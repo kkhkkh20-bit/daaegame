@@ -1,0 +1,1992 @@
+[
+  {
+    "person": "doto",
+    "name": "도토",
+    "baseline_reference": [
+      "art/canonical48-rev45/originals/doto.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-role-doto.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "anxious",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [],
+    "existing_body_keys": [],
+    "existing_world_keys": [],
+    "story_work": "장부 정리와 광장 배급 보조",
+    "story_activity": "여러 장부의 모서리를 맞춘다.",
+    "weekly_locations": [
+      [
+        "square",
+        "post",
+        "home"
+      ],
+      [
+        "square",
+        "post",
+        "home"
+      ],
+      [
+        "square",
+        "post",
+        "home"
+      ],
+      [
+        "square",
+        "post",
+        "home"
+      ],
+      [
+        "square",
+        "post",
+        "home"
+      ],
+      [
+        "square",
+        "post",
+        "home"
+      ],
+      [
+        "square",
+        "post",
+        "home"
+      ]
+    ],
+    "observed_base_living_choices": [
+      {
+        "location": "hall",
+        "pose": "neutral"
+      },
+      {
+        "location": "square",
+        "pose": "neutral"
+      }
+    ],
+    "explicit_pending_places": [
+      {
+        "place": "hall",
+        "period": "morning",
+        "person": "doto",
+        "pose": "action_1",
+        "source": "art/canonical-channel-alignment-20261017/report.json",
+        "exists": false,
+        "runtime_path": "",
+        "status": "production pending; no false neutral activity label",
+        "original_candidates": []
+      },
+      {
+        "place": "hall",
+        "period": "afternoon",
+        "person": "doto",
+        "pose": "action_1",
+        "source": "art/canonical-channel-alignment-20261017/report.json",
+        "exists": false,
+        "runtime_path": "",
+        "status": "production pending; no false neutral activity label",
+        "original_candidates": []
+      },
+      {
+        "place": "hall",
+        "period": "evening",
+        "person": "doto",
+        "pose": "action_2",
+        "source": "art/canonical-channel-alignment-20261017/report.json",
+        "exists": false,
+        "runtime_path": "",
+        "status": "production pending; no false neutral activity label",
+        "original_candidates": []
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "person": "guard",
+    "name": "돌목",
+    "baseline_reference": [
+      "art/role-connect-20261016/sources/approved/review-dolmok-mouth-v1.png"
+    ],
+    "baseline_runtime": "game/assets/room13-role-guard-neutral.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "anxious",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [],
+    "existing_body_keys": [],
+    "existing_world_keys": [
+      "action_1",
+      "action_2",
+      "check_records_low",
+      "listen_left"
+    ],
+    "story_work": "",
+    "story_activity": "",
+    "weekly_locations": [],
+    "observed_base_living_choices": [
+      {
+        "location": "gate",
+        "pose": "action_1"
+      }
+    ],
+    "explicit_pending_places": [],
+    "notes": "Only latest mouth neutral/profile aligned; five old expressions and nine investigation actions not counted complete"
+  },
+  {
+    "person": "neoul",
+    "name": "너울",
+    "baseline_reference": [
+      "art/canonical48-rev45/originals/neoul.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-canonical-default-neoul.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "anxious",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [],
+    "existing_body_keys": [],
+    "existing_world_keys": [],
+    "story_work": "광장 질서와 행사 준비",
+    "story_activity": "통행하는 사람들과 길가 짐을 번갈아 살핀다.",
+    "weekly_locations": [
+      [
+        "square",
+        "school",
+        "home"
+      ],
+      [
+        "square",
+        "school",
+        "home"
+      ],
+      [
+        "square",
+        "school",
+        "home"
+      ],
+      [
+        "square",
+        "school",
+        "home"
+      ],
+      [
+        "square",
+        "school",
+        "home"
+      ],
+      [
+        "square",
+        "school",
+        "home"
+      ],
+      [
+        "square",
+        "school",
+        "home"
+      ]
+    ],
+    "observed_base_living_choices": [
+      {
+        "location": "facility",
+        "pose": "neutral"
+      }
+    ],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "resident_bori",
+    "name": "보리",
+    "baseline_reference": [
+      "art/canonical48-rev45/originals/resident_bori.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-canonical-default-resident_bori.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "anxious",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [],
+    "existing_body_keys": [],
+    "existing_world_keys": [
+      "living_firewood"
+    ],
+    "story_work": "장작 운반과 가족 돌봄",
+    "story_activity": "장작을 묶고 끈을 다시 조이고 있다.",
+    "weekly_locations": [
+      [
+        "gate",
+        "workshop",
+        "square"
+      ],
+      [
+        "gate",
+        "store",
+        "home"
+      ],
+      [
+        "gate",
+        "workshop",
+        "home"
+      ],
+      [
+        "store",
+        "workshop",
+        "square"
+      ],
+      [
+        "gate",
+        "store",
+        "home"
+      ],
+      [
+        "store",
+        "school",
+        "home"
+      ],
+      [
+        "home",
+        "square",
+        "home"
+      ]
+    ],
+    "observed_base_living_choices": [
+      {
+        "location": "gate",
+        "pose": "living_firewood"
+      },
+      {
+        "location": "school",
+        "pose": "neutral"
+      },
+      {
+        "location": "square",
+        "pose": "living_firewood"
+      },
+      {
+        "location": "store",
+        "pose": "living_firewood"
+      },
+      {
+        "location": "workshop",
+        "pose": "living_firewood"
+      }
+    ],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "resident_guseul",
+    "name": "구슬",
+    "baseline_reference": [
+      "art/canonical48-rev45/originals/resident_guseul.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-role-resident_guseul.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "anxious",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [],
+    "existing_body_keys": [],
+    "existing_world_keys": [],
+    "story_work": "거래품 정리와 견습",
+    "story_activity": "계약서에 눌린 도장을 닦아 낸다.",
+    "weekly_locations": [
+      [
+        "store",
+        "post",
+        "inn"
+      ],
+      [
+        "store",
+        "post",
+        "inn"
+      ],
+      [
+        "store",
+        "post",
+        "inn"
+      ],
+      [
+        "store",
+        "post",
+        "inn"
+      ],
+      [
+        "store",
+        "post",
+        "inn"
+      ],
+      [
+        "store",
+        "post",
+        "inn"
+      ],
+      [
+        "store",
+        "post",
+        "inn"
+      ]
+    ],
+    "observed_base_living_choices": [
+      {
+        "location": "inn",
+        "pose": "neutral"
+      },
+      {
+        "location": "post",
+        "pose": "neutral"
+      },
+      {
+        "location": "store",
+        "pose": "neutral"
+      }
+    ],
+    "explicit_pending_places": [
+      {
+        "place": "inn",
+        "period": "all",
+        "person": "resident_guseul",
+        "pose": "living_stamp",
+        "source": "art/canonical-channel-alignment-20261017/report.json",
+        "exists": false,
+        "runtime_path": "",
+        "status": "production pending; no false neutral activity label",
+        "original_candidates": []
+      },
+      {
+        "place": "post",
+        "period": "all",
+        "person": "resident_guseul",
+        "pose": "living_stamp",
+        "source": "art/canonical-channel-alignment-20261017/report.json",
+        "exists": false,
+        "runtime_path": "",
+        "status": "production pending; no false neutral activity label",
+        "original_candidates": []
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "person": "resident_kkwak",
+    "name": "꽥순",
+    "baseline_reference": [
+      "art/incoming/kkwak-refined-20261017/kwaeksun-refined-candidate-v1.png"
+    ],
+    "baseline_runtime": "game/assets/room13-role-resident_kkwak-refined-v1.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "anxious",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [],
+    "existing_body_keys": [],
+    "existing_world_keys": [],
+    "story_work": "빨래 물 나르기와 하천 길 확인",
+    "story_activity": "빈 물통 안의 얼음을 두드린다.",
+    "weekly_locations": [
+      [
+        "store",
+        "lowroad",
+        "home"
+      ],
+      [
+        "store",
+        "lowroad",
+        "home"
+      ],
+      [
+        "store",
+        "lowroad",
+        "home"
+      ],
+      [
+        "store",
+        "lowroad",
+        "home"
+      ],
+      [
+        "store",
+        "lowroad",
+        "home"
+      ],
+      [
+        "store",
+        "lowroad",
+        "home"
+      ],
+      [
+        "store",
+        "lowroad",
+        "home"
+      ]
+    ],
+    "observed_base_living_choices": [
+      {
+        "location": "gate",
+        "pose": "neutral"
+      },
+      {
+        "location": "store",
+        "pose": "neutral"
+      }
+    ],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "resident_lamplighter",
+    "name": "초롱",
+    "baseline_reference": [
+      "art/expression-acting-20261016/pack68/resident_lamplighter/neutral.png"
+    ],
+    "baseline_runtime": "game/assets/room13-fullbody-resident_lamplighter-neutral-acting.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [
+      "anxious",
+      "flustered"
+    ],
+    "existing_body_keys": [],
+    "existing_world_keys": [
+      "living_inspectlamp"
+    ],
+    "story_work": "등불 점검과 비밀 식량 전달",
+    "story_activity": "등 아래 점검함을 닫고 매듭을 확인한다.",
+    "weekly_locations": [
+      [
+        "square",
+        "gate",
+        "workshop"
+      ],
+      [
+        "square",
+        "greenhouse",
+        "workshop"
+      ],
+      [
+        "square",
+        "gate",
+        "greenhouse"
+      ],
+      [
+        "square",
+        "library",
+        "workshop"
+      ],
+      [
+        "square",
+        "gate",
+        "greenhouse"
+      ],
+      [
+        "square",
+        "workshop",
+        "home"
+      ],
+      [
+        "square",
+        "gate",
+        "home"
+      ]
+    ],
+    "observed_base_living_choices": [
+      {
+        "location": "gate",
+        "pose": "living_inspectlamp"
+      },
+      {
+        "location": "square",
+        "pose": "living_inspectlamp"
+      },
+      {
+        "location": "workshop",
+        "pose": "living_inspectlamp"
+      }
+    ],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "resident_librarian",
+    "name": "사서 선생님",
+    "baseline_reference": [
+      "art/npc-redesign-20261015/source/snow_leopard_tea_hostess.png"
+    ],
+    "baseline_runtime": "game/assets/room13-redesign-resident_librarian.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "anxious",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [],
+    "existing_body_keys": [],
+    "existing_world_keys": [
+      "event_ledgertie",
+      "living_bookpaper"
+    ],
+    "story_work": "도서관 기록 보존",
+    "story_activity": "젖은 책 사이에 마른 종이를 끼운다.",
+    "weekly_locations": [
+      [
+        "library",
+        "library",
+        "home"
+      ],
+      [
+        "library",
+        "library",
+        "home"
+      ],
+      [
+        "library",
+        "library",
+        "home"
+      ],
+      [
+        "library",
+        "library",
+        "home"
+      ],
+      [
+        "library",
+        "library",
+        "home"
+      ],
+      [
+        "library",
+        "library",
+        "home"
+      ],
+      [
+        "library",
+        "library",
+        "home"
+      ]
+    ],
+    "observed_base_living_choices": [
+      {
+        "location": "post",
+        "pose": "living_bookpaper"
+      }
+    ],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "resident_madam",
+    "name": "백 부인",
+    "baseline_reference": [
+      "art/canonical48-rev45/originals/resident_madam.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-role-resident_madam.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "anxious",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [],
+    "existing_body_keys": [],
+    "existing_world_keys": [],
+    "story_work": "비축품과 사유 창고 관리",
+    "story_activity": "보관함을 봉해 둔 자리를 손으로 확인한다.",
+    "weekly_locations": [
+      [
+        "home",
+        "store",
+        "inn"
+      ],
+      [
+        "home",
+        "store",
+        "inn"
+      ],
+      [
+        "home",
+        "store",
+        "inn"
+      ],
+      [
+        "home",
+        "store",
+        "inn"
+      ],
+      [
+        "home",
+        "store",
+        "inn"
+      ],
+      [
+        "home",
+        "store",
+        "inn"
+      ],
+      [
+        "home",
+        "store",
+        "inn"
+      ]
+    ],
+    "observed_base_living_choices": [
+      {
+        "location": "inn",
+        "pose": "neutral"
+      },
+      {
+        "location": "store",
+        "pose": "neutral"
+      }
+    ],
+    "explicit_pending_places": [
+      {
+        "place": "inn",
+        "period": "all",
+        "person": "resident_madam",
+        "pose": "living_inspect",
+        "source": "art/canonical-channel-alignment-20261017/report.json",
+        "exists": false,
+        "runtime_path": "",
+        "status": "production pending; no false neutral activity label",
+        "original_candidates": []
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "person": "resident_momo",
+    "name": "모모 관장",
+    "baseline_reference": [
+      "art/canonical48-rev45/originals/resident_momo.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-canonical-default-resident_momo.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "anxious",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [],
+    "existing_body_keys": [],
+    "existing_world_keys": [
+      "living_lampnumber"
+    ],
+    "story_work": "박물관 보관과 옛 생활 자료",
+    "story_activity": "낡은 등잔 바닥에 붙은 번호를 읽는다.",
+    "weekly_locations": [
+      [
+        "library",
+        "library",
+        "home"
+      ],
+      [
+        "library",
+        "library",
+        "home"
+      ],
+      [
+        "library",
+        "library",
+        "home"
+      ],
+      [
+        "library",
+        "library",
+        "home"
+      ],
+      [
+        "library",
+        "library",
+        "home"
+      ],
+      [
+        "library",
+        "library",
+        "home"
+      ],
+      [
+        "library",
+        "library",
+        "home"
+      ]
+    ],
+    "observed_base_living_choices": [
+      {
+        "location": "post",
+        "pose": "living_lampnumber"
+      }
+    ],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "resident_mungchi",
+    "name": "뭉치",
+    "baseline_reference": [
+      "art/canonical48-rev45/originals/resident_mungchi.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-role-resident_mungchi.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "anxious",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [],
+    "existing_body_keys": [],
+    "existing_world_keys": [],
+    "story_work": "수집상 집 심부름",
+    "story_activity": "작은 상자와 큰 상자를 따로 쌓는다.",
+    "weekly_locations": [
+      [
+        "home",
+        "store",
+        "home"
+      ],
+      [
+        "home",
+        "store",
+        "home"
+      ],
+      [
+        "home",
+        "store",
+        "home"
+      ],
+      [
+        "home",
+        "store",
+        "home"
+      ],
+      [
+        "home",
+        "store",
+        "home"
+      ],
+      [
+        "home",
+        "store",
+        "home"
+      ],
+      [
+        "home",
+        "store",
+        "home"
+      ]
+    ],
+    "observed_base_living_choices": [
+      {
+        "location": "store",
+        "pose": "neutral"
+      }
+    ],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "resident_nubi",
+    "name": "누비 아주머니",
+    "baseline_reference": [
+      "art/canonical48-rev45/originals/resident_nubi.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-role-resident_nubi.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "anxious",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [],
+    "existing_body_keys": [],
+    "existing_world_keys": [],
+    "story_work": "세탁 협업과 임시 숙박 연결",
+    "story_activity": "마른 빨래를 사람별로 나눠 묶는다.",
+    "weekly_locations": [
+      [
+        "inn",
+        "workshop",
+        "store"
+      ],
+      [
+        "inn",
+        "workshop",
+        "store"
+      ],
+      [
+        "inn",
+        "workshop",
+        "store"
+      ],
+      [
+        "inn",
+        "workshop",
+        "store"
+      ],
+      [
+        "inn",
+        "workshop",
+        "store"
+      ],
+      [
+        "inn",
+        "workshop",
+        "store"
+      ],
+      [
+        "inn",
+        "workshop",
+        "store"
+      ]
+    ],
+    "observed_base_living_choices": [
+      {
+        "location": "facility",
+        "pose": "neutral"
+      },
+      {
+        "location": "inn",
+        "pose": "neutral"
+      },
+      {
+        "location": "school",
+        "pose": "neutral"
+      },
+      {
+        "location": "store",
+        "pose": "neutral"
+      },
+      {
+        "location": "workshop",
+        "pose": "neutral"
+      }
+    ],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "resident_owlgp",
+    "name": "부엉이 할아버지",
+    "baseline_reference": [
+      "art/expression-acting-20261016/pack68/resident_owlgp/neutral.png"
+    ],
+    "baseline_runtime": "game/assets/room13-fullbody-resident_owlgp-neutral-acting.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "angry",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [
+      "anxious",
+      "joy"
+    ],
+    "existing_body_keys": [],
+    "existing_world_keys": [
+      "living_notebook"
+    ],
+    "story_work": "은퇴 탐정과 등 점검",
+    "story_activity": "낡은 수첩의 풀린 제본을 묶는다.",
+    "weekly_locations": [
+      [
+        "square",
+        "library",
+        "inn"
+      ],
+      [
+        "square",
+        "library",
+        "inn"
+      ],
+      [
+        "square",
+        "library",
+        "inn"
+      ],
+      [
+        "square",
+        "library",
+        "inn"
+      ],
+      [
+        "square",
+        "library",
+        "inn"
+      ],
+      [
+        "square",
+        "library",
+        "inn"
+      ],
+      [
+        "square",
+        "library",
+        "inn"
+      ]
+    ],
+    "observed_base_living_choices": [
+      {
+        "location": "dining",
+        "pose": "neutral"
+      },
+      {
+        "location": "hall",
+        "pose": "neutral"
+      },
+      {
+        "location": "inn",
+        "pose": "neutral"
+      },
+      {
+        "location": "school",
+        "pose": "neutral"
+      },
+      {
+        "location": "square",
+        "pose": "living_notebook"
+      }
+    ],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "resident_piko",
+    "name": "피코",
+    "baseline_reference": [
+      "art/canonical48-rev45/originals/resident_piko.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-role-resident_piko.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "anxious",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [],
+    "existing_body_keys": [],
+    "existing_world_keys": [],
+    "story_work": "그림과 가족 초상 작업",
+    "story_activity": "완성하지 못한 초상에 천을 덮는다.",
+    "weekly_locations": [
+      [
+        "square",
+        "square",
+        "home"
+      ],
+      [
+        "square",
+        "square",
+        "home"
+      ],
+      [
+        "square",
+        "square",
+        "home"
+      ],
+      [
+        "square",
+        "square",
+        "home"
+      ],
+      [
+        "square",
+        "square",
+        "home"
+      ],
+      [
+        "square",
+        "square",
+        "home"
+      ],
+      [
+        "square",
+        "square",
+        "home"
+      ]
+    ],
+    "observed_base_living_choices": [
+      {
+        "location": "clinic",
+        "pose": "distressed"
+      },
+      {
+        "location": "square",
+        "pose": "neutral"
+      }
+    ],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "resident_seol",
+    "name": "설이",
+    "baseline_reference": [
+      "art/canonical48-rev45/originals/resident_seol.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-canonical-default-resident_seol.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "anxious",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [],
+    "existing_body_keys": [],
+    "existing_world_keys": [
+      "living_bellrope"
+    ],
+    "story_work": "종탑과 야간 안내",
+    "story_activity": "작은 종의 끈을 풀었다 다시 매단다.",
+    "weekly_locations": [
+      [
+        "tower",
+        "tower",
+        "home"
+      ],
+      [
+        "tower",
+        "tower",
+        "home"
+      ],
+      [
+        "tower",
+        "tower",
+        "home"
+      ],
+      [
+        "tower",
+        "tower",
+        "home"
+      ],
+      [
+        "tower",
+        "tower",
+        "home"
+      ],
+      [
+        "tower",
+        "tower",
+        "home"
+      ],
+      [
+        "tower",
+        "tower",
+        "home"
+      ]
+    ],
+    "observed_base_living_choices": [
+      {
+        "location": "square",
+        "pose": "living_bellrope"
+      }
+    ],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "resident_siluk",
+    "name": "실룩",
+    "baseline_reference": [
+      "art/npc-redesign-20261015/source/hyena_town_v2.png"
+    ],
+    "baseline_runtime": "game/assets/room13-redesign-resident_siluk.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "anxious",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [],
+    "existing_body_keys": [],
+    "existing_world_keys": [
+      "event_whisper"
+    ],
+    "story_work": "짐 운반과 마구간",
+    "story_activity": "짐수레 바퀴의 끼인 눈을 털어 낸다.",
+    "weekly_locations": [
+      [
+        "gate",
+        "store",
+        "home"
+      ],
+      [
+        "gate",
+        "store",
+        "home"
+      ],
+      [
+        "gate",
+        "store",
+        "home"
+      ],
+      [
+        "gate",
+        "store",
+        "home"
+      ],
+      [
+        "gate",
+        "store",
+        "home"
+      ],
+      [
+        "gate",
+        "store",
+        "home"
+      ],
+      [
+        "gate",
+        "store",
+        "home"
+      ]
+    ],
+    "observed_base_living_choices": [
+      {
+        "location": "gate",
+        "pose": "neutral"
+      },
+      {
+        "location": "store",
+        "pose": "neutral"
+      }
+    ],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "resident_teacher",
+    "name": "사자 선생님",
+    "baseline_reference": [
+      "art/canonical48-rev45/originals/resident_teacher.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-canonical-default-resident_teacher.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "anxious",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [],
+    "existing_body_keys": [],
+    "existing_world_keys": [],
+    "story_work": "학교와 비상 대피소",
+    "story_activity": "아이들 외투의 젖은 끝을 펴 놓는다.",
+    "weekly_locations": [
+      [
+        "school",
+        "school",
+        "home"
+      ],
+      [
+        "school",
+        "school",
+        "home"
+      ],
+      [
+        "school",
+        "school",
+        "home"
+      ],
+      [
+        "school",
+        "school",
+        "home"
+      ],
+      [
+        "school",
+        "school",
+        "home"
+      ],
+      [
+        "school",
+        "school",
+        "home"
+      ],
+      [
+        "school",
+        "school",
+        "home"
+      ]
+    ],
+    "observed_base_living_choices": [
+      {
+        "location": "school",
+        "pose": "neutral"
+      }
+    ],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "resident_yeoni",
+    "name": "여니",
+    "baseline_reference": [
+      "art/npc-redesign-20261015/source/foxtown.png"
+    ],
+    "baseline_runtime": "game/assets/room13-redesign-resident_yeoni.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "anxious",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [],
+    "existing_body_keys": [],
+    "existing_world_keys": [
+      "living_mend"
+    ],
+    "story_work": "의복 수선과 물자 교환",
+    "story_activity": "헤진 소매 안쪽을 뒤집어 살핀다.",
+    "weekly_locations": [
+      [
+        "home",
+        "square",
+        "home"
+      ],
+      [
+        "square",
+        "square",
+        "home"
+      ],
+      [
+        "home",
+        "inn",
+        "home"
+      ],
+      [
+        "workshop",
+        "square",
+        "home"
+      ],
+      [
+        "home",
+        "square",
+        "home"
+      ],
+      [
+        "square",
+        "inn",
+        "home"
+      ],
+      [
+        "home",
+        "school",
+        "home"
+      ]
+    ],
+    "observed_base_living_choices": [
+      {
+        "location": "inn",
+        "pose": "neutral"
+      },
+      {
+        "location": "school",
+        "pose": "neutral"
+      },
+      {
+        "location": "square",
+        "pose": "living_mend"
+      },
+      {
+        "location": "store",
+        "pose": "neutral"
+      },
+      {
+        "location": "workshop",
+        "pose": "neutral"
+      }
+    ],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "kid_kkomi",
+    "name": "꼬미",
+    "baseline_reference": [
+      "art/ep-art-20261016/originals/fullbody-kid_kkomi-neutral.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-fullbody-kid_kkomi-neutral.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "angry",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [
+      "joy",
+      "anxious"
+    ],
+    "existing_body_keys": [
+      "door_peek",
+      "hideout_proud"
+    ],
+    "existing_world_keys": [
+      "door_peek",
+      "hideout_proud"
+    ],
+    "story_work": "",
+    "story_activity": "",
+    "weekly_locations": [],
+    "observed_base_living_choices": [],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "kid_kkam",
+    "name": "깜이",
+    "baseline_reference": [
+      "art/ep-art-20261016/originals/fullbody-kid_kkam-neutral.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-fullbody-kid_kkam-neutral.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "angry",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [
+      "joy",
+      "anxious"
+    ],
+    "existing_body_keys": [],
+    "existing_world_keys": [],
+    "story_work": "",
+    "story_activity": "",
+    "weekly_locations": [],
+    "observed_base_living_choices": [],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "kid_mong",
+    "name": "몽이",
+    "baseline_reference": [
+      "art/ep-art-20261016/originals/fullbody-kid_mong-neutral.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-fullbody-kid_mong-neutral.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "angry",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [
+      "joy",
+      "anxious"
+    ],
+    "existing_body_keys": [],
+    "existing_world_keys": [],
+    "story_work": "",
+    "story_activity": "",
+    "weekly_locations": [],
+    "observed_base_living_choices": [],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "kid_bang",
+    "name": "방울",
+    "baseline_reference": [
+      "art/ep-art-20261016/originals/fullbody-kid_bang-neutral.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-fullbody-kid_bang-neutral.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "angry",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [
+      "joy",
+      "anxious"
+    ],
+    "existing_body_keys": [
+      "cling_leg"
+    ],
+    "existing_world_keys": [
+      "cling_leg"
+    ],
+    "story_work": "",
+    "story_activity": "",
+    "weekly_locations": [],
+    "observed_base_living_choices": [],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "kid_nubi1",
+    "name": "누비의 큰아이",
+    "baseline_reference": [
+      "art/ep-art-20261016/originals/fullbody-kid_nubi1-neutral.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-fullbody-kid_nubi1-neutral.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "angry",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [
+      "joy",
+      "anxious"
+    ],
+    "existing_body_keys": [],
+    "existing_world_keys": [
+      "hold_skirt"
+    ],
+    "story_work": "",
+    "story_activity": "",
+    "weekly_locations": [],
+    "observed_base_living_choices": [],
+    "explicit_pending_places": [],
+    "notes": "hold_skirt revision failed delivery; old retained pose excluded from readiness"
+  },
+  {
+    "person": "kid_nubi2",
+    "name": "누비의 둘째",
+    "baseline_reference": [
+      "art/ep-art-20261016/originals/fullbody-kid_nubi2-neutral.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-fullbody-kid_nubi2-neutral.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "angry",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [
+      "joy",
+      "anxious"
+    ],
+    "existing_body_keys": [],
+    "existing_world_keys": [],
+    "story_work": "",
+    "story_activity": "",
+    "weekly_locations": [],
+    "observed_base_living_choices": [],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "kid_siluk1",
+    "name": "실룩의 큰아이",
+    "baseline_reference": [
+      "art/ep-art-20261016/originals/fullbody-kid_siluk1-neutral.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-fullbody-kid_siluk1-neutral.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "angry",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [
+      "joy",
+      "anxious"
+    ],
+    "existing_body_keys": [],
+    "existing_world_keys": [],
+    "story_work": "",
+    "story_activity": "",
+    "weekly_locations": [],
+    "observed_base_living_choices": [],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "kid_siluk2",
+    "name": "실룩의 작은아이",
+    "baseline_reference": [
+      "art/ep-art-20261016/originals/fullbody-kid_siluk2-neutral.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-fullbody-kid_siluk2-neutral.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "angry",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [
+      "joy",
+      "anxious"
+    ],
+    "existing_body_keys": [],
+    "existing_world_keys": [],
+    "story_work": "",
+    "story_activity": "",
+    "weekly_locations": [],
+    "observed_base_living_choices": [],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "kid_saemi",
+    "name": "새미",
+    "baseline_reference": [
+      "art/ep-art-20261016/originals/fullbody-kid_saemi-neutral.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-fullbody-kid_saemi-neutral.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "angry",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [
+      "joy",
+      "anxious"
+    ],
+    "existing_body_keys": [
+      "hide_bowl"
+    ],
+    "existing_world_keys": [
+      "hide_bowl"
+    ],
+    "story_work": "",
+    "story_activity": "",
+    "weekly_locations": [],
+    "observed_base_living_choices": [],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "kid_dodam",
+    "name": "도담",
+    "baseline_reference": [
+      "art/ep-art-20261016/originals/fullbody-kid_dodam-neutral.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-fullbody-kid_dodam-neutral.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "angry",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [
+      "joy",
+      "anxious"
+    ],
+    "existing_body_keys": [
+      "lick_ladle"
+    ],
+    "existing_world_keys": [
+      "lick_ladle"
+    ],
+    "story_work": "",
+    "story_activity": "",
+    "weekly_locations": [],
+    "observed_base_living_choices": [],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "npc_pandol",
+    "name": "판돌 영감",
+    "baseline_reference": [
+      "art/ep-art-20261016/originals/fullbody-npc_pandol-neutral.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-fullbody-npc_pandol-neutral.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "angry",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [
+      "joy",
+      "anxious"
+    ],
+    "existing_body_keys": [
+      "point_name"
+    ],
+    "existing_world_keys": [
+      "point_name"
+    ],
+    "story_work": "",
+    "story_activity": "",
+    "weekly_locations": [],
+    "observed_base_living_choices": [],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "chorong_mother",
+    "name": "초롱 어머니",
+    "baseline_reference": [
+      "art/ep-art-20261016/originals/fullbody-chorong_mother-neutral.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-fullbody-chorong_mother-neutral.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [
+      "anxious"
+    ],
+    "existing_body_keys": [
+      "offer_lantern"
+    ],
+    "existing_world_keys": [
+      "offer_lantern"
+    ],
+    "story_work": "",
+    "story_activity": "",
+    "weekly_locations": [],
+    "observed_base_living_choices": [],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "resident_tosil",
+    "name": "토실",
+    "baseline_reference": [
+      "art/canonical48-rev45/originals/resident_tosil.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-canonical-default-resident_tosil.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "anxious",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [],
+    "existing_body_keys": [
+      "hold_storybook"
+    ],
+    "existing_world_keys": [
+      "living_thermos",
+      "hold_storybook"
+    ],
+    "story_work": "",
+    "story_activity": "",
+    "weekly_locations": [],
+    "observed_base_living_choices": [
+      {
+        "location": "forest",
+        "pose": "living_thermos"
+      },
+      {
+        "location": "inn",
+        "pose": "living_thermos"
+      },
+      {
+        "location": "market",
+        "pose": "living_thermos"
+      },
+      {
+        "location": "square",
+        "pose": "living_thermos"
+      }
+    ],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "resident_solbang",
+    "name": "솔방울",
+    "baseline_reference": [
+      "art/role-connect-20261016/sources/approved/review-solbang-distinct-v1.png"
+    ],
+    "baseline_runtime": "game/assets/room13-role-resident_solbang-neutral.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "anxious",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [],
+    "existing_body_keys": [],
+    "existing_world_keys": [],
+    "story_work": "",
+    "story_activity": "",
+    "weekly_locations": [],
+    "observed_base_living_choices": [
+      {
+        "location": "clinic",
+        "pose": "neutral"
+      },
+      {
+        "location": "forest",
+        "pose": "neutral"
+      },
+      {
+        "location": "market",
+        "pose": "neutral"
+      }
+    ],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "resident_guldol",
+    "name": "굴돌 할아버지",
+    "baseline_reference": [
+      "art/role-connect-20261016/sources/approved/review-guldol-distinct-v1.png"
+    ],
+    "baseline_runtime": "game/assets/room13-role-resident_guldol-neutral.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "anxious",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [],
+    "existing_body_keys": [],
+    "existing_world_keys": [],
+    "story_work": "",
+    "story_activity": "",
+    "weekly_locations": [],
+    "observed_base_living_choices": [
+      {
+        "location": "square",
+        "pose": "neutral"
+      },
+      {
+        "location": "workshop",
+        "pose": "neutral"
+      }
+    ],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "resident_mulgyeol",
+    "name": "물결",
+    "baseline_reference": [
+      "art/canonical48-rev45/originals/resident_mulgyeol.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-role-resident_mulgyeol.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "anxious",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [],
+    "existing_body_keys": [],
+    "existing_world_keys": [],
+    "story_work": "",
+    "story_activity": "",
+    "weekly_locations": [],
+    "observed_base_living_choices": [
+      {
+        "location": "dining",
+        "pose": "neutral"
+      },
+      {
+        "location": "market",
+        "pose": "neutral"
+      },
+      {
+        "location": "river",
+        "pose": "neutral"
+      }
+    ],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "resident_dalgeurak",
+    "name": "달그락",
+    "baseline_reference": [
+      "art/canonical48-rev45/originals/resident_dalgeurak.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-role-resident_dalgeurak.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "anxious",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [],
+    "existing_body_keys": [],
+    "existing_world_keys": [],
+    "story_work": "",
+    "story_activity": "",
+    "weekly_locations": [],
+    "observed_base_living_choices": [
+      {
+        "location": "dining",
+        "pose": "neutral"
+      },
+      {
+        "location": "market",
+        "pose": "neutral"
+      },
+      {
+        "location": "square",
+        "pose": "neutral"
+      }
+    ],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "resident_jongjong",
+    "name": "종종이",
+    "baseline_reference": [
+      "art/canonical48-rev45/originals/resident_jongjong.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-role-resident_jongjong.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "anxious",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [],
+    "existing_body_keys": [],
+    "existing_world_keys": [],
+    "story_work": "",
+    "story_activity": "",
+    "weekly_locations": [],
+    "observed_base_living_choices": [
+      {
+        "location": "market",
+        "pose": "neutral"
+      },
+      {
+        "location": "post",
+        "pose": "neutral"
+      },
+      {
+        "location": "square",
+        "pose": "neutral"
+      }
+    ],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "resident_hyeoni",
+    "name": "현이",
+    "baseline_reference": [
+      "art/canonical48-rev45/originals/resident_hyeoni.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-role-resident_hyeoni.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "anxious",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [],
+    "existing_body_keys": [],
+    "existing_world_keys": [],
+    "story_work": "",
+    "story_activity": "",
+    "weekly_locations": [],
+    "observed_base_living_choices": [
+      {
+        "location": "dining",
+        "pose": "neutral"
+      },
+      {
+        "location": "market",
+        "pose": "neutral"
+      },
+      {
+        "location": "square",
+        "pose": "neutral"
+      }
+    ],
+    "explicit_pending_places": [],
+    "notes": ""
+  },
+  {
+    "person": "resident_kalbaram",
+    "name": "칼바람",
+    "baseline_reference": [
+      "art/canonical48-rev45/originals/resident_kalbaram.webp"
+    ],
+    "baseline_runtime": "game/assets/room13-role-resident_kalbaram.webp",
+    "source_status": "source SHA matched / episode registry",
+    "requested_expression_keys": [
+      "joy",
+      "angry",
+      "anxious",
+      "surprise"
+    ],
+    "request_status": "reconcile candidate38 first; not approved for immediate new production",
+    "existing_expression_keys": [],
+    "existing_body_keys": [],
+    "existing_world_keys": [],
+    "story_work": "",
+    "story_activity": "",
+    "weekly_locations": [],
+    "observed_base_living_choices": [
+      {
+        "location": "forest",
+        "pose": "neutral"
+      },
+      {
+        "location": "gate",
+        "pose": "neutral"
+      }
+    ],
+    "explicit_pending_places": [],
+    "notes": ""
+  }
+]

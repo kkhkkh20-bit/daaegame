@@ -1,0 +1,9817 @@
+{
+  "version": "0.19.7",
+  "cast_ids": [
+    "daram",
+    "dad",
+    "granny",
+    "seryeon",
+    "nabi",
+    "bami",
+    "doto",
+    "buri",
+    "karo",
+    "neoul",
+    "mom",
+    "guard",
+    "elder",
+    "bodum",
+    "workshop",
+    "resident_tori",
+    "resident_bori",
+    "resident_yeoni",
+    "resident_kongi",
+    "resident_kkwak",
+    "resident_librarian",
+    "resident_owlgp",
+    "resident_teacher",
+    "resident_nero",
+    "resident_seol",
+    "resident_ppul",
+    "resident_tok",
+    "resident_sling",
+    "resident_momo",
+    "resident_ttadak",
+    "resident_piko",
+    "resident_mungchi",
+    "resident_madam",
+    "resident_siluk",
+    "resident_musoe",
+    "resident_somi",
+    "resident_seori",
+    "resident_ubak",
+    "resident_nubi",
+    "resident_eunho",
+    "resident_guseul",
+    "resident_badook",
+    "resident_lamplighter",
+    "kid_kkomi",
+    "kid_kkam",
+    "kid_mong",
+    "kid_bang",
+    "kid_nubi1",
+    "kid_nubi2",
+    "kid_siluk1",
+    "kid_siluk2",
+    "kid_saemi",
+    "kid_dodam",
+    "npc_pandol",
+    "chorong_mother",
+    "resident_tosil",
+    "resident_solbang",
+    "resident_guldol",
+    "resident_mulgyeol",
+    "resident_dalgeurak",
+    "resident_jongjong",
+    "resident_hyeoni",
+    "resident_kalbaram"
+  ],
+  "fullbody_matches_json": true,
+  "acting_matches_json": true,
+  "schedule_sample": "fresh room13 state; days1..14 periods0..2 world-layout locations only; no episode flags",
+  "base_living_choices": [
+    {
+      "day": 1,
+      "period": 0,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "inn",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_musoe",
+      "pose": "living_foldmap"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_guldol",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "square",
+      "person": "resident_owlgp",
+      "pose": "living_notebook"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "square",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "square",
+      "person": "resident_tori",
+      "pose": "world_bench_left"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "square",
+      "person": "resident_seol",
+      "pose": "living_bellrope"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "store",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "store",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "store",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_1"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "post",
+      "person": "resident_eunho",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "post",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "post",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "river",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 0,
+      "location": "market",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_tori",
+      "pose": "activity"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_yeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "square",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "square",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "square",
+      "person": "resident_piko",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "square",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "gate",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "gate",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "store",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "store",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "store",
+      "person": "resident_mungchi",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "store",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "store",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "post",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "post",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "post",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "river",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "market",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "market",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 1,
+      "location": "market",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 2,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 1,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 1,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_ubak",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 2,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_2"
+    },
+    {
+      "day": 1,
+      "period": 2,
+      "location": "square",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 2,
+      "location": "square",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 1,
+      "period": 2,
+      "location": "square",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 1,
+      "period": 2,
+      "location": "gate",
+      "person": "karo",
+      "pose": "action_2"
+    },
+    {
+      "day": 1,
+      "period": 2,
+      "location": "gate",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 1,
+      "period": 2,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 1,
+      "period": 2,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 1,
+      "period": 2,
+      "location": "store",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 2,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 1,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 1,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 1,
+      "period": 2,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 1,
+      "period": 2,
+      "location": "forest",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 1,
+      "period": 2,
+      "location": "forest",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "inn",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_musoe",
+      "pose": "living_foldmap"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_guldol",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "square",
+      "person": "resident_owlgp",
+      "pose": "living_notebook"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "square",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "square",
+      "person": "resident_tori",
+      "pose": "world_bench_left"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "square",
+      "person": "resident_yeoni",
+      "pose": "living_mend"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "square",
+      "person": "resident_seol",
+      "pose": "living_bellrope"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "square",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "square",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "store",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "store",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "store",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_1"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "action_1"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "post",
+      "person": "resident_eunho",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "post",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "river",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 0,
+      "location": "market",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_tori",
+      "pose": "activity"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_yeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "square",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "square",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "square",
+      "person": "resident_seol",
+      "pose": "living_bellrope"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "square",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "square",
+      "person": "resident_piko",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "square",
+      "person": "resident_somi",
+      "pose": "living_bootice"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "square",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "square",
+      "person": "resident_guldol",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "gate",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "store",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "store",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "store",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "store",
+      "person": "resident_mungchi",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "store",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "store",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "chair_read"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "post",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "post",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "post",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "post",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "river",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "forest",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "market",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "market",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 1,
+      "location": "market",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 2,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 2,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 2,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_ubak",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 2,
+      "period": 2,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_2"
+    },
+    {
+      "day": 2,
+      "period": 2,
+      "location": "square",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 2,
+      "location": "square",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 2,
+      "period": 2,
+      "location": "gate",
+      "person": "karo",
+      "pose": "action_2"
+    },
+    {
+      "day": 2,
+      "period": 2,
+      "location": "gate",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 2,
+      "period": 2,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 2,
+      "period": 2,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 2,
+      "period": 2,
+      "location": "store",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 2,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 2,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 2,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 2,
+      "period": 2,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "inn",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_musoe",
+      "pose": "living_foldmap"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_guldol",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "square",
+      "person": "resident_owlgp",
+      "pose": "living_notebook"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "square",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "square",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "square",
+      "person": "resident_seol",
+      "pose": "living_bellrope"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "store",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "store",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_1"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "action_1"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "post",
+      "person": "resident_eunho",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "post",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "post",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "river",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 0,
+      "location": "market",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_tori",
+      "pose": "activity"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_yeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "square",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "square",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "square",
+      "person": "resident_piko",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "square",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "square",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "gate",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "gate",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "store",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "store",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "store",
+      "person": "resident_mungchi",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "store",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "store",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "chair_read"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "post",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "post",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "post",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "river",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "market",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 1,
+      "location": "market",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 2,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 3,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 3,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_ubak",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 3,
+      "period": 2,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_2"
+    },
+    {
+      "day": 3,
+      "period": 2,
+      "location": "square",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 2,
+      "location": "square",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 3,
+      "period": 2,
+      "location": "gate",
+      "person": "karo",
+      "pose": "action_2"
+    },
+    {
+      "day": 3,
+      "period": 2,
+      "location": "gate",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 3,
+      "period": 2,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 3,
+      "period": 2,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 3,
+      "period": 2,
+      "location": "store",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 2,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 3,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 3,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 3,
+      "period": 2,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "inn",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_tori",
+      "pose": "activity"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_yeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_musoe",
+      "pose": "living_foldmap"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_guldol",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "square",
+      "person": "resident_owlgp",
+      "pose": "living_notebook"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "square",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "square",
+      "person": "resident_seol",
+      "pose": "living_bellrope"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "store",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "store",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "store",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "store",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_1"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "action_1"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "post",
+      "person": "resident_eunho",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "post",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "post",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "river",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 0,
+      "location": "market",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_tori",
+      "pose": "activity"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_guldol",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "square",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "square",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "square",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "square",
+      "person": "resident_piko",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "square",
+      "person": "resident_somi",
+      "pose": "living_bootice"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "square",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "gate",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "store",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "store",
+      "person": "resident_yeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "store",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "store",
+      "person": "resident_mungchi",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "store",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "store",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "chair_read"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "post",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "post",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "post",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "forest",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "market",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "market",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "market",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 1,
+      "location": "market",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 2,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 4,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 4,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_ubak",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 4,
+      "period": 2,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_2"
+    },
+    {
+      "day": 4,
+      "period": 2,
+      "location": "square",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 2,
+      "location": "square",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 4,
+      "period": 2,
+      "location": "square",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 4,
+      "period": 2,
+      "location": "gate",
+      "person": "karo",
+      "pose": "action_2"
+    },
+    {
+      "day": 4,
+      "period": 2,
+      "location": "gate",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 4,
+      "period": 2,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 4,
+      "period": 2,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 4,
+      "period": 2,
+      "location": "store",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 2,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 4,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 4,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 4,
+      "period": 2,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "inn",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_musoe",
+      "pose": "living_foldmap"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_guldol",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "square",
+      "person": "resident_owlgp",
+      "pose": "living_notebook"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "square",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "square",
+      "person": "resident_tori",
+      "pose": "world_bench_left"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "square",
+      "person": "resident_seol",
+      "pose": "living_bellrope"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "square",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "store",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "store",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "store",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_1"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "action_1"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "post",
+      "person": "resident_eunho",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "post",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "river",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 0,
+      "location": "market",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_yeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "square",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "square",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "square",
+      "person": "resident_seol",
+      "pose": "living_bellrope"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "square",
+      "person": "resident_piko",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "square",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "square",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "gate",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "gate",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "store",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "store",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "store",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "store",
+      "person": "resident_mungchi",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "store",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "store",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "chair_read"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "post",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "post",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "post",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "river",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "market",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 5,
+      "period": 1,
+      "location": "market",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 2,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 5,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 5,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_ubak",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 5,
+      "period": 2,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_2"
+    },
+    {
+      "day": 5,
+      "period": 2,
+      "location": "square",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 2,
+      "location": "square",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 5,
+      "period": 2,
+      "location": "gate",
+      "person": "karo",
+      "pose": "action_2"
+    },
+    {
+      "day": 5,
+      "period": 2,
+      "location": "gate",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 5,
+      "period": 2,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 5,
+      "period": 2,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 5,
+      "period": 2,
+      "location": "store",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 2,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 5,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 5,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 5,
+      "period": 2,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "inn",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_musoe",
+      "pose": "living_foldmap"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_guldol",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "square",
+      "person": "resident_owlgp",
+      "pose": "living_notebook"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "square",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "square",
+      "person": "resident_tori",
+      "pose": "world_bench_left"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "square",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "square",
+      "person": "resident_seol",
+      "pose": "living_bellrope"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "square",
+      "person": "resident_piko",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "square",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "square",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "store",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "store",
+      "person": "resident_yeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "store",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "store",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_1"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "action_1"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "post",
+      "person": "resident_eunho",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "post",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "post",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "river",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 0,
+      "location": "market",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_tori",
+      "pose": "activity"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_yeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "school",
+      "person": "resident_bori",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "square",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "square",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "square",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "square",
+      "person": "resident_piko",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "square",
+      "person": "resident_somi",
+      "pose": "living_bootice"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "square",
+      "person": "resident_guldol",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "gate",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "store",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "store",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "store",
+      "person": "resident_mungchi",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "store",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "store",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "chair_read"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "post",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "post",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "post",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "post",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "river",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "forest",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "market",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "market",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "market",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 1,
+      "location": "market",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 2,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 6,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 6,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_ubak",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 6,
+      "period": 2,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_2"
+    },
+    {
+      "day": 6,
+      "period": 2,
+      "location": "square",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 2,
+      "location": "square",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 6,
+      "period": 2,
+      "location": "gate",
+      "person": "karo",
+      "pose": "action_2"
+    },
+    {
+      "day": 6,
+      "period": 2,
+      "location": "gate",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 6,
+      "period": 2,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 6,
+      "period": 2,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 6,
+      "period": 2,
+      "location": "store",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 2,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 6,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 6,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 6,
+      "period": 2,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "inn",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_musoe",
+      "pose": "living_foldmap"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "square",
+      "person": "resident_owlgp",
+      "pose": "living_notebook"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "square",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "square",
+      "person": "resident_seol",
+      "pose": "living_bellrope"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "square",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "store",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "store",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "store",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_1"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "action_1"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "post",
+      "person": "resident_eunho",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "post",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "market",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 0,
+      "location": "market",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "school",
+      "person": "resident_yeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_guldol",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "square",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "square",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "square",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "square",
+      "person": "resident_tori",
+      "pose": "world_bench_left"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "square",
+      "person": "resident_piko",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "square",
+      "person": "resident_somi",
+      "pose": "living_bootice"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "square",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "gate",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "store",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "store",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "store",
+      "person": "resident_mungchi",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "store",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "store",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "chair_read"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "post",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "post",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "post",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "river",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "market",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "market",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 1,
+      "location": "market",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 2,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 7,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_tori",
+      "pose": "activity"
+    },
+    {
+      "day": 7,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 7,
+      "period": 2,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_2"
+    },
+    {
+      "day": 7,
+      "period": 2,
+      "location": "square",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 2,
+      "location": "square",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 7,
+      "period": 2,
+      "location": "gate",
+      "person": "karo",
+      "pose": "action_2"
+    },
+    {
+      "day": 7,
+      "period": 2,
+      "location": "gate",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 7,
+      "period": 2,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 7,
+      "period": 2,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 7,
+      "period": 2,
+      "location": "clinic",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 7,
+      "period": 2,
+      "location": "store",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 7,
+      "period": 2,
+      "location": "store",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 2,
+      "location": "store",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 2,
+      "location": "store",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 2,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 7,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 7,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 2,
+      "location": "hall",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 7,
+      "period": 2,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "inn",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_musoe",
+      "pose": "living_foldmap"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_guldol",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "square",
+      "person": "resident_owlgp",
+      "pose": "living_notebook"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "square",
+      "person": "resident_tori",
+      "pose": "world_bench_left"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "square",
+      "person": "resident_seol",
+      "pose": "living_bellrope"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "store",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "store",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "store",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_1"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "hall",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "action_1"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "post",
+      "person": "resident_eunho",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "post",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "post",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "river",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 0,
+      "location": "market",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_tori",
+      "pose": "activity"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_yeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "square",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "square",
+      "person": "resident_piko",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "square",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "gate",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "gate",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "store",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "store",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "store",
+      "person": "resident_mungchi",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "store",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "store",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "hall",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "chair_read"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "post",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "post",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "post",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "river",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "market",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "market",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 1,
+      "location": "market",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 2,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 8,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 8,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_ubak",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 8,
+      "period": 2,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_2"
+    },
+    {
+      "day": 8,
+      "period": 2,
+      "location": "square",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 8,
+      "period": 2,
+      "location": "square",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 8,
+      "period": 2,
+      "location": "gate",
+      "person": "karo",
+      "pose": "action_2"
+    },
+    {
+      "day": 8,
+      "period": 2,
+      "location": "gate",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 8,
+      "period": 2,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 8,
+      "period": 2,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 8,
+      "period": 2,
+      "location": "store",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 2,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 8,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 8,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 2,
+      "location": "hall",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 8,
+      "period": 2,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "inn",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_musoe",
+      "pose": "living_foldmap"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_guldol",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "square",
+      "person": "resident_owlgp",
+      "pose": "living_notebook"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "square",
+      "person": "resident_tori",
+      "pose": "world_bench_left"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "square",
+      "person": "resident_yeoni",
+      "pose": "living_mend"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "square",
+      "person": "resident_seol",
+      "pose": "living_bellrope"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "square",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "square",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "store",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "store",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "store",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_1"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "hall",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "action_1"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "post",
+      "person": "resident_eunho",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "post",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "river",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 0,
+      "location": "market",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_tori",
+      "pose": "activity"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_yeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "square",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "square",
+      "person": "resident_seol",
+      "pose": "living_bellrope"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "square",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "square",
+      "person": "resident_piko",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "square",
+      "person": "resident_somi",
+      "pose": "living_bootice"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "square",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "square",
+      "person": "resident_guldol",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "gate",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "store",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "store",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "store",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "store",
+      "person": "resident_mungchi",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "store",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "store",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "hall",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "chair_read"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "post",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "post",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "post",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "post",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "river",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "forest",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "market",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "market",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 1,
+      "location": "market",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 2,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 9,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 9,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_ubak",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 9,
+      "period": 2,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_2"
+    },
+    {
+      "day": 9,
+      "period": 2,
+      "location": "square",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 9,
+      "period": 2,
+      "location": "gate",
+      "person": "karo",
+      "pose": "action_2"
+    },
+    {
+      "day": 9,
+      "period": 2,
+      "location": "gate",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 9,
+      "period": 2,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 9,
+      "period": 2,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 9,
+      "period": 2,
+      "location": "store",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 2,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 9,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 9,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 2,
+      "location": "hall",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 9,
+      "period": 2,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "inn",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_musoe",
+      "pose": "living_foldmap"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_guldol",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "square",
+      "person": "resident_owlgp",
+      "pose": "living_notebook"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "square",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "square",
+      "person": "resident_seol",
+      "pose": "living_bellrope"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "store",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "store",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_1"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "hall",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "action_1"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "post",
+      "person": "resident_eunho",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "post",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "post",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "river",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 0,
+      "location": "market",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_tori",
+      "pose": "activity"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_yeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "square",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "square",
+      "person": "resident_piko",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "square",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "square",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "gate",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "gate",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "store",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "store",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "store",
+      "person": "resident_mungchi",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "store",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "store",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "hall",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "chair_read"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "post",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "post",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "post",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "river",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "market",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 1,
+      "location": "market",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 2,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 10,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 10,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_ubak",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 10,
+      "period": 2,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_2"
+    },
+    {
+      "day": 10,
+      "period": 2,
+      "location": "square",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 10,
+      "period": 2,
+      "location": "gate",
+      "person": "karo",
+      "pose": "action_2"
+    },
+    {
+      "day": 10,
+      "period": 2,
+      "location": "gate",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 10,
+      "period": 2,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 10,
+      "period": 2,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 10,
+      "period": 2,
+      "location": "store",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 2,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 10,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 10,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 2,
+      "location": "hall",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 10,
+      "period": 2,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "school",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "school",
+      "person": "resident_bori",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_tori",
+      "pose": "activity"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_yeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_musoe",
+      "pose": "living_foldmap"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_guldol",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "square",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "square",
+      "person": "resident_seol",
+      "pose": "living_bellrope"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "clinic",
+      "person": "resident_piko",
+      "pose": "distressed"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "store",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "store",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "store",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "store",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "facility",
+      "person": "neoul",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "facility",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_1"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "hall",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "action_1"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "post",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "post",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "river",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 0,
+      "location": "market",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_tori",
+      "pose": "activity"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "school",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_guldol",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "square",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "square",
+      "person": "resident_somi",
+      "pose": "living_bootice"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "square",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "gate",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_piko",
+      "pose": "distressed"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "store",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "store",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "store",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "store",
+      "person": "resident_yeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "store",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "store",
+      "person": "resident_mungchi",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "store",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "store",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "facility",
+      "person": "neoul",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "hall",
+      "person": "bami",
+      "pose": "action_1"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "hall",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "chair_read"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "post",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "post",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "post",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "forest",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "market",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "market",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "market",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 1,
+      "location": "market",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_ubak",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "school",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "school",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "school",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "school",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_2"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "square",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "gate",
+      "person": "karo",
+      "pose": "action_2"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "gate",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "gate",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "clinic",
+      "person": "resident_piko",
+      "pose": "distressed"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "store",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "facility",
+      "person": "neoul",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "hall",
+      "person": "bami",
+      "pose": "action_2"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "hall",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 11,
+      "period": 2,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "school",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "school",
+      "person": "resident_bori",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_musoe",
+      "pose": "living_foldmap"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_guldol",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "square",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "square",
+      "person": "resident_tori",
+      "pose": "world_bench_left"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "square",
+      "person": "resident_seol",
+      "pose": "living_bellrope"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "square",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "clinic",
+      "person": "resident_piko",
+      "pose": "distressed"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "store",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "store",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "store",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "store",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "facility",
+      "person": "neoul",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "facility",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_1"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "hall",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "action_1"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "post",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "river",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 0,
+      "location": "market",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "school",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_yeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "square",
+      "person": "resident_seol",
+      "pose": "living_bellrope"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "square",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "square",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "gate",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "gate",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_piko",
+      "pose": "distressed"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "store",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "store",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "store",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "store",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "store",
+      "person": "resident_mungchi",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "store",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "store",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "facility",
+      "person": "neoul",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "hall",
+      "person": "bami",
+      "pose": "action_1"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "hall",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "chair_read"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "post",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "post",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "post",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "river",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "market",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 12,
+      "period": 1,
+      "location": "market",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_ubak",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "school",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "school",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "school",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "school",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_2"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "square",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "gate",
+      "person": "karo",
+      "pose": "action_2"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "gate",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "gate",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "clinic",
+      "person": "resident_piko",
+      "pose": "distressed"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "store",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "facility",
+      "person": "neoul",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "hall",
+      "person": "bami",
+      "pose": "action_2"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "hall",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 12,
+      "period": 2,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "school",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "school",
+      "person": "resident_bori",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_musoe",
+      "pose": "living_foldmap"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_guldol",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "square",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "square",
+      "person": "resident_tori",
+      "pose": "world_bench_left"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "square",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "square",
+      "person": "resident_seol",
+      "pose": "living_bellrope"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "square",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "square",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "clinic",
+      "person": "resident_piko",
+      "pose": "distressed"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "store",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "store",
+      "person": "resident_yeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "store",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "store",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "facility",
+      "person": "neoul",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "facility",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_1"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "hall",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "action_1"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "post",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "post",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "river",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 0,
+      "location": "market",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_tori",
+      "pose": "activity"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_yeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "school",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "square",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "square",
+      "person": "resident_somi",
+      "pose": "living_bootice"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "square",
+      "person": "resident_guldol",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "gate",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_piko",
+      "pose": "distressed"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "store",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "store",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "store",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "store",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "store",
+      "person": "resident_mungchi",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "store",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "store",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "facility",
+      "person": "neoul",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "hall",
+      "person": "bami",
+      "pose": "action_1"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "hall",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "chair_read"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "post",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "post",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "post",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "post",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "river",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "forest",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "market",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "market",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "market",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 1,
+      "location": "market",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_ubak",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "school",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "school",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "school",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "school",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_2"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "square",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "gate",
+      "person": "karo",
+      "pose": "action_2"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "gate",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "gate",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "clinic",
+      "person": "resident_piko",
+      "pose": "distressed"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "store",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "facility",
+      "person": "neoul",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "hall",
+      "person": "bami",
+      "pose": "action_2"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "hall",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 13,
+      "period": 2,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "school",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "school",
+      "person": "resident_bori",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_musoe",
+      "pose": "living_foldmap"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "workshop",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "square",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "square",
+      "person": "resident_seol",
+      "pose": "living_bellrope"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "square",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "gate",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "clinic",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "clinic",
+      "person": "resident_piko",
+      "pose": "distressed"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "store",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "store",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "store",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "store",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "facility",
+      "person": "neoul",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "facility",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_1"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "hall",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "action_1"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "post",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "forest",
+      "person": "resident_kalbaram",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "market",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 0,
+      "location": "market",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "inn",
+      "person": "resident_ttadak",
+      "pose": "living_repair"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "school",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "school",
+      "person": "resident_yeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_1"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "workshop",
+      "person": "resident_guldol",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "square",
+      "person": "resident_tori",
+      "pose": "world_bench_left"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "square",
+      "person": "resident_somi",
+      "pose": "living_bootice"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "square",
+      "person": "resident_jongjong",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "gate",
+      "person": "karo",
+      "pose": "living_axlewrap"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "gate",
+      "person": "resident_kkwak",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_piko",
+      "pose": "distressed"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_ubak",
+      "pose": "living_measure"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "clinic",
+      "person": "resident_solbang",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "store",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "store",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "store",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "store",
+      "person": "resident_nero",
+      "pose": "activity"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "store",
+      "person": "resident_mungchi",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "store",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "store",
+      "person": "resident_siluk",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "facility",
+      "person": "neoul",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "hall",
+      "person": "bami",
+      "pose": "action_1"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "hall",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "post",
+      "person": "seryeon",
+      "pose": "chair_read"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "post",
+      "person": "resident_kongi",
+      "pose": "activity"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "post",
+      "person": "resident_librarian",
+      "pose": "living_bookpaper"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "post",
+      "person": "resident_ppul",
+      "pose": "activity"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "post",
+      "person": "resident_momo",
+      "pose": "living_lampnumber"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "post",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "river",
+      "person": "resident_mulgyeol",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "market",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "market",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 1,
+      "location": "market",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "inn",
+      "person": "granny",
+      "pose": "living_keyledger"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_tori",
+      "pose": "activity"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_madam",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_ubak",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_guseul",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "inn",
+      "person": "resident_tosil",
+      "pose": "living_thermos"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "school",
+      "person": "resident_owlgp",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "school",
+      "person": "resident_tok",
+      "pose": "activity"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "school",
+      "person": "resident_seori",
+      "pose": "living_notes"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "school",
+      "person": "resident_teacher",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "school",
+      "person": "resident_nubi",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "workshop",
+      "person": "buri",
+      "pose": "action_2"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "square",
+      "person": "resident_badook",
+      "pose": "living_bootlace"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "gate",
+      "person": "karo",
+      "pose": "action_2"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "gate",
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "gate",
+      "person": "resident_bori",
+      "pose": "living_firewood"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "gate",
+      "person": "guard",
+      "pose": "action_1"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "clinic",
+      "person": "resident_piko",
+      "pose": "distressed"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "store",
+      "person": "resident_eunho",
+      "pose": "living_prices"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "facility",
+      "person": "neoul",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "dining",
+      "person": "nabi",
+      "pose": "action_2"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_dalgeurak",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "dining",
+      "person": "resident_hyeoni",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "hall",
+      "person": "bami",
+      "pose": "action_2"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "hall",
+      "person": "doto",
+      "pose": "neutral"
+    },
+    {
+      "day": 14,
+      "period": 2,
+      "location": "post",
+      "person": "resident_sling",
+      "pose": "activity"
+    }
+  ]
+}

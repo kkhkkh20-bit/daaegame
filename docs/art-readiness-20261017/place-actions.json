@@ -1,0 +1,254 @@
+[
+  {
+    "place": "inn",
+    "period": "all",
+    "person": "resident_eunho",
+    "pose": "living_prices",
+    "source": "game/assets/room13-world-layout.json:slot_actions",
+    "exists": true,
+    "runtime_path": "game/assets/room13-pixel-acting-eunho.webp",
+    "status": "registered; visibility depends on schedule and episode",
+    "original_candidates": []
+  },
+  {
+    "place": "inn",
+    "period": "all",
+    "person": "resident_ubak",
+    "pose": "living_measure",
+    "source": "game/assets/room13-world-layout.json:slot_actions",
+    "exists": true,
+    "runtime_path": "game/assets/room13-pixel-acting-ubak.webp",
+    "status": "registered; visibility depends on schedule and episode",
+    "original_candidates": []
+  },
+  {
+    "place": "inn",
+    "period": "all",
+    "person": "resident_owlgp",
+    "pose": "living_notebook",
+    "source": "game/assets/room13-world-layout.json:slot_actions",
+    "exists": true,
+    "runtime_path": "game/assets/room13-action-resident_owlgp-living_notebook.webp",
+    "status": "registered; visibility depends on schedule and episode",
+    "original_candidates": [
+      "art/priority3-actions-20261015/owlgp/owlgp-notebook-binding-v2.png"
+    ],
+    "story_reason": "수첩 제본 묶기, 의자 포함 (content activity)"
+  },
+  {
+    "place": "inn",
+    "period": "all",
+    "person": "resident_tosil",
+    "pose": "living_thermos",
+    "source": "game/assets/room13-world-layout.json:slot_actions",
+    "exists": true,
+    "runtime_path": "game/assets/room13-action-resident_tosil-living_thermos.webp",
+    "status": "registered; visibility depends on schedule and episode",
+    "original_candidates": [
+      "art/map-actions-20261015/p0-20261016/resident_tosil-living_thermos.png"
+    ],
+    "story_reason": "보온병을 두 손으로 꼭 안고 있다 (systems/room13_new_cast.rpy:12). 2026-10-16 20:30 PDT 제작본, 요청 조건 충족(소유자). 선 자세: 선 키 그대로"
+  },
+  {
+    "place": "school",
+    "period": "all",
+    "person": "resident_seori",
+    "pose": "living_notes",
+    "source": "game/assets/room13-world-layout.json:slot_actions",
+    "exists": true,
+    "runtime_path": "game/assets/room13-pixel-acting-seori.webp",
+    "status": "registered; visibility depends on schedule and episode",
+    "original_candidates": []
+  },
+  {
+    "place": "workshop",
+    "period": "all",
+    "person": "resident_ubak",
+    "pose": "living_measure",
+    "source": "game/assets/room13-world-layout.json:slot_actions",
+    "exists": true,
+    "runtime_path": "game/assets/room13-pixel-acting-ubak.webp",
+    "status": "registered; visibility depends on schedule and episode",
+    "original_candidates": []
+  },
+  {
+    "place": "dining",
+    "period": "all",
+    "person": "resident_owlgp",
+    "pose": "living_notebook",
+    "source": "game/assets/room13-world-layout.json:slot_actions",
+    "exists": true,
+    "runtime_path": "game/assets/room13-action-resident_owlgp-living_notebook.webp",
+    "status": "registered; visibility depends on schedule and episode",
+    "original_candidates": [
+      "art/priority3-actions-20261015/owlgp/owlgp-notebook-binding-v2.png"
+    ],
+    "story_reason": "수첩 제본 묶기, 의자 포함 (content activity)"
+  },
+  {
+    "place": "post",
+    "period": "all",
+    "person": "resident_momo",
+    "pose": "living_lampnumber",
+    "source": "game/assets/room13-world-layout.json:slot_actions",
+    "exists": true,
+    "runtime_path": "game/assets/room13-action-resident_momo-living_lampnumber.webp",
+    "status": "registered; visibility depends on schedule and episode",
+    "original_candidates": [
+      "art/map-action-storybook3-20261015/momo/momo-v2.png"
+    ],
+    "story_reason": "우체국: 등잔 바닥 번호 확인 (map_action)"
+  },
+  {
+    "place": "post",
+    "period": "all",
+    "person": "resident_librarian",
+    "pose": "living_bookpaper",
+    "source": "game/assets/room13-world-layout.json:slot_actions",
+    "exists": true,
+    "runtime_path": "game/assets/room13-action-resident_librarian-living_bookpaper.webp",
+    "status": "registered; visibility depends on schedule and episode",
+    "original_candidates": [
+      "art/librarian-bookpaper-20261015/librarian_book.png"
+    ],
+    "story_reason": "우체국: 젖은 책 사이에 마른 종이를 끼운다 (생활, 2026-10-15 17:31 지시)"
+  },
+  {
+    "place": "post",
+    "period": "all",
+    "person": "resident_sling",
+    "pose": "activity",
+    "source": "game/assets/room13-world-layout.json:slot_actions",
+    "exists": true,
+    "runtime_path": "game/assets/room13-pixel-acting-resident_sling.webp",
+    "status": "registered; visibility depends on schedule and episode",
+    "original_candidates": []
+  },
+  {
+    "place": "post",
+    "period": "all",
+    "person": "resident_ppul",
+    "pose": "activity",
+    "source": "game/assets/room13-world-layout.json:slot_actions",
+    "exists": true,
+    "runtime_path": "game/assets/room13-pixel-acting-resident_ppul.webp",
+    "status": "registered; visibility depends on schedule and episode",
+    "original_candidates": []
+  },
+  {
+    "place": "post",
+    "period": "all",
+    "person": "resident_eunho",
+    "pose": "living_prices",
+    "source": "game/assets/room13-world-layout.json:slot_actions",
+    "exists": true,
+    "runtime_path": "game/assets/room13-pixel-acting-eunho.webp",
+    "status": "registered; visibility depends on schedule and episode",
+    "original_candidates": []
+  },
+  {
+    "place": "post",
+    "period": "all",
+    "person": "seryeon",
+    "pose": "action_1",
+    "source": "game/assets/room13-world-layout.json:slot_actions",
+    "exists": true,
+    "runtime_path": "game/assets/room13-pixel-acting-seryeon.webp",
+    "status": "registered; visibility depends on schedule and episode",
+    "original_candidates": []
+  },
+  {
+    "place": "post",
+    "period": "all",
+    "person": "resident_librarian",
+    "pose": "living_bookpaper",
+    "source": "game/assets/room13-world-layout.json:old_scene_slot_actions",
+    "exists": true,
+    "runtime_path": "game/assets/room13-action-resident_librarian-living_bookpaper.webp",
+    "status": "registered; visibility depends on schedule and episode",
+    "original_candidates": [
+      "art/librarian-bookpaper-20261015/librarian_book.png"
+    ],
+    "story_reason": "우체국: 젖은 책 사이에 마른 종이를 끼운다 (생활, 2026-10-15 17:31 지시)"
+  },
+  {
+    "place": "post",
+    "period": "all",
+    "person": "resident_momo",
+    "pose": "living_lampnumber",
+    "source": "game/assets/room13-world-layout.json:old_scene_slot_actions",
+    "exists": true,
+    "runtime_path": "game/assets/room13-action-resident_momo-living_lampnumber.webp",
+    "status": "registered; visibility depends on schedule and episode",
+    "original_candidates": [
+      "art/map-action-storybook3-20261015/momo/momo-v2.png"
+    ],
+    "story_reason": "우체국: 등잔 바닥 번호 확인 (map_action)"
+  },
+  {
+    "place": "inn",
+    "period": "all",
+    "person": "resident_guseul",
+    "pose": "living_stamp",
+    "source": "art/canonical-channel-alignment-20261017/report.json",
+    "exists": false,
+    "runtime_path": "",
+    "status": "production pending; no false neutral activity label",
+    "original_candidates": []
+  },
+  {
+    "place": "inn",
+    "period": "all",
+    "person": "resident_madam",
+    "pose": "living_inspect",
+    "source": "art/canonical-channel-alignment-20261017/report.json",
+    "exists": false,
+    "runtime_path": "",
+    "status": "production pending; no false neutral activity label",
+    "original_candidates": []
+  },
+  {
+    "place": "hall",
+    "period": "morning",
+    "person": "doto",
+    "pose": "action_1",
+    "source": "art/canonical-channel-alignment-20261017/report.json",
+    "exists": false,
+    "runtime_path": "",
+    "status": "production pending; no false neutral activity label",
+    "original_candidates": []
+  },
+  {
+    "place": "hall",
+    "period": "afternoon",
+    "person": "doto",
+    "pose": "action_1",
+    "source": "art/canonical-channel-alignment-20261017/report.json",
+    "exists": false,
+    "runtime_path": "",
+    "status": "production pending; no false neutral activity label",
+    "original_candidates": []
+  },
+  {
+    "place": "hall",
+    "period": "evening",
+    "person": "doto",
+    "pose": "action_2",
+    "source": "art/canonical-channel-alignment-20261017/report.json",
+    "exists": false,
+    "runtime_path": "",
+    "status": "production pending; no false neutral activity label",
+    "original_candidates": []
+  },
+  {
+    "place": "post",
+    "period": "all",
+    "person": "resident_guseul",
+    "pose": "living_stamp",
+    "source": "art/canonical-channel-alignment-20261017/report.json",
+    "exists": false,
+    "runtime_path": "",
+    "status": "production pending; no false neutral activity label",
+    "original_candidates": []
+  }
+]
