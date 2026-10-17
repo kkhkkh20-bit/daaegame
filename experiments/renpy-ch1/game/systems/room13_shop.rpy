@@ -17,6 +17,9 @@ init 94 python:
         "lamp_oil": ("resident_lamplighter","등잔 기름을 건넨다",lambda:not r13_has("topic:lamplighter_warning"),[
             ("dad","등잔 기름입니다. 밤마다 등을 돌보시니 기름이 모자라실 것 같아서요."),
             ("resident_lamplighter","……고맙습니다. 요즘은 기름도 아껴 써야 해서요."),
+            # 0.19.17: 초롱이 아빠가 누구인지 알아보는 한 박자 없이 "부인도"라고 하지 않는다.
+            ("resident_lamplighter","……혹시 13호실 부인 가족 되세요? 아이를 데리고 오셨다는 말은 들었어요."),
+            ("dad","네. 제 아내입니다."),
             ("resident_lamplighter","부인도 전에 이렇게 기름을 챙겨 주셨어요. 그때 저한테 맡기신 봉투가 하나 있었는데……."),
             ("dad","아내가 맡긴 봉투요?"),
             ("resident_lamplighter","봉투 이야기는 다음에 말씀드릴게요. 지금은 등을 마저 돌봐야 해서요.")],[],["topic:lamplighter_warning","lamplighter_trust"]),

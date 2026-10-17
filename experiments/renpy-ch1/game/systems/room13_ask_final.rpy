@@ -11,3 +11,13 @@ init 201 python:
     if "life:resident_teacher:after" in ROOM13["topics"]:
         ROOM13["topics"]["life:resident_teacher:after"]["title"]="요즘 걱정되는 일이 있으십니까?"
         R13_QUESTION_SUMMARIES.setdefault("요즘 걱정되는 일이 있으십니까?","요즘 걱정되는 일이 있는지 묻는다")
+
+    # 모모 그림에는 초록 숄이 있다(어깨에 두르고 여미고 있다). 검수 1의 "의자에 개켜 둔 숄"은 그림과 어긋나 되돌린다.
+    if "ep6:st_momo_glasses" in ROOM13["topics"]:
+        _fa_t=ROOM13["topics"]["ep6:st_momo_glasses"]
+        _fa_t["title"]="그 초록 숄을 늘 여미고 계시네요"
+        R13_QUESTION_SUMMARIES["그 초록 숄을 늘 여미고 계시네요"]="늘 여미는 초록 숄이 누구 것인지 묻는다"
+        _fa_t["variants"]=[(None,[
+            ("resident_momo","제 숄이 아니에요. 첫 겨울에 보호소로 간 동생 거예요."),
+            ("resident_momo","옛 마을 물건이라면 뭐든 산다고들 흉보죠. 사람은 가도 물건은 남으니까, 그거라도 붙잡아 두는 거예요."),
+            ("resident_momo","언젠가 누가 ‘이건 누구 것이었소’ 하고 물어봐 주면 좋겠어요. 그럼 그 이름을 한 번 더 말할 수 있으니까요.")])]

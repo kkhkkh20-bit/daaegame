@@ -20,13 +20,13 @@ init 116 python:
     def _r13_tm_topic(npc,title,give,lines,need=("lodging",),not_flags=()):
         return dict(npc=npc,title=title,day=[2,4],need=list(need),not_flags=list(not_flags),give=list(give),flags=[],state={"case_state":["pending"]},lines=list(lines))
     ROOM13["topics"].update({
-        "rumor_mom:yeoni":_r13_tm_topic("resident_yeoni","외지 부인 이야기를 들은 적 있습니까?",["J11"],[
-            ("dad","여관 13호실에 묵던 외지 부인 이야기를 들은 적 있습니까?"),
+        "rumor_mom:yeoni":_r13_tm_topic("resident_yeoni","제 아내 이야기를 들은 적 있습니까?",["J11"],[
+            ("dad","여관 13호실에 묵던 제 아내 이야기를 들은 적 있습니까?"),
             ("resident_yeoni","그 부인이요? 짐을 싸서 외곽 초소 쪽으로 갔다던데요."),
             ("dad","직접 보셨습니까?"),
             ("resident_yeoni","아뇨, 까로 아저씨한테 들었어요. 그 아저씨가 짐을 실어 날랐다나요.")]),
-        "rumor_mom:nubi":_r13_tm_topic("resident_nubi","외지 부인 이야기를 들은 적 있습니까?",["J12"],[
-            ("dad","여관 13호실에 묵던 외지 부인 이야기를 들은 적 있습니까?"),
+        "rumor_mom:nubi":_r13_tm_topic("resident_nubi","제 아내 이야기를 들은 적 있습니까?",["J12"],[
+            ("dad","여관 13호실에 묵던 제 아내 이야기를 들은 적 있습니까?"),
             ("resident_nubi","짐을 들고 마을 밖으로 나갔다던데요. 식당에서 누가 그러더라고요."),
             ("dad","누가 그런 말을 했는지 기억나십니까?"),
             ("resident_nubi","그건 모르겠어요. 밥 먹으면서 흘려들은 말이라서요.")]),

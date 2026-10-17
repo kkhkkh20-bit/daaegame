@@ -39,7 +39,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 3 | 79 | `room13_home.rpy:19` | _r13_life_topics |
 | 4 | 92 | `systems/room13_livelihood_flow.rpy:35` | _r13_life_snack_topics |
 | 5 | 93 | `systems/room13_livelihood_flow.rpy:114` | _r13_shop_topics |
-| 6 | 94 | `systems/room13_shop.rpy:50` | _r13_firstday_topics |
+| 6 | 94 | `systems/room13_shop.rpy:53` | _r13_firstday_topics |
 | 7 | 95 | `systems/room13_first_day_flow.rpy:127` | _r13_items_topics |
 | 8 | 96 | `systems/room13_items.rpy:112` | _r13_intro_topics |
 | 9 | 97 | `systems/room13_intro_clues.rpy:130` | _r13_poc_topics |
@@ -131,7 +131,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 55 | `room13_rules.rpy:169` | _r13_life_finish_topic |
 | 2 | 93 | `systems/room13_livelihood_flow.rpy:118` | _r13_shop_finish_topic |
-| 3 | 94 | `systems/room13_shop.rpy:61` | _r13_items_finish_topic |
+| 3 | 94 | `systems/room13_shop.rpy:64` | _r13_items_finish_topic |
 | 4 | 96 | `systems/room13_items.rpy:123` | _r13_daram_home_finish |
 | 5 | 101 | `systems/room13_daram_home.rpy:122` |  |
 
