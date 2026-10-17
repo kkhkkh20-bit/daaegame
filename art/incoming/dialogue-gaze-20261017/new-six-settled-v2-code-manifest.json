@@ -1,0 +1,721 @@
+{
+  "revision": "new-six-settled-v2-code-handoff",
+  "pose_count": 36,
+  "character_count": 6,
+  "slots": [
+    "neutral",
+    "joy",
+    "angry",
+    "anxious",
+    "surprise_talk",
+    "surprise_react"
+  ],
+  "game_applied": false,
+  "archives": [
+    {
+      "id": "nabi-karo-buri-six-gaze-package-v2",
+      "path": "/workspace/shared/dialogue-batch02-nabi-karo-buri/nabi-karo-buri-six-gaze-package-v2.zip",
+      "library_file_id": "libfile_e6904e0782b88191bd6df8a7338cbbd4",
+      "bytes": 27509273,
+      "sha256": "2deb2679459b4f8e67e791fa55f59ed4c40beb3395d6ffa7ff0886ce46b0058a",
+      "reused_existing_archive": true
+    },
+    {
+      "id": "granny-momo-musoe-dialogue-18-settled-v2",
+      "path": "/workspace/shared/dialogue-batch-granny-momo-musoe/granny-momo-musoe-dialogue-18-settled-v2.zip",
+      "library_file_id": "libfile_4cc49d25c1808191af68723f104d455a",
+      "bytes": 29438376,
+      "sha256": "0032331357b9abf052d01e797efac4341dfa6eda1e3dd54a56ac517cf190bd73",
+      "reused_existing_archive": true
+    }
+  ],
+  "import_policy": "Exact allowlist only. Import final_pixel for runtime; source_master is archival/edit input, not runtime. Do not glob all PNGs. Exclude older alias surprise-pixel-2px.png in Karo/Buri surprise_react folders. No first-ten characters. No rejected artwork. Existing archives reused byte-identically.",
+  "transition_contract": "surprise_react is brief transient only; transition to settled surprise_talk with direct player eye contact before continuing dialogue. Do not use neutral as surprise_talk fallback.",
+  "scale_note": "720x600 proof canvas / approximately 560 visible pixels is not a decision to equalize all runtime character sizes; preserve per-character display size and anchors.",
+  "records": [
+    {
+      "character": "nabi",
+      "slot": "neutral",
+      "archive_id": "nabi-karo-buri-six-gaze-package-v2",
+      "source_master": {
+        "archive_member": "nabi/neutral/source.png",
+        "sha256": "e1c003dc1dd091bf7fa3c17ee1754024ca0aee86177e04281b088f37534c6dd3",
+        "bytes": 1086503,
+        "target": "sources/nabi/neutral.png"
+      },
+      "final_pixel": {
+        "archive_member": "nabi/neutral/neutral-pixel-2px.png",
+        "sha256": "83fed45955c7e97d25e10491922ac52d781691169ebebad64d2d03d2e1e37360",
+        "bytes": 63198,
+        "target": "final_pixel/nabi/neutral.png"
+      },
+      "source_manifest": "nabi/neutral/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "nabi",
+      "slot": "joy",
+      "archive_id": "nabi-karo-buri-six-gaze-package-v2",
+      "source_master": {
+        "archive_member": "nabi/joy/source.png",
+        "sha256": "dab78626314c649d35466011601e864f16b7d2d1e005d0d34616a4dfb8240663",
+        "bytes": 1123046,
+        "target": "sources/nabi/joy.png"
+      },
+      "final_pixel": {
+        "archive_member": "nabi/joy/joy-pixel-2px.png",
+        "sha256": "c066f9c4e9cf290d57311749269765aca8899390ab5a4fc021d9a9a0517d9b5a",
+        "bytes": 64779,
+        "target": "final_pixel/nabi/joy.png"
+      },
+      "source_manifest": "nabi/joy/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "nabi",
+      "slot": "angry",
+      "archive_id": "nabi-karo-buri-six-gaze-package-v2",
+      "source_master": {
+        "archive_member": "nabi/angry/source.png",
+        "sha256": "642e5d3d9ef5068f2cd7fd0b5150f6f53ae516988d428560971ddc256aa649fd",
+        "bytes": 1155043,
+        "target": "sources/nabi/angry.png"
+      },
+      "final_pixel": {
+        "archive_member": "nabi/angry/angry-pixel-2px.png",
+        "sha256": "89c44bb3babbeb44c3c0a7f7dbbd9f33725a11c68ea439a1fc99ddec6db7ceb4",
+        "bytes": 66974,
+        "target": "final_pixel/nabi/angry.png"
+      },
+      "source_manifest": "nabi/angry/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "nabi",
+      "slot": "anxious",
+      "archive_id": "nabi-karo-buri-six-gaze-package-v2",
+      "source_master": {
+        "archive_member": "nabi/anxious/source.png",
+        "sha256": "a40ebf75708fb192e7a43ce3d5fa61e00c49af4f44318900aac2a27f6aaf312f",
+        "bytes": 1106546,
+        "target": "sources/nabi/anxious.png"
+      },
+      "final_pixel": {
+        "archive_member": "nabi/anxious/anxious-pixel-2px.png",
+        "sha256": "888c5c3d257499bac4e9597689c904f8ac1dd2ada685e0995ce6b1b20030f2c6",
+        "bytes": 64027,
+        "target": "final_pixel/nabi/anxious.png"
+      },
+      "source_manifest": "nabi/anxious/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "nabi",
+      "slot": "surprise_talk",
+      "archive_id": "nabi-karo-buri-six-gaze-package-v2",
+      "source_master": {
+        "archive_member": "nabi/surprise_talk/source.png",
+        "sha256": "4e17aff16db417c60f9bbd97906fc1a7aacceb57f59100ea50ae33e931643945",
+        "bytes": 1024742,
+        "target": "sources/nabi/surprise_talk.png"
+      },
+      "final_pixel": {
+        "archive_member": "nabi/surprise_talk/surprise_talk-pixel-2px.png",
+        "sha256": "b4fb26fb46008faace75e8d4a60562dfdbadb5238453938a4d2843c0cdaf1e3f",
+        "bytes": 69677,
+        "target": "final_pixel/nabi/surprise_talk.png"
+      },
+      "source_manifest": "nabi/surprise_talk/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "nabi",
+      "slot": "surprise_react",
+      "archive_id": "nabi-karo-buri-six-gaze-package-v2",
+      "source_master": {
+        "archive_member": "nabi/surprise_react/source.png",
+        "sha256": "c5e5a852d6d261669a90a38f0759585094373b36742091386d5a1272419ce793",
+        "bytes": 1127185,
+        "target": "sources/nabi/surprise_react.png"
+      },
+      "final_pixel": {
+        "archive_member": "nabi/surprise_react/surprise_react-pixel-2px.png",
+        "sha256": "70c57661f319db9c796e9938c4b9fe3d18004db66cc8244ec407b6733abec1f2",
+        "bytes": 75550,
+        "target": "final_pixel/nabi/surprise_react.png"
+      },
+      "source_manifest": "nabi/surprise_react/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "karo",
+      "slot": "neutral",
+      "archive_id": "nabi-karo-buri-six-gaze-package-v2",
+      "source_master": {
+        "archive_member": "karo/neutral/source.png",
+        "sha256": "f15da6440d98e60813f44b38dbd2b18469e4555cd8c3fa8d25d54d1ec5f03c56",
+        "bytes": 1172031,
+        "target": "sources/karo/neutral.png"
+      },
+      "final_pixel": {
+        "archive_member": "karo/neutral/neutral-pixel-2px.png",
+        "sha256": "97f57f3de79d6cad99035117e34cd175c5b334f4d24aa5e1b5fb96355f608be5",
+        "bytes": 78229,
+        "target": "final_pixel/karo/neutral.png"
+      },
+      "source_manifest": "karo/neutral/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "karo",
+      "slot": "joy",
+      "archive_id": "nabi-karo-buri-six-gaze-package-v2",
+      "source_master": {
+        "archive_member": "karo/joy/source.png",
+        "sha256": "1efd571285962fd814819cc41992895230d7ec3c1c03871a066af23bb5eea7ca",
+        "bytes": 1055390,
+        "target": "sources/karo/joy.png"
+      },
+      "final_pixel": {
+        "archive_member": "karo/joy/joy-pixel-2px.png",
+        "sha256": "ab8217b3a3249f09b3e632024cb642870fc928dfd5b9a5dd36639beac4af24ca",
+        "bytes": 76186,
+        "target": "final_pixel/karo/joy.png"
+      },
+      "source_manifest": "karo/joy/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "karo",
+      "slot": "angry",
+      "archive_id": "nabi-karo-buri-six-gaze-package-v2",
+      "source_master": {
+        "archive_member": "karo/angry/source.png",
+        "sha256": "bf3fe63f8b93acab78ca9a23b4c7a6454210578242bfdfb6eaa9a540ee3708a6",
+        "bytes": 1106429,
+        "target": "sources/karo/angry.png"
+      },
+      "final_pixel": {
+        "archive_member": "karo/angry/angry-pixel-2px.png",
+        "sha256": "437eb7decfb201cfa837f7776da5494d981cf35f4445878ff87f2e6e1db508b9",
+        "bytes": 71875,
+        "target": "final_pixel/karo/angry.png"
+      },
+      "source_manifest": "karo/angry/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "karo",
+      "slot": "anxious",
+      "archive_id": "nabi-karo-buri-six-gaze-package-v2",
+      "source_master": {
+        "archive_member": "karo/anxious/source.png",
+        "sha256": "509be408d1d9f11a8737e940a0ede96676cb441a4478cf42080ef150c5753b90",
+        "bytes": 1146963,
+        "target": "sources/karo/anxious.png"
+      },
+      "final_pixel": {
+        "archive_member": "karo/anxious/anxious-pixel-2px.png",
+        "sha256": "e73c625463bf870c57e047c430407652086df3a60a7be6b9547903e3e8adeee5",
+        "bytes": 75990,
+        "target": "final_pixel/karo/anxious.png"
+      },
+      "source_manifest": "karo/anxious/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "karo",
+      "slot": "surprise_talk",
+      "archive_id": "nabi-karo-buri-six-gaze-package-v2",
+      "source_master": {
+        "archive_member": "karo/surprise_talk/source.png",
+        "sha256": "8d37c637373ebacf3e7df3e8150c629c5271ef48d005754ab04789745ff7c3ec",
+        "bytes": 1064751,
+        "target": "sources/karo/surprise_talk.png"
+      },
+      "final_pixel": {
+        "archive_member": "karo/surprise_talk/surprise_talk-pixel-2px.png",
+        "sha256": "15dc75337a735f54b2d2dd380bc992f1eff9e507c215258c2337b248dd2bb22f",
+        "bytes": 69978,
+        "target": "final_pixel/karo/surprise_talk.png"
+      },
+      "source_manifest": "karo/surprise_talk/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "karo",
+      "slot": "surprise_react",
+      "archive_id": "nabi-karo-buri-six-gaze-package-v2",
+      "source_master": {
+        "archive_member": "karo/surprise_react/source.png",
+        "sha256": "8fc5743f9811c9e4e7b0aebda79c62cca4914cc7d4ec9d4c09e6f4c6e84ec1a8",
+        "bytes": 1131129,
+        "target": "sources/karo/surprise_react.png"
+      },
+      "final_pixel": {
+        "archive_member": "karo/surprise_react/surprise_react-pixel-2px.png",
+        "sha256": "cd48adff2a1ca843da50f4fedc546e6d23c6c68ea7724864492644fee94ef5c1",
+        "bytes": 74756,
+        "target": "final_pixel/karo/surprise_react.png"
+      },
+      "source_manifest": "karo/surprise_react/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "buri",
+      "slot": "neutral",
+      "archive_id": "nabi-karo-buri-six-gaze-package-v2",
+      "source_master": {
+        "archive_member": "buri/neutral/source.png",
+        "sha256": "4e326ce2e6b01c116623eed2ba527effea0cd0aed02298a837c8504daed08702",
+        "bytes": 1267202,
+        "target": "sources/buri/neutral.png"
+      },
+      "final_pixel": {
+        "archive_member": "buri/neutral/neutral-pixel-2px.png",
+        "sha256": "defede525aa898b4c1fd8cc2cdf52edd7fe1b65b3f6b35f6ca6ce13131edc64a",
+        "bytes": 65222,
+        "target": "final_pixel/buri/neutral.png"
+      },
+      "source_manifest": "buri/neutral/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "buri",
+      "slot": "joy",
+      "archive_id": "nabi-karo-buri-six-gaze-package-v2",
+      "source_master": {
+        "archive_member": "buri/joy/source.png",
+        "sha256": "f942f9be827f8bf9c30d1dac0d70d5dd674e7f5ff082bb091354be1a2122ecdd",
+        "bytes": 1033434,
+        "target": "sources/buri/joy.png"
+      },
+      "final_pixel": {
+        "archive_member": "buri/joy/joy-pixel-2px.png",
+        "sha256": "0cf1e330759a3ae9572fdb3c7c398f5ac123ddca45e7bd397835bbc9d73d1f0f",
+        "bytes": 63679,
+        "target": "final_pixel/buri/joy.png"
+      },
+      "source_manifest": "buri/joy/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "buri",
+      "slot": "angry",
+      "archive_id": "nabi-karo-buri-six-gaze-package-v2",
+      "source_master": {
+        "archive_member": "buri/angry/source.png",
+        "sha256": "cd9183b5f9a04d1815963181e9916063c1aa26a322207a71b3fc59f3dedae95a",
+        "bytes": 1040607,
+        "target": "sources/buri/angry.png"
+      },
+      "final_pixel": {
+        "archive_member": "buri/angry/angry-pixel-2px.png",
+        "sha256": "240bc0c95c3ad902e0151f6ebc52fa0093dd91e3d29ad8ce7df3908464c0429c",
+        "bytes": 64150,
+        "target": "final_pixel/buri/angry.png"
+      },
+      "source_manifest": "buri/angry/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "buri",
+      "slot": "anxious",
+      "archive_id": "nabi-karo-buri-six-gaze-package-v2",
+      "source_master": {
+        "archive_member": "buri/anxious/source.png",
+        "sha256": "391d860ab13fb7c8acb7c27081ba6f5a510ee02e3a06ec6cb44908dd1a2607ba",
+        "bytes": 799100,
+        "target": "sources/buri/anxious.png"
+      },
+      "final_pixel": {
+        "archive_member": "buri/anxious/anxious-pixel-2px.png",
+        "sha256": "7beeb658df8d69fb97ec56fec42545df8d2197035c03b9c880683b96531dd87a",
+        "bytes": 58286,
+        "target": "final_pixel/buri/anxious.png"
+      },
+      "source_manifest": "buri/anxious/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "buri",
+      "slot": "surprise_talk",
+      "archive_id": "nabi-karo-buri-six-gaze-package-v2",
+      "source_master": {
+        "archive_member": "buri/surprise_talk/source.png",
+        "sha256": "83e67fad24fea595db97da85fba2f798ab2af2b27f46f4e0d7fd7b842776b72f",
+        "bytes": 968488,
+        "target": "sources/buri/surprise_talk.png"
+      },
+      "final_pixel": {
+        "archive_member": "buri/surprise_talk/surprise_talk-pixel-2px.png",
+        "sha256": "1c2fe04626f53b2ea6ad07174465c9b6407e91fb4bf0d196a0b1ea79c0b795c1",
+        "bytes": 63469,
+        "target": "final_pixel/buri/surprise_talk.png"
+      },
+      "source_manifest": "buri/surprise_talk/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "buri",
+      "slot": "surprise_react",
+      "archive_id": "nabi-karo-buri-six-gaze-package-v2",
+      "source_master": {
+        "archive_member": "buri/surprise_react/source.png",
+        "sha256": "e08866e3518c82080dd128b4d01bd4b0d5aeab3a5a20ef3c3eceab86f78df949",
+        "bytes": 938219,
+        "target": "sources/buri/surprise_react.png"
+      },
+      "final_pixel": {
+        "archive_member": "buri/surprise_react/surprise_react-pixel-2px.png",
+        "sha256": "6a3948ca61d3117872b525780f969812535e856acede3b9cc84978f7a3103804",
+        "bytes": 64883,
+        "target": "final_pixel/buri/surprise_react.png"
+      },
+      "source_manifest": "buri/surprise_react/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "granny",
+      "slot": "neutral",
+      "archive_id": "granny-momo-musoe-dialogue-18-settled-v2",
+      "source_master": {
+        "archive_member": "granny/neutral/source.png",
+        "sha256": "39dcbe2d91108de99d54b4b436bbce17d428583dc431bd615e0aa39696e1f556",
+        "bytes": 1067116,
+        "target": "sources/granny/neutral.png"
+      },
+      "final_pixel": {
+        "archive_member": "granny/neutral/neutral-pixel-2px.png",
+        "sha256": "2b35678f28e9912b2e6619c8a0a130173a408b2634ae3fcbfea842fc3ec4b452",
+        "bytes": 68909,
+        "target": "final_pixel/granny/neutral.png"
+      },
+      "source_manifest": "granny/neutral/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "granny",
+      "slot": "joy",
+      "archive_id": "granny-momo-musoe-dialogue-18-settled-v2",
+      "source_master": {
+        "archive_member": "granny/joy/source.png",
+        "sha256": "ac79f7530b82286600461a401e3f2e88710f165030129d0af428edb00d3e014c",
+        "bytes": 1117184,
+        "target": "sources/granny/joy.png"
+      },
+      "final_pixel": {
+        "archive_member": "granny/joy/joy-pixel-2px.png",
+        "sha256": "0b88753f19c6efb212ff668fc3e1a32f226852acfc7e16145c469a92acbb90aa",
+        "bytes": 69285,
+        "target": "final_pixel/granny/joy.png"
+      },
+      "source_manifest": "granny/joy/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "granny",
+      "slot": "angry",
+      "archive_id": "granny-momo-musoe-dialogue-18-settled-v2",
+      "source_master": {
+        "archive_member": "granny/angry/source.png",
+        "sha256": "5a69f5ef61d08c0ae34120a40c5899b5eb8d4e382c6745b3eebb5dd670b68874",
+        "bytes": 1092564,
+        "target": "sources/granny/angry.png"
+      },
+      "final_pixel": {
+        "archive_member": "granny/angry/angry-pixel-2px.png",
+        "sha256": "0e71c41181c79585fa0d9a987403c0d1aec2cdbed573d082f249cb11c6b25df8",
+        "bytes": 68781,
+        "target": "final_pixel/granny/angry.png"
+      },
+      "source_manifest": "granny/angry/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "granny",
+      "slot": "anxious",
+      "archive_id": "granny-momo-musoe-dialogue-18-settled-v2",
+      "source_master": {
+        "archive_member": "granny/anxious/source.png",
+        "sha256": "925c183371cd3b4bcedf4ab922dba65ba3d457233f244c6f0b3b67efc9c16f05",
+        "bytes": 1068492,
+        "target": "sources/granny/anxious.png"
+      },
+      "final_pixel": {
+        "archive_member": "granny/anxious/anxious-pixel-2px.png",
+        "sha256": "d4efab9600f122e1fa81282788505bbd82c3efba7fd665a8453187b493347ce5",
+        "bytes": 68067,
+        "target": "final_pixel/granny/anxious.png"
+      },
+      "source_manifest": "granny/anxious/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "granny",
+      "slot": "surprise_talk",
+      "archive_id": "granny-momo-musoe-dialogue-18-settled-v2",
+      "source_master": {
+        "archive_member": "granny/surprise_talk/source.png",
+        "sha256": "399dfc92a28015f2ee287b121271477703aec0cceb0d298391a308a9b3ff4b31",
+        "bytes": 1034392,
+        "target": "sources/granny/surprise_talk.png"
+      },
+      "final_pixel": {
+        "archive_member": "granny/surprise_talk/surprise_talk-pixel-2px.png",
+        "sha256": "4857f23d4827b1f1f3406c3919b5592dad894398baf5b2f1e926dcb965a19d91",
+        "bytes": 66921,
+        "target": "final_pixel/granny/surprise_talk.png"
+      },
+      "source_manifest": "granny/surprise_talk/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "granny",
+      "slot": "surprise_react",
+      "archive_id": "granny-momo-musoe-dialogue-18-settled-v2",
+      "source_master": {
+        "archive_member": "granny/surprise/source.png",
+        "sha256": "dfe3132f221d264493977548a1470656b3d39655e7f7b89d68195b4b98146ea1",
+        "bytes": 1080266,
+        "target": "sources/granny/surprise_react.png"
+      },
+      "final_pixel": {
+        "archive_member": "granny/surprise/surprise-pixel-2px.png",
+        "sha256": "5f4b33bc8a4a44459017de2e35695e4fe5a89678418eeda6a13364a75a43cfcd",
+        "bytes": 67549,
+        "target": "final_pixel/granny/surprise_react.png"
+      },
+      "source_manifest": "granny/surprise/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "momo",
+      "slot": "neutral",
+      "archive_id": "granny-momo-musoe-dialogue-18-settled-v2",
+      "source_master": {
+        "archive_member": "momo/neutral/source.png",
+        "sha256": "c01fdb3b54e4edde6c057bd777ed88e829163d85e48117ef632cf701fee663e4",
+        "bytes": 1551494,
+        "target": "sources/momo/neutral.png"
+      },
+      "final_pixel": {
+        "archive_member": "momo/neutral/neutral-pixel-2px.png",
+        "sha256": "bde660b19788cf8c47cc66a78d302bb7da1f305709b376eef313fa59a809c0c7",
+        "bytes": 73359,
+        "target": "final_pixel/momo/neutral.png"
+      },
+      "source_manifest": "momo/neutral/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "momo",
+      "slot": "joy",
+      "archive_id": "granny-momo-musoe-dialogue-18-settled-v2",
+      "source_master": {
+        "archive_member": "momo/joy/source.png",
+        "sha256": "e193ac8321d29d987be35d49d8e835234d4a068c6c7044cf53667f6517f928bd",
+        "bytes": 1579672,
+        "target": "sources/momo/joy.png"
+      },
+      "final_pixel": {
+        "archive_member": "momo/joy/joy-pixel-2px.png",
+        "sha256": "8cf5927cad2714d92c04e6714832b53426ca917d94d447387deff87e594b32a4",
+        "bytes": 77355,
+        "target": "final_pixel/momo/joy.png"
+      },
+      "source_manifest": "momo/joy/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "momo",
+      "slot": "angry",
+      "archive_id": "granny-momo-musoe-dialogue-18-settled-v2",
+      "source_master": {
+        "archive_member": "momo/angry/source.png",
+        "sha256": "def21ab7d346e0e477a72ab7f6d908525bb2718255d4610a945007212ed9cb67",
+        "bytes": 1552287,
+        "target": "sources/momo/angry.png"
+      },
+      "final_pixel": {
+        "archive_member": "momo/angry/angry-pixel-2px.png",
+        "sha256": "b6227a7b25e043a645d35f18e3668d9d93875bc935fa2cd236b3617adf8ebc0e",
+        "bytes": 73999,
+        "target": "final_pixel/momo/angry.png"
+      },
+      "source_manifest": "momo/angry/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "momo",
+      "slot": "anxious",
+      "archive_id": "granny-momo-musoe-dialogue-18-settled-v2",
+      "source_master": {
+        "archive_member": "momo/anxious/source.png",
+        "sha256": "105164f199a356389fcd97060a732e53864061600809e4dbaed762af35e9b016",
+        "bytes": 1131625,
+        "target": "sources/momo/anxious.png"
+      },
+      "final_pixel": {
+        "archive_member": "momo/anxious/anxious-pixel-2px.png",
+        "sha256": "b215e2ac9f4cbb3625d3208a4ba59369eca051e22e00877f7baf299408b57a22",
+        "bytes": 71690,
+        "target": "final_pixel/momo/anxious.png"
+      },
+      "source_manifest": "momo/anxious/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "momo",
+      "slot": "surprise_talk",
+      "archive_id": "granny-momo-musoe-dialogue-18-settled-v2",
+      "source_master": {
+        "archive_member": "momo/surprise_talk/source.png",
+        "sha256": "97c3f885762cee436a2337c12fe58b2b01b9b81acc5231388cfa530326385993",
+        "bytes": 1131828,
+        "target": "sources/momo/surprise_talk.png"
+      },
+      "final_pixel": {
+        "archive_member": "momo/surprise_talk/surprise_talk-pixel-2px.png",
+        "sha256": "c255cebd23b986e9220c4a6214fbccc62845a22c24e000fbf0ed001cd1f8532e",
+        "bytes": 73882,
+        "target": "final_pixel/momo/surprise_talk.png"
+      },
+      "source_manifest": "momo/surprise_talk/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "momo",
+      "slot": "surprise_react",
+      "archive_id": "granny-momo-musoe-dialogue-18-settled-v2",
+      "source_master": {
+        "archive_member": "momo/surprise/source.png",
+        "sha256": "e80c6fd141de1747f9c14e3878ca67cecf8f887055d4fae84ed596ed6243c02c",
+        "bytes": 1173388,
+        "target": "sources/momo/surprise_react.png"
+      },
+      "final_pixel": {
+        "archive_member": "momo/surprise/surprise-pixel-2px.png",
+        "sha256": "445e9761b7f56c2c29f4860a8052648a87dac607bc48383fa05e579712f23a6a",
+        "bytes": 75685,
+        "target": "final_pixel/momo/surprise_react.png"
+      },
+      "source_manifest": "momo/surprise/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "musoe",
+      "slot": "neutral",
+      "archive_id": "granny-momo-musoe-dialogue-18-settled-v2",
+      "source_master": {
+        "archive_member": "musoe/neutral/source.png",
+        "sha256": "ba7f411765536b3ed9d87bf9a4c2678e0cd41a8e6dc5e3097d4af413ef3f23b2",
+        "bytes": 1616696,
+        "target": "sources/musoe/neutral.png"
+      },
+      "final_pixel": {
+        "archive_member": "musoe/neutral/neutral-pixel-2px.png",
+        "sha256": "3eed0ad1d3b28fc1b598f62fea0f2acefda4b8d1b8fb1395209dd7c2a0e11c96",
+        "bytes": 87316,
+        "target": "final_pixel/musoe/neutral.png"
+      },
+      "source_manifest": "musoe/neutral/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "musoe",
+      "slot": "joy",
+      "archive_id": "granny-momo-musoe-dialogue-18-settled-v2",
+      "source_master": {
+        "archive_member": "musoe/joy/source.png",
+        "sha256": "ff3590d79235146abeff1ae882de1e601967d26d7e11c62b7cb7c3a775d04725",
+        "bytes": 1608278,
+        "target": "sources/musoe/joy.png"
+      },
+      "final_pixel": {
+        "archive_member": "musoe/joy/joy-pixel-2px.png",
+        "sha256": "0f4b61092886ee3b3d97e0de7b60488a1a4c47d7ef5f64c895859bd6320cfb24",
+        "bytes": 84367,
+        "target": "final_pixel/musoe/joy.png"
+      },
+      "source_manifest": "musoe/joy/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "musoe",
+      "slot": "angry",
+      "archive_id": "granny-momo-musoe-dialogue-18-settled-v2",
+      "source_master": {
+        "archive_member": "musoe/angry/source.png",
+        "sha256": "e722545e848a1edd7873ec6b5bb5cf63d9a3b2fae28615cbf594911ae6fa636d",
+        "bytes": 1616550,
+        "target": "sources/musoe/angry.png"
+      },
+      "final_pixel": {
+        "archive_member": "musoe/angry/angry-pixel-2px.png",
+        "sha256": "64cc70a02f33332dcf3cf8ed625995c2e7c5906f3c257979b266cdd093c49aeb",
+        "bytes": 88578,
+        "target": "final_pixel/musoe/angry.png"
+      },
+      "source_manifest": "musoe/angry/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "musoe",
+      "slot": "anxious",
+      "archive_id": "granny-momo-musoe-dialogue-18-settled-v2",
+      "source_master": {
+        "archive_member": "musoe/anxious/source.png",
+        "sha256": "6bba8b355d754a45655b5e9e5154fe2bb62ffd6f707efd9a8beaad64cf5df110",
+        "bytes": 1597541,
+        "target": "sources/musoe/anxious.png"
+      },
+      "final_pixel": {
+        "archive_member": "musoe/anxious/anxious-pixel-2px.png",
+        "sha256": "dcbdcd5890bcbdfc9af4de4bcfefe685e07ab5ff78f0f6ccee32d229aae70112",
+        "bytes": 86176,
+        "target": "final_pixel/musoe/anxious.png"
+      },
+      "source_manifest": "musoe/anxious/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "musoe",
+      "slot": "surprise_talk",
+      "archive_id": "granny-momo-musoe-dialogue-18-settled-v2",
+      "source_master": {
+        "archive_member": "musoe/surprise_talk/source.png",
+        "sha256": "01db94cbbd30e7d6e7238297002067b920b9955ae28e9c18f84af745089fb91f",
+        "bytes": 1590239,
+        "target": "sources/musoe/surprise_talk.png"
+      },
+      "final_pixel": {
+        "archive_member": "musoe/surprise_talk/surprise_talk-pixel-2px.png",
+        "sha256": "ed594f295660db6b5e9cecf813913dc6717eabf1c6e5c8d0d26471fadf8c79f9",
+        "bytes": 82064,
+        "target": "final_pixel/musoe/surprise_talk.png"
+      },
+      "source_manifest": "musoe/surprise_talk/manifest.json",
+      "game_applied": false
+    },
+    {
+      "character": "musoe",
+      "slot": "surprise_react",
+      "archive_id": "granny-momo-musoe-dialogue-18-settled-v2",
+      "source_master": {
+        "archive_member": "musoe/surprise/source.png",
+        "sha256": "1593be57816bcacfd4303a2e8ea4cdbb832147b9fbcb2ec493b0abed32733289",
+        "bytes": 1655291,
+        "target": "sources/musoe/surprise_react.png"
+      },
+      "final_pixel": {
+        "archive_member": "musoe/surprise/surprise-pixel-2px.png",
+        "sha256": "e52b20fc76a37e31600ecf29bde33cf099c0567a359bfc8c79405232b76a11e9",
+        "bytes": 88739,
+        "target": "final_pixel/musoe/surprise_react.png"
+      },
+      "source_manifest": "musoe/surprise/manifest.json",
+      "game_applied": false
+    }
+  ]
+}
