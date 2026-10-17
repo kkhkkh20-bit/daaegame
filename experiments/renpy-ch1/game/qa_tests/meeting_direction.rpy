@@ -41,3 +41,18 @@ testcase meeting_direction:
     assert eval (r13_qa_direction_result and r13_debate_is_broken("C2","s3") and "C2" not in room13["propositions"])
     assert eval (not r13_meeting_direction and not renpy.music.get_pause(channel="music"))
     $ r13_qa_note("direction: opponent recovery, wrong counter keeps statement, success only after correct counter, cleanup ok")
+
+testcase meeting_granny_startle:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=10,period=0,location="dining",case_state="occurred",victim_state="dead",evidence=["E12"]),("entry_corrected","lodging","witness:nabi"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    run Call("r13_qa_direction_present","C3","s2","E12")
+    click pos (640,600) until eval ((r13_meeting_direction or {}).get("beat")=="gasp") timeout 40
+    assert eval (r13_meeting_focus=="granny" and r13_meeting_direction_poses.get("granny")=="flustered")
+    assert eval ("flustered-acting" in r13_fullbody_spec("granny",r13_meeting_direction_poses["granny"])["file"])
+    screenshot "granny-startled-with-neighbors.png"
+    click pos (640,600) until eval (r13_qa_direction_done) timeout 40
+    assert eval (r13_qa_direction_result and r13_debate_is_broken("C3","s2") and "C3" not in room13["propositions"])
+    $ r13_qa_note("granny visibly startled, gasps keep camera on subject, proof is still canonical")

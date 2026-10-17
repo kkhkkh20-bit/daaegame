@@ -48,7 +48,7 @@ class CouncilDirection(unittest.TestCase):
   self.assertEqual(self.playing,'altar');self.assertIn(('amb','wind'),self.calls)
  def test_culprit_is_not_inferred_and_authored_faces_take_priority(self):
   direct=self.e['r13_meeting_direct_line']
-  self.assertEqual(direct('debate:break:C3:s2:E12',0,('granny','reply'),'neutral','neutral')[1],'surprise')
+  self.assertEqual(direct('debate:break:C3:s2:E12',0,('granny','reply'),'neutral','neutral')[1],'flustered')
   self.assertEqual(direct('debate:counter:C3:s2',0,('granny','reply'),'neutral','neutral')[1],'neutral')
   p=('granny','reply',{'expression':'flustered'})
   self.assertEqual(direct('debate:break:C3:s2:E12',0,p,'neutral','flustered')[1],'flustered')

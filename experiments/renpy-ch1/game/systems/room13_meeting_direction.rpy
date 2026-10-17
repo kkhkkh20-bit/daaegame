@@ -29,6 +29,12 @@ init 174 python:
     # Performance styles, not guilt. A composed opponent can gather themselves
     # between statements; others retain pressure from already-proved contradictions.
     R13_MEETING_COMPOSED = {"resident_ppul","resident_seori","neoul"}
+    # Granny's legacy surprise slot still points to a calm redesign picture.
+    # Use her inspected, expressive head-in-hands pose inside councils only.
+    R13_MEETING_STARTLE_POSES = {"granny":"flustered"}
+
+    def r13_meeting_startle_pose(person):
+        return R13_MEETING_STARTLE_POSES.get(person,"surprise")
 
     def r13_meeting_direct_beat(beat,claim=None,sid=None,key=None):
         if beat not in R13_MEETING_BEATS:return
@@ -139,6 +145,7 @@ init 174 python:
                 elif beat=="loss":pose="neutral"
             if beat=="shaken" and person==getattr(store,"r13_meeting_shock_target",None) and index<=1:
                 pose="surprise"
+            if pose=="surprise":pose=r13_meeting_startle_pose(person)
             poses=dict(getattr(store,"r13_meeting_direction_poses",{}) or {})
             poses[person]=pose;store.r13_meeting_direction_poses=poses
         return expression,pose
@@ -149,7 +156,7 @@ init 174 python:
         poses=dict(getattr(store,"r13_meeting_direction_poses",{}) or {})
         people=[p for p,_ in r13_meeting_cast(claim,r13_debate_session(claim))]
         for who in people:
-            if who in CAST and who!=r13_viewpoint():poses[who]="surprise"
+            if who in CAST and who!=r13_viewpoint():poses[who]=r13_meeting_startle_pose(who)
         store.r13_meeting_direction_poses=poses
         store.r13_meeting_shock_at=renpy.display.core.get_time()
 
@@ -161,7 +168,7 @@ init 174 python:
         target=r13_debate_statement(claim,sid)["who"]
         people=list(r13_meeting_neighbors(claim,target))
         people=list(dict.fromkeys(p for p in people if p in CAST and p not in (target,r13_viewpoint())))
-        return [(who,text,{"pose":"surprise"}) for who,text in zip(people,("정말요?","그렇다고요?"))]
+        return [(who,text,{"pose":r13_meeting_startle_pose(who)}) for who,text in zip(people,("정말요?","그렇다고요?"))]
 
     def r13_meeting_direct_pose(person,fallback="neutral"):
         return (getattr(store,"r13_meeting_direction_poses",{}) or {}).get(person,fallback)
@@ -233,8 +240,8 @@ screen r13_meeting_evidence_hold(claim,sid,key):
             text r13_meeting_statement_text(claim,sid) size r13_read_size(19,22) color "#493b30" xmaximum 878
 
 label r13_meeting_direct_interrupt(claim,sid,key):
-    $ r13_meeting_direct_shock(claim,sid)
     $ r13_meeting_direct_beat("interrupt",claim,sid,key)
+    $ r13_meeting_direct_shock(claim,sid)
     if not renpy.is_skipping() and not r13_fast_all:
         show screen r13_meeting_objection(claim,sid)
         $ renpy.music.set_pause(True,channel="music")
