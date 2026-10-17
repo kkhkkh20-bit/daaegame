@@ -54,6 +54,8 @@ init 140 python:
         return R13PaperFrame() if kind=="aged-paper" else R13InkPanel()
 
     def r13_dialogue_frame():
+        if getattr(store,"r13_ui_preview",False):
+            return R13InkPanel(alpha="d9",slim=True)
         # Standard and dark settings are solid; only explicit light mode is translucent.
         alpha=persistent.room13_window_alpha or "d4"
         return R13InkPanel(alpha="dc" if alpha=="99" else "ff",dark=alpha in ("f0","f5","fa","ff"))

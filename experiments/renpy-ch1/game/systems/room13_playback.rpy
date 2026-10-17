@@ -51,7 +51,7 @@ screen r13_strip_button(caption,icon,command,enabled=True,chosen=False,last=Fals
             hbox:
                 xalign .5 yalign .5 spacing 4
                 add R13AntiqueIcon(icon,size=22) yalign .5 alpha (1.0 if enabled else .4)
-                text caption size (24 if big else 20) font r13_ui_font() color ("#efe2c2" if enabled else "#a59a86") yalign .5
+                text caption size (24 if big else 20) font r13_ui_font() color (("#d8ccb3" if r13_ui_preview else "#efe2c2") if enabled else "#a59a86") yalign .5
             if not last:
                 add Solid("#756b5980") xpos (cw-5) ypos 13 xsize 1 ysize (ch-26)
 
@@ -63,7 +63,7 @@ screen r13_playback_footer(show_record=False,ready=True):
     $ skip_ready=ready and renpy.get_screen("say") is not None and renpy.get_screen("choice") is None
     fixed:
         xpos (1280-footer_width) ypos (720-footer_height) xsize footer_width ysize footer_height
-        add R13InkPanel() xsize footer_width ysize footer_height
+        add (R13InkPanel(alpha="b8",slim=True) if r13_ui_preview else R13InkPanel()) xsize footer_width ysize footer_height
         hbox:
             spacing 0
             use r13_strip_button("백로그","backlog",Show("r13_backlog"),enabled=ready)

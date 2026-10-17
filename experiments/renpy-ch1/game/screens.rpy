@@ -192,7 +192,7 @@ screen say(who,what):
             $ r13_name_track(who)
             frame:
                 xpos 254 ypos (_r13_say_top(what)-22 if room13_mode else 522)
-                padding (14,5) background R13InkPanel(alpha="ff")
+                padding (14,5) background (R13InkPanel(alpha="ef",slim=True) if r13_ui_preview else R13InkPanel(alpha="ff"))
                 at r13_name_fade
                 text who id "who" color R13_SPEAKER_COLOR font r13_ui_font() size 18
         # Next-line mark breathes slowly like a firefly (0.18.47 storybook tone).

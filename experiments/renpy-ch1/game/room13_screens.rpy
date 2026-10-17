@@ -222,7 +222,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
         # on the left, the scene is dimmed, and plain-text options name what
         # Dad will ask; the question itself is then spoken in dialogue.
         # 0.18.39 (owner): same size and place as in dialogue, so the person does not jump.
-        add Solid("#00000080")
+        add Solid("#00000030" if r13_ui_preview else "#00000080")
         add r13_close_art(person,pose,840):
             xpos r13_close_x(person,pose) xanchor .5 ypos r13_close_y(person,840,110,pose)
         if title=="선택":
@@ -232,7 +232,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                 # panel above the head, never as bare white text over the face or a bright background.
                 frame:
                     xpos list_left ypos 18 xsize list_width padding (18,8,18,10)
-                    background R13InkPanel()
+                    background (R13InkPanel(alpha="d9",slim=True) if r13_ui_preview else R13InkPanel())
                     text context[1]:
                         xsize list_width-36 text_align .5
                         size r13_read_size(20,24) color "#fff4df" line_spacing 3 font r13_ui_font()
@@ -256,7 +256,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                 for index,(title,action,was_read) in enumerate(entries):
                     button:
                         xsize list_width-23 yminimum row_h padding (18,9)
-                        background R13InkPanel() hover_background R13InkPanel(focused=True)
+                        background (R13InkPanel(alpha="e6",slim=True) if r13_ui_preview else R13InkPanel()) hover_background (R13InkPanel(focused=True,alpha="f5",slim=True) if r13_ui_preview else R13InkPanel(focused=True))
                         action r13_safe_question_action(action) sensitive ready
                         text (("%d  "%(index+1) if index<9 else "")+r13_question_caption(title,was_read,mark_unread=True)):
                             xsize list_width-59 text_align .5 xalign .5
@@ -266,7 +266,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                 if not entries:
                     # 0.18.93: on a panel like the question rows (bare text sat on the person's face).
                     frame:
-                        xsize list_width-23 padding (16,10) background R13InkPanel()
+                        xsize list_width-23 padding (16,10) background (R13InkPanel(alpha="d9",slim=True) if r13_ui_preview else R13InkPanel())
                         text "지금 더 물을 이야기는 없다.\n가지고 온 자료를 보여줄 수도 있다.":
                             xsize list_width-55 text_align .5 xalign .5 size r13_read_size(24,30) color "#eee5d5"
                             outlines [(1,"#101515",0,0)]
@@ -279,11 +279,11 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
             # Bottom-left corner, on the same row as the tools at the bottom right.
             textbutton "돌아가기":
                 xpos 0 ypos 676 xsize 150 ysize 44
-                padding (12,6) background R13InkPanel() hover_background R13InkPanel(focused=True)
+                padding (12,6) background (R13InkPanel(alpha="e6",slim=True) if r13_ui_preview else R13InkPanel()) hover_background (R13InkPanel(focused=True,alpha="f5",slim=True) if r13_ui_preview else R13InkPanel(focused=True))
                 text_size r13_read_size(20,24) text_color "#fff4df" text_xalign .5
                 action return_action sensitive ready
     else:
-        add Solid("#00000048")
+        add Solid("#00000020" if r13_ui_preview else "#00000048")
         $ compact_width=min(list_width,940)
         $ choice_size=r13_read_size(23,28)
         $ list_left=(1280-compact_width)//2
@@ -297,7 +297,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
         if context:
             frame:
                 xalign .5 ypos 34 xsize compact_width padding (22,14,22,16)
-                background R13InkPanel()
+                background (R13InkPanel(alpha="d9",slim=True) if r13_ui_preview else R13InkPanel())
                 vbox:
                     spacing 6
                     if context[0]:
@@ -334,7 +334,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                             color ("#d3e3e7" if was_read else "#ffffff")
                 if not entries:
                     frame:
-                        xsize compact_width-23 padding (16,10) background R13InkPanel()
+                        xsize compact_width-23 padding (16,10) background (R13InkPanel(alpha="d9",slim=True) if r13_ui_preview else R13InkPanel())
                         text "지금 더 물을 이야기는 없다.\n가지고 온 자료를 보여줄 수도 있다.":
                             xsize compact_width-55 text_align .5 xalign .5 size r13_read_size(22,28) color "#eee5d5"
         if ready:
@@ -344,7 +344,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
         if return_action is not None:
             textbutton "돌아가기":
                 xpos 0 ypos 676 xsize 150 ysize 44
-                padding (12,6) background R13InkPanel() hover_background R13InkPanel(focused=True)
+                padding (12,6) background (R13InkPanel(alpha="e6",slim=True) if r13_ui_preview else R13InkPanel()) hover_background (R13InkPanel(focused=True,alpha="f5",slim=True) if r13_ui_preview else R13InkPanel(focused=True))
                 text_size r13_read_size(20,24) text_color "#fff4df" text_xalign .5
                 action return_action sensitive ready
 

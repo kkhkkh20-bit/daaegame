@@ -2,10 +2,10 @@
 init 58 python:
     class R13InkPanel(renpy.Displayable):
         """Warm brown cover edges, ink face, and amber light only along the lower edge."""
-        def __init__(self,focused=False,disabled=False,alpha="ff",corner=None,dark=False,**kwargs):
+        def __init__(self,focused=False,disabled=False,alpha="ff",corner=None,dark=False,slim=False,**kwargs):
             super(R13InkPanel,self).__init__(**kwargs)
             self.focused=focused;self.disabled=disabled
-            self.alpha=alpha;self.corner=corner;self.dark=dark
+            self.alpha=alpha;self.corner=corner;self.dark=dark;self.slim=slim
         def render(self,width,height,st,at):
             w=max(1,int(width));h=max(1,int(height))
             r=renpy.Render(w,h);c=r.canvas()
@@ -16,6 +16,11 @@ init 58 python:
                         (w-n-d-1,h-n-1),(n+d,h-n-1),(n,h-n-d-1),(n,n+d)]
             fill=('#453d34' if self.disabled else '#2c2420' if self.dark else '#4a3b30' if self.focused else '#352c27')
             c.polygon(fill+self.alpha,edge(3))
+            if self.slim:
+                c.lines("#a78b6466",True,edge(1),1)
+                if self.focused:
+                    c.line("#d5b479cc",(cut+4,h-2),(w-cut-5,h-2),1)
+                return r
             # Border bands leave the inner face clear for the explicit light option.
             for outer,inner,color in ((edge(0),edge(1),'#332b28'),
                     (edge(1),edge(3),'#8b745a')):
@@ -200,3 +205,6 @@ init 58 python:
                 c.rect("#b58c48",(6,h-7,max(1,w-12),2))
                 c.rect("#e6bd69",(6,h-5,max(1,w-12),2))
             return r
+
+# Local design preview: disabled in ordinary gameplay until reviewed.
+default r13_ui_preview = False
