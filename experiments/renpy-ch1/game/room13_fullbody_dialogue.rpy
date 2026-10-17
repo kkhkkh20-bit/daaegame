@@ -103,7 +103,7 @@ init 58 python:
         w,h=max(1,int(round(fw*s))),max(1,int(round(fh*s)))
         # Eye blink pieces (room13_dot_fx.rpy) sit on the uncropped picture, in its own pixels.
         piece=Crop((fx,fy,fw,fh),r13_blink_art(person,emotion,image["file"]))
-        if image.get("cell"):
+        if image.get("cell") or image.get("native_detail"):
             piece=Transform(piece,size=(w,h),nearest=True,subpixel=False)
         else:
             piece=r13_pixel_scale(piece,w,h,R13_CLOSE_PIXEL_GRID)

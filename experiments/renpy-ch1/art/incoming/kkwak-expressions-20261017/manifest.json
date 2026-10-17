@@ -1,0 +1,38 @@
+{
+  "character": "kwaeksun",
+  "status": "neutral approved unchanged; five expressions are production candidates, not approved or applied",
+  "source_library_file_id": "libfile_72a40de0b9f88191b32026bb52398807",
+  "base_prompt": "Edit the attached approved pink bird sprite to create ONE full-body expression/acting variant. Preserve EXACT character design, face construction and large cyan eyes, hooked charcoal beak, pink swept crest with dark tips, teal winter coat with three brown buttons, cream fringed scarf, slate pleated skirt, brown fur cuff buckle boots, pink and charcoal feathered wing-hands and long tail. Same cute head/body proportions, palette, crisp fine pixel clusters, outline weight and simple shade ramps as reference. No redesign, no human hands, no fur, no tiny feather texture, no noise/dithering, no painterly blur, no extra characters, no symbols, no text. Full body and all extremities completely within frame on real transparent background. Body acting must read clearly from silhouette, not merely a face swap. ",
+  "expressions": [
+    {
+      "name": "joy",
+      "status": "candidate",
+      "pose_prompt": "JOY: an exuberantly happy open-beak smile, eyes closed into happy upward crescents, chest lifted and upper body leaning forward delightedly. Both feathered wing-hands thrown outward and upward in a broad welcoming cheer, clearly above elbows, feathers gently fanned. Crest perked and tail lifted. Feet remain grounded, no jumping.",
+      "file": "kwaeksun-joy-candidate-v1.png"
+    },
+    {
+      "name": "flustered",
+      "status": "candidate",
+      "pose_prompt": "FLUSTERED / EMBARRASSED: conspicuous rosy cheek blush, wide cyan eyes looking aside with raised inner brows, shy small parted beak. Head sharply tilted and shoulders hunched high toward scarf. One wing-hand held against cheek and the other raised awkwardly before chest with feather tips splayed. Upper body twists away bashfully, knees inward slightly. Distinct from joy and fear.",
+      "file": "kwaeksun-flustered-candidate-v1.png"
+    },
+    {
+      "name": "angry",
+      "status": "candidate",
+      "pose_prompt": "ANGRY: brows strongly angled downward, narrowed cyan eyes, beak open in an indignant complaint. Torso leans forward assertively. One feathered wing-hand planted on hip with elbow thrust out; other wing-arm thrust forward across body in an emphatic scolding gesture, wing tips fanned, not a human pointing finger. Crest bristled upward, tail slightly spread. Firm planted stance.",
+      "file": "kwaeksun-angry-candidate-v1.png"
+    },
+    {
+      "name": "anxious",
+      "status": "candidate",
+      "pose_prompt": "ANXIOUS: worried cyan eyes with raised inner brows, slightly downturned closed beak, head lowered into scarf. Rounded inward shoulders, body recoiling and leaning away slightly. Both feathered wing-hands clutch the scarf close against chest, elbows pulled inward. Crest drooped and tail tucked close. Clearly contracted silhouette; no sweat symbols, no tears.",
+      "file": "kwaeksun-anxious-candidate-v1.png"
+    },
+    {
+      "name": "surprise",
+      "status": "candidate",
+      "pose_prompt": "SURPRISE: huge wide-open cyan eyes, lifted brows, beak gaping open in shocked O-like bird gape. Torso leaning backward in a sudden recoil, shoulders raised. Both wing-hands raised high beside shoulders with black-tipped feathers widely splayed in alarm. Crest springs upright and tail fans outward, boots firmly on ground. Distinct from delighted joy, no symbols.",
+      "file": "kwaeksun-surprise-candidate-v1.png"
+    }
+  ]
+}
