@@ -9445,23 +9445,15 @@ testcase hitbox_room13:
     $ r13_admin_hitboxes=False
 
 testcase job_in_person:
-    # 0.18.56 (owner): no work board at the top; Nabi gives the kitchen work in the dining room.
+    # 0.18.91 (owner): jobs were removed. Nabi in the dining room no longer offers kitchen work.
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=2,period=0,location="dining",life_poc=True),("entry_corrected","lodging","life_meal_served"))
+    run Call("r13_qa_roam",dict(day=2,period=0,location="dining",life_poc=True),("entry_corrected","lodging","life_meal_served","livelihood_open"))
     pause 1.0
-    screenshot "dining_no_board.png"
-    run Call("r13_qa_talk","nabi")
-    click pos (1150,90) until "식사 준비" timeout 30
-    screenshot "nabi_job_topic.png"
-    click "식사 준비"
-    click pos (1150,90) until screen "r13_confirm" timeout 30
-    click "시작하기"
-    click pos (1150,90) until screen "choice" timeout 40
-    click "맡은 일만 마친다"
-    click pos (1150,90) until screen "r13_hub" timeout 40
-    assert eval (room13["period"]==1 and any(j["key"]=="kitchen" for j in r13_wallet(room13)["jobs"]))
+    assert eval (not any(k.startswith("job:") for p in ("nabi","karo","buri","resident_kkwak","resident_badook") for k,_ in r13_topics(p)))
+    assert eval (not any(r13_job_allowed(room13,k) for k in R13_JOBS))
+    screenshot "dining_no_job.png"
 
 testcase depth_dump:
     pause 2.0
@@ -9548,23 +9540,14 @@ testcase new_places_tour:
     screenshot "place_map.png"
 
 testcase job_fishing:
-    # 0.18.61: 꽥순 gives the ice-fishing work at the river.
+    # 0.18.91 (owner): jobs were removed; no lodging fee is charged overnight either.
     pause 2.0
     click "처음부터"
     pause 3.0
-    $ r13_qa_found=r13_qa_find_slot("resident_kkwak","river")
-    assert eval (r13_qa_found is not None)
-    run Call("r13_qa_roam",r13_qa_found,("entry_corrected","lodging"))
+    run Call("r13_qa_roam",dict(day=3,period=0,location="river",life_poc=True),("entry_corrected","lodging","livelihood_open"),cash=4)
     pause 1.0
-    run Call("r13_qa_talk","resident_kkwak")
-    click pos (1150,90) until "얼음낚시" timeout 30
-    click "얼음낚시"
-    click pos (1150,90) until screen "r13_confirm" timeout 30
-    click "시작하기"
-    click pos (1150,90) until screen "choice" timeout 40
-    click "강 건너 길에 관해 묻는다"
-    click pos (1150,90) until screen "r13_hub" timeout 40
-    assert eval ("kkwak_ice" in r13_wallet(room13)["relations"] and any(j["key"]=="fishing" for j in r13_wallet(room13)["jobs"]))
+    assert eval (r13_settle_lodging(room13) is room13 and r13_cash_now()==4)
+    screenshot "river_no_job.png"
 
 testcase market_stall_shop:
     # 0.18.61: goods are bought at the market stall.

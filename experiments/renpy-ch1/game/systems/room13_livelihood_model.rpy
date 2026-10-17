@@ -47,7 +47,8 @@ init 91 python:
         return data
 
     def r13_job_allowed(state,key):
-        return (key in R13_JOBS and state.get("day",1)>=2 and state.get("period",0)<2
+        # 0.18.91: 일거리는 없앴다(systems/room13_no_livelihood.rpy). 예전 조건은 기록으로 남긴다.
+        return False and (key in R13_JOBS and state.get("day",1)>=2 and state.get("period",0)<2
             and "livelihood_open" in state.get("flags",[])
             and not any(j["day"]==state["day"] and (j["period"]==state["period"] or j["key"]==key)
                 for j in r13_wallet(state)["jobs"]))
@@ -73,6 +74,8 @@ init 91 python:
         return n,dict(pay=pay,combined=combined,observed=choice=="ask")
 
     def r13_settle_lodging(state):
+        # 0.18.91: 숙박비·외상은 없앴다(systems/room13_no_livelihood.rpy).
+        return state
         n=winter_copy.deepcopy(state); wallet=r13_wallet(n); day=n["day"]
         if day in wallet["settled"]:return state
         fee=0 if day==1 else 10

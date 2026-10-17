@@ -22,7 +22,7 @@ init 165 python:
 
     _r13_conv_sleep_text=r13_learning_sleep_text
     def r13_learning_sleep_text():
-        text=_r13_conv_sleep_text()
+        text="\n".join(line for line in _r13_conv_sleep_text().split("\n") if line.strip())
         tonight,waiting=r13_sleep_missed_counts()
         if tonight:text+="\n오늘 밤에만 할 수 있는 일이 아직 %d개 남아 있다."%tonight
         if waiting:text+="\n지금 지나치면 결과만 전해 듣게 될 일이 %d개 있다."%waiting

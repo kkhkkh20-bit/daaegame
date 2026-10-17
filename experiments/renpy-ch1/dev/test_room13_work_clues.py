@@ -20,7 +20,6 @@ _c=ns['r13_compare_result'](['M01','J01']);assert '무슨 이야기를 했는지
 assert store.room13==before
 assert ns['r13_present']('resident_lamplighter','J01')!='base'
 assert ns['r13_present']('buri','J01')=='base'
-assert ns['r13_work_available']('kitchen')
-ns['r13_where']=lambda p:None
+# 0.18.91: jobs were removed, so no work is ever available.
 assert not ns['r13_work_available']('kitchen')
-print('PASS: testimony requires conversation; owned-only comparison; presentation; absent employer')
+print('PASS: testimony requires conversation; owned-only comparison; presentation; no jobs')

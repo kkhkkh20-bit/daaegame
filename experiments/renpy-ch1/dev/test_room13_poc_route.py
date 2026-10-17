@@ -20,9 +20,10 @@ class PocRouteTest(unittest.TestCase):
   exec(textwrap.dedent((ROOT/'game/systems/room13_livelihood_model.rpy').read_text().split('init 91 python:\n')[1]),self.ns)
   exec(textwrap.dedent((ROOT/'game/systems/room13_poc_route.rpy').read_text().split('init 100 python:\n')[1].split('\nlabel r13_poc_night_review:')[0]),self.ns)
  def test_work_opens_followup_only_after_owned_note_presentation(self):
-  s=self.store.room13;s['evidence']=['M01'];self.ns['r13_present']('nabi','M01');self.assertNotIn('J04',s['evidence'])
+  # 0.18.91: no jobs; showing the owned note is enough to open the follow-up question.
+  s=self.store.room13;s['evidence']=['M01']
   self.assertNotIn('poc:nabi_packet',[k for k,t in self.ns['r13_topics']('nabi')])
-  s['livelihood']['jobs']=[dict(day=2,period=0,key='kitchen',choice='finish')]
+  self.ns['r13_present']('nabi','M01');self.assertNotIn('J04',s['evidence'])
   self.assertIn('poc:nabi_packet',[k for k,t in self.ns['r13_topics']('nabi')]);self.assertNotIn('J04',s['evidence'])
   self.assertEqual(self.data['topics']['poc:nabi_packet']['give'],['J04'])
  def test_previous_work_is_recognized_without_new_trust_flags(self):
@@ -49,15 +50,13 @@ class PocRouteTest(unittest.TestCase):
   exec(textwrap.dedent('    def r13_finish_action(key):'+source),ns)
   ns['r13_finish_action']('warning');current=self.store.room13;self.assertEqual(current['period'],3);self.assertIn('E18',current['evidence']);before=copy.deepcopy(current);ns['r13_finish_action']('warning');self.assertEqual(current,before)
  def test_first_three_day_income_routes_and_debt_never_require_shop(self):
-  complete=self.ns['r13_complete_job'];settle=self.ns['r13_settle_lodging'];wallet=self.ns['r13_wallet']
-  for first,second,expected_cash,expected_debt in [('kitchen','delivery',3,0),('kitchen','repair',4,0),('delivery','repair',5,0)]:
-   s=dict(day=2,period=0,flags=['livelihood_open']);s,_=complete(s,first,'ask');s,_=complete(s,second,'ask');s=settle(s);self.assertEqual((wallet(s)['cash'],wallet(s)['debt']),(expected_cash,expected_debt))
-   if first=='delivery' or second=='delivery':
-    s.update(day=3,period=0);s,result=complete(s,'delivery','combine');self.assertEqual(result['pay'],14);s,_=complete(s,'kitchen','finish');s=settle(s);self.assertEqual(wallet(s)['cash'],expected_cash+10);self.assertEqual(wallet(s)['debt'],expected_debt);self.assertNotIn('cord',wallet(s)['items'])
-  skipped=dict(day=2,period=2,flags=['livelihood_open']);skipped=settle(skipped);self.assertEqual(wallet(skipped)['debt'],10);self.assertEqual(skipped['period'],2)
+  # 0.18.91: no jobs and no lodging, so no debt ever builds up.
+  settle=self.ns['r13_settle_lodging'];wallet=self.ns['r13_wallet']
+  skipped=dict(day=2,period=2,flags=['livelihood_open']);skipped=settle(skipped);self.assertEqual(wallet(skipped)['debt'],0);self.assertEqual(skipped['period'],2)
  def test_shop_purchase_alone_or_unaccepted_gift_never_counts_as_help(self):
-  s=self.store.room13;s['resident_help']=[dict(person='nabi',kind='purchase',completed=True),dict(person='nabi',kind='gift',completed=False),dict(person='karo',kind='gift',completed=True)]
-  before=copy.deepcopy(s);self.assertFalse(self.ns['r13_poc_helped']('nabi'));self.assertTrue(self.ns['r13_poc_helped']('karo'));self.assertEqual(s,before)
+  # 0.18.91: help no longer gates the mother questions; checking it never writes state.
+  s=self.store.room13;s['resident_help']=[dict(person='nabi',kind='purchase',completed=True)]
+  before=copy.deepcopy(s);self.assertTrue(self.ns['r13_poc_helped']('nabi'));self.assertEqual(s,before)
  def test_accepted_help_opens_question_without_faking_work_or_granting_testimony(self):
   s=self.store.room13;s['evidence']=['M01'];s['resident_help']=[dict(person='nabi',kind='gift',item='requested_item',completed=True,day=2)]
   self.ns['r13_present']('nabi','M01');self.assertIn('poc:nabi_packet',[k for k,t in self.ns['r13_topics']('nabi')]);self.assertFalse(self.ns['r13_poc_worked']('kitchen'));self.assertNotIn('J04',s['evidence']);self.assertEqual(self.ns['r13_wallet'](s)['jobs'],[])
