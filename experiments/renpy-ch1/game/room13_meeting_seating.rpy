@@ -180,7 +180,7 @@ transform r13_meeting_pan(revision=0,direction=1,outgoing=False):
 screen r13_meeting_stage(claim,focus=None,close=False,ready=False,selected=None,ballot=False):
     $ session=r13_debate_session(claim)
     if close:
-        add R13MeetingOrbit(claim,focus,r13_meeting_shot_revision,(r13_meeting_direction or {}).get("beat","listen"),r13_meeting_direction_poses)
+        add R13MeetingOrbit(claim,focus,r13_meeting_shot_revision,(r13_meeting_direction or {}).get("beat","listen"),r13_meeting_direction_poses,r13_meeting_line_token,r13_meeting_listener,r13_meeting_art_slots,r13_meeting_reaction)
     else:
         add r13_meeting_plate(session,False)
         use r13_meeting_camera_frame(claim,focus,False,ready,selected,ballot)
@@ -227,10 +227,24 @@ screen r13_meeting_camera_frame(claim,focus=None,close=False,ready=False,selecte
                 if seated:
                     $ height=230
                     $ top=edge+95-height
-                    add Transform(r13_meeting_actor(who,focus,cx,seated=True),ysize=height,fit="contain",nearest=True) xcenter cx ypos top
+                    # A missing dedicated seat (e.g. Doto) can reuse the approved
+                    # smooth portrait; the existing table mask hides the lower body.
+                    $ source_profile=r13_dialogue_source_profile(who,"neutral",840) if who not in R13_MEETING_SEATED else None
+                    if source_profile:
+                        add Transform(r13_fullbody_close_art(who,"neutral",840),ysize=height,fit="contain",nearest=False) xcenter cx ypos top
+                    else:
+                        add Transform(r13_meeting_actor(who,focus,cx,seated=True),ysize=height,fit="contain",nearest=True) xcenter cx ypos top
                 else:
                     $ stand_width,height,top=r13_meeting_standing_slot(who,len(seats),edge,session)
-                    add r13_pixel_scale(r13_meeting_actor(who,focus,cx),stand_width,height,R13_CLOSE_PIXEL_GRID) xcenter cx ypos top
+                    $ source_profile=r13_dialogue_source_profile(who,"neutral",840)
+                    if source_profile:
+                        $ source_width,source_height=source_profile["canvas"]
+                        $ stand_width=min(int(source_width*306.0/source_height),int(1160.0/max(1,len(seats))*.90))
+                        $ height=int(round(stand_width*source_height/float(source_width)))
+                        $ source_top=int(edge-height*(1.0 if venue_kind in ("field","room") else .60))
+                        add Transform(r13_fullbody_close_art(who,"neutral",840),xysize=(stand_width,height),nearest=False) xcenter cx ypos source_top
+                    else:
+                        add r13_pixel_scale(r13_meeting_actor(who,focus,cx),stand_width,height,R13_CLOSE_PIXEL_GRID) xcenter cx ypos top
                 $ own=[st for st in r13_debate_statements(claim) if st["who"]==who and r13_debate_visible(claim,st)]
                 button:
                     area (cx-56,top-28,112,84) padding (0,0) background None hover_background None
