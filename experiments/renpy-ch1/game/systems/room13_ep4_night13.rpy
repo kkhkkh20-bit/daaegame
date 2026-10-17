@@ -255,7 +255,7 @@ label r13_nt_ttadak_signal:
     $ r13_flag("nt_ttadak_signal")
     call r13_scene("hall","여관 뒷벽","calm")
     call r13_lines([(None,"여관 뒤에서 망치 소리가 났다. 따닥이 처마 밑 판자에 못을 박고 있었다."),
-        ("resident_ttadak","아, 13호 손님! 그 방 뒤에 길 있는 거 아세요? 판자 뜯다가 찾았어요. 아무한테도 말하지 마세요, 촌장님 일이라."),
+        ("resident_ttadak","아, 다람이 아버님! 13호 방 뒤에 길 있는 거 아세요? 판자 뜯다가 찾았어요. 아무한테도 말하지 마세요, 촌장님 일이라."),
         ("resident_ttadak","촌장님이 여관 뒷벽 도면을 내일 아침까지 달래요. 일당이 두 배예요. 두 배!"),
         ("resident_ttadak","【내일 새벽에 통로 길이를 한 번 더 재 보려고요.】 할머니께도 말씀드렸어요. 레버 좀 올려 두시라고."),
         ("resident_ttadak","할머니가 웃으시더라고요. \"추우니 단단히 입으렴.\"")],"nt:ttadak:signal")

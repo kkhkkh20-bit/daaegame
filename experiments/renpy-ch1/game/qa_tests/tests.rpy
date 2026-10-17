@@ -12360,7 +12360,7 @@ testcase continuity_0195:
     assert eval (_c_q4[0]=="break" and "직접 말했습니다" in _c_q4[1][1][1] and "썼습니다" not in str(_c_q4[1]))
     assert eval (_c_q3[0]=="break" and "꺼냈어" not in str(_c_q3[1]) and "학교에 있었어요" in str(_c_q3[1]))
 
-init 1001 python:
+init 999 python:
     def r13_qa_thread_audit_dump():
         """0.19.17: one engine run, no clicks. Writes what dev/thread_audit.py checks."""
         import json as _j,os as _o

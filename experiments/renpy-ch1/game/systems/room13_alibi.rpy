@@ -156,6 +156,13 @@ init 147 python:
             return [cross[1][0],("dad","(주방 레버와 13호 책장, 세탁실로 이어지는 통로는 내가 직접 열어 봤다. 토실이 들은 발소리는 그 길이었을까? 그렇다면 누구의 발소리였을까?)",{"thought":True})]
         return cross[1]
 
+    def r13_alibi_again_lines(key):
+        _,m,p=key.split(":",2)
+        said=[row for row in r13_alibi_lines(key) if row[0]==p]
+        title=R13_ALIBI_MOMENTS[m][0]
+        if not said:return [("dad","(%s의 일은 이미 물어봤다.)"%title,{"thought":True})]
+        return [(None,"(전에 들은 말 · %s)"%title),said[-1][:2]]
+
     def r13_alibi_new_crosses():
         return [c for c in R13_ALIBI_CROSS if not r13_has(c[2]) and all(r13_alibi_heard(m,p) for m,p in c[0])]
 
@@ -175,6 +182,10 @@ init 147 python:
 
 label r13_alibi_topic:
     $ _ab_key=r13_topic
+    if r13_has(_ab_key):
+        # 0.19.17 (owner): asking again does not replay the whole statement; one line of what was said.
+        call r13_lines(r13_alibi_again_lines(_ab_key),"alibi:again:"+_ab_key[6:])
+        return
     call r13_lines(r13_alibi_lines(_ab_key),"alibi:"+_ab_key[6:]+(":truth" if R13_ALIBI[tuple(_ab_key.split(":",2)[1:])].get("truth") and r13_has(R13_ALIBI[tuple(_ab_key.split(":",2)[1:])]["truth"][0]) else ""))
     $ r13_flag(_ab_key)
     $ _ab_new=r13_alibi_new_crosses()

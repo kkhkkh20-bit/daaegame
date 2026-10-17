@@ -91,8 +91,9 @@ label r13_ev_lamp_round:
     call r13_ev_here("night")
     call r13_lines([(None,"광장 가장자리에서 초롱이 긴 장대로 등 뚜껑을 하나씩 열고 있었다."),
         ("resident_lamplighter","저녁 순회예요. 따라오셔도 돼요. 대신 등 바로 아래에는 서지 마세요."),
-        ("daram","아빠, 등에 이름표가 붙어 있어!")]+
-        ([("resident_lamplighter","부인이 맡긴 봉투 이야기는 여기서 말고, 따로 이야기할 때 해요. 보는 눈이 많아서요.")] if r13_mother_knowledge()["pending"] and room13["day"]>=3 else []),"ev:lamp:open")
+        ("daram","아빠, 등에 이름표가 붙어 있어!")],"ev:lamp:open")
+    if r13_mother_knowledge()["pending"] and room13["day"]>=3:
+        call r13_lines([("resident_lamplighter","부인이 맡긴 봉투 이야기는 여기서 말고, 따로 이야기할 때 해요. 보는 눈이 많아서요.")],"ev:lamp:open:pending")
     $ _ep_loop=True
     while _ep_loop:
         $ _ep_loop=False

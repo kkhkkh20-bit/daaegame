@@ -487,7 +487,7 @@ label r13_ev_kongi_errand:
         return None
     if r13_cash_now()<2:
         if room13["day"]==1:
-            call r13_lines([("resident_kongi","첫 손님이니까 이번만 외상이에요. 대신 내일 구운 밤 하나 주세요.")],"ev:m:free")
+            call r13_lines([("resident_kongi","첫 손님이니까 이번엔 그냥 해 드릴게요. 대신 내일 구운 밤 하나 주세요.")],"ev:m:free")
         else:
             call r13_lines([("resident_kongi","돈부터 주세요. 저도 먹고살아야 해요.")],"ev:m:nocash")
             $ r13_forget_topic("kongi_errand")
