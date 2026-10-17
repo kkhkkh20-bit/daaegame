@@ -1,0 +1,159 @@
+{
+  "version": "0.19.26",
+  "meeting": {
+    "active": true,
+    "focus": "seryeon",
+    "packet": [
+      "seryeon",
+      "부엉이 어르신이 발견된 13호는 안에서 잠겨 있었습니다. 그 안에는 다람 양이 있었습니다."
+    ],
+    "kind": "round"
+  },
+  "meeting_restored": {
+    "active": true,
+    "focus": "seryeon",
+    "packet": [
+      "seryeon",
+      "부엉이 어르신이 발견된 13호는 안에서 잠겨 있었습니다. 그 안에는 다람 양이 있었습니다."
+    ],
+    "kind": "round"
+  },
+  "heights": {
+    "740": {
+      "canvas": [
+        405,
+        608
+      ],
+      "size": [
+        405,
+        608
+      ],
+      "file": "assets/dialogue-source-master/resident_hyeoni/760/neutral.webp"
+    },
+    "776": {
+      "canvas": [
+        425,
+        637
+      ],
+      "size": [
+        425,
+        637
+      ],
+      "file": "assets/dialogue-source-master/resident_hyeoni/760/neutral.webp"
+    },
+    "840": {
+      "canvas": [
+        604,
+        906
+      ],
+      "size": [
+        604,
+        906
+      ],
+      "file": "assets/dialogue-source-master/resident_hyeoni/840/neutral.webp"
+    },
+    "876": {
+      "canvas": [
+        630,
+        945
+      ],
+      "size": [
+        630,
+        945
+      ],
+      "file": "assets/dialogue-source-master/resident_hyeoni/840/neutral.webp"
+    }
+  },
+  "post_menu": {
+    "pose": "chair_listen",
+    "file": "assets/dialogue-pose-source/seryeon-letter-bust.webp"
+  },
+  "chair_before_save": {
+    "pose": "chair_listen",
+    "packet": [
+      "seryeon",
+      "편지는 받는 분이 직접 오셔야 내드릴 수 있습니다."
+    ]
+  },
+  "chair_restored": {
+    "pose": "chair_listen",
+    "packet": [
+      "seryeon",
+      "편지는 받는 분이 직접 오셔야 내드릴 수 있습니다."
+    ]
+  },
+  "chair_read_fixture": {
+    "pose": "chair_read",
+    "file": "assets/dialogue-pose-source/seryeon-letter-bust.webp"
+  },
+  "authored_fixtures": [
+    {
+      "person": "resident_ppul",
+      "requested": "kneel_stone",
+      "selected": "kneel_stone",
+      "current": "kneel_stone",
+      "file": "assets/room13-fullbody-resident_ppul-pose-kneel_stone.webp",
+      "image": {
+        "native_detail": true,
+        "smooth_source": true
+      }
+    },
+    {
+      "person": "resident_teacher",
+      "requested": "write_attendance",
+      "selected": "write_attendance",
+      "current": "write_attendance",
+      "file": "assets/room13-role-resident_teacher-batch-write_attendance-v1.webp",
+      "image": {
+        "file": "assets/room13-role-resident_teacher-batch-write_attendance-v1.webp",
+        "size": [
+          1005,
+          1566
+        ],
+        "crop": [
+          0,
+          0,
+          1005,
+          1566
+        ],
+        "map": [
+          0.5,
+          -11.75,
+          -15
+        ],
+        "native_detail": true,
+        "source_sha256": "26186a2d0022c9cd73c8c164cb6f5b82ad54052cfc2ac8f1178324f1b36d5e10",
+        "review_batch": "reviewed-batches-20261017"
+      }
+    },
+    {
+      "person": "resident_teacher",
+      "requested": "collapse_attendance",
+      "selected": "collapse_attendance",
+      "current": "collapse_attendance",
+      "file": "assets/room13-role-resident_teacher-batch-collapse_attendance-v1.webp",
+      "image": {
+        "file": "assets/room13-role-resident_teacher-batch-collapse_attendance-v1.webp",
+        "size": [
+          1004,
+          1566
+        ],
+        "crop": [
+          0,
+          0,
+          1004,
+          1566
+        ],
+        "map": [
+          0.5,
+          -11.5,
+          10.5
+        ],
+        "native_detail": true,
+        "source_sha256": "d3c6381336bed0bea8da34c940ccde23304bceee20674fc1815d6d5cb2296872",
+        "review_batch": "reviewed-batches-20261017"
+      }
+    }
+  ],
+  "status": "passed"
+}
