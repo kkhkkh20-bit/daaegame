@@ -22,7 +22,7 @@ init 103 python:
     R13_WITNESS_GATES={"E12":"witness:nabi","E15":"witness:nabi","E13":"witness:tok"}
     R13_WITNESS_REFUSALS={
         "witness:nabi":[("nabi","……저는 할머니랑 계속 같이 있었어요. 제가 아는 건 그것뿐이에요."),
-            ("dad","(나비가 전에 한 말과 다르다. 할머니 앞이라 말하지 못하는 것이다. 그 아이에게 무엇이 걸려 있는지 먼저 알아야 했다.)",{"thought":True})],
+            ("dad","(나비가 전에 한 말과 다르다. 할머니 앞이라서일까? 그 아이에게 무엇이 걸려 있을까?)",{"thought":True})],
         "witness:tok":[("resident_ppul","수리공 톡은 오늘 나오지 않았소. 쪽지만으로는 누가 고친 핀인지 확인할 수 없소."),
             ("dad","(톡이 직접 말해 줘야 했다. 그가 왜 나오지 않았는지 알아봤어야 했다.)",{"thought":True})],
     }
@@ -104,7 +104,7 @@ init 103 python:
         need=["ep4_seen"],not_flags=["clue_lamp_marks","tok_cleared"],flags=["clue_lamp_marks","ep4_open"],give=[],cost=0,lines=[
         (None,"광장 등 뚜껑 나사에 가느다란 줄 자국이 나 있었다. 공구가 아니라 계측기 집게가 물었던 자국이었다."),
         (None,"등 안쪽은 차가웠다. 조각이 있던 자리에 종이 눈금 조각이 끼어 있었다."),
-        ("dad","(톡의 공구 자국이 아니다. 누군가 무언가를 재려고 등 뚜껑을 열었다.)",{"thought":True})])
+        ("dad","(톡의 공구 자국과는 생김새가 다르다. 그럼 누가, 무엇을 하려고 이 뚜껑을 열었을까?)",{"thought":True})])
     R13_CONTEXT_ACTIVITIES[("square","lamp")]=tuple(R13_CONTEXT_ACTIVITIES.get(("square","lamp"),()))+("ep4_lamp_look",)
 
     def r13_ep_first(flag):
@@ -335,15 +335,15 @@ label r13_ep3_bell:
                 ("neoul","그런 숫자는 함부로 공개하지 마시오.")],"ep3:measure")
             $ r13_grant(["W4"],"우박이 잰 돌의 출력")
             $ r13_flag("know_stone_failing","ubak_met")
-        "등불지기와 함께 광장 등을 몇 개 끈다" if not r13_has("chorong_dead"):
+        "등불지기와 함께 광장 등을 몇 개 끈다" if not r13_has("chorong_dead") and not (r13_has("nt_chorong_half") and r13_has("nt_night8")):
             call r13_lines([("resident_lamplighter","등을 끄면 돌이 덜 지쳐요. 등은 돌에서 불을 받거든요."),
                 (None,"광장 등이 절반쯤 꺼지자 돌의 빛이 조금 굵어졌다. 설이가 그제야 종 줄을 놓았다."),
                 ("neoul","……이번 한 번만이오.")],"ep3:lamps")
             $ r13_grant(["W5"],"등불지기와 끈 광장 등")
             $ r13_flag("lamps_saved","lamplighter_trust")
         # 0.19.15: 초롱이 ④에서 죽은 판에는 우박이 등불지기 대신 등을 끈다.
-        "우박과 함께 광장 등을 몇 개 끈다" if r13_has("chorong_dead"):
-            call r13_lines([("resident_ubak","초롱 씨가 하던 일이에요. 등을 끄면 돌이 덜 지친다고 했어요. 등은 돌에서 불을 받거든요."),
+        "우박과 함께 광장 등을 몇 개 끈다" if r13_has("chorong_dead") or (r13_has("nt_chorong_half") and r13_has("nt_night8")):
+            call r13_lines([("resident_ubak","초롱 씨가 하던 일이에요. 등을 끄면 돌이 덜 지친다고 했어요. 등은 돌에서 불을 받거든요." if r13_has("chorong_dead") else "초롱 씨는 아직 진료소에 누워 있어요. 등을 끄면 돌이 덜 지친다고 초롱 씨가 그랬어요. 등은 돌에서 불을 받거든요."),
                 (None,"우박이 등 뚜껑을 하나씩 열었다. 손이 서툴렀다. 광장 등이 절반쯤 꺼지자 돌의 빛이 조금 굵어졌다. 설이가 그제야 종 줄을 놓았다."),
                 ("neoul","……이번 한 번만이오.")],"ep3:lamps_ubak")
             $ r13_grant(["W5"],"우박과 끈 광장 등")
@@ -416,7 +416,7 @@ label r13_ep4_accused:
             "광장 등을 직접 살펴본다" if not r13_has("clue_lamp_marks"):
                 call r13_lines([(None,"광장 등 뚜껑 나사에 가느다란 줄 자국이 나 있었다. 공구가 아니라 계측기 집게가 물었던 자국이었다."),
                     (None,"등 안쪽은 차가웠다. 조각이 있던 자리에 종이 눈금 조각이 끼어 있었다."),
-                    ("dad","(톡의 공구 자국이 아니다. 누군가 무언가를 재려고 등 뚜껑을 열었다.)",{"thought":True})],"ep4:lamp")
+                    ("dad","(톡의 공구 자국과는 생김새가 다르다. 그럼 누가, 무엇을 하려고 이 뚜껑을 열었을까?)",{"thought":True})],"ep4:lamp")
                 $ r13_flag("clue_lamp_marks","ep4_open")
                 $ _ep_loop=True
             "“등 안의 돌 조각은 뭡니까?”" if "W5" not in room13["evidence"]:

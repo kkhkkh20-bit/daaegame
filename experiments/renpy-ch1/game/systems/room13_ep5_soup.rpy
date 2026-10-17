@@ -166,7 +166,7 @@ label r13_ws_roots:
     if room13["day"]>=R13_WEEK2_DAY and r13_has("mom_hideout_found") and not r13_has("Y03"):
         $ r13_grant(["Y02"],"숲 뿌리 밑에 남은 엄마의 쪽지")
         call r13_lines([(None,"재 옆에 초록빛 유리 조각. 손가락 마디만 하다. 한쪽 면에 오래된 흙이 말라붙어 있다."),
-            ("dad","(숲에서 이런 유리를 쓰는 곳은 하나다. 무너진 폐온실.)",{"thought":True})],"ws:roots:glass")
+            ("dad","(초록 유리. 숲에 이런 유리를 쓴 건물이 있었던가? 무너진 폐온실 지붕이 이런 빛이었을까?)",{"thought":True})],"ws:roots:glass")
         $ r13_grant(["Y03"],"숲 뿌리 밑 재 옆에서 주운 초록 유리")
         if r13_ws_daram():
             call r13_lines([(None,"담요 안쪽에 크레용 그림이 접혀 있었다. 삐뚤빼뚤한 다람쥐 셋."),
@@ -208,8 +208,10 @@ label r13_ws_greenhouse:
     else:
         call r13_lines([("mom","다람은?"),("dad","아직 보호실에. 내가 못 꺼냈어."),("mom","……그럼 오늘 밤 창문으로 가자. 얼굴만이라도.")],"ws:reunion:held")
     call r13_lines([(None,"……"),
-        ("mom","당신도. 미안해. 그 편지, 내가 쓴 게 아니야."),
-        ("dad","알아. 할머니였어.")]+
+        ("mom","당신도. 미안해. 그 편지, 내가 쓴 게 아니야.")]+
+        ([("dad","알아. 초롱 씨가 전해 준 네 편지에 적혀 있었어. 할머니를 조심하라고.")] if r13_has("N06") else
+         [("dad","알아. 네가 맡긴 봉투에 적혀 있었어. 그럼 누가 쓴 거야?"),("mom","할머니야. 내 이름으로 부르면 내가 돌아올 줄 알았겠지.")] if r13_has("E18") else
+         [("dad","……그럼 누가 쓴 거야?"),("mom","할머니야. 내 이름으로 부르면 내가 돌아올 줄 알았겠지.")])+
         ([("mom","네가 토실이구나. ……아줌마가 네 엄마 이름, 꼭 찾아 줄게.")] if r13_has("ws_tosil_kept") else [])+
         [("mom","연구 원본은 여기 있어. 내일 옛 시설에 같이 가. 사람을 바치지 않아도 되는 길이 있어.")],"ws:reunion:close")
     $ r13_flag("mom_reunited","ws_reunited")

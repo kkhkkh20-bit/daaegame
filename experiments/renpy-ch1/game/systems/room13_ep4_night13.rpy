@@ -29,6 +29,38 @@ init 155 python:
     def r13_nt_has_lever():
         return any(r13_has(k) for k in ("E05","E37","E04"))
 
+    # 0.19.17 장면 대사가 아빠가 이미 아는 엄마 소식 단계를 따른다(봉투를 읽음 ≠ 봉투를 쥠 ≠ 약속 ≠ 알아봄).
+    def r13_nt_mom_stage():
+        k=r13_mother_knowledge()
+        if r13_has("E18"):return "read"
+        if r13_has("warning_sealed_held"):return "held"
+        if k["promised"]:return "promised"
+        if k["recognized"]:return "recognized"
+        return "none"
+
+    def r13_nt_chorong_signal_lines():
+        stage=r13_nt_mom_stage();p="resident_lamplighter"
+        first=[(None,"초롱이 등 기름을 채우고 있었다. 나를 보더니 주위를 살피고 다가왔다."),
+            (p,"다람이 일, 들었어요. ……그리고 하나 더요.")]
+        if stage=="read":
+            mid=[(p,"점검함에 또 편지가 들어 있었어요. 지난번 봉투와 같은 글씨예요. 부인 글씨요.")]
+        elif stage=="held":
+            mid=[(p,"점검함에 편지가 하나 더 들어 있었어요. 전에 꺼내 가신 봉투와 같은 글씨예요.")]
+        elif stage=="promised":
+            mid=[(p,"맡아 둔 봉투 말고, 점검함에 편지가 하나 더 들어 있었어요. 같은 글씨예요. 부인 글씨요.")]
+        elif stage=="recognized":
+            mid=[(p,"점검함에 편지가 들어 있었어요. 전에 보여 주신 부인 글씨예요.")]
+        else:
+            mid=[(p,"점검함에 편지가 들어 있었어요. 겉에 ‘다람에게’라고 적혀 있어요."),
+                ("dad","(다람이에게 온 편지? 이 마을에서 누가 다람이에게 편지를 쓸까?)",{"thought":True})]
+        last=[(p,"오늘은 순찰이 많아서 못 꺼냈어요. 밤에 등 다 켜고 나서 꺼내 갈게요."),
+            (p,"【오늘 밤엔 꼭 직접 전해 드릴게요. 종탑 쪽이 지름길이에요.】")]
+        if stage in ("read","held","promised"):
+            last.append((p,"부인 소식, 제가 꼭 전해 드린다고 했잖아요."))
+        else:
+            last.append((p,"다람이 앞으로 온 편지는 제가 꼭 직접 전해 드릴게요."))
+        return first+mid+last
+
     # 죽은 사람은 마을에 없다. 반쯤 산 사람은 진료소에 있다.
     _r13_nt_where=r13_where
     def r13_where(person):
@@ -133,6 +165,7 @@ label r13_nt_dawn8:
         ("resident_tosil","할머니는 늑대 아니지?"),
         ("granny","그럼. 할머니는 할머니지. 자, 이제 자렴."),
         ("granny","아이 아버지, 못 주무셨군요. 다람이 책이에요. 그 애한테 넣어 주려고 꺼내 왔어요. 혼자 있으면 무섭잖아요."),
+        ("dad","(그림책을 챙겨 온 손이다. ……그런데 아내는 여관에는 자기가 어디로 가는지 말하지 말라고 적었다. 왜 여관이었을까?)",{"thought":True}) if r13_has("E18") else
         ("dad","(고마운 사람이다. 이 마을에서 우리 편은 이 사람뿐인지도 모른다.)",{"thought":True})],"nt:dawn8:book")
     call r13_scene("ep_holding_morning","보호실 앞","quiet")
     call r13_lines([("dad","아이 얼굴만 보겠습니다. 한 번만."),
@@ -146,7 +179,8 @@ label r13_nt_dawn8:
         ("buri","할아버지 탐정 수첩이에요. 아무한테도 안 보여 줬어요."),
         (None,"수첩 마지막 장. 떨리는 글씨. \"13호 책장 뒤 — 바람.\""),
         ("buri","할아버지는 마지막까지 뭘 찾고 있었어요. 그게 아저씨 애면…… 그래도 알고 싶어요."),
-        ("dad","(책장 뒤에서 바람이 분다. 책장 뒤가 벽이 아니라는 뜻이다.)",{"thought":True})],"nt:dawn8:buri")
+        ("dad","(할아버지도 책장 뒤의 길을 알고 있었다. 언제부터, 무엇을 찾고 있었을까?)",{"thought":True}) if any(r13_has(k) for k in ("E05","E37")) else
+        ("dad","(책장 뒤에서 바람이 분다? 책장 뒤에 벽 말고 무엇이 있을까?)",{"thought":True})],"nt:dawn8:buri")
     $ r13_grant(["N01"],"부리가 건넨 할아버지의 수첩")
     # 서리는 범행 도구를 다시 대조하기로 한다(예전엔 엄마가 나타난 장면에서 열렸다).
     $ r13_flag("examination_agreed")
@@ -164,12 +198,7 @@ label r13_nt_chorong_signal:
     $ r13_flag("nt_chorong_signal")
     if r13_has("chorong_dead"):
         return
-    call r13_lines([(None,"초롱이 등 기름을 채우고 있었다. 나를 보더니 주위를 살피고 다가왔다."),
-        ("resident_lamplighter","다람이 일, 들었어요. ……그리고 하나 더요."),
-        ("resident_lamplighter","점검함에 또 편지가 들어 있었어요. 그분 글씨예요. 아버님 부인요."),
-        ("resident_lamplighter","오늘은 순찰이 많아서 못 꺼냈어요. 밤에 등 다 켜고 나서 꺼내 갈게요."),
-        ("resident_lamplighter","【오늘 밤엔 꼭 직접 전해 드릴게요. 종탑 쪽이 지름길이에요.】"),
-        ("resident_lamplighter","어머님 소식, 제가 꼭 전해 드린다고 했잖아요.")],"nt:chorong:signal")
+    call r13_lines(r13_nt_chorong_signal_lines(),"nt:chorong:signal")
     menu:
         "이름 판을 본다":
             call r13_lines([(None,"광장 이름 판. 어제 새로 새긴 부엉이 할아버지의 이름."),
@@ -233,7 +262,7 @@ label r13_nt_ttadak_signal:
     $ r13_grant(["N03"],"여관 뒷벽에서 따닥에게 들은 말")
     menu:
         "수첩과 레버 이야기를 한다" if r13_has("N01") and r13_nt_has_lever():
-            call r13_lines([("dad","부엉이 할아버지가 마지막에 적은 겁니다. \"13호 책장 뒤 — 바람.\" 할아버지는 그 통로를 알고 나서 죽었습니다."),
+            call r13_lines([("dad","부엉이 할아버지가 마지막 장에 적은 겁니다. \"13호 책장 뒤 — 바람.\" 할아버지도 그 통로를 알고 있었습니다. 그리고 그날 밤 13호에서 돌아가셨습니다."),
                 ("dad","그리고 통로 안쪽 판자 문은 주방 손잡이로만 여닫습니다. 그 문엔 안쪽 손잡이가 없습니다. 누가 손잡이를 내리면, 따닥 씨는 안에 갇힙니다."),
                 ("resident_ttadak","……판자 문 안쪽엔 손잡이가 없긴 했어요. 그래도 누가 일부러 내리겠어요."),
                 ("resident_ttadak","알았어요. 혼자는 안 들어가요. 근데 일당은 포기 못 해요. 누가 문을 못 닫게 붙잡아 주면 모를까.")],"nt:ttadak:warned")
@@ -263,8 +292,9 @@ label r13_nt_night8:
             (None,"(쪽지) 촛대가 떨어져서 부러졌어. 나는 침대 밑에 들어갔어. 무서워서 눈 감았어."),
             (None,"(쪽지) 그다음에 쿵 소리 났어. 나 아니야."),
             (None,"(쪽지) 아빠한테 나 안 무섭다고 해 줘. ……조금만 무서워."),
-            ("resident_somi","다람이가 이거 아빠한테만 주래. 우리는 안 읽었어. ……조금 읽었어."),
-            ("dad","(촛대가 부러진 뒤에 일어난 일이 하나 더 있다.)",{"thought":True})],"nt:night8:note")
+            ("resident_somi","다람이가 이거 아빠한테만 주래. 우리는 안 읽었어. ……조금 읽었어.")]+
+            ([("dad","(보호실에서 직접 들은 말과 같다. 다람이는 말을 바꾸지 않았다. 그럼 촛대가 부러진 다음의 쿵 소리는 무엇이었을까?)",{"thought":True})] if r13_has("E06") else
+            [("dad","(촛대가 부러지고, 다람이는 침대 밑에서 눈을 감았다. 그다음의 쿵 소리는 무엇이었을까?)",{"thought":True})]),"nt:night8:note")
         if not r13_has("E06"):
             $ r13_grant(["E06"],"아이들이 보호실 창으로 받아 온 다람의 쪽지")
     else:
@@ -290,7 +320,8 @@ label r13_nt_night8:
             (None,"……",{"dim":True}),
             (None,"초롱의 팔을 풀자, 품 안에서 젖은 편지 한 장이 나왔다. 남은 건 한 줄뿐."),
             (None,"(편지) 다람아, 엄마 여기 있…"),
-            ("dad","(어머님 소식, 꼭 전해 드릴게요—. 오늘 낮에 웃으면서 한 말이다.)",{"thought":True}),
+            ("dad","(꼭 직접 전해 드릴게요—. 오늘 낮에 웃으면서 한 말이다.)",{"thought":True}) if r13_has("nt_chorong_signal") else
+            ("dad","(다람이에게 온 편지다. 이 사람은 이걸 전하러 오던 길이었을까?)",{"thought":True}),
             ("dad","(이 사람은 끝까지 놓지 않았다. 남의 엄마 편지를.)",{"thought":True})],"nt:night8:dead")
         $ r13_flag("chorong_dead")
         $ r13_grant(["N05"],"초롱의 품에서 나온 젖은 편지")
@@ -338,8 +369,9 @@ label r13_nt_dawn9:
             (None,"문 옆 돌벽 이음새에 쪼은 자국이 한 줄로 길게 나 있었다. 처음엔 깊게, 갈수록 얕게. 따닥의 부리 끝이 깨져 있었다."),
             (None,"통로는 어깨 폭이었다. 날개를 펼 자리는 없었다."),
             (None,"……",{"dim":True}),
-            ("dad","(이 문은 저절로 닫히지 않는다. 누군가 주방에서 손잡이를 내렸다.)",{"thought":True}),
-            ("dad","(따닥이 새벽에 여기 들어간다는 걸 미리 들은 사람은—.)",{"thought":True})]+
+            ("dad","(판자 문은 주방 손잡이로 여닫힌다. 그 손잡이가 내려져 있었다. 저절로 내려갔을까, 누가 내렸을까?)",{"thought":True}),
+            ("dad","(따닥 씨는 새벽에 통로를 잰다고 했다. 그 말을 들은 사람이 나 말고 또 누가 있었지?)",{"thought":True}) if r13_has("N03") else
+            ("dad","(따닥 씨가 새벽에 이 안에 있다는 걸 누가 알고 있었을까?)",{"thought":True})]+
             ([("resident_tok","따닥……. 판자를 늘 반 치씩 길게 잘랐어요. 모자라는 것보다 남는 게 낫다고."),
               ("resident_tok","도면은 다 못 그렸네. 내가 마저 그릴게.")] if r13_has("tok_cleared") else []),"nt:dawn9:dead")
         $ r13_flag("ttadak_dead")

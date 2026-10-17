@@ -91,7 +91,8 @@ label r13_ev_lamp_round:
     call r13_ev_here("night")
     call r13_lines([(None,"광장 가장자리에서 초롱이 긴 장대로 등 뚜껑을 하나씩 열고 있었다."),
         ("resident_lamplighter","저녁 순회예요. 따라오셔도 돼요. 대신 등 바로 아래에는 서지 마세요."),
-        ("daram","아빠, 등에 이름표가 붙어 있어!")],"ev:lamp:open")
+        ("daram","아빠, 등에 이름표가 붙어 있어!")]+
+        ([("resident_lamplighter","부인이 맡긴 봉투 이야기는 여기서 말고, 따로 이야기할 때 해요. 보는 눈이 많아서요.")] if r13_mother_knowledge()["pending"] and room13["day"]>=3 else []),"ev:lamp:open")
     $ _ep_loop=True
     while _ep_loop:
         $ _ep_loop=False
@@ -125,7 +126,8 @@ label r13_ev_lamp_round:
             "북쪽 길 끝 등도 같이 보자고 한다" if r13_has("lamplighter_dawn_asked") and not r13_has("know_lamp_sign"):
                 call r13_lines([("resident_lamplighter","그 등은 제가 혼자 봐요."),
                     (None,"초롱은 장대를 내리고 한참 말이 없었다."),
-                    ("resident_lamplighter","……미안해요. 그 등은 따로 약속한 사람이 있어요. 그 사람 허락 없이는 못 보여 드려요.",{"expression":"anxious"})],"ev:lamp:north")
+                    ("resident_lamplighter","……미안해요. 그 등은 따로 약속한 사람이 있어요. 그 사람 허락 없이는 못 보여 드려요.",{"expression":"anxious"})]+
+                    ([("dad","(아내의 봉투를 맡아 둔 사람이다. 이 등도 누군가와 한 약속일까?)",{"thought":True})] if (r13_mother_knowledge()["promised"] or r13_has("E18")) else []),"ev:lamp:north")
                 $ r13_flag("know_lamp_sign")
                 $ _ep_loop=True
             "순회를 마치고 돌아간다":
@@ -158,9 +160,12 @@ label r13_ev_lamp_again:
 label r13_ev_night_visit:
     $ r13_flag("ev_visit:%d"%room13["day"])
     call r13_ev_here("night")
-    call r13_lines([(None,"입구 옆 보호실 창에 작은 등 하나가 켜져 있었다. 창살 너머에서 다람이가 웅크리고 있었다. 담요도 없었다."),
-        ("daram","아빠!"),
-        ("resident_badook" if r13_has("badook_doubt") or r13_has("badook_ally") else "neoul","면회는 잠깐이오. 물건은 내가 먼저 보오.")],"ev:visit:open")
+    call r13_lines(([(None,"보호실 창에 오늘도 작은 등 하나. 다람이가 창살을 잡고 기다리고 있었다.")]+
+        ([(None,"어젯밤 담요는 아침에 바둑이에게 돌아갔다고 했다.")] if r13_has("daram_warm") else [])
+        if r13_has("ev_visit:%d"%(room13["day"]-1)) else
+        [(None,"입구 옆 보호실 창에 작은 등 하나가 켜져 있었다. 창살 너머에서 다람이가 웅크리고 있었다. 담요도 없었다.")])+
+        [("daram","아빠!"),
+        ("resident_badook","면회는 잠깐이에요. 물건은 제가 먼저 볼게요.") if r13_has("badook_doubt") or r13_has("badook_ally") else ("neoul","면회는 잠깐이오. 물건은 내가 먼저 보오.")],"ev:visit:open")
     if "W7" not in room13["evidence"]:
         $ r13_grant(["W7"],"보호실 앞에서 들은 밤 규칙")
     $ _visit_turns=2
@@ -199,14 +204,17 @@ label r13_ev_night_visit:
                 $ r13_flag("visit_banned","neoul_annoyed","rumor:troublemaker")
                 $ _visit_turns=0
     if not r13_has("visit_banned"):
-        call r13_lines([("resident_badook" if r13_has("badook_ally") else "neoul","시간 됐소.")],"ev:visit:end")
+        call r13_lines([("resident_badook","시간 됐어요.") if r13_has("badook_ally") else ("neoul","시간 됐소.")],"ev:visit:end")
     return
 
 # ---- 재판 전날 밤 식당 (6일 저녁) ----
 label r13_ev_eve_trial:
     $ r13_flag("ev_eve_done")
     call r13_ev_here("night")
-    call r13_lines([(None,"식당에는 내일 재판에 나올 사람들이 흩어져 앉아 있었다. 누구도 크게 말하지 않았다."),
+    call r13_lines([(None,"식당에는 내일 재판에 나올 사람들이 흩어져 앉아 있었다. 누구도 크게 말하지 않았다.")]+
+        ([(None,"어젯밤 초롱이, 오늘 새벽 따닥이 죽었다. 아무도 두 사람의 이름을 입에 올리지 않았다.")] if r13_has("chorong_dead") and r13_has("ttadak_dead") else
+         [(None,"어젯밤 종탑 아래에서 초롱이 죽었다. 아무도 그 이름을 입에 올리지 않았다.")] if r13_has("chorong_dead") else
+         [(None,"오늘 새벽 통로 안에서 따닥이 죽었다. 아무도 그 이름을 입에 올리지 않았다.")] if r13_has("ttadak_dead") else [])+[
         ("dad","(내일 재판에서 누가 무엇을 말해 줄지, 오늘 밤 확인해 두자.)",{"thought":True})],"ev:eve:open")
     $ _eve_left=3
     while _eve_left>0:
@@ -221,7 +229,7 @@ label r13_ev_eve_trial:
                         ("dad","(나비가 무서워하는 것은 할머니일까, 아이들 끼니일까.)",{"thought":True})],"ev:eve:nabi:ask")
                 else:
                     call r13_lines([("nabi","……내일은 할머니랑 계속 같이 있었다고만 할 거예요. 아이들 밥이 할머니한테 걸려 있거든요."),
-                        ("dad","(나비의 입을 막고 있는 건 할머니가 아니라 아이들 끼니다.)",{"thought":True})],"ev:eve:nabi:no")
+                        ("dad","(아이들 끼니가 할머니 손에 있다. 그 끼니를 다른 데서 구할 수 있다면, 나비는 본 대로 말할까?)",{"thought":True})],"ev:eve:nabi:no")
             "톡을 찾는다" if not r13_has("eve:tok"):
                 $ r13_flag("eve:tok")
                 if r13_has("witness:tok"):

@@ -28,6 +28,20 @@ init 157 python:
     def r13_cv_daram():
         return (store.room13 or {}).get("daram_state") in ("with_dad","rescued")
 
+    # 0.19.17: 아빠가 초대 편지를 누가 썼는지 어디까지 아는가. 할머니 손 ≠ 아내가 안 썼음 ≠ 모름.
+    def r13_cv_letter_known():
+        if r13_has("N06"):return "granny"
+        if r13_has("E18"):return "not_mom"
+        return None
+
+    def r13_cv_hall_thought():
+        k=r13_cv_letter_known()
+        if k=="granny":
+            return ("dad","(초대 편지는 할머니 손에서 나왔다고 했다. 그 편지와 이 명령서의 'ㄹ' 꼬리가 같다. 촌장 도장 아래 이 글씨도 같은 손일까?)",{"thought":True})
+        if k=="not_mom":
+            return ("dad","(아내는 오라는 편지를 쓴 적이 없다고 했다. 그 편지를 쓴 손이 이 명령서도 썼을까? 그 손은 누구일까?)",{"thought":True})
+        return ("dad","(초대 편지와 명령서, 'ㄹ' 꼬리가 같은 모양이다. 같은 손이 썼을까? 아내의 글씨와도 같을까?)",{"thought":True})
+
     # ---- 회의 Q6: 수레 앞 (13일 밤, 광장, 맞서는 사람 촌장) ----
     R13_DEBATE_SEATS["ep6"]=["resident_ppul","neoul","resident_badook","resident_bori","mom","resident_seol"]
     R13_DEBATE_STANCE["ep6"]=("보호소라 믿는다","모르겠다","수레를 막는다")
@@ -126,7 +140,7 @@ label r13_cv_morning:
         ([(None,"사자. 말썽.")] if r13_has("teacher_on_cart") else [])+
         [(None,"맨 끝. 엄마의 이름. 말썽.")]+
         ([("daram","엄마 이름이다. 엄마도 가? 엄마 안 아프잖아.")] if r13_cv_daram() else [])+
-        [("dad","(이건 아픈 사람 명단이 아니다. 마을이 치우고 싶은 사람 명단이다.)",{"thought":True}),
+        [("dad","(‘잊음’ 옆에 ‘말썽’이 섞여 있다. 정말 아픈 사람을 모시는 명단일까? 아내 이름은 왜 여기 있을까?)",{"thought":True}),
         (None,"게시판 앞에 판돌 영감이 지팡이를 짚고 서 있었다. 자기 이름을 손가락으로 몇 번이고 짚었다.",{"show":"npc_pandol","pose":"point_name"}),
         ("npc_pandol","이게…… 나요? 판돌. 판돌이 나 맞지요?"),
         ("npc_pandol","보호소엔 불이 잘 든다더구먼. 거기 가면 우리 할멈도 있으려나. ……모과. 작년 겨울에 먼저 갔소.")],"cv:morning")
@@ -138,7 +152,7 @@ label r13_cv_market:
     call r13_scene("r13_market","장터 · 은호","calm")
     call r13_lines([("resident_eunho","수레 말이오? 빌려 줬소. 장사꾼이 빈 수레 놀려서 뭐 합니까."),
         ("resident_eunho","하루, 편도. 값은 이미 받았소. 돌아올 때 실을 짐이 없다더이다."),
-        ("dad","(사람을 모셔다 드리는 길이면 내려올 때 빈 수레다. 그건 맞다. 그런데 모셔다 드린 사람 소식은 한 번도 내려온 적이 없다.)",{"thought":True}),
+        ("dad","(사람을 모셔다 드리는 길이면 내려올 때 빈 수레다. 그건 맞다. 그런데 모셔다 드린 사람 소식이 내려온 적은 있었을까?)",{"thought":True}),
         (None,"은호의 견습 구슬이 저울 옆에서 장부를 넘기고 있었다."),
         ("resident_guseul","사장님 장부요? 그건 손님한테 보여 주는 거고요. ……진짜는 따로 있어요.")],"cv:market")
     $ r13_grant(["V02"],"장터에서 은호가 흔든 빌림 쪽지")
@@ -201,12 +215,13 @@ label r13_cv_hall:
         ("resident_badook","그런데 손님, 이상합니다. 보호소 가는 길에 결박 끈이 왜 필요합니까."),
         (None,"명령서. '보호소 이송을 명함.' 아래에 촌장의 뿔 도장. 'ㄹ'의 꼬리가 둥글게 한 바퀴 말려 있다."),
         (None,"가방에서 이 마을로 우리를 부른 초대 편지를 꺼냈다. 'ㄹ'의 꼬리가 똑같이 말려 있었다."),
-        ("dad","(편지를 쓴 손이 명령서도 썼다. 그 손은 할머니다.)",{"thought":True}),
+        r13_cv_hall_thought(),
         ("resident_badook","저는 오늘 밤 이 명령을 못 따르겠습니다. 수레 앞에 서 있을 겁니다. 혼자라도요.")],"cv:hall")
     $ r13_grant(["V06"],"바둑이가 보여 준 명령서")
     menu:
         "명령서와 초대 편지를 나란히 보여 준다" if r13_has("E01"):
-            call r13_lines([("dad","이 명령서는 촌장이 쓴 게 아닙니다. 도장만 촌장 것이고, 손은 여관 할머니입니다."),
+            call r13_lines([("dad","이 명령서는 촌장이 쓴 게 아닙니다. 도장만 촌장 것이고, 손은 여관 할머니입니다.") if r13_cv_letter_known()=="granny" else
+                ("dad","이 'ㄹ' 꼬리를 보십시오. 도장은 촌장 것인데, 글씨는 우리 가족을 이 마을로 부른 편지와 같은 손입니다."),
                 ("dad","몸으로 막지 마십시오. 오늘 밤 회의에서 '이 명령서는 가짜'라고 말해 주십시오. 순찰대원이 말하면 사람들이 듣습니다."),
                 ("resident_badook","……막는 사람이 아니라, 말하는 사람이 되라는 거군요.")],"cv:hall:witness")
             $ r13_flag("cv_badook_witness")
@@ -223,7 +238,9 @@ label r13_cv_tea:
     call r13_scene("ep_hall_cell" if room13.get("granny_state")=="detained" else "council","13일 저녁 · 회관 아래 방" if room13.get("granny_state")=="detained" else "13일 저녁 · 여관 식당","quiet")
     call r13_lines(([(None,"회관 아래 방. 창살 너머로 할머니가 찻주전자를 들었다.")] if room13.get("granny_state")=="detained" else [(None,"여관 식당. 할머니가 찻잔 둘에 차를 따랐다. 손이 하나도 떨리지 않았다.")])+
         [("granny","앉아요. 식기 전에 마셔요. 오늘 밤은 길 테니까."),
-        ("dad","명령서를 쓰셨죠."),
+        ("dad","명령서를 쓰셨죠.") if r13_has("V06") and r13_cv_letter_known()=="granny" else
+        ("dad","수레 명령서 글씨가 우리를 부른 편지와 같았습니다. 누가 쓴 겁니까?") if r13_has("V06") else
+        ("dad","광장의 수레 명단은 누가 써서 붙인 겁니까?"),
         ("granny","촌장 어른은 글씨가 떨려서요. 내가 대신 써 드린 지 오래예요. 해마다 그날 써요.")]+
         ([("mom","저 명단에 제 이름이 있어요."),("granny","그럼요. 아가가 말썽이니까. 옛 시설 조각을 함부로 꺼내면, 남은 것도 금방 동나요.")] if r13_has("mom_reunited") else [])+
         [(None,"……"),
@@ -313,15 +330,17 @@ label r13_cv_decision:
             call r13_lines([("resident_ppul","……그건 내일, 산에서 하시오. 할멈도 올라갈 거요.")],"cv:decision:granny")
             $ r13_flag("cv_granny_tomorrow")
     elif _cv_pick=="publish":
-        call r13_lines([("mom","……모과. 판돌의 아내. 보낸 사람, 너울."),
-            (None,"엄마는 읽기를 멈추지 않았다. 이름이 하나씩 불릴 때마다 사람들이 한 걸음씩 다가왔다."),
+        call r13_lines(([("mom","……모과. 판돌의 아내. 보낸 사람, 너울."),
+            (None,"엄마는 읽기를 멈추지 않았다. 이름이 하나씩 불릴 때마다 사람들이 한 걸음씩 다가왔다.")] if r13_has("mom_reunited") else
+            [("dad","……모과. 판돌 영감님의 아내. 보낸 사람, 너울."),
+            (None,"나는 읽기를 멈추지 않았다. 이름이 하나씩 불릴 때마다 사람들이 한 걸음씩 다가왔다.")])+[
             ("resident_bori","너울. 네가 실었구나. 다 네가."),
             ("neoul","나는 명령서대로 했소! 명령서대로!"),
             (None,"누가 먼저 손을 뻗었는지는 아무도 몰랐다. 너울이 사람들 사이로 끌려 들어갔다. 횃불이 흔들렸다."),
-            ("mom","그만해요! 그만…….")]+([("daram","아빠, 우리가 이긴 거야?"),("dad","…….")] if r13_cv_daram() else []),"cv:decision:publish")
+            ("mom","그만해요! 그만…….") if r13_has("mom_reunited") else ("dad","그만하십시오! 그만…….")]+([("daram","아빠, 우리가 이긴 거야?"),("dad","…….")] if r13_cv_daram() else []),"cv:decision:publish")
         $ r13_flag("cart_stopped","neoul_gone")
     else:
-        call r13_lines([(None,"빨래 수레 덮개 아래로 엄마가 몸을 숨겼다.")]+
+        call r13_lines([(None,"빨래 수레 덮개 아래로 엄마가 몸을 숨겼다.") if r13_has("mom_reunited") else (None,"수레에 엄마는 없었다. 이름만 명단 끝에 적혀 있었다. 빨래 수레 덮개 아래는 비어 있었다.")]+
             ([(None,"여니가 판돌 영감의 손을 끌었다. \"한 사람 말고, 이분도요. 제 단골이에요.\"")] if r13_has("ws_cart_truth") else [])+
             [(None,"새벽, 수레가 산길로 올라갔다.")]+([("daram","아빠, 할아버지들은?"),("dad","…….")] if r13_cv_daram() else []),"cv:decision:family")
         $ r13_flag("cv_family_only")

@@ -15,7 +15,7 @@ label r13_week2_opening:
     else:
         call r13_lines([("daram","아빠. 저 사람, 어제도 저기서 배관 고쳤잖아."),(None,"배관을 고치던 주민이 자기 이름을 잊었다. 길 건너에서는 빈 식량 자루를 두고 언성이 높아졌다."),("dad","아빠랑 여기서 같이 지켜보자."),("daram","물 가져다줄까? 먼저 물어보고 줄게.")],"week2:family_route")
     # 0.18.90: 초롱이 죽은 판에서는 돌의 바늘을 보는 우박이 말한다.
-    call r13_lines([("resident_ubak" if r13_has("chorong_dead") else "resident_lamplighter","등불이 어두워진 건 나중이에요. 며칠 전부터 힘을 재는 바늘이 먼저 흔들렸어요."),(None,"재판에서 누구 편을 들었든, 눈과 추위는 마을 전체를 덮고 있었다. 학교는 교실을 비웠다. 진료소는 복도까지 자리를 깔았다.")],"week2:crisis")
+    call r13_lines([("resident_ubak" if r13_has("chorong_dead") or (r13_has("nt_chorong_half") and r13_has("nt_night8")) else "resident_lamplighter","등불이 어두워진 건 나중이에요. 며칠 전부터 힘을 재는 바늘이 먼저 흔들렸어요."),(None,"재판에서 누구 편을 들었든, 눈과 추위는 마을 전체를 덮고 있었다. 학교는 교실을 비웠다. 진료소는 복도까지 자리를 깔았다.")],"week2:crisis")
     if r13_has("warning_exposed"):
         $ r13_flag("pursuit_active")
         call r13_lines([(None,"여관에서 편지 이야기가 새어 나갔다. 다음 편지를 누가 가져오는지 묻고 다니는 사람이 있다고 했다.")] if r13_has("chorong_dead") else [("resident_lamplighter","여관에서 편지 이야기가 새어 나갔어요. 다음 편지를 누가 가져오는지 묻고 다니는 사람이 있어요.")],"week2:prior_disclosure")
@@ -36,7 +36,7 @@ label r13_week2_events:
         $ r13_grant(["E19"],"초롱이 직접 가져온 현재 답장")
         $ r13_edit(mom_state="contacted")
     if r13_has("contact_compromised") and "contact_relocated" not in room13["events"]:
-        call r13_lines([(None,"광장 등 밑에 짧은 쪽지가 끼워져 있었다. 「약속 장소에 경비가 먼저 와 있었어. 자리를 바꿨어. 새 표식을 봐 줘.」"),("dad","(아내 글씨다. 살아 있다.)",{"thought":True})] if r13_has("chorong_dead") else [("resident_lamplighter","약속 장소에 경비가 먼저 와 있었어요. 그래서 부인께서 자리를 바꾸셨어요. 새 표식을 확인해야 해요."),("dad","아내가 살아 있다는 거죠?"),("resident_lamplighter","제가 직접 받은 신호로는 그렇습니다. 다음 신호도 같이 확인해 봅시다.")],"week2:relocated")
+        call r13_lines([(None,"광장 등 밑에 짧은 쪽지가 끼워져 있었다. 「약속 장소에 경비가 먼저 와 있었어. 자리를 바꿨어. 새 표식을 봐 줘.」"),("dad","(아내 글씨다. 아직 무사하다.)" if any(r13_has(k) for k in ("N05","N06","E19")) else "(아내 글씨다. 살아 있다.)",{"thought":True})] if r13_has("chorong_dead") else [("resident_lamplighter","약속 장소에 경비가 먼저 와 있었어요. 그래서 부인께서 자리를 바꾸셨어요. 새 표식을 확인해야 해요."),("dad","아내는 아직 무사하다는 거죠?" if any(r13_has(k) for k in ("N05","N06","E19")) else "아내가 살아 있다는 거죠?"),("resident_lamplighter","제가 직접 받은 신호로는 그렇습니다. 다음 신호도 같이 확인해 봅시다.")],"week2:relocated")
         $ r13_event("contact_relocated")
     if r13_has("convoy_changed") and "convoy_changed_notice" not in room13["events"]:
         call r13_lines([("neoul","사람을 끌고 가는 경비 조가 바뀌었습니다. 전에 보신 순번과 다를 겁니다."),(None,"갖고 있던 기록은 그대로 남아 있다. 하지만 지금 내려진 명령은 다시 확인해야 한다.")],"week2:convoy_changed")
@@ -110,7 +110,13 @@ label r13_reunion:
             call r13_lines([("daram","안 다쳤어. 계속 아빠랑 같이 있었어."),("mom","그래. 잘했어.")],"reunion:prevented")
         else:
             call r13_lines([("daram","이제 하나도 안 아파."),("mom","그래도 손 보여 줘.")],"reunion:injured")
-    call r13_lines([("dad","네 편지를 받고 왔어. 13호실에서 기다린다고 했잖아."),(None,"가지고 온 편지를 펼쳤다. 아내는 한 줄을 읽더니 고개를 저었다."),("mom","이건 내가 쓴 게 아니야. 다람이 이름 옆에 도토리도 없잖아."),("mom","나는 할머니에게 다시는 돌아오지 않겠다고 말했어. 너희한테는 오지 말라고 따로 썼고."),("dad","그 편지는 오지 않았어. 이 편지만 왔지."),("mom","내 이름으로 부르면 너희가 올 거고, 그럼 나도 돌아올 수밖에 없으니까. 나한테 직접 오라고 하면 거절할 걸 알았겠지.")],"reunion:lure")
+    if r13_has("E18") or r13_has("N06"):
+        # 0.19.17: 아빠는 이미 엄마 글로 초대 편지가 가짜라는 걸 읽었다. 처음 듣는 것처럼 되묻지 않는다.
+        call r13_lines([("dad","이 편지, 네가 쓴 게 아니라고 했지."),(None,"가지고 온 편지를 펼쳤다. 아내는 한 줄을 읽더니 고개를 끄덕였다."),("mom","응. 다람이 이름 옆에 도토리도 없잖아."),("mom","나는 할머니에게 다시는 돌아오지 않겠다고 말했어. 너희한테는 오지 말라고 따로 썼고.")]+
+            ([("dad","그 글은 여기 와서야 받았어. 이 편지가 먼저 왔지.")] if r13_has("E18") else [("dad","그 글은 오지 않았어. 이 편지만 왔지.")])+
+            [("mom","내 이름으로 부르면 너희가 올 거고, 그럼 나도 돌아올 수밖에 없으니까. 나한테 직접 오라고 하면 거절할 걸 알았겠지.")],"reunion:lure:known")
+    else:
+        call r13_lines([("dad","네 편지를 받고 왔어. 13호실에서 기다린다고 했잖아."),(None,"가지고 온 편지를 펼쳤다. 아내는 한 줄을 읽더니 고개를 저었다."),("mom","이건 내가 쓴 게 아니야. 다람이 이름 옆에 도토리도 없잖아."),("mom","나는 할머니에게 다시는 돌아오지 않겠다고 말했어. 너희한테는 오지 말라고 따로 썼고."),("dad","그 편지는 오지 않았어. 이 편지만 왔지."),("mom","내 이름으로 부르면 너희가 올 거고, 그럼 나도 돌아올 수밖에 없으니까. 나한테 직접 오라고 하면 거절할 걸 알았겠지.")],"reunion:lure")
     if room13.get("life_poc"):
         call r13_lines([("dad","방에 남긴 메모에는 우리가 오면 짐을 놓아두라고 했잖아."),("mom","가족에게 연락하겠다는 말은 들었어. 혹시 네가 다람이와 오면 초롱에게 내 소식을 묻게 하려고 남겼지. 내가 어디로 가는지는 쓰지 않았어.")],"reunion:family_note:learning")
     $ r13_flag("mom_reunited")

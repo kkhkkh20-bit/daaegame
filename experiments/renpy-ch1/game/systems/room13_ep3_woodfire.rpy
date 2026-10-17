@@ -303,7 +303,7 @@ label r13_wf_morning:
     menu:
         "보리의 손을 본다":
             call r13_lines([(None,"천을 걷어 보니 두 손바닥이 벌겋게 데어 있었다. 손등은 멀쩡했다."),
-                ("dad","(불을 붙이는 손은 손끝이나 손등이 덴다. 이건 뜨거운 판자를 꽉 쥐고 뜯어낸 손이다.)",{"thought":True})],"wf:morning:hands")
+                ("dad","(두 손바닥만 데었고 손등은 멀쩡하다. 불씨를 놓다 덴 손일까, 뜨거운 것을 꽉 쥐었던 손일까?)",{"thought":True})],"wf:morning:hands")
             $ r13_grant(["F04"],"광장에서 직접 본 보리의 손")
             $ r13_flag("wf_bori_trusted")
         "“증거도 없이 내보낼 겁니까?”":
@@ -348,18 +348,22 @@ label r13_wf_ruins:
             if _wf_pick=="inside":
                 call r13_lines([(None,"담요 자리보다 더 안쪽, 쓰러진 장작 밑에서 작은 등잔이 나왔다. 그을렸지만 깨지지 않았다."),
                     (None,"뚜껑이 꼭 닫혀 있었다. 흔들어 보니 안에 기름이 그대로 찰랑였다."),
-                    ("dad","(꼬미는 약속대로 뚜껑을 닫았다. 이 등잔은 그 밤 켜져 있지 않았다.)",{"thought":True})],"wf:ruins:inside")
+                    ("dad","(뚜껑은 닫혔고 기름은 그대로다. 그 밤 이 등잔이 켜져 있었을까?)",{"thought":True})],"wf:ruins:inside")
                 $ r13_grant(["F05"],"창고 터 안쪽 구석에서 찾은 등잔")
             elif _wf_pick=="door":
                 call r13_lines([(None,"문틀이 숯처럼 새까맸다. 그런데 안쪽 장작더미는 겉만 그을렸다."),
-                    ("dad","(안에서 불이 났다면 안쪽이 제일 많이 탔겠지. 불은 문에서 시작됐다. 그래서 아이들이 문으로 못 나왔다.)",{"thought":True})],"wf:ruins:door")
+                    ("dad","(안에서 불이 났다면 안쪽이 제일 많이 탔을 텐데, 숯이 된 건 문틀이다. 불은 어디서 시작됐을까?)",{"thought":True})],"wf:ruins:door")
                 $ r13_grant(["F06"],"창고 터 문틀을 직접 봄")
             else:
                 call r13_lines([(None,"문 앞 눈이 녹아 웅덩이가 져 있었다. 물 위에 무지개 같은 기름막. 코를 대자 독한 냄새가 났다."),
-                    ("dad","(등유다. 등잔 기름이 아니라, 솥에 쓰는 독한 기름. 누군가 문 앞에 부었다.)",{"thought":True})],"wf:ruins:snow")
+                    ("dad","(등잔 기름 냄새가 아니다. 솥에 쓰는 독한 등유 냄새다. 왜 창고 문 앞 눈에 등유가 고여 있을까?)",{"thought":True})],"wf:ruins:snow")
                 $ r13_grant(["F07"],"창고 문 앞 눈을 직접 봄")
-    if r13_has("F06") or r13_has("F07"):
-        call r13_lines([("dad","(불은 등잔에서 나지 않았다. 누가 문 앞에 등유를 붓고 불을 붙였다. 마을에서 등유를 통째로 쓰는 곳은…… 빨래터다.)",{"thought":True})],"wf:ruins:sum")
+    if r13_has("F07") and r13_has("F02"):
+        call r13_lines([("dad","(빨래터 솥 옆 기름통도 등유였다. 그 통은 지금도 뚜껑까지 꽉 차 있을까?)",{"thought":True})],"wf:ruins:sum")
+    elif r13_has("F07"):
+        call r13_lines([("dad","(문 앞의 등유는 어디서 왔을까? 이 마을에서 등유를 통째로 쓰는 곳이 있을까?)",{"thought":True})],"wf:ruins:sum")
+    elif r13_has("F06"):
+        call r13_lines([("dad","(불이 문 쪽에서 났다면, 무엇이 문 앞에서 불을 키웠을까? 문 앞 눈도 봐야 할까?)",{"thought":True})],"wf:ruins:sum")
     call r13_scene("r13_school","학교 교실 · 난로 옆","quiet")
     if r13_has("wf_kkomi_alive"):
         call r13_lines([("kid_kkomi","우린 학교 돌창고에 있었어. 선생님이 우리 이름 불렀어. 넷 다."),
@@ -398,7 +402,7 @@ label r13_wf_nubi:
             elif _wf_pick=="hand":
                 call r13_lines([(None,"천 밑으로 손등이 보였다. 새로 덴 자리가 물집이 잡혀 있었다."),
                     ("resident_nubi","솥에 데었어요. 빨래하다 보면 늘 그래요."),
-                    ("dad","(솥에 데면 손바닥이나 팔이다. 손등은, 확 피어오르는 불 앞에 손을 뻗었을 때 덴다.)",{"thought":True})],"wf:nubi:hand")
+                    ("dad","(솥에 데었다면 손바닥이나 팔일 텐데, 물집은 손등에 있다. 무엇 앞에 손을 뻗다 데었을까?)",{"thought":True})],"wf:nubi:hand")
                 $ r13_grant(["F10"],"누비의 손을 직접 봄")
             else:
                 call r13_lines([("kid_nubi1","엄마가 어젯밤에 늦게 왔어. 우리 다 잘 때."),
@@ -431,7 +435,7 @@ label r13_wf_choice:
         "빨래터의 누비에게 간다":
             call r13_scene("ep_laundry","7일 아침 · 여관 뒤 빨래터","quiet")
             if sum(1 for k in ("F09","F10","F11") if r13_has(k))>=2:
-                call r13_lines([("dad","창고 문 앞에 등유가 부어져 있었습니다. 이 통이 반이나 줄었고요."),
+                call r13_lines([("dad"," ".join([t for k,t in (("F07","창고 문 앞 눈에서 등유 냄새가 났습니다."),("F09","이 통은 반이나 줄었고요."),("F10","손등의 물집은 솥에 덴 자리가 아닌 것 같습니다."),("F11","아이가 그 밤 늦게 오셨다고 하더군요.")) if r13_has(k)])),
                     ("resident_nubi","(오래 말이 없다) ……불만 내려고 했어요."),
                     ("resident_nubi","문 앞에 조금만. 애들이 놀라서 나가면, 창고가 비면, 그럼 그 애들이 다른 데로 가면…… 그 몫이 우리 애들한테 온다고 했어요."),
                     ("resident_nubi","너울 님이 그랬어요. 그 애들 몫을 우리 집에 준다고."),
@@ -440,7 +444,7 @@ label r13_wf_choice:
                 $ r13_grant(["F12"],"빨래터에서 누비에게 직접 들은 말")
             else:
                 call r13_lines([("resident_nubi","……무슨 말씀이신지 모르겠어요. 빨래 일이 바빠서요."),
-                    ("dad","(물어볼 근거가 모자랐다. 기름통, 손, 아이의 말 가운데 둘은 있어야 했다.)",{"thought":True})],"wf:choice:nubi:closed")
+                    ("dad","(내가 본 것만으로는 누비 씨에게 아무것도 물을 수 없었다. 이 빨래터에서 무엇을 더 봐야 했을까?)",{"thought":True})],"wf:choice:nubi:closed")
     $ r13_tick()
     return
 

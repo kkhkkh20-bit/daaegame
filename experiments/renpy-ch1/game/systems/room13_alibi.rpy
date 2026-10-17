@@ -150,6 +150,12 @@ init 147 python:
         if truth and r13_has(truth[0]):return truth[1]
         return spec["claim"]
 
+    # 0.19.17: 통로를 이미 직접 열어 본 뒤에는 "벽 안에 길이 있다면"을 가정하지 않는다.
+    def r13_alibi_cross_lines(cross):
+        if cross[2]=="alibi_x_wall" and (r13_has("E05") or r13_has("E37")):
+            return [cross[1][0],("dad","(주방 레버와 13호 책장, 세탁실로 이어지는 통로는 내가 직접 열어 봤다. 토실이 들은 발소리는 그 길이었을까? 그렇다면 누구의 발소리였을까?)",{"thought":True})]
+        return cross[1]
+
     def r13_alibi_new_crosses():
         return [c for c in R13_ALIBI_CROSS if not r13_has(c[2]) and all(r13_alibi_heard(m,p) for m,p in c[0])]
 
@@ -174,6 +180,6 @@ label r13_alibi_topic:
     $ _ab_new=r13_alibi_new_crosses()
     while _ab_new:
         $ _ab_cross=_ab_new.pop(0)
-        call r13_lines(_ab_cross[1],"alibi:cross:"+_ab_cross[2])
+        call r13_lines(r13_alibi_cross_lines(_ab_cross),"alibi:cross:"+_ab_cross[2])
         $ r13_flag(_ab_cross[2])
     return
