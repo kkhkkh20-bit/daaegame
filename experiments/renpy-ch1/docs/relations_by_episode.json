@@ -1199,14 +1199,6 @@
      "truth": true
     },
     {
-     "a": "resident_hyeoni",
-     "b": "granny",
-     "kind": "suspect",
-     "label": "비명 뒤 안 돌아옴",
-     "reveal": "alibi:case:resident_hyeoni / alibi_x_dining",
-     "truth": true
-    },
-    {
      "a": "resident_ttadak",
      "b": "dad",
      "kind": "help",
@@ -1598,6 +1590,11 @@
      "note": "유리관 곁 할아버지 목소리"
     },
     {
+     "id": "resident_musoe",
+     "role": "관련자",
+     "note": "유리관 곁에서 들린 목소리"
+    },
+    {
      "id": "resident_lamplighter",
      "role": "관련자",
      "note": "유품 편지의 뿌리 그림"
@@ -1697,14 +1694,6 @@
      "kind": "help",
      "label": "이름 하나 안 틀리고 부름",
      "reveal": "11일 밤 대피소 / 12일 낮 출석부",
-     "truth": true
-    },
-    {
-     "a": "resident_teacher",
-     "b": "kid_saemi",
-     "kind": "work",
-     "label": "새미도 우리 반",
-     "reveal": "11일 밤 대피소 / Y13",
      "truth": true
     },
     {
