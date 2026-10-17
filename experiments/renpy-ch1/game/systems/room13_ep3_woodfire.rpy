@@ -210,7 +210,7 @@ label r13_wf_laundry:
                 (None,"너울은 말을 돌리고 가 버렸다.")],"wf:laundry:greet")
         "그냥 간다":
             pass
-    $ r13_tick()
+    $ r13_event_tick()
     return
 
 label r13_wf_hideout:
@@ -246,7 +246,7 @@ label r13_wf_hideout:
                 ("dad","(겁만 줬다. 숨을 곳을 보여 줘야 했다.)",{"thought":True})],"wf:hideout:scared")
         "오늘은 돌아간다":
             pass
-    $ r13_tick()
+    $ r13_event_tick()
     return
 
 label r13_wf_fire:
@@ -330,7 +330,7 @@ label r13_wf_nabi_blame:
                 $ r13_grant(["F03"],"나비에게 들은 등잔 이야기")
         "“나비 잘못이 아닐 수도 있습니다.”":
             call r13_lines([("granny","그럼 증거를 가져오세요. 내일 아침까지요.")],"wf:nabi:defend")
-    $ r13_tick()
+    $ r13_event_tick()
     return
 
 label r13_wf_ruins:
@@ -378,7 +378,7 @@ label r13_wf_ruins:
             ("kid_mong","꼬미가 우리 다 깨웠어. 대장은 맨 나중에 나온다고 했어."),
             ("kid_bang","곰 아저씨 손 다 데었어. 아저씨 잡혀갔어?",{"expression":"anxious"})],"wf:school:kids")
         $ r13_grant(["F08"],"학교에서 살아남은 아이들에게 들은 말")
-    $ r13_tick()
+    $ r13_event_tick()
     return
 
 label r13_wf_nubi:
@@ -410,7 +410,7 @@ label r13_wf_nubi:
                     ("kid_nubi2","엄마, 이제 밥 많이 먹을 수 있어? 너울 아저씨가 그랬잖아."),
                     ("resident_nubi","(아이 입을 막는다) ……쉿.")],"wf:nubi:kid")
                 $ r13_grant(["F11"],"빨래터에서 누비의 아이에게 들은 말")
-    $ r13_tick()
+    $ r13_event_tick()
     return
 
 label r13_wf_choice:
@@ -445,7 +445,7 @@ label r13_wf_choice:
             else:
                 call r13_lines([("resident_nubi","……무슨 말씀이신지 모르겠어요. 빨래 일이 바빠서요."),
                     ("dad","(내가 본 것만으로는 누비 씨에게 아무것도 물을 수 없었다. 이 빨래터에서 무엇을 더 봐야 했을까?)",{"thought":True})],"wf:choice:nubi:closed")
-    $ r13_tick()
+    $ r13_event_tick()
     return
 
 label r13_wf_meeting:
@@ -462,7 +462,7 @@ label r13_wf_meeting:
             (None,"보리가 끌려가며 학교 쪽을 돌아보았다. 아이들이 창문에 붙어 있었다.")],"wf:meeting:fail")
         $ r13_flag("bori_taken","wf_done","wf_second_fire")
     call r13_wf_aftermath
-    $ r13_tick()
+    $ r13_event_tick()
     return None
 
 label r13_wf_decision:

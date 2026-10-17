@@ -134,8 +134,16 @@ label r13_take_offer(label):
     $ _o=dict(room13.get("offers",{}))
     $ _o.pop(label,None)
     $ r13_edit(offers=_o)
+    # 포가튼 시티형 시간(systems/room13_time_flow_fc.rpy): 사건이 끝나면 다음 시간대.
+    #   장면이 스스로 시간을 정했으면(r13_event_tick, 하루가 끝남) 여기서 더 넘기지 않는다.
+    $ r13_tf_event_handled=False
+    $ _tf_offer_clock=(room13["day"],room13["period"])
     call expression label
-    return _return
+    $ _tf_offer_return=_return
+    # 이 판 전에 저장된 사건 도중의 저장은 시계 기록이 없다: 그때는 넘기지 않는다.
+    if not r13_tf_event_handled and (room13["day"],room13["period"])==getattr(store,"_tf_offer_clock",None):
+        $ r13_event_tick()
+    return _tf_offer_return
 
 screen r13_event_offers(ready=False):
     # Offers whose person stands here are pressed on that person (see r13_world_contents).

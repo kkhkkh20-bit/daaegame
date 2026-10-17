@@ -165,7 +165,7 @@ label r13_cv_market:
             $ r13_grant(["V03"],"구슬이 꺼내 온 은호의 다른 장부")
         "빌림 쪽지를 보여 준다":
             call r13_lines([("resident_guseul","그건 저도 봤어요. 그게 다예요.")],"cv:guseul:no")
-    $ r13_tick()
+    $ r13_event_tick()
     return
 
 label r13_cv_store:
@@ -181,7 +181,7 @@ label r13_cv_store:
             $ r13_grant(["V04"],"뭉치가 보여 준 창고 쪽문 안쪽")
         "그냥 돌아간다":
             pass
-    $ r13_tick()
+    $ r13_event_tick()
     return
 
 label r13_cv_stable:
@@ -204,8 +204,8 @@ label r13_cv_stable:
                 $ r13_flag("cv_cart_delayed")
             "그냥 돌아간다":
                 pass
-    if not r13_has("cv_cart_delayed"):
-        $ r13_tick()
+    # 수레를 늦춘 대가로 시간을 번다(이 장면만 시간이 흐르지 않는다).
+    $ r13_event_tick(0 if r13_has("cv_cart_delayed") else 1)
     return
 
 label r13_cv_hall:
@@ -230,7 +230,7 @@ label r13_cv_hall:
                 $ r13_flag("cv_badook_safe")
         "수레 명단을 보여 준다":
             call r13_lines([("resident_badook","명단이 이상한 건 저도 압니다. 그래서 막겠다는 겁니다.")],"cv:hall:list")
-    $ r13_tick()
+    $ r13_event_tick()
     return
 
 label r13_cv_tea:

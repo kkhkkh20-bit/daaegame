@@ -384,6 +384,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 61 | `room13_interaction.rpy:84` | _r13_before_inspection_name |
 | 2 | 66 | `room13_inspection.rpy:294` |  |
 
+## `r13_person_action` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 124 | `systems/room13_event_offers.rpy:50` | _r13_tf_person_action |
+| 2 | 191 | `systems/room13_time_flow_fc.rpy:145` |  |
+
 ## `r13_prove` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |

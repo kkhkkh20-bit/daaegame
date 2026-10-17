@@ -1304,7 +1304,8 @@ testcase w2e_bell:
     click "설이에게 종을 치라고 한다"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 60
-    assert eval (r13_has("w2_bell_rung") and r13_has("operators_terms") and r13_has("transport_terms") and room13["period"]==0)
+    # 포가튼 시티형 시간(systems/room13_time_flow_fc.rpy): 사건 제안이 끝나면 다음 시간대.
+    assert eval (r13_has("w2_bell_rung") and r13_has("operators_terms") and r13_has("transport_terms") and room13["period"]==1)
 
 testcase w2e_numbers:
     pause 2.0
@@ -1814,11 +1815,16 @@ testcase event_offer:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("+w1c","+ep","+offers","ev_l_done","ev_i_done","ep1_patrol_seen","ev_a_done"),(),12)
+    # ev_q_done: 사건이 끝나면 오후가 되어 광장의 누비 장면(2일 오후)이 열린다. 여기서는 건너뛴다.
+    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("+w1c","+ep","+offers","ev_l_done","ev_i_done","ep1_patrol_seen","ev_a_done","ev_q_done"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     assert eval ("r13_w1c_portrait" in room13["offers"] and not r13_has("ev_g_done"))
     # 0.18.53: the event is pressed on the person when they stand here.
-    click "피코"
+    # 포가튼 시티형 시간: 그 사람의 대화 선택지 끝 ! 줄로 들어간다.
+    assert eval (r13_offer_for_person("resident_piko")=="r13_w1c_portrait")
+    run Call("r13_qa_talk","resident_piko")
+    click pos (1150,90) until screen "r13_topics" timeout 40
+    click "피코의 그림판을 들여다본다"
     click pos (1150,90) until screen "choice" timeout 40
     click "모른 척한다"
     click pos (1150,90) until screen "r13_hub" timeout 40
@@ -9328,7 +9334,9 @@ testcase offer_on_person:
         r13_qa_note("post people: %r"%([(a["person"],a["pose"],a["x"],a["y"]) for a in r13_stage_people()],))
     # 0.18.63: the offer pose is the drawn steaming action (map action), "thinking" only as fallback.
     assert eval (any(a["person"]=="resident_sling" and a["pose"]=="event_steam" for a in r13_stage_people()))
-    click "슬링"
+    run Call("r13_qa_talk","resident_sling")
+    click pos (1150,90) until screen "r13_topics" timeout 40
+    click "김에 쐬는 봉투를 묻는다"
     click pos (1150,90) until screen "choice" timeout 40
     assert eval (r13_has("ev_l_done"))
     $ r13_qa_crowd_dump()
@@ -11673,6 +11681,66 @@ testcase time_flow:
     pause 1.0
     assert eval (r13_debate_arguable("Q3") and "r13_wf_meeting" in room13.get("offers",{}))
     $ r13_qa_note("time flow ok")
+
+testcase time_flow_fc:
+    # 포가튼 시티형 시간(소유자 승인 2026-10-17, 시안 v4, systems/room13_time_flow_fc.rpy).
+    # 조사·대화는 시간을 쓰지 않고, 사건(! 줄)을 끝내면 +1, "저녁까지 기다린다"로 저녁, 잠으로 다음 날.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="inn",life_poc=True),("entry_corrected","lodging","+offers","ev_q_done"))
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 0.6
+    # 1) 조사 활동과 대화는 시간을 쓰지 않는다.
+    assert eval (all(a.get("cost",1)==0 for a in ROOM13["activities"].values()))
+    python:
+        for _k in [k for k in ROOM13["activities"] if k not in room13["done"]][:2]:
+            r13_finish_action(_k)
+        for _k in [k for k,t in ROOM13["topics"].items() if t["npc"]=="nabi" and k not in room13["read_topics"]][:1]:
+            r13_finish_topic(_k)
+    assert eval (room13["day"]==2 and room13["period"]==0)
+    assert eval (r13_tf_wait_text()=="오후까지 기다린다")
+    screenshot "tf_hub_morning.png"
+    # 2) 사건이 든 사람: 대화 선택지 끝의 ! 줄, 꼬리표 "끝나면 오후가 됩니다". 끝나면 오후.
+    python:
+        R13_EVENT_OFFERS["r13_qa_tf_event"]=("나비가 부엌 쪽에서 손짓한다",[],"")
+        R13_OFFER_ACTORS["r13_qa_tf_event"]=("nabi",None)
+        R13_OFFER_CHOICES["r13_qa_tf_event"]="부엌 일을 따라가 본다"
+        r13_offer("r13_qa_tf_event")
+    assert eval (r13_offer_for_person("nabi")=="r13_qa_tf_event")
+    assert eval (getattr(r13_tf_topic_questions("nabi")[-1][0],"r13_tag",None)=="끝나면 오후가 됩니다")
+    run Call("r13_qa_talk","nabi")
+    click pos (1150,90) until screen "r13_topics" timeout 40
+    pause 0.6
+    screenshot "tf_topics_event_row.png"
+    click "부엌 일을 따라가 본다"
+    click pos (1150,90) until eval (r13_has("qa_tf_event_done") and renpy.get_screen("r13_hub")) timeout 40
+    pause 0.5
+    screenshot "tf_time_card.png"
+    assert eval (room13["period"]==1 and "r13_qa_tf_event" not in room13.get("offers",{}))
+    # 3) "저녁까지 기다린다": 오후에는 저녁으로. 저녁 이후에는 단추가 없다.
+    assert eval (r13_tf_wait_text()=="저녁까지 기다린다")
+    click "저녁까지 기다린다"
+    pause 0.6
+    assert screen "r13_confirm"
+    keysym "K_RETURN"
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval (room13["day"]==2 and room13["period"]==2 and r13_tf_wait_text() is None)
+    # 4) 잠: 13호에서 자면 다음 날 오전.
+    run Call("r13_qa_goto",2,2,"room13")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 0.6
+    click "자기"
+    pause 0.6
+    keysym "K_RETURN"
+    click pos (1150,90) until eval (room13["day"]==3 and renpy.get_screen("r13_hub")) timeout 60
+    assert eval (room13["period"]==0)
+    $ r13_qa_note("time flow fc ok")
+
+label r13_qa_tf_event:
+    call r13_lines([(None,"나비를 따라 부엌에 들어갔다. 그릇을 나르고 나니 한나절이 갔다.")],"qa:tf:event")
+    $ r13_flag("qa_tf_event_done")
+    return
 
 testcase expression_acting:
     # 0.18.92 (owner 17:05): the expression package in the real dialogue layout, normal and large

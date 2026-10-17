@@ -267,7 +267,7 @@ label r13_ep1_nabi_shelter:
                 ("dad","그 사람이 내 아내를 그려 주고 있어. 아내를 찾는 데 꼭 필요한 그림이야."),
                 ("nabi","……손님 부인을요? 오늘 하루만이에요.")],"ep1:shelter:portrait")
         $ r13_flag("piko_sheltered")
-        $ r13_tick()
+        $ r13_event_tick()
     else:
         call r13_lines([("nabi","그림쟁이 아저씨를 여기서요? 할머니가 아시면 큰일 나요."),
             ("nabi","죄송해요. 저도 여기서 쫓겨나면 갈 데가 없어요.")],"ep1:shelter:no")
@@ -412,7 +412,7 @@ label r13_ep1_funeral:
     else:
         call r13_lines([(None,"다람이 피코의 판자 하나에 꽃을 올렸다."),("daram","아저씨 그림 예뻤어요.")],"ep1:funeral:flower")
     $ r13_flag("piko_mourned")
-    $ r13_tick()
+    $ r13_event_tick()
     return
 
 label r13_ep1_library_dawn:

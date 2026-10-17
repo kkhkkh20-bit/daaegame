@@ -54,6 +54,14 @@ screen r13_goal_fold(goal,ready=False):
                         vbox:
                             spacing 16
                             text thought size r13_read_size(22,24) color "#496579" xsize 542
+                            # 열린 일(시안 v4 A, systems/room13_time_flow_fc.rpy): 회의 마감과 오늘 저녁 일.
+                            $ open_rows=r13_tf_open_items()
+                            if open_rows:
+                                vbox:
+                                    spacing 4
+                                    text "열린 일" size r13_read_size(20,23) color "#765426"
+                                    for row in open_rows:
+                                        text ("· "+row) size r13_read_size(19,22) color "#493b30" xsize 542
                     textbutton ("조사 메모 열기 · 의문 %d개"%len(notes)):
                         ypos (panel_height-86) xsize 390 ysize 56
                         text_size 20 text_color "#765426" background None hover_background Solid("#b28d4925")

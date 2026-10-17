@@ -217,7 +217,7 @@ label r13_ws_greenhouse:
     $ r13_flag("mom_reunited","ws_reunited")
     $ r13_edit(mom_state="reunited",reply_due=None)
     $ r13_grant(["E30"],"엄마가 보관한 연구 원본 직접 확인")
-    $ r13_tick()
+    $ r13_event_tick()
     return
 
 label r13_ws_lowroad:
@@ -246,7 +246,7 @@ label r13_ws_lowroad:
                 $ r13_flag("ws_tents_school")
             "부탁만 한다":
                 call r13_lines([("resident_teacher","죄송합니다. 오늘 밤은 아이들 자리도 모자라요.")],"ws:teacher:closed")
-    $ r13_tick()
+    $ r13_event_tick()
     return
 
 label r13_ws_long_night:
@@ -322,7 +322,7 @@ label r13_ws_lab:
         call r13_lines([(None,"솜이가 유리관 앞에 쪼그려 앉아 있었다."),
             ("resident_somi","……다람아. 방금 누가 내 이름 불렀어. 할아버지 목소리였어. \"솜이야.\" 그렇게."),
             (None,"관 속 조각 하나가 한 번, 크게 깜빡였다. 아무도 그 이유를 말하지 않았다.")],"ws:lab:somi")
-    $ r13_tick()
+    $ r13_event_tick()
     return
 
 label r13_ws_teacher_talk:
@@ -339,7 +339,7 @@ label r13_ws_teacher_talk:
     else:
         call r13_lines([("resident_teacher","고맙습니다. 걱정 마세요."),
             ("dad","(다정한 말인데, 등이 서늘하다.)",{"thought":True})],"ws:teacher:alone")
-    $ r13_tick()
+    $ r13_event_tick()
     return
 
 label r13_ws_soup:

@@ -324,6 +324,8 @@ label r13_field:
     if r13_choice[0]=="person":
         $ r13_target=r13_choice[1]
         call r13_talk
+        if _return=="day":
+            jump r13_day
         jump r13_roam
     if r13_choice[0]=="travel":
         $ r13_destination=r13_local_destination(r13_choice[1])
@@ -347,6 +349,11 @@ label r13_field:
         if _return:
             $ r13_target=_return
             call r13_talk
+            if _return=="day":
+                jump r13_day
+        jump r13_roam
+    if r13_choice[1]=="tf_wait":
+        call r13_tf_wait
         jump r13_roam
     if r13_choice[1]=="evening":
         call r13_evening_board
@@ -440,6 +447,10 @@ label r13_talk_menu:
 label r13_talk_dispatch:
     if r13_topic=="back":
         return
+    if str(r13_topic).startswith("offer:"):
+        # 그 사람의 ! 사건 줄(systems/room13_time_flow_fc.rpy). 끝나면 장소로 돌아간다.
+        call r13_tf_offer_from_talk(str(r13_topic)[6:])
+        return _return
     $ r13_speaker(r13_target,"neutral")
     if r13_topic in R13_TOPIC_LABELS:
         call expression R13_TOPIC_LABELS[r13_topic]

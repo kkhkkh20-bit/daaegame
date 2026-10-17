@@ -248,7 +248,7 @@ label r13_nt_overhear:
                 $ r13_flag("fair_hearing","nt_ppul_promise")
             "오늘은 물러선다":
                 call r13_lines([("resident_ppul","회의는 회의대로 하오. 집행은 마을이 정하오.")],"nt:ppul:no")
-    $ r13_tick()
+    $ r13_event_tick()
     return
 
 label r13_nt_ttadak_signal:

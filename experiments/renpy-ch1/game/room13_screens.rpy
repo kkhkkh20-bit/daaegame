@@ -137,6 +137,7 @@ screen r13_hub(entry=False):
             text ("가진 돈 %d냥"%r13_wallet(room13)["cash"]) size r13_read_size(18,21) color "#fff2cf"
     if not entry:
         use r13_event_offers(ready)
+        use r13_tf_wait_button(ready)
     use r13_admin_key()
     if not entry and room13.get("life_poc") and room13["day"]<=2:
         use r13_goal_fold(r13_intro_goal(),ready)
@@ -254,15 +255,39 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
             vbox:
                 spacing 12
                 for index,(title,action,was_read) in enumerate(entries):
+                    $ row_tag=getattr(title,"r13_tag",None)
+                    $ tag_w=(len(row_tag)*r13_read_size(17,20)+20 if row_tag else 0)
                     button:
                         xsize list_width-23 yminimum row_h padding (18,9)
                         background R13InkPanel() hover_background R13InkPanel(focused=True)
                         action r13_safe_question_action(action) sensitive ready
-                        text (("%d  "%(index+1) if index<9 else "")+r13_question_caption(title,was_read,mark_unread=True)):
-                            xsize list_width-59 text_align .5 xalign .5
-                            size r13_read_size(24,30) font r13_ui_font()
-                            color (r13_role_color("subdued") if was_read else r13_role_color("speech"))
-                            outlines [(1,"#101515",0,0)]
+                        if getattr(title,"r13_event",False):
+                            # 사건 줄(시안 v4): 번호 · ! · 할 일 · 오른쪽에 결과 꼬리표.
+                            $ ev_size=r13_read_size(24,30)
+                            $ ev_text_w=list_width-59-80-tag_w
+                            $ ev_lines=(1 if len(title)*ev_size<=ev_text_w else 2)
+                            fixed:
+                                xsize list_width-59 ysize max(row_h-18,ev_lines*(ev_size+8))
+                                if index<9:
+                                    text ("%d"%(index+1)):
+                                        xpos 0 yalign .5 size ev_size font r13_ui_font()
+                                        color r13_role_color("speech") outlines [(1,"#101515",0,0)]
+                                frame:
+                                    xpos 30 yalign .5 xysize (32,32) padding (0,0) background Solid("#c8553d")
+                                    text "!" size 24 color "#fff4df" xalign .5 yalign .5 font r13_ui_font()
+                                text str(title):
+                                    xpos 74 yalign .5 xsize ev_text_w size ev_size font r13_ui_font()
+                                    color r13_role_color("speech") outlines [(1,"#101515",0,0)]
+                                if row_tag:
+                                    frame:
+                                        xalign 1.0 yalign .5 xsize tag_w padding (8,4) background Solid("#efe3c8")
+                                        text row_tag size r13_read_size(17,20) color "#3c2f22" font r13_ui_font() xalign .5
+                        else:
+                            text (("%d  "%(index+1) if index<9 else "")+r13_question_caption(title,was_read,mark_unread=True)):
+                                xsize list_width-59 text_align .5 xalign .5
+                                size r13_read_size(24,30) font r13_ui_font()
+                                color (r13_role_color("subdued") if was_read else r13_role_color("speech"))
+                                outlines [(1,"#101515",0,0)]
                 if not entries:
                     # 0.18.93: on a panel like the question rows (bare text sat on the person's face).
                     frame:
@@ -386,7 +411,8 @@ screen r13_topics(person):
     default ready=False
     timer .15 action SetScreenVariable("ready",True)
     $ actor_pose=r13_conversation_pose(person)
-    $ questions=[(r13_calendar_topic_title(key,spec),Return(key),r13_calendar_topic_seen(key,spec)) for key,spec in r13_topics_in_order(person)]
+    # 포가튼 시티형 시간(systems/room13_time_flow_fc.rpy): 사건 줄은 ! 와 결과 꼬리표를 달고 맨 끝에 온다.
+    $ questions=r13_tf_topic_questions(person)
     use r13_question_list(person,actor_pose,R13_NAMES[person]+"에게 묻기",questions,ready,return_action=Return("back"))
     use r13_toolbar(investigate_action=Return("back"),present_action=Return("present"),person=person,mode="talk",ready=ready)
 
