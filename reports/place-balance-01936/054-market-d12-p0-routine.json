@@ -1,0 +1,210 @@
+{
+  "file": "054-market-d12-p0-routine.png",
+  "day": 12,
+  "period": 0,
+  "scenario": "routine",
+  "location": "market",
+  "location_name": "여관 앞 · 장터",
+  "camera": 880,
+  "actors": [
+    {
+      "person": "resident_yeoni",
+      "pose": "map27_mk_5",
+      "x": 1857,
+      "y": 340,
+      "width": 107,
+      "height": 160,
+      "rect": [
+        1857,
+        340,
+        107,
+        160
+      ],
+      "depth": 500,
+      "occlusion": [],
+      "contact": "behind_counter",
+      "slot": null,
+      "activity": "장갑의 구멍을 꿰맨다.",
+      "map27_occlusion": [
+        [
+          [
+            1715,
+            455
+          ],
+          [
+            1735,
+            425
+          ],
+          [
+            1830,
+            418
+          ],
+          [
+            1890,
+            425
+          ],
+          [
+            1940,
+            420
+          ],
+          [
+            1960,
+            440
+          ],
+          [
+            1958,
+            480
+          ],
+          [
+            2012,
+            485
+          ],
+          [
+            2015,
+            560
+          ],
+          [
+            1715,
+            560
+          ]
+        ]
+      ],
+      "map27_keepouts": [
+        [
+          [
+            1925.75,
+            384.7916666666667
+          ],
+          [
+            1951.2708333333333,
+            384.7916666666667
+          ],
+          [
+            1951.2708333333333,
+            413.95833333333337
+          ],
+          [
+            1925.75,
+            413.95833333333337
+          ]
+        ]
+      ]
+    },
+    {
+      "person": "resident_dalgeurak",
+      "pose": "map27_mk_6",
+      "x": 1991,
+      "y": 345,
+      "width": 107,
+      "height": 160,
+      "rect": [
+        1991,
+        345,
+        107,
+        160
+      ],
+      "depth": 505,
+      "occlusion": [],
+      "contact": "behind_counter",
+      "slot": null,
+      "activity": "항아리를 들어 보인다.",
+      "map27_occlusion": [
+        [
+          [
+            2010,
+            505
+          ],
+          [
+            2035,
+            452
+          ],
+          [
+            2075,
+            432
+          ],
+          [
+            2120,
+            440
+          ],
+          [
+            2160,
+            440
+          ],
+          [
+            2160,
+            600
+          ],
+          [
+            2010,
+            600
+          ]
+        ]
+      ],
+      "map27_keepouts": []
+    },
+    {
+      "person": "resident_madam",
+      "pose": "neutral",
+      "x": 1363,
+      "y": 426,
+      "width": 113,
+      "height": 230,
+      "rect": [
+        1363,
+        426,
+        113,
+        230
+      ],
+      "depth": 656,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        1420,
+        655,
+        230,
+        "floor"
+      ],
+      "activity": "백 부인은 남은 목록을 가리고 사람들을 봤다."
+    },
+    {
+      "person": "resident_mungchi",
+      "pose": "map27_mk_7",
+      "x": 1376,
+      "y": 454,
+      "width": 145,
+      "height": 218,
+      "rect": [
+        1376,
+        454,
+        145,
+        218
+      ],
+      "depth": 672,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "바구니를 들고 장을 본다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    }
+  ],
+  "names": {
+    "resident_yeoni": "여니",
+    "resident_dalgeurak": "달그락",
+    "resident_madam": "백 부인",
+    "resident_mungchi": "뭉치"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 12,
+    "period": 0,
+    "location": "market"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "검수 완료 (해당 캡처 범위)",
+  "review_note": "주변 가구/소품과 손·발·좌석 접점 육안 확인. 다른 날짜·이벤트 상태로 일반화하지 않음."
+}

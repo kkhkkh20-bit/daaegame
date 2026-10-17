@@ -1,0 +1,170 @@
+{
+  "file": "021-square-d2-p1-routine.png",
+  "day": 2,
+  "period": 1,
+  "scenario": "routine",
+  "location": "square",
+  "location_name": "돌이 있는 광장",
+  "camera": 640,
+  "actors": [
+    {
+      "person": "resident_sling",
+      "pose": "activity",
+      "x": 1281,
+      "y": 294,
+      "width": 178,
+      "height": 142,
+      "rect": [
+        1281,
+        294,
+        178,
+        142
+      ],
+      "depth": 520,
+      "occlusion": [],
+      "contact": "crouching",
+      "slot": null,
+      "activity": "슬링은 배달할 봉투와 돌아온 봉투를 나눴다.",
+      "ground_depth": 520,
+      "elevation": 86
+    },
+    {
+      "person": "resident_guldol",
+      "pose": "neutral",
+      "x": 644,
+      "y": 362,
+      "width": 123,
+      "height": 219,
+      "rect": [
+        644,
+        362,
+        123,
+        219
+      ],
+      "depth": 581,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        710,
+        580,
+        220,
+        "floor"
+      ],
+      "activity": "광장의 돌 앞에 서서 오래 귀를 댄다."
+    },
+    {
+      "person": "resident_piko",
+      "pose": "map27_sq_2",
+      "x": 947,
+      "y": 369,
+      "width": 147,
+      "height": 220,
+      "rect": [
+        947,
+        369,
+        147,
+        220
+      ],
+      "depth": 589,
+      "occlusion": [],
+      "contact": "behind_counter",
+      "slot": null,
+      "activity": "액자 그림을 들어 보인다.",
+      "map27_occlusion": [
+        [
+          [
+            870,
+            545
+          ],
+          [
+            900,
+            520
+          ],
+          [
+            1000,
+            515
+          ],
+          [
+            1060,
+            540
+          ],
+          [
+            1065,
+            605
+          ],
+          [
+            870,
+            605
+          ]
+        ]
+      ],
+      "map27_keepouts": []
+    },
+    {
+      "person": "doto",
+      "pose": "action_1",
+      "x": 851,
+      "y": 375,
+      "width": 106,
+      "height": 245,
+      "rect": [
+        851,
+        375,
+        106,
+        245
+      ],
+      "depth": 620,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "도토는 어제 옮긴 줄과 오늘 옮길 줄 사이에 종이를 끼웠다."
+    },
+    {
+      "person": "resident_somi",
+      "pose": "living_bootice",
+      "x": 1569,
+      "y": 478,
+      "width": 260,
+      "height": 229,
+      "rect": [
+        1569,
+        478,
+        260,
+        229
+      ],
+      "depth": 707,
+      "occlusion": [],
+      "contact": "self-contained",
+      "slot": [
+        1700,
+        707,
+        269,
+        "floor"
+      ],
+      "activity": "솜이는 구두 밑창을 문지르고 반대쪽 발을 들었다."
+    }
+  ],
+  "names": {
+    "resident_seol": "설이",
+    "resident_sling": "슬링",
+    "resident_dalgeurak": "달그락",
+    "resident_guldol": "굴돌 할아버지",
+    "resident_piko": "피코",
+    "doto": "도토",
+    "resident_lamplighter": "초롱",
+    "resident_somi": "솜이"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 1,
+    "location": "square"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "수정 후 검수 완료 (해당 캡처 범위)",
+  "review_note": "주변 가구/소품과 손·발·좌석 접점 육안 확인. 다른 날짜·이벤트 상태로 일반화하지 않음."
+}

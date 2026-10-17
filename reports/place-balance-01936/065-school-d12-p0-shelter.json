@@ -1,0 +1,174 @@
+{
+  "file": "065-school-d12-p0-shelter.png",
+  "day": 12,
+  "period": 0,
+  "scenario": "shelter",
+  "location": "school",
+  "location_name": "마을 학교",
+  "camera": 520,
+  "actors": [
+    {
+      "person": "resident_tori",
+      "pose": "neutral",
+      "x": 1309,
+      "y": 282,
+      "width": 110,
+      "height": 228,
+      "rect": [
+        1309,
+        282,
+        110,
+        228
+      ],
+      "depth": 510,
+      "occlusion": [
+        [
+          1212,
+          436
+        ],
+        [
+          1327,
+          436
+        ],
+        [
+          1327,
+          542
+        ],
+        [
+          1212,
+          542
+        ]
+      ],
+      "contact": "standing",
+      "slot": [
+        1365,
+        510,
+        205,
+        "cloak_back"
+      ],
+      "activity": "토리는 자리를 비운 쪽에서 천을 다시 접었다."
+    },
+    {
+      "person": "resident_yeoni",
+      "pose": "neutral",
+      "x": 1652,
+      "y": 341,
+      "width": 145,
+      "height": 244,
+      "rect": [
+        1652,
+        341,
+        145,
+        244
+      ],
+      "depth": 585,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        1740,
+        585,
+        233,
+        "waiting"
+      ],
+      "activity": "여니는 접어 둔 천의 안쪽을 만졌다."
+    },
+    {
+      "person": "resident_badook",
+      "pose": "neutral",
+      "x": 1551,
+      "y": 413,
+      "width": 216,
+      "height": 277,
+      "rect": [
+        1551,
+        413,
+        216,
+        277
+      ],
+      "depth": 690,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        1660,
+        688,
+        277,
+        "waiting"
+      ],
+      "activity": "바둑이는 옮길 사람과 도착할 쪽을 번갈아 확인했다."
+    },
+    {
+      "person": "resident_kongi",
+      "pose": "neutral",
+      "x": 1277,
+      "y": 423,
+      "width": 185,
+      "height": 269,
+      "rect": [
+        1277,
+        423,
+        185,
+        269
+      ],
+      "depth": 692,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        1370,
+        690,
+        269,
+        "waiting"
+      ],
+      "activity": "콩이는 빵 꾸러미를 작은 것부터 모았다."
+    },
+    {
+      "person": "resident_musoe",
+      "pose": "neutral",
+      "x": 1019,
+      "y": 435,
+      "width": 181,
+      "height": 258,
+      "rect": [
+        1019,
+        435,
+        181,
+        258
+      ],
+      "depth": 693,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        1110,
+        691,
+        258,
+        "waiting"
+      ],
+      "activity": "무쇠 할아버지는 지도보다 사람들 발을 먼저 봤다."
+    }
+  ],
+  "names": {
+    "resident_teacher": "사자 선생님",
+    "resident_tori": "토리",
+    "nabi": "나비",
+    "resident_owlgp": "부엉이 할아버지",
+    "resident_bori": "보리",
+    "resident_yeoni": "여니",
+    "resident_badook": "바둑이",
+    "resident_kongi": "콩이",
+    "resident_musoe": "무쇠 할아버지",
+    "resident_nubi": "누비 아주머니",
+    "resident_somi": "솜이"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 12,
+    "period": 0,
+    "location": "school"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "추가 배치·원화 검토 필요",
+  "review_note": "대피 인원 밀집, 토리/콩이 이름 위치 추가 검토"
+}

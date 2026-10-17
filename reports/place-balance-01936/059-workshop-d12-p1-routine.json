@@ -1,0 +1,225 @@
+{
+  "file": "059-workshop-d12-p1-routine.png",
+  "day": 12,
+  "period": 1,
+  "scenario": "routine",
+  "location": "workshop",
+  "location_name": "수리점",
+  "camera": 520,
+  "actors": [
+    {
+      "person": "resident_tok",
+      "pose": "map27_ws_1",
+      "x": 1529,
+      "y": 271,
+      "width": 131,
+      "height": 196,
+      "rect": [
+        1529,
+        271,
+        131,
+        196
+      ],
+      "depth": 467,
+      "occlusion": [],
+      "contact": "behind_counter",
+      "slot": null,
+      "activity": "랜턴의 나사를 조인다.",
+      "map27_occlusion": [
+        [
+          [
+            1405,
+            374
+          ],
+          [
+            1460,
+            374
+          ],
+          [
+            1460,
+            354
+          ],
+          [
+            1480,
+            353
+          ],
+          [
+            1480,
+            330
+          ],
+          [
+            1560,
+            330
+          ],
+          [
+            1560,
+            370
+          ],
+          [
+            1600,
+            350
+          ],
+          [
+            1710,
+            351
+          ],
+          [
+            1730,
+            380
+          ],
+          [
+            1730,
+            512
+          ],
+          [
+            1405,
+            512
+          ]
+        ]
+      ],
+      "map27_keepouts": [
+        [
+          [
+            1548.140625,
+            333.5260416666667
+          ],
+          [
+            1611.9427083333333,
+            333.5260416666667
+          ],
+          [
+            1611.9427083333333,
+            387.7578125
+          ],
+          [
+            1573.6614583333333,
+            387.7578125
+          ],
+          [
+            1573.6614583333333,
+            357.7708333333333
+          ],
+          [
+            1548.140625,
+            357.7708333333333
+          ]
+        ]
+      ]
+    },
+    {
+      "person": "buri",
+      "pose": "action_1",
+      "x": 570,
+      "y": 303,
+      "width": 98,
+      "height": 208,
+      "rect": [
+        570,
+        303,
+        98,
+        208
+      ],
+      "depth": 511,
+      "occlusion": [
+        [
+          331,
+          460
+        ],
+        [
+          470,
+          439
+        ],
+        [
+          683,
+          441
+        ],
+        [
+          1060,
+          483
+        ],
+        [
+          1060,
+          624
+        ],
+        [
+          890,
+          678
+        ],
+        [
+          350,
+          604
+        ]
+      ],
+      "contact": "tool",
+      "slot": null,
+      "activity": "부리는 손에 묻은 기름을 닦고 공구를 다시 쥐었다."
+    },
+    {
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp",
+      "x": 1128,
+      "y": 351,
+      "width": 144,
+      "height": 220,
+      "rect": [
+        1128,
+        351,
+        144,
+        220
+      ],
+      "depth": 571,
+      "occlusion": [],
+      "contact": "self-contained",
+      "slot": [
+        1200,
+        570,
+        220,
+        "floor"
+      ],
+      "activity": "초롱은 흔들리는 빛을 한참 보고 있었다."
+    },
+    {
+      "person": "resident_yeoni",
+      "pose": "neutral",
+      "x": 1346,
+      "y": 351,
+      "width": 136,
+      "height": 230,
+      "rect": [
+        1346,
+        351,
+        136,
+        230
+      ],
+      "depth": 581,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        1425,
+        580,
+        230,
+        "floor"
+      ],
+      "activity": "여니는 작은 천 조각까지 모아 접었다."
+    }
+  ],
+  "names": {
+    "resident_tok": "톡",
+    "buri": "부리",
+    "resident_lamplighter": "초롱",
+    "resident_yeoni": "여니"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 12,
+    "period": 1,
+    "location": "workshop"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "검수 완료 (해당 캡처 범위)",
+  "review_note": "주변 가구/소품과 손·발·좌석 접점 육안 확인. 다른 날짜·이벤트 상태로 일반화하지 않음."
+}

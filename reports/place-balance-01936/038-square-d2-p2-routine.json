@@ -1,0 +1,71 @@
+{
+  "file": "038-square-d2-p2-routine.png",
+  "day": 2,
+  "period": 2,
+  "scenario": "routine",
+  "location": "square",
+  "location_name": "돌이 있는 광장",
+  "camera": 0,
+  "actors": [
+    {
+      "person": "doto",
+      "pose": "action_1",
+      "x": 851,
+      "y": 375,
+      "width": 106,
+      "height": 245,
+      "rect": [
+        851,
+        375,
+        106,
+        245
+      ],
+      "depth": 620,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "도토는 어제 옮긴 줄과 오늘 옮길 줄 사이에 종이를 끼웠다. 찬 바람에 손을 비비며 하던 일을 천천히 정리했다."
+    },
+    {
+      "person": "resident_badook",
+      "pose": "living_bootlace",
+      "x": 110,
+      "y": 462,
+      "width": 268,
+      "height": 215,
+      "rect": [
+        110,
+        462,
+        268,
+        215
+      ],
+      "depth": 677,
+      "occlusion": [],
+      "contact": "self-contained",
+      "slot": [
+        245,
+        676,
+        255,
+        "floor"
+      ],
+      "activity": "바둑이는 순찰화 끈을 조이고 길을 봤다. 등불 아래로 자리를 옮겨 남은 일을 매만졌다."
+    }
+  ],
+  "names": {
+    "doto": "도토",
+    "resident_badook": "바둑이"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 2,
+    "location": "square"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "수정 후 검수 완료 (해당 캡처 범위)",
+  "review_note": "주변 가구/소품과 손·발·좌석 접점 육안 확인. 다른 날짜·이벤트 상태로 일반화하지 않음."
+}

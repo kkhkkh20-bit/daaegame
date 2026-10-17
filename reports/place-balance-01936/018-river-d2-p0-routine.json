@@ -1,0 +1,73 @@
+{
+  "file": "018-river-d2-p0-routine.png",
+  "day": 2,
+  "period": 0,
+  "scenario": "routine",
+  "location": "river",
+  "location_name": "마을 아래 · 큰 강가",
+  "camera": 0,
+  "actors": [
+    {
+      "person": "resident_nero",
+      "pose": "activity",
+      "x": 169,
+      "y": 518,
+      "width": 181,
+      "height": 186,
+      "rect": [
+        169,
+        518,
+        181,
+        186
+      ],
+      "depth": 704,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        260,
+        705,
+        250,
+        "floor"
+      ],
+      "activity": "네로는 이름표의 젖은 쪽을 안으로 접었다."
+    },
+    {
+      "person": "resident_mulgyeol",
+      "pose": "map27_ri_2",
+      "x": 429,
+      "y": 443,
+      "width": 183,
+      "height": 274,
+      "rect": [
+        429,
+        443,
+        183,
+        274
+      ],
+      "depth": 717,
+      "occlusion": [],
+      "contact": "pole_ground",
+      "slot": null,
+      "activity": "긴 장대를 땅에 짚는다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    }
+  ],
+  "names": {
+    "resident_nero": "네로",
+    "resident_mulgyeol": "물결"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 0,
+    "location": "river"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "검수 완료 (해당 캡처 범위)",
+  "review_note": "주변 가구/소품과 손·발·좌석 접점 육안 확인. 다른 날짜·이벤트 상태로 일반화하지 않음."
+}

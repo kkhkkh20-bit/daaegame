@@ -1,0 +1,4803 @@
+{
+  "clicks": [
+    {
+      "label": "room13-0-pending-daram",
+      "person": "daram",
+      "target": "daram",
+      "actor": {
+        "person": "daram",
+        "pose": "action_1",
+        "x": 1021,
+        "y": 253,
+        "width": 157,
+        "height": 145,
+        "rect": [
+          1021,
+          253,
+          157,
+          145
+        ],
+        "depth": 510,
+        "occlusion": [],
+        "contact": "floor_sit",
+        "slot": null,
+        "activity": "침대에서 책 읽는 중"
+      },
+      "point": [
+        653,
+        296
+      ],
+      "actions": [
+        "('person', 'daram')"
+      ]
+    },
+    {
+      "label": "room13-1-occurred-daram",
+      "person": "daram",
+      "target": "daram",
+      "actor": {
+        "person": "daram",
+        "pose": "action_1",
+        "x": 1162,
+        "y": 475,
+        "width": 157,
+        "height": 145,
+        "rect": [
+          1162,
+          475,
+          157,
+          145
+        ],
+        "depth": 620,
+        "occlusion": [],
+        "contact": "floor_sit",
+        "slot": null,
+        "activity": "깔개에 앉아 쉬는 중"
+      },
+      "point": [
+        654,
+        518
+      ],
+      "actions": [
+        "('person', 'daram')"
+      ]
+    },
+    {
+      "label": "guestroom-0-occurred-daram",
+      "person": "daram",
+      "target": "daram",
+      "actor": {
+        "person": "daram",
+        "pose": "action_1",
+        "x": 771,
+        "y": 227,
+        "width": 173,
+        "height": 160,
+        "rect": [
+          771,
+          227,
+          173,
+          160
+        ],
+        "depth": 500,
+        "occlusion": [],
+        "contact": "floor_sit",
+        "slot": null,
+        "activity": "침대에서 책 읽는 중"
+      },
+      "point": [
+        872,
+        274
+      ],
+      "actions": [
+        "('person', 'daram')"
+      ]
+    },
+    {
+      "label": "square-1-pending-resident_sling",
+      "person": "resident_sling",
+      "target": "resident_sling",
+      "actor": {
+        "person": "resident_sling",
+        "pose": "activity",
+        "x": 1281,
+        "y": 294,
+        "width": 178,
+        "height": 142,
+        "rect": [
+          1281,
+          294,
+          178,
+          142
+        ],
+        "depth": 520,
+        "occlusion": [],
+        "contact": "crouching",
+        "slot": null,
+        "activity": "슬링은 배달할 봉투와 돌아온 봉투를 나눴다.",
+        "ground_depth": 520,
+        "elevation": 86
+      },
+      "point": [
+        726,
+        336
+      ],
+      "actions": [
+        "('person', 'resident_sling')"
+      ]
+    },
+    {
+      "label": "square-0-pending-resident_seol",
+      "person": "resident_seol",
+      "target": "resident_seol",
+      "actor": {
+        "person": "resident_seol",
+        "pose": "living_bellrope",
+        "x": 317,
+        "y": 241,
+        "width": 97,
+        "height": 175,
+        "rect": [
+          317,
+          241,
+          97,
+          175
+        ],
+        "depth": 460,
+        "occlusion": [],
+        "contact": "standing",
+        "slot": null,
+        "activity": "설이는 종줄의 매듭을 다시 만졌다.",
+        "ground_depth": 460,
+        "elevation": 45
+      },
+      "point": [
+        357,
+        259
+      ],
+      "actions": [
+        "('person', 'resident_seol')"
+      ]
+    },
+    {
+      "label": "clinic-0-occurred-resident_seori",
+      "person": "resident_seori",
+      "target": "resident_seori",
+      "actor": {
+        "person": "resident_seori",
+        "pose": "inspect_paper_threequarter_front",
+        "x": 1571,
+        "y": 355,
+        "width": 207,
+        "height": 303,
+        "rect": [
+          1571,
+          355,
+          207,
+          303
+        ],
+        "depth": 654,
+        "occlusion": [],
+        "contact": "self-contained",
+        "slot": null,
+        "activity": "환자 쪽으로 서서 확인할 서류를 살펴본다."
+      },
+      "point": [
+        1040,
+        409
+      ],
+      "actions": [
+        "('person', 'resident_seori')"
+      ]
+    },
+    {
+      "label": "store-1-occurred-resident_seori",
+      "person": "resident_seori",
+      "target": "resident_seori",
+      "actor": {
+        "person": "resident_seori",
+        "pose": "living_notes",
+        "x": 105,
+        "y": 347,
+        "width": 220,
+        "height": 320,
+        "rect": [
+          105,
+          347,
+          220,
+          320
+        ],
+        "depth": 667,
+        "occlusion": [],
+        "contact": "self-contained",
+        "slot": [
+          216,
+          666,
+          338,
+          "floor"
+        ],
+        "activity": "서리는 종이의 숫자보다 조건을 먼저 읽었다."
+      },
+      "point": [
+        214,
+        412
+      ],
+      "actions": [
+        "('person', 'resident_seori')"
+      ]
+    },
+    {
+      "label": "school-2-occurred-resident_seori",
+      "person": "resident_seori",
+      "target": "resident_seori",
+      "actor": {
+        "person": "resident_seori",
+        "pose": "living_notes",
+        "x": 430,
+        "y": 313,
+        "width": 156,
+        "height": 227,
+        "rect": [
+          430,
+          313,
+          156,
+          227
+        ],
+        "depth": 540,
+        "occlusion": [
+          [
+            0,
+            405
+          ],
+          [
+            189,
+            424
+          ],
+          [
+            217,
+            411
+          ],
+          [
+            404,
+            439
+          ],
+          [
+            456,
+            417
+          ],
+          [
+            585,
+            420
+          ],
+          [
+            726,
+            435
+          ],
+          [
+            726,
+            566
+          ],
+          [
+            263,
+            621
+          ],
+          [
+            0,
+            621
+          ]
+        ],
+        "contact": "self-contained",
+        "slot": [
+          510,
+          540,
+          240,
+          "class_back"
+        ],
+        "activity": "서리는 종이의 숫자보다 조건을 먼저 읽었다. 해가 진 뒤라 손놀림이 한층 느려졌다."
+      },
+      "point": [
+        507,
+        359
+      ],
+      "actions": [
+        "('person', 'resident_seori')"
+      ]
+    }
+  ],
+  "matrix": {
+    "rows": [
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "room13",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "guestroom",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_seol",
+        "pose": "living_bellrope",
+        "changed": true,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_hyeoni",
+        "pose": "map27_mk_8",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_yeoni",
+        "pose": "living_mend",
+        "changed": false,
+        "contact": "bench_sit"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "doto",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_ppul",
+        "pose": "activity",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_owlgp",
+        "pose": "living_notebook",
+        "changed": false,
+        "contact": "portable_stool"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_seori",
+        "pose": "inspect_paper_threequarter_front",
+        "changed": true,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_teacher",
+        "pose": "map27_sc_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "resident_tok",
+        "pose": "map27_ws_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "tool"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "resident_ubak",
+        "pose": "living_measure",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "resident_guldol",
+        "pose": "map9_stone_tapping",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "resident_lamplighter",
+        "pose": "living_inspectlamp",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "resident_ttadak",
+        "pose": "living_repair",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "resident_musoe",
+        "pose": "living_foldmap",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_librarian",
+        "pose": "map27_po_2",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_sling",
+        "pose": "map27_po_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_jongjong",
+        "pose": "map27_po_3",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "seryeon",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "clipboard"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_momo",
+        "pose": "living_lampnumber",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "room13",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "guestroom",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_seol",
+        "pose": "living_bellrope",
+        "changed": true,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_hyeoni",
+        "pose": "map27_mk_8",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_yeoni",
+        "pose": "living_mend",
+        "changed": false,
+        "contact": "bench_sit"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "doto",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_ppul",
+        "pose": "activity",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_owlgp",
+        "pose": "living_notebook",
+        "changed": false,
+        "contact": "portable_stool"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_seori",
+        "pose": "inspect_paper_threequarter_front",
+        "changed": true,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_teacher",
+        "pose": "map27_sc_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "resident_tok",
+        "pose": "map27_ws_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "tool"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "resident_ubak",
+        "pose": "living_measure",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "resident_guldol",
+        "pose": "map9_stone_tapping",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "resident_lamplighter",
+        "pose": "living_inspectlamp",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "resident_ttadak",
+        "pose": "living_repair",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "resident_musoe",
+        "pose": "living_foldmap",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_librarian",
+        "pose": "map27_po_2",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_sling",
+        "pose": "map27_po_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_jongjong",
+        "pose": "map27_po_3",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "seryeon",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "clipboard"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_momo",
+        "pose": "living_lampnumber",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_seol",
+        "pose": "living_bellrope",
+        "changed": true,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_hyeoni",
+        "pose": "map27_mk_8",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_yeoni",
+        "pose": "living_mend",
+        "changed": false,
+        "contact": "bench_sit"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "doto",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_ppul",
+        "pose": "activity",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_owlgp",
+        "pose": "living_notebook",
+        "changed": false,
+        "contact": "portable_stool"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_seori",
+        "pose": "inspect_paper_threequarter_front",
+        "changed": true,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "resident_tok",
+        "pose": "map27_ws_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "tool"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "resident_ubak",
+        "pose": "living_measure",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "resident_lamplighter",
+        "pose": "living_inspectlamp",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "resident_ttadak",
+        "pose": "living_repair",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "resident_musoe",
+        "pose": "living_foldmap",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_sling",
+        "pose": "map27_po_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_jongjong",
+        "pose": "map27_po_3",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "post",
+        "person": "seryeon",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "clipboard"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "room13",
+        "person": "daram",
+        "pose": "action_2",
+        "changed": true,
+        "contact": "kneeling"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "guestroom",
+        "person": "daram",
+        "pose": "action_2",
+        "changed": true,
+        "contact": "kneeling"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_seol",
+        "pose": "living_bellrope",
+        "changed": true,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_sling",
+        "pose": "activity",
+        "changed": true,
+        "contact": "crouching"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_dalgeurak",
+        "pose": "map27_sq_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_guldol",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_piko",
+        "pose": "map27_sq_2",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "doto",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_lamplighter",
+        "pose": "living_inspectlamp",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_somi",
+        "pose": "living_bootice",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_seori",
+        "pose": "living_notes",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_ubak",
+        "pose": "living_measure",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_teacher",
+        "pose": "map27_sc_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "dining",
+        "person": "nabi",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "carrying_tray"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "resident_tok",
+        "pose": "map27_ws_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "tool"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_momo",
+        "pose": "living_lampnumber",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_librarian",
+        "pose": "map27_po_2",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "seryeon",
+        "pose": "chair_read",
+        "changed": false,
+        "contact": "background_chair"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_jongjong",
+        "pose": "map27_po_3",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "room13",
+        "person": "daram",
+        "pose": "action_2",
+        "changed": true,
+        "contact": "kneeling"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "guestroom",
+        "person": "daram",
+        "pose": "action_2",
+        "changed": true,
+        "contact": "kneeling"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_seol",
+        "pose": "living_bellrope",
+        "changed": true,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_sling",
+        "pose": "activity",
+        "changed": true,
+        "contact": "crouching"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_dalgeurak",
+        "pose": "map27_sq_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_guldol",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_piko",
+        "pose": "map27_sq_2",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "doto",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_lamplighter",
+        "pose": "living_inspectlamp",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_somi",
+        "pose": "living_bootice",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_seori",
+        "pose": "living_notes",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_ubak",
+        "pose": "living_measure",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_teacher",
+        "pose": "map27_sc_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "dining",
+        "person": "nabi",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "carrying_tray"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "resident_tok",
+        "pose": "map27_ws_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "tool"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_momo",
+        "pose": "living_lampnumber",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_librarian",
+        "pose": "map27_po_2",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "seryeon",
+        "pose": "chair_read",
+        "changed": false,
+        "contact": "background_chair"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_jongjong",
+        "pose": "map27_po_3",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_seol",
+        "pose": "living_bellrope",
+        "changed": true,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_sling",
+        "pose": "activity",
+        "changed": true,
+        "contact": "crouching"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_dalgeurak",
+        "pose": "map27_sq_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "doto",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_lamplighter",
+        "pose": "living_inspectlamp",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_somi",
+        "pose": "living_bootice",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_seori",
+        "pose": "living_notes",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_ubak",
+        "pose": "living_measure",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "dining",
+        "person": "nabi",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "carrying_tray"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "resident_tok",
+        "pose": "map27_ws_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "tool"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "post",
+        "person": "seryeon",
+        "pose": "chair_read",
+        "changed": false,
+        "contact": "background_chair"
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_jongjong",
+        "pose": "map27_po_3",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "routine",
+        "location": "room13",
+        "person": "daram",
+        "pose": "inspect_floor",
+        "changed": true,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "routine",
+        "location": "guestroom",
+        "person": "daram",
+        "pose": "inspect_floor",
+        "changed": true,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "routine",
+        "location": "square",
+        "person": "doto",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_badook",
+        "pose": "living_bootlace",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_seori",
+        "pose": "inspect_paper_threequarter_front",
+        "changed": true,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "routine",
+        "location": "dining",
+        "person": "resident_tok",
+        "pose": "map27_di_1a",
+        "changed": false,
+        "contact": "seated"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "routine",
+        "location": "dining",
+        "person": "resident_dalgeurak",
+        "pose": "map27_di_1b",
+        "changed": false,
+        "contact": "seated"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "routine",
+        "location": "dining",
+        "person": "resident_mulgyeol",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "routine",
+        "location": "dining",
+        "person": "nabi",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "carrying_tray"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "routine",
+        "location": "dining",
+        "person": "resident_owlgp",
+        "pose": "living_notebook",
+        "changed": false,
+        "contact": "portable_stool"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "routine",
+        "location": "dining",
+        "person": "resident_hyeoni",
+        "pose": "map27_mk_8",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "kneeling"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_sling",
+        "pose": "map27_po_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "offers",
+        "location": "room13",
+        "person": "daram",
+        "pose": "inspect_floor",
+        "changed": true,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "offers",
+        "location": "guestroom",
+        "person": "daram",
+        "pose": "inspect_floor",
+        "changed": true,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "offers",
+        "location": "square",
+        "person": "doto",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_badook",
+        "pose": "living_bootlace",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_seori",
+        "pose": "inspect_paper_threequarter_front",
+        "changed": true,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "offers",
+        "location": "dining",
+        "person": "resident_tok",
+        "pose": "map27_di_1a",
+        "changed": false,
+        "contact": "seated"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "offers",
+        "location": "dining",
+        "person": "resident_dalgeurak",
+        "pose": "map27_di_1b",
+        "changed": false,
+        "contact": "seated"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "offers",
+        "location": "dining",
+        "person": "resident_mulgyeol",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "offers",
+        "location": "dining",
+        "person": "nabi",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "carrying_tray"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "offers",
+        "location": "dining",
+        "person": "resident_owlgp",
+        "pose": "living_notebook",
+        "changed": false,
+        "contact": "portable_stool"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "offers",
+        "location": "dining",
+        "person": "resident_hyeoni",
+        "pose": "map27_mk_8",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "kneeling"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_sling",
+        "pose": "map27_po_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "absent",
+        "location": "square",
+        "person": "doto",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_seori",
+        "pose": "inspect_paper_threequarter_front",
+        "changed": true,
+        "contact": "self-contained"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "absent",
+        "location": "dining",
+        "person": "resident_tok",
+        "pose": "map27_di_1a",
+        "changed": false,
+        "contact": "seated"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "absent",
+        "location": "dining",
+        "person": "resident_dalgeurak",
+        "pose": "map27_di_1b",
+        "changed": false,
+        "contact": "seated"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "absent",
+        "location": "dining",
+        "person": "resident_mulgyeol",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "absent",
+        "location": "dining",
+        "person": "nabi",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "carrying_tray"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "absent",
+        "location": "dining",
+        "person": "resident_owlgp",
+        "pose": "living_notebook",
+        "changed": false,
+        "contact": "portable_stool"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "absent",
+        "location": "dining",
+        "person": "resident_hyeoni",
+        "pose": "map27_mk_8",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "kneeling"
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_sling",
+        "pose": "map27_po_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "room13",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "guestroom",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_seol",
+        "pose": "living_bellrope",
+        "changed": true,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "doto",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_ppul",
+        "pose": "activity",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_owlgp",
+        "pose": "living_notebook",
+        "changed": false,
+        "contact": "portable_stool"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_seori",
+        "pose": "inspect_paper_threequarter_front",
+        "changed": true,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_teacher",
+        "pose": "map27_sc_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "resident_tok",
+        "pose": "map27_ws_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "tool"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "resident_ubak",
+        "pose": "living_measure",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "resident_lamplighter",
+        "pose": "living_inspectlamp",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "resident_ttadak",
+        "pose": "living_repair",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "resident_musoe",
+        "pose": "living_foldmap",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_librarian",
+        "pose": "map27_po_2",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_sling",
+        "pose": "map27_po_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_jongjong",
+        "pose": "map27_po_3",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "seryeon",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "clipboard"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_momo",
+        "pose": "living_lampnumber",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "room13",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "guestroom",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_seol",
+        "pose": "living_bellrope",
+        "changed": true,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "doto",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_ppul",
+        "pose": "activity",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_owlgp",
+        "pose": "living_notebook",
+        "changed": false,
+        "contact": "portable_stool"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_seori",
+        "pose": "inspect_paper_threequarter_front",
+        "changed": true,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_teacher",
+        "pose": "map27_sc_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "resident_tok",
+        "pose": "map27_ws_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "tool"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "resident_ubak",
+        "pose": "living_measure",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "resident_lamplighter",
+        "pose": "living_inspectlamp",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "resident_ttadak",
+        "pose": "living_repair",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "resident_musoe",
+        "pose": "living_foldmap",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_librarian",
+        "pose": "map27_po_2",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_sling",
+        "pose": "map27_po_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_jongjong",
+        "pose": "map27_po_3",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "seryeon",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "clipboard"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_momo",
+        "pose": "living_lampnumber",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_seol",
+        "pose": "living_bellrope",
+        "changed": true,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "doto",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_ppul",
+        "pose": "activity",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_owlgp",
+        "pose": "living_notebook",
+        "changed": false,
+        "contact": "portable_stool"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_seori",
+        "pose": "inspect_paper_threequarter_front",
+        "changed": true,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "resident_tok",
+        "pose": "map27_ws_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "tool"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "resident_ubak",
+        "pose": "living_measure",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "resident_lamplighter",
+        "pose": "living_inspectlamp",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "resident_ttadak",
+        "pose": "living_repair",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "resident_musoe",
+        "pose": "living_foldmap",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_sling",
+        "pose": "map27_po_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_jongjong",
+        "pose": "map27_po_3",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "absent",
+        "location": "post",
+        "person": "seryeon",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "clipboard"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "room13",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "guestroom",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_piko",
+        "pose": "map27_sq_2",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "doto",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_bori",
+        "pose": "living_firewood",
+        "changed": false,
+        "contact": "crouching"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_tori",
+        "pose": "world_bench_left",
+        "changed": false,
+        "contact": "background_bench"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_somi",
+        "pose": "living_bootice",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_lamplighter",
+        "pose": "living_inspectlamp",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_jongjong",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_seori",
+        "pose": "living_notes",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_ubak",
+        "pose": "living_measure",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_solbang",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_teacher",
+        "pose": "map27_sc_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_yeoni",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "dining",
+        "person": "nabi",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "carrying_tray"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "resident_tok",
+        "pose": "map27_ws_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "tool"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "resident_guldol",
+        "pose": "map9_stone_tapping",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_ppul",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_momo",
+        "pose": "living_lampnumber",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_sling",
+        "pose": "map27_po_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_librarian",
+        "pose": "map27_po_2",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "seryeon",
+        "pose": "chair_read",
+        "changed": false,
+        "contact": "background_chair"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "room13",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "guestroom",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_piko",
+        "pose": "map27_sq_2",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "doto",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_bori",
+        "pose": "living_firewood",
+        "changed": false,
+        "contact": "crouching"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_tori",
+        "pose": "world_bench_left",
+        "changed": false,
+        "contact": "background_bench"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_somi",
+        "pose": "living_bootice",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_lamplighter",
+        "pose": "living_inspectlamp",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_jongjong",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_seori",
+        "pose": "living_notes",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_ubak",
+        "pose": "living_measure",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_solbang",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_teacher",
+        "pose": "map27_sc_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_yeoni",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "dining",
+        "person": "nabi",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "carrying_tray"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "resident_tok",
+        "pose": "map27_ws_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "tool"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "resident_guldol",
+        "pose": "map9_stone_tapping",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_ppul",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_momo",
+        "pose": "living_lampnumber",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_sling",
+        "pose": "map27_po_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_librarian",
+        "pose": "map27_po_2",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "seryeon",
+        "pose": "chair_read",
+        "changed": false,
+        "contact": "background_chair"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "doto",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_bori",
+        "pose": "living_firewood",
+        "changed": false,
+        "contact": "crouching"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_tori",
+        "pose": "world_bench_left",
+        "changed": false,
+        "contact": "background_bench"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_jongjong",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_somi",
+        "pose": "living_bootice",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_lamplighter",
+        "pose": "living_inspectlamp",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_seori",
+        "pose": "living_notes",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_ubak",
+        "pose": "living_measure",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_solbang",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "school",
+        "person": "resident_yeoni",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "dining",
+        "person": "nabi",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "carrying_tray"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "resident_tok",
+        "pose": "map27_ws_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "tool"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_sling",
+        "pose": "map27_po_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "post",
+        "person": "seryeon",
+        "pose": "chair_read",
+        "changed": false,
+        "contact": "background_chair"
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_ppul",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "routine",
+        "location": "room13",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "routine",
+        "location": "guestroom",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "routine",
+        "location": "square",
+        "person": "doto",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_badook",
+        "pose": "living_bootlace",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_seori",
+        "pose": "inspect_paper_threequarter_front",
+        "changed": true,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_ubak",
+        "pose": "living_measure",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "routine",
+        "location": "dining",
+        "person": "resident_tok",
+        "pose": "map27_di_1a",
+        "changed": false,
+        "contact": "seated"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "routine",
+        "location": "dining",
+        "person": "resident_dalgeurak",
+        "pose": "map27_di_1b",
+        "changed": false,
+        "contact": "seated"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "routine",
+        "location": "dining",
+        "person": "nabi",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "carrying_tray"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "routine",
+        "location": "dining",
+        "person": "resident_hyeoni",
+        "pose": "map27_mk_8",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "kneeling"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_sling",
+        "pose": "map27_po_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "offers",
+        "location": "room13",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "offers",
+        "location": "guestroom",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "offers",
+        "location": "square",
+        "person": "doto",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_badook",
+        "pose": "living_bootlace",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_seori",
+        "pose": "inspect_paper_threequarter_front",
+        "changed": true,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_ubak",
+        "pose": "living_measure",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "offers",
+        "location": "dining",
+        "person": "resident_tok",
+        "pose": "map27_di_1a",
+        "changed": false,
+        "contact": "seated"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "offers",
+        "location": "dining",
+        "person": "resident_dalgeurak",
+        "pose": "map27_di_1b",
+        "changed": false,
+        "contact": "seated"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "offers",
+        "location": "dining",
+        "person": "nabi",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "carrying_tray"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "offers",
+        "location": "dining",
+        "person": "resident_hyeoni",
+        "pose": "map27_mk_8",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "kneeling"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_sling",
+        "pose": "map27_po_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "absent",
+        "location": "square",
+        "person": "doto",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_seori",
+        "pose": "inspect_paper_threequarter_front",
+        "changed": true,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_ubak",
+        "pose": "living_measure",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "absent",
+        "location": "dining",
+        "person": "resident_tok",
+        "pose": "map27_di_1a",
+        "changed": false,
+        "contact": "seated"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "absent",
+        "location": "dining",
+        "person": "resident_dalgeurak",
+        "pose": "map27_di_1b",
+        "changed": false,
+        "contact": "seated"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "absent",
+        "location": "dining",
+        "person": "nabi",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "carrying_tray"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "absent",
+        "location": "dining",
+        "person": "resident_hyeoni",
+        "pose": "map27_mk_8",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "kneeling"
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_sling",
+        "pose": "map27_po_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "room13",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "guestroom",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_seol",
+        "pose": "living_bellrope",
+        "changed": true,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_tori",
+        "pose": "world_bench_left",
+        "changed": false,
+        "contact": "background_bench"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_ppul",
+        "pose": "activity",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_lamplighter",
+        "pose": "living_inspectlamp",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_piko",
+        "pose": "map27_cl_1",
+        "changed": false,
+        "contact": "background_bed"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_seori",
+        "pose": "inspect_paper_threequarter_front",
+        "changed": true,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_teacher",
+        "pose": "map27_sc_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_owlgp",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_bori",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "resident_tok",
+        "pose": "map27_ws_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "tool"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "resident_guldol",
+        "pose": "map9_stone_tapping",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "resident_ttadak",
+        "pose": "living_repair",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "resident_musoe",
+        "pose": "living_foldmap",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "resident_ubak",
+        "pose": "living_measure",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_librarian",
+        "pose": "map27_po_2",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_sling",
+        "pose": "map27_po_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_jongjong",
+        "pose": "map27_po_3",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "seryeon",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "clipboard"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_momo",
+        "pose": "living_lampnumber",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "room13",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "guestroom",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_seol",
+        "pose": "living_bellrope",
+        "changed": true,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_tori",
+        "pose": "world_bench_left",
+        "changed": false,
+        "contact": "background_bench"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_ppul",
+        "pose": "activity",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_lamplighter",
+        "pose": "living_inspectlamp",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_piko",
+        "pose": "map27_cl_1",
+        "changed": false,
+        "contact": "background_bed"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_seori",
+        "pose": "inspect_paper_threequarter_front",
+        "changed": true,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_teacher",
+        "pose": "map27_sc_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_owlgp",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_bori",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "resident_tok",
+        "pose": "map27_ws_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "tool"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "resident_guldol",
+        "pose": "map9_stone_tapping",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "resident_ttadak",
+        "pose": "living_repair",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "resident_musoe",
+        "pose": "living_foldmap",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "resident_ubak",
+        "pose": "living_measure",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_librarian",
+        "pose": "map27_po_2",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_sling",
+        "pose": "map27_po_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_jongjong",
+        "pose": "map27_po_3",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "seryeon",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "clipboard"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_momo",
+        "pose": "living_lampnumber",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_seol",
+        "pose": "living_bellrope",
+        "changed": true,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_tori",
+        "pose": "world_bench_left",
+        "changed": false,
+        "contact": "background_bench"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_ppul",
+        "pose": "activity",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_lamplighter",
+        "pose": "living_inspectlamp",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_seori",
+        "pose": "inspect_paper_threequarter_front",
+        "changed": true,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "school",
+        "person": "resident_owlgp",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "school",
+        "person": "resident_bori",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "resident_tok",
+        "pose": "map27_ws_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "tool"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "resident_ttadak",
+        "pose": "living_repair",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "resident_musoe",
+        "pose": "living_foldmap",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "resident_ubak",
+        "pose": "living_measure",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_sling",
+        "pose": "map27_po_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_jongjong",
+        "pose": "map27_po_3",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "post",
+        "person": "seryeon",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "clipboard"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "room13",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "guestroom",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_seol",
+        "pose": "living_bellrope",
+        "changed": true,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_dalgeurak",
+        "pose": "map27_sq_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_jongjong",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_piko",
+        "pose": "map27_cl_1",
+        "changed": false,
+        "contact": "background_bed"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_ubak",
+        "pose": "living_measure",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_solbang",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_teacher",
+        "pose": "map27_sc_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_owlgp",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "dining",
+        "person": "nabi",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "carrying_tray"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "resident_tok",
+        "pose": "map27_ws_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "tool"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "resident_lamplighter",
+        "pose": "living_inspectlamp",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "resident_yeoni",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_ppul",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_momo",
+        "pose": "living_lampnumber",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_sling",
+        "pose": "map27_po_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_librarian",
+        "pose": "map27_po_2",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "seryeon",
+        "pose": "chair_read",
+        "changed": false,
+        "contact": "background_chair"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "room13",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "guestroom",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_seol",
+        "pose": "living_bellrope",
+        "changed": true,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_dalgeurak",
+        "pose": "map27_sq_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_jongjong",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_piko",
+        "pose": "map27_cl_1",
+        "changed": false,
+        "contact": "background_bed"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_ubak",
+        "pose": "living_measure",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_solbang",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_teacher",
+        "pose": "map27_sc_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_owlgp",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "dining",
+        "person": "nabi",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "carrying_tray"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "resident_tok",
+        "pose": "map27_ws_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "tool"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "resident_lamplighter",
+        "pose": "living_inspectlamp",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "resident_yeoni",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_ppul",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_momo",
+        "pose": "living_lampnumber",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_sling",
+        "pose": "map27_po_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_librarian",
+        "pose": "map27_po_2",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "seryeon",
+        "pose": "chair_read",
+        "changed": false,
+        "contact": "background_chair"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_seol",
+        "pose": "living_bellrope",
+        "changed": true,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_dalgeurak",
+        "pose": "map27_sq_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_jongjong",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_ubak",
+        "pose": "living_measure",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_solbang",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "school",
+        "person": "resident_owlgp",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "dining",
+        "person": "nabi",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "carrying_tray"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "resident_tok",
+        "pose": "map27_ws_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_1",
+        "changed": false,
+        "contact": "tool"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "resident_lamplighter",
+        "pose": "living_inspectlamp",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "resident_yeoni",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_sling",
+        "pose": "map27_po_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "post",
+        "person": "seryeon",
+        "pose": "chair_read",
+        "changed": false,
+        "contact": "background_chair"
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_ppul",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "room13",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "guestroom",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_badook",
+        "pose": "living_bootlace",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_piko",
+        "pose": "map27_cl_1",
+        "changed": false,
+        "contact": "background_bed"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_teacher",
+        "pose": "map27_sc_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_owlgp",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_tok",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_seori",
+        "pose": "living_notes",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_nubi",
+        "pose": "map27_in_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "dining",
+        "person": "resident_dalgeurak",
+        "pose": "map27_di_1b",
+        "changed": false,
+        "contact": "seated"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "dining",
+        "person": "nabi",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "carrying_tray"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "dining",
+        "person": "resident_mulgyeol",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "dining",
+        "person": "resident_hyeoni",
+        "pose": "map27_mk_8",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "kneeling"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_sling",
+        "pose": "map27_po_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "room13",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "guestroom",
+        "person": "daram",
+        "pose": "action_1",
+        "changed": true,
+        "contact": "floor_sit"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_badook",
+        "pose": "living_bootlace",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_piko",
+        "pose": "map27_cl_1",
+        "changed": false,
+        "contact": "background_bed"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_teacher",
+        "pose": "map27_sc_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_owlgp",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_tok",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_seori",
+        "pose": "living_notes",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_nubi",
+        "pose": "map27_in_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "dining",
+        "person": "resident_dalgeurak",
+        "pose": "map27_di_1b",
+        "changed": false,
+        "contact": "seated"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "dining",
+        "person": "nabi",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "carrying_tray"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "dining",
+        "person": "resident_mulgyeol",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "dining",
+        "person": "resident_hyeoni",
+        "pose": "map27_mk_8",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "kneeling"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_sling",
+        "pose": "map27_po_1",
+        "changed": false,
+        "contact": "behind_counter"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "absent",
+        "location": "school",
+        "person": "resident_owlgp",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "absent",
+        "location": "school",
+        "person": "resident_tok",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "absent",
+        "location": "school",
+        "person": "resident_seori",
+        "pose": "living_notes",
+        "changed": false,
+        "contact": "self-contained"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "absent",
+        "location": "school",
+        "person": "resident_nubi",
+        "pose": "map27_in_1",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "absent",
+        "location": "dining",
+        "person": "resident_dalgeurak",
+        "pose": "map27_di_1b",
+        "changed": false,
+        "contact": "seated"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "absent",
+        "location": "dining",
+        "person": "nabi",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "carrying_tray"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "absent",
+        "location": "dining",
+        "person": "resident_mulgyeol",
+        "pose": "neutral",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "absent",
+        "location": "dining",
+        "person": "resident_hyeoni",
+        "pose": "map27_mk_8",
+        "changed": false,
+        "contact": "standing"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "absent",
+        "location": "workshop",
+        "person": "buri",
+        "pose": "action_2",
+        "changed": false,
+        "contact": "kneeling"
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_sling",
+        "pose": "map27_po_1",
+        "changed": false,
+        "contact": "behind_counter"
+      }
+    ],
+    "errors": []
+  },
+  "status": "passed"
+}

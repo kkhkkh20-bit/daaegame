@@ -1,0 +1,146 @@
+{
+  "file": "031-store-d2-p1-routine.png",
+  "day": 2,
+  "period": 1,
+  "scenario": "routine",
+  "location": "store",
+  "location_name": "공동 물품 창고",
+  "camera": 454,
+  "actors": [
+    {
+      "person": "resident_mungchi",
+      "pose": "map27_st_1",
+      "x": 1040,
+      "y": 271,
+      "width": 108,
+      "height": 162,
+      "rect": [
+        1040,
+        271,
+        108,
+        162
+      ],
+      "depth": 433,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "자루를 어깨에 메고 옮긴다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    },
+    {
+      "person": "resident_madam",
+      "pose": "neutral",
+      "x": 914,
+      "y": 295,
+      "width": 123,
+      "height": 250,
+      "rect": [
+        914,
+        295,
+        123,
+        250
+      ],
+      "depth": 545,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        975,
+        544,
+        250,
+        "floor"
+      ],
+      "activity": "백 부인은 보관함을 봉해 둔 자리를 다시 만졌다."
+    },
+    {
+      "person": "resident_siluk",
+      "pose": "map27_st_2",
+      "x": 1359,
+      "y": 325,
+      "width": 213,
+      "height": 319,
+      "rect": [
+        1359,
+        325,
+        213,
+        319
+      ],
+      "depth": 644,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "나무 상자를 나른다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    },
+    {
+      "person": "resident_eunho",
+      "pose": "living_prices",
+      "x": 976,
+      "y": 348,
+      "width": 279,
+      "height": 301,
+      "rect": [
+        976,
+        348,
+        279,
+        301
+      ],
+      "depth": 649,
+      "occlusion": [],
+      "contact": "self-contained",
+      "slot": [
+        1116,
+        647,
+        324,
+        "floor"
+      ],
+      "activity": "은호는 물자 목록 옆의 값을 다시 적었다."
+    },
+    {
+      "person": "resident_bori",
+      "pose": "living_firewood",
+      "x": 1262,
+      "y": 456,
+      "width": 204,
+      "height": 244,
+      "rect": [
+        1262,
+        456,
+        204,
+        244
+      ],
+      "depth": 700,
+      "occlusion": [],
+      "contact": "crouching",
+      "slot": [
+        1350,
+        689,
+        354,
+        "floor"
+      ],
+      "activity": "보리는 장작 묶음의 끈을 한 번 더 당겼다."
+    }
+  ],
+  "names": {
+    "resident_mungchi": "뭉치",
+    "resident_madam": "백 부인",
+    "resident_siluk": "실룩",
+    "resident_eunho": "은호 사장",
+    "resident_nero": "네로",
+    "resident_bori": "보리"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 1,
+    "location": "store"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "검수 완료 (해당 캡처 범위)",
+  "review_note": "주변 가구/소품과 손·발·좌석 접점 육안 확인. 다른 날짜·이벤트 상태로 일반화하지 않음."
+}

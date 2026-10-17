@@ -1,0 +1,51 @@
+{
+  "file": "047-store-d2-p2-routine.png",
+  "day": 2,
+  "period": 2,
+  "scenario": "routine",
+  "location": "store",
+  "location_name": "공동 물품 창고",
+  "camera": 466,
+  "actors": [
+    {
+      "person": "resident_nubi",
+      "pose": "neutral",
+      "x": 1015,
+      "y": 323,
+      "width": 182,
+      "height": 324,
+      "rect": [
+        1015,
+        323,
+        182,
+        324
+      ],
+      "depth": 647,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        1116,
+        647,
+        324,
+        "floor"
+      ],
+      "activity": "누비는 마른 빨랫감을 집별로 묶었다. 해가 진 뒤라 손놀림이 한층 느려졌다."
+    }
+  ],
+  "names": {
+    "resident_nubi": "누비 아주머니"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 2,
+    "location": "store"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "검수 완료 (해당 캡처 범위)",
+  "review_note": "주변 가구/소품과 손·발·좌석 접점 육안 확인. 다른 날짜·이벤트 상태로 일반화하지 않음."
+}

@@ -1,0 +1,306 @@
+{
+  "file": "063-school-d12-p2-routine.png",
+  "day": 12,
+  "period": 2,
+  "scenario": "routine",
+  "location": "school",
+  "location_name": "마을 학교",
+  "camera": 0,
+  "actors": [
+    {
+      "person": "resident_teacher",
+      "pose": "map27_sc_1",
+      "x": 269,
+      "y": 289,
+      "width": 104,
+      "height": 165,
+      "rect": [
+        269,
+        289,
+        104,
+        165
+      ],
+      "depth": 454,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "책을 들고 칠판을 가리킨다.",
+      "map27_occlusion": [
+        [
+          [
+            155,
+            363
+          ],
+          [
+            500,
+            363
+          ],
+          [
+            500,
+            465
+          ],
+          [
+            155,
+            465
+          ]
+        ]
+      ],
+      "map27_keepouts": [
+        [
+          [
+            337.6850925226586,
+            339
+          ],
+          [
+            361.6208065835851,
+            339
+          ],
+          [
+            361.6208065835851,
+            377.5416666666667
+          ],
+          [
+            337.6850925226586,
+            377.5416666666667
+          ]
+        ]
+      ]
+    },
+    {
+      "person": "resident_owlgp",
+      "pose": "neutral",
+      "x": 52,
+      "y": 291,
+      "width": 111,
+      "height": 235,
+      "rect": [
+        52,
+        291,
+        111,
+        235
+      ],
+      "depth": 526,
+      "occlusion": [
+        [
+          0,
+          405
+        ],
+        [
+          189,
+          424
+        ],
+        [
+          217,
+          411
+        ],
+        [
+          404,
+          439
+        ],
+        [
+          456,
+          417
+        ],
+        [
+          585,
+          420
+        ],
+        [
+          726,
+          435
+        ],
+        [
+          726,
+          566
+        ],
+        [
+          263,
+          621
+        ],
+        [
+          0,
+          621
+        ]
+      ],
+      "contact": "standing",
+      "slot": [
+        120,
+        525,
+        235,
+        "class_back"
+      ],
+      "activity": "부엉이 할아버지는 수첩을 가까이 들었다. 찬 바람에 손을 비비며 하던 일을 천천히 정리했다."
+    },
+    {
+      "person": "resident_tok",
+      "pose": "neutral",
+      "x": 221,
+      "y": 297,
+      "width": 174,
+      "height": 240,
+      "rect": [
+        221,
+        297,
+        174,
+        240
+      ],
+      "depth": 537,
+      "occlusion": [
+        [
+          0,
+          405
+        ],
+        [
+          189,
+          424
+        ],
+        [
+          217,
+          411
+        ],
+        [
+          404,
+          439
+        ],
+        [
+          456,
+          417
+        ],
+        [
+          585,
+          420
+        ],
+        [
+          726,
+          435
+        ],
+        [
+          726,
+          566
+        ],
+        [
+          263,
+          621
+        ],
+        [
+          0,
+          621
+        ]
+      ],
+      "contact": "standing",
+      "slot": [
+        309,
+        535,
+        240,
+        "class_back"
+      ],
+      "activity": "톡은 작은 부품의 끝을 집게로 바로잡았다. 해가 진 뒤라 손놀림이 한층 느려졌다."
+    },
+    {
+      "person": "resident_seori",
+      "pose": "living_notes",
+      "x": 430,
+      "y": 313,
+      "width": 156,
+      "height": 227,
+      "rect": [
+        430,
+        313,
+        156,
+        227
+      ],
+      "depth": 540,
+      "occlusion": [
+        [
+          0,
+          405
+        ],
+        [
+          189,
+          424
+        ],
+        [
+          217,
+          411
+        ],
+        [
+          404,
+          439
+        ],
+        [
+          456,
+          417
+        ],
+        [
+          585,
+          420
+        ],
+        [
+          726,
+          435
+        ],
+        [
+          726,
+          566
+        ],
+        [
+          263,
+          621
+        ],
+        [
+          0,
+          621
+        ]
+      ],
+      "contact": "self-contained",
+      "slot": [
+        510,
+        540,
+        240,
+        "class_back"
+      ],
+      "activity": "서리는 종이의 숫자보다 조건을 먼저 읽었다. 해가 진 뒤라 손놀림이 한층 느려졌다."
+    },
+    {
+      "person": "resident_nubi",
+      "pose": "map27_in_1",
+      "x": 79,
+      "y": 431,
+      "width": 177,
+      "height": 266,
+      "rect": [
+        79,
+        431,
+        177,
+        266
+      ],
+      "depth": 697,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "빨래를 접어 바구니에 담는다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    }
+  ],
+  "names": {
+    "resident_teacher": "사자 선생님",
+    "resident_owlgp": "부엉이 할아버지",
+    "resident_tok": "톡",
+    "resident_seori": "서리 검사원",
+    "resident_nubi": "누비 아주머니"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 12,
+    "period": 2,
+    "location": "school"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "추가 배치·원화 검토 필요",
+  "review_note": "사자 선생님이 툭 뒤에 가려짐: 학교 슬롯 추가 배치 필요"
+}

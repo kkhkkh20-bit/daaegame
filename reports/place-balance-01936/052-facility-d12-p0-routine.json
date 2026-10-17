@@ -1,0 +1,109 @@
+{
+  "file": "052-facility-d12-p0-routine.png",
+  "day": 12,
+  "period": 0,
+  "scenario": "routine",
+  "location": "facility",
+  "location_name": "북쪽 보호시설 접견실",
+  "camera": 588,
+  "actors": [
+    {
+      "person": "neoul",
+      "pose": "map27_fa_1",
+      "x": 1164,
+      "y": 304,
+      "width": 129,
+      "height": 193,
+      "rect": [
+        1164,
+        304,
+        129,
+        193
+      ],
+      "depth": 497,
+      "occlusion": [],
+      "contact": "background_desk",
+      "slot": null,
+      "activity": "책상에 손을 짚고 이야기를 듣는다.",
+      "map27_occlusion": [
+        [
+          [
+            720,
+            411
+          ],
+          [
+            1450,
+            411
+          ],
+          [
+            1462,
+            445
+          ],
+          [
+            1462,
+            625
+          ],
+          [
+            720,
+            625
+          ]
+        ]
+      ],
+      "map27_keepouts": [
+        [
+          [
+            1206.7213541666667,
+            399.49479166666663
+          ],
+          [
+            1234.3645833333333,
+            399.49479166666663
+          ],
+          [
+            1234.3645833333333,
+            412.68815104166663
+          ],
+          [
+            1206.7213541666667,
+            412.68815104166663
+          ]
+        ],
+        [
+          [
+            1264.5208333333333,
+            399.49479166666663
+          ],
+          [
+            1292.6666666666667,
+            399.49479166666663
+          ],
+          [
+            1292.6666666666667,
+            412.68815104166663
+          ],
+          [
+            1264.5208333333333,
+            412.68815104166663
+          ]
+        ]
+      ]
+    }
+  ],
+  "names": {
+    "neoul": "너울",
+    "resident_nubi": "누비 아주머니"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 12,
+    "period": 0,
+    "location": "facility"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "검수 완료 (해당 캡처 범위)",
+  "review_note": "주변 가구/소품과 손·발·좌석 접점 육안 확인. 다른 날짜·이벤트 상태로 일반화하지 않음."
+}

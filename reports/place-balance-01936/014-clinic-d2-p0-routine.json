@@ -1,0 +1,46 @@
+{
+  "file": "014-clinic-d2-p0-routine.png",
+  "day": 2,
+  "period": 0,
+  "scenario": "routine",
+  "location": "clinic",
+  "location_name": "임시 진료실",
+  "camera": 640,
+  "actors": [
+    {
+      "person": "resident_seori",
+      "pose": "inspect_paper_threequarter_front",
+      "x": 1571,
+      "y": 355,
+      "width": 207,
+      "height": 303,
+      "rect": [
+        1571,
+        355,
+        207,
+        303
+      ],
+      "depth": 654,
+      "occlusion": [],
+      "contact": "self-contained",
+      "slot": null,
+      "activity": "환자 쪽으로 서서 확인할 서류를 살펴본다."
+    }
+  ],
+  "names": {
+    "resident_seori": "서리 검사원"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 0,
+    "location": "clinic"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "검수 완료 (해당 캡처 범위)",
+  "review_note": "주변 가구/소품과 손·발·좌석 접점 육안 확인. 다른 날짜·이벤트 상태로 일반화하지 않음."
+}

@@ -1,0 +1,218 @@
+{
+  "file": "051-school-d12-p0-routine.png",
+  "day": 12,
+  "period": 0,
+  "scenario": "routine",
+  "location": "school",
+  "location_name": "마을 학교",
+  "camera": 0,
+  "actors": [
+    {
+      "person": "resident_teacher",
+      "pose": "map27_sc_1",
+      "x": 269,
+      "y": 289,
+      "width": 104,
+      "height": 165,
+      "rect": [
+        269,
+        289,
+        104,
+        165
+      ],
+      "depth": 454,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "책을 들고 칠판을 가리킨다.",
+      "map27_occlusion": [
+        [
+          [
+            155,
+            363
+          ],
+          [
+            500,
+            363
+          ],
+          [
+            500,
+            465
+          ],
+          [
+            155,
+            465
+          ]
+        ]
+      ],
+      "map27_keepouts": [
+        [
+          [
+            337.6850925226586,
+            339
+          ],
+          [
+            361.6208065835851,
+            339
+          ],
+          [
+            361.6208065835851,
+            377.5416666666667
+          ],
+          [
+            337.6850925226586,
+            377.5416666666667
+          ]
+        ]
+      ]
+    },
+    {
+      "person": "resident_owlgp",
+      "pose": "neutral",
+      "x": 52,
+      "y": 291,
+      "width": 111,
+      "height": 235,
+      "rect": [
+        52,
+        291,
+        111,
+        235
+      ],
+      "depth": 526,
+      "occlusion": [
+        [
+          0,
+          405
+        ],
+        [
+          189,
+          424
+        ],
+        [
+          217,
+          411
+        ],
+        [
+          404,
+          439
+        ],
+        [
+          456,
+          417
+        ],
+        [
+          585,
+          420
+        ],
+        [
+          726,
+          435
+        ],
+        [
+          726,
+          566
+        ],
+        [
+          263,
+          621
+        ],
+        [
+          0,
+          621
+        ]
+      ],
+      "contact": "standing",
+      "slot": [
+        120,
+        525,
+        235,
+        "class_back"
+      ],
+      "activity": "부엉이 할아버지는 수첩을 가까이 들었다."
+    },
+    {
+      "person": "resident_bori",
+      "pose": "neutral",
+      "x": 187,
+      "y": 296,
+      "width": 216,
+      "height": 240,
+      "rect": [
+        187,
+        296,
+        216,
+        240
+      ],
+      "depth": 536,
+      "occlusion": [
+        [
+          0,
+          405
+        ],
+        [
+          189,
+          424
+        ],
+        [
+          217,
+          411
+        ],
+        [
+          404,
+          439
+        ],
+        [
+          456,
+          417
+        ],
+        [
+          585,
+          420
+        ],
+        [
+          726,
+          435
+        ],
+        [
+          726,
+          566
+        ],
+        [
+          263,
+          621
+        ],
+        [
+          0,
+          621
+        ]
+      ],
+      "contact": "standing",
+      "slot": [
+        309,
+        535,
+        240,
+        "class_back"
+      ],
+      "activity": "보리는 장작을 나눠 놓고 빈자리를 한참 봤다."
+    }
+  ],
+  "names": {
+    "resident_teacher": "사자 선생님",
+    "resident_owlgp": "부엉이 할아버지",
+    "resident_bori": "보리"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 12,
+    "period": 0,
+    "location": "school"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "추가 배치·원화 검토 필요",
+  "review_note": "사자 선생님이 보리 뒤에 가려짐: 학교 슬롯 추가 배치 필요"
+}

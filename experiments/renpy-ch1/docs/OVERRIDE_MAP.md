@@ -109,7 +109,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 7 | 147 | `systems/room13_alibi.rpy:157` | _r13_review_notes |
 | 8 | 173 | `systems/room13_review_knowledge.rpy:94` |  |
 
-## `r13_stage_people` (7층)
+## `r13_stage_people` (8층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
@@ -119,7 +119,8 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 4 | 125 | `systems/room13_map_actions.rpy:38` | _r13_perspective_stage |
 | 5 | 126 | `systems/room13_perspective.rpy:32` | _r13_map9_stage |
 | 6 | 176 | `systems/room13_map_work_nine.rpy:17` | _r13_map27_stage |
-| 7 | 178 | `systems/room13_map_action27.rpy:51` |  |
+| 7 | 178 | `systems/room13_map_action27.rpy:51` | _r13_contact_stage |
+| 8 | 179 | `systems/room13_spatial_contacts.rpy:36` |  |
 
 ## `r13_compare_result` (6층)
 

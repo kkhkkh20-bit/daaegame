@@ -1,0 +1,121 @@
+{
+  "file": "005-post-d2-p0-routine.png",
+  "day": 2,
+  "period": 0,
+  "scenario": "routine",
+  "location": "post",
+  "location_name": "우체국 입구",
+  "camera": 0,
+  "actors": [
+    {
+      "person": "resident_librarian",
+      "pose": "map27_po_2",
+      "x": 485,
+      "y": 411,
+      "width": 129,
+      "height": 194,
+      "rect": [
+        485,
+        411,
+        129,
+        194
+      ],
+      "depth": 605,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "종이를 펼쳐 말린다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    },
+    {
+      "person": "resident_jongjong",
+      "pose": "map27_po_3",
+      "x": 977,
+      "y": 484,
+      "width": 106,
+      "height": 159,
+      "rect": [
+        977,
+        484,
+        106,
+        159
+      ],
+      "depth": 643,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "편지를 안고 나갈 채비를 한다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    },
+    {
+      "person": "seryeon",
+      "pose": "action_1",
+      "x": 4,
+      "y": 469,
+      "width": 171,
+      "height": 205,
+      "rect": [
+        4,
+        469,
+        171,
+        205
+      ],
+      "depth": 674,
+      "occlusion": [],
+      "contact": "clipboard",
+      "slot": [
+        90,
+        675,
+        220,
+        "waiting"
+      ],
+      "activity": "우편 담당자는 돌아온 봉투의 이름을 다시 확인했다."
+    },
+    {
+      "person": "resident_momo",
+      "pose": "living_lampnumber",
+      "x": 811,
+      "y": 460,
+      "width": 106,
+      "height": 230,
+      "rect": [
+        811,
+        460,
+        106,
+        230
+      ],
+      "depth": 690,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        870,
+        690,
+        230,
+        "waiting"
+      ],
+      "activity": "모모는 전시품 밑의 번호를 다시 읽었다."
+    }
+  ],
+  "names": {
+    "resident_librarian": "사서 선생님",
+    "resident_sling": "슬링",
+    "resident_jongjong": "종종이",
+    "seryeon": "세련",
+    "resident_momo": "모모"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 0,
+    "location": "post"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "추가 배치·원화 검토 필요",
+  "review_note": "우체국 창구 슬링 크기 및 인물 겹침 추가 배치 필요"
+}

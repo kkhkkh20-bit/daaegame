@@ -1,0 +1,86 @@
+{
+  "file": "015-school-d2-p0-routine.png",
+  "day": 2,
+  "period": 0,
+  "scenario": "routine",
+  "location": "school",
+  "location_name": "마을 학교",
+  "camera": 0,
+  "actors": [
+    {
+      "person": "resident_teacher",
+      "pose": "map27_sc_1",
+      "x": 269,
+      "y": 289,
+      "width": 104,
+      "height": 165,
+      "rect": [
+        269,
+        289,
+        104,
+        165
+      ],
+      "depth": 454,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "책을 들고 칠판을 가리킨다.",
+      "map27_occlusion": [
+        [
+          [
+            155,
+            363
+          ],
+          [
+            500,
+            363
+          ],
+          [
+            500,
+            465
+          ],
+          [
+            155,
+            465
+          ]
+        ]
+      ],
+      "map27_keepouts": [
+        [
+          [
+            337.6850925226586,
+            339
+          ],
+          [
+            361.6208065835851,
+            339
+          ],
+          [
+            361.6208065835851,
+            377.5416666666667
+          ],
+          [
+            337.6850925226586,
+            377.5416666666667
+          ]
+        ]
+      ]
+    }
+  ],
+  "names": {
+    "resident_teacher": "사자 선생님"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 0,
+    "location": "school"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "검수 완료 (해당 캡처 범위)",
+  "review_note": "주변 가구/소품과 손·발·좌석 접점 육안 확인. 다른 날짜·이벤트 상태로 일반화하지 않음."
+}

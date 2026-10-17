@@ -1,0 +1,177 @@
+{
+  "file": "013-workshop-d2-p0-routine.png",
+  "day": 2,
+  "period": 0,
+  "scenario": "routine",
+  "location": "workshop",
+  "location_name": "수리점",
+  "camera": 0,
+  "actors": [
+    {
+      "person": "buri",
+      "pose": "action_1",
+      "x": 570,
+      "y": 303,
+      "width": 98,
+      "height": 208,
+      "rect": [
+        570,
+        303,
+        98,
+        208
+      ],
+      "depth": 511,
+      "occlusion": [
+        [
+          331,
+          460
+        ],
+        [
+          470,
+          439
+        ],
+        [
+          683,
+          441
+        ],
+        [
+          1060,
+          483
+        ],
+        [
+          1060,
+          624
+        ],
+        [
+          890,
+          678
+        ],
+        [
+          350,
+          604
+        ]
+      ],
+      "contact": "tool",
+      "slot": null,
+      "activity": "부리는 닳은 부품을 새 부품 옆에 놓았다."
+    },
+    {
+      "person": "resident_ubak",
+      "pose": "living_measure",
+      "x": 168,
+      "y": 357,
+      "width": 201,
+      "height": 190,
+      "rect": [
+        168,
+        357,
+        201,
+        190
+      ],
+      "depth": 547,
+      "occlusion": [],
+      "contact": "self-contained",
+      "slot": [
+        270,
+        548,
+        226,
+        "doorfloor"
+      ],
+      "activity": "우박은 전날 숫자 옆에 오늘 조건을 적었다."
+    },
+    {
+      "person": "resident_guldol",
+      "pose": "map9_stone_tapping",
+      "x": 723,
+      "y": 328,
+      "width": 114,
+      "height": 219,
+      "rect": [
+        723,
+        328,
+        114,
+        219
+      ],
+      "depth": 547,
+      "occlusion": [
+        [
+          331,
+          460
+        ],
+        [
+          470,
+          439
+        ],
+        [
+          683,
+          441
+        ],
+        [
+          1060,
+          483
+        ],
+        [
+          1060,
+          624
+        ],
+        [
+          890,
+          678
+        ],
+        [
+          350,
+          604
+        ]
+      ],
+      "contact": "standing",
+      "slot": null,
+      "activity": "작은 돌을 망치로 톡톡 두드리며 귀를 기울인다."
+    },
+    {
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp",
+      "x": 1128,
+      "y": 351,
+      "width": 144,
+      "height": 220,
+      "rect": [
+        1128,
+        351,
+        144,
+        220
+      ],
+      "depth": 571,
+      "occlusion": [],
+      "contact": "self-contained",
+      "slot": [
+        1200,
+        570,
+        220,
+        "floor"
+      ],
+      "activity": "초롱은 점검함을 열고 전날 매듭을 봤다."
+    }
+  ],
+  "names": {
+    "resident_tok": "톡",
+    "buri": "부리",
+    "resident_ubak": "우박",
+    "resident_guldol": "굴돌 할아버지",
+    "resident_lamplighter": "초롱",
+    "resident_ttadak": "따닥",
+    "resident_musoe": "무쇠 할아버지"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 0,
+    "location": "workshop"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "검수 완료 (해당 캡처 범위)",
+  "review_note": "주변 가구/소품과 손·발·좌석 접점 육안 확인. 다른 날짜·이벤트 상태로 일반화하지 않음."
+}

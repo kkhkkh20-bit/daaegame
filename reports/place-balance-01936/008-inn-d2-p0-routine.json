@@ -1,0 +1,74 @@
+{
+  "file": "008-inn-d2-p0-routine.png",
+  "day": 2,
+  "period": 0,
+  "scenario": "routine",
+  "location": "inn",
+  "location_name": "여관 접수대",
+  "camera": 0,
+  "actors": [
+    {
+      "person": "resident_nubi",
+      "pose": "map27_in_1",
+      "x": 206,
+      "y": 414,
+      "width": 165,
+      "height": 248,
+      "rect": [
+        206,
+        414,
+        165,
+        248
+      ],
+      "depth": 662,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "빨래를 접어 바구니에 담는다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    },
+    {
+      "person": "resident_tosil",
+      "pose": "living_thermos",
+      "x": 412,
+      "y": 442,
+      "width": 132,
+      "height": 265,
+      "rect": [
+        412,
+        442,
+        132,
+        265
+      ],
+      "depth": 707,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        485,
+        706,
+        265,
+        "waiting"
+      ],
+      "activity": "보온병을 두 손으로 꼭 안고 있다."
+    }
+  ],
+  "names": {
+    "granny": "할머니",
+    "resident_nubi": "누비 아주머니",
+    "resident_tosil": "토실"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 0,
+    "location": "inn"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "검수 완료 (해당 캡처 범위)",
+  "review_note": "주변 가구/소품과 손·발·좌석 접점 육안 확인. 다른 날짜·이벤트 상태로 일반화하지 않음."
+}

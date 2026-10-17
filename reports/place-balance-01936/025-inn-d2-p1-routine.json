@@ -1,0 +1,93 @@
+{
+  "file": "025-inn-d2-p1-routine.png",
+  "day": 2,
+  "period": 1,
+  "scenario": "routine",
+  "location": "inn",
+  "location_name": "여관 접수대",
+  "camera": 0,
+  "actors": [
+    {
+      "person": "resident_ttadak",
+      "pose": "living_doorframe",
+      "x": 968,
+      "y": 277,
+      "width": 145,
+      "height": 196,
+      "rect": [
+        968,
+        277,
+        145,
+        196
+      ],
+      "depth": 473,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "따닥은 어제 댄 나무 조각을 다시 눌렀다."
+    },
+    {
+      "person": "resident_tori",
+      "pose": "activity",
+      "x": 723,
+      "y": 442,
+      "width": 193,
+      "height": 250,
+      "rect": [
+        723,
+        442,
+        193,
+        250
+      ],
+      "depth": 692,
+      "occlusion": [],
+      "contact": "seat",
+      "slot": null,
+      "activity": "토리는 어제 꿰맨 천을 펼쳐 바늘땀을 다시 세었다."
+    },
+    {
+      "person": "resident_yeoni",
+      "pose": "neutral",
+      "x": 394,
+      "y": 442,
+      "width": 157,
+      "height": 265,
+      "rect": [
+        394,
+        442,
+        157,
+        265
+      ],
+      "depth": 707,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        485,
+        706,
+        265,
+        "waiting"
+      ],
+      "activity": "여니는 풀어낸 실을 길이별로 나눴다."
+    }
+  ],
+  "names": {
+    "resident_ttadak": "따닥",
+    "granny": "할머니",
+    "resident_owlgp": "부엉이 할아버지",
+    "resident_tori": "토리",
+    "resident_yeoni": "여니"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 1,
+    "location": "inn"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "검수 완료 (해당 캡처 범위)",
+  "review_note": "주변 가구/소품과 손·발·좌석 접점 육안 확인. 다른 날짜·이벤트 상태로 일반화하지 않음."
+}

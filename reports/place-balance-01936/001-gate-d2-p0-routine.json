@@ -1,0 +1,97 @@
+{
+  "file": "001-gate-d2-p0-routine.png",
+  "day": 2,
+  "period": 0,
+  "scenario": "routine",
+  "location": "gate",
+  "location_name": "눈에 막힌 입구",
+  "camera": 628,
+  "actors": [
+    {
+      "person": "guard",
+      "pose": "action_1",
+      "x": 1179,
+      "y": 410,
+      "width": 179,
+      "height": 190,
+      "rect": [
+        1179,
+        410,
+        179,
+        190
+      ],
+      "depth": 600,
+      "occlusion": [],
+      "contact": "held_ledger",
+      "slot": null,
+      "activity": "입구 장부에 드나든 사람을 적는다."
+    },
+    {
+      "person": "resident_bori",
+      "pose": "living_firewood",
+      "x": 863,
+      "y": 469,
+      "width": 132,
+      "height": 158,
+      "rect": [
+        863,
+        469,
+        132,
+        158
+      ],
+      "depth": 627,
+      "occlusion": [],
+      "contact": "crouching",
+      "slot": [
+        920,
+        620,
+        230,
+        "floor"
+      ],
+      "activity": "보리는 장작 묶음의 끈을 한 번 더 당겼다."
+    },
+    {
+      "person": "resident_badook",
+      "pose": "living_bootlace",
+      "x": 986,
+      "y": 455,
+      "width": 245,
+      "height": 196,
+      "rect": [
+        986,
+        455,
+        245,
+        196
+      ],
+      "depth": 651,
+      "occlusion": [],
+      "contact": "self-contained",
+      "slot": [
+        1110,
+        651,
+        245,
+        "floor"
+      ],
+      "activity": "바둑이는 순찰화 끈을 조이고 길을 봤다."
+    }
+  ],
+  "names": {
+    "guard": "돌목",
+    "karo": "까로",
+    "resident_bori": "보리",
+    "resident_badook": "바둑이"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 0,
+    "location": "gate"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "검수 완료 (해당 캡처 범위)",
+  "review_note": "주변 가구/소품과 손·발·좌석 접점 육안 확인. 다른 날짜·이벤트 상태로 일반화하지 않음."
+}

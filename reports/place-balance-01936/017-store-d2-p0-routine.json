@@ -1,0 +1,77 @@
+{
+  "file": "017-store-d2-p0-routine.png",
+  "day": 2,
+  "period": 0,
+  "scenario": "routine",
+  "location": "store",
+  "location_name": "공동 물품 창고",
+  "camera": 0,
+  "actors": [
+    {
+      "person": "resident_kongi",
+      "pose": "activity",
+      "x": 991,
+      "y": 417,
+      "width": 250,
+      "height": 232,
+      "rect": [
+        991,
+        417,
+        250,
+        232
+      ],
+      "depth": 649,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        1116,
+        647,
+        324,
+        "floor"
+      ],
+      "activity": "콩이는 눌린 빵을 따로 놓고 바구니를 고쳐 들었다."
+    },
+    {
+      "person": "resident_guseul",
+      "pose": "living_stamp",
+      "x": 143,
+      "y": 328,
+      "width": 144,
+      "height": 338,
+      "rect": [
+        143,
+        328,
+        144,
+        338
+      ],
+      "depth": 666,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        216,
+        666,
+        338,
+        "floor"
+      ],
+      "activity": "구슬은 묶음 번호를 맞춘 뒤 물건을 닦았다."
+    }
+  ],
+  "names": {
+    "resident_kongi": "콩이",
+    "resident_guseul": "구슬",
+    "resident_kkwak": "꽥순"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 0,
+    "location": "store"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "검수 완료 (해당 캡처 범위)",
+  "review_note": "주변 가구/소품과 손·발·좌석 접점 육안 확인. 다른 날짜·이벤트 상태로 일반화하지 않음."
+}

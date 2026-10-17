@@ -1,0 +1,180 @@
+{
+  "file": "036-market-d2-p1-routine.png",
+  "day": 2,
+  "period": 1,
+  "scenario": "routine",
+  "location": "market",
+  "location_name": "여관 앞 · 장터",
+  "camera": 62,
+  "actors": [
+    {
+      "person": "resident_solbang",
+      "pose": "map27_mk_1",
+      "x": 648,
+      "y": 348,
+      "width": 107,
+      "height": 160,
+      "rect": [
+        648,
+        348,
+        107,
+        160
+      ],
+      "depth": 508,
+      "occlusion": [],
+      "contact": "behind_counter",
+      "slot": null,
+      "activity": "약초 묶음을 들어 보인다.",
+      "map27_occlusion": [
+        [
+          [
+            560,
+            452
+          ],
+          [
+            600,
+            440
+          ],
+          [
+            650,
+            432
+          ],
+          [
+            700,
+            437
+          ],
+          [
+            755,
+            445
+          ],
+          [
+            765,
+            425
+          ],
+          [
+            800,
+            410
+          ],
+          [
+            840,
+            412
+          ],
+          [
+            860,
+            422
+          ],
+          [
+            880,
+            413
+          ],
+          [
+            930,
+            418
+          ],
+          [
+            950,
+            470
+          ],
+          [
+            950,
+            610
+          ],
+          [
+            560,
+            610
+          ]
+        ]
+      ],
+      "map27_keepouts": [
+        [
+          [
+            692.7916666666666,
+            400.0833333333333
+          ],
+          [
+            731.3333333333334,
+            400.0833333333333
+          ],
+          [
+            731.3333333333334,
+            424.5625
+          ],
+          [
+            692.7916666666666,
+            424.5625
+          ]
+        ]
+      ]
+    },
+    {
+      "person": "resident_kongi",
+      "pose": "activity",
+      "x": 1066,
+      "y": 452,
+      "width": 165,
+      "height": 153,
+      "rect": [
+        1066,
+        452,
+        165,
+        153
+      ],
+      "depth": 605,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        1150,
+        605,
+        205,
+        "floor"
+      ],
+      "activity": "콩이는 눌린 빵을 따로 놓고 바구니를 고쳐 들었다."
+    },
+    {
+      "person": "resident_tosil",
+      "pose": "living_thermos",
+      "x": 692,
+      "y": 453,
+      "width": 126,
+      "height": 253,
+      "rect": [
+        692,
+        453,
+        126,
+        253
+      ],
+      "depth": 706,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        760,
+        705,
+        253,
+        "floor"
+      ],
+      "activity": "장터 구석에서 과자 노점을 기웃거린다."
+    }
+  ],
+  "names": {
+    "resident_nubi": "누비 아주머니",
+    "resident_guseul": "구슬",
+    "resident_solbang": "솔방울",
+    "resident_kongi": "콩이",
+    "resident_ppul": "뿔이 촌장",
+    "resident_hyeoni": "현이",
+    "resident_tosil": "토실"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 1,
+    "location": "market"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "검수 완료 (해당 캡처 범위)",
+  "review_note": "주변 가구/소품과 손·발·좌석 접점 육안 확인. 다른 날짜·이벤트 상태로 일반화하지 않음."
+}

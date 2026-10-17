@@ -1,0 +1,91 @@
+{
+  "file": "042-dining-d2-p2-routine.png",
+  "day": 2,
+  "period": 2,
+  "scenario": "routine",
+  "location": "dining",
+  "location_name": "여관 식당",
+  "camera": 880,
+  "actors": [
+    {
+      "person": "resident_dalgeurak",
+      "pose": "map27_di_1b",
+      "x": 1887,
+      "y": 257,
+      "width": 130,
+      "height": 236,
+      "rect": [
+        1887,
+        257,
+        130,
+        236
+      ],
+      "depth": 493,
+      "occlusion": [],
+      "contact": "seated",
+      "slot": null,
+      "activity": "수프를 떠먹는다.",
+      "map27_occlusion": [
+        [
+          [
+            1855,
+            356
+          ],
+          [
+            2085,
+            356
+          ],
+          [
+            2085,
+            445
+          ],
+          [
+            1855,
+            445
+          ]
+        ]
+      ],
+      "map27_keepouts": [
+        [
+          [
+            1909.3051364942528,
+            312.72609208972847
+          ],
+          [
+            1958.0976225754312,
+            312.72609208972847
+          ],
+          [
+            1958.0976225754312,
+            364.9693034238489
+          ],
+          [
+            1909.3051364942528,
+            364.9693034238489
+          ]
+        ]
+      ]
+    }
+  ],
+  "names": {
+    "resident_tok": "톡",
+    "resident_dalgeurak": "달그락",
+    "resident_mulgyeol": "물결",
+    "nabi": "나비",
+    "resident_owlgp": "부엉이 할아버지",
+    "resident_hyeoni": "현이"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 2,
+    "location": "dining"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "검수 완료 (해당 캡처 범위)",
+  "review_note": "주변 가구/소품과 손·발·좌석 접점 육안 확인. 다른 날짜·이벤트 상태로 일반화하지 않음."
+}

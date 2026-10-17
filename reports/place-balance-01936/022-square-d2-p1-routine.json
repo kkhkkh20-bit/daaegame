@@ -1,0 +1,237 @@
+{
+  "file": "022-square-d2-p1-routine.png",
+  "day": 2,
+  "period": 1,
+  "scenario": "routine",
+  "location": "square",
+  "location_name": "돌이 있는 광장",
+  "camera": 0,
+  "actors": [
+    {
+      "person": "resident_seol",
+      "pose": "living_bellrope",
+      "x": 317,
+      "y": 241,
+      "width": 97,
+      "height": 175,
+      "rect": [
+        317,
+        241,
+        97,
+        175
+      ],
+      "depth": 460,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "설이는 종줄의 매듭을 다시 만졌다.",
+      "ground_depth": 460,
+      "elevation": 45
+    },
+    {
+      "person": "resident_dalgeurak",
+      "pose": "map27_sq_1",
+      "x": 482,
+      "y": 344,
+      "width": 133,
+      "height": 200,
+      "rect": [
+        482,
+        344,
+        133,
+        200
+      ],
+      "depth": 544,
+      "occlusion": [],
+      "contact": "behind_counter",
+      "slot": null,
+      "activity": "수레 옆에서 보따리를 펼친다.",
+      "map27_occlusion": [
+        [
+          [
+            330,
+            472
+          ],
+          [
+            420,
+            465
+          ],
+          [
+            560,
+            480
+          ],
+          [
+            600,
+            505
+          ],
+          [
+            600,
+            565
+          ],
+          [
+            330,
+            565
+          ]
+        ]
+      ],
+      "map27_keepouts": [
+        [
+          [
+            508.0416666666667,
+            397.3854166666667
+          ],
+          [
+            612.859375,
+            397.3854166666667
+          ],
+          [
+            612.859375,
+            452.0729166666667
+          ],
+          [
+            508.0416666666667,
+            452.0729166666667
+          ]
+        ]
+      ]
+    },
+    {
+      "person": "resident_guldol",
+      "pose": "neutral",
+      "x": 644,
+      "y": 362,
+      "width": 123,
+      "height": 219,
+      "rect": [
+        644,
+        362,
+        123,
+        219
+      ],
+      "depth": 581,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        710,
+        580,
+        220,
+        "floor"
+      ],
+      "activity": "광장의 돌 앞에 서서 오래 귀를 댄다."
+    },
+    {
+      "person": "resident_piko",
+      "pose": "map27_sq_2",
+      "x": 947,
+      "y": 369,
+      "width": 147,
+      "height": 220,
+      "rect": [
+        947,
+        369,
+        147,
+        220
+      ],
+      "depth": 589,
+      "occlusion": [],
+      "contact": "behind_counter",
+      "slot": null,
+      "activity": "액자 그림을 들어 보인다.",
+      "map27_occlusion": [
+        [
+          [
+            870,
+            545
+          ],
+          [
+            900,
+            520
+          ],
+          [
+            1000,
+            515
+          ],
+          [
+            1060,
+            540
+          ],
+          [
+            1065,
+            605
+          ],
+          [
+            870,
+            605
+          ]
+        ]
+      ],
+      "map27_keepouts": []
+    },
+    {
+      "person": "doto",
+      "pose": "action_1",
+      "x": 851,
+      "y": 375,
+      "width": 106,
+      "height": 245,
+      "rect": [
+        851,
+        375,
+        106,
+        245
+      ],
+      "depth": 620,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "도토는 어제 옮긴 줄과 오늘 옮길 줄 사이에 종이를 끼웠다."
+    },
+    {
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp",
+      "x": 161,
+      "y": 423,
+      "width": 167,
+      "height": 255,
+      "rect": [
+        161,
+        423,
+        167,
+        255
+      ],
+      "depth": 678,
+      "occlusion": [],
+      "contact": "self-contained",
+      "slot": [
+        245,
+        676,
+        255,
+        "floor"
+      ],
+      "activity": "초롱은 점검함을 열고 전날 매듭을 봤다."
+    }
+  ],
+  "names": {
+    "resident_seol": "설이",
+    "resident_sling": "슬링",
+    "resident_dalgeurak": "달그락",
+    "resident_guldol": "굴돌 할아버지",
+    "resident_piko": "피코",
+    "doto": "도토",
+    "resident_lamplighter": "초롱",
+    "resident_somi": "솜이"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 1,
+    "location": "square"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "수정 후 검수 완료 (해당 캡처 범위)",
+  "review_note": "주변 가구/소품과 손·발·좌석 접점 육안 확인. 다른 날짜·이벤트 상태로 일반화하지 않음."
+}

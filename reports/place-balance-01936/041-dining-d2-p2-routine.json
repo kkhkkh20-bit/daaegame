@@ -1,0 +1,163 @@
+{
+  "file": "041-dining-d2-p2-routine.png",
+  "day": 2,
+  "period": 2,
+  "scenario": "routine",
+  "location": "dining",
+  "location_name": "여관 식당",
+  "camera": 46,
+  "actors": [
+    {
+      "person": "resident_tok",
+      "pose": "map27_di_1a",
+      "x": 584,
+      "y": 256,
+      "width": 205,
+      "height": 212,
+      "rect": [
+        584,
+        256,
+        205,
+        212
+      ],
+      "depth": 468,
+      "occlusion": [],
+      "contact": "seated",
+      "slot": null,
+      "activity": "수프를 떠먹는다.",
+      "map27_occlusion": [
+        [
+          [
+            645,
+            356
+          ],
+          [
+            965,
+            356
+          ],
+          [
+            965,
+            445
+          ],
+          [
+            645,
+            445
+          ]
+        ]
+      ],
+      "map27_keepouts": [
+        [
+          [
+            677.0258177885916,
+            325.7805642633229
+          ],
+          [
+            751.7787070829954,
+            325.7805642633229
+          ],
+          [
+            751.7787070829954,
+            368.9780564263323
+          ],
+          [
+            677.0258177885916,
+            368.9780564263323
+          ]
+        ]
+      ]
+    },
+    {
+      "person": "resident_mulgyeol",
+      "pose": "neutral",
+      "x": 553,
+      "y": 345,
+      "width": 114,
+      "height": 205,
+      "rect": [
+        553,
+        345,
+        114,
+        205
+      ],
+      "depth": 550,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        600,
+        550,
+        205,
+        "floor"
+      ],
+      "activity": "식당 난로 앞에서 젖은 장갑을 말린다."
+    },
+    {
+      "person": "nabi",
+      "pose": "action_2",
+      "x": 220,
+      "y": 428,
+      "width": 207,
+      "height": 226,
+      "rect": [
+        220,
+        428,
+        207,
+        226
+      ],
+      "depth": 654,
+      "occlusion": [],
+      "contact": "carrying_tray",
+      "slot": [
+        325,
+        655,
+        260,
+        "floor"
+      ],
+      "activity": "나비는 그릇을 닦고 아직 안 쓴 것 옆에 놓았다. 찬 바람에 손을 비비며 하던 일을 천천히 정리했다."
+    },
+    {
+      "person": "resident_owlgp",
+      "pose": "living_notebook",
+      "x": 445,
+      "y": 477,
+      "width": 126,
+      "height": 202,
+      "rect": [
+        445,
+        477,
+        126,
+        202
+      ],
+      "depth": 679,
+      "occlusion": [],
+      "contact": "portable_stool",
+      "slot": [
+        540,
+        680,
+        260,
+        "floor"
+      ],
+      "activity": "부엉이 할아버지는 풀린 수첩을 다시 묶었다. 찬 바람에 손을 비비며 하던 일을 천천히 정리했다."
+    }
+  ],
+  "names": {
+    "resident_tok": "톡",
+    "resident_dalgeurak": "달그락",
+    "resident_mulgyeol": "물결",
+    "nabi": "나비",
+    "resident_owlgp": "부엉이 할아버지",
+    "resident_hyeoni": "현이"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 2,
+    "location": "dining"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "추가 배치·원화 검토 필요",
+  "review_note": "나비 식당 컵 비율 원화 검토 필요"
+}

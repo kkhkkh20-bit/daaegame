@@ -1,0 +1,104 @@
+{
+  "file": "040-inn-d2-p2-routine.png",
+  "day": 2,
+  "period": 2,
+  "scenario": "routine",
+  "location": "inn",
+  "location_name": "여관 접수대",
+  "camera": 0,
+  "actors": [
+    {
+      "person": "resident_guseul",
+      "pose": "living_stamp",
+      "x": 1033,
+      "y": 323,
+      "width": 92,
+      "height": 216,
+      "rect": [
+        1033,
+        323,
+        92,
+        216
+      ],
+      "depth": 539,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        1080,
+        540,
+        216,
+        "waiting"
+      ],
+      "activity": "구슬은 묶음 번호를 맞춘 뒤 물건을 닦았다. 찬 바람에 손을 비비며 하던 일을 천천히 정리했다."
+    },
+    {
+      "person": "resident_ubak",
+      "pose": "living_measure",
+      "x": 778,
+      "y": 410,
+      "width": 223,
+      "height": 210,
+      "rect": [
+        778,
+        410,
+        223,
+        210
+      ],
+      "depth": 620,
+      "occlusion": [],
+      "contact": "self-contained",
+      "slot": [
+        890,
+        620,
+        238,
+        "waiting"
+      ],
+      "activity": "우박은 전날 숫자 옆에 오늘 조건을 적었다. 어두워지자 손을 멈추고 하던 것을 다시 살폈다."
+    },
+    {
+      "person": "resident_madam",
+      "pose": "neutral",
+      "x": 420,
+      "y": 442,
+      "width": 130,
+      "height": 265,
+      "rect": [
+        420,
+        442,
+        130,
+        265
+      ],
+      "depth": 707,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        485,
+        706,
+        265,
+        "waiting"
+      ],
+      "activity": "백 부인은 보관함을 봉해 둔 자리를 다시 만졌다. 등불 아래로 자리를 옮겨 남은 일을 매만졌다."
+    }
+  ],
+  "names": {
+    "resident_guseul": "구슬",
+    "resident_tosil": "토실",
+    "resident_ubak": "우박",
+    "granny": "할머니",
+    "resident_eunho": "은호 사장",
+    "resident_madam": "백 부인"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 2,
+    "location": "inn"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "검수 완료 (해당 캡처 범위)",
+  "review_note": "주변 가구/소품과 손·발·좌석 접점 육안 확인. 다른 날짜·이벤트 상태로 일반화하지 않음."
+}

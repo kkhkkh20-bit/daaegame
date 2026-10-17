@@ -1,0 +1,300 @@
+{
+  "file": "012-workshop-d2-p0-routine.png",
+  "day": 2,
+  "period": 0,
+  "scenario": "routine",
+  "location": "workshop",
+  "location_name": "수리점",
+  "camera": 520,
+  "actors": [
+    {
+      "person": "resident_tok",
+      "pose": "map27_ws_1",
+      "x": 1529,
+      "y": 271,
+      "width": 131,
+      "height": 196,
+      "rect": [
+        1529,
+        271,
+        131,
+        196
+      ],
+      "depth": 467,
+      "occlusion": [],
+      "contact": "behind_counter",
+      "slot": null,
+      "activity": "랜턴의 나사를 조인다.",
+      "map27_occlusion": [
+        [
+          [
+            1405,
+            374
+          ],
+          [
+            1460,
+            374
+          ],
+          [
+            1460,
+            354
+          ],
+          [
+            1480,
+            353
+          ],
+          [
+            1480,
+            330
+          ],
+          [
+            1560,
+            330
+          ],
+          [
+            1560,
+            370
+          ],
+          [
+            1600,
+            350
+          ],
+          [
+            1710,
+            351
+          ],
+          [
+            1730,
+            380
+          ],
+          [
+            1730,
+            512
+          ],
+          [
+            1405,
+            512
+          ]
+        ]
+      ],
+      "map27_keepouts": [
+        [
+          [
+            1548.140625,
+            333.5260416666667
+          ],
+          [
+            1611.9427083333333,
+            333.5260416666667
+          ],
+          [
+            1611.9427083333333,
+            387.7578125
+          ],
+          [
+            1573.6614583333333,
+            387.7578125
+          ],
+          [
+            1573.6614583333333,
+            357.7708333333333
+          ],
+          [
+            1548.140625,
+            357.7708333333333
+          ]
+        ]
+      ]
+    },
+    {
+      "person": "buri",
+      "pose": "action_1",
+      "x": 570,
+      "y": 303,
+      "width": 98,
+      "height": 208,
+      "rect": [
+        570,
+        303,
+        98,
+        208
+      ],
+      "depth": 511,
+      "occlusion": [
+        [
+          331,
+          460
+        ],
+        [
+          470,
+          439
+        ],
+        [
+          683,
+          441
+        ],
+        [
+          1060,
+          483
+        ],
+        [
+          1060,
+          624
+        ],
+        [
+          890,
+          678
+        ],
+        [
+          350,
+          604
+        ]
+      ],
+      "contact": "tool",
+      "slot": null,
+      "activity": "부리는 닳은 부품을 새 부품 옆에 놓았다."
+    },
+    {
+      "person": "resident_guldol",
+      "pose": "map9_stone_tapping",
+      "x": 723,
+      "y": 328,
+      "width": 114,
+      "height": 219,
+      "rect": [
+        723,
+        328,
+        114,
+        219
+      ],
+      "depth": 547,
+      "occlusion": [
+        [
+          331,
+          460
+        ],
+        [
+          470,
+          439
+        ],
+        [
+          683,
+          441
+        ],
+        [
+          1060,
+          483
+        ],
+        [
+          1060,
+          624
+        ],
+        [
+          890,
+          678
+        ],
+        [
+          350,
+          604
+        ]
+      ],
+      "contact": "standing",
+      "slot": null,
+      "activity": "작은 돌을 망치로 톡톡 두드리며 귀를 기울인다."
+    },
+    {
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp",
+      "x": 1128,
+      "y": 351,
+      "width": 144,
+      "height": 220,
+      "rect": [
+        1128,
+        351,
+        144,
+        220
+      ],
+      "depth": 571,
+      "occlusion": [],
+      "contact": "self-contained",
+      "slot": [
+        1200,
+        570,
+        220,
+        "floor"
+      ],
+      "activity": "초롱은 점검함을 열고 전날 매듭을 봤다."
+    },
+    {
+      "person": "resident_ttadak",
+      "pose": "living_repair",
+      "x": 1316,
+      "y": 352,
+      "width": 217,
+      "height": 230,
+      "rect": [
+        1316,
+        352,
+        217,
+        230
+      ],
+      "depth": 582,
+      "occlusion": [],
+      "contact": "self-contained",
+      "slot": [
+        1425,
+        580,
+        230,
+        "floor"
+      ],
+      "activity": "따닥은 어제 댄 나무 조각을 다시 눌렀다."
+    },
+    {
+      "person": "resident_musoe",
+      "pose": "living_foldmap",
+      "x": 1590,
+      "y": 427,
+      "width": 205,
+      "height": 280,
+      "rect": [
+        1590,
+        427,
+        205,
+        280
+      ],
+      "depth": 707,
+      "occlusion": [],
+      "contact": "self-contained",
+      "slot": [
+        1700,
+        705,
+        280,
+        "floor"
+      ],
+      "activity": "무쇠 할아버지는 접은 지도의 모서리를 폈다."
+    }
+  ],
+  "names": {
+    "resident_tok": "톡",
+    "buri": "부리",
+    "resident_ubak": "우박",
+    "resident_guldol": "굴돌 할아버지",
+    "resident_lamplighter": "초롱",
+    "resident_ttadak": "따닥",
+    "resident_musoe": "무쇠 할아버지"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 0,
+    "location": "workshop"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "검수 완료 (해당 캡처 범위)",
+  "review_note": "주변 가구/소품과 손·발·좌석 접점 육안 확인. 다른 날짜·이벤트 상태로 일반화하지 않음."
+}

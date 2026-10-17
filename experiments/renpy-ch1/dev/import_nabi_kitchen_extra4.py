@@ -5,6 +5,7 @@ import hashlib,json,shutil
 from pathlib import Path
 from PIL import Image
 from map27_pixel_derivative import derive_map_image,validate_map_image
+from nabi_kitchen_geometry import apply_kitchen_stature
 ROOT=Path(__file__).resolve().parents[1];SOURCE=Path('/workspace/nabi-extra4-input');COMMIT='64264145c81635843cfde00fdf987dd4c6283f5a'
 POSES={'stir_pot':('KI-2','냄비의 수프를 천천히 젓는다.'),'ladle_soup':('KI-3','그릇에 수프를 담는다.'),'wash_dishes':('KI-4','조리대 곁에서 접시를 닦는다.'),'arrange_tray':('KI-5','쟁반에 빵과 수프를 올린다.')}
 COUNTER=[[600,530],[790,555],[1100,595],[1620,565],[1620,720],[600,720]]
@@ -28,5 +29,6 @@ def main():
   reg['rows'].append(dict(request_id=key,status='approved',person='nabi',pose='map31_nabi_'+pose,location='kitchen',periods=[0],days=days(index),min_day=2,activation='daily_kitchen',replace_poses=['neutral','activity','inn_activity','world','action_1','action_2'],variants={'morning':v},spec=spec,activity=activity))
   receipts.append(dict(request_id=key,pose=pose,source=str(original.relative_to(ROOT)),source_size=[W,H],source_bytes=len(b),source_sha256=r['sha256'],export=file,export_sha256=hashlib.sha256(dest.read_bytes()).hexdigest(),transform=t))
  assert len(receipts)==4 and len({r['request_id'] for r in reg['rows']})==31
+ apply_kitchen_stature(reg)
  reg.update(status='approved_31_sources_31_scheduled',nabi_extra4_source_commit=COMMIT);regpath.write_text(json.dumps(reg,ensure_ascii=False,indent=2)+'\n');(folder/'receipt.json').write_text(json.dumps(dict(source_commit=COMMIT,source_archive_bytes=4572352,source_archive_sha256='d86dd434a00dd27abf6613699b65187393efbd39563fdfb35bb350486443049f',rows=receipts),indent=2)+'\n')
 if __name__=='__main__':main()

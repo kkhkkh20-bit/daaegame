@@ -122,6 +122,11 @@ def build(repo=REPO, output=None):
                 registered=row.get('status','approved')=='approved'
                 add('map',row['pose'],row['spec'],ref(Path('assets')/filename,pointer=f'/{"rows" if rows is map27 else "people"}/{index}'),'conditional_call' if registered else 'generated',conditions='Existing resident required; selector guards and upstream schedule/offer/pose checks apply.',pixel=True)
                 placements.append(dict(row,source=ref(Path('assets')/filename,pointer=f'/{index}'),guards=function_refs([selector]),resolution='conditional: upstream resident presence and override chain unknown',days=declared_days(row),capture_status='실제 캡처 없음',maps={k:media(v) for k,v in world.get(row['location'],{}).get('files',{}).items()}))
+        seori_path=Path('assets/room13-seori-review-art.json')
+        if person=='resident_seori' and (game/seori_path).exists():
+            review=data(seori_path)
+            add('map',review['pose'],review['spec'],ref(seori_path),'conditional_call',conditions='Existing clinic living_notes actor; morning/evening only; no active offer; loadable source. Actual weekly location can be store/school.',pixel=True)
+            placements.append(dict(person=person,pose=review['pose'],location='clinic',periods=[0,2],days=list(range(1,15)),source=ref(seori_path),guards=function_refs(['r13_stage_people']),resolution='conditional: replaces an existing clinic actor only; no schedule invention',capture_status='실제 캡처 없음',maps={k:media(v) for k,v in world.get('clinic',{}).get('files',{}).items()}))
         schedule=residents.get(person,{}).get('weekly_locations');override=tables.get('R13_WEEKLY_ROUTINES',{}).get(person)
         if override:schedule=override
         weekly=[dict(day=d,period=p,location=schedule[(d-1)%7][p],resolution='base schedule only; runtime overrides unknown') for d in range(1,15) for p in range(3)] if schedule and len(schedule)==7 else []
@@ -148,7 +153,8 @@ def build(repo=REPO, output=None):
         for who in found:
             inputs[str(p.relative_to(repo))]=hashlib.sha256(p.read_bytes()).hexdigest()
             inputs[str(shot.relative_to(repo))]=subprocess_blob_hash(shot)
-            by_id[who]['captures'].append(dict(url='../../'+str(shot.relative_to(repo)),evidence=str(p.relative_to(repo)),day=room.get('day'),period=room.get('period'),location=room.get('location'),screens=j['screens'],game_commit=j.get('game_commit','unknown'),pose=j.get('actor',{}).get('pose'),actor=j.get('actor'),archive_sha256=j.get('archive_sha256'),capture_kind=j.get('capture_kind','historical QA'),label='실제 엔진 QA 캡처 · 상태 fixture / 현재 source commit 일치 미검증'))
+            actor=next((a for a in j.get('actors',[]) if a.get('person')==who),j.get('actor',{}))
+            by_id[who]['captures'].append(dict(url='../../'+str(shot.relative_to(repo)),evidence=str(p.relative_to(repo)),day=room.get('day'),period=room.get('period'),location=room.get('location'),screens=j['screens'],game_commit=j.get('game_commit','unknown'),pose=actor.get('pose'),actor=actor,archive_sha256=j.get('archive_sha256'),capture_kind=j.get('capture_kind','historical QA'),label='실제 엔진 QA 캡처 · 상태 fixture / 현재 source commit 일치 미검증'))
     for c in characters:
         for placement in c['placements']:
             placement['captures']=[capture for capture in c['captures'] if capture.get('pose')==placement['pose'] and capture['location']==placement['location']]

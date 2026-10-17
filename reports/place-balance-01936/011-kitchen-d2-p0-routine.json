@@ -1,0 +1,94 @@
+{
+  "file": "011-kitchen-d2-p0-routine.png",
+  "day": 2,
+  "period": 0,
+  "scenario": "routine",
+  "location": "kitchen",
+  "location_name": "여관 1층 · 주방",
+  "camera": 112,
+  "actors": [
+    {
+      "person": "nabi",
+      "pose": "map27_ki_1",
+      "x": 629,
+      "y": 338,
+      "width": 245,
+      "height": 364,
+      "rect": [
+        629,
+        338,
+        245,
+        364
+      ],
+      "depth": 702,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "도마 위의 당근을 썬다.",
+      "map27_occlusion": [
+        [
+          [
+            600,
+            530
+          ],
+          [
+            790,
+            555
+          ],
+          [
+            1100,
+            595
+          ],
+          [
+            1620,
+            565
+          ],
+          [
+            1620,
+            720
+          ],
+          [
+            600,
+            720
+          ]
+        ]
+      ],
+      "map27_keepouts": [
+        [
+          [
+            640.895063229572,
+            466.47058823529414
+          ],
+          [
+            778.877796692607,
+            466.47058823529414
+          ],
+          [
+            778.877796692607,
+            546.1699346405228
+          ],
+          [
+            640.895063229572,
+            546.1699346405228
+          ]
+        ]
+      ]
+    }
+  ],
+  "names": {
+    "nabi": "나비"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 0,
+    "location": "kitchen"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "수정 후 검수 완료 (해당 캡처 범위)",
+  "review_note": "주변 가구/소품과 손·발·좌석 접점 육안 확인. 다른 날짜·이벤트 상태로 일반화하지 않음."
+}

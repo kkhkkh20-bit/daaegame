@@ -1,0 +1,74 @@
+{
+  "file": "060-clinic-d12-p1-routine.png",
+  "day": 12,
+  "period": 1,
+  "scenario": "routine",
+  "location": "clinic",
+  "location_name": "임시 진료실",
+  "camera": 640,
+  "actors": [
+    {
+      "person": "resident_piko",
+      "pose": "map27_cl_1",
+      "x": 1100,
+      "y": 313,
+      "width": 107,
+      "height": 160,
+      "rect": [
+        1100,
+        313,
+        107,
+        160
+      ],
+      "depth": 473,
+      "occlusion": [],
+      "contact": "background_bed",
+      "slot": null,
+      "activity": "침대 가장자리에 앉아 담요를 여민다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    },
+    {
+      "person": "resident_solbang",
+      "pose": "neutral",
+      "x": 1453,
+      "y": 437,
+      "width": 168,
+      "height": 253,
+      "rect": [
+        1453,
+        437,
+        168,
+        253
+      ],
+      "depth": 690,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        1538,
+        689,
+        253,
+        "floor"
+      ],
+      "activity": "진료소 선반에 약초 다발을 채운다."
+    }
+  ],
+  "names": {
+    "resident_piko": "피코",
+    "resident_ubak": "우박",
+    "resident_solbang": "솔방울"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 12,
+    "period": 1,
+    "location": "clinic"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "추가 배치·원화 검토 필요",
+  "review_note": "피코 침대 동작 크기 추가 검토"
+}

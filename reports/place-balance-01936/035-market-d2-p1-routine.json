@@ -1,0 +1,284 @@
+{
+  "file": "035-market-d2-p1-routine.png",
+  "day": 2,
+  "period": 1,
+  "scenario": "routine",
+  "location": "market",
+  "location_name": "여관 앞 · 장터",
+  "camera": 880,
+  "actors": [
+    {
+      "person": "resident_nubi",
+      "pose": "map27_mk_4",
+      "x": 1719,
+      "y": 339,
+      "width": 107,
+      "height": 160,
+      "rect": [
+        1719,
+        339,
+        107,
+        160
+      ],
+      "depth": 499,
+      "occlusion": [],
+      "contact": "behind_counter",
+      "slot": null,
+      "activity": "줄무늬 천을 펼쳐 보인다.",
+      "map27_occlusion": [
+        [
+          [
+            1715,
+            455
+          ],
+          [
+            1735,
+            425
+          ],
+          [
+            1830,
+            418
+          ],
+          [
+            1890,
+            425
+          ],
+          [
+            1940,
+            420
+          ],
+          [
+            1960,
+            440
+          ],
+          [
+            1958,
+            480
+          ],
+          [
+            2012,
+            485
+          ],
+          [
+            2015,
+            560
+          ],
+          [
+            1715,
+            560
+          ]
+        ]
+      ],
+      "map27_keepouts": [
+        [
+          [
+            1751.8125,
+            385.875
+          ],
+          [
+            1816.9166666666667,
+            385.875
+          ],
+          [
+            1816.9166666666667,
+            439
+          ],
+          [
+            1751.8125,
+            439
+          ]
+        ]
+      ]
+    },
+    {
+      "person": "resident_guseul",
+      "pose": "map27_mk_3",
+      "x": 1478,
+      "y": 358,
+      "width": 99,
+      "height": 148,
+      "rect": [
+        1478,
+        358,
+        99,
+        148
+      ],
+      "depth": 506,
+      "occlusion": [],
+      "contact": "behind_counter",
+      "slot": null,
+      "activity": "저울에 치즈를 올린다.",
+      "map27_occlusion": [
+        [
+          [
+            1225,
+            448
+          ],
+          [
+            1265,
+            430
+          ],
+          [
+            1270,
+            415
+          ],
+          [
+            1345,
+            415
+          ],
+          [
+            1352,
+            438
+          ],
+          [
+            1360,
+            423
+          ],
+          [
+            1435,
+            420
+          ],
+          [
+            1440,
+            440
+          ],
+          [
+            1490,
+            440
+          ],
+          [
+            1500,
+            420
+          ],
+          [
+            1550,
+            423
+          ],
+          [
+            1565,
+            448
+          ],
+          [
+            1565,
+            525
+          ],
+          [
+            1225,
+            525
+          ]
+        ]
+      ],
+      "map27_keepouts": [
+        [
+          [
+            1500.1614583333333,
+            404.25
+          ],
+          [
+            1538.703125,
+            404.25
+          ],
+          [
+            1538.703125,
+            440.86458333333337
+          ],
+          [
+            1500.1614583333333,
+            440.86458333333337
+          ]
+        ]
+      ]
+    },
+    {
+      "person": "resident_kongi",
+      "pose": "activity",
+      "x": 1066,
+      "y": 452,
+      "width": 165,
+      "height": 153,
+      "rect": [
+        1066,
+        452,
+        165,
+        153
+      ],
+      "depth": 605,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        1150,
+        605,
+        205,
+        "floor"
+      ],
+      "activity": "콩이는 눌린 빵을 따로 놓고 바구니를 고쳐 들었다."
+    },
+    {
+      "person": "resident_ppul",
+      "pose": "activity",
+      "x": 1322,
+      "y": 483,
+      "width": 194,
+      "height": 172,
+      "rect": [
+        1322,
+        483,
+        194,
+        172
+      ],
+      "depth": 655,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        1420,
+        655,
+        230,
+        "floor"
+      ],
+      "activity": "촌장은 식량 나눔표 위에 누름돌을 다시 올렸다."
+    },
+    {
+      "person": "resident_hyeoni",
+      "pose": "map27_mk_8",
+      "x": 1217,
+      "y": 452,
+      "width": 162,
+      "height": 251,
+      "rect": [
+        1217,
+        452,
+        162,
+        251
+      ],
+      "depth": 703,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "류트 줄을 튕긴다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    }
+  ],
+  "names": {
+    "resident_nubi": "누비 아주머니",
+    "resident_guseul": "구슬",
+    "resident_solbang": "솔방울",
+    "resident_kongi": "콩이",
+    "resident_ppul": "뿔이 촌장",
+    "resident_hyeoni": "현이",
+    "resident_tosil": "토실"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 1,
+    "location": "market"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "검수 완료 (해당 캡처 범위)",
+  "review_note": "주변 가구/소품과 손·발·좌석 접점 육안 확인. 다른 날짜·이벤트 상태로 일반화하지 않음."
+}

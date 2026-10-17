@@ -1,0 +1,98 @@
+{
+  "file": "019-forest-d2-p0-routine.png",
+  "day": 2,
+  "period": 0,
+  "scenario": "routine",
+  "location": "forest",
+  "location_name": "마을 서쪽 · 길 없는 숲",
+  "camera": 358,
+  "actors": [
+    {
+      "person": "resident_siluk",
+      "pose": "neutral",
+      "x": 943,
+      "y": 451,
+      "width": 109,
+      "height": 250,
+      "rect": [
+        943,
+        451,
+        109,
+        250
+      ],
+      "depth": 701,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        1000,
+        700,
+        250,
+        "floor"
+      ],
+      "activity": "실룩은 수레 바퀴에 끼인 눈을 털었다."
+    },
+    {
+      "person": "resident_solbang",
+      "pose": "work_herb_bundle",
+      "x": 1369,
+      "y": 472,
+      "width": 157,
+      "height": 233,
+      "rect": [
+        1369,
+        472,
+        157,
+        233
+      ],
+      "depth": 705,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        1450,
+        706,
+        255,
+        "floor"
+      ],
+      "activity": "바구니 속 마른 약초를 다발로 묶는다."
+    },
+    {
+      "person": "resident_kalbaram",
+      "pose": "map27_fo_1",
+      "x": 1141,
+      "y": 540,
+      "width": 165,
+      "height": 180,
+      "rect": [
+        1141,
+        540,
+        165,
+        180
+      ],
+      "depth": 720,
+      "occlusion": [],
+      "contact": "kneeling",
+      "slot": null,
+      "activity": "무릎을 낮추고 발자국을 살핀다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    }
+  ],
+  "names": {
+    "resident_siluk": "실룩",
+    "resident_solbang": "솔방울",
+    "resident_kalbaram": "칼바람"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 0,
+    "location": "forest"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "검수 완료 (해당 캡처 범위)",
+  "review_note": "주변 가구/소품과 손·발·좌석 접점 육안 확인. 다른 날짜·이벤트 상태로 일반화하지 않음."
+}

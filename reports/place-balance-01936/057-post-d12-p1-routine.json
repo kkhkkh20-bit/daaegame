@@ -1,0 +1,356 @@
+{
+  "file": "057-post-d12-p1-routine.png",
+  "day": 12,
+  "period": 1,
+  "scenario": "routine",
+  "location": "post",
+  "location_name": "우체국 입구",
+  "camera": 0,
+  "actors": [
+    {
+      "person": "resident_ppul",
+      "pose": "neutral",
+      "x": 672,
+      "y": 344,
+      "width": 169,
+      "height": 248,
+      "rect": [
+        672,
+        344,
+        169,
+        248
+      ],
+      "depth": 592,
+      "occlusion": [
+        [
+          366,
+          552
+        ],
+        [
+          1030,
+          466
+        ],
+        [
+          1030,
+          392
+        ],
+        [
+          1279,
+          392
+        ],
+        [
+          1279,
+          720
+        ],
+        [
+          366,
+          720
+        ]
+      ],
+      "contact": "standing",
+      "slot": [
+        757,
+        632,
+        332,
+        "counter"
+      ],
+      "activity": "촌장은 남은 몫을 세다가 손을 멈췄다."
+    },
+    {
+      "person": "resident_momo",
+      "pose": "living_lampnumber",
+      "x": 518,
+      "y": 368,
+      "width": 110,
+      "height": 238,
+      "rect": [
+        518,
+        368,
+        110,
+        238
+      ],
+      "depth": 606,
+      "occlusion": [
+        [
+          366,
+          552
+        ],
+        [
+          1030,
+          466
+        ],
+        [
+          1030,
+          392
+        ],
+        [
+          1279,
+          392
+        ],
+        [
+          1279,
+          720
+        ],
+        [
+          366,
+          720
+        ]
+      ],
+      "contact": "standing",
+      "slot": [
+        580,
+        646,
+        318,
+        "counter"
+      ],
+      "activity": "모모는 전시품을 바닥에서 올리고 자리를 비웠다."
+    },
+    {
+      "person": "resident_sling",
+      "pose": "map27_po_1",
+      "x": 570,
+      "y": 409,
+      "width": 160,
+      "height": 240,
+      "rect": [
+        570,
+        409,
+        160,
+        240
+      ],
+      "depth": 649,
+      "occlusion": [],
+      "contact": "behind_counter",
+      "slot": null,
+      "activity": "소포를 창구에 내려놓는다.",
+      "map27_occlusion": [
+        [
+          [
+            365,
+            552
+          ],
+          [
+            620,
+            520
+          ],
+          [
+            840,
+            493
+          ],
+          [
+            1030,
+            460
+          ],
+          [
+            1280,
+            455
+          ],
+          [
+            1280,
+            720
+          ],
+          [
+            365,
+            720
+          ]
+        ]
+      ],
+      "map27_keepouts": [
+        [
+          [
+            662.1875,
+            518.375
+          ],
+          [
+            727.8125,
+            518.375
+          ],
+          [
+            727.8125,
+            555.09375
+          ],
+          [
+            662.1875,
+            555.09375
+          ]
+        ],
+        [
+          [
+            633.28125,
+            493.375
+          ],
+          [
+            645,
+            493.375
+          ],
+          [
+            655.9375,
+            510.5625
+          ],
+          [
+            662.1875,
+            521.5
+          ],
+          [
+            668.4375,
+            529.3125
+          ],
+          [
+            688.75,
+            534
+          ],
+          [
+            688.75,
+            554.3125
+          ],
+          [
+            663.75,
+            557.4375
+          ],
+          [
+            648.125,
+            544.9375
+          ],
+          [
+            638.75,
+            530.875
+          ]
+        ],
+        [
+          [
+            691.875,
+            498.0625
+          ],
+          [
+            702.8125,
+            498.0625
+          ],
+          [
+            709.0625,
+            512.125
+          ],
+          [
+            718.4375,
+            519.15625
+          ],
+          [
+            723.125,
+            530.875
+          ],
+          [
+            710.625,
+            533.21875
+          ],
+          [
+            695,
+            523.0625
+          ]
+        ]
+      ]
+    },
+    {
+      "person": "resident_librarian",
+      "pose": "map27_po_2",
+      "x": 444,
+      "y": 358,
+      "width": 200,
+      "height": 300,
+      "rect": [
+        444,
+        358,
+        200,
+        300
+      ],
+      "depth": 658,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "종이를 펼쳐 말린다.",
+      "map27_occlusion": [
+        [
+          [
+            366,
+            552
+          ],
+          [
+            1030,
+            466
+          ],
+          [
+            1030,
+            392
+          ],
+          [
+            1279,
+            392
+          ],
+          [
+            1279,
+            720
+          ],
+          [
+            366,
+            720
+          ]
+        ]
+      ],
+      "map27_keepouts": []
+    },
+    {
+      "person": "seryeon",
+      "pose": "chair_read",
+      "x": 10,
+      "y": 310,
+      "width": 310,
+      "height": 364,
+      "rect": [
+        10,
+        310,
+        310,
+        364
+      ],
+      "depth": 674,
+      "occlusion": [
+        [
+          188,
+          408
+        ],
+        [
+          317,
+          416
+        ],
+        [
+          324,
+          583
+        ],
+        [
+          184,
+          577
+        ]
+      ],
+      "contact": "background_chair",
+      "slot": null,
+      "activity": "우편 담당자는 묶음을 작은 것부터 모았다."
+    }
+  ],
+  "names": {
+    "resident_ppul": "뿔이 촌장",
+    "resident_momo": "모모",
+    "resident_sling": "슬링",
+    "resident_librarian": "사서 선생님",
+    "seryeon": "세련"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 12,
+    "period": 1,
+    "location": "post"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "추가 배치·원화 검토 필요",
+  "review_note": "사서/모모/슬링 겹침과 창구 크기 추가 배치 필요"
+}

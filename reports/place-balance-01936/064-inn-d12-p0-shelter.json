@@ -1,0 +1,77 @@
+{
+  "file": "064-inn-d12-p0-shelter.png",
+  "day": 12,
+  "period": 0,
+  "scenario": "shelter",
+  "location": "inn",
+  "location_name": "여관 접수대",
+  "camera": 0,
+  "actors": [
+    {
+      "person": "bami",
+      "pose": "action_2",
+      "x": 5,
+      "y": 472,
+      "width": 174,
+      "height": 208,
+      "rect": [
+        5,
+        472,
+        174,
+        208
+      ],
+      "depth": 680,
+      "occlusion": [],
+      "contact": "floor_sit",
+      "slot": [
+        90,
+        680,
+        260,
+        "waiting"
+      ],
+      "activity": "밤이는 문을 살핀 뒤 자리에 앉았다. 전처럼 내 발소리에 곧바로 몸을 숨기지는 않았다."
+    },
+    {
+      "person": "resident_tosil",
+      "pose": "living_thermos",
+      "x": 412,
+      "y": 442,
+      "width": 132,
+      "height": 265,
+      "rect": [
+        412,
+        442,
+        132,
+        265
+      ],
+      "depth": 707,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        485,
+        706,
+        265,
+        "waiting"
+      ],
+      "activity": "보온병을 두 손으로 꼭 안고 있다."
+    }
+  ],
+  "names": {
+    "granny": "할머니",
+    "bami": "밤이",
+    "resident_tosil": "토실"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 12,
+    "period": 0,
+    "location": "inn"
+  },
+  "game_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35 + 0.19.36 spatial working tree",
+  "archive_sha256": "f4e911811fbef04ca60789d1da0d263d044793f794631cec73c4acd203a872e9",
+  "capture_kind": "Native Chromium/WASM fixture; no whole campaign run",
+  "review_status": "검수 완료 (해당 캡처 범위)",
+  "review_note": "주변 가구/소품과 손·발·좌석 접점 육안 확인. 다른 날짜·이벤트 상태로 일반화하지 않음."
+}
