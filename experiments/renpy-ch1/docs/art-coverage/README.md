@@ -4,6 +4,8 @@
 
 화질 자료: [꽥순 원본·렌더 진단](PIXEL_DIAGNOSIS_KKWAK.md), [표시 계산 CSV](display-metrics.csv), [표시 계산 JSON](display-metrics.json). `python3 dev/art_display_metrics.py`로 재생성한다. 이는 브라우저 실측이 아니며 전역 픽셀 규칙을 바꾸지 않는다.
 
+후보 제작·수신·승인 진행 상태의 단일 기록은 [첫 제작 묶음 현재 현황](BATCH_01.md#현재-제작수신-현황--2026-10-17)과 그 기계용 원본 `batch-01.json`이다. `coverage.json/csv`와 `SUMMARY.md`는 현재 저장소에 실제 연결된 자산 기준이며, 미수신 후보의 제작 보고를 파일 존재나 완료로 집계하지 않는다.
+
 ## 갱신
 
 `python3 dev/art_coverage.py`가 최신 게임의 캐릭터, 주요 채널, 장소 시간/사건 상태, 이벤트 배경·겹침, 지도 공개 상태, 대화 지시, 기존 제작 요청을 읽어 원장을 다시 만든다. `python3 dev/art_coverage.py --check`는 생성 결과가 현재 코드와 같은지 확인한다.
