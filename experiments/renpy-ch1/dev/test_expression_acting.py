@@ -85,8 +85,15 @@ class ExpressionActing(unittest.TestCase):
                         self.assertEqual(image["crop"][2] % 2, 0)
 
     def test_held_characters_are_untouched(self):
+        redesign_backup = json.loads((ROOT / "art/npc-redesign-20261015/original-entries.json").read_text(encoding="utf-8"))["npcs"]
         for person in REG["held"]:
+            if person == "resident_nero":
+                # 0.18.93: owner chose 네로's grey lynx-type original again (not the package's silver wolf)
+                self.assertEqual(FULLBODY[person], redesign_backup[person]["fullbody"])
+                continue
             self.assertEqual(FULLBODY[person], BEFORE[person], person)
+        self.assertNotIn("resident_nero", REG["apply"])
+        self.assertTrue((ROOT / "art/unassigned-candidates/silver-wolf/white_wolf-base-rev13.png").exists())
 
 
 if __name__ == "__main__":
