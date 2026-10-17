@@ -49,6 +49,13 @@ init 152 python:
         "ep1:ubak":_r13_e1_topic("resident_ubak","광장 3번 등 안의 숫자 쪽지를 묻는다",(3,4),not_flags=["lt_ubak_done"]),
         "ep1:librarian":_r13_e1_topic("resident_librarian","피코가 여기 자주 왔습니까?",(3,3),need=["lt_dawn"],not_flags=["lt_lib_met"]),
     })
+    # 0.19.17: 3일 새벽(lt_dawn) 뒤에는 "내일 봐야지"가 지나간 말이다. 같은 기록(L01·L02)을 주되 지금 시점으로 말한다.
+    _r13_e1_tok_head=[("resident_tok","등은 내 자식 같은 거라. 하나라도 식으면 그 밑에서 누가 떨잖아요."),
+        ("buri","저기 공구판 빈자리요? 【온도계】 자리예요. 등 안이 얼마나 따뜻한지 재는 거요. 지난주에 진료소 검사원님이 빌려 갔어요.")]
+    ROOM13["topics"]["ep1:tok_lamps"]["variants"]=[
+        ({"has":["lt_dawn","piko_dead"]},_r13_e1_tok_head+[("resident_tok","(장부를 넘기며) 광장 【3번 등】이 요 며칠 밤마다 깜빡였어요. 오늘 보려고 적어 뒀는데…… 그 밑에서 자던 사람이……")]),
+        ({"has":["lt_dawn"]},_r13_e1_tok_head+[("resident_tok","(장부를 넘기며) 광장 【3번 등】이 요 며칠 밤마다 깜빡였어요. 오늘 보려고 적어 뒀는데, 그 전에 꺼져 버렸네요.")]),
+    ]
     R13_TOPIC_LABELS.update({"ep1:nabi_shelter":"r13_ep1_nabi_shelter","ep1:ubak":"r13_ep1_ubak","ep1:librarian":"r13_ep1_librarian"})
 
     _r13_e1_topics=r13_topics
@@ -128,7 +135,7 @@ init 152 python:
                 wrong=("resident_madam","그게 제가 훔쳤다는 뜻인가요?")),
             dict(id="s4",who="neoul",text="누가 팔았든 【이미 끝난 일】이오. 톡만 풀어 주면 되지 않소.",
                 accept=["L10","L11"],
-                broken_by={"L10":[("dad","끝나지 않았습니다. 같은 사람이 기록실 난로 조각도 가져갔습니다. 그리고 한 사람이 더 쓰러졌습니다."),("neoul","……")],
+                broken_by={"L10":[("dad","끝나지 않았습니다. 어젯밤 기록실 난로 조각도 사라졌습니다. 조각을 노리는 손이 아직 마을에 있습니다."),("neoul","……")],
                     "L11":[("resident_librarian","어젯밤 허리에 노끈을 감은 사람이 제 기록실 창으로 들어왔어요. 장작이 없었으면 저도 죽었을 거예요."),("neoul","……")]},
                 hint="같은 손이 또 조각을 가져간 곳이 있다.",
                 wrong=("neoul","그래서 무엇이 아직 안 끝났다는 거요?")),
@@ -192,10 +199,15 @@ init 152 python:
         ("night:ep1_promise","다람이가 그림쟁이 이야기를 한다",lambda:r13_has("lt_piko_promise") and store.room13["day"]==2,[
             ("daram","아빠, 그 아저씨가 엄마 그려 준대. 코 찡그리는 것도."),
             ("daram","엄마가 그림 보면 웃겠다. 그치?")]),
-        ("night:ep1_cold","다람이가 창밖을 본다",lambda:r13_has("piko_seen") and not r13_has("lt_piko_promise") and store.room13["day"]==2,[
+        ("night:ep1_cold","다람이가 창밖을 본다",lambda:r13_has("piko_seen") and not r13_has("lt_piko_promise") and not r13_has("piko_sheltered") and store.room13["day"]==2,[
             ("daram","그 아저씨, 오늘도 밖에서 자?"),
             ("dad","……그럴 거야."),
             ("daram","춥겠다.")]),
+        # 0.19.17: 나비가 식당 의자를 내준 밤에는 "오늘도 밖에서 자?"가 맞지 않는다.
+        ("night:ep1_sheltered","다람이가 그림쟁이 걱정을 한다",lambda:r13_has("piko_sheltered") and not r13_has("lt_piko_promise") and store.room13["day"]==2,[
+            ("daram","그 아저씨, 오늘은 식당에서 자?"),
+            ("dad","응. 나비가 식당 의자를 내줬어. 새벽에는 나가야 한대."),
+            ("daram","그래도 오늘 밤은 안 춥겠다.")]),
     ):
         ROOM13["topics"][_k]=dict(npc="daram",title=_t,day=[2,2],need=["lodging"],give=[],flags=[],lines=list(_l))
         R13_NIGHT_TALK_COND[_k]=_c
@@ -288,7 +300,7 @@ label r13_ep1_dawn:
             $ r13_grant(["L12"],"피코가 그리다 만 엄마 초상")
         else:
             call r13_lines([(None,"판자 사이에서 오래된 스케치가 나왔다. 다람쥐 여인이 소포를 안고 울고 있었다."),
-                ("dad","(눈썹의 흉터. 아내다. 피코는 아내를 본 적이 있다.)",{"thought":True})],"ep1:dawn:sketch")
+                ("dad","(눈썹의 흉터가 아내와 똑같다. 피코는 아내를 본 적이 있었을까?)",{"thought":True})],"ep1:dawn:sketch")
             $ r13_grant(["L13"],"피코의 판자 사이에서 나온 스케치")
         $ r13_grant(["L00","L06"],"3일 새벽 광장")
     call r13_lines([("dad","(등이 꺼진 밤에, 등 밑에서 잔 사람이 쓰러졌다.)",{"thought":True})],"ep1:dawn:thought")
@@ -313,6 +325,13 @@ label r13_ep1_accused:
     return None
 
 label r13_ep1_lamp:
+    # 0.19.17: 다 살펴본 등을 다시 누르면 짧게 넘어간다.
+    if r13_has("L03") and r13_has("L04") and (r13_has("L14") or not r13_has("own:rubbing")):
+        if r13_has("lt_solved"):
+            call r13_lines([("dad","(톡이 조각을 다시 넣은 3번 등이다. 손을 대 보니 온기가 금방 옅어진다.)",{"thought":True})],"ep1:lamp:again_solved")
+        else:
+            call r13_lines([("dad","(쪽지와 노끈은 이미 챙겼다. 꺼진 3번 등에서 더 찾을 것은 없어 보인다.)",{"thought":True})],"ep1:lamp:again")
+        return
     $ _e1_loop=True
     while _e1_loop:
         $ _e1_loop=False
@@ -371,7 +390,7 @@ label r13_ep1_librarian:
     $ r13_flag("lt_lib_met")
     call r13_lines([("resident_librarian","따뜻한 차 한 잔은 늘 있어요."),
         ("resident_librarian","피코는 여기서 옛 그림을 자주 베껴 갔어요. 지난달엔 우체국 앞에서 소포를 안고 울던 다람쥐 여인을 그리고 싶다더군요."),
-        ("dad","(아내다.)",{"thought":True}),
+        ("dad","(피코의 판자 사이에서 나온 그 스케치다. 눈썹에 흉터가 있던 그 여인.)" if r13_has("L13") else "(우체국 앞에서 소포를 안고 울던 다람쥐 여인…… 아내일까?)",{"thought":True}),
         ("resident_librarian","(난로를 보며) 요즘 이 난로 조각이 금방 식어요.")],"ep1:librarian")
     return
 
@@ -413,7 +432,7 @@ label r13_ep1_library_dawn:
             (None,"……눈 내리는 소리만 들렸다."),
             ("dad","(기록이 젖지 않게. 마지막까지.)",{"thought":True}),
             (None,"묶음 맨 위 대출 카드에 아내의 이름이 있었다."),
-            ("dad","(여기 난로 조각도 사라졌다. 같은 사람이다.)",{"thought":True})],"ep1:library:dead")
+            ("dad","(여기 난로 조각도 사라졌다. 3번 등의 조각을 가져간 손과 같은 손일까?)",{"thought":True})],"ep1:library:dead")
         $ r13_grant(["L10"],"기록실의 빈 난로")
     return
 
@@ -455,7 +474,7 @@ label r13_ep1_store:
     call r13_lines([(None,"창고 안쪽 상자에서 초록빛이 새어 나왔다. 손을 대니 사람 손처럼 따뜻했다. 등 조각들이다."),
         ("resident_madam","사고판 것뿐이에요. 요즘 온기가 얼마나 귀한지 아세요?"),
         (None,"조각 하나를 뒤집어 보니 밑에 작은 이름표. 톡의 글씨로 '광장 3'."),
-        ("dad","(톡은 고친 조각마다 이름표를 붙인다. 이건 피코가 잠든 그 등의 조각이다.)",{"thought":True})],"ep1:store")
+        ("dad","(톡의 글씨로 ‘광장 3’. 피코가 잠들던 그 등에서 나온 조각일까?)",{"thought":True})],"ep1:store")
     $ r13_grant(["L09"],"백 부인 창고의 조각")
     return
 
@@ -497,15 +516,24 @@ label r13_ep1_decision:
     return
 
 label r13_ep1_aftermath:
-    call r13_lines([(None,"톡이 '광장 3' 조각을 등에 다시 넣었다. 등이 데워졌다. 그런데 숨 몇 번 사이에 온기가 옅어졌다."),
-        ("resident_tok","이 조각, 가을엔 밤새 따뜻했어요. 지금은…….")],"ep1:after:lamp")
-    if r13_has("know_stone_failing"):
-        call r13_lines([("resident_ubak","조각 탓이 아니에요. 【돌이 식고 있어요】.")],"ep1:after:ubak")
-    call r13_lines([("dad","(실룩이 훔친 건 조각이지만, 피코를 쓰러뜨린 건 이 겨울이다.)",{"thought":True})],"ep1:after:thought")
-    if r13_has("piko_dead"):
+    # 0.19.17: 회의에서 밝히지 못했으면(톡이 끌려감) 실룩이 훔쳤다는 결론과 톡의 수리 장면을 보여 주지 않는다.
+    if r13_has("lt_solved"):
+        call r13_lines([(None,"톡이 '광장 3' 조각을 등에 다시 넣었다. 등이 데워졌다. 그런데 숨 몇 번 사이에 온기가 옅어졌다."),
+            ("resident_tok","이 조각, 가을엔 밤새 따뜻했어요. 지금은…….")],"ep1:after:lamp")
+        if r13_has("know_stone_failing"):
+            call r13_lines([("resident_ubak","조각 탓이 아니에요. 【돌이 식고 있어요】.")],"ep1:after:ubak")
+        call r13_lines([("dad","(실룩이 훔친 건 조각이지만, 피코를 쓰러뜨린 건 이 겨울이다.)",{"thought":True})],"ep1:after:thought")
+    else:
+        call r13_lines([(None,"톡이 끌려간 뒤, 광장 3번 등은 조각 자리가 빈 채로 서 있었다."),
+            ("dad","(톡이 정말 조각을 가져갔을까? 쪽지와 노끈의 주인을 끝내 밝히지 못했다.)",{"thought":True})],"ep1:after:fail")
+    if r13_has("piko_dead") and r13_has("lt_piko_promise"):
         call r13_lines([(None,"그날 밤, 다람이 그림책을 펼쳤다.",{"book":"U01-opening"}),
             (None,"「아침이 되자, 아저씨는 엄마 코를 다 못 그린 채 잠들어 있었어요.」",{"book":"U01-ending"}),
             ("daram","……아빠. 이 책, 이제 안 읽을래.")],"ep1:after:book")
+    elif r13_has("piko_dead"):
+        call r13_lines([(None,"그날 밤, 다람이 그림책을 펼쳤다.",{"book":"U01-opening"}),
+            (None,"「아침이 되자, 아저씨는 등 밑에서 잠든 채 일어나지 않았어요.」",{"book":"U01-ending"}),
+            ("daram","……아빠. 이 책, 이제 안 읽을래.")],"ep1:after:book_unpromised")
     else:
         call r13_lines([(None,"그날 밤, 다람이 그림책을 펼쳤다.",{"book":"U01-opening"}),
             (None,"「아침이 되자, 누군가 아저씨에게 담요를 덮어 주었어요.」",{"book":"U01-ending"}),
@@ -515,5 +543,5 @@ label r13_ep1_aftermath:
 label r13_ep1_deadline:
     $ r13_flag("lt_done","tok_detained")
     call r13_lines([(None,"광장에 판자가 덧대진 기둥이 섰다. 톡이 그 앞에 묶여 있었다. 회의는 열리지 않았다."),
-        ("dad","(진짜 범인은 아직 마을 어딘가에 있다.)",{"thought":True})],"ep1:deadline")
+        ("dad","(회의도 없이 톡이 묶였다. 톡이 정말 조각을 가져갔을까? 확인하지 못한 것이 아직 남아 있다.)",{"thought":True})],"ep1:deadline")
     return

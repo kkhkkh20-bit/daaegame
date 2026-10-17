@@ -74,7 +74,8 @@ label r13_w1c_events:
         call r13_w1c_fake_night
     if r13_tl(5)<=_d<=r13_tl(6) and _loc=="hall" and room13["case_state"]=="occurred" and not r13_has("ev_s_done"):
         $ r13_offer("r13_w1c_seal")
-    if _d==r13_tl(6) and _p<=1 and _loc in ("gate","store") and room13["case_state"]=="occurred" and not r13_has("ev_t_done"):
+    # 0.19.17: ① 회의 뒤 너울이 데려간 실룩(siluk_handed)은 거짓 증언을 팔러 나타나지 않는다.
+    if _d==r13_tl(6) and _p<=1 and _loc in ("gate","store") and room13["case_state"]=="occurred" and not r13_has("ev_t_done") and not r13_has("siluk_handed"):
         $ r13_offer("r13_w1c_testimony")
     if _d>=R13_WEEK2_DAY and r13_has("letters_safe") and r13_has("pursuit_active") and not r13_has("pursuit_managed"):
         call r13_lines([("resident_sling","부인 편지는 제가 할머니 몰래 다른 길로 돌렸어요. 그래서 뒤쫓는 사람은 엉뚱한 편지만 들고 갔어요.")],"w1c:letters:safe")
