@@ -69,6 +69,8 @@ testcase ui_polish_01965:
     pause until screen "r13_hub" timeout 20
     assert eval (room13["location"]=="inn" and preferences.text_cps==34)
     screenshot "ui065-direct-field-people-and-props.png"
+    # Wait for the hub debounce before an actual prop click.
+    pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
     # Actual prop hit test, not a direct call to the observation label.
     assert eval (not r13_secret_route_available() and not r13_object_visible(ROOM13["objects"]["room13"]["books"]))
     assert eval (r13_object_visible(ROOM13["objects"]["inn"]["keys"]) and not r13_has("observed:inn:keys"))
