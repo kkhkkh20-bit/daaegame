@@ -2,13 +2,21 @@ import json,unittest,hashlib
 from PIL import Image
 from test_map_action27 import environment,ROOT
 from map27_pixel_derivative import validate_map_image
+from investigation_canonical_overlay import receipt, restored_registries, run as validate_canonical_overlay
 class ResidentActions(unittest.TestCase):
  def setUp(self):
-  self.rows=[r for r in json.loads((ROOT/'game/assets/room13-map-action27.json').read_text())['rows'] if r['spec'].get('source_commit')=='69e8e718959253743e4440e71d47c6676ec581b1']
+  # Verify current14 exact source/export hashes and18 specs before legacy reconstruction.
+  validate_canonical_overlay(ROOT)
+  current={name:json.loads((ROOT/'game'/name).read_text()) for name in ('assets/room13-pixel-acting.json','assets/room13-map-action27.json')}
+  legacy=restored_registries(current,receipt(ROOT))['assets/room13-map-action27.json']['rows']
+  self.legacy_rows=[r for r in legacy if r['spec'].get('source_commit')=='69e8e718959253743e4440e71d47c6676ec581b1']
+  ids={r['request_id'] for r in self.legacy_rows}
+  self.rows=[r for r in current['assets/room13-map-action27.json']['rows'] if r['request_id'] in ids]
+  self.assertEqual(len(self.rows),len(self.legacy_rows))
  def test_seven_originals_and_exports_no_duplicate_patrol(self):
   manifest=json.loads((ROOT/'art/approved-resident-actions-remaining7/manifest.json').read_text());self.assertEqual(len(manifest),7)
   files=set()
-  for r in self.rows:
+  for r in self.legacy_rows:
    m=next(m for m in manifest if m['sha256']==r['spec']['source_sha256']);p=ROOT/'art/approved-resident-actions-remaining7/originals'/m['file'].split('/')[-1]
    self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),m['sha256']);files.add(r['spec']['file'])
    with Image.open(ROOT/'game'/r['spec']['file']) as im:validate_map_image(im.convert('RGBA'))
@@ -27,3 +35,4 @@ class ResidentActions(unittest.TestCase):
     self.assertIsNone(select(row,dict(actor,pose='block_cart'),state,daylight,width,False))
   env['_r13_map27_stage']=lambda entry=False:[];env['R13_MAP_ACTION27']['rows']=self.rows;self.assertEqual(env['r13_stage_people'](),[])
 if __name__=='__main__':unittest.main()
+
