@@ -215,8 +215,15 @@ testcase investigation_placement_granny:
         pause 0.5
     assert eval (r13_world_offset()==(r13_world_width()-1280 if room13["location"]=="workshop" else 0))
     run Function(r13_pd_check_field,"placement-opposite-camera-end")
+    run Function(r13_pd_hover_clear)
+    # Two distinct physical positions guarantee fresh mousemotion even if the test cursor
+    # already equals the final position. Do not clear tooltip/screen state in Python.
+    move pos (600,20)
+    pause 0.1
+    run Function(r13_pd_hover_clear)
     move pos (640,20)
     pause 0.2
+    run Function(r13_pd_hover_clear)
     pause until eval (r13_pd_hover_clear()) timeout 3
     screenshot "placement-granny-06-opposite-camera-end.png"
     $ R13_PD_MAP_PEOPLE["inn"]=r13_pd_saved_preference

@@ -1,4 +1,4 @@
-"""Second diagnostic overlay: 34 exact selected actual pose specs, one flag each."""
+"""Second diagnostic overlay: 47 exact selected actual pose specs, one flag each."""
 import copy,json,hashlib,argparse
 from pathlib import Path
 from investigation_job_overlay import restore as restore_jobs
@@ -9,7 +9,7 @@ def slot(doc,p):
  for k in parts[:-1]:n=n[int(k)] if isinstance(n,list) else n[k]
  return n,int(parts[-1]) if isinstance(n,list) else parts[-1]
 def receipt(root=ROOT):
- r=json.loads((root/RECEIPT).read_text());assert len(r['operations'])==34
+ r=json.loads((root/RECEIPT).read_text());assert len(r['operations'])==47
  for o in r['operations']:assert o['value']==dict(o['expected'],native_detail=True) and not o['expected'].get('native_detail')
  return r
 
@@ -31,6 +31,6 @@ def run(root=ROOT,apply=False):
   for o in r['operations']:
    n,k=slot(docs[o['file']],o['pointer']);n[k]=o['value']
   for p,d in docs.items():(root/'game'/p).write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
- return 34
+ return 47
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('--root',type=Path,default=ROOT);p.add_argument('--apply',action='store_true');a=p.parse_args();print(run(a.root,a.apply))

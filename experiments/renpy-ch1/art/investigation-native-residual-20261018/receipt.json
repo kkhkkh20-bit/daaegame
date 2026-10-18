@@ -1,6 +1,6 @@
 {
   "base_commit": "cda35116e5e10eb8f9b62b819b23ab96890ac586",
-  "purpose": "Previous8 + exactly26 visually source-inspected selected poses; native diagnosis pending; mixed5 and held2 excluded",
+  "purpose": "34 preserved operations + 11 source-inspected selected poses / 13 exact active pointers. Native diagnosis pending. No new art.",
   "operations": [
     {
       "file": "assets/room13-pixel-acting.json",
@@ -3637,12 +3637,1072 @@
         "redesign": "candidate_fox_town",
         "native_detail": true
       }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/14/spec",
+      "expected": {
+        "file": "assets/map-action27/MK-3--resident_guseul.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          189.44,
+          7.68,
+          225.28,
+          253.44
+        ],
+        "foot": [
+          291.84,
+          761.856
+        ],
+        "anchors": {
+          "foot": [
+            291.84,
+            761.856
+          ],
+          "hand_right": [
+            158.72,
+            284.15999999999997
+          ],
+          "hand_left": [
+            286.72,
+            414.72
+          ],
+          "cheese_pan": [
+            194.56,
+            307.20000000000005
+          ],
+          "work_support": [
+            220.16,
+            414.72
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              115.0,
+              240.0
+            ],
+            [
+              315.0,
+              240.0
+            ],
+            [
+              315.0,
+              430.0
+            ],
+            [
+              115.0,
+              430.0
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_sha256": "0f6d8005e5b3770ed7cf9fab7ad82f3cbb57187572f305ab6e2a3a5a72b405d0",
+        "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376"
+      },
+      "value": {
+        "file": "assets/map-action27/MK-3--resident_guseul.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          189.44,
+          7.68,
+          225.28,
+          253.44
+        ],
+        "foot": [
+          291.84,
+          761.856
+        ],
+        "anchors": {
+          "foot": [
+            291.84,
+            761.856
+          ],
+          "hand_right": [
+            158.72,
+            284.15999999999997
+          ],
+          "hand_left": [
+            286.72,
+            414.72
+          ],
+          "cheese_pan": [
+            194.56,
+            307.20000000000005
+          ],
+          "work_support": [
+            220.16,
+            414.72
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              115.0,
+              240.0
+            ],
+            [
+              315.0,
+              240.0
+            ],
+            [
+              315.0,
+              430.0
+            ],
+            [
+              115.0,
+              430.0
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_sha256": "0f6d8005e5b3770ed7cf9fab7ad82f3cbb57187572f305ab6e2a3a5a72b405d0",
+        "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/28/spec",
+      "expected": {
+        "file": "assets/map-action27/MK-8--resident_hyeoni.webp",
+        "crop": [
+          0,
+          0,
+          496,
+          768
+        ],
+        "head": [
+          128.95999999999998,
+          0.0,
+          297.59999999999997,
+          215.04000000000005
+        ],
+        "foot": [
+          252.96,
+          760.32
+        ],
+        "anchors": {
+          "foot": [
+            252.96,
+            760.32
+          ],
+          "hand_left": [
+            426.56,
+            307.20000000000005
+          ],
+          "hand_right": [
+            243.04,
+            376.32
+          ],
+          "lute_strings": [
+            282.71999999999997,
+            368.64
+          ],
+          "raised_foot": [
+            416.63999999999993,
+            744.96
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "dd72dfe60cd9d5993c0aadc64dab2743a97f044e0725d481a8c43dbd685af6e0",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "value": {
+        "file": "assets/map-action27/MK-8--resident_hyeoni.webp",
+        "crop": [
+          0,
+          0,
+          496,
+          768
+        ],
+        "head": [
+          128.95999999999998,
+          0.0,
+          297.59999999999997,
+          215.04000000000005
+        ],
+        "foot": [
+          252.96,
+          760.32
+        ],
+        "anchors": {
+          "foot": [
+            252.96,
+            760.32
+          ],
+          "hand_left": [
+            426.56,
+            307.20000000000005
+          ],
+          "hand_right": [
+            243.04,
+            376.32
+          ],
+          "lute_strings": [
+            282.71999999999997,
+            368.64
+          ],
+          "raised_foot": [
+            416.63999999999993,
+            744.96
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "dd72dfe60cd9d5993c0aadc64dab2743a97f044e0725d481a8c43dbd685af6e0",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/29/spec",
+      "expected": {
+        "file": "assets/map-action27/MK-8--resident_hyeoni.webp",
+        "crop": [
+          0,
+          0,
+          496,
+          768
+        ],
+        "head": [
+          128.95999999999998,
+          0.0,
+          297.59999999999997,
+          215.04000000000005
+        ],
+        "foot": [
+          252.96,
+          760.32
+        ],
+        "anchors": {
+          "foot": [
+            252.96,
+            760.32
+          ],
+          "hand_left": [
+            426.56,
+            307.20000000000005
+          ],
+          "hand_right": [
+            243.04,
+            376.32
+          ],
+          "lute_strings": [
+            282.71999999999997,
+            368.64
+          ],
+          "raised_foot": [
+            416.63999999999993,
+            744.96
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "dd72dfe60cd9d5993c0aadc64dab2743a97f044e0725d481a8c43dbd685af6e0",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "value": {
+        "file": "assets/map-action27/MK-8--resident_hyeoni.webp",
+        "crop": [
+          0,
+          0,
+          496,
+          768
+        ],
+        "head": [
+          128.95999999999998,
+          0.0,
+          297.59999999999997,
+          215.04000000000005
+        ],
+        "foot": [
+          252.96,
+          760.32
+        ],
+        "anchors": {
+          "foot": [
+            252.96,
+            760.32
+          ],
+          "hand_left": [
+            426.56,
+            307.20000000000005
+          ],
+          "hand_right": [
+            243.04,
+            376.32
+          ],
+          "lute_strings": [
+            282.71999999999997,
+            368.64
+          ],
+          "raised_foot": [
+            416.63999999999993,
+            744.96
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "dd72dfe60cd9d5993c0aadc64dab2743a97f044e0725d481a8c43dbd685af6e0",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/30/spec",
+      "expected": {
+        "file": "assets/map-action27/MK-8--resident_hyeoni.webp",
+        "crop": [
+          0,
+          0,
+          496,
+          768
+        ],
+        "head": [
+          128.95999999999998,
+          0.0,
+          297.59999999999997,
+          215.04000000000005
+        ],
+        "foot": [
+          252.96,
+          760.32
+        ],
+        "anchors": {
+          "foot": [
+            252.96,
+            760.32
+          ],
+          "hand_left": [
+            426.56,
+            307.20000000000005
+          ],
+          "hand_right": [
+            243.04,
+            376.32
+          ],
+          "lute_strings": [
+            282.71999999999997,
+            368.64
+          ],
+          "raised_foot": [
+            416.63999999999993,
+            744.96
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "dd72dfe60cd9d5993c0aadc64dab2743a97f044e0725d481a8c43dbd685af6e0",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "value": {
+        "file": "assets/map-action27/MK-8--resident_hyeoni.webp",
+        "crop": [
+          0,
+          0,
+          496,
+          768
+        ],
+        "head": [
+          128.95999999999998,
+          0.0,
+          297.59999999999997,
+          215.04000000000005
+        ],
+        "foot": [
+          252.96,
+          760.32
+        ],
+        "anchors": {
+          "foot": [
+            252.96,
+            760.32
+          ],
+          "hand_left": [
+            426.56,
+            307.20000000000005
+          ],
+          "hand_right": [
+            243.04,
+            376.32
+          ],
+          "lute_strings": [
+            282.71999999999997,
+            368.64
+          ],
+          "raised_foot": [
+            416.63999999999993,
+            744.96
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "dd72dfe60cd9d5993c0aadc64dab2743a97f044e0725d481a8c43dbd685af6e0",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_kongi/activity",
+      "expected": {
+        "file": "assets/room13-pixel-acting-resident_kongi.webp",
+        "crop": [
+          570,
+          594,
+          407,
+          377
+        ],
+        "nearest": true,
+        "foot": [
+          203,
+          373
+        ],
+        "facing": "right",
+        "contact": "standing",
+        "head": [
+          13,
+          0,
+          369,
+          226
+        ],
+        "reviewed": true,
+        "posture": "crouching"
+      },
+      "value": {
+        "file": "assets/room13-pixel-acting-resident_kongi.webp",
+        "crop": [
+          570,
+          594,
+          407,
+          377
+        ],
+        "nearest": true,
+        "foot": [
+          203,
+          373
+        ],
+        "facing": "right",
+        "contact": "standing",
+        "head": [
+          13,
+          0,
+          369,
+          226
+        ],
+        "reviewed": true,
+        "posture": "crouching",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_kongi/neutral",
+      "expected": {
+        "file": "assets/room13-pixel-acting-resident_kongi.webp",
+        "crop": [
+          84,
+          38,
+          327,
+          475
+        ],
+        "nearest": true,
+        "foot": [
+          163,
+          471
+        ],
+        "facing": "left",
+        "contact": "standing",
+        "head": [
+          57,
+          0,
+          261,
+          204
+        ],
+        "reviewed": true,
+        "posture": "standing"
+      },
+      "value": {
+        "file": "assets/room13-pixel-acting-resident_kongi.webp",
+        "crop": [
+          84,
+          38,
+          327,
+          475
+        ],
+        "nearest": true,
+        "foot": [
+          163,
+          471
+        ],
+        "facing": "left",
+        "contact": "standing",
+        "head": [
+          57,
+          0,
+          261,
+          204
+        ],
+        "reviewed": true,
+        "posture": "standing",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/40/spec",
+      "expected": {
+        "file": "assets/map-action27/RI-2--resident_mulgyeol.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          160.5,
+          54.0,
+          185.5,
+          151.0
+        ],
+        "foot": [
+          256.0,
+          755.0
+        ],
+        "anchors": {
+          "head_center": [
+            255.5,
+            133.0
+          ],
+          "foot_left": [
+            181.0,
+            755.0
+          ],
+          "foot_right": [
+            331.0,
+            748.5
+          ],
+          "foot": [
+            256.0,
+            755.0
+          ],
+          "hand_pole_upper": [
+            372.5,
+            274.0
+          ],
+          "hand_pole_lower": [
+            370.5,
+            380.5
+          ],
+          "pole_top": [
+            358.5,
+            7.0
+          ],
+          "pole_bottom": [
+            399.0,
+            752.5
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "pole_ground",
+        "stature_ratio": 1.0,
+        "source_sha256": "54fea88c5c31d6ee97ddfc24544241b6e426a0a0fb3b3ed87cb5caaea1980eba",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "value": {
+        "file": "assets/map-action27/RI-2--resident_mulgyeol.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          160.5,
+          54.0,
+          185.5,
+          151.0
+        ],
+        "foot": [
+          256.0,
+          755.0
+        ],
+        "anchors": {
+          "head_center": [
+            255.5,
+            133.0
+          ],
+          "foot_left": [
+            181.0,
+            755.0
+          ],
+          "foot_right": [
+            331.0,
+            748.5
+          ],
+          "foot": [
+            256.0,
+            755.0
+          ],
+          "hand_pole_upper": [
+            372.5,
+            274.0
+          ],
+          "hand_pole_lower": [
+            370.5,
+            380.5
+          ],
+          "pole_top": [
+            358.5,
+            7.0
+          ],
+          "pole_bottom": [
+            399.0,
+            752.5
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "pole_ground",
+        "stature_ratio": 1.0,
+        "source_sha256": "54fea88c5c31d6ee97ddfc24544241b6e426a0a0fb3b3ed87cb5caaea1980eba",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_mulgyeol/neutral",
+      "expected": {
+        "file": "assets/room13-role-resident_mulgyeol.webp",
+        "crop": [
+          88,
+          0,
+          424,
+          761
+        ],
+        "nearest": true,
+        "foot": [
+          173,
+          759
+        ],
+        "facing": "front",
+        "contact": "standing",
+        "head": [
+          40,
+          1,
+          240,
+          212
+        ],
+        "reviewed": true,
+        "posture": "standing",
+        "role_connect": "lizard-base"
+      },
+      "value": {
+        "file": "assets/room13-role-resident_mulgyeol.webp",
+        "crop": [
+          88,
+          0,
+          424,
+          761
+        ],
+        "nearest": true,
+        "foot": [
+          173,
+          759
+        ],
+        "facing": "front",
+        "contact": "standing",
+        "head": [
+          40,
+          1,
+          240,
+          212
+        ],
+        "reviewed": true,
+        "posture": "standing",
+        "role_connect": "lizard-base",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_nero/activity",
+      "expected": {
+        "file": "assets/room13-pixel-acting-resident_nero.webp",
+        "crop": [
+          564,
+          526,
+          449,
+          463
+        ],
+        "nearest": true,
+        "foot": [
+          224,
+          459
+        ],
+        "facing": "right",
+        "contact": "standing",
+        "head": [
+          93,
+          0,
+          284,
+          278
+        ],
+        "reviewed": true,
+        "posture": "crouching"
+      },
+      "value": {
+        "file": "assets/room13-pixel-acting-resident_nero.webp",
+        "crop": [
+          564,
+          526,
+          449,
+          463
+        ],
+        "nearest": true,
+        "foot": [
+          224,
+          459
+        ],
+        "facing": "right",
+        "contact": "standing",
+        "head": [
+          93,
+          0,
+          284,
+          278
+        ],
+        "reviewed": true,
+        "posture": "crouching",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_ppul/activity",
+      "expected": {
+        "file": "assets/room13-pixel-acting-resident_ppul.webp",
+        "crop": [
+          574,
+          534,
+          503,
+          446
+        ],
+        "nearest": true,
+        "foot": [
+          251,
+          442
+        ],
+        "facing": "right",
+        "contact": "standing",
+        "head": [
+          5,
+          0,
+          498,
+          268
+        ],
+        "reviewed": true,
+        "posture": "standing"
+      },
+      "value": {
+        "file": "assets/room13-pixel-acting-resident_ppul.webp",
+        "crop": [
+          574,
+          534,
+          503,
+          446
+        ],
+        "nearest": true,
+        "foot": [
+          251,
+          442
+        ],
+        "facing": "right",
+        "contact": "standing",
+        "head": [
+          5,
+          0,
+          498,
+          268
+        ],
+        "reviewed": true,
+        "posture": "standing",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_ppul/neutral",
+      "expected": {
+        "file": "assets/room13-pixel-acting-resident_ppul.webp",
+        "crop": [
+          89,
+          10,
+          333,
+          489
+        ],
+        "nearest": true,
+        "foot": [
+          166,
+          485
+        ],
+        "facing": "right",
+        "contact": "standing",
+        "head": [
+          52,
+          0,
+          273,
+          210
+        ],
+        "reviewed": true,
+        "posture": "standing"
+      },
+      "value": {
+        "file": "assets/room13-pixel-acting-resident_ppul.webp",
+        "crop": [
+          89,
+          10,
+          333,
+          489
+        ],
+        "nearest": true,
+        "foot": [
+          166,
+          485
+        ],
+        "facing": "right",
+        "contact": "standing",
+        "head": [
+          52,
+          0,
+          273,
+          210
+        ],
+        "reviewed": true,
+        "posture": "standing",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-seori-review-art.json",
+      "pointer": "/spec",
+      "expected": {
+        "file": "assets/map-action27/seori-threequarter-review.webp",
+        "crop": [
+          0,
+          0,
+          526,
+          768
+        ],
+        "foot": [
+          319.45515911282547,
+          754.3218997361478
+        ],
+        "anchors": {
+          "eyes_left": [
+            215.16393442622953,
+            170.72295514511876
+          ],
+          "eyes_right": [
+            265.79074252651884,
+            170.72295514511876
+          ],
+          "gaze_target": [
+            170.61234329797495,
+            312.5699208443272
+          ],
+          "hand_paper_side": [
+            143.27386692381873,
+            335.87335092348286
+          ],
+          "hand_paper_bottom": [
+            239.4648023143684,
+            347.5250659630607
+          ],
+          "paper_top": [
+            160.48698167791707,
+            275.08179419525067
+          ],
+          "paper_bottom": [
+            188.3317261330762,
+            355.12401055408975
+          ],
+          "foot_left": [
+            228.83317261330762,
+            735.5778364116095
+          ],
+          "foot_right": [
+            410.0771456123433,
+            754.3218997361478
+          ],
+          "foot": [
+            319.45515911282547,
+            754.3218997361478
+          ]
+        },
+        "head": [
+          141.24879459980716,
+          12.158311345646439,
+          272.87849566055934,
+          253.80474934036943
+        ],
+        "contact": "self-contained",
+        "facing": "front-left-threequarter",
+        "nearest": true,
+        "source_sha256": "761b7930193aecdce0ab86fb8788ebf6e900171d229678b7d5fee8d1fcc11155",
+        "source_commit": "12479638c1964c20325192a4514254329c9bd4fb"
+      },
+      "value": {
+        "file": "assets/map-action27/seori-threequarter-review.webp",
+        "crop": [
+          0,
+          0,
+          526,
+          768
+        ],
+        "foot": [
+          319.45515911282547,
+          754.3218997361478
+        ],
+        "anchors": {
+          "eyes_left": [
+            215.16393442622953,
+            170.72295514511876
+          ],
+          "eyes_right": [
+            265.79074252651884,
+            170.72295514511876
+          ],
+          "gaze_target": [
+            170.61234329797495,
+            312.5699208443272
+          ],
+          "hand_paper_side": [
+            143.27386692381873,
+            335.87335092348286
+          ],
+          "hand_paper_bottom": [
+            239.4648023143684,
+            347.5250659630607
+          ],
+          "paper_top": [
+            160.48698167791707,
+            275.08179419525067
+          ],
+          "paper_bottom": [
+            188.3317261330762,
+            355.12401055408975
+          ],
+          "foot_left": [
+            228.83317261330762,
+            735.5778364116095
+          ],
+          "foot_right": [
+            410.0771456123433,
+            754.3218997361478
+          ],
+          "foot": [
+            319.45515911282547,
+            754.3218997361478
+          ]
+        },
+        "head": [
+          141.24879459980716,
+          12.158311345646439,
+          272.87849566055934,
+          253.80474934036943
+        ],
+        "contact": "self-contained",
+        "facing": "front-left-threequarter",
+        "nearest": true,
+        "source_sha256": "761b7930193aecdce0ab86fb8788ebf6e900171d229678b7d5fee8d1fcc11155",
+        "source_commit": "12479638c1964c20325192a4514254329c9bd4fb",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_seori/living_notes",
+      "expected": {
+        "file": "assets/room13-pixel-acting-seori.webp",
+        "crop": [
+          637,
+          523,
+          328,
+          478
+        ],
+        "nearest": true,
+        "anchor": {
+          "foot": [
+            164,
+            474
+          ]
+        },
+        "action_ko": "메모 옆에 확인한 사람 이름을 적는다.",
+        "contact": "self-contained",
+        "head": [
+          0,
+          0,
+          328,
+          196
+        ],
+        "facing": "right-profile"
+      },
+      "value": {
+        "file": "assets/room13-pixel-acting-seori.webp",
+        "crop": [
+          637,
+          523,
+          328,
+          478
+        ],
+        "nearest": true,
+        "anchor": {
+          "foot": [
+            164,
+            474
+          ]
+        },
+        "action_ko": "메모 옆에 확인한 사람 이름을 적는다.",
+        "contact": "self-contained",
+        "head": [
+          0,
+          0,
+          328,
+          196
+        ],
+        "facing": "right-profile",
+        "native_detail": true
+      }
     }
   ],
   "baseline_semantic_sha256": {
     "assets/room13-pixel-acting.json": "cb5427fee77c43338c958b9f9852da77c81fb7f5f25a085db96595a7cc458b3e",
     "assets/room13-map-action27.json": "b79080398b0e3698e9fe00073f717d3a1f3aca073d4239b1eae2626907270bbc",
-    "assets/room13-life-groups.json": "a061108ffb6330195f497344bac1d6690e28025b55791baa1f26abc6c4a75a71"
+    "assets/room13-life-groups.json": "a061108ffb6330195f497344bac1d6690e28025b55791baa1f26abc6c4a75a71",
+    "assets/room13-seori-review-art.json": "4eab0bc34b42788730ce8020068eaddeb94360aeaa01899f0f453d969e051fd6"
   },
   "expanded_on_commit": "e304590f482fd8fdf206063a656e90016cd35234",
   "original_six_operations_sha256": "76a2c035cf8c4adc4b7551313ca73c334772b24494902feceb6f29a29a2724cd",
@@ -3680,7 +4740,17 @@
     "assets/room13-pixel-acting-resident_tok.webp": "ff1a8309aaa76fd03350a4c28114a08554d91672bee229fa6e4efce7610a1837",
     "assets/room13-pixel-acting-ttadak.webp": "2fe4dc67296f32f9c818d0b5f7b8bebe169d8a10dab7ef617abf0dc26e45eb55",
     "assets/map-action27/MK-5--resident_yeoni.webp": "afc738c3f017da64b2cd37bffed4c4340a4d38cc3ef6b37f4045cf16aa3b4444",
-    "assets/room13-redesign-resident_yeoni.webp": "a1f6054d272c14d38622dfcb0ca5ed755670ec00cd0d3d45f2abff936585a6df"
+    "assets/room13-redesign-resident_yeoni.webp": "a1f6054d272c14d38622dfcb0ca5ed755670ec00cd0d3d45f2abff936585a6df",
+    "assets/map-action27/MK-3--resident_guseul.webp": "13047583cb4660c21bc716d65edd8470682cc5ef4b90b24785762d6e407ea0e2",
+    "assets/map-action27/MK-8--resident_hyeoni.webp": "a384e00602098577d7b6bb29d4eddde2f3568905084773fbb5800e8c1c927624",
+    "assets/room13-pixel-acting-resident_kongi.webp": "5ddde1c6da28b3973760b62bee484e39652ebe802ad592a5f80211ec7291f7f0",
+    "assets/map-action27/RI-2--resident_mulgyeol.webp": "aa113a9599ab1e146235c08fcaaf0ffdbac86ae937af5ee24a1f2641b586de9a",
+    "assets/room13-role-resident_mulgyeol.webp": "81ce223b96128b6bca09ef04261c1b0c7bc91d781cfaf382753c72a6bd57bd3c",
+    "assets/room13-pixel-acting-resident_nero.webp": "432a03f461129d06a31c31a81fd408039b195604daa250e1e059c7821c56d8c8",
+    "assets/room13-pixel-acting-resident_ppul.webp": "01f85c6bf6f8fd8ce61e1bd42ecc9e61cf70d6c413c077c463ff3bf4e32a40c0",
+    "assets/map-action27/seori-threequarter-review.webp": "8d30a2a5c08b234f9ef729edeed28322fa636e315c15229c67267c7fcd3d50e3",
+    "assets/room13-pixel-acting-seori.webp": "3c1e10cebeb7ff3f1a0dfd8c6a9821b58ddf10f98d43dc892ec89f8a333f0c72"
   },
-  "previous_eight_operations_sha256": "1edd9f68910a9815b874ef59c25f153e78ed88d2ea2a5397dfd0b4966119fc22"
+  "previous_eight_operations_sha256": "1edd9f68910a9815b874ef59c25f153e78ed88d2ea2a5397dfd0b4966119fc22",
+  "previous34_operations_sha256": "e62d3a3b12556dfc1f7983db10555aae0a13c416d9462f48776b8bcb8af2664e"
 }

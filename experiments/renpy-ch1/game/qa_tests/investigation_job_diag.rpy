@@ -201,7 +201,7 @@ testcase investigation_job_musoe:
         assert screen "r13_hub"
         assert eval (room13["location"]=="workshop" and room13["day"]==2 and room13["period"]==0)
         run Function(r13_pd_check_field,"body-click-denial-stayed-in-field")
-    # Wood has a real contextual wait option; inspect then physically decline it, never advance time.
+    # Final init106 clears context waits: wood follows ordinary observation, then returns to field.
     if eval (r13_world_offset()>0):
         click "‹"
         pause 0.5
@@ -211,19 +211,17 @@ testcase investigation_job_musoe:
     assert eval (r13_world_offset()==0)
     $ r13_pd_saved_object_preference=R13_PD_MAP_OBJECTS["workshop"]
     $ R13_PD_MAP_OBJECTS["workshop"]=("wood",)
-    assert eval (r13_context_wait("wood") and not r13_tool_available("wood") and not r13_object_actions("wood"))
-    run Function(r13_pd_choose_object,True)
+    run Function(r13_pd_flow_log,"wood-final-context-preflight",dict(wait=r13_context_wait("wood"),tool=r13_tool_available("wood"),actions=[k for k,_ in r13_object_actions("wood")],visible=r13_object_visible(ROOM13["objects"]["workshop"]["wood"])))
+    assert eval (not r13_context_wait("wood") and not r13_tool_available("wood") and not r13_object_actions("wood"))
+    run Function(r13_pd_choose_object)
     assert eval (r13_pd_object_ready and r13_pd_object=="wood")
+    $ r13_pd_wood_focus=renpy.display.render.focus_at_point(r13_pd_object_x,r13_pd_object_y)
+    assert eval (r13_pd_wood_focus is not None and r13_pd_wood_focus.widget._get_tooltip()==r13_object_name("wood"))
     click pos (r13_pd_object_x,r13_pd_object_y)
     pause until eval (r13_has("observed:workshop:wood")) timeout 10
     assert screen "say"
     run Function(r13_pd_flow_log,"actual-wood-observed",dict(key=r13_pd_object,flag=r13_pd_observed_flag))
     screenshot "job-musoe-03b-wood-observed.png"
-    advance until screen "r13_object_context" timeout 40
-    pause until eval (renpy.get_screen("r13_object_context").scope.get("ready",False)) timeout 5
-    assert eval (renpy.get_screen("r13_object_context").scope.get("key")=="wood")
-    screenshot "job-musoe-03c-wood-context.png"
-    click "그만 살펴본다"
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
     pause 1.2

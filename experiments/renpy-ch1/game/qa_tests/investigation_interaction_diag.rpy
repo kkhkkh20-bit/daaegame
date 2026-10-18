@@ -67,7 +67,16 @@ init 999 python:
 
     def r13_pd_hover_clear():
         hub=renpy.get_screen('r13_hub')
-        return bool(hub and not GetTooltip() and not hub.scope.get('hint'))
+        mouse=renpy.get_mouse_pos()
+        focus=renpy.display.render.focus_at_point(int(mouse[0]),int(mouse[1]))
+        state=dict(mouse=list(mouse),tooltip=GetTooltip(),hub_hint=hub.scope.get('hint') if hub else None,
+            hub_present=hub is not None,focus_tooltip=focus.widget._get_tooltip() if focus is not None else None,
+            focus_bounds=[focus.x,focus.y,focus.w,focus.h] if focus is not None else None)
+        if state!=getattr(store,'r13_pd_last_hover_probe',None):
+            store.r13_pd_last_hover_probe=state
+            r13_pd_flow_log('actual-hover-state',state)
+        # Keep both existing checks: a real displayed hint must not become a false PASS.
+        return bool(hub and not state['tooltip'] and not state['hub_hint'])
 
     def r13_pd_choose_person(allow_no_content=False):
         # Use the same rendered Crop/AlphaMask that the production button uses.
