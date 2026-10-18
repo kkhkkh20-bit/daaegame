@@ -70,9 +70,11 @@ init 174 python:
         # Quiet beats retain the current track/position; no restart per sentence.
         if beat in ("listen","press","select","interrupt","explain","shaken","half","resolve","reaction","gasp"):
             wanted=getattr(store,"r13_meeting_direction_music",None) or base
-        path=R13_BGM[wanted]
+        path=r13_meeting_tempo_path(wanted) if "r13_meeting_tempo_path" in globals() else R13_BGM[wanted]
         renpy.music.set_pause(False,channel="music")
-        if renpy.music.get_playing(channel="music")!=path:
+        if "r13_meeting_tempo_play" in globals():
+            r13_meeting_tempo_play(path)
+        elif renpy.music.get_playing(channel="music")!=path:
             renpy.music.play(path,channel="music",loop=True,fadeout=.28,fadein=.35)
         store.r13_meeting_direction_music=wanted
         renpy.music.set_volume(R13_MEETING_BEATS[beat][1],delay=.16,channel="music")

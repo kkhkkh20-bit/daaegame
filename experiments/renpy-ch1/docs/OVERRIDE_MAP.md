@@ -426,14 +426,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 174 | `systems/room13_meeting_direction.rpy:81` | _r13_pressure_direct_end |
+| 1 | 174 | `systems/room13_meeting_direction.rpy:83` | _r13_pressure_direct_end |
 | 2 | 191 | `systems/room13_meeting_pressure.rpy:117` |  |
 
 ## `r13_meeting_direct_line` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 174 | `systems/room13_meeting_direction.rpy:170` | _r13_pressure_direct_line |
+| 1 | 174 | `systems/room13_meeting_direction.rpy:172` | _r13_pressure_direct_line |
 | 2 | 191 | `systems/room13_meeting_pressure.rpy:74` |  |
 
 ## `r13_meeting_plate` (2층)
@@ -442,6 +442,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 99 | `room13_meeting_seating.rpy:147` | _r13_e1_plate |
 | 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:175` |  |
+
+## `r13_meeting_pressure_proof` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 191 | `systems/room13_meeting_pressure.rpy:44` | _r13_tempo_pressure_proof |
+| 2 | 192 | `systems/room13_meeting_tempo.rpy:79` |  |
 
 ## `r13_object_name` (2층)
 

@@ -289,7 +289,7 @@ label r13_meeting_interrupt(claim,sid,resume=None):
         r13_meeting_reaction_settle()
         store.r13_meeting_pending_resume=None
         r13_meeting_direct_audio()
-    return
+    return r13_meeting_tempo_snapshot()
 
 label r13_meeting_public_vote(claim,choice):
     $ r13_meeting_vote=r13_meeting_record_vote(claim,choice)

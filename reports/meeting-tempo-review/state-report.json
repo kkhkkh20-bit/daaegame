@@ -1,0 +1,453 @@
+{
+  "kind": "Actual engine inputs after one initial C2 fixture",
+  "checks": [
+    "Actual explanation gain zero, timeout restores both channels, user volume/mute unchanged",
+    "Evidence picker cancel preserves pressure/event tokens and restores audible scene",
+    "Actual save/load restores held pressure and exact line; does not replay collective or silence",
+    "Actual held Ctrl skip reaches authored choice; pressure applied once; transient collective settles; music not stuck silent",
+    "Authored successful counter lowers pressure 2→1, preserved in next spoken line",
+    "Tempo stage stays 2 when personal pressure recovers to 1; engine music mute action survives skip/recovery, then restores original mixer preferences"
+  ],
+  "restored": {
+    "tempo_stage": 2,
+    "tempo_path": "assets/bgm-council-tempo2.ogg",
+    "tempo_position": null,
+    "level": 1,
+    "events": [
+      [
+        "legacy",
+        "C2",
+        "resident_ppul",
+        "s2",
+        "signal"
+      ],
+      [
+        "legacy",
+        "C2",
+        "resident_ppul",
+        "s2",
+        "proven_contradiction"
+      ],
+      [
+        "legacy",
+        "C2",
+        "resident_ppul",
+        "s3",
+        "signal"
+      ],
+      [
+        "legacy",
+        "C2",
+        "resident_ppul",
+        "s3",
+        "proven_contradiction"
+      ],
+      [
+        "legacy",
+        "C2",
+        "resident_ppul",
+        "s3",
+        "successful_counter"
+      ]
+    ],
+    "collective": {
+      "claim": "C2",
+      "sid": "s3",
+      "token": "debate:break:C2:s3:E09",
+      "phase": "settled",
+      "people": [
+        "seryeon",
+        "resident_ppul",
+        "buri",
+        "nabi",
+        "resident_bori",
+        "resident_tori",
+        "doto",
+        "resident_kongi",
+        "granny",
+        "resident_seori"
+      ]
+    },
+    "poses": {
+      "resident_ppul": "anxious"
+    },
+    "music": 1,
+    "ambience": 1,
+    "prefs": {
+      "music": 0.31622776601683794,
+      "sfx": 0.251188643150958,
+      "voice": 1,
+      "main": 1
+    },
+    "mute": {
+      "sfx": false,
+      "voice": false,
+      "music": false,
+      "main": false
+    },
+    "can_rollback": true,
+    "rollback_keys": [
+      "anyrepeat_K_PAGEUP",
+      "anyrepeat_KP_PAGEUP",
+      "K_AC_BACK",
+      "mousedown_4"
+    ],
+    "revision": 10,
+    "read": "meeting:live:C2:s3:0:0ca19cf974df65",
+    "index": 0
+  },
+  "passed": true,
+  "initial": {
+    "tempo_stage": 0,
+    "tempo_path": "assets/bgm-council.mp3",
+    "tempo_position": 8.437,
+    "level": 0,
+    "events": [],
+    "collective": null,
+    "poses": {
+      "resident_ppul": "neutral"
+    },
+    "music": 1,
+    "ambience": 1,
+    "prefs": {
+      "music": 0.31622776601683794,
+      "sfx": 0.251188643150958,
+      "voice": 1,
+      "main": 1
+    },
+    "mute": {
+      "sfx": false,
+      "voice": false,
+      "music": false,
+      "main": false
+    },
+    "can_rollback": true,
+    "rollback_keys": [
+      "anyrepeat_K_PAGEUP",
+      "anyrepeat_KP_PAGEUP",
+      "K_AC_BACK",
+      "mousedown_4"
+    ],
+    "revision": 8,
+    "read": "meeting:live:C2:s2:0:d48b3d7f5c6e5a",
+    "index": 0
+  },
+  "quiet": {
+    "tempo_stage": 0,
+    "tempo_path": "assets/bgm-council.mp3",
+    "tempo_position": 13.246,
+    "level": 0,
+    "events": [
+      [
+        "legacy",
+        "C2",
+        "resident_ppul",
+        "s2",
+        "signal"
+      ]
+    ],
+    "collective": null,
+    "poses": {},
+    "music": 0,
+    "ambience": 0,
+    "prefs": {
+      "music": 0.31622776601683794,
+      "sfx": 0.251188643150958,
+      "voice": 1,
+      "main": 1
+    },
+    "mute": {
+      "sfx": false,
+      "voice": false,
+      "music": false,
+      "main": false
+    },
+    "can_rollback": false,
+    "rollback_keys": [
+      "anyrepeat_K_PAGEUP",
+      "anyrepeat_KP_PAGEUP",
+      "K_AC_BACK",
+      "mousedown_4"
+    ],
+    "revision": 8,
+    "read": "debate:break:C2:s2:E35:0:cebb3cddd80cc4",
+    "index": 0
+  },
+  "released": {
+    "tempo_stage": 0,
+    "tempo_path": "assets/bgm-council.mp3",
+    "tempo_position": 15.836,
+    "level": 0,
+    "events": [
+      [
+        "legacy",
+        "C2",
+        "resident_ppul",
+        "s2",
+        "signal"
+      ]
+    ],
+    "collective": null,
+    "poses": {},
+    "music": 0.58,
+    "ambience": 1,
+    "prefs": {
+      "music": 0.31622776601683794,
+      "sfx": 0.251188643150958,
+      "voice": 1,
+      "main": 1
+    },
+    "mute": {
+      "sfx": false,
+      "voice": false,
+      "music": false,
+      "main": false
+    },
+    "can_rollback": false,
+    "rollback_keys": [
+      "anyrepeat_K_PAGEUP",
+      "anyrepeat_KP_PAGEUP",
+      "K_AC_BACK",
+      "mousedown_4"
+    ],
+    "revision": 8,
+    "read": "debate:break:C2:s2:E35:0:cebb3cddd80cc4",
+    "index": 0
+  },
+  "loaded": {
+    "tempo_stage": 1,
+    "tempo_path": "<from 22.820>assets/bgm-council-tempo1.ogg",
+    "tempo_position": 37.689,
+    "level": 1,
+    "events": [
+      [
+        "legacy",
+        "C2",
+        "resident_ppul",
+        "s2",
+        "signal"
+      ],
+      [
+        "legacy",
+        "C2",
+        "resident_ppul",
+        "s2",
+        "proven_contradiction"
+      ]
+    ],
+    "collective": {
+      "claim": "C2",
+      "sid": "s2",
+      "token": "debate:break:C2:s2:E35",
+      "phase": "settled",
+      "people": [
+        "seryeon",
+        "resident_ppul",
+        "buri",
+        "nabi",
+        "resident_bori",
+        "resident_tori",
+        "doto",
+        "resident_kongi",
+        "granny",
+        "resident_seori"
+      ]
+    },
+    "poses": {
+      "resident_ppul": "anxious"
+    },
+    "music": 1,
+    "ambience": 1,
+    "prefs": {
+      "music": 0.31622776601683794,
+      "sfx": 0.251188643150958,
+      "voice": 1,
+      "main": 1
+    },
+    "mute": {
+      "sfx": false,
+      "voice": false,
+      "music": false,
+      "main": false
+    },
+    "can_rollback": true,
+    "rollback_keys": [
+      "anyrepeat_K_PAGEUP",
+      "anyrepeat_KP_PAGEUP",
+      "K_AC_BACK",
+      "mousedown_4"
+    ],
+    "revision": 10,
+    "read": "meeting:live:C2:s3:0:0ca19cf974df65",
+    "index": 0
+  },
+  "skipped": {
+    "tempo_stage": 2,
+    "tempo_path": "assets/bgm-pressure-tempo2.ogg",
+    "tempo_position": null,
+    "level": 2,
+    "events": [
+      [
+        "legacy",
+        "C2",
+        "resident_ppul",
+        "s2",
+        "signal"
+      ],
+      [
+        "legacy",
+        "C2",
+        "resident_ppul",
+        "s2",
+        "proven_contradiction"
+      ],
+      [
+        "legacy",
+        "C2",
+        "resident_ppul",
+        "s3",
+        "signal"
+      ],
+      [
+        "legacy",
+        "C2",
+        "resident_ppul",
+        "s3",
+        "proven_contradiction"
+      ]
+    ],
+    "collective": {
+      "claim": "C2",
+      "sid": "s3",
+      "token": "debate:break:C2:s3:E09",
+      "phase": "settled",
+      "people": [
+        "seryeon",
+        "resident_ppul",
+        "buri",
+        "nabi",
+        "resident_bori",
+        "resident_tori",
+        "doto",
+        "resident_kongi",
+        "granny",
+        "resident_seori"
+      ]
+    },
+    "poses": {
+      "resident_ppul": "angry"
+    },
+    "music": 1,
+    "ambience": 1,
+    "prefs": {
+      "music": 0.31622776601683794,
+      "sfx": 0.251188643150958,
+      "voice": 1,
+      "main": 1
+    },
+    "mute": {
+      "sfx": false,
+      "voice": false,
+      "music": true,
+      "main": false
+    },
+    "can_rollback": false,
+    "rollback_keys": [
+      "anyrepeat_K_PAGEUP",
+      "anyrepeat_KP_PAGEUP",
+      "K_AC_BACK",
+      "mousedown_4"
+    ],
+    "revision": 10,
+    "read": "debate:counter:C2:s3:1:58ca825a51f7d5",
+    "index": 2
+  },
+  "recovered": {
+    "tempo_stage": 2,
+    "tempo_path": "assets/bgm-council-tempo2.ogg",
+    "tempo_position": null,
+    "level": 1,
+    "events": [
+      [
+        "legacy",
+        "C2",
+        "resident_ppul",
+        "s2",
+        "signal"
+      ],
+      [
+        "legacy",
+        "C2",
+        "resident_ppul",
+        "s2",
+        "proven_contradiction"
+      ],
+      [
+        "legacy",
+        "C2",
+        "resident_ppul",
+        "s3",
+        "signal"
+      ],
+      [
+        "legacy",
+        "C2",
+        "resident_ppul",
+        "s3",
+        "proven_contradiction"
+      ],
+      [
+        "legacy",
+        "C2",
+        "resident_ppul",
+        "s3",
+        "successful_counter"
+      ]
+    ],
+    "collective": {
+      "claim": "C2",
+      "sid": "s3",
+      "token": "debate:break:C2:s3:E09",
+      "phase": "settled",
+      "people": [
+        "seryeon",
+        "resident_ppul",
+        "buri",
+        "nabi",
+        "resident_bori",
+        "resident_tori",
+        "doto",
+        "resident_kongi",
+        "granny",
+        "resident_seori"
+      ]
+    },
+    "poses": {
+      "resident_ppul": "anxious"
+    },
+    "music": 1,
+    "ambience": 1,
+    "prefs": {
+      "music": 0.31622776601683794,
+      "sfx": 0.251188643150958,
+      "voice": 1,
+      "main": 1
+    },
+    "mute": {
+      "sfx": false,
+      "voice": false,
+      "music": true,
+      "main": false
+    },
+    "can_rollback": true,
+    "rollback_keys": [
+      "anyrepeat_K_PAGEUP",
+      "anyrepeat_KP_PAGEUP",
+      "K_AC_BACK",
+      "mousedown_4"
+    ],
+    "revision": 10,
+    "read": "meeting:live:C2:s3:0:0ca19cf974df65",
+    "index": 0
+  }
+}

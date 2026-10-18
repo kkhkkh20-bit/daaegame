@@ -293,7 +293,7 @@ screen r13_meeting_tools(claim,sid=None,board=False,ready=True):
     use r13_footer_control(0,"회의 중단" if board else "더보기","settings",Return(("leave",)) if board else Show("r13_more_tools"),enabled=ready)
     use r13_footer_control(1,"결론 정리" if can_conclude else "토론 듣기" if board else "발언 선택","testimony",Return(("conclude",)) if can_conclude else Return(("round",sid)) if board else Function(r13_meeting_request_live_action,"review"),enabled=ready and (board or live_controls))
     use r13_footer_control(2,"다시 듣기" if completed else "되묻기","dialogue",Return(("listen" if completed else "press",sid)) if board else Function(r13_meeting_request_live_action,"press"),enabled=ready and (board or (live_controls and r13_meeting_can_live_press())))
-    use r13_footer_control(3,"반박한 발언" if completed else "자료 보여주기","present",Return(("present",sid)) if board else Function(renpy.call_in_new_context,"r13_meeting_interrupt",claim,r13_meeting_live_target()),enabled=ready and not completed and (board or r13_meeting_can_interrupt()),primary=True)
+    use r13_footer_control(3,"반박한 발언" if completed else "자료 보여주기","present",Return(("present",sid)) if board else Function(r13_meeting_interrupt_with_tempo,claim,r13_meeting_live_target()),enabled=ready and not completed and (board or r13_meeting_can_interrupt()),primary=True)
     use r13_footer_control(4,"기록","record",Show("r13_records"),enabled=ready)
     if not board and live_controls:
         $ live_ids=r13_meeting_live_ids(claim,r13_meeting_live_sid)
