@@ -183,7 +183,7 @@ init 175 python:
             self.foreground=AlphaMask(self.surface,R13MeetingForeground(self.session,True)) if self.surface is not None else None
         def render(self,width,height,st,at):
             out=renpy.Render(1280,720)
-            if renpy.predicting():view=float(self.people.index(self.focus)) if self.focus in self.people else 0.0;moving=False
+            if getattr(self,"review_fixed_view",False) or renpy.predicting():view=float(self.people.index(self.focus)) if self.focus in self.people else 0.0;moving=False
             else:view,moving=r13_meeting_world_view(self.claim,self.focus)
             a=renpy.render(self.plate,1280,720,st,at);b=renpy.render(self.flip,1280,720,st,at)
             r13_meeting_world_tiles(out,a,b,view*2560.0/max(1,len(self.people)))
