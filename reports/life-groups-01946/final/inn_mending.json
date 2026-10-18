@@ -1,0 +1,646 @@
+{
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "campaign_id": "room13_v1",
+    "version": 3,
+    "story_revision": "father-pov-fire-pooling-v3",
+    "day": 2,
+    "period": 1,
+    "location": "inn",
+    "kitchen_switch": false,
+    "passage_open": false,
+    "secret_route_unlocked": false,
+    "case_state": "occurred",
+    "victim_state": "alive",
+    "daram_state": "with_dad",
+    "granny_state": "trusted",
+    "trial_result": "pending",
+    "evidence": [],
+    "records": {},
+    "flags": [
+      "entry_corrected",
+      "lodging",
+      "ev_g_done"
+    ],
+    "read_topics": [],
+    "done": [],
+    "checks": {},
+    "encounters": [],
+    "resident_knowledge": {},
+    "propositions": [],
+    "arguments": {},
+    "log": [],
+    "trial_ended": false,
+    "life_poc": true,
+    "learning_archive": [],
+    "mom_state": "hidden",
+    "ending": null,
+    "events": [],
+    "convoy_revision": 0,
+    "scout_revision": -1,
+    "observations": {},
+    "week2_started": false,
+    "finale_started": false,
+    "world_art_revisions": {
+      "inn": "15d2672eece51b749e5a23c653a4d3dbd825364c5906542375da1b46fced143b",
+      "school": "002ece0c658efd6ce90754a1717cc1248b581458304198897db0f7d10de8917d",
+      "workshop": "fcdb78f8a3b82ef51bb8ba106e183c4d8579154ea0c119ba70ff3742cec2f1a7",
+      "square": "8f1170c834a547624f948e5354da05fdd6cd547fe6b67189ffaf12500c17e5f6",
+      "gate": "d20318972090eae4ff65054d75f1025158aa7dcf993ee66ed27909f76e821252",
+      "clinic": "3f40df1612c0ab33648592fb27b5fb2080a98e062c4079c023d50a9213592fb6",
+      "store": "5752ef2f6a0f713182584d2924beb6b98d92872fff5d0da44247943879b5014a",
+      "greenhouse": "ca7bbee7242a52ba81a11a38866d06f988810a4e0ba16a0c5cde5e4231d00c0a",
+      "facility": "e2e03e40b2f0cd58cdb11b90e838ea37445860b03c4c6a8f3ab0b099f825f7a8",
+      "altar": "c12d8a6d6d5cbee725f9624b57256514fa3b58e5b980c3797442657600775136",
+      "kitchen": "873d5990cc565429f7bcd7f936a409abe5f8de01c3497bbd562802faf98b3c56",
+      "dining": "a55eee24f1e6e7be107606e3c99fa759ba0d6e9674ac5b3cfac12b109989708a",
+      "passage": "1744c533ff0dd5baa6051c7c4b9f2543dc46700f441addd488b4a53866221064",
+      "hall": "84c3fbf3e2250a0e59c0b3436b0b77cdf459244985a6f855da3b88ada508d451",
+      "room13": "4dbc0ccf4b327f3e63bcc7746d4d55fcda0221092f47c5f075e7e9350198917b",
+      "post": "d2a09eedeb11fc5d8a57338fa33f54cd4323ebce162854b1c768a73584178d56",
+      "river": "85fc6a5b85a7c24935be067145db94c31f90f304f7b41d885a868ef19f94322e",
+      "forest": "84938111f0165c2e0f07c21b2e09799ebf1cd145d07c32badcd096e91ac92016",
+      "market": "099d28f3eecd90974f3024b4819c2c072e7625e64d73153425e5c304c378928d",
+      "ancient": "cb1961477b1c2e9d99ccad1c2c4540b63e5607ed75baeac623461f4db1f1607c"
+    },
+    "carriage_art_file": "assets/room13-pixel-carriage-letter0153-morning.webp",
+    "interaction_revision": 2,
+    "last_inspection": null,
+    "visual_revision": "pixel-b-front-v3",
+    "run_token": "e8c2764eb586"
+  },
+  "say": "",
+  "buttons": [
+    {
+      "text": "                                                여니       토리       따닥       할머니        부엉이 할아버지       함께 바느질",
+      "value": "",
+      "rect": [
+        0,
+        0,
+        1280,
+        720
+      ]
+    },
+    {
+      "text": "",
+      "value": "",
+      "rect": [
+        980,
+        165,
+        131,
+        273
+      ]
+    },
+    {
+      "text": "",
+      "value": "",
+      "rect": [
+        1158,
+        155,
+        121,
+        201
+      ]
+    },
+    {
+      "text": "",
+      "value": "",
+      "rect": [
+        415,
+        172,
+        138,
+        138
+      ]
+    },
+    {
+      "text": "",
+      "value": "",
+      "rect": [
+        28,
+        214,
+        235,
+        212
+      ]
+    },
+    {
+      "text": "",
+      "value": "",
+      "rect": [
+        332,
+        436,
+        234,
+        107
+      ]
+    },
+    {
+      "text": "",
+      "value": "",
+      "rect": [
+        769,
+        359,
+        134,
+        102
+      ]
+    },
+    {
+      "text": "",
+      "value": "",
+      "rect": [
+        980,
+        165,
+        131,
+        273
+      ]
+    },
+    {
+      "text": "",
+      "value": "",
+      "rect": [
+        415,
+        172,
+        138,
+        138
+      ]
+    },
+    {
+      "text": "",
+      "value": "",
+      "rect": [
+        332,
+        436,
+        234,
+        107
+      ]
+    },
+    {
+      "text": "",
+      "value": "('person', 'resident_yeoni')",
+      "rect": [
+        440,
+        251,
+        141,
+        210
+      ]
+    },
+    {
+      "text": "",
+      "value": "('person', 'resident_ttadak')",
+      "rect": [
+        968,
+        277,
+        145,
+        196
+      ]
+    },
+    {
+      "text": "",
+      "value": "('person', 'resident_tori')",
+      "rect": [
+        502,
+        252,
+        200,
+        300
+      ]
+    },
+    {
+      "text": "",
+      "value": "('person', 'resident_owlgp')",
+      "rect": [
+        0,
+        477,
+        126,
+        202
+      ]
+    },
+    {
+      "text": "      여니",
+      "value": "('person', 'resident_yeoni')",
+      "rect": [
+        466,
+        202,
+        88,
+        48
+      ]
+    },
+    {
+      "text": "      토리",
+      "value": "('person', 'resident_tori')",
+      "rect": [
+        562,
+        203,
+        88,
+        48
+      ]
+    },
+    {
+      "text": "      따닥",
+      "value": "('person', 'resident_ttadak')",
+      "rect": [
+        999,
+        227,
+        88,
+        48
+      ]
+    },
+    {
+      "text": "      부엉이 할아버지",
+      "value": "('person', 'resident_owlgp')",
+      "rect": [
+        8,
+        428,
+        167,
+        48
+      ]
+    },
+    {
+      "text": "      함께 바느질",
+      "value": "('life_group', 'inn_mending')",
+      "rect": [
+        420,
+        150,
+        136,
+        42
+      ]
+    },
+    {
+      "text": "      할머니 ›",
+      "value": "",
+      "rect": [
+        1180,
+        236,
+        92,
+        37
+      ]
+    },
+    {
+      "text": "      › 식당",
+      "value": "('travel', 'dining')",
+      "rect": [
+        750,
+        158,
+        90,
+        64
+      ]
+    },
+    {
+      "text": "      › 주방",
+      "value": "('travel', 'kitchen')",
+      "rect": [
+        848,
+        158,
+        90,
+        64
+      ]
+    },
+    {
+      "text": "      › 2층 복도",
+      "value": "('travel', 'hall')",
+      "rect": [
+        946,
+        158,
+        134,
+        64
+      ]
+    },
+    {
+      "text": "      › 여관 밖으로",
+      "value": "('travel', 'outside')",
+      "rect": [
+        1088,
+        158,
+        162,
+        64
+      ]
+    },
+    {
+      "text": "       지도 · 이동",
+      "value": "('menu', 'map')",
+      "rect": [
+        1070,
+        82,
+        180,
+        64
+      ]
+    },
+    {
+      "text": "       생각",
+      "value": "",
+      "rect": [
+        1048,
+        664,
+        112,
+        56
+      ]
+    },
+    {
+      "text": "       기록",
+      "value": "",
+      "rect": [
+        1168,
+        664,
+        112,
+        56
+      ]
+    },
+    {
+      "text": "       메뉴",
+      "value": "",
+      "rect": [
+        1190,
+        20,
+        64,
+        64
+      ]
+    }
+  ],
+  "game_commit": "e16710e7 + 0.19.46 integration tree",
+  "archive_sha256": "dc03bb79920da8b8e7e5c34de9ef0839a55cc2690138e2d4ca145cf236d8d293",
+  "capture_kind": "Actual local SDK engine, explicit state fixture; final registry",
+  "actors": [
+    {
+      "person": "resident_yeoni",
+      "pose": "living_mend",
+      "x": 440,
+      "y": 251,
+      "width": 141,
+      "height": 210,
+      "rect": [
+        440,
+        251,
+        141,
+        210
+      ],
+      "depth": 470,
+      "occlusion": [],
+      "contact": "bench_sit",
+      "slot": null,
+      "activity": "함께 바느질",
+      "map27_occlusion": [],
+      "map27_keepouts": [],
+      "life_group": "inn_mending"
+    },
+    {
+      "person": "resident_ttadak",
+      "pose": "living_doorframe",
+      "x": 968,
+      "y": 277,
+      "width": 145,
+      "height": 196,
+      "rect": [
+        968,
+        277,
+        145,
+        196
+      ],
+      "depth": 473,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "따닥은 망치를 내려놓고 벽에 손을 댔다."
+    },
+    {
+      "person": "resident_tori",
+      "pose": "group_cooperative",
+      "x": 502,
+      "y": 252,
+      "width": 200,
+      "height": 300,
+      "rect": [
+        502,
+        252,
+        200,
+        300
+      ],
+      "depth": 525,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "함께 바느질",
+      "map27_occlusion": [
+        [
+          [
+            555,
+            458
+          ],
+          [
+            580,
+            453
+          ],
+          [
+            614,
+            466
+          ],
+          [
+            677,
+            466
+          ],
+          [
+            692,
+            382
+          ],
+          [
+            735,
+            379
+          ],
+          [
+            770,
+            402
+          ],
+          [
+            752,
+            551
+          ],
+          [
+            741,
+            615
+          ],
+          [
+            716,
+            620
+          ],
+          [
+            712,
+            554
+          ],
+          [
+            584,
+            548
+          ],
+          [
+            584,
+            607
+          ],
+          [
+            561,
+            608
+          ]
+        ]
+      ],
+      "map27_keepouts": [],
+      "life_group": "inn_mending"
+    },
+    {
+      "person": "granny",
+      "pose": "living_keyledger",
+      "x": 1351,
+      "y": 382,
+      "width": 119,
+      "height": 242,
+      "rect": [
+        1351,
+        382,
+        119,
+        242
+      ],
+      "depth": 624,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "할머니는 장부의 모서리를 손끝으로 눌렀다."
+    },
+    {
+      "person": "resident_owlgp",
+      "pose": "living_notebook",
+      "x": -4,
+      "y": 477,
+      "width": 126,
+      "height": 202,
+      "rect": [
+        0,
+        477,
+        126,
+        202
+      ],
+      "depth": 679,
+      "occlusion": [],
+      "contact": "portable_stool",
+      "slot": [
+        90,
+        680,
+        260,
+        "waiting"
+      ],
+      "activity": "부엉이 할아버지의 수첩이 덮여 있었다."
+    }
+  ],
+  "transparent_probes": [
+    {
+      "person": "resident_yeoni",
+      "point": [
+        442,
+        253
+      ],
+      "source_alpha": 0,
+      "actions": [
+        "None",
+        "('object', 'lounge_notice')"
+      ]
+    },
+    {
+      "person": "resident_yeoni",
+      "point": [
+        451,
+        253
+      ],
+      "source_alpha": 0,
+      "actions": [
+        "None",
+        "('object', 'lounge_notice')"
+      ]
+    },
+    {
+      "person": "resident_yeoni",
+      "point": [
+        461,
+        253
+      ],
+      "source_alpha": 0,
+      "actions": [
+        "None",
+        "('object', 'lounge_notice')"
+      ]
+    },
+    {
+      "person": "resident_yeoni",
+      "point": [
+        470,
+        253
+      ],
+      "source_alpha": 0,
+      "actions": [
+        "None",
+        "('object', 'lounge_notice')"
+      ]
+    },
+    {
+      "person": "resident_tori",
+      "point": [
+        505,
+        255
+      ],
+      "source_alpha": 0,
+      "actions": [
+        "None",
+        "('object', 'lounge_notice')"
+      ]
+    },
+    {
+      "person": "resident_tori",
+      "point": [
+        519,
+        255
+      ],
+      "source_alpha": 0,
+      "actions": [
+        "('person', 'resident_yeoni')"
+      ]
+    },
+    {
+      "person": "resident_tori",
+      "point": [
+        532,
+        255
+      ],
+      "source_alpha": 0,
+      "actions": [
+        "None",
+        "('object', 'lounge_notice')"
+      ]
+    },
+    {
+      "person": "resident_tori",
+      "point": [
+        545,
+        255
+      ],
+      "source_alpha": 0,
+      "actions": [
+        "None",
+        "('object', 'lounge_notice')"
+      ]
+    }
+  ],
+  "face_hits": [
+    {
+      "person": "resident_yeoni",
+      "point": [
+        510,
+        271
+      ],
+      "actions": [
+        "('person', 'resident_yeoni')"
+      ]
+    },
+    {
+      "person": "resident_tori",
+      "point": [
+        606,
+        304
+      ],
+      "actions": [
+        "('person', 'resident_tori')"
+      ]
+    }
+  ]
+}

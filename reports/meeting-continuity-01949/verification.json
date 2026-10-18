@@ -1,0 +1,22 @@
+{
+  "version": "0.19.49",
+  "archive_sha256": "d41c3489ce7f6e1ff1f494e45e7c043d6f10199133c3a404ddc000a13981d08f",
+  "before_archive": "94173556b83095526dbcdbae2da6c2aa49f83cfc945065911c1f6b43666e59e7",
+  "parts": 7,
+  "preloads": 1210,
+  "hashes": "passed",
+  "crc": "passed",
+  "unit_tests": 410,
+  "lint": "passed",
+  "initial_fixture": "Day10 council, all catalog evidence supplied and C1 previously proved; not naturally earned in this run",
+  "continued_play": "Actual PC/touch input after initial fixture: press/cancel, real save/load menus, E35 rebuttal, E09 counter, same-speaker next line, skip stops at choice, answer and review return",
+  "transitions": 38,
+  "renderer_fixtures": "Separate F1 close and C2/F1 wide captures, not continuous story play",
+  "limits": [
+    "Not a full campaign",
+    "Not physical-phone testing",
+    "Cross-packet rollback not verified",
+    "Public cloud game renderer unavailable; these are local SDK captures"
+  ],
+  "probe_note": "Initial run used a slow transient shock-target assertion and missed the short reaction. Revised sampling captured the actual surprised frame and verified its single reaction token; no game change was needed for this probe issue."
+}
