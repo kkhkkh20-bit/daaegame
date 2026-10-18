@@ -2295,12 +2295,11 @@ testcase day1_note_spot:
     $ r13_world_cameras={"room13":0}
     run Call("r13_qa_goto",1,1,"room13")
     pause 2.0
-    # Current field UI: select the paper in investigation mode, then inspect it.
+    # 0.19.55: pressing the paper in investigation mode directly inspects it.
     click "주변 살피기"
     pause 0.3
     click pos (ROOM13["objects"]["room13"]["mother_note"]["rect"][0]+ROOM13["objects"]["room13"]["mother_note"]["rect"][2]//2-r13_world_offset(),ROOM13["objects"]["room13"]["mother_note"]["rect"][1]+ROOM13["objects"]["room13"]["mother_note"]["rect"][3]//2)
-    assert eval (r13_field_selection()=="mother_note")
-    click "살펴보기"
+    pause 0.5
     click pos (640,600) until screen "r13_hub" timeout 40
     assert eval ("M01" in room13["evidence"] and r13_bed_available("bed") and not r13_object_visible(ROOM13["objects"]["room13"]["mother_note"]))
     pause 1.0
@@ -9405,7 +9404,10 @@ testcase karo_comes_day2:
     run Call("r13_qa_roam",dict(day=2,period=0,location="room13",daram_state="with_dad",life_poc=True),("+w1c","entry_corrected","lodging","night1_seen"),(),12)
     pause 1.5
     $ room13["flags"]=[f for f in room13["flags"] if f!="livelihood_open"]
-    click "복도로"
+    # 0.19.50 moved local travel to the map; keep exercising the real travel action.
+    click "지도 · 이동" until screen "r13_map" timeout 30
+    click "2층 복도"
+    click "이곳으로 이동"
     pause 2.5
     screenshot "karo_comes_1.png"
     click pos (640,600)
@@ -10833,11 +10835,11 @@ testcase screen_choice_guard:
     assert eval r13_qa_ok
 
 testcase ep1_meeting:
-    # 에피소드 ① 등 도둑: 광장 회의 Q1을 증거 다섯 개로 깨고, 빚을 지우는 결정까지.
+    # Legacy Q1 save compatibility: retain five-statement meeting and debt decision.
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=4,period=0,location="square",life_poc=True,evidence=["L03","L04","L06","L09","L10","L07","L08"]),("+ep","+offers","entry_corrected","lodging","ep4_seen","lt_dawn","piko_dead","lt_open","lt_lib_dawn","siluk_debt_known","ep1_patrol_seen","ep1_eaves_seen","ep1_done"))
+    run Call("r13_qa_roam",dict(day=4,period=0,location="square",life_poc=True,q1_rules=1,evidence=["L03","L04","L06","L09","L10","L07","L08"]),("+ep","+offers","entry_corrected","lodging","ep4_seen","lt_dawn","piko_dead","lt_open","lt_lib_dawn","siluk_debt_known","ep1_patrol_seen","ep1_eaves_seen","ep1_done"))
     pause 1.0
     assert eval (r13_debate_session("Q1")=="ep1" and r13_debate_engageable("Q1"))
     run Call("r13_qa_event","r13_ep1_meeting")
@@ -11238,7 +11240,7 @@ testcase meeting_lap_hint:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=4,period=0,location="square",life_poc=True,evidence=["L03","L04","L06","L09","L10","L07","L08"]),("+ep","+offers","entry_corrected","lodging","ep4_seen","lt_dawn","piko_dead","lt_open","lt_lib_dawn","siluk_debt_known","ep1_patrol_seen","ep1_eaves_seen","ep1_done"))
+    run Call("r13_qa_roam",dict(day=4,period=0,location="square",life_poc=True,q1_rules=1,evidence=["L03","L04","L06","L09","L10","L07","L08"]),("+ep","+offers","entry_corrected","lodging","ep4_seen","lt_dawn","piko_dead","lt_open","lt_lib_dawn","siluk_debt_known","ep1_patrol_seen","ep1_eaves_seen","ep1_done"))
     pause 1.0
     run Call("r13_qa_event","r13_ep1_meeting")
     click pos (640,600) until screen "choice" timeout 30
@@ -12367,3 +12369,26 @@ testcase continuity_0195:
         store._c_q3=r13_debate_judge("Q3","s1","F04")
     assert eval (_c_q4[0]=="break" and "직접 말했습니다" in _c_q4[1][1][1] and "썼습니다" not in str(_c_q4[1]))
     assert eval (_c_q3[0]=="break" and "꺼냈어" not in str(_c_q3[1]) and "학교에 있었어요" in str(_c_q3[1]))
+
+testcase q1_argument_access:
+    # Q1 v2 witnesses and ledger contact must remain reachable through real schedules.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=4,period=0,location="workshop",life_poc=True,evidence=["L06"]),("+ep","+offers","lt_dawn","lt_open","lt_siluk_seen","lt_lib_dawn","piko_dead","librarian_dead","ep4_seen","ep1_done","ep1_patrol_seen","ep1_eaves_seen"))
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval (r13_q1_v2() and not r13_has("lt_done"))
+    python:
+        for person,key in (("resident_lamplighter","q1v:patrol"),("buri","q1v:buri"),("resident_siluk","q1v:receipt")):
+            place=r13_where(person)
+            assert place in r13_places(), (person,place)
+            r13_edit(location=place)
+            assert person in r13_people(), person
+            assert key in dict(r13_topics(person)), (person,key)
+            assert r13_contact_has_content(person), person
+        r13_grant(["L09"],"QA ledger contact fixture")
+        r13_edit(location=r13_where("resident_madam"))
+        assert "resident_madam" in r13_people()
+        assert r13_contact_has_content("resident_madam")
+        assert "L09" in r13_contact_presentations("resident_madam")
+        r13_qa_note("Q1 v2: all three investigation routes have reachable people and open contact gates")

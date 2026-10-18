@@ -684,6 +684,8 @@ label r13_debate_dispatch:
             call r13_lines(r13_debate_st.get("press",[(r13_debate_st["who"],"말한 그대로입니다."),("dad","(저 말을 반박할 자료가 있는지 다시 살펴보자.)",{"thought":True})]),"debate:press:"+r13_claim+":"+r13_debate_st["id"], binding_route="dynamic:215")
         if not r13_debate_st.get("ready_flags") or all(r13_has(f) for f in r13_debate_st["ready_flags"]):
             $ r13_debate_mark("pressed",r13_claim,r13_debate_st["id"])
+            if r13_claim=="Q1" and r13_q1_v2():
+                $ r13_q1_press_done(r13_debate_st["id"])
         if r13_debate_st.get("ready_flags") and r13_debate_is_broken(r13_claim,r13_debate_st["id"]):
             python:
                 observation=r13_debate_st["press"][0][1]
@@ -700,6 +702,8 @@ label r13_debate_dispatch:
             call r13_debate_present_record(r13_claim,r13_debate_action[1],r13_item)
     elif r13_debate_action[0]=="conclude":
         call r13_debate_conclude(r13_claim)
+        if r13_claim=="Q1" and r13_q1_v2() and r13_debate_closed(r13_claim):
+            return False
         if _return:
             # Episode 3: without the chief's promise the culprit verdict is not enforced.
             # Week-1 case T: a bought false witness ruins the hearing even with the promise.
@@ -749,6 +753,9 @@ label r13_debate_answer_counter(claim,sid):
     return False
 
 label r13_debate_conclude(claim):
+    if claim=="Q1" and r13_q1_v2():
+        call r13_q1_argument_conclude
+        return _return
     if not r13_debate_ready(claim):
         return False
     $ r13_debate_spec=R13_DEBATE[claim]["conclusion"]
@@ -894,7 +901,7 @@ screen r13_debate_board(claim,selected):
                 spacing 10
                 hbox:
                     spacing 24
-                    text ("발언 기록 · %d/%d 반박"%(done,total)) size 21 color "#493b30"
+                    text ("확인한 발언 · %d"%done if claim=="Q1" and r13_q1_v2() else "발언 기록 · %d/%d 반박"%(done,total)) size 21 color "#493b30"
                     textbutton "닫기" style "r13_compact_button" xsize 112 ysize 44 action SetScreenVariable("statements_open",False)
                 viewport:
                     xsize 484 ysize 300 mousewheel True draggable True scrollbars "vertical" vscrollbar_unscrollable "hide"

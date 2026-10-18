@@ -197,10 +197,10 @@ label r13_q1_hints:
     $ _q1_hint_options=[("어떤 논점을 다시 생각할까?",None)]+[(text[0],sid) for sid,done,text in r13_q1_review_rows() if not done]+[("돌아간다",None)]
     $ _q1_hint=renpy.display_menu(_q1_hint_options)
     if _q1_hint:
-        call r13_lines([("dad",R13_Q1_QUESTIONS[_q1_hint][1],{"thought":True}),("dad",R13_Q1_QUESTIONS[_q1_hint][2],{"thought":True})],"ep1:review:thought")
+        call r13_lines([("dad",r13_q1_question(_q1_hint)[1],{"thought":True}),("dad",r13_q1_question(_q1_hint)[2],{"thought":True})],"ep1:review:thought")
         menu:
             "이 의문으로 다시 생각한다":
                 pass
             "구체적인 조사 방향을 본다":
-                call r13_lines([(None,R13_Q1_QUESTIONS[_q1_hint][3])],"ep1:review:direction")
+                call r13_lines([(None,r13_q1_question(_q1_hint)[3])],"ep1:review:direction")
     return

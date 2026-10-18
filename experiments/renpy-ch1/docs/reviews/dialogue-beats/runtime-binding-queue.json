@@ -760,7 +760,7 @@
   },
   {
     "source": "game/room13_interaction.rpy",
-    "line": 255,
+    "line": 259,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "ROOM13[\"activities\"][r13_action][\"lines\"],\"activity:\"+r13_action",
@@ -2050,7 +2050,7 @@
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 707,
+    "line": 711,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "R13_FAKE_TESTIMONY_LINES,\"debate:c4:fake_testimony\"",
@@ -2062,7 +2062,7 @@
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 713,
+    "line": 717,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "R13_C4_UNENFORCED,\"debate:c4:unenforced\"",
@@ -2074,7 +2074,7 @@
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 731,
+    "line": 735,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[(r13_debate_gap[\"who\"],r13_debate_gap[\"text\"].replace(\"【\",\"\").replace(\"】\",\"\")),\n        (\"dad\",\"(저 말을 뒤집을 자료가 지금 내게는 없다.)\",{\"thought\":True})]+r13_debate_gap_lines(claim,r13_debate_gap)+[\n        (None,\"아무도 그 말을 막지 못했다.\")],\"debate:unanswerable:\"+claim",
@@ -2086,7 +2086,7 @@
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 739,
+    "line": 743,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "r13_debate_c[\"lines\"],\"debate:counter:\"+claim+\":\"+sid",
@@ -2098,7 +2098,7 @@
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 743,
+    "line": 747,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "r13_debate_c[\"correct\"],\"debate:counter_ok:\"+claim+\":\"+sid",
@@ -2110,7 +2110,7 @@
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 747,
+    "line": 751,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[r13_debate_c[\"wrong\"][r13_debate_pick],\n        (\"dad\",\"(내 말이 그대로 되돌아왔다. 자료는 맞다. 답을 다시 생각해 보자.)\",{\"thought\":True})],\"debate:counter_wrong:\"+claim+\":\"+sid+\":\"+r13_debate_pick",
@@ -2122,7 +2122,7 @@
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 761,
+    "line": 768,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "r13_debate_spec[\"correct\"],\"debate:conclusion:\"+claim",
@@ -2134,7 +2134,7 @@
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 763,
+    "line": 770,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[r13_debate_spec[r13_debate_pick]],\"debate:conclusion_wrong:\"+claim+\":\"+r13_debate_pick",
@@ -2146,7 +2146,7 @@
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 775,
+    "line": 782,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[r13_point.get(\"wrong_who\",{}).get(r13_debate_pick,r13_debate_spec[\"over\"])],\"debate:point_wrong:\"+claim+\":\"+r13_debate_pick",
@@ -2158,7 +2158,7 @@
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 780,
+    "line": 787,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[(\"dad\",r13_point[\"ask\"])],\"debate:point:\"+claim",
@@ -2170,7 +2170,7 @@
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 790,
+    "line": 798,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "list(r13_point[\"decisive\"].get(r13_point_key,[]))+list(r13_debate_spec[\"correct\"]),\"debate:conclusion:\"+claim",
@@ -2182,7 +2182,7 @@
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 793,
+    "line": 800,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[r13_point[\"wrong_key\"]],\"debate:point_key_wrong:\"+claim+\":\"+r13_point_key",
@@ -2500,7 +2500,7 @@
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 464,
+    "line": 475,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[(None,\"톡이 묶인 채 돌 앞에 서 있었다. 사람들 틈에 실룩의 아이 둘이 빵 봉지를 쥐고 서 있었다. 백 부인은 맨 앞줄에 앉았다.\"),\n        (\"neoul\",\"그림쟁이가 쓰러졌소.\"+(\" 기록실 선생도 죽었소.\" if r13_has(\"librarian_dead\") else \"\")+\" 오늘 끝냅시다.\")],\"ep1:meeting:open\"",
@@ -5764,7 +5764,7 @@
   },
   {
     "source": "game/systems/room13_meeting_flow.rpy",
-    "line": 197,
+    "line": 215,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "r13_meeting_live_rows(claim,r13_meeting_live_sid),\"meeting:live:\"+claim+\":\"+r13_meeting_live_sid",
@@ -5776,7 +5776,7 @@
   },
   {
     "source": "game/systems/room13_meeting_flow.rpy",
-    "line": 232,
+    "line": 250,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "presentation_rows,\"debate:\"+presentation_result+\":\"+claim+\":\"+sid+\":\"+key",
@@ -5788,7 +5788,7 @@
   },
   {
     "source": "game/systems/room13_meeting_flow.rpy",
-    "line": 271,
+    "line": 289,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[(\"dad\",presentation_rows,{\"thought\":True})],\"debate:hint:\"+claim+\":\"+sid",
@@ -5800,7 +5800,7 @@
   },
   {
     "source": "game/systems/room13_meeting_flow.rpy",
-    "line": 296,
+    "line": 315,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "r13_meeting_opinion_lines,\"meeting:opinions:\"+claim+\":\"+choice",

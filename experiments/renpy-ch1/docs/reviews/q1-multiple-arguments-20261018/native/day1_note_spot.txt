@@ -1,0 +1,68 @@
+[rpytest] [log] Running 2 test(s) marked with 'only' flag.
+[rpytest] [log] - global::day1_note_spot
+[rpytest] [log] - global::day1_note_spot
+
+[rpytest] Starting test run
+[rpytest] Platform:      Linux-6.18.55-x86_64-with-glibc2.41
+[rpytest] Python:        3.12.8
+[rpytest] Ren'Py:        Ren'Py 8.5.3.26051504
+[rpytest] Game Version:  0.19.58
+
+[rpytest] [exc] + global
+[rpytest] [exc]   - day1_note_spot
+File "/tmp/daram-q1v-native/worker2/game/qa_tests/tests.rpy", line 2302, in global::day1_note_spot
+AssertionError: assert eval (r13_field_selection()=="mother_note")
+
+Full traceback:
+  File "renpy/test/testexecution.py", line 549, in update
+    node_executor.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "renpy/test/testexecution.py", line 471, in execute
+    self.node_state = self.node.execute(self.node_state, elapsed)
+                      ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/test/testast.py", line 1458, in execute
+    renpy.test.testreporter.reporter.log_assert(self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "renpy/test/testreporter.py", line 888, in log_assert
+    raise RenpyTestAssertionError(f"{status.value}: {assert_node}")
+renpy.test.types.RenpyTestAssertionError: failed: <Assert (game/qa_tests/tests.rpy:2302)>
+
+While running game code:
+renpy.test.types.RenpyTestAssertionError: failed: <Assert (game/qa_tests/tests.rpy:2302)>
+File "/tmp/daram-q1v-native/worker2/game/room13.rpy", line 115, in script call
+  call r13_carriage
+File "/tmp/daram-q1v-native/worker2/game/room13.rpy", line 256, in script call
+  call r13_lines([(None, '덜컹. 마차 바퀴가 돌부리를 넘었다. 편지에서 눈을 들자, 옆자리에 있던 다람이가 보이지 않았다.', {'no_lead': True}), ('daram', '왁! 놀랐지? 놀랐지, 아빠?', {'expression': 'joy', 'sfx': 'surprise'}), ('dad', '깜짝이야. 언제 거기 들어가 있었어?'), ('daram', '아빠가 편지 읽을 때! 의자 뒤로 살금살금 갔는데, 아빠는 하나도 몰랐지?', 'expressive'), ('dad', '전혀 몰랐어. 우리 다람이 숨기 대장이네.'), ('daram', '헤헤. 그리고 이거 봐. 과자 봉지에서 엄청 큰 과자가 나왔어!', 'joy'), (None, '다람이가 손바닥만 한 과자를 내 코앞에 자랑스럽게 내밀었다.'), ('dad', '그렇게 큰 과자가 봉지 안에 들어 있었어? 아껴 먹어야겠네.'), ('daram', '아니지! 이렇게 큰 건 첫입에 크게 베어 먹어야 돼!', 'expressive'), ('dad', '천천히 먹어. 아무도 안 뺏어 먹어.'), ('daram', '아빠가 쳐다보고 있잖아.'), ('dad', '들켰네.'), (None, '다람이가 웃으며 과자를 베어 물었다. 부스러기 몇 개가 내 무릎 위로 떨어졌다.'), ('daram', '엄마한테도 주고 싶다. 이렇게 큰 과자.', 'thinking'), ('dad', '그래. 오늘 저녁이면 엄마한테 직접 줄 수 있어.'), (None, '나는 무릎 위에 펼쳐 두었던 편지를 다시 읽었다. ‘13호실을 잡아 뒀어. 다람이랑 와서 같이 겨울을 나자.’ 끝에는 아내의 이름이 적혀 있었다. 편지를 접어 주머니에 넣었다.'), ('daram', '아빠, 엄마가 있는 마을은 커?'), ('dad', '아빠도 이 마을은 처음 가 봐. 그러니까 까로 아저씨한테 여쭤볼까?'), ('daram', '아저씨! 마을까지 아직 멀었어요?', 'expressive'), ('karo', '저 앞 모퉁이만 돌아가면 마을 지붕들이 보일 겁니다.'), (None, '다람이가 과자 봉지를 품에 안고 마차 창문 쪽으로 바짝 다가앉았다.'), ('daram', '엄마가 있는 여관도 여기서 보여요?'), ('karo', '여관은 마을 안쪽에 있어요. 도착하면 제가 안내해 드리죠.'), ('daram', '아빠, 도착하면 여관부터 가자.'), ('dad', '응. 엄마가 13호실에서 기다린다고 했어.'), ('daram', '내가 먼저 문 두드려도 돼?', 'thinking'), ('dad', '그럼. 엄마 깜짝 놀라겠다.')],R13_CARRIAGE_IDENTITY, binding_route="dynamic:016")
+File "/tmp/daram-q1v-native/worker2/game/room13.rpy", line 76, in script call
+  $ R13_CHARS.get(r13_packet[0],source_thought)(r13_line_markup(r13_pages[r13_page_i]))
+File "/tmp/daram-q1v-native/worker2/game/room13.rpy", line 300, in script call
+  call screen r13_hub
+File "/tmp/daram-q1v-native/worker2/game/room13.rpy", line 320, in script call
+  call r13_object(r13_choice[1])
+File "/tmp/daram-q1v-native/worker2/game/room13.rpy", line 376, in script call
+  call r13_mother_note
+File "/tmp/daram-q1v-native/worker2/game/systems/room13_first_day_flow.rpy", line 82, in script call
+  call r13_lines([("dad","(책상에 접힌 종이가 있다. 다람이 이름 옆에 작은 도토리가 그려져 있다.)",{"thought":True}),("daram","이 그림은 엄마가 나한테 쓰는 표시야."),(None,"‘다람아, 아빠랑 도착하면 이 방에 짐을 놓아. 내가 없으면 등불을 돌보는 분에게 내 소식을 물어봐. 방에 남긴 건 그대로 두고.’"),("daram","아빠랑 나한테 쓴 메모네. 엄마가 언제 적어 놓은 걸까?"),("dad","글씨 모양도 적어 두자. 가져온 편지하고 같이 다시 읽어 봐야겠어.")],"life:mother:note:v2")
+File "/tmp/daram-q1v-native/worker2/game/room13.rpy", line 76, in script
+  $ R13_CHARS.get(r13_packet[0],source_thought)(r13_line_markup(r13_pages[r13_page_i]))
+
+During testcase execution:
+  File "/tmp/daram-q1v-native/worker2/.", line 0, in None
+
+  File "/tmp/daram-q1v-native/worker2/game/qa_tests/tests.rpy", line 2285, in testsuite global
+    testcase day1_note_spot:
+  File "/tmp/daram-q1v-native/worker2/game/qa_tests/tests.rpy", line 2302, in testcase day1_note_spot
+    assert eval (r13_field_selection()=="mother_note")
+
+====================
+[rpytest] [exc]   - day1_note_spot (11.722 s)
+[rpytest] [exc]   - day1_note_spot (11.722 s)
+
+[rpytest] Test outcomes (Summary)
+[rpytest] Test suites:     1 |     0 passed |     0 xfailed |     1 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Test cases :   197 |     0 passed |     0 xfailed |     1 failed |     0 xpassed |   196 skipped |     0 not run
+[rpytest] Test hooks :     0 |     0 passed |     0 xfailed |     0 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Assertions :     2 |     1 passed |     0 xfailed |     1 failed |     0 xpassed |
+
+[rpytest] Time: 14.555 s
+[rpytest] Status: FAILED
