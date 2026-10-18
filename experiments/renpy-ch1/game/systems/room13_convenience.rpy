@@ -4,7 +4,7 @@
 # - 지도에서 고른 장소를 한 번 더 누르면 바로 이동한다.
 init 165 python:
     def r13_autosave_now():
-        if renpy.is_skipping() and getattr(store,"r13_conv_skip",False):return
+        if getattr(store,"r13_admin_meeting_test",False) or (renpy.is_skipping() and getattr(store,"r13_conv_skip",False)):return
         try:renpy.force_autosave(take_screenshot=False,block=False)
         except Exception:pass
 

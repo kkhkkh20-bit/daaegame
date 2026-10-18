@@ -63,6 +63,34 @@ jobs:
           rm "$RUNNER_TEMP/renpy-sdk.tar.bz2"
           git rev-parse HEAD > "$ROOM13_CI_OUT/source-commit.txt"
           python experiments/renpy-ch1/dev/ci_package_build.py snapshot
+      - name: Diagnose lossless art portability without changing files
+        working-directory: experiments/renpy-ch1
+        run: |
+          python - <<'PY' | tee "$ROOM13_CI_OUT/drawer-pixel-diagnostic.json"
+          import io, json, hashlib
+          import sys
+          sys.path.insert(0, "dev")
+          import PIL, numpy, scipy
+          from PIL import Image, features
+          import import_drawer_puzzle as drawer
+          rows = []
+          for key, (_, asset, _) in drawer.STATES.items():
+              expected = drawer.build(key).convert("RGBA")
+              path = drawer.GAME / "assets" / asset
+              with Image.open(path) as saved:
+                  actual = saved.convert("RGBA")
+              regenerated = drawer.encode(io.BytesIO(drawer._png(drawer.build(key))), lossless=True)
+              with Image.open(io.BytesIO(regenerated)) as encoded:
+                  decoded = encoded.convert("RGBA")
+              rows.append(dict(asset=asset, size=list(actual.size), expected_size=list(expected.size),
+                  rgba_exact=(actual.size == expected.size and actual.tobytes() == expected.tobytes()),
+                  regenerated_rgba_exact=(actual.size == decoded.size and actual.tobytes() == decoded.tobytes()),
+                  file_bytes_equal=path.read_bytes() == regenerated,
+                  original_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
+                  regenerated_sha256=hashlib.sha256(regenerated).hexdigest()))
+          print(json.dumps(dict(pillow=PIL.__version__, libwebp=features.version("webp"),
+              numpy=numpy.__version__, scipy=scipy.__version__, rows=rows), indent=2))
+          PY
       - name: Unit tests and Ren'Py lint
         working-directory: experiments/renpy-ch1
         run: |

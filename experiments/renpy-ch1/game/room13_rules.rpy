@@ -359,7 +359,7 @@ init 55 python:
         return key
 
     def r13_remember_line(key):
-        if key not in persistent.room13_read:persistent.room13_read=persistent.room13_read+[key]
+        if not getattr(store,"r13_admin_meeting_test",False) and key not in persistent.room13_read:persistent.room13_read=persistent.room13_read+[key]
 
     def r13_dialogue_granny_reply(key, repeated, identity):
         # Dialogue only: no state, inventory, consent or timing writes.
