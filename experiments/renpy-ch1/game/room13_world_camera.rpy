@@ -72,6 +72,8 @@ init 58 python:
             if cameras.get(self.location)!=value:
                 cameras[self.location]=value
                 store.r13_world_cameras=cameras
+                if getattr(store,"r13_field_pick",None) and not r13_field_selection():
+                    store.r13_field_pick=None
                 # A pan happens inside call screen, before its next checkpoint.
                 # Keep the current viewport when a save resumes this interaction.
                 renpy.retain_after_load()
@@ -181,7 +183,7 @@ screen r13_world_camera_controls(adjustment):
             style "r13_action_button" xpos 1272 xanchor 1.0 ypos 236 padding (12,8) text_size 22
             action Function(r13_pan_camera,adjustment,1) tooltip "옆으로 둘러보기"
     # First wide place ever: one quiet line on how to look around, for six seconds.
-    if not persistent.r13_pan_hint_seen:
+    if not persistent.r13_pan_hint_seen and r13_field_view=="people":
         timer 6.0 action SetField(persistent,"r13_pan_hint_seen",True)
         frame:
             xalign .5 ypos 584 padding (16,8) background "#000000aa"

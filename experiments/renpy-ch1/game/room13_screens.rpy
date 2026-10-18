@@ -83,11 +83,6 @@ screen r13_hub(entry=False):
         use r13_world_camera_controls(world_adjustment)
     else:
         use r13_world_contents(entry,ready)
-    if not entry:
-        hbox:
-            xpos 1252 xanchor 1.0 ypos 184 spacing 16
-            for destination,title in r13_local_connections():
-                use r13_control(title,"map",Return(("travel",destination)),enabled=ready,height=64)
     if entry:
         use r13_waiting_window(ready)
     else:
@@ -157,7 +152,7 @@ screen r13_world_contents(entry=False,ready=False):
     $ bundle_point=r13_gate_bundle_check_point()
     if bundle_point:
         add TopicTick() xpos bundle_point[0]-13 ypos bundle_point[1]-13
-    if r13_field_view=="scene" and r13_field_spots:
+    if r13_field_view=="scene":
         use r13_field_spots_overlay(ready)
     use r13_admin_hitboxes()
     if r13_field_view=="people":
