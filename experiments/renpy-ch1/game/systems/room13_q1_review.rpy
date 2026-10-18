@@ -166,6 +166,7 @@ label r13_q1_menu_scene:
     return
 
 label r13_q1_preflight:
+    call r13_q1_hard_rules
     call r13_lines([(None,"회의에서는 지금 가진 자료로 이야기한다. 회의는 4일 오후가 끝나기 전까지 열 수 있다."),(None,"조사나 추리가 끝나지 않았어도 들어갈 수 있다.")],"ep1:preflight")
     call r13_q1_menu_scene
     menu:

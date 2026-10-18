@@ -65,7 +65,7 @@ init 100 python:
         return rows
 
     def r13_meeting_live_should_stop(identity):
-        return bool(identity.startswith("meeting:live:") and getattr(store,"r13_meeting_live_active",False) and getattr(store,"r13_meeting_live_command",None))
+        return bool(identity.startswith("meeting:live:") and getattr(store,"r13_meeting_live_active",False) and (getattr(store,"r13_meeting_live_command",None) or r13_debate_closed(getattr(store,"r13_meeting_claim",""))))
 
     def r13_meeting_can_live_press():
         if not getattr(store,"r13_meeting_live_active",False) or not r13_meeting_can_interrupt():return False
@@ -204,7 +204,7 @@ label r13_meeting_live_round(claim):
     $ r13_meeting_live_active=True
     $ r13_meeting_live_command=None
     $ r13_meeting_live_lap=0
-    while not r13_meeting_live_command and not r13_debate_ready(claim):
+    while not r13_meeting_live_command and not r13_debate_ready(claim) and not r13_debate_closed(claim):
         # Recompute after questions reveal statements or a live rebuttal resolves one.
         $ r13_meeting_round_ids=r13_meeting_live_ids(claim,r13_debate_selected)
         if not r13_meeting_round_ids:
@@ -255,8 +255,12 @@ label r13_debate_present_record(claim,sid,key,allow_hidden=False,presentation_re
     hide screen r13_material_corner
     hide screen r13_meeting_evidence_hold
     if presentation_result=="break" and r13_debate_counter(claim,sid):
+        if claim=="Q1" and r13_q1_hard():
+            $ r13_q1_prepare_counter(sid,key)
         call r13_debate_answer_counter(claim,sid)
-        if not _return:
+        if _return is None and claim=="Q1" and r13_q1_hard():
+            $ presentation_result="withdrawn"
+        elif not _return:
             $ presentation_result="countered"
             $ r13_debate_miss(claim)
     if presentation_result=="break":
@@ -287,7 +291,10 @@ label r13_debate_present_record(claim,sid,key,allow_hidden=False,presentation_re
         $ presentation_rows=r13_debate_hint_due(claim,sid)
         if presentation_rows:
             call r13_lines([("dad",presentation_rows,{"thought":True})],"debate:hint:"+claim+":"+sid, binding_route="dynamic:608")
-    call r13_meeting_direct_reactions(claim,sid,presentation_result)
+    if claim=="Q1" and r13_q1_hard() and r13_q1_reject_evidence(sid,key,presentation_result):
+        call r13_q1_error_notice
+    if presentation_result!="withdrawn":
+        call r13_meeting_direct_reactions(claim,sid,presentation_result)
     $ r13_meeting_interrupting=was_interrupting
     $ r13_meeting_direct_beat("listen",claim)
     return presentation_result=="break"

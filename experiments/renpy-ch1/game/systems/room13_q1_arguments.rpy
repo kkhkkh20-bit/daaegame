@@ -2,14 +2,14 @@
 # Old meetings already in progress retain the original five-statement contract.
 init 191 python:
     def r13_q1_v2():
-        return (store.room13 or {}).get("q1_rules")==2
+        return (store.room13 or {}).get("q1_rules") in (2,3)
 
     def r13_q1_activate():
         s=store.room13 or {}
         if "q1_rules" in s or r13_has("lt_done"):return
         d=s.get("debate",{})
         started=any(d.get(k,{}).get("Q1") for k in ("broken","pressed","misses")) or d.get("closed",{}).get("ep1:Q1") or "Q1" in s.get("propositions",[])
-        r13_edit(q1_rules=1 if started else 2)
+        r13_edit(q1_rules=1 if started else 3)
 
     for key,name,fact,limit in (
         ("L15","초롱의 첫 순찰","초롱은 2일 밤 첫 순찰에서 3번 등을 열어 받침을 바로잡았다. 조각은 안에 있었고 뚜껑 틈에는 끈이 없었다.","그 뒤 등을 연 사람의 얼굴은 확인하지 못했다."),
@@ -285,7 +285,7 @@ label r13_q1_argument_conclude:
             $ _q1_final="weak"
         "아직 더 따져 보겠습니다.":
             return False
-    call screen r13_confirm("지금까지 제시한 근거와 이 결론으로 회의를 마친다.","이 결론으로 마친다","회의에서 더 생각한다")
+    call screen r13_confirm("입증된 결론이면 회의를 마친다. 근거가 부족하거나 틀린 결론이면 오답 1회로 센다. 현재 %d / 3회."%r13_q1_formal_errors() if r13_q1_hard() else "지금까지 제시한 근거와 이 결론으로 회의를 마친다.","이 결론으로 마친다","회의에서 더 생각한다")
     if not _return:
         return False
     $ r13_debate_pick=_q1_final
@@ -297,9 +297,15 @@ label r13_q1_argument_conclude:
         call r13_lines([("neoul","조각을 가져갔다는 것과 죽일 생각이었다는 것은 다른 말이오. 그 결론을 뒷받침할 근거를 듣지 못했소.")],"q1v:over")
     elif _q1_final=="weak":
         call r13_lines([("neoul","온도를 쟀다는 것만으로 조각을 가져갔다고 확정할 수는 없소.")],"q1v:weak")
+    elif r13_q1_hard():
+        call r13_lines([("neoul","그 결론까지 이어지는 근거를 듣지 못했소. 확인한 사실만으로 그 주장이 성립하는지 다시 따져 보시오.")],"q1h:incomplete")
     else:
         call r13_lines([("neoul","그 결론까지 이어지는 근거를 듣지 못했소. 확인한 부분은 남기되 처분은 그대로 두겠소.")],"q1v:incomplete")
-    $ r13_debate_close("Q1","final_unproved")
+    if r13_q1_hard():
+        $ r13_q1_record_error(dict(sid="conclusion",supports=[],choices=[_q1_final],failed="conclusion"))
+        call r13_q1_error_notice
+    else:
+        $ r13_debate_close("Q1","final_unproved")
     return False
 
 label r13_q1_argument_failure:

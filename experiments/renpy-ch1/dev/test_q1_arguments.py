@@ -100,7 +100,7 @@ class Q1Arguments(unittest.TestCase):
         self.assertEqual(self.e['r13_debate_statements']('Q1')[0]['id'],'s1')
         self.assertFalse(self.e['r13_debate_ready']('C1'))
         self.store.room13={'day':1,'flags':[],'evidence':[],'debate':{},'propositions':[]}
-        self.e['r13_q1_activate']();self.assertEqual(self.store.room13['q1_rules'],2)
+        self.e['r13_q1_activate']();self.assertEqual(self.store.room13['q1_rules'],3)
         self.assertFalse(self.ready())
 
     def test_discovery_and_public_evidence_do_not_require_rope(self):

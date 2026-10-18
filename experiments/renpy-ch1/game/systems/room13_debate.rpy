@@ -647,6 +647,8 @@ label r13_debate_loop:
     $ r13_meeting_active=True
     $ r13_debate_action=_return
 label r13_debate_dispatch:
+    if r13_claim=="Q1" and r13_q1_hard() and r13_debate_closed(r13_claim):
+        return False
     if r13_debate_action[0]=="round":
         call r13_meeting_live_round(r13_claim)
         $ r13_debate_action=_return
@@ -722,6 +724,8 @@ label r13_debate_dispatch:
             $ r13_prove(r13_claim)
             call r13_meeting_public_vote(r13_claim,r13_debate_pick)
             return True
+    if r13_claim=="Q1" and r13_q1_hard() and r13_debate_closed(r13_claim):
+        return False
     if r13_meeting_resume_listening and not r13_debate_ready(r13_claim):
         $ r13_meeting_resume_listening=False
         $ r13_debate_action=("round",r13_debate_selected)
@@ -739,6 +743,9 @@ label r13_debate_unanswerable(claim):
     return
 
 label r13_debate_answer_counter(claim,sid):
+    if claim=="Q1" and r13_q1_hard():
+        call r13_q1_hard_counter(sid)
+        return _return
     $ r13_debate_c=r13_debate_counter(claim,sid)
     call r13_lines(r13_debate_c["lines"],"debate:counter:"+claim+":"+sid, binding_route="dynamic:219")
     $ r13_meeting_direct_beat("recover",claim,sid)
