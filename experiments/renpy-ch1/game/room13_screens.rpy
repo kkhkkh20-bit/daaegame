@@ -46,10 +46,7 @@ init 80:
 screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode="line",ready=True):
     style_prefix "r13"
     if mode=="talk":
-        use r13_footer_control(4,"기록","record",Show("r13_records",target=person,present_action=present_action),enabled=ready)
-        use r13_footer_control(3,"더보기","settings",Show("r13_more_tools"),enabled=ready)
-        if present_action is not None:
-            use r13_present_button(present_action,ready,r13_control_x(4),r13_control_upper_y(),232,r13_control_height())
+        use r13_concept_dock(ready=ready,show_record=True,person=person,present_action=present_action)
     elif mode!="field":
         use r13_playback_footer(show_record=True,ready=ready)
     else:
