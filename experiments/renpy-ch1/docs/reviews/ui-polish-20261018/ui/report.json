@@ -1,0 +1,19 @@
+{
+  "checks": [
+    "Mobile controls grow independently of large text",
+    "Map select/cancel preserve exact story state; confirm/back share 232x80 geometry",
+    "Sparse owned collection shows two relevant filters with 80px touch targets",
+    "Record source opens and folds through real controls",
+    "Scene hint folds; empty tap gives feedback without story, evidence or clock changes"
+  ],
+  "touch_geometry": {
+    "physical": [
+      844,
+      390
+    ],
+    "touch": true,
+    "height": 80,
+    "large_text": false
+  },
+  "passed": true
+}

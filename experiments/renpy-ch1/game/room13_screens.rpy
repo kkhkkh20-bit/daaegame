@@ -451,7 +451,7 @@ screen r13_book(target=None,present=False,hearing=False):
     if chip_person:
         $ entries=r13_record_related_first(entries,chip_person)
     $ selected_record=r13_present_selection(entries,detail,page) if present else r13_record_selected(entries,detail,page)
-    text ("자료 %d개"%len(entries)) xpos 284 ypos 86 size 20 color "#65503b"
+    text ("자료 %d개"%len(entries)) xpos 284 ypos (72 if r13_touch_ui() else 86) size 20 color "#65503b"
     use r13_material_filters("r13_book",material_filter,not hearing and not archive,unread=len(r13_material_subset(r13_catalog_entries(archive and not present,hearing),"unread")))
     use r13_material_grid(entries,selected_record,page,"r13_book",archive and not present)
     use r13_material_detail(selected_record,archive and not present,view_context) id (view_context,selected_record,archive,persistent.room13_large_text)
