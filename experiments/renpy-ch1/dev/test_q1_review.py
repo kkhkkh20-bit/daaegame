@@ -67,6 +67,14 @@ class Q1Review(unittest.TestCase):
         self.assertIn('등을 연 사람',lines);self.assertIn('가지고 있던 자료',lines);self.assertIn('조사를 보완',lines)
         self.assertNotIn('L09',lines);self.assertNotIn('입구',lines)
         self.assertEqual(before,self.store.room13)
+    def test_legacy_result_can_review_without_promising_a_missing_checkpoint(self):
+        self.store.room13["evidence"]=["L03"]
+        self.e["r13_debate_close"]("Q1","partial")
+        text=str(self.e["r13_q1_review_lines"]())
+        self.assertIn("가지고 있던 자료",text)
+        self.assertNotIn("다시 시도할 수 있다",text)
+        self.assertFalse(self.e["r13_q1_can_restore"]("meeting"))
+
     def test_all_broken_without_conclusion_is_not_missing_evidence(self):
         self.store.room13['evidence']=['L03','L04','L06','L07','L09','L10']
         for sid in ('s1','s2','s3','s4','s5'):self.e['r13_debate_mark']('broken','Q1',sid)

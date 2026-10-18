@@ -70,8 +70,10 @@ init 181 python:
         if unproved:
             held=any(r13_debate_answerable("Q1",r13_debate_statement("Q1",sid)) for sid,_,_ in unproved)
             missing=any(not r13_debate_answerable("Q1",r13_debate_statement("Q1",sid)) for sid,_,_ in unproved)
-            if held:lines.append((None,"가지고 있던 자료로 더 따져 볼 수 있는 주장도 남았다. 같은 자료로 회의만 다시 시도할 수 있다."))
+            if held:lines.append((None,"가지고 있던 자료로 더 따져 볼 수 있는 주장도 남았다."+(" 같은 자료로 회의만 다시 시도할 수 있다." if r13_q1_can_restore("meeting") else "")))
             if missing:lines.append((None,"지금 가진 자료만으로는 연결을 확인하기 어려운 주장도 남았다. 조사를 보완하거나, 이 결과로 이야기를 이어갈 수 있다."))
+        lines.append((None,"재시도하면 당시의 시간·소지품·조사 상태로 돌아간다."))
+        lines.append((None,"이번 결과는 별도로 보관되어 있다." if r13_q1_can_restore("result") else "이 결과를 남기려면 저장 메뉴에서 직접 저장해 주세요."))
         return lines
 
     def r13_q1_lamp_aftermath():
@@ -156,9 +158,17 @@ label r13_q1_checkpoint(kind):
         $ renpy.notify("되돌아갈 시점을 저장하지 못했습니다. 저장 메뉴에서 직접 저장할 수 있습니다.")
     return
 
+label r13_q1_menu_scene:
+    window hide
+    hide r13_visitor
+    $ r13_last_partner=None
+    $ dialogue_speaker=None
+    return
+
 label r13_q1_preflight:
+    call r13_lines([(None,"회의에서는 지금 가진 자료로 이야기한다. 회의는 4일 오후가 끝나기 전까지 열 수 있다."),(None,"조사나 추리가 끝나지 않았어도 들어갈 수 있다.")],"ep1:preflight")
+    call r13_q1_menu_scene
     menu:
-        "회의에서는 지금 가진 자료로 이야기한다. 조사나 추리가 끝나지 않았어도 들어갈 수 있다. 회의는 4일 오후가 끝나기 전까지 열 수 있다."
         "회의에 들어간다":
             return True
         "조사를 더 한다":
@@ -170,9 +180,8 @@ label r13_q1_preflight:
 label r13_q1_review:
     call r13_lines(r13_q1_review_lines(),"ep1:review")
 label r13_q1_review_menu:
-    $ _q1_review_prompt="이 결과로 이야기를 이어갈 수 있다. 재시도하면 당시의 시간·소지품·조사 상태로 돌아간다."+(" 이번 결과는 별도로 보관되어 있다." if r13_q1_can_restore("result") else " 이번 결과를 남기려면 저장 메뉴에서 직접 저장해 주세요.")
+    call r13_q1_menu_scene
     menu:
-        "[_q1_review_prompt]"
         "이 결과로 계속한다":
             return
         "남은 논점을 생각한다" if any(not row[1] for row in r13_q1_review_rows()):

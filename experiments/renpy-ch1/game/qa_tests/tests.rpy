@@ -531,7 +531,7 @@ testcase trial_gate_no_witness:
     pause 0.6
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
-    click "발언 기록"
+    click "발언 목록"
     pause 0.4
     click "한참 걸려요"
     pause 0.6
@@ -2295,8 +2295,12 @@ testcase day1_note_spot:
     $ r13_world_cameras={"room13":0}
     run Call("r13_qa_goto",1,1,"room13")
     pause 2.0
-    $ r13_qa_hitmap("day1_note")
-    click pos r13_qa_pick("mother_note")
+    # Current field UI: select the paper in investigation mode, then inspect it.
+    click "주변 살피기"
+    pause 0.3
+    click pos (ROOM13["objects"]["room13"]["mother_note"]["rect"][0]+ROOM13["objects"]["room13"]["mother_note"]["rect"][2]//2-r13_world_offset(),ROOM13["objects"]["room13"]["mother_note"]["rect"][1]+ROOM13["objects"]["room13"]["mother_note"]["rect"][3]//2)
+    assert eval (r13_field_selection()=="mother_note")
+    click "살펴보기"
     click pos (640,600) until screen "r13_hub" timeout 40
     assert eval ("M01" in room13["evidence"] and r13_bed_available("bed") and not r13_object_visible(ROOM13["objects"]["room13"]["mother_note"]))
     pause 1.0
@@ -2450,7 +2454,7 @@ testcase trial_counter:
     pause 0.6
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
-    click "발언 기록"
+    click "발언 목록"
     pause 0.4
     click "다시 휘두를 사람이"
     pause 0.6
@@ -10837,6 +10841,7 @@ testcase ep1_meeting:
     pause 1.0
     assert eval (r13_debate_session("Q1")=="ep1" and r13_debate_engageable("Q1"))
     run Call("r13_qa_event","r13_ep1_meeting")
+    click pos (640,600) until screen "choice" timeout 30
     click "회의에 들어간다"
     click pos (640,600) until eval (getattr(store,"r13_meeting_live_active",False)) timeout 60
     pause 0.6
@@ -11236,6 +11241,7 @@ testcase meeting_lap_hint:
     run Call("r13_qa_roam",dict(day=4,period=0,location="square",life_poc=True,evidence=["L03","L04","L06","L09","L10","L07","L08"]),("+ep","+offers","entry_corrected","lodging","ep4_seen","lt_dawn","piko_dead","lt_open","lt_lib_dawn","siluk_debt_known","ep1_patrol_seen","ep1_eaves_seen","ep1_done"))
     pause 1.0
     run Call("r13_qa_event","r13_ep1_meeting")
+    click pos (640,600) until screen "choice" timeout 30
     click "회의에 들어간다"
     click pos (640,600) until eval (getattr(store,"r13_meeting_live_active",False)) timeout 60
     assert eval (r13_meeting_live_lap==0)
@@ -11665,7 +11671,7 @@ testcase time_flow:
     pause 1.0
     # The QA seed marks finished episodes (R13_QA_EPISODES_SEEN); reopen ①.
     $ r13_edit(flags=[f for f in room13["flags"] if f!="lt_done"])
-    assert eval ((r13_meeting_countdown() or "").startswith("광장 회의까지 "))
+    assert eval ((r13_meeting_countdown() or "").startswith("광장 회의 · 4일 오전부터 오후까지"))
     screenshot "countdown_ep1.png"
     run Call("r13_qa_roam",dict(day=6,period=2,location="school",life_poc=True,evidence=["F04","F05","F06","F09","F11"]),("entry_corrected","lodging","livelihood_open","lt_done","wf_fire","wf_morning","wf_ruins","+offers"))
     pause 1.0

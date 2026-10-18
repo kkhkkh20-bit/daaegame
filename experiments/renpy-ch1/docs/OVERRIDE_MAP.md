@@ -205,7 +205,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 75 | `room13_dialogue_openings_20261013.rpy:169` | _r13_review_opening |
 | 2 | 173 | `systems/room13_review_knowledge.rpy:139` | _r13_q1_opening |
-| 3 | 181 | `systems/room13_q1_review.rpy:139` |  |
+| 3 | 181 | `systems/room13_q1_review.rpy:141` |  |
 
 ## `r13_debate_seats` (3층)
 

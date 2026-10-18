@@ -13400,10 +13400,10 @@
     "line": 90,
     "context": "def _r13_dp_statement(claim,sid):",
     "person": "resident_madam",
-    "text": "판 사람이요? 얼굴은 못 봤어요. 날이 밝기 전에 왔고, 허리에 노끈을 감고 있더군요.",
+    "text": "판 사람이요? 얼굴은 못 봤어요. 해 질 녘에 왔고, 허리에 노끈을 감고 있더군요.",
     "packet": [
       "resident_madam",
-      "판 사람이요? 얼굴은 못 봤어요. 날이 밝기 전에 왔고, 허리에 노끈을 감고 있더군요."
+      "판 사람이요? 얼굴은 못 봤어요. 해 질 녘에 왔고, 허리에 노끈을 감고 있더군요."
     ],
     "already_static_text": false
   },
@@ -38158,18 +38158,6 @@
   },
   {
     "source": "game/systems/room13_q1_review.rpy",
-    "line": 73,
-    "context": "def r13_q1_review_lines():",
-    "person": null,
-    "text": "가지고 있던 자료로 더 따져 볼 수 있는 주장도 남았다. 같은 자료로 회의만 다시 시도할 수 있다.",
-    "packet": [
-      null,
-      "가지고 있던 자료로 더 따져 볼 수 있는 주장도 남았다. 같은 자료로 회의만 다시 시도할 수 있다."
-    ],
-    "already_static_text": false
-  },
-  {
-    "source": "game/systems/room13_q1_review.rpy",
     "line": 74,
     "context": "def r13_q1_review_lines():",
     "person": null,
@@ -38182,7 +38170,19 @@
   },
   {
     "source": "game/systems/room13_q1_review.rpy",
-    "line": 79,
+    "line": 75,
+    "context": "def r13_q1_review_lines():",
+    "person": null,
+    "text": "재시도하면 당시의 시간·소지품·조사 상태로 돌아간다.",
+    "packet": [
+      null,
+      "재시도하면 당시의 시간·소지품·조사 상태로 돌아간다."
+    ],
+    "already_static_text": false
+  },
+  {
+    "source": "game/systems/room13_q1_review.rpy",
+    "line": 81,
     "context": "def r13_q1_lamp_aftermath():",
     "person": null,
     "text": "톡이 끌려간 뒤에도 3번 등은 식어 있었다. 부리가 빈 작업대를 바라보았다.",
@@ -38194,7 +38194,7 @@
   },
   {
     "source": "game/systems/room13_q1_review.rpy",
-    "line": 80,
+    "line": 82,
     "context": "def r13_q1_lamp_aftermath():",
     "person": "buri",
     "text": "등도 그대로고, 선생님도 안 돌아왔어요.",
@@ -38206,7 +38206,7 @@
   },
   {
     "source": "game/systems/room13_q1_review.rpy",
-    "line": 82,
+    "line": 84,
     "context": "def r13_q1_lamp_aftermath():",
     "person": null,
     "text": "풀려난 톡이 3번 등의 빈 뚜껑을 닫았다.",
@@ -38218,7 +38218,7 @@
   },
   {
     "source": "game/systems/room13_q1_review.rpy",
-    "line": 83,
+    "line": 85,
     "context": "def r13_q1_lamp_aftermath():",
     "person": "resident_tok",
     "text": "범인은 밝혔지만, 조각은 아직 못 돌려받았어요. 이대로는 등을 데울 수 없어요.",
@@ -38230,7 +38230,7 @@
   },
   {
     "source": "game/systems/room13_q1_review.rpy",
-    "line": 84,
+    "line": 86,
     "context": "def r13_q1_lamp_aftermath():",
     "person": null,
     "text": "톡이 돌려받은 ‘광장 3’ 조각을 등에 다시 넣었다. 등이 데워졌다. 그런데 숨 몇 번 사이에 온기가 옅어졌다.",
@@ -38242,7 +38242,7 @@
   },
   {
     "source": "game/systems/room13_q1_review.rpy",
-    "line": 85,
+    "line": 87,
     "context": "def r13_q1_lamp_aftermath():",
     "person": "resident_tok",
     "text": "이 조각, 가을엔 밤새 따뜻했어요. 지금은…….",
@@ -38254,7 +38254,7 @@
   },
   {
     "source": "game/systems/room13_q1_review.rpy",
-    "line": 89,
+    "line": 91,
     "context": "def r13_q1_afterthought():",
     "person": "dad",
     "text": "(조각을 훔친 사람은 밝혔다. 하지만 이 겨울에 사람들이 온기를 잃는 일까지 끝난 것은 아니다.)",
@@ -38269,7 +38269,7 @@
   },
   {
     "source": "game/systems/room13_q1_review.rpy",
-    "line": 90,
+    "line": 92,
     "context": "def r13_q1_afterthought():",
     "person": "dad",
     "text": "(밝힌 것과 밝히지 못한 것이 남았다. 내가 모르는 일을 안다고 말할 수는 없다.)",
@@ -38281,6 +38281,30 @@
       }
     ],
     "already_static_text": false
+  },
+  {
+    "source": "game/systems/room13_q1_review.rpy",
+    "line": 169,
+    "context": "label r13_q1_preflight:",
+    "person": null,
+    "text": "회의에서는 지금 가진 자료로 이야기한다. 회의는 4일 오후가 끝나기 전까지 열 수 있다.",
+    "packet": [
+      null,
+      "회의에서는 지금 가진 자료로 이야기한다. 회의는 4일 오후가 끝나기 전까지 열 수 있다."
+    ],
+    "already_static_text": true
+  },
+  {
+    "source": "game/systems/room13_q1_review.rpy",
+    "line": 169,
+    "context": "label r13_q1_preflight:",
+    "person": null,
+    "text": "조사나 추리가 끝나지 않았어도 들어갈 수 있다.",
+    "packet": [
+      null,
+      "조사나 추리가 끝나지 않았어도 들어갈 수 있다."
+    ],
+    "already_static_text": true
   },
   {
     "source": "game/systems/room13_reinspect.rpy",

@@ -248,29 +248,7 @@ screen r13_plan_read():
     key "game_menu" action Return(False)
 
 screen r13_mystery_notebook():
+    # Legacy entry point uses the same parchment and memo content as Records > Memo.
     modal True
     zorder 96
-    default expanded=None
-    add Solid("#102725fa")
-    text "추리 메모" style "r13_title_text" xpos 48 ypos 30 color "#efd4a1"
-    text "확인한 사실과 아직 풀리지 않은 질문" xpos 260 ypos 46 size 23 color "#d4dfd8"
-    viewport:
-        area (48,108,1184,496) mousewheel True draggable True scrollbars "vertical"
-        vbox:
-            spacing 18
-            for i,note in enumerate(r13_first_mystery_notes()):
-                frame:
-                    xsize 1144 padding R13_UI_PADDING["panel"] background R13ActionPanel()
-                    vbox:
-                        spacing 13
-                        text note["title"] size r13_read_size(28,32) color "#efd4a1" xsize 1088
-                        text ("확인 · "+note["fact"]) size r13_read_size(23,28) color "#fff2cf" xsize 1088
-                        text ("의문 · "+note["question"]) size r13_read_size(24,29) color "#a8cdec" xsize 1088
-                        if note["keys"]:
-                            text ("함께 볼 기록 · "+" / ".join(R13_RECORD_SHORT.get(k,ROOM13["evidence"][k]["name"]) for k in note["keys"])) size r13_read_size(21,25) color "#d4dfd8" xsize 1088
-                        textbutton ("생각 정리 접기" if expanded==i else "생각 정리"):
-                            style "r13_action_button" xsize 260 ysize 56 text_size 22 action SetScreenVariable("expanded",None if expanded==i else i)
-                        if expanded==i:
-                            text note["hint"] size r13_read_size(22,27) color "#d4dfd8" xsize 1088
-    textbutton "닫기" style "r13_action_button" xpos 930 ypos 642 xsize 300 ysize 62 text_size 24 action Hide("r13_mystery_notebook")
-    key "game_menu" action Hide("r13_mystery_notebook")
+    use r13_records(initial_tab="notes",close_action=Hide("r13_mystery_notebook"))

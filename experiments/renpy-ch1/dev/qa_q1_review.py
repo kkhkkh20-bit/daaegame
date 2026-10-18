@@ -21,9 +21,12 @@ async def main():
    for i in range(240):
     st=await q.state()
     if st.get('say') and (not seen or seen[-1]!=st['say']):seen.append(st['say'])
-    if screen and screen in st['screens'] or label and any(label in b['text'] for b in st['buttons']):return st
+    if screen and screen in st['screens'] or label and any(label in b['text'] for b in st['buttons']):
+     await asyncio.sleep(.5)
+     return await q.state()
     if await q.py('import renpy;result=renpy.store.r13_aftermath_active'):
-     await q.value('next')
+     if any(b.get('value') in ('next',repr('next')) for b in st['buttons']):await q.value('next')
+     else:await asyncio.sleep(.15)
     elif 'say' in st['screens']:await q.input(810,610)
     else:await asyncio.sleep(.15)
    raise AssertionError(('timeout',screen,label,st['screens'],st['say'],[b['text'][:80] for b in st['buttons']]))
@@ -49,14 +52,24 @@ async def main():
     await q.press(direction)
    await q.press(title);await q.press('이 주장에 근거로 낸다');await until('r13_debate_board')
   try:
-   await page.goto(URL);await page.wait_for_function("typeof renpy_exec==='function'",timeout=180000);await q.wait('main_menu');print('BOOT',flush=True)
+   await page.goto(URL);await page.wait_for_function("typeof renpy_exec==='function'",timeout=240000);await page.wait_for_function("!document.getElementById('presplash')",timeout=240000);await q.wait('main_menu');print('BOOT',flush=True)
    await py('s.preferences.text_cps=0;result=True');await q.press('처음부터');await q.press('건너뛰기');await q.wait('say');await q.press('건너뛰기');await q.advance()
    # Inject only the starting fixture, then execute the authored dawn and meeting.
    await py('s.r13_edit(day=4,period=0,location="square",evidence=["L03","L04","L06"],flags=["entry_corrected","lodging","lt_dawn","lt_open","piko_dead","ep4_seen","ep1_done","ep1_patrol_seen","ep1_eaves_seen"],propositions=[],debate={},run_token="browser-q1-review",livelihood=dict(cash=7,debt=0,items=[]));result=True')
    await native_jump(q,'r13_roam');await until('r13_hub')
    await py('result=s.r13_q1_can_restore("investigation")')
    assert await py('result=s.r13_q1_can_restore("investigation")')
-   await q.py('import renpy;renpy.exports.show_screen("r13_mystery_notebook");renpy.exports.restart_interaction();result=True');await q.shot('01-investigation-questions');await q.press('닫기')
+   await q.press('기록');await until('r13_records');await q.press('메모');await q.shot('01-investigation-questions')
+   await q.press('막혔다면 생각 정리');await q.shot('01b-notebook-expanded')
+   await py('s.r13_set_text_size("large");result=True')
+   await page.set_viewport_size({'width':844,'height':390});await q.shot('01c-notebook-mobile-large')
+   await q.input(670,500);await page.mouse.wheel(0,600);await asyncio.sleep(.4);await q.shot('01d-notebook-mobile-scroll')
+   await q.press('닫기');await until('r13_hub')
+   await page.set_viewport_size({'width':1280,'height':720});await py('s.r13_set_text_size("normal");result=True')
+   await q.py('import renpy;renpy.exports.show_screen("r13_mystery_notebook");renpy.exports.restart_interaction();result=True');await q.shot('01e-legacy-notebook-shared');await q.press('닫기');await until('r13_hub')
+   checks.append('Records > Memo real entry, optional thinking, large text scroll and close; legacy entry shares the same parchment')
+   if os.environ.get('ROOM13_NOTEBOOK_ONLY'):
+    (OUT/'notebook-result.json').write_text(json.dumps(dict(passed=True,checks=checks),ensure_ascii=False,indent=2));return
    await q.value(('offer','r13_ep1_meeting'));await until(label='회의에 들어간다');await q.shot('02-enter-with-incomplete-evidence')
    await q.press('조사를 더 한다');await until('r13_hub')
    assert not await py('result=s.r13_has("lt_done")');checks.append('incomplete entry can cancel without time, proof or outcome')
@@ -76,12 +89,12 @@ async def main():
    await q.press('같은 자료로 회의를 다시 한다');await until(label='회의에 들어간다');await q.shot('08-meeting-restored')
    assert await py('result=not s.r13_has("lt_done") and s.r13_debate_progress("Q1")== (0,5) and s.r13_wallet(s.room13)["cash"]==7')
    assert await py('result=s.r13_q1_previous_result()=='+repr(failure))
-   checks.append('native meeting restore resets outcome and debate, preserves 7 coins')
+   checks.append('native meeting restore resets outcome and debate, preserves 7 coins');print('RESTORE meeting PASS',flush=True)
    await q.press('보관한 이전 결과를 본다');await until(label='이 결과로 계속한다')
    assert await py('result=s.r13_has("tok_detained") and s.r13_debate_progress("Q1")== (3,5)')
    await q.press('조사를 다시 살펴본다');await until('r13_hub');await q.shot('09-investigation-restored')
    assert await py('result=s.room13["day"]==4 and s.room13["period"]==0 and not s.r13_has("lt_done") and s.r13_wallet(s.room13)["cash"]==7')
-   checks.append('native investigation restore returns after dawn without replaying death scene; prior failure remains loadable')
+   checks.append('native investigation restore returns after dawn without replaying death scene; prior failure remains loadable');print('RESTORE result/investigation PASS',flush=True)
    # Complete the investigation using actual episode labels and their options.
    await py('s.r13_edit(location="gate");result=True');await native_jump(q,'r13_roam');await until(label='노끈을 본다');await q.press('노끈을 본다');await until(label='그만 간다');await q.press('그만 간다');await until('r13_hub')
    await py('s.r13_edit(location="store");result=True');await native_jump(q,'r13_roam');await until('r13_hub')
