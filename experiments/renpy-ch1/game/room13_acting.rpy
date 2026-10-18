@@ -509,11 +509,17 @@ init 59 python:
                 rect=[left,top,max(1,right-left),max(1,bottom-top)]
             staged.append(dict(person=person,pose=pose,x=x,y=y,width=rendered_width,height=rendered_height,
                 rect=rect,depth=y+rendered_height,occlusion=occlusion,contact=contact,slot=selected_slot,
-                activity=r13_calendar_activity(person) if person in R13_CALENDAR else spec.get("activity_label",spec.get("action_ko",spec.get("action",r13_activity_text(person))))))
+                activity=r13_staged_activity(person,spec)))
         result=sorted(staged,key=lambda actor:actor["depth"])
         if len(R13_STAGE_CACHE)>=16:R13_STAGE_CACHE.clear()
         R13_STAGE_CACHE[cache_key]=result
         return result
+
+    def r13_staged_activity(person,spec):
+        # Only the two canonical neutral fallbacks may replace a stale job description.
+        if person in ("resident_musoe","resident_lamplighter") and spec.get("source_kind")=="temporary_canonical_neutral_fallback_no_old_art" and spec.get("action_ko"):
+            return "주변을 살핀다." if person=="resident_musoe" else spec["action_ko"]
+        return r13_calendar_activity(person) if person in R13_CALENDAR else spec.get("activity_label",spec.get("action_ko",spec.get("action",r13_activity_text(person))))
 
     def r13_staged_art(actor,still=False):
         art=r13_art(actor["person"],actor["pose"])
@@ -584,3 +590,4 @@ init 59 python:
             key="chair_listen" if pose=="neutral" else "chair_read" if pose=="thinking" else pose
             if key in R13_ACTING.get(person,{}):return key
         return pose
+

@@ -1,0 +1,170 @@
+{
+  "status": "LOCAL_CANDIDATE_NATIVE_QA_PENDING",
+  "base_commit": "e304590f482fd8fdf206063a656e90016cd35234",
+  "rows": [
+    {
+      "request_id": "JOB-CHORONG-STONE",
+      "status": "approved",
+      "person": "resident_lamplighter",
+      "pose": "job_replace_lightstone",
+      "location": "workshop",
+      "periods": [
+        0
+      ],
+      "replace_poses": [
+        "living_inspectlamp"
+      ],
+      "activity": "가져온 등을 손에 들고 빛돌을 갈아 끼운다.",
+      "variants": {
+        "morning": {
+          "world_width": 1800,
+          "render_height": 220,
+          "anchor": "foot",
+          "target": [
+            1200,
+            570
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/investigation-jobs-20261018/chorong-replace-lightstone-v1.webp",
+        "crop": [
+          194,
+          33,
+          722,
+          1435
+        ],
+        "foot": [
+          316.4,
+          1434
+        ],
+        "anchors": {
+          "foot": [
+            316.4,
+            1434
+          ]
+        },
+        "head": [
+          72,
+          0,
+          577,
+          430
+        ],
+        "native_detail": true,
+        "nearest": true,
+        "contact": "self-contained",
+        "source_sha256": "197adff414a5dc532c32b4aa35cf9cd19c0071088a0740a1268dd5294c539f83",
+        "reviewed": false,
+        "source_kind": "canonical_handheld_job_20261018"
+      }
+    },
+    {
+      "request_id": "JOB-MUSOE-OLD-TOOL",
+      "status": "approved",
+      "person": "resident_musoe",
+      "pose": "job_inspect_old_tool",
+      "location": "workshop",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "replace_poses": [
+        "living_foldmap"
+      ],
+      "activity": "오래 쓰던 손도구의 머리를 손끝으로 살핀다.",
+      "variants": {
+        "morning": {
+          "world_width": 1800,
+          "render_height": 280,
+          "anchor": "foot",
+          "target": [
+            1700,
+            705
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1800,
+          "render_height": 280,
+          "anchor": "foot",
+          "target": [
+            1700,
+            705
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 1800,
+          "render_height": 280,
+          "anchor": "foot",
+          "target": [
+            1700,
+            705
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/investigation-jobs-20261018/musoe-inspect-old-tool-v1.webp",
+        "crop": [
+          136,
+          11,
+          805,
+          1518
+        ],
+        "foot": [
+          437.9,
+          1517
+        ],
+        "anchors": {
+          "foot": [
+            437.9,
+            1517
+          ]
+        },
+        "head": [
+          80,
+          0,
+          644,
+          455
+        ],
+        "native_detail": true,
+        "nearest": true,
+        "contact": "self-contained",
+        "source_sha256": "20c748367b63d06e17a3484559c2347cd18b08d5b6bcce0b3e43ecb32d9b68da",
+        "reviewed": false,
+        "source_kind": "canonical_handheld_job_20261018"
+      }
+    }
+  ],
+  "assets": [
+    {
+      "person": "resident_lamplighter",
+      "source": "art/investigation-jobs-20261018/originals/chorong-replace-lightstone-v1.png",
+      "source_sha256": "197adff414a5dc532c32b4aa35cf9cd19c0071088a0740a1268dd5294c539f83",
+      "export": "game/assets/investigation-jobs-20261018/chorong-replace-lightstone-v1.webp",
+      "export_sha256": "a69fce8ac5a73416811006acd593fc3c704777f08b3dd0b56140ed60c7933f64",
+      "canonical_sha256": "067e60f202442c2ad56b87febafe612c1b72c1a819dc837f95bcbb477d542759"
+    },
+    {
+      "person": "resident_musoe",
+      "source": "art/investigation-jobs-20261018/originals/musoe-inspect-old-tool-v1.png",
+      "source_sha256": "20c748367b63d06e17a3484559c2347cd18b08d5b6bcce0b3e43ecb32d9b68da",
+      "export": "game/assets/investigation-jobs-20261018/musoe-inspect-old-tool-v1.webp",
+      "export_sha256": "bb62cc761efac7cca3a17d087bcd71dbb2979655787d850b6239b5af99af9c2c",
+      "canonical_sha256": "e651223aba6e457fd8e6e52954f2ffc2449b46b51c6ed292effdd25d9b6de6eb"
+    }
+  ],
+  "constraints": [
+    "No residents/schedules created; exact existing living pose only.",
+    "Chorong handheld morning workshop only, no tabletop support required.",
+    "Other locations retain canonical neutral with truthful source-kind-scoped label.",
+    "Same observed day2 native foot targets and heights; not a new furniture-scale correction.",
+    "Append rows only after exact first-match conflict check; third overlay reversal needed before existing full registry baseline validators."
+  ],
+  "baseline_map_semantic_sha256": "e7a9fe8ca076b7a1a0b1cb45ffcc1620f05e6d0f67d1fa358c12f2aa32fb495e",
+  "integration_mode": "APPEND_TWO_CONDITIONAL_MAP27_ROWS; existing18 alias specs remain unchanged as outside-workshop fallbacks",
+  "requires_residual_exact_count": 8
+}

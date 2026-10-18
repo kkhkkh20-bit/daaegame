@@ -2,10 +2,13 @@ import hashlib,json,unittest
 from pathlib import Path
 from PIL import Image
 from map27_pixel_derivative import validate_map_image
+from investigation_native_residual import run as validate_native_residual, restore as restore_native_residual
 ROOT=Path(__file__).resolve().parents[1]
 class Action27P0(unittest.TestCase):
  def test_originals_export_and_registry_match(self):
   receipt=json.loads((ROOT/'art/approved-action27-p0/receipt.json').read_text());reg=json.loads((ROOT/'game/assets/room13-map-action27.json').read_text());self.assertEqual(len(receipt['rows']),8);self.assertEqual({r['request_id'] for r in reg['rows'] if r['request_id'] in {x['request_id'] for x in receipt['rows']}},{'MK-2','MK-3','MK-4','MK-5','MK-6','PO-1','SQ-2','WS-1'})
+  validate_native_residual(ROOT)
+  reg=restore_native_residual({'assets/room13-map-action27.json':reg},ROOT,require_applied=True)['assets/room13-map-action27.json']
   for r in receipt['rows']:
    src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
    out=ROOT/'game'/r['export'];self.assertEqual(hashlib.sha256(out.read_bytes()).hexdigest(),r['export_sha256']);validate_map_image(Image.open(out).convert('RGBA'))

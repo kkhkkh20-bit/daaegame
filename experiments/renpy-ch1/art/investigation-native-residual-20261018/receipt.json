@@ -1,6 +1,6 @@
 {
   "base_commit": "cda35116e5e10eb8f9b62b819b23ab96890ac586",
-  "purpose": "Six selected pose flags only; diagnostic, not visual approval",
+  "purpose": "Original six exact flags plus Sling PO-1 and Ubak living_measure; no geometry or source edits",
   "operations": [
     {
       "file": "assets/room13-pixel-acting.json",
@@ -601,11 +601,389 @@
         "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af",
         "native_detail": true
       }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/18/spec",
+      "expected": {
+        "file": "assets/map-action27/PO-1--resident_sling.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          164.0,
+          13.5,
+          246.5,
+          225.0
+        ],
+        "foot": [
+          308.5,
+          754.5
+        ],
+        "anchors": {
+          "foot_left": [
+            191.5,
+            754.5
+          ],
+          "foot_right": [
+            425.0,
+            749.0
+          ],
+          "foot": [
+            308.5,
+            754.5
+          ],
+          "hand_parcel_left": [
+            349.0,
+            429.5
+          ],
+          "hand_parcel_right": [
+            481.5,
+            420.0
+          ],
+          "parcel_bottom_left": [
+            358.0,
+            455.5
+          ],
+          "parcel_bottom_right": [
+            476.5,
+            449.0
+          ],
+          "parcel_bottom": [
+            417.0,
+            452.5
+          ],
+          "work": [
+            417.0,
+            452.5
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              295.0,
+              350.0
+            ],
+            [
+              505.0,
+              350.0
+            ],
+            [
+              505.0,
+              467.5
+            ],
+            [
+              295.0,
+              467.5
+            ]
+          ],
+          [
+            [
+              202.5,
+              270.0
+            ],
+            [
+              240.0,
+              270.0
+            ],
+            [
+              275.0,
+              325.0
+            ],
+            [
+              295.0,
+              360.0
+            ],
+            [
+              315.0,
+              385.0
+            ],
+            [
+              380.0,
+              400.0
+            ],
+            [
+              380.0,
+              465.0
+            ],
+            [
+              300.0,
+              475.0
+            ],
+            [
+              250.0,
+              435.0
+            ],
+            [
+              220.0,
+              390.0
+            ]
+          ],
+          [
+            [
+              390.0,
+              285.0
+            ],
+            [
+              425.0,
+              285.0
+            ],
+            [
+              445.0,
+              330.0
+            ],
+            [
+              475.0,
+              352.5
+            ],
+            [
+              490.0,
+              390.0
+            ],
+            [
+              450.0,
+              397.5
+            ],
+            [
+              400.0,
+              365.0
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_sha256": "ddd164dae71ffde0a52e21342c2af26d90b0c2df36cf2a9355da90bcc78310a2",
+        "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376"
+      },
+      "value": {
+        "file": "assets/map-action27/PO-1--resident_sling.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          164.0,
+          13.5,
+          246.5,
+          225.0
+        ],
+        "foot": [
+          308.5,
+          754.5
+        ],
+        "anchors": {
+          "foot_left": [
+            191.5,
+            754.5
+          ],
+          "foot_right": [
+            425.0,
+            749.0
+          ],
+          "foot": [
+            308.5,
+            754.5
+          ],
+          "hand_parcel_left": [
+            349.0,
+            429.5
+          ],
+          "hand_parcel_right": [
+            481.5,
+            420.0
+          ],
+          "parcel_bottom_left": [
+            358.0,
+            455.5
+          ],
+          "parcel_bottom_right": [
+            476.5,
+            449.0
+          ],
+          "parcel_bottom": [
+            417.0,
+            452.5
+          ],
+          "work": [
+            417.0,
+            452.5
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              295.0,
+              350.0
+            ],
+            [
+              505.0,
+              350.0
+            ],
+            [
+              505.0,
+              467.5
+            ],
+            [
+              295.0,
+              467.5
+            ]
+          ],
+          [
+            [
+              202.5,
+              270.0
+            ],
+            [
+              240.0,
+              270.0
+            ],
+            [
+              275.0,
+              325.0
+            ],
+            [
+              295.0,
+              360.0
+            ],
+            [
+              315.0,
+              385.0
+            ],
+            [
+              380.0,
+              400.0
+            ],
+            [
+              380.0,
+              465.0
+            ],
+            [
+              300.0,
+              475.0
+            ],
+            [
+              250.0,
+              435.0
+            ],
+            [
+              220.0,
+              390.0
+            ]
+          ],
+          [
+            [
+              390.0,
+              285.0
+            ],
+            [
+              425.0,
+              285.0
+            ],
+            [
+              445.0,
+              330.0
+            ],
+            [
+              475.0,
+              352.5
+            ],
+            [
+              490.0,
+              390.0
+            ],
+            [
+              450.0,
+              397.5
+            ],
+            [
+              400.0,
+              365.0
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_sha256": "ddd164dae71ffde0a52e21342c2af26d90b0c2df36cf2a9355da90bcc78310a2",
+        "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_ubak/living_measure",
+      "expected": {
+        "file": "assets/room13-pixel-acting-ubak.webp",
+        "crop": [
+          539,
+          558,
+          441,
+          416
+        ],
+        "nearest": true,
+        "anchor": {
+          "foot": [
+            220,
+            412
+          ]
+        },
+        "action_ko": "계측기 바늘과 종이 눈금을 맞춘다.",
+        "contact": "self-contained",
+        "head": [
+          40,
+          0,
+          401,
+          216
+        ],
+        "facing": "right-profile"
+      },
+      "value": {
+        "file": "assets/room13-pixel-acting-ubak.webp",
+        "crop": [
+          539,
+          558,
+          441,
+          416
+        ],
+        "nearest": true,
+        "anchor": {
+          "foot": [
+            220,
+            412
+          ]
+        },
+        "action_ko": "계측기 바늘과 종이 눈금을 맞춘다.",
+        "contact": "self-contained",
+        "head": [
+          40,
+          0,
+          401,
+          216
+        ],
+        "facing": "right-profile",
+        "native_detail": true
+      }
     }
   ],
   "baseline_semantic_sha256": {
     "assets/room13-pixel-acting.json": "cb5427fee77c43338c958b9f9852da77c81fb7f5f25a085db96595a7cc458b3e",
     "assets/room13-map-action27.json": "b79080398b0e3698e9fe00073f717d3a1f3aca073d4239b1eae2626907270bbc",
     "assets/room13-life-groups.json": "a061108ffb6330195f497344bac1d6690e28025b55791baa1f26abc6c4a75a71"
+  },
+  "expanded_on_commit": "e304590f482fd8fdf206063a656e90016cd35234",
+  "original_six_operations_sha256": "76a2c035cf8c4adc4b7551313ca73c334772b24494902feceb6f29a29a2724cd",
+  "source_export_hashes": {
+    "assets/room13-action-resident_momo-living_lampnumber.webp": "994aeb84f7938d13775ade9b09272442a98fe33582fb94d9393541c16281c77c",
+    "assets/room13-action-granny-living_keyledger.webp": "ef9e7e4c7237e904a3204db0b59b9e9a653c0b2015d15da8da6a1ec15d22eaba",
+    "assets/room13-group-buri-cooperative.webp": "c4137e0ed4310f30fe4c1a91c316a5b6d4587e3a68fd67ab6db938d07df90ff5",
+    "assets/room13-group-resident_tok-cooperative.webp": "19d4c4296103ca07aa20766beb1266c30e73ddf00411489678099b697d7054b5",
+    "assets/map-action27/VA-5--resident_guldol.webp": "db8c192d2517eab146712df24aee4bdcd64102097bb1d7b2e113a5c210f90828",
+    "assets/map-action27/PO-2--resident_librarian.webp": "0ae895da144fab04b84d32f31abde99ee63e263fa0edbf475ca7e7967d015ed0",
+    "assets/map-action27/PO-1--resident_sling.webp": "7e89e07a426849f99ebd643911043322b68905e2b26dc7ef6b6cdc53e93ce22f",
+    "assets/room13-pixel-acting-ubak.webp": "ed094e6436663e3e0ff653a5a1037f6f4595dca2acb6f9b5455a1f74782b2118"
   }
 }

@@ -25,7 +25,7 @@ init 999 python:
         state=r13_pd_scene_status()
         return state['hub_ready'] and not any(state[key] for key in ('say_present','field_hint_active','pan_hint_active','ongoing_transitions'))
 
-    def r13_pd_checkpoint(step, capture=True):
+    def r13_pd_checkpoint(step, capture=False):
         # Flush before capture so a rendering/capture stall leaves its boundary.
         row=dict(step=step,variant=getattr(store,'r13_pd_variant','unselected'),
             screens={name:renpy.get_screen(name) is not None for name in ('main_menu','say','r13_hub','r13_topics','r13_qa_pixel_baseline')},
@@ -102,7 +102,7 @@ init 999 python:
         actors=[]
         for i,person in enumerate(R13_PD_PEOPLE):
             cw,ch=r13_actor_geometry(person,'neutral');h=200;w=int(round(cw*float(h)/ch))
-            actors.append(dict(person=person,pose='neutral',x=(i%3)*426+(426-w)//2,y=(i//3)*240+30,width=w,height=h,
+            actors.append(dict(person=person,pose='neutral',x=(i%3)*426+(426-w)//2,y=(i//3)*240+24,width=w,height=h,
                 rect=[0,0,w,h],depth=h,occlusion=[],contact='standing'))
         return actors
 
@@ -141,7 +141,7 @@ label r13_qa_pixel_diag(variant="proposed"):
     $ renpy.pause(1.0, hard=True, modal=False)
     $ r13_pd_checkpoint("board-after-pause")
     python:
-        report={'variant':variant,'source_commit':'24ce3b6037093a562f0bd9b1c35c64a9b690a13d','kind':'bounded three-map native presentation fixture; not campaign replay; equal-height board is not an age/size target','baseline':[],'fields':[],'missing':[]}
+        report={'variant':variant,'baseline_scope':'Old .66 acting/map registry art restored only; current production layout/code used for both variants','source_commit':'24ce3b6037093a562f0bd9b1c35c64a9b690a13d','kind':'bounded three-map native presentation fixture; not campaign replay; equal-height board is not an age/size target','baseline':[],'fields':[],'missing':[]}
         for actor in r13_pd_baseline():
             r13_pd_checkpoint('board-row-'+actor['person'],False)
             report['baseline'].append(r13_pd_row(actor))
