@@ -12,3 +12,7 @@ Source changes and static review prepared; official SDK execution is pending. Th
 
 ## Packaging
 Generate preview/room13-dev only with dev/build_web.py, preserving its previous .rpyc seeding and the existing 8 MiB transport parts. Do not manually edit or merge packaged game data.
+
+## Admin quick test and portable art verification
+- Add isolated admin C1–C4 meeting replay, with normal play-state restoration and explicit save/read-history guards. Eight source-level regression checks passed in CI; interactive runtime QA remains pending.
+- Drawer art verification compares exact decoded RGBA pixels and image dimensions/format against source-derived output. CI proved all four existing assets pixel-identical; only WebP encoding bytes differed under libwebp 1.5.0. Source MANIFEST SHA-256, source references, layout, geometry, and strict no-tolerance pixel validation remain required. No artwork was regenerated. Regression coverage rejects RGB, alpha, size, format, corrupt, and missing-file changes.

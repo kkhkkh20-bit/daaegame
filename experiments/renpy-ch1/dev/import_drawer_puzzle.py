@@ -87,6 +87,16 @@ def build(key):
     return resample(img, (RULER_SIZE * SCALE, RULER_SIZE * SCALE))
 
 
+def imported_pixels_match(path, expected):
+    """Require exact RGBA pixels, not encoder-version-dependent WebP bytes."""
+    try:
+        with Image.open(path) as actual:
+            return (actual.format == "WEBP" and actual.size == expected.size
+                    and actual.convert("RGBA").tobytes() == expected.convert("RGBA").tobytes())
+    except (OSError, ValueError):
+        return False
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true")
@@ -105,12 +115,13 @@ def main():
     states = {}
     bad = []
     for key, (src, asset, rect) in STATES.items():
-        data = encode(io.BytesIO(_png(build(key))), lossless=True)
+        expected = build(key)
         out = GAME / "assets" / asset
         if a.check:
-            if not out.exists() or out.read_bytes() != data:
+            if not imported_pixels_match(out, expected):
                 bad.append(asset)
         else:
+            data = encode(io.BytesIO(_png(expected)), lossless=True)
             out.write_bytes(data)
             print(asset, len(data), "bytes")
         states[key] = dict(file="assets/" + asset, rect=rect or ruler_rect(),
