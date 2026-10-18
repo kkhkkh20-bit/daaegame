@@ -2,6 +2,7 @@
 import copy,json,hashlib,argparse
 from pathlib import Path
 from investigation_job_overlay import restore as restore_jobs
+from investigation_source2_overlay import restore as restore_sources
 ROOT=Path(__file__).resolve().parents[1]
 RECEIPT='art/investigation-native-residual-20261018/receipt.json'
 def slot(doc,p):
@@ -14,7 +15,7 @@ def receipt(root=ROOT):
  return r
 
 def restore(registries,root=ROOT,require_applied=False):
- out=restore_jobs(registries,root)
+ out=restore_jobs(restore_sources(registries,root),root)
  for o in receipt(root)['operations']:
   if o['file'] not in out:continue
   n,k=slot(out[o['file']],o['pointer'])
