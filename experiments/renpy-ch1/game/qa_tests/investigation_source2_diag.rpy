@@ -122,7 +122,8 @@ testcase investigation_source2_ttadak:
         pause 0.4
         if screen "r13_resident_approach":
             run Function(r13_pd_approach_yes)
-            click expression r13_pd_approach_text
+            run Function(r13_pd_flow_log,"source2-live-approach-caption",dict(source_title=r13_pd_approach_text,display_title=r13_question_summary(r13_pd_approach_text)))
+            click expression r13_question_summary(r13_pd_approach_text)
         advance until screen "r13_topics" timeout 40
         pause 0.4
         if eval (bool(r13_pd_plain_topics(r13_pd_person))):
@@ -243,7 +244,8 @@ testcase investigation_source2_tosil:
         pause 0.4
         if screen "r13_resident_approach":
             run Function(r13_pd_approach_yes)
-            click expression r13_pd_approach_text
+            run Function(r13_pd_flow_log,"source2-live-approach-caption",dict(source_title=r13_pd_approach_text,display_title=r13_question_summary(r13_pd_approach_text)))
+            click expression r13_question_summary(r13_pd_approach_text)
         advance until screen "r13_topics" timeout 40
         pause 0.4
         if eval (bool(r13_pd_plain_topics(r13_pd_person))):
