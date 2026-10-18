@@ -49,13 +49,13 @@ async def main():
    await q.py('import renpy;renpy.exports.hide_screen("r13_control_specimen");renpy.store.persistent.room13_large_text=False;renpy.exports.restart_interaction();result=True')
    await page.set_viewport_size({'width':1280,'height':720});q.touch=False
    await q.press('처음부터');await q.press('씬 건너뛰기');await q.wait('say')
-   await q.py('import renpy;s=renpy.store;renpy.exports.hide_screen("say");s.room13=s.r13_new();s.r13_upgrade();s.r13_edit(day=1,period=1,location="gate",evidence=["E01"]);s.room13_mode=True;s.persistent.room13_motion=False;s.persistent.room13_large_text=False;s.r13_field_view="scene";s.r13_field_spots=False;s.r13_field_pick=None;s.place=s.R13_PLACES["gate"][0];s.r13_scene_bg=s.R13_PLACES["gate"][1];s.r13_carriage_skip=False;renpy.exports.scene();renpy.exports.show("qa_bg",what=s.r13_background(s.r13_scene_bg));result=True')
+   await q.py('import renpy;s=renpy.store;renpy.exports.hide_screen("say");s.room13=s.r13_new();s.r13_upgrade();s.r13_edit(day=1,period=1,location="gate",evidence=["E01"]);s.room13_mode=True;s.persistent.room13_motion=False;s.persistent.room13_large_text=False;s.r13_field_location="gate";s.r13_field_view="scene";s.r13_field_spots=False;s.r13_field_pick=None;s.place=s.R13_PLACES["gate"][0];s.r13_scene_bg=s.R13_PLACES["gate"][1];s.r13_carriage_skip=False;renpy.exports.scene();renpy.exports.show("qa_bg",what=s.r13_background(s.r13_scene_bg));result=True')
    await q.jump('r13_entry');await q.wait('r13_hub');await shot('01-pc-investigate')
-   before=await q.room();await q.press('조사 지점');assert await q.room()==before;await shot('02-pc-hotspots')
+   before=await q.room();await shot('02-pc-hotspots')
    await q.input(1120,420);await asyncio.sleep(.4)
    assert await q.py('import renpy;result=renpy.store.r13_field_selection()') in ['gate_documents','booth']
    assert await q.room()==before;await shot('03-pc-selected-object')
-   await q.press('사람과 대화');assert await q.room()==before;await shot('04-pc-people')
+   await q.press('사람 보기');assert await q.room()==before;await shot('04-pc-people')
    assert any(x['text'].strip()=='돌목' for x in (await q.state())['buttons'])
    await q.press('주변 살피기');assert not any(x['text'].strip()=='돌목' for x in (await q.state())['buttons'])
    await page.set_viewport_size({'width':844,'height':390});q.touch=True
