@@ -1,3 +1,5 @@
+후속 사용자 정정에 따른 [방향성 잔상 비교안](../meeting-directional-trail/README.md)이 추가됐다. 이 0.38초 디졸브는 비교 기준으로 보존하며 최종안으로 배포하지 않았다.
+
 # B 디졸브 잔상 길이 비교
 
 사용자 선택: “b를 좀 더 잔상이 남게”. 변경 전 실제 코드값은 **0.24초**, 변경 후는 **0.38초**(+0.14초, 약 58% 증가). SDK native Dissolve의 부드러운 교차 소멸을 유지하고 정지 잔상이나 별도 잔상 레이어를 더하지 않았다. fixture의 연속 redraw 구간도 .32→.42초로 맞췄다. SDK `renpy/display/transition.py`의 Dissolve.render는 st >= time이면 new_widget만 반환한다.
