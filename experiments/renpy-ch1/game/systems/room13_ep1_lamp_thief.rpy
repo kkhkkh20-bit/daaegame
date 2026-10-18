@@ -214,6 +214,7 @@ init 152 python:
 # 장면
 # =========================================================
 label r13_ep1_events:
+    $ r13_q1_activate()
     $ _e1d,_e1p,_e1loc=room13["day"],room13["period"],room13["location"]
     # 옛 사건 4의 첫 장면과 기한이 다시 켜지지 않게 한다.
     if not r13_has("ep4_seen"):
@@ -231,7 +232,7 @@ label r13_ep1_events:
         call r13_ep1_library_dawn
     if _e1d==4 and _e1p<=1 and _e1loc=="gate" and not r13_has("lt_siluk_seen"):
         call r13_ep1_siluk
-    if _e1d==4 and _e1p<=1 and _e1loc=="store" and not r13_has("lt_store_seen") and (r13_has("L04") or r13_has("L11")):
+    if _e1d==4 and _e1p<=1 and _e1loc=="store" and not r13_has("lt_store_seen") and (r13_has("L04") or r13_has("L11") or r13_has("L19")):
         call r13_ep1_store
     if _e1d==4 and _e1p<=1 and _e1loc=="square" and not r13_has("lt_done"):
         $ r13_offer("r13_ep1_meeting")
@@ -477,7 +478,10 @@ label r13_ep1_meeting:
     if _return:
         call r13_ep1_decision
     else:
-        call r13_lines([("neoul",("결론을 듣지 못했소. 톡의 처분은 그대로 두겠소." if r13_debate_ready("Q1") else "반박된 부분은 기록하겠소. 하지만 남은 의심을 풀지 못했으니 톡의 처분은 그대로요.")),(None,"톡이 끌려가며 수리점 쪽을 돌아보았다.")],"ep1:meeting:fail")
+        if r13_q1_v2():
+            call r13_q1_argument_failure
+        else:
+            call r13_lines([("neoul",("결론을 듣지 못했소. 톡의 처분은 그대로 두겠소." if r13_debate_ready("Q1") else "반박된 부분은 기록하겠소. 하지만 남은 의심을 풀지 못했으니 톡의 처분은 그대로요.")),(None,"톡이 끌려가며 수리점 쪽을 돌아보았다.")],"ep1:meeting:fail")
         $ r13_flag("tok_detained","lt_done")
     call r13_ep1_aftermath
     call r13_q1_checkpoint("result")
@@ -486,6 +490,7 @@ label r13_ep1_meeting:
 
 label r13_ep1_decision:
     $ r13_flag("tok_cleared","lt_done","lt_solved")
+    call r13_q1_public_recovery
     call r13_lines([("neoul","톡은 풀어 주겠소. 실룩은 내가 데려가오.")],"ep1:decision:open")
     $ _e1_menu=[("어떻게 할까?",None),("실룩을 데려가게 둔다","hand"),("백 부인 창고를 열어 조각을 돌려놓게 한다","store"),("둘 다 요구한다","both")]
     if r13_has("siluk_debt_known"):

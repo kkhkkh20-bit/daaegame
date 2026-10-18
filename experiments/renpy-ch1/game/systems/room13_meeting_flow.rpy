@@ -329,7 +329,7 @@ screen r13_meeting_ballot(claim,vote):
         vbox:
             spacing 10
             text "공개 의견 확인" size r13_read_size(24,28) color "#493b30"
-            $ my_choice=next((text for kind,text in R13_DEBATE[claim]["conclusion"]["options"] if kind==vote["choice"]),"")
+            $ my_choice=("실룩이 허락 없이 조각을 가져갔다" if claim=="Q1" and r13_q1_v2() and vote["choice"]=="correct" else next((text for kind,text in R13_DEBATE[claim]["conclusion"]["options"] if kind==vote["choice"]),""))
             text ("내가 밝힌 의견 · "+my_choice) size r13_read_size(19,23) color "#795d40"
             hbox:
                 spacing 24

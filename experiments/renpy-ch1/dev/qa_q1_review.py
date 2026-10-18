@@ -1,4 +1,4 @@
-"""First-case browser regression with explicit investigation/meeting fixtures, real UI and native save loads."""
+"""Legacy Q1 browser regression with explicit fixtures, real UI and native save loads."""
 import asyncio,json,os
 from pathlib import Path
 from playwright.async_api import async_playwright
@@ -62,7 +62,7 @@ async def main():
    await page.goto(URL);await page.wait_for_function("typeof renpy_exec==='function'",timeout=240000);await page.wait_for_function("!document.getElementById('presplash')",timeout=240000);await q.wait('main_menu');print('BOOT',flush=True)
    await py('s.preferences.text_cps=0;result=True');await q.press('처음부터');await q.press('건너뛰기');await q.wait('say');await q.press('건너뛰기');await q.advance()
    # Inject only the starting fixture, then execute the authored dawn and meeting.
-   await py('s.r13_edit(day=4,period=0,location="square",evidence=["L03","L04","L06"],flags=["entry_corrected","lodging","lt_dawn","lt_open","piko_dead","ep4_seen","ep1_done","ep1_patrol_seen","ep1_eaves_seen"],propositions=[],debate={},run_token="browser-q1-review",livelihood=dict(cash=7,debt=0,items=[]));result=True')
+   await py('s.r13_edit(day=4,period=0,location="square",q1_rules=1,evidence=["L03","L04","L06"],flags=["entry_corrected","lodging","lt_dawn","lt_open","piko_dead","ep4_seen","ep1_done","ep1_patrol_seen","ep1_eaves_seen"],propositions=[],debate={},run_token="browser-q1-review",livelihood=dict(cash=7,debt=0,items=[]));result=True')
    await native_jump(q,'r13_roam');await until('r13_hub')
    await py('result=s.r13_q1_can_restore("investigation")')
    assert await py('result=s.r13_q1_can_restore("investigation")')

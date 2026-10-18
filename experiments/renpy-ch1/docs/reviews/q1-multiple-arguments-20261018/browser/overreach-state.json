@@ -1,0 +1,43 @@
+{
+  "flags": [
+    "entry_corrected",
+    "lodging",
+    "lt_dawn",
+    "lt_open",
+    "piko_dead",
+    "librarian_dead",
+    "lt_lib_dawn",
+    "lt_siluk_seen",
+    "ep4_seen",
+    "ep1_done",
+    "ep1_patrol_seen",
+    "ep1_eaves_seen",
+    "livelihood_open",
+    "ev_b_done",
+    "ev_b_missed",
+    "musoe_herbs",
+    "siluk_debt_known",
+    "tok_detained",
+    "lt_done"
+  ],
+  "evidence": [
+    "L16",
+    "L17"
+  ],
+  "debate": {
+    "broken": {
+      "Q1": [
+        "v_action",
+        "v_identity",
+        "v_link",
+        "v_permission"
+      ]
+    },
+    "pressed": {},
+    "misses": {},
+    "closed": {
+      "ep1:Q1": "final_unproved"
+    }
+  },
+  "cash": 7
+}
