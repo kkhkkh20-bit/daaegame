@@ -20,7 +20,7 @@ init 150 python:
         "council": "assets/bgm-council.mp3", "pressure": "assets/bgm-pressure.mp3",
         "dark": "assets/bgm-dark.mp3", "altar": "assets/bgm-altar.mp3",
     }
-    R13_AMBIENCE = {"wind": "assets/amb-wind.mp3", "fire": "assets/amb-fire.mp3", "clock": "assets/amb-clock.mp3",
+    R13_AMBIENCE = {"council_murmur": "assets/council-smallroom-murmur.ogg", "wind": "assets/amb-wind.mp3", "fire": "assets/amb-fire.mp3", "clock": "assets/amb-clock.mp3",
         "heartbeat": "assets/sfx-heartbeat.wav"}
 
     # 장소(배경 이름) → (평온, 조사, 밤) 배경음, 환경음

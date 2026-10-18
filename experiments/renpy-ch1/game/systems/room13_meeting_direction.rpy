@@ -77,8 +77,8 @@ init 174 python:
         elif renpy.music.get_playing(channel="music")!=path:
             renpy.music.play(path,channel="music",loop=True,fadeout=.28,fadein=.35)
         store.r13_meeting_direction_music=wanted
-        renpy.music.set_volume(R13_MEETING_BEATS[beat][1],delay=.16,channel="music")
-        r13_sound_ambience("wind" if venue in ("stone","field") else "fire")
+        if claim!="C2":renpy.music.set_volume(R13_MEETING_BEATS[beat][1],delay=.16,channel="music")
+        r13_sound_ambience("council_murmur" if claim=="C2" else "wind" if venue in ("stone","field") else "fire")
 
     def r13_meeting_direct_end():
         store.r13_meeting_proof_reveal=None
@@ -372,7 +372,10 @@ label r13_meeting_direct_interrupt(claim,sid,key):
     if r13_fresh_signal and not renpy.is_skipping() and not r13_fast_all:
         show screen r13_meeting_objection(claim,sid)
         $ renpy.music.set_pause(True,channel="music")
-        $ source_fx("impact")
+        if claim=="C2":
+            $ r13_meeting_core_hit(claim,sid)
+        else:
+            $ source_fx("impact")
         $ renpy.pause(1.68 if persistent.room13_motion else 1.42)
         hide screen r13_meeting_objection
     $ r13_meeting_direct_beat("explain",claim,sid,key)

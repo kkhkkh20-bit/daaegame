@@ -9,6 +9,8 @@ class PressurePilot(unittest.TestCase):
   self.e['r13_debate_statement']=lambda c,s:{'who':'resident_ppul'}
   self.e['r13_meeting_cast']=lambda c,s:[('resident_ppul',0),('buri',0),('resident_piko',0),('mom',0),('resident_owlgp',0)]
   self.s.r13_meeting_claim='C2';self.s.r13_meeting_active=True
+  self.s.r13_meeting_audio_line=None;self.s.r13_meeting_audio_mix=None;self.s.r13_meeting_audio_bypass=None;self.s.r13_meeting_audio_hits=[]
+  self.e['config'].interact_callbacks=[];self.e['renpy'].is_skipping=lambda:False
   src=(Path(__file__).resolve().parents[1]/'game/systems/room13_meeting_pressure.rpy').read_text().split('init 191 python:\n',1)[1].split('\nscreen ',1)[0]
   exec(textwrap.dedent(src),self.e)
  def proof(self,sid):
@@ -42,18 +44,33 @@ class PressurePilot(unittest.TestCase):
   self.assertEqual(self.s.r13_meeting_collective['phase'],'settled');self.assertEqual(self.s.r13_meeting_pressure,levels);self.assertEqual(self.s.r13_meeting_pressure_events,events)
  def test_new_run_does_not_inherit_pressure(self):
   self.proof('s1');self.s.room13['run_token']='next';self.assertEqual(self.e['r13_meeting_pressure_level']('resident_ppul'),0)
- def test_silence_timeout_restores_ambience_without_touching_preferences(self):
-  gains={'music':.8,'ambience':.4};screens={};prefs={'music':.23,'sfx':0.0}
-  self.e['_r13_pressure_direct_audio']=lambda:gains.update(music=.58)
+ def test_silence_waits_for_event_not_legacy_timer(self):
+  gains={'music':.8,'ambience':.4};calls=[]
+  self.e['_r13_pressure_direct_audio']=lambda:None
   self.e['r13_meeting_channel_gain']=lambda c:gains[c]
-  self.e['renpy'].get_screen=lambda name:screens.get(name)
-  self.e['renpy'].show_screen=lambda name,**kw:screens.update({name:kw})
-  self.e['renpy'].hide_screen=lambda name:screens.pop(name,None)
-  self.e['renpy'].music.set_volume=lambda value,channel,**kw:gains.update({channel:value})
+  self.e['renpy'].music.set_volume=lambda value,channel,**kw:(gains.update({channel:value}),calls.append((channel,value)))
   self.s.r13_meeting_proof_reveal={'identity':'real-proof','revealed':False}
   self.e['r13_meeting_direct_audio']();self.assertEqual(gains,{'music':0.0,'ambience':0.0})
-  self.e['r13_meeting_quiet_release']('real-proof')
-  self.assertEqual(gains,{'music':.58,'ambience':.4});self.assertEqual(prefs,{'music':.23,'sfx':0.0})
-  self.e['r13_meeting_direct_audio']();self.assertEqual(gains['music'],.58)
+  before=len(calls);self.e['r13_meeting_quiet_release']('real-proof');self.e['r13_meeting_direct_audio']()
+  self.assertEqual(gains,{'music':0.0,'ambience':0.0});self.assertEqual(len(calls),before)
+  self.s.r13_meeting_audio_line=('real-proof',1,'buri');self.e['r13_meeting_direct_audio']()
+  self.assertEqual(gains,{'music':.45,'ambience':.65})
+  self.s.r13_meeting_proof_reveal['revealed']=True;self.e['r13_meeting_direct_audio']()
+  self.assertEqual(gains,{'music':.45,'ambience':.65})
+ def test_dad_block_no_pumping_and_cleanup(self):
+  gains={'music':.45,'ambience':.65};calls=[]
+  self.e['_r13_pressure_direct_audio']=lambda:None
+  self.e['r13_meeting_channel_gain']=lambda c:gains[c]
+  self.e['renpy'].music.set_volume=lambda value,channel,**kw:(gains.update({channel:value}),calls.append((channel,value)))
+  self.s.r13_meeting_audio_line=('debate:counter_ok:C2:s3',0,'dad')
+  self.e['r13_meeting_direct_audio']();self.assertEqual(gains['music'],.14)
+  before=len(calls);self.s.r13_meeting_audio_line=('debate:counter_ok:C2:s3',1,'dad');self.e['r13_meeting_direct_audio']();self.assertEqual(len(calls),before)
+  self.e['r13_meeting_audio_cleanup']();self.assertEqual(gains['music'],.45)
+  self.e['r13_meeting_direct_audio']();self.assertEqual(gains['music'],.45)
+ def test_pending_hit_has_no_sound_and_approved_hook_is_once(self):
+  self.assertFalse(self.e['r13_meeting_core_hit']('C2','s1'))
+  self.e['R13_C2_TABLE_IMPACT']='mock-approved-only-in-unit-test'
+  self.assertTrue(self.e['r13_meeting_core_hit']('C2','s2'))
+  self.assertFalse(self.e['r13_meeting_core_hit']('C2','s2'))
 
 if __name__=='__main__':unittest.main()

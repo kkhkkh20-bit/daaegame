@@ -153,7 +153,7 @@ init 175 python:
             self.session=r13_debate_session(claim);self.kind=r13_meeting_kind(self.session)
             self.people=[p for p,_ in r13_meeting_cast(claim,self.session)]
             # Reverse portrait composition for the speaking viewpoint, not a new meeting attendee.
-            if portrait_focus and focus in CAST and focus not in self.people:self.people.append(focus)
+            if portrait_focus and focus in CAST and focus not in ("dad",r13_viewpoint()) and focus not in self.people:self.people.append(focus)
             self.poses=dict(poses or {});self.beat=beat
             self.shade=R13_MEETING_BEATS.get(beat,R13_MEETING_BEATS["listen"])[3]
             tint="#e4eeff" if self.kind=="stone" else "#fff3df" if self.kind=="round" else "#eef3ff"
@@ -206,6 +206,13 @@ init 175 python:
                 dx,dy=self.offsets[person]
                 x=cx+dx*depth-rendered.get_size()[0]/2
                 y=dy*depth+(1-depth)*240
+                progress=getattr(self,"review_move_progress",1.0)
+                if person==self.focus and progress<1.0:
+                    direction=getattr(self,"review_move_direction",1)
+                    x+=direction*18*(1-progress)
+                    # Current arriving character only: room, table and dialogue stay sharp.
+                    echo=renpy.render(Transform(art,alpha=.10*(1-progress)),1280,1000,st,at)
+                    out.subpixel_blit(echo,(x-direction*12*(1-progress),y))
                 out.subpixel_blit(rendered,(x,y))
             if self.surface is not None and "foreground" in components:
                 if self.surface.view!=view:

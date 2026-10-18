@@ -61,7 +61,10 @@ init 173 python:
     def r13_meeting_interrupt_with_tempo(claim,sid):
         # A nested context restores its parent's audio when it returns. Carry the
         # child's actual musical position back, rather than restart its stage.
-        audio=renpy.call_in_new_context("r13_meeting_interrupt",claim,sid)
+        try:
+            audio=renpy.call_in_new_context("r13_meeting_interrupt",claim,sid)
+        finally:
+            if claim=="C2":r13_meeting_audio_cleanup()
         if not audio:return
         path=r13_meeting_tempo_file(audio.get("path"))
         if not path:return
@@ -69,7 +72,7 @@ init 173 python:
         if position is not None:
             renpy.music.play("<from %.3f loop 0>%s"%(max(0.0,position),path),channel="music",loop=True,fadeout=.08,fadein=.12)
         else:renpy.music.play(path,channel="music",loop=True,fadeout=.08,fadein=.12)
-        renpy.music.set_volume(audio["volume"],channel="music")
+        renpy.music.set_volume(.45 if claim=="C2" else audio["volume"],channel="music")
         renpy.music.set_pause(audio["paused"],channel="music")
 
 init 192 python:

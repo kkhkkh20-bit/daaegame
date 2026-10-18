@@ -4,6 +4,10 @@ default r13_meeting_pressure_events = []
 default r13_meeting_collective = None
 default r13_meeting_silence_ambience = None
 default r13_meeting_quiet_released = []
+default r13_meeting_audio_line = None
+default r13_meeting_audio_mix = None
+default r13_meeting_audio_bypass = None
+default r13_meeting_audio_hits = []
 
 init 191 python:
     def r13_meeting_pressure_enabled(claim=None):
@@ -72,6 +76,7 @@ init 191 python:
 
     _r13_pressure_direct_line=r13_meeting_direct_line
     def r13_meeting_direct_line(identity,index,packet,expression,pose):
+        store.r13_meeting_audio_line=(identity,index,packet[0])
         expression,pose=_r13_pressure_direct_line(identity,index,packet,expression,pose)
         if not getattr(store,"r13_meeting_active",False) or not r13_meeting_pressure_enabled():return expression,pose
         people=r13_meeting_pressure_attendees(store.r13_meeting_claim)
@@ -93,30 +98,66 @@ init 191 python:
     def r13_meeting_direct_audio():
         _r13_pressure_direct_audio()
         if not getattr(store,"r13_meeting_active",False) or not r13_meeting_pressure_enabled():return
-        proof=getattr(store,"r13_meeting_proof_reveal",None)
-        collective=getattr(store,"r13_meeting_collective",None) or {}
-        quiet=bool(proof and not proof.get("revealed") and proof["identity"] not in store.r13_meeting_quiet_released)
-        if quiet and renpy.get_screen("r13_meeting_quiet_clock") is None:renpy.show_screen("r13_meeting_quiet_clock",token=proof["identity"])
-        if not quiet:renpy.hide_screen("r13_meeting_quiet_clock")
-        silent=quiet or collective.get("phase") in ("pending","playing")
-        if silent:
-            if store.r13_meeting_silence_ambience is None:store.r13_meeting_silence_ambience=r13_meeting_channel_gain("ambience")
-            # Keep track position and mixer preferences; silence only the authored explanation.
-            renpy.music.set_volume(0.0,delay=.10,channel="music")
-            renpy.music.set_volume(0.0,delay=.10,channel="ambience")
-        elif store.r13_meeting_silence_ambience is not None:
-            renpy.music.set_volume(store.r13_meeting_silence_ambience,delay=.20,channel="ambience")
-            store.r13_meeting_silence_ambience=None
+        renpy.hide_screen("r13_meeting_quiet_clock")
+        proof=getattr(store,"r13_meeting_proof_reveal",None) or {}
+        line=getattr(store,"r13_meeting_audio_line",None)
+        mode=r13_meeting_audio_mode(proof,line,getattr(store,"r13_meeting_collective",None),
+            renpy.is_skipping() or getattr(store,"r13_fast_all",False),store.r13_meeting_audio_bypass,
+            store.r13_meeting_quiet_released)
+        r13_meeting_audio_apply(mode)
+
+    def r13_meeting_audio_mode(proof,line,collective,skipping,bypass,released):
+        if skipping or (line is not None and line==bypass):return "normal"
+        if proof and not proof.get("revealed") and proof["identity"] not in released:
+            if not line or line[0]!=proof["identity"] or line[2]==r13_viewpoint():return "silent"
+        if (collective or {}).get("phase") in ("pending","playing"):return "silent"
+        if line and line[2]==r13_viewpoint() and line[0].startswith(("debate:counter_ok:C2:","trial:C2:done")):
+            return "duck"
+        return "normal"
+
+    def r13_meeting_audio_apply(mode):
+        # Channel-relative gains; never write user mixer volume or mute preferences.
+        target={"normal":(.45,.65),"duck":(.14,.18),"silent":(0.0,0.0)}[mode]
+        current=(r13_meeting_channel_gain("music"),r13_meeting_channel_gain("ambience"))
+        if store.r13_meeting_audio_mix==mode and all(abs(a-b)<.001 for a,b in zip(current,target)):return
+        for channel,gain in zip(("music","ambience"),target):
+            renpy.music.set_volume(gain,delay=.10 if mode=="silent" else .20,channel=channel)
+        store.r13_meeting_audio_mix=mode
 
     def r13_meeting_quiet_release(token):
-        if token not in store.r13_meeting_quiet_released:store.r13_meeting_quiet_released=list(store.r13_meeting_quiet_released)+[token]
+        # Compatibility for old saves with the old timer screen: no timed release.
         renpy.hide_screen("r13_meeting_quiet_clock")
-        r13_meeting_direct_audio()
+
+    def r13_meeting_audio_cleanup(bypass=True):
+        renpy.hide_screen("r13_meeting_quiet_clock")
+        if bypass:store.r13_meeting_audio_bypass=store.r13_meeting_audio_line
+        proof=getattr(store,"r13_meeting_proof_reveal",None) or {}
+        if proof and proof["identity"] not in store.r13_meeting_quiet_released:
+            store.r13_meeting_quiet_released=list(store.r13_meeting_quiet_released)+[proof["identity"]]
+        if getattr(store,"r13_meeting_active",False) and r13_meeting_pressure_enabled():r13_meeting_audio_apply("normal")
+
+    # Awaiting owner-selected source. No generic impact is presented as a table hit.
+    R13_C2_TABLE_IMPACT = None
+    def r13_meeting_core_hit(claim,sid):
+        token=((store.room13 or {}).get("run_token","legacy"),claim,sid)
+        if token in store.r13_meeting_audio_hits or renpy.is_skipping():return False
+        store.r13_meeting_audio_hits=list(store.r13_meeting_audio_hits)+[token]
+        if not R13_C2_TABLE_IMPACT:return False
+        renpy.music.play(R13_C2_TABLE_IMPACT,channel="scene_fx",loop=False)
+        return True
+
+    def r13_meeting_audio_interact():
+        if not getattr(store,"r13_meeting_active",False):return
+        if not r13_meeting_pressure_enabled():return
+        if renpy.get_screen("_exception") or renpy.is_skipping() or getattr(store,"r13_fast_all",False):
+            r13_meeting_audio_cleanup()
+    config.interact_callbacks.append(r13_meeting_audio_interact)
 
     _r13_pressure_direct_end=r13_meeting_direct_end
     def r13_meeting_direct_end():
         _r13_pressure_direct_end()
         store.r13_meeting_silence_ambience=None
+        store.r13_meeting_audio_line=None;store.r13_meeting_audio_mix=None;store.r13_meeting_audio_bypass=None
         renpy.hide_screen("r13_meeting_quiet_clock")
         r13_meeting_collective_settle()
 
@@ -124,12 +165,14 @@ init 191 python:
         r13_meeting_collective_settle()
         proof=getattr(store,"r13_meeting_proof_reveal",None)
         if proof and proof["identity"] not in store.r13_meeting_quiet_released:store.r13_meeting_quiet_released=list(store.r13_meeting_quiet_released)+[proof["identity"]]
+        r13_meeting_audio_cleanup()
         # Saved levels/events survive; transient shock never restarts on load.
         if getattr(store,"r13_meeting_active",False):r13_meeting_direct_audio()
     config.after_load_callbacks.append(r13_meeting_pressure_after_load)
 
 screen r13_meeting_quiet_clock(token):
-    timer 2.4 action Function(r13_meeting_quiet_release,token)
+    # Old-save compatibility only; reading duration never triggers an audio event.
+    timer .01 action Hide("r13_meeting_quiet_clock")
 
 screen r13_meeting_collective_view(claim):
     zorder 170
@@ -156,3 +199,13 @@ label r13_meeting_collective_beat:
         $ r13_meeting_collective_settle()
         $ r13_meeting_direct_audio()
     return
+
+init 197 python:
+    _r13_audio_previous_exception_handler=config.exception_handler
+    def r13_meeting_audio_exception(te):
+        try:
+            r13_meeting_audio_cleanup()
+        except Exception as cleanup_error:
+            renpy.log("C2 audio cleanup failed: %r" % cleanup_error)
+        return _r13_audio_previous_exception_handler(te) if _r13_audio_previous_exception_handler else False
+    config.exception_handler=r13_meeting_audio_exception

@@ -35,7 +35,8 @@ class Tempo(unittest.TestCase):
   self.e['renpy'].call_in_new_context=lambda *args:values
   self.e['renpy'].music.set_volume=lambda v,**kw:self.calls.append(('volume',v))
   self.e['renpy'].music.set_pause=lambda v,**kw:self.calls.append(('pause',v))
+  self.e['r13_meeting_audio_cleanup']=lambda:self.calls.append(('cleanup',True))
   before=copy.deepcopy(self.s.room13);self.e['r13_meeting_interrupt_with_tempo']('C2','s2')
   self.assertEqual(self.playing,'<from 21.500 loop 0>assets/bgm-council-tempo1.ogg')
-  self.assertEqual(self.calls[-2:],[('volume',.58),('pause',False)])
+  self.assertEqual(self.calls[-2:],[('volume',.45),('pause',False)])
   self.assertEqual(self.s.room13,before)

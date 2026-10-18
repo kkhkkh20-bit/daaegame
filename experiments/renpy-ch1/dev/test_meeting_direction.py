@@ -63,6 +63,7 @@ class CouncilDirection(unittest.TestCase):
  def test_audio_ducks_without_restart_and_counter_reclaims_pressure(self):
   beat=self.e['r13_meeting_direct_beat']
   beat('listen','C2');beat('select');beat('explain');beat('shaken')
+  self.assertIn(('amb','council_murmur'),self.calls)
   self.assertEqual([c for c in self.calls if c[0]=='play'],[('play','council')])
   beat('recover');self.assertEqual(self.playing,'pressure')
   beat('select');beat('explain');beat('listen');self.assertEqual(self.playing,'pressure')
@@ -115,6 +116,8 @@ class CouncilDirection(unittest.TestCase):
   self.e['r13_meeting_direct_beat']('explain','C2')
   self.calls.clear();self.e['r13_meeting_direct_after_load']()
   self.assertIn(('pause',False),self.calls)
+  self.assertFalse(any(c[0]=='volume' for c in self.calls)) # C2 event layer owns gain.
+  self.s.r13_meeting_claim='C3';self.e['r13_meeting_direct_beat']('explain','C3')
   self.assertIn(('volume',.58),self.calls)
   self.assertEqual(self.s.r13_meeting_direction['beat'],'explain')
 

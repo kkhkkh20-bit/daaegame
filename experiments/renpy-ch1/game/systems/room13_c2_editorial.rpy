@@ -3,12 +3,15 @@ default r13_c2_edit = {}
 default r13_c2_pair_poses = {}
 
 init 195 python:
-    R13_MEETING_RESUME_FIELDS=R13_MEETING_RESUME_FIELDS+("r13_c2_edit","r13_c2_pair_poses")
+    R13_MEETING_RESUME_FIELDS=R13_MEETING_RESUME_FIELDS+("r13_c2_edit","r13_c2_pair_poses","r13_meeting_audio_line","r13_meeting_audio_bypass")
     def r13_c2_pair_for(identity,person):
-        # A sustained authored exchange, not a keyword or a one-line interruption.
-        sustained=("debate:counter:C2:s3","debate:counter_ok:C2:s3",
-            "debate:counter_wrong:C2:s3:weak")
-        return ("resident_ppul","dad") if identity in sustained and person in ("resident_ppul","dad") else None
+        # C2 counter is player-versus-resident, not a sustained resident pair.
+        return None
+
+    def r13_c2_visible_person(person,fallback=None):
+        for who in (person,fallback,"resident_ppul"):
+            if who in CAST and who not in ("dad",r13_viewpoint()):return who
+        return None
 
     _r13_c2_direct_line=r13_meeting_direct_line
     def r13_meeting_direct_line(identity,index,packet,expression,pose):
@@ -34,9 +37,12 @@ init 195 python:
         else:store.r13_c2_pair_poses={}
         listener=store.r13_meeting_listener
         if not listener and old.get("speaker") in CAST and old.get("speaker")!=person:listener=old["speaker"]
-        if listener==person:listener=None
+        listener=r13_c2_visible_person(listener)
+        visual=r13_c2_visible_person(person,listener)
+        if listener==visual:listener=None
         if person not in CAST:listener=None
-        store.r13_c2_edit=dict(token=token,speaker=person,pair=pair,listener=listener,
+        store.r13_c2_edit=dict(token=token,speaker=person,visual=visual,pair=pair,listener=listener,
+            previous=old.get("visual"),
             phase="pending" if listener and not pair else "settled",
             cue="enter" if pair and old.get("pair")!=pair else "hold" if pair else "exit" if old.get("pair") else "reaction")
         return expression,pose
@@ -48,25 +54,33 @@ init 195 python:
 
     def r13_c2_edit_after_load():
         # Pair/left-right/pressure survive; a brief reaction never replays on load.
-        if store.r13_c2_edit:store.r13_c2_edit=dict(store.r13_c2_edit,phase="settled")
+        if store.r13_c2_edit:
+            state=store.r13_c2_edit
+            store.r13_c2_edit=dict(state,phase="settled",pair=None,previous=None,
+                visual=r13_c2_visible_person(state.get("speaker"),state.get("listener")),
+                listener=None)
+            store.r13_c2_pair_poses={}
     config.after_load_callbacks.append(r13_c2_edit_after_load)
 
     class R13C2Editorial(renpy.Displayable):
         def __init__(self,focus,**kwargs):
             super(R13C2Editorial,self).__init__(**kwargs)
             state=dict(store.r13_c2_edit or {})
-            self.token=state.get("token");self.pair=state.get("pair")
-            self.focus=state.get("speaker") if state.get("speaker") in CAST else focus
+            self.token=state.get("token");self.pair=None
+            self.focus=r13_c2_visible_person(state.get("visual"),focus)
             self.listener=state.get("listener")
+            if self.listener in ("dad",r13_viewpoint()):self.listener=None
+            self.previous=state.get("previous");self.last_focus=self.previous
+            self.move_started=None;self.direction=1
             self.started=None;self.claimed=False
             self.shots={}
             for who in set([self.focus,self.listener]+list(self.pair or ())):
-                if who not in CAST:continue
+                if who not in CAST or who in ("dad",r13_viewpoint()):continue
                 shot=R13MeetingOrbit("C2",who,store.r13_meeting_shot_revision,
                     (store.r13_meeting_direction or {}).get("beat","listen"),
                     store.r13_meeting_direction_poses,store.r13_meeting_line_token,
                     store.r13_meeting_listener,store.r13_meeting_art_slots,
-                    store.r13_meeting_reaction,portrait_focus=True)
+                    store.r13_meeting_reaction)
                 shot.review_fixed_view=True
                 self.shots[who]=shot
             self.panel=None
@@ -101,6 +115,14 @@ init 195 python:
                     elif elapsed<1.8:
                         shot=self.shots.get(self.listener,shot);renpy.redraw(self,1.8-elapsed)
                     else:store.r13_c2_edit=dict(state,phase="settled")
+            if shot.focus!=self.last_focus:
+                if self.last_focus in shot.people and shot.focus in shot.people:
+                    self.direction=1 if shot.people.index(shot.focus)>shot.people.index(self.last_focus) else -1
+                    self.move_started=st
+                self.last_focus=shot.focus
+            progress=min(1.0,max(0.0,(st-self.move_started)/.18)) if enabled and self.move_started is not None else 1.0
+            shot.review_move_progress=progress;shot.review_move_direction=self.direction
+            if progress<1:renpy.redraw(self,0)
             return renpy.render(shot,width,height,st,at)
         def visit(self):return list(self.shots.values())+([self.panel] if self.panel is not None else [])
 
