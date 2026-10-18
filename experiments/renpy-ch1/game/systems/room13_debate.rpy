@@ -744,6 +744,7 @@ label r13_debate_answer_counter(claim,sid):
         return True
     $ r13_meeting_direct_beat("reversal",claim,sid)
     $ source_fx("wrong")
+    $ r13_meeting_pressure_recover(claim,sid)
     call r13_lines([r13_debate_c["wrong"][r13_debate_pick],
         ("dad","(내 말이 그대로 되돌아왔다. 자료는 맞다. 답을 다시 생각해 보자.)",{"thought":True})],"debate:counter_wrong:"+claim+":"+sid+":"+r13_debate_pick, binding_route="dynamic:221")
     return False

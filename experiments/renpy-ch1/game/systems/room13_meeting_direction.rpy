@@ -252,6 +252,9 @@ init 174 python:
         proof=getattr(store,"r13_meeting_proof_reveal",None)
         # A call without a completed explanation is not an animation trigger.
         if not proof or not proof.get("revealed") or proof["claim"]!=claim or proof["sid"]!=sid:return
+        if getattr(store,"r13_meeting_pressure_enabled",lambda c:False)(claim):
+            r13_meeting_pressure_proof(claim,sid)
+            return
         token=proof["identity"]
         tokens=list(getattr(store,"r13_meeting_reaction_tokens",[]) or [])
         if token in tokens:return
@@ -344,7 +347,8 @@ screen r13_meeting_evidence_hold(claim,sid,key):
 
 label r13_meeting_direct_interrupt(claim,sid,key):
     $ r13_meeting_direct_beat("interrupt",claim,sid,key)
-    if not renpy.is_skipping() and not r13_fast_all:
+    $ r13_fresh_signal=not r13_meeting_pressure_enabled(claim) or r13_meeting_pressure_change(claim,sid,"signal",0)
+    if r13_fresh_signal and not renpy.is_skipping() and not r13_fast_all:
         show screen r13_meeting_objection(claim,sid)
         $ renpy.music.set_pause(True,channel="music")
         $ source_fx("impact")
@@ -361,6 +365,8 @@ label r13_meeting_direct_reactions(claim,sid,result):
     return
 
 label r13_meeting_direct_gasp_lines(claim,sid):
+    if r13_meeting_collective_pending():
+        call r13_meeting_collective_beat
     $ r13_meeting_gasp_rows=r13_meeting_direct_gasps(claim,sid)
     if r13_meeting_gasp_rows:
         $ r13_meeting_focus_change(claim,r13_debate_statement(claim,sid)["who"])

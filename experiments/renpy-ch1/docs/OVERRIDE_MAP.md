@@ -415,6 +415,27 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 99 | `room13_meeting_seating.rpy:50` | _r13_e1_cast |
 | 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:181` |  |
 
+## `r13_meeting_direct_audio` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 174 | `systems/room13_meeting_direction.rpy:58` | _r13_pressure_direct_audio |
+| 2 | 191 | `systems/room13_meeting_pressure.rpy:93` |  |
+
+## `r13_meeting_direct_end` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 174 | `systems/room13_meeting_direction.rpy:81` | _r13_pressure_direct_end |
+| 2 | 191 | `systems/room13_meeting_pressure.rpy:117` |  |
+
+## `r13_meeting_direct_line` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 174 | `systems/room13_meeting_direction.rpy:170` | _r13_pressure_direct_line |
+| 2 | 191 | `systems/room13_meeting_pressure.rpy:74` |  |
+
 ## `r13_meeting_plate` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |

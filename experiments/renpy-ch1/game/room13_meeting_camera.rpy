@@ -11,7 +11,7 @@ init 175 python:
         if beat in ("gasp","reversal"):return .08,min(.48,.32+extra*.045)
         if beat in ("cornered","resolve"):return .05,min(.44,.30+extra*.04)
         if beat in ("press","reaction","explain"):return 0.0,min(.40,.26+extra*.04)
-        return 0.0,min(.48,.32+extra*.045)
+        return 0.0,min(.36,.30+extra*.025)
 
     def r13_meeting_motion_ease(u):
         # Brief acceleration followed by a longer, smooth deceleration to rest.
@@ -41,7 +41,7 @@ init 175 python:
         hold,duration=getattr(store,"r13_meeting_pan_profile",r13_meeting_motion_profile("listen",delta))
         elapsed=max(0.0,now-store.r13_meeting_pan_started)
         u=min(1.0,max(0.0,(elapsed-hold)/duration))
-        return start+delta*r13_meeting_motion_ease(u),elapsed<hold+duration
+        return start+delta*r13_meeting_motion_ease(u),elapsed<hold+duration+.10
 
     def r13_meeting_world_slot(index,view,count):
         # Three visible seats, projected from one fixed circular seat arrangement.

@@ -46,6 +46,8 @@ label r13_lines(entries,identity,binding_route=None):
         $ r13_thought_active=bool(len(r13_packet)>2 and isinstance(r13_packet[2],dict) and r13_packet[2].get("thought"))
         $ r13_expression,r13_directed_pose=r13_line_performance(identity,r13_index,r13_packet)
         $ r13_expression,r13_directed_pose=r13_meeting_direct_line(identity,r13_index,r13_packet,r13_expression,r13_directed_pose)
+        if r13_meeting_collective_pending():
+            call r13_meeting_collective_beat
         if r13_thought_active:
             $ r13_expression,r13_directed_pose="thinking","thinking"
         $ r13_dialogue_beat_begin(identity,r13_index,r13_packet,r13_directed_pose)
