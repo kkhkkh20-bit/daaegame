@@ -173,10 +173,14 @@ init 55 python:
         shown=getattr(store,"r13_topic_shown",None)
         store.r13_topic_shown=None
         t=ROOM13["topics"][key]
-        r13_grant(t["give"],R13_NAMES.get(t["npc"],t["npc"])+"와 대화")
+        # E12-first questioning never produced the broad first statement J09.
+        give=[item for item in t["give"] if not (key=="nabi_alibi" and item=="J09" and r13_has("E12"))]
+        r13_grant(give,R13_NAMES.get(t["npc"],t["npc"])+"와 대화")
         r13_flag(*t["flags"])
         n=winter_copy.deepcopy(store.room13)
         was_read=key in n["read_topics"]
+        if shown and r13_topic_current_context(key) is not None:
+            n.setdefault("current_topic_contexts",{})[key]=r13_topic_current_context(key)
         n.setdefault("dialogue_views", {})[key]=dict(context=r13_calendar_key(t["npc"]),mode="followup" if was_read else "first")
         if not was_read:
             n["read_topics"].append(key)
