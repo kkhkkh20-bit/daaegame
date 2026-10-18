@@ -47,9 +47,9 @@ init 181 python:
         for name in ("foot", "hand", "seat"):
             if name in spec:anchors[name] = spec[name]
         geometry_spec = dict(spec, anchors=anchors)
-        polygons = []
+        polygons = list(member.get("occlusion_polygons", []))
         if member.get("occlusion"):
-            polygons = [R13_WORLD_LAYOUTS[member["occlusion"]]["occlusion"]]
+            polygons.append(R13_WORLD_LAYOUTS[member["occlusion"]]["occlusion"])
         variant = dict(render_height=member["height"], anchor=member["anchor"], target=member["target"], depth=member["depth"], occlusion=polygons)
         # Reuse the exact draw/pick foreground masks, including authored hands and tools.
         result = r13_map27_geometry(actor, geometry_spec, variant, group["world_width"])
@@ -133,7 +133,7 @@ screen r13_life_group_conversation(key, person=None):
                 add prop xpos px ypos py
             use r13_resident_stage(False, False)
         frame:
-            xpos 120 ypos 512 xsize 1040 padding (26,18) background R13InkPanel(alpha="e8")
+            xpos 120 ypos 112 xsize 1040 padding (26,18) background R13InkPanel(alpha="e8")
             vbox:
                 spacing 12
                 text R13_NAMES[lines[line_index][0]] size 26 color "#f6d18a"
@@ -152,7 +152,7 @@ screen r13_life_group_conversation(key, person=None):
 label r13_life_group_talk(key, person=None):
     # No call to r13_talk/r13_lines/events: even encounter and read-knowledge flags stay unchanged.
     if r13_life_group_lines(key, person):
-        call screen r13_life_group_conversation(key, person) from r13_life_group_screen_return
+        call screen r13_life_group_conversation(key, person)
     return
 
 label r13_life_field_person_dispatch:

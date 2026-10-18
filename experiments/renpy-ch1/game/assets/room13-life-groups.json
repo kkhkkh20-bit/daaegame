@@ -1,9 +1,9 @@
 {
-  "revision": 1,
+  "revision": 2,
   "groups": [
     {
       "id": "workshop_pair",
-      "status": "awaiting_art",
+      "status": "approved",
       "location": "workshop",
       "days": [
         2,
@@ -16,39 +16,179 @@
       "world_width": 1800,
       "label": "함께 부품 손질",
       "label_position": [
-        650,
-        590
+        460,
+        225
       ],
       "members": [
         {
           "person": "buri",
-          "pose": "action_1",
+          "pose": "group_cooperative",
           "replace_poses": [
             "action_1"
           ],
-          "anchor": "hand",
+          "anchor": "shared_component_contact",
           "target": [
-            620,
-            421
+            570,
+            425
           ],
           "height": 208,
           "depth": 515,
-          "occlusion": "workshop"
+          "occlusion": "workshop",
+          "spec": {
+            "file": "assets/room13-group-buri-cooperative.webp",
+            "crop": [
+              0,
+              0,
+              512,
+              768
+            ],
+            "head": [
+              125.0,
+              8.0,
+              275.0,
+              225.0
+            ],
+            "anchors": {
+              "support_hand_left": [
+                304.0,
+                381.0
+              ],
+              "support_hand_right": [
+                416.5,
+                376.5
+              ],
+              "shared_component_contact": [
+                455.0,
+                345.0
+              ],
+              "foot_left": [
+                151.5,
+                737.5
+              ],
+              "foot_right": [
+                327.5,
+                715.5
+              ],
+              "foot": [
+                239.5,
+                737.5
+              ]
+            },
+            "foot": [
+              239.5,
+              737.5
+            ],
+            "contact": "shared_work",
+            "facing": "right-threequarter",
+            "stature_ratio": 1,
+            "source_sha256": "50b893f23339aa69e0e58644c1975ae7a61ac6aada36c6aee540740a7aed5805",
+            "source_commit": "8b553e7ce1e81543c3415f5ba9c3f329907ee78e",
+            "foreground_parts": [
+              [
+                [
+                  200.0,
+                  315.0
+                ],
+                [
+                  467.0,
+                  315.0
+                ],
+                [
+                  467.0,
+                  415.0
+                ],
+                [
+                  200.0,
+                  415.0
+                ]
+              ]
+            ]
+          }
         },
         {
           "person": "resident_tok",
-          "pose": "map27_ws_1",
+          "pose": "group_cooperative",
           "replace_poses": [
             "map27_ws_1"
           ],
-          "anchor": "work_support",
+          "anchor": "screwdriver_tip",
           "target": [
-            760,
+            570,
             425
           ],
-          "height": 196,
+          "height": 220,
           "depth": 515,
-          "occlusion": "workshop"
+          "occlusion": "workshop",
+          "spec": {
+            "file": "assets/room13-group-resident_tok-cooperative.webp",
+            "crop": [
+              0,
+              0,
+              512,
+              768
+            ],
+            "head": [
+              145.0,
+              30.0,
+              260.0,
+              235.0
+            ],
+            "anchors": {
+              "screwdriver_tip": [
+                127.0,
+                389.5
+              ],
+              "guiding_fingertips": [
+                147.0,
+                389.0
+              ],
+              "foot_left": [
+                177.0,
+                726.5
+              ],
+              "foot_right": [
+                447.0,
+                737.5
+              ],
+              "foot": [
+                312.0,
+                737.5
+              ]
+            },
+            "foot": [
+              312.0,
+              737.5
+            ],
+            "contact": "shared_work",
+            "facing": "left-threequarter",
+            "stature_ratio": 1,
+            "source_sha256": "bc68b8c9d499392ee6c1cdc9988d3ff64986cb044d21300d7f3964758b4f3823",
+            "source_commit": "8b553e7ce1e81543c3415f5ba9c3f329907ee78e",
+            "foreground_parts": [
+              [
+                [
+                  60.0,
+                  325.0
+                ],
+                [
+                  165.0,
+                  325.0
+                ],
+                [
+                  290.0,
+                  425.0
+                ],
+                [
+                  165.0,
+                  455.0
+                ],
+                [
+                  60.0,
+                  395.0
+                ]
+              ]
+            ]
+          }
         }
       ],
       "need_flags": [],
@@ -67,11 +207,12 @@
           "그래. 조금씩 맞춰 보자."
         ]
       ],
-      "art_gap": "Separate gear cloth and lantern do not depict a shared part. Needs Buri supporting one part and Tok adjusting that same part; no extra furniture."
+      "art_gap": "",
+      "review": "Native SDK desktop/mobile individual/group clicks and non-consuming conversation checks; reports/life-groups-01946."
     },
     {
       "id": "inn_mending",
-      "status": "awaiting_art",
+      "status": "approved",
       "location": "inn",
       "days": [
         2,
@@ -84,8 +225,8 @@
       "world_width": 1920,
       "label": "함께 바느질",
       "label_position": [
-        590,
-        225
+        420,
+        150
       ],
       "members": [
         {
@@ -106,7 +247,7 @@
         },
         {
           "person": "resident_tori",
-          "pose": "neutral",
+          "pose": "group_cooperative",
           "replace_poses": [
             "activity",
             "neutral",
@@ -114,11 +255,113 @@
           ],
           "anchor": "foot",
           "target": [
-            840,
-            525
+            625,
+            545
           ],
-          "height": 212,
-          "depth": 525
+          "height": 300,
+          "depth": 525,
+          "spec": {
+            "file": "assets/room13-group-resident_tori-cooperative.webp",
+            "crop": [
+              0,
+              0,
+              512,
+              768
+            ],
+            "head": [
+              130.0,
+              5.0,
+              275.0,
+              260.0
+            ],
+            "anchors": {
+              "hands_gathered": [
+                265.0,
+                432.0
+              ],
+              "foot_left": [
+                245.0,
+                736.5
+              ],
+              "foot_right": [
+                384.0,
+                750.0
+              ],
+              "foot": [
+                314.5,
+                750.0
+              ]
+            },
+            "foot": [
+              314.5,
+              750.0
+            ],
+            "contact": "standing",
+            "facing": "left-threequarter",
+            "stature_ratio": 1,
+            "source_sha256": "e47e643683ade9652d6eba6156b7acad53dc4b63fbfba846afca70d3a7f8b669",
+            "source_commit": "8b553e7ce1e81543c3415f5ba9c3f329907ee78e"
+          },
+          "occlusion_polygons": [
+            [
+              [
+                555,
+                458
+              ],
+              [
+                580,
+                453
+              ],
+              [
+                614,
+                466
+              ],
+              [
+                677,
+                466
+              ],
+              [
+                692,
+                382
+              ],
+              [
+                735,
+                379
+              ],
+              [
+                770,
+                402
+              ],
+              [
+                752,
+                551
+              ],
+              [
+                741,
+                615
+              ],
+              [
+                716,
+                620
+              ],
+              [
+                712,
+                554
+              ],
+              [
+                584,
+                548
+              ],
+              [
+                584,
+                607
+              ],
+              [
+                561,
+                608
+              ]
+            ]
+          ]
         }
       ],
       "need_flags": [],
@@ -137,11 +380,12 @@
           "이번엔 제가 해 볼게요."
         ]
       ],
-      "art_gap": "Tori neutral faces right, away from Yeoni at the left. Needs Tori looking toward Yeoni cloth at left, with hands available, no duplicate cloth/chair; final contacts require live QA."
+      "art_gap": "",
+      "review": "Native SDK desktop/mobile individual/group clicks and non-consuming conversation checks; reports/life-groups-01946."
     },
     {
       "id": "school_play",
-      "status": "awaiting_live_review",
+      "status": "approved",
       "location": "school",
       "days": [
         8,
@@ -304,7 +548,8 @@
         "kid_mong": "하나, 둘! 같이 세고 있어요.",
         "kid_bang": "잠깐만요. 저도 같이 할래요!"
       },
-      "art_gap": "Approved three play sources imported through import_art.py, raw originals preserved. Actual engine contact/alpha picker/save-load review blocked by SDK download 403; source low-alpha remnants are retained, not silently repainted."
+      "art_gap": "",
+      "review": "Native SDK desktop/mobile individual/group clicks and non-consuming conversation checks; reports/life-groups-01946."
     }
   ]
 }

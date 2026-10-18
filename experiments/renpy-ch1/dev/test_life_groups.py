@@ -52,7 +52,7 @@ def environment(group='workshop_pair',approved=True):
     block=SOURCE.read_text().split('init 181 python:\n',1)[1].split('\nscreen ',1)[0]
     exec(textwrap.dedent(block),env)
     row=next(r for r in env['R13_LIFE_GROUPS'] if r['id']==group)
-    if approved:row['status']='approved'
+    row['status']='approved' if approved else 'awaiting_live_review'
     s.room13.update(day=row['days'][0],period=row['periods'][0],location=row['location'],flags=['lodging','entry_corrected',*row['need_flags']],offers={})
     if not row.get('conditional_cast'):
         for i,m in enumerate(row['members']):
@@ -83,6 +83,24 @@ class LifeGroups(unittest.TestCase):
             with Image.open(source) as a,Image.open(ROOT/'game'/spec['file']) as b:
                 self.assertEqual(a.size,b.size)
                 self.assertIsNone(ImageChops.difference(a.getchannel('A'),b.getchannel('A')).getbbox())
+    def test_cooperative_originals_and_shared_component_contact(self):
+        import hashlib
+        from PIL import Image
+        from map27_pixel_derivative import validate_map_image
+        source=ROOT/'art/cooperative-work-three-20261018'
+        manifest=json.loads((source/'manifest.json').read_text())
+        for row in manifest:
+            original=source/row['file']
+            self.assertEqual(hashlib.sha256(original.read_bytes()).hexdigest(),row['sha256'])
+            with Image.open(ROOT/'game/assets'/('room13-group-'+row['person_id']+'-cooperative.webp')) as image:
+                validate_map_image(image.convert('RGBA'))
+        e,row,_=environment('workshop_pair');actors=e['r13_stage_people']();contacts=[]
+        for member in row['members']:
+            actor=next(a for a in actors if a['person']==member['person']);spec=member['spec'];anchor=spec['anchors'][member['anchor']];scale=actor['height']/spec['crop'][3]
+            contacts.append([actor['x']+anchor[0]*scale,actor['y']+anchor[1]*scale])
+        self.assertLess(max(abs(a-b) for a,b in zip(*contacts)),1)
+        e,row,_=environment('inn_mending');actor=next(a for a in e['r13_stage_people']() if a['person']=='resident_tori')
+        self.assertTrue(actor['map27_occlusion'])
     def test_stale_child_and_invalid_choice_never_enter_adult_dialogue(self):
         e,row,_=environment('school_play');e['store'].room13['day']=10
         self.assertEqual(e['r13_person_action']('kid_kkam'),('life_child','kid_kkam'))
@@ -93,7 +111,7 @@ class LifeGroups(unittest.TestCase):
         for tag in ('r13_ep_cut','r13_ep_book'):
             e,row,_=environment('school_play');e['renpy'].get_showing_tags=lambda:[tag]
             self.assertEqual(e['r13_stage_people'](),[])
-    def test_pending_art_is_not_shipped_as_completed_group(self):
+    def test_pending_rows_remain_disabled(self):
         for key in ('workshop_pair','inn_mending','school_play'):
             e,row,a=environment(key,False)
             self.assertEqual(e['r13_stage_people'](),a)
