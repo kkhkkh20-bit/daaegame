@@ -18,6 +18,11 @@ testcase investigation_placement_ubak:
     pause 0.2
     run Show("r13_qa_pixel_variant")
     run Function(r13_pd_check_field,"entered-real-field")
+    assert eval (r13_world_offset()==0)
+    run Function(r13_pd_target_render,"resident_ubak","living_measure","target-camera-zero")
+    move pos (640,20)
+    pause 0.2
+    pause until eval (r13_pd_hover_clear()) timeout 3
     screenshot "placement-ubak-01-field.png"
     run Function(r13_pd_choose_person)
     if eval (not r13_pd_person_ready and r13_world_offset()>0):
@@ -38,12 +43,21 @@ testcase investigation_placement_ubak:
         run Function(r13_pd_choose_person)
     assert eval (r13_pd_person_ready and r13_pd_person=="resident_ubak")
     click pos (r13_pd_person_x,r13_pd_person_y)
+    pause until eval (renpy.get_screen("say") is not None or renpy.get_screen("r13_resident_approach") is not None or renpy.get_screen("r13_topics") is not None) timeout 5
+    if screen "say":
+        run Function(r13_pd_log_opening,"actual-first-contact-notice")
+        screenshot "placement-ubak-01c-first-notice.png"
     advance until eval (renpy.get_screen("r13_resident_approach") is not None or renpy.get_screen("r13_topics") is not None) timeout 40
     assert eval (r13_target==r13_pd_person)
     pause 0.4
     if screen "r13_resident_approach":
         run Function(r13_pd_approach_yes)
+        screenshot "placement-ubak-01d-approach.png"
         click expression r13_pd_approach_text
+        pause until eval (renpy.get_screen("say") is not None or renpy.get_screen("r13_topics") is not None) timeout 5
+        if screen "say":
+            run Function(r13_pd_log_opening,"actual-first-contact-opening")
+            screenshot "placement-ubak-01e-opening.png"
     advance until screen "r13_topics" timeout 40
     pause 0.4
     run Function(r13_pd_choose_topic)
@@ -64,6 +78,9 @@ testcase investigation_placement_ubak:
     pause 0.2
     assert eval (room13["location"]=="workshop")
     run Function(r13_pd_check_field,"returned-from-resident")
+    move pos (640,20)
+    pause 0.2
+    pause until eval (r13_pd_hover_clear()) timeout 3
     screenshot "placement-ubak-03-returned.png"
     if eval (r13_world_offset()<r13_world_width()-1280):
         click "›"
@@ -73,6 +90,10 @@ testcase investigation_placement_ubak:
         pause 0.5
     assert eval (r13_world_offset()==(r13_world_width()-1280 if room13["location"]=="workshop" else 0))
     run Function(r13_pd_check_field,"placement-opposite-camera-end")
+    move pos (640,20)
+    pause 0.2
+    pause until eval (r13_pd_hover_clear()) timeout 3
+    run Function(r13_pd_target_render,"resident_ubak","living_measure","target-camera-right-end")
     screenshot "placement-ubak-04-opposite-camera-end.png"
     $ R13_PD_MAP_PEOPLE["workshop"]=r13_pd_saved_preference
     run Hide("r13_qa_pixel_variant")
@@ -96,6 +117,9 @@ testcase investigation_placement_granny:
     pause 0.2
     run Show("r13_qa_pixel_variant")
     run Function(r13_pd_check_field,"entered-real-field")
+    move pos (640,20)
+    pause 0.2
+    pause until eval (r13_pd_hover_clear()) timeout 3
     screenshot "placement-granny-01-field.png"
     run Function(r13_pd_choose_person)
     if eval (not r13_pd_person_ready and r13_world_offset()>0):
@@ -142,6 +166,9 @@ testcase investigation_placement_granny:
     pause 0.2
     assert eval (room13["location"]=="inn")
     run Function(r13_pd_check_field,"returned-from-resident")
+    move pos (640,20)
+    pause 0.2
+    pause until eval (r13_pd_hover_clear()) timeout 3
     screenshot "placement-granny-03-returned.png"
     $ r13_pd_saved_object_preference=R13_PD_MAP_OBJECTS["inn"]
     $ R13_PD_MAP_OBJECTS["inn"]=("register",)
@@ -175,6 +202,9 @@ testcase investigation_placement_granny:
     pause 0.2
     assert eval (room13["location"]=="inn" and room13["day"]==2 and room13["period"]==0)
     run Function(r13_pd_check_field,"returned-from-object")
+    move pos (640,20)
+    pause 0.2
+    pause until eval (r13_pd_hover_clear()) timeout 3
     screenshot "placement-granny-05-register-returned.png"
     $ R13_PD_MAP_OBJECTS["inn"]=r13_pd_saved_object_preference
     if eval (r13_world_offset()>0):
@@ -185,6 +215,9 @@ testcase investigation_placement_granny:
         pause 0.5
     assert eval (r13_world_offset()==(r13_world_width()-1280 if room13["location"]=="workshop" else 0))
     run Function(r13_pd_check_field,"placement-opposite-camera-end")
+    move pos (640,20)
+    pause 0.2
+    pause until eval (r13_pd_hover_clear()) timeout 3
     screenshot "placement-granny-06-opposite-camera-end.png"
     $ R13_PD_MAP_PEOPLE["inn"]=r13_pd_saved_preference
     run Hide("r13_qa_pixel_variant")

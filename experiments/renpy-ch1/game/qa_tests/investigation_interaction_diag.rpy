@@ -34,20 +34,63 @@ init 999 python:
             if speech:result.append((key,spec,speech))
         return result
 
-    def r13_pd_choose_person():
+    def r13_pd_contact_probe(person):
+        eligible=r13_pd_plain_topics(person)
+        contact=bool(r13_contact_has_content(person))
+        rows=[]
+        if person not in r13_met_people():
+            rows=list(r13_conversation_opening(person,True))
+            if person in R13_OPENING_SCENES['first_meetings']:rows+=list(r13_resident_notice(person))
+        predicted=[]
+        for who,line in rows:
+            predicted.extend(r13_question_line_cues('notice:resident:'+person,who,line))
+        return dict(person=person,contact_has_content=contact,plain_keys=[k for k,_,_ in eligible],
+            available_keys=[k for k,_ in r13_topics_in_order(person)],predicted_first_contact_cues=sorted(set(predicted)),
+            known_cues=sorted(room13.get('question_cues',{})),already_met=person in r13_met_people())
+
+    def r13_pd_target_render(person,pose,step):
+        actor=next(a for a in r13_stage_people(False) if a['person']==person)
+        assert actor['pose']==pose,(person,actor['pose'],pose)
+        row=r13_pd_row(actor,'r13_hub');offset=r13_world_offset()
+        row['on_screen']=actor['x']+actor['width']>offset and actor['x']<offset+1280
+        assert min(row['render_bounds'])>0,row
+        if row['on_screen']:
+            assert row['widget_present'] and row['ancestor_alphas'] and all(a>=.99 for a in row['ancestor_alphas']),row
+        r13_pd_flow_log(step,dict(target=row,contact_probe=r13_pd_contact_probe(person),
+            ordinary_place_access=room13['location'] in r13_places(),visual_acceptance=False))
+
+    def r13_pd_log_opening(step):
+        screen=renpy.get_screen('say')
+        assert screen is not None
+        r13_pd_flow_log(step,dict(packet=list(r13_packet),who=screen.scope.get('who'),what=screen.scope.get('what'),
+            person=r13_pd_person,contact_probe=r13_pd_contact_probe(r13_pd_person)))
+
+    def r13_pd_hover_clear():
+        hub=renpy.get_screen('r13_hub')
+        return bool(hub and not GetTooltip() and not hub.scope.get('hint'))
+
+    def r13_pd_choose_person(allow_no_content=False):
         # Use the same rendered Crop/AlphaMask that the production button uses.
         store.r13_pd_person_ready=False
         location=room13['location'];offset=r13_world_offset()
         actors=r13_stage_people(False);plates=r13_actor_nameplates(actors)
+        # Actual current screen-space input regions, including UI overlays.
+        regions=[]
+        for f in renpy.display.focus.focus_list:
+            if f.x is not None:
+                regions.append(dict(bounds=[f.x,f.y,f.w,f.h],tooltip=f.widget._get_tooltip(),text=f.widget._tts_all(False)))
+        r13_pd_flow_log('rendered-input-regions',dict(camera_offset=offset,regions=regions))
         def inside(px,py,rect):
             x,y,w,h=rect;return x<=px<x+w and y<=py<y+h
         for person in R13_PD_MAP_PEOPLE[location]:
             actor=next((a for a in actors if a['person']==person),None)
             if actor is None or r13_offer_for_person(person):continue
-            eligible=r13_pd_plain_topics(person)
-            if not eligible:
-                r13_pd_flow_log('resident-skipped-no-live-plain-topic',dict(person=person,available_keys=[k for k,_ in r13_topics_in_order(person)]))
+            probe=r13_pd_contact_probe(person)
+            if not probe['plain_keys'] and not probe['contact_has_content'] and not allow_no_content:
+                r13_pd_flow_log('resident-skipped-no-production-contact',probe)
                 continue
+            store.r13_pd_contact_allowed=probe['contact_has_content']
+            r13_pd_flow_log('resident-contact-preflight',probe)
             x,y,w,h=actor['rect']
             mask=renpy.render(r13_actor_hit_mask(actor),w,h,1.2,1.2)
             blocked=[p['rect'] for p in plates]+[a['rect'] for a in actors if a['person']!=person]
@@ -55,13 +98,19 @@ init 999 python:
             for ly in range(3,max(3,int(h)-3),4):
                 for lx in range(3,max(3,int(w)-3),4):
                     px,py=x+lx,y+ly;sx=px-offset
-                    if not (24<sx<1000 and 110<py<580):continue
+                    if not (24<sx<1256 and 110<py<704):continue
                     if any(inside(px,py,r) for r in blocked):continue
                     if not all(mask.is_pixel_opaque(lx+dx,ly+dy) for dx in (-1,0,1) for dy in (-1,0,1)):continue
+                    # Same rendered focus test used by Ren'Py 8.5.3 testfocus.find_position.
+                    # This rejects actual HUD, object and nameplate interception, not a guessed UI band.
+                    focus=renpy.display.render.focus_at_point(int(sx),int(py))
+                    tooltip=focus.widget._get_tooltip() if focus is not None else None
+                    expected=r13_person_caption(person)+' · 말 걸기'
+                    if tooltip!=expected:continue
                     store.r13_pd_person=person;store.r13_pd_person_name=R13_NAMES[person]
                     store.r13_pd_person_x=int(sx);store.r13_pd_person_y=int(py)
                     store.r13_pd_person_ready=True
-                    r13_pd_flow_log('resident-body-mask-click-target',dict(person=person,pose=actor['pose'],spec_file=(r13_acting_spec(person,actor['pose']) or {}).get('file'),actor_rect=actor['rect'],mask_local=[lx,ly],screen_click=[sx,py],mask_3x3_opaque=True,camera_offset=offset,method='production r13_actor_hit_mask -> Render.is_pixel_opaque; nameplates and other actor bounds excluded'))
+                    r13_pd_flow_log('resident-body-mask-click-target',dict(person=person,pose=actor['pose'],spec_file=(r13_acting_spec(person,actor['pose']) or {}).get('file'),actor_rect=actor['rect'],mask_local=[lx,ly],screen_click=[sx,py],mask_3x3_opaque=True,camera_offset=offset,focus_bounds=[focus.x,focus.y,focus.w,focus.h],focus_tooltip=tooltip,contact_probe=probe,method='production opaque hit mask plus actual topmost render.focus_at_point body-button tooltip; other actor/nameplate bounds excluded; no UI band bypass'))
                     return
         r13_pd_flow_log('resident-not-yet-clickable',dict(camera_offset=offset,people=[a['person'] for a in actors]))
 
@@ -103,7 +152,7 @@ init 999 python:
         assert bounds and min(bounds[2:])>0
         r13_pd_flow_log('actual-topic-say-verified',dict(topic=r13_pd_topic,packet=list(r13_packet),who=scope.get('who'),what=scope.get('what'),page_index=r13_page_i,portrait_tag='r13_visitor',portrait_bounds=list(bounds),portrait_person=r13_motion_person,portrait_pose=r13_current_pose))
 
-    def r13_pd_choose_object():
+    def r13_pd_choose_object(allow_wait=False):
         store.r13_pd_object_ready=False
         location=room13['location'];offset=r13_world_offset();actors=r13_stage_people(False)
         objects=ROOM13['objects'][location]
@@ -115,7 +164,7 @@ init 999 python:
             spec=objects.get(key)
             if not spec or not r13_object_visible(spec):continue
             # Avoid contexts requiring a choice for this minimal click-return case.
-            if r13_tool_available(key) or r13_object_actions(key) or r13_context_wait(key) or r13_bed_available(key) or r13_bed_blocked_reason(key):continue
+            if r13_tool_available(key) or r13_object_actions(key) or (r13_context_wait(key) and not allow_wait) or r13_bed_available(key) or r13_bed_blocked_reason(key):continue
             x,y,w,h=spec['rect']
             for fy in (.5,.25,.75,.1,.9):
                 for fx in (.5,.25,.75,.1,.9):

@@ -71,6 +71,9 @@ init 179 python:
                     layout=r13_layout("inn");rx,ry,rw,rh=layout["objects"]["register"]
                     actor["map27_occlusion"]=[layout["occlusion"],[(rx,ry),(rx+rw,ry),(rx+rw,ry+rh),(rx,ry+rh)]]
                     actor["map27_keepouts"]=[]
+                elif location=="workshop" and r13_world_width()==1800 and person=="resident_musoe" and actor["pose"]=="job_inspect_old_tool":
+                    # Candidate visitor floor position; preserve approved source, pose and current stature.
+                    actor=r13_contact_geometry(actor,actor["pose"],"foot",(130,690),actor["height"],690)
                 elif location=="square" and r13_world_width()==1920 and person in R13_SQUARE_LEVELS:
                     level=R13_SQUARE_LEVELS[person]
                     if actor["pose"] in level["poses"]:
