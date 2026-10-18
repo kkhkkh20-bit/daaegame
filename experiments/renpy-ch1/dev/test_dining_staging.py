@@ -4,10 +4,12 @@ ROOT=Path(__file__).resolve().parents[1]
 class DiningStaging(unittest.TestCase):
  def test_six_residents_get_distinct_floor_slots(self):
   layout=json.loads((ROOT/'game/assets/room13-world-layout.json').read_text())['dining']
-  source=(ROOT/'game/room13_acting.rpy').read_text();body=source.split('    def r13_stage_people(entry=False):',1)[1].split('    def r13_staged_art',1)[0]
+  source=(ROOT/'game/room13_acting.rpy').read_text();body=source.split('    def r13_stage_people(entry=False):',1)[1].split('\n    def ',1)[0]
   spec=dict(crop=[0,0,200,400],foot=[100,400],head=[50,0,100,100],contact='standing')
   names=['nabi','resident_owlgp','resident_tok','resident_mulgyeol','resident_dalgeurak','resident_hyeoni']
   env=dict(store=types.SimpleNamespace(room13=dict(day=2,period=2,location='dining',flags=[])),r13_layout=lambda location:layout,r13_visible_people=lambda:names,r13_living_pose=lambda *a:'neutral',r13_acting_spec=lambda *a:spec,r13_actor_geometry=lambda *a:(200,400),r13_world_display_height=lambda p,pose,h,l:h,r13_activity_text=lambda p:'',R13_STAGE_CACHE={},R13_STAGE_FLOORS={},R13_STAGE_POSITIONS={},R13_STAGE_COUNTERS={},R13_CROWD_SLOTS={},R13_STAGE_CRITICAL={},R13_CALENDAR={})
+  helper=source[source.index('    def r13_staged_activity('):].split('\n    def ',1)[0]
+  exec(textwrap.dedent(helper),env)
   exec('def r13_stage_people(entry=False):'+'\n'+textwrap.indent(textwrap.dedent(body),'    '),env)
   actors=env['r13_stage_people']();self.assertEqual(len(actors),6);self.assertEqual(len({a['slot'] for a in actors}),6)
   self.assertEqual(len({(a['x'],a['y']) for a in actors}),6)
