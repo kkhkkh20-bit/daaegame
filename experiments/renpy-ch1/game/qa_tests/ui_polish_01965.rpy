@@ -84,6 +84,7 @@ testcase ui_polish_01965:
     screenshot "ui065-direct-object-keys-observed.png"
     click pos (640,560) until screen "r13_hub" timeout 30
     assert eval (not r13_secret_route_available() and not r13_object_visible(ROOM13["objects"]["room13"]["books"]))
+    pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
     click "할머니"
     click pos (640,560) until screen "r13_resident_approach" timeout 30
     assert screen "r13_resident_approach"
