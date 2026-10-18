@@ -1,0 +1,118 @@
+{
+  "flags": [
+    "entry_corrected",
+    "lodging",
+    "lt_dawn",
+    "lt_open",
+    "piko_dead",
+    "librarian_dead",
+    "lt_lib_dawn",
+    "lt_siluk_seen",
+    "ep4_seen",
+    "ep1_done",
+    "ep1_patrol_seen",
+    "ep1_eaves_seen",
+    "livelihood_open",
+    "ev_b_done",
+    "ev_b_missed",
+    "musoe_herbs",
+    "lt_store_seen",
+    "siluk_debt_known",
+    "reward:ep1",
+    "tok_cleared",
+    "lt_done",
+    "lt_solved",
+    "siluk_handed",
+    "madam_store_opened",
+    "madam_hostile"
+  ],
+  "evidence": [
+    "L19",
+    "L09",
+    "L18",
+    "L20",
+    "L21",
+    "L22"
+  ],
+  "debate": {
+    "broken": {
+      "Q1": [
+        "v_origin",
+        "v_trade",
+        "v_own",
+        "v_where",
+        "v_slip",
+        "h_work",
+        "h_scope",
+        "v_permission"
+      ]
+    },
+    "pressed": {
+      "Q1": [
+        "v_where",
+        "h_work",
+        "v_permission"
+      ]
+    },
+    "misses": {},
+    "closed": {},
+    "half": {
+      "Q1:v_trade": "L19",
+      "Q1:h_scope": "L21"
+    }
+  },
+  "cash": 15,
+  "thesis": "trade",
+  "proofs": {
+    "v_origin": {
+      "supports": [
+        "L09"
+      ],
+      "choices": [
+        "correct"
+      ],
+      "thesis": "trade"
+    },
+    "v_trade": {
+      "supports": [
+        "L18",
+        "L19"
+      ],
+      "choices": [
+        "correct"
+      ],
+      "thesis": "trade"
+    },
+    "v_own": {
+      "supports": [
+        "L19"
+      ],
+      "choices": [
+        "correct",
+        "correct"
+      ],
+      "thesis": "trade"
+    },
+    "v_slip": {
+      "supports": [
+        "L20"
+      ],
+      "choices": [
+        "correct"
+      ],
+      "thesis": "trade"
+    },
+    "h_scope": {
+      "supports": [
+        "L21",
+        "L22"
+      ],
+      "choices": [
+        "correct",
+        "correct"
+      ],
+      "thesis": "trade"
+    }
+  },
+  "errors": 0
+}

@@ -4,6 +4,47 @@ init 192 python:
     def r13_q1_hard():
         return (store.room13 or {}).get("q1_rules")==3
 
+    R13_Q1_THESES={
+        "physical":dict(title="끈의 사용 경로",choice="남은 끈의 주인부터 따지겠습니다.",
+            chain=["v_trace","v_recent","v_user","v_action"],
+            claim="현장 끈의 출처와 남은 시점을 좁혀, 그 끈을 쓴 사람이 조각을 꺼냈다는 것을 밝히겠습니다."),
+        "trade":dict(title="거래와 취득 경위",choice="팔린 조각의 행방부터 따지겠습니다.",
+            chain=["v_origin","v_trade","v_own","v_where","v_slip"],
+            claim="조각의 거래에서 판매자를 확인하고, 그 사람이 조각을 어떻게 얻었는지 따져 반출을 밝히겠습니다."),
+        "testimony":dict(title="두 목격의 연결",choice="두 사람이 본 작업부터 맞춰보겠습니다.",
+            chain=["v_identity","v_action","v_link"],
+            claim="얼굴을 본 증언과 조각을 본 증언을 같은 작업으로 연결해, 누가 가져갔는지 밝히겠습니다."),
+    }
+
+    def r13_q1_thesis():
+        return (store.room13 or {}).get("q1_thesis")
+
+    def r13_q1_thesis_title():
+        return R13_Q1_THESES.get(r13_q1_thesis(),{}).get("title","")
+
+    def r13_q1_choose_thesis(key):
+        if not r13_q1_hard() or key not in R13_Q1_THESES or r13_debate_closed("Q1"):return False
+        if r13_q1_thesis():return False
+        if r13_debate_state().get("broken",{}).get("Q1"):return False
+        r13_edit(q1_thesis=key)
+        return True
+
+    def r13_q1_thesis_allows(sid):
+        spec=R13_Q1_THESES.get(r13_q1_thesis())
+        return bool(spec and sid in spec["chain"]+["v_accused","h_work","h_scope","v_permission"])
+
+    def r13_q1_first_statement():
+        spec=R13_Q1_THESES.get(r13_q1_thesis(),{})
+        for sid in spec.get("chain",[]):
+            if r13_q1_node_open(r13_debate_statement("Q1",sid)):return sid
+        return "v_accused"
+
+    _r13_qh_removal=r13_q1_removal_proved
+    def r13_q1_removal_proved():
+        if not r13_q1_hard():return _r13_qh_removal()
+        spec=R13_Q1_THESES.get(r13_q1_thesis())
+        return bool(spec and all(r13_q1_done(sid) for sid in spec["chain"]))
+
     for key,name,fact,limit in (
         ("L21","덮개 작업표","2일 낮, 톡이 실룩에게 맡긴 작업. 대상은 3번 등의 덮개, 지급 부품은 나사 두 개. 조각 교체 수량과 회수 예정 수량은 모두 0이다.","작업을 맡겼다는 기록이다. 실제로 누가 무엇을 했는지는 별도 확인이 필요하다."),
         ("L22","3번 등의 자재 대장","광장 3이라는 이름표의 조각은 3번 등에 설치된 마을 자재로 등재되어 있다. 덮개 부품과 조각은 별도 항목이며, 조각의 폐기·양도 기록은 없다.","기록이 없다는 이유만으로 행위자나 절도 시각을 정할 수 없다."),
@@ -100,7 +141,8 @@ init 192 python:
         r13_q1_round("실룩의 두 설명 중 어느 부분이 함께 성립할 수 없소?",
             "수리점에서 받았나, 등에서 꺼냈나입니다.",
             "조각을 팔았다는 말과 빚이 있다는 말입니다.","빚이 있는 사람이 물건을 팔았다는 두 말은 모순되지 않소.",
-            "직접 꺼냈다는 말과 수리했다는 말입니다.","수리 중 물건을 꺼낼 수도 있소. 수리였다는 해명은 작업 범위까지 따져야 하오.")])
+            "직접 꺼냈다는 말과 수리했다는 말입니다.","수리 중 물건을 꺼낼 수도 있소. 수리였다는 해명은 작업 범위까지 따져야 하오.")],
+        observed=[("resident_siluk","내가 한 말이오. 어느 부분이 앞뒤가 맞지 않는다는 거요?")])
 
     R13_Q1_HARD_ARGUMENTS.extend([
         r13_q1_statement("h_work","resident_siluk","등에 손댄 건 톡이 맡긴 수리였소. 작업표도 있소.",lines=[
@@ -134,12 +176,19 @@ init 192 python:
     _r13_qh_node_open=r13_q1_node_open
     def r13_q1_node_open(st):
         if r13_q1_hard():
-            if st["id"]=="v_action":return r13_q1_done("v_user") or r13_q1_done("v_identity")
+            if not r13_q1_thesis_allows(st["id"]):return False
+            if st["id"]=="v_action":return r13_q1_done("v_user" if r13_q1_thesis()=="physical" else "v_identity")
             if st["id"]=="v_identity":return r13_has("L17")
             if st["id"]=="v_origin":return r13_has("L09")
             if st["id"]=="h_work":return r13_q1_removal_proved()
             if st["id"]=="v_permission":return r13_q1_removal_proved() and r13_q1_done("h_scope")
         return _r13_qh_node_open(st)
+
+    _r13_qh_judge=r13_debate_judge
+    def r13_debate_judge(claim,sid,key):
+        if claim=="Q1" and r13_q1_hard() and not r13_q1_thesis_allows(sid):
+            return "wrong",[("neoul","다른 주장을 시작할 차례가 아니오. 처음 내세운 논증에서 그 사실이 어느 고리를 잇는지 설명하시오.")]
+        return _r13_qh_judge(claim,sid,key)
 
     _r13_qh_required=r13_debate_required
     def r13_debate_required(claim):
@@ -160,14 +209,14 @@ init 192 python:
         if not r13_q1_hard() or r13_debate_closed("Q1") or r13_debate_judge("Q1",sid,key)[0]!="break" or not st.get("counter",{}).get("rounds"):return False
         supports=list(st.get("pair",{}).get("keys",[key]))
         if not all(k in (store.room13 or {}).get("evidence",[]) for k in supports):return False
-        r13_edit(q1_argument_pending=dict(sid=sid,supports=supports))
+        r13_edit(q1_argument_pending=dict(sid=sid,supports=supports,thesis=r13_q1_thesis()))
         return True
 
     def r13_q1_evaluate_counter(sid,choices):
         # Read-only; neither owning a record nor selecting a plausible sentence proves a fact.
         pending=(store.room13 or {}).get("q1_argument_pending",{})
         st=r13_debate_statement("Q1",sid);rounds=st.get("counter",{}).get("rounds",[])
-        if not r13_q1_hard() or r13_debate_closed("Q1") or pending.get("sid")!=sid or not r13_q1_node_open(st) or r13_q1_done(sid):return "invalid",None
+        if not r13_q1_hard() or r13_debate_closed("Q1") or pending.get("sid")!=sid or pending.get("thesis")!=r13_q1_thesis() or not r13_q1_node_open(st) or r13_q1_done(sid):return "invalid",None
         expected=st.get("pair",{}).get("keys")
         if expected and pending.get("supports")!=list(expected):return "invalid",None
         if not expected and (len(pending.get("supports",[]))!=1 or pending["supports"][0] not in st.get("accept",[])):return "invalid",None
@@ -181,7 +230,7 @@ init 192 python:
         if status=="invalid":return status,failed
         pending=winter_copy.deepcopy(store.room13["q1_argument_pending"])
         if status=="correct":
-            proofs=dict(store.room13.get("q1_argument_proofs",{}));proofs[sid]=dict(supports=pending["supports"],choices=list(choices))
+            proofs=dict(store.room13.get("q1_argument_proofs",{}));proofs[sid]=dict(supports=pending["supports"],choices=list(choices),thesis=pending["thesis"])
             r13_edit(q1_argument_proofs=proofs,q1_argument_pending={})
         else:
             r13_q1_record_error(dict(sid=sid,supports=pending["supports"],choices=list(choices),failed=failed))
@@ -203,6 +252,7 @@ init 192 python:
     _r13_qh_summary=r13_q1_summary
     def r13_q1_summary():
         rows=_r13_qh_summary()
+        if r13_q1_hard() and r13_q1_thesis():rows=("선택한 논증: "+r13_q1_thesis_title()+". "+rows[0],rows[1],rows[2])
         if r13_q1_hard() and (store.room13 or {}).get("debate",{}).get("closed",{}).get("ep1:Q1")=="argument_limit":
             return rows[0],"확정한 반박이 세 번 무너져 회의가 끝났다.",rows[2]
         return rows
@@ -229,6 +279,8 @@ label r13_q1_hard_counter(sid):
         $ r13_edit(q1_argument_pending={})
         return None
     $ _qh_status,_qh_failed=r13_q1_commit_counter(sid,_qh_choices)
+    if _qh_status in ("correct","wrong"):
+        $ renpy.block_rollback()
     if _qh_status=="correct":
         call r13_lines(_qh_counter["correct"],"q1h:accepted:"+sid)
         return True
@@ -240,12 +292,29 @@ label r13_q1_hard_counter(sid):
 label r13_q1_hard_rules:
     if r13_q1_hard():
         call r13_lines([(None,"자료 열람과 질문은 자유롭다. 발언에 맞지 않는 자료를 근거로 내거나, 상대의 반론에 잘못된 답을 확정하면 오답이 된다."),
-            (None,"오답 세 번이면 이번 회의가 끝난다. 해석은 확정 전에 철회할 수 있다. 실패 뒤에는 같은 자료로 회의를 처음부터 다시 할 수 있다.")],"q1h:rules")
+            (None,"회의에서 내세운 논증은 끝까지 이어야 한다. 오답 세 번이면 이번 회의가 끝난다. 같은 자료로 다시 시작할 때는 다른 논증을 고를 수 있다.")],"q1h:rules")
     return
 
 label r13_q1_error_notice:
+    $ renpy.block_rollback()
     if r13_debate_closed("Q1"):
         call r13_lines([("neoul","반박이 세 번 무너졌소. 이 회의의 반론은 여기까지 받겠소.")],"q1h:limit")
     else:
         call r13_lines([("neoul","그 반박은 받아들이지 않겠소. 지금까지 %d번이오. 자료와 주장을 다시 살피시오."%r13_q1_formal_errors())],"q1h:warning")
+    return
+
+label r13_q1_thesis_opening:
+    if not r13_q1_hard() or r13_q1_thesis():
+        return
+    call r13_lines([("neoul","등을 돌보는 톡이 조각을 가져간 것 아니오? 다르게 본다면 그 근거를 말해 보시오.")],"q1h:thesis:ask")
+    while not r13_q1_thesis():
+        $ _qh_thesis_pick=renpy.display_menu([("톡을 지목한 말에 어떻게 반박할까?",None)]+[(spec["choice"],key) for key,spec in R13_Q1_THESES.items()]+[("자료를 다시 살펴보겠습니다.","records")])
+        if _qh_thesis_pick=="records":
+            call screen r13_records(close_action=Return(False))
+        else:
+            call screen r13_confirm(R13_Q1_THESES[_qh_thesis_pick]["claim"]+"\n\n이번 회의에서는 이 논증을 끝까지 이어갑니다. 다른 논증은 회의를 처음부터 다시 할 때 선택할 수 있습니다.","이 논증으로 끝까지 간다","다시 생각한다")
+            if _return:
+                $ r13_q1_choose_thesis(_qh_thesis_pick)
+                $ renpy.block_rollback()
+    call r13_lines([("dad",R13_Q1_THESES[r13_q1_thesis()]["claim"]),("neoul","좋소. 그 주장에 필요한 연결을 하나씩 설명하시오.")],"q1h:thesis:commit")
     return

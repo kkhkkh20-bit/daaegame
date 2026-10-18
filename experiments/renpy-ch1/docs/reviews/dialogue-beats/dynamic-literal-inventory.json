@@ -12857,7 +12857,7 @@
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 671,
+    "line": 673,
     "context": "label r13_debate_dispatch:",
     "person": "dad",
     "text": "(맞는 자료를 찾지 못했다. 저 말은 반박되지 않은 채 그대로 남는다.)",
@@ -12872,7 +12872,7 @@
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 686,
+    "line": 688,
     "context": "label r13_debate_dispatch:",
     "person": "dad",
     "text": "(저 말을 반박할 자료가 있는지 다시 살펴보자.)",
@@ -12887,7 +12887,7 @@
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 740,
+    "line": 742,
     "context": "label r13_debate_unanswerable(claim):",
     "person": "dad",
     "text": "(저 말을 뒤집을 자료가 지금 내게는 없다.)",
@@ -12902,7 +12902,7 @@
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 741,
+    "line": 743,
     "context": "label r13_debate_unanswerable(claim):",
     "person": null,
     "text": "아무도 그 말을 막지 못했다.",
@@ -12914,7 +12914,7 @@
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 759,
+    "line": 761,
     "context": "label r13_debate_answer_counter(claim,sid):",
     "person": "dad",
     "text": "(내 말이 그대로 되돌아왔다. 자료는 맞다. 답을 다시 생각해 보자.)",
@@ -39054,7 +39054,7 @@
   },
   {
     "source": "game/systems/room13_q1_difficulty.rpy",
-    "line": 38,
+    "line": 79,
     "context": "def r13_q1_set_counter(sid,rounds,correct=None,observed=None):",
     "person": "resident_siluk",
     "text": "색도 굵기도 흔한 물건이오. 무엇이 같다는 거요?",
@@ -39066,7 +39066,7 @@
   },
   {
     "source": "game/systems/room13_q1_difficulty.rpy",
-    "line": 49,
+    "line": 90,
     "context": "def r13_q1_set_counter(sid,rounds,correct=None,observed=None):",
     "person": "dad",
     "text": "끈은 첫 순찰에서 뚜껑을 확인한 뒤에 남았습니다. 잔열로 그보다 정확한 시각까지 정하지는 않겠습니다.",
@@ -39078,7 +39078,7 @@
   },
   {
     "source": "game/systems/room13_q1_difficulty.rpy",
-    "line": 72,
+    "line": 113,
     "context": "def r13_q1_set_counter(sid,rounds,correct=None,observed=None):",
     "person": "neoul",
     "text": "한 사람은 얼굴을, 한 사람은 물건을 보았소. 두 기록을 함께 냈다는 것만으로 같은 작업이 되지는 않소.",
@@ -39090,7 +39090,7 @@
   },
   {
     "source": "game/systems/room13_q1_difficulty.rpy",
-    "line": 85,
+    "line": 126,
     "context": "def r13_q1_set_counter(sid,rounds,correct=None,observed=None):",
     "person": "resident_madam",
     "text": "제 원장과 그 쪽지가 같은 거래라는 근거부터 대세요.",
@@ -39102,7 +39102,7 @@
   },
   {
     "source": "game/systems/room13_q1_difficulty.rpy",
-    "line": 96,
+    "line": 137,
     "context": "def r13_q1_set_counter(sid,rounds,correct=None,observed=None):",
     "person": "resident_siluk",
     "text": "…내 물건이라고 팔았소. 톡이 버린다기에 받은 거요.",
@@ -39114,7 +39114,7 @@
   },
   {
     "source": "game/systems/room13_q1_difficulty.rpy",
-    "line": 97,
+    "line": 138,
     "context": "def r13_q1_set_counter(sid,rounds,correct=None,observed=None):",
     "person": "resident_siluk",
     "text": "돈을 받아 왔다는 쪽지요. 그걸로 내 심부름이라는 말을 뒤집을 수 있소?",
@@ -39126,7 +39126,19 @@
   },
   {
     "source": "game/systems/room13_q1_difficulty.rpy",
-    "line": 107,
+    "line": 145,
+    "context": "def r13_q1_set_counter(sid,rounds,correct=None,observed=None):",
+    "person": "resident_siluk",
+    "text": "내가 한 말이오. 어느 부분이 앞뒤가 맞지 않는다는 거요?",
+    "packet": [
+      "resident_siluk",
+      "내가 한 말이오. 어느 부분이 앞뒤가 맞지 않는다는 거요?"
+    ],
+    "already_static_text": false
+  },
+  {
+    "source": "game/systems/room13_q1_difficulty.rpy",
+    "line": 149,
     "context": "def r13_q1_set_counter(sid,rounds,correct=None,observed=None):",
     "person": "dad",
     "text": "맡긴 일과 조각의 처리 내역을 함께 확인하겠습니다.",
@@ -39138,7 +39150,7 @@
   },
   {
     "source": "game/systems/room13_q1_difficulty.rpy",
-    "line": 108,
+    "line": 150,
     "context": "def r13_q1_set_counter(sid,rounds,correct=None,observed=None):",
     "person": "resident_siluk",
     "text": "톡의 서명이 있소. 나 혼자 멋대로 등을 만진 게 아니란 말이오.",
@@ -39150,7 +39162,7 @@
   },
   {
     "source": "game/systems/room13_q1_difficulty.rpy",
-    "line": 109,
+    "line": 151,
     "context": "def r13_q1_set_counter(sid,rounds,correct=None,observed=None):",
     "person": "resident_tok",
     "text": "덮개가 흔들린다고 해서 점검을 맡겼어요. 이건 작업표, 이쪽은 자재 대장이에요.",
@@ -39162,7 +39174,7 @@
   },
   {
     "source": "game/systems/room13_q1_difficulty.rpy",
-    "line": 110,
+    "line": 152,
     "context": "def r13_q1_set_counter(sid,rounds,correct=None,observed=None):",
     "person": null,
     "text": "작업표에는 덮개, 나사 두 개, 조각 교체 0, 회수 예정 0이 적혀 있었다. 대장의 광장 3 조각은 사용 중인 마을 자재였다.",
@@ -39174,7 +39186,7 @@
   },
   {
     "source": "game/systems/room13_q1_difficulty.rpy",
-    "line": 112,
+    "line": 154,
     "context": "def r13_q1_set_counter(sid,rounds,correct=None,observed=None):",
     "person": "resident_siluk",
     "text": "톡이 일을 맡긴 건 분명하오. 조각을 다룬 일도 그 작업으로 봐야 하지 않겠소?",
@@ -39186,7 +39198,7 @@
   },
   {
     "source": "game/systems/room13_q1_difficulty.rpy",
-    "line": 123,
+    "line": 165,
     "context": "def r13_q1_set_counter(sid,rounds,correct=None,observed=None):",
     "person": "dad",
     "text": "실룩 씨의 반출은 앞서 연결했습니다. 이 작업표로 조각까지 넘겨받았다는 해명은 성립하지 않습니다. 별도의 허락을 받았습니까?",
@@ -39198,7 +39210,7 @@
   },
   {
     "source": "game/systems/room13_q1_difficulty.rpy",
-    "line": 125,
+    "line": 167,
     "context": "def r13_q1_set_counter(sid,rounds,correct=None,observed=None):",
     "person": "dad",
     "text": "덮개 점검과 별개로, 조각을 가져가도 된다고 허락받았습니까?",
@@ -39210,7 +39222,7 @@
   },
   {
     "source": "game/systems/room13_q1_difficulty.rpy",
-    "line": 126,
+    "line": 168,
     "context": "def r13_q1_set_counter(sid,rounds,correct=None,observed=None):",
     "person": "resident_tok",
     "text": "덮개 점검만 맡겼어요. 조각을 교체하거나 폐기하라고 한 적도, 실룩 씨에게 넘긴 적도 없어요.",
@@ -39222,7 +39234,7 @@
   },
   {
     "source": "game/systems/room13_q1_difficulty.rpy",
-    "line": 127,
+    "line": 169,
     "context": "def r13_q1_set_counter(sid,rounds,correct=None,observed=None):",
     "person": "resident_siluk",
     "text": "…따로 허락받지는 않았소. 내가 꺼내 팔았소. 식었으니 버려도 되는 줄 알았소.",
@@ -39234,7 +39246,7 @@
   },
   {
     "source": "game/systems/room13_q1_difficulty.rpy",
-    "line": 128,
+    "line": 170,
     "context": "def r13_q1_set_counter(sid,rounds,correct=None,observed=None):",
     "person": "resident_siluk",
     "text": "빚이 열두 냥이오. 못 갚으면 아이들을 일꾼으로 보내야 했소. 돌려놓을 생각도 못 했소.",
@@ -39246,7 +39258,19 @@
   },
   {
     "source": "game/systems/room13_q1_difficulty.rpy",
-    "line": 242,
+    "line": 190,
+    "context": "def r13_debate_judge(claim,sid,key):",
+    "person": "neoul",
+    "text": "다른 주장을 시작할 차례가 아니오. 처음 내세운 논증에서 그 사실이 어느 고리를 잇는지 설명하시오.",
+    "packet": [
+      "neoul",
+      "다른 주장을 시작할 차례가 아니오. 처음 내세운 논증에서 그 사실이 어느 고리를 잇는지 설명하시오."
+    ],
+    "already_static_text": false
+  },
+  {
+    "source": "game/systems/room13_q1_difficulty.rpy",
+    "line": 294,
     "context": "label r13_q1_hard_rules:",
     "person": null,
     "text": "자료 열람과 질문은 자유롭다. 발언에 맞지 않는 자료를 근거로 내거나, 상대의 반론에 잘못된 답을 확정하면 오답이 된다.",
@@ -39258,19 +39282,19 @@
   },
   {
     "source": "game/systems/room13_q1_difficulty.rpy",
-    "line": 243,
+    "line": 295,
     "context": "label r13_q1_hard_rules:",
     "person": null,
-    "text": "오답 세 번이면 이번 회의가 끝난다. 해석은 확정 전에 철회할 수 있다. 실패 뒤에는 같은 자료로 회의를 처음부터 다시 할 수 있다.",
+    "text": "회의에서 내세운 논증은 끝까지 이어야 한다. 오답 세 번이면 이번 회의가 끝난다. 같은 자료로 다시 시작할 때는 다른 논증을 고를 수 있다.",
     "packet": [
       null,
-      "오답 세 번이면 이번 회의가 끝난다. 해석은 확정 전에 철회할 수 있다. 실패 뒤에는 같은 자료로 회의를 처음부터 다시 할 수 있다."
+      "회의에서 내세운 논증은 끝까지 이어야 한다. 오답 세 번이면 이번 회의가 끝난다. 같은 자료로 다시 시작할 때는 다른 논증을 고를 수 있다."
     ],
     "already_static_text": true
   },
   {
     "source": "game/systems/room13_q1_difficulty.rpy",
-    "line": 248,
+    "line": 301,
     "context": "label r13_q1_error_notice:",
     "person": "neoul",
     "text": "반박이 세 번 무너졌소. 이 회의의 반론은 여기까지 받겠소.",
@@ -39279,6 +39303,30 @@
       "반박이 세 번 무너졌소. 이 회의의 반론은 여기까지 받겠소."
     ],
     "already_static_text": true
+  },
+  {
+    "source": "game/systems/room13_q1_difficulty.rpy",
+    "line": 309,
+    "context": "label r13_q1_thesis_opening:",
+    "person": "neoul",
+    "text": "등을 돌보는 톡이 조각을 가져간 것 아니오? 다르게 본다면 그 근거를 말해 보시오.",
+    "packet": [
+      "neoul",
+      "등을 돌보는 톡이 조각을 가져간 것 아니오? 다르게 본다면 그 근거를 말해 보시오."
+    ],
+    "already_static_text": true
+  },
+  {
+    "source": "game/systems/room13_q1_difficulty.rpy",
+    "line": 319,
+    "context": "label r13_q1_thesis_opening:",
+    "person": "neoul",
+    "text": "좋소. 그 주장에 필요한 연결을 하나씩 설명하시오.",
+    "packet": [
+      "neoul",
+      "좋소. 그 주장에 필요한 연결을 하나씩 설명하시오."
+    ],
+    "already_static_text": false
   },
   {
     "source": "game/systems/room13_q1_review.rpy",

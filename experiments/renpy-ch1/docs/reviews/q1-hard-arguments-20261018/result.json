@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "runs": [
+    {
+      "name": "physical",
+      "passed": true,
+      "checks": [
+        {
+          "route": "physical",
+          "success": true
+        }
+      ],
+      "dialogue_pages": 97
+    },
+    {
+      "name": "trade",
+      "passed": true,
+      "checks": [
+        {
+          "route": "trade",
+          "success": true
+        }
+      ],
+      "dialogue_pages": 113
+    },
+    {
+      "name": "testimony",
+      "passed": true,
+      "checks": [
+        {
+          "route": "testimony",
+          "success": true
+        }
+      ],
+      "dialogue_pages": 104
+    },
+    {
+      "name": "errors",
+      "passed": true,
+      "checks": [
+        {
+          "route": "premature-conclusion",
+          "success": true
+        },
+        {
+          "route": "three-errors",
+          "success": true
+        },
+        {
+          "route": "native-restart",
+          "success": true
+        },
+        {
+          "route": "restart-can-choose-another-thesis",
+          "success": true
+        },
+        {
+          "route": "live-third-error",
+          "success": true
+        }
+      ],
+      "dialogue_pages": 113
+    }
+  ],
+  "dialogue_pages": 427,
+  "screenshots": 78
+}

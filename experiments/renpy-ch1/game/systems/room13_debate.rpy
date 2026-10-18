@@ -627,11 +627,13 @@ label r13_debate_run(claim):
 
 label r13_debate_session_run(claim):
     $ r13_claim=claim
+    if claim=="Q1" and r13_q1_hard():
+        call r13_q1_thesis_opening
     if not r13_debate_engageable(claim):
         call r13_debate_unanswerable(claim)
         return False
     $ r13_meeting_begin_opinions(claim)
-    $ r13_debate_selected=r13_debate_next_target(claim,r13_debate_statements(claim)[0]["id"])
+    $ r13_debate_selected=r13_q1_first_statement() if claim=="Q1" and r13_q1_hard() else r13_debate_next_target(claim,r13_debate_statements(claim)[0]["id"])
     $ r13_meeting_resume_listening=False
     $ r13_debate_action=("round",r13_debate_selected)
     jump r13_debate_dispatch

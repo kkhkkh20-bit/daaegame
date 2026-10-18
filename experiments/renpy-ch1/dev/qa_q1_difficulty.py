@@ -4,6 +4,7 @@ from pathlib import Path
 from playwright.async_api import async_playwright
 from qa_q1_review import Q1QA,native_jump,URL
 OUT=Path(os.environ.get('ROOM13_QA_OUT','/tmp/q1-hard-browser'));OUT.mkdir(parents=True,exist_ok=True)
+THESES={'physical':'남은 끈의 주인부터 따지겠습니다.','trade':'팔린 조각의 행방부터 따지겠습니다.','testimony':'두 사람이 본 작업부터 맞춰보겠습니다.'}
 COUNTERS=['뜯긴 끝의 모양이 맞습니다.','첫 순찰의 내부 확인 뒤입니다.','내부 확인과 잔열은 다릅니다.',
 '조각은 봤지만 얼굴은 못 봤습니다.','도움받고 작업한 사람이 실룩입니다.','부리가 수레를 도운 직후입니다.',
 '내려올 때까지 작업자가 같았습니다.','3번 등의 조각이 창고에 있습니다.','날짜·번호·품목·대금이 같습니다.',
@@ -32,7 +33,11 @@ async def main():
     if 'choice' in st['screens']:
      match=next((x for x in ([answer_override] if answer_override else COUNTERS) if any(x in b['text'] for b in st['buttons'])),None)
      if match:
-      tag=route+'-counter-'+str(len(shots));await q.shot(tag);shots.add(tag);await q.press(match);continue
+      tag=route+'-counter-'+str(len(shots));await q.shot(tag);shots.add(tag)
+      if route=='physical' and 'mobile-large' not in shots:
+       await page.set_viewport_size({'width':844,'height':390});await py('s.r13_set_text_size("large");result=True');await q.shot('physical-mobile-large-counter');shots.add('mobile-large')
+       await page.set_viewport_size({'width':1280,'height':720});await py('s.r13_set_text_size("normal");result=True')
+      await q.press(match);continue
     if await py('result=s.r13_aftermath_active'):
      if any(b.get('value') in ('next',repr('next')) for b in st['buttons']):await q.value('next')
      else:await asyncio.sleep(.1)
@@ -41,7 +46,7 @@ async def main():
    raise AssertionError((route,'timeout',screen,label,st['screens'],say,[b['text'][:75] for b in st['buttons']]))
   async def fixture(evidence):
    flags=['entry_corrected','lodging','lt_dawn','lt_open','piko_dead','librarian_dead','lt_lib_dawn','lt_siluk_seen','ep4_seen','ep1_done','ep1_patrol_seen','ep1_eaves_seen']
-   await py('s.r13_edit(day=4,period=0,location="square",q1_rules=3,q1_formal_errors=[],q1_argument_pending={},q1_argument_proofs={},evidence='+repr(evidence)+',flags='+repr(flags)+',propositions=[],arguments={},debate={},meeting_heard=[],meeting_votes={},records={},q1_checkpoints={},run_token='+repr('q1-hard-'+route)+',livelihood=dict(cash=7,debt=0,items=[]));s.r13_meeting_active=False;s.r13_meeting_live_active=False;result=True')
+   await py('renpy.exports.hide_screen("r13_debate_board");s.r13_edit(day=4,period=0,location="square",q1_rules=3,q1_thesis=None,q1_formal_errors=[],q1_argument_pending={},q1_argument_proofs={},evidence='+repr(evidence)+',flags='+repr(flags)+',propositions=[],arguments={},debate={},meeting_heard=[],meeting_votes={},records={},q1_checkpoints={},run_token='+repr('q1-hard-'+route)+',livelihood=dict(cash=7,debt=0,items=[]));s.r13_meeting_active=False;s.r13_meeting_live_active=False;result=True')
    await native_jump(q,'r13_roam');await until('r13_hub')
   async def talk(who,topics):
    await py('s.r13_target='+repr(who)+';result=True');await native_jump(q,'r13_talk_menu');await until('r13_topics')
@@ -57,12 +62,21 @@ async def main():
     direction=await py('sc=renpy.display.screen.get_screen("r13_book");entries=sc.scope["entries"];result="다음" if entries.index('+repr(key)+')//s.r13_record_page_size()>sc.scope["page"] else "이전"')
     await q.press(direction)
    await q.press(title);await q.press('이 주장에 근거로 낸다' if hearing else '에게 보여주기')
-  async def enter():
-   await py('s.r13_edit(location="square");result=True');await native_jump(q,'r13_roam');await until('r13_hub')
-   await q.value(('offer','r13_ep1_meeting'));await until(label='회의에 들어간다');await q.press('회의에 들어간다')
+  async def thesis(key):
+   await until(label=THESES[key])
+   if route=='physical':
+    await q.press('자료를 다시 살펴보겠습니다.');await until('r13_records');await q.shot('physical-before-commit-records');await q.press('닫기');await until(label=THESES[key])
+    assert await py('result=not s.r13_q1_thesis() and s.r13_q1_formal_errors()==0')
+   await q.shot(route+'-thesis-options');await q.press(THESES[key])
+   await until('r13_confirm');await q.shot(route+'-thesis-commit');await q.press('이 논증으로 끝까지 간다')
    for _ in range(100):
     if await py('result=s.r13_meeting_live_active'):break
     await q.input(810,610)
+   assert await py('result=s.r13_q1_thesis()=='+repr(key))
+  async def enter():
+   await py('s.r13_edit(location="square");result=True');await native_jump(q,'r13_roam');await until('r13_hub')
+   await q.value(('offer','r13_ep1_meeting'));await until(label='회의에 들어간다');await q.press('회의에 들어간다')
+   await thesis(route if route in THESES else 'testimony')
    await q.press('발언 선택');await until('r13_debate_board')
   async def select(sid):
    for _ in range(20):
@@ -85,20 +99,23 @@ async def main():
     assert await py('result=s.r13_has("tok_cleared") and s.r13_has("lt_solved") and s.r13_has("madam_store_opened") and not s.r13_has("tok_detained")')
     assert await py('result=all(done for _,done,_ in s.r13_q1_review_rows())')
    else:assert await py('result=s.r13_has("tok_detained") and not s.r13_has("tok_cleared")')
-   state=await py('result=dict(flags=s.room13["flags"],evidence=s.room13["evidence"],debate=s.room13["debate"],cash=s.r13_wallet(s.room13)["cash"])')
+   state=await py('result=dict(flags=s.room13["flags"],evidence=s.room13["evidence"],debate=s.room13["debate"],cash=s.r13_wallet(s.room13)["cash"],thesis=s.r13_q1_thesis(),proofs=s.room13.get("q1_argument_proofs",{}),errors=s.r13_q1_formal_errors())')
    (OUT/(route+'-state.json')).write_text(json.dumps(state,ensure_ascii=False,indent=2))
    checks.append(dict(route=route,success=success));print('PASS',route,flush=True)
   try:
    await page.goto(URL);await page.wait_for_function("typeof renpy_exec==='function'",timeout=240000);await page.wait_for_function("!document.getElementById('presplash')",timeout=240000);await q.wait('main_menu');print('BOOT',flush=True)
-   assert await py('result=s.config.version=="0.19.59"')
-   await py('s.preferences.text_cps=0;result=True');await q.press('처음부터');await q.press('건너뛰기');await q.wait('say');await q.press('건너뛰기');await q.advance()
-   if os.environ.get('ROOM13_QA_FOCUS')!='errors':
+   assert await py('result=s.config.version=="0.19.60"')
+   await py('s.preferences.text_cps=0;result=True');await q.press('처음부터');await q.press('건너뛰기');await q.wait('say');await q.press('건너뛰기')
+   # The real new-game initialization has run; route fixtures safely jump past the unrelated entry conversation.
+   focus=os.environ.get('ROOM13_QA_FOCUS','all')
+   if focus in ('all','physical'):
     route='physical';await fixture(['L04','L07','L06'])
     await talk('resident_lamplighter',['q1v:patrol','q1v:removal']);await enter()
     for sid,key in [('v_trace','L04'),('v_trace','L07'),('v_recent','L15')]:await proof(sid,key)
     await press('v_user');await proof('v_action','L16');await authority()
     assert not await py('result=s.r13_has("L09") or s.r13_has("L18") or s.r13_has("L19")')
     await finish()
+   if focus in ('all','trade'):
     route='trade';await fixture([]);await talk('resident_siluk',['q1v:receipt'])
     await py('s.r13_edit(location="store");result=True');await native_jump(q,'r13_roam');await until('r13_hub')
     assert await py('result=s.r13_has("L09")')
@@ -110,9 +127,13 @@ async def main():
     await press('v_where');await proof('v_slip','L20');await authority()
     assert not await py('result=bool(set(s.room13["evidence"]) & {"L04","L07","L15","L16","L17"})')
     await finish()
+   if focus in ('all','testimony'):
     route='testimony';await fixture(['L06']);await talk('resident_lamplighter',['q1v:patrol','q1v:removal']);await talk('buri',['q1v:buri']);await enter()
     for sid,key in [('v_identity','L17'),('v_action','L16'),('v_link','L17'),('v_link','L16')]:await proof(sid,key)
     await authority();await finish()
+   if focus not in ('all','errors'):
+    (OUT/'result.json').write_text(json.dumps(dict(passed=True,checks=checks,dialogue_pages=len(seen)),ensure_ascii=False,indent=2))
+    return
    route='premature-conclusion';await fixture(['L16','L17','L06']);await enter()
    await q.press('결론 정리');await until(label='실룩이 허락 없이');await q.press('실룩이 허락 없이');await until('r13_confirm');await q.press('이 결론으로 마친다');await until('r13_debate_board')
    assert await py('result=s.r13_q1_formal_errors()==1 and not s.r13_debate_closed("Q1") and not s.r13_q1_removal_proved()')
@@ -133,23 +154,25 @@ async def main():
    assert await py('result=s.r13_q1_formal_errors()==3 and s.r13_debate_closed("Q1") and s.r13_has("tok_detained")')
    await q.shot('three-errors-result');checks.append(dict(route='three-errors',success=True))
    await q.press('같은 자료로 회의를 다시 한다');await until(label='회의에 들어간다')
-   assert await py('result=s.r13_q1_formal_errors()==0 and not s.room13.get("q1_argument_proofs") and not s.room13.get("q1_argument_pending") and not s.r13_q1_done("v_identity") and not s.r13_has("lt_done") and s.room13["evidence"]==["L16","L17","L06"] and s.r13_wallet(s.room13)["cash"]==7')
+   assert await py('result=s.r13_q1_formal_errors()==0 and not s.r13_q1_thesis() and not s.room13.get("q1_argument_proofs") and not s.room13.get("q1_argument_pending") and not s.r13_q1_done("v_identity") and not s.r13_has("lt_done") and s.room13["evidence"]==["L16","L17","L06"] and s.r13_wallet(s.room13)["cash"]==7')
    await q.shot('native-meeting-restart');checks.append(dict(route='native-restart',success=True))
-   route='live-errors';await q.press('회의에 들어간다')
-   for _ in range(200):
-    if await py('result=s.r13_meeting_live_active and s.r13_meeting_live_sid=="v_identity"'):break
+   route='live-errors';await q.press('회의에 들어간다');await thesis('physical')
+   assert await py('result=s.r13_q1_thesis()=="physical" and not s.r13_debate_visible("Q1",s.r13_debate_statement("Q1","v_identity"))')
+   checks.append(dict(route='restart-can-choose-another-thesis',success=True))
+   # This attempt committed to the rope argument. Witness material cannot replace its missing links.
+   for _ in range(100):
+    if await py('result=s.r13_meeting_live_active and s.r13_meeting_live_sid=="v_accused"'):break
     await q.input(810,610)
    for attempt in range(3):
     await q.press('자료 보여주기');await item('L17')
     if attempt==2:await until(label='이 결과로 계속한다')
     else:
-     await until(label='이 논증으로 반박한다');await q.press('이 논증으로 반박한다')
-     # Return from the nested presentation to its live sentence.
      for _ in range(150):
       st=await q.state()
       if await py('result=s.r13_meeting_live_active and not s.r13_meeting_interrupting and s.r13_q1_formal_errors()=='+str(attempt+1)):break
       await q.input(810,610)
     assert await py('result=s.r13_q1_formal_errors()=='+str(attempt+1))
+   assert await py('result=s.r13_q1_thesis()=="physical" and not s.r13_q1_removal_proved()')
    await q.shot('live-third-error-result');checks.append(dict(route='live-third-error',success=True))
    (OUT/'result.json').write_text(json.dumps(dict(passed=True,checks=checks,dialogue_pages=len(seen)),ensure_ascii=False,indent=2))
   except Exception:

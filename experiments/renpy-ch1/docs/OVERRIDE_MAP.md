@@ -170,6 +170,15 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 4 | 130 | `systems/room13_new_places.rpy:18` | _r13_ws_places |
 | 5 | 156 | `systems/room13_ep5_soup.rpy:39` |  |
 
+## `r13_debate_judge` (4층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 98 | `systems/room13_debate.rpy:431` | _r13_sound_debate_judge |
+| 2 | 150 | `systems/room13_sound.rpy:175` | _r13_qa_judge |
+| 3 | 191 | `systems/room13_q1_arguments.rpy:161` | _r13_qh_judge |
+| 4 | 192 | `systems/room13_q1_difficulty.rpy:188` |  |
+
 ## `r13_debate_seats` (4층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -220,21 +229,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 2 | 173 | `systems/room13_review_knowledge.rpy:139` | _r13_q1_opening |
 | 3 | 181 | `systems/room13_q1_review.rpy:141` |  |
 
-## `r13_debate_judge` (3층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 98 | `systems/room13_debate.rpy:431` | _r13_sound_debate_judge |
-| 2 | 150 | `systems/room13_sound.rpy:175` | _r13_qa_judge |
-| 3 | 191 | `systems/room13_q1_arguments.rpy:161` |  |
-
 ## `r13_debate_required` (3층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 98 | `systems/room13_debate.rpy:416` | _r13_qa_required |
 | 2 | 191 | `systems/room13_q1_arguments.rpy:153` | _r13_qh_required |
-| 3 | 192 | `systems/room13_q1_difficulty.rpy:145` |  |
+| 3 | 192 | `systems/room13_q1_difficulty.rpy:194` |  |
 
 ## `r13_debate_statements` (3층)
 
@@ -242,7 +243,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 98 | `systems/room13_debate.rpy:378` | _r13_qa_statements |
 | 2 | 191 | `systems/room13_q1_arguments.rpy:145` | _r13_qh_statements |
-| 3 | 192 | `systems/room13_q1_difficulty.rpy:131` |  |
+| 3 | 192 | `systems/room13_q1_difficulty.rpy:173` |  |
 
 ## `r13_finish_action` (3층)
 
@@ -282,7 +283,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 181 | `systems/room13_q1_review.rpy:57` | _r13_qa_summary |
 | 2 | 191 | `systems/room13_q1_arguments.rpy:215` | _r13_qh_summary |
-| 3 | 192 | `systems/room13_q1_difficulty.rpy:204` |  |
+| 3 | 192 | `systems/room13_q1_difficulty.rpy:253` |  |
 
 ## `r13_background` (2층)
 
@@ -520,7 +521,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 191 | `systems/room13_q1_arguments.rpy:137` | _r13_qh_node_open |
-| 2 | 192 | `systems/room13_q1_difficulty.rpy:135` |  |
+| 2 | 192 | `systems/room13_q1_difficulty.rpy:177` |  |
 
 ## `r13_q1_notes` (2층)
 
@@ -534,7 +535,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 191 | `systems/room13_q1_arguments.rpy:170` | _r13_qh_press |
-| 2 | 192 | `systems/room13_q1_difficulty.rpy:150` |  |
+| 2 | 192 | `systems/room13_q1_difficulty.rpy:199` |  |
+
+## `r13_q1_removal_proved` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 191 | `systems/room13_q1_arguments.rpy:134` | _r13_qh_removal |
+| 2 | 192 | `systems/room13_q1_difficulty.rpy:43` |  |
 
 ## `r13_q1_review_lines` (2층)
 

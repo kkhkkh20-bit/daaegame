@@ -1,0 +1,106 @@
+{
+  "flags": [
+    "entry_corrected",
+    "lodging",
+    "lt_dawn",
+    "lt_open",
+    "piko_dead",
+    "librarian_dead",
+    "lt_lib_dawn",
+    "lt_siluk_seen",
+    "ep4_seen",
+    "ep1_done",
+    "ep1_patrol_seen",
+    "ep1_eaves_seen",
+    "livelihood_open",
+    "ev_b_done",
+    "ev_b_missed",
+    "musoe_herbs",
+    "siluk_debt_known",
+    "reward:ep1",
+    "tok_cleared",
+    "lt_done",
+    "lt_solved",
+    "siluk_handed",
+    "madam_store_opened",
+    "madam_hostile"
+  ],
+  "evidence": [
+    "L06",
+    "L15",
+    "L16",
+    "L17",
+    "L21",
+    "L22",
+    "L09"
+  ],
+  "debate": {
+    "broken": {
+      "Q1": [
+        "v_identity",
+        "v_action",
+        "v_link",
+        "h_work",
+        "h_scope",
+        "v_permission"
+      ]
+    },
+    "pressed": {
+      "Q1": [
+        "h_work",
+        "v_permission"
+      ]
+    },
+    "misses": {},
+    "closed": {},
+    "half": {
+      "Q1:v_link": "L17",
+      "Q1:h_scope": "L21"
+    }
+  },
+  "cash": 15,
+  "thesis": "testimony",
+  "proofs": {
+    "v_identity": {
+      "supports": [
+        "L17"
+      ],
+      "choices": [
+        "correct"
+      ],
+      "thesis": "testimony"
+    },
+    "v_action": {
+      "supports": [
+        "L16"
+      ],
+      "choices": [
+        "correct"
+      ],
+      "thesis": "testimony"
+    },
+    "v_link": {
+      "supports": [
+        "L16",
+        "L17"
+      ],
+      "choices": [
+        "correct",
+        "correct"
+      ],
+      "thesis": "testimony"
+    },
+    "h_scope": {
+      "supports": [
+        "L21",
+        "L22"
+      ],
+      "choices": [
+        "correct",
+        "correct"
+      ],
+      "thesis": "testimony"
+    }
+  },
+  "errors": 0
+}

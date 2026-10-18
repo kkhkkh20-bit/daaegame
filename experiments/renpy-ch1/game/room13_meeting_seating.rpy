@@ -279,7 +279,7 @@ screen r13_meeting_chrome(claim):
         vbox:
             xpos 42
             spacing 2
-            text (r13_meeting_header(session)+("" if r13_meeting_intro else "  ·  확인한 발언 %d"%proved if claim=="Q1" and r13_q1_v2() else "  ·  반박 %d / %d"%(proved,proof_total))) size r13_read_size(15,17) color "#795d40"
+            text (r13_meeting_header(session)+("" if r13_meeting_intro else ("  ·  확인한 발언 %d"%proved+(" · "+r13_q1_thesis_title() if r13_q1_hard() else "")) if claim=="Q1" and r13_q1_v2() else "  ·  반박 %d / %d"%(proved,proof_total))) size r13_read_size(15,17) color "#795d40"
             text ("참석자들의 이야기" if r13_meeting_intro else "쟁점 · 3번 등의 조각을 누가 가져갔는가?" if claim=="Q1" and r13_q1_v2() else "쟁점 · "+R13_MEETING_ISSUES.get(claim,R13_DEBATE[claim]["title"])) size r13_read_size(21,25) color "#493b30"
         if not r13_meeting_intro:
             add Solid("#d6bf98") xpos 0 ypos 51 xysize (868,3)
