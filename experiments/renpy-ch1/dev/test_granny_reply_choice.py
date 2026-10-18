@@ -154,6 +154,12 @@ class GrannyReplyChoice(unittest.TestCase):
         self.assertNotIn('warning_source_exposed',self.s['flags'])
         self.assertNotIn('poc:letter_conflict',self.s['flags']);self.assertNotIn('J06',self.s['evidence'])
 
+    def test_reply_menu_titles_fit_24_characters(self):
+        choices=menu_branches(self.n)
+        self.assertEqual(choices[2][0],'출처는 밝히지 않고 초대 편지를 묻는다')
+        for title,visible,statements in choices:
+            self.assertLessEqual(len(title),24)
+
     def test_withhold_and_exit_are_explicit_player_choices(self):
         self.present();before=copy.deepcopy(self.s)
         result,spoken=choose(self.n,3)

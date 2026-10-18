@@ -343,7 +343,7 @@ label r13_siluk_advance_followup:
                 ("dad","그럼 돌려받을 돈으로 남겨 두겠습니다.")],"ev:a:followup:refund")
             $ r13_flag("know_siluk_debt")
             $ r13_siluk_record_request("refund")
-        "선금은 이미 드렸습니다. 부탁한 짐부터 가져와 주세요." if _siluk_phase=="overdue":
+        "선금은 드렸으니 부탁한 짐을 가져와 주세요" if _siluk_phase=="overdue":
             call r13_lines([("dad","선금은 이미 드렸습니다. 부탁한 짐부터 가져와 주세요."),
                 ("resident_siluk","……알겠습니다. 아직 가져오지 못했어요.")],"ev:a:followup:deliver")
             $ r13_siluk_record_request("deliver")

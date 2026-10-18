@@ -125,7 +125,10 @@
       "new_asset_approval": false,
       "visual_qa": false,
       "integration_review_source": "/workspace/shared/piko-causality-prep/docs/reviews/piko-causality-context-review.json",
-      "line": 30
+      "line": 30,
+      "expression": "(\"neoul\", \"3번 등 안의 조각이 없어졌소. %s 아침부터 오후까지 광장에서 이 일을 따져 보겠소. 그날 밤 본 것이 있는 사람은 나오시오.\" % when, {\"expression\":\"neutral\"})",
+      "application_status": "awaiting_approved_runtime_assets",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held"
     }
   ],
   "runtime_binding": "local_callsite_snapshot_binding_assets_held"

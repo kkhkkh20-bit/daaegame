@@ -251,7 +251,8 @@ class SilukAdvanceIntegration(unittest.TestCase):
         wallet = copy.deepcopy(self.f("r13_wallet", self.s))
         for choice, request in (("약속한 때가 지났습니다. 어떻게 된 겁니까?", "explain"),
                                 ("짐을 못 가져오셨으면 선금을 돌려주세요.", "refund"),
-                                ("선금은 이미 드렸습니다. 부탁한 짐부터 가져와 주세요.", "deliver")):
+                                ("선금은 드렸으니 부탁한 짐을 가져와 주세요", "deliver")):
+            self.assertLessEqual(len(choice), 24)
             for _ in range(2):
                 self.branch("r13_siluk_advance_followup", choice)
                 rec = self.f("r13_siluk_advance_record")

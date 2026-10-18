@@ -112,7 +112,7 @@ jobs:
           export ROOM13_QA_OUT="$ROOM13_CI_OUT/native-qa"
           export ROOM13_TEST_TIMEOUT=180
           mkdir -p "$HOME" "$XDG_CONFIG_HOME" "$XDG_DATA_HOME" "$XDG_CACHE_HOME" "$RENPY_PATH_TO_SAVES" "$ROOM13_QA_OUT"
-          bash dev/run_renpy_tests.sh meeting_direction admin_meeting_replay ui_polish_01965 settings_typography settings_volume_endpoint sling_earned_disclosure 2>&1 | tee "$ROOM13_CI_OUT/native-qa-summary.log"
+          bash dev/run_renpy_tests.sh meeting_direction admin_meeting_replay ui_polish_01965 settings_typography settings_volume_endpoint sling_earned_disclosure controlled_066_siluk_reunion controlled_066_siluk_advance_handoff controlled_066_chorong_same_day_envelope controlled_066_granny_explicit_reply 2>&1 | tee "$ROOM13_CI_OUT/native-qa-summary.log"
       - name: Compile and build web release
         working-directory: experiments/renpy-ch1
         run: |

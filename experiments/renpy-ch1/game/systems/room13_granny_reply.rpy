@@ -31,7 +31,7 @@ label r13_granny_warning_reply:
         "어디서 받았는지 왜 궁금한지 되묻는다":
             call r13_lines([("dad","어디서 받았는지는 왜 궁금하십니까?"),("granny","나도 부인 소식을 기다리고 있으니까요. 어디에 소식을 남겼는지 궁금해서요.",{"expression":"neutral"})],"present:granny:E18:why")
             return None
-        "받은 곳은 밝히지 않고 초대 편지에 관해 묻는다" if r13_granny_reply_topic:
+        "출처는 밝히지 않고 초대 편지를 묻는다" if r13_granny_reply_topic:
             call r13_lines([("dad","장소까지 말씀드리지는 않겠습니다.")],"present:granny:E18:withhold")
             return r13_granny_reply_topic
         "받은 곳은 밝히지 않고 다른 질문을 고른다":
