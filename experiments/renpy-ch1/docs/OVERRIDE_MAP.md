@@ -82,6 +82,20 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 8 | 140 | `systems/room13_dialogue_expand.rpy:19` | _r13_review_topic_lines |
 | 9 | 173 | `systems/room13_review_knowledge.rpy:149` |  |
 
+## `r13_first_mystery_notes` (9층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 76 | `room13_first_mystery.rpy:26` | _r13_firstday_notes |
+| 2 | 94 | `systems/room13_first_day_flow.rpy:46` | _r13_intro_notes |
+| 3 | 97 | `systems/room13_intro_clues.rpy:119` | _r13_learning_mystery_notes |
+| 4 | 98 | `systems/room13_learning.rpy:115` | _r13_poc_notes |
+| 5 | 100 | `systems/room13_poc_route.rpy:142` | _r13_tn_notes |
+| 6 | 121 | `systems/room13_trial_notes.rpy:48` | _r13_alibi_notes |
+| 7 | 147 | `systems/room13_alibi.rpy:157` | _r13_review_notes |
+| 8 | 173 | `systems/room13_review_knowledge.rpy:94` | _r13_q1_notes |
+| 9 | 181 | `systems/room13_q1_review.rpy:49` |  |
+
 ## `r13_stage_people` (9층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -109,19 +123,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 7 | 153 | `systems/room13_ep2_kids.rpy:92` | _r13_nt_where |
 | 8 | 155 | `systems/room13_ep4_night13.rpy:34` | _r13_continuity_where |
 | 9 | 162 | `systems/room13_story_continuity.rpy:19` |  |
-
-## `r13_first_mystery_notes` (8층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 76 | `room13_first_mystery.rpy:26` | _r13_firstday_notes |
-| 2 | 94 | `systems/room13_first_day_flow.rpy:46` | _r13_intro_notes |
-| 3 | 97 | `systems/room13_intro_clues.rpy:119` | _r13_learning_mystery_notes |
-| 4 | 98 | `systems/room13_learning.rpy:115` | _r13_poc_notes |
-| 5 | 100 | `systems/room13_poc_route.rpy:142` | _r13_tn_notes |
-| 6 | 121 | `systems/room13_trial_notes.rpy:48` | _r13_alibi_notes |
-| 7 | 147 | `systems/room13_alibi.rpy:157` | _r13_review_notes |
-| 8 | 173 | `systems/room13_review_knowledge.rpy:94` |  |
 
 ## `r13_compare_result` (6층)
 
@@ -195,14 +196,22 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 98 | `systems/room13_debate.rpy:551` | _r13_poc_campaign_goal |
 | 2 | 100 | `systems/room13_poc_route.rpy:130` | _r13_time_campaign_goal |
-| 3 | 169 | `systems/room13_time_flow.rpy:30` |  |
+| 3 | 169 | `systems/room13_time_flow.rpy:32` |  |
+
+## `r13_conversation_opening` (3층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 75 | `room13_dialogue_openings_20261013.rpy:169` | _r13_review_opening |
+| 2 | 173 | `systems/room13_review_knowledge.rpy:139` | _r13_q1_opening |
+| 3 | 181 | `systems/room13_q1_review.rpy:139` |  |
 
 ## `r13_debate_seats` (3층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 98 | `systems/room13_debate.rpy:571` | _r13_e1_seats |
-| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:164` | _r13_continuity_seats |
+| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:169` | _r13_continuity_seats |
 | 3 | 162 | `systems/room13_story_continuity.rpy:59` |  |
 
 ## `r13_finish_action` (3층)
@@ -264,13 +273,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 69 | `room13_feedback.rpy:8` | _r13_sound_click_feedback |
 | 2 | 150 | `systems/room13_sound.rpy:205` |  |
 
-## `r13_conversation_opening` (2층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 75 | `room13_dialogue_openings_20261013.rpy:169` | _r13_review_opening |
-| 2 | 173 | `systems/room13_review_knowledge.rpy:139` |  |
-
 ## `r13_debate_judge` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -283,7 +285,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 98 | `systems/room13_debate.rpy:363` | _r13_e1_session |
-| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:158` |  |
+| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:163` |  |
 
 ## `r13_dialogue_beat_art` (2층)
 
@@ -395,14 +397,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 99 | `room13_meeting_seating.rpy:50` | _r13_e1_cast |
-| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:181` |  |
+| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:186` |  |
 
 ## `r13_meeting_plate` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 99 | `room13_meeting_seating.rpy:147` | _r13_e1_plate |
-| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:175` |  |
+| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:180` |  |
 
 ## `r13_object_name` (2층)
 

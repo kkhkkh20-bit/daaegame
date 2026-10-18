@@ -9,7 +9,7 @@ init 175 python:
     import json as r13_aftermath_json
     with renpy.file("assets/room13-episode-aftermath.json") as r13_aftermath_file:
         R13_AFTERMATH = r13_aftermath_json.load(r13_aftermath_file)["frames"]
-    R13_AFTERMATH_TITLES = dict(ep1="조각을 되돌린 뒤",ep2="이름을 부른 뒤",ep2_clinic="이틀 뒤, 진료소",ep3="불이 꺼진 뒤",ep4="등을 켠 뒤",ep5="수프가 식은 뒤",ep6="수레가 지난 뒤")
+    R13_AFTERMATH_TITLES = dict(ep1="광장에 남은 사람들",ep2="이름을 부른 뒤",ep2_clinic="이틀 뒤, 진료소",ep3="불이 꺼진 뒤",ep4="등을 켠 뒤",ep5="수프가 식은 뒤",ep6="수레가 지난 뒤")
 
     def r13_episode_aftermath_frames(episode,state=None):
         """Pure branch selection. Death/absence always outranks an earlier rescue flag."""

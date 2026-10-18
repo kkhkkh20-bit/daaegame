@@ -13,10 +13,10 @@ init 152 python:
         ("L04","뚜껑에 걸린 노끈","물증","3번 등 뚜껑 틈에 짐 묶는 갈색 노끈이 걸려 있었다. 끈의 주인과, 등을 열었던 시각은 아직 확인하지 못했다."),
         ("L05","우박의 말","증언","우박은 온도만 재고, 새벽이 되기 전에 조각을 제자리에 돌려놨다고 했다."),
         ("L06","초롱의 말","증언","초롱은 새벽에 돌 때 3번 등이 아직 미지근했다고 했다. 조각이 사라진 시각과 대조할 수 있는 증언이다."),
-        ("L07","실룩의 짐 끈","물증","실룩의 갈색 짐 끈은 한쪽 끝이 뜯겨 있다. 등 뚜껑에 걸린 끈과 같다."),
+        ("L07","실룩의 짐 끈","물증","실룩의 갈색 짐 끈은 한쪽 끝이 뜯겨 있다. 뜯긴 끝의 모양을 기록했다."),
         ("L08","실룩 아이의 말","증언","실룩의 아이는 아빠가 어젯밤 늦게, 손이 꽁꽁 언 채 들어왔다고 했다."),
         ("L09","이름표 붙은 조각","물증","백 부인 창고의 조각 밑에 톡의 글씨로 '광장 3'이라는 이름표가 붙어 있다. 피코가 잠든 등에서 나온 조각이다."),
-        ("L10","빈 난로","물증","기록실 난로 조각도 사라졌다. 같은 사람이 또 훔쳤다."),
+        ("L10","빈 난로","물증","기록실 난로에서도 조각이 사라졌다. 누가 가져갔는지는 확인하지 못했다."),
         ("L11","사서의 말","증언","사서 선생님은 밤에 허리에 노끈을 감은 사람이 창으로 들어와 난로 조각을 빼 갔다고 했다."),
         ("L12","코 없는 엄마 초상","물증","피코가 그리다 만 엄마 초상. 코만 아직 그려져 있지 않다."),
         ("L13","피코의 스케치","물증","소포를 안고 우는 다람쥐 여인. 눈썹의 흉터가 엄마와 같다. 피코는 엄마를 본 적이 있다."),
@@ -108,9 +108,10 @@ init 152 python:
     R13_DEBATE["Q1"]=dict(title="3번 등을 열어 피코를 얼어 쓰러지게 한 사람",session="ep1",chair="neoul",
         statements=[
             dict(id="s1",who="neoul",text="3번 등을 연 건 【톡】이오. 등 여는 사람은 톡뿐이니까.",
-                accept=["L03","L04","L14"],
+                accept=["L03","L04"],
+                soft={"L14":("neoul","나사에 흔적이 남은 건 알겠소. 누구의 공구인지 대조한 건 아니잖소.")},
                 broken_by={
-                    "L03":[("dad","등 안에 온도를 적은 쪽지가 있었습니다. 온도계는 지난주부터 진료소에 있었습니다. 톡 씨 손에는 그 도구가 없었어요."),("neoul","……그럼 온도를 잰 자를 데려오시오.")],
+                    "L03":[("dad","등 안에 온도를 적은 쪽지가 있었습니다. 누군가 온도를 쟀다는 흔적이지요. 그 사람이 톡 씨인지 확인도 하지 않고, 톡 씨만 열었다고 단정할 수는 없습니다."),("neoul","……그럼 온도를 잰 자를 데려오시오.")],
                     "L04":[("dad","뚜껑 틈에 짐 묶는 노끈이 걸려 있었습니다. 톡 씨가 남긴 것인지 확인하지 않았습니다. 등을 열 줄 안다는 이유만으로 톡 씨 것이라고 정할 수는 없습니다."),("neoul","……끈의 주인도 확인해야 한다는 거요?")],
                     "L14":[("dad","등을 닦기 전에 나사 둘레를 떠 둔 종이입니다. 톡 씨 공구 자국은 없습니다."),("neoul","……종이 한 장으로 사람을 바꾸라는 거요?")]},
                 hint="3번 등에서 찾은 쪽지나 노끈은 누구의 물건일까?",
@@ -122,19 +123,23 @@ init 152 python:
                 wrong=("neoul","그게 조수가 손대지 않았다는 증거요?")),
             dict(id="s3",who="resident_madam",text="제 창고 조각은 【정당하게 산 것】이에요.",
                 accept=["L09"],
+                soft={"L04":("resident_madam","등에 노끈이 걸려 있었다는 건 알겠어요. 하지만 제 창고의 조각이 그 등에서 나왔다는 근거는요?")},
                 broken_by={"L09":[("dad","조각 밑에 톡 씨 글씨로 '광장 3'. 피코가 잠든 그 등입니다. 부인은 그 밑에서 잠든 사람 머리 위의 온기를 산 겁니다."),
                     (None,"광장이 웅성거렸다. 백 부인이 숄을 여몄다."),("resident_madam","……판 사람에게 물으세요.")]},
                 hint="창고 조각에 붙어 있던 것.",
                 wrong=("resident_madam","그게 제가 훔쳤다는 뜻인가요?")),
             dict(id="s4",who="neoul",text="누가 팔았든 【이미 끝난 일】이오. 톡만 풀어 주면 되지 않소.",
                 accept=["L10","L11"],
-                broken_by={"L10":[("dad","끝나지 않았습니다. 같은 사람이 기록실 난로 조각도 가져갔습니다. 그리고 한 사람이 더 쓰러졌습니다."),("neoul","……")],
+                broken_by={"L10":[("dad","끝나지 않았습니다. 기록실 난로에서도 조각이 사라졌습니다. 누가 가져갔는지, 다른 난로도 안전한지 아직 확인하지 못했습니다."),("neoul","……")],
                     "L11":[("resident_librarian","어젯밤 허리에 노끈을 감은 사람이 제 기록실 창으로 들어왔어요. 장작이 없었으면 저도 죽었을 거예요."),("neoul","……")]},
                 hint="같은 손이 또 조각을 가져간 곳이 있다.",
                 wrong=("neoul","그래서 무엇이 아직 안 끝났다는 거요?")),
             dict(id="s5",who="resident_siluk",text="그 노끈…… 【누구나 쓰는 끈】이오.",
-                accept=["L07"],soft={"L08":("resident_siluk","애 말을 믿으라는 거요? 끈을 대 보시오.")},
-                broken_by={"L07":[("dad","끝이 뜯긴 자리가 똑같습니다. 그리고 어젯밤 늦게, 손이 꽁꽁 언 채 들어오셨다고요. 따님이."),
+                accept=["L07"],required_flags=["L04"],
+                blocked=[("resident_siluk","내 짐 끈은 봤겠지. 현장에 남은 끈과 직접 대조한 거요?")],
+                soft={"L04":("resident_siluk","그 끈이 등 뚜껑에 있었다는 건 알겠소. 내 짐 끈과 뜯긴 자리가 맞는지는 확인했소?"),
+                    "L08":("resident_siluk","늦게 돌아왔다고 내가 그 등을 열었다는 거요? 현장에 남은 끈이 내 것이라는 근거가 있어야지.")},
+                broken_by={"L07":[("dad","등 뚜껑에 남은 끈과 실룩 씨 짐 끈은 뜯긴 끝이 맞아 들어갑니다. 같은 종류라는 것만이 아니라, 한 끈에서 뜯겨 나온 자리입니다."),
                     (None,"실룩이 무릎을 꿇었다."),
                     ("resident_siluk","……빚이 열두 냥이었소. 못 갚으면 애들을 일꾼으로 보내야 했소."),
                     ("resident_siluk","등 하나 식는다고 사람이 쓰러질 줄은 몰랐소. 그림쟁이가 거기서 자는 줄은……."),
@@ -292,6 +297,7 @@ label r13_ep1_dawn:
             $ r13_grant(["L13"],"피코의 판자 사이에서 나온 스케치")
         $ r13_grant(["L00","L06"],"3일 새벽 광장")
     call r13_lines([("dad","(등이 꺼진 밤에, 등 밑에서 잔 사람이 쓰러졌다.)",{"thought":True})],"ep1:dawn:thought")
+    call r13_q1_checkpoint("investigation")
     return
 
 label r13_ep1_accused:
@@ -413,8 +419,9 @@ label r13_ep1_library_dawn:
             (None,"……눈 내리는 소리만 들렸다."),
             ("dad","(기록이 젖지 않게. 마지막까지.)",{"thought":True}),
             (None,"묶음 맨 위 대출 카드에 아내의 이름이 있었다."),
-            ("dad","(여기 난로 조각도 사라졌다. 같은 사람이다.)",{"thought":True})],"ep1:library:dead")
+            ("dad","(여기 난로 조각도 사라졌다. 3번 등에서 벌어진 일과 이어져 있을까?)",{"thought":True})],"ep1:library:dead")
         $ r13_grant(["L10"],"기록실의 빈 난로")
+    call r13_q1_checkpoint("investigation")
     return
 
 label r13_ep1_siluk:
@@ -436,7 +443,7 @@ label r13_ep1_siluk:
         $ _e1_menu.append(("그만 간다","stop"))
         $ _e1_pick=renpy.display_menu(_e1_menu)
         if _e1_pick=="rope":
-            call r13_lines([("dad","(등 뚜껑에 걸려 있던 것과 같은 끈이다. 끝이 뜯긴 자리도.)",{"thought":True})],"ep1:siluk:rope")
+            call r13_lines([("dad",("(등 뚜껑에 남은 끈과 뜯긴 끝이 맞아 들어간다.)" if r13_has("L04") else "(갈색 짐 끈 한쪽 끝이 뜯겨 있다. 끝의 모양을 적어 두자.)"),{"thought":True})],"ep1:siluk:rope")
             $ r13_grant(["L07"],"실룩의 짐 끈")
             $ _e1_loop=True
         elif _e1_pick=="kid":
@@ -460,6 +467,10 @@ label r13_ep1_store:
     return
 
 label r13_ep1_meeting:
+    call r13_q1_checkpoint("meeting")
+    call r13_q1_preflight
+    if not _return:
+        return None
     call r13_scene("winter_square","광장 · 등 도둑 회의","hearing")
     call r13_lines([(None,"톡이 묶인 채 돌 앞에 서 있었다. 사람들 틈에 실룩의 아이 둘이 빵 봉지를 쥐고 서 있었다. 백 부인은 맨 앞줄에 앉았다."),
         ("neoul","그림쟁이가 쓰러졌소."+(" 기록실 선생도 죽었소." if r13_has("librarian_dead") else "")+" 오늘 끝냅시다.")],"ep1:meeting:open", binding_route="dynamic:262")
@@ -467,9 +478,11 @@ label r13_ep1_meeting:
     if _return:
         call r13_ep1_decision
     else:
-        call r13_lines([("neoul","증거가 모자라오. 톡은 광장에 세우겠소."),(None,"톡이 끌려가며 수리점 쪽을 돌아보았다.")],"ep1:meeting:fail")
+        call r13_lines([("neoul",("결론을 듣지 못했소. 톡의 처분은 그대로 두겠소." if r13_debate_ready("Q1") else "반박된 부분은 기록하겠소. 하지만 남은 의심을 풀지 못했으니 톡의 처분은 그대로요.")),(None,"톡이 끌려가며 수리점 쪽을 돌아보았다.")],"ep1:meeting:fail")
         $ r13_flag("tok_detained","lt_done")
     call r13_ep1_aftermath
+    call r13_q1_checkpoint("result")
+    call r13_q1_review
     return None
 
 label r13_ep1_decision:
@@ -497,17 +510,16 @@ label r13_ep1_decision:
     return
 
 label r13_ep1_aftermath:
-    call r13_lines([(None,"톡이 '광장 3' 조각을 등에 다시 넣었다. 등이 데워졌다. 그런데 숨 몇 번 사이에 온기가 옅어졌다."),
-        ("resident_tok","이 조각, 가을엔 밤새 따뜻했어요. 지금은…….")],"ep1:after:lamp")
-    if r13_has("know_stone_failing"):
-        call r13_lines([("resident_ubak","조각 탓이 아니에요. 【돌이 식고 있어요】.")],"ep1:after:ubak")
-    call r13_lines([("dad","(실룩이 훔친 건 조각이지만, 피코를 쓰러뜨린 건 이 겨울이다.)",{"thought":True})],"ep1:after:thought")
+    call r13_lines(r13_q1_lamp_aftermath(),"ep1:after:lamp")
+    if r13_has("know_stone_failing") and r13_has("madam_store_opened") and r13_has("tok_cleared"):
+        call r13_lines([("resident_ubak","조각을 돌려놔도 오래 따뜻하지 않아요. 돌 자체가 식고 있어요.")],"ep1:after:ubak")
+    call r13_lines(r13_q1_afterthought(),"ep1:after:thought")
     if r13_has("piko_dead"):
-        call r13_lines([(None,"그날 밤, 다람이 그림책을 펼쳤다.",{"book":"U01-opening"}),
+        call r13_lines([(None,"다람이가 품에 넣어 둔 그림책을 펼쳤다.",{"book":"U01-opening"}),
             (None,"「아침이 되자, 아저씨는 엄마 코를 다 못 그린 채 잠들어 있었어요.」",{"book":"U01-ending"}),
             ("daram","……아빠. 이 책, 이제 안 읽을래.")],"ep1:after:book")
     else:
-        call r13_lines([(None,"그날 밤, 다람이 그림책을 펼쳤다.",{"book":"U01-opening"}),
+        call r13_lines([(None,"다람이가 품에 넣어 둔 그림책을 펼쳤다.",{"book":"U01-opening"}),
             (None,"「아침이 되자, 누군가 아저씨에게 담요를 덮어 주었어요.」",{"book":"U01-ending"}),
             ("daram","아빠, 이번엔 끝이 바뀌었어.")],"ep1:after:book_saved")
     call r13_episode_aftermath("ep1")
@@ -518,4 +530,6 @@ label r13_ep1_deadline:
     call r13_lines([(None,"광장에 판자가 덧대진 기둥이 섰다. 톡이 그 앞에 묶여 있었다. 회의는 열리지 않았다."),
         ("dad","(진짜 범인은 아직 마을 어딘가에 있다.)",{"thought":True})],"ep1:deadline")
     call r13_episode_aftermath("ep1")
+    call r13_q1_checkpoint("result")
+    call r13_q1_review
     return

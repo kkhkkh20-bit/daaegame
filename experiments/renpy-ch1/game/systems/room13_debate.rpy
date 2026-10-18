@@ -657,9 +657,9 @@ label r13_debate_dispatch:
         $ r13_debate_selected=r13_debate_action[1]
     elif r13_debate_action[0]=="leave":
         if r13_debate_dad_broken(r13_claim):
-            call screen r13_confirm("여기까지 정리하면 이 회의에서는 이 주장을 다시 다룰 수 없다. 반박한 말은 기록에 남고, 남은 말은 그대로 남는다.","여기까지 정리한다","더 찾아본다")
+            call screen r13_confirm("여기까지 정리하면 이 회의에서는 이 주장을 다시 다룰 수 없다. 반박한 말은 기록에 남고, 남은 말은 그대로 남는다.","여기까지 정리한다","회의에서 더 생각한다")
         else:
-            call screen r13_confirm("반론을 그만두면 이 회의에서는 이 주장을 다시 다룰 수 없다. 상대의 말이 그대로 남는다.","반론을 그만둔다","더 찾아본다")
+            call screen r13_confirm("반론을 그만두면 이 회의에서는 이 주장을 다시 다룰 수 없다. 상대의 말이 그대로 남는다.","반론을 그만둔다","회의에서 더 생각한다")
         if _return:
             if r13_debate_dad_broken(r13_claim):
                 $ r13_debate_close(r13_claim,"partial")
