@@ -8,7 +8,7 @@ OUT=Path(os.environ.get('ROOM13_UI_QA_OUT','/tmp/room13-direct-investigation'))
 class Q(UIQA):
  async def py(self,code):return await asyncio.wait_for(self.p.evaluate('code=>renpy_exec(code)','exec('+ascii(code)+')'),90)
  async def state(self):
-  probe=FLOW_PROBE.replace('names=[',"names=['r13_meeting_agenda','r13_debate_board','r13_records',")
+  probe=FLOW_PROBE.replace('names=[',"names=['r13_resident_approach','r13_meeting_agenda','r13_debate_board','r13_records',")
   st=await self.py('ns={};exec('+ascii(probe)+',ns);result=ns["result"]');assert '_exception'not in st['screens'],st;return st
  async def jump(self,label):
   code='\n'.join(['import renpy','def qa_jump(**kwargs):',' import renpy',' s=renpy.store',' renpy.ui.textbutton("검토 시작",clicked=s.Jump('+repr(label)+'),xpos=500,ypos=300,xsize=280,ysize=80)',"renpy.exports.define_screen('qa_jump',qa_jump,modal='True',zorder='200')","renpy.exports.show_screen('qa_jump')","renpy.exports.restart_interaction()","result=True"])
@@ -37,6 +37,8 @@ async def main():
    report['touch_geometry']=await q.py('import renpy;s=renpy.store;result={"physical":renpy.exports.get_physical_size(),"touch":s.r13_touch_ui(),"height":s.r13_control_height(),"large_text":s.persistent.room13_large_text}')
    assert report['touch_geometry']['touch'] and report['touch_geometry']['height']==80 and not report['touch_geometry']['large_text'],report
    await q.shot('02-mobile-field')
+   await q.press('할머니');await q.until('r13_resident_approach');await q.press('아내 편지');await q.wait('say');await q.shot('02a-mobile-dialogue')
+   await q.until('r13_topics');await q.shot('02b-mobile-questions');await q.press('돌아가기');await q.until('r13_hub')
    before=await q.room();await q.press('지도');await q.wait('r13_map');await q.shot('03-mobile-map')
    st=await q.state();foot=[v for v in st['buttons'] if v['text'].strip() in ('이곳으로 이동','현장으로')]
    # Disabled current-place confirm is omitted from the enabled-button probe.
@@ -44,10 +46,10 @@ async def main():
    await q.press('식당');assert await q.room()==before;await q.shot('04-mobile-map-selected')
    st=await q.state();foot=[v for v in st['buttons'] if v['text'].strip() in ('이곳으로 이동','현장으로')];assert len(foot)==2 and all(v['rect'][2:]==[232,80] for v in foot),foot
    await q.press('마을');rect=await q.py('import renpy;result=renpy.store.r13_cart_name_rect("workshop")');x,y,w,h=rect;await q.input(x+w/2,y+h/2);await q.shot('05-mobile-village-map');assert await q.room()==before
-   await q.press('현장으로');await q.wait('r13_hub');await q.press('기록');await asyncio.sleep(.4);await q.shot('06-mobile-records-folded')
+   await q.press('현장으로');await q.wait('r13_hub');await q.py('import renpy;renpy.store.r13_records_view={"material_filter":"unread"};result=True');await q.press('기록');await asyncio.sleep(.4);await q.shot('06-mobile-records-folded')
    filters=[v for v in (await q.state())['buttons'] if 280<=v['rect'][0]<800 and 90<=v['rect'][1]<190]
    assert all(v['rect'][2]>=80 and v['rect'][3]>=80 for v in filters),filters
-   assert len(filters)==2,filters
+   assert len(filters)==1,filters
    await q.press('초대 편지');await q.press('출처');await q.shot('07-mobile-records-origin-open');await q.press('출처 접기');await q.press('닫기');await q.wait('r13_hub')
    await q.press('주변 살피기');await asyncio.sleep(3.3);assert await q.py('import renpy;result="inn" in renpy.store.r13_scene_hint_seen');await q.shot('08-mobile-investigation-clean')
    before=await q.room()
@@ -66,7 +68,7 @@ async def main():
    await q.py('import renpy;s=renpy.store;s.config.variants=[v for v in s.config.variants if v!="touch"];renpy.exports.restart_interaction();result=True')
    assert await q.py('import renpy;result=renpy.store.r13_control_height()')==64
    await q.shot('11-pc-mouse-field')
-   report['checks']=['Mobile controls grow independently of large text','Map select/cancel preserve exact story state; confirm/back share 232x80 geometry','Sparse owned collection shows two relevant filters with 80px touch targets','Record source opens and folds through real controls','Scene hint folds; empty tap gives feedback without story, evidence or clock changes']
+   report['checks']=['Mobile controls grow independently of large text','Map select/cancel preserve exact story state; confirm/back share 232x80 geometry','Sparse owned collection shows only All; no unread counter filter','Record source opens and folds through real controls','Scene hint folds; empty tap gives feedback without story, evidence or clock changes']
    report['passed']=True
   except Exception as e:
    report['error']=repr(e);await page.screenshot(path=str(OUT/'failure.png'))

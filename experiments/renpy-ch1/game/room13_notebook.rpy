@@ -256,15 +256,15 @@ screen r13_material_filters(owner,current,allow_transfer=True,unread=0,shelf=Non
     $ owned=r13_catalog_entries(False,False)
     hbox:
         xpos 284 ypos (100 if touch else 106 if big else 110) spacing 5
-        for key,title in (("all","전체"),("testimony","증언"),("transfer","전달 가능"),("unread","● 안 읽음 %d"%unread)):
-          if (key!="transfer" or allow_transfer) and (key in ("all","unread",current) or bool(r13_material_subset(owned,key))):
-            textbutton (("전달" if key=="transfer" else "새 %d"%unread if key=="unread" else title) if touch else title):
-                style "r13_paper_tab_button" yminimum (80 if touch else 44 if big else 38) xminimum (80 if touch else 0) xpadding 10 text_size (22 if touch else r13_read_size(16,19)) text_yalign .5
+        for key,title in (("all","전체"),("testimony","증언"),("transfer","전달 가능")):
+          if (key!="transfer" or allow_transfer) and (key in ("all",current) or bool(r13_material_subset(owned,key))):
+            textbutton (("전달" if key=="transfer" else title) if touch else title):
+                style "r13_paper_tab_button" yminimum (80 if touch else 44 if big else 38) xsize 120 xpadding 10 text_size (22 if touch else r13_read_size(16,19)) text_yalign .5
                 selected current==key
                 action [Function(r13_record_select,owner,"material_filter",key),Function(r13_record_select,owner,"detail",None),Function(r13_record_select,owner,"page",0)]
         if shelf is not None and (shelf_count or shelf):
             textbutton (("이번 사건" if shelf else "지난 사건") if touch else (("지난 사건 %d"%shelf_count) if not shelf else "지금 쓰는 자료")):
-                style "r13_paper_tab_button" yminimum (80 if touch else 44 if big else 38) xminimum (80 if touch else 0) xpadding 10 text_size (22 if touch else r13_read_size(16,19)) text_yalign .5
+                style "r13_paper_tab_button" yminimum (80 if touch else 44 if big else 38) xsize 120 xpadding 10 text_size (22 if touch else r13_read_size(16,19)) text_yalign .5
                 selected shelf
                 action [Function(r13_record_select,owner,"shelf",not shelf),Function(r13_record_select,owner,"detail",None),Function(r13_record_select,owner,"page",0)]
 
@@ -382,7 +382,7 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
             textbutton ("이번 여정" if not archive else "지난 플레이"):
                 style "r13_paper_tab_button" xpos 66 ypos (490 if r13_touch_ui() else 426) xsize 176 ysize (80 if r13_touch_ui() else 40) text_size 18
                 action [SetScreenVariable("archive",not archive),SetScreenVariable("shelf",False),SetScreenVariable("detail",None),SetScreenVariable("page",0)]
-        $ material_filter="all" if archive and material_filter=="transfer" else material_filter
+        $ material_filter="all" if material_filter=="unread" or (archive and material_filter=="transfer") else material_filter
         $ entries=r13_material_subset(r13_catalog_entries(archive,shelf=shelf and not archive),material_filter)
         text (("지난 사건 %d개" if shelf and not archive else "자료 %d개")%len(entries)) xpos 284 ypos (72 if r13_touch_ui() else 86) size 20 color "#65503b"
         use r13_material_filters(_scope,material_filter,not archive,unread=len(r13_material_subset(r13_catalog_entries(archive,shelf=shelf and not archive),"unread")),shelf=(None if archive else shelf),shelf_count=len(r13_catalog_entries(shelf=True)))
