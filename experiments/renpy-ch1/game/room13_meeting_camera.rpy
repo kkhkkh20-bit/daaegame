@@ -46,7 +46,7 @@ init 175 python:
         def __init__(self,session,view,count,shade,**kwargs):
             super(R13MeetingSurface,self).__init__(**kwargs)
             self.view=view;self.count=count
-            self.y=460 if r13_meeting_kind(session)=="round" else 424
+            self.y=476 if r13_meeting_kind(session)=="round" else 440
             plate=r13_meeting_plate(session,True)
             band=(160,490,960,180) if r13_meeting_kind(session)=="stone" else (160,470,960,250)
             self.art=Transform(Crop(band,plate),xysize=(1280,340),nearest=True,
@@ -124,7 +124,7 @@ init 175 python:
             # Uniform enlargement and centered crop lowers the authored horizon
             # with the close table edge; neither the table nor background is squashed.
             plate=r13_meeting_plate(self.session,True)
-            zoom=1.2 if self.kind=="round" else 1.1 if self.kind=="stone" else 1.0
+            zoom=1.24 if self.kind=="round" else 1.14 if self.kind=="stone" else 1.0
             if zoom!=1.0:plate=Crop((int(1280*(zoom-1)/2),0,1280,720),Transform(plate,zoom=zoom))
             self.plate=Transform(plate,
                 matrixcolor=TintMatrix(tint)*SaturationMatrix(.86)*BrightnessMatrix(-.035-self.shade))
