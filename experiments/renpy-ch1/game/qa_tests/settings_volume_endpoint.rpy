@@ -20,6 +20,14 @@ init 999 python:
                 grabbed=renpy.display.focus.get_grab() is w)
         r13_qa_volume_log(result)
 
+    def r13_qa_volume_point(widget_id, outside=False):
+        import renpy.test.testfocus as tf
+        w=renpy.get_displayable("pause_menu",widget_id)
+        f=tf.focus_from_displayable(w)
+        # SDK 8.5.3 resolves an outside selector point to its top-left fallback.
+        # Compute absolute integer positions from the actual rendered geometry.
+        return (int(f.x+f.w+30 if outside else f.x+f.w/2),int(f.y+f.h/2))
+
     def r13_qa_volume_trace_start():
         import inspect
         import renpy.test.testfocus as tf
@@ -60,16 +68,21 @@ testcase settings_volume_endpoint:
     run Function(r13_qa_settings_offset)
     run Function(r13_qa_volume_state,"before-input")
     run Function(r13_qa_volume_trace_start)
-    click id "music_volume" pos (0.5,0.5)
-    click id "fx_volume" pos (0.5,0.5)
+    $ r13_qa_music_middle=r13_qa_volume_point("music_volume")
+    $ r13_qa_fx_middle=r13_qa_volume_point("fx_volume")
+    $ r13_qa_music_end=r13_qa_volume_point("music_volume",True)
+    $ r13_qa_fx_end=r13_qa_volume_point("fx_volume",True)
+    $ r13_qa_volume_log(("absolute-targets",r13_qa_music_middle,r13_qa_fx_middle,r13_qa_music_end,r13_qa_fx_end))
+    click pos (r13_qa_music_middle[0],r13_qa_music_middle[1])
+    click pos (r13_qa_fx_middle[0],r13_qa_fx_middle[1])
     pause 0.3
     run Function(r13_qa_volume_state,"after-midpoint-click")
     screenshot "settings-volume-50-percent.png"
     $ r13_qa_volume_half_ok=(r13_qa_mixer_matches("music_volume","music",50) and r13_qa_mixer_matches("fx_volume","sfx",50))
-    # Preserve the failing sequence until actual event/target diagnostics explain it.
-    drag id "music_volume" pos (0.5,0.5) to id "music_volume" pos (1.1,0.5) steps 20
+    # Real pointer drag with no selector on the outside endpoint; preserves grab.
+    drag pos (r13_qa_music_middle[0],r13_qa_music_middle[1]) to pos (r13_qa_music_end[0],r13_qa_music_end[1]) steps 20
     run Function(r13_qa_volume_state,"after-music-outside-drag")
-    drag id "fx_volume" pos (0.5,0.5) to id "fx_volume" pos (1.1,0.5) steps 20
+    drag pos (r13_qa_fx_middle[0],r13_qa_fx_middle[1]) to pos (r13_qa_fx_end[0],r13_qa_fx_end[1]) steps 20
     pause 0.3
     run Function(r13_qa_volume_state,"after-both-outside-drags")
     screenshot "settings-volume-endpoint-before-assert.png"
