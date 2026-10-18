@@ -1,0 +1,34 @@
+{
+  "kind": "Focused inn hit conflict and touch swipe; day-2 UI fixture",
+  "checks": [
+    {
+      "platform": "pc",
+      "keys_rect": [
+        1030,
+        136,
+        150,
+        170
+      ],
+      "center_tap_result": "r13_map (outside travel button intercepts)",
+      "lower_tap_result": "keys",
+      "story_state_unchanged": true
+    },
+    {
+      "platform": "mobile",
+      "keys_rect": [
+        1030,
+        136,
+        150,
+        170
+      ],
+      "center_tap_result": "r13_map (outside travel button intercepts)",
+      "lower_tap_result": "keys",
+      "story_state_unchanged": true
+    },
+    {
+      "touch_swipe_offset": 280,
+      "story_state_unchanged": true
+    }
+  ],
+  "passed": true
+}
