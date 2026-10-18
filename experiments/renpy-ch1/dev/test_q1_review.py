@@ -55,7 +55,8 @@ class Q1Review(unittest.TestCase):
         self.assertIn('직접 대조',str(j('Q1','s5','L07')))
         self.assertIn('뜯긴 자리',str(j('Q1','s5','L04')))
         self.assertIn('창고의 조각',str(j('Q1','s3','L04')))
-        self.assertEqual(j('Q1','s1','L14')[0],'soft')
+        self.assertEqual(j('Q1','s1','L14')[0],'break')
+        self.assertNotIn('공구 자국은 없습니다',str(j('Q1','s1','L14')))
     def test_partial_review_distinguishes_missing_evidence_and_unused_evidence(self):
         self.store.room13['flags']=['lt_dawn','lt_done','tok_detained']
         self.store.room13['evidence']=['L03','L06','L10']

@@ -212,7 +212,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 98 | `systems/room13_debate.rpy:571` | _r13_e1_seats |
-| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:169` | _r13_continuity_seats |
+| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:168` | _r13_continuity_seats |
 | 3 | 162 | `systems/room13_story_continuity.rpy:59` |  |
 
 ## `r13_finish_action` (3층)
@@ -286,7 +286,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 98 | `systems/room13_debate.rpy:363` | _r13_e1_session |
-| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:163` |  |
+| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:162` |  |
 
 ## `r13_dialogue_beat_art` (2층)
 
@@ -398,14 +398,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 99 | `room13_meeting_seating.rpy:50` | _r13_e1_cast |
-| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:186` |  |
+| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:185` |  |
 
 ## `r13_meeting_plate` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 99 | `room13_meeting_seating.rpy:147` | _r13_e1_plate |
-| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:180` |  |
+| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:179` |  |
 
 ## `r13_object_name` (2층)
 

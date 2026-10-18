@@ -73,7 +73,7 @@
     },
     {
       "source": "game/systems/room13_ep1_lamp_thief.rpy",
-      "line": 476,
+      "line": 475,
       "expression": "(\"neoul\",\"그림쟁이가 쓰러졌소.\"+(\" 기록실 선생도 죽었소.\" if r13_has(\"librarian_dead\") else \"\")+\" 오늘 끝냅시다.\")",
       "who_expression": "'neoul'",
       "text_expression": "'그림쟁이가 쓰러졌소.' + (' 기록실 선생도 죽었소.' if r13_has('librarian_dead') else '') + ' 오늘 끝냅시다.'",
