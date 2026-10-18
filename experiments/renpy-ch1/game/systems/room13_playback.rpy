@@ -40,15 +40,17 @@ screen r13_backlog():
 screen r13_strip_button(caption,icon,command,enabled=True,chosen=False,last=False,cell_width=None):
     use r13_control(caption,icon,command,enabled=enabled,chosen=chosen,width=cell_width or 232)
 
+# Playback helpers live behind the rightmost More control.
 screen r13_playback_footer(show_record=False,ready=True):
-    $ skip_ready=ready and renpy.get_screen("say") is not None and renpy.get_screen("choice") is None
-    use r13_footer_control(0,"백로그","backlog",Show("r13_backlog"),enabled=ready)
-    use r13_footer_control(1,"자동","auto",Preference("auto-forward","toggle"),enabled=ready,chosen=_preferences.afm_enable)
-    use r13_footer_control(2,"대사 건너뛰기","skip",[SetVariable("r13_conv_skip",True),Function(renpy.end_interaction,True)],enabled=skip_ready)
-    use r13_footer_control(3,"더보기","settings",Show("r13_more_tools"),enabled=ready)
-    use r13_footer_control(4,"기록" if show_record else "설정","record" if show_record else "settings",Show("r13_records") if show_record else ShowMenu("pause_menu"),enabled=ready)
+    use r13_concept_dock(ready=ready,show_record=show_record)
 
 screen r13_more_tools():
+    if r13_meeting_active:
+        use r13_meeting_more_tools
+    else:
+        use r13_concept_more
+
+screen r13_meeting_more_tools():
     modal True
     zorder 105
     $ line_active=renpy.get_screen("say") is not None and renpy.get_screen("choice") is None

@@ -100,7 +100,7 @@ init python:
         # spoken outside r13_lines (an old-save notice, a QA line) can wrap to three or more; the
         # window then grows upward by whole lines so the last line never runs past the frame.
         large=bool(persistent.room13_large_text)
-        top=R13_SAY_TOP_LARGE if large else R13_SAY_TOP_NORMAL
+        top=min(R13_SAY_TOP_LARGE if large else R13_SAY_TOP_NORMAL,480)
         lines=_r13_say_lines(what,29 if large else 23) if isinstance(what,str) else 1
         if lines>2:
             top-=(lines-2)*(34 if large else 28)
@@ -181,27 +181,27 @@ screen say(who,what):
         window:
             id "window"
             # Two-line body height is preserved while the whole panel follows the shared footer.
-            xpos (240 if room13_mode else 40)
+            xpos (160 if room13_mode else 40)
             ypos (_r13_say_top(what) if room13_mode else 551)
-            xsize (800 if room13_mode else 1200)
+            xsize (1072 if room13_mode else 1200)
             ysize (r13_control_y()-16-_r13_say_top(what) if room13_mode else 169)
             background (r13_dialogue_frame() if room13_mode else Solid("#211a16f2")) padding (22,16)
             if room13_mode:
-                r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(23,29) line_spacing 5 xsize 756 font r13_ui_font() color r13_say_color()
+                r13_dialogue_text what id "what" style "say_dialogue" size (29 if r13_touch_ui() else r13_read_size(26,29)) line_spacing 7 xsize 1028 font r13_ui_font() color r13_say_color()
             else:
                 text what id "what" xsize 1120 font "assets/Galmuri11.ttf" color "#fff5df"
         if who:
             $ r13_name_track(who)
             frame:
-                xpos 254 ypos (_r13_say_top(what)-32 if room13_mode else 522)
+                xpos 174 ypos (_r13_say_top(what)-32 if room13_mode else 522)
                 padding (16,5) background R13InkPanel(alpha="ff",slim=True)
                 at r13_name_fade
                 text who id "who" color "#FFF0CC" font r13_ui_font() size r13_read_size(26,28) xmaximum 736
         # Next-line mark breathes slowly like a firefly (0.18.47 storybook tone).
         if r13_fx_active():
-            text "▸" xpos 1002 ypos (r13_control_y()-48) size 24 color "#d9d4ab" at r13_next_glow
+            text "▸" xpos 1190 ypos (r13_control_y()-48) size 24 color "#d9d4ab" at r13_next_glow
         else:
-            text "▸" xpos 1002 ypos (r13_control_y()-48) size 24 color "#d9d4ab"
+            text "▸" xpos 1190 ypos (r13_control_y()-48) size 24 color "#d9d4ab"
         if room13_mode:
             timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
             if place != "마차 안" and not r13_cg_active:

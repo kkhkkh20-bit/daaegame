@@ -11,7 +11,7 @@ screen r13_hud():
             tooltip "마차 이야기를 건너뛰고 마을 입구에 도착합니다"
     if not r13_cg_active and place!="마차 안" and not r13_meeting_active:
         frame:
-            xpos 940 ypos 20 xsize 238 ysize 68 padding (10,8) background R13PaperFrame()
+            xpos (940 if renpy.get_screen("r13_hub") else R13_CONCEPT_RIGHT-238) ypos 20 xsize 238 ysize 68 padding (10,8) background R13PaperFrame()
             hbox:
                 spacing 10
                 vbox:
@@ -46,10 +46,7 @@ init 80:
 screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode="line",ready=True):
     style_prefix "r13"
     if mode=="talk":
-        use r13_footer_control(4,"기록","record",Show("r13_records",target=person,present_action=present_action),enabled=ready)
-        use r13_footer_control(3,"더보기","settings",Show("r13_more_tools"),enabled=ready)
-        if present_action is not None:
-            use r13_present_button(present_action,ready,r13_control_x(4),r13_control_upper_y(),232,r13_control_height())
+        use r13_concept_dock(ready=ready,show_record=True,person=person,present_action=present_action)
     elif mode!="field":
         use r13_playback_footer(show_record=True,ready=ready)
     else:
