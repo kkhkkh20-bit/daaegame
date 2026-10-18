@@ -1,0 +1,187 @@
+{
+  "operations": [
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_ttadak/living_doorframe",
+      "expected": {
+        "file": "assets/room13-action-resident_ttadak-living_doorframe.webp",
+        "crop": [
+          8,
+          65,
+          501,
+          677
+        ],
+        "nearest": true,
+        "foot": [
+          256,
+          673
+        ],
+        "head": [
+          162,
+          3,
+          200,
+          168
+        ],
+        "contact": "standing",
+        "reviewed": true,
+        "map_action": true,
+        "stature_ratio": 1.0,
+        "source_sha256": "a7733a0ec825c2e0cbf3224d24585c050f1859450b0197935792e09541ca9797"
+      },
+      "value": {
+        "file": "assets/investigation-source2/ttadak-doorframe-v1.webp",
+        "crop": [
+          30,
+          82,
+          967,
+          1391
+        ],
+        "nearest": true,
+        "foot": [
+          517.75,
+          1390
+        ],
+        "head": [
+          300,
+          0,
+          430,
+          450
+        ],
+        "contact": "standing",
+        "reviewed": false,
+        "map_action": true,
+        "stature_ratio": 1.0,
+        "source_sha256": "c8f2b481ff3a4d4fb8e3231b586541f649a912455ccea25cad81b1d32145f89b",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_tosil/living_thermos",
+      "expected": {
+        "file": "assets/room13-action-resident_tosil-living_thermos.webp",
+        "crop": [
+          78,
+          28,
+          356,
+          712
+        ],
+        "nearest": true,
+        "foot": [
+          191,
+          708
+        ],
+        "head": [
+          32,
+          4,
+          320,
+          310
+        ],
+        "contact": "standing",
+        "reviewed": true,
+        "map_action": true,
+        "stature_ratio": 1.0,
+        "source_sha256": "fd640b921511e1ced791a644d34ba579ef045d7d3a17860e601bf31dc3be2262"
+      },
+      "value": {
+        "file": "assets/investigation-source2/tosil-thermos-v1.webp",
+        "crop": [
+          153,
+          17,
+          733,
+          1483
+        ],
+        "nearest": true,
+        "foot": [
+          418.0,
+          1482
+        ],
+        "head": [
+          0,
+          0,
+          733,
+          630
+        ],
+        "contact": "standing",
+        "reviewed": false,
+        "map_action": true,
+        "stature_ratio": 1.0,
+        "source_sha256": "7c4ac82394064772fc0d1db6176fd467391d9cbf20f9a30eea29f03294b763ff",
+        "native_detail": true
+      }
+    }
+  ],
+  "assets": [
+    {
+      "source": "art/investigation-source2-20261018/ttadak-doorframe-v1.png",
+      "export": "game/assets/investigation-source2/ttadak-doorframe-v1.webp",
+      "source_sha256": "c8f2b481ff3a4d4fb8e3231b586541f649a912455ccea25cad81b1d32145f89b",
+      "export_sha256": "d665345deb299fcb18d0fb82341a9b7bd54f5b1d7ecd99d69c96ca31adcf4b89",
+      "identity_reference_sha256": "e5a1a7aea1455d6c0b495820d4bb70ccfedc0005107910e8ac92475845cfeff6",
+      "anchors": {
+        "foot_left": [
+          215.0,
+          1390
+        ],
+        "foot_right": [
+          820.5,
+          1380
+        ],
+        "foot": [
+          517.75,
+          1390
+        ],
+        "hammer_grip": [
+          669,
+          572
+        ],
+        "open_hand_contact": [
+          921,
+          672
+        ]
+      },
+      "head_status": "manual approximate bounds; native click/face review required",
+      "source_visual_review": "root approved equal-height light comparison; runtime pending"
+    },
+    {
+      "source": "art/investigation-source2-20261018/tosil-thermos-v1.png",
+      "export": "game/assets/investigation-source2/tosil-thermos-v1.webp",
+      "source_sha256": "7c4ac82394064772fc0d1db6176fd467391d9cbf20f9a30eea29f03294b763ff",
+      "export_sha256": "ea00e08917495d6a208e305ad1466524e16f3bfed165aa3365344cec34a12066",
+      "identity_reference_sha256": "4b7ac82763f0458e9bd5f4522961b6df8f03b5d018e122cd147e10162739af08",
+      "anchors": {
+        "foot_left": [
+          281.5,
+          1472
+        ],
+        "foot_right": [
+          554.5,
+          1482
+        ],
+        "foot": [
+          418.0,
+          1482
+        ],
+        "thermos_top": [
+          280,
+          642
+        ],
+        "hand_upper": [
+          328,
+          720
+        ],
+        "hand_lower": [
+          369,
+          788
+        ]
+      },
+      "head_status": "manual approximate bounds; native click/face review required",
+      "source_visual_review": "root approved equal-height source comparison; runtime pending"
+    }
+  ],
+  "baseline_acting_semantic_sha256": "04ee7f27ed0165528d9b95d9f9840666239754acb38b68c410ec68008e3d2d12",
+  "expected_final_acting_semantic_sha256": "5130b4a8143f42040642ac455d9d5d12461287e9ab3b0ed1e14861083af586cd",
+  "requires_residual_exact_count": 47,
+  "reviewed": false,
+  "purpose": "Two source-only repairs; preserve schedule, target heights, foot world coordinates and child stature. No geometry proposal."
+}

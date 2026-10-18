@@ -61,6 +61,19 @@ init 179 python:
                         height=old["head"][3]*scale*spec["crop"][3]/spec["head"][3]
                         actor=r13_contact_geometry(actor,review["pose"],"foot",target,height,actor["depth"])
                         actor["activity"]="환자 쪽으로 서서 확인할 서류를 살펴본다."
+                elif location=="inn" and r13_world_width()==1920 and person=="granny" and actor["pose"]=="living_keyledger":
+                    # Keep the approved carried ledger/key art and its established height.
+                    # Crop-relative lower book edge (220,355) sits above the drawn register.
+                    spec=r13_acting_spec(person,actor["pose"]);w0,h0=r13_actor_geometry(person,actor["pose"])
+                    scale=float(actor["height"])/h0;foot=spec["foot"]
+                    target=(1600+(foot[0]-220)*scale,340+(foot[1]-355)*scale)
+                    actor=r13_contact_geometry(actor,actor["pose"],"foot",target,actor["height"],target[1])
+                    layout=r13_layout("inn");rx,ry,rw,rh=layout["objects"]["register"]
+                    actor["map27_occlusion"]=[layout["occlusion"],[(rx,ry),(rx+rw,ry),(rx+rw,ry+rh),(rx,ry+rh)]]
+                    actor["map27_keepouts"]=[]
+                elif location=="workshop" and r13_world_width()==1800 and person=="resident_musoe" and actor["pose"]=="job_inspect_old_tool":
+                    # Candidate visitor floor position; preserve approved source, pose and current stature.
+                    actor=r13_contact_geometry(actor,actor["pose"],"foot",(130,690),actor["height"],690)
                 elif location=="square" and r13_world_width()==1920 and person in R13_SQUARE_LEVELS:
                     level=R13_SQUARE_LEVELS[person]
                     if actor["pose"] in level["poses"]:

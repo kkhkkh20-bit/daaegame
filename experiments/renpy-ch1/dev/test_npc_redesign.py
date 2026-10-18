@@ -110,7 +110,12 @@ class NpcRedesign(unittest.TestCase):
         self.assertEqual(CAST["resident_nero"], saved["cast"])
         self.assertEqual(PORTRAITS["resident_nero"], saved["portraits"])
         self.assertEqual(FULLBODY["resident_nero"], saved["fullbody"])
-        self.assertEqual({k: v for k, v in ACTING["resident_nero"].items() if not v.get("map_action")}, saved["acting"])
+        # Validate the exact reviewed overlay and original export hashes first;
+        # compare the preserved redesign contract after exact flag restoration.
+        from investigation_native_residual import run as validate_residual, restore as restore_residual
+        validate_residual(ROOT)
+        legacy_acting = restore_residual({"assets/room13-pixel-acting.json": ACTING}, ROOT)["assets/room13-pixel-acting.json"]
+        self.assertEqual({k: v for k, v in legacy_acting["resident_nero"].items() if not v.get("map_action")}, saved["acting"])
         used = files([CAST["resident_nero"], ACTING["resident_nero"], PORTRAITS["resident_nero"], FULLBODY["resident_nero"]])
         self.assertFalse(any("redesign" in f or "living_foldtag" in f or "acting.webp" in f for f in used), used)
         self.assertIn("assets/room13-fullbody-resident_nero-neutral.webp", used)

@@ -182,12 +182,7 @@ screen r13_world_camera_controls(adjustment):
         textbutton "›":
             style "r13_action_button" xpos 1272 xanchor 1.0 ypos 236 padding (12,8) text_size 22 xminimum (80 if r13_touch_ui() else 0) yminimum (80 if r13_touch_ui() else 0)
             action Function(r13_pan_camera,adjustment,1) tooltip "옆으로 둘러보기"
-    # First wide place ever: one quiet line on how to look around, for six seconds.
-    if not persistent.r13_pan_hint_seen and r13_field_view=="people":
-        timer 6.0 action SetField(persistent,"r13_pan_hint_seen",True)
-        frame:
-            xalign .5 ypos 584 padding (16,8) background "#000000aa"
-            text "화면을 좌우로 끌면 옆을 둘러볼 수 있다" size r13_read_size(18,22) color "#f3e6c8"
+    # First-wide-place guidance shares the single field instruction panel.
 
 # 0.18.75: the one-time "drag to look around" line on the first wide place.
 default persistent.r13_pan_hint_seen = False

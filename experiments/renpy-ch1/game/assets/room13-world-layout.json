@@ -485,7 +485,7 @@
     }
   },
   "workshop": {
-    "revision": 2,
+    "revision": 3,
     "width": 1800,
     "height": 720,
     "initial_x": 0,
@@ -610,6 +610,11 @@
         130,
         650,
         250
+      ],
+      "resident_ubak": [
+        300,
+        548,
+        226
       ]
     },
     "work": {
@@ -699,7 +704,10 @@
     },
     "slot_actions": {
       "resident_ubak": "living_measure"
-    }
+    },
+    "pinned": [
+      "resident_ubak"
+    ]
   },
   "square": {
     "revision": 3,

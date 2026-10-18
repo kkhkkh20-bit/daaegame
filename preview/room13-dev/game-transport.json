@@ -1,42 +1,42 @@
 {
  "multipart": true,
- "archive_bytes": 53670603,
- "archive_sha256": "fa558548d89966df4c4cc6e53976566e0862f4387bd66a986d98565236d48a3b",
+ "archive_bytes": 53672516,
+ "archive_sha256": "07435a1dbb42339fb8fbd616f8f5c792f45f44474c6fb1e772d08321792b2ea8",
  "parts": [
   {
    "file": "game.part01",
    "bytes": 8388608,
-   "sha256": "e5b4eb2fffa0a40d05992dac6fafca05060e90f912dd09719c75ec9eb3b2d68b"
+   "sha256": "953930d4f0f0eaf6b696d9ac6f22e08b2c27a17fad20518b8ee1aed5041250ce"
   },
   {
    "file": "game.part02",
    "bytes": 8388608,
-   "sha256": "8ff606e2f4dff91c4ae44be871783a54ef4d3223bdc28ee5295f722f11ec75af"
+   "sha256": "76da9488d635fe2775302287fa9ca29b79e12a4c8e770726dec180b622ebea3d"
   },
   {
    "file": "game.part03",
    "bytes": 8388608,
-   "sha256": "b446af80b6421dd1df43e3bd3fec3ae4480f8a284401de60f024062f6290070c"
+   "sha256": "c999936aa02beea9cb8d1afca31f38fe938e558480f128c60c58734da318dde0"
   },
   {
    "file": "game.part04",
    "bytes": 8388608,
-   "sha256": "328ce348f246fa1ab4936d19ef7cd8bab9bd954518349e2fbcb5fee224ab8cb1"
+   "sha256": "366990364305d569838105c518a609ccc9b3cd8b1cac0cc3478298e7cacb4c37"
   },
   {
    "file": "game.part05",
    "bytes": 8388608,
-   "sha256": "971cd7f77f7ff14fc8439c6af23f201ed3496576c7bf752c4b557a6d010ad332"
+   "sha256": "cf81c605f0816cd370dc58baae6438d102727aa0b972bdc5fc9d3993c16f40cc"
   },
   {
    "file": "game.part06",
    "bytes": 8388608,
-   "sha256": "cde04bc67d0715cb80fc7581c35d59b9846f782f400c364699b5476c9b589581"
+   "sha256": "9b2d5bbb72d250ba344df7f0cf45ec2fc50d56d280cedb8e6ad14e97c9e0c474"
   },
   {
    "file": "game.part07",
-   "bytes": 3338955,
-   "sha256": "dc0f631969409199617d2843fb4be9b07c4f2af28167c455813831a6fec742be"
+   "bytes": 3340868,
+   "sha256": "84b197bdfb30c573687bf0405013fb925e26bfee7458c78c00005a682b70b4b2"
   }
  ],
  "preload": [
@@ -2909,6 +2909,96 @@
    "file": "game/assets/dialogue-source-master/seryeon/840/surprise_talk.webp",
    "bytes": 96144,
    "sha256": "581289fef718872c1cfa326e3f0977398f41ab0a6758989dee0b605ab54a0804"
+  },
+  {
+   "file": "game/assets/investigation-canonical-20261018/doto--map27_compare_ration_slips_v2.webp",
+   "bytes": 873124,
+   "sha256": "d5f6a536f249f20655b353d1f84d5f025eb5b8f7d2b842005cc44f5abfdbec5a"
+  },
+  {
+   "file": "game/assets/investigation-canonical-20261018/doto--map27_write_ledger_v2.webp",
+   "bytes": 874978,
+   "sha256": "73d8398257af093aa50982b6caa8034c26fcbfa0124f26f662e37405188e3931"
+  },
+  {
+   "file": "game/assets/investigation-canonical-20261018/resident_jongjong--map27_pack_satchel_v2.webp",
+   "bytes": 948378,
+   "sha256": "17f0089a5597d81d8121b3f2729a5da5998d9e61d1b8d8cc7b130b11c9ecdcc1"
+  },
+  {
+   "file": "game/assets/investigation-canonical-20261018/resident_jongjong--map27_sort_letters_v2.webp",
+   "bytes": 990404,
+   "sha256": "f86b1dded5bfc12df0cdf4f0c46b72fbbca6199dcfe8f7026a3367a939aaa8ba"
+  },
+  {
+   "file": "game/assets/investigation-canonical-20261018/resident_lamplighter--distressed.webp",
+   "bytes": 934440,
+   "sha256": "c48dbffee7b2520e5b44ac90f9b679921f9df864066f44f61b63b16ba6b3b345"
+  },
+  {
+   "file": "game/assets/investigation-canonical-20261018/resident_lamplighter--expressive.webp",
+   "bytes": 941786,
+   "sha256": "d52d7837099b716ec28944eca210efd471e2198143856f10d896e2d10ec5f070"
+  },
+  {
+   "file": "game/assets/investigation-canonical-20261018/resident_lamplighter--neutral.webp",
+   "bytes": 892500,
+   "sha256": "5a5217dc0a4498ea9a7c1a34c9a5b79be7eae7598d8f98bf130643557ac4bb06"
+  },
+  {
+   "file": "game/assets/investigation-canonical-20261018/resident_lamplighter--thinking.webp",
+   "bytes": 907912,
+   "sha256": "e6c1f8791e6e8825209ed29d73c543f755daa06475efcd606f5d621880b0ec92"
+  },
+  {
+   "file": "game/assets/investigation-canonical-20261018/resident_musoe--distressed.webp",
+   "bytes": 985016,
+   "sha256": "05b84ea0a11077b3b3d875e4852a28f05ea3006ec93b0eac004a4c3b8e094b1e"
+  },
+  {
+   "file": "game/assets/investigation-canonical-20261018/resident_musoe--expressive.webp",
+   "bytes": 1025418,
+   "sha256": "c726e916ed91ebd3038bd35e4658022305a8bc0ab912f0510703cdde10fc1cdc"
+  },
+  {
+   "file": "game/assets/investigation-canonical-20261018/resident_musoe--neutral.webp",
+   "bytes": 986572,
+   "sha256": "b5ce450ade169dbac3e0561d8c646be7c8751138f7f9383c95a3efd15cd2f442"
+  },
+  {
+   "file": "game/assets/investigation-canonical-20261018/resident_musoe--thinking.webp",
+   "bytes": 959810,
+   "sha256": "f47a3d7d04c7b1b93fbeaf529cedea7eac6c54997a72cf80e8115daf9d23a70d"
+  },
+  {
+   "file": "game/assets/investigation-canonical-20261018/resident_piko--map27_mix_paint_v2.webp",
+   "bytes": 1046636,
+   "sha256": "397e5dc9d1cd4029470d69e8592959fbb56f5c70e2f9f45a4f2c4073917bd97b"
+  },
+  {
+   "file": "game/assets/investigation-canonical-20261018/resident_piko--map27_paint_sketchboard_v2.webp",
+   "bytes": 988972,
+   "sha256": "68de094239971c092cc1ed8612592daeb68f400a37001e9871f7d10f0309512f"
+  },
+  {
+   "file": "game/assets/investigation-jobs-20261018/chorong-replace-lightstone-v1.webp",
+   "bytes": 629466,
+   "sha256": "a69fce8ac5a73416811006acd593fc3c704777f08b3dd0b56140ed60c7933f64"
+  },
+  {
+   "file": "game/assets/investigation-jobs-20261018/musoe-inspect-old-tool-v1.webp",
+   "bytes": 1005386,
+   "sha256": "bb62cc761efac7cca3a17d087bcd71dbb2979655787d850b6239b5af99af9c2c"
+  },
+  {
+   "file": "game/assets/investigation-source2/tosil-thermos-v1.webp",
+   "bytes": 990844,
+   "sha256": "ea00e08917495d6a208e305ad1466524e16f3bfed165aa3365344cec34a12066"
+  },
+  {
+   "file": "game/assets/investigation-source2/ttadak-doorframe-v1.webp",
+   "bytes": 992416,
+   "sha256": "d665345deb299fcb18d0fb82341a9b7bd54f5b1d7ecd99d69c96ca31adcf4b89"
   },
   {
    "file": "game/assets/map-action27/CL-1--resident_piko.webp",
