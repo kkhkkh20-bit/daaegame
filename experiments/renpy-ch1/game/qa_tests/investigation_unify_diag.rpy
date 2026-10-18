@@ -104,7 +104,7 @@ label r13_qa_pixel_diag(variant="proposed"):
     hide screen say
     hide screen r13_hub
     show screen r13_qa_pixel_baseline
-    pause 1.0 hard
+    $ renpy.pause(1.0, hard=True)
     python:
         report={'variant':variant,'source_commit':'24ce3b6037093a562f0bd9b1c35c64a9b690a13d','kind':'bounded three-map native presentation fixture; not campaign replay; equal-height board is not an age/size target','baseline':[r13_pd_row(a) for a in r13_pd_baseline()],'fields':[],'missing':[]}
         renpy.screenshot(r13_pd_os.path.join(r13_pd_out(),'00-neutral-equal-height.png'))
