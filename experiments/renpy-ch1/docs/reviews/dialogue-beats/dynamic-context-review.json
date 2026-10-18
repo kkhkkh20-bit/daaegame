@@ -6598,12 +6598,6 @@
       "text_sha256": "45f3647c9a920b4c2b1781a7fb2a427b2d59a7dfbd8dfdcd832556ef209c81f6"
     },
     "563": {
-      "emotion": "neutral",
-      "reaction": false,
-      "reviewed": true,
-      "batch": "q1-review-20261018",
-      "reason": "첫 사건 조사·회의·후일담. 관찰과 추론을 구분하고 불안과 미해결 결과를 전달한다. 새 표정 자산을 활성화하지 않는다.",
-      "application_status": "awaiting_approved_runtime_assets",
       "source": "game/systems/room13_debate_points.rpy",
       "line": 90,
       "context": "def _r13_dp_statement(claim,sid):",
@@ -6614,6 +6608,12 @@
         "판 사람이요? 얼굴은 못 봤어요. 해 질 녘에 왔고, 허리에 노끈을 감고 있더군요."
       ],
       "already_static_text": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "batch": "dynamic-context-02",
+      "reason": "사건별 반증을 대조하는 회의 분기. 발언자는 자신의 목격 범위나 혐의를 제한하며 답한다.",
+      "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "a0c267b7859138d09f8c5437013fa6d323a702cd763b9a250f468da351bd3474"
     },
     "565": {
@@ -17274,6 +17274,44 @@
       "text_sha256": "d338531adeafad3955c05be9dfe3abfd3148d5ed0431fbf54ed0cbcbebd85816"
     },
     "1510": {
+      "source": "game/systems/room13_question_discovery.rpy",
+      "line": 95,
+      "context": "R13_LIFE_CUES={\"life:\"+person+\":work\":cues for person,cues in R13_WORK_CUES.items()}",
+      "person": "resident_kalbaram",
+      "text": "부인은 못 봤소. 다만 댁 마차가 온 날 밤에 아이 하나를 봤지.",
+      "packet": [
+        "resident_kalbaram",
+        "부인은 못 봤소. 다만 댁 마차가 온 날 밤에 아이 하나를 봤지."
+      ],
+      "already_static_text": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "batch": "question-discovery-20261018",
+      "reason": "아내를 찾는 질문에, 부인을 직접 보지는 못했다는 목격 범위를 밝힌 뒤 기존 첫날 밤 아이 목격담으로 이어진다. 원래 alibi:night1:resident_kalbaram의 장소·시각·아이·보온병 사실을 재사용하며, 아내의 행선지나 범인을 단정하지 않는다.",
+      "application_status": "awaiting_approved_runtime_assets",
+      "text_sha256": "b5647642dc52f9e2c8c3dbf376ccd5f0f81c14319417d4f03059e2d7544231f6"
+    },
+    "1511": {
+      "source": "game/systems/room13_question_discovery.rpy",
+      "line": 184,
+      "context": "def r13_conversation_topic_lines(key):",
+      "person": "granny",
+      "text": "눈에 길이 막혀 묵는 분이 늘어서요. 장부를 보면서 날짜를 확인하는 게 낫겠어요.",
+      "packet": [
+        "granny",
+        "눈에 길이 막혀 묵는 분이 늘어서요. 장부를 보면서 날짜를 확인하는 게 낫겠어요."
+      ],
+      "already_static_text": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "batch": "question-discovery-20261018",
+      "reason": "아내가 여관을 떠난 날짜는 장부로 확인하자는 답변 중 손님이 늘었다는 짧은 부연이다. 새 사건이나 범인 추정은 하지 않으며, 이 말을 실제로 들은 뒤 손님 수 후속 질문을 연다.",
+      "application_status": "awaiting_approved_runtime_assets",
+      "text_sha256": "bca6d4e0973b61e0748462fcae0d41fbde8872720eb79f263121102da3f03ba4"
+    },
+    "1513": {
       "source": "game/systems/room13_reinspect.rpy",
       "line": 21,
       "context": "file scope",
@@ -17292,7 +17330,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "2c8a85e64c026d2f4449dd5aa4045c4053cce19a230c0f454739a48ebe6d89a9"
     },
-    "1512": {
+    "1515": {
       "source": "game/systems/room13_reinspect.rpy",
       "line": 23,
       "context": "file scope",
@@ -17311,7 +17349,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "8581349df3f7093e8a2392e5b087a80fbf7e9c7d69d29447342262c4a1005db7"
     },
-    "1513": {
+    "1516": {
       "source": "game/systems/room13_reinspect.rpy",
       "line": 24,
       "context": "file scope",
@@ -17330,7 +17368,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "3373232b4322918615278313e50ddb02e5c291e7bc2f49e6d8ec81e4b4d29759"
     },
-    "1515": {
+    "1518": {
       "source": "game/systems/room13_reinspect.rpy",
       "line": 27,
       "context": "file scope",
@@ -17349,7 +17387,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "cb241aa007cc373f7a620c15622e65778a71bdadebc4f67f1cf5e713f9ef1565"
     },
-    "1517": {
+    "1520": {
       "source": "game/systems/room13_review_knowledge.rpy",
       "line": 106,
       "context": "def r13_intro_direction_lines():",
@@ -17368,7 +17406,7 @@
       "application_status": "approved_art_when_available",
       "text_sha256": "0a818322620686ed525cd4b0d308ea13adaff03c2f931c4b70c70423899ba97f"
     },
-    "1519": {
+    "1522": {
       "source": "game/systems/room13_review_knowledge.rpy",
       "line": 109,
       "context": "def r13_intro_direction_lines():",
@@ -17387,7 +17425,7 @@
       "application_status": "approved_art_when_available",
       "text_sha256": "b966c9d5d28cbdf95ede6582bf9bf33e00dc3a615d79030dec3f69aa132feb6f"
     },
-    "1520": {
+    "1523": {
       "source": "game/systems/room13_review_knowledge.rpy",
       "line": 113,
       "context": "def r13_intro_direction_lines():",
@@ -17406,7 +17444,7 @@
       "application_status": "approved_art_when_available",
       "text_sha256": "ce75cca76b08ad460c644fb23fe48cd9feb41535744a87d75a2b53b0140ac086"
     },
-    "1522": {
+    "1525": {
       "source": "game/systems/room13_review_knowledge.rpy",
       "line": 115,
       "context": "def r13_intro_direction_lines():",
@@ -17425,7 +17463,7 @@
       "application_status": "approved_art_when_available",
       "text_sha256": "7c1dcf4f22776bd4b6b394033108a1bba573d259e7252406f97eab96bd850fb8"
     },
-    "1524": {
+    "1527": {
       "source": "game/systems/room13_review_knowledge.rpy",
       "line": 117,
       "context": "def r13_intro_direction_lines():",
@@ -17444,7 +17482,7 @@
       "application_status": "approved_art_when_available",
       "text_sha256": "b34a0c778273d7400fd0bf51003cbe8d9f44e3397202b92a931ab8aff35f5763"
     },
-    "1527": {
+    "1530": {
       "source": "game/systems/room13_review_knowledge.rpy",
       "line": 153,
       "context": "def r13_conversation_topic_lines(key):",
@@ -17463,7 +17501,7 @@
       "application_status": "approved_art_when_available",
       "text_sha256": "79d11e9746e096b582cc97beb2e942a3c3c8f8ed956fdd0f034f86c06d22db05"
     },
-    "1528": {
+    "1531": {
       "source": "game/systems/room13_review_knowledge.rpy",
       "line": 154,
       "context": "def r13_conversation_topic_lines(key):",
@@ -17482,7 +17520,7 @@
       "application_status": "approved_art_when_available",
       "text_sha256": "39aabce97337576d2243ac56a74f49eceb0361c1c81e3d1fc275bd012cfb42b7"
     },
-    "1529": {
+    "1532": {
       "source": "game/systems/room13_review_knowledge.rpy",
       "line": 155,
       "context": "def r13_conversation_topic_lines(key):",
@@ -17501,7 +17539,7 @@
       "application_status": "approved_art_when_available",
       "text_sha256": "e4cf64f590ea838b6d8db357ef5ee85405f5744c21afe9a082b9e8879e0591e2"
     },
-    "1530": {
+    "1533": {
       "source": "game/systems/room13_review_knowledge.rpy",
       "line": 159,
       "context": "def r13_conversation_topic_lines(key):",
@@ -17520,7 +17558,7 @@
       "application_status": "approved_art_when_available",
       "text_sha256": "aac9849a3b59ddd7cbf73fa2b82ccc1a0afd06a1e2f9af1f87972a5c9990d247"
     },
-    "1531": {
+    "1534": {
       "source": "game/systems/room13_review_knowledge.rpy",
       "line": 161,
       "context": "def r13_conversation_topic_lines(key):",
@@ -17539,7 +17577,7 @@
       "application_status": "approved_art_when_available",
       "text_sha256": "bd3b6afd2b303fc95a992af455d6bac569a8186e05f246d22d6de90a2ca05677"
     },
-    "1532": {
+    "1535": {
       "source": "game/systems/room13_review_knowledge.rpy",
       "line": 163,
       "context": "def r13_conversation_topic_lines(key):",
@@ -17558,7 +17596,7 @@
       "application_status": "approved_art_when_available",
       "text_sha256": "a8aa38d40fc0641cb6893403940554b314ba776c957425f87f8eae40b814b9ac"
     },
-    "1534": {
+    "1537": {
       "source": "game/systems/room13_review_knowledge.rpy",
       "line": 165,
       "context": "def r13_conversation_topic_lines(key):",
@@ -17577,7 +17615,7 @@
       "application_status": "approved_art_when_available",
       "text_sha256": "846f6bca564239b1f7053aea5eaa446277a5421fc15e4bf2096e93306f75539d"
     },
-    "1535": {
+    "1538": {
       "source": "game/systems/room13_review_knowledge.rpy",
       "line": 165,
       "context": "def r13_conversation_topic_lines(key):",
@@ -17596,7 +17634,7 @@
       "application_status": "approved_art_when_available",
       "text_sha256": "dd3221bc4df7f91db1d349bda3d0918fad12c7df40822537b521fe99d1bf7165"
     },
-    "1538": {
+    "1541": {
       "source": "game/systems/room13_review_knowledge.rpy",
       "line": 168,
       "context": "def r13_conversation_topic_lines(key):",
@@ -17615,7 +17653,7 @@
       "application_status": "approved_art_when_available",
       "text_sha256": "b3ca7adfb9a53a311f7ba2e104eb9fb759d902db6ac82ba55f0eb12803f98364"
     },
-    "1540": {
+    "1543": {
       "source": "game/systems/room13_review_knowledge.rpy",
       "line": 169,
       "context": "def r13_conversation_topic_lines(key):",
@@ -17634,7 +17672,7 @@
       "application_status": "approved_art_when_available",
       "text_sha256": "0747110fb33b5859153ca730a9aa58bb2b6d6b19bf97d1dceec8f555531b9696"
     },
-    "1542": {
+    "1545": {
       "source": "game/systems/room13_review_knowledge.rpy",
       "line": 171,
       "context": "def r13_conversation_topic_lines(key):",
@@ -17653,7 +17691,7 @@
       "application_status": "approved_art_when_available",
       "text_sha256": "34f63f35380bc616d90682d9280ba4c204cac77ab2d71cd8158ea030c718b8e8"
     },
-    "1543": {
+    "1546": {
       "source": "game/systems/room13_review_knowledge.rpy",
       "line": 172,
       "context": "def r13_conversation_topic_lines(key):",
@@ -17672,7 +17710,7 @@
       "application_status": "approved_art_when_available",
       "text_sha256": "c768abe024d507ed68a01159c671f3cd5a529aaba35bd6fd77b0bd8163325e03"
     },
-    "1545": {
+    "1548": {
       "source": "game/systems/room13_shop.rpy",
       "line": 9,
       "context": "R13_ITEM_TOPICS = {",
@@ -17691,7 +17729,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "db618e3c0e3f11e2b13148185052d79af87a9200e85743f617342f77897a51f8"
     },
-    "1547": {
+    "1550": {
       "source": "game/systems/room13_shop.rpy",
       "line": 11,
       "context": "R13_ITEM_TOPICS = {",
@@ -17710,7 +17748,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "7ef39510eecf2f2625d8b9c889808e32c56efebacc8a51f9b0372b6d8cd0d6e7"
     },
-    "1549": {
+    "1552": {
       "source": "game/systems/room13_shop.rpy",
       "line": 14,
       "context": "R13_ITEM_TOPICS = {",
@@ -17729,7 +17767,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "ac409cb1877afffcafd4837fa38ca141297a34042aa8bd6806dbc75bcb44bd20"
     },
-    "1551": {
+    "1554": {
       "source": "game/systems/room13_shop.rpy",
       "line": 16,
       "context": "R13_ITEM_TOPICS = {",
@@ -17748,7 +17786,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "4bd64847f650cddcc4b1dd2b4ccfd474dd5f70dc2506afd9dbb271d9a084d698"
     },
-    "1553": {
+    "1556": {
       "source": "game/systems/room13_shop.rpy",
       "line": 19,
       "context": "R13_ITEM_TOPICS = {",
@@ -17767,7 +17805,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "ba2b671b659968fcc2170e402da1dd2f944060595239ca46dff5b80668a8a6ac"
     },
-    "1554": {
+    "1557": {
       "source": "game/systems/room13_shop.rpy",
       "line": 20,
       "context": "R13_ITEM_TOPICS = {",
@@ -17786,7 +17824,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "b1137f24763c7dd0f6383fda255edafdadfb8d7bbfb6ea78d3bba9feceff9997"
     },
-    "1556": {
+    "1559": {
       "source": "game/systems/room13_shop.rpy",
       "line": 22,
       "context": "R13_ITEM_TOPICS = {",
@@ -17805,7 +17843,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "3cc0190958d16a1a9d2c8a58ebde0c59943ace0bdf5a6db40eeb2c19d1f3ade6"
     },
-    "1558": {
+    "1561": {
       "source": "game/systems/room13_shop.rpy",
       "line": 25,
       "context": "R13_ITEM_TOPICS = {",
@@ -17824,7 +17862,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "52efe364c3a1483759ef184b8882532ce164a445f63c71b255d65187ed4f212b"
     },
-    "1559": {
+    "1562": {
       "source": "game/systems/room13_shop.rpy",
       "line": 26,
       "context": "R13_ITEM_TOPICS = {",
@@ -17843,7 +17881,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "de752a66d37be449705cd610eb0975faff160c034e3c0fcf3c3b079aa9e3c109"
     },
-    "1562": {
+    "1565": {
       "source": "game/systems/room13_shop.rpy",
       "line": 30,
       "context": "R13_ITEM_TOPICS = {",
@@ -17862,7 +17900,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "c23566054ab3b423421c9452fffb9b46032ab37ec8b65e1f77ab613fc7127597"
     },
-    "1563": {
+    "1566": {
       "source": "game/systems/room13_shop.rpy",
       "line": 31,
       "context": "R13_ITEM_TOPICS = {",
@@ -17881,7 +17919,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "fe866806546be1d2c4c9131325606d62c5b5265d3a2b29c2d3ad011b656729a4"
     },
-    "1565": {
+    "1568": {
       "source": "game/systems/room13_shop.rpy",
       "line": 34,
       "context": "R13_ITEM_TOPICS = {",
@@ -17900,7 +17938,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "1b4d6f5e9e7e98a9953bf8c8b0e5e4dd462f47256820e521017f441b27bd7656"
     },
-    "1567": {
+    "1570": {
       "source": "game/systems/room13_shop.rpy",
       "line": 36,
       "context": "R13_ITEM_TOPICS = {",
@@ -17919,7 +17957,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "0bcdc62a5bd45cc725592a45edb0f85268c0864882bd65447374e8c2c36af296"
     },
-    "1569": {
+    "1572": {
       "source": "game/systems/room13_shop.rpy",
       "line": 39,
       "context": "R13_ITEM_TOPICS = {",
@@ -17938,7 +17976,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "858f869f1770d26b4304eeebb734f50903360667129f0fca91284c078026048d"
     },
-    "1570": {
+    "1573": {
       "source": "game/systems/room13_shop.rpy",
       "line": 40,
       "context": "R13_ITEM_TOPICS = {",
@@ -17957,7 +17995,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "7d3a7d41cb5de7db57e228ddaa546d1b7b89ec62d5d121889e4a6bd6b33440be"
     },
-    "1571": {
+    "1574": {
       "source": "game/systems/room13_story_continuity.rpy",
       "line": 36,
       "context": "R13_MOM_ABSENT_LINES = dict([",
@@ -17976,7 +18014,7 @@
       "application_status": "approved_art_when_available",
       "text_sha256": "fd93ec884addad3477acfc61552fb1f81314d84dc29cdbb81eff410e4878a0aa"
     },
-    "1572": {
+    "1575": {
       "source": "game/systems/room13_story_continuity.rpy",
       "line": 38,
       "context": "R13_MOM_ABSENT_LINES = dict([",
@@ -17995,7 +18033,7 @@
       "application_status": "approved_art_when_available",
       "text_sha256": "fcc017c89ed87c03e4fb4094b99b57d77a74e63f2bb3a9fc8049a1e39e725712"
     },
-    "1575": {
+    "1578": {
       "source": "game/systems/room13_story_continuity.rpy",
       "line": 44,
       "context": "R13_MOM_ABSENT_LINES = dict([",
@@ -18014,7 +18052,7 @@
       "application_status": "approved_art_when_available",
       "text_sha256": "43503afa31f562fe20294026222559892c227104edd6a27dfbdc6c7ac1fd6bb0"
     },
-    "1576": {
+    "1579": {
       "source": "game/systems/room13_story_continuity.rpy",
       "line": 72,
       "context": "def r13_debate_seats(session):",
@@ -18033,7 +18071,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "3a2cd3f73928cc3e330f58aebe71ba27ccefdc32010c987c041db4b1097b22c7"
     },
-    "1577": {
+    "1580": {
       "source": "game/systems/room13_story_continuity.rpy",
       "line": 73,
       "context": "def r13_debate_seats(session):",
@@ -18052,7 +18090,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "077d527152c739faf8b3c340706724373ed47a7474c1bd0f097b26b45c60b4aa"
     },
-    "1578": {
+    "1581": {
       "source": "game/systems/room13_story_continuity.rpy",
       "line": 74,
       "context": "def r13_debate_seats(session):",
@@ -18071,7 +18109,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "afce65cf72776f7e329f7834febf01f9b58ae187410ca17a7e09b491b257f310"
     },
-    "1581": {
+    "1584": {
       "source": "game/systems/room13_testimony.rpy",
       "line": 25,
       "context": "def _r13_tm_topic(npc,title,give,lines,need=(\"lodging\",),not_flags=()):",
@@ -18090,7 +18128,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "a8aca1a36eadd12acbcc119491805df9fde34114c79ea9aa827de03dd5221c1f"
     },
-    "1583": {
+    "1586": {
       "source": "game/systems/room13_testimony.rpy",
       "line": 27,
       "context": "def _r13_tm_topic(npc,title,give,lines,need=(\"lodging\",),not_flags=()):",
@@ -18109,7 +18147,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "92333a47c604078feb142379eb7e33695dc2c5ad537c341694cba7deeb3e9c9f"
     },
-    "1586": {
+    "1589": {
       "source": "game/systems/room13_testimony.rpy",
       "line": 30,
       "context": "def _r13_tm_topic(npc,title,give,lines,need=(\"lodging\",),not_flags=()):",
@@ -18128,7 +18166,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "db8bf1c74ffe986a3ddfeeed7e7a6c6d54e7e352dbc9484f635f99068257e186"
     },
-    "1588": {
+    "1591": {
       "source": "game/systems/room13_testimony.rpy",
       "line": 32,
       "context": "def _r13_tm_topic(npc,title,give,lines,need=(\"lodging\",),not_flags=()):",
@@ -18147,7 +18185,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "85302cd70d86664e32d8628b7a216a81d832ea65126c8efc7b0f22e952a03f58"
     },
-    "1590": {
+    "1593": {
       "source": "game/systems/room13_testimony.rpy",
       "line": 35,
       "context": "def _r13_tm_topic(npc,title,give,lines,need=(\"lodging\",),not_flags=()):",
@@ -18166,7 +18204,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "345281f7ff6b3e39118f86858f8c432aa259dbd92d7ac8ec1e32e437153112a5"
     },
-    "1592": {
+    "1595": {
       "source": "game/systems/room13_testimony.rpy",
       "line": 37,
       "context": "def _r13_tm_topic(npc,title,give,lines,need=(\"lodging\",),not_flags=()):",
@@ -18185,7 +18223,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "1f70db30195405b52ef6e3361b05c1777c74eba246a4d6e8de390f5aa6bf959e"
     },
-    "1594": {
+    "1597": {
       "source": "game/systems/room13_testimony.rpy",
       "line": 53,
       "context": "def r13_present(person,key,identity=False):",
@@ -18204,7 +18242,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "31f82293882e0b4aeef7517d5eb836f57a117a5e68e7544346e5608f97308813"
     },
-    "1596": {
+    "1599": {
       "source": "game/systems/room13_testimony.rpy",
       "line": 55,
       "context": "def r13_present(person,key,identity=False):",
@@ -18223,7 +18261,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "372218450c938546294cec476d109bd9aaf82a91a7003ab29fb395f3e0c85834"
     },
-    "1598": {
+    "1601": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 76,
       "context": "def r13_kongi_report(place,day,flags):",
@@ -18242,7 +18280,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "60903b7525dc01851af289e788c306886193efeb07ffb66ef5ce5adc1aa55f1a"
     },
-    "1599": {
+    "1602": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 79,
       "context": "def r13_kongi_report(place,day,flags):",
@@ -18261,7 +18299,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "66dcdead2c335313e9f9c667efc7f6baef920f51ec7dff25cc40e31fc4c03513"
     },
-    "1600": {
+    "1603": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 82,
       "context": "def r13_kongi_report(place,day,flags):",
@@ -18280,7 +18318,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "74e366b837daf4dcd183b1c4788208a8cd6c75eb9f5bbfc2c90f716aa72e0a06"
     },
-    "1601": {
+    "1604": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 86,
       "context": "def r13_kongi_report(place,day,flags):",
@@ -18299,7 +18337,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "a5b7bf5e9d76f48765b598dbc803c6ec9c66f91360c0da9ae65cc3de1fc0b1fb"
     },
-    "1602": {
+    "1605": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 87,
       "context": "def r13_kongi_report(place,day,flags):",
@@ -18318,7 +18356,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "d7a38381ef5be77da2e11b3c87abd7881394c48b1dea377c579ce0761078b3fd"
     },
-    "1603": {
+    "1606": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 90,
       "context": "def r13_kongi_report(place,day,flags):",
@@ -18337,7 +18375,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "8480df66a9055b4703f4125a2d060309b550c57bded420b65adfefb0753e34b3"
     },
-    "1604": {
+    "1607": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 91,
       "context": "def r13_kongi_report(place,day,flags):",
@@ -18356,7 +18394,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "0410e7bb2127c1b72f65f199a756d0064d6402df005130ef2fe4419a9c0c95ae"
     },
-    "1606": {
+    "1609": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 113,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18375,7 +18413,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "b01cc7d299658fbfad1ef41838df555a5b3ef8a2683a88cda9d5386c24697d53"
     },
-    "1608": {
+    "1611": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 115,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18394,7 +18432,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "78a7147988b00947466bd62a3a92163aeb316facce0b2adc87301762dbd1055a"
     },
-    "1610": {
+    "1613": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 117,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18413,7 +18451,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "678249db72166fcdc696e1c1c1de844425a536a3d8a5a91a29d303237922839d"
     },
-    "1611": {
+    "1614": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 119,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18432,7 +18470,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "6634b28f31dafbe2cfd066073ebced1ea60a5dc398db641deddaa40e108209f7"
     },
-    "1612": {
+    "1615": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 120,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18451,7 +18489,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "710f7fb3c656de11d9a4334511e83601b33d8596bcbf6dc4d8a72a9b3c83abf5"
     },
-    "1613": {
+    "1616": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 122,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18470,7 +18508,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "2671a174e1ba7c1c3ac5093fcb9a3cf391361d28ef72f3582e8841c849d34369"
     },
-    "1614": {
+    "1617": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 123,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18489,7 +18527,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "6d1b6e66ba899161ce12ff7d6400411bd21df1ca4a87b1c73db98f62b8202c79"
     },
-    "1616": {
+    "1619": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 126,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18508,7 +18546,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "31a47762c4a2ca9bf9fda10e5e601a7ba4183ab067e01d71c0fcb9b8d14f8565"
     },
-    "1617": {
+    "1620": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 128,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18527,7 +18565,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "1af06437749aea2e7f77e9be510baebf775588cdf3cb136c27b8c5cc79f731a3"
     },
-    "1618": {
+    "1621": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 129,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18546,7 +18584,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "97100e520c229ad32935ff2b6aafdf121d422bb81b1cbbc697e8a8e4932d78d1"
     },
-    "1620": {
+    "1623": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 132,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18565,7 +18603,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "2c5b1c7ea90b5bf7d5d916c26f51f2d2556af9cb7b389908a183437c290ee1e0"
     },
-    "1621": {
+    "1624": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 133,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18584,7 +18622,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "5b3deebb44b28f0ab5504c8f2d5322f1bca3b7cb18a06ff579b18ef2ea2dda65"
     },
-    "1622": {
+    "1625": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 135,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18603,7 +18641,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "3c735d1b97b6664303ade3408d0c9581f72b7f5b5bf6359824bcf6ed31cd160a"
     },
-    "1623": {
+    "1626": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 136,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18622,7 +18660,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "dddcc14c5118d412b22d4f999a2a21afa000a38fbf281601e4c16e7b4e75b59e"
     },
-    "1624": {
+    "1627": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 138,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18641,7 +18679,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "e7b73dd2cf69384ce483619696c943059eef9c3c3e7cc35c3ea5ca4e41bac931"
     },
-    "1625": {
+    "1628": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 139,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18660,7 +18698,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "a10366931e316cfe52e806246d47c1c03e2b29a12c22f4ee2e93b07fcd663c41"
     },
-    "1627": {
+    "1630": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 143,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18679,7 +18717,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "ef905d02720b88c0230a53dc9f402292d927a29dfc8b71baa489e65eb7c554fd"
     },
-    "1629": {
+    "1632": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 145,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18698,7 +18736,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "a402fc0d50817fb0ac3c1f29679c23d15ef363222879259ad8616cab29540f89"
     },
-    "1630": {
+    "1633": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 146,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18717,7 +18755,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "24de25d779fc3c8e6f32e776dc5e0fa637616988f5c237541807bd2ecb1d24f8"
     },
-    "1631": {
+    "1634": {
       "source": "game/systems/room13_town_events2.rpy",
       "line": 49,
       "context": "def _ev2_topic(npc,title,day,need=(),flags=(),give=(),not_flags=(),lines=()):",
@@ -18736,7 +18774,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "589ca5a9641a36c8d9a83e73115f24819d122c472b01506998f5c4b541925e8f"
     },
-    "1633": {
+    "1636": {
       "source": "game/systems/room13_town_events2.rpy",
       "line": 51,
       "context": "def _ev2_topic(npc,title,day,need=(),flags=(),give=(),not_flags=(),lines=()):",
@@ -18755,7 +18793,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "2b4a9cebb352c99ecb91a721b50e61e5b56ceef3003b376bef6e7492918aba80"
     },
-    "1634": {
+    "1637": {
       "source": "game/systems/room13_town_events2.rpy",
       "line": 54,
       "context": "def _ev2_topic(npc,title,day,need=(),flags=(),give=(),not_flags=(),lines=()):",
@@ -18774,7 +18812,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "d59f68ce67ad820b13f7328495c303037ca2b30de6078fe1edfff1b51eaf3bd4"
     },
-    "1636": {
+    "1639": {
       "source": "game/systems/room13_town_events2.rpy",
       "line": 56,
       "context": "def _ev2_topic(npc,title,day,need=(),flags=(),give=(),not_flags=(),lines=()):",
@@ -18793,7 +18831,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "e602b105fa35d98e688c0787f2e5d136972e960f32508e68edf5c58b4b1fd594"
     },
-    "1637": {
+    "1640": {
       "source": "game/systems/room13_town_events2.rpy",
       "line": 58,
       "context": "def _ev2_topic(npc,title,day,need=(),flags=(),give=(),not_flags=(),lines=()):",
@@ -18812,7 +18850,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "e977fa40d53d7402748001e60a6c5df5559028318380725b61f4295e2f8c69f6"
     },
-    "1638": {
+    "1641": {
       "source": "game/systems/room13_town_events2.rpy",
       "line": 59,
       "context": "def _ev2_topic(npc,title,day,need=(),flags=(),give=(),not_flags=(),lines=()):",
@@ -18831,7 +18869,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "e251c829560c53222f9c08d6c92bc2707c5751dd66cf2f6114959e8c73cd3f0c"
     },
-    "1639": {
+    "1642": {
       "source": "game/systems/room13_town_events2.rpy",
       "line": 61,
       "context": "def _ev2_topic(npc,title,day,need=(),flags=(),give=(),not_flags=(),lines=()):",
@@ -18850,7 +18888,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "d5ab82c6d7bac6f388abbde063a5464d770cde4c0b5b985ea9bc48a624e0fa3b"
     },
-    "1640": {
+    "1643": {
       "source": "game/systems/room13_town_events2.rpy",
       "line": 63,
       "context": "def _ev2_topic(npc,title,day,need=(),flags=(),give=(),not_flags=(),lines=()):",
@@ -18869,7 +18907,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "f8a73f9e3f08bb3722fd3e8f7392f9cdd9bd32095909521f1d8e482eba0ccd49"
     },
-    "1641": {
+    "1644": {
       "source": "game/systems/room13_town_events2.rpy",
       "line": 64,
       "context": "def _ev2_topic(npc,title,day,need=(),flags=(),give=(),not_flags=(),lines=()):",
@@ -18888,7 +18926,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "853775d5f6278625fc1d0f5a24b51463a7c57839573e22c0007dbcc3202d6eb8"
     },
-    "1647": {
+    "1650": {
       "source": "game/systems/room13_use_knowledge.rpy",
       "line": 31,
       "context": "file scope",
@@ -18907,7 +18945,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "3fcac98504d44da9cc5b3d98617d5f2d4e36a3ed982b3aea2a06f5d3bdbc244b"
     },
-    "1648": {
+    "1651": {
       "source": "game/systems/room13_use_knowledge.rpy",
       "line": 32,
       "context": "file scope",
@@ -18926,7 +18964,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "d0372c5cfcabe52b54d3eff7b329a6220d5ff96c757adec88b7c69d9c44e42b3"
     },
-    "1650": {
+    "1653": {
       "source": "game/systems/room13_use_knowledge.rpy",
       "line": 35,
       "context": "file scope",
@@ -18945,7 +18983,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "ddc00b3e45288ff4514871b1ea540378067ac3fdcc3b1a7256639e321849f8a6"
     },
-    "1653": {
+    "1656": {
       "source": "game/systems/room13_use_knowledge.rpy",
       "line": 39,
       "context": "file scope",
@@ -18964,7 +19002,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "d486f2ee1ec135066fed63009e6f7b42bb53efeb16f48adaadb23fd3c8e9bf7c"
     },
-    "1654": {
+    "1657": {
       "source": "game/systems/room13_use_knowledge.rpy",
       "line": 40,
       "context": "file scope",
@@ -18983,7 +19021,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "6e8599d7bcf31a1b8d1e4616fd04b7972d84004308800c1ddf264a0755629301"
     },
-    "1656": {
+    "1659": {
       "source": "game/systems/room13_use_knowledge.rpy",
       "line": 43,
       "context": "file scope",
@@ -19002,7 +19040,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "1acaff1582e7a66e61b0c5472f72ae8cc96dc66f692e7a2a80f445755c7db90a"
     },
-    "1659": {
+    "1662": {
       "source": "game/systems/room13_use_knowledge.rpy",
       "line": 47,
       "context": "file scope",
@@ -19021,7 +19059,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "c1cb1ae621de64f3f34368b78102e4c06875ebcd804da65fceab50a13325957c"
     },
-    "1661": {
+    "1664": {
       "source": "game/systems/room13_use_knowledge.rpy",
       "line": 61,
       "context": "def r13_present(person,key,identity=False):",
@@ -19040,7 +19078,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "4f0ac7fbdef426022792ad8e09698a316793dce269d2e69725725a2136e88253"
     },
-    "1662": {
+    "1665": {
       "source": "game/systems/room13_week1_cases.rpy",
       "line": 23,
       "context": "file scope",
@@ -19059,7 +19097,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "ccf477665b55471865b6a728e2ea0527ad0ebbc9f5fa67b31ba144aff8eee2d4"
     },
-    "1664": {
+    "1667": {
       "source": "game/systems/room13_week1_cases.rpy",
       "line": 25,
       "context": "file scope",
@@ -19078,7 +19116,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "163a82eae0c0486e54b7924008d52d5b24f7866f75d734547986319a7e574ffb"
     },
-    "1665": {
+    "1668": {
       "source": "game/systems/room13_week1_cases.rpy",
       "line": 26,
       "context": "file scope",
@@ -19097,7 +19135,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "afce65cf72776f7e329f7834febf01f9b58ae187410ca17a7e09b491b257f310"
     },
-    "1666": {
+    "1669": {
       "source": "game/systems/room13_week1_cases.rpy",
       "line": 32,
       "context": "R13_FAKE_TESTIMONY_LINES=[",
@@ -19116,7 +19154,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "8966fcbacb0dbf3e9ba2e09496bc437cea14b486bb50e206e6a3d0c3c3ad279a"
     },
-    "1667": {
+    "1670": {
       "source": "game/systems/room13_week1_cases.rpy",
       "line": 33,
       "context": "R13_FAKE_TESTIMONY_LINES=[",
@@ -19135,7 +19173,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "c76a32df1dbca3500600100cae2087ce526fa74914c9e8809f5be9a62cbbfb18"
     },
-    "1668": {
+    "1671": {
       "source": "game/systems/room13_week1_cases.rpy",
       "line": 34,
       "context": "R13_FAKE_TESTIMONY_LINES=[",
@@ -19154,7 +19192,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "f06cb9e8668b9b626c0515cbacd48b60d2a34dd4564f2d46c1d45292961d8951"
     },
-    "1669": {
+    "1672": {
       "source": "game/systems/room13_week1_cases.rpy",
       "line": 35,
       "context": "R13_FAKE_TESTIMONY_LINES=[",
@@ -19173,7 +19211,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "011e85a125a0878c8561fad6f036ae04b5ba31a999f45c35be04e954e1831108"
     },
-    "1671": {
+    "1674": {
       "source": "game/systems/room13_week1_cases.rpy",
       "line": 46,
       "context": "R13_FAKE_TESTIMONY_LINES=[",
@@ -19192,7 +19230,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "9ddb4f969f5a8891bf9af32e5200a9b9616356ac8128e7d049b6cf9e651254dd"
     },
-    "1674": {
+    "1677": {
       "source": "game/systems/room13_work_clues.rpy",
       "line": 14,
       "context": "R13_WORK_RELATIONS={",
@@ -19463,7 +19501,7 @@
       "reviewed": true,
       "text_sha256": "feef4b41281f26a069312a98eba69c1095b2f353a6708142b69dc6ade2f45422"
     },
-    "1579": {
+    "1582": {
       "source": "game/systems/room13_testimony.rpy",
       "line": 23,
       "context": "def _r13_tm_topic(npc,title,give,lines,need=(\"lodging\",),not_flags=()):",
@@ -19499,7 +19537,7 @@
       "reviewed": true,
       "text_sha256": "7e215ef3de06facb11dd61110f01e946f417fab5dcd5ba7bf657d987f6b5b73f"
     },
-    "1584": {
+    "1587": {
       "source": "game/systems/room13_testimony.rpy",
       "line": 28,
       "context": "def _r13_tm_topic(npc,title,give,lines,need=(\"lodging\",),not_flags=()):",
@@ -19535,7 +19573,7 @@
       "reviewed": true,
       "text_sha256": "7e215ef3de06facb11dd61110f01e946f417fab5dcd5ba7bf657d987f6b5b73f"
     },
-    "1597": {
+    "1600": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 44,
       "context": "R13_KONGI_PLACES=((\"store\",\"공동 창고\"),(\"workshop\",\"수리점 뒤 골목\"),(\"post\",\"우체국\"),(\"kitchen\",\"여관 주방\"))",
