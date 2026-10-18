@@ -117,8 +117,6 @@ screen r13_hub(entry=False):
             xpos max(12,min(980,renpy.get_mouse_pos()[0]+18)) ypos max(90,min(594,renpy.get_mouse_pos()[1]+22)) padding (14,9) background R13ActionPanel()
             hbox:
                 spacing 6
-                if hint in [r13_object_name(k) for k,spec in ROOM13["objects"].get(room13["location"],{}).items() if r13_object_visible(spec)]:
-                    add R13AntiqueIcon("investigate",size=22) yalign .5
                 text hint size 20 color "#fff2cf" yalign .5
 
 screen r13_world_contents(entry=False,ready=False):
@@ -129,7 +127,7 @@ screen r13_world_contents(entry=False,ready=False):
             button:
                 area tuple(spec["rect"])
                 background None hover_background None insensitive_background None padding (0,0)
-                action SetVariable("r13_field_pick",(room13["location"],key)) sensitive ready and r13_field_view=="scene"
+                action [Function(r13_click_feedback,key),Return(("object",key))] sensitive ready and r13_field_view=="scene"
                 tooltip r13_object_name(key)
     # 0.18.50 (owner): where a person and an object overlap, the person is pressed. Objects drawn
     # in front of a resident stay pressable around the resident's silhouette.
@@ -137,7 +135,7 @@ screen r13_world_contents(entry=False,ready=False):
         button:
             area rect focus_mask mask
             background None hover_background None insensitive_background None padding (0,0)
-            action SetVariable("r13_field_pick",(room13["location"],key)) sensitive ready and r13_field_view=="scene"
+            action [Function(r13_click_feedback,key),Return(("object",key))] sensitive ready and r13_field_view=="scene"
             tooltip r13_object_name(key)
     # 0.18.63: separate prop layers (systems/room13_map_actions.rpy), behind the residents.
     for prop,px,py in r13_world_props(entry):
@@ -152,8 +150,6 @@ screen r13_world_contents(entry=False,ready=False):
     $ bundle_point=r13_gate_bundle_check_point()
     if bundle_point:
         add TopicTick() xpos bundle_point[0]-13 ypos bundle_point[1]-13
-    if r13_field_view=="scene":
-        use r13_field_spots_overlay(ready)
     use r13_admin_hitboxes()
     if r13_field_view=="people":
         for nameplate in r13_actor_nameplates(r13_stage_people(entry)):
