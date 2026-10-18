@@ -5,6 +5,10 @@ from playwright.async_api import async_playwright
 import webqa
 webqa.FLOW_PROBE=webqa.FLOW_PROBE.replace('names=[',"names=['r13_q1_checkpoint_wait','r13_mystery_notebook','r13_episode_aftermath_view','r13_debate_board','r13_meeting_ballot','r13_meeting_agenda',")
 from webqa import UIQA
+class Q1QA(UIQA):
+ async def py(self,code):
+  # Wasm introspection can exceed 35s during a cold record-screen render.
+  return await asyncio.wait_for(self.p.evaluate('code=>renpy_exec(code)','exec('+ascii(code)+')'),90)
 OUT=Path(os.environ.get('ROOM13_QA_OUT','/tmp/q1-browser'));OUT.mkdir(parents=True,exist_ok=True)
 URL=os.environ.get('ROOM13_URL','http://127.0.0.1:8770/preview/room13-dev/')
 
@@ -15,12 +19,15 @@ async def native_jump(q,label):
 async def main():
  async with async_playwright() as p:
   browser=await p.chromium.launch(executable_path=os.environ.get('ROOM13_CHROME','/usr/bin/chromium'),args=['--no-sandbox','--enable-unsafe-swiftshader'])
-  page=await browser.new_page(viewport={'width':1280,'height':720});q=UIQA(page,OUT)
-  seen=[];checks=[]
+  page=await browser.new_page(viewport={'width':1280,'height':720});q=Q1QA(page,OUT)
+  seen=[];checks=[];captured=set()
   async def until(screen=None,label=None):
    for i in range(240):
     st=await q.state()
     if st.get('say') and (not seen or seen[-1]!=st['say']):seen.append(st['say'])
+    for snippet,name in [('이제 톡이 그랬다는 말','12-case-specific-opinion'),('지금은 덮어 두자','13-father-answers-daram'),('수첩을 펼쳤다','14-review-transition')]:
+     if snippet in (st.get('say') or '') and name not in captured:
+      await q.shot(name);captured.add(name)
     if screen and screen in st['screens'] or label and any(label in b['text'] for b in st['buttons']):
      await asyncio.sleep(.5)
      return await q.state()
@@ -106,6 +113,9 @@ async def main():
    await until(label='이 결과로 계속한다');await q.shot('10-success-review')
    assert await py('result=s.r13_has("tok_cleared") and s.r13_has("madam_store_opened") and s.r13_wallet(s.room13)["cash"]==15')
    checks.append('completed investigation wins; lamp returned only after warehouse decision; reward exactly once')
+   assert not any(t in ('정말요?','그렇다고요?') or '사람을 희생' in t for t in seen)
+   assert len(captured)==3,captured
+   checks.append('case-specific opinions, authored proof replies without repeated chorus, father response and notebook transition observed')
    await q.press('이 결과로 계속한다');await until('r13_hub');await q.shot('11-continue-success')
    (OUT/'result.json').write_text(json.dumps(dict(passed=True,checks=checks,dialogue=seen),ensure_ascii=False,indent=2));print('PASS',checks,flush=True)
   except Exception:

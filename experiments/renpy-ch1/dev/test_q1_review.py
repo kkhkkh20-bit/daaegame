@@ -37,6 +37,23 @@ class Q1Review(unittest.TestCase):
         self.store.room13['evidence']=['L04']
         self.assertEqual(self.e['r13_q1_notes']()[-1]['keys'],['L04'])
         self.assertNotIn('실룩',str(self.e['r13_q1_notes']()))
+
+    def test_first_case_opinions_use_its_own_proof_and_never_discuss_sacrifice(self):
+        self.e['config']=types.SimpleNamespace(after_load_callbacks=[])
+        exec(block('systems/room13_meeting_flow.rpy','init 100 python:\n'),self.e)
+        self.e['r13_meeting_begin_opinions']('Q1')
+        for sid in ('s1','s2','s3','s4','s5'):
+            self.e['r13_debate_mark']('broken','Q1',sid)
+        self.store.room13['propositions']=['Q1']
+        before=copy.deepcopy(self.store.room13)
+        vote=self.e['r13_meeting_vote_snapshot']('Q1','correct')
+        rows=self.e['r13_meeting_reaction_lines'](vote)
+        self.assertTrue(rows)
+        self.assertNotIn('희생',str(rows))
+        self.assertNotIn('resident_tok',[row[0] for row in rows])
+        self.assertEqual({row['person'] for row in vote['changed']},{'resident_tok','buri','resident_lamplighter'})
+        self.assertTrue(all(row['grounds']==['Q1'] for row in vote['voters'] if row['stance']==2))
+        self.assertEqual(self.store.room13,before)
     def test_partial_evidence_still_opens_meeting(self):
         self.store.room13['evidence']=['L06']
         self.assertTrue(self.e['r13_debate_engageable']('Q1'))

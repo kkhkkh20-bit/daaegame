@@ -516,11 +516,14 @@ label r13_ep1_aftermath:
     if r13_has("piko_dead"):
         call r13_lines([(None,"다람이가 품에 넣어 둔 그림책을 펼쳤다.",{"book":"U01-opening"}),
             (None,"「아침이 되자, 아저씨는 엄마 코를 다 못 그린 채 잠들어 있었어요.」",{"book":"U01-ending"}),
-            ("daram","……아빠. 이 책, 이제 안 읽을래.")],"ep1:after:book")
+            ("daram","……아빠. 이 책, 이제 안 읽을래."),
+            ("dad","응. 지금은 덮어 두자."),
+            (None,"다람이가 책을 닫았다. 나는 아이의 손을 잡고 잠시 곁에 서 있었다.")],"ep1:after:book")
     else:
         call r13_lines([(None,"다람이가 품에 넣어 둔 그림책을 펼쳤다.",{"book":"U01-opening"}),
             (None,"「아침이 되자, 누군가 아저씨에게 담요를 덮어 주었어요.」",{"book":"U01-ending"}),
-            ("daram","아빠, 이번엔 끝이 바뀌었어.")],"ep1:after:book_saved")
+            ("daram","아빠, 이번엔 끝이 바뀌었어."),
+            ("dad","그러네. 담요를 덮어 준 사람이 있었구나.")],"ep1:after:book_saved")
     call r13_episode_aftermath("ep1")
     return
 

@@ -178,6 +178,7 @@ label r13_q1_preflight:
             jump r13_q1_preflight
 
 label r13_q1_review:
+    call r13_lines([(None,"수첩을 펼쳤다. 확인한 사실과 아직 답하지 못한 의문을 나누어 적었다.")],"ep1:review:opening")
     call r13_lines(r13_q1_review_lines(),"ep1:review")
 label r13_q1_review_menu:
     call r13_q1_menu_scene
