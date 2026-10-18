@@ -8355,5 +8355,546 @@
     "code": "await q.shot('32-day3-natural-save')",
     "started": 1792288158.7650673,
     "result": null
+  },
+  {
+    "code": "await q.press('돌아가기')",
+    "started": 1792289344.8366506,
+    "result": null
+  },
+  {
+    "code": "await q.press('피코가 여기 자주')",
+    "started": 1792289345.7628944,
+    "result": null
+  },
+  {
+    "code": "(await advance())['screens']",
+    "started": 1792289346.744489,
+    "result": [
+      "r13_topics"
+    ]
+  },
+  {
+    "code": "await q.press('자료 보여주기')",
+    "started": 1792289396.4540613,
+    "result": null
+  },
+  {
+    "code": "await q.press('뚜껑의 노끈')",
+    "started": 1792289397.36122,
+    "result": null
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await brief())['buttons'] if x['text'].strip()]",
+    "started": 1792289398.2879455,
+    "result": [
+      [
+        "       자료",
+        [
+          66,
+          128,
+          176,
+          56
+        ]
+      ],
+      [
+        "      전체",
+        [
+          284,
+          110,
+          52,
+          38
+        ]
+      ],
+      [
+        "      증언",
+        [
+          341,
+          110,
+          52,
+          38
+        ]
+      ],
+      [
+        "      전달 가능",
+        [
+          398,
+          110,
+          91,
+          38
+        ]
+      ],
+      [
+        "      ● 안 읽음 10",
+        [
+          494,
+          110,
+          123,
+          38
+        ]
+      ],
+      [
+        "       뚜껑의 노끈",
+        [
+          290,
+          166,
+          119,
+          128
+        ]
+      ],
+      [
+        "       ● 숫자 쪽지",
+        [
+          414,
+          166,
+          119,
+          128
+        ]
+      ],
+      [
+        "       ● 초롱의 말",
+        [
+          538,
+          166,
+          119,
+          128
+        ]
+      ],
+      [
+        "       ● 등 밑의 피코",
+        [
+          662,
+          166,
+          119,
+          128
+        ]
+      ],
+      [
+        "       ● 피코의 스케치",
+        [
+          290,
+          300,
+          119,
+          128
+        ]
+      ],
+      [
+        "       ● 엄마의 우체국 방문",
+        [
+          414,
+          300,
+          119,
+          128
+        ]
+      ],
+      [
+        "       ● 초롱의 목격담",
+        [
+          538,
+          300,
+          119,
+          128
+        ]
+      ],
+      [
+        "       ● 바느질 흔적",
+        [
+          662,
+          300,
+          119,
+          128
+        ]
+      ],
+      [
+        "       엄마의 메모",
+        [
+          290,
+          434,
+          119,
+          128
+        ]
+      ],
+      [
+        "       ● 고친 입장기록",
+        [
+          414,
+          434,
+          119,
+          128
+        ]
+      ],
+      [
+        "       예약 원본",
+        [
+          538,
+          434,
+          119,
+          128
+        ]
+      ],
+      [
+        "       ● 옮겨 쓴 목록",
+        [
+          662,
+          434,
+          119,
+          128
+        ]
+      ],
+      [
+        "      다음 ›",
+        [
+          507,
+          584,
+          132,
+          82
+        ]
+      ],
+      [
+        "뚜껑에 걸린 노끈 확인한 내용 3번 등 뚜껑 틈에 짐 묶는 갈색 노끈이 걸려 있었다. 끈의 주인과, 등을 열었던 시각은 아직 확인하지 못했다. 3일 · 오전 · 돌이 있는 광장 직접 조사해 기록한 물건·문서·관찰 얻은 곳: 꺼진 3번 등 뚜껑",
+        [
+          844,
+          218,
+          351,
+          322
+        ]
+      ],
+      [
+        "      사서 선생님에게 보여주기",
+        [
+          824,
+          584,
+          398,
+          82
+        ]
+      ],
+      [
+        "      그만두기",
+        [
+          66,
+          584,
+          176,
+          82
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await q.press('사서 선생님에게 보여주기')",
+    "started": 1792289438.8940818,
+    "result": null
+  },
+  {
+    "code": "(await advance())['screens']",
+    "started": 1792289439.8159428,
+    "result": [
+      "r13_topics"
+    ]
+  },
+  {
+    "code": "await q.press('자료 보여주기')",
+    "started": 1792289441.7365484,
+    "result": null
+  },
+  {
+    "code": "await q.press('등 밑의 피코')",
+    "started": 1792289442.621453,
+    "result": null
+  },
+  {
+    "code": "await q.press('사서 선생님에게 보여주기')",
+    "started": 1792289443.5908368,
+    "result": null
+  },
+  {
+    "code": "(await advance())['screens']",
+    "started": 1792289444.5474792,
+    "result": [
+      "r13_topics"
+    ]
+  },
+  {
+    "code": "await q.shot('33-natural-library-warning')",
+    "started": 1792289631.7805054,
+    "result": null
+  },
+  {
+    "code": "(await brief())['room']",
+    "started": 1792289632.2814772,
+    "result": {
+      "day": 3,
+      "period": 0,
+      "location": "post",
+      "flags": [
+        "question_read:entry:daram:look",
+        "question_read:entry:explain",
+        "observed:gate:gate_documents",
+        "observed:gate:booth",
+        "entry_corrected",
+        "ep4_seen",
+        "ep1_patrol_seen",
+        "ep1_eaves_seen",
+        "ep1_done",
+        "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+        "calendar:granny:1:1:arrival:10b5e62b61554787",
+        "lodging",
+        "observed:room13:bed",
+        "night1_seen",
+        "travel_money",
+        "livelihood_open",
+        "noticed:calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+        "calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+        "intro:memo_shown",
+        "mother_lamplighter_lead",
+        "mother_letter_promised",
+        "mother_recognized",
+        "noticed:calendar:seryeon:2:0:settling:10b5e62b61554787",
+        "calendar:seryeon:2:0:settling:10b5e62b61554787",
+        "intro:post_letter",
+        "intro:post_memo",
+        "mother_first_lead_checked",
+        "poc:night:2",
+        "ev_l_done",
+        "warning_exposed",
+        "lt_dawn",
+        "piko_dead",
+        "observed:square:stone",
+        "ev_a_done",
+        "know_siluk_debt",
+        "observed:square:lt_lamp3",
+        "lt_two_people",
+        "noticed:calendar:resident_librarian:3:0:settling:10b5e62b61554787",
+        "calendar:resident_librarian:3:0:settling:10b5e62b61554787",
+        "lt_lib_met",
+        "lt_lib_warned",
+        "lt_lib_safe",
+        "lt_lib_ill"
+      ],
+      "evidence": [
+        "E01",
+        "G3",
+        "G1",
+        "E02",
+        "M01",
+        "E03",
+        "J02",
+        "J03",
+        "L13",
+        "L00",
+        "L06",
+        "L03",
+        "L04"
+      ],
+      "daram_state": "with_dad"
+    }
+  },
+  {
+    "code": "await q.press('돌아가기')",
+    "started": 1792289650.4824867,
+    "result": null
+  },
+  {
+    "code": "(await advance())['screens']",
+    "started": 1792289651.413995,
+    "result": [
+      "r13_hub"
+    ]
+  },
+  {
+    "code": "await q.press('지도 · 이동')",
+    "started": 1792289652.1084619,
+    "result": null
+  },
+  {
+    "code": "await q.press('여관 안')",
+    "started": 1792289653.0333827,
+    "result": null
+  },
+  {
+    "code": "await q.press('13호실')",
+    "started": 1792289653.937341,
+    "result": null
+  },
+  {
+    "code": "await q.press('이곳으로 이동')",
+    "started": 1792289654.9001114,
+    "result": null
+  },
+  {
+    "code": "(await advance())['screens']",
+    "started": 1792289708.6964123,
+    "result": [
+      "r13_hub"
+    ]
+  },
+  {
+    "code": "await q.press('자기')",
+    "started": 1792289708.9455278,
+    "result": null
+  },
+  {
+    "code": "await q.press('자기')",
+    "started": 1792289709.8694968,
+    "result": null
+  },
+  {
+    "code": "(await advance())['screens']",
+    "started": 1792289710.7738845,
+    "result": [
+      "r13_evidence_found",
+      "r13_hub"
+    ]
+  },
+  {
+    "code": "(await brief())['room']",
+    "started": 1792289746.7558036,
+    "result": {
+      "day": 4,
+      "period": 0,
+      "location": "room13",
+      "flags": [
+        "question_read:entry:daram:look",
+        "question_read:entry:explain",
+        "observed:gate:gate_documents",
+        "observed:gate:booth",
+        "entry_corrected",
+        "ep4_seen",
+        "ep1_patrol_seen",
+        "ep1_eaves_seen",
+        "ep1_done",
+        "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+        "calendar:granny:1:1:arrival:10b5e62b61554787",
+        "lodging",
+        "observed:room13:bed",
+        "night1_seen",
+        "travel_money",
+        "livelihood_open",
+        "noticed:calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+        "calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+        "intro:memo_shown",
+        "mother_lamplighter_lead",
+        "mother_letter_promised",
+        "mother_recognized",
+        "noticed:calendar:seryeon:2:0:settling:10b5e62b61554787",
+        "calendar:seryeon:2:0:settling:10b5e62b61554787",
+        "intro:post_letter",
+        "intro:post_memo",
+        "mother_first_lead_checked",
+        "poc:night:2",
+        "ev_l_done",
+        "warning_exposed",
+        "lt_dawn",
+        "piko_dead",
+        "observed:square:stone",
+        "ev_a_done",
+        "know_siluk_debt",
+        "observed:square:lt_lamp3",
+        "lt_two_people",
+        "noticed:calendar:resident_librarian:3:0:settling:10b5e62b61554787",
+        "calendar:resident_librarian:3:0:settling:10b5e62b61554787",
+        "lt_lib_met",
+        "lt_lib_warned",
+        "lt_lib_safe",
+        "lt_lib_ill",
+        "poc:night:3",
+        "lt_lib_dawn",
+        "ev_b_done",
+        "ev_b_missed",
+        "musoe_herbs"
+      ],
+      "evidence": [
+        "E01",
+        "G3",
+        "G1",
+        "E02",
+        "M01",
+        "E03",
+        "J02",
+        "J03",
+        "L13",
+        "L00",
+        "L06",
+        "L03",
+        "L04",
+        "L10"
+      ],
+      "daram_state": "with_dad"
+    }
+  },
+  {
+    "code": "await q.shot('34-after-day3-night')",
+    "started": 1792289746.9130566,
+    "result": null
+  },
+  {
+    "code": "await q.input(1220,48)",
+    "started": 1792289747.586853,
+    "result": null
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await brief())['buttons'] if x['text'].strip()]",
+    "started": 1792289747.897214,
+    "result": [
+      [
+        "       저장 · 불러오기",
+        [
+          564,
+          464,
+          328,
+          64
+        ]
+      ],
+      [
+        "       다시 시작할 아침",
+        [
+          908,
+          464,
+          328,
+          64
+        ]
+      ],
+      [
+        "       설정",
+        [
+          564,
+          544,
+          328,
+          64
+        ]
+      ],
+      [
+        "       메인화면",
+        [
+          908,
+          544,
+          328,
+          64
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await q.press('저장 · 불러오기')",
+    "started": 1792289775.062966,
+    "result": null
+  },
+  {
+    "code": "await q.press('1쪽')",
+    "started": 1792289775.9740126,
+    "result": null
+  },
+  {
+    "code": "await q.press('1쪽 5번')",
+    "started": 1792289776.9476855,
+    "result": null
+  },
+  {
+    "code": "await q.shot('35-days1-3-complete-save')",
+    "started": 1792289777.9080038,
+    "result": null
+  },
+  {
+    "code": "await q.press('돌아가기')",
+    "started": 1792289778.3605719,
+    "result": null
   }
 ]
