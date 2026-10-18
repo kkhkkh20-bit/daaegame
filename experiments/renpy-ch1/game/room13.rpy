@@ -274,7 +274,7 @@ label r13_day:
     jump r13_roam
 
 label r13_roam:
-    $ r13_upgrade()
+    $ r13_life_field_active=False; r13_upgrade()
     if room13.get("revision_restart_required"):
         jump r13_revision_resume
     # 0.18.83: 사건 다음 날 엄마가 진료소에 나타나던 장면(r13_mother_intervention)은 부르지 않는다.
@@ -296,9 +296,9 @@ label r13_roam:
     call r13_scene(R13_PLACES[room13["location"]][1],place,"night" if room13["period"]>=2 else "search" if room13["case_state"]=="occurred" else "calm")
 label r13_field:
     window hide
-    hide r13_visitor
+    $ renpy.hide("r13_visitor"); r13_life_field_active=True
     call screen r13_hub
-    $ r13_choice=_return
+    $ r13_choice=_return; r13_life_field_active=r13_life_choice_is_group(r13_choice)
     if not r13_screen_choice_ok(r13_choice,"r13_hub"):
         jump r13_field
     if r13_choice[0]=="livelihood":
@@ -328,10 +328,10 @@ label r13_field:
         $ r13_mark("empty:%d:%d"%(r13_choice[1][0]//70,r13_choice[1][1]//70),*r13_choice[1])
         call r13_lines([(None,"발밑과 벽면을 꼼꼼히 살폈다. 이 자리에는 특별히 눈에 띄는 흔적이 없다.")],"field:empty:"+room13["location"], binding_route="dynamic:019")
         jump r13_field
-    if r13_choice[0]=="person":
+    if r13_choice[0] in ("person","life_group","life_child"):
         $ r13_target=r13_choice[1]
-        call r13_talk
-        jump r13_roam
+        call r13_life_field_person_dispatch
+        jump expression ("r13_field" if r13_choice[0] in ("life_group","life_child") else "r13_roam")
     if r13_choice[0]=="travel":
         $ r13_destination=r13_local_destination(r13_choice[1])
         if r13_destination=="outside":
