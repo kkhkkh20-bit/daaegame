@@ -1,0 +1,586 @@
+{
+  "label": "post-2-0-False-700",
+  "actors": [
+    {
+      "person": "resident_librarian",
+      "pose": "map27_po_2",
+      "x": 485,
+      "y": 411,
+      "width": 129,
+      "height": 194,
+      "rect": [
+        485,
+        411,
+        129,
+        194
+      ],
+      "depth": 605,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "종이를 펼쳐 말린다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    },
+    {
+      "person": "resident_jongjong",
+      "pose": "map27_sort_letters_v2",
+      "x": 960,
+      "y": 434,
+      "width": 135,
+      "height": 210,
+      "rect": [
+        960,
+        434,
+        135,
+        210
+      ],
+      "depth": 644,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "우편 봉투를 분류한다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    },
+    {
+      "person": "resident_sling",
+      "pose": "map27_po_1",
+      "x": 1298,
+      "y": 383,
+      "width": 187,
+      "height": 280,
+      "rect": [
+        1298,
+        383,
+        187,
+        280
+      ],
+      "depth": 663,
+      "occlusion": [],
+      "contact": "behind_counter",
+      "slot": null,
+      "activity": "소포를 창구에 내려놓는다.",
+      "map27_occlusion": [
+        [
+          [
+            1100,
+            560
+          ],
+          [
+            1135,
+            515
+          ],
+          [
+            1500,
+            500
+          ],
+          [
+            1600,
+            492
+          ],
+          [
+            1700,
+            480
+          ],
+          [
+            2160,
+            470
+          ],
+          [
+            2160,
+            720
+          ],
+          [
+            1100,
+            720
+          ]
+        ]
+      ],
+      "map27_keepouts": [
+        [
+          [
+            1405.5520833333333,
+            510.60416666666663
+          ],
+          [
+            1482.1145833333333,
+            510.60416666666663
+          ],
+          [
+            1482.1145833333333,
+            553.4427083333333
+          ],
+          [
+            1405.5520833333333,
+            553.4427083333333
+          ]
+        ],
+        [
+          [
+            1371.828125,
+            481.4375
+          ],
+          [
+            1385.5,
+            481.4375
+          ],
+          [
+            1398.2604166666667,
+            501.4895833333333
+          ],
+          [
+            1405.5520833333333,
+            514.25
+          ],
+          [
+            1412.84375,
+            523.3645833333333
+          ],
+          [
+            1436.5416666666667,
+            528.8333333333333
+          ],
+          [
+            1436.5416666666667,
+            552.53125
+          ],
+          [
+            1407.375,
+            556.1770833333333
+          ],
+          [
+            1389.1458333333333,
+            541.59375
+          ],
+          [
+            1378.2083333333333,
+            525.1875
+          ]
+        ],
+        [
+          [
+            1440.1875,
+            486.90625
+          ],
+          [
+            1452.9479166666667,
+            486.90625
+          ],
+          [
+            1460.2395833333333,
+            503.3125
+          ],
+          [
+            1471.1770833333333,
+            511.515625
+          ],
+          [
+            1476.6458333333333,
+            525.1875
+          ],
+          [
+            1462.0625,
+            527.921875
+          ],
+          [
+            1443.8333333333333,
+            516.0729166666666
+          ]
+        ]
+      ]
+    },
+    {
+      "person": "seryeon",
+      "pose": "action_1",
+      "x": 4,
+      "y": 469,
+      "width": 171,
+      "height": 205,
+      "rect": [
+        4,
+        469,
+        171,
+        205
+      ],
+      "depth": 674,
+      "occlusion": [],
+      "contact": "clipboard",
+      "slot": [
+        90,
+        675,
+        220,
+        "waiting"
+      ],
+      "activity": "우편 담당자는 돌아온 봉투의 이름을 다시 확인했다."
+    },
+    {
+      "person": "resident_momo",
+      "pose": "living_lampnumber",
+      "x": 811,
+      "y": 460,
+      "width": 106,
+      "height": 230,
+      "rect": [
+        811,
+        460,
+        106,
+        230
+      ],
+      "depth": 690,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        870,
+        690,
+        230,
+        "waiting"
+      ],
+      "activity": "모모는 전시품 밑의 번호를 다시 읽었다."
+    }
+  ],
+  "offset": 700,
+  "hits": [
+    {
+      "person": "resident_jongjong",
+      "point": [
+        327,
+        467
+      ],
+      "actions": [
+        "('person', 'resident_jongjong')"
+      ]
+    },
+    {
+      "person": "resident_sling",
+      "point": [
+        702,
+        428
+      ],
+      "actions": [
+        "('person', 'resident_sling')"
+      ]
+    },
+    {
+      "person": "resident_momo",
+      "point": [
+        159,
+        484
+      ],
+      "actions": [
+        "('person', 'resident_momo')"
+      ]
+    }
+  ],
+  "specs": {
+    "resident_librarian": {
+      "file": "assets/map-action27/PO-2--resident_librarian.webp",
+      "crop": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "head": [
+        134.656,
+        27.647999999999996,
+        173.05599999999998,
+        158.976
+      ],
+      "foot": [
+        296.96,
+        748.8
+      ],
+      "anchors": {
+        "foot": [
+          296.96,
+          748.8
+        ],
+        "foot_left": [
+          222.72,
+          748.8
+        ],
+        "foot_right": [
+          363.52,
+          744.96
+        ],
+        "hand_left": [
+          320,
+          268.79999999999995
+        ],
+        "hand_right": [
+          455.68,
+          188.16
+        ],
+        "prop_support": [
+          410.624,
+          280.32
+        ]
+      },
+      "foreground_parts": [],
+      "contact": "standing",
+      "stature_ratio": 1,
+      "source_sha256": "5fdf72dbf96f1dedff609e7a293f961e72245896dd0890013dd3956859752c94",
+      "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+    },
+    "resident_jongjong": {
+      "file": "assets/map-action27/VA-11--resident_jongjong.webp",
+      "crop": [
+        0,
+        0,
+        494,
+        768
+      ],
+      "head": [
+        127.54228855721392,
+        0,
+        235.46268656716416,
+        245.21072796934865
+      ],
+      "foot": [
+        290.89452736318407,
+        752.7969348659003
+      ],
+      "anchors": {
+        "foot_left": [
+          211.91641791044776,
+          752.7969348659003
+        ],
+        "foot_right": [
+          369.8726368159204,
+          752.7969348659003
+        ],
+        "hand_left_image": [
+          132.93830845771143,
+          314.85057471264366
+        ],
+        "hand_right_image": [
+          211.91641791044776,
+          307.0038314176245
+        ],
+        "foot": [
+          290.89452736318407,
+          752.7969348659003
+        ]
+      },
+      "contact": "standing",
+      "stature_ratio": 1,
+      "source_sha256": "f9ef58a8aa502d9856cb96f01bc9fd86656df31d2b8bbf2973503bdf01ac2e73",
+      "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+    },
+    "resident_sling": {
+      "file": "assets/map-action27/PO-1--resident_sling.webp",
+      "crop": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "head": [
+        164,
+        13.5,
+        246.5,
+        225
+      ],
+      "foot": [
+        308.5,
+        754.5
+      ],
+      "anchors": {
+        "foot_left": [
+          191.5,
+          754.5
+        ],
+        "foot_right": [
+          425,
+          749
+        ],
+        "foot": [
+          308.5,
+          754.5
+        ],
+        "hand_parcel_left": [
+          349,
+          429.5
+        ],
+        "hand_parcel_right": [
+          481.5,
+          420
+        ],
+        "parcel_bottom_left": [
+          358,
+          455.5
+        ],
+        "parcel_bottom_right": [
+          476.5,
+          449
+        ],
+        "parcel_bottom": [
+          417,
+          452.5
+        ],
+        "work": [
+          417,
+          452.5
+        ]
+      },
+      "foreground_parts": [
+        [
+          [
+            295,
+            350
+          ],
+          [
+            505,
+            350
+          ],
+          [
+            505,
+            467.5
+          ],
+          [
+            295,
+            467.5
+          ]
+        ],
+        [
+          [
+            202.5,
+            270
+          ],
+          [
+            240,
+            270
+          ],
+          [
+            275,
+            325
+          ],
+          [
+            295,
+            360
+          ],
+          [
+            315,
+            385
+          ],
+          [
+            380,
+            400
+          ],
+          [
+            380,
+            465
+          ],
+          [
+            300,
+            475
+          ],
+          [
+            250,
+            435
+          ],
+          [
+            220,
+            390
+          ]
+        ],
+        [
+          [
+            390,
+            285
+          ],
+          [
+            425,
+            285
+          ],
+          [
+            445,
+            330
+          ],
+          [
+            475,
+            352.5
+          ],
+          [
+            490,
+            390
+          ],
+          [
+            450,
+            397.5
+          ],
+          [
+            400,
+            365
+          ]
+        ]
+      ],
+      "contact": "behind_counter",
+      "stature_ratio": 1,
+      "source_sha256": "ddd164dae71ffde0a52e21342c2af26d90b0c2df36cf2a9355da90bcc78310a2",
+      "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376"
+    },
+    "seryeon": {
+      "file": "assets/room13-pixel-acting-seryeon.webp",
+      "crop": [
+        596,
+        514,
+        385,
+        461
+      ],
+      "nearest": true,
+      "facing": "right",
+      "contact": "clipboard",
+      "foot": [
+        192,
+        460
+      ],
+      "head": [
+        179,
+        0,
+        182,
+        201
+      ],
+      "hand": [
+        321,
+        181
+      ]
+    },
+    "resident_momo": {
+      "file": "assets/room13-action-resident_momo-living_lampnumber.webp",
+      "crop": [
+        93,
+        1,
+        354,
+        765
+      ],
+      "nearest": true,
+      "foot": [
+        192,
+        761
+      ],
+      "head": [
+        57,
+        5,
+        210,
+        150
+      ],
+      "contact": "standing",
+      "reviewed": true,
+      "map_action": true,
+      "stature_ratio": 1,
+      "source_sha256": "5319857cfa25aee94795afd3027f4dadbb3796623c0a47360b3d545b4c94d61b"
+    }
+  },
+  "room": "post",
+  "clicked": [
+    "resident_jongjong"
+  ],
+  "screens": [
+    "r13_hub"
+  ],
+  "game_commit": "1b94f0d5 + 0.19.43 working tree",
+  "archive_sha256": "c9e213cb6c4f3df24eba26dd24dc0479f875414b326cbf9ab1d6a6ec047bfa25",
+  "capture_kind": "explicit schedule fixture in native SDK web engine"
+}

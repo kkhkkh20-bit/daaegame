@@ -4,6 +4,837 @@
   "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376",
   "rows": [
     {
+      "request_id": "VA-6-gate",
+      "status": "approved",
+      "person": "resident_badook",
+      "pose": "map27_check_rope",
+      "location": "gate",
+      "periods": [
+        0
+      ],
+      "replace_poses": [
+        "living_bootlace"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 300,
+          "anchor": "foot",
+          "target": [
+            1110,
+            651
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 300,
+          "anchor": "foot",
+          "target": [
+            1110,
+            651
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 1920,
+          "render_height": 300,
+          "anchor": "foot",
+          "target": [
+            1110,
+            651
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-6--resident_badook.webp",
+        "crop": [
+          0,
+          0,
+          516,
+          768
+        ],
+        "head": [
+          120.46692607003891,
+          0.0,
+          271.05058365758754,
+          215.84313725490196
+        ],
+        "foot": [
+          286.3599221789883,
+          752.4392156862745
+        ],
+        "anchors": {
+          "foot_left": [
+            196.26070038910507,
+            752.4392156862745
+          ],
+          "foot_right": [
+            376.4591439688716,
+            752.4392156862745
+          ],
+          "hand_left_image": [
+            216.84046692607004,
+            276.58039215686273
+          ],
+          "hand_right_image": [
+            418.1206225680934,
+            291.6392156862745
+          ],
+          "foot": [
+            286.3599221789883,
+            752.4392156862745
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "8e6c62f72314ad87814bce487721abffd7339110fa55f33bfc2dd689c02be5a3",
+        "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+      },
+      "activity": "순찰용 밧줄의 매듭을 살핀다."
+    },
+    {
+      "request_id": "VA-7-gate",
+      "status": "approved",
+      "person": "resident_bori",
+      "pose": "map27_carry_firewood_v2",
+      "location": "gate",
+      "periods": [
+        0
+      ],
+      "replace_poses": [
+        "living_firewood"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 280,
+          "anchor": "foot",
+          "target": [
+            920,
+            620
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 280,
+          "anchor": "foot",
+          "target": [
+            920,
+            620
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 1920,
+          "render_height": 280,
+          "anchor": "foot",
+          "target": [
+            920,
+            620
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-7--resident_bori.webp",
+        "crop": [
+          0,
+          0,
+          578,
+          768
+        ],
+        "head": [
+          180.625,
+          0.0,
+          276.25,
+          228.53979238754326
+        ],
+        "foot": [
+          280.234375,
+          752.5868512110727
+        ],
+        "anchors": {
+          "foot_left": [
+            173.1875,
+            698.9065743944637
+          ],
+          "foot_right": [
+            387.28125,
+            752.5868512110727
+          ],
+          "hand_left_image": [
+            231.09375,
+            437.94602076124573
+          ],
+          "hand_right_image": [
+            479.71875,
+            460.8
+          ],
+          "foot": [
+            280.234375,
+            752.5868512110727
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "731a173e63f0415f7b86f81d7bcd1d09b26bbc68e15ba2adfa3100a39597b3fd",
+        "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+      },
+      "activity": "작업장갑을 끼고 장작을 나른다."
+    },
+    {
+      "request_id": "VA-8-store",
+      "status": "approved",
+      "person": "resident_bori",
+      "pose": "map27_check_own_ration_v2",
+      "location": "store",
+      "periods": [
+        1
+      ],
+      "replace_poses": [
+        "living_firewood"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 340,
+          "anchor": "foot",
+          "target": [
+            1350,
+            689
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 340,
+          "anchor": "foot",
+          "target": [
+            1350,
+            689
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 1920,
+          "render_height": 340,
+          "anchor": "foot",
+          "target": [
+            1350,
+            689
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-8--resident_bori.webp",
+        "crop": [
+          0,
+          0,
+          578,
+          768
+        ],
+        "head": [
+          180.625,
+          0.0,
+          276.25,
+          228.53979238754326
+        ],
+        "foot": [
+          317.953125,
+          752.5868512110727
+        ],
+        "anchors": {
+          "foot_left": [
+            208.25,
+            752.5868512110727
+          ],
+          "foot_right": [
+            427.65625,
+            752.5868512110727
+          ],
+          "hand_left_image": [
+            162.03125,
+            468.240830449827
+          ],
+          "hand_right_image": [
+            479.71875,
+            268.93287197231837
+          ],
+          "foot": [
+            317.953125,
+            752.5868512110727
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "5ea8b02dbf44e30b69d86d19cc29bdc794be7d40d06471f6168ef99653553e7d",
+        "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+      },
+      "activity": "자신의 배급표와 주머니를 확인한다."
+    },
+    {
+      "request_id": "VA-9-square",
+      "status": "approved",
+      "person": "doto",
+      "pose": "map27_write_ledger_v2",
+      "location": "square",
+      "periods": [
+        0,
+        1
+      ],
+      "replace_poses": [
+        "action_1"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 245,
+          "anchor": "foot",
+          "target": [
+            900,
+            620
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 245,
+          "anchor": "foot",
+          "target": [
+            900,
+            620
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 1920,
+          "render_height": 245,
+          "anchor": "foot",
+          "target": [
+            900,
+            620
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-9--doto.webp",
+        "crop": [
+          0,
+          0,
+          506,
+          768
+        ],
+        "head": [
+          119.1740412979351,
+          0.0,
+          278.0727630285153,
+          258.1512605042017
+        ],
+        "foot": [
+          265.1622418879056,
+          752.6102133160957
+        ],
+        "anchors": {
+          "foot_left": [
+            176.77482792527042,
+            752.6102133160957
+          ],
+          "foot_right": [
+            353.54965585054083,
+            737.2204266321913
+          ],
+          "hand_left_image": [
+            288.0039331366765,
+            338.0788623141564
+          ],
+          "hand_right_image": [
+            388.8053097345133,
+            384.2482223658694
+          ],
+          "foot": [
+            265.1622418879056,
+            752.6102133160957
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "10e0eb3c34eb109b0433e507bfb7f97d1a66d28787a0b5cd97f7fd0036a2f334",
+        "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+      },
+      "activity": "토시를 끼고 장부에 적는다."
+    },
+    {
+      "request_id": "VA-9-hall",
+      "status": "approved",
+      "person": "doto",
+      "pose": "map27_write_ledger_v2",
+      "location": "hall",
+      "periods": [
+        0
+      ],
+      "replace_poses": [
+        "action_1"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 255,
+          "anchor": "foot",
+          "target": [
+            1017,
+            669
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 2160,
+          "render_height": 255,
+          "anchor": "foot",
+          "target": [
+            1017,
+            669
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 2160,
+          "render_height": 255,
+          "anchor": "foot",
+          "target": [
+            1017,
+            669
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-9--doto.webp",
+        "crop": [
+          0,
+          0,
+          506,
+          768
+        ],
+        "head": [
+          119.1740412979351,
+          0.0,
+          278.0727630285153,
+          258.1512605042017
+        ],
+        "foot": [
+          265.1622418879056,
+          752.6102133160957
+        ],
+        "anchors": {
+          "foot_left": [
+            176.77482792527042,
+            752.6102133160957
+          ],
+          "foot_right": [
+            353.54965585054083,
+            737.2204266321913
+          ],
+          "hand_left_image": [
+            288.0039331366765,
+            338.0788623141564
+          ],
+          "hand_right_image": [
+            388.8053097345133,
+            384.2482223658694
+          ],
+          "foot": [
+            265.1622418879056,
+            752.6102133160957
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "10e0eb3c34eb109b0433e507bfb7f97d1a66d28787a0b5cd97f7fd0036a2f334",
+        "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+      },
+      "activity": "토시를 끼고 장부에 적는다."
+    },
+    {
+      "request_id": "VA-10-square",
+      "status": "approved",
+      "person": "doto",
+      "pose": "map27_compare_ration_slips_v2",
+      "location": "square",
+      "periods": [
+        2
+      ],
+      "replace_poses": [
+        "action_1"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 245,
+          "anchor": "foot",
+          "target": [
+            900,
+            620
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 245,
+          "anchor": "foot",
+          "target": [
+            900,
+            620
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 1920,
+          "render_height": 245,
+          "anchor": "foot",
+          "target": [
+            900,
+            620
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-10--doto.webp",
+        "crop": [
+          0,
+          0,
+          504,
+          768
+        ],
+        "head": [
+          119.05511811023622,
+          0.0,
+          277.79527559055117,
+          258.1512605042017
+        ],
+        "foot": [
+          264.6496062992126,
+          752.6102133160957
+        ],
+        "anchors": {
+          "foot_left": [
+            176.5984251968504,
+            752.6102133160957
+          ],
+          "foot_right": [
+            352.7007874015748,
+            745.1635423400129
+          ],
+          "hand_left_image": [
+            186.51968503937007,
+            307.29928894634776
+          ],
+          "hand_right_image": [
+            443.4803149606299,
+            245.74014221073045
+          ],
+          "foot": [
+            264.6496062992126,
+            752.6102133160957
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "d4a7133a0d6a1d1953be9ee5743d71f1611aed03030023d0effab4149d35ae04",
+        "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+      },
+      "activity": "두 배급표의 표기를 비교한다."
+    },
+    {
+      "request_id": "VA-10-hall",
+      "status": "approved",
+      "person": "doto",
+      "pose": "map27_compare_ration_slips_v2",
+      "location": "hall",
+      "periods": [
+        1,
+        2
+      ],
+      "replace_poses": [
+        "action_1",
+        "action_2"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 255,
+          "anchor": "foot",
+          "target": [
+            1017,
+            669
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 2160,
+          "render_height": 255,
+          "anchor": "foot",
+          "target": [
+            1017,
+            669
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 2160,
+          "render_height": 255,
+          "anchor": "foot",
+          "target": [
+            1017,
+            669
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-10--doto.webp",
+        "crop": [
+          0,
+          0,
+          504,
+          768
+        ],
+        "head": [
+          119.05511811023622,
+          0.0,
+          277.79527559055117,
+          258.1512605042017
+        ],
+        "foot": [
+          264.6496062992126,
+          752.6102133160957
+        ],
+        "anchors": {
+          "foot_left": [
+            176.5984251968504,
+            752.6102133160957
+          ],
+          "foot_right": [
+            352.7007874015748,
+            745.1635423400129
+          ],
+          "hand_left_image": [
+            186.51968503937007,
+            307.29928894634776
+          ],
+          "hand_right_image": [
+            443.4803149606299,
+            245.74014221073045
+          ],
+          "foot": [
+            264.6496062992126,
+            752.6102133160957
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "d4a7133a0d6a1d1953be9ee5743d71f1611aed03030023d0effab4149d35ae04",
+        "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+      },
+      "activity": "두 배급표의 표기를 비교한다."
+    },
+    {
+      "request_id": "VA-11-post",
+      "status": "approved",
+      "person": "resident_jongjong",
+      "pose": "map27_sort_letters_v2",
+      "location": "post",
+      "periods": [
+        0
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world",
+        "map9_letters_waiting"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 210,
+          "anchor": "foot",
+          "target": [
+            1040,
+            640
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1280,
+          "render_height": 240,
+          "anchor": "foot",
+          "target": [
+            300,
+            700
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 1280,
+          "render_height": 240,
+          "anchor": "foot",
+          "target": [
+            300,
+            700
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-11--resident_jongjong.webp",
+        "crop": [
+          0,
+          0,
+          494,
+          768
+        ],
+        "head": [
+          127.54228855721392,
+          0.0,
+          235.46268656716416,
+          245.21072796934865
+        ],
+        "foot": [
+          290.89452736318407,
+          752.7969348659003
+        ],
+        "anchors": {
+          "foot_left": [
+            211.91641791044776,
+            752.7969348659003
+          ],
+          "foot_right": [
+            369.8726368159204,
+            752.7969348659003
+          ],
+          "hand_left_image": [
+            132.93830845771143,
+            314.85057471264366
+          ],
+          "hand_right_image": [
+            211.91641791044776,
+            307.0038314176245
+          ],
+          "foot": [
+            290.89452736318407,
+            752.7969348659003
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "f9ef58a8aa502d9856cb96f01bc9fd86656df31d2b8bbf2973503bdf01ac2e73",
+        "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+      },
+      "activity": "우편 봉투를 분류한다."
+    },
+    {
+      "request_id": "VA-12-post",
+      "status": "approved",
+      "person": "resident_jongjong",
+      "pose": "map27_pack_satchel_v2",
+      "location": "post",
+      "periods": [
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world",
+        "map9_letters_waiting"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 210,
+          "anchor": "foot",
+          "target": [
+            1040,
+            640
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1280,
+          "render_height": 240,
+          "anchor": "foot",
+          "target": [
+            300,
+            700
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 1280,
+          "render_height": 240,
+          "anchor": "foot",
+          "target": [
+            300,
+            700
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-12--resident_jongjong.webp",
+        "crop": [
+          0,
+          0,
+          492,
+          768
+        ],
+        "head": [
+          127.41035856573706,
+          0.0,
+          235.21912350597609,
+          245.0542437779196
+        ],
+        "foot": [
+          275.6474103585657,
+          752.806636885769
+        ],
+        "anchors": {
+          "foot_left": [
+            196.996015936255,
+            752.806636885769
+          ],
+          "foot_right": [
+            354.2988047808765,
+            752.806636885769
+          ],
+          "hand_left_image": [
+            270.50199203187253,
+            345.5264837268666
+          ],
+          "hand_right_image": [
+            388.601593625498,
+            353.36821952776006
+          ],
+          "foot": [
+            275.6474103585657,
+            752.806636885769
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "169143ce4a8a4f6aa817c286a20c195d8f41585d605b1d29843ade2fa2674c87",
+        "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+      },
+      "activity": "우편 가방에 편지를 챙긴다."
+    },
+    {
       "request_id": "VA-2",
       "status": "approved",
       "person": "resident_piko",

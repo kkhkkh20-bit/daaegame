@@ -1,0 +1,436 @@
+{
+  "label": "store-2-1-False-640",
+  "actors": [
+    {
+      "person": "resident_mungchi",
+      "pose": "map27_st_1",
+      "x": 1040,
+      "y": 271,
+      "width": 108,
+      "height": 162,
+      "rect": [
+        1040,
+        271,
+        108,
+        162
+      ],
+      "depth": 433,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "자루를 어깨에 메고 옮긴다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    },
+    {
+      "person": "resident_madam",
+      "pose": "neutral",
+      "x": 914,
+      "y": 295,
+      "width": 123,
+      "height": 250,
+      "rect": [
+        914,
+        295,
+        123,
+        250
+      ],
+      "depth": 545,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        975,
+        544,
+        250,
+        "floor"
+      ],
+      "activity": "백 부인은 보관함을 봉해 둔 자리를 다시 만졌다."
+    },
+    {
+      "person": "resident_siluk",
+      "pose": "map27_st_2",
+      "x": 1359,
+      "y": 325,
+      "width": 213,
+      "height": 319,
+      "rect": [
+        1359,
+        325,
+        213,
+        319
+      ],
+      "depth": 644,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "나무 상자를 나른다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    },
+    {
+      "person": "resident_eunho",
+      "pose": "living_prices",
+      "x": 976,
+      "y": 348,
+      "width": 279,
+      "height": 301,
+      "rect": [
+        976,
+        348,
+        279,
+        301
+      ],
+      "depth": 649,
+      "occlusion": [],
+      "contact": "self-contained",
+      "slot": [
+        1116,
+        647,
+        324,
+        "floor"
+      ],
+      "activity": "은호는 물자 목록 옆의 값을 다시 적었다."
+    },
+    {
+      "person": "resident_nero",
+      "pose": "activity",
+      "x": 99,
+      "y": 426,
+      "width": 234,
+      "height": 241,
+      "rect": [
+        99,
+        426,
+        234,
+        241
+      ],
+      "depth": 667,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        216,
+        666,
+        338,
+        "floor"
+      ],
+      "activity": "네로는 이름표의 젖은 쪽을 안으로 접었다."
+    },
+    {
+      "person": "resident_bori",
+      "pose": "map27_check_own_ration_v2",
+      "x": 1209,
+      "y": 356,
+      "width": 256,
+      "height": 340,
+      "rect": [
+        1209,
+        356,
+        256,
+        340
+      ],
+      "depth": 696,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "자신의 배급표와 주머니를 확인한다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    }
+  ],
+  "offset": 640,
+  "hits": [
+    {
+      "person": "resident_mungchi",
+      "point": [
+        470,
+        305
+      ],
+      "actions": [
+        "('person', 'resident_mungchi')"
+      ]
+    },
+    {
+      "person": "resident_madam",
+      "point": [
+        324,
+        330
+      ],
+      "actions": [
+        "('person', 'resident_madam')"
+      ]
+    },
+    {
+      "person": "resident_siluk",
+      "point": [
+        838,
+        373
+      ],
+      "actions": [
+        "('person', 'resident_siluk')"
+      ]
+    },
+    {
+      "person": "resident_eunho",
+      "point": [
+        503,
+        420
+      ],
+      "actions": [
+        "('person', 'resident_eunho')"
+      ]
+    },
+    {
+      "person": "resident_bori",
+      "point": [
+        710,
+        406
+      ],
+      "actions": [
+        "('person', 'resident_bori')"
+      ]
+    }
+  ],
+  "specs": {
+    "resident_mungchi": {
+      "file": "assets/map-action27/ST-1--resident_mungchi.webp",
+      "crop": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "head": [
+        246.38400000000001,
+        77.048,
+        180,
+        170
+      ],
+      "foot": [
+        284.15999999999997,
+        753.408
+      ],
+      "anchors": {
+        "foot_left": [
+          142.336,
+          753.408
+        ],
+        "foot_right": [
+          425.984,
+          753.408
+        ],
+        "head_center": [
+          336.384,
+          162.048
+        ],
+        "hand_sack_neck": [
+          265.216,
+          244.99200000000002
+        ],
+        "hand_free": [
+          481.28,
+          473.856
+        ],
+        "prop_center": [
+          137.728,
+          270.336
+        ],
+        "shoulder_sack_contact": [
+          227.84,
+          221.952
+        ],
+        "foot": [
+          284.15999999999997,
+          753.408
+        ]
+      },
+      "foreground_parts": [],
+      "contact": "standing",
+      "stature_ratio": 0.96,
+      "source_sha256": "9101f95c0dbc7558c48c1a0da6e404b79cd259b8562d60bb8dbe18ebb0b3613e",
+      "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+    },
+    "resident_madam": {
+      "file": "assets/room13-role-resident_madam.webp",
+      "crop": [
+        68,
+        0,
+        375,
+        759
+      ],
+      "nearest": true,
+      "foot": [
+        185,
+        755
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        30,
+        1,
+        247,
+        211
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "role_connect": "spotted_dog-originalized-pixel-v2"
+    },
+    "resident_siluk": {
+      "file": "assets/map-action27/ST-2--resident_siluk.webp",
+      "crop": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "head": [
+        197.499776,
+        31.000256000000007,
+        180,
+        170
+      ],
+      "foot": [
+        268,
+        757.499904
+      ],
+      "anchors": {
+        "foot_left": [
+          180.499968,
+          757.499904
+        ],
+        "foot_right": [
+          355.500032,
+          757.499904
+        ],
+        "head_center": [
+          287.499776,
+          116.00025600000001
+        ],
+        "hand_left_box": [
+          273.50016,
+          374.49984
+        ],
+        "hand_right_box": [
+          401.50016,
+          372.99993600000005
+        ],
+        "prop_center": [
+          317.000192,
+          332.500224
+        ],
+        "foot": [
+          268,
+          757.499904
+        ]
+      },
+      "foreground_parts": [],
+      "contact": "standing",
+      "stature_ratio": 1,
+      "source_sha256": "00377789e4ba7b88868b1293e63170dcac93ded939e4248a268bda23ad48a081",
+      "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+    },
+    "resident_eunho": {
+      "file": "assets/room13-pixel-acting-eunho.webp",
+      "crop": [
+        592,
+        525,
+        436,
+        470
+      ],
+      "nearest": true,
+      "anchor": {
+        "foot": [
+          218,
+          466
+        ]
+      },
+      "action_ko": "물자 목록 옆에 값을 다시 적는다.",
+      "contact": "self-contained",
+      "head": [
+        87,
+        0,
+        349,
+        226
+      ],
+      "facing": "right-profile"
+    },
+    "resident_nero": {
+      "file": "assets/room13-pixel-acting-resident_nero.webp",
+      "crop": [
+        564,
+        526,
+        449,
+        463
+      ],
+      "nearest": true,
+      "foot": [
+        224,
+        459
+      ],
+      "facing": "right",
+      "contact": "standing",
+      "head": [
+        93,
+        0,
+        284,
+        278
+      ],
+      "reviewed": true,
+      "posture": "crouching"
+    },
+    "resident_bori": {
+      "file": "assets/map-action27/VA-8--resident_bori.webp",
+      "crop": [
+        0,
+        0,
+        578,
+        768
+      ],
+      "head": [
+        180.625,
+        0,
+        276.25,
+        228.53979238754326
+      ],
+      "foot": [
+        317.953125,
+        752.5868512110727
+      ],
+      "anchors": {
+        "foot_left": [
+          208.25,
+          752.5868512110727
+        ],
+        "foot_right": [
+          427.65625,
+          752.5868512110727
+        ],
+        "hand_left_image": [
+          162.03125,
+          468.240830449827
+        ],
+        "hand_right_image": [
+          479.71875,
+          268.93287197231837
+        ],
+        "foot": [
+          317.953125,
+          752.5868512110727
+        ]
+      },
+      "contact": "standing",
+      "stature_ratio": 1,
+      "source_sha256": "5ea8b02dbf44e30b69d86d19cc29bdc794be7d40d06471f6168ef99653553e7d",
+      "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+    }
+  },
+  "room": "store",
+  "clicked": [
+    "resident_bori"
+  ],
+  "screens": [
+    "r13_hub"
+  ],
+  "game_commit": "1b94f0d5 + 0.19.43 working tree",
+  "archive_sha256": "c9e213cb6c4f3df24eba26dd24dc0479f875414b326cbf9ab1d6a6ec047bfa25",
+  "capture_kind": "explicit schedule fixture in native SDK web engine"
+}
