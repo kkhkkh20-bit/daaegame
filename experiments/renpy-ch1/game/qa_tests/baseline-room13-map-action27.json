@@ -1,0 +1,7158 @@
+{
+  "schema": 1,
+  "status": "approved_31_sources_31_scheduled",
+  "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376",
+  "rows": [
+    {
+      "request_id": "VA-6-gate",
+      "status": "approved",
+      "person": "resident_badook",
+      "pose": "map27_check_rope",
+      "location": "gate",
+      "periods": [
+        0
+      ],
+      "replace_poses": [
+        "living_bootlace"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 300,
+          "anchor": "foot",
+          "target": [
+            1110,
+            651
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 300,
+          "anchor": "foot",
+          "target": [
+            1110,
+            651
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 1920,
+          "render_height": 300,
+          "anchor": "foot",
+          "target": [
+            1110,
+            651
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-6--resident_badook.webp",
+        "crop": [
+          0,
+          0,
+          516,
+          768
+        ],
+        "head": [
+          120.46692607003891,
+          0.0,
+          271.05058365758754,
+          215.84313725490196
+        ],
+        "foot": [
+          286.3599221789883,
+          752.4392156862745
+        ],
+        "anchors": {
+          "foot_left": [
+            196.26070038910507,
+            752.4392156862745
+          ],
+          "foot_right": [
+            376.4591439688716,
+            752.4392156862745
+          ],
+          "hand_left_image": [
+            216.84046692607004,
+            276.58039215686273
+          ],
+          "hand_right_image": [
+            418.1206225680934,
+            291.6392156862745
+          ],
+          "foot": [
+            286.3599221789883,
+            752.4392156862745
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "8e6c62f72314ad87814bce487721abffd7339110fa55f33bfc2dd689c02be5a3",
+        "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+      },
+      "activity": "순찰용 밧줄의 매듭을 살핀다."
+    },
+    {
+      "request_id": "VA-7-gate",
+      "status": "approved",
+      "person": "resident_bori",
+      "pose": "map27_carry_firewood_v2",
+      "location": "gate",
+      "periods": [
+        0
+      ],
+      "replace_poses": [
+        "living_firewood"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 280,
+          "anchor": "foot",
+          "target": [
+            920,
+            620
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 280,
+          "anchor": "foot",
+          "target": [
+            920,
+            620
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 1920,
+          "render_height": 280,
+          "anchor": "foot",
+          "target": [
+            920,
+            620
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-7--resident_bori.webp",
+        "crop": [
+          0,
+          0,
+          578,
+          768
+        ],
+        "head": [
+          180.625,
+          0.0,
+          276.25,
+          228.53979238754326
+        ],
+        "foot": [
+          280.234375,
+          752.5868512110727
+        ],
+        "anchors": {
+          "foot_left": [
+            173.1875,
+            698.9065743944637
+          ],
+          "foot_right": [
+            387.28125,
+            752.5868512110727
+          ],
+          "hand_left_image": [
+            231.09375,
+            437.94602076124573
+          ],
+          "hand_right_image": [
+            479.71875,
+            460.8
+          ],
+          "foot": [
+            280.234375,
+            752.5868512110727
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "731a173e63f0415f7b86f81d7bcd1d09b26bbc68e15ba2adfa3100a39597b3fd",
+        "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+      },
+      "activity": "작업장갑을 끼고 장작을 나른다."
+    },
+    {
+      "request_id": "VA-8-store",
+      "status": "approved",
+      "person": "resident_bori",
+      "pose": "map27_check_own_ration_v2",
+      "location": "store",
+      "periods": [
+        1
+      ],
+      "replace_poses": [
+        "living_firewood"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 340,
+          "anchor": "foot",
+          "target": [
+            1350,
+            689
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 340,
+          "anchor": "foot",
+          "target": [
+            1350,
+            689
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 1920,
+          "render_height": 340,
+          "anchor": "foot",
+          "target": [
+            1350,
+            689
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-8--resident_bori.webp",
+        "crop": [
+          0,
+          0,
+          578,
+          768
+        ],
+        "head": [
+          180.625,
+          0.0,
+          276.25,
+          228.53979238754326
+        ],
+        "foot": [
+          317.953125,
+          752.5868512110727
+        ],
+        "anchors": {
+          "foot_left": [
+            208.25,
+            752.5868512110727
+          ],
+          "foot_right": [
+            427.65625,
+            752.5868512110727
+          ],
+          "hand_left_image": [
+            162.03125,
+            468.240830449827
+          ],
+          "hand_right_image": [
+            479.71875,
+            268.93287197231837
+          ],
+          "foot": [
+            317.953125,
+            752.5868512110727
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "5ea8b02dbf44e30b69d86d19cc29bdc794be7d40d06471f6168ef99653553e7d",
+        "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+      },
+      "activity": "자신의 배급표와 주머니를 확인한다."
+    },
+    {
+      "request_id": "VA-9-square",
+      "status": "approved",
+      "person": "doto",
+      "pose": "map27_write_ledger_v2",
+      "location": "square",
+      "periods": [
+        0,
+        1
+      ],
+      "replace_poses": [
+        "action_1"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 245,
+          "anchor": "foot",
+          "target": [
+            900,
+            620
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 245,
+          "anchor": "foot",
+          "target": [
+            900,
+            620
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 1920,
+          "render_height": 245,
+          "anchor": "foot",
+          "target": [
+            900,
+            620
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-9--doto.webp",
+        "crop": [
+          0,
+          0,
+          506,
+          768
+        ],
+        "head": [
+          119.1740412979351,
+          0.0,
+          278.0727630285153,
+          258.1512605042017
+        ],
+        "foot": [
+          265.1622418879056,
+          752.6102133160957
+        ],
+        "anchors": {
+          "foot_left": [
+            176.77482792527042,
+            752.6102133160957
+          ],
+          "foot_right": [
+            353.54965585054083,
+            737.2204266321913
+          ],
+          "hand_left_image": [
+            288.0039331366765,
+            338.0788623141564
+          ],
+          "hand_right_image": [
+            388.8053097345133,
+            384.2482223658694
+          ],
+          "foot": [
+            265.1622418879056,
+            752.6102133160957
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "10e0eb3c34eb109b0433e507bfb7f97d1a66d28787a0b5cd97f7fd0036a2f334",
+        "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+      },
+      "activity": "토시를 끼고 장부에 적는다."
+    },
+    {
+      "request_id": "VA-9-hall",
+      "status": "approved",
+      "person": "doto",
+      "pose": "map27_write_ledger_v2",
+      "location": "hall",
+      "periods": [
+        0
+      ],
+      "replace_poses": [
+        "action_1"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 255,
+          "anchor": "foot",
+          "target": [
+            1017,
+            669
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 2160,
+          "render_height": 255,
+          "anchor": "foot",
+          "target": [
+            1017,
+            669
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 2160,
+          "render_height": 255,
+          "anchor": "foot",
+          "target": [
+            1017,
+            669
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-9--doto.webp",
+        "crop": [
+          0,
+          0,
+          506,
+          768
+        ],
+        "head": [
+          119.1740412979351,
+          0.0,
+          278.0727630285153,
+          258.1512605042017
+        ],
+        "foot": [
+          265.1622418879056,
+          752.6102133160957
+        ],
+        "anchors": {
+          "foot_left": [
+            176.77482792527042,
+            752.6102133160957
+          ],
+          "foot_right": [
+            353.54965585054083,
+            737.2204266321913
+          ],
+          "hand_left_image": [
+            288.0039331366765,
+            338.0788623141564
+          ],
+          "hand_right_image": [
+            388.8053097345133,
+            384.2482223658694
+          ],
+          "foot": [
+            265.1622418879056,
+            752.6102133160957
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "10e0eb3c34eb109b0433e507bfb7f97d1a66d28787a0b5cd97f7fd0036a2f334",
+        "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+      },
+      "activity": "토시를 끼고 장부에 적는다."
+    },
+    {
+      "request_id": "VA-10-square",
+      "status": "approved",
+      "person": "doto",
+      "pose": "map27_compare_ration_slips_v2",
+      "location": "square",
+      "periods": [
+        2
+      ],
+      "replace_poses": [
+        "action_1"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 245,
+          "anchor": "foot",
+          "target": [
+            900,
+            620
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 245,
+          "anchor": "foot",
+          "target": [
+            900,
+            620
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 1920,
+          "render_height": 245,
+          "anchor": "foot",
+          "target": [
+            900,
+            620
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-10--doto.webp",
+        "crop": [
+          0,
+          0,
+          504,
+          768
+        ],
+        "head": [
+          119.05511811023622,
+          0.0,
+          277.79527559055117,
+          258.1512605042017
+        ],
+        "foot": [
+          264.6496062992126,
+          752.6102133160957
+        ],
+        "anchors": {
+          "foot_left": [
+            176.5984251968504,
+            752.6102133160957
+          ],
+          "foot_right": [
+            352.7007874015748,
+            745.1635423400129
+          ],
+          "hand_left_image": [
+            186.51968503937007,
+            307.29928894634776
+          ],
+          "hand_right_image": [
+            443.4803149606299,
+            245.74014221073045
+          ],
+          "foot": [
+            264.6496062992126,
+            752.6102133160957
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "d4a7133a0d6a1d1953be9ee5743d71f1611aed03030023d0effab4149d35ae04",
+        "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+      },
+      "activity": "두 배급표의 표기를 비교한다."
+    },
+    {
+      "request_id": "VA-10-hall",
+      "status": "approved",
+      "person": "doto",
+      "pose": "map27_compare_ration_slips_v2",
+      "location": "hall",
+      "periods": [
+        1,
+        2
+      ],
+      "replace_poses": [
+        "action_1",
+        "action_2"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 255,
+          "anchor": "foot",
+          "target": [
+            1017,
+            669
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 2160,
+          "render_height": 255,
+          "anchor": "foot",
+          "target": [
+            1017,
+            669
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 2160,
+          "render_height": 255,
+          "anchor": "foot",
+          "target": [
+            1017,
+            669
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-10--doto.webp",
+        "crop": [
+          0,
+          0,
+          504,
+          768
+        ],
+        "head": [
+          119.05511811023622,
+          0.0,
+          277.79527559055117,
+          258.1512605042017
+        ],
+        "foot": [
+          264.6496062992126,
+          752.6102133160957
+        ],
+        "anchors": {
+          "foot_left": [
+            176.5984251968504,
+            752.6102133160957
+          ],
+          "foot_right": [
+            352.7007874015748,
+            745.1635423400129
+          ],
+          "hand_left_image": [
+            186.51968503937007,
+            307.29928894634776
+          ],
+          "hand_right_image": [
+            443.4803149606299,
+            245.74014221073045
+          ],
+          "foot": [
+            264.6496062992126,
+            752.6102133160957
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "d4a7133a0d6a1d1953be9ee5743d71f1611aed03030023d0effab4149d35ae04",
+        "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+      },
+      "activity": "두 배급표의 표기를 비교한다."
+    },
+    {
+      "request_id": "VA-11-post",
+      "status": "approved",
+      "person": "resident_jongjong",
+      "pose": "map27_sort_letters_v2",
+      "location": "post",
+      "periods": [
+        0
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world",
+        "map9_letters_waiting"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 210,
+          "anchor": "foot",
+          "target": [
+            1040,
+            640
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1280,
+          "render_height": 240,
+          "anchor": "foot",
+          "target": [
+            300,
+            700
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 1280,
+          "render_height": 240,
+          "anchor": "foot",
+          "target": [
+            300,
+            700
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-11--resident_jongjong.webp",
+        "crop": [
+          0,
+          0,
+          494,
+          768
+        ],
+        "head": [
+          127.54228855721392,
+          0.0,
+          235.46268656716416,
+          245.21072796934865
+        ],
+        "foot": [
+          290.89452736318407,
+          752.7969348659003
+        ],
+        "anchors": {
+          "foot_left": [
+            211.91641791044776,
+            752.7969348659003
+          ],
+          "foot_right": [
+            369.8726368159204,
+            752.7969348659003
+          ],
+          "hand_left_image": [
+            132.93830845771143,
+            314.85057471264366
+          ],
+          "hand_right_image": [
+            211.91641791044776,
+            307.0038314176245
+          ],
+          "foot": [
+            290.89452736318407,
+            752.7969348659003
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "f9ef58a8aa502d9856cb96f01bc9fd86656df31d2b8bbf2973503bdf01ac2e73",
+        "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+      },
+      "activity": "우편 봉투를 분류한다."
+    },
+    {
+      "request_id": "VA-12-post",
+      "status": "approved",
+      "person": "resident_jongjong",
+      "pose": "map27_pack_satchel_v2",
+      "location": "post",
+      "periods": [
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world",
+        "map9_letters_waiting"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 210,
+          "anchor": "foot",
+          "target": [
+            1040,
+            640
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1280,
+          "render_height": 240,
+          "anchor": "foot",
+          "target": [
+            300,
+            700
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 1280,
+          "render_height": 240,
+          "anchor": "foot",
+          "target": [
+            300,
+            700
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-12--resident_jongjong.webp",
+        "crop": [
+          0,
+          0,
+          492,
+          768
+        ],
+        "head": [
+          127.41035856573706,
+          0.0,
+          235.21912350597609,
+          245.0542437779196
+        ],
+        "foot": [
+          275.6474103585657,
+          752.806636885769
+        ],
+        "anchors": {
+          "foot_left": [
+            196.996015936255,
+            752.806636885769
+          ],
+          "foot_right": [
+            354.2988047808765,
+            752.806636885769
+          ],
+          "hand_left_image": [
+            270.50199203187253,
+            345.5264837268666
+          ],
+          "hand_right_image": [
+            388.601593625498,
+            353.36821952776006
+          ],
+          "foot": [
+            275.6474103585657,
+            752.806636885769
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "169143ce4a8a4f6aa817c286a20c195d8f41585d605b1d29843ade2fa2674c87",
+        "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+      },
+      "activity": "우편 가방에 편지를 챙긴다."
+    },
+    {
+      "request_id": "VA-2",
+      "status": "approved",
+      "person": "resident_piko",
+      "pose": "map27_paint_sketchboard_v2",
+      "location": "square",
+      "periods": [
+        0,
+        1
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 300,
+          "anchor": "foot",
+          "target": [
+            1050,
+            625
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 300,
+          "anchor": "foot",
+          "target": [
+            1050,
+            625
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-2--resident_piko.webp",
+        "crop": [
+          0,
+          0,
+          498,
+          768
+        ],
+        "head": [
+          132.99306243805748,
+          0.0,
+          206.8780971258672,
+          172.5288831835687
+        ],
+        "foot": [
+          278.30029732408326,
+          752.7188703465982
+        ],
+        "anchors": {
+          "foot_left": [
+            228.55104063429138,
+            752.7188703465982
+          ],
+          "foot_right": [
+            328.04955401387514,
+            752.7188703465982
+          ],
+          "hand_left_image": [
+            283.2259663032706,
+            238.0898587933248
+          ],
+          "hand_right_image": [
+            422.6223984142716,
+            276.53915275994865
+          ],
+          "foot": [
+            278.30029732408326,
+            752.7188703465982
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "e4a2944fce37457cd896255afaf6269c3af157697fd24043469903420c99aab2",
+        "source_commit": "d301395b62ba3bb93b3ab050cbd1cf8d0c741937"
+      },
+      "activity": "그림판에 풍경을 그린다.",
+      "max_day": 10,
+      "days": [
+        1,
+        3,
+        5,
+        6,
+        7,
+        9
+      ]
+    },
+    {
+      "request_id": "VA-3",
+      "status": "approved",
+      "person": "resident_piko",
+      "pose": "map27_mix_paint_v2",
+      "location": "square",
+      "periods": [
+        1
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 300,
+          "anchor": "foot",
+          "target": [
+            1050,
+            625
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 300,
+          "anchor": "foot",
+          "target": [
+            1050,
+            625
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-3--resident_piko.webp",
+        "crop": [
+          0,
+          0,
+          498,
+          768
+        ],
+        "head": [
+          132.99306243805748,
+          0.0,
+          206.8780971258672,
+          172.5288831835687
+        ],
+        "foot": [
+          270.9117938553023,
+          752.7188703465982
+        ],
+        "anchors": {
+          "foot_left": [
+            218.69970267591674,
+            752.7188703465982
+          ],
+          "foot_right": [
+            323.1238850346878,
+            752.7188703465982
+          ],
+          "hand_left_image": [
+            293.0773042616452,
+            230.2028241335045
+          ],
+          "hand_right_image": [
+            367.9474727452924,
+            276.53915275994865
+          ],
+          "foot": [
+            270.9117938553023,
+            752.7188703465982
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "dedd8df29e64b1899286e892eca3925d6ddaeaea2e533e6942057a48af7d8d70",
+        "source_commit": "d301395b62ba3bb93b3ab050cbd1cf8d0c741937"
+      },
+      "activity": "팔레트에서 물감 색을 섞는다.",
+      "max_day": 10,
+      "days": [
+        2,
+        4,
+        8,
+        10
+      ]
+    },
+    {
+      "request_id": "VA-4",
+      "status": "approved",
+      "person": "resident_guldol",
+      "pose": "map27_inspect_stone_clean",
+      "location": "square",
+      "periods": [
+        1
+      ],
+      "replace_poses": [
+        "neutral"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 260,
+          "anchor": "foot",
+          "target": [
+            710,
+            580
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 260,
+          "anchor": "foot",
+          "target": [
+            710,
+            580
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-4--resident_guldol.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          100.0,
+          5.0,
+          265.0,
+          240.0
+        ],
+        "foot": [
+          261.0,
+          745.0
+        ],
+        "anchors": {
+          "foot_left": [
+            153.5,
+            745.0
+          ],
+          "foot_right": [
+            368.5,
+            737.5
+          ],
+          "hand_left_image": [
+            266.0,
+            246.0
+          ],
+          "hand_right_image": [
+            420.0,
+            238.0
+          ],
+          "foot": [
+            261.0,
+            745.0
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "1ae9a3901cacbb36e5ad71273459d0e654d98ba658785a6999bedcd3bb77cc13",
+        "source_commit": "d301395b62ba3bb93b3ab050cbd1cf8d0c741937"
+      },
+      "activity": "돌 조각의 결을 살핀다."
+    },
+    {
+      "request_id": "VA-5",
+      "status": "approved",
+      "person": "resident_guldol",
+      "pose": "map27_sort_chisels_clean",
+      "location": "workshop",
+      "periods": [
+        0,
+        1
+      ],
+      "replace_poses": [
+        "map9_stone_tapping"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1800,
+          "render_height": 280,
+          "anchor": "foot",
+          "target": [
+            780,
+            547
+          ],
+          "occlusion": [
+            [
+              [
+                331,
+                460
+              ],
+              [
+                470,
+                439
+              ],
+              [
+                683,
+                441
+              ],
+              [
+                1060,
+                483
+              ],
+              [
+                1060,
+                624
+              ],
+              [
+                890,
+                678
+              ],
+              [
+                350,
+                604
+              ]
+            ]
+          ]
+        },
+        "afternoon": {
+          "world_width": 1800,
+          "render_height": 280,
+          "anchor": "foot",
+          "target": [
+            780,
+            547
+          ],
+          "occlusion": [
+            [
+              [
+                331,
+                460
+              ],
+              [
+                470,
+                439
+              ],
+              [
+                683,
+                441
+              ],
+              [
+                1060,
+                483
+              ],
+              [
+                1060,
+                624
+              ],
+              [
+                890,
+                678
+              ],
+              [
+                350,
+                604
+              ]
+            ]
+          ]
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-5--resident_guldol.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          100.0,
+          5.0,
+          265.0,
+          240.0
+        ],
+        "foot": [
+          279.0,
+          752.5
+        ],
+        "anchors": {
+          "foot_left": [
+            169.0,
+            752.5
+          ],
+          "foot_right": [
+            389.0,
+            737.5
+          ],
+          "hand_left_image": [
+            240.5,
+            307.0
+          ],
+          "hand_right_image": [
+            425.0,
+            407.0
+          ],
+          "foot": [
+            279.0,
+            752.5
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "cfe69eba2d50787104a5e977707d7bc5c0694511743776bb52da4b5d7221cb1f",
+        "source_commit": "d301395b62ba3bb93b3ab050cbd1cf8d0c741937"
+      },
+      "activity": "가죽 도구집의 끌을 정리한다."
+    },
+    {
+      "request_id": "MK-2",
+      "status": "approved",
+      "person": "resident_eunho",
+      "pose": "map27_mk_2",
+      "location": "market",
+      "periods": [
+        0,
+        1
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 160,
+          "anchor": "work_support",
+          "target": [
+            1270,
+            432
+          ],
+          "occlusion": [
+            [
+              [
+                1225,
+                448
+              ],
+              [
+                1265,
+                430
+              ],
+              [
+                1270,
+                415
+              ],
+              [
+                1345,
+                415
+              ],
+              [
+                1352,
+                438
+              ],
+              [
+                1360,
+                423
+              ],
+              [
+                1435,
+                420
+              ],
+              [
+                1440,
+                440
+              ],
+              [
+                1490,
+                440
+              ],
+              [
+                1500,
+                420
+              ],
+              [
+                1550,
+                423
+              ],
+              [
+                1565,
+                448
+              ],
+              [
+                1565,
+                525
+              ],
+              [
+                1225,
+                525
+              ]
+            ]
+          ]
+        },
+        "afternoon": {
+          "world_width": 2160,
+          "render_height": 160,
+          "anchor": "work_support",
+          "target": [
+            1270,
+            432
+          ],
+          "occlusion": [
+            [
+              [
+                1225,
+                448
+              ],
+              [
+                1265,
+                430
+              ],
+              [
+                1270,
+                415
+              ],
+              [
+                1345,
+                415
+              ],
+              [
+                1352,
+                438
+              ],
+              [
+                1360,
+                423
+              ],
+              [
+                1435,
+                420
+              ],
+              [
+                1440,
+                440
+              ],
+              [
+                1490,
+                440
+              ],
+              [
+                1500,
+                420
+              ],
+              [
+                1550,
+                423
+              ],
+              [
+                1565,
+                448
+              ],
+              [
+                1565,
+                525
+              ],
+              [
+                1225,
+                525
+              ]
+            ]
+          ]
+        },
+        "evening": {
+          "world_width": 2160,
+          "render_height": 160,
+          "anchor": "work_support",
+          "target": [
+            1270,
+            432
+          ],
+          "occlusion": [
+            [
+              [
+                1225,
+                448
+              ],
+              [
+                1265,
+                430
+              ],
+              [
+                1270,
+                415
+              ],
+              [
+                1345,
+                415
+              ],
+              [
+                1352,
+                438
+              ],
+              [
+                1360,
+                423
+              ],
+              [
+                1435,
+                420
+              ],
+              [
+                1440,
+                440
+              ],
+              [
+                1490,
+                440
+              ],
+              [
+                1500,
+                420
+              ],
+              [
+                1550,
+                423
+              ],
+              [
+                1565,
+                448
+              ],
+              [
+                1565,
+                525
+              ],
+              [
+                1225,
+                525
+              ]
+            ]
+          ]
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/MK-2--resident_eunho.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          199.68,
+          7.68,
+          220.16,
+          207.36
+        ],
+        "foot": [
+          327.68,
+          756.48
+        ],
+        "anchors": {
+          "foot": [
+            327.68,
+            756.48
+          ],
+          "hand_right": [
+            276.48,
+            368.64
+          ],
+          "hand_left": [
+            445.44,
+            360.96
+          ],
+          "pen_page": [
+            317.44,
+            384.0
+          ],
+          "work_support": [
+            363.52,
+            407.04
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              225.0,
+              325.0
+            ],
+            [
+              500.0,
+              325.0
+            ],
+            [
+              500.0,
+              425.0
+            ],
+            [
+              225.0,
+              425.0
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_sha256": "6c95622ad1a73cbc6104ec882d45ff7a5d0b9c7c2c3d04ce5b9de3bd2a6ad50c",
+        "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376"
+      },
+      "activity": "장부에 값을 적는다."
+    },
+    {
+      "request_id": "MK-3",
+      "status": "approved",
+      "person": "resident_guseul",
+      "pose": "map27_mk_3",
+      "location": "market",
+      "periods": [
+        0,
+        1
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world",
+        "living_stamp"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 148,
+          "anchor": "work_support",
+          "target": [
+            1520,
+            438
+          ],
+          "occlusion": [
+            [
+              [
+                1225,
+                448
+              ],
+              [
+                1265,
+                430
+              ],
+              [
+                1270,
+                415
+              ],
+              [
+                1345,
+                415
+              ],
+              [
+                1352,
+                438
+              ],
+              [
+                1360,
+                423
+              ],
+              [
+                1435,
+                420
+              ],
+              [
+                1440,
+                440
+              ],
+              [
+                1490,
+                440
+              ],
+              [
+                1500,
+                420
+              ],
+              [
+                1550,
+                423
+              ],
+              [
+                1565,
+                448
+              ],
+              [
+                1565,
+                525
+              ],
+              [
+                1225,
+                525
+              ]
+            ]
+          ]
+        },
+        "afternoon": {
+          "world_width": 2160,
+          "render_height": 148,
+          "anchor": "work_support",
+          "target": [
+            1520,
+            438
+          ],
+          "occlusion": [
+            [
+              [
+                1225,
+                448
+              ],
+              [
+                1265,
+                430
+              ],
+              [
+                1270,
+                415
+              ],
+              [
+                1345,
+                415
+              ],
+              [
+                1352,
+                438
+              ],
+              [
+                1360,
+                423
+              ],
+              [
+                1435,
+                420
+              ],
+              [
+                1440,
+                440
+              ],
+              [
+                1490,
+                440
+              ],
+              [
+                1500,
+                420
+              ],
+              [
+                1550,
+                423
+              ],
+              [
+                1565,
+                448
+              ],
+              [
+                1565,
+                525
+              ],
+              [
+                1225,
+                525
+              ]
+            ]
+          ]
+        },
+        "evening": {
+          "world_width": 2160,
+          "render_height": 148,
+          "anchor": "work_support",
+          "target": [
+            1520,
+            438
+          ],
+          "occlusion": [
+            [
+              [
+                1225,
+                448
+              ],
+              [
+                1265,
+                430
+              ],
+              [
+                1270,
+                415
+              ],
+              [
+                1345,
+                415
+              ],
+              [
+                1352,
+                438
+              ],
+              [
+                1360,
+                423
+              ],
+              [
+                1435,
+                420
+              ],
+              [
+                1440,
+                440
+              ],
+              [
+                1490,
+                440
+              ],
+              [
+                1500,
+                420
+              ],
+              [
+                1550,
+                423
+              ],
+              [
+                1565,
+                448
+              ],
+              [
+                1565,
+                525
+              ],
+              [
+                1225,
+                525
+              ]
+            ]
+          ]
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/MK-3--resident_guseul.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          189.44,
+          7.68,
+          225.28,
+          253.44
+        ],
+        "foot": [
+          291.84,
+          761.856
+        ],
+        "anchors": {
+          "foot": [
+            291.84,
+            761.856
+          ],
+          "hand_right": [
+            158.72,
+            284.15999999999997
+          ],
+          "hand_left": [
+            286.72,
+            414.72
+          ],
+          "cheese_pan": [
+            194.56,
+            307.20000000000005
+          ],
+          "work_support": [
+            220.16,
+            414.72
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              115.0,
+              240.0
+            ],
+            [
+              315.0,
+              240.0
+            ],
+            [
+              315.0,
+              430.0
+            ],
+            [
+              115.0,
+              430.0
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_sha256": "0f6d8005e5b3770ed7cf9fab7ad82f3cbb57187572f305ab6e2a3a5a72b405d0",
+        "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376"
+      },
+      "activity": "저울에 치즈를 올린다."
+    },
+    {
+      "request_id": "WS-1",
+      "status": "approved",
+      "person": "resident_tok",
+      "pose": "map27_ws_1",
+      "location": "workshop",
+      "periods": [
+        0,
+        1
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1800,
+          "render_height": 196,
+          "anchor": "work_support",
+          "target": [
+            1585,
+            383
+          ],
+          "occlusion": [
+            [
+              [
+                1405,
+                374
+              ],
+              [
+                1460,
+                374
+              ],
+              [
+                1460,
+                354
+              ],
+              [
+                1480,
+                353
+              ],
+              [
+                1480,
+                330
+              ],
+              [
+                1560,
+                330
+              ],
+              [
+                1560,
+                370
+              ],
+              [
+                1600,
+                350
+              ],
+              [
+                1710,
+                351
+              ],
+              [
+                1730,
+                380
+              ],
+              [
+                1730,
+                512
+              ],
+              [
+                1405,
+                512
+              ]
+            ]
+          ]
+        },
+        "afternoon": {
+          "world_width": 1800,
+          "render_height": 196,
+          "anchor": "work_support",
+          "target": [
+            1585,
+            383
+          ],
+          "occlusion": [
+            [
+              [
+                1405,
+                374
+              ],
+              [
+                1460,
+                374
+              ],
+              [
+                1460,
+                354
+              ],
+              [
+                1480,
+                353
+              ],
+              [
+                1480,
+                330
+              ],
+              [
+                1560,
+                330
+              ],
+              [
+                1560,
+                370
+              ],
+              [
+                1600,
+                350
+              ],
+              [
+                1710,
+                351
+              ],
+              [
+                1730,
+                380
+              ],
+              [
+                1730,
+                512
+              ],
+              [
+                1405,
+                512
+              ]
+            ]
+          ]
+        },
+        "evening": {
+          "world_width": 1800,
+          "render_height": 196,
+          "anchor": "work_support",
+          "target": [
+            1585,
+            383
+          ],
+          "occlusion": [
+            [
+              [
+                1405,
+                374
+              ],
+              [
+                1460,
+                374
+              ],
+              [
+                1460,
+                354
+              ],
+              [
+                1480,
+                353
+              ],
+              [
+                1480,
+                330
+              ],
+              [
+                1560,
+                330
+              ],
+              [
+                1560,
+                370
+              ],
+              [
+                1600,
+                350
+              ],
+              [
+                1710,
+                351
+              ],
+              [
+                1730,
+                380
+              ],
+              [
+                1730,
+                512
+              ],
+              [
+                1405,
+                512
+              ]
+            ]
+          ]
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/WS-1--resident_tok.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          138.24,
+          15.36,
+          261.12,
+          238.07999999999998
+        ],
+        "foot": [
+          266.24,
+          754.1759999999999
+        ],
+        "anchors": {
+          "foot": [
+            266.24,
+            754.1759999999999
+          ],
+          "hand_right": [
+            102.4,
+            276.48
+          ],
+          "hand_left": [
+            281.6,
+            391.68
+          ],
+          "driver_screw": [
+            199.68,
+            330.24
+          ],
+          "work_support": [
+            220.16,
+            437.76
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              75.0,
+              245.0
+            ],
+            [
+              325.0,
+              245.0
+            ],
+            [
+              325.0,
+              457.5
+            ],
+            [
+              175.0,
+              457.5
+            ],
+            [
+              175.0,
+              340.0
+            ],
+            [
+              75.0,
+              340.0
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_sha256": "a7643c1f56f32a599e7e77da2d64d8cf0520ff5d9779766ec33d384aa866edb0",
+        "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376"
+      },
+      "activity": "랜턴의 나사를 조인다."
+    },
+    {
+      "request_id": "MK-4",
+      "status": "approved",
+      "person": "resident_nubi",
+      "pose": "map27_mk_4",
+      "location": "market",
+      "periods": [
+        0,
+        1
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 160,
+          "anchor": "foot",
+          "target": [
+            1772,
+            497
+          ],
+          "occlusion": [
+            [
+              [
+                1715,
+                455
+              ],
+              [
+                1735,
+                425
+              ],
+              [
+                1830,
+                418
+              ],
+              [
+                1890,
+                425
+              ],
+              [
+                1940,
+                420
+              ],
+              [
+                1960,
+                440
+              ],
+              [
+                1958,
+                480
+              ],
+              [
+                2012,
+                485
+              ],
+              [
+                2015,
+                560
+              ],
+              [
+                1715,
+                560
+              ]
+            ]
+          ]
+        },
+        "afternoon": {
+          "world_width": 2160,
+          "render_height": 160,
+          "anchor": "foot",
+          "target": [
+            1772,
+            497
+          ],
+          "occlusion": [
+            [
+              [
+                1715,
+                455
+              ],
+              [
+                1735,
+                425
+              ],
+              [
+                1830,
+                418
+              ],
+              [
+                1890,
+                425
+              ],
+              [
+                1940,
+                420
+              ],
+              [
+                1960,
+                440
+              ],
+              [
+                1958,
+                480
+              ],
+              [
+                2012,
+                485
+              ],
+              [
+                2015,
+                560
+              ],
+              [
+                1715,
+                560
+              ]
+            ]
+          ]
+        },
+        "evening": {
+          "world_width": 2160,
+          "render_height": 160,
+          "anchor": "foot",
+          "target": [
+            1772,
+            497
+          ],
+          "occlusion": [
+            [
+              [
+                1715,
+                455
+              ],
+              [
+                1735,
+                425
+              ],
+              [
+                1830,
+                418
+              ],
+              [
+                1890,
+                425
+              ],
+              [
+                1940,
+                420
+              ],
+              [
+                1960,
+                440
+              ],
+              [
+                1958,
+                480
+              ],
+              [
+                2012,
+                485
+              ],
+              [
+                2015,
+                560
+              ],
+              [
+                1715,
+                560
+              ]
+            ]
+          ]
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/MK-4--resident_nubi.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          111.5,
+          5.5,
+          273.0,
+          185.5
+        ],
+        "foot": [
+          253.0,
+          760.0
+        ],
+        "anchors": {
+          "foot_left": [
+            163.5,
+            759.5
+          ],
+          "foot_right": [
+            342.5,
+            760.0
+          ],
+          "foot": [
+            253.0,
+            760.0
+          ],
+          "hand_left": [
+            173.5,
+            248.5
+          ],
+          "hand_right": [
+            442.0,
+            237.5
+          ],
+          "cloth_corner_left": [
+            182.5,
+            251.0
+          ],
+          "cloth_corner_right": [
+            444.5,
+            245.0
+          ],
+          "cloth_bottom": [
+            324.5,
+            466.0
+          ],
+          "work": [
+            313.5,
+            247.0
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              157.5,
+              225.0
+            ],
+            [
+              470.0,
+              225.0
+            ],
+            [
+              470.0,
+              480.0
+            ],
+            [
+              157.5,
+              480.0
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_sha256": "faf21827f3de0fed74b4ad0a8a1ec11c8cee16dff99dbdb54a4d6a0da4b28c69",
+        "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376"
+      },
+      "activity": "줄무늬 천을 펼쳐 보인다."
+    },
+    {
+      "request_id": "MK-5",
+      "status": "approved",
+      "person": "resident_yeoni",
+      "pose": "map27_mk_5",
+      "location": "market",
+      "periods": [
+        0,
+        1
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 160,
+          "anchor": "foot",
+          "target": [
+            1915,
+            497
+          ],
+          "occlusion": [
+            [
+              [
+                1715,
+                455
+              ],
+              [
+                1735,
+                425
+              ],
+              [
+                1830,
+                418
+              ],
+              [
+                1890,
+                425
+              ],
+              [
+                1940,
+                420
+              ],
+              [
+                1960,
+                440
+              ],
+              [
+                1958,
+                480
+              ],
+              [
+                2012,
+                485
+              ],
+              [
+                2015,
+                560
+              ],
+              [
+                1715,
+                560
+              ]
+            ]
+          ]
+        },
+        "afternoon": {
+          "world_width": 2160,
+          "render_height": 160,
+          "anchor": "foot",
+          "target": [
+            1915,
+            497
+          ],
+          "occlusion": [
+            [
+              [
+                1715,
+                455
+              ],
+              [
+                1735,
+                425
+              ],
+              [
+                1830,
+                418
+              ],
+              [
+                1890,
+                425
+              ],
+              [
+                1940,
+                420
+              ],
+              [
+                1960,
+                440
+              ],
+              [
+                1958,
+                480
+              ],
+              [
+                2012,
+                485
+              ],
+              [
+                2015,
+                560
+              ],
+              [
+                1715,
+                560
+              ]
+            ]
+          ]
+        },
+        "evening": {
+          "world_width": 2160,
+          "render_height": 160,
+          "anchor": "foot",
+          "target": [
+            1915,
+            497
+          ],
+          "occlusion": [
+            [
+              [
+                1715,
+                455
+              ],
+              [
+                1735,
+                425
+              ],
+              [
+                1830,
+                418
+              ],
+              [
+                1890,
+                425
+              ],
+              [
+                1940,
+                420
+              ],
+              [
+                1960,
+                440
+              ],
+              [
+                1958,
+                480
+              ],
+              [
+                2012,
+                485
+              ],
+              [
+                2015,
+                560
+              ],
+              [
+                1715,
+                560
+              ]
+            ]
+          ]
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/MK-5--resident_yeoni.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          211.5,
+          6.0,
+          191.5,
+          200.5
+        ],
+        "foot": [
+          280.5,
+          752.5
+        ],
+        "anchors": {
+          "foot_left": [
+            201.0,
+            752.5
+          ],
+          "foot_right": [
+            359.5,
+            751.5
+          ],
+          "foot": [
+            280.5,
+            752.5
+          ],
+          "hand_needle": [
+            335.5,
+            240.5
+          ],
+          "hand_glove": [
+            405.5,
+            266.0
+          ],
+          "needle_tip": [
+            370.5,
+            257.0
+          ],
+          "thread_glove": [
+            374.5,
+            258.0
+          ],
+          "glove_bottom": [
+            390.0,
+            337.5
+          ],
+          "work": [
+            374.5,
+            258.0
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              330.0,
+              215.0
+            ],
+            [
+              452.5,
+              215.0
+            ],
+            [
+              452.5,
+              355.0
+            ],
+            [
+              330.0,
+              355.0
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_sha256": "4327c21304aa6bc97b69d9d8d0c17fcb94b0fba54436adf7e51f89e2ef8dcfd9",
+        "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376"
+      },
+      "activity": "장갑의 구멍을 꿰맨다."
+    },
+    {
+      "request_id": "PO-1",
+      "status": "approved",
+      "person": "resident_sling",
+      "pose": "map27_po_1",
+      "location": "post",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 280,
+          "anchor": "parcel_bottom",
+          "target": [
+            1450,
+            548
+          ],
+          "occlusion": [
+            [
+              [
+                1100,
+                560
+              ],
+              [
+                1135,
+                515
+              ],
+              [
+                1500,
+                500
+              ],
+              [
+                1600,
+                492
+              ],
+              [
+                1700,
+                480
+              ],
+              [
+                2160,
+                470
+              ],
+              [
+                2160,
+                720
+              ],
+              [
+                1100,
+                720
+              ]
+            ]
+          ]
+        },
+        "afternoon": {
+          "world_width": 1280,
+          "render_height": 290,
+          "anchor": "parcel_bottom",
+          "target": [
+            800,
+            540
+          ],
+          "occlusion": [
+            [
+              [
+                365,
+                552
+              ],
+              [
+                620,
+                520
+              ],
+              [
+                840,
+                493
+              ],
+              [
+                1030,
+                460
+              ],
+              [
+                1280,
+                455
+              ],
+              [
+                1280,
+                720
+              ],
+              [
+                365,
+                720
+              ]
+            ]
+          ]
+        },
+        "evening": {
+          "world_width": 1280,
+          "render_height": 290,
+          "anchor": "parcel_bottom",
+          "target": [
+            800,
+            540
+          ],
+          "occlusion": [
+            [
+              [
+                365,
+                550
+              ],
+              [
+                620,
+                518
+              ],
+              [
+                840,
+                491
+              ],
+              [
+                1030,
+                458
+              ],
+              [
+                1280,
+                453
+              ],
+              [
+                1280,
+                720
+              ],
+              [
+                365,
+                720
+              ]
+            ]
+          ]
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/PO-1--resident_sling.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          164.0,
+          13.5,
+          246.5,
+          225.0
+        ],
+        "foot": [
+          308.5,
+          754.5
+        ],
+        "anchors": {
+          "foot_left": [
+            191.5,
+            754.5
+          ],
+          "foot_right": [
+            425.0,
+            749.0
+          ],
+          "foot": [
+            308.5,
+            754.5
+          ],
+          "hand_parcel_left": [
+            349.0,
+            429.5
+          ],
+          "hand_parcel_right": [
+            481.5,
+            420.0
+          ],
+          "parcel_bottom_left": [
+            358.0,
+            455.5
+          ],
+          "parcel_bottom_right": [
+            476.5,
+            449.0
+          ],
+          "parcel_bottom": [
+            417.0,
+            452.5
+          ],
+          "work": [
+            417.0,
+            452.5
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              295.0,
+              350.0
+            ],
+            [
+              505.0,
+              350.0
+            ],
+            [
+              505.0,
+              467.5
+            ],
+            [
+              295.0,
+              467.5
+            ]
+          ],
+          [
+            [
+              202.5,
+              270.0
+            ],
+            [
+              240.0,
+              270.0
+            ],
+            [
+              275.0,
+              325.0
+            ],
+            [
+              295.0,
+              360.0
+            ],
+            [
+              315.0,
+              385.0
+            ],
+            [
+              380.0,
+              400.0
+            ],
+            [
+              380.0,
+              465.0
+            ],
+            [
+              300.0,
+              475.0
+            ],
+            [
+              250.0,
+              435.0
+            ],
+            [
+              220.0,
+              390.0
+            ]
+          ],
+          [
+            [
+              390.0,
+              285.0
+            ],
+            [
+              425.0,
+              285.0
+            ],
+            [
+              445.0,
+              330.0
+            ],
+            [
+              475.0,
+              352.5
+            ],
+            [
+              490.0,
+              390.0
+            ],
+            [
+              450.0,
+              397.5
+            ],
+            [
+              400.0,
+              365.0
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_sha256": "ddd164dae71ffde0a52e21342c2af26d90b0c2df36cf2a9355da90bcc78310a2",
+        "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376"
+      },
+      "activity": "소포를 창구에 내려놓는다."
+    },
+    {
+      "request_id": "SQ-2",
+      "status": "approved",
+      "person": "resident_piko",
+      "pose": "map27_sq_2",
+      "location": "square",
+      "periods": [
+        0,
+        1
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 220,
+          "anchor": "foot",
+          "target": [
+            1020,
+            585
+          ],
+          "occlusion": [
+            [
+              [
+                870,
+                545
+              ],
+              [
+                900,
+                520
+              ],
+              [
+                1000,
+                515
+              ],
+              [
+                1060,
+                540
+              ],
+              [
+                1065,
+                605
+              ],
+              [
+                870,
+                605
+              ]
+            ]
+          ]
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 220,
+          "anchor": "foot",
+          "target": [
+            1020,
+            585
+          ],
+          "occlusion": [
+            [
+              [
+                870,
+                545
+              ],
+              [
+                900,
+                520
+              ],
+              [
+                1000,
+                515
+              ],
+              [
+                1060,
+                540
+              ],
+              [
+                1065,
+                605
+              ],
+              [
+                870,
+                605
+              ]
+            ]
+          ]
+        },
+        "evening": {
+          "world_width": 1920,
+          "render_height": 220,
+          "anchor": "foot",
+          "target": [
+            1020,
+            585
+          ],
+          "occlusion": [
+            [
+              [
+                870,
+                545
+              ],
+              [
+                900,
+                520
+              ],
+              [
+                1000,
+                515
+              ],
+              [
+                1060,
+                540
+              ],
+              [
+                1065,
+                605
+              ],
+              [
+                870,
+                605
+              ]
+            ]
+          ]
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/SQ-2--resident_piko.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          140.0,
+          45.0,
+          150.0,
+          135.0
+        ],
+        "foot": [
+          253.44,
+          752.64
+        ],
+        "anchors": {
+          "foot_left": [
+            186.88,
+            752.64
+          ],
+          "foot_right": [
+            320.0,
+            751.872
+          ],
+          "hand_frame_left": [
+            248.832,
+            274.176
+          ],
+          "hand_frame_right": [
+            372.224,
+            268.79999999999995
+          ],
+          "frame_center": [
+            305.152,
+            241.92000000000002
+          ],
+          "foot": [
+            253.44,
+            752.64
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_sha256": "7208a0b54f8bd07e3a4bfc0a41e19d15dcb256e627eae71f30cd8553d240f5f5",
+        "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376",
+        "native_detail": true
+      },
+      "max_day": 10,
+      "activity": "액자 그림을 들어 보인다."
+    },
+    {
+      "request_id": "MK-6",
+      "status": "approved",
+      "person": "resident_dalgeurak",
+      "pose": "map27_mk_6",
+      "location": "market",
+      "periods": [
+        0,
+        1
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world",
+        "map9_pots_display"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 160,
+          "anchor": "foot_baseline",
+          "target": [
+            2050,
+            503
+          ],
+          "occlusion": [
+            [
+              [
+                2010,
+                505
+              ],
+              [
+                2035,
+                452
+              ],
+              [
+                2075,
+                432
+              ],
+              [
+                2120,
+                440
+              ],
+              [
+                2160,
+                440
+              ],
+              [
+                2160,
+                600
+              ],
+              [
+                2010,
+                600
+              ]
+            ]
+          ]
+        },
+        "afternoon": {
+          "world_width": 2160,
+          "render_height": 160,
+          "anchor": "foot_baseline",
+          "target": [
+            2050,
+            503
+          ],
+          "occlusion": [
+            [
+              [
+                2010,
+                505
+              ],
+              [
+                2035,
+                452
+              ],
+              [
+                2075,
+                432
+              ],
+              [
+                2120,
+                440
+              ],
+              [
+                2160,
+                440
+              ],
+              [
+                2160,
+                600
+              ],
+              [
+                2010,
+                600
+              ]
+            ]
+          ]
+        },
+        "evening": {
+          "world_width": 2160,
+          "render_height": 160,
+          "anchor": "foot_baseline",
+          "target": [
+            2050,
+            503
+          ],
+          "occlusion": [
+            [
+              [
+                2010,
+                505
+              ],
+              [
+                2035,
+                452
+              ],
+              [
+                2075,
+                432
+              ],
+              [
+                2120,
+                440
+              ],
+              [
+                2160,
+                440
+              ],
+              [
+                2160,
+                600
+              ],
+              [
+                2010,
+                600
+              ]
+            ]
+          ]
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/MK-6--resident_dalgeurak.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          227.5,
+          27.5,
+          150.0,
+          170.0
+        ],
+        "foot": [
+          282.624,
+          758.784
+        ],
+        "anchors": {
+          "foot_left": [
+            177.664,
+            752.64
+          ],
+          "foot_right": [
+            387.584,
+            758.784
+          ],
+          "foot_baseline": [
+            282.624,
+            758.784
+          ],
+          "hand_jar_support": [
+            88.576,
+            229.632
+          ],
+          "jar_center": [
+            88.064,
+            183.552
+          ],
+          "foot": [
+            282.624,
+            758.784
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_sha256": "7ab84d50ace20e86997aea695725b9db9a05ac975836a7711779091b22f43a04",
+        "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376"
+      },
+      "activity": "항아리를 들어 보인다."
+    },
+    {
+      "request_id": "MK-1",
+      "status": "approved",
+      "person": "resident_solbang",
+      "pose": "map27_mk_1",
+      "location": "market",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 160,
+          "anchor": "foot",
+          "target": [
+            705,
+            505
+          ],
+          "occlusion": [
+            [
+              [
+                560,
+                452
+              ],
+              [
+                600,
+                440
+              ],
+              [
+                650,
+                432
+              ],
+              [
+                700,
+                437
+              ],
+              [
+                755,
+                445
+              ],
+              [
+                765,
+                425
+              ],
+              [
+                800,
+                410
+              ],
+              [
+                840,
+                412
+              ],
+              [
+                860,
+                422
+              ],
+              [
+                880,
+                413
+              ],
+              [
+                930,
+                418
+              ],
+              [
+                950,
+                470
+              ],
+              [
+                950,
+                610
+              ],
+              [
+                560,
+                610
+              ]
+            ]
+          ]
+        },
+        "afternoon": {
+          "world_width": 2160,
+          "render_height": 160,
+          "anchor": "foot",
+          "target": [
+            705,
+            505
+          ],
+          "occlusion": [
+            [
+              [
+                560,
+                452
+              ],
+              [
+                600,
+                440
+              ],
+              [
+                650,
+                432
+              ],
+              [
+                700,
+                437
+              ],
+              [
+                755,
+                445
+              ],
+              [
+                765,
+                425
+              ],
+              [
+                800,
+                410
+              ],
+              [
+                840,
+                412
+              ],
+              [
+                860,
+                422
+              ],
+              [
+                880,
+                413
+              ],
+              [
+                930,
+                418
+              ],
+              [
+                950,
+                470
+              ],
+              [
+                950,
+                610
+              ],
+              [
+                560,
+                610
+              ]
+            ]
+          ]
+        },
+        "evening": {
+          "world_width": 2160,
+          "render_height": 160,
+          "anchor": "foot",
+          "target": [
+            705,
+            505
+          ],
+          "occlusion": [
+            [
+              [
+                560,
+                452
+              ],
+              [
+                600,
+                440
+              ],
+              [
+                650,
+                432
+              ],
+              [
+                700,
+                437
+              ],
+              [
+                755,
+                445
+              ],
+              [
+                765,
+                425
+              ],
+              [
+                800,
+                410
+              ],
+              [
+                840,
+                412
+              ],
+              [
+                860,
+                422
+              ],
+              [
+                880,
+                413
+              ],
+              [
+                930,
+                418
+              ],
+              [
+                950,
+                470
+              ],
+              [
+                950,
+                610
+              ],
+              [
+                560,
+                610
+              ]
+            ]
+          ]
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/MK-1--resident_solbang.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          99.84,
+          12.288,
+          275.456,
+          195.072
+        ],
+        "foot": [
+          273.92,
+          754.944
+        ],
+        "anchors": {
+          "foot": [
+            273.92,
+            754.944
+          ],
+          "foot_left": [
+            161.792,
+            758.016
+          ],
+          "foot_right": [
+            380.928,
+            752.64
+          ],
+          "hand_left": [
+            273.92,
+            344.064
+          ],
+          "hand_right": [
+            343.04,
+            342.528
+          ],
+          "prop_support": [
+            309.76,
+            318.71999999999997
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              215.0,
+              250.0
+            ],
+            [
+              400.0,
+              250.0
+            ],
+            [
+              400.0,
+              367.5
+            ],
+            [
+              215.0,
+              367.5
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1.0,
+        "source_sha256": "9d53aa4ae52277a913ab8d03d6d7276e6b6e5282621595e1b7ed754da7537a53",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "activity": "약초 묶음을 들어 보인다."
+    },
+    {
+      "request_id": "PO-2",
+      "status": "approved",
+      "person": "resident_librarian",
+      "pose": "map27_po_2",
+      "location": "post",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world",
+        "living_bookpaper"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 194,
+          "anchor": "foot",
+          "target": [
+            560,
+            600
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1280,
+          "render_height": 300,
+          "anchor": "foot",
+          "target": [
+            435,
+            650
+          ],
+          "occlusion": [
+            [
+              [
+                366,
+                552
+              ],
+              [
+                1030,
+                466
+              ],
+              [
+                1030,
+                392
+              ],
+              [
+                1279,
+                392
+              ],
+              [
+                1279,
+                720
+              ],
+              [
+                366,
+                720
+              ]
+            ]
+          ]
+        },
+        "evening": {
+          "world_width": 1280,
+          "render_height": 300,
+          "anchor": "foot",
+          "target": [
+            435,
+            650
+          ],
+          "occlusion": [
+            [
+              [
+                366,
+                552
+              ],
+              [
+                1030,
+                466
+              ],
+              [
+                1030,
+                392
+              ],
+              [
+                1279,
+                392
+              ],
+              [
+                1279,
+                720
+              ],
+              [
+                366,
+                720
+              ]
+            ]
+          ]
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/PO-2--resident_librarian.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          134.656,
+          27.647999999999996,
+          173.05599999999998,
+          158.976
+        ],
+        "foot": [
+          296.96,
+          748.8
+        ],
+        "anchors": {
+          "foot": [
+            296.96,
+            748.8
+          ],
+          "foot_left": [
+            222.72,
+            748.8
+          ],
+          "foot_right": [
+            363.52,
+            744.96
+          ],
+          "hand_left": [
+            320.0,
+            268.79999999999995
+          ],
+          "hand_right": [
+            455.68,
+            188.16
+          ],
+          "prop_support": [
+            410.624,
+            280.32
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "5fdf72dbf96f1dedff609e7a293f961e72245896dd0890013dd3956859752c94",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "activity": "종이를 펼쳐 말린다."
+    },
+    {
+      "request_id": "PO-3",
+      "status": "approved",
+      "person": "resident_jongjong",
+      "pose": "map27_po_3",
+      "location": "post",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world",
+        "map9_letters_waiting"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 159,
+          "anchor": "foot",
+          "target": [
+            1040,
+            640
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1280,
+          "render_height": 185,
+          "anchor": "foot",
+          "target": [
+            300,
+            700
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 1280,
+          "render_height": 185,
+          "anchor": "foot",
+          "target": [
+            300,
+            700
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/PO-3--resident_jongjong.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          133.632,
+          6.144,
+          254.464,
+          248.06400000000002
+        ],
+        "foot": [
+          302.592,
+          754.1759999999999
+        ],
+        "anchors": {
+          "foot": [
+            302.592,
+            754.1759999999999
+          ],
+          "foot_left": [
+            225.28,
+            755.712
+          ],
+          "foot_right": [
+            376.32,
+            743.424
+          ],
+          "hand_left": [
+            309.248,
+            376.32
+          ],
+          "hand_right": [
+            360.448,
+            393.216
+          ],
+          "prop_support": [
+            328.704,
+            343.296
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "2b61174bc3c5960d17ba86b1a70c7816269f3e0a014ae144659fd7e350502687",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af",
+        "native_detail": true
+      },
+      "activity": "편지를 안고 나갈 채비를 한다."
+    },
+    {
+      "request_id": "IN-1",
+      "status": "approved",
+      "person": "resident_nubi",
+      "pose": "map27_in_1",
+      "location": "inn",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world",
+        "map9_inn_sort_tie_laundry"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 248,
+          "anchor": "foot",
+          "target": [
+            300,
+            655
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 248,
+          "anchor": "foot",
+          "target": [
+            300,
+            655
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 1920,
+          "render_height": 248,
+          "anchor": "foot",
+          "target": [
+            300,
+            655
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/IN-1--resident_nubi.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          128.0,
+          9.984,
+          243.712,
+          172.79999999999998
+        ],
+        "foot": [
+          290.304,
+          747.264
+        ],
+        "anchors": {
+          "foot": [
+            290.304,
+            747.264
+          ],
+          "foot_left": [
+            205.824,
+            747.264
+          ],
+          "foot_right": [
+            364.032,
+            746.496
+          ],
+          "hand_left": [
+            207.36,
+            357.12
+          ],
+          "hand_right": [
+            375.296,
+            246.52800000000002
+          ],
+          "prop_support": [
+            271.872,
+            371.712
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "a5e7537d7f1bfc9afcebf4f85e3817056d2e8093f0988e12eeb46cb74500f444",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "activity": "빨래를 접어 바구니에 담는다."
+    },
+    {
+      "request_id": "IN-1",
+      "status": "approved",
+      "person": "resident_nubi",
+      "pose": "map27_in_1",
+      "location": "school",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world",
+        "map9_inn_sort_tie_laundry"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1800,
+          "render_height": 266,
+          "anchor": "foot",
+          "target": [
+            180,
+            690
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1800,
+          "render_height": 266,
+          "anchor": "foot",
+          "target": [
+            180,
+            690
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 1800,
+          "render_height": 266,
+          "anchor": "foot",
+          "target": [
+            180,
+            690
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/IN-1--resident_nubi.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          128.0,
+          9.984,
+          243.712,
+          172.79999999999998
+        ],
+        "foot": [
+          290.304,
+          747.264
+        ],
+        "anchors": {
+          "foot": [
+            290.304,
+            747.264
+          ],
+          "foot_left": [
+            205.824,
+            747.264
+          ],
+          "foot_right": [
+            364.032,
+            746.496
+          ],
+          "hand_left": [
+            207.36,
+            357.12
+          ],
+          "hand_right": [
+            375.296,
+            246.52800000000002
+          ],
+          "prop_support": [
+            271.872,
+            371.712
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "a5e7537d7f1bfc9afcebf4f85e3817056d2e8093f0988e12eeb46cb74500f444",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "activity": "빨래를 접어 바구니에 담는다."
+    },
+    {
+      "request_id": "IN-1",
+      "status": "approved",
+      "person": "resident_nubi",
+      "pose": "map27_in_1",
+      "location": "facility",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world",
+        "map9_inn_sort_tie_laundry"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 262,
+          "anchor": "foot",
+          "target": [
+            400,
+            680
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 262,
+          "anchor": "foot",
+          "target": [
+            400,
+            680
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 1920,
+          "render_height": 262,
+          "anchor": "foot",
+          "target": [
+            400,
+            680
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/IN-1--resident_nubi.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          128.0,
+          9.984,
+          243.712,
+          172.79999999999998
+        ],
+        "foot": [
+          290.304,
+          747.264
+        ],
+        "anchors": {
+          "foot": [
+            290.304,
+            747.264
+          ],
+          "foot_left": [
+            205.824,
+            747.264
+          ],
+          "foot_right": [
+            364.032,
+            746.496
+          ],
+          "hand_left": [
+            207.36,
+            357.12
+          ],
+          "hand_right": [
+            375.296,
+            246.52800000000002
+          ],
+          "prop_support": [
+            271.872,
+            371.712
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "a5e7537d7f1bfc9afcebf4f85e3817056d2e8093f0988e12eeb46cb74500f444",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "activity": "빨래를 접어 바구니에 담는다."
+    },
+    {
+      "request_id": "SQ-1",
+      "status": "approved",
+      "person": "resident_dalgeurak",
+      "pose": "map27_sq_1",
+      "location": "square",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 200,
+          "anchor": "foot",
+          "target": [
+            560,
+            540
+          ],
+          "occlusion": [
+            [
+              [
+                330,
+                472
+              ],
+              [
+                420,
+                465
+              ],
+              [
+                560,
+                480
+              ],
+              [
+                600,
+                505
+              ],
+              [
+                600,
+                565
+              ],
+              [
+                330,
+                565
+              ]
+            ]
+          ]
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 200,
+          "anchor": "foot",
+          "target": [
+            560,
+            540
+          ],
+          "occlusion": [
+            [
+              [
+                330,
+                472
+              ],
+              [
+                420,
+                465
+              ],
+              [
+                560,
+                480
+              ],
+              [
+                600,
+                505
+              ],
+              [
+                600,
+                565
+              ],
+              [
+                330,
+                565
+              ]
+            ]
+          ]
+        },
+        "evening": {
+          "world_width": 1920,
+          "render_height": 200,
+          "anchor": "foot",
+          "target": [
+            560,
+            540
+          ],
+          "occlusion": [
+            [
+              [
+                330,
+                472
+              ],
+              [
+                420,
+                465
+              ],
+              [
+                560,
+                480
+              ],
+              [
+                600,
+                505
+              ],
+              [
+                600,
+                565
+              ],
+              [
+                330,
+                565
+              ]
+            ]
+          ]
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/SQ-1--resident_dalgeurak.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          175.616,
+          2.3040000000000003,
+          186.36799999999997,
+          211.96800000000002
+        ],
+        "foot": [
+          299.52,
+          752.64
+        ],
+        "anchors": {
+          "foot": [
+            299.52,
+            752.64
+          ],
+          "foot_left": [
+            176.128,
+            754.944
+          ],
+          "foot_right": [
+            411.136,
+            742.656
+          ],
+          "hand_left": [
+            215.04,
+            254.20800000000003
+          ],
+          "hand_right": [
+            459.264,
+            273.408
+          ],
+          "prop_support": [
+            374.784,
+            380.15999999999997
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              100.0,
+              205.0
+            ],
+            [
+              502.5,
+              205.0
+            ],
+            [
+              502.5,
+              415.0
+            ],
+            [
+              100.0,
+              415.0
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 0.96,
+        "source_sha256": "1308dc8f845854d04ed7fb0728f4352f3eac6e90cc57b222493c862e6c4a66fd",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "activity": "수레 옆에서 보따리를 펼친다."
+    },
+    {
+      "request_id": "MK-8",
+      "status": "approved",
+      "person": "resident_hyeoni",
+      "pose": "map27_mk_8",
+      "location": "market",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 251,
+          "anchor": "foot",
+          "target": [
+            1300,
+            700
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 2160,
+          "render_height": 251,
+          "anchor": "foot",
+          "target": [
+            1300,
+            700
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 2160,
+          "render_height": 251,
+          "anchor": "foot",
+          "target": [
+            1300,
+            700
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/MK-8--resident_hyeoni.webp",
+        "crop": [
+          0,
+          0,
+          496,
+          768
+        ],
+        "head": [
+          128.95999999999998,
+          0.0,
+          297.59999999999997,
+          215.04000000000005
+        ],
+        "foot": [
+          252.96,
+          760.32
+        ],
+        "anchors": {
+          "foot": [
+            252.96,
+            760.32
+          ],
+          "hand_left": [
+            426.56,
+            307.20000000000005
+          ],
+          "hand_right": [
+            243.04,
+            376.32
+          ],
+          "lute_strings": [
+            282.71999999999997,
+            368.64
+          ],
+          "raised_foot": [
+            416.63999999999993,
+            744.96
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "dd72dfe60cd9d5993c0aadc64dab2743a97f044e0725d481a8c43dbd685af6e0",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "activity": "류트 줄을 튕긴다."
+    },
+    {
+      "request_id": "MK-8",
+      "status": "approved",
+      "person": "resident_hyeoni",
+      "pose": "map27_mk_8",
+      "location": "square",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 232,
+          "anchor": "foot",
+          "target": [
+            1310,
+            615
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 232,
+          "anchor": "foot",
+          "target": [
+            1310,
+            615
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 1920,
+          "render_height": 232,
+          "anchor": "foot",
+          "target": [
+            1310,
+            615
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/MK-8--resident_hyeoni.webp",
+        "crop": [
+          0,
+          0,
+          496,
+          768
+        ],
+        "head": [
+          128.95999999999998,
+          0.0,
+          297.59999999999997,
+          215.04000000000005
+        ],
+        "foot": [
+          252.96,
+          760.32
+        ],
+        "anchors": {
+          "foot": [
+            252.96,
+            760.32
+          ],
+          "hand_left": [
+            426.56,
+            307.20000000000005
+          ],
+          "hand_right": [
+            243.04,
+            376.32
+          ],
+          "lute_strings": [
+            282.71999999999997,
+            368.64
+          ],
+          "raised_foot": [
+            416.63999999999993,
+            744.96
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "dd72dfe60cd9d5993c0aadc64dab2743a97f044e0725d481a8c43dbd685af6e0",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "activity": "류트 줄을 튕긴다."
+    },
+    {
+      "request_id": "MK-8",
+      "status": "approved",
+      "person": "resident_hyeoni",
+      "pose": "map27_mk_8",
+      "location": "dining",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 260,
+          "anchor": "foot",
+          "target": [
+            120,
+            690
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 2160,
+          "render_height": 260,
+          "anchor": "foot",
+          "target": [
+            120,
+            690
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 2160,
+          "render_height": 260,
+          "anchor": "foot",
+          "target": [
+            120,
+            690
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/MK-8--resident_hyeoni.webp",
+        "crop": [
+          0,
+          0,
+          496,
+          768
+        ],
+        "head": [
+          128.95999999999998,
+          0.0,
+          297.59999999999997,
+          215.04000000000005
+        ],
+        "foot": [
+          252.96,
+          760.32
+        ],
+        "anchors": {
+          "foot": [
+            252.96,
+            760.32
+          ],
+          "hand_left": [
+            426.56,
+            307.20000000000005
+          ],
+          "hand_right": [
+            243.04,
+            376.32
+          ],
+          "lute_strings": [
+            282.71999999999997,
+            368.64
+          ],
+          "raised_foot": [
+            416.63999999999993,
+            744.96
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "dd72dfe60cd9d5993c0aadc64dab2743a97f044e0725d481a8c43dbd685af6e0",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "activity": "류트 줄을 튕긴다."
+    },
+    {
+      "request_id": "SC-1",
+      "status": "approved",
+      "person": "resident_teacher",
+      "pose": "map27_sc_1",
+      "location": "school",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world",
+        "map9_school_spread_wet_coat"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1800,
+          "render_height": 210,
+          "anchor": "foot",
+          "target": [
+            330,
+            452
+          ],
+          "occlusion": [
+            [
+              [
+                155,
+                363
+              ],
+              [
+                500,
+                363
+              ],
+              [
+                500,
+                465
+              ],
+              [
+                155,
+                465
+              ]
+            ]
+          ]
+        },
+        "afternoon": {
+          "world_width": 1800,
+          "render_height": 210,
+          "anchor": "foot",
+          "target": [
+            330,
+            452
+          ],
+          "occlusion": [
+            [
+              [
+                155,
+                363
+              ],
+              [
+                500,
+                363
+              ],
+              [
+                500,
+                465
+              ],
+              [
+                155,
+                465
+              ]
+            ]
+          ]
+        },
+        "evening": {
+          "world_width": 1800,
+          "render_height": 210,
+          "anchor": "foot",
+          "target": [
+            330,
+            452
+          ],
+          "occlusion": [
+            [
+              [
+                155,
+                363
+              ],
+              [
+                500,
+                363
+              ],
+              [
+                500,
+                465
+              ],
+              [
+                155,
+                465
+              ]
+            ]
+          ]
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/SC-1--resident_teacher.webp",
+        "crop": [
+          0,
+          0,
+          482,
+          768
+        ],
+        "head": [
+          144.29999999999998,
+          15.36,
+          298.21999999999997,
+          222.72
+        ],
+        "foot": [
+          283.79,
+          760.32
+        ],
+        "anchors": {
+          "foot": [
+            283.79,
+            760.32
+          ],
+          "hand_left": [
+            365.56000000000006,
+            314.88
+          ],
+          "hand_right": [
+            57.72,
+            199.68
+          ],
+          "book_grip": [
+            379.99,
+            314.88
+          ],
+          "point_tip": [
+            19.24,
+            161.28
+          ],
+          "cane_ground": [
+            452.14,
+            752.64
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              319.6978851963746,
+              232.72727272727275
+            ],
+            [
+              431.1077542799597,
+              232.72727272727275
+            ],
+            [
+              431.1077542799597,
+              412.1212121212121
+            ],
+            [
+              319.6978851963746,
+              412.1212121212121
+            ]
+          ]
+        ],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "952bd774cab26ac1b3717129856d8ad93a93d83de3db3e3449622c3dd928737d",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "activity": "책을 들고 칠판을 가리킨다."
+    },
+    {
+      "request_id": "FO-1",
+      "status": "approved",
+      "person": "resident_kalbaram",
+      "pose": "map27_fo_1",
+      "location": "forest",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 180,
+          "anchor": "inspect_ground",
+          "target": [
+            1250,
+            706
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 2160,
+          "render_height": 180,
+          "anchor": "inspect_ground",
+          "target": [
+            1250,
+            706
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 2160,
+          "render_height": 180,
+          "anchor": "inspect_ground",
+          "target": [
+            1250,
+            706
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/FO-1--resident_kalbaram.webp",
+        "crop": [
+          0,
+          0,
+          702,
+          768
+        ],
+        "head": [
+          379.08,
+          46.08,
+          259.74,
+          268.79999999999995
+        ],
+        "foot": [
+          561.6,
+          706.56
+        ],
+        "anchors": {
+          "foot": [
+            561.6,
+            706.56
+          ],
+          "hand_left": [
+            512.4599999999999,
+            422.4
+          ],
+          "hand_right": [
+            414.17999999999995,
+            668.16
+          ],
+          "knee_ground": [
+            329.93999999999994,
+            698.88
+          ],
+          "inspect_ground": [
+            463.32,
+            706.56
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "kneeling",
+        "stature_ratio": 0.65,
+        "source_sha256": "29daabddf1fadb2860c12647255139ab91c4ab90b9961f47449386714af4cd51",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af",
+        "native_detail": true
+      },
+      "activity": "무릎을 낮추고 발자국을 살핀다.",
+      "min_day": 2
+    },
+    {
+      "request_id": "MK-7",
+      "status": "approved",
+      "person": "resident_mungchi",
+      "pose": "map27_mk_7",
+      "location": "market",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 218,
+          "anchor": "foot",
+          "target": [
+            1450,
+            668
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 2160,
+          "render_height": 218,
+          "anchor": "foot",
+          "target": [
+            1450,
+            668
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 2160,
+          "render_height": 218,
+          "anchor": "foot",
+          "target": [
+            1450,
+            668
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/MK-7--resident_mungchi.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          192.62400000000002,
+          70.13600000000002,
+          180.0,
+          170.0
+        ],
+        "foot": [
+          259.584,
+          754.944
+        ],
+        "anchors": {
+          "foot_left": [
+            177.152,
+            754.944
+          ],
+          "foot_right": [
+            342.016,
+            754.1759999999999
+          ],
+          "head_center": [
+            282.624,
+            155.13600000000002
+          ],
+          "hand_far_basket_handle": [
+            367.104,
+            313.344
+          ],
+          "hand_near_basket_side": [
+            407.04,
+            392.448
+          ],
+          "prop_center": [
+            423.424,
+            399.36
+          ],
+          "foot": [
+            259.584,
+            754.944
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 0.96,
+        "source_sha256": "9c35e16d0c6361e58bfaf5389435250acfe0da62c78d12829d438d8697dbb529",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "activity": "바구니를 들고 장을 본다."
+    },
+    {
+      "request_id": "ST-1",
+      "status": "approved",
+      "person": "resident_mungchi",
+      "pose": "map27_st_1",
+      "location": "store",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world",
+        "map9_store_sort_boxes"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 162,
+          "anchor": "foot",
+          "target": [
+            1100,
+            430
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 162,
+          "anchor": "foot",
+          "target": [
+            1100,
+            430
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 1920,
+          "render_height": 162,
+          "anchor": "foot",
+          "target": [
+            1100,
+            430
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/ST-1--resident_mungchi.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          246.38400000000001,
+          77.048,
+          180.0,
+          170.0
+        ],
+        "foot": [
+          284.15999999999997,
+          753.408
+        ],
+        "anchors": {
+          "foot_left": [
+            142.336,
+            753.408
+          ],
+          "foot_right": [
+            425.984,
+            753.408
+          ],
+          "head_center": [
+            336.384,
+            162.048
+          ],
+          "hand_sack_neck": [
+            265.216,
+            244.99200000000002
+          ],
+          "hand_free": [
+            481.28,
+            473.856
+          ],
+          "prop_center": [
+            137.728,
+            270.336
+          ],
+          "shoulder_sack_contact": [
+            227.84,
+            221.952
+          ],
+          "foot": [
+            284.15999999999997,
+            753.408
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 0.96,
+        "source_sha256": "9101f95c0dbc7558c48c1a0da6e404b79cd259b8562d60bb8dbe18ebb0b3613e",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "activity": "자루를 어깨에 메고 옮긴다."
+    },
+    {
+      "request_id": "ST-2",
+      "status": "approved",
+      "person": "resident_siluk",
+      "pose": "map27_st_2",
+      "location": "store",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 319,
+          "anchor": "foot",
+          "target": [
+            1470,
+            640
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 319,
+          "anchor": "foot",
+          "target": [
+            1470,
+            640
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 1920,
+          "render_height": 319,
+          "anchor": "foot",
+          "target": [
+            1470,
+            640
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/ST-2--resident_siluk.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          197.499776,
+          31.000256000000007,
+          180.0,
+          170.0
+        ],
+        "foot": [
+          268.0,
+          757.499904
+        ],
+        "anchors": {
+          "foot_left": [
+            180.499968,
+            757.499904
+          ],
+          "foot_right": [
+            355.500032,
+            757.499904
+          ],
+          "head_center": [
+            287.499776,
+            116.00025600000001
+          ],
+          "hand_left_box": [
+            273.50016,
+            374.49984
+          ],
+          "hand_right_box": [
+            401.50016,
+            372.99993600000005
+          ],
+          "prop_center": [
+            317.000192,
+            332.500224
+          ],
+          "foot": [
+            268.0,
+            757.499904
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "00377789e4ba7b88868b1293e63170dcac93ded939e4248a268bda23ad48a081",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "activity": "나무 상자를 나른다."
+    },
+    {
+      "request_id": "GA-1",
+      "status": "approved",
+      "person": "neoul",
+      "pose": "map27_ga_1",
+      "location": "gate",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 211,
+          "anchor": "foot",
+          "target": [
+            810,
+            620
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 211,
+          "anchor": "foot",
+          "target": [
+            810,
+            620
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 1920,
+          "render_height": 211,
+          "anchor": "foot",
+          "target": [
+            810,
+            620
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/GA-1--neoul.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          168.0,
+          5.0,
+          211.0,
+          159.0
+        ],
+        "foot": [
+          290.5,
+          755.0
+        ],
+        "anchors": {
+          "head_center": [
+            273.0,
+            84.5
+          ],
+          "foot_left": [
+            187.0,
+            755.0
+          ],
+          "foot_right": [
+            394.5,
+            755.0
+          ],
+          "foot": [
+            290.5,
+            755.0
+          ],
+          "pointing_hand": [
+            60.0,
+            181.0
+          ],
+          "pointing_tip": [
+            19.0,
+            155.5
+          ],
+          "clipboard_hand": [
+            420.5,
+            349.5
+          ],
+          "clipboard_bottom": [
+            432.5,
+            325.5
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "2074653d5bde9e1312bc3dc98badd5ac21e22340a0b2f904fbd77430522178cc",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "activity": "명부를 들고 입구를 가리킨다.",
+      "costume_id": "winter_official_navy_v1",
+      "usage": "map_only"
+    },
+    {
+      "request_id": "FA-1",
+      "status": "approved",
+      "person": "neoul",
+      "pose": "map27_fa_1",
+      "location": "facility",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 193,
+          "anchor": "work",
+          "target": [
+            1250,
+            411
+          ],
+          "occlusion": [
+            [
+              [
+                720,
+                411
+              ],
+              [
+                1450,
+                411
+              ],
+              [
+                1462,
+                445
+              ],
+              [
+                1462,
+                625
+              ],
+              [
+                720,
+                625
+              ]
+            ]
+          ]
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 193,
+          "anchor": "work",
+          "target": [
+            1250,
+            411
+          ],
+          "occlusion": [
+            [
+              [
+                720,
+                411
+              ],
+              [
+                1450,
+                411
+              ],
+              [
+                1462,
+                445
+              ],
+              [
+                1462,
+                625
+              ],
+              [
+                720,
+                625
+              ]
+            ]
+          ]
+        },
+        "evening": {
+          "world_width": 1920,
+          "render_height": 193,
+          "anchor": "work",
+          "target": [
+            1250,
+            411
+          ],
+          "occlusion": [
+            [
+              [
+                720,
+                411
+              ],
+              [
+                1450,
+                411
+              ],
+              [
+                1462,
+                445
+              ],
+              [
+                1462,
+                625
+              ],
+              [
+                720,
+                625
+              ]
+            ]
+          ]
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/FA-1--neoul.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          175.5,
+          5.5,
+          220.5,
+          166.0
+        ],
+        "foot": [
+          273.5,
+          754.0
+        ],
+        "anchors": {
+          "head_center": [
+            301.5,
+            87.0
+          ],
+          "foot_left": [
+            172.0,
+            753.0
+          ],
+          "foot_right": [
+            375.0,
+            754.0
+          ],
+          "foot": [
+            273.5,
+            754.0
+          ],
+          "hand_left": [
+            223.5,
+            424.0
+          ],
+          "hand_right": [
+            458.5,
+            424.5
+          ],
+          "work": [
+            341.0,
+            424.5
+          ],
+          "desk_line_left": [
+            174.5,
+            426.0
+          ],
+          "desk_line_right": [
+            505.5,
+            426.5
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              170.0,
+              380.0
+            ],
+            [
+              280.0,
+              380.0
+            ],
+            [
+              280.0,
+              432.5
+            ],
+            [
+              170.0,
+              432.5
+            ]
+          ],
+          [
+            [
+              400.0,
+              380.0
+            ],
+            [
+              512.0,
+              380.0
+            ],
+            [
+              512.0,
+              432.5
+            ],
+            [
+              400.0,
+              432.5
+            ]
+          ]
+        ],
+        "contact": "background_desk",
+        "stature_ratio": 1.0,
+        "source_sha256": "82e6b15d31ae9e43756004b62fa1491a622aeb7906d83ba05a12c4e1618ac0eb",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "activity": "책상에 손을 짚고 이야기를 듣는다.",
+      "costume_id": "winter_official_navy_v1",
+      "usage": "map_only"
+    },
+    {
+      "request_id": "CL-1",
+      "status": "approved",
+      "person": "resident_piko",
+      "pose": "map27_cl_1",
+      "location": "clinic",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world",
+        "map9_clinic_rest_alive_v2",
+        "distressed"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 240,
+          "anchor": "seat",
+          "target": [
+            1150,
+            408
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 240,
+          "anchor": "seat",
+          "target": [
+            1150,
+            408
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 1920,
+          "render_height": 240,
+          "anchor": "seat",
+          "target": [
+            1150,
+            408
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/CL-1--resident_piko.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          136.5,
+          6.5,
+          250.0,
+          194.5
+        ],
+        "foot": [
+          406.5,
+          731.0
+        ],
+        "anchors": {
+          "head_center": [
+            285.0,
+            110.5
+          ],
+          "foot_left": [
+            345.5,
+            731.0
+          ],
+          "foot_right": [
+            468.0,
+            727.5
+          ],
+          "foot": [
+            406.5,
+            731.0
+          ],
+          "buttock": [
+            238.5,
+            465.5
+          ],
+          "seat": [
+            238.5,
+            465.5
+          ],
+          "hand_left": [
+            255.0,
+            264.0
+          ],
+          "hand_right": [
+            359.0,
+            300.0
+          ],
+          "blanket_left_grip": [
+            241.0,
+            238.0
+          ],
+          "blanket_right_grip": [
+            348.0,
+            280.0
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "background_bed",
+        "stature_ratio": 0.8,
+        "source_sha256": "6070b407f29748be55d9c4ccff92ba27df242c2b0a8b24d461d1a4847424c4f5",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af",
+        "native_detail": true
+      },
+      "activity": "침대 가장자리에 앉아 담요를 여민다.",
+      "min_day": 11
+    },
+    {
+      "request_id": "RI-1",
+      "status": "approved",
+      "person": "resident_kkwak",
+      "pose": "map27_ri_1",
+      "location": "river",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world",
+        "map9_river_haul_net"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 176,
+          "anchor": "foot",
+          "target": [
+            260,
+            705
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 2160,
+          "render_height": 176,
+          "anchor": "foot",
+          "target": [
+            260,
+            705
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 2160,
+          "render_height": 176,
+          "anchor": "foot",
+          "target": [
+            260,
+            705
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/RI-1--resident_kkwak.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          88.5,
+          22.0,
+          272.0,
+          252.5
+        ],
+        "foot": [
+          324.5,
+          749.0
+        ],
+        "anchors": {
+          "head_center": [
+            256.5,
+            184.0
+          ],
+          "foot_left": [
+            267.5,
+            749.0
+          ],
+          "foot_right": [
+            381.5,
+            748.5
+          ],
+          "foot": [
+            324.5,
+            749.0
+          ],
+          "buttock": [
+            187.5,
+            564.0
+          ],
+          "seat": [
+            187.5,
+            564.0
+          ],
+          "bucket_bottom": [
+            171.0,
+            732.5
+          ],
+          "hand_rod_left": [
+            319.0,
+            424.0
+          ],
+          "hand_rod_right": [
+            372.0,
+            416.5
+          ],
+          "rod_tip": [
+            481.5,
+            347.5
+          ],
+          "line_bottom": [
+            481.0,
+            745.0
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "bucket_ground",
+        "stature_ratio": 0.78,
+        "source_sha256": "48c5e1d5be63ccad4d746d99e462e1011d447f3851ebfa2d0266866180235bdd",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "activity": "물통에 앉아 낚싯줄을 드리운다."
+    },
+    {
+      "request_id": "RI-2",
+      "status": "approved",
+      "person": "resident_mulgyeol",
+      "pose": "map27_ri_2",
+      "location": "river",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world",
+        "map9_rope_coiling"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 274,
+          "anchor": "foot",
+          "target": [
+            520,
+            712
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 2160,
+          "render_height": 274,
+          "anchor": "foot",
+          "target": [
+            520,
+            712
+          ],
+          "occlusion": []
+        },
+        "evening": {
+          "world_width": 2160,
+          "render_height": 274,
+          "anchor": "foot",
+          "target": [
+            520,
+            712
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/RI-2--resident_mulgyeol.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          160.5,
+          54.0,
+          185.5,
+          151.0
+        ],
+        "foot": [
+          256.0,
+          755.0
+        ],
+        "anchors": {
+          "head_center": [
+            255.5,
+            133.0
+          ],
+          "foot_left": [
+            181.0,
+            755.0
+          ],
+          "foot_right": [
+            331.0,
+            748.5
+          ],
+          "foot": [
+            256.0,
+            755.0
+          ],
+          "hand_pole_upper": [
+            372.5,
+            274.0
+          ],
+          "hand_pole_lower": [
+            370.5,
+            380.5
+          ],
+          "pole_top": [
+            358.5,
+            7.0
+          ],
+          "pole_bottom": [
+            399.0,
+            752.5
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "pole_ground",
+        "stature_ratio": 1.0,
+        "source_sha256": "54fea88c5c31d6ee97ddfc24544241b6e426a0a0fb3b3ed87cb5caaea1980eba",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "activity": "긴 장대를 땅에 짚는다."
+    },
+    {
+      "request_id": "DI-1a",
+      "status": "approved",
+      "person": "resident_tok",
+      "pose": "map27_di_1a",
+      "location": "dining",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 212,
+          "anchor": "seat",
+          "target": [
+            660,
+            415
+          ],
+          "occlusion": [
+            [
+              [
+                645,
+                356
+              ],
+              [
+                965,
+                356
+              ],
+              [
+                965,
+                445
+              ],
+              [
+                645,
+                445
+              ]
+            ]
+          ],
+          "secondary_targets": {
+            "bowl_bottom": [
+              720,
+              365
+            ]
+          }
+        },
+        "afternoon": {
+          "world_width": 2160,
+          "render_height": 212,
+          "anchor": "seat",
+          "target": [
+            660,
+            415
+          ],
+          "occlusion": [
+            [
+              [
+                645,
+                356
+              ],
+              [
+                965,
+                356
+              ],
+              [
+                965,
+                445
+              ],
+              [
+                645,
+                445
+              ]
+            ]
+          ],
+          "secondary_targets": {
+            "bowl_bottom": [
+              720,
+              365
+            ]
+          }
+        },
+        "evening": {
+          "world_width": 2160,
+          "render_height": 212,
+          "anchor": "seat",
+          "target": [
+            660,
+            415
+          ],
+          "occlusion": [
+            [
+              [
+                645,
+                356
+              ],
+              [
+                965,
+                356
+              ],
+              [
+                965,
+                445
+              ],
+              [
+                645,
+                445
+              ]
+            ]
+          ],
+          "secondary_targets": {
+            "bowl_bottom": [
+              720,
+              365
+            ]
+          }
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/DI-1a--resident_tok.webp",
+        "crop": [
+          0,
+          0,
+          742,
+          768
+        ],
+        "head": [
+          237.44,
+          7.680000000000001,
+          289.38,
+          253.44000000000003
+        ],
+        "foot": [
+          430.35999999999996,
+          752.6400000000001
+        ],
+        "anchors": {
+          "foot": [
+            430.35999999999996,
+            752.6400000000001
+          ],
+          "seat": [
+            274.53999999999996,
+            576.0
+          ],
+          "chair_ground": [
+            230.02,
+            752.6400000000001
+          ],
+          "bowl_bottom": [
+            489.72,
+            391.68
+          ],
+          "hand_left": [
+            422.93999999999994,
+            368.64000000000004
+          ],
+          "hand_right": [
+            586.18,
+            291.84000000000003
+          ],
+          "spoon_tip": [
+            511.97999999999996,
+            276.47999999999996
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              336.99918896999185,
+              252.78996865203763
+            ],
+            [
+              607.802108678021,
+              252.78996865203763
+            ],
+            [
+              607.802108678021,
+              409.2789968652038
+            ],
+            [
+              336.99918896999185,
+              409.2789968652038
+            ]
+          ]
+        ],
+        "contact": "seated",
+        "stature_ratio": 0.72,
+        "source_sha256": "6ba35b9434286ee2136854e6590e70149b149fbb0e7cc53923f9b30de1696ce1",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "activity": "수프를 떠먹는다."
+    },
+    {
+      "request_id": "DI-1b",
+      "status": "approved",
+      "person": "resident_dalgeurak",
+      "pose": "map27_di_1b",
+      "location": "dining",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 236,
+          "anchor": "seat",
+          "target": [
+            1965,
+            415
+          ],
+          "occlusion": [
+            [
+              [
+                1855,
+                356
+              ],
+              [
+                2085,
+                356
+              ],
+              [
+                2085,
+                445
+              ],
+              [
+                1855,
+                445
+              ]
+            ]
+          ],
+          "secondary_targets": {
+            "bowl_bottom": [
+              1934,
+              356
+            ]
+          }
+        },
+        "afternoon": {
+          "world_width": 2160,
+          "render_height": 236,
+          "anchor": "seat",
+          "target": [
+            1965,
+            415
+          ],
+          "occlusion": [
+            [
+              [
+                1855,
+                356
+              ],
+              [
+                2085,
+                356
+              ],
+              [
+                2085,
+                445
+              ],
+              [
+                1855,
+                445
+              ]
+            ]
+          ],
+          "secondary_targets": {
+            "bowl_bottom": [
+              1934,
+              356
+            ]
+          }
+        },
+        "evening": {
+          "world_width": 2160,
+          "render_height": 236,
+          "anchor": "seat",
+          "target": [
+            1965,
+            415
+          ],
+          "occlusion": [
+            [
+              [
+                1855,
+                356
+              ],
+              [
+                2085,
+                356
+              ],
+              [
+                2085,
+                445
+              ],
+              [
+                1855,
+                445
+              ]
+            ]
+          ],
+          "secondary_targets": {
+            "bowl_bottom": [
+              1934,
+              356
+            ]
+          }
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/DI-1b--resident_dalgeurak.webp",
+        "crop": [
+          0,
+          0,
+          422,
+          768
+        ],
+        "head": [
+          117.88000000000002,
+          0.0,
+          197.87,
+          215.04000000000002
+        ],
+        "foot": [
+          117.88000000000002,
+          752.64
+        ],
+        "anchors": {
+          "foot": [
+            117.88000000000002,
+            752.64
+          ],
+          "seat": [
+            252.6,
+            514.5600000000001
+          ],
+          "chair_ground": [
+            265.23,
+            737.28
+          ],
+          "bowl_bottom": [
+            151.56,
+            322.56
+          ],
+          "hand_left": [
+            206.29,
+            330.24
+          ],
+          "hand_right": [
+            84.20000000000002,
+            222.72
+          ],
+          "spoon_tip": [
+            155.77,
+            215.04000000000002
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              72.58620689655173,
+              181.34592680047226
+            ],
+            [
+              231.36853448275863,
+              181.34592680047226
+            ],
+            [
+              231.36853448275863,
+              351.357733175915
+            ],
+            [
+              72.58620689655173,
+              351.357733175915
+            ]
+          ]
+        ],
+        "contact": "seated",
+        "stature_ratio": 0.72,
+        "source_sha256": "c6f6811fc34c991dd3190263e4a07d8d9dbe95935d343fc3f7308f131e0ebc84",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "activity": "수프를 떠먹는다."
+    },
+    {
+      "request_id": "KI-1",
+      "status": "approved",
+      "person": "nabi",
+      "pose": "map27_ki_1",
+      "location": "kitchen",
+      "periods": [
+        0
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 364,
+          "anchor": "board_bottom",
+          "target": [
+            700,
+            542
+          ],
+          "occlusion": [
+            [
+              [
+                600,
+                530
+              ],
+              [
+                790,
+                555
+              ],
+              [
+                1100,
+                595
+              ],
+              [
+                1620,
+                565
+              ],
+              [
+                1620,
+                720
+              ],
+              [
+                600,
+                720
+              ]
+            ]
+          ],
+          "review_head_height": 120,
+          "review_ground_depth": 690
+        },
+        "afternoon": {
+          "world_width": 2160,
+          "render_height": 244,
+          "anchor": "board_bottom",
+          "target": [
+            700,
+            542
+          ],
+          "occlusion": [
+            [
+              [
+                600,
+                530
+              ],
+              [
+                790,
+                555
+              ],
+              [
+                1100,
+                595
+              ],
+              [
+                1620,
+                565
+              ],
+              [
+                1620,
+                720
+              ],
+              [
+                600,
+                720
+              ]
+            ]
+          ]
+        },
+        "evening": {
+          "world_width": 2160,
+          "render_height": 244,
+          "anchor": "board_bottom",
+          "target": [
+            700,
+            542
+          ],
+          "occlusion": [
+            [
+              [
+                600,
+                530
+              ],
+              [
+                790,
+                555
+              ],
+              [
+                1100,
+                595
+              ],
+              [
+                1620,
+                565
+              ],
+              [
+                1620,
+                720
+              ],
+              [
+                600,
+                720
+              ]
+            ]
+          ]
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/KI-1--nabi.webp",
+        "crop": [
+          0,
+          0,
+          516,
+          768
+        ],
+        "head": [
+          61.92,
+          0.0,
+          268.32000000000005,
+          253.44000000000003
+        ],
+        "foot": [
+          201.24,
+          760.32
+        ],
+        "anchors": {
+          "foot": [
+            201.24,
+            760.32
+          ],
+          "hand_left": [
+            211.55999999999997,
+            384.0
+          ],
+          "hand_right": [
+            82.55999999999999,
+            345.6
+          ],
+          "knife_carrot": [
+            149.64,
+            399.36
+          ],
+          "board_bottom": [
+            149.64,
+            430.08000000000004
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              25.09727626459144,
+              271.05882352941177
+            ],
+            [
+              316.2256809338521,
+              271.05882352941177
+            ],
+            [
+              316.2256809338521,
+              439.2156862745098
+            ],
+            [
+              25.09727626459144,
+              439.2156862745098
+            ]
+          ]
+        ],
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "963372be4bccf8c78c392809ab9fdd73243f09d66e890edac7c44fcb8576543f",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "activity": "도마 위의 당근을 썬다.",
+      "activation": "daily_kitchen",
+      "days": [
+        2,
+        7,
+        12
+      ],
+      "min_day": 2
+    },
+    {
+      "request_id": "KI-2",
+      "status": "approved",
+      "person": "nabi",
+      "pose": "map31_nabi_stir_pot",
+      "location": "kitchen",
+      "periods": [
+        0
+      ],
+      "days": [
+        3,
+        8,
+        13
+      ],
+      "min_day": 2,
+      "activation": "daily_kitchen",
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world",
+        "action_1",
+        "action_2"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 303,
+          "anchor": "prop_support",
+          "target": [
+            1835,
+            354
+          ],
+          "occlusion": [
+            [
+              [
+                1590,
+                355
+              ],
+              [
+                2080,
+                355
+              ],
+              [
+                2080,
+                625
+              ],
+              [
+                1590,
+                625
+              ]
+            ],
+            [
+              [
+                1660,
+                300
+              ],
+              [
+                1775,
+                300
+              ],
+              [
+                1775,
+                355
+              ],
+              [
+                1660,
+                355
+              ]
+            ]
+          ],
+          "review_head_height": 94,
+          "review_ground_depth": 500
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/KI-2--nabi.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          168.96,
+          7.68,
+          250.88,
+          238.07999999999998
+        ],
+        "foot": [
+          286.72,
+          756.48
+        ],
+        "anchors": {
+          "foot": [
+            286.72,
+            756.48
+          ],
+          "hand_left": [
+            435.2,
+            245.76
+          ],
+          "hand_right": [
+            302.08,
+            368.64
+          ],
+          "spoon_pot": [
+            414.72,
+            349.44
+          ],
+          "prop_support": [
+            409.6,
+            430.08000000000004
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              280.0,
+              220.0
+            ],
+            [
+              512.0,
+              220.0
+            ],
+            [
+              512.0,
+              442.5
+            ],
+            [
+              280.0,
+              442.5
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_commit": "64264145c81635843cfde00fdf987dd4c6283f5a",
+        "source_sha256": "06b7b1b986348332611e0c58a05efce4d376daeb747ab7bccb67ce333c959845"
+      },
+      "activity": "냄비의 수프를 천천히 젓는다."
+    },
+    {
+      "request_id": "KI-3",
+      "status": "approved",
+      "person": "nabi",
+      "pose": "map31_nabi_ladle_soup",
+      "location": "kitchen",
+      "periods": [
+        0
+      ],
+      "days": [
+        4,
+        9,
+        14
+      ],
+      "min_day": 2,
+      "activation": "daily_kitchen",
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world",
+        "action_1",
+        "action_2"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 364,
+          "anchor": "prop_support",
+          "target": [
+            700,
+            542
+          ],
+          "occlusion": [
+            [
+              [
+                600,
+                530
+              ],
+              [
+                790,
+                555
+              ],
+              [
+                1100,
+                595
+              ],
+              [
+                1620,
+                565
+              ],
+              [
+                1620,
+                720
+              ],
+              [
+                600,
+                720
+              ]
+            ]
+          ],
+          "review_head_height": 120,
+          "review_ground_depth": 690
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/KI-3--nabi.webp",
+        "crop": [
+          0,
+          0,
+          516,
+          768
+        ],
+        "head": [
+          82.56,
+          0.0,
+          268.32,
+          253.44
+        ],
+        "foot": [
+          211.55999999999997,
+          756.48
+        ],
+        "anchors": {
+          "foot": [
+            211.55999999999997,
+            756.48
+          ],
+          "hand_right": [
+            46.44,
+            230.4
+          ],
+          "hand_left": [
+            185.76,
+            391.68
+          ],
+          "ladle_tip": [
+            129.0,
+            314.88
+          ],
+          "soup_bowl": [
+            144.48000000000002,
+            360.9599999999999
+          ],
+          "prop_support": [
+            144.48000000000002,
+            407.04
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              20.07782101167315,
+              200.7843137254902
+            ],
+            [
+              250.9727626459144,
+              200.7843137254902
+            ],
+            [
+              250.9727626459144,
+              419.1372549019608
+            ],
+            [
+              20.07782101167315,
+              419.1372549019608
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_commit": "64264145c81635843cfde00fdf987dd4c6283f5a",
+        "source_sha256": "1bb0a4636b5f9198551264534b4848a8fc742b90d3e88c9dd264aea9819db4ef"
+      },
+      "activity": "그릇에 수프를 담는다."
+    },
+    {
+      "request_id": "KI-4",
+      "status": "approved",
+      "person": "nabi",
+      "pose": "map31_nabi_wash_dishes",
+      "location": "kitchen",
+      "periods": [
+        0
+      ],
+      "days": [
+        5,
+        10
+      ],
+      "min_day": 2,
+      "activation": "daily_kitchen",
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world",
+        "action_1",
+        "action_2"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 364,
+          "anchor": "prop_support",
+          "target": [
+            700,
+            542
+          ],
+          "occlusion": [
+            [
+              [
+                600,
+                530
+              ],
+              [
+                790,
+                555
+              ],
+              [
+                1100,
+                595
+              ],
+              [
+                1620,
+                565
+              ],
+              [
+                1620,
+                720
+              ],
+              [
+                600,
+                720
+              ]
+            ]
+          ],
+          "review_head_height": 120,
+          "review_ground_depth": 690
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/KI-4--nabi.webp",
+        "crop": [
+          0,
+          0,
+          516,
+          768
+        ],
+        "head": [
+          67.08,
+          0.0,
+          268.32,
+          253.44
+        ],
+        "foot": [
+          237.35999999999999,
+          752.6399999999999
+        ],
+        "anchors": {
+          "foot": [
+            237.35999999999999,
+            752.6399999999999
+          ],
+          "hand_right": [
+            92.88,
+            360.9599999999999
+          ],
+          "hand_left": [
+            72.24000000000001,
+            422.40000000000003
+          ],
+          "sponge_plate": [
+            77.39999999999999,
+            360.9599999999999
+          ],
+          "prop_support": [
+            67.08000000000001,
+            430.08000000000004
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              0.0,
+              271.05882352941177
+            ],
+            [
+              210.8171206225681,
+              271.05882352941177
+            ],
+            [
+              210.8171206225681,
+              451.7647058823529
+            ],
+            [
+              0.0,
+              451.7647058823529
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_commit": "64264145c81635843cfde00fdf987dd4c6283f5a",
+        "source_sha256": "e4b7e99bc04f3a0d7d2c55d25396ffc4e71ab2617aa21a8eb468888cd3ec393d"
+      },
+      "activity": "조리대 곁에서 접시를 닦는다."
+    },
+    {
+      "request_id": "KI-5",
+      "status": "approved",
+      "person": "nabi",
+      "pose": "map31_nabi_arrange_tray",
+      "location": "kitchen",
+      "periods": [
+        0
+      ],
+      "days": [
+        6,
+        11
+      ],
+      "min_day": 2,
+      "activation": "daily_kitchen",
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world",
+        "action_1",
+        "action_2"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 400,
+          "anchor": "prop_support",
+          "target": [
+            700,
+            542
+          ],
+          "occlusion": [
+            [
+              [
+                600,
+                530
+              ],
+              [
+                790,
+                555
+              ],
+              [
+                1100,
+                595
+              ],
+              [
+                1620,
+                565
+              ],
+              [
+                1620,
+                720
+              ],
+              [
+                600,
+                720
+              ]
+            ]
+          ],
+          "review_head_height": 120,
+          "review_ground_depth": 690
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/KI-5--nabi.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          81.92,
+          7.68,
+          245.76,
+          230.39999999999998
+        ],
+        "foot": [
+          209.92,
+          760.3199999999999
+        ],
+        "anchors": {
+          "foot": [
+            209.92,
+            760.3199999999999
+          ],
+          "hand_right": [
+            81.92,
+            314.88
+          ],
+          "hand_left": [
+            220.16,
+            407.04
+          ],
+          "bread_contact": [
+            102.4,
+            337.92
+          ],
+          "prop_support": [
+            153.6,
+            407.04
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              25.0,
+              275.0
+            ],
+            [
+              310.0,
+              275.0
+            ],
+            [
+              310.0,
+              425.0
+            ],
+            [
+              25.0,
+              425.0
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_commit": "64264145c81635843cfde00fdf987dd4c6283f5a",
+        "source_sha256": "0a9366c80dce51c74e23bf14ef21142de6f1ecbf77d7e4a9eccbef92f943d6d9"
+      },
+      "activity": "쟁반에 빵과 수프를 올린다."
+    },
+    {
+      "request_id": "VA-1",
+      "status": "approved",
+      "person": "resident_badook",
+      "pose": "map27_lantern_patrol",
+      "location": "square",
+      "periods": [
+        2
+      ],
+      "replace_poses": [
+        "living_bootlace"
+      ],
+      "variants": {
+        "evening": {
+          "world_width": 1920,
+          "render_height": 300,
+          "anchor": "foot",
+          "target": [
+            245,
+            676
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-1--resident_badook.webp",
+        "crop": [
+          0,
+          0,
+          516,
+          768
+        ],
+        "head": [
+          120.46692607003891,
+          10.03921568627451,
+          271.05058365758754,
+          210.8235294117647
+        ],
+        "foot": [
+          291.63035019455253,
+          744.9098039215686
+        ],
+        "anchors": {
+          "foot_left": [
+            201.28015564202335,
+            629.9607843137255
+          ],
+          "foot_right": [
+            381.9805447470817,
+            744.9098039215686
+          ],
+          "hand_left_image": [
+            170.15953307392996,
+            99.89019607843137
+          ],
+          "hand_right_image": [
+            423.1400778210117,
+            337.81960784313725
+          ],
+          "foot": [
+            291.63035019455253,
+            744.9098039215686
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "da6139101310671715ccabcf35aa8eb8ab5e80ea4aa3d6f304f0f17f3e472e3e",
+        "source_commit": "b9ba25ebc0d0ca2baf114f9fc39d3f5d6f9180c2"
+      },
+      "activity": "등불을 들고 광장을 순찰한다."
+    }
+  ],
+  "remaining_source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af",
+  "nabi_extra4_source_commit": "64264145c81635843cfde00fdf987dd4c6283f5a"
+}

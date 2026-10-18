@@ -25,6 +25,7 @@ jobs:
     env:
       SDL_AUDIODRIVER: dummy
       LIBGL_ALWAYS_SOFTWARE: '1'
+      ROOM13_DIAGNOSTIC_ONLY: '1'
     steps:
       - name: Set job-local build paths
         run: |
@@ -99,7 +100,7 @@ jobs:
             python -m unittest discover -s dev -p "test_*.py" -v 2>&1 | tee "$ROOM13_CI_OUT/unittest-failure.log"
             exit 1
           fi
-      - name: Native meeting smoke in disposable home and save directory
+      - name: Investigation comparison and actual-input diagnostics in disposable profile
         working-directory: experiments/renpy-ch1
         timeout-minutes: 12
         run: |
@@ -112,13 +113,15 @@ jobs:
           export ROOM13_QA_OUT="$ROOM13_CI_OUT/native-qa"
           export ROOM13_TEST_TIMEOUT=180
           mkdir -p "$HOME" "$XDG_CONFIG_HOME" "$XDG_DATA_HOME" "$XDG_CACHE_HOME" "$RENPY_PATH_TO_SAVES" "$ROOM13_QA_OUT"
-          bash dev/run_renpy_tests.sh meeting_direction admin_meeting_replay ui_polish_01965 settings_typography settings_volume_endpoint sling_earned_disclosure controlled_066_siluk_reunion controlled_066_siluk_advance_handoff controlled_066_chorong_same_day_envelope controlled_066_granny_explicit_reply 2>&1 | tee "$ROOM13_CI_OUT/native-qa-summary.log"
+          bash dev/run_renpy_tests.sh investigation_unify_diag investigation_flow_baseline_post investigation_flow_baseline_workshop investigation_flow_baseline_inn investigation_flow_proposed_post investigation_flow_proposed_workshop investigation_flow_proposed_inn 2>&1 | tee "$ROOM13_CI_OUT/native-qa-summary.log"
       - name: Compile and build web release
+        if: env.ROOM13_DIAGNOSTIC_ONLY != '1'
         working-directory: experiments/renpy-ch1
         run: |
           set -o pipefail
           xvfb-run -a python dev/build_web.py --sdk "$RENPY_SDK" --work "$RUNNER_TEMP/room13-build" --part-mb 8 2>&1 | tee "$ROOM13_CI_OUT/build.log"
       - name: Verify manifest and package changed release files
+        if: env.ROOM13_DIAGNOSTIC_ONLY != '1'
         run: python experiments/renpy-ch1/dev/ci_package_build.py package
       - name: Collect diagnostics
         if: always()
@@ -147,4 +150,5 @@ jobs:
           compression-level: 0
           if-no-files-found: error
 # Deliberately no push, merge, deploy, credentials, Pages or OIDC permissions.
+
 
