@@ -20,6 +20,9 @@ class SettingsTypeScale(unittest.TestCase):
   self.assertLessEqual(322+4*132+3*8,904)
   self.assertLessEqual(322+300+70+164+2*8,904)
   self.assertLessEqual(322+360+132+8,904)
+ def test_row_labels_and_controls_share_vertical_center(self):
+  self.assertIn('xpos 0 yalign .5 xsize 304 spacing 4',A)
+  self.assertIn('ypos ((r13_opt_row_height()-56)//2)',A)
  def test_preview_uses_actual_say_size_without_transform(self):
   preview=(ROOT/'game/room13_typing_preview.rpy').read_text()
   self.assertIn('(preferences.text_cps, _r13_say_size(), r13_ui_font())',preview)

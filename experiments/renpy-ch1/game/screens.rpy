@@ -586,7 +586,7 @@ screen r13_opt_row(label,description=""):
     fixed:
         xsize 904 ysize r13_opt_row_height()
         vbox:
-            xpos 0 ypos 8 xsize 304 spacing 4
+            xpos 0 yalign .5 xsize 304 spacing 4
             text label size r13_opt_size() color "#493b30"
             if description:
                 text description size r13_opt_size() color "#796a52" xsize 304

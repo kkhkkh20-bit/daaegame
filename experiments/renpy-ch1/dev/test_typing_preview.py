@@ -24,6 +24,12 @@ class PreviewTest(unittest.TestCase):
  def draw(self,t):self.p.render(860,88,t,t)
  def test_initial_and_hover_clock(self):
   self.draw(10);self.draw(10.5);self.assertEqual(self.times,[0,.5]);self.assertEqual(len(self.children),1)
+ def test_interaction_invalidates_cached_size_but_not_hover(self):
+  self.draw(10);self.p.per_interact();self.assertEqual(self.redraws,[])
+  self.size=31;self.p.per_interact();self.assertEqual(self.redraws,[(self.p,0)])
+  self.draw(12);self.assertEqual(self.children[-1].kw['size'],31)
+  self.assertEqual(self.times[-1],0)
+  self.redraws.clear();self.p.per_interact();self.assertEqual(self.redraws,[])
  def test_replay_starts_at_zero_without_preference_write(self):
   self.draw(10);self.p.restart();self.draw(15);self.assertEqual(self.times,[0,0]);self.assertEqual(self.pref.text_cps,34)
  def test_each_speed_including_instant(self):
