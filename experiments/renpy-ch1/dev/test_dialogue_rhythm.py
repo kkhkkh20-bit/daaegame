@@ -55,4 +55,11 @@ class RhythmTests(unittest.TestCase):
         custom='{cps=12}응, 알겠어.{/cps}'
         self.assertEqual(self.rhythm(custom),custom)
 
+    def test_typing_counts_visible_letters_but_not_spaces_or_future_glyphs(self):
+        audible=self.env['r13_typing_glyph']
+        self.assertTrue(audible(SimpleNamespace(time=.1,character=ord('가')),.2))
+        for char in (' ', '\t', '\n', '\u3000'):
+            self.assertFalse(audible(SimpleNamespace(time=.1,character=ord(char)),.2))
+        self.assertFalse(audible(SimpleNamespace(time=.3,character=ord('나')),.2))
+
 if __name__=='__main__': unittest.main()

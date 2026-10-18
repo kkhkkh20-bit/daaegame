@@ -50,6 +50,9 @@ init 62 python:
         # trailing glyph or extra interaction is added to a completed line.
         return "".join(result)
 
+    def r13_typing_glyph(glyph,st):
+        return 0 < glyph.time <= st and glyph.character>0 and not chr(glyph.character).isspace()
+
     class R13DialogueText(renpy.text.text.Text):
         # Character owns the original self.text and installs slow/slow_done by
         # comparing it with the original say string. Only the layout token
@@ -71,7 +74,7 @@ init 62 python:
             if layout is not None:
                 # Observe the same glyph timestamps the renderer uses, including
                 # punctuation pauses. Audio runs from the screen timer, not render.
-                self.r13_revealed=sum(1 for paragraph in layout.paragraph_glyphs for g in paragraph if 0 < g.time <= st)
+                self.r13_revealed=sum(1 for paragraph in layout.paragraph_glyphs for g in paragraph if r13_typing_glyph(g,st))
             return result
 
     def r13_typing_tick():
