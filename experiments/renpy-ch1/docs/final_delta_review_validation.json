@@ -1,0 +1,210 @@
+{
+  "revision": "final-delta-v4-independent-review",
+  "source_art_review_pass": true,
+  "native_runtime_review_pass": false,
+  "v4_files": {
+    "parent_projection__640x400.png": {
+      "sha256": "c7bdef044df90d08b362e9199bba238ea98b6727f811e14cd24da415dda3a891",
+      "changed_pixels": 0,
+      "changed_bbox_ltrb": null,
+      "exact_2x2": true
+    },
+    "contact__640x400.png": {
+      "sha256": "884ec7326df6c640ebf6b6a972132dd7eb621c21a2cf882f22b35f20f99ed983",
+      "changed_pixels": 104,
+      "changed_bbox_ltrb": [
+        304,
+        228,
+        336,
+        248
+      ],
+      "exact_2x2": true
+    },
+    "container_unfolded__640x400.png": {
+      "sha256": "791d9a9bc50381d88741c24caf6918221138325072d61fc6be876369499956d4",
+      "changed_pixels": 0,
+      "changed_bbox_ltrb": null,
+      "exact_2x2": true
+    },
+    "empty_before__640x400.png": {
+      "sha256": "cce2a67c45dc63465dd7c4f861ffd2c39bc653c63c828003696f3a16d4e0b946",
+      "changed_pixels": 232,
+      "changed_bbox_ltrb": [
+        304,
+        224,
+        336,
+        248
+      ],
+      "exact_2x2": true
+    },
+    "fragment_projection__640x400.png": {
+      "sha256": "7452c897bcaf3766af108074e339db25662679031b63479c3a23e20038cb4e8b",
+      "changed_pixels": 0,
+      "changed_bbox_ltrb": null,
+      "exact_2x2": true
+    },
+    "open__640x400.png": {
+      "sha256": "d834a9237a9e46e2ec63e3174d98d57b3f880ae71ce7047b3228af4b8e429649",
+      "changed_pixels": 180,
+      "changed_bbox_ltrb": [
+        304,
+        224,
+        336,
+        248
+      ],
+      "exact_2x2": true
+    },
+    "inner_fitting_section.png": {
+      "sha256": "dbce3577f03ddca2e51ff9ca220649751ccecb4f9aac7fe68131c1c6a3ad7e11",
+      "changed_pixels": 0,
+      "changed_bbox_ltrb": null,
+      "exact_2x2": false
+    },
+    "grip__640x400.png": {
+      "sha256": "5c886226d6bafada8473e857bc4233023a2e73ab1c1bdb3a1de388469398e336",
+      "changed_pixels": 96,
+      "changed_bbox_ltrb": [
+        306,
+        226,
+        336,
+        248
+      ],
+      "exact_2x2": true
+    },
+    "canonical_tail_projection__640x400.png": {
+      "sha256": "b9b2ba4930c48ae49226acca353c6b4dfbaa342be6e96e80c972fd9de03a95f7",
+      "changed_pixels": 0,
+      "changed_bbox_ltrb": null,
+      "exact_2x2": true
+    },
+    "lifted__640x400.png": {
+      "sha256": "b790840bae0dab830c1062b2bb0aee0b1c059b2f17761170eef53df31c7086d8",
+      "changed_pixels": 232,
+      "changed_bbox_ltrb": [
+        304,
+        224,
+        336,
+        248
+      ],
+      "exact_2x2": true
+    },
+    "empty_after__640x400.png": {
+      "sha256": "7d967fb74f690ad48f735944f17e2274b30c2870ce91e56fbe49bcb12288b284",
+      "changed_pixels": 232,
+      "changed_bbox_ltrb": [
+        304,
+        224,
+        336,
+        248
+      ],
+      "exact_2x2": true
+    }
+  },
+  "container_files": {
+    "transparent/container_canonical_v2__64.png": {
+      "sha256": "73c1f365058acd039524c4af9baf60a647fe5ab93077bf11bdd78c1b5319ed54",
+      "exact_source_mask_reconstruction": true,
+      "exact_2x2": true,
+      "visible_parent_shape": "canonical parent mask; no invented second tear"
+    },
+    "transparent/container_canonical_v2__240.png": {
+      "sha256": "009f8aaeb4c3a232f45b6212cb088e29d27dfb4923d053d4041dfc1bac3ac319",
+      "exact_source_mask_reconstruction": true,
+      "exact_2x2": true,
+      "visible_parent_shape": "canonical parent mask; no invented second tear"
+    }
+  },
+  "canonical_exact_composition": true,
+  "container_source_hashes": {
+    "masters/container_empty.png": "2cac2fe250a23e75c70fc3b29682b57f0669b3f1dc752ca96105c249d4e267da",
+    "masters/cloth_texture.png": "56c98afccf32affa08c688071177a9a80913f20084edd03f2cee2d1923c44a46",
+    "examinations/cloth-mask-v1/parent_mask_rgba.png": "98cb5003cef65222ead2d57e3ca45b0a2b367ac8a3a4bb802dd9fd4e491e54d0"
+  },
+  "delta_runtime_assets": {
+    "delta-v2/game/assets/recommended-story-icons/container_canonical_v2__64.png": {
+      "sha256": "73c1f365058acd039524c4af9baf60a647fe5ab93077bf11bdd78c1b5319ed54",
+      "size": [
+        64,
+        64
+      ],
+      "exact_2x2": true
+    },
+    "delta-v2/game/assets/recommended-story-icons/container_canonical_v2__240.png": {
+      "sha256": "009f8aaeb4c3a232f45b6212cb088e29d27dfb4923d053d4041dfc1bac3ac319",
+      "size": [
+        240,
+        240
+      ],
+      "exact_2x2": true
+    },
+    "delta-v2/game/assets/recommended-story-icons/piko-native-v4/contact__640x400.png": {
+      "sha256": "884ec7326df6c640ebf6b6a972132dd7eb621c21a2cf882f22b35f20f99ed983",
+      "size": [
+        640,
+        400
+      ],
+      "exact_2x2": true
+    },
+    "delta-v2/game/assets/recommended-story-icons/piko-native-v4/container_unfolded__640x400.png": {
+      "sha256": "791d9a9bc50381d88741c24caf6918221138325072d61fc6be876369499956d4",
+      "size": [
+        640,
+        400
+      ],
+      "exact_2x2": true
+    },
+    "delta-v2/game/assets/recommended-story-icons/piko-native-v4/empty_before__640x400.png": {
+      "sha256": "cce2a67c45dc63465dd7c4f861ffd2c39bc653c63c828003696f3a16d4e0b946",
+      "size": [
+        640,
+        400
+      ],
+      "exact_2x2": true
+    },
+    "delta-v2/game/assets/recommended-story-icons/piko-native-v4/open__640x400.png": {
+      "sha256": "d834a9237a9e46e2ec63e3174d98d57b3f880ae71ce7047b3228af4b8e429649",
+      "size": [
+        640,
+        400
+      ],
+      "exact_2x2": true
+    },
+    "delta-v2/game/assets/recommended-story-icons/piko-native-v4/inner_fitting_section.png": {
+      "sha256": "63cfc8031705e9402a77691901ffd9cf17a435875abfe86e89620f5389239e94",
+      "size": [
+        640,
+        280
+      ],
+      "exact_2x2": true
+    },
+    "delta-v2/game/assets/recommended-story-icons/piko-native-v4/grip__640x400.png": {
+      "sha256": "5c886226d6bafada8473e857bc4233023a2e73ab1c1bdb3a1de388469398e336",
+      "size": [
+        640,
+        400
+      ],
+      "exact_2x2": true
+    },
+    "delta-v2/game/assets/recommended-story-icons/piko-native-v4/lifted__640x400.png": {
+      "sha256": "b790840bae0dab830c1062b2bb0aee0b1c059b2f17761170eef53df31c7086d8",
+      "size": [
+        640,
+        400
+      ],
+      "exact_2x2": true
+    },
+    "delta-v2/game/assets/recommended-story-icons/piko-native-v4/empty_after__640x400.png": {
+      "sha256": "7d967fb74f690ad48f735944f17e2274b30c2870ce91e56fbe49bcb12288b284",
+      "size": [
+        640,
+        400
+      ],
+      "exact_2x2": true
+    }
+  },
+  "review_limits": [
+    "Source art and independently reconstructed file/mask checks only; no real RenPy render or pointer-state test.",
+    "Container icon depicts the same container with lining laid out for comparison, not a new evidence object or a state that silently overrides earlier story events.",
+    "Native v4 preserves the v3 decisive canonical patch and illustrative-center provenance scope."
+  ]
+}

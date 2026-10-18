@@ -1,0 +1,275 @@
+{
+  "revision": "recommended-evidence-v2-delta",
+  "base": "recommended_evidence_ready_assets_v1.zip",
+  "physical_group_count": 16,
+  "physical_component_count": "at least23, not16 separate loose items",
+  "coverage": {
+    "entry_original": {
+      "fact_keys": [
+        "entry_original"
+      ],
+      "resolution": "existing_runtime_document_resolver",
+      "resolved": true
+    },
+    "entry_list": {
+      "fact_keys": [
+        "entry_list"
+      ],
+      "resolution": "existing_runtime_document_resolver",
+      "resolved": true
+    },
+    "ledger": {
+      "fact_keys": [
+        "ledger"
+      ],
+      "resolution": "exported_art",
+      "resolved": true
+    },
+    "research": {
+      "fact_keys": [
+        "research"
+      ],
+      "resolution": "exported_art",
+      "resolved": true
+    },
+    "portrait": {
+      "fact_keys": [
+        "piko_portrait"
+      ],
+      "resolution": "exported_art",
+      "resolved": true
+    },
+    "lamp": {
+      "fact_keys": [
+        "empty_heat",
+        "pedestal"
+      ],
+      "resolution": "exported_art",
+      "resolved": true
+    },
+    "stone": {
+      "fact_keys": [
+        "stone"
+      ],
+      "resolution": "exported_art",
+      "resolved": true
+    },
+    "container": {
+      "fact_keys": [
+        "container"
+      ],
+      "resolution": "exported_art",
+      "resolved": true
+    },
+    "cart": {
+      "fact_keys": [
+        "e2_card_rail",
+        "e2_card_ties"
+      ],
+      "resolution": "exported_art",
+      "resolved": true
+    },
+    "oilcan": {
+      "fact_keys": [
+        "e3_card_can"
+      ],
+      "resolution": "exported_art",
+      "resolved": true
+    },
+    "tool": {
+      "fact_keys": [
+        "e4_card_tool"
+      ],
+      "resolution": "exported_art",
+      "resolved": true
+    },
+    "mechanism": {
+      "fact_keys": [
+        "e4_card_lever"
+      ],
+      "resolution": "exported_art",
+      "resolved": true
+    },
+    "pots": {
+      "fact_keys": [
+        "e5_card_pots"
+      ],
+      "resolution": "exported_art",
+      "resolved": true
+    },
+    "bottle": {
+      "fact_keys": [
+        "e5_card_bottle"
+      ],
+      "resolution": "exported_art",
+      "resolved": true
+    },
+    "board": {
+      "fact_keys": [
+        "e6_card_board"
+      ],
+      "resolution": "exported_art",
+      "resolved": true
+    },
+    "manifest": {
+      "fact_keys": [
+        "e6_card_manifest"
+      ],
+      "resolution": "exported_art",
+      "resolved": true
+    }
+  },
+  "missing_physical_group_art": [],
+  "art": {
+    "ledger": {
+      "icon": "assets/recommended-story-icons/ledger__64.png",
+      "detail": "assets/recommended-story-icons/ledger__240.png",
+      "identity": "ledger"
+    },
+    "research": {
+      "icon": "assets/recommended-story-icons/research__64.png",
+      "detail": "assets/recommended-story-icons/research__240.png",
+      "identity": "research"
+    },
+    "stone": {
+      "icon": "assets/recommended-story-icons/stone17__64.png",
+      "detail": "assets/recommended-story-icons/stone17__240.png",
+      "identity": "stone17"
+    },
+    "container": {
+      "icon": "assets/recommended-story-icons/container_canonical_v2__64.png",
+      "detail": "assets/recommended-story-icons/container_canonical_v2__240.png",
+      "identity": "container",
+      "examination": "assets/recommended-story-icons/piko-native-v4/container_unfolded__640x400.png"
+    },
+    "e2_card_rail": {
+      "icon": "assets/recommended-story-icons/cart_rail_ties__64.png",
+      "detail": "assets/recommended-story-icons/cart_rail_ties__240.png",
+      "identity": "cart_rail_ties"
+    },
+    "e2_card_ties": {
+      "icon": "assets/recommended-story-icons/cart_rail_ties__64.png",
+      "detail": "assets/recommended-story-icons/cart_rail_ties__240.png",
+      "identity": "cart_rail_ties"
+    },
+    "e3_card_can": {
+      "icon": "assets/recommended-story-icons/oil_can__64.png",
+      "detail": "assets/recommended-story-icons/oil_can__240.png",
+      "identity": "oil_can"
+    },
+    "e4_card_tool": {
+      "icon": "assets/recommended-story-icons/pry_tool_clean__64.png",
+      "detail": "assets/recommended-story-icons/pry_tool_clean__240.png",
+      "identity": "pry_tool_clean"
+    },
+    "e4_card_lever": {
+      "icon": "assets/recommended-story-icons/door_lever__64.png",
+      "detail": "assets/recommended-story-icons/door_lever__240.png",
+      "identity": "door_lever"
+    },
+    "e5_card_pots": {
+      "icon": "assets/recommended-story-icons/soup_pots_swapped__64.png",
+      "detail": "assets/recommended-story-icons/soup_pots_swapped__240.png",
+      "identity": "soup_pots_swapped",
+      "variants": {
+        "original": {
+          "icon": "assets/recommended-story-icons/soup_pots_original__64.png",
+          "detail": "assets/recommended-story-icons/soup_pots_original__240.png"
+        },
+        "swapped": {
+          "icon": "assets/recommended-story-icons/soup_pots_swapped__64.png",
+          "detail": "assets/recommended-story-icons/soup_pots_swapped__240.png"
+        }
+      }
+    },
+    "e5_card_bottle": {
+      "icon": "assets/recommended-story-icons/medicine_bottle__64.png",
+      "detail": "assets/recommended-story-icons/medicine_bottle__240.png",
+      "identity": "medicine_bottle"
+    },
+    "e6_card_board": {
+      "icon": "assets/recommended-story-icons/allocation_board__64.png",
+      "detail": "assets/recommended-story-icons/allocation_board__240.png",
+      "identity": "allocation_board"
+    },
+    "e6_card_manifest": {
+      "icon": "assets/recommended-story-icons/departure_manifest__64.png",
+      "detail": "assets/recommended-story-icons/departure_manifest__240.png",
+      "identity": "departure_manifest"
+    },
+    "piko_portrait": {
+      "icon": "assets/recommended-story-icons/piko_portrait_reuse__64.png",
+      "detail": "assets/recommended-story-icons/piko_portrait_reuse__240.png",
+      "identity": "portrait"
+    },
+    "empty_heat": {
+      "icon": "assets/recommended-story-icons/lamp_empty_clean__64.png",
+      "detail": "assets/recommended-story-icons/lamp_empty_clean__240.png",
+      "identity": "lamp",
+      "examination": "assets/recommended-story-icons/piko-native-v4/empty_before__640x400.png"
+    },
+    "pedestal": {
+      "icon": "assets/recommended-story-icons/lamp_empty_clean__64.png",
+      "detail": "assets/recommended-story-icons/lamp_empty_clean__240.png",
+      "identity": "lamp",
+      "examination": "assets/recommended-story-icons/piko-native-v4/empty_after__640x400.png"
+    }
+  },
+  "legacy_reuse": {
+    "entry_original": {
+      "resolver": "r13_record_icon(\"G1\")",
+      "identity": "entry_original",
+      "note": "same existing genuine document art; title and actual entries rendered by UI"
+    },
+    "entry_list": {
+      "resolver": "r13_record_icon(\"G3\")",
+      "identity": "entry_list",
+      "note": "same existing genuine document art; title and actual entries rendered by UI"
+    }
+  },
+  "piko_sequence": {
+    "open": "assets/recommended-story-icons/piko-native-v4/open__640x400.png",
+    "grip": "assets/recommended-story-icons/piko-native-v4/grip__640x400.png",
+    "contact": "assets/recommended-story-icons/piko-native-v4/contact__640x400.png",
+    "lifted": "assets/recommended-story-icons/piko-native-v4/lifted__640x400.png",
+    "empty_before": "assets/recommended-story-icons/piko-native-v4/empty_before__640x400.png",
+    "empty_after": "assets/recommended-story-icons/piko-native-v4/empty_after__640x400.png",
+    "container_unfolded": "assets/recommended-story-icons/piko-native-v4/container_unfolded__640x400.png",
+    "inner_fitting_section": "assets/recommended-story-icons/piko-native-v4/inner_fitting_section.png"
+  },
+  "e3_scene_states": {
+    "night": "assets/recommended-story-icons/e3-reviewed-v3/fire_lmw_night__1140x494.png",
+    "day": "assets/recommended-story-icons/e3-reviewed-v3/fire_lmw_day__1140x494.png"
+  },
+  "source_approval_notes": {
+    "portrait": "new frame composition from exact approved Mom source; NOT recovered existingP01 painting; unsupported eyebrow-scar dialogue removed by story coordinator",
+    "container": "new exact canonical parent-mask display replaces v1 separately drawn damage",
+    "lamp": "shared identity icon; actual date-specific damage only in large examination; no third cloth item",
+    "piko": "folded plain center illustrative; decisive UV[190,0,300,174] and both stripes/tear canonical",
+    "e3": "static day/night geometry reviewed, real branches remain; observed no-handoff intervals are witness scope, not architectural no-branches claim"
+  },
+  "engine_gate_status": "unchanged; native rendering and interactions require coordinator validation",
+  "source_masters_preserved": true,
+  "files": {
+    "game/systems/room13_recommended_evidence_art_v2.rpy": "cdb613d552eaeee8a600d603a1c3beef3eaaa3c433e79d7fd47318476d94d3f9",
+    "game/systems/room13_recommended_cloth_compare.rpy": "9c8c556850521cad9d5e0116222c6d839cd2eaa62a3d877b8acbc0def4f9c222",
+    "game/assets/recommended-story-icons/container_canonical_v2__64.png": "73c1f365058acd039524c4af9baf60a647fe5ab93077bf11bdd78c1b5319ed54",
+    "game/assets/recommended-story-icons/piko_portrait_reuse__64.png": "0690f75d2f456eb5672bd526a2f3c0f40d5571a87994c2bd894bff03664b0bd5",
+    "game/assets/recommended-story-icons/container_canonical_v2__240.png": "009f8aaeb4c3a232f45b6212cb088e29d27dfb4923d053d4041dfc1bac3ac319",
+    "game/assets/recommended-story-icons/lamp_empty_clean__64.png": "8a89ae427b1491d3b3f7343651c9dc1e143936230e751718eb7ef5d1787d35fe",
+    "game/assets/recommended-story-icons/lamp_empty_clean__240.png": "0483d64a8cf955a6a72df50fcb550004e20a86c0b063d29e47367612508f82fc",
+    "game/assets/recommended-story-icons/piko_portrait_reuse__240.png": "f2a1b68bc383f4202dd97ed59892ed5105ce967e60eead15fcc6114228464f8f",
+    "game/assets/recommended-story-icons/piko-native-v4/contact__640x400.png": "884ec7326df6c640ebf6b6a972132dd7eb621c21a2cf882f22b35f20f99ed983",
+    "game/assets/recommended-story-icons/piko-native-v4/container_unfolded__640x400.png": "791d9a9bc50381d88741c24caf6918221138325072d61fc6be876369499956d4",
+    "game/assets/recommended-story-icons/piko-native-v4/empty_before__640x400.png": "cce2a67c45dc63465dd7c4f861ffd2c39bc653c63c828003696f3a16d4e0b946",
+    "game/assets/recommended-story-icons/piko-native-v4/open__640x400.png": "d834a9237a9e46e2ec63e3174d98d57b3f880ae71ce7047b3228af4b8e429649",
+    "game/assets/recommended-story-icons/piko-native-v4/inner_fitting_section.png": "63cfc8031705e9402a77691901ffd9cf17a435875abfe86e89620f5389239e94",
+    "game/assets/recommended-story-icons/piko-native-v4/grip__640x400.png": "5c886226d6bafada8473e857bc4233023a2e73ab1c1bdb3a1de388469398e336",
+    "game/assets/recommended-story-icons/piko-native-v4/lifted__640x400.png": "b790840bae0dab830c1062b2bb0aee0b1c059b2f17761170eef53df31c7086d8",
+    "game/assets/recommended-story-icons/piko-native-v4/empty_after__640x400.png": "7d967fb74f690ad48f735944f17e2274b30c2870ce91e56fbe49bcb12288b284",
+    "game/assets/recommended-story-icons/e3-reviewed-v3/fire_lmw_day__1140x494.png": "adbbb7152d9b1d553593b4344e474491670da5eb2c946a20d32269c900916f5b",
+    "game/assets/recommended-story-icons/e3-reviewed-v3/fire_lmw_night__1140x494.png": "73357212491e646a5c637307d177070eacaa3f49d2441f05100d82d3d284949c",
+    "game/assets/recommended-story-icons/cloth-mask-v1/parent_mask_rgba.png": "98cb5003cef65222ead2d57e3ca45b0a2b367ac8a3a4bb802dd9fd4e491e54d0",
+    "game/assets/recommended-story-icons/cloth-mask-v1/fragment_mask_rgba.png": "05a7eeb47a9654d8d8fab5029eb515eadb0c6bcb12232d10bf9fa04f74b57415"
+  }
+}
