@@ -3,6 +3,15 @@ from pathlib import Path
 spec=importlib.util.spec_from_file_location('resource_build',Path(__file__).with_name('build.py'))
 b=importlib.util.module_from_spec(spec);spec.loader.exec_module(b)
 class Extractor(unittest.TestCase):
+    def test_gallery_upgrade_preserves_evidence_and_is_idempotent(self):
+        spec=importlib.util.spec_from_file_location('gallery',Path(__file__).with_name('gallery.py'))
+        module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+        with tempfile.TemporaryDirectory() as td:
+            folder=Path(td)/'reports/place-balance-01936';folder.mkdir(parents=True)
+            evidence='<figure><a href="capture.png"><img src="capture.png"></a><figcaption>추가 검토 필요 · 전체 분기 검수 아님</figcaption></figure>'
+            page=folder/'index.html';page.write_text('<!doctype html><meta charset="utf-8"><style></style>'+evidence)
+            module.install(td);first=page.read_bytes();module.install(td)
+            self.assertEqual(first,page.read_bytes());self.assertIn(evidence,page.read_text());self.assertEqual(page.read_text().count('src="ui.js"'),1)
     def test_literal_only_no_execution(self):
         text='init 150 python:\n    A = {"night": ("one", None)}\n    B = dangerous_call()\n\nlabel start:\n    pass\n'
         self.assertEqual(b.literal_tables(text),{'A':{'night':('one',None)}})

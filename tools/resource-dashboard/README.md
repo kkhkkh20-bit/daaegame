@@ -1,6 +1,6 @@
 # 다람탐정 리소스 도감
 
-Character cards and a place-grouped overview show stable character IDs and pose IDs for review instructions. Read-only HTML index at `preview/resource-dashboard/`. This is **not** the Sites design/selection board. No Site registration, selection writes, game art, dialogue, placement or audio replacement is performed.
+Character cards and a place-grouped overview show Korean names and actions; stable character IDs, pose IDs and code evidence remain available in collapsed details. Read-only HTML index at `preview/resource-dashboard/`. This is **not** the Sites design/selection board. No Site registration, selection writes, game art, dialogue, placement or audio replacement is performed.
 
 ## Build and preview
 
@@ -61,3 +61,7 @@ python3 ../../tools/resource-dashboard/qa_game_captures.py
 cd ../..
 python3 tools/resource-dashboard/build.py
 ```
+
+## UI follow-up (2026-10-18)
+
+See [UI review and integration notes](../../reports/resource-ui-polish-20261018/README.md) for current desktop/mobile evidence, shared original-ratio image viewer, audio credits, and the progressive enhancement of the existing place gallery. The generator also installs gallery UI assets without changing original figure evidence. Current browser QA saves captures in that report directory. Earlier game-suite and SDK results above are historical, not rerun claims for this UI-only change.
