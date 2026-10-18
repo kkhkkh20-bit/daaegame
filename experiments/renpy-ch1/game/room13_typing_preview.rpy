@@ -15,7 +15,7 @@ init 71 python:
         def render(self, width, height, st, at):
             # Picking a speed, changing font size, or resetting settings restarts
             # the sample. Ordinary hover/interaction rebuilds do not restart it.
-            signature = (preferences.text_cps, r13_read_size(24,30), r13_ui_font())
+            signature = (preferences.text_cps, _r13_say_size(), r13_ui_font())
             if signature != self.signature:
                 self.signature = signature
                 self.started = st

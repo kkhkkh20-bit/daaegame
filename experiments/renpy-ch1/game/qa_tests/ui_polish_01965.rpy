@@ -45,19 +45,26 @@ testcase ui_polish_01965:
     run Show("pause_menu")
     pause 0.3
     assert screen "pause_menu"
-    click "느리게"
+    run Function(r13_qa_settings_offset)
+    click id "r13_text_speed_24"
     pause 0.2
     assert eval (preferences.text_cps==24 and renpy.get_screen("pause_menu").scope["typing_preview"].signature[0]==24)
+    run Function(r13_qa_settings_offset,True)
+    pause 0.2
     screenshot "ui065-settings-preview-slow.png"
-    click "다시 보기"
+    click id "r13_preview_replay"
     pause 0.2
     assert eval (renpy.get_screen("pause_menu").scope["typing_preview"].started is not None)
-    click "즉시"
+    run Function(r13_qa_settings_offset)
+    click id "r13_text_speed_0"
     pause 0.2
     assert eval (preferences.text_cps==0 and renpy.get_screen("pause_menu").scope["typing_preview"].signature[0]==0)
+    run Function(r13_qa_settings_offset,True)
+    pause 0.2
     screenshot "ui065-settings-preview-instant.png"
-    # Three controls share this caption; target the text-speed row, not font size.
-    click pos (768,272)
+    # Stable id distinguishes speed from the other two normal captions.
+    run Function(r13_qa_settings_offset)
+    click id "r13_text_speed_34"
     pause 0.2
     assert eval (preferences.text_cps==34 and renpy.get_screen("pause_menu").scope["typing_preview"].signature[0]==34)
     run Hide("pause_menu")

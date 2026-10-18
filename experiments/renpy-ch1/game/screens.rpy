@@ -558,15 +558,25 @@ init python:
             renpy.run(Preference("display","toggle"))
 
 # The same folio and left index as the records. Settings apply immediately.
+init python:
+    def r13_opt_size():
+        return r13_read_size(22,26)
+
+    def r13_opt_title_size():
+        return r13_read_size(30,34)
+
+    def r13_opt_row_height():
+        return 112 if persistent.room13_large_text else 92
+
 style r13opt_text is text:
-    font r13_ui_font() color "#493b30"
+    font r13_ui_font() color "#493b30" line_spacing 2
 style r13opt_button is button:
     background R13PaperFrame() hover_background R13PaperFrame(ink=True) selected_background R13PaperFrame(ink=True)
     insensitive_background R13PaperFrame(ink=True)
     padding (10,8) ysize 56
 style r13opt_button_text is text:
     font r13_ui_font() color "#65503b" hover_color "#fff0ce" selected_color "#fff0ce" insensitive_color "#9b917e"
-    xalign .5 yalign .5 text_align .5
+    xalign .5 yalign .5 text_align .5 line_spacing 2
 style r13opt_bar is bar:
     ysize 40
     left_bar Solid("#ad8550",ysize=40) right_bar Solid("#d0b88e",ysize=40)
@@ -574,16 +584,16 @@ style r13opt_bar is bar:
 
 screen r13_opt_row(label,description=""):
     fixed:
-        xsize 904 ysize 102
+        xsize 904 ysize r13_opt_row_height()
         vbox:
-            xpos 0 ypos 12 xsize 250 spacing 8
-            text label size r13_read_size(22,26) color "#493b30"
+            xpos 0 ypos 8 xsize 304 spacing 4
+            text label size r13_opt_size() color "#493b30"
             if description:
-                text description size r13_read_size(16,18) color "#796a52" xsize 250
+                text description size r13_opt_size() color "#796a52" xsize 304
         hbox:
-            xpos 270 ypos 18 spacing 8
+            xpos 322 ypos ((r13_opt_row_height()-56)//2) spacing 8
             transclude
-        add Solid("#b99b7560") xpos 0 ypos 100 xsize 904 ysize 1
+        add Solid("#b99b7560") xpos 0 ypos (r13_opt_row_height()-2) xsize 904 ysize 1
 
 screen pause_menu():
     tag menu
@@ -594,87 +604,88 @@ screen pause_menu():
     default tab=(persistent.room13_option_tab if persistent.room13_option_tab in ("sound","screen","reading") else "reading")
     add Solid("#211b18b8")
     add R13TravelSheet() xpos 12 ypos 8 xsize 1256 ysize 704
-    text "설정" xpos 50 ypos 48 size 32 color "#493b30"
-    text "변경한 설정은 바로 적용됩니다." xpos 292 ypos 52 size 22 color "#65503b"
+    text "설정" xpos 50 ypos 48 size r13_opt_title_size() color "#493b30"
+    text "변경한 설정은 바로 적용됩니다." xpos 292 ypos 52 size r13_opt_size() color "#65503b"
     vbox:
         xpos 44 ypos 132 spacing 14
         for key,name in (("reading","읽기"),("sound","소리"),("screen","화면")):
             textbutton name:
-                xsize 184 ysize 62 text_size r13_read_size(23,27)
+                xsize 184 ysize 62 text_size r13_opt_size()
                 selected tab==key
                 action [SetScreenVariable("tab",key),SetField(persistent,"room13_option_tab",key),Function(renpy.save_persistent)]
-    fixed:
-        xpos 292 ypos 124 xsize 914 ysize 484
+    viewport:
+        id "r13_settings_body"
+        area (292,124,914,484) mousewheel True draggable True scrollbars "vertical"
         vbox:
             spacing 0
             if tab=="sound":
                 use r13_opt_row("배경음", "음악의 크기"):
                     bar value Preference("music volume") style "r13opt_bar" xsize 300 ysize 48 id "music_volume"
-                    text ("%d%%"%r13_mixer_percent("music")) size 22 xsize 70 yalign .5
+                    text ("%d%%"%r13_mixer_percent("music")) id "music_volume_percent" size r13_opt_size() xsize 70 yalign .5
                     textbutton ("음소거 중" if _preferences.get_mute("music") else "소리 켜짐"):
-                        xsize 164 selected not _preferences.get_mute("music") action Preference("music mute","toggle") text_size 21
+                        xsize 164 selected not _preferences.get_mute("music") action Preference("music mute","toggle") text_size r13_opt_size()
                 use r13_opt_row("효과음", "문·버튼·조사 소리"):
                     bar value Preference("sound volume") style "r13opt_bar" xsize 300 ysize 48 id "fx_volume"
-                    text ("%d%%"%r13_mixer_percent("sfx")) size 22 xsize 70 yalign .5
+                    text ("%d%%"%r13_mixer_percent("sfx")) id "fx_volume_percent" size r13_opt_size() xsize 70 yalign .5
                     textbutton ("음소거 중" if _preferences.get_mute("sfx") else "소리 켜짐"):
-                        xsize 164 selected not _preferences.get_mute("sfx") action Preference("sound mute","toggle") text_size 21
+                        xsize 164 selected not _preferences.get_mute("sfx") action Preference("sound mute","toggle") text_size r13_opt_size()
                 use r13_opt_row("대사 타이핑 소리", "글자가 나타날 때 나는 소리"):
                     for value,name in ((True,"켜기"),(False,"끄기")):
-                        textbutton name xsize 164 selected persistent.room13_typing_sound==value action Function(r13_set_option,"room13_typing_sound",value) text_size 22
+                        textbutton name xsize 164 selected persistent.room13_typing_sound==value action Function(r13_set_option,"room13_typing_sound",value) text_size r13_opt_size()
                 use r13_opt_row("소리 확인", "효과음 음량을 적용해 재생"):
-                    textbutton "효과음 듣기" xsize 224 action Function(r13_test_option_sound) text_size 22
-                    textbutton "음악 출처" xsize 180 action Show("r13_music_credits") text_size 22
-                text "음소거 중이거나 음량이 0%이면 소리가 나지 않습니다." size 18 color "#796a52"
+                    textbutton "효과음 듣기" xsize 224 action Function(r13_test_option_sound) text_size r13_opt_size()
+                    textbutton "음악 출처" xsize 180 action Show("r13_music_credits") text_size r13_opt_size()
+                text "음소거 중이거나 음량이 0%이면 소리가 나지 않습니다." size r13_opt_size() color "#796a52"
             elif tab=="reading":
                 use r13_opt_row("글자 크기", "대사와 메뉴에 함께 적용"):
                     for key,name in (("small","작게"),("normal","보통"),("large","크게")):
-                        textbutton name xsize 164 selected r13_text_size()==key action Function(r13_set_text_size,key) text_size 22
+                        textbutton name id ("r13_text_size_"+key) xsize 164 selected r13_text_size()==key action Function(r13_set_text_size,key) text_size r13_opt_size()
                 use r13_opt_row("대사 표시 속도", "글자가 나타나는 빠르기"):
                     for speed_title,speed_value in (("느리게",24),("보통",34),("빠르게",55),("즉시",0)):
-                        textbutton speed_title xsize 132 action [Preference("text speed",speed_value),Function(typing_preview.restart)] selected _preferences.text_cps==speed_value text_size 22
+                        textbutton speed_title id ("r13_text_speed_%d"%speed_value) xsize 132 action [Preference("text speed",speed_value),Function(typing_preview.restart)] selected _preferences.text_cps==speed_value text_size r13_opt_size()
                 use r13_opt_row("자동 넘김 대기", "자동 재생 중 다음 대사까지"):
                     for value,name in ((0,"수동"),(5,"짧게"),(15,"보통"),(25,"길게")):
-                        textbutton name xsize 132 action Preference("auto-forward time",value) selected (_preferences.afm_time==0 if value==0 else (0<_preferences.afm_time<10) if value==5 else (10<=_preferences.afm_time<20) if value==15 else _preferences.afm_time>=20) text_size 22
-                text "자동 재생은 대화 중 하단의 ‘자동’에서 켜고 끕니다." size 18 color "#796a52"
+                        textbutton name xsize 132 action Preference("auto-forward time",value) selected (_preferences.afm_time==0 if value==0 else (0<_preferences.afm_time<10) if value==5 else (10<=_preferences.afm_time<20) if value==15 else _preferences.afm_time>=20) text_size r13_opt_size()
+                text "자동 재생은 대화 하단의 ‘자동’에서 켜고 끕니다." size r13_opt_size() color "#796a52"
                 hbox:
                     spacing 18
-                    text "속도 미리보기 · 소리 없음" size 18 color "#796a52" yalign .5
-                    textbutton "다시 보기" xsize 160 ysize 36 padding (10,4) text_size 18 action Function(typing_preview.restart)
+                    text "속도 미리보기 · 소리 없음" size r13_opt_size() color "#796a52" yalign .5
+                    textbutton "다시 보기" id "r13_preview_replay" xsize 160 ysize 56 padding (10,8) text_size r13_opt_size() action Function(typing_preview.restart)
                 frame:
-                    xsize 904 ysize 116 padding (18,14) background r13_dialogue_frame()
+                    xsize 904 ysize 108 padding (18,14) background r13_dialogue_frame()
                     add typing_preview
             else:
                 use r13_opt_row("대사창 진하기", "배경이 비쳐 보이는 정도"):
                     for value,name in (("99","연하게"),("d4","보통"),("f5","진하게")):
-                        textbutton name xsize 164 selected persistent.room13_window_alpha==value action [SetField(persistent,"room13_window_alpha",value),Function(renpy.save_persistent)] text_size 22
+                        textbutton name xsize 164 selected persistent.room13_window_alpha==value action [SetField(persistent,"room13_window_alpha",value),Function(renpy.save_persistent)] text_size r13_opt_size()
                 use r13_opt_row("화면 움직임", "눈·불빛·인물의 짧은 반응"):
                     for value,name in ((True,"켜기"),(False,"끄기")):
-                        textbutton name xsize 164 selected persistent.room13_motion==value action Function(r13_set_option,"room13_motion",value) text_size 22
+                        textbutton name xsize 164 selected persistent.room13_motion==value action Function(r13_set_option,"room13_motion",value) text_size r13_opt_size()
                 use r13_opt_row("전체 화면", "기기·브라우저 지원 시 전환"):
-                    textbutton "전체 화면 전환" xsize 300 action Function(r13_toggle_fullscreen) text_size 22
+                    textbutton "전체 화면 전환" xsize 300 action Function(r13_toggle_fullscreen) text_size r13_opt_size()
                 # 0.18.50 (owner): test tool behind a PIN (systems/room13_admin.rpy).
                 use r13_opt_row("관리자 도구", "핀 번호를 넣으면 켜짐"):
                     if persistent.room13_admin:
-                        text "켜짐 · 마을 화면 위쪽 ‘관리자’" size 20 color "#796a52" yalign .5
-                        textbutton "끄기" xsize 132 action Function(r13_admin_toggle) text_size 22
+                        text "켜짐 · 마을 화면 위쪽 ‘관리자’" xsize 360 size r13_opt_size() color "#796a52" yalign .5
+                        textbutton "끄기" xsize 132 action Function(r13_admin_toggle) text_size r13_opt_size()
                     else:
-                        textbutton "핀 번호로 켜기" xsize 224 action Show("r13_admin_pin") text_size 22
+                        textbutton "핀 번호로 켜기" xsize 224 action Show("r13_admin_pin") text_size r13_opt_size()
                 frame:
-                    xsize 904 ysize 116 padding (18,14) background r13_dialogue_frame()
-                    text "대사창 미리보기\n바꾼 진하기가 바로 적용됩니다." size r13_read_size(24,30) color "#efe2c2" xsize 860
-    text ("v"+config.version) xpos 54 ypos 594 size 16 color "#796a52"
+                    xsize 904 ysize 108 padding (18,14) background r13_dialogue_frame()
+                    text "대사창 미리보기\n바꾼 진하기가 바로 적용됩니다." size _r13_say_size() color "#efe2c2" xsize 860
+    text ("v"+config.version) xpos 54 ypos 594 size r13_opt_size() color "#796a52"
     textbutton "설정 초기화":
-        xpos 44 ypos 630 xsize 184 ysize 56 text_size 21
+        xpos 44 ypos 630 xsize 184 ysize 56 text_size r13_opt_size()
         action Confirm("읽기·소리·화면 설정을 기본값으로 돌릴까요? 게임 진행과 저장은 유지됩니다.",Function(r13_reset_options))
     # 0.19.2: 단축키 안내는 「더보기」에서 설정 안으로 옮겼다.
-    textbutton "단축키 (PC)":
-        xpos 532 ypos 630 xsize 200 ysize 56 text_size 21 action Show("r13_shortcut_help")
+    textbutton "단축키 PC":
+        xpos 532 ypos 630 xsize 200 ysize 56 text_size r13_opt_size() action Show("r13_shortcut_help")
     if not main_menu:
         textbutton "메인화면":
-            xpos 292 ypos 630 xsize 220 ysize 56 text_size 22
+            xpos 292 ypos 630 xsize 220 ysize 56 text_size r13_opt_size()
             action Confirm("메인화면으로 돌아가시겠습니까?\n저장하지 않은 게임 진행은 사라집니다.",MainMenu(confirm=False))
     textbutton "닫기":
-        xpos 976 ypos 630 xsize 230 ysize 56 text_size 24 action Return()
+        xpos 976 ypos 630 xsize 230 ysize 56 text_size r13_opt_size() action Return()
     key "game_menu" action Return()
 
 screen save():
