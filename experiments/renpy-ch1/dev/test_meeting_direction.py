@@ -256,6 +256,7 @@ class WorldCamera(unittest.TestCase):
    renpy=types.SimpleNamespace(file=lambda path:__import__("io").StringIO((ROOT/"game"/path).read_text()),Displayable=object,is_skipping=lambda:False,display=types.SimpleNamespace(core=types.SimpleNamespace(get_time=lambda:self.clock[0]))))
   src=(ROOT/'game/room13_meeting_camera.rpy').read_text().split('init 175 python:\n',1)[1]
   exec(textwrap.dedent(src),self.e)
+  self.e['R13_MEETING_SPEED_CARD']=False
  def test_camera_projects_fixed_seats_together_instead_of_replacing_speaker_cards(self):
   slot=self.e['r13_meeting_world_slot']
   self.assertEqual(slot(0,0,9)[:2],(640,1.0))

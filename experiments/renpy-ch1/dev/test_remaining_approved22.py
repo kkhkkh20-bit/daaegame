@@ -8,7 +8,7 @@ class RemainingApproved22(unittest.TestCase):
   for r in receipt['rows']:
    p=ROOT/r['source'];self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),r['source_sha256'])
    with Image.open(p) as im:self.assertEqual(list(im.size),r['source_size'])
-  data=json.loads((ROOT/'game/assets/room13-dialogue-pose-source-art.json').read_text());poses=[(who,key,e) for who,row in data['people'].items() for key,e in row['pose_profiles'].items()];self.assertEqual(len(poses),15)
+  data=json.loads((ROOT/'game/assets/room13-dialogue-pose-source-art.json').read_text());poses=[(who,key,e) for who,row in data['people'].items() for key,e in row['pose_profiles'].items()];self.assertEqual(sum(e['profiles']['840']['frames']['neutral']['source_master'].startswith('art/approved-remaining22/') for _,_,e in poses),15)
   for who,key,e in poses:
    for height,p in e['profiles'].items():
     f=p['frames']['neutral'];self.assertTrue((ROOT/'game'/f['file']).is_file());self.assertIn('/'+who+'/'+key+'/',f['file']);self.assertEqual(f['source_sha256'],e['source_sha256'])

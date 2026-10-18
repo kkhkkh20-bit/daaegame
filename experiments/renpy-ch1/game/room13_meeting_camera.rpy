@@ -1,6 +1,7 @@
 # A single world-space camera. Seats never animate from one UI card to another.
 # The near table, fixed cast and far architecture share the same continuous yaw.
 init 175 python:
+    R13_MEETING_SPEED_CARD = True
     import math as r13_orbit_math
     import json as r13_meeting_art_json
     R13_MEETING_SOURCE_ART=r13_meeting_art_json.load(renpy.file("assets/room13-meeting-source-art.json"))
@@ -40,6 +41,8 @@ init 175 python:
             store.r13_meeting_pan_profile=r13_meeting_motion_profile(beat,delta)
         hold,duration=getattr(store,"r13_meeting_pan_profile",r13_meeting_motion_profile("listen",delta))
         elapsed=max(0.0,now-store.r13_meeting_pan_started)
+        if R13_MEETING_SPEED_CARD:
+            return float(start+delta),elapsed<.18 and not renpy.in_rollback()
         u=min(1.0,max(0.0,(elapsed-hold)/duration))
         return start+delta*r13_meeting_motion_ease(u),elapsed<hold+duration+.10
 
@@ -166,6 +169,18 @@ init 175 python:
             out=renpy.Render(1280,720)
             if renpy.predicting():view=float(self.people.index(self.focus)) if self.focus in self.people else 0.0;moving=False
             else:view,moving=r13_meeting_world_view(self.claim,self.focus)
+            if moving and R13_MEETING_SPEED_CARD:
+                # Scene-only card: UI/dialogue are drawn above this displayable.
+                # One static card per speaker change, then settle directly on the target.
+                canvas=out.canvas()
+                canvas.rect("#efc33f",(0,0,1280,500))
+                for i in range(17):
+                    y=18+i*28
+                    x=-80+(i*137)%320
+                    length=550+(i*89)%710
+                    canvas.rect("#fff1a0" if i%3 else "#9d661f",(x,y,length,2+i%4))
+                renpy.redraw(self,.03)
+                return out
             a=renpy.render(self.plate,1280,720,st,at);b=renpy.render(self.flip,1280,720,st,at)
             r13_meeting_world_tiles(out,a,b,view*2560.0/max(1,len(self.people)))
             slots=[]
