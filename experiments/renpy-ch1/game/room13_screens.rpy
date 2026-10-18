@@ -193,6 +193,8 @@ screen r13_world_contents(entry=False,ready=False):
                 background Solid("#d9a441")
                 text "!" size 28 color "#2a1d10" xalign .5 yalign .5
 
+    use r13_life_group_labels(entry,ready)
+
 screen r13_resident_stage(entry=False,ready=False):
     for actor in r13_stage_people(entry):
         add r13_staged_visible_art(actor):
