@@ -1,0 +1,1723 @@
+{
+  "kind": "shipped approved registry; explicit state fixtures in actual engine",
+  "cases": [
+    {
+      "actors": [
+        {
+          "person": "buri",
+          "pose": "group_cooperative",
+          "x": 447,
+          "y": 332,
+          "width": 139,
+          "height": 208,
+          "rect": [
+            447,
+            332,
+            139,
+            208
+          ],
+          "depth": 515,
+          "occlusion": [],
+          "contact": "shared_work",
+          "slot": null,
+          "activity": "함께 부품 손질",
+          "map27_occlusion": [
+            [
+              [
+                331,
+                460
+              ],
+              [
+                470,
+                439
+              ],
+              [
+                683,
+                441
+              ],
+              [
+                1060,
+                483
+              ],
+              [
+                1060,
+                624
+              ],
+              [
+                890,
+                678
+              ],
+              [
+                350,
+                604
+              ]
+            ]
+          ],
+          "map27_keepouts": [
+            [
+              [
+                501.1666666666667,
+                417.3125
+              ],
+              [
+                573.4791666666666,
+                417.3125
+              ],
+              [
+                573.4791666666666,
+                444.3958333333333
+              ],
+              [
+                501.1666666666667,
+                444.3958333333333
+              ]
+            ]
+          ],
+          "life_group": "workshop_pair"
+        },
+        {
+          "person": "resident_tok",
+          "pose": "group_cooperative",
+          "x": 534,
+          "y": 313,
+          "width": 147,
+          "height": 220,
+          "rect": [
+            534,
+            313,
+            147,
+            220
+          ],
+          "depth": 515,
+          "occlusion": [],
+          "contact": "shared_work",
+          "slot": null,
+          "activity": "함께 부품 손질",
+          "map27_occlusion": [
+            [
+              [
+                331,
+                460
+              ],
+              [
+                470,
+                439
+              ],
+              [
+                683,
+                441
+              ],
+              [
+                1060,
+                483
+              ],
+              [
+                1060,
+                624
+              ],
+              [
+                890,
+                678
+              ],
+              [
+                350,
+                604
+              ]
+            ]
+          ],
+          "map27_keepouts": [
+            [
+              [
+                551.1875,
+                406.0989583333333
+              ],
+              [
+                581.265625,
+                406.0989583333333
+              ],
+              [
+                617.0729166666666,
+                434.74479166666663
+              ],
+              [
+                581.265625,
+                443.33854166666663
+              ],
+              [
+                551.1875,
+                426.15104166666663
+              ]
+            ]
+          ],
+          "life_group": "workshop_pair"
+        },
+        {
+          "person": "resident_ubak",
+          "pose": "living_measure",
+          "x": 168,
+          "y": 357,
+          "width": 201,
+          "height": 190,
+          "rect": [
+            168,
+            357,
+            201,
+            190
+          ],
+          "depth": 547,
+          "occlusion": [],
+          "contact": "self-contained",
+          "slot": [
+            270,
+            548,
+            226,
+            "doorfloor"
+          ],
+          "activity": "우박은 쓰던 숫자를 가리지 않고 종이를 내렸다."
+        },
+        {
+          "person": "resident_guldol",
+          "pose": "map27_sort_chisels_clean",
+          "x": 678,
+          "y": 273,
+          "width": 187,
+          "height": 280,
+          "rect": [
+            678,
+            273,
+            187,
+            280
+          ],
+          "depth": 553,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "가죽 도구집의 끌을 정리한다.",
+          "map27_occlusion": [
+            [
+              [
+                331,
+                460
+              ],
+              [
+                470,
+                439
+              ],
+              [
+                683,
+                441
+              ],
+              [
+                1060,
+                483
+              ],
+              [
+                1060,
+                624
+              ],
+              [
+                890,
+                678
+              ],
+              [
+                350,
+                604
+              ]
+            ]
+          ],
+          "map27_keepouts": []
+        },
+        {
+          "person": "resident_lamplighter",
+          "pose": "living_inspectlamp",
+          "x": 1128,
+          "y": 351,
+          "width": 144,
+          "height": 220,
+          "rect": [
+            1128,
+            351,
+            144,
+            220
+          ],
+          "depth": 571,
+          "occlusion": [],
+          "contact": "self-contained",
+          "slot": [
+            1200,
+            570,
+            220,
+            "floor"
+          ],
+          "activity": "초롱은 점검함에서 손을 떼고 내 쪽을 봤다."
+        },
+        {
+          "person": "resident_ttadak",
+          "pose": "living_repair",
+          "x": 1316,
+          "y": 352,
+          "width": 217,
+          "height": 230,
+          "rect": [
+            1316,
+            352,
+            217,
+            230
+          ],
+          "depth": 582,
+          "occlusion": [],
+          "contact": "self-contained",
+          "slot": [
+            1425,
+            580,
+            230,
+            "floor"
+          ],
+          "activity": "따닥은 망치를 내려놓고 벽에 손을 댔다."
+        },
+        {
+          "person": "resident_musoe",
+          "pose": "living_foldmap",
+          "x": 1590,
+          "y": 427,
+          "width": 205,
+          "height": 280,
+          "rect": [
+            1590,
+            427,
+            205,
+            280
+          ],
+          "depth": 707,
+          "occlusion": [],
+          "contact": "self-contained",
+          "slot": [
+            1700,
+            705,
+            280,
+            "floor"
+          ],
+          "activity": "무쇠 할아버지는 지도에서 손을 떼고 귀를 기울였다."
+        }
+      ],
+      "offset": 0,
+      "groups": [
+        "workshop_pair"
+      ],
+      "specs": {
+        "buri": {
+          "file": "assets/room13-group-buri-cooperative.webp",
+          "crop": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "head": [
+            125,
+            8,
+            275,
+            225
+          ],
+          "anchors": {
+            "support_hand_left": [
+              304,
+              381
+            ],
+            "support_hand_right": [
+              416.5,
+              376.5
+            ],
+            "shared_component_contact": [
+              455,
+              345
+            ],
+            "foot_left": [
+              151.5,
+              737.5
+            ],
+            "foot_right": [
+              327.5,
+              715.5
+            ],
+            "foot": [
+              239.5,
+              737.5
+            ]
+          },
+          "foot": [
+            239.5,
+            737.5
+          ],
+          "contact": "shared_work",
+          "facing": "right-threequarter",
+          "stature_ratio": 1,
+          "source_sha256": "50b893f23339aa69e0e58644c1975ae7a61ac6aada36c6aee540740a7aed5805",
+          "source_commit": "8b553e7ce1e81543c3415f5ba9c3f329907ee78e",
+          "foreground_parts": [
+            [
+              [
+                200,
+                315
+              ],
+              [
+                467,
+                315
+              ],
+              [
+                467,
+                415
+              ],
+              [
+                200,
+                415
+              ]
+            ]
+          ]
+        },
+        "resident_tok": {
+          "file": "assets/room13-group-resident_tok-cooperative.webp",
+          "crop": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "head": [
+            145,
+            30,
+            260,
+            235
+          ],
+          "anchors": {
+            "screwdriver_tip": [
+              127,
+              389.5
+            ],
+            "guiding_fingertips": [
+              147,
+              389
+            ],
+            "foot_left": [
+              177,
+              726.5
+            ],
+            "foot_right": [
+              447,
+              737.5
+            ],
+            "foot": [
+              312,
+              737.5
+            ]
+          },
+          "foot": [
+            312,
+            737.5
+          ],
+          "contact": "shared_work",
+          "facing": "left-threequarter",
+          "stature_ratio": 1,
+          "source_sha256": "bc68b8c9d499392ee6c1cdc9988d3ff64986cb044d21300d7f3964758b4f3823",
+          "source_commit": "8b553e7ce1e81543c3415f5ba9c3f329907ee78e",
+          "foreground_parts": [
+            [
+              [
+                60,
+                325
+              ],
+              [
+                165,
+                325
+              ],
+              [
+                290,
+                425
+              ],
+              [
+                165,
+                455
+              ],
+              [
+                60,
+                395
+              ]
+            ]
+          ]
+        },
+        "resident_ubak": {
+          "file": "assets/room13-pixel-acting-ubak.webp",
+          "crop": [
+            539,
+            558,
+            441,
+            416
+          ],
+          "nearest": true,
+          "anchor": {
+            "foot": [
+              220,
+              412
+            ]
+          },
+          "action_ko": "계측기 바늘과 종이 눈금을 맞춘다.",
+          "contact": "self-contained",
+          "head": [
+            40,
+            0,
+            401,
+            216
+          ],
+          "facing": "right-profile"
+        },
+        "resident_guldol": {
+          "file": "assets/map-action27/VA-5--resident_guldol.webp",
+          "crop": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "head": [
+            100,
+            5,
+            265,
+            240
+          ],
+          "foot": [
+            279,
+            752.5
+          ],
+          "anchors": {
+            "foot_left": [
+              169,
+              752.5
+            ],
+            "foot_right": [
+              389,
+              737.5
+            ],
+            "hand_left_image": [
+              240.5,
+              307
+            ],
+            "hand_right_image": [
+              425,
+              407
+            ],
+            "foot": [
+              279,
+              752.5
+            ]
+          },
+          "contact": "standing",
+          "stature_ratio": 1,
+          "source_sha256": "cfe69eba2d50787104a5e977707d7bc5c0694511743776bb52da4b5d7221cb1f",
+          "source_commit": "d301395b62ba3bb93b3ab050cbd1cf8d0c741937"
+        },
+        "resident_lamplighter": {
+          "file": "assets/room13-pixel-acting-lamplighter.webp",
+          "crop": [
+            653,
+            514,
+            317,
+            483
+          ],
+          "nearest": true,
+          "anchor": {
+            "foot": [
+              158,
+              479
+            ]
+          },
+          "action_ko": "등의 점검함을 닫고 걸쇠를 확인한다.",
+          "contact": "self-contained",
+          "head": [
+            22,
+            0,
+            295,
+            256
+          ],
+          "facing": "right-profile"
+        },
+        "resident_ttadak": {
+          "file": "assets/room13-pixel-acting-ttadak.webp",
+          "crop": [
+            550,
+            535,
+            417,
+            441
+          ],
+          "nearest": true,
+          "anchor": {
+            "foot": [
+              208,
+              437
+            ]
+          },
+          "action_ko": "나무 조각을 대고 보수할 곳을 살핀다.",
+          "contact": "self-contained",
+          "head": [
+            100,
+            0,
+            317,
+            190
+          ],
+          "facing": "right-profile"
+        },
+        "resident_musoe": {
+          "file": "assets/room13-pixel-acting-musoe.webp",
+          "crop": [
+            622,
+            524,
+            350,
+            476
+          ],
+          "nearest": true,
+          "anchor": {
+            "foot": [
+              175,
+              472
+            ]
+          },
+          "action_ko": "낡은 지도를 접어 정리한다.",
+          "contact": "self-contained",
+          "head": [
+            66,
+            0,
+            284,
+            209
+          ],
+          "facing": "right-profile"
+        }
+      },
+      "nameplate_clearance": [
+        {
+          "person": "resident_tok",
+          "rect": [
+            568,
+            271,
+            88,
+            48
+          ],
+          "leader": null,
+          "overlap": 0
+        },
+        {
+          "person": "buri",
+          "rect": [
+            473,
+            284,
+            88,
+            48
+          ],
+          "leader": null,
+          "overlap": 0
+        }
+      ],
+      "contact_focus": [
+        "('person', 'resident_tok')"
+      ],
+      "face_hits": [
+        {
+          "person": "buri",
+          "point": [
+            518,
+            364
+          ],
+          "actions": [
+            "('person', 'buri')"
+          ]
+        },
+        {
+          "person": "resident_tok",
+          "point": [
+            612,
+            355
+          ],
+          "actions": [
+            "('person', 'resident_tok')"
+          ]
+        }
+      ],
+      "transparent_probes": [
+        {
+          "person": "buri",
+          "point": [
+            449,
+            334
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        },
+        {
+          "person": "buri",
+          "point": [
+            458,
+            334
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        },
+        {
+          "person": "buri",
+          "point": [
+            468,
+            334
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        },
+        {
+          "person": "buri",
+          "point": [
+            477,
+            334
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        },
+        {
+          "person": "resident_tok",
+          "point": [
+            536,
+            315
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "('person', 'buri')"
+          ]
+        },
+        {
+          "person": "resident_tok",
+          "point": [
+            546,
+            315
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "('person', 'buri')"
+          ]
+        },
+        {
+          "person": "resident_tok",
+          "point": [
+            556,
+            315
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "('person', 'buri')"
+          ]
+        },
+        {
+          "person": "resident_tok",
+          "point": [
+            566,
+            315
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        }
+      ],
+      "label": "workshop_pair"
+    },
+    {
+      "actors": [
+        {
+          "person": "resident_yeoni",
+          "pose": "living_mend",
+          "x": 440,
+          "y": 251,
+          "width": 141,
+          "height": 210,
+          "rect": [
+            440,
+            251,
+            141,
+            210
+          ],
+          "depth": 470,
+          "occlusion": [],
+          "contact": "bench_sit",
+          "slot": null,
+          "activity": "함께 바느질",
+          "map27_occlusion": [],
+          "map27_keepouts": [],
+          "life_group": "inn_mending"
+        },
+        {
+          "person": "resident_ttadak",
+          "pose": "living_doorframe",
+          "x": 968,
+          "y": 277,
+          "width": 145,
+          "height": 196,
+          "rect": [
+            968,
+            277,
+            145,
+            196
+          ],
+          "depth": 473,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "따닥은 망치를 내려놓고 벽에 손을 댔다."
+        },
+        {
+          "person": "resident_tori",
+          "pose": "group_cooperative",
+          "x": 662,
+          "y": 262,
+          "width": 200,
+          "height": 300,
+          "rect": [
+            662,
+            262,
+            200,
+            300
+          ],
+          "depth": 525,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "함께 바느질",
+          "map27_occlusion": [
+            [
+              [
+                555,
+                458
+              ],
+              [
+                580,
+                453
+              ],
+              [
+                614,
+                466
+              ],
+              [
+                677,
+                466
+              ],
+              [
+                692,
+                382
+              ],
+              [
+                735,
+                379
+              ],
+              [
+                770,
+                402
+              ],
+              [
+                752,
+                551
+              ],
+              [
+                741,
+                615
+              ],
+              [
+                716,
+                620
+              ],
+              [
+                712,
+                554
+              ],
+              [
+                584,
+                548
+              ],
+              [
+                584,
+                607
+              ],
+              [
+                561,
+                608
+              ]
+            ]
+          ],
+          "map27_keepouts": [],
+          "life_group": "inn_mending"
+        },
+        {
+          "person": "granny",
+          "pose": "living_keyledger",
+          "x": 1351,
+          "y": 382,
+          "width": 119,
+          "height": 242,
+          "rect": [
+            1351,
+            382,
+            119,
+            242
+          ],
+          "depth": 624,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "할머니는 장부의 모서리를 손끝으로 눌렀다."
+        },
+        {
+          "person": "resident_owlgp",
+          "pose": "living_notebook",
+          "x": -4,
+          "y": 477,
+          "width": 126,
+          "height": 202,
+          "rect": [
+            0,
+            477,
+            126,
+            202
+          ],
+          "depth": 679,
+          "occlusion": [],
+          "contact": "portable_stool",
+          "slot": [
+            90,
+            680,
+            260,
+            "waiting"
+          ],
+          "activity": "부엉이 할아버지의 수첩이 덮여 있었다."
+        }
+      ],
+      "offset": 0,
+      "groups": [
+        "inn_mending"
+      ],
+      "specs": {
+        "resident_yeoni": {
+          "file": "assets/room13-action-resident_yeoni-living_mend.webp",
+          "crop": [
+            5,
+            1,
+            506,
+            756
+          ],
+          "nearest": true,
+          "foot": [
+            378,
+            752
+          ],
+          "head": [
+            160,
+            5,
+            190,
+            140
+          ],
+          "contact": "bench_sit",
+          "reviewed": true,
+          "map_action": true,
+          "stature_ratio": 0.74,
+          "source_sha256": "a28df012c9ec0770130a15099e90bd097dfe4011456a20eff0c020a25a740282",
+          "seat": [
+            235,
+            524
+          ]
+        },
+        "resident_ttadak": {
+          "file": "assets/room13-action-resident_ttadak-living_doorframe.webp",
+          "crop": [
+            8,
+            65,
+            501,
+            677
+          ],
+          "nearest": true,
+          "foot": [
+            256,
+            673
+          ],
+          "head": [
+            162,
+            3,
+            200,
+            168
+          ],
+          "contact": "standing",
+          "reviewed": true,
+          "map_action": true,
+          "stature_ratio": 1,
+          "source_sha256": "a7733a0ec825c2e0cbf3224d24585c050f1859450b0197935792e09541ca9797"
+        },
+        "resident_tori": {
+          "file": "assets/room13-group-resident_tori-cooperative.webp",
+          "crop": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "head": [
+            130,
+            5,
+            275,
+            260
+          ],
+          "anchors": {
+            "hands_gathered": [
+              265,
+              432
+            ],
+            "foot_left": [
+              245,
+              736.5
+            ],
+            "foot_right": [
+              384,
+              750
+            ],
+            "foot": [
+              314.5,
+              750
+            ]
+          },
+          "foot": [
+            314.5,
+            750
+          ],
+          "contact": "standing",
+          "facing": "left-threequarter",
+          "stature_ratio": 1,
+          "source_sha256": "e47e643683ade9652d6eba6156b7acad53dc4b63fbfba846afca70d3a7f8b669",
+          "source_commit": "8b553e7ce1e81543c3415f5ba9c3f329907ee78e"
+        },
+        "granny": {
+          "file": "assets/room13-action-granny-living_keyledger.webp",
+          "crop": [
+            68,
+            16,
+            369,
+            751
+          ],
+          "nearest": true,
+          "foot": [
+            211,
+            747
+          ],
+          "head": [
+            50,
+            4,
+            264,
+            232
+          ],
+          "contact": "standing",
+          "reviewed": true,
+          "map_action": true,
+          "stature_ratio": 1,
+          "source_sha256": "4aab5040bc774feac8db7b459176e21bdd411ff4f42de862cf34304332006280"
+        },
+        "resident_owlgp": {
+          "file": "assets/room13-action-resident_owlgp-living_notebook.webp",
+          "crop": [
+            17,
+            5,
+            467,
+            751
+          ],
+          "nearest": true,
+          "foot": [
+            345,
+            747
+          ],
+          "head": [
+            138,
+            5,
+            295,
+            280
+          ],
+          "contact": "portable_stool",
+          "reviewed": true,
+          "map_action": true,
+          "stature_ratio": 0.78,
+          "source_sha256": "d5c35cdbe005836f14caf450e5e72ccf5200e7ff6dca2cf99e7a98bb7dde7dc8",
+          "seat": [
+            225,
+            544
+          ]
+        }
+      },
+      "nameplate_clearance": [
+        {
+          "person": "resident_yeoni",
+          "rect": [
+            466,
+            202,
+            88,
+            48
+          ],
+          "leader": null,
+          "overlap": 0
+        },
+        {
+          "person": "resident_tori",
+          "rect": [
+            722,
+            213,
+            88,
+            48
+          ],
+          "leader": null,
+          "overlap": 0
+        }
+      ],
+      "face_hits": [
+        {
+          "person": "resident_yeoni",
+          "point": [
+            510,
+            271
+          ],
+          "actions": [
+            "('person', 'resident_yeoni')"
+          ]
+        },
+        {
+          "person": "resident_tori",
+          "point": [
+            766,
+            314
+          ],
+          "actions": [
+            "('person', 'resident_tori')"
+          ]
+        }
+      ],
+      "transparent_probes": [
+        {
+          "person": "resident_yeoni",
+          "point": [
+            442,
+            253
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        },
+        {
+          "person": "resident_yeoni",
+          "point": [
+            451,
+            253
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        },
+        {
+          "person": "resident_yeoni",
+          "point": [
+            461,
+            253
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        },
+        {
+          "person": "resident_yeoni",
+          "point": [
+            470,
+            253
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        },
+        {
+          "person": "resident_tori",
+          "point": [
+            665,
+            265
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        },
+        {
+          "person": "resident_tori",
+          "point": [
+            679,
+            265
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        },
+        {
+          "person": "resident_tori",
+          "point": [
+            692,
+            265
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        },
+        {
+          "person": "resident_tori",
+          "point": [
+            705,
+            265
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        }
+      ],
+      "label": "inn_mending"
+    },
+    {
+      "actors": [
+        {
+          "person": "resident_teacher",
+          "pose": "map27_sc_1",
+          "x": 252,
+          "y": 244,
+          "width": 132,
+          "height": 210,
+          "rect": [
+            252,
+            244,
+            132,
+            210
+          ],
+          "depth": 454,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "책을 들고 칠판을 가리킨다.",
+          "map27_occlusion": [
+            [
+              [
+                155,
+                363
+              ],
+              [
+                500,
+                363
+              ],
+              [
+                500,
+                465
+              ],
+              [
+                155,
+                465
+              ]
+            ]
+          ],
+          "map27_keepouts": [
+            [
+              [
+                339.41739048338366,
+                307.6363636363636
+              ],
+              [
+                369.88102656092644,
+                307.6363636363636
+              ],
+              [
+                369.88102656092644,
+                356.68939393939394
+              ],
+              [
+                339.41739048338366,
+                356.68939393939394
+              ]
+            ]
+          ]
+        },
+        {
+          "person": "kid_kkam",
+          "x": 1090,
+          "y": 405,
+          "width": 138,
+          "height": 205,
+          "rect": [
+            1090,
+            405,
+            138,
+            205
+          ],
+          "depth": 620,
+          "slot": null,
+          "contact": "standing",
+          "occlusion": [],
+          "map27_occlusion": [],
+          "map27_keepouts": [],
+          "pose": "group_play",
+          "life_group": "school_play",
+          "activity": "아이들과 함께 이야기"
+        },
+        {
+          "person": "kid_bang",
+          "x": 1425,
+          "y": 406,
+          "width": 100,
+          "height": 205,
+          "rect": [
+            1425,
+            406,
+            100,
+            205
+          ],
+          "depth": 620,
+          "slot": null,
+          "contact": "standing",
+          "occlusion": [],
+          "map27_occlusion": [],
+          "map27_keepouts": [],
+          "pose": "group_play",
+          "life_group": "school_play",
+          "activity": "아이들과 함께 이야기"
+        },
+        {
+          "person": "kid_mong",
+          "x": 1232,
+          "y": 401,
+          "width": 144,
+          "height": 220,
+          "rect": [
+            1232,
+            401,
+            144,
+            220
+          ],
+          "depth": 665,
+          "slot": null,
+          "contact": "standing",
+          "occlusion": [],
+          "map27_occlusion": [],
+          "map27_keepouts": [],
+          "pose": "group_play",
+          "life_group": "school_play",
+          "activity": "아이들과 함께 이야기"
+        }
+      ],
+      "offset": 520,
+      "groups": [
+        "school_play"
+      ],
+      "specs": {
+        "resident_teacher": {
+          "file": "assets/map-action27/SC-1--resident_teacher.webp",
+          "crop": [
+            0,
+            0,
+            482,
+            768
+          ],
+          "head": [
+            144.29999999999998,
+            15.36,
+            298.21999999999997,
+            222.72
+          ],
+          "foot": [
+            283.79,
+            760.32
+          ],
+          "anchors": {
+            "foot": [
+              283.79,
+              760.32
+            ],
+            "hand_left": [
+              365.56000000000006,
+              314.88
+            ],
+            "hand_right": [
+              57.72,
+              199.68
+            ],
+            "book_grip": [
+              379.99,
+              314.88
+            ],
+            "point_tip": [
+              19.24,
+              161.28
+            ],
+            "cane_ground": [
+              452.14,
+              752.64
+            ]
+          },
+          "foreground_parts": [
+            [
+              [
+                319.6978851963746,
+                232.72727272727275
+              ],
+              [
+                431.1077542799597,
+                232.72727272727275
+              ],
+              [
+                431.1077542799597,
+                412.1212121212121
+              ],
+              [
+                319.6978851963746,
+                412.1212121212121
+              ]
+            ]
+          ],
+          "contact": "standing",
+          "stature_ratio": 1,
+          "source_sha256": "952bd774cab26ac1b3717129856d8ad93a93d83de3db3e3449622c3dd928737d",
+          "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+        },
+        "kid_kkam": {
+          "file": "assets/room13-group-kid_kkam-play.webp",
+          "crop": [
+            42,
+            63,
+            965,
+            1435
+          ],
+          "foot": [
+            353,
+            1432
+          ],
+          "head": [
+            183,
+            0,
+            665,
+            650
+          ],
+          "contact": "standing",
+          "facing": "right-three-quarter",
+          "nearest": true,
+          "native_detail": true,
+          "stature_ratio": 1,
+          "source_sha256": "240698c750b4850d314e3a77344f64f763584983f1843f3bed45072426cdc3e6",
+          "source_commit": "e993c8854dc99ac99a2948ae13198c90bbab733b"
+        },
+        "kid_bang": {
+          "file": "assets/room13-group-kid_bang-play.webp",
+          "crop": [
+            184,
+            40,
+            720,
+            1475
+          ],
+          "foot": [
+            326,
+            1471
+          ],
+          "head": [
+            0,
+            0,
+            720,
+            640
+          ],
+          "contact": "standing",
+          "facing": "left-three-quarter",
+          "nearest": true,
+          "native_detail": true,
+          "stature_ratio": 1,
+          "source_sha256": "8c0849d522465b113635612696555e3c3fb2b9ebfc472af37390b1418dee00f7",
+          "source_commit": "e993c8854dc99ac99a2948ae13198c90bbab733b"
+        },
+        "kid_mong": {
+          "file": "assets/room13-group-kid_mong-play.webp",
+          "crop": [
+            44,
+            49,
+            949,
+            1454
+          ],
+          "foot": [
+            514,
+            1449
+          ],
+          "head": [
+            56,
+            0,
+            890,
+            720
+          ],
+          "contact": "standing",
+          "facing": "left-three-quarter",
+          "nearest": true,
+          "native_detail": true,
+          "stature_ratio": 1,
+          "source_sha256": "bdf517b4b892a08aa37cd61f276eb1a3c03916d597f640a3a48c8e68da227bad",
+          "source_commit": "e993c8854dc99ac99a2948ae13198c90bbab733b"
+        }
+      },
+      "nameplate_clearance": [
+        {
+          "person": "kid_mong",
+          "rect": [
+            1263,
+            351,
+            88,
+            48
+          ],
+          "leader": null,
+          "overlap": 0
+        },
+        {
+          "person": "kid_kkam",
+          "rect": [
+            1119,
+            355,
+            88,
+            48
+          ],
+          "leader": null,
+          "overlap": 0
+        },
+        {
+          "person": "kid_bang",
+          "rect": [
+            1431,
+            356,
+            88,
+            48
+          ],
+          "leader": null,
+          "overlap": 0
+        }
+      ],
+      "face_hits": [
+        {
+          "person": "kid_kkam",
+          "point": [
+            643,
+            451
+          ],
+          "actions": [
+            "('life_child', 'kid_kkam')"
+          ]
+        },
+        {
+          "person": "kid_bang",
+          "point": [
+            955,
+            450
+          ],
+          "actions": [
+            "('life_child', 'kid_bang')"
+          ]
+        },
+        {
+          "person": "kid_mong",
+          "point": [
+            787,
+            455
+          ],
+          "actions": [
+            "('life_child', 'kid_mong')"
+          ]
+        }
+      ],
+      "member_entry_checks": [
+        {
+          "clicked": "kid_kkam",
+          "speakers": [
+            "kid_kkam",
+            "kid_kkam",
+            "kid_mong",
+            "kid_bang",
+            "kid_kkam"
+          ],
+          "unchanged_world": true
+        },
+        {
+          "clicked": "kid_bang",
+          "speakers": [
+            "kid_bang",
+            "kid_kkam",
+            "kid_mong",
+            "kid_bang",
+            "kid_kkam"
+          ],
+          "unchanged_world": true
+        },
+        {
+          "clicked": "kid_mong",
+          "speakers": [
+            "kid_mong",
+            "kid_kkam",
+            "kid_mong",
+            "kid_bang",
+            "kid_kkam"
+          ],
+          "unchanged_world": true
+        }
+      ],
+      "transparent_probes": [
+        {
+          "person": "kid_kkam",
+          "point": [
+            571,
+            406
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        },
+        {
+          "person": "kid_kkam",
+          "point": [
+            580,
+            406
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        },
+        {
+          "person": "kid_kkam",
+          "point": [
+            589,
+            406
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        },
+        {
+          "person": "kid_kkam",
+          "point": [
+            598,
+            406
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        },
+        {
+          "person": "kid_bang",
+          "point": [
+            906,
+            407
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        },
+        {
+          "person": "kid_bang",
+          "point": [
+            913,
+            407
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        },
+        {
+          "person": "kid_bang",
+          "point": [
+            919,
+            407
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        },
+        {
+          "person": "kid_bang",
+          "point": [
+            926,
+            407
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        },
+        {
+          "person": "kid_mong",
+          "point": [
+            713,
+            402
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        },
+        {
+          "person": "kid_mong",
+          "point": [
+            723,
+            402
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        },
+        {
+          "person": "kid_mong",
+          "point": [
+            732,
+            402
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        },
+        {
+          "person": "kid_mong",
+          "point": [
+            742,
+            402
+          ],
+          "source_alpha": 0,
+          "actions": [
+            "None"
+          ]
+        }
+      ],
+      "label": "school_play"
+    }
+  ],
+  "statuses": {
+    "workshop_pair": "approved",
+    "inn_mending": "approved",
+    "school_play": "approved"
+  },
+  "passed": true
+}

@@ -1,0 +1,1081 @@
+{
+  "baseline": "0.19.47 ec6acca9",
+  "kind": "Focused day-2 UI fixtures, actual map/local-travel clicks; no full story playthrough",
+  "checks": [
+    "Map destination selection and cancel preserve exact game state and camera",
+    "Actual inn→hall→room and mobile map room→school→room completed; inspect observations for retained mode/selection/camera",
+    "Records return preserves story state and exploration view"
+  ],
+  "observations": [
+    {
+      "initial": {
+        "location": "inn",
+        "mode": "scene",
+        "pick": null,
+        "selection": null,
+        "spots": false,
+        "offset": 640,
+        "width": 1920,
+        "objects": [
+          {
+            "key": "desk",
+            "name": "접수대",
+            "rect": [
+              1600,
+              440,
+              240,
+              230
+            ]
+          },
+          {
+            "key": "door",
+            "name": "출입문",
+            "rect": [
+              980,
+              165,
+              131,
+              273
+            ]
+          },
+          {
+            "key": "keys",
+            "name": "객실 열쇠",
+            "rect": [
+              1670,
+              136,
+              150,
+              170
+            ]
+          },
+          {
+            "key": "register",
+            "name": "접수 장부",
+            "rect": [
+              1556,
+              355,
+              127,
+              46
+            ]
+          },
+          {
+            "key": "knitting",
+            "name": "털실 바구니",
+            "rect": [
+              1713,
+              353,
+              134,
+              82
+            ]
+          },
+          {
+            "key": "coats",
+            "name": "걸린 외투",
+            "rect": [
+              1158,
+              155,
+              121,
+              201
+            ]
+          },
+          {
+            "key": "cups",
+            "name": "찻잔들",
+            "rect": [
+              1422,
+              101,
+              180,
+              63
+            ]
+          },
+          {
+            "key": "lounge_notice",
+            "name": "휴게실 게시판",
+            "rect": [
+              415,
+              172,
+              138,
+              138
+            ]
+          },
+          {
+            "key": "lounge_hearth",
+            "name": "휴게실 벽난로",
+            "rect": [
+              28,
+              214,
+              235,
+              212
+            ]
+          },
+          {
+            "key": "lounge_tea",
+            "name": "휴게실 찻상",
+            "rect": [
+              332,
+              436,
+              234,
+              107
+            ]
+          },
+          {
+            "key": "luggage",
+            "name": "창가의 여행 가방",
+            "rect": [
+              769,
+              359,
+              134,
+              102
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "arrive_hall": {
+        "location": "hall",
+        "mode": "people",
+        "pick": null,
+        "selection": null,
+        "spots": false,
+        "offset": 440,
+        "width": 2160,
+        "objects": [
+          {
+            "key": "rail",
+            "name": "복도 난간",
+            "rect": [
+              0,
+              215,
+              860,
+              473
+            ]
+          },
+          {
+            "key": "door",
+            "name": "출입문",
+            "rect": [
+              975,
+              180,
+              245,
+              290
+            ]
+          },
+          {
+            "key": "towels",
+            "name": "접은 수건",
+            "rect": [
+              530,
+              466,
+              200,
+              76
+            ]
+          },
+          {
+            "key": "boots",
+            "name": "신발",
+            "rect": [
+              861,
+              401,
+              126,
+              88
+            ]
+          },
+          {
+            "key": "bucket",
+            "name": "청소 도구",
+            "rect": [
+              1236,
+              335,
+              125,
+              164
+            ]
+          },
+          {
+            "key": "lamp",
+            "name": "등과 점검함",
+            "rect": [
+              916,
+              192,
+              72,
+              95
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "arrive_room": {
+        "location": "room13",
+        "mode": "people",
+        "pick": null,
+        "selection": null,
+        "spots": false,
+        "offset": 440,
+        "width": 2160,
+        "objects": [
+          {
+            "key": "desk",
+            "name": "책상 · 여행 필기함",
+            "rect": [
+              0,
+              468,
+              620,
+              47
+            ]
+          },
+          {
+            "key": "bed",
+            "name": "침대",
+            "rect": [
+              809,
+              337,
+              675,
+              180
+            ]
+          },
+          {
+            "key": "window",
+            "name": "창문",
+            "rect": [
+              272,
+              12,
+              293,
+              303
+            ]
+          },
+          {
+            "key": "boxes",
+            "name": "여행 가방",
+            "rect": [
+              19,
+              563,
+              490,
+              157
+            ]
+          },
+          {
+            "key": "under",
+            "name": "침대 밑",
+            "rect": [
+              842,
+              498,
+              438,
+              57
+            ]
+          },
+          {
+            "key": "floor",
+            "name": "바닥 흔적",
+            "rect": [
+              863,
+              552,
+              215,
+              64
+            ]
+          },
+          {
+            "key": "cup",
+            "name": "찻잔",
+            "rect": [
+              321,
+              364,
+              80,
+              66
+            ]
+          },
+          {
+            "key": "notebook",
+            "name": "공책",
+            "rect": [
+              147,
+              426,
+              210,
+              40
+            ]
+          },
+          {
+            "key": "coat",
+            "name": "코트",
+            "rect": [
+              593,
+              351,
+              150,
+              255
+            ]
+          },
+          {
+            "key": "sewing",
+            "name": "반짇고리",
+            "rect": [
+              1541,
+              419,
+              150,
+              126
+            ]
+          },
+          {
+            "key": "socks",
+            "name": "양말",
+            "rect": [
+              461,
+              285,
+              122,
+              105
+            ]
+          },
+          {
+            "key": "bedside_books",
+            "name": "머리맡 책",
+            "rect": [
+              883,
+              294,
+              86,
+              33
+            ]
+          },
+          {
+            "key": "bread",
+            "name": "빵 그릇",
+            "rect": [
+              401,
+              393,
+              95,
+              40
+            ]
+          },
+          {
+            "key": "mother_note",
+            "name": "책상 위 접힌 종이",
+            "rect": [
+              160,
+              383,
+              152,
+              49
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "select_coat": {
+        "location": "room13",
+        "mode": "scene",
+        "pick": [
+          "room13",
+          "coat"
+        ],
+        "selection": "coat",
+        "spots": false,
+        "offset": 440,
+        "width": 2160,
+        "objects": [
+          {
+            "key": "desk",
+            "name": "책상 · 여행 필기함",
+            "rect": [
+              0,
+              468,
+              620,
+              47
+            ]
+          },
+          {
+            "key": "bed",
+            "name": "침대",
+            "rect": [
+              809,
+              337,
+              675,
+              180
+            ]
+          },
+          {
+            "key": "window",
+            "name": "창문",
+            "rect": [
+              272,
+              12,
+              293,
+              303
+            ]
+          },
+          {
+            "key": "boxes",
+            "name": "여행 가방",
+            "rect": [
+              19,
+              563,
+              490,
+              157
+            ]
+          },
+          {
+            "key": "under",
+            "name": "침대 밑",
+            "rect": [
+              842,
+              498,
+              438,
+              57
+            ]
+          },
+          {
+            "key": "floor",
+            "name": "바닥 흔적",
+            "rect": [
+              863,
+              552,
+              215,
+              64
+            ]
+          },
+          {
+            "key": "cup",
+            "name": "찻잔",
+            "rect": [
+              321,
+              364,
+              80,
+              66
+            ]
+          },
+          {
+            "key": "notebook",
+            "name": "공책",
+            "rect": [
+              147,
+              426,
+              210,
+              40
+            ]
+          },
+          {
+            "key": "coat",
+            "name": "코트",
+            "rect": [
+              593,
+              351,
+              150,
+              255
+            ]
+          },
+          {
+            "key": "sewing",
+            "name": "반짇고리",
+            "rect": [
+              1541,
+              419,
+              150,
+              126
+            ]
+          },
+          {
+            "key": "socks",
+            "name": "양말",
+            "rect": [
+              461,
+              285,
+              122,
+              105
+            ]
+          },
+          {
+            "key": "bedside_books",
+            "name": "머리맡 책",
+            "rect": [
+              883,
+              294,
+              86,
+              33
+            ]
+          },
+          {
+            "key": "bread",
+            "name": "빵 그릇",
+            "rect": [
+              401,
+              393,
+              95,
+              40
+            ]
+          },
+          {
+            "key": "mother_note",
+            "name": "책상 위 접힌 종이",
+            "rect": [
+              160,
+              383,
+              152,
+              49
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "after_pan": {
+        "location": "room13",
+        "mode": "scene",
+        "pick": [
+          "room13",
+          "coat"
+        ],
+        "selection": "coat",
+        "spots": false,
+        "offset": 880,
+        "width": 2160,
+        "objects": [
+          {
+            "key": "desk",
+            "name": "책상 · 여행 필기함",
+            "rect": [
+              0,
+              468,
+              620,
+              47
+            ]
+          },
+          {
+            "key": "bed",
+            "name": "침대",
+            "rect": [
+              809,
+              337,
+              675,
+              180
+            ]
+          },
+          {
+            "key": "window",
+            "name": "창문",
+            "rect": [
+              272,
+              12,
+              293,
+              303
+            ]
+          },
+          {
+            "key": "boxes",
+            "name": "여행 가방",
+            "rect": [
+              19,
+              563,
+              490,
+              157
+            ]
+          },
+          {
+            "key": "under",
+            "name": "침대 밑",
+            "rect": [
+              842,
+              498,
+              438,
+              57
+            ]
+          },
+          {
+            "key": "floor",
+            "name": "바닥 흔적",
+            "rect": [
+              863,
+              552,
+              215,
+              64
+            ]
+          },
+          {
+            "key": "cup",
+            "name": "찻잔",
+            "rect": [
+              321,
+              364,
+              80,
+              66
+            ]
+          },
+          {
+            "key": "notebook",
+            "name": "공책",
+            "rect": [
+              147,
+              426,
+              210,
+              40
+            ]
+          },
+          {
+            "key": "coat",
+            "name": "코트",
+            "rect": [
+              593,
+              351,
+              150,
+              255
+            ]
+          },
+          {
+            "key": "sewing",
+            "name": "반짇고리",
+            "rect": [
+              1541,
+              419,
+              150,
+              126
+            ]
+          },
+          {
+            "key": "socks",
+            "name": "양말",
+            "rect": [
+              461,
+              285,
+              122,
+              105
+            ]
+          },
+          {
+            "key": "bedside_books",
+            "name": "머리맡 책",
+            "rect": [
+              883,
+              294,
+              86,
+              33
+            ]
+          },
+          {
+            "key": "bread",
+            "name": "빵 그릇",
+            "rect": [
+              401,
+              393,
+              95,
+              40
+            ]
+          },
+          {
+            "key": "mother_note",
+            "name": "책상 위 접힌 종이",
+            "rect": [
+              160,
+              383,
+              152,
+              49
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "markers": {
+        "location": "room13",
+        "mode": "scene",
+        "pick": [
+          "room13",
+          "coat"
+        ],
+        "selection": "coat",
+        "spots": true,
+        "offset": 880,
+        "width": 2160,
+        "objects": [
+          {
+            "key": "desk",
+            "name": "책상 · 여행 필기함",
+            "rect": [
+              0,
+              468,
+              620,
+              47
+            ]
+          },
+          {
+            "key": "bed",
+            "name": "침대",
+            "rect": [
+              809,
+              337,
+              675,
+              180
+            ]
+          },
+          {
+            "key": "window",
+            "name": "창문",
+            "rect": [
+              272,
+              12,
+              293,
+              303
+            ]
+          },
+          {
+            "key": "boxes",
+            "name": "여행 가방",
+            "rect": [
+              19,
+              563,
+              490,
+              157
+            ]
+          },
+          {
+            "key": "under",
+            "name": "침대 밑",
+            "rect": [
+              842,
+              498,
+              438,
+              57
+            ]
+          },
+          {
+            "key": "floor",
+            "name": "바닥 흔적",
+            "rect": [
+              863,
+              552,
+              215,
+              64
+            ]
+          },
+          {
+            "key": "cup",
+            "name": "찻잔",
+            "rect": [
+              321,
+              364,
+              80,
+              66
+            ]
+          },
+          {
+            "key": "notebook",
+            "name": "공책",
+            "rect": [
+              147,
+              426,
+              210,
+              40
+            ]
+          },
+          {
+            "key": "coat",
+            "name": "코트",
+            "rect": [
+              593,
+              351,
+              150,
+              255
+            ]
+          },
+          {
+            "key": "sewing",
+            "name": "반짇고리",
+            "rect": [
+              1541,
+              419,
+              150,
+              126
+            ]
+          },
+          {
+            "key": "socks",
+            "name": "양말",
+            "rect": [
+              461,
+              285,
+              122,
+              105
+            ]
+          },
+          {
+            "key": "bedside_books",
+            "name": "머리맡 책",
+            "rect": [
+              883,
+              294,
+              86,
+              33
+            ]
+          },
+          {
+            "key": "bread",
+            "name": "빵 그릇",
+            "rect": [
+              401,
+              393,
+              95,
+              40
+            ]
+          },
+          {
+            "key": "mother_note",
+            "name": "책상 위 접힌 종이",
+            "rect": [
+              160,
+              383,
+              152,
+              49
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "arrive_school": {
+        "location": "school",
+        "mode": "scene",
+        "pick": [
+          "room13",
+          "coat"
+        ],
+        "selection": null,
+        "spots": true,
+        "offset": 0,
+        "width": 1800,
+        "objects": [
+          {
+            "key": "desks",
+            "name": "학교 책상",
+            "rect": [
+              32,
+              386,
+              702,
+              181
+            ]
+          },
+          {
+            "key": "stove",
+            "name": "난로",
+            "rect": [
+              865,
+              399,
+              158,
+              182
+            ]
+          },
+          {
+            "key": "blankets",
+            "name": "담요",
+            "rect": [
+              0,
+              482,
+              260,
+              127
+            ]
+          },
+          {
+            "key": "lessons",
+            "name": "학습 공책",
+            "rect": [
+              235,
+              419,
+              123,
+              28
+            ]
+          },
+          {
+            "key": "firewood",
+            "name": "난방 장작",
+            "rect": [
+              965,
+              470,
+              80,
+              94
+            ]
+          },
+          {
+            "key": "coat_hooks",
+            "name": "외투 걸이",
+            "rect": [
+              1199,
+              271,
+              153,
+              126
+            ]
+          },
+          {
+            "key": "shoe_cubbies",
+            "name": "신발장",
+            "rect": [
+              1197,
+              394,
+              281,
+              64
+            ]
+          },
+          {
+            "key": "reading_desk",
+            "name": "독서 책상",
+            "rect": [
+              1605,
+              380,
+              194,
+              110
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "return_room": {
+        "location": "room13",
+        "mode": "scene",
+        "pick": [
+          "room13",
+          "coat"
+        ],
+        "selection": "coat",
+        "spots": true,
+        "offset": 880,
+        "width": 2160,
+        "objects": [
+          {
+            "key": "desk",
+            "name": "책상 · 여행 필기함",
+            "rect": [
+              0,
+              468,
+              620,
+              47
+            ]
+          },
+          {
+            "key": "bed",
+            "name": "침대",
+            "rect": [
+              809,
+              337,
+              675,
+              180
+            ]
+          },
+          {
+            "key": "window",
+            "name": "창문",
+            "rect": [
+              272,
+              12,
+              293,
+              303
+            ]
+          },
+          {
+            "key": "boxes",
+            "name": "여행 가방",
+            "rect": [
+              19,
+              563,
+              490,
+              157
+            ]
+          },
+          {
+            "key": "under",
+            "name": "침대 밑",
+            "rect": [
+              842,
+              498,
+              438,
+              57
+            ]
+          },
+          {
+            "key": "floor",
+            "name": "바닥 흔적",
+            "rect": [
+              863,
+              552,
+              215,
+              64
+            ]
+          },
+          {
+            "key": "cup",
+            "name": "찻잔",
+            "rect": [
+              321,
+              364,
+              80,
+              66
+            ]
+          },
+          {
+            "key": "notebook",
+            "name": "공책",
+            "rect": [
+              147,
+              426,
+              210,
+              40
+            ]
+          },
+          {
+            "key": "coat",
+            "name": "코트",
+            "rect": [
+              593,
+              351,
+              150,
+              255
+            ]
+          },
+          {
+            "key": "sewing",
+            "name": "반짇고리",
+            "rect": [
+              1541,
+              419,
+              150,
+              126
+            ]
+          },
+          {
+            "key": "socks",
+            "name": "양말",
+            "rect": [
+              461,
+              285,
+              122,
+              105
+            ]
+          },
+          {
+            "key": "bedside_books",
+            "name": "머리맡 책",
+            "rect": [
+              883,
+              294,
+              86,
+              33
+            ]
+          },
+          {
+            "key": "bread",
+            "name": "빵 그릇",
+            "rect": [
+              401,
+              393,
+              95,
+              40
+            ]
+          },
+          {
+            "key": "mother_note",
+            "name": "책상 위 접힌 종이",
+            "rect": [
+              160,
+              383,
+              152,
+              49
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "passed": true
+}

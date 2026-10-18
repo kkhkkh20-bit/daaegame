@@ -54,7 +54,6 @@ init 181 python:
         # Reuse the exact draw/pick foreground masks, including authored hands and tools.
         result = r13_map27_geometry(actor, geometry_spec, variant, group["world_width"])
         result.update(pose=member["pose"], life_group=group["id"], activity=group["label"])
-        if "nameplate_top" in member:result["nameplate_top"]=member["nameplate_top"]
         return result
 
     def r13_life_group_overlap(a, b):

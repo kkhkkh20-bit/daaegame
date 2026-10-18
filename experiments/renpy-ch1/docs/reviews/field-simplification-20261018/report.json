@@ -1,0 +1,10 @@
+{
+  "kind": "Focused PC/touch UI fixtures, not a full story review",
+  "checks": [
+    "People default; redundant controls removed; scene hides people; formerly blocked keys center now selects keys",
+    "Actual map-only travel; destination resets to people; offscreen selection clears after pan; map cancel preserves exact story/view/camera",
+    "Touch map room→school→room works; camera persists without stale target; records preserve story state except record read markers",
+    "Direct tap on the default visible resident opens real conversation questions and returns to the field"
+  ],
+  "passed": true
+}

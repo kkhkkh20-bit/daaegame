@@ -91,7 +91,7 @@ screen r13_cartography(region,selected,ready,map_hover):
             if key==selected or key==map_hover:
                 $ underline_width=max(36,int(round(R13_CARTOGRAPHY["regions"]["village"]["nodes"][key]["label_bounds"][2]*R13_MAP_SCALE)))
                 add R13MapInkUnderline(hovered=(key==map_hover)) xpos (hx-underline_width//2) ypos (hy+18) xysize (underline_width,6)
-            if key==room13["location"]:
+            if key==("inn" if room13["location"] in R13_INN_LOCATIONS else room13["location"]):
                 text "현재 위치" xpos hx ypos (hy+24 if hy<565 else hy-42) xanchor .5 size 14 color "#765b3e"
     elif map_hover in dict(r13_map_nodes(region)):
         $ hx,hy=r13_cart_point(region,map_hover)
