@@ -46,7 +46,7 @@ init 116 python:
 
     _r13_tm_present=r13_present
     def r13_present(person,key,identity=False):
-        if person=="doto" and key in ("E05","E37","E04") and r13_has(key) and not r13_has("J10"):
+        if person=="doto" and (store.room13 or {}).get("case_state")=="occurred" and key in ("E05","E37","E04") and r13_has(key) and not r13_has("J10"):
             _r13_tm_present(person,key,identity)
             r13_grant(["J10"],"도토에게 통로 기록을 보여 줌")
             return [("dad","그날 어느 출입구를 지켰니?"),
