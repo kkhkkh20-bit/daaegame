@@ -4,6 +4,416 @@
   "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376",
   "rows": [
     {
+      "request_id": "VA-2",
+      "status": "approved",
+      "person": "resident_piko",
+      "pose": "map27_paint_sketchboard_v2",
+      "location": "square",
+      "periods": [
+        0,
+        1
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 300,
+          "anchor": "foot",
+          "target": [
+            1050,
+            625
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 300,
+          "anchor": "foot",
+          "target": [
+            1050,
+            625
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-2--resident_piko.webp",
+        "crop": [
+          0,
+          0,
+          498,
+          768
+        ],
+        "head": [
+          132.99306243805748,
+          0.0,
+          206.8780971258672,
+          172.5288831835687
+        ],
+        "foot": [
+          278.30029732408326,
+          752.7188703465982
+        ],
+        "anchors": {
+          "foot_left": [
+            228.55104063429138,
+            752.7188703465982
+          ],
+          "foot_right": [
+            328.04955401387514,
+            752.7188703465982
+          ],
+          "hand_left_image": [
+            283.2259663032706,
+            238.0898587933248
+          ],
+          "hand_right_image": [
+            422.6223984142716,
+            276.53915275994865
+          ],
+          "foot": [
+            278.30029732408326,
+            752.7188703465982
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "e4a2944fce37457cd896255afaf6269c3af157697fd24043469903420c99aab2",
+        "source_commit": "d301395b62ba3bb93b3ab050cbd1cf8d0c741937"
+      },
+      "activity": "그림판에 풍경을 그린다.",
+      "max_day": 10,
+      "days": [
+        1,
+        3,
+        5,
+        6,
+        7,
+        9
+      ]
+    },
+    {
+      "request_id": "VA-3",
+      "status": "approved",
+      "person": "resident_piko",
+      "pose": "map27_mix_paint_v2",
+      "location": "square",
+      "periods": [
+        1
+      ],
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 300,
+          "anchor": "foot",
+          "target": [
+            1050,
+            625
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 300,
+          "anchor": "foot",
+          "target": [
+            1050,
+            625
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-3--resident_piko.webp",
+        "crop": [
+          0,
+          0,
+          498,
+          768
+        ],
+        "head": [
+          132.99306243805748,
+          0.0,
+          206.8780971258672,
+          172.5288831835687
+        ],
+        "foot": [
+          270.9117938553023,
+          752.7188703465982
+        ],
+        "anchors": {
+          "foot_left": [
+            218.69970267591674,
+            752.7188703465982
+          ],
+          "foot_right": [
+            323.1238850346878,
+            752.7188703465982
+          ],
+          "hand_left_image": [
+            293.0773042616452,
+            230.2028241335045
+          ],
+          "hand_right_image": [
+            367.9474727452924,
+            276.53915275994865
+          ],
+          "foot": [
+            270.9117938553023,
+            752.7188703465982
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "dedd8df29e64b1899286e892eca3925d6ddaeaea2e533e6942057a48af7d8d70",
+        "source_commit": "d301395b62ba3bb93b3ab050cbd1cf8d0c741937"
+      },
+      "activity": "팔레트에서 물감 색을 섞는다.",
+      "max_day": 10,
+      "days": [
+        2,
+        4,
+        8,
+        10
+      ]
+    },
+    {
+      "request_id": "VA-4",
+      "status": "approved",
+      "person": "resident_guldol",
+      "pose": "map27_inspect_stone_clean",
+      "location": "square",
+      "periods": [
+        1
+      ],
+      "replace_poses": [
+        "neutral"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1920,
+          "render_height": 260,
+          "anchor": "foot",
+          "target": [
+            710,
+            580
+          ],
+          "occlusion": []
+        },
+        "afternoon": {
+          "world_width": 1920,
+          "render_height": 260,
+          "anchor": "foot",
+          "target": [
+            710,
+            580
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-4--resident_guldol.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          100.0,
+          5.0,
+          265.0,
+          240.0
+        ],
+        "foot": [
+          261.0,
+          745.0
+        ],
+        "anchors": {
+          "foot_left": [
+            153.5,
+            745.0
+          ],
+          "foot_right": [
+            368.5,
+            737.5
+          ],
+          "hand_left_image": [
+            266.0,
+            246.0
+          ],
+          "hand_right_image": [
+            420.0,
+            238.0
+          ],
+          "foot": [
+            261.0,
+            745.0
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "1ae9a3901cacbb36e5ad71273459d0e654d98ba658785a6999bedcd3bb77cc13",
+        "source_commit": "d301395b62ba3bb93b3ab050cbd1cf8d0c741937"
+      },
+      "activity": "돌 조각의 결을 살핀다."
+    },
+    {
+      "request_id": "VA-5",
+      "status": "approved",
+      "person": "resident_guldol",
+      "pose": "map27_sort_chisels_clean",
+      "location": "workshop",
+      "periods": [
+        0,
+        1
+      ],
+      "replace_poses": [
+        "map9_stone_tapping"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 1800,
+          "render_height": 280,
+          "anchor": "foot",
+          "target": [
+            780,
+            547
+          ],
+          "occlusion": [
+            [
+              [
+                331,
+                460
+              ],
+              [
+                470,
+                439
+              ],
+              [
+                683,
+                441
+              ],
+              [
+                1060,
+                483
+              ],
+              [
+                1060,
+                624
+              ],
+              [
+                890,
+                678
+              ],
+              [
+                350,
+                604
+              ]
+            ]
+          ]
+        },
+        "afternoon": {
+          "world_width": 1800,
+          "render_height": 280,
+          "anchor": "foot",
+          "target": [
+            780,
+            547
+          ],
+          "occlusion": [
+            [
+              [
+                331,
+                460
+              ],
+              [
+                470,
+                439
+              ],
+              [
+                683,
+                441
+              ],
+              [
+                1060,
+                483
+              ],
+              [
+                1060,
+                624
+              ],
+              [
+                890,
+                678
+              ],
+              [
+                350,
+                604
+              ]
+            ]
+          ]
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-5--resident_guldol.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          100.0,
+          5.0,
+          265.0,
+          240.0
+        ],
+        "foot": [
+          279.0,
+          752.5
+        ],
+        "anchors": {
+          "foot_left": [
+            169.0,
+            752.5
+          ],
+          "foot_right": [
+            389.0,
+            737.5
+          ],
+          "hand_left_image": [
+            240.5,
+            307.0
+          ],
+          "hand_right_image": [
+            425.0,
+            407.0
+          ],
+          "foot": [
+            279.0,
+            752.5
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "cfe69eba2d50787104a5e977707d7bc5c0694511743776bb52da4b5d7221cb1f",
+        "source_commit": "d301395b62ba3bb93b3ab050cbd1cf8d0c741937"
+      },
+      "activity": "가죽 도구집의 끌을 정리한다."
+    },
+    {
       "request_id": "MK-2",
       "status": "approved",
       "person": "resident_eunho",
