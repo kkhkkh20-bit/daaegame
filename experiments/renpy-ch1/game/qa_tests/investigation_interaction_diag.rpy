@@ -23,24 +23,88 @@ init 999 python:
             rows.append(row)
         r13_pd_flow_log(step,dict(actors=rows,ready=True))
 
+    def r13_pd_plain_topics(person):
+        result=[]
+        for key,spec in r13_topics_in_order(person):
+            if key not in ROOM13['topics'] or key in R13_TOPIC_LABELS or key in ('buri_consent','home:records','shop:eunho') or spec.get('special') or key in room13.get('read_topics',[]):continue
+            if spec.get('npc')!=person or spec.get('cost') or spec.get('consume'):continue
+            rows=r13_topic_current_lines(key) if r13_topic_current_context(key) is not None else r13_conversation_topic_lines(key)
+            speech=[row[1] for row in rows if row[0]==person]
+            if speech:result.append((key,spec,speech))
+        return result
+
     def r13_pd_choose_person():
+        # Use the same rendered Crop/AlphaMask that the production button uses.
+        store.r13_pd_person_ready=False
         location=room13['location'];offset=r13_world_offset()
         actors=r13_stage_people(False);plates=r13_actor_nameplates(actors)
+        def inside(px,py,rect):
+            x,y,w,h=rect;return x<=px<x+w and y<=py<y+h
         for person in R13_PD_MAP_PEOPLE[location]:
-            plate=next((p for p in plates if p['person']==person),None)
-            if not plate or r13_offer_for_person(person):continue
-            x,y,w,h=plate['rect'];sx=x+w/2-offset;sy=y+h/2
-            if not (16<sx<1000 and 100<sy<690):continue
-            store.r13_pd_person=person;store.r13_pd_person_name=R13_NAMES[person]
-            store.r13_pd_person_x=int(sx);store.r13_pd_person_y=int(sy)
-            r13_pd_flow_log('resident-click-target',dict(person=person,name=R13_NAMES[person],nameplate_rect=plate['rect'],screen_click=[sx,sy],method='actual visible nameplate; not guessed body rectangle'))
+            actor=next((a for a in actors if a['person']==person),None)
+            if actor is None or r13_offer_for_person(person):continue
+            eligible=r13_pd_plain_topics(person)
+            if not eligible:
+                r13_pd_flow_log('resident-skipped-no-live-plain-topic',dict(person=person,available_keys=[k for k,_ in r13_topics_in_order(person)]))
+                continue
+            x,y,w,h=actor['rect']
+            mask=renpy.render(r13_actor_hit_mask(actor),w,h,1.2,1.2)
+            blocked=[p['rect'] for p in plates]+[a['rect'] for a in actors if a['person']!=person]
+            # Interior 3x3 mask acceptance avoids a single translucent crop-edge pixel.
+            for ly in range(3,max(3,int(h)-3),4):
+                for lx in range(3,max(3,int(w)-3),4):
+                    px,py=x+lx,y+ly;sx=px-offset
+                    if not (24<sx<1000 and 110<py<580):continue
+                    if any(inside(px,py,r) for r in blocked):continue
+                    if not all(mask.is_pixel_opaque(lx+dx,ly+dy) for dx in (-1,0,1) for dy in (-1,0,1)):continue
+                    store.r13_pd_person=person;store.r13_pd_person_name=R13_NAMES[person]
+                    store.r13_pd_person_x=int(sx);store.r13_pd_person_y=int(py)
+                    store.r13_pd_person_ready=True
+                    r13_pd_flow_log('resident-body-mask-click-target',dict(person=person,pose=actor['pose'],spec_file=(r13_acting_spec(person,actor['pose']) or {}).get('file'),actor_rect=actor['rect'],mask_local=[lx,ly],screen_click=[sx,py],mask_3x3_opaque=True,camera_offset=offset,method='production r13_actor_hit_mask -> Render.is_pixel_opaque; nameplates and other actor bounds excluded'))
+                    return
+        r13_pd_flow_log('resident-not-yet-clickable',dict(camera_offset=offset,people=[a['person'] for a in actors]))
+
+    def r13_pd_approach_yes():
+        screen=renpy.get_screen('r13_resident_approach')
+        assert screen and screen.scope.get('ready',False)
+        choices=screen.scope.get('choices')
+        assert choices and choices[0][0], 'Actual approach positive choice missing'
+        store.r13_pd_approach_text=choices[0][0]
+
+    def r13_pd_choose_topic():
+        assert renpy.get_screen('r13_topics') and r13_target==r13_pd_person
+        available=r13_topics_in_order(r13_target)
+        for key,spec,speech in r13_pd_plain_topics(r13_target):
+            store.r13_pd_topic=key;store.r13_pd_topic_title=r13_calendar_topic_title(key,spec)
+            store.r13_pd_expected_speech=speech
+            r13_pd_flow_log('live-topic-ui-target',dict(person=r13_target,topic=key,title=store.r13_pd_topic_title,expected_resident_lines=speech,available_keys=[k for k,_ in available]))
             return
-        raise AssertionError(('No preferred scheduled resident nameplate in viewport',location,[a['person'] for a in actors]))
+        raise AssertionError(('MISSING_DIALOGUE_COVERAGE: no available unread plain topic with resident speech',r13_target,[k for k,_ in available]))
+
+    def r13_pd_topic_say_ready():
+        screen=renpy.get_screen('say')
+        packet=getattr(store,'r13_packet',None)
+        return bool(screen and getattr(store,'r13_topic',None)==getattr(store,'r13_pd_topic',None) and packet and packet[0]==r13_pd_person and packet[1] in r13_pd_expected_speech)
+
+    def r13_pd_assert_topic_say():
+        assert r13_pd_topic_say_ready(), 'Selected topic resident speech not reached'
+        screen=renpy.get_screen('say');scope=screen.scope
+        what=renpy.get_displayable('say','what');who=renpy.get_displayable('say','who')
+        expected_name=r13_speaker_label(R13_NAMES[r13_pd_person])
+        assert scope.get('who')==expected_name,(scope.get('who'),expected_name)
+        assert scope.get('what') and what is not None and who is not None
+        assert min(renpy.render(what,1280,720,1.2,1.2).get_size())>0
+        assert 'r13_visitor' in renpy.get_showing_tags() and r13_motion_person==r13_pd_person
+        bounds=renpy.get_image_bounds('r13_visitor')
+        assert bounds and min(bounds[2:])>0
+        r13_pd_flow_log('actual-topic-say-verified',dict(topic=r13_pd_topic,packet=list(r13_packet),who=scope.get('who'),what=scope.get('what'),page_index=r13_page_i,portrait_tag='r13_visitor',portrait_bounds=list(bounds),portrait_person=r13_motion_person,portrait_pose=r13_current_pose))
 
     def r13_pd_choose_object():
+        store.r13_pd_object_ready=False
         location=room13['location'];offset=r13_world_offset();actors=r13_stage_people(False)
         objects=ROOM13['objects'][location]
-        occupied=[a['rect'] for a in actors]+[p['rect'] for p in r13_actor_nameplates(actors)]
+        occupied=[p['rect'] for p in r13_actor_nameplates(actors)]
+        actor_masks=[(a['rect'],renpy.render(r13_actor_hit_mask(a),a['rect'][2],a['rect'][3],1.2,1.2)) for a in actors]
         def inside(px,py,rect):
             x,y,w,h=rect;return x<=px<x+w and y<=py<y+h
         for key in R13_PD_MAP_OBJECTS[location]:
@@ -52,16 +116,19 @@ init 999 python:
             for fy in (.5,.25,.75,.1,.9):
                 for fx in (.5,.25,.75,.1,.9):
                     px,py=int(x+w*fx),int(y+h*fy);sx=px-offset
-                    if not (24<sx<1000 and 110<py<590):continue
+                    if not (24<sx<1256 and 110<py<590):continue
+                    # Right-side menu/bed bands are excluded; key rack at y210 is not UI.
+                    if sx>=1000 and (py<200 or 250<py<350):continue
                     if any(inside(px,py,r) for r in occupied):continue
+                    if any(inside(px,py,r) and mask.is_pixel_opaque(px-r[0],py-r[1]) for r,mask in actor_masks):continue
                     if any(other!=key and r13_object_visible(ospec) and inside(px,py,ospec['rect']) for other,ospec in objects.items()):continue
                     flag='observed:'+location+':'+key
                     assert not r13_has(flag),('Object already observed in fresh fixture',flag)
                     store.r13_pd_object=key;store.r13_pd_observed_flag=flag
-                    store.r13_pd_object_x=int(sx);store.r13_pd_object_y=py
-                    r13_pd_flow_log('object-click-target',dict(key=key,source_rect=spec['rect'],screen_click=[sx,py],method='runtime object rectangle; exclude actor/nameplate/other object rectangles'))
+                    store.r13_pd_object_x=int(sx);store.r13_pd_object_y=py;store.r13_pd_object_ready=True
+                    r13_pd_flow_log('object-click-target',dict(key=key,source_rect=spec['rect'],screen_click=[sx,py],method='runtime object rectangle; exclude rendered actor hit-mask pixels, nameplates, other object rectangles and UI bands'))
                     return
-        raise AssertionError(('No unobstructed context-free object point',location))
+        r13_pd_flow_log('object-not-yet-clickable',dict(camera_offset=offset))
 
 # Starts a fresh actual roam state; no natural-campaign completion claim.
 testcase investigation_flow_baseline_post:
@@ -78,12 +145,41 @@ testcase investigation_flow_baseline_post:
     run Function(r13_pd_check_field,"entered-real-field")
     screenshot "flow-baseline_post-01-field.png"
     run Function(r13_pd_choose_person)
+    if eval (not r13_pd_person_ready and r13_world_offset()>0):
+        click "‹"
+        pause 0.5
+        run Function(r13_pd_choose_person)
+    if eval (not r13_pd_person_ready and r13_world_offset()>0):
+        click "‹"
+        pause 0.5
+        run Function(r13_pd_choose_person)
+    if eval (not r13_pd_person_ready and r13_world_offset()<r13_world_width()-1280):
+        click "›"
+        pause 0.5
+        run Function(r13_pd_choose_person)
+    if eval (not r13_pd_person_ready and r13_world_offset()<r13_world_width()-1280):
+        click "›"
+        pause 0.5
+        run Function(r13_pd_choose_person)
+    assert eval (r13_pd_person_ready)
     click pos (r13_pd_person_x,r13_pd_person_y)
     advance until eval (renpy.get_screen("r13_resident_approach") is not None or renpy.get_screen("r13_topics") is not None) timeout 40
     assert eval (r13_target==r13_pd_person)
     pause 0.4
-    run Function(r13_pd_flow_log,"resident-approach-or-topics",dict(person=r13_target))
-    screenshot "flow-baseline_post-02-resident.png"
+    if screen "r13_resident_approach":
+        run Function(r13_pd_approach_yes)
+        click expression r13_pd_approach_text
+    advance until screen "r13_topics" timeout 40
+    pause 0.4
+    run Function(r13_pd_choose_topic)
+    click expression r13_pd_topic_title
+    advance until eval (r13_pd_topic_say_ready()) timeout 40
+    pause 0.4
+    run Function(r13_pd_assert_topic_say)
+    screenshot "flow-baseline_post-02-resident-topic-say.png"
+    advance until screen "r13_topics" timeout 40
+    assert eval (r13_pd_topic in room13["read_topics"])
+    pause 0.3
     click "돌아가기"
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
@@ -91,6 +187,23 @@ testcase investigation_flow_baseline_post:
     assert eval (room13["location"]=="post")
     run Function(r13_pd_check_field,"returned-from-resident")
     run Function(r13_pd_choose_object)
+    if eval (not r13_pd_object_ready and r13_world_offset()>0):
+        click "‹"
+        pause 0.5
+        run Function(r13_pd_choose_object)
+    if eval (not r13_pd_object_ready and r13_world_offset()>0):
+        click "‹"
+        pause 0.5
+        run Function(r13_pd_choose_object)
+    if eval (not r13_pd_object_ready and r13_world_offset()<r13_world_width()-1280):
+        click "›"
+        pause 0.5
+        run Function(r13_pd_choose_object)
+    if eval (not r13_pd_object_ready and r13_world_offset()<r13_world_width()-1280):
+        click "›"
+        pause 0.5
+        run Function(r13_pd_choose_object)
+    assert eval (r13_pd_object_ready)
     click pos (r13_pd_object_x,r13_pd_object_y)
     pause until eval (r13_has(r13_pd_observed_flag)) timeout 10
     assert screen "say"
@@ -120,12 +233,41 @@ testcase investigation_flow_baseline_workshop:
     run Function(r13_pd_check_field,"entered-real-field")
     screenshot "flow-baseline_workshop-01-field.png"
     run Function(r13_pd_choose_person)
+    if eval (not r13_pd_person_ready and r13_world_offset()>0):
+        click "‹"
+        pause 0.5
+        run Function(r13_pd_choose_person)
+    if eval (not r13_pd_person_ready and r13_world_offset()>0):
+        click "‹"
+        pause 0.5
+        run Function(r13_pd_choose_person)
+    if eval (not r13_pd_person_ready and r13_world_offset()<r13_world_width()-1280):
+        click "›"
+        pause 0.5
+        run Function(r13_pd_choose_person)
+    if eval (not r13_pd_person_ready and r13_world_offset()<r13_world_width()-1280):
+        click "›"
+        pause 0.5
+        run Function(r13_pd_choose_person)
+    assert eval (r13_pd_person_ready)
     click pos (r13_pd_person_x,r13_pd_person_y)
     advance until eval (renpy.get_screen("r13_resident_approach") is not None or renpy.get_screen("r13_topics") is not None) timeout 40
     assert eval (r13_target==r13_pd_person)
     pause 0.4
-    run Function(r13_pd_flow_log,"resident-approach-or-topics",dict(person=r13_target))
-    screenshot "flow-baseline_workshop-02-resident.png"
+    if screen "r13_resident_approach":
+        run Function(r13_pd_approach_yes)
+        click expression r13_pd_approach_text
+    advance until screen "r13_topics" timeout 40
+    pause 0.4
+    run Function(r13_pd_choose_topic)
+    click expression r13_pd_topic_title
+    advance until eval (r13_pd_topic_say_ready()) timeout 40
+    pause 0.4
+    run Function(r13_pd_assert_topic_say)
+    screenshot "flow-baseline_workshop-02-resident-topic-say.png"
+    advance until screen "r13_topics" timeout 40
+    assert eval (r13_pd_topic in room13["read_topics"])
+    pause 0.3
     click "돌아가기"
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
@@ -133,6 +275,23 @@ testcase investigation_flow_baseline_workshop:
     assert eval (room13["location"]=="workshop")
     run Function(r13_pd_check_field,"returned-from-resident")
     run Function(r13_pd_choose_object)
+    if eval (not r13_pd_object_ready and r13_world_offset()>0):
+        click "‹"
+        pause 0.5
+        run Function(r13_pd_choose_object)
+    if eval (not r13_pd_object_ready and r13_world_offset()>0):
+        click "‹"
+        pause 0.5
+        run Function(r13_pd_choose_object)
+    if eval (not r13_pd_object_ready and r13_world_offset()<r13_world_width()-1280):
+        click "›"
+        pause 0.5
+        run Function(r13_pd_choose_object)
+    if eval (not r13_pd_object_ready and r13_world_offset()<r13_world_width()-1280):
+        click "›"
+        pause 0.5
+        run Function(r13_pd_choose_object)
+    assert eval (r13_pd_object_ready)
     click pos (r13_pd_object_x,r13_pd_object_y)
     pause until eval (r13_has(r13_pd_observed_flag)) timeout 10
     assert screen "say"
@@ -162,12 +321,41 @@ testcase investigation_flow_baseline_inn:
     run Function(r13_pd_check_field,"entered-real-field")
     screenshot "flow-baseline_inn-01-field.png"
     run Function(r13_pd_choose_person)
+    if eval (not r13_pd_person_ready and r13_world_offset()>0):
+        click "‹"
+        pause 0.5
+        run Function(r13_pd_choose_person)
+    if eval (not r13_pd_person_ready and r13_world_offset()>0):
+        click "‹"
+        pause 0.5
+        run Function(r13_pd_choose_person)
+    if eval (not r13_pd_person_ready and r13_world_offset()<r13_world_width()-1280):
+        click "›"
+        pause 0.5
+        run Function(r13_pd_choose_person)
+    if eval (not r13_pd_person_ready and r13_world_offset()<r13_world_width()-1280):
+        click "›"
+        pause 0.5
+        run Function(r13_pd_choose_person)
+    assert eval (r13_pd_person_ready)
     click pos (r13_pd_person_x,r13_pd_person_y)
     advance until eval (renpy.get_screen("r13_resident_approach") is not None or renpy.get_screen("r13_topics") is not None) timeout 40
     assert eval (r13_target==r13_pd_person)
     pause 0.4
-    run Function(r13_pd_flow_log,"resident-approach-or-topics",dict(person=r13_target))
-    screenshot "flow-baseline_inn-02-resident.png"
+    if screen "r13_resident_approach":
+        run Function(r13_pd_approach_yes)
+        click expression r13_pd_approach_text
+    advance until screen "r13_topics" timeout 40
+    pause 0.4
+    run Function(r13_pd_choose_topic)
+    click expression r13_pd_topic_title
+    advance until eval (r13_pd_topic_say_ready()) timeout 40
+    pause 0.4
+    run Function(r13_pd_assert_topic_say)
+    screenshot "flow-baseline_inn-02-resident-topic-say.png"
+    advance until screen "r13_topics" timeout 40
+    assert eval (r13_pd_topic in room13["read_topics"])
+    pause 0.3
     click "돌아가기"
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
@@ -175,6 +363,23 @@ testcase investigation_flow_baseline_inn:
     assert eval (room13["location"]=="inn")
     run Function(r13_pd_check_field,"returned-from-resident")
     run Function(r13_pd_choose_object)
+    if eval (not r13_pd_object_ready and r13_world_offset()>0):
+        click "‹"
+        pause 0.5
+        run Function(r13_pd_choose_object)
+    if eval (not r13_pd_object_ready and r13_world_offset()>0):
+        click "‹"
+        pause 0.5
+        run Function(r13_pd_choose_object)
+    if eval (not r13_pd_object_ready and r13_world_offset()<r13_world_width()-1280):
+        click "›"
+        pause 0.5
+        run Function(r13_pd_choose_object)
+    if eval (not r13_pd_object_ready and r13_world_offset()<r13_world_width()-1280):
+        click "›"
+        pause 0.5
+        run Function(r13_pd_choose_object)
+    assert eval (r13_pd_object_ready)
     click pos (r13_pd_object_x,r13_pd_object_y)
     pause until eval (r13_has(r13_pd_observed_flag)) timeout 10
     assert screen "say"
@@ -204,12 +409,41 @@ testcase investigation_flow_proposed_post:
     run Function(r13_pd_check_field,"entered-real-field")
     screenshot "flow-proposed_post-01-field.png"
     run Function(r13_pd_choose_person)
+    if eval (not r13_pd_person_ready and r13_world_offset()>0):
+        click "‹"
+        pause 0.5
+        run Function(r13_pd_choose_person)
+    if eval (not r13_pd_person_ready and r13_world_offset()>0):
+        click "‹"
+        pause 0.5
+        run Function(r13_pd_choose_person)
+    if eval (not r13_pd_person_ready and r13_world_offset()<r13_world_width()-1280):
+        click "›"
+        pause 0.5
+        run Function(r13_pd_choose_person)
+    if eval (not r13_pd_person_ready and r13_world_offset()<r13_world_width()-1280):
+        click "›"
+        pause 0.5
+        run Function(r13_pd_choose_person)
+    assert eval (r13_pd_person_ready)
     click pos (r13_pd_person_x,r13_pd_person_y)
     advance until eval (renpy.get_screen("r13_resident_approach") is not None or renpy.get_screen("r13_topics") is not None) timeout 40
     assert eval (r13_target==r13_pd_person)
     pause 0.4
-    run Function(r13_pd_flow_log,"resident-approach-or-topics",dict(person=r13_target))
-    screenshot "flow-proposed_post-02-resident.png"
+    if screen "r13_resident_approach":
+        run Function(r13_pd_approach_yes)
+        click expression r13_pd_approach_text
+    advance until screen "r13_topics" timeout 40
+    pause 0.4
+    run Function(r13_pd_choose_topic)
+    click expression r13_pd_topic_title
+    advance until eval (r13_pd_topic_say_ready()) timeout 40
+    pause 0.4
+    run Function(r13_pd_assert_topic_say)
+    screenshot "flow-proposed_post-02-resident-topic-say.png"
+    advance until screen "r13_topics" timeout 40
+    assert eval (r13_pd_topic in room13["read_topics"])
+    pause 0.3
     click "돌아가기"
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
@@ -217,6 +451,23 @@ testcase investigation_flow_proposed_post:
     assert eval (room13["location"]=="post")
     run Function(r13_pd_check_field,"returned-from-resident")
     run Function(r13_pd_choose_object)
+    if eval (not r13_pd_object_ready and r13_world_offset()>0):
+        click "‹"
+        pause 0.5
+        run Function(r13_pd_choose_object)
+    if eval (not r13_pd_object_ready and r13_world_offset()>0):
+        click "‹"
+        pause 0.5
+        run Function(r13_pd_choose_object)
+    if eval (not r13_pd_object_ready and r13_world_offset()<r13_world_width()-1280):
+        click "›"
+        pause 0.5
+        run Function(r13_pd_choose_object)
+    if eval (not r13_pd_object_ready and r13_world_offset()<r13_world_width()-1280):
+        click "›"
+        pause 0.5
+        run Function(r13_pd_choose_object)
+    assert eval (r13_pd_object_ready)
     click pos (r13_pd_object_x,r13_pd_object_y)
     pause until eval (r13_has(r13_pd_observed_flag)) timeout 10
     assert screen "say"
@@ -246,12 +497,41 @@ testcase investigation_flow_proposed_workshop:
     run Function(r13_pd_check_field,"entered-real-field")
     screenshot "flow-proposed_workshop-01-field.png"
     run Function(r13_pd_choose_person)
+    if eval (not r13_pd_person_ready and r13_world_offset()>0):
+        click "‹"
+        pause 0.5
+        run Function(r13_pd_choose_person)
+    if eval (not r13_pd_person_ready and r13_world_offset()>0):
+        click "‹"
+        pause 0.5
+        run Function(r13_pd_choose_person)
+    if eval (not r13_pd_person_ready and r13_world_offset()<r13_world_width()-1280):
+        click "›"
+        pause 0.5
+        run Function(r13_pd_choose_person)
+    if eval (not r13_pd_person_ready and r13_world_offset()<r13_world_width()-1280):
+        click "›"
+        pause 0.5
+        run Function(r13_pd_choose_person)
+    assert eval (r13_pd_person_ready)
     click pos (r13_pd_person_x,r13_pd_person_y)
     advance until eval (renpy.get_screen("r13_resident_approach") is not None or renpy.get_screen("r13_topics") is not None) timeout 40
     assert eval (r13_target==r13_pd_person)
     pause 0.4
-    run Function(r13_pd_flow_log,"resident-approach-or-topics",dict(person=r13_target))
-    screenshot "flow-proposed_workshop-02-resident.png"
+    if screen "r13_resident_approach":
+        run Function(r13_pd_approach_yes)
+        click expression r13_pd_approach_text
+    advance until screen "r13_topics" timeout 40
+    pause 0.4
+    run Function(r13_pd_choose_topic)
+    click expression r13_pd_topic_title
+    advance until eval (r13_pd_topic_say_ready()) timeout 40
+    pause 0.4
+    run Function(r13_pd_assert_topic_say)
+    screenshot "flow-proposed_workshop-02-resident-topic-say.png"
+    advance until screen "r13_topics" timeout 40
+    assert eval (r13_pd_topic in room13["read_topics"])
+    pause 0.3
     click "돌아가기"
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
@@ -259,6 +539,23 @@ testcase investigation_flow_proposed_workshop:
     assert eval (room13["location"]=="workshop")
     run Function(r13_pd_check_field,"returned-from-resident")
     run Function(r13_pd_choose_object)
+    if eval (not r13_pd_object_ready and r13_world_offset()>0):
+        click "‹"
+        pause 0.5
+        run Function(r13_pd_choose_object)
+    if eval (not r13_pd_object_ready and r13_world_offset()>0):
+        click "‹"
+        pause 0.5
+        run Function(r13_pd_choose_object)
+    if eval (not r13_pd_object_ready and r13_world_offset()<r13_world_width()-1280):
+        click "›"
+        pause 0.5
+        run Function(r13_pd_choose_object)
+    if eval (not r13_pd_object_ready and r13_world_offset()<r13_world_width()-1280):
+        click "›"
+        pause 0.5
+        run Function(r13_pd_choose_object)
+    assert eval (r13_pd_object_ready)
     click pos (r13_pd_object_x,r13_pd_object_y)
     pause until eval (r13_has(r13_pd_observed_flag)) timeout 10
     assert screen "say"
@@ -288,12 +585,41 @@ testcase investigation_flow_proposed_inn:
     run Function(r13_pd_check_field,"entered-real-field")
     screenshot "flow-proposed_inn-01-field.png"
     run Function(r13_pd_choose_person)
+    if eval (not r13_pd_person_ready and r13_world_offset()>0):
+        click "‹"
+        pause 0.5
+        run Function(r13_pd_choose_person)
+    if eval (not r13_pd_person_ready and r13_world_offset()>0):
+        click "‹"
+        pause 0.5
+        run Function(r13_pd_choose_person)
+    if eval (not r13_pd_person_ready and r13_world_offset()<r13_world_width()-1280):
+        click "›"
+        pause 0.5
+        run Function(r13_pd_choose_person)
+    if eval (not r13_pd_person_ready and r13_world_offset()<r13_world_width()-1280):
+        click "›"
+        pause 0.5
+        run Function(r13_pd_choose_person)
+    assert eval (r13_pd_person_ready)
     click pos (r13_pd_person_x,r13_pd_person_y)
     advance until eval (renpy.get_screen("r13_resident_approach") is not None or renpy.get_screen("r13_topics") is not None) timeout 40
     assert eval (r13_target==r13_pd_person)
     pause 0.4
-    run Function(r13_pd_flow_log,"resident-approach-or-topics",dict(person=r13_target))
-    screenshot "flow-proposed_inn-02-resident.png"
+    if screen "r13_resident_approach":
+        run Function(r13_pd_approach_yes)
+        click expression r13_pd_approach_text
+    advance until screen "r13_topics" timeout 40
+    pause 0.4
+    run Function(r13_pd_choose_topic)
+    click expression r13_pd_topic_title
+    advance until eval (r13_pd_topic_say_ready()) timeout 40
+    pause 0.4
+    run Function(r13_pd_assert_topic_say)
+    screenshot "flow-proposed_inn-02-resident-topic-say.png"
+    advance until screen "r13_topics" timeout 40
+    assert eval (r13_pd_topic in room13["read_topics"])
+    pause 0.3
     click "돌아가기"
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
@@ -301,6 +627,23 @@ testcase investigation_flow_proposed_inn:
     assert eval (room13["location"]=="inn")
     run Function(r13_pd_check_field,"returned-from-resident")
     run Function(r13_pd_choose_object)
+    if eval (not r13_pd_object_ready and r13_world_offset()>0):
+        click "‹"
+        pause 0.5
+        run Function(r13_pd_choose_object)
+    if eval (not r13_pd_object_ready and r13_world_offset()>0):
+        click "‹"
+        pause 0.5
+        run Function(r13_pd_choose_object)
+    if eval (not r13_pd_object_ready and r13_world_offset()<r13_world_width()-1280):
+        click "›"
+        pause 0.5
+        run Function(r13_pd_choose_object)
+    if eval (not r13_pd_object_ready and r13_world_offset()<r13_world_width()-1280):
+        click "›"
+        pause 0.5
+        run Function(r13_pd_choose_object)
+    assert eval (r13_pd_object_ready)
     click pos (r13_pd_object_x,r13_pd_object_y)
     pause until eval (r13_has(r13_pd_observed_flag)) timeout 10
     assert screen "say"
