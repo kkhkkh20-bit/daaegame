@@ -185,10 +185,14 @@ init 175 python:
             out=renpy.Render(1280,720)
             if getattr(self,"review_fixed_view",False) or renpy.predicting():view=float(self.people.index(self.focus)) if self.focus in self.people else 0.0;moving=False
             else:view,moving=r13_meeting_world_view(self.claim,self.focus)
-            a=renpy.render(self.plate,1280,720,st,at);b=renpy.render(self.flip,1280,720,st,at)
-            r13_meeting_world_tiles(out,a,b,view*2560.0/max(1,len(self.people)))
+            view=getattr(self,"review_view_override",view)
+            components=getattr(self,"review_components",("background","actors","foreground"))
+            if "background" in components:
+                a=renpy.render(self.plate,1280,720,st,at);b=renpy.render(self.flip,1280,720,st,at)
+                r13_meeting_world_tiles(out,a,b,view*2560.0/max(1,len(self.people)))
             slots=[]
             for index,person in enumerate(self.people):
+                if "actors" not in components or person not in getattr(self,"review_actor_ids",self.people):continue
                 slot=r13_meeting_world_slot(index,view,len(self.people))
                 if slot is not None:slots.append((abs(slot[2]),person,slot))
             for _distance,person,(cx,depth,angle) in sorted(slots,reverse=True):
@@ -201,7 +205,7 @@ init 175 python:
                 x=cx+dx*depth-rendered.get_size()[0]/2
                 y=dy*depth+(1-depth)*240
                 out.subpixel_blit(rendered,(x,y))
-            if self.surface is not None:
+            if self.surface is not None and "foreground" in components:
                 if self.surface.view!=view:
                     self.surface.view=view;renpy.redraw(self.surface,0)
                 foreground=renpy.render(self.foreground,1280,720,st,at)

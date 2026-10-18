@@ -1,6 +1,9 @@
 # Isolated SDK comparison fixture. No production caller or default effect change.
 default r13_effect_review_enabled = False
 default r13_effect_review_mode = "A"
+default r13_effect_review_manual = False
+default r13_effect_review_phase = 0
+default r13_effect_review_started = 0.0
 
 transform r13_effect_review_slide():
     subpixel True
@@ -22,36 +25,54 @@ transform r13_effect_review_trail_fade(opacity=1.0):
     linear .28 alpha 0.0
 
 init 193 python:
-    class R13TrailStripReview(renpy.Displayable):
-        def __init__(self,source,direction,lag,**kwargs):
-            super(R13TrailStripReview,self).__init__(**kwargs)
-            self.source=source;self.direction=direction;self.lag=lag
+    def r13_review_route(people,old,new):
+        start=people.index(old);end=people.index(new)
+        delta=(end-start)%len(people)
+        if delta>len(people)/2.0:delta-=len(people)
+        direction=1 if delta>0 else -1
+        passing=[people[(start+direction*n)%len(people)] for n in range(1,abs(delta))]
+        return start,delta,passing
+
+    class R13ReviewOrbitLayer(R13MeetingOrbit):
+        def __init__(self,focus,start,delta,components,people=None,lag=0,**kwargs):
+            super(R13ReviewOrbitLayer,self).__init__("C2",focus,0,"listen",{},**kwargs)
+            self.review_fixed_view=True
+            self.review_components=components
+            self.review_actor_ids=self.people if people is None else people
+            self.start=start;self.delta=delta;self.lag=lag
         def render(self,width,height,st,at):
-            p=max(0.0,min(1.0,st/.34))
-            x=(self.direction*(-320*(1-p)**3-self.lag))%1280
-            frame=renpy.render(self.source,1280,720,st,at)
-            out=renpy.Render(1280,720)
-            # Periodic strip avoids black margins without enlarging the settled shot.
-            out.subpixel_blit(frame,(x-1280,0));out.subpixel_blit(frame,(x,0))
-            if st<.34:renpy.redraw(self,0)
-            return out
-        def visit(self):return [self.source]
+            p=max(0.0,min(1.0,(st-self.lag)/.34))
+            self.review_view_override=self.start+self.delta*(1-(1-p)**3)
+            if st<.34+self.lag:renpy.redraw(self,0)
+            return super(R13ReviewOrbitLayer,self).render(width,height,st,at)
 
     class R13DirectionalTrailReview(renpy.Displayable):
-        def __init__(self,art,settled,direction,**kwargs):
+        def __init__(self,art,settled,old_focus,**kwargs):
             super(R13DirectionalTrailReview,self).__init__(**kwargs)
-            # Flatten the unmodified stage once; never feed a trail composite back in.
-            source=Flatten(art)
-            self.settled=settled
-            main=R13TrailStripReview(source,direction,0)
-            echoes=[At(Transform(R13TrailStripReview(source,direction,lag),blur=blur),
-                r13_effect_review_trail_fade(alpha)) for lag,alpha,blur in ((180,.26,3),(360,.15,6))]
-            self.moving=Fixed(main,*echoes,xysize=(1280,720))
+            self.settled=settled;self.arrival=art.focus
+            start,delta,self.passing=r13_review_route(art.people,old_focus,art.focus)
+            assert self.arrival not in self.passing
+            regular=[p for p in art.people if p not in self.passing and p!=self.arrival]
+            layers=[R13ReviewOrbitLayer(art.focus,start,delta,("background","actors"),regular),
+                R13ReviewOrbitLayer(art.focus,start,delta,("actors",),self.passing)]
+            # Transparent character layers only; arrival/background/UI never enter echoes.
+            for lag,alpha,blur in ((.055,.26,3),(.11,.15,6)):
+                source=R13ReviewOrbitLayer(art.focus,start,delta,("actors",),self.passing,lag)
+                layers.append(At(Transform(Flatten(source),blur=blur),r13_effect_review_trail_fade(alpha)))
+            # Draw arrival exactly once, sharp, in front of echoes; table occlusion stays last.
+            layers.append(R13ReviewOrbitLayer(art.focus,start,delta,("actors",),[self.arrival]))
+            layers.append(R13ReviewOrbitLayer(art.focus,start,delta,("foreground",),[]))
+            self.moving=Fixed(*layers,xysize=(1280,720))
         def render(self,width,height,st,at):
-            if st>=.34:return renpy.render(self.settled,width,height,st,at)
+            if st>=.34 or not persistent.room13_motion or renpy.is_skipping() or renpy.in_rollback():
+                return renpy.render(self.settled,width,height,st,at)
             renpy.redraw(self,0)
             return renpy.render(self.moving,width,height,st,st)
         def visit(self):return [self.moving,self.settled]
+
+    def r13_effect_review_advance():
+        store.r13_effect_review_phase=(store.r13_effect_review_phase+1)%3
+        store.r13_effect_review_started=renpy.display.core.get_time()
 
     class R13EffectReview(renpy.Displayable):
         """Same approved C2 artwork and authored lines; only stage transition differs."""
@@ -60,6 +81,10 @@ init 193 python:
             self.mode=mode
             rows=R13_DEBATE["C2"]["statements"][0]
             self.rows=[(rows["who"],rows["text"])]+list(rows["broken"])
+            if mode=="D":
+                # Reuse reviewed source text directly; no duplicate dialogue registration.
+                opening=R13_DIALOGUE_BEATS["lines"]["trial:opening"]
+                self.rows=[(opening[str(i)]["person"],opening[str(i)]["text"]) for i in (0,1,0)]
             self.scenes=[];self.effects=[];self.dialogues=[];self.arts=[]
             for who,text in self.rows:
                 art=R13MeetingOrbit("C2",who,0,"listen",{})
@@ -76,11 +101,14 @@ init 193 python:
                 if i==0:self.effects.append(scene)
                 elif mode=="A":self.effects.append(Fixed(At(self.arts[i],r13_effect_review_slide),xysize=(1280,720)))
                 elif mode=="B":self.effects.append(renpy.display.transition.Dissolve(.38,old_widget=self.scenes[i-1],new_widget=scene))
-                elif mode=="D":self.effects.append(R13DirectionalTrailReview(self.arts[i],scene,-1 if i==1 else 1))
+                elif mode=="D":self.effects.append(R13DirectionalTrailReview(self.arts[i],scene,self.rows[i-1][0]))
                 else:self.effects.append(Fixed(At(scene,r13_effect_review_zoom),xysize=(1280,720)))
         def render(self,width,height,st,at):
             phase=0 if st<2.0 else 1 if st<5.5 else 2
             elapsed=st-(0,2.0,5.5)[phase]
+            if store.r13_effect_review_manual:
+                phase=store.r13_effect_review_phase
+                elapsed=max(0.0,renpy.display.core.get_time()-store.r13_effect_review_started)
             out=renpy.Render(1280,720)
             out.blit(renpy.render(self.effects[phase],1280,720,elapsed,elapsed),(0,0))
             out.blit(renpy.render(self.dialogues[phase],1280,720,st,at),(0,0))
@@ -91,10 +119,12 @@ init 193 python:
 screen r13_effect_review_screen(mode):
     modal True
     zorder 300
-    add R13EffectReview(mode)
+    add R13EffectReview(mode) id "effect_review"
+    if r13_effect_review_manual:
+        key "mouseup_1" action Function(r13_effect_review_advance)
     frame:
         xpos 24 ypos 20 padding (14,8) background Solid("#17202bed")
-        text (mode+" · "+{"A":"짧은 가로 이동","B":"짧은 디졸브","C":"작은 줌 정착","D":"방향성 잔상 · 3겹 윤곽"}[mode]+"   |   비교용 · 미적용") size 25 color "#ffffff"
+        text (mode+" · "+{"A":"짧은 가로 이동","B":"짧은 디졸브","C":"작은 줌 정착","D":"통과 인물만 잔상 · 도착 인물 선명"}[mode]+"   |   비교용 · 미적용") size 25 color "#ffffff"
 
 label r13_effect_review:
     if not r13_effect_review_enabled:
