@@ -16,7 +16,7 @@ screen r13_control(caption,icon,command,enabled=True,chosen=False,primary=False,
                 add R13AntiqueIcon(icon,size=icon_size or R13_CONTROL["icon"]) yalign .5 alpha (1.0 if enabled else .5)
             text caption:
                 font r13_ui_font() size (label_size or r13_read_size(R13_CONTROL["text"],R13_CONTROL["large_text"]))
-                color ("#a79c8c" if not enabled else "#f2d28d" if primary or chosen else "#fff4df")
+                color ("#a79c8c" if not enabled else "#fff4df" if primary else "#f2d28d" if chosen else "#fff4df")
                 yalign .5
 
 screen r13_footer_control(column,caption,icon,command,enabled=True,chosen=False,primary=False):

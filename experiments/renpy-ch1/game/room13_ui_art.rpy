@@ -47,7 +47,7 @@ init 58 python:
                 return [(n+5,n),(w-n-6,n),(w-n-1,n+5),(w-n-1,h-n-6),
                     (w-n-6,h-n-1),(n+5,h-n-1),(n,h-n-6),(n,n+5)]
             # All states share opacity and geometry; state changes use colour.
-            fill="#39312b" if self.disabled else "#51412e" if self.primary or self.chosen else "#44382e" if self.hovered else "#302923"
+            fill="#39312b" if self.disabled else "#806039" if self.primary else "#51412e" if self.chosen else "#44382e" if self.hovered else "#302923"
             border="#746651" if self.disabled else "#dfbd79" if self.primary or self.chosen or self.hovered else "#a18a68"
             c.polygon(fill+R13_CONTROL["alpha"],outline(0))
             c.lines(border,True,outline(1),2)

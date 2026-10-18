@@ -5,8 +5,11 @@ init 57 python:
     R13_CONTROL = dict(width=232, gap=16, left=28, bottom=16,
         height=64, large_height=80, icon=28, icon_gap=10,
         text=22, large_text=24, alpha="e6", padding=16)
+    def r13_touch_ui():
+        return renpy.variant("touch") or renpy.get_physical_size()[1]<600
+
     def r13_control_height():
-        return R13_CONTROL["large_height" if persistent.room13_large_text else "height"]
+        return R13_CONTROL["large_height" if persistent.room13_large_text or r13_touch_ui() else "height"]
     def r13_control_x(column):
         return R13_CONTROL["left"]+column*(R13_CONTROL["width"]+R13_CONTROL["gap"])
     def r13_control_y():

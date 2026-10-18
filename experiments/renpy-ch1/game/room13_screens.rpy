@@ -25,7 +25,7 @@ screen r13_hud():
                 add R13TimeDial() yalign .5
         frame:
             xpos 24 ypos 20 padding (14,8) background R13PaperFrame()
-            text r13_hud_place() size r13_read_size(18,22) color "#493b30"
+            text (r13_hud_place()+(" · 주변 조사" if renpy.get_screen("r13_hub") and r13_field_view=="scene" else "")) size r13_read_size(18,22) color "#493b30"
 
 init 80:
     style r13_toolbar_button is r13_action_button:
@@ -87,8 +87,8 @@ screen r13_hub(entry=False):
         use r13_waiting_window(ready)
     else:
         fixed:
-            area (1020,104,232,64)
-            use r13_antique_button("지도 · 이동","map",Return(("menu","map")),enabled=ready,width=232,height=64)
+            area (1020,104,232,r13_control_height())
+            use r13_antique_button("지도 · 이동","map",Return(("menu","map")),enabled=ready,width=232,height=r13_control_height())
     if not entry and r13_bed_available("bed"):
         fixed:
             area (1020,264,232,64)
@@ -121,6 +121,10 @@ screen r13_hub(entry=False):
 
 screen r13_world_contents(entry=False,ready=False):
     style_prefix "r13"
+    if r13_field_view=="scene":
+        button:
+            area (0,0,r13_world_width(),720) padding (0,0) background None hover_background None
+            action Function(r13_empty_tap_feedback) sensitive ready alt "배경"
     # Background targets stay behind the visible residents.
     for key,spec in ROOM13["objects"].get(room13["location"],{}).items():
         if r13_object_visible(spec):
@@ -456,6 +460,7 @@ screen r13_book(target=None,present=False,hearing=False):
     if present:
         textbutton ("이 주장에 근거로 낸다" if hearing else R13_NAMES.get(target,"상대")+"에게 보여주기"):
             style "r13_compact_button" xpos 824 ypos 584 xsize 398 ysize 82 text_size r13_read_size(20,24)
+            background R13ControlSurface(primary=True) hover_background R13ControlSurface(primary=True,hovered=True) insensitive_background R13ControlSurface(disabled=True)
             action Return(selected_record)
             sensitive ready and detail==selected_record and r13_catalog_can_present(selected_record,hearing) and not archive
     textbutton ("그만두기" if present else "닫기"):

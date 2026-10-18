@@ -3,6 +3,7 @@ default r13_field_view = "people"
 default r13_field_spots = False # legacy save compatibility; no field markers.
 default r13_field_pick = None
 default r13_field_location = None
+default r13_scene_hint_seen = ()
 
 init 85 python:
     def r13_field_selection():
@@ -30,7 +31,8 @@ init 85 python:
 screen r13_field_view_controls(ready):
     $ investigating=r13_field_view=="scene"
     use r13_footer_control(0,"사람 보기" if investigating else "주변 살피기","dialogue" if investigating else "investigate",SetVariable("r13_field_view","people" if investigating else "scene"),enabled=ready)
-    if investigating:
+    if investigating and room13["location"] not in r13_scene_hint_seen:
+        timer 3.0 action SetVariable("r13_scene_hint_seen",tuple(r13_scene_hint_seen)+(room13["location"],))
         frame:
             area (28,r13_control_y()-64,944,48) padding (16,8) background R13InkPanel(alpha="e6",slim=True)
             text "궁금한 물건을 직접 누르세요 · 좌우로 끌어 둘러볼 수 있어요" yalign .5 size r13_read_size(21,24) color "#fff4df" font r13_ui_font()
