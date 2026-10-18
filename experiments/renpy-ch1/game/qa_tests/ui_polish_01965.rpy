@@ -56,7 +56,10 @@ testcase ui_polish_01965:
     pause 0.2
     assert eval (preferences.text_cps==0 and renpy.get_screen("pause_menu").scope["typing_preview"].signature[0]==0)
     screenshot "ui065-settings-preview-instant.png"
-    click "보통"
+    # Three controls share this caption; target the text-speed row, not font size.
+    click pos (768,272)
+    pause 0.2
+    assert eval (preferences.text_cps==34 and renpy.get_screen("pause_menu").scope["typing_preview"].signature[0]==34)
     run Hide("pause_menu")
     click "지도 · 이동" until screen "r13_map" timeout 20
     pause 0.5
