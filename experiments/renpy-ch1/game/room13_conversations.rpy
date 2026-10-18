@@ -190,7 +190,7 @@ init 70 python:
     ROOM13["topics"]["smalltalk:seol_rope"]["flags"]=["heard_dawn_round"]
     ROOM13["topics"]["smalltalk:tori_stitches"]["flags"]=["heard_pin_job"]
     for r13_key,r13_person,r13_title,r13_need,r13_lines,r13_flags in (
-        ("cross:nabi_door","nabi","밤에 주방에는 누가 들어가?",[],[
+        ("cross:nabi_door","nabi","밤에 주방에는 누가 들어가?",["heard_kitchen_light"],[
             ("nabi","아무도 안 들어가요. 밤에는 제가 뒷문을 잠그고 열쇠도 제가 갖고 있어요."),
             ("nabi","왜요? 뭐가 없어졌어요?")],["asked_nabi_door"]),
         ("cross:nabi_light","nabi","콩이가 밤에 주방 불을 봤다던데.",["heard_kitchen_light"],[
@@ -209,8 +209,8 @@ init 70 python:
         ROOM13["topics"][r13_key]=dict(npc=r13_person,title=r13_title,
             lines=[("dad",r13_title)]+list(r13_lines),day=[1,3],need=list(r13_need),
             flags=list(r13_flags),give=[],cost=0)
-    # Nabi denies first; after Kongi's word the question changes and the first one closes.
-    ROOM13["topics"]["cross:nabi_door"]["not_flags"]=["heard_kitchen_light"]
+    # Kongi supplies the reason to ask; Nabi denies entry before Dad challenges the light.
+    ROOM13["topics"]["cross:nabi_door"]["not_flags"]=["nabi_light_asked"]
 
     r13_conversation_base_available=r13_available
     def r13_available(spec):

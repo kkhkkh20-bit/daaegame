@@ -88,9 +88,7 @@ init 145 python:
         ("dad","부모님은?"),("resident_tosil","겨울엔 산 너머에서 일해요. 봄에 데리러 온대요."),
         ("resident_tosil","다람이는 몇 살이에요? 나랑 비슷해 보이는데.")],flags=["tosil_met"])
     _r13_nc_topic("tosil:granny","resident_tosil","할머니는 어떤 분이야?",[
-        ("dad","할머니는 어떤 분이니?"),("resident_tosil","무섭기도 하고 다정하기도 해요. 밤에는 꼭 혼자 아래층으로 내려가세요."),
-        ("dad","아래층?"),("resident_tosil","창고 쪽이요. 따라가면 혼나요. 한 번 혼났어요."),
-        ("dad","(밤마다 혼자 아래로 내려간다…….)",{"thought":True})],need=["tosil_met"])
+        ("dad","할머니는 어떤 분이니?"),("resident_tosil","무섭기도 하고 다정하기도 해요.")],need=["tosil_met"])
     _r13_nc_topic("tosil:forest","resident_tosil","숲에 갔던 밤 이야기",[
         ("dad","토실아, 숲에 심부름 간 게 그날이 처음이 아니었니?"),
         ("resident_tosil","……네. 처음은 아저씨네 마차가 온 날 밤이었어요. 할머니가 부인한테 따뜻한 차 갖다 드리라고, 발자국 따라가면 된다고 했어요."),

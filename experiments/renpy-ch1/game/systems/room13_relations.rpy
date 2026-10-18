@@ -185,26 +185,22 @@ transform r13_rel_faded:
 
 # Presentation only: knowledge gates, status rules and fixed seats remain above.
 screen r13_relations_content(owner,selected,filt,focused=True):
+    $ filt="all" # Old saved filters must not dim/hide people after controls are removed.
     $ layout=r13_rel_layout()
     $ edges=r13_rel_edges()
     $ people=r13_rel_people()
     $ selected=selected if selected in people else "daram"
     $ linked={other for other,k,lab in r13_rel_lines_of(selected)}
-    $ counts=r13_rel_counts()
     text "알게 된 관계" xpos 282 ypos 66 size r13_read_size(23,26) color "#654b30"
     textbutton ("전체 관계도" if focused else "인물 중심"):
         style "r13_paper_tab_button" xpos 704 ypos 62 xsize 160 ysize 40 padding (4,0) text_size 19 text_yalign .5
         action Function(r13_record_select,owner,"rel_focus",not focused)
-    hbox:
-        xpos 280 ypos 104 spacing 8
-        for key,title in (("all","전체 %d"%counts["all"]),("alive","살아 있음 %d"%counts["alive"]),("dead","숨짐 %d"%counts["dead"]),("saved","구함 %d"%counts["saved"])):
-            textbutton title style "r13_paper_tab_button" xsize 140 ysize 40 padding (4,0) text_size r13_read_size(17,19) text_align .5 text_yalign .5 selected filt==key action Function(r13_record_select,owner,"rel_filter",key)
-    add R13PaperFrame() xpos 278 ypos 150 xsize 588 ysize 428
+    add R13PaperFrame() xpos 278 ypos 110 xsize 588 ysize 468
     if focused:
         use r13_relation_focus(owner,selected,filt)
     else:
       fixed:
-        xpos 284 ypos 158 xsize R13_REL_COLS*R13_REL_CELL[0] ysize R13_REL_ROWS*R13_REL_CELL[1]
+        xpos 284 ypos 118 xsize R13_REL_COLS*R13_REL_CELL[0] ysize R13_REL_ROWS*R13_REL_CELL[1]
         add R13RelLines(edges,layout,selected)
         for who in [p for p in people if p in layout]:
             $ x,y=layout[who]
@@ -259,7 +255,7 @@ screen r13_relation_focus(owner,person,filt):
     $ layout={person:(222,92)}
     $ layout.update({other:positions[i] for i,(other,k,lab) in enumerate(rows[:4])})
     fixed:
-        xpos 284 ypos 158 xysize (576,326)
+        xpos 284 ypos 118 xysize (576,326)
         add R13RelLines([(person,other,k,lab) for other,k,lab in rows[:4]],layout,person,{p:((66,56) if p==person else (56,40)) for p in layout})
         use r13_relation_focus_card(owner,person,222,92,True)
         for i,(other,k,lab) in enumerate(rows[:4]):

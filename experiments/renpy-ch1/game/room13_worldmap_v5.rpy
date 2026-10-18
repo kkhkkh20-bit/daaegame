@@ -61,6 +61,11 @@ screen r13_cartography(region,selected,ready,map_hover):
                 add Transform(R13_CARTOGRAPHY["reveals"][secret]["art"],size=(int(round(cw*R13_MAP_SCALE)),int(round(ch*R13_MAP_SCALE))),nearest=True) xpos (16+int(round(cx*R13_MAP_SCALE))) ypos (9+int(round(cy*R13_MAP_SCALE)))
     for key,point in r13_map_nodes(region):
         $ lx,ly,lw,lh=r13_cart_rect(region,key)
+        # Reuse the authored contour: available destinations are visible before
+        # hover, while undiscovered/unavailable places receive no travel outline.
+        if key in r13_places():
+            $ outlined_focus=key==selected or key==map_hover
+            add Transform(r13_cart_layer(region,key,outline=True),matrixcolor=TintMatrix("#694425" if outlined_focus else "#a18b6c"),alpha=(1.0 if outlined_focus else .85)) xpos (ox+lx) ypos (oy+ly)
         button:
             id ("map_building_"+key)
             area (ox+lx,oy+ly,lw,lh) padding (0,0)
@@ -75,6 +80,7 @@ screen r13_cartography(region,selected,ready,map_hover):
             alt R13_MAP_LABELS[key]
     # Village names are ink in the approved drawing, not separate button plates.
     # Only existing eligible places receive interactive targets and underlines.
+    # Building contours above persist independently of the supplementary underline.
     if region=="village":
         for key,point in r13_map_nodes(region):
             $ hx,hy=r13_cart_label_point(key)

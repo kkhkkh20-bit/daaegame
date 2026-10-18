@@ -97,6 +97,9 @@ init 190 python:
 
     R13_QUESTION_LEADS = {
         "granny_rules":("heard:door_locks",),
+        # A named meal and a disputed night visit must be heard before asking.
+        "life:nabi":("read:help:nabi", "life:nabi_helped"),
+        "cross:nabi_light":("read:cross:nabi_door", "asked_nabi_door"),
         "life:granny:work":("heard:life:granny:work",),
         "karo_parcel":("J03", "heard:return_parcels"),
         "kalbaram:edge":("heard:forest_edge",),

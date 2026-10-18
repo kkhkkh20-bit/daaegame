@@ -101,7 +101,7 @@ jobs:
           fi
       - name: Native meeting smoke in disposable home and save directory
         working-directory: experiments/renpy-ch1
-        timeout-minutes: 8
+        timeout-minutes: 12
         run: |
           set -o pipefail
           export HOME="$RUNNER_TEMP/room13-native-home"
@@ -110,9 +110,9 @@ jobs:
           export XDG_CACHE_HOME="$HOME/cache"
           export RENPY_PATH_TO_SAVES="$HOME/saves"
           export ROOM13_QA_OUT="$ROOM13_CI_OUT/native-qa"
-          export ROOM13_TEST_TIMEOUT=120
+          export ROOM13_TEST_TIMEOUT=180
           mkdir -p "$HOME" "$XDG_CONFIG_HOME" "$XDG_DATA_HOME" "$XDG_CACHE_HOME" "$RENPY_PATH_TO_SAVES" "$ROOM13_QA_OUT"
-          bash dev/run_renpy_tests.sh meeting_direction admin_meeting_replay 2>&1 | tee "$ROOM13_CI_OUT/native-qa-summary.log"
+          bash dev/run_renpy_tests.sh meeting_direction admin_meeting_replay ui_polish_01965 settings_typography settings_volume_endpoint 2>&1 | tee "$ROOM13_CI_OUT/native-qa-summary.log"
       - name: Compile and build web release
         working-directory: experiments/renpy-ch1
         run: |

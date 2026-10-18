@@ -23,14 +23,14 @@ async def main():
    assert await q.py('import renpy;result=renpy.display.screen.get_screen("r13_records").scope["rel_sel"]=="granny"')
    await q.press('거둬 준 빚')
    assert await q.py('import renpy;result=renpy.display.screen.get_screen("r13_records").scope["rel_sel"]=="nabi"')
-   await q.press('숨짐');await q.input(716,190);await q.shot('02-relations-status')
+   await q.py('import renpy;sc=renpy.display.screen.get_screen("r13_records");sc.scope["rel_filter"]="dead";renpy.exports.restart_interaction();result=True');await asyncio.sleep(.2);assert await q.py('import renpy;result=renpy.display.screen.get_screen("r13_records").scope["rel_filter"]=="all"');await q.input(716,150);await q.shot('02-relations-no-status-filter')
    assert not await q.py('import renpy;result=any(row[3]=="할아버지와 손녀" for row in renpy.store.r13_rel_edges())')
    state=await q.py('import renpy;sc=renpy.display.screen.get_screen("r13_records");result=[sc.scope["rel_sel"],sc.scope["rel_filter"]]')
    await q.press('닫기');await q.py('import renpy;renpy.exports.show_screen("r13_records");renpy.exports.restart_interaction();result=True');await q.wait('r13_records')
    assert await q.py('import renpy;sc=renpy.display.screen.get_screen("r13_records");result=[sc.scope["rel_sel"],sc.scope["rel_filter"]]')==state
    assert (await q.state())['room']==original
    await q.py('import renpy;renpy.store.persistent.room13_large_text=True;renpy.store.persistent.room13_motion=False;renpy.exports.restart_interaction();result=True')
-   await page.set_viewport_size({'width':844,'height':390});q.touch=True;await q.press('인물 중심');await q.press('전체');await q.input(490,530);await q.shot('03-relations-mobile-large')
+   await page.set_viewport_size({'width':844,'height':390});q.touch=True;await q.press('인물 중심');await q.input(490,530);await q.shot('03-relations-mobile-large')
    await q.press('닫기');await asyncio.sleep(1);assert not await q.py('import renpy;result=renpy.display.screen.get_screen("r13_records") is not None');await page.set_viewport_size({'width':1280,'height':720})
    # Explicit half-proof fixture: expose only the item already presented.
    await q.py('import renpy;s=renpy.store;s.persistent.room13_large_text=False;s.r13_meeting_active=True;s.r13_meeting_claim="Q4";s.r13_meeting_intro=False;s.r13_meeting_live_active=False;s.r13_edit(evidence=["N09","N07"],debate={});s.r13_debate_half("Q4","s3","N09");renpy.exports.show_screen("r13_debate_board",claim="Q4",selected="s3");renpy.exports.restart_interaction();result=True')
@@ -68,7 +68,7 @@ async def main():
    await q.shot('map-village-mobile');await q.press('현장으로 돌아가기')
    await q.py('import renpy;s=renpy.store;renpy.exports.hide_screen("r13_map");s.r13_edit(day=14,period=2,location="altar",finale_started=True);renpy.exports.show_screen("r13_map",initial_region="mountain");renpy.exports.restart_interaction();result=True')
    await q.wait('r13_map');await page.set_viewport_size({'width':844,'height':390});await q.shot('map-altar-mobile')
-   result=dict(passed=True,checks=['known relations only; unopened facts stay hidden','real graph and relationship-card navigation','focused graph and real horizontal character-index drag; overview switch','status filter retains fixed places','relationship selection/filter restored after close','relationship UI leaves story state unchanged','all 26 slotted people render; large text and reduced motion mobile','half-proof shows only already presented item','four suspects and cancel all inside the screen','actual point menu cancel leaves proof/story unchanged','four distinct venue styles in actual meeting renderer; Q6 at night','real map selection changes no clock or travel; current offers only; building polygons select without state changes','meeting type shown in selected-place footer'])
+   result=dict(passed=True,checks=['known relations only; unopened facts stay hidden','real graph and relationship-card navigation','focused graph and real horizontal character-index drag; overview switch','retired status filter cannot dim people from an old save','relationship selection restored and retired filter neutralized after close','relationship UI leaves story state unchanged','all 26 slotted people render; large text and reduced motion mobile','half-proof shows only already presented item','four suspects and cancel all inside the screen','actual point menu cancel leaves proof/story unchanged','four distinct venue styles in actual meeting renderer; Q6 at night','real map selection changes no clock or travel; current offers only; building polygons select without state changes','meeting type shown in selected-place footer'])
    (OUT/'result.json').write_text(json.dumps(result,ensure_ascii=False,indent=2));print('PASS',result,flush=True)
   except Exception as e:
    print('FAIL',repr(e),flush=True);await page.screenshot(path=str(OUT/'stop.png'));raise

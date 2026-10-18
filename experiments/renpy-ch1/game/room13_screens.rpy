@@ -25,7 +25,7 @@ screen r13_hud():
                 add R13TimeDial() yalign .5
         frame:
             xpos 24 ypos 20 padding (14,8) background R13PaperFrame()
-            text (r13_hud_place()+(" · 주변 조사" if renpy.get_screen("r13_hub") and r13_field_view=="scene" else "")) size r13_read_size(18,22) color "#493b30"
+            text r13_hud_place() size r13_read_size(18,22) color "#493b30"
 
 init 80:
     style r13_toolbar_button is r13_action_button:
@@ -46,7 +46,7 @@ init 80:
 screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode="line",ready=True):
     style_prefix "r13"
     if mode=="talk":
-        use r13_concept_dock(ready=ready,show_record=True,person=person,present_action=present_action)
+        use r13_concept_dock(ready=ready,show_record=True,person=person,present_action=present_action,reserve_return=True)
     elif mode!="field":
         use r13_playback_footer(show_record=True,ready=ready)
     else:
@@ -118,55 +118,52 @@ screen r13_hub(entry=False):
 
 screen r13_world_contents(entry=False,ready=False):
     style_prefix "r13"
-    if r13_field_view=="scene":
-        button:
-            area (0,0,r13_world_width(),720) padding (0,0) background None hover_background None
-            action Function(r13_empty_tap_feedback) sensitive ready alt "배경"
+    button:
+        area (0,0,r13_world_width(),720) padding (0,0) background None hover_background None
+        action Function(r13_empty_tap_feedback) sensitive ready alt "배경"
     # Background targets stay behind the visible residents.
     for key,spec in ROOM13["objects"].get(room13["location"],{}).items():
         if r13_object_visible(spec):
             button:
                 area tuple(spec["rect"])
                 background None hover_background None insensitive_background None padding (0,0)
-                action [Function(r13_click_feedback,key),Return(("object",key))] sensitive ready and r13_field_view=="scene"
-                tooltip r13_object_name(key)
+                action [Function(r13_click_feedback,key),Return(("object",key))] sensitive ready
+                tooltip r13_object_name(key) alt r13_object_name(key)
     # 0.18.50 (owner): where a person and an object overlap, the person is pressed. Objects drawn
     # in front of a resident stay pressable around the resident's silhouette.
     for key,rect,mask in r13_objects_over_actors(entry):
         button:
             area rect focus_mask mask
             background None hover_background None insensitive_background None padding (0,0)
-            action [Function(r13_click_feedback,key),Return(("object",key))] sensitive ready and r13_field_view=="scene"
-            tooltip r13_object_name(key)
+            action [Function(r13_click_feedback,key),Return(("object",key))] sensitive ready
+            tooltip r13_object_name(key) alt r13_object_name(key)
     # 0.18.63: separate prop layers (systems/room13_map_actions.rpy), behind the residents.
     for prop,px,py in r13_world_props(entry):
         add prop xpos px ypos py
-    if r13_field_view=="people":
-        use r13_resident_stage(entry,ready)
+    use r13_resident_stage(entry,ready)
     # Inspection ticks sit under the name tags, never on top of a name.
     for key,point in room13["checks"].items():
         $ point=r13_check_point(key,point)
-        if key.startswith(room13["location"]+":") and r13_visible_check(key,point) and (r13_field_view=="scene" or not r13_point_on_face(point,entry)):
+        if key.startswith(room13["location"]+":") and r13_visible_check(key,point) and not r13_point_on_face(point,entry):
             add TopicTick() xpos point[0]-13 ypos point[1]-13
     $ bundle_point=r13_gate_bundle_check_point()
     if bundle_point:
         add TopicTick() xpos bundle_point[0]-13 ypos bundle_point[1]-13
     use r13_admin_hitboxes()
-    if r13_field_view=="people":
-        for nameplate in r13_actor_nameplates(r13_stage_people(entry)):
-            if nameplate["leader"]:
-                $ leader=R13NameLeader(nameplate["leader"])
-                add leader xpos leader.left ypos leader.top
-            textbutton R13_NAMES[nameplate["person"]]:
-                area nameplate["rect"]
-                padding (12,7) background R13ActionPanel() hover_background R13ActionPanel(True) text_size 20 text_color "#fff2cf" text_xalign .5 text_yalign .5
-                action r13_person_action(nameplate["person"],entry) sensitive ready
-            if not entry and r13_offer_for_person(nameplate["person"]):
-                # 0.18.53: something is happening with this person; press them to see it.
-                frame:
-                    xpos nameplate["rect"][0]-38 ypos nameplate["rect"][1]+4 xsize 34 ysize 40 padding (0,0)
-                    background Solid("#d9a441")
-                    text "!" size 28 color "#2a1d10" xalign .5 yalign .5
+    for nameplate in r13_actor_nameplates(r13_stage_people(entry)):
+        if nameplate["leader"]:
+            $ leader=R13NameLeader(nameplate["leader"])
+            add leader xpos leader.left ypos leader.top
+        textbutton R13_NAMES[nameplate["person"]]:
+            area nameplate["rect"]
+            padding (12,7) background R13ActionPanel() hover_background R13ActionPanel(True) text_size 20 text_color "#fff2cf" text_xalign .5 text_yalign .5
+            action r13_person_action(nameplate["person"],entry) sensitive ready
+        if not entry and r13_offer_for_person(nameplate["person"]):
+            # 0.18.53: something is happening with this person; press them to see it.
+            frame:
+                xpos nameplate["rect"][0]-38 ypos nameplate["rect"][1]+4 xsize 34 ysize 40 padding (0,0)
+                background Solid("#d9a441")
+                text "!" size 28 color "#2a1d10" xalign .5 yalign .5
 
     use r13_life_group_labels(entry,ready)
 
@@ -252,9 +249,8 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                 key ("K_%d"%(index+1)) action r13_safe_question_action(action)
                 key ("K_KP%d"%(index+1)) action r13_safe_question_action(action)
         if return_action is not None:
-            # 0.18.42 (owner): not centred under the list, where it read as another choice.
-            # Bottom-left corner, on the same row as the tools at the bottom right.
-            use r13_footer_control(0,"돌아가기","dialogue",return_action,enabled=ready)
+            # Return to the scene sits at the right; topic tools reserve this slot.
+            use r13_concept_action(R13_CONCEPT_RIGHT-232,232,"돌아가기","dialogue",return_action,enabled=ready)
     else:
         add Solid("#00000020")
         $ compact_width=min(list_width,940)
@@ -315,7 +311,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                 key ("K_%d"%(index+1)) action r13_safe_question_action(action)
                 key ("K_KP%d"%(index+1)) action r13_safe_question_action(action)
         if return_action is not None:
-            use r13_footer_control(0,"돌아가기","dialogue",return_action,enabled=ready)
+            use r13_concept_action(R13_CONCEPT_RIGHT-232,232,"돌아가기","dialogue",return_action,enabled=ready)
 
 screen r13_entry_topics():
     style_prefix "r13"
@@ -440,20 +436,20 @@ screen r13_book(target=None,present=False,hearing=False):
     if chip_person:
         $ entries=r13_record_related_first(entries,chip_person)
     $ selected_record=r13_present_selection(entries,detail,page) if present else r13_record_selected(entries,detail,page)
-    text ("자료 %d개"%len(entries)) xpos 284 ypos (72 if r13_touch_ui() else 86) size 20 color "#65503b"
+    text ("자료 %d개"%len(entries)) xpos 284 ypos 72 size 20 color "#65503b"
     use r13_material_filters("r13_book",material_filter,not hearing and not archive,unread=len(r13_material_subset(r13_catalog_entries(archive and not present,hearing),"unread")))
-    use r13_material_grid(entries,selected_record,page,"r13_book",archive and not present)
+    use r13_material_grid(entries,selected_record,page,"r13_book",archive and not present,filters=r13_material_filters_visible(material_filter,not hearing and not archive))
     use r13_material_detail(selected_record,archive and not present,view_context) id (view_context,selected_record,archive,persistent.room13_large_text)
     if present and not selected_record:
         text "보여줄 자료를 직접 고르세요." xpos 842 ypos 320 xsize 362 text_align .5 size 18 color "#796044"
     if present:
         textbutton ("이 주장에 근거로 낸다" if hearing else R13_NAMES.get(target,"상대")+"에게 보여주기"):
-            style "r13_compact_button" xpos 824 ypos 584 xsize 398 ysize 82 text_size r13_read_size(20,24)
+            style "r13_compact_button" xpos 824 ypos r13_record_footer_y() xsize 398 ysize r13_record_footer_height() text_size r13_read_size(20,24)
             background R13ControlSurface(primary=True) hover_background R13ControlSurface(primary=True,hovered=True) insensitive_background R13ControlSurface(disabled=True)
             action Return(selected_record)
             sensitive ready and detail==selected_record and r13_catalog_can_present(selected_record,hearing) and not archive
     textbutton ("그만두기" if present else "닫기"):
-        style "r13_compact_button" xpos 66 ypos 584 xsize 176 ysize 82 text_size 20
+        style "r13_compact_button" xpos 66 ypos r13_record_footer_y() xsize 176 ysize r13_record_footer_height() text_size 20
         action (Return(False) if present else Hide("r13_book")) sensitive ready
     key "game_menu" action (Return(False) if present else Hide("r13_book"))
 

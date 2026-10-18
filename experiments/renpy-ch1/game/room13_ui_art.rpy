@@ -56,17 +56,17 @@ init 58 python:
 
     class R13PaperFrame(renpy.Displayable):
         """Clean inset paper card. Flat colour groups, no texture or metal casing."""
-        def __init__(self,corner=6,**kwargs):
+        def __init__(self,corner=6,ink=False,**kwargs):
             super(R13PaperFrame,self).__init__(**kwargs)
-            self.corner=corner
+            self.corner=corner;self.ink=ink
         def render(self,width,height,st,at):
             w=max(1,int(width));h=max(1,int(height));r=renpy.Render(w,h);c=r.canvas()
             # Edge patina is broad, bounded shading, never speckled texture.
             c.rect('#806249',(0,2,w,max(1,h-2)))
             c.rect('#bea077',(1,0,max(1,w-2),max(1,h-3)))
             c.rect('#d9be91',(3,2,max(1,w-6),max(1,h-6)))
-            c.rect('#e5cea5',(6,5,max(1,w-12),max(1,h-13)))
-            c.rect('#f0dfbd',(10,9,max(1,w-20),max(1,h-22)))
+            c.rect('#66513d' if self.ink else '#e5cea5',(6,5,max(1,w-12),max(1,h-13)))
+            c.rect('#4a3b30' if self.ink else '#f0dfbd',(10,9,max(1,w-20),max(1,h-22)))
             c.line('#fff0cf',(6,4),(w-7,4),1)
             c.line('#a48861',(5,h-5),(w-6,h-5),1)
             return r

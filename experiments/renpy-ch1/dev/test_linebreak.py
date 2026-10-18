@@ -3,7 +3,7 @@ import re,textwrap,types,unittest
 from pathlib import Path
 src=(Path(__file__).resolve().parents[1]/'game/systems/room13_linebreak.rpy').read_text(encoding='utf-8')
 block=textwrap.dedent(src.split('init 112 python:\n',1)[1].split('    _r13_lb_prev_filter')[0])
-env={'persistent':types.SimpleNamespace(room13_large_text=False)}
+env={'persistent':types.SimpleNamespace(room13_large_text=False), 'r13_touch_ui':lambda:False}
 exec(block,env)
 f=env['r13_dialogue_lines']
 class LineBreak(unittest.TestCase):
@@ -28,4 +28,26 @@ class LineBreak(unittest.TestCase):
   out=f('{color=#fff}{b}서리 검사원{/b}{/color}이 장부를 덮고 창밖을 보았다. 바람이 세졌다.')
   self.assertIn('{color=#fff}{b}서리 검사원{/b}{/color}',out)
   self.assertEqual(out.count('\n'),1)
+ def test_authored_newlines_also_paginate(self):
+  text='첫 줄입니다.\n둘째 줄입니다.\n셋째 줄입니다.\n넷째 줄입니다.'
+  self.assertEqual(env['r13_dialogue_pages'](text),['첫 줄입니다.\n둘째 줄입니다.','셋째 줄입니다.\n넷째 줄입니다.'])
+ def test_touch_uses_large_line_budget(self):
+  text='가나다라마바사 아자차카타파하 가나다라마바사 아자차카타파하 가나다라마바사 아자차카타파하'
+  try:
+   env['r13_touch_ui']=lambda:True
+   pages=env['r13_dialogue_pages'](text)
+   self.assertTrue(all(len(line)<=29 for page in pages for line in page.split('\n')))
+   self.assertTrue(all(page.count('\n')<=1 for page in pages))
+   self.assertEqual(''.join(text.split()),''.join(''.join(pages).split()))
+  finally:
+   env['r13_touch_ui']=lambda:False
+ def test_explicit_long_line_reflows_without_losing_words(self):
+  text='처음입니다.\n'+'가나다라마바사 아자차카타파하 '*12+'마지막입니다.'
+  for large in (False,True):
+   env['persistent'].room13_large_text=large
+   pages=env['r13_dialogue_pages'](text)
+   self.assertTrue(all(page.count('\n')<=1 for page in pages))
+   self.assertTrue(all(len(line)<=(29 if large else 33) for page in pages for line in page.split('\n')))
+   self.assertEqual(''.join(text.split()),''.join(''.join(pages).split()))
+  env['persistent'].room13_large_text=False
 if __name__=='__main__':unittest.main()
