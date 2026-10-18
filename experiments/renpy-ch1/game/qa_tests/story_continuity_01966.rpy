@@ -40,7 +40,7 @@ label r13_qa066_siluk_offer:
 label r13_qa066_siluk_notice(day, period):
     hide screen r13_hub
     $ r13_qa066_done=False
-    $ room13.update(day=day,period=period,location="stable")
+    $ room13.update(day=day,period=period,location="gate")
     call r13_siluk_advance_events
     $ r13_qa066_done=True
     jump r13_field
@@ -66,7 +66,7 @@ testcase controlled_066_siluk_reunion:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=1,period=0,location="stable",life_poc=True,case_state="pending"),("entry_corrected","lodging"))
+    run Call("r13_qa_roam",dict(day=1,period=0,location="gate",life_poc=True,case_state="pending"),("entry_corrected","lodging"))
     click pos (640,600) until screen "r13_hub" timeout 40
     assert eval ("resident_siluk" not in r13_met_people())
     run Call("r13_qa066_talk","resident_siluk")
@@ -104,7 +104,7 @@ testcase controlled_066_siluk_advance_handoff:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=3,period=0,location="stable",life_poc=True,case_state="pending"),("entry_corrected","lodging","ev_a_done"),(),12)
+    run Call("r13_qa_roam",dict(day=3,period=0,location="gate",life_poc=True,case_state="pending"),("entry_corrected","lodging","ev_a_done"),(),12)
     click pos (640,600) until screen "r13_hub" timeout 40
     run Call("r13_qa066_siluk_offer")
     click pos (640,560) until screen "choice" timeout 30
