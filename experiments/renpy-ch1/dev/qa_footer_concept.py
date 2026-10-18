@@ -34,14 +34,15 @@ async def main():
    await q.py('import renpy;s=renpy.store;renpy.exports.hide_screen("say");s.room13=s.r13_new();s.r13_upgrade();s.r13_edit(day=2,period=0,location="inn",evidence=["E01"]);s.r13_flag("entry_corrected","lodging");s.room13_mode=True;s.persistent.room13_motion=False;s.persistent.room13_large_text=False;s.persistent.r13_pan_hint_seen=True;s.config.variants=[v for v in s.config.variants if v!="touch"];s.r13_world_cameras={};s.r13_field_location=None;s.place=s.R13_PLACES["inn"][0];s.r13_scene_bg=s.R13_PLACES["inn"][1];s.r13_carriage_skip=False;renpy.exports.scene();renpy.exports.show("qa_bg",what=s.r13_background(s.r13_scene_bg));result=True')
    await q.jump('r13_field');await q.wait('r13_hub');await q.press('할머니');await q.until('r13_resident_approach');await q.press('아내 편지');await q.wait('say')
    await q.shot('01-pc-dialogue')
-   st=await q.state();labels=[v['text'].strip() for v in st['buttons']];assert '기록' in labels and '더보기' in labels and not any(v in labels for v in ('백로그','자동','대사 건너뛰기')),labels
+   st=await q.state();labels=[v['text'].strip() for v in st['buttons']];assert '현재 대화 건너뛰기' in labels and '기록' in labels and '더보기' in labels and not any(v in labels for v in ('백로그','자동','대사 건너뛰기')),labels
+   pair=[v for v in st['buttons'] if v['text'].strip() in ('기록','더보기')];assert len(pair)==2 and all(v['rect'][2]==160 for v in pair),pair
    await q.press('더보기');await q.shot('02-pc-more');await page.keyboard.press('Escape');await q.wait('say')
    await page.set_viewport_size({'width':844,'height':390});q.touch=True;await asyncio.sleep(.4);await q.shot('03-mobile-dialogue')
    before=await q.room();line=(await q.state())['say']
    await q.press('더보기');await q.shot('04-mobile-more');assert await q.room()==before
-   await q.press('현재 대화 건너뛰기');await q.shot('05-mobile-skip-confirm');assert await q.room()==before
+   await page.keyboard.press('Escape');await q.press('현재 대화 건너뛰기');await q.shot('05-mobile-skip-confirm');assert await q.room()==before
    await q.press('계속 읽기');await q.wait('say');assert await q.room()==before and (await q.state())['say']==line
-   report['checks'].append('Playback helpers absent from dialogue dock; More is rightmost; More and skip-cancel preserve exact story and current line')
+   report['checks'].append('Direct current-conversation skip is outside More; record and More share 160px width; More is rightmost; More and skip-cancel preserve exact story and current line')
    await q.press('더보기');await q.press('대화 기록');await asyncio.sleep(.4);await q.shot('06-mobile-backlog');await q.press('대화로 돌아가기');await q.wait('say');assert await q.room()==before
    await q.py('import renpy;renpy.store.preferences.afm_time=99;result=True')
    await q.press('더보기');await q.press('자동 읽기');await q.shot('06b-mobile-auto-running')
@@ -53,6 +54,8 @@ async def main():
    await q.py('import renpy;renpy.store.preferences.afm_enable=False;result=True')
    st=await q.state();actions=[v for v in st['buttons'] if v['text'].strip() in ('자료 보여주기','기록','더보기')];assert [v['text'].strip() for v in sorted(actions,key=lambda a:a['rect'][0])]==['자료 보여주기','기록','더보기'],actions
    assert all(v['rect'][3]==80 for v in actions),actions
+   assert all(v['rect'][2]==160 for v in actions if v['text'].strip() in ('기록','더보기')),actions
+   assert not any(v['text'].strip()=='현재 대화 건너뛰기' for v in st['buttons'])
    before=await q.room();await q.press('자료 보여주기');await q.wait('r13_book');await q.press('그만두기');await q.wait('r13_topics');assert await q.room()==before
    await q.press('기록');await asyncio.sleep(.3);await q.press('닫기');await q.wait('r13_topics');assert {k:v for k,v in (await q.room()).items() if k!='record_ui'}=={k:v for k,v in before.items() if k!='record_ui'}
    await page.set_viewport_size({'width':1280,'height':720});q.touch=False;await asyncio.sleep(.3);await q.shot('08-pc-questions')
