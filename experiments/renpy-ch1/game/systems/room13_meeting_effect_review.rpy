@@ -38,7 +38,7 @@ init 193 python:
             for i,scene in enumerate(self.scenes):
                 if i==0:self.effects.append(scene)
                 elif mode=="A":self.effects.append(Fixed(At(self.arts[i],r13_effect_review_slide),xysize=(1280,720)))
-                elif mode=="B":self.effects.append(renpy.display.transition.Dissolve(.24,old_widget=self.scenes[i-1],new_widget=scene))
+                elif mode=="B":self.effects.append(renpy.display.transition.Dissolve(.38,old_widget=self.scenes[i-1],new_widget=scene))
                 else:self.effects.append(Fixed(At(scene,r13_effect_review_zoom),xysize=(1280,720)))
         def render(self,width,height,st,at):
             phase=0 if st<2.0 else 1 if st<5.5 else 2
@@ -46,7 +46,7 @@ init 193 python:
             out=renpy.Render(1280,720)
             out.blit(renpy.render(self.effects[phase],1280,720,elapsed,elapsed),(0,0))
             out.blit(renpy.render(self.dialogues[phase],1280,720,st,at),(0,0))
-            renpy.redraw(self,0 if phase and elapsed<.32 else max(.01,(2.0 if phase==0 else 5.5 if phase==1 else st+1)-st))
+            renpy.redraw(self,0 if phase and elapsed<.42 else max(.01,(2.0 if phase==0 else 5.5 if phase==1 else st+1)-st))
             return out
         def visit(self):return self.scenes+self.effects+self.dialogues
 

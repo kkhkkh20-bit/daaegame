@@ -1,3 +1,5 @@
+최신 B 수정 후보: [0.24→0.38초 디졸브 비교](../meeting-dissolve-038/README.md). 아래 A/B/C 영상은 최초 비교본으로 보존한다.
+
 # 회의 화면 효과 A / B / C — 선택용 SDK 비교
 
 기준: `15cdf06d` 위의 별도 `review/meeting-effect-abc` 브랜치. Ren’Py 8.5.3 공식 Web 빌드, Chromium 1280×720. main 배포 없음. `r13_effect_review_enabled=False`가 기본이고 정상 플레이에서 이 비교 label을 호출하는 경로는 없다. 기존 인터럽트 1.68초·기존 효과음·새 외부 음성 미적용 상태는 변경하지 않았다.
