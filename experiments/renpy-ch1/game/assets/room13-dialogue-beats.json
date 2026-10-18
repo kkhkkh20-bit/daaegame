@@ -7780,26 +7780,19 @@
       },
       "2": {
         "person": "daram",
-        "text": "아저씨 그림 예쁘다!",
+        "text": "아주머니 그림 예쁘다!",
         "emotion": "joy",
         "reaction": false,
         "reviewed": true,
-        "reason": "피코의 등 난방 설명과 그림을 반기는 다람.",
-        "batch": "context-06",
-        "application_status": "approved_source_master"
+        "reason": "살아 있는 피코의 그림을 처음 보고 반기는 다람의 칭찬. 피코의 죽음 이후 장면이 아니다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/piko-causality-prep/docs/reviews/piko-causality-context-review.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
       }
     },
     "ep1:shelter:helped": {
-      "0": {
-        "person": "nabi",
-        "text": "그림쟁이 아저씨를 여기서요? 할머니가 아시면 큰일 나요.",
-        "emotion": "anxious",
-        "reaction": false,
-        "reviewed": true,
-        "reason": "나비는 자기 자리도 위험한 상황에서 제한적인 은신을 허락한다.",
-        "batch": "context-06",
-        "application_status": "approved_source_master"
-      },
       "1": {
         "person": "nabi",
         "text": "……손님은 제 일 도와주셨으니까요. 식당 의자라도 괜찮다면요. 불 꺼진 뒤에만, 새벽엔 꼭 나가야 해요.",
@@ -7809,19 +7802,22 @@
         "reason": "나비는 자기 자리도 위험한 상황에서 제한적인 은신을 허락한다.",
         "batch": "context-06",
         "application_status": "approved_source_master"
-      }
-    },
-    "ep1:shelter:portrait": {
+      },
       "0": {
         "person": "nabi",
-        "text": "그림쟁이 아저씨를 여기서요? 할머니가 아시면 큰일 나요.",
+        "text": "그림쟁이 아주머니를 여기서요? 할머니가 아시면 큰일 나요.",
         "emotion": "anxious",
         "reaction": false,
         "reviewed": true,
-        "reason": "부인 초상이라는 사정을 듣고도 위험이 남는 하루 한정 허락.",
-        "batch": "context-06",
-        "application_status": "approved_source_master"
-      },
+        "reason": "거처를 몰래 내주면 할머니에게 들킬까 걱정한다. 여성 호칭만 바로잡아 나비의 기존 염려를 유지한다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/piko-causality-prep/docs/reviews/piko-causality-context-review.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
+      }
+    },
+    "ep1:shelter:portrait": {
       "2": {
         "person": "nabi",
         "text": "……손님 부인을요? 오늘 하루만이에요.",
@@ -7831,19 +7827,22 @@
         "reason": "부인 초상이라는 사정을 듣고도 위험이 남는 하루 한정 허락.",
         "batch": "context-06",
         "application_status": "approved_source_master"
-      }
-    },
-    "ep1:shelter:no": {
+      },
       "0": {
         "person": "nabi",
-        "text": "그림쟁이 아저씨를 여기서요? 할머니가 아시면 큰일 나요.",
+        "text": "그림쟁이 아주머니를 여기서요? 할머니가 아시면 큰일 나요.",
         "emotion": "anxious",
         "reaction": false,
         "reviewed": true,
-        "reason": "나비 자신도 쫓겨날 곳이 없어 거절하는 두려움. 악의나 분노가 아니다.",
-        "batch": "context-06",
-        "application_status": "approved_source_master"
-      },
+        "reason": "잠자리를 부탁받은 나비가 자신도 위험해질까 망설이는 첫 응답이다. 엄마의 초상 의뢰를 이미 도운 일로 바꾸지 않는다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/piko-causality-prep/docs/reviews/piko-causality-context-review.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
+      }
+    },
+    "ep1:shelter:no": {
       "1": {
         "person": "nabi",
         "text": "죄송해요. 저도 여기서 쫓겨나면 갈 데가 없어요.",
@@ -7853,6 +7852,19 @@
         "reason": "나비 자신도 쫓겨날 곳이 없어 거절하는 두려움. 악의나 분노가 아니다.",
         "batch": "context-06",
         "application_status": "approved_source_master"
+      },
+      "0": {
+        "person": "nabi",
+        "text": "그림쟁이 아주머니를 여기서요? 할머니가 아시면 큰일 나요.",
+        "emotion": "anxious",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "도울 조건이 없는 나비가 자신의 거처를 잃을까 두려워 거절한다. 피코를 미워하거나 조롱하는 표정이 아니다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/piko-causality-prep/docs/reviews/piko-causality-context-review.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
       }
     },
     "ep1:dawn:survived": {
@@ -7870,13 +7882,16 @@
     "ep1:dawn:portrait_done": {
       "1": {
         "person": "daram",
-        "text": "엄마다! 아저씨가 약속 지켰어!",
+        "text": "엄마다! 아주머니가 약속 지켰어!",
         "emotion": "joy",
         "reaction": false,
         "reviewed": true,
-        "reason": "완성된 엄마 얼굴과 지킨 약속을 반기는 아이. 환자 상태 전체에 대한 축하는 아니다.",
-        "batch": "context-06",
-        "application_status": "approved_source_master"
+        "reason": "생존 구조 분기에서 완성된 엄마 초상과 지켜진 약속을 알아본 기쁨이다. 쓰러진 피코의 상태를 즐거워하는 감정으로 해석하지 않는다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/piko-causality-prep/docs/reviews/piko-causality-context-review.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
       }
     },
     "ep1:dawn:dead": {
@@ -7886,19 +7901,25 @@
         "emotion": "anxious",
         "reaction": false,
         "reviewed": true,
-        "reason": "초롱의 자책과 일어나지 않는 화가를 걱정하는 아이.",
-        "batch": "context-06",
-        "application_status": "approved_source_master"
+        "reason": "꺼진 등 아래 움직이지 않는 피코를 마주한 초롱의 불안과 다람의 걱정이다. 신남·웃음·분노나 범인 단정은 없다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/piko-causality-prep/docs/reviews/piko-causality-context-review.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
       },
       "2": {
         "person": "daram",
-        "text": "아빠, 아저씨 왜 안 일어나?",
+        "text": "아빠, 아주머니 왜 안 일어나?",
         "emotion": "anxious",
         "reaction": false,
         "reviewed": true,
-        "reason": "초롱의 자책과 일어나지 않는 화가를 걱정하는 아이.",
-        "batch": "context-06",
-        "application_status": "approved_source_master"
+        "reason": "꺼진 등 아래 움직이지 않는 피코를 마주한 초롱의 불안과 다람의 걱정이다. 신남·웃음·분노나 범인 단정은 없다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/piko-causality-prep/docs/reviews/piko-causality-context-review.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
       }
     },
     "ep1:dawn:portrait": {
@@ -8000,16 +8021,6 @@
         "batch": "context-06",
         "application_status": "approved_source_master"
       },
-      "3": {
-        "person": "resident_ubak",
-        "text": "그 아저씨가…… 저 때문이에요?",
-        "emotion": "anxious",
-        "reaction": false,
-        "reviewed": true,
-        "reason": "온도 쪽지를 들켜 순간 놀란 우박이 반환 사실과 죄책감을 말하고, 서리는 자신의 심부름과 증거 순서를 차분히 확인한다.",
-        "batch": "context-06",
-        "application_status": "approved_source_master"
-      },
       "4": {
         "person": "resident_seori",
         "text": "제 심부름이었습니다. 그리고 이 아이가 돌려놨다면, 새벽엔 조각이 등 안에 있었어야 합니다.",
@@ -8019,6 +8030,19 @@
         "reason": "온도 쪽지를 들켜 순간 놀란 우박이 반환 사실과 죄책감을 말하고, 서리는 자신의 심부름과 증거 순서를 차분히 확인한다.",
         "batch": "context-06",
         "application_status": "approved_source_master"
+      },
+      "3": {
+        "person": "resident_ubak",
+        "text": "그 아주머니가…… 저 때문이에요?",
+        "emotion": "anxious",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "우박이 측정과 반환을 말한 뒤 피코에게 생긴 일이 자기 탓인지 묻는다. 자책과 두려움이며 범인 자백으로 단정하지 않는다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/piko-causality-prep/docs/reviews/piko-causality-context-review.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
       }
     },
     "ep1:ubak:numbers": {
@@ -8132,16 +8156,6 @@
       }
     },
     "ep1:funeral:nose": {
-      "1": {
-        "person": "daram",
-        "text": "아저씨. 약속 내가 지킬게.",
-        "emotion": "anxious",
-        "reaction": false,
-        "reviewed": true,
-        "reason": "약속을 대신 지키는 아이의 애도. 웃는 초상에 관한 말은 아이가 신났다는 뜻이 아니다.",
-        "batch": "context-06",
-        "application_status": "approved_source_master"
-      },
       "4": {
         "person": "daram",
         "text": "……이제 엄마 웃는다.",
@@ -8151,18 +8165,34 @@
         "reason": "약속을 대신 지키는 아이의 애도. 웃는 초상에 관한 말은 아이가 신났다는 뜻이 아니다.",
         "batch": "context-06",
         "application_status": "approved_source_master"
+      },
+      "1": {
+        "person": "daram",
+        "text": "아주머니. 약속 내가 지킬게.",
+        "emotion": "anxious",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "다람이 피코와의 약속을 대신 지키며 애도한다. 그림 속 엄마가 웃는다는 말은 다람이 신났다는 뜻이 아니다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/piko-causality-prep/docs/reviews/piko-causality-context-review.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
       }
     },
     "ep1:funeral:flower": {
       "1": {
         "person": "daram",
-        "text": "아저씨 그림 예뻤어요.",
+        "text": "아주머니 그림 예뻤어요.",
         "emotion": "anxious",
         "reaction": false,
         "reviewed": true,
-        "reason": "화가의 그림을 기억하는 아이의 애도.",
-        "batch": "context-06",
-        "application_status": "approved_source_master"
+        "reason": "다람이 꽃을 놓고 피코의 그림을 기억하는 작별이다. 밝게 칭찬하던 첫 만남과 같은 기쁨 표정으로 돌리지 않는다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/piko-causality-prep/docs/reviews/piko-causality-context-review.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
       }
     },
     "ep1:library:saved": {
@@ -12996,13 +13026,14 @@
     "life:night1:rest": {
       "0": {
         "person": "daram",
-        "text": "엄마는 왜 우리를 부르고 없어진 거야?",
+        "text": "엄마는 지금 어디에 있는 거야?",
         "emotion": "anxious",
         "reaction": false,
         "reviewed": true,
         "reason": "엄마의 부재 이유를 아직 모르는 다람이 아빠에게 묻고 소식을 부탁한다.",
         "review_batch": "main-01916-context",
-        "application_status": "approved_source_master"
+        "application_status": "approved_source_master",
+        "text_context_review": "2026-10-18 causal text review; prior expression/asset status retained; runtime unverified."
       },
       "2": {
         "person": "daram",
@@ -14518,19 +14549,11 @@
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "실룩의 안심 약속과 콩이가 직접 본 방문 정보. 실제 귀환 여부와 별개로 표면 태도를 기록한다.",
-        "batch": "context-08",
-        "application_status": "approved_source_master"
-      },
-      "2": {
-        "person": "resident_kongi",
-        "text": "실룩 아저씨요? 어제 백 부인네 뒷문으로 들어가던데요.",
-        "emotion": "neutral",
-        "reaction": false,
-        "reviewed": true,
-        "reason": "실룩의 안심 약속과 콩이가 직접 본 방문 정보. 실제 귀환 여부와 별개로 표면 태도를 기록한다.",
-        "batch": "context-08",
-        "application_status": "approved_source_master"
+        "reason": "기존의 안심시키는 약속 그대로다. 아직 기한을 어긴 상태가 아니므로 죄책감·기쁨·놀람을 추가하지 않는다.",
+        "integration_review_source": "/workspace/shared/siluk-witness-causality/reviewed-context.json",
+        "application_status": "awaiting_approved_runtime_assets",
+        "visual_qa": false,
+        "new_asset_approval": false
       }
     },
     "ev:a:paid_all": {
@@ -14540,9 +14563,11 @@
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "실룩이 부족한 선금을 마지못해 받는다.",
-        "batch": "context-08",
-        "application_status": "approved_source_master"
+        "reason": "기존의 부족한 선금 수락을 유지한다. 금액이 적다는 질문이 곧 격한 분노나 놀람은 아니다.",
+        "integration_review_source": "/workspace/shared/siluk-witness-causality/reviewed-context.json",
+        "application_status": "awaiting_approved_runtime_assets",
+        "visual_qa": false,
+        "new_asset_approval": false
       }
     },
     "ev:a:refuse": {
@@ -14878,13 +14903,16 @@
     "w1c:letters:safe": {
       "0": {
         "person": "resident_sling",
-        "text": "부인 편지는 제가 할머니 몰래 다른 길로 돌렸어요. 그래서 뒤쫓는 사람은 엉뚱한 편지만 들고 갔어요.",
+        "text": "부인 편지는 제가 다른 길로 돌렸어요. 그래서 뒤쫓는 사람은 엉뚱한 편지만 들고 갔어요.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "슬링이 우회 전달로 편지를 지켰다고 설명한다.",
-        "batch": "context-08",
-        "application_status": "approved_source_master"
+        "reason": "기존 편지 보호의 후반 성과를 설명한다. 우회 전달과 추적 완화만 확인하며 지시자를 새로 밝혀 주는 암시를 제거한다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/sling-earned-disclosure-delta/reviewed-context-mapping.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
       }
     },
     "w1c:portrait:open": {
@@ -14978,81 +15006,102 @@
     "w1c:letters:open": {
       "1": {
         "person": "resident_sling",
-        "text": "……! 아, 아니에요. 봉투가 젖어서 말리는 거예요.",
+        "text": "……! 아, 봉투가 젖어서 말리는 거예요.",
         "emotion": "surprise",
         "reaction": true,
         "reviewed": true,
-        "reason": "봉투를 열다 들킨 슬링의 짧은 놀람과 즉각적인 해명.",
-        "batch": "context-08",
-        "application_status": "approved_source_master"
+        "reason": "김으로 접착면을 떼는 동작이 드러난 직후, 슬링이 놀라 젖은 봉투를 말린다고 둘러댄다. 기존 들킴 상황의 짧은 놀람을 이 정확한 대사에만 둔다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/sling-earned-disclosure-delta/reviewed-context-mapping.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
+      },
+      "3": {
+        "person": "resident_sling",
+        "text": "……아니요.",
+        "emotion": "anxious",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "받는 사람의 허락이 있느냐는 직접 질문에 없다고 인정한다. 새 위협이나 분노가 아니라 들킨 뒤의 불안이며 추가 놀람 동작은 없다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/sling-earned-disclosure-delta/reviewed-context-mapping.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
       }
     },
     "w1c:letters:catch": {
       "1": {
         "person": "resident_sling",
-        "text": "……할머니가 시켰어요. 손님 편지 중에 ‘부인’이 보낸 게 있으면 베껴 오라고요. 안 그러면 일자리를 잃는대요.",
+        "text": "……편지 내용을 베끼려던 거예요. 시킨 사람이 있지만, 이름은 말 못 해요. 일자리를 잃을 수도 있어서요.",
         "emotion": "anxious",
         "reaction": false,
         "reviewed": true,
-        "reason": "할머니의 강요와 실직 위험을 고백하는 슬링.",
-        "batch": "context-08",
-        "application_status": "approved_source_master"
+        "reason": "무단 개봉을 들킨 뒤 필사하려던 의도는 인정하지만 이름은 숨긴다. 일자리 상실에 대한 두려움을 표현한다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/sling-earned-disclosure-delta/reviewed-context-mapping.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
       }
     },
     "w1c:letters:who": {
       "1": {
         "person": "resident_sling",
-        "text": "……여관 할머니요. 손님 편지 중에 ‘부인’이 보낸 게 있으면 베껴 오래요. 안 하면 일자리가 없대요.",
+        "text": "……부탁받은 일이에요. 누구인지는 말 못 해요. 거절하면 일자리가 없어질 수도 있어서요.",
         "emotion": "anxious",
         "reaction": false,
         "reviewed": true,
-        "reason": "지시자를 말하며 일자리 상실을 두려워하는 슬링. 질문 맥락이 다른 동일 고백은 별도 유지.",
-        "batch": "context-08",
-        "application_status": "approved_source_master"
+        "reason": "스스로 읽는지 부탁받았는지 묻자 부탁받은 일이라고만 답한다. 이름을 숨기는 이유가 고용 불안이다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/sling-earned-disclosure-delta/reviewed-context-mapping.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
       }
     },
     "w1c:letters:neoul": {
-      "0": {
-        "person": "neoul",
-        "text": "우체국 일은 우체국 일이오. 슬링은 오늘부터 나오지 마시오.",
-        "emotion": "neutral",
-        "reaction": false,
-        "reviewed": true,
-        "reason": "너울의 해고 결정과 슬링의 말 없는 충격.",
-        "batch": "context-08",
-        "application_status": "approved_source_master"
-      },
-      "1": {
+      "2": {
         "person": "resident_sling",
         "text": "……",
         "emotion": "anxious",
         "reaction": false,
         "reviewed": true,
-        "reason": "너울의 해고 결정과 슬링의 말 없는 충격.",
-        "batch": "context-08",
-        "application_status": "approved_source_master"
+        "reason": "업무 배제 처분 뒤 슬링의 말 없는 반응이다. 기존 같은 장면의 불안한 침묵을 새 서술 한 줄 때문에 바뀐 인덱스에 정확히 옮긴다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/sling-earned-disclosure-delta/reviewed-context-mapping.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
+      },
+      "1": {
+        "person": "neoul",
+        "text": "받는 사람 허락도 없이 편지를 열려 했소? 슬링은 오늘부터 우체국에 나오지 마시오.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "실제로 신고받은 경비가 허락 없는 개봉을 지적하고 기존 업무 배제 처분을 내린다. 명령조이지만 노여움이나 새로운 폭력·체포를 추가하지 않는다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/sling-earned-disclosure-delta/reviewed-context-mapping.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
       }
     },
     "w1c:letters:paid": {
       "1": {
         "person": "resident_sling",
-        "text": "오늘 몫은 받았으니…… 이 편지는 그대로 보내겠습니다.",
+        "text": "……오늘 몫은 받았으니, 이 편지는 그대로 보내겠습니다.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "당일 품삯 보장 후 원본 전달을 약속하지만 지시자를 말하는 데 불안이 남는다.",
-        "batch": "context-08",
-        "application_status": "approved_source_master"
-      },
-      "2": {
-        "person": "resident_sling",
-        "text": "시킨 사람은 여관 할머니예요. 손님 편지 중에 ‘부인’이 보낸 게 있으면 베껴 오라고 했어요.",
-        "emotion": "anxious",
-        "reaction": false,
-        "reviewed": true,
-        "reason": "당일 품삯 보장 후 원본 전달을 약속하지만 지시자를 말하는 데 불안이 남는다.",
-        "batch": "context-08",
-        "application_status": "approved_source_master"
+        "reason": "아빠의 명시적인 3냥 지원이 실행된 뒤 오늘 이 편지를 그대로 보내겠다고 답한다. 당일 합의를 차분히 확인할 뿐 장기 고용이 해결된 기쁨으로 과장하지 않는다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/sling-earned-disclosure-delta/reviewed-context-mapping.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
       }
     },
     "w1c:letters:portrait": {
@@ -15062,31 +15111,27 @@
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "받는 사람의 가족을 이해하고 지시자를 조심스럽게 고백한다.",
-        "batch": "context-08",
-        "application_status": "approved_source_master"
-      },
-      "2": {
-        "person": "resident_sling",
-        "text": "여관 할머니가 시켰어요. 손님 편지 중에 ‘부인’이 보낸 게 있으면 베껴 오라고요.",
-        "emotion": "anxious",
-        "reaction": false,
-        "reviewed": true,
-        "reason": "받는 사람의 가족을 이해하고 지시자를 조심스럽게 고백한다.",
-        "batch": "context-08",
-        "application_status": "approved_source_master"
+        "reason": "이미 보여 준 초상 속 인물의 가족임을 확인하고 이 편지를 함부로 다루지 않겠다고 답한다. 기존 정확한 확인 대사의 차분함을 유지한다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/sling-earned-disclosure-delta/reviewed-context-mapping.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
       }
     },
     "w1c:letters:stop": {
-      "0": {
+      "1": {
         "person": "resident_sling",
-        "text": "……네. 대신 할머니한테는 아무 편지도 없었다고 할게요.",
-        "emotion": "anxious",
+        "text": "……네. 편지는 열지 않을게요. 이 일은 여기서만 이야기해 주세요.",
+        "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "할머니에게 편지가 없었다고 거짓 보고할 위험을 감수하는 슬링.",
-        "batch": "context-08",
-        "application_status": "approved_source_master"
+        "reason": "무료 중단·비밀 보호 요청 뒤 편지는 열지 않겠다고 합의한다. 이 일은 여기서만 말해 달라는 경계가 남아 있으므로 기쁨으로 확대하지 않는다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/sling-earned-disclosure-delta/reviewed-context-mapping.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
       }
     },
     "w1c:letters:fake:fail": {
@@ -20363,6 +20408,337 @@
         "reason": "해당 장면에서 알고 있는 사실과 요청을 침착하게 전달한다.",
         "review_batch": "main-01916-context",
         "application_status": "approved_source_master"
+      }
+    },
+    "present:granny:E18:source": {
+      "1": {
+        "person": "granny",
+        "text": "광장에 있었군요. 나도 부인 소식을 기다리고 있어요.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "Player explicitly states an independently recorded pickup location. Granny acknowledges only that stated place and repeats her existing claim of waiting for Mom. Calm neutral reply; no new knowledge about Mom, invitation authorship, or hidden motives.",
+        "batch": "granny-e18-player-response-v2",
+        "application_status": "awaiting_approved_runtime_assets",
+        "visual_runtime_reviewed": false,
+        "context_review_status": "text_context_reviewed_existing_approved_neutral"
+      }
+    },
+    "present:granny:E18:why": {
+      "1": {
+        "person": "granny",
+        "text": "나도 부인 소식을 기다리고 있으니까요. 어디에 소식을 남겼는지 궁금해서요.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "Player asks why Granny wants the source before any comparison is required. Granny states her own reason within her established waiting-for-Mom claim. Neutral, not a reveal, proof, accusation, or emotional escalation.",
+        "batch": "granny-e18-player-response-v2",
+        "application_status": "awaiting_approved_runtime_assets",
+        "visual_runtime_reviewed": false,
+        "context_review_status": "text_context_reviewed_existing_approved_neutral"
+      }
+    },
+    "ev:a:followup:deliver": {
+      "1": {
+        "person": "resident_siluk",
+        "text": "……알겠습니다. 아직 가져오지 못했어요.",
+        "emotion": "anxious",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "기한을 놓친 상태에서 추가 선금 없이 원래 의무를 이행하라는 요구를 받는다. 머뭇거리며 미이행을 인정하므로 불안으로 유지한다. 이행 완료의 기쁨은 금지한다.",
+        "integration_review_source": "/workspace/shared/siluk-witness-causality/reviewed-context.json",
+        "application_status": "awaiting_approved_runtime_assets",
+        "visual_qa": false,
+        "new_asset_approval": false
+      }
+    },
+    "ev:a:followup:explain": {
+      "1": {
+        "person": "resident_siluk",
+        "text": "……받은 돈을 백 부인 빚 갚는 데 썼어요. 짐은 아직 못 가져왔어요.",
+        "emotion": "anxious",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "기한이 지난 뒤 받은 돈을 빚에 썼고 짐도 못 가져왔다고 직접 인정한다. 기존 빚 고백의 압박과 불안을 이어가며 갑작스러운 놀람·공격적 분노로 바꾸지 않는다.",
+        "integration_review_source": "/workspace/shared/siluk-witness-causality/reviewed-context.json",
+        "application_status": "awaiting_approved_runtime_assets",
+        "visual_qa": false,
+        "new_asset_approval": false
+      }
+    },
+    "ev:a:followup:progress": {
+      "1": {
+        "person": "resident_siluk",
+        "text": "……아직 가져오지는 못했어요.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "아직 기한 전이거나 옛 저장의 기한이 불명확하다. 현재 진행상황에 짧게 답할 뿐 늦었다고 단정하거나 죄책감 반응을 강제하지 않는다.",
+        "integration_review_source": "/workspace/shared/siluk-witness-causality/reviewed-context.json",
+        "application_status": "awaiting_approved_runtime_assets",
+        "visual_qa": false,
+        "new_asset_approval": false
+      }
+    },
+    "ev:a:followup:refund": {
+      "1": {
+        "person": "resident_siluk",
+        "text": "……받은 돈을 백 부인 빚 갚는 데 썼어요. 지금은 돌려드릴 돈이 없어요.",
+        "emotion": "anxious",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "정당한 반환 요구에 빚으로 써 버렸고 돌려줄 돈도 없음을 인정한다. 책임 추궁 앞의 불안이며 승리감·적대감·과장된 놀람이 아니다.",
+        "integration_review_source": "/workspace/shared/siluk-witness-causality/reviewed-context.json",
+        "application_status": "awaiting_approved_runtime_assets",
+        "visual_qa": false,
+        "new_asset_approval": false
+      }
+    },
+    "ev:a:witness:later": {
+      "1": {
+        "person": "resident_kongi",
+        "text": "며칠 전에 백 부인네 뒷문으로 들어가는 걸 봤어요.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "2026-10-18 text-context review: Kongi calmly answers Dad's explicit inquiry, reports only seeing entry, and denies seeing indoor actions. No payment-date knowledge or debt conclusion; preserve existing approved neutral asset, runtime visual QA not performed.",
+        "integration_review_source": "/workspace/shared/siluk-witness-causality/reviewed-context.json",
+        "application_status": "awaiting_approved_runtime_assets",
+        "visual_qa": false,
+        "new_asset_approval": false
+      },
+      "3": {
+        "person": "resident_kongi",
+        "text": "아뇨. 들어가는 것만 봤어요.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "2026-10-18 text-context review: Kongi calmly answers Dad's explicit inquiry, reports only seeing entry, and denies seeing indoor actions. No payment-date knowledge or debt conclusion; preserve existing approved neutral asset, runtime visual QA not performed.",
+        "integration_review_source": "/workspace/shared/siluk-witness-causality/reviewed-context.json",
+        "application_status": "awaiting_approved_runtime_assets",
+        "visual_qa": false,
+        "new_asset_approval": false
+      }
+    },
+    "ev:a:witness:next_day": {
+      "1": {
+        "person": "resident_kongi",
+        "text": "어제 백 부인네 뒷문으로 들어가는 걸 봤어요.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "2026-10-18 text-context review: Kongi calmly answers Dad's explicit inquiry, reports only seeing entry, and denies seeing indoor actions. No payment-date knowledge or debt conclusion; preserve existing approved neutral asset, runtime visual QA not performed.",
+        "integration_review_source": "/workspace/shared/siluk-witness-causality/reviewed-context.json",
+        "application_status": "awaiting_approved_runtime_assets",
+        "visual_qa": false,
+        "new_asset_approval": false
+      },
+      "3": {
+        "person": "resident_kongi",
+        "text": "아뇨. 들어가는 것만 봤어요.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "2026-10-18 text-context review: Kongi calmly answers Dad's explicit inquiry, reports only seeing entry, and denies seeing indoor actions. No payment-date knowledge or debt conclusion; preserve existing approved neutral asset, runtime visual QA not performed.",
+        "integration_review_source": "/workspace/shared/siluk-witness-causality/reviewed-context.json",
+        "application_status": "awaiting_approved_runtime_assets",
+        "visual_qa": false,
+        "new_asset_approval": false
+      }
+    },
+    "w1c:letters:intro": {
+      "2": {
+        "person": "resident_sling",
+        "text": "예, 슬링입니다. 잠깐만요.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "첫 접촉에서 우편 담당자라고 짧게 자신을 소개한다. 아직 무단 개봉을 추궁받지 않았으므로 놀람이나 적대 반응을 앞당기지 않는다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/sling-earned-disclosure-delta/reviewed-context-mapping.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
+      }
+    },
+    "w1c:letters:report:reason": {
+      "1": {
+        "person": "resident_sling",
+        "text": "……편지를 베껴 오라는 부탁을 받았어요. 누구 부탁인지는 말 못 해요. 그 이름을 꺼내면 일자리를 잃을까 봐요.",
+        "emotion": "anxious",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "아빠가 신고보다 먼저 사정을 듣기로 했지만 이름은 밝히지 못한다. 생계 위협이 사라진 듯 안심시키지 않는다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/sling-earned-disclosure-delta/reviewed-context-mapping.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
+      }
+    },
+    "w1c:letters:report:warning": {
+      "1": {
+        "person": "resident_sling",
+        "text": "너울한테요? 그러면 저는 우체국에서 일 못 해요.",
+        "emotion": "anxious",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "신고가 아직 확정되기 전에 경비에게 알려지면 일을 못 하게 될 위험을 말한다. 확정 처분이나 이미 해고된 장면처럼 연기하지 않는다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/sling-earned-disclosure-delta/reviewed-context-mapping.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
+      }
+    },
+    "w1c:letters:wage": {
+      "1": {
+        "person": "resident_sling",
+        "text": "세 냥이요.",
+        "emotion": "anxious",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "강요를 고백한 직후 아빠가 하루 품삯을 묻는다. 슬링은 아직 지원 약속을 받지 않은 채 액수만 답하므로 기쁨이나 거래 성사 반응을 넣지 않는다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/sling-earned-disclosure-delta/reviewed-context-mapping.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
+      }
+    },
+    "grudge:sling:reason": {
+      "1": {
+        "person": "resident_sling",
+        "text": "……편지를 베껴 오라는 부탁을 받았어요. 누구 부탁인지는 말 못 해요. 일도 끊겼는데, 그 이름까지 말할 용기는 없어요.",
+        "emotion": "anxious",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "신고 뒤 처음 사정을 듣는 경로에서 이미 일도 끊겼고 이름까지 밝힐 용기는 없다고 거절한다. 실명 고백이나 화해 완료를 앞당기지 않는다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/sling-earned-disclosure-delta/reviewed-context-mapping.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
+      }
+    },
+    "sling:confidence:promise": {
+      "1": {
+        "person": "resident_sling",
+        "text": "……그 약속은 지켜 주세요. 편지에 대해 확인할 건 듣겠습니다.",
+        "emotion": "anxious",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "아빠의 무료 비밀 보호 약속을 받아들이면서도 꼭 지켜 달라고 조심스럽게 요청한다. 돈을 받은 기쁨이나 모든 위험이 해결된 안도는 아니다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/sling-earned-disclosure-delta/reviewed-context-mapping.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
+      }
+    },
+    "grudge:sling:reason:known": {
+      "1": {
+        "person": "resident_sling",
+        "text": "할머니가 베껴 오라고 했다고 말씀드렸죠. 그 사정과 별개로, 저를 경비에게 알리신 건 잊지 못해요.",
+        "emotion": "anxious",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "실명을 이미 들은 저장에만 나오는 확인이다. 기존 지식을 인정하지만 신고당한 원망과 일자리 사정이 남아 있는 조심스러운 반응이다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/sling-earned-disclosure-delta/reviewed-context-mapping.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
+      }
+    },
+    "w1c:letters:catch:known": {
+      "1": {
+        "person": "resident_sling",
+        "text": "전에 말씀드린 할머니의 부탁이에요. 손님 편지를 베껴 오지 않으면 일자리를 잃는다고 하셨죠.",
+        "emotion": "anxious",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "이미 지시자를 들은 저장에서 같은 부탁과 일자리 위협을 상기한다. 새 폭로가 아니라 지속되는 압박의 확인이다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/sling-earned-disclosure-delta/reviewed-context-mapping.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
+      }
+    },
+    "w1c:letters:who:known": {
+      "1": {
+        "person": "resident_sling",
+        "text": "네. 할머니가 손님 편지를 베껴 오라고 하셨던 일이에요.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "이미 알려진 할머니의 부탁이 맞는지 묻는 확인에 짧게 답한다. 추가 충격이나 새로운 고백 장면으로 과장하지 않는다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/sling-earned-disclosure-delta/reviewed-context-mapping.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
+      }
+    },
+    "w1c:letters:report:reason:known": {
+      "1": {
+        "person": "resident_sling",
+        "text": "할머니가 손님 편지를 베껴 오라고 했다는 말씀은 드렸죠. 거절하면 일자리를 잃는다고요.",
+        "emotion": "anxious",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "신고 경고 뒤 이미 들은 사정을 다시 확인한다. 실명 자체는 기존 지식이지만 거절하면 일을 잃는 위험은 남아 있다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/sling-earned-disclosure-delta/reviewed-context-mapping.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
+      }
+    },
+    "w1c:letters:portrait:known": {
+      "0": {
+        "person": "resident_sling",
+        "text": "할머니의 부탁이라고 말씀드렸지만, 이 편지는 열지 않겠어요.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "지시자를 이미 아는 저장에서 이 편지만큼은 열지 않겠다고 보호를 확인한다. 새 비밀이나 위협을 덧붙이지 않는다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/sling-earned-disclosure-delta/reviewed-context-mapping.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
+      }
+    },
+    "w1c:letters:portrait:guarded": {
+      "0": {
+        "person": "resident_sling",
+        "text": "누가 시켰는지는 말 못 해요. 그 이름을 꺼냈다가 일자리를 잃을까 봐요.",
+        "emotion": "anxious",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "초상으로 가족임을 알게 되어도 지시자 이름은 아직 말하지 못한다. 일자리를 잃을까 걱정하는 범위에만 불안을 둔다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/sling-earned-disclosure-delta/reviewed-context-mapping.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
+      }
+    },
+    "w1c:letters:fake:unknown": {
+      "0": {
+        "person": "resident_sling",
+        "text": "누구에게 쪽지를 전하라는 건지, 아직 얘기가 안 됐어요.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "지시자가 아직 밝혀지지 않았을 때 쪽지의 수신자부터 불명확하다고 말한다. 플레이어 소지 자료를 읽은 척하거나 실명을 대신 추측하지 않는다.",
+        "application_status": "awaiting_approved_runtime_assets",
+        "integration_review_source": "/workspace/shared/sling-earned-disclosure-delta/reviewed-context-mapping.json",
+        "visual_qa": false,
+        "new_asset_approval": false,
+        "context_review_status": "authored_context_review_existing_supported_assets"
       }
     }
   }

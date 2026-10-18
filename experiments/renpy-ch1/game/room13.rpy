@@ -493,6 +493,11 @@ label r13_talk_dispatch:
             call r13_lines(r13_reaction,"present:"+r13_target+":"+r13_item+":"+str(r13_disclose_name), binding_route="dynamic:029")
             hide screen r13_material_corner
             $ r13_flush_grants()
+            if r13_granny_warning_asked(r13_target,r13_item,r13_reaction):
+                call r13_granny_warning_reply
+                if _return:
+                    $ r13_topic=_return
+                    jump r13_talk_dispatch
         jump r13_talk_menu
     if r13_topic=="buri_consent":
         call r13_lines([(None, '부리는 손에 든 공구를 내려놓았지만 내 쪽을 쳐다보지는 않았다.'), ('buri', '밖에서는 다들 할아버지가 아이를 잡아먹으려 했다고 수군거려요.'), ('dad', '나는 그렇게 말한 적이 없어.'), ('buri', '누군가는 그렇게 말했어요. 다람이를 살인 혐의에서 구하려고요.'), (None, '내가 딸아이 이야기를 꺼내려 하자 부리가 먼저 고개를 들어 나를 보았다.'), ('dad', '나도 우리 아이가 그 방에서 왜 다쳤는지 진실을 알아야 해.'), ('buri', '그럼 저한테 직접 물어보세요. 할아버지가 어떤 사람이었는지 미리 정해 놓고 묻지는 마시고요.')],"buri:consent:opening")

@@ -11,7 +11,7 @@ init 173 python:
         received="E18" in evidence
         named=met or recognized or promised or bool(flags & {"mother_lamplighter_lead","poc:note_shown:karo"}) or "J01" in evidence or bool(shown)
         return dict(named=named,recognized=recognized,promised=promised,received=received,
-            due=3,pending=promised and not received and "chorong_dead" not in flags and s.get("case_state")=="pending" and "lamplighter_warning" not in s.get("read_topics",[]),
+            due=s.get("day",1),pending=promised and not received and "warning_location" not in flags and "chorong_dead" not in flags and s.get("case_state")=="pending" and "lamplighter_warning" not in s.get("read_topics",[]),
             post="J02" in evidence,post_checked="J03" in evidence)
 
     def r13_mother_remember_show(person,key,identity=False):
@@ -36,15 +36,12 @@ init 173 python:
             r13_mother_remember_show(person,key,identity)
             r13_flag("mother_lamplighter_lead","mother_letter_promised")
             if key=="M01":r13_flag("mother_recognized","intro:memo_shown")
-            if s.get("day",1)<3:
-                when="모레" if s.get("day",1)==1 else "내일"
-                return [(person,"부인이 가족에게 남긴 봉투를 맡아 두었어요. "+when+" 찾아둘 테니 다시 와 주시겠어요?"),
-                    ("dad","3일에 다시 뵙겠습니다.")]
             r13_flag("topic:lamplighter_warning")
             if before["received"]:
                 return [(person,"전에 드린 편지가 부인이 가족에게 남긴 글이에요. 지금 어디 계신지는 저도 몰라요.")]
-            return [(person,"말씀드린 봉투를 찾아뒀어요. 어디서 받으실지 말씀드릴게요." if before["promised"] else "부인이 가족에게 전해 달라고 맡긴 봉투가 있어요."),
-                (person,"여기서 길게 이야기하진 맙시다. 무엇이 궁금하신가요?")]
+            r13_flag("warning_location")
+            return [(person,"말씀드린 봉투는 손님들이 오시기 전에 부인이 맡긴 거예요." if before["promised"] else "손님들이 오시기 전에 부인이 가족에게 전해 달라고 맡긴 봉투가 있어요."),
+                (person,"광장 등 밑 점검함에 두었어요. 그 봉투는 가져가셔도 됩니다.")]
         if owned and early and person=="resident_lamplighter" and key=="E01":
             r13_mother_remember_show(person,key,identity)
             if r13_mother_knowledge()["recognized"]:
@@ -73,11 +70,10 @@ init 173 python:
         k=r13_mother_knowledge(); s=store.room13 or {}
         if k["received"] or k["post_checked"]:return None
         if k["pending"]:
-            due=k["due"];late=s.get("day",1)>=due
             return dict(title="초롱이 맡아 둔 봉투에는 무엇이 있을까?",
-                fact="초롱은 엄마가 가족에게 남긴 봉투를 맡고 있으며, 3일에 다시 오라고 했다.",
-                question="약속한 날이다. 엄마가 남긴 글은 무엇일까?" if late else "엄마는 왜 초롱에게 봉투를 맡겼을까?",
-                hint="약속은 달력에도 적어 두었다. 봉투를 읽기 전에는 내용과 행선지를 알 수 없다.",keys=[v for v in ("M01","J04","J05") if r13_has(v)])
+                fact="초롱은 엄마가 가족에게 남긴 봉투를 맡고 있다고 했다.",
+                question="엄마가 맡긴 봉투를 어디서 받을 수 있을까?",
+                hint="초롱에게 받는 곳을 물어볼 수 있다. 봉투를 읽기 전에는 내용과 행선지를 알 수 없다.",keys=[v for v in ("M01","J04","J05") if r13_has(v)])
         if k["promised"] and not k["received"]:
             return dict(title="엄마가 맡긴 봉투에는 무엇이 있을까?",fact="초롱은 엄마가 맡긴 봉투를 등 밑 점검함에 두었다고 했다.",
                 question="봉투에 남긴 글은 무엇일까?",hint="아직 읽지 않은 글의 내용은 알 수 없다.",keys=[v for v in ("M01","J04","J05") if r13_has(v)])
@@ -107,7 +103,7 @@ init 173 python:
                 ("dad","응. 가져온 편지와 엄마가 맡긴 글을 나란히 놓고 확인해 보자.")]
         if k["promised"]:
             return [("daram","초롱 아저씨가 엄마 봉투를 맡고 있댔지?"),
-                ("dad","응. 3일에 확인하기로 했어. 엄마가 어떤 글을 남겼을까?" if k["pending"] else "응. 등 밑 점검함에 두었다고 했어. 어떤 글을 남겼을까?")]
+                ("dad","응. 지금 어디서 받을 수 있는지 물어보자." if k["pending"] else "응. 등 밑 점검함에 두었다고 했어. 어떤 글을 남겼을까?")]
         if k["post"] or k["post_checked"]:return _r13_review_direction()
         if r13_has("J04"):
             return [("daram","나비 언니가 엄마가 초롱 아저씨에게 봉투를 건네는 걸 봤대."),("dad","그 봉투는 누구에게 남긴 글일까?")]
@@ -132,17 +128,16 @@ init 173 python:
     def r13_calendar_promises():
         rows=_r13_review_promises(); k=r13_mother_knowledge()
         if k["pending"]:
-            rows.append("3일째 · %s요일 — 초롱에게 엄마가 맡긴 봉투를 확인하기로 했다."%r13_weekday(3))
+            rows.append("초롱에게 엄마가 맡긴 봉투를 어디서 받을지 물어볼 수 있다.")
         return rows
 
     _r13_review_opening=r13_conversation_opening
     def r13_conversation_opening(person,first):
         k=r13_mother_knowledge(); s=store.room13 or {}
         if person=="resident_lamplighter" and k["pending"] and not r13_has("chorong_dead"):
-            if s.get("day",1)>=3:
-                r13_flag("topic:lamplighter_warning")
-                return [(person,"다시 오셨군요. 말씀드린 봉투를 찾아뒀어요. 어디에 두었는지 알려드릴게요.")]
-            return [(person,"봉투는 3일에 찾아둘게요. 다른 궁금한 일이 있으세요?")]
+            r13_flag("topic:lamplighter_warning")
+            r13_flag("warning_location")
+            return [(person,"말씀드린 봉투는 광장 등 밑 점검함에 두었어요. 가져가셔도 됩니다.")]
         return _r13_review_opening(person,first)
 
     _r13_review_topic_lines=r13_conversation_topic_lines

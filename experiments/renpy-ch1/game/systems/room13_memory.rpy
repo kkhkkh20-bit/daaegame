@@ -11,9 +11,10 @@ init 114 python:
             fix=("받은 사례금을 나눠 준다",3,[("dad","그 사례금은 제가 혼자 가질 돈이 아니었습니다. 밥값으로 받아 주세요."),
                 ("resident_piko","……가짜를 그린 건 제 잘못이에요. 그래도 밥값은 받을게요. 이걸로 끝내요.")])),
         "sling":dict(person="resident_sling",flag="sling_hostile",
-            cold=[("resident_sling","덕분에 우체국에는 못 나가요. 할머니도 더는 일을 안 주시고요.")],
-            fix=("너울에게 슬링의 사정을 전한다",0,[("dad","슬링에게 편지를 열게 시킨 사람이 따로 있습니다. 일자리를 빌미로요."),
-                ("neoul","……시킨 사람이 따로 있다면 이야기가 다르오. 내일부터 다시 나오라 하시오."),
+            cold=[("resident_sling","덕분에 우체국에는 못 나가요. 그날 뒤로 일거리도 끊겼고요.")],
+            fix=("사정부터 묻지 않은 일을 사과한다",0,[("dad","편지를 연 일은 그냥 넘길 수 없었습니다. 그래도 사정부터 듣지 않고 신고한 건 성급했습니다."),
+                ("dad","너울 씨, 남의 편지를 열려 한 것은 잘못입니다. 그래도 슬링의 사정을 듣고 다시 일할 기회를 주실 수 없겠습니까?"),
+                ("neoul","……내일부터 다시 나오라 하시오. 편지는 받는 사람이 열게 하고."),
                 ("resident_sling","고마워요. 그래도 그날 너울 앞에 저를 세운 건 안 잊을 거예요.")]),extra=("neoul_annoyed",)),
         "ttadak":dict(person="resident_ttadak",flag="ttadak_hostile",
             cold=[("resident_ttadak","제 벽 일을 신고하고 받은 사례금은 잘 쓰셨어요?")],
@@ -63,6 +64,14 @@ init 114 python:
         if _g["fix"]:
             ROOM13["topics"]["grudge_fix:"+_k]=dict(npc=_g["person"],title=_g["fix"][0]+(" (%d냥)"%_g["fix"][1] if _g["fix"][1] else ""),day=[2,14],need=[_g["flag"]],not_flags=[_k+"_reconciled"],give=[],flags=[],lines=list(_g["fix"][2]))
             R13_TOPIC_LABELS["grudge_fix:"+_k]="r13_grudge_fix"
+    # A report does not identify the requester. Listening and apologizing stay
+    # possible before H9, so earning trust cannot depend on the secret itself.
+    ROOM13["topics"]["grudge_reason:sling"]=dict(
+        npc="resident_sling",title="그때 왜 편지를 열려 했습니까?",day=[2,14],
+        need=["sling_hostile"],not_flags=["sling_grudge_reason_heard","sling_reconciled"],
+        discover_any=["sling_hostile"],give=[],flags=[],lines=[])
+    R13_TOPIC_LABELS["grudge_reason:sling"]="r13_sling_grudge_reason"
+    ROOM13["topics"]["grudge_fix:sling"]["discover_any"]=["sling_hostile"]
     # Existing cold topics close once the incident is repaired.
     for _t,_k in (("somi_after_hostile","somi"),("siluk_cold","siluk")):
         ROOM13["topics"][_t]["not_flags"]=list(ROOM13["topics"][_t].get("not_flags",[]))+[_k+"_reconciled"]
@@ -90,8 +99,23 @@ init 114 python:
                 ("resident_eunho","그렇다고 제가 한 일이 없어지진 않소. 그래도 이제부터 당신한테는 남들과 같은 값만 받겠습니다.")]
         return _r13_mem_present(person,key,identity)
 
+label r13_sling_grudge_reason:
+    if not r13_grudge_open("sling") or r13_has("sling_grudge_reason_heard"):
+        return
+    if r13_sling_knows_requester():
+        call r13_lines([("dad","전에 들은 편지 일을 다시 확인하고 싶습니다."),
+            ("resident_sling","할머니가 베껴 오라고 했다고 말씀드렸죠. 그 사정과 별개로, 저를 경비에게 알리신 건 잊지 못해요.")],"grudge:sling:reason:known")
+    else:
+        call r13_lines([("dad","그때 왜 편지를 열려 했는지, 이제라도 들을 수 있겠습니까?"),
+            ("resident_sling","……편지를 베껴 오라는 부탁을 받았어요. 누구 부탁인지는 말 못 해요. 일도 끊겼는데, 그 이름까지 말할 용기는 없어요.")],"grudge:sling:reason")
+    $ r13_flag("sling_job_pressure_heard","sling_grudge_reason_heard")
+    $ r13_finish_topic("grudge_reason:sling")
+    return
+
 label r13_grudge_fix:
     $ _gk=r13_topic.split(":",1)[1]
+    if _gk=="sling" and not r13_grudge_open("sling"):
+        return
     $ _gt,_gcost,_glines=R13_GRUDGES[_gk]["fix"]
     if _gcost and r13_cash_now()<_gcost:
         call r13_lines([("dad","(지금 가진 돈으로는 모자라다. %d냥이 있어야 한다.)"%_gcost,{"thought":True})],"grudge:short:"+_gk, binding_route="dynamic:610")

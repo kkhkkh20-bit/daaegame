@@ -51,7 +51,7 @@ init 100 python:
         ("dad","그 봉투가 아내에게서 받은 것인지도 아십니까?"),
         ("karo","누구 봉투인지는 몰라요. 그래도 허락 없이 함을 열어 보지는 마세요."),
         ("dad","점검함을 찾기 전에, 아내의 메모와 들은 이야기를 가지고 초롱 씨에게 먼저 물어보겠습니다.")])
-    ROOM13["topics"]["poc:granny_letter"]=dict(npc="granny",title="아내는 쓴 적 없다는데, 그 편지는 누가 썼습니까?",day=[3,4],need=["poc:letter_conflict","warning_exposed"],give=["J06"],flags=["poc:granny_explained"],lines=[
+    ROOM13["topics"]["poc:granny_letter"]=dict(npc="granny",title="아내는 쓴 적 없다는데, 그 편지는 누가 썼습니까?",day=[2,4],need=["poc:letter_conflict","warning_exposed"],give=["J06"],flags=["poc:granny_explained"],lines=[
         ("dad","아내 이름으로 온 편지와 아내가 직접 쓴 글을 함께 읽었습니다. 아내는 오라는 편지를 쓴 적이 없다고 썼더군요."),
         ("granny","부인이 가족을 보고 싶다고 했어요. 그 말을 제가 받아 적어 부쳤을 뿐이에요."),
         ("dad","그럼 아내는 왜 여관에는 자기 행선지를 말하지 말라고 했을까요?"),
@@ -80,8 +80,6 @@ init 100 python:
             return original+[(person,"식사 준비를 같이 하고 나면, 그분이 오셨을 때 제가 본 것도 차분히 말씀드릴게요." if person=="nabi" else "배달을 마치고 짐표를 정리할 때, 초롱 씨가 소식을 맡아 두는 곳도 말씀드릴게요.")]
         if key in ("J04","J05") and person=="resident_lamplighter":
             _r13_poc_present(person,key,identity)
-            if s["day"]<3:
-                return [("dad","혹시 아내가 맡긴 봉투가 있는지 직접 확인하고 싶습니다."),(person,"가족에게 전할 것이 있어요. 오늘은 챙길 일이 남아 있어서, 내일 다시 와 주시겠어요?")]
             r13_flag("topic:lamplighter_warning")
             return [("dad","아내가 봉투를 맡겼다는 이야기와 점검함 이야기를 들었습니다. 혹시 가족에게 남긴 글입니까?"),(person,"맞아요. 먼저 어디서 어떻게 받을지 설명할게요. 물어보세요.")]
         result=_r13_poc_present(person,key,identity)

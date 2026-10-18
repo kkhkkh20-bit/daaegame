@@ -7,15 +7,35 @@ class DynamicBindings(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
   cls.bind=staticmethod(binder());cls.registry=json.loads((ROOT/'game/assets/room13-dialogue-bindings.json').read_text())
- def test_all_119_calls_have_exact_route_and_original_arguments(self):
+ def test_original_119_and_two_explicit_providers_have_exact_routes_and_arguments(self):
   import line_cues
   queue=json.loads((OUT/'runtime-binding-queue.json').read_text())
+  checked=set();held=set();retired=set()
   for i,row in enumerate(queue):
+   if row.get('active') is False:
+    retired.add(i)
+    self.assertEqual(i,238);self.assertEqual(row['identity'],'ep1:dawn:thought')
+    self.assertEqual(row['binding_status'],'retired_removed_source_call')
+    self.assertNotIn('dynamic:%03d'%i,self.registry['routes'])
+    self.assertNotIn('"ep1:dawn:thought"',(ROOT/row['source']).read_text())
+    continue
+   if row.get('emit_binding') is False:
+    held.add(i)
+    self.assertEqual(row['assets'],'HOLD');self.assertNotIn('dynamic:%03d'%i,self.registry['routes']);continue
    if row['binding_status']=='static_exact_binding_available':continue
+   checked.add('dynamic:%03d'%i)
+   self.assertIn('call r13_lines(', (ROOT/row['source']).read_text().splitlines()[row['line']-1])
    source=(ROOT/row['source']).read_text();offset=sum(len(s) for s in source.splitlines(True)[:row['line']-1]);start=source.index('call r13_lines(',offset)+len('call r13_lines');end=line_cues._match_bracket(source,start)
    actual=ast.parse('f'+source[start:end+1],mode='eval').body;original=ast.parse('f('+row['call_expression']+')',mode='eval').body
    self.assertEqual([ast.dump(a) for a in actual.args],[ast.dump(a) for a in original.args]);self.assertEqual(actual.keywords[-1].value.value,'dynamic:%03d'%i)
-  self.assertEqual(len(self.registry['routes']),119)
+  self.assertEqual(checked,set(self.registry['routes']))
+  self.assertEqual(retired,{238});self.assertEqual(held,{803,804,806,807,808,809,810,811,812,813,814})
+  original_routes=['dynamic:013', 'dynamic:016', 'dynamic:019', 'dynamic:022', 'dynamic:023', 'dynamic:024', 'dynamic:028', 'dynamic:029', 'dynamic:035', 'dynamic:077', 'dynamic:081', 'dynamic:086', 'dynamic:096', 'dynamic:097', 'dynamic:102', 'dynamic:103', 'dynamic:105', 'dynamic:109', 'dynamic:168', 'dynamic:169', 'dynamic:170', 'dynamic:171', 'dynamic:172', 'dynamic:173', 'dynamic:192', 'dynamic:194', 'dynamic:199', 'dynamic:202', 'dynamic:203', 'dynamic:209', 'dynamic:211', 'dynamic:212', 'dynamic:213', 'dynamic:214', 'dynamic:215', 'dynamic:216', 'dynamic:217', 'dynamic:218', 'dynamic:219', 'dynamic:220', 'dynamic:221', 'dynamic:222', 'dynamic:223', 'dynamic:224', 'dynamic:225', 'dynamic:226', 'dynamic:227', 'dynamic:262', 'dynamic:275', 'dynamic:290', 'dynamic:291', 'dynamic:303', 'dynamic:320', 'dynamic:324', 'dynamic:335', 'dynamic:342', 'dynamic:344', 'dynamic:351', 'dynamic:354', 'dynamic:369', 'dynamic:385', 'dynamic:388', 'dynamic:389', 'dynamic:392', 'dynamic:393', 'dynamic:402', 'dynamic:404', 'dynamic:405', 'dynamic:411', 'dynamic:412', 'dynamic:415', 'dynamic:416', 'dynamic:418', 'dynamic:426', 'dynamic:438', 'dynamic:439', 'dynamic:452', 'dynamic:454', 'dynamic:455', 'dynamic:463', 'dynamic:466', 'dynamic:467', 'dynamic:468', 'dynamic:469', 'dynamic:470', 'dynamic:471', 'dynamic:472', 'dynamic:475', 'dynamic:482', 'dynamic:530', 'dynamic:540', 'dynamic:544', 'dynamic:551', 'dynamic:565', 'dynamic:575', 'dynamic:576', 'dynamic:578', 'dynamic:579', 'dynamic:592', 'dynamic:596', 'dynamic:600', 'dynamic:601', 'dynamic:604', 'dynamic:605', 'dynamic:606', 'dynamic:607', 'dynamic:608', 'dynamic:609', 'dynamic:610', 'dynamic:611', 'dynamic:612', 'dynamic:658', 'dynamic:664', 'dynamic:665', 'dynamic:718', 'dynamic:739', 'dynamic:743', 'dynamic:768', 'dynamic:781']
+  self.assertEqual(len(original_routes),119)
+  self.assertEqual(set(self.registry['routes']),set(original_routes)|{'dynamic:805','dynamic:857'})
+  for index,provider in ((805,'r13_piko_notice_lines'),(857,'r13_sling_confront_lines')):
+   self.assertEqual(queue[index]['provider_scope']['function'],provider)
+   self.assertEqual(queue[index]['provider_group'],'explicit_function')
  def test_same_text_in_different_scene_has_different_decision(self):
   packet=('daram','아빠!');b=self.bind([packet],'ev:visit:open','dynamic:544')
   self.assertEqual(b['rows']['0']['emotion'],'joy')
@@ -71,3 +91,4 @@ class DynamicBindings(unittest.TestCase):
    result=json.loads((OUT/name).read_text());self.assertEqual(result['unresolved'],[])
   self.assertEqual(len(json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text())['people']),59)
 if __name__=='__main__':unittest.main()
+

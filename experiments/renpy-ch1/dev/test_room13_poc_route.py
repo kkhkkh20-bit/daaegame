@@ -29,9 +29,18 @@ class PocRouteTest(unittest.TestCase):
  def test_previous_work_is_recognized_without_new_trust_flags(self):
   s=self.store.room13;s.update(day=3,evidence=['M01']);s['livelihood']['jobs']=[dict(day=2,key='delivery')]
   self.ns['r13_present']('karo','M01');self.assertIn('poc:karo_box',[k for k,t in self.ns['r13_topics']('karo')]);self.assertNotIn('J05',s['evidence'])
- def test_witness_presentations_wait_until_day_three_and_do_not_grant_letter(self):
-  s=self.store.room13;s['evidence']=['J04'];self.ns['r13_present']('resident_lamplighter','J04');self.assertNotIn('topic:lamplighter_warning',s['flags'])
-  s['day']=3;self.ns['r13_present']('resident_lamplighter','J04');self.assertIn('topic:lamplighter_warning',s['flags']);self.assertNotIn('E18',s['evidence'])
+ def test_witness_presentations_open_same_day_without_granting_letter(self):
+  s=self.store.room13
+  for day in (2,3):
+   for key in ('J04','J05'):
+    with self.subTest(day=day,key=key):
+     s.update(day=day,evidence=[key],flags=[])
+     rows=self.ns['r13_present']('resident_lamplighter',key)
+     self.assertIn('topic:lamplighter_warning',s['flags']);self.assertNotIn('E18',s['evidence'])
+     self.assertNotRegex(str(rows),'내일|모레|3일')
+     before=copy.deepcopy(s);self.ns['r13_present']('resident_lamplighter',key);self.assertEqual(s,before)
+  s.update(day=2,evidence=[],flags=[]);before=copy.deepcopy(s)
+  self.assertEqual(self.ns['r13_present']('resident_lamplighter','J04'),[('base','base response')]);self.assertEqual(s,before)
  def test_letter_comparison_requires_both_owned_and_presentation_preserves_disclosure(self):
   s=self.store.room13;s['day']=3;s['evidence']=['E01'];self.assertEqual(self.ns['r13_compare_result'](['E01','E18']),'base comparison');self.assertNotIn('poc:letter_conflict',s['flags'])
   s['evidence'].append('E18');self.ns['r13_compare_result'](['E01','E18']);self.assertIn('poc:letter_conflict',s['flags'])
@@ -64,3 +73,4 @@ class PocRouteTest(unittest.TestCase):
   s=self.store.room13;s.update(day=3,period=2,evidence=['M01','J02']);before=copy.deepcopy(s)
   self.assertIn('내일 오전',self.ns['r13_poc_goal']());self.ns['r13_first_mystery_notes']();self.ns['r13_learning_job_context']('kitchen');self.assertEqual(s,before)
 if __name__=='__main__':unittest.main()
+

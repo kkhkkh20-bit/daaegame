@@ -73,7 +73,7 @@
     },
     {
       "source": "game/systems/room13_ep1_lamp_thief.rpy",
-      "line": 476,
+      "line": 485,
       "expression": "(\"neoul\",\"그림쟁이가 쓰러졌소.\"+(\" 기록실 선생도 죽었소.\" if r13_has(\"librarian_dead\") else \"\")+\" 오늘 끝냅시다.\")",
       "who_expression": "'neoul'",
       "text_expression": "'그림쟁이가 쓰러졌소.' + (' 기록실 선생도 죽었소.' if r13_has('librarian_dead') else '') + ' 오늘 끝냅시다.'",
@@ -87,7 +87,7 @@
     },
     {
       "source": "game/systems/room13_week1_cases.rpy",
-      "line": 242,
+      "line": 305,
       "expression": "(\"daram\" if room13.get(\"daram_state\") in (\"with_dad\",\"rescued\") else \"dad\",(\"엄마 털실이다…….\" if room13.get(\"daram_state\") in (\"with_dad\",\"rescued\") else \"(다람이에게 돌려줄 것들이다.)\"))",
       "who_expression": "'daram' if room13.get('daram_state') in ('with_dad', 'rescued') else 'dad'",
       "text_expression": "'엄마 털실이다…….' if room13.get('daram_state') in ('with_dad', 'rescued') else '(다람이에게 돌려줄 것들이다.)'",
@@ -98,6 +98,37 @@
       "application_status": "awaiting_approved_runtime_assets",
       "runtime_binding": "local_callsite_snapshot_binding_assets_held",
       "preserve_authored_action": false
+    },
+    {
+      "source": "game/systems/room13_piko_causality.rpy",
+      "function": "r13_piko_notice_lines",
+      "context": "def r13_piko_notice_lines(recovery=False):",
+      "identity": "ep1:piko:notice:v1",
+      "index": 2,
+      "who_expression": "'neoul'",
+      "text_expression": "'3번 등 안의 조각이 없어졌소. %s 아침부터 오후까지 광장에서 이 일을 따져 보겠소. 그날 밤 본 것이 있는 사람은 나오시오.' % when",
+      "finite_locals": {
+        "when": [
+          "오늘",
+          "내일"
+        ]
+      },
+      "person": "neoul",
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "조각이 사라진 일을 공개 확인하자는 업무 공지다. 판결·범인 확정·새 피해자 사망을 보태지 않는다. 오늘은 day4 period<=1 회복, 내일은 day3 최초/회복이며 실제 월일을 만들지 않는다.",
+      "rendered_texts": [
+        "3번 등 안의 조각이 없어졌소. 내일 아침부터 오후까지 광장에서 이 일을 따져 보겠소. 그날 밤 본 것이 있는 사람은 나오시오.",
+        "3번 등 안의 조각이 없어졌소. 오늘 아침부터 오후까지 광장에서 이 일을 따져 보겠소. 그날 밤 본 것이 있는 사람은 나오시오."
+      ],
+      "new_asset_approval": false,
+      "visual_qa": false,
+      "integration_review_source": "/workspace/shared/piko-causality-prep/docs/reviews/piko-causality-context-review.json",
+      "line": 30,
+      "expression": "(\"neoul\", \"3번 등 안의 조각이 없어졌소. %s 아침부터 오후까지 광장에서 이 일을 따져 보겠소. 그날 밤 본 것이 있는 사람은 나오시오.\" % when, {\"expression\":\"neutral\"})",
+      "application_status": "awaiting_approved_runtime_assets",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held"
     }
   ],
   "runtime_binding": "local_callsite_snapshot_binding_assets_held"

@@ -99,6 +99,8 @@ init 190 python:
         "granny_rules":("heard:door_locks",),
         # A named meal and a disputed night visit must be heard before asking.
         "life:nabi":("read:help:nabi", "life:nabi_helped"),
+        "intro:lamplighter_mother":("read:lamplighter_warning", "E18"),
+        "intro:post_visit":("E18",),
         "cross:nabi_light":("read:cross:nabi_door", "asked_nabi_door"),
         "life:granny:work":("heard:life:granny:work",),
         "karo_parcel":("J03", "heard:return_parcels"),
@@ -244,10 +246,10 @@ init 190 python:
         if person=="resident_librarian" and day==3:
             if not r13_has("lt_lib_warned"):pending.add("L04")
             elif not r13_has("lt_lib_safe"):pending.add("L00")
-        if person=="resident_lamplighter" and day>=3 and not r13_has("topic:lamplighter_warning"):
+        if person=="resident_lamplighter" and not r13_has("topic:lamplighter_warning"):
             pending.update(("M01","J04","J05"))
         if person in ("nabi","karo") and s.get("life_poc") and 2<=day<=4 and not r13_has("poc:note_shown:"+person):pending.add("M01")
-        if person=="seryeon" and r13_has("J02"):
+        if person=="seryeon" and (r13_has("J02") or r13_has("E18")):
             if not r13_has("intro:post_letter"):pending.add("E01")
             if not r13_has("intro:post_memo"):pending.add("M01")
         if person=="buri":

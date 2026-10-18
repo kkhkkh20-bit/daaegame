@@ -1,0 +1,1241 @@
+{
+  "base_commit": "a3350f2618b33ca1aab57504c8e8227174153b0e",
+  "status": "PLAN_ONLY_NOT_APPLIED",
+  "source_files": [
+    "game/systems/room13_town_events2.rpy",
+    "game/room13_dialogue_openings_20261013.rpy"
+  ],
+  "static_packet_changes": [
+    {
+      "identity": "ev:a:advance:unknown",
+      "before": null,
+      "after": {
+        "line": 303,
+        "rows": [
+          [
+            "dad",
+            "(실룩에게 선금을 준 일은 기억난다. 부탁한 짐부터 확인해야겠다.)",
+            {
+              "thought": true
+            }
+          ]
+        ]
+      },
+      "review_status": "CONTEXT_REVIEW_COMPLETE_NOT_VISUAL_QA"
+    },
+    {
+      "identity": "ev:a:followup:deliver",
+      "before": null,
+      "after": {
+        "line": 339,
+        "rows": [
+          [
+            "dad",
+            "선금은 이미 드렸습니다. 부탁한 짐부터 가져와 주세요."
+          ],
+          [
+            "resident_siluk",
+            "……알겠습니다. 아직 가져오지 못했어요."
+          ]
+        ]
+      },
+      "review_status": "CONTEXT_REVIEW_COMPLETE_NOT_VISUAL_QA"
+    },
+    {
+      "identity": "ev:a:followup:explain",
+      "before": null,
+      "after": {
+        "line": 328,
+        "rows": [
+          [
+            "dad",
+            "짐을 가져오기로 한 때가 지났습니다. 어떻게 된 겁니까?"
+          ],
+          [
+            "resident_siluk",
+            "……받은 돈을 백 부인 빚 갚는 데 썼어요. 짐은 아직 못 가져왔어요."
+          ]
+        ]
+      },
+      "review_status": "CONTEXT_REVIEW_COMPLETE_NOT_VISUAL_QA"
+    },
+    {
+      "identity": "ev:a:followup:progress",
+      "before": null,
+      "after": {
+        "line": 324,
+        "rows": [
+          [
+            "dad",
+            "선금 드리고 부탁한 짐 말입니다. 어디까지 확인하셨습니까?"
+          ],
+          [
+            "resident_siluk",
+            "……아직 가져오지는 못했어요."
+          ]
+        ]
+      },
+      "review_status": "CONTEXT_REVIEW_COMPLETE_NOT_VISUAL_QA"
+    },
+    {
+      "identity": "ev:a:followup:refund",
+      "before": null,
+      "after": {
+        "line": 333,
+        "rows": [
+          [
+            "dad",
+            "짐을 못 가져오셨으면 선금을 돌려주세요."
+          ],
+          [
+            "resident_siluk",
+            "……받은 돈을 백 부인 빚 갚는 데 썼어요. 지금은 돌려드릴 돈이 없어요."
+          ],
+          [
+            "dad",
+            "그럼 돌려받을 돈으로 남겨 두겠습니다."
+          ]
+        ]
+      },
+      "review_status": "CONTEXT_REVIEW_COMPLETE_NOT_VISUAL_QA"
+    },
+    {
+      "identity": "ev:a:followup:resolved",
+      "before": null,
+      "after": {
+        "line": 320,
+        "rows": [
+          [
+            null,
+            "이 선금 건은 이미 정리했다. 새로 돈을 건네지는 않았다."
+          ]
+        ]
+      },
+      "review_status": "CONTEXT_REVIEW_COMPLETE_NOT_VISUAL_QA"
+    },
+    {
+      "identity": "ev:a:overdue:late",
+      "before": null,
+      "after": {
+        "line": 299,
+        "rows": [
+          [
+            null,
+            "실룩이 짐을 가져오겠다고 약속한 날이 지났다. 아직 짐은 받지 못했다."
+          ]
+        ]
+      },
+      "review_status": "CONTEXT_REVIEW_COMPLETE_NOT_VISUAL_QA"
+    },
+    {
+      "identity": "ev:a:overdue:next_day",
+      "before": null,
+      "after": {
+        "line": 301,
+        "rows": [
+          [
+            null,
+            "날이 바뀌어도 실룩에게 부탁한 짐은 오지 않았다."
+          ]
+        ]
+      },
+      "review_status": "CONTEXT_REVIEW_COMPLETE_NOT_VISUAL_QA"
+    },
+    {
+      "identity": "ev:a:overdue:sunset",
+      "before": null,
+      "after": {
+        "line": 297,
+        "rows": [
+          [
+            null,
+            "해가 졌지만, 실룩이 가져오기로 한 짐은 아직 받지 못했다."
+          ]
+        ]
+      },
+      "review_status": "CONTEXT_REVIEW_COMPLETE_NOT_VISUAL_QA"
+    },
+    {
+      "identity": "ev:a:paid",
+      "before": {
+        "line": 106,
+        "rows": [
+          [
+            "resident_siluk",
+            "해 지기 전에 짐 가지고 올게요. 걱정 마세요."
+          ],
+          [
+            null,
+            "실룩은 해가 져도, 다음 날이 되어도 오지 않았다."
+          ],
+          [
+            "resident_kongi",
+            "실룩 아저씨요? 어제 백 부인네 뒷문으로 들어가던데요."
+          ]
+        ]
+      },
+      "after": {
+        "line": 243,
+        "rows": [
+          [
+            "resident_siluk",
+            "해 지기 전에 짐 가지고 올게요. 걱정 마세요."
+          ],
+          [
+            null,
+            "실룩은 선금을 챙겨 자리를 떠났다."
+          ]
+        ]
+      },
+      "review_status": "CONTEXT_REVIEW_COMPLETE_NOT_VISUAL_QA"
+    },
+    {
+      "identity": "ev:a:paid_all",
+      "before": {
+        "line": 112,
+        "rows": [
+          [
+            "resident_siluk",
+            "……이것뿐이에요? 뭐, 일단 받죠."
+          ],
+          [
+            null,
+            "그 뒤로 실룩은 다시 나타나지 않았다."
+          ]
+        ]
+      },
+      "after": {
+        "line": 248,
+        "rows": [
+          [
+            "resident_siluk",
+            "……이것뿐이에요? 뭐, 일단 받죠."
+          ],
+          [
+            null,
+            "실룩은 내가 건넨 돈을 챙겨 자리를 떠났다."
+          ]
+        ]
+      },
+      "review_status": "CONTEXT_REVIEW_COMPLETE_NOT_VISUAL_QA"
+    },
+    {
+      "identity": "ev:a:witness:later",
+      "before": null,
+      "after": {
+        "line": 310,
+        "rows": [
+          [
+            "resident_kongi",
+            "실룩 아저씨요? 선금을 주신 날, 백 부인네 뒷문으로 들어가는 걸 봤어요."
+          ]
+        ]
+      },
+      "review_status": "CONTEXT_REVIEW_COMPLETE_NOT_VISUAL_QA"
+    },
+    {
+      "identity": "ev:a:witness:next_day",
+      "before": null,
+      "after": {
+        "line": 308,
+        "rows": [
+          [
+            "resident_kongi",
+            "실룩 아저씨요? 어제 백 부인네 뒷문으로 들어가던데요."
+          ]
+        ]
+      },
+      "review_status": "CONTEXT_REVIEW_COMPLETE_NOT_VISUAL_QA"
+    }
+  ],
+  "dynamic_opening_additions": [
+    {
+      "source": "game/room13_dialogue_openings_20261013.rpy",
+      "line": 171,
+      "context": "def r13_siluk_advance_greeting",
+      "rows": [
+        [
+          "resident_siluk",
+          "짐을 맡기신 분이죠. 선금은 받았습니다."
+        ]
+      ],
+      "review_status": "CONTEXT_REVIEW_COMPLETE_NOT_VISUAL_QA"
+    },
+    {
+      "source": "game/room13_dialogue_openings_20261013.rpy",
+      "line": 172,
+      "context": "def r13_siluk_advance_greeting",
+      "rows": [
+        [
+          "resident_siluk",
+          "……맡기신 짐 말씀이죠. 아직 가져오지 못했어요."
+        ]
+      ],
+      "review_status": "CONTEXT_REVIEW_COMPLETE_NOT_VISUAL_QA"
+    },
+    {
+      "source": "game/room13_dialogue_openings_20261013.rpy",
+      "line": 173,
+      "context": "def r13_siluk_advance_greeting",
+      "rows": [
+        [
+          "resident_siluk",
+          "맡기신 짐하고 선금 이야기인가요?"
+        ]
+      ],
+      "review_status": "CONTEXT_REVIEW_COMPLETE_NOT_VISUAL_QA"
+    },
+    {
+      "source": "game/room13_dialogue_openings_20261013.rpy",
+      "line": 174,
+      "context": "def r13_siluk_advance_greeting",
+      "rows": [
+        [
+          "resident_siluk",
+          "그때 맡기신 짐 이야기는 기억해요."
+        ]
+      ],
+      "review_status": "CONTEXT_REVIEW_COMPLETE_NOT_VISUAL_QA"
+    }
+  ],
+  "unchanged_dynamic_routes": [
+    "dynamic:739"
+  ],
+  "required_generated_outputs": [
+    "docs/reviews/dialogue-beats/inventory.json",
+    "docs/reviews/dialogue-beats/summary.json",
+    "docs/reviews/dialogue-beats/callsites.json",
+    "docs/reviews/dialogue-beats/runtime-binding-queue.json",
+    "docs/reviews/dialogue-beats/dynamic-literal-inventory.json",
+    "game/assets/room13-dialogue-bindings.json",
+    "docs/OVERRIDE_MAP.md"
+  ],
+  "required_review_outputs": [
+    "game/assets/room13-dialogue-beats.json",
+    "game/assets/room13-line-direction.json",
+    "docs/reviews/dialogue-beats/dynamic-context-review.json"
+  ],
+  "untouched_art_registries": [
+    "game/assets/room13-fullbody-dialogue.json",
+    "game/assets/room13-dialogue-talk-art.json"
+  ],
+  "source_reference_migration_candidates": [
+    {
+      "file": "docs/reviews/dialogue-beats/callsites.json",
+      "references": [
+        {
+          "json_path": "$/0",
+          "source": "game/room13_dialogue_openings_20261013.rpy",
+          "before_line": 60,
+          "after_line": 60,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/526",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 97,
+          "after_line": 233,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/527",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 106,
+          "after_line": null,
+          "status": "REVIEW_CHANGED_OR_REMOVED_SOURCE"
+        },
+        {
+          "json_path": "$/528",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 112,
+          "after_line": null,
+          "status": "REVIEW_CHANGED_OR_REMOVED_SOURCE"
+        },
+        {
+          "json_path": "$/529",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 116,
+          "after_line": 251,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/530",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 118,
+          "after_line": 253,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/531",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 123,
+          "after_line": 258,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/532",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 129,
+          "after_line": null,
+          "status": "REVIEW_CHANGED_OR_REMOVED_SOURCE"
+        },
+        {
+          "json_path": "$/533",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 134,
+          "after_line": 270,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/534",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 139,
+          "after_line": 275,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/535",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 142,
+          "after_line": 278,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/536",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 147,
+          "after_line": 283,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/537",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 151,
+          "after_line": 287,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/538",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 159,
+          "after_line": 352,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/539",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 169,
+          "after_line": 362,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/540",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 180,
+          "after_line": 373,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/541",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 182,
+          "after_line": 375,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/542",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 189,
+          "after_line": 382,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/543",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 192,
+          "after_line": 385,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/544",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 196,
+          "after_line": 389,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/545",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 200,
+          "after_line": 393,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/546",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 208,
+          "after_line": 401,
+          "status": "move_exact_unchanged_source"
+        }
+      ]
+    },
+    {
+      "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+      "references": [
+        {
+          "json_path": "$/rows/1712",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 49,
+          "after_line": 49,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/rows/1714",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 51,
+          "after_line": 51,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/rows/1715",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 54,
+          "after_line": 54,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/rows/1717",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 56,
+          "after_line": 56,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/rows/1718",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 58,
+          "after_line": 58,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/rows/1719",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 59,
+          "after_line": 59,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/rows/1720",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 61,
+          "after_line": 61,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/rows/1721",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 63,
+          "after_line": 63,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/rows/1722",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 64,
+          "after_line": 64,
+          "status": "move_exact_unchanged_source"
+        }
+      ]
+    },
+    {
+      "file": "docs/reviews/dialogue-beats/dynamic-literal-inventory.json",
+      "references": [
+        {
+          "json_path": "$/3476",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 49,
+          "after_line": 49,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3477",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 50,
+          "after_line": 50,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3478",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 51,
+          "after_line": 51,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3479",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 54,
+          "after_line": 54,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3480",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 55,
+          "after_line": 55,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3481",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 56,
+          "after_line": 56,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3482",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 58,
+          "after_line": 58,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3483",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 59,
+          "after_line": 59,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3484",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 61,
+          "after_line": 61,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3485",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 63,
+          "after_line": 63,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3486",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 64,
+          "after_line": 64,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3487",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 72,
+          "after_line": 72,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3488",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 73,
+          "after_line": 73,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3489",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 74,
+          "after_line": 74,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3490",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 97,
+          "after_line": 233,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3491",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 98,
+          "after_line": 234,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3492",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 99,
+          "after_line": 235,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3493",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 106,
+          "after_line": null,
+          "status": "REVIEW_CHANGED_OR_REMOVED_SOURCE"
+        },
+        {
+          "json_path": "$/3494",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 107,
+          "after_line": null,
+          "status": "REVIEW_CHANGED_OR_REMOVED_SOURCE"
+        },
+        {
+          "json_path": "$/3495",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 108,
+          "after_line": null,
+          "status": "REVIEW_CHANGED_OR_REMOVED_SOURCE"
+        },
+        {
+          "json_path": "$/3496",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 112,
+          "after_line": null,
+          "status": "REVIEW_CHANGED_OR_REMOVED_SOURCE"
+        },
+        {
+          "json_path": "$/3497",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 113,
+          "after_line": null,
+          "status": "REVIEW_CHANGED_OR_REMOVED_SOURCE"
+        },
+        {
+          "json_path": "$/3498",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 116,
+          "after_line": 251,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3499",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 118,
+          "after_line": 253,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3500",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 119,
+          "after_line": 254,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3501",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 123,
+          "after_line": 258,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3502",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 124,
+          "after_line": 259,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3503",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 129,
+          "after_line": null,
+          "status": "REVIEW_CHANGED_OR_REMOVED_SOURCE"
+        },
+        {
+          "json_path": "$/3504",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 130,
+          "after_line": null,
+          "status": "REVIEW_CHANGED_OR_REMOVED_SOURCE"
+        },
+        {
+          "json_path": "$/3505",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 131,
+          "after_line": null,
+          "status": "REVIEW_CHANGED_OR_REMOVED_SOURCE"
+        },
+        {
+          "json_path": "$/3506",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 134,
+          "after_line": 270,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3507",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 135,
+          "after_line": 271,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3508",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 139,
+          "after_line": 275,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3509",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 142,
+          "after_line": 278,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3510",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 143,
+          "after_line": 279,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3511",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 147,
+          "after_line": 283,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3512",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 148,
+          "after_line": 284,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3513",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 151,
+          "after_line": 287,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3514",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 159,
+          "after_line": 352,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3515",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 160,
+          "after_line": 353,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3516",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 161,
+          "after_line": 354,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3517",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 162,
+          "after_line": 355,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3518",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 163,
+          "after_line": 356,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3519",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 169,
+          "after_line": 362,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3520",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 170,
+          "after_line": 363,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3521",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 171,
+          "after_line": 364,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3522",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 172,
+          "after_line": 365,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3523",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 173,
+          "after_line": 366,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3524",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 180,
+          "after_line": 373,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3525",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 182,
+          "after_line": 375,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3526",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 183,
+          "after_line": 376,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3527",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 184,
+          "after_line": 377,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3528",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 185,
+          "after_line": 378,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3529",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 189,
+          "after_line": 382,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3530",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 192,
+          "after_line": 385,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3531",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 193,
+          "after_line": 386,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3532",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 196,
+          "after_line": 389,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3533",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 197,
+          "after_line": 390,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3534",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 200,
+          "after_line": 393,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3535",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 201,
+          "after_line": 394,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3536",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 202,
+          "after_line": 395,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/3537",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 203,
+          "after_line": 396,
+          "status": "move_exact_unchanged_source"
+        }
+      ]
+    },
+    {
+      "file": "docs/reviews/dialogue-beats/runtime-binding-queue.json",
+      "references": [
+        {
+          "json_path": "$/77",
+          "source": "game/room13_dialogue_openings_20261013.rpy",
+          "before_line": 60,
+          "after_line": 60,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/719",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 97,
+          "after_line": 233,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/720",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 106,
+          "after_line": null,
+          "status": "REVIEW_CHANGED_OR_REMOVED_SOURCE"
+        },
+        {
+          "json_path": "$/721",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 112,
+          "after_line": null,
+          "status": "REVIEW_CHANGED_OR_REMOVED_SOURCE"
+        },
+        {
+          "json_path": "$/722",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 116,
+          "after_line": 251,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/723",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 118,
+          "after_line": 253,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/724",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 123,
+          "after_line": 258,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/725",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 129,
+          "after_line": null,
+          "status": "REVIEW_CHANGED_OR_REMOVED_SOURCE"
+        },
+        {
+          "json_path": "$/726",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 134,
+          "after_line": 270,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/727",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 139,
+          "after_line": 275,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/728",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 142,
+          "after_line": 278,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/729",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 147,
+          "after_line": 283,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/730",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 151,
+          "after_line": 287,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/731",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 159,
+          "after_line": 352,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/732",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 169,
+          "after_line": 362,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/733",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 180,
+          "after_line": 373,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/734",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 182,
+          "after_line": 375,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/735",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 189,
+          "after_line": 382,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/736",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 192,
+          "after_line": 385,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/737",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 196,
+          "after_line": 389,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/738",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 200,
+          "after_line": 393,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/739",
+          "source": "game/systems/room13_town_events2.rpy",
+          "before_line": 208,
+          "after_line": 401,
+          "status": "move_exact_unchanged_source"
+        }
+      ]
+    },
+    {
+      "file": "docs/reviews/dialogue-beats/supplemental-context-review.json",
+      "references": [
+        {
+          "json_path": "$/rows/193",
+          "source": "game/room13_dialogue_openings_20261013.rpy",
+          "before_line": 229,
+          "after_line": 239,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/rows/194",
+          "source": "game/room13_dialogue_openings_20261013.rpy",
+          "before_line": 231,
+          "after_line": 241,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/rows/195",
+          "source": "game/room13_dialogue_openings_20261013.rpy",
+          "before_line": 233,
+          "after_line": 243,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/rows/196",
+          "source": "game/room13_dialogue_openings_20261013.rpy",
+          "before_line": 234,
+          "after_line": 244,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/rows/277",
+          "source": "game/room13_dialogue_openings_20261013.rpy",
+          "before_line": 108,
+          "after_line": 108,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/rows/278",
+          "source": "game/room13_dialogue_openings_20261013.rpy",
+          "before_line": 117,
+          "after_line": 117,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/rows/279",
+          "source": "game/room13_dialogue_openings_20261013.rpy",
+          "before_line": 123,
+          "after_line": 123,
+          "status": "move_exact_unchanged_source"
+        },
+        {
+          "json_path": "$/rows/280",
+          "source": "game/room13_dialogue_openings_20261013.rpy",
+          "before_line": 127,
+          "after_line": 127,
+          "status": "move_exact_unchanged_source"
+        }
+      ]
+    }
+  ],
+  "override_dependencies": {
+    "new_overrides": [],
+    "new_helpers_init104": [
+      "r13_siluk_advance_record",
+      "r13_siluk_pay_advance",
+      "r13_siluk_advance_notice",
+      "r13_siluk_commit_notice",
+      "r13_siluk_witness_ready",
+      "r13_siluk_commit_witness",
+      "r13_siluk_sync_advance",
+      "r13_siluk_advance_phase",
+      "r13_siluk_record_request"
+    ],
+    "new_helpers_init75": [
+      "r13_siluk_advance_greeting"
+    ],
+    "runtime_dependencies": [
+      "r13_wallet(init91)",
+      "r13_town_set(init102)",
+      "r13_abs_time(init56)",
+      "r13_people(final override chain)",
+      "r13_note_encounter"
+    ],
+    "opening_existing_line_delta": 10
+  },
+  "notes": [
+    "See siluk-advance-context-review.json for exact editorial mapping to existing approved art; no new artwork approval or visual QA.",
+    "Regenerate from combined next-patch tree, not .65.",
+    "Compiler PROVIDERS is queue-index based: preserve existing binding_route IDs and verify remapped callsites.",
+    "Plan source reference candidates came from available local metadata snapshot; verify on the exact combined baseline before applying."
+  ]
+}

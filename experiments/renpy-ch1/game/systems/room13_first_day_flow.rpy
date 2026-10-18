@@ -88,16 +88,16 @@ label r13_life_first_night:
     call r13_scene(R13_PLACES["room13"][1],R13_PLACES["room13"][0],"night")
     call r13_lines([("daram","엄마가 여기 있었던 건 맞지? 이불도 엄마가 꿰맨 것 같아."),("dad","응. 메모도 남겨 뒀고. 그런데 엄마가 지금 어디 있는지는 더 알아봐야겠어.")],"life:night1:plan:v2")
     if r13_has("mother_expected_family"):
-        call r13_lines([("daram","메모에 아빠랑 내가 도착하면 이 방으로 오라고 했지."),("dad","응. 엄마도 우리가 올 걸 알고 있었어. 그런데 기다리던 방에는 없네.")],"life:night1:comparison")
-    if r13_mother_knowledge()["promised"]:
-        call r13_lines([("daram","초롱 아저씨가 엄마 봉투를 맡고 있대."),("dad","응. 3일에 다시 만나기로 했어. 엄마가 어떤 글을 남겼을까?")],"life:night1:promised")
+        call r13_lines([("daram","메모에 아빠랑 내가 도착하면 이 방으로 오라고 했지."),("dad","응. 혹시 우리가 오면 이 방을 찾을 거라고 생각했나 봐. 지금 어디 있는지는 아직 모르고.")],"life:night1:comparison")
+    if r13_mother_knowledge()["promised"] and not r13_mother_knowledge()["received"]:
+        call r13_lines([("daram","초롱 아저씨가 엄마 봉투를 맡고 있대."),("dad","응. 어디서 받을 수 있는지 바로 물어볼 수 있어. 엄마가 어떤 글을 남겼을까?")],"life:night1:promised")
     elif r13_mother_knowledge()["recognized"]:
         call r13_lines([("daram","초롱 아저씨가 엄마를 알아봤지."),("dad","응. 엄마와 언제 어디서 만났는지도 더 들어 보고 싶어.")],"life:night1:recognized")
     elif r13_mother_knowledge()["named"]:
         call r13_lines([("daram","메모에 적힌 분은 초롱 아저씨지?"),("dad","응. 그분도 엄마를 기억할까?")],"life:night1:known_lead")
     else:
         call r13_lines([("daram","등불 돌보는 분이 누구인지는 아직 모르지?"),("dad","응. 이 마을 사람이라면 누구 말인지 알 텐데.")],"life:night1:unknown_lead")
-    call r13_lines([("daram","엄마는 왜 우리를 부르고 없어진 거야?"),("dad","엄마는 이 방에 우리에게 남긴 메모를 두었어. 무엇을 보고, 누구를 만났는지 하나씩 알아보자."),("daram","엄마 소식 찾으면 나한테도 꼭 말해 줘."),("dad","응. 같이 찾자.")],"life:night1:rest")
+    call r13_lines([("daram","엄마는 지금 어디에 있는 거야?"),("dad","엄마는 이 방에 우리에게 남긴 메모를 두었어. 무엇을 보고, 누구를 만났는지 하나씩 알아보자."),("daram","엄마 소식 찾으면 나한테도 꼭 말해 줘."),("dad","응. 같이 찾자.")],"life:night1:rest")
     $ r13_flag("night1_seen")
     return
 

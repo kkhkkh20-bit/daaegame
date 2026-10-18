@@ -1,0 +1,513 @@
+{
+  "schema": 1,
+  "base_commit": "a3350f2618b33ca1aab57504c8e8227174153b0e",
+  "status": "CONTEXT_REVIEW_COMPLETE_EXISTING_ASSET_MAPPING_ONLY",
+  "scope": "Exact text context and existing registry support reviewed. No image generation, new artwork approval, runtime or visual QA performed.",
+  "art_registry": {
+    "path": "game/assets/room13-dialogue-talk-art.json",
+    "git_blob_sha": "3445c0fbdd93a887f13d8754b1f8661ae10fb392",
+    "fresh_fixed_commit_verified": true,
+    "existing_frame_paths": {
+      "resident_siluk": {
+        "anxious": {
+          "560": "assets/dialogue-source-master/resident_siluk/560/anxious.webp",
+          "760": "assets/dialogue-source-master/resident_siluk/760/anxious.webp",
+          "840": "assets/dialogue-source-master/resident_siluk/840/anxious.webp"
+        },
+        "neutral": {
+          "560": "assets/dialogue-source-master/resident_siluk/560/neutral.webp",
+          "760": "assets/dialogue-source-master/resident_siluk/760/neutral.webp",
+          "840": "assets/dialogue-source-master/resident_siluk/840/neutral.webp"
+        }
+      },
+      "resident_kongi": {
+        "neutral": {
+          "560": "assets/dialogue-source-master/resident_kongi/560/neutral.webp",
+          "760": "assets/dialogue-source-master/resident_kongi/760/neutral.webp",
+          "840": "assets/dialogue-source-master/resident_kongi/840/neutral.webp"
+        }
+      }
+    }
+  },
+  "static_packet_reviews": [
+    {
+      "identity": "ev:a:advance:unknown",
+      "index": 0,
+      "source": "game/systems/room13_town_events2.rpy",
+      "call_line": 303,
+      "person": "dad",
+      "text": "(실룩에게 선금을 준 일은 기억난다. 부탁한 짐부터 확인해야겠다.)",
+      "reviewed": true,
+      "visual_qa": false,
+      "emotion": null,
+      "reaction": false,
+      "reason": "아빠의 생각은 thought/POV 처리를 유지한다. 외부 화자의 표정으로 바꾸지 않는다.",
+      "disposition": "thought_no_portrait_cue"
+    },
+    {
+      "identity": "ev:a:followup:deliver",
+      "index": 0,
+      "source": "game/systems/room13_town_events2.rpy",
+      "call_line": 339,
+      "person": "dad",
+      "text": "선금은 이미 드렸습니다. 부탁한 짐부터 가져와 주세요.",
+      "reviewed": true,
+      "visual_qa": false,
+      "emotion": null,
+      "reaction": false,
+      "reason": "플레이어가 고른 진척·책임·반환·이행 요구다. 단호하지만 고함이나 감정 발작을 쓰지 않았으므로 기본 POV 발화로 두고 실룩의 감정을 대신 씌우지 않는다.",
+      "disposition": "default_pov_speech_no_talk_art_cue"
+    },
+    {
+      "identity": "ev:a:followup:deliver",
+      "index": 1,
+      "source": "game/systems/room13_town_events2.rpy",
+      "call_line": 339,
+      "person": "resident_siluk",
+      "text": "……알겠습니다. 아직 가져오지 못했어요.",
+      "reviewed": true,
+      "visual_qa": false,
+      "emotion": "anxious",
+      "reaction": false,
+      "reason": "기한을 놓친 상태에서 추가 선금 없이 원래 의무를 이행하라는 요구를 받는다. 머뭇거리며 미이행을 인정하므로 불안으로 유지한다. 이행 완료의 기쁨은 금지한다.",
+      "disposition": "bind_existing_approved_talk_frame"
+    },
+    {
+      "identity": "ev:a:followup:explain",
+      "index": 0,
+      "source": "game/systems/room13_town_events2.rpy",
+      "call_line": 328,
+      "person": "dad",
+      "text": "짐을 가져오기로 한 때가 지났습니다. 어떻게 된 겁니까?",
+      "reviewed": true,
+      "visual_qa": false,
+      "emotion": null,
+      "reaction": false,
+      "reason": "플레이어가 고른 진척·책임·반환·이행 요구다. 단호하지만 고함이나 감정 발작을 쓰지 않았으므로 기본 POV 발화로 두고 실룩의 감정을 대신 씌우지 않는다.",
+      "disposition": "default_pov_speech_no_talk_art_cue"
+    },
+    {
+      "identity": "ev:a:followup:explain",
+      "index": 1,
+      "source": "game/systems/room13_town_events2.rpy",
+      "call_line": 328,
+      "person": "resident_siluk",
+      "text": "……받은 돈을 백 부인 빚 갚는 데 썼어요. 짐은 아직 못 가져왔어요.",
+      "reviewed": true,
+      "visual_qa": false,
+      "emotion": "anxious",
+      "reaction": false,
+      "reason": "기한이 지난 뒤 받은 돈을 빚에 썼고 짐도 못 가져왔다고 직접 인정한다. 기존 빚 고백의 압박과 불안을 이어가며 갑작스러운 놀람·공격적 분노로 바꾸지 않는다.",
+      "disposition": "bind_existing_approved_talk_frame"
+    },
+    {
+      "identity": "ev:a:followup:progress",
+      "index": 0,
+      "source": "game/systems/room13_town_events2.rpy",
+      "call_line": 324,
+      "person": "dad",
+      "text": "선금 드리고 부탁한 짐 말입니다. 어디까지 확인하셨습니까?",
+      "reviewed": true,
+      "visual_qa": false,
+      "emotion": null,
+      "reaction": false,
+      "reason": "플레이어가 고른 진척·책임·반환·이행 요구다. 단호하지만 고함이나 감정 발작을 쓰지 않았으므로 기본 POV 발화로 두고 실룩의 감정을 대신 씌우지 않는다.",
+      "disposition": "default_pov_speech_no_talk_art_cue"
+    },
+    {
+      "identity": "ev:a:followup:progress",
+      "index": 1,
+      "source": "game/systems/room13_town_events2.rpy",
+      "call_line": 324,
+      "person": "resident_siluk",
+      "text": "……아직 가져오지는 못했어요.",
+      "reviewed": true,
+      "visual_qa": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reason": "아직 기한 전이거나 옛 저장의 기한이 불명확하다. 현재 진행상황에 짧게 답할 뿐 늦었다고 단정하거나 죄책감 반응을 강제하지 않는다.",
+      "disposition": "bind_existing_approved_talk_frame"
+    },
+    {
+      "identity": "ev:a:followup:refund",
+      "index": 0,
+      "source": "game/systems/room13_town_events2.rpy",
+      "call_line": 333,
+      "person": "dad",
+      "text": "짐을 못 가져오셨으면 선금을 돌려주세요.",
+      "reviewed": true,
+      "visual_qa": false,
+      "emotion": null,
+      "reaction": false,
+      "reason": "플레이어가 고른 진척·책임·반환·이행 요구다. 단호하지만 고함이나 감정 발작을 쓰지 않았으므로 기본 POV 발화로 두고 실룩의 감정을 대신 씌우지 않는다.",
+      "disposition": "default_pov_speech_no_talk_art_cue"
+    },
+    {
+      "identity": "ev:a:followup:refund",
+      "index": 1,
+      "source": "game/systems/room13_town_events2.rpy",
+      "call_line": 333,
+      "person": "resident_siluk",
+      "text": "……받은 돈을 백 부인 빚 갚는 데 썼어요. 지금은 돌려드릴 돈이 없어요.",
+      "reviewed": true,
+      "visual_qa": false,
+      "emotion": "anxious",
+      "reaction": false,
+      "reason": "정당한 반환 요구에 빚으로 써 버렸고 돌려줄 돈도 없음을 인정한다. 책임 추궁 앞의 불안이며 승리감·적대감·과장된 놀람이 아니다.",
+      "disposition": "bind_existing_approved_talk_frame"
+    },
+    {
+      "identity": "ev:a:followup:refund",
+      "index": 2,
+      "source": "game/systems/room13_town_events2.rpy",
+      "call_line": 333,
+      "person": "dad",
+      "text": "그럼 돌려받을 돈으로 남겨 두겠습니다.",
+      "reviewed": true,
+      "visual_qa": false,
+      "emotion": null,
+      "reaction": false,
+      "reason": "플레이어가 고른 진척·책임·반환·이행 요구다. 단호하지만 고함이나 감정 발작을 쓰지 않았으므로 기본 POV 발화로 두고 실룩의 감정을 대신 씌우지 않는다.",
+      "disposition": "default_pov_speech_no_talk_art_cue"
+    },
+    {
+      "identity": "ev:a:followup:resolved",
+      "index": 0,
+      "source": "game/systems/room13_town_events2.rpy",
+      "call_line": 320,
+      "person": null,
+      "text": "이 선금 건은 이미 정리했다. 새로 돈을 건네지는 않았다.",
+      "reviewed": true,
+      "visual_qa": false,
+      "emotion": null,
+      "reaction": false,
+      "reason": "서술자가 현재까지 확인한 사실 또는 지급 직후 행동을 말한다. 서술만으로 실룩/콩이 얼굴을 새로 띄우거나 이전 감정 초상을 남기지 않는다.",
+      "disposition": "narration_no_portrait_cue"
+    },
+    {
+      "identity": "ev:a:overdue:late",
+      "index": 0,
+      "source": "game/systems/room13_town_events2.rpy",
+      "call_line": 299,
+      "person": null,
+      "text": "실룩이 짐을 가져오겠다고 약속한 날이 지났다. 아직 짐은 받지 못했다.",
+      "reviewed": true,
+      "visual_qa": false,
+      "emotion": null,
+      "reaction": false,
+      "reason": "서술자가 현재까지 확인한 사실 또는 지급 직후 행동을 말한다. 서술만으로 실룩/콩이 얼굴을 새로 띄우거나 이전 감정 초상을 남기지 않는다.",
+      "disposition": "narration_no_portrait_cue"
+    },
+    {
+      "identity": "ev:a:overdue:next_day",
+      "index": 0,
+      "source": "game/systems/room13_town_events2.rpy",
+      "call_line": 301,
+      "person": null,
+      "text": "날이 바뀌어도 실룩에게 부탁한 짐은 오지 않았다.",
+      "reviewed": true,
+      "visual_qa": false,
+      "emotion": null,
+      "reaction": false,
+      "reason": "서술자가 현재까지 확인한 사실 또는 지급 직후 행동을 말한다. 서술만으로 실룩/콩이 얼굴을 새로 띄우거나 이전 감정 초상을 남기지 않는다.",
+      "disposition": "narration_no_portrait_cue"
+    },
+    {
+      "identity": "ev:a:overdue:sunset",
+      "index": 0,
+      "source": "game/systems/room13_town_events2.rpy",
+      "call_line": 297,
+      "person": null,
+      "text": "해가 졌지만, 실룩이 가져오기로 한 짐은 아직 받지 못했다.",
+      "reviewed": true,
+      "visual_qa": false,
+      "emotion": null,
+      "reaction": false,
+      "reason": "서술자가 현재까지 확인한 사실 또는 지급 직후 행동을 말한다. 서술만으로 실룩/콩이 얼굴을 새로 띄우거나 이전 감정 초상을 남기지 않는다.",
+      "disposition": "narration_no_portrait_cue"
+    },
+    {
+      "identity": "ev:a:paid",
+      "index": 0,
+      "source": "game/systems/room13_town_events2.rpy",
+      "call_line": 243,
+      "person": "resident_siluk",
+      "text": "해 지기 전에 짐 가지고 올게요. 걱정 마세요.",
+      "reviewed": true,
+      "visual_qa": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reason": "기존의 안심시키는 약속 그대로다. 아직 기한을 어긴 상태가 아니므로 죄책감·기쁨·놀람을 추가하지 않는다.",
+      "disposition": "bind_existing_approved_talk_frame"
+    },
+    {
+      "identity": "ev:a:paid",
+      "index": 1,
+      "source": "game/systems/room13_town_events2.rpy",
+      "call_line": 243,
+      "person": null,
+      "text": "실룩은 선금을 챙겨 자리를 떠났다.",
+      "reviewed": true,
+      "visual_qa": false,
+      "emotion": null,
+      "reaction": false,
+      "reason": "서술자가 현재까지 확인한 사실 또는 지급 직후 행동을 말한다. 서술만으로 실룩/콩이 얼굴을 새로 띄우거나 이전 감정 초상을 남기지 않는다.",
+      "disposition": "narration_no_portrait_cue"
+    },
+    {
+      "identity": "ev:a:paid_all",
+      "index": 0,
+      "source": "game/systems/room13_town_events2.rpy",
+      "call_line": 248,
+      "person": "resident_siluk",
+      "text": "……이것뿐이에요? 뭐, 일단 받죠.",
+      "reviewed": true,
+      "visual_qa": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reason": "기존의 부족한 선금 수락을 유지한다. 금액이 적다는 질문이 곧 격한 분노나 놀람은 아니다.",
+      "disposition": "bind_existing_approved_talk_frame"
+    },
+    {
+      "identity": "ev:a:paid_all",
+      "index": 1,
+      "source": "game/systems/room13_town_events2.rpy",
+      "call_line": 248,
+      "person": null,
+      "text": "실룩은 내가 건넨 돈을 챙겨 자리를 떠났다.",
+      "reviewed": true,
+      "visual_qa": false,
+      "emotion": null,
+      "reaction": false,
+      "reason": "서술자가 현재까지 확인한 사실 또는 지급 직후 행동을 말한다. 서술만으로 실룩/콩이 얼굴을 새로 띄우거나 이전 감정 초상을 남기지 않는다.",
+      "disposition": "narration_no_portrait_cue"
+    },
+    {
+      "identity": "ev:a:witness:next_day",
+      "index": 1,
+      "source": "game/systems/room13_town_events2.rpy",
+      "person": "resident_kongi",
+      "text": "어제 백 부인네 뒷문으로 들어가는 걸 봤어요.",
+      "reviewed": true,
+      "visual_qa": false,
+      "new_asset_approval": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reason": "2026-10-18 text-context review: Kongi calmly answers Dad's explicit inquiry, reports only seeing entry, and denies seeing indoor actions. No payment-date knowledge or debt conclusion; preserve existing approved neutral asset, runtime visual QA not performed."
+    },
+    {
+      "identity": "ev:a:witness:next_day",
+      "index": 3,
+      "source": "game/systems/room13_town_events2.rpy",
+      "person": "resident_kongi",
+      "text": "아뇨. 들어가는 것만 봤어요.",
+      "reviewed": true,
+      "visual_qa": false,
+      "new_asset_approval": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reason": "2026-10-18 text-context review: Kongi calmly answers Dad's explicit inquiry, reports only seeing entry, and denies seeing indoor actions. No payment-date knowledge or debt conclusion; preserve existing approved neutral asset, runtime visual QA not performed."
+    },
+    {
+      "identity": "ev:a:witness:later",
+      "index": 1,
+      "source": "game/systems/room13_town_events2.rpy",
+      "person": "resident_kongi",
+      "text": "며칠 전에 백 부인네 뒷문으로 들어가는 걸 봤어요.",
+      "reviewed": true,
+      "visual_qa": false,
+      "new_asset_approval": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reason": "2026-10-18 text-context review: Kongi calmly answers Dad's explicit inquiry, reports only seeing entry, and denies seeing indoor actions. No payment-date knowledge or debt conclusion; preserve existing approved neutral asset, runtime visual QA not performed."
+    },
+    {
+      "identity": "ev:a:witness:later",
+      "index": 3,
+      "source": "game/systems/room13_town_events2.rpy",
+      "person": "resident_kongi",
+      "text": "아뇨. 들어가는 것만 봤어요.",
+      "reviewed": true,
+      "visual_qa": false,
+      "new_asset_approval": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reason": "2026-10-18 text-context review: Kongi calmly answers Dad's explicit inquiry, reports only seeing entry, and denies seeing indoor actions. No payment-date knowledge or debt conclusion; preserve existing approved neutral asset, runtime visual QA not performed."
+    }
+  ],
+  "static_beats_replace": {
+    "ev:a:advance:unknown": {},
+    "ev:a:followup:deliver": {
+      "1": {
+        "person": "resident_siluk",
+        "text": "……알겠습니다. 아직 가져오지 못했어요.",
+        "emotion": "anxious",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "기한을 놓친 상태에서 추가 선금 없이 원래 의무를 이행하라는 요구를 받는다. 머뭇거리며 미이행을 인정하므로 불안으로 유지한다. 이행 완료의 기쁨은 금지한다.",
+        "batch": "siluk-time-contact-20261018",
+        "application_status": "approved_source_master"
+      }
+    },
+    "ev:a:followup:explain": {
+      "1": {
+        "person": "resident_siluk",
+        "text": "……받은 돈을 백 부인 빚 갚는 데 썼어요. 짐은 아직 못 가져왔어요.",
+        "emotion": "anxious",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "기한이 지난 뒤 받은 돈을 빚에 썼고 짐도 못 가져왔다고 직접 인정한다. 기존 빚 고백의 압박과 불안을 이어가며 갑작스러운 놀람·공격적 분노로 바꾸지 않는다.",
+        "batch": "siluk-time-contact-20261018",
+        "application_status": "approved_source_master"
+      }
+    },
+    "ev:a:followup:progress": {
+      "1": {
+        "person": "resident_siluk",
+        "text": "……아직 가져오지는 못했어요.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "아직 기한 전이거나 옛 저장의 기한이 불명확하다. 현재 진행상황에 짧게 답할 뿐 늦었다고 단정하거나 죄책감 반응을 강제하지 않는다.",
+        "batch": "siluk-time-contact-20261018",
+        "application_status": "approved_source_master"
+      }
+    },
+    "ev:a:followup:refund": {
+      "1": {
+        "person": "resident_siluk",
+        "text": "……받은 돈을 백 부인 빚 갚는 데 썼어요. 지금은 돌려드릴 돈이 없어요.",
+        "emotion": "anxious",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "정당한 반환 요구에 빚으로 써 버렸고 돌려줄 돈도 없음을 인정한다. 책임 추궁 앞의 불안이며 승리감·적대감·과장된 놀람이 아니다.",
+        "batch": "siluk-time-contact-20261018",
+        "application_status": "approved_source_master"
+      }
+    },
+    "ev:a:followup:resolved": {},
+    "ev:a:overdue:late": {},
+    "ev:a:overdue:next_day": {},
+    "ev:a:overdue:sunset": {},
+    "ev:a:paid": {
+      "0": {
+        "person": "resident_siluk",
+        "text": "해 지기 전에 짐 가지고 올게요. 걱정 마세요.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "기존의 안심시키는 약속 그대로다. 아직 기한을 어긴 상태가 아니므로 죄책감·기쁨·놀람을 추가하지 않는다.",
+        "batch": "siluk-time-contact-20261018",
+        "application_status": "approved_source_master"
+      }
+    },
+    "ev:a:paid_all": {
+      "0": {
+        "person": "resident_siluk",
+        "text": "……이것뿐이에요? 뭐, 일단 받죠.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "기존의 부족한 선금 수락을 유지한다. 금액이 적다는 질문이 곧 격한 분노나 놀람은 아니다.",
+        "batch": "siluk-time-contact-20261018",
+        "application_status": "approved_source_master"
+      }
+    },
+    "ev:a:witness:later": {
+      "0": {
+        "person": "resident_kongi",
+        "text": "실룩 아저씨요? 선금을 주신 날, 백 부인네 뒷문으로 들어가는 걸 봤어요.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "콩이가 직접 본 방문의 날짜를 지급일로 특정한다. 다음날 버전과 같은 사실 전달이며 새 정서 사건은 없다.",
+        "batch": "siluk-time-contact-20261018",
+        "application_status": "approved_source_master"
+      }
+    },
+    "ev:a:witness:next_day": {
+      "0": {
+        "person": "resident_kongi",
+        "text": "실룩 아저씨요? 어제 백 부인네 뒷문으로 들어가던데요.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "콩이가 전날 직접 본 방문을 담담히 말한다. 사기 전모를 알고 충격받는 장면이 아니다. 기존 콩이 cue의 동일 본문을 올바른 시점으로 옮긴다.",
+        "batch": "siluk-time-contact-20261018",
+        "application_status": "approved_source_master"
+      }
+    }
+  },
+  "dynamic_context_review_rows": [
+    {
+      "source": "game/room13_dialogue_openings_20261013.rpy",
+      "line": 171,
+      "context": "def r13_siluk_advance_greeting():",
+      "person": "resident_siluk",
+      "text": "짐을 맡기신 분이죠. 선금은 받았습니다.",
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "기한 전에 이미 맺은 거래를 알아보는 인사다. 처음 만난 듯 되돌아가거나 아직 성립하지 않은 잘못의 죄책감을 강제하지 않는다.",
+      "batch": "siluk-time-contact-20261018",
+      "application_status": "approved_source_master",
+      "visual_qa": false
+    },
+    {
+      "source": "game/room13_dialogue_openings_20261013.rpy",
+      "line": 172,
+      "context": "def r13_siluk_advance_greeting():",
+      "person": "resident_siluk",
+      "text": "……맡기신 짐 말씀이죠. 아직 가져오지 못했어요.",
+      "emotion": "anxious",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "실제 기한이 지난 상태에서 미이행을 먼저 인정하는 주저함과 부담이다. 재접촉이 반복되어도 놀람 반응을 재생하지 않는다.",
+      "batch": "siluk-time-contact-20261018",
+      "application_status": "approved_source_master",
+      "visual_qa": false
+    },
+    {
+      "source": "game/room13_dialogue_openings_20261013.rpy",
+      "line": 173,
+      "context": "def r13_siluk_advance_greeting():",
+      "person": "resident_siluk",
+      "text": "맡기신 짐하고 선금 이야기인가요?",
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "지급 사실만 복구되고 기한은 불명확한 저장이다. 거래를 알아보는 확인일 뿐 연체·사기를 표정으로 먼저 확정하지 않는다.",
+      "batch": "siluk-time-contact-20261018",
+      "application_status": "approved_source_master",
+      "visual_qa": false
+    },
+    {
+      "source": "game/room13_dialogue_openings_20261013.rpy",
+      "line": 174,
+      "context": "def r13_siluk_advance_greeting():",
+      "person": "resident_siluk",
+      "text": "그때 맡기신 짐 이야기는 기억해요.",
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "실제로 resolved/fulfilled가 기록된 경우의 거래 기억만 확인한다. 해결 방법을 모르므로 환불 기쁨이나 화해 감정을 창작하지 않는다.",
+      "batch": "siluk-time-contact-20261018",
+      "application_status": "approved_source_master",
+      "visual_qa": false
+    }
+  ],
+  "explicit_deletions": [
+    {
+      "file": "game/assets/room13-dialogue-beats.json",
+      "identity": "ev:a:paid",
+      "index": "2",
+      "reason": "콩이 증언은 새 witness identity/index0으로 이동했다. 지급 직후 미래 증언의 옛 cue를 제거한다."
+    }
+  ],
+  "no_new_line_direction_show_or_pose": true,
+  "hold_rows": [],
+  "remaining_gates": [
+    "Integrate exact cue rows and rebuild bindings/callsite provenance on the combined tree.",
+    "Verify asset loadability and visual correspondence in CI/runtime QA; registry support is not visual QA."
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "tests": 16,
+  "failures": 0,
+  "errors": 0,
+  "seconds": 0.215,
+  "command": "python -m unittest discover -s dev -p test_siluk_advance_timing.py -v",
+  "scope": "Pure production-function/authored-packet integration; no RenPy game, visual QA, or full final override-chain execution.",
+  "authorization": "Parent subsequently authorized pure unittest after initial no-execution preparation.",
+  "harness_fix": "f(self,name,*args,**kwargs) forwards kwargs to production helper; no assertions weakened.",
+  "dependency_files": [
+    {
+      "path": "game/room13_rules.rpy",
+      "git_blob_sha": "1d3d051240e172188d65dc1ba14a69b145862c73",
+      "matches_previous_read_only_snapshot": true,
+      "matches_fixed_base_commit": true
+    },
+    {
+      "path": "game/room13_week2_rules.rpy",
+      "git_blob_sha": "7a09673b9ea22415b665db471a6c48456c9c4756",
+      "matches_previous_read_only_snapshot": true,
+      "matches_fixed_base_commit": true
+    },
+    {
+      "path": "game/systems/room13_livelihood_model.rpy",
+      "git_blob_sha": "f5a5ebae0f99ac2521452196bd68c165dfdbd5f4",
+      "matches_previous_read_only_snapshot": true,
+      "matches_fixed_base_commit": true
+    },
+    {
+      "path": "game/systems/room13_town_events.rpy",
+      "git_blob_sha": "a5644f65f0335b74cf7914e9bac6cab8d8187b0a",
+      "matches_previous_read_only_snapshot": true,
+      "matches_fixed_base_commit": true
+    },
+    {
+      "path": "game/systems/room13_question_discovery.rpy",
+      "git_blob_sha": "0411c87b76ef0aecbe21650a0f857ba2e8d0d685",
+      "matches_previous_read_only_snapshot": false,
+      "matches_fixed_base_commit": true
+    }
+  ],
+  "log_sha256": "faefa995ce9f583e8c0e4bf3553e3f9f5720a5dfb7e6f93ab5b24642e900ca6c",
+  "dependency_note": "All five dependency Git blob SHAs match fixed .64 reads. The shared prep question_discovery contains unrelated Nabi edits, so its mismatch is not a .64 base mismatch; fresh GitHub .64 SHA confirmed 0411c87b76ef0aecbe21650a0f857ba2e8d0d685."
+}

@@ -24,11 +24,32 @@ class IntroCluesTest(unittest.TestCase):
   self.assertIn('intro:memo_shown',s['flags']);self.assertNotIn('J02',s['evidence'])
   t=self.ns['ROOM13']['topics']['intro:lamplighter_mother'];self.assertEqual(t['give'],['J02']);self.assertEqual(t['need'],['intro:memo_shown'])
  def test_post_identity_requires_two_separate_owned_presentations(self):
-  f=self.ns['r13_present'];s=self.store.room13;s['evidence']=['J02','E01','M01']
-  f('seryeon','J02');self.assertEqual(s['flags'],[])
-  f('seryeon','M01');self.assertEqual(s['flags'],['intro:post_memo']);self.assertNotIn('J03',s['evidence'])
-  f('seryeon','E01');self.assertIn('intro:post_letter',s['flags']);self.assertNotIn('J03',s['evidence'])
-  t=self.ns['ROOM13']['topics']['intro:post_visit'];self.assertEqual(set(t['need']),{'J02','intro:post_memo','intro:post_letter'})
+  f=self.ns['r13_present'];s=self.store.room13
+  for entry in ('J02','E18'):
+   for order in (('M01','E01'),('E01','M01')):
+    with self.subTest(entry=entry,order=order):
+     s.update(evidence=[entry,'E01','M01'],flags=[])
+     f('seryeon',entry);self.assertEqual(s['flags'],[])
+     first_flag='intro:post_memo' if order[0]=='M01' else 'intro:post_letter'
+     f('seryeon',order[0]);self.assertEqual(s['flags'],[first_flag]);self.assertNotIn('J03',s['evidence'])
+     before=copy.deepcopy(s);f('seryeon',order[0]);self.assertEqual(s,before)
+     f('seryeon',order[1]);self.assertEqual(set(s['flags']),{'intro:post_letter','intro:post_memo'});self.assertNotIn('J03',s['evidence'])
+     if entry=='E18':self.assertNotIn('J02',s['evidence'])
+  t=self.ns['ROOM13']['topics']['intro:post_visit']
+  self.assertEqual(set(t['need']),{'intro:post_memo','intro:post_letter'})
+  self.assertEqual(t['give'],['J03'])
+ def test_post_identity_cannot_substitute_ownership_for_actual_presentations(self):
+  f=self.ns['r13_present'];s=self.store.room13
+  for owned,shown in ((['E18','E01'],'M01'),(['E18','M01'],'E01'),(['E18'],'M01')):
+   with self.subTest(owned=owned,shown=shown):
+    s.update(evidence=owned,flags=[]);before=copy.deepcopy(s)
+    self.assertEqual(f('seryeon',shown),'base');self.assertEqual(s,before)
+  s.update(evidence=['E18','E01','M01'],flags=[])
+  t=self.ns['ROOM13']['topics']['intro:post_visit']
+  self.assertFalse(all(self.ns['r13_has'](key) for key in t['need']))
+  f('seryeon','M01');self.assertFalse(all(self.ns['r13_has'](key) for key in t['need']))
+  f('seryeon','E01');self.assertTrue(all(self.ns['r13_has'](key) for key in t['need']))
+  self.assertNotIn('J03',s['evidence'])
  def test_legacy_and_later_case_do_not_unlock_intro(self):
   s=self.store.room13;s['evidence']=['M01'];s['life_poc']=False
   self.assertEqual(self.ns['r13_present']('resident_lamplighter','M01'),'base');self.assertEqual(s['flags'],[])
@@ -39,3 +60,4 @@ class IntroCluesTest(unittest.TestCase):
   self.ns['r13_present']('resident_lamplighter','M01')
   self.assertIn('topic:lamplighter_warning',s['flags']);self.assertIn('intro:memo_shown',s['flags'])
 if __name__=='__main__':unittest.main()
+

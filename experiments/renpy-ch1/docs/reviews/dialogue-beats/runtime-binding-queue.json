@@ -295,52 +295,52 @@
   },
   {
     "source": "game/room13.rpy",
-    "line": 498,
+    "line": 503,
     "identity": "buri:consent:opening",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None, '부리는 손에 든 공구를 내려놓았지만 내 쪽을 쳐다보지는 않았다.'), ('buri', '밖에서는 다들 할아버지가 아이를 잡아먹으려 했다고 수군거려요.'), ('dad', '나는 그렇게 말한 적이 없어.'), ('buri', '누군가는 그렇게 말했어요. 다람이를 살인 혐의에서 구하려고요.'), (None, '내가 딸아이 이야기를 꺼내려 하자 부리가 먼저 고개를 들어 나를 보았다.'), ('dad', '나도 우리 아이가 그 방에서 왜 다쳤는지 진실을 알아야 해.'), ('buri', '그럼 저한테 직접 물어보세요. 할아버지가 어떤 사람이었는지 미리 정해 놓고 묻지는 마시고요.')],\"buri:consent:opening\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 498
-  },
-  {
-    "source": "game/room13.rpy",
-    "line": 504,
-    "identity": "buri:consent:repair",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"dad\",\"내가 한 말도 바로잡을게. 기록에는 팔을 잡은 흔적과 머리 부상이 따로 적혀 있어. 그러니 할아버지가 무엇을 하려 했는지는 아직 몰라.\"),(\"buri\",\"그렇게 바로잡은 내용도 기록에 꼭 남겨 주세요. 여기서 저한테만 말로 하시는 거라면 아무 소용 없어요.\")],\"buri:consent:repair\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 504
-  },
-  {
-    "source": "game/room13.rpy",
-    "line": 507,
-    "identity": "buri:consent:needs_record",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"buri\",\"사실대로 적으셨다는 그 기록부터 직접 가져와 보여 주세요. 그다음에 이야기를 들을게요.\")],\"buri:consent:needs_record\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 507
+    "end_line": 503
   },
   {
     "source": "game/room13.rpy",
     "line": 509,
-    "identity": "buri:consent:accepted",
+    "identity": "buri:consent:repair",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[('dad', '직접 확인하지 않은 추측은 기록에 적지 않을게.'), ('buri', '지금 제 앞에서만요? 나중에 다른 마을 사람들 앞에서는요?'), ('dad', '사람들 앞에서도 마찬가지야. 그때 다르게 말하면 바로잡을게.'), (None, '부리는 대답하지 않았다. 나는 그 침묵을 허락의 뜻으로 착각할 뻔했다.'), ('buri', '그 말, 사람들 앞에서도 꼭 지키세요.'), (None, '부리가 작업대 한쪽의 공구들을 치워 자리를 비웠다. 사람 한 명이 걸터앉을 만한 공간이었다.'), ('buri', '기록은 그 자리에 앉아서 같이 봐요.')],\"buri:consent:accepted\"",
+    "call_expression": "[(\"dad\",\"내가 한 말도 바로잡을게. 기록에는 팔을 잡은 흔적과 머리 부상이 따로 적혀 있어. 그러니 할아버지가 무엇을 하려 했는지는 아직 몰라.\"),(\"buri\",\"그렇게 바로잡은 내용도 기록에 꼭 남겨 주세요. 여기서 저한테만 말로 하시는 거라면 아무 소용 없어요.\")],\"buri:consent:repair\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 509
   },
   {
     "source": "game/room13.rpy",
     "line": 512,
-    "identity": "buri:consent:refused",
+    "identity": "buri:consent:needs_record",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[('buri', '우리 할아버지를 괴물로 만들면 탐정님 아이가 무사히 돌아오나요?'), ('dad', '나는 어떻게든 우리 아이를 구해야 해.'), ('buri', '그 마음은 저도 알아요. 제가 그걸 모르는 사람인 것처럼 말씀하지 마세요.'), (None, '부리가 다시 공구를 집어 들었다. 작업대 한쪽에 빈자리가 있었지만, 내게 앉으라고 내어 주지는 않았다.'), ('buri', '지금은 그만 나가 주세요.')],\"buri:consent:refused\"",
+    "call_expression": "[(\"buri\",\"사실대로 적으셨다는 그 기록부터 직접 가져와 보여 주세요. 그다음에 이야기를 들을게요.\")],\"buri:consent:needs_record\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 512
   },
   {
     "source": "game/room13.rpy",
-    "line": 532,
+    "line": 514,
+    "identity": "buri:consent:accepted",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[('dad', '직접 확인하지 않은 추측은 기록에 적지 않을게.'), ('buri', '지금 제 앞에서만요? 나중에 다른 마을 사람들 앞에서는요?'), ('dad', '사람들 앞에서도 마찬가지야. 그때 다르게 말하면 바로잡을게.'), (None, '부리는 대답하지 않았다. 나는 그 침묵을 허락의 뜻으로 착각할 뻔했다.'), ('buri', '그 말, 사람들 앞에서도 꼭 지키세요.'), (None, '부리가 작업대 한쪽의 공구들을 치워 자리를 비웠다. 사람 한 명이 걸터앉을 만한 공간이었다.'), ('buri', '기록은 그 자리에 앉아서 같이 봐요.')],\"buri:consent:accepted\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 514
+  },
+  {
+    "source": "game/room13.rpy",
+    "line": 517,
+    "identity": "buri:consent:refused",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[('buri', '우리 할아버지를 괴물로 만들면 탐정님 아이가 무사히 돌아오나요?'), ('dad', '나는 어떻게든 우리 아이를 구해야 해.'), ('buri', '그 마음은 저도 알아요. 제가 그걸 모르는 사람인 것처럼 말씀하지 마세요.'), (None, '부리가 다시 공구를 집어 들었다. 작업대 한쪽에 빈자리가 있었지만, 내게 앉으라고 내어 주지는 않았다.'), ('buri', '지금은 그만 나가 주세요.')],\"buri:consent:refused\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 517
+  },
+  {
+    "source": "game/room13.rpy",
+    "line": 537,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "r13_topic_rows,\"topic:\"+r13_topic",
@@ -348,376 +348,376 @@
     "binding_route": "dynamic:035",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 532
-  },
-  {
-    "source": "game/room13.rpy",
-    "line": 542,
-    "identity": "night1:meal",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"nabi\",\"탐정님, 그릇이 뜨거워요. 밑받침을 잡고 드세요.\"),(\"daram\",\"아빠 밥그릇은 제가 가져갈게요.\"),(\"nabi\",\"두 번 왔다 갔다 하면 되잖아. 무리해서 한 번에 다 들지 말고.\")],\"night1:meal\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 542
-  },
-  {
-    "source": "game/room13.rpy",
-    "line": 544,
-    "identity": "night1:knocking",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"식당 현관문을 일정한 박자로 둔탁하게 두드리는 소리가 이어졌다. 식사하던 손님 한 명이 말없이 창문 커튼을 쳤다.\"),(\"daram\",\"밖에 누가 왔나 봐요.\"),(\"granny\",\"경비들이 알아서 살피고 있어. 신경 쓰지 마라.\"),(\"daram\",\"스스로 문을 못 여는 것 같은데요.\"),(\"nabi\",\"……밥 식기 전에 얼른 먹어.\")],\"night1:knocking\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 544
+    "end_line": 537
   },
   {
     "source": "game/room13.rpy",
     "line": 547,
-    "identity": "night1:look",
+    "identity": "night1:meal",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"주민 한 명이 자기 집이 어느 쪽인지 말하지 못했다. 경비가 그 주민의 목덜미에 번호표를 달고 어디론가 데려갔다. 지켜보던 사람 중 아무도 소리를 지르지 않았다.\")],\"night1:look\"",
+    "call_expression": "[(\"nabi\",\"탐정님, 그릇이 뜨거워요. 밑받침을 잡고 드세요.\"),(\"daram\",\"아빠 밥그릇은 제가 가져갈게요.\"),(\"nabi\",\"두 번 왔다 갔다 하면 되잖아. 무리해서 한 번에 다 들지 말고.\")],\"night1:meal\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 547
   },
   {
     "source": "game/room13.rpy",
-    "line": 550,
+    "line": 549,
+    "identity": "night1:knocking",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(None,\"식당 현관문을 일정한 박자로 둔탁하게 두드리는 소리가 이어졌다. 식사하던 손님 한 명이 말없이 창문 커튼을 쳤다.\"),(\"daram\",\"밖에 누가 왔나 봐요.\"),(\"granny\",\"경비들이 알아서 살피고 있어. 신경 쓰지 마라.\"),(\"daram\",\"스스로 문을 못 여는 것 같은데요.\"),(\"nabi\",\"……밥 식기 전에 얼른 먹어.\")],\"night1:knocking\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 549
+  },
+  {
+    "source": "game/room13.rpy",
+    "line": 552,
+    "identity": "night1:look",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(None,\"주민 한 명이 자기 집이 어느 쪽인지 말하지 못했다. 경비가 그 주민의 목덜미에 번호표를 달고 어디론가 데려갔다. 지켜보던 사람 중 아무도 소리를 지르지 않았다.\")],\"night1:look\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 552
+  },
+  {
+    "source": "game/room13.rpy",
+    "line": 555,
     "identity": "night1:stay",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"daram\",\"아빠, 우리도 길 잃어버리면 저 아저씨처럼 저기로 끌려가?\"),(\"dad\",\"길을 모르겠으면 혼자 헤매지 말고 아빠랑 같이 물어보자.\")],\"night1:stay\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 550
+    "end_line": 555
   },
   {
     "source": "game/room13.rpy",
-    "line": 560,
+    "line": 565,
     "identity": "case:appointment:v4",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"karo\",\"되돌아온 짐이 마을 바깥 초소에 도착했어요. 지금 확인하러 가실 거죠?\"),(\"daram\",\"할아버지 물건은 내가 대신 받아 둘게. 방에서 기다리고 있을게.\"),(None,\"계단 아래에서 할머니가 웃으며 고개를 끄덕였다.\"),(\"granny\",\"엄마 물건은 할아버지가 직접 보여 주실 거야. 할아버지 오시면 둘이 먼저 보고 있으렴. 할머니는 식당을 봐야 해서.\"),(\"dad\",\"(되돌아온 짐을 받으러 초소에 갈까, 아니면 아이 곁에 남을까.)\",{\"thought\":True})],\"case:appointment:v4\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 560
+    "end_line": 565
   },
   {
     "source": "game/room13.rpy",
-    "line": 569,
+    "line": 574,
     "identity": "case:separate:v4",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"dad\",\"할아버지 오시면 같이 보고 있어. 아빠가 짐 받아서 돌아오면 함께 보자.\"),(\"daram\",\"아빠, 금방 와?\"),(\"dad\",\"짐 받는 대로 바로 올게.\")],\"case:separate:v4\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 569
+    "end_line": 574
   },
   {
     "source": "game/room13.rpy",
-    "line": 571,
+    "line": 576,
     "identity": "case:father:parcel:v3",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"karo\",\"봉투에 찍힌 날짜 좀 보세요. 부인이 이 마을에 오기 전에 보낸 물건 같네요.\"),(None,\"봉투에 찍힌 오래된 우체국 날짜 도장은 젖어 있었다. 봉투 안에는 우리가 보냈던 장갑과 맡김표가 들어 있었다.\"),(\"dad\",\"이 짐을 받으러 오라고 전한 사람은 누굽니까?\"),(\"karo\",\"여관에서 전해 줬어요. 저는 최근에 온 연락인 줄 알았는데…….\")],\"case:father:parcel:v3\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 571
-  },
-  {
-    "source": "game/room13.rpy",
-    "line": 579,
-    "identity": "case:father:return:v3",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"그때 계단 위에서 나무를 두드리는 소리가 들렸다. 우리 방 문틈 아래로 연기가 새어 나왔다.\"),(\"nabi\",\"다람아, 그 안에 가만히 있어. 문에서 떨어져!\"),(\"dad\",\"무슨 일이니? 왜 문을 못 여는 거니?\"),(\"doto\",\"방 안쪽 빗장이 안 풀립니다. 비명을 듣고 바로 달려왔는데요.\"),(\"dad\",\"다람아!\"),(\"daram\",\"아빠…… 나 여기 있어.\"),(\"granny\",\"다들 비켜요. 공구 가져왔어요.\"),(None,\"도토가 할머니에게서 지렛대를 받아 문틀 틈에 밀어 넣었다. 너울과 함께 문을 받쳤다.\")],\"case:father:return:v3\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 579
+    "end_line": 576
   },
   {
     "source": "game/room13.rpy",
     "line": 584,
-    "identity": "case:discovery:v3",
+    "identity": "case:father:return:v3",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"빗장을 걸어 두던 잠금쇠가 뜯겨 나갔다. 너울이 연기 나는 작은 깔개 위에 젖은 천을 덮었다. 다행히 침대에는 불이 옮겨붙지 않았다.\"),(\"dad\",\"다람아, 이제 나와도 돼. 아빠가 손 잡아 줄게.\"),(None,\"침대 아래에서 다람이가 손을 뻗었다. 그 바로 옆 바닥에는 어르신이 쓰러져 있었다.\"),(\"daram\",\"내가 할아버지를 때렸어.\"),(\"dad\",\"너는 어디 다쳤어?\"),(\"daram\",\"아빠, 내가 때렸다니까.\"),(None,\"아이 손목에는 세게 눌린 자국이 있었다. 바닥에 떨어진 촛대는 두 동강 나 있었다.\")],\"case:discovery:v3\"",
+    "call_expression": "[(None,\"그때 계단 위에서 나무를 두드리는 소리가 들렸다. 우리 방 문틈 아래로 연기가 새어 나왔다.\"),(\"nabi\",\"다람아, 그 안에 가만히 있어. 문에서 떨어져!\"),(\"dad\",\"무슨 일이니? 왜 문을 못 여는 거니?\"),(\"doto\",\"방 안쪽 빗장이 안 풀립니다. 비명을 듣고 바로 달려왔는데요.\"),(\"dad\",\"다람아!\"),(\"daram\",\"아빠…… 나 여기 있어.\"),(\"granny\",\"다들 비켜요. 공구 가져왔어요.\"),(None,\"도토가 할머니에게서 지렛대를 받아 문틀 틈에 밀어 넣었다. 너울과 함께 문을 받쳤다.\")],\"case:father:return:v3\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 584
   },
   {
     "source": "game/room13.rpy",
-    "line": 587,
-    "identity": "case:preserve:v3",
+    "line": 589,
+    "identity": "case:discovery:v3",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"dad\",\"아이는 제가 데리고 나가겠습니다. 쓰러진 분부터 살피되, 물건을 옮기면 원래 있던 자리를 표시해 두세요.\"),(\"neoul\",\"문 앞은 제가 막겠습니다. 도토 씨, 바닥에 지금 보이는 자국부터 그려 주십시오.\")],\"case:preserve:v3\"",
+    "call_expression": "[(None,\"빗장을 걸어 두던 잠금쇠가 뜯겨 나갔다. 너울이 연기 나는 작은 깔개 위에 젖은 천을 덮었다. 다행히 침대에는 불이 옮겨붙지 않았다.\"),(\"dad\",\"다람아, 이제 나와도 돼. 아빠가 손 잡아 줄게.\"),(None,\"침대 아래에서 다람이가 손을 뻗었다. 그 바로 옆 바닥에는 어르신이 쓰러져 있었다.\"),(\"daram\",\"내가 할아버지를 때렸어.\"),(\"dad\",\"너는 어디 다쳤어?\"),(\"daram\",\"아빠, 내가 때렸다니까.\"),(None,\"아이 손목에는 세게 눌린 자국이 있었다. 바닥에 떨어진 촛대는 두 동강 나 있었다.\")],\"case:discovery:v3\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 587
-  },
-  {
-    "source": "game/room13.rpy",
-    "line": 591,
-    "identity": "case:unpreserved:v3",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"buri\",\"할아버지! 비켜요!\"),(\"neoul\",\"조심하십시오. 발밑에 떨어진 물건이 있습니다.\"),(None,\"사람들이 쓰러진 어르신 곁으로 몰려들었다. 너울이 촛대를 거둬 갔다. 하지만 바닥의 자국은 이미 여러 사람의 발자국에 덮여 있었다.\")],\"case:unpreserved:v3\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 591
+    "end_line": 589
   },
   {
     "source": "game/room13.rpy",
     "line": 592,
-    "identity": "case:sealing:v3",
+    "identity": "case:preserve:v3",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"resident_seori\",\"어르신은 숨을 쉬지 않습니다. 아이 팔도 보겠습니다.\"),(None,\"촛대의 휘어진 장식 고리에 작은 금속 조각이 걸려 있었다. 너울은 조각에 손대지 않고 촛대째 싸서 봉했다.\"),(\"daram\",\"내가 놓으라고 했어. 그런데 할아버지가 안 놔줘서…….\"),(\"granny\",\"아이를 잡아당기지 말아요. 얘도 지금 떨고 있잖아요.\"),(\"neoul\",\"확인이 끝날 때까지 아이는 초소 보호실에 두겠습니다.\"),(\"dad\",\"아이만 데려가는 겁니까?\"),(\"neoul\",\"아버님은 그 시간에 까로 씨와 마을 밖에 계셨다는 게 확인됐습니다.\"),(\"dad\",\"아이를 직접 만나겠습니다. 아이가 한 말은 고치지 말고 그대로 기록에 남겨 주십시오.\")],\"case:sealing:v3\"",
+    "call_expression": "[(\"dad\",\"아이는 제가 데리고 나가겠습니다. 쓰러진 분부터 살피되, 물건을 옮기면 원래 있던 자리를 표시해 두세요.\"),(\"neoul\",\"문 앞은 제가 막겠습니다. 도토 씨, 바닥에 지금 보이는 자국부터 그려 주십시오.\")],\"case:preserve:v3\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 592
   },
   {
     "source": "game/room13.rpy",
     "line": 596,
-    "identity": "case:displaced:v3",
+    "identity": "case:unpreserved:v3",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"nabi\",\"짐은 옆방으로 옮겨 둘게요. 오늘부터는 옆방에서 묵으세요.\"),(None,\"나는 13호 열쇠를 내려놓았다. 손에는 다람이가 가져오겠다고 했던 가방만 남았다.\")],\"case:displaced:v3\"",
+    "call_expression": "[(\"buri\",\"할아버지! 비켜요!\"),(\"neoul\",\"조심하십시오. 발밑에 떨어진 물건이 있습니다.\"),(None,\"사람들이 쓰러진 어르신 곁으로 몰려들었다. 너울이 촛대를 거둬 갔다. 하지만 바닥의 자국은 이미 여러 사람의 발자국에 덮여 있었다.\")],\"case:unpreserved:v3\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 596
   },
   {
     "source": "game/room13.rpy",
-    "line": 602,
+    "line": 597,
+    "identity": "case:sealing:v3",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(\"resident_seori\",\"어르신은 숨을 쉬지 않습니다. 아이 팔도 보겠습니다.\"),(None,\"촛대의 휘어진 장식 고리에 작은 금속 조각이 걸려 있었다. 너울은 조각에 손대지 않고 촛대째 싸서 봉했다.\"),(\"daram\",\"내가 놓으라고 했어. 그런데 할아버지가 안 놔줘서…….\"),(\"granny\",\"아이를 잡아당기지 말아요. 얘도 지금 떨고 있잖아요.\"),(\"neoul\",\"확인이 끝날 때까지 아이는 초소 보호실에 두겠습니다.\"),(\"dad\",\"아이만 데려가는 겁니까?\"),(\"neoul\",\"아버님은 그 시간에 까로 씨와 마을 밖에 계셨다는 게 확인됐습니다.\"),(\"dad\",\"아이를 직접 만나겠습니다. 아이가 한 말은 고치지 말고 그대로 기록에 남겨 주십시오.\")],\"case:sealing:v3\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 597
+  },
+  {
+    "source": "game/room13.rpy",
+    "line": 601,
+    "identity": "case:displaced:v3",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(\"nabi\",\"짐은 옆방으로 옮겨 둘게요. 오늘부터는 옆방에서 묵으세요.\"),(None,\"나는 13호 열쇠를 내려놓았다. 손에는 다람이가 가져오겠다고 했던 가방만 남았다.\")],\"case:displaced:v3\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 601
+  },
+  {
+    "source": "game/room13.rpy",
+    "line": 607,
     "identity": "case:prevented:watch",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"나는 나비에게 아이를 부탁했다. 그리고 어르신에게 통로를 알고 있다고 말했다. 방문은 열어 둔 채였다.\"),(\"resident_owlgp\",\"그럼 이 방에서 기다리지 맙시다. 아래층으로 내려갑시다.\")],\"case:prevented:watch\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 602
+    "end_line": 607
   },
   {
     "source": "game/room13.rpy",
-    "line": 604,
+    "line": 609,
     "identity": "case:prevented:accompany",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_owlgp\",\"댁은 되돌아온 짐을 찾으러 간 줄 알았소.\"),(\"dad\",\"되돌아온 짐은 내일 확인해도 됩니다.\"),(\"daram\",\"아빠랑 같이 왔어요. 할아버지가 보여 주신다던 물건, 이제 봐도 돼요?\"),(None,\"어르신의 손이 잠깐 떨렸다. 내가 옆에 앉아 기다리자, 어르신은 쥐고 있던 봉투를 내려놓았다.\"),(\"resident_owlgp\",\"아래층에서 이야기합시다. 이 방은 너무 답답하오.\")],\"case:prevented:accompany\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 604
+    "end_line": 609
   },
   {
     "source": "game/room13.rpy",
-    "line": 605,
+    "line": 610,
     "identity": "case:prevented:result",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"granny\",\"다들 여기 계셨네요. 아이 곁에 있어 주려고 올라왔어요. 차라도 내올까요?\"),(\"dad\",\"차는 아래층 식당에서 다 함께 마시겠습니다.\"),(None,\"그날 13호에서는 아무도 죽지 않았다. 그렇다고 누군가 하려던 일을 막았다는 증거를 얻은 것은 아니었다.\")],\"case:prevented:result\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 605
+    "end_line": 610
   },
   {
     "source": "game/room13.rpy",
-    "line": 620,
+    "line": 625,
     "identity": "trial:opening",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"seryeon\",\"부엉이 어르신이 발견된 13호는 안에서 잠겨 있었습니다. 그 안에는 다람 양이 있었습니다.\"),(\"buri\",\"그냥 ‘발견된 사람’처럼 말하지 마세요. 우리 할아버지예요.\"),(\"resident_seori\",\"오늘 확인할 것은 아이가 그 죽음에 책임이 있는지입니다. 소문을 본 일처럼 말하지 마십시오.\"),(\"resident_ppul\",\"아이가 위험하다면 마을의 다른 아이들부터 지켜야 합니다.\"),(\"dad\",\"아이가 위험하다는 판단도 확인된 사실에 근거해 주십시오.\")],\"trial:opening\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 620
+    "end_line": 625
   },
   {
     "source": "game/room13.rpy",
-    "line": 646,
+    "line": 651,
     "identity": "trial:C1:start",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"seryeon\",\"복도에 있던 사람들은 아무도 그 방에 들어가지 않았다고 합니다.\"),(\"dad\",\"복도에 있던 분들이 지켜본 문이 어느 문인지 확인하고 싶습니다.\")],\"trial:C1:start\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 646
-  },
-  {
-    "source": "game/room13.rpy",
-    "line": 648,
-    "identity": "trial:C2:start",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"resident_ppul\",\"아이가 겁을 먹은 건 알겠습니다. 하지만 아이에게 맞은 사람이 죽었습니다.\"),(\"buri\",\"할아버지가 먼저 아이 손을 잡았다는 말도 지금은 들을게요. 그다음엔 무슨 일이 있었는데요?\")],\"trial:C2:start\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 648
-  },
-  {
-    "source": "game/room13.rpy",
-    "line": 650,
-    "identity": "trial:C3:start",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"granny\",\"비명이 들렸을 때 나는 식당에 있었어요. 다들 나를 봤잖아요.\")],\"trial:C3:start\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 650
+    "end_line": 651
   },
   {
     "source": "game/room13.rpy",
     "line": 653,
-    "identity": "trial:C4:prepared",
+    "identity": "trial:C2:start",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"granny\",\"아버님이 보여 준 자국도 오래된 것일 수 있다고 했죠. 누가 그 길로 들어갔다 해도, 어르신을 도우려던 건지 아닌지 어떻게 알아요?\")],\"trial:C4:prepared\"",
+    "call_expression": "[(\"resident_ppul\",\"아이가 겁을 먹은 건 알겠습니다. 하지만 아이에게 맞은 사람이 죽었습니다.\"),(\"buri\",\"할아버지가 먼저 아이 손을 잡았다는 말도 지금은 들을게요. 그다음엔 무슨 일이 있었는데요?\")],\"trial:C2:start\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 653
   },
   {
     "source": "game/room13.rpy",
     "line": 655,
-    "identity": "trial:C4:prepared_pin",
+    "identity": "trial:C3:start",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"granny\",\"브로치를 조사하신다니까 말씀드리는데요. 오후에 어르신을 도와드릴 때 떨어졌을 수도 있잖아요.\")],\"trial:C4:prepared_pin\"",
+    "call_expression": "[(\"granny\",\"비명이 들렸을 때 나는 식당에 있었어요. 다들 나를 봤잖아요.\")],\"trial:C3:start\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 655
   },
   {
     "source": "game/room13.rpy",
-    "line": 657,
+    "line": 658,
+    "identity": "trial:C4:prepared",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(\"granny\",\"아버님이 보여 준 자국도 오래된 것일 수 있다고 했죠. 누가 그 길로 들어갔다 해도, 어르신을 도우려던 건지 아닌지 어떻게 알아요?\")],\"trial:C4:prepared\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 658
+  },
+  {
+    "source": "game/room13.rpy",
+    "line": 660,
+    "identity": "trial:C4:prepared_pin",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(\"granny\",\"브로치를 조사하신다니까 말씀드리는데요. 오후에 어르신을 도와드릴 때 떨어졌을 수도 있잖아요.\")],\"trial:C4:prepared_pin\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 660
+  },
+  {
+    "source": "game/room13.rpy",
+    "line": 662,
     "identity": "trial:C4:start",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"granny\",\"잠깐 주방에 갔다고 해서 내가 13호에 갔다는 건가요? 갔다 해도 아픈 분을 도우려던 거라면요?\")],\"trial:C4:start\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 657
+    "end_line": 662
   },
   {
     "source": "game/room13.rpy",
-    "line": 672,
+    "line": 677,
     "identity": "trial:C1:counter",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_seori\",\"정문 말고도 방에 드나들 길이 있었군요. 아이만 들어갈 수 있었다는 말은 고치십시오.\"),(\"seryeon\",\"그 통로에 아이 어머니 물건도 있었다면서요. 그날 그 길로 들어간 사람이 부인입니까?\")],\"trial:C1:counter\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 672
-  },
-  {
-    "source": "game/room13.rpy",
-    "line": 675,
-    "identity": "trial:C1:done",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"resident_seori\",\"맞습니다. 그날 실제로 누가 드나들었는지는 따로 확인해야 합니다.\")],\"trial:C1:done\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 675
-  },
-  {
-    "source": "game/room13.rpy",
-    "line": 678,
-    "identity": "trial:C1:wrong",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"seryeon\",\"가족을 믿는다는 대답만으로는 그날 출입했는지 확인할 수 없습니다.\")],\"trial:C1:wrong\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 678
+    "end_line": 677
   },
   {
     "source": "game/room13.rpy",
     "line": 680,
-    "identity": "trial:C1:overreach",
+    "identity": "trial:C1:done",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"resident_seori\",\"통로가 있으니 누군가 드나들 수 있었다는 건 알겠습니다. 하지만 누가 그 통로를 썼는지는 아직 밝혀지지 않았습니다.\")],\"trial:C1:overreach\"",
+    "call_expression": "[(\"resident_seori\",\"맞습니다. 그날 실제로 누가 드나들었는지는 따로 확인해야 합니다.\")],\"trial:C1:done\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 680
   },
   {
     "source": "game/room13.rpy",
-    "line": 685,
-    "identity": "trial:C2:done",
+    "line": 683,
+    "identity": "trial:C1:wrong",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"seryeon\",\"아이의 첫 공격 때문에 어르신이 나중에 쓰러졌을 가능성은요?\"),(\"dad\",\"팔의 상처로는 목숨을 앗아 간 머리 상처가 설명되지 않습니다. 떨어져 나간 촛대 윗부분이 그 뒤에 한 번 더 쓰였습니다. 그사이 아이가 어디 있었는지, 누가 다른 길로 드나들었는지 함께 봐야 합니다.\"),(\"resident_seori\",\"지금까지 나온 관찰과 방의 기록을 함께 봤습니다. 아이가 한 것으로 확인된 일과 어르신을 죽게 한 공격은 같은 일로 적을 수 없습니다.\"),(\"daram\",\"그럼…… 내가 때린 건 어떻게 돼?\"),(\"dad\",\"그건 네가 붙잡힌 손을 빼려고 한 일이야. 사람을 죽게 한 공격과는 달라.\")],\"trial:C2:done\"",
+    "call_expression": "[(\"seryeon\",\"가족을 믿는다는 대답만으로는 그날 출입했는지 확인할 수 없습니다.\")],\"trial:C1:wrong\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 683
+  },
+  {
+    "source": "game/room13.rpy",
+    "line": 685,
+    "identity": "trial:C1:overreach",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(\"resident_seori\",\"통로가 있으니 누군가 드나들 수 있었다는 건 알겠습니다. 하지만 누가 그 통로를 썼는지는 아직 밝혀지지 않았습니다.\")],\"trial:C1:overreach\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 685
   },
   {
     "source": "game/room13.rpy",
-    "line": 688,
-    "identity": "trial:C2:wrong",
+    "line": 690,
+    "identity": "trial:C2:done",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"buri\",\"할아버지도 착한 사람이었어요. 그런 말로 대충 끝내지 마세요.\")],\"trial:C2:wrong\"",
+    "call_expression": "[(\"seryeon\",\"아이의 첫 공격 때문에 어르신이 나중에 쓰러졌을 가능성은요?\"),(\"dad\",\"팔의 상처로는 목숨을 앗아 간 머리 상처가 설명되지 않습니다. 떨어져 나간 촛대 윗부분이 그 뒤에 한 번 더 쓰였습니다. 그사이 아이가 어디 있었는지, 누가 다른 길로 드나들었는지 함께 봐야 합니다.\"),(\"resident_seori\",\"지금까지 나온 관찰과 방의 기록을 함께 봤습니다. 아이가 한 것으로 확인된 일과 어르신을 죽게 한 공격은 같은 일로 적을 수 없습니다.\"),(\"daram\",\"그럼…… 내가 때린 건 어떻게 돼?\"),(\"dad\",\"그건 네가 붙잡힌 손을 빼려고 한 일이야. 사람을 죽게 한 공격과는 달라.\")],\"trial:C2:done\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 688
+    "end_line": 690
   },
   {
     "source": "game/room13.rpy",
     "line": 693,
-    "identity": "trial:C3:done",
+    "identity": "trial:C2:wrong",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"nabi\",\"제가 할머니를 본 건 첫 비명 때뿐이에요. 그 뒤로 주방 안까지 들여다본 건 아니에요.\"),(\"granny\",\"그러니까 내가 잠깐 안 보였다는 것 말고는 아무것도 없잖아요.\"),(\"resident_seori\",\"그것만으로는 어르신이 해를 입었을 수 있는 시간 내내 다른 곳에 있었다는 증거가 되지 못합니다. 실제로 손을 댔는지는 이어서 보겠습니다.\")],\"trial:C3:done\"",
+    "call_expression": "[(\"buri\",\"할아버지도 착한 사람이었어요. 그런 말로 대충 끝내지 마세요.\")],\"trial:C2:wrong\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 693
   },
   {
     "source": "game/room13.rpy",
-    "line": 696,
-    "identity": "trial:C3:wrong",
+    "line": 698,
+    "identity": "trial:C3:done",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"nabi\",\"제가 할머니와 같이 있었던 시간까지 없던 일로 만들지는 마세요.\")],\"trial:C3:wrong\"",
+    "call_expression": "[(\"nabi\",\"제가 할머니를 본 건 첫 비명 때뿐이에요. 그 뒤로 주방 안까지 들여다본 건 아니에요.\"),(\"granny\",\"그러니까 내가 잠깐 안 보였다는 것 말고는 아무것도 없잖아요.\"),(\"resident_seori\",\"그것만으로는 어르신이 해를 입었을 수 있는 시간 내내 다른 곳에 있었다는 증거가 되지 못합니다. 실제로 손을 댔는지는 이어서 보겠습니다.\")],\"trial:C3:done\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 696
+    "end_line": 698
   },
   {
     "source": "game/room13.rpy",
     "line": 701,
-    "identity": "trial:C4:done",
+    "identity": "trial:C3:wrong",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"dad\",\"첫 비명 때 나비가 채워 준 핀입니다. 구조 직후 봉해 둔 촛대 조각에 그 핀 조각이 끼어 있었습니다. 그러니 도구를 거둬 간 뒤에 들어간 게 아닙니다.\"),(\"granny\",\"그래서 내가 들어갔다고 해도, 어르신이 도와달라고 한 거라면요?\"),(\"dad\",\"내려친 방향으로 눌린 고리 안에서 핀도 같이 휘었습니다. 주워 들다가 나중에 끼어든 조각이 아닙니다. 첫 비명 때만 해도 그 핀은 목도리에 달려 있었습니다.\"),(\"resident_seori\",\"할머니가 전날 어르신이 크게 변할 낌새를 알고 있었다는 것도 확인됐습니다. 위험을 모른 채 둘만 두었다는 설명도 기록과 다릅니다. 이 사실은 방에서 나온 자료와 따로 남기겠습니다.\"),(\"granny\",\"…….\"),(\"resident_seori\",\"대답하지 않으셔도 됩니다. 지금까지 모은 자료로 판단하겠습니다.\")],\"trial:C4:done\"",
+    "call_expression": "[(\"nabi\",\"제가 할머니와 같이 있었던 시간까지 없던 일로 만들지는 마세요.\")],\"trial:C3:wrong\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 701
   },
   {
     "source": "game/room13.rpy",
-    "line": 704,
+    "line": 706,
+    "identity": "trial:C4:done",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(\"dad\",\"첫 비명 때 나비가 채워 준 핀입니다. 구조 직후 봉해 둔 촛대 조각에 그 핀 조각이 끼어 있었습니다. 그러니 도구를 거둬 간 뒤에 들어간 게 아닙니다.\"),(\"granny\",\"그래서 내가 들어갔다고 해도, 어르신이 도와달라고 한 거라면요?\"),(\"dad\",\"내려친 방향으로 눌린 고리 안에서 핀도 같이 휘었습니다. 주워 들다가 나중에 끼어든 조각이 아닙니다. 첫 비명 때만 해도 그 핀은 목도리에 달려 있었습니다.\"),(\"resident_seori\",\"할머니가 전날 어르신이 크게 변할 낌새를 알고 있었다는 것도 확인됐습니다. 위험을 모른 채 둘만 두었다는 설명도 기록과 다릅니다. 이 사실은 방에서 나온 자료와 따로 남기겠습니다.\"),(\"granny\",\"…….\"),(\"resident_seori\",\"대답하지 않으셔도 됩니다. 지금까지 모은 자료로 판단하겠습니다.\")],\"trial:C4:done\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 706
+  },
+  {
+    "source": "game/room13.rpy",
+    "line": 709,
     "identity": "trial:C4:wrong",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_seori\",\"물건의 주인이 곧 범인인 것은 아닙니다. 그 물건이 언제 어떻게 옮겨 갔는지 밝혀야 합니다.\")],\"trial:C4:wrong\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 704
+    "end_line": 709
   },
   {
     "source": "game/room13.rpy",
-    "line": 710,
+    "line": 715,
     "identity": "verdict:cleared",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_seori\",\"다람 양이 죽였다는 의심을 뒷받침하던 설명은 더 이상 성립하지 않습니다. 아이를 풀어 주십시오.\"),(\"resident_ppul\",\"아이는 가족에게 돌려보내겠습니다. 남은 사안은 따로 기록하시오.\")],\"verdict:cleared\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 710
+    "end_line": 715
   },
   {
     "source": "game/room13.rpy",
-    "line": 713,
+    "line": 718,
     "identity": "verdict:culprit",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_seori\",\"할머니가 어르신에게 손을 대고 그 사실을 숨긴 일, 어르신을 죽게 한 일은 따로 확인됐습니다. 증거를 훼손하지 못하도록 할머니를 붙잡아 두십시오.\"),(\"neoul\",\"할머니, 일어나시오.\")],\"verdict:culprit\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 713
+    "end_line": 718
   },
   {
     "source": "game/room13.rpy",
-    "line": 714,
+    "line": 719,
     "identity": "verdict:child",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"daram\",\"이제 할아버지는 다시 못 만나지.\"),(\"dad\",\"응.\"),(\"daram\",\"나 할아버지 안 죽였다고 말하고 싶은데.\"),(\"dad\",\"부리한테도 네가 준비되면 그때 같이 말하자.\")],\"verdict:child\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 714
+    "end_line": 719
   },
   {
     "source": "game/room13.rpy",
-    "line": 717,
+    "line": 722,
     "identity": "verdict:held",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_seori\",\"뒤집힌 부분은 기록에 남겼습니다. 하지만 오늘 모은 자료만으로는 아이를 풀어 달라는 요청이 받아들여지지 않았습니다.\"),(\"resident_ppul\",\"추가 확인은 아이를 보호시설로 옮겨서 하겠습니다.\"),(\"dad\",\"확인하지 못한 일까지 아이 죄로 못 박지 마십시오.\"),(\"daram\",\"아빠는 같이 못 와?\"),(\"neoul\",\"오늘은 여기까지입니다.\"),(\"dad\",\"다시 올게. 다른 데로 옮겨지면 꼭 말 남겨 줘.\"),(\"daram\",\"아빠도. 아빠가 못 오면…… 누가 대신 오는지 말해 줘.\")],\"verdict:held\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 717
-  },
-  {
-    "source": "game/room13.rpy",
-    "line": 725,
-    "identity": "prevention:hearing",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"seryeon\",\"아이가 함께 들어왔다는 기록과, 따로 맡아 달라는 요청을 확인하겠습니다.\"),(\"resident_owlgp\",\"아이는 나와 함께 있었소. 죽은 사람도, 아이가 저지른 살인도 없소. 없는 사건을 만들지는 맙시다.\"),(\"granny\",\"낯선 아이를 가족과 따로 떼어 보호하자는 뜻이었어요.\"),(\"dad\",\"아이 보호자는 여기 있습니다. 마을 입구 초소에서 함께 등록한 원본도 있고요.\")],\"prevention:hearing\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 725
+    "end_line": 722
   },
   {
     "source": "game/room13.rpy",
     "line": 730,
-    "identity": "prevention:registered",
+    "identity": "prevention:hearing",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"resident_seori\",\"아빠와 딸이 함께 들어왔다는 기록은 그대로 인정됩니다. 따로 떼어 놓자는 요청은 근거가 없다고 봅니다.\")],\"prevention:registered\"",
+    "call_expression": "[(\"seryeon\",\"아이가 함께 들어왔다는 기록과, 따로 맡아 달라는 요청을 확인하겠습니다.\"),(\"resident_owlgp\",\"아이는 나와 함께 있었소. 죽은 사람도, 아이가 저지른 살인도 없소. 없는 사건을 만들지는 맙시다.\"),(\"granny\",\"낯선 아이를 가족과 따로 떼어 보호하자는 뜻이었어요.\"),(\"dad\",\"아이 보호자는 여기 있습니다. 마을 입구 초소에서 함께 등록한 원본도 있고요.\")],\"prevention:hearing\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 730
   },
   {
     "source": "game/room13.rpy",
-    "line": 732,
+    "line": 735,
+    "identity": "prevention:registered",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(\"resident_seori\",\"아빠와 딸이 함께 들어왔다는 기록은 그대로 인정됩니다. 따로 떼어 놓자는 요청은 근거가 없다고 봅니다.\")],\"prevention:registered\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 735
+  },
+  {
+    "source": "game/room13.rpy",
+    "line": 737,
     "identity": "prevention:independent_check",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_owlgp\",\"초소 원본을 여기서 직접 대조해 봅시다. 아이를 떼어 놓고 볼 일이 아니오.\"),(None,\"초소 담당자를 불러 원본을 확인했다. 그동안 우리 부녀는 떨어지지 않고 함께 기다렸다.\")],\"prevention:independent_check\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 732
+    "end_line": 737
   },
   {
     "source": "game/room13.rpy",
-    "line": 734,
+    "line": 739,
     "identity": "prevention:witness",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_owlgp\",\"그날 아이는 나와 같이 있었소. 원본과 그걸 확인한 사람을 함께 부르시오.\"),(\"resident_seori\",\"사람들 앞에서 원본을 대조하기 전까지 가족을 떼어 놓지 마십시오.\")],\"prevention:witness\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 734
+    "end_line": 739
   },
   {
     "source": "game/room13_dialogue_openings_20261013.rpy",
@@ -2194,313 +2194,314 @@
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 241,
+    "line": 249,
     "identity": "ep1:glimpse",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"광장 둘레에 등이 다섯 개 서 있었다. 등 하나 밑에서 누군가 판자에 그림을 그리고 있었다.\"),\n        (\"resident_piko\",\"여기가 마을에서 제일 따뜻해요. 등 안에 따뜻한 돌 조각이 들어 있거든요. 밤새 손을 데워 줘요.\"),\n        (\"daram\",\"아저씨 그림 예쁘다!\"),\n        (\"dad\",\"(이 마을에서 등은 불빛이 아니라 난로구나.)\",{\"thought\":True})],\"ep1:glimpse\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 244
-  },
-  {
-    "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 251,
-    "identity": "ep1:shelter:helped",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"nabi\",\"그림쟁이 아저씨를 여기서요? 할머니가 아시면 큰일 나요.\"),\n                (\"nabi\",\"……손님은 제 일 도와주셨으니까요. 식당 의자라도 괜찮다면요. 불 꺼진 뒤에만, 새벽엔 꼭 나가야 해요.\")],\"ep1:shelter:helped\"",
+    "call_expression": "[(None,\"광장 둘레에 등이 다섯 개 서 있었다. 등 하나 밑에서 누군가 판자에 그림을 그리고 있었다.\"),\n        (\"resident_piko\",\"여기가 마을에서 제일 따뜻해요. 등 안에 따뜻한 돌 조각이 들어 있거든요. 밤새 손을 데워 줘요.\"),\n        (\"daram\",\"아주머니 그림 예쁘다!\"),\n        (\"dad\",\"(이 마을에서 등은 불빛이 아니라 난로구나.)\",{\"thought\":True})],\"ep1:glimpse\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 252
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 254,
+    "line": 259,
+    "identity": "ep1:shelter:helped",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(\"nabi\",\"그림쟁이 아주머니를 여기서요? 할머니가 아시면 큰일 나요.\"),\n                (\"nabi\",\"……손님은 제 일 도와주셨으니까요. 식당 의자라도 괜찮다면요. 불 꺼진 뒤에만, 새벽엔 꼭 나가야 해요.\")],\"ep1:shelter:helped\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 260
+  },
+  {
+    "source": "game/systems/room13_ep1_lamp_thief.rpy",
+    "line": 262,
     "identity": "ep1:shelter:portrait",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"nabi\",\"그림쟁이 아저씨를 여기서요? 할머니가 아시면 큰일 나요.\"),\n                (\"dad\",\"그 사람이 내 아내를 그려 주고 있어. 아내를 찾는 데 꼭 필요한 그림이야.\"),\n                (\"nabi\",\"……손님 부인을요? 오늘 하루만이에요.\")],\"ep1:shelter:portrait\"",
+    "call_expression": "[(\"nabi\",\"그림쟁이 아주머니를 여기서요? 할머니가 아시면 큰일 나요.\"),\n                (\"dad\",\"그 사람이 내 아내를 그려 주고 있어. 아내를 찾는 데 꼭 필요한 그림이야.\"),\n                (\"nabi\",\"……손님 부인을요? 오늘 하루만이에요.\")],\"ep1:shelter:portrait\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 256
+    "end_line": 264
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 260,
+    "line": 268,
     "identity": "ep1:shelter:no",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"nabi\",\"그림쟁이 아저씨를 여기서요? 할머니가 아시면 큰일 나요.\"),\n            (\"nabi\",\"죄송해요. 저도 여기서 쫓겨나면 갈 데가 없어요.\")],\"ep1:shelter:no\"",
+    "call_expression": "[(\"nabi\",\"그림쟁이 아주머니를 여기서요? 할머니가 아시면 큰일 나요.\"),\n            (\"nabi\",\"죄송해요. 저도 여기서 쫓겨나면 갈 데가 없어요.\")],\"ep1:shelter:no\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 261
+    "end_line": 269
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 270,
+    "line": 278,
     "identity": "ep1:dawn:survived",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"3번 등이 꺼져 있었다. 그 밑에 피코가 쓰러져 있었다. 식당에서 자고, 새벽에 그림을 챙기러 나왔다가.\"),\n            (\"nabi\",\"제가 문을 너무 일찍 열었어요……. 숨은 쉬어요! 진료소로!\"),\n            (None,\"사람들이 피코를 들어 옮겼다. 손에서 붓이 떨어지지 않았다.\")],\"ep1:dawn:survived\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 272
+    "end_line": 280
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 274,
+    "line": 282,
     "identity": "ep1:dawn:portrait_done",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"피코의 품에서 판자 하나가 나왔다. 엄마의 얼굴. 코를 찡그린 모양까지 다 그려져 있었다.\"),\n                (\"daram\",\"엄마다! 아저씨가 약속 지켰어!\")],\"ep1:dawn:portrait_done\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 275
-  },
-  {
-    "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 281,
-    "identity": "ep1:dawn:dead",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"광장이 이상하게 조용했다. 3번 등이 꺼져 있었다. 그 밑에 담요를 덮은 작은 몸이 웅크려 있었다. 손에는 붓이 쥐여 있었다.\"),\n            (\"resident_lamplighter\",\"새벽에 돌 때만 해도…… 미지근했어요. 분명히.\"),\n            (\"daram\",\"아빠, 아저씨 왜 안 일어나?\")],\"ep1:dawn:dead\"",
+    "call_expression": "[(None,\"피코의 품에서 판자 하나가 나왔다. 엄마의 얼굴. 코를 찡그린 모양까지 다 그려져 있었다.\"),\n                (\"daram\",\"엄마다! 아주머니가 약속 지켰어!\")],\"ep1:dawn:portrait_done\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 283
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 284,
-    "identity": "ep1:dawn:silence",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"……눈 내리는 소리만 들렸다.\")],\"ep1:dawn:silence\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 284
-  },
-  {
-    "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 286,
-    "identity": "ep1:dawn:portrait",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"붓 옆에 판자 하나. 엄마의 얼굴이었다. 코만 아직 그려져 있지 않았다.\"),\n                (\"daram\",\"……엄마다. 코를 아직 안 그렸어.\")],\"ep1:dawn:portrait\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 287
-  },
-  {
-    "source": "game/systems/room13_ep1_lamp_thief.rpy",
     "line": 290,
-    "identity": "ep1:dawn:sketch",
+    "identity": "ep1:dawn:dead",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"판자 사이에서 오래된 스케치가 나왔다. 다람쥐 여인이 소포를 안고 울고 있었다.\"),\n                (\"dad\",\"(눈썹의 흉터. 아내다. 피코는 아내를 본 적이 있다.)\",{\"thought\":True})],\"ep1:dawn:sketch\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 291
-  },
-  {
-    "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 294,
-    "identity": "ep1:dawn:thought",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"dad\",\"(등이 꺼진 밤에, 등 밑에서 잔 사람이 쓰러졌다.)\",{\"thought\":True})],\"ep1:dawn:thought\"",
+    "call_expression": "[(None,\"광장이 이상하게 조용했다. 3번 등이 꺼져 있었다. 그 밑에는 담요로 덮인 피코가 누워 있었다. 손에는 붓이 쥐여 있었다.\"),\n            (\"resident_lamplighter\",\"새벽에 돌 때만 해도…… 미지근했어요. 분명히.\",{\"expression\":\"anxious\"}),\n            (\"daram\",\"아빠, 아주머니 왜 안 일어나?\",{\"expression\":\"anxious\"}),\n            (None,\"나는 다람이의 손을 잡았다. 담요 아래의 피코는 움직이지 않았다.\"),\n            (\"dad\",\"……다람아. 아주머니는 돌아가셨어.\")],\"ep1:dawn:dead\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 294
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 300,
+    "line": 295,
+    "identity": "ep1:dawn:silence",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(None,\"……눈 내리는 소리만 들렸다.\")],\"ep1:dawn:silence\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 295
+  },
+  {
+    "source": "game/systems/room13_ep1_lamp_thief.rpy",
+    "line": 297,
+    "identity": "ep1:dawn:portrait",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(None,\"붓 옆에 판자 하나. 엄마의 얼굴이었다. 코만 아직 그려져 있지 않았다.\"),\n                (\"daram\",\"……엄마다. 코를 아직 안 그렸어.\")],\"ep1:dawn:portrait\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 298
+  },
+  {
+    "source": "game/systems/room13_ep1_lamp_thief.rpy",
+    "line": 301,
+    "identity": "ep1:dawn:sketch",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(None,\"판자 사이에서 오래된 스케치가 나왔다. 다람쥐 여인이 소포를 안고 울고 있었다.\"),\n                (\"dad\",\"(눈썹의 흉터. 아내다. 피코는 아내를 본 적이 있다.)\",{\"thought\":True})],\"ep1:dawn:sketch\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 302
+  },
+  {
+    "source": "game/systems/room13_ep1_lamp_thief.rpy",
+    "line": 294,
+    "identity": "ep1:dawn:thought",
+    "binding_status": "retired_removed_source_call",
+    "call_expression": "[(\"dad\",\"(등이 꺼진 밤에, 등 밑에서 잔 사람이 쓰러졌다.)\",{\"thought\":True})],\"ep1:dawn:thought\"",
+    "content_review_status": "inactive_historical_slot_only; no runtime cue emitted",
+    "end_line": 294,
+    "active": false
+  },
+  {
+    "source": "game/systems/room13_ep1_lamp_thief.rpy",
+    "line": 314,
     "identity": "ep1:accused",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"수리점 앞에 사람들이 모여 있었다. 너울이 톡의 작업대를 손바닥으로 내리쳤다.\"),\n        (\"neoul\",\"3번 등 안의 돌 조각이 없어졌소. 그래서 그 밑에서 사람이 쓰러졌소.\"),\n        (\"neoul\",\"그 등을 열 줄 아는 사람은 이 마을에 당신뿐이오.\"),\n        (\"resident_tok\",\"나는 안 가져갔어요! 조각이 없으면 등이 식는다는 걸 제일 잘 아는 게 나라고요!\"),\n        (\"neoul\",\"내일 아침까지 범인이 안 나오면, 당신을 광장에 세우겠소.\")],\"ep1:accused\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 304
+    "end_line": 318
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 307,
+    "line": 321,
     "identity": "ep1:accused:defend",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"neoul\",\"그럼 내일 아침까지 증거를 가져오시오.\")],\"ep1:accused:defend\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 307
+    "end_line": 321
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 309,
+    "line": 323,
     "identity": "ep1:accused:side",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"너울이 톡의 손목을 묶었다.\"),(\"resident_tok\",\"……손님도 똑같군요.\")],\"ep1:accused:side\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 309
+    "end_line": 323
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 329,
+    "line": 343,
     "identity": "ep1:lamp:inside",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"조각이 있던 자리에 작은 쪽지가 끼어 있었다. 숫자가 몇 개 적혀 있다. 온도를 잰 숫자 같다.\"),\n                (\"dad\",\"(누군가 등을 열고 온도를 쟀다.)\",{\"thought\":True})],\"ep1:lamp:inside\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 330
+    "end_line": 344
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 334,
+    "line": 348,
     "identity": "ep1:lamp:gap",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"뚜껑 틈에 갈색 노끈 한 가닥이 걸려 있었다. 짐을 묶을 때 쓰는 거친 끈이다.\"),\n                (\"dad\",\"(온도를 적은 쪽지와 노끈. 같은 사람이 남긴 걸까, 서로 다른 사람이 열었던 걸까?)\",{\"thought\":True})],\"ep1:lamp:gap\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 335
+    "end_line": 349
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 339,
+    "line": 353,
     "identity": "ep1:lamp:rub",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"숯으로 문지르자 나사 둘레의 흔적이 종이 위에 고스란히 떠올랐다.\"),\n                (\"dad\",\"(너울이 등을 닦아도, 이건 남는다.)\",{\"thought\":True})],\"ep1:lamp:rub\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 340
-  },
-  {
-    "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 345,
-    "identity": "ep1:lamp:summary",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"dad\",\"(온도를 잰 사람과 노끈의 주인. 같은 사람인지, 언제 등을 열었는지 확인할 수 있을까?)\",{\"thought\":True})],\"ep1:lamp:summary\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 345
-  },
-  {
-    "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 350,
-    "identity": "ep1:ubak",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"dad\",\"꺼진 3번 등 안에 온도를 적은 쪽지가 있었어.\"),\n        (\"resident_ubak\",\"……! 제가 했어요. 스승님이 돌이 얼마나 식었는지 몰래 재 오라고 해서요.\"),\n        (\"resident_ubak\",\"근데 온도만 재고, 새벽 되기 전에 조각을 【제자리에 돌려놨어요】. 진짜예요.\"),\n        (\"resident_ubak\",\"그 아저씨가…… 저 때문이에요?\"),\n        (\"resident_seori\",\"제 심부름이었습니다. 그리고 이 아이가 돌려놨다면, 새벽엔 조각이 등 안에 있었어야 합니다.\")],\"ep1:ubak\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 354
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 358,
-    "identity": "ep1:ubak:numbers",
+    "line": 359,
+    "identity": "ep1:lamp:summary",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"resident_ubak\",\"가을보다 훨씬 낮아요. 밤마다 더 떨어져요.\"),\n                (\"resident_seori\",\"마을의 돌 자체가 식고 있습니다.\")],\"ep1:ubak:numbers\"",
+    "call_expression": "[(\"dad\",\"(온도를 잰 사람과 노끈의 주인. 같은 사람인지, 언제 등을 열었는지 확인할 수 있을까?)\",{\"thought\":True})],\"ep1:lamp:summary\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 359
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 363,
-    "identity": "ep1:ubak:trust",
+    "line": 364,
+    "identity": "ep1:ubak",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"resident_ubak\",\"……네.\"),(\"resident_seori\",\"고맙습니다. 저도 도울 일이 있으면 말씀하십시오.\")],\"ep1:ubak:trust\"",
+    "call_expression": "[(\"dad\",\"꺼진 3번 등 안에 온도를 적은 쪽지가 있었어.\"),\n        (\"resident_ubak\",\"……! 제가 했어요. 스승님이 돌이 얼마나 식었는지 몰래 재 오라고 해서요.\"),\n        (\"resident_ubak\",\"근데 온도만 재고, 새벽 되기 전에 조각을 【제자리에 돌려놨어요】. 진짜예요.\"),\n        (\"resident_ubak\",\"그 아주머니가…… 저 때문이에요?\"),\n        (\"resident_seori\",\"제 심부름이었습니다. 그리고 이 아이가 돌려놨다면, 새벽엔 조각이 등 안에 있었어야 합니다.\")],\"ep1:ubak\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 363
-  },
-  {
-    "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 366,
-    "identity": "ep1:ubak:blame",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"resident_seori\",\"진짜 범인을 놓칠 겁니다. 이 아이는 돌려놨다고 했습니다.\")],\"ep1:ubak:blame\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 366
+    "end_line": 368
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
     "line": 372,
-    "identity": "ep1:librarian",
+    "identity": "ep1:ubak:numbers",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"resident_librarian\",\"따뜻한 차 한 잔은 늘 있어요.\"),\n        (\"resident_librarian\",\"피코는 여기서 옛 그림을 자주 베껴 갔어요. 지난달엔 우체국 앞에서 소포를 안고 울던 다람쥐 여인을 그리고 싶다더군요.\"),\n        (\"dad\",\"(아내다.)\",{\"thought\":True}),\n        (\"resident_librarian\",\"(난로를 보며) 요즘 이 난로 조각이 금방 식어요.\")],\"ep1:librarian\"",
+    "call_expression": "[(\"resident_ubak\",\"가을보다 훨씬 낮아요. 밤마다 더 떨어져요.\"),\n                (\"resident_seori\",\"마을의 돌 자체가 식고 있습니다.\")],\"ep1:ubak:numbers\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 375
+    "end_line": 373
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 381,
-    "identity": "ep1:funeral",
+    "line": 377,
+    "identity": "ep1:ubak:trust",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"톡이 꺼진 등 옆에 피코의 판자 그림들을 하나씩 세웠다. 부리가 등잔을 들었다.\"),\n        (\"resident_tok\",\"내가 고친 등 밑에서 잤어요. 내 탓이 아니라고 해도…… 편하진 않네요.\"),\n        (\"resident_momo\",\"……세 냥이면 하룻밤 방값은 됐을 거예요.\"),\n        (None,\"아무도 대답하지 않았다.\")],\"ep1:funeral\"",
+    "call_expression": "[(\"resident_ubak\",\"……네.\"),(\"resident_seori\",\"고맙습니다. 저도 도울 일이 있으면 말씀하십시오.\")],\"ep1:ubak:trust\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 384
+    "end_line": 377
+  },
+  {
+    "source": "game/systems/room13_ep1_lamp_thief.rpy",
+    "line": 380,
+    "identity": "ep1:ubak:blame",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(\"resident_seori\",\"진짜 범인을 놓칠 겁니다. 이 아이는 돌려놨다고 했습니다.\")],\"ep1:ubak:blame\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 380
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
     "line": 386,
+    "identity": "ep1:librarian",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(\"resident_librarian\",\"따뜻한 차 한 잔은 늘 있어요.\"),\n        (\"resident_librarian\",\"피코는 여기서 옛 그림을 자주 베껴 갔어요. 지난달엔 우체국 앞에서 소포를 안고 울던 다람쥐 여인을 그리고 싶다더군요.\"),\n        (\"dad\",\"(아내다.)\",{\"thought\":True}),\n        (\"resident_librarian\",\"(난로를 보며) 요즘 이 난로 조각이 금방 식어요.\")],\"ep1:librarian\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 389
+  },
+  {
+    "source": "game/systems/room13_ep1_lamp_thief.rpy",
+    "line": 395,
+    "identity": "ep1:funeral",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(None,\"톡이 꺼진 등 옆에 피코의 판자 그림들을 하나씩 세웠다. 부리가 등잔을 들었다.\"),\n        (\"resident_tok\",\"내가 고친 등 밑에서 잤어요. 내 탓이 아니라고 해도…… 편하진 않네요.\"),\n        (\"resident_momo\",\"……세 냥이면 하룻밤 방값은 됐을 거예요.\"),\n        (None,\"아무도 대답하지 않았다.\")],\"ep1:funeral\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 398
+  },
+  {
+    "source": "game/systems/room13_ep1_lamp_thief.rpy",
+    "line": 400,
     "identity": "ep1:funeral:nose",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"다람이 크레용을 꺼내 엄마 초상 앞에 쪼그려 앉았다.\"),\n            (\"daram\",\"아저씨. 약속 내가 지킬게.\"),\n            (None,\"다람이 삐뚤빼뚤, 엄마의 코를 찡그린 모양으로 그려 넣었다.\"),\n            (None,\"……눈 내리는 소리만 들렸다.\"),\n            (\"daram\",\"……이제 엄마 웃는다.\")],\"ep1:funeral:nose\"",
+    "call_expression": "[(None,\"다람이 크레용을 꺼내 엄마 초상 앞에 쪼그려 앉았다.\"),\n            (\"daram\",\"아주머니. 약속 내가 지킬게.\"),\n            (None,\"다람이 삐뚤빼뚤, 엄마의 코를 찡그린 모양으로 그려 넣었다.\"),\n            (None,\"……눈 내리는 소리만 들렸다.\"),\n            (\"daram\",\"……이제 엄마 웃는다.\")],\"ep1:funeral:nose\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 390
+    "end_line": 404
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 394,
+    "line": 408,
     "identity": "ep1:funeral:flower",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"다람이 피코의 판자 하나에 꽃을 올렸다.\"),(\"daram\",\"아저씨 그림 예뻤어요.\")],\"ep1:funeral:flower\"",
+    "call_expression": "[(None,\"다람이 피코의 판자 하나에 꽃을 올렸다.\"),(\"daram\",\"아주머니 그림 예뻤어요.\")],\"ep1:funeral:flower\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 394
+    "end_line": 408
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 402,
+    "line": 416,
     "identity": "ep1:library:saved",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_librarian\",\"밤에 누가 창으로 들어왔어요. 장작이 있어서 버텼어요.\"),\n            (\"resident_librarian\",\"얼굴은 못 봤지만, 허리에 【노끈】을 감고 있었어요.\")],\"ep1:library:saved\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 403
+    "end_line": 417
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 406,
+    "line": 420,
     "identity": "ep1:library:ill",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"기록실 사서 선생님이 밤새 앓다가 진료소로 옮겨졌다는 말을 들었다. 난로 조각은 사라졌다고 했다.\")],\"ep1:library:ill\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 406
+    "end_line": 420
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 411,
+    "line": 425,
     "identity": "ep1:library:dead",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"난로가 꺼져 있었다. 조각이 있던 자리가 비어 있었다.\"),\n            (None,\"사서 선생님은 의자에 앉아 있었다. 무릎 위 기록 묶음에 자기 숄을 덮어 둔 채였다.\"),\n            (None,\"……눈 내리는 소리만 들렸다.\"),\n            (\"dad\",\"(기록이 젖지 않게. 마지막까지.)\",{\"thought\":True}),\n            (None,\"묶음 맨 위 대출 카드에 아내의 이름이 있었다.\"),\n            (\"dad\",\"(여기 난로 조각도 사라졌다. 같은 사람이다.)\",{\"thought\":True})],\"ep1:library:dead\"",
+    "call_expression": "[(None,\"난로가 꺼져 있었다. 조각이 있던 자리가 비어 있었다.\"),\n            (None,\"사서 선생님은 의자에 앉아 있었다. 무릎 위 기록 묶음에 자기 숄을 덮어 둔 채였다.\"),\n            (None,\"……눈 내리는 소리만 들렸다.\"),\n            (\"dad\",\"(기록이 젖지 않게. 마지막까지.)\",{\"thought\":True}),\n            (None,\"묶음 맨 위 대출 카드에 아내의 이름이 있었다.\"),\n            (\"dad\",\"(여기 난로 조각도 사라졌다. 3번 등에서 벌어진 일과 이어져 있을까?)\",{\"thought\":True})],\"ep1:library:dead\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 416
+    "end_line": 430
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 423,
+    "line": 438,
     "identity": "ep1:siluk",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"짐꾼 실룩이 짐을 묶고 있었다. 갈색 노끈, 한쪽 끝이 뜯겨 있었다.\"),\n        (\"resident_siluk\",\"……무슨 일이오. 바쁘오.\"),\n        (None,\"실룩의 아이 둘이 따끈한 빵을 나눠 먹고 있었다. \\\"아빠가 빵 사 왔어요! 진짜 빵이에요!\\\"\",{\"show\":\"kid_siluk2\",\"expression\":\"joy\"})],\"ep1:siluk\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 425
+    "end_line": 440
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 439,
+    "line": 454,
     "identity": "ep1:siluk:rope",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"dad\",\"(등 뚜껑에 걸려 있던 것과 같은 끈이다. 끝이 뜯긴 자리도.)\",{\"thought\":True})],\"ep1:siluk:rope\"",
+    "call_expression": "[(\"dad\",(\"(등 뚜껑에 남은 끈과 뜯긴 끝이 맞아 들어간다.)\" if r13_has(\"L04\") else \"(갈색 짐 끈 한쪽 끝이 뜯겨 있다. 끝의 모양을 적어 두자.)\"),{\"thought\":True})],\"ep1:siluk:rope\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 439
+    "end_line": 454
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 443,
+    "line": 458,
     "identity": "ep1:siluk:kid",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"실룩의 아이가 빵을 꼭 쥔 채 말했다. \\\"아빠가 어젯밤 늦게, 손이 꽁꽁 언 채 들어왔어요.\\\"\",{\"show\":\"kid_siluk1\"})],\"ep1:siluk:kid\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 443
-  },
-  {
-    "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 447,
-    "identity": "ep1:siluk:debt",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"resident_siluk\",\"……백 부인한테 진 빚, 다음 달까지 못 갚으면 애들을 그 집 일꾼으로 보내야 하오.\")],\"ep1:siluk:debt\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 447
-  },
-  {
-    "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 455,
-    "identity": "ep1:store",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"창고 안쪽 상자에서 초록빛이 새어 나왔다. 손을 대니 사람 손처럼 따뜻했다. 등 조각들이다.\"),\n        (\"resident_madam\",\"사고판 것뿐이에요. 요즘 온기가 얼마나 귀한지 아세요?\"),\n        (None,\"조각 하나를 뒤집어 보니 밑에 작은 이름표. 톡의 글씨로 '광장 3'.\"),\n        (\"dad\",\"(톡은 고친 조각마다 이름표를 붙인다. 이건 피코가 잠든 그 등의 조각이다.)\",{\"thought\":True})],\"ep1:store\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 458
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 475,
+    "line": 462,
+    "identity": "ep1:siluk:debt",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(\"resident_siluk\",\"……백 부인한테 진 빚, 다음 달까지 못 갚으면 애들을 그 집 일꾼으로 보내야 하오.\")],\"ep1:siluk:debt\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 462
+  },
+  {
+    "source": "game/systems/room13_ep1_lamp_thief.rpy",
+    "line": 470,
+    "identity": "ep1:store",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(None,\"창고 안쪽 상자에서 초록빛이 새어 나왔다. 손을 대니 사람 손처럼 따뜻했다. 등 조각들이다.\"),\n        (\"resident_madam\",\"사고판 것뿐이에요. 요즘 온기가 얼마나 귀한지 아세요?\"),\n        (None,\"조각 하나를 뒤집어 보니 밑에 작은 이름표. 톡의 글씨로 '광장 3'.\"),\n        (\"dad\",\"(톡은 고친 조각마다 이름표를 붙인다. 이건 피코가 잠든 그 등의 조각이다.)\",{\"thought\":True})],\"ep1:store\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 473
+  },
+  {
+    "source": "game/systems/room13_ep1_lamp_thief.rpy",
+    "line": 484,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[(None,\"톡이 묶인 채 돌 앞에 서 있었다. 사람들 틈에 실룩의 아이 둘이 빵 봉지를 쥐고 서 있었다. 백 부인은 맨 앞줄에 앉았다.\"),\n        (\"neoul\",\"그림쟁이가 쓰러졌소.\"+(\" 기록실 선생도 죽었소.\" if r13_has(\"librarian_dead\") else \"\")+\" 오늘 끝냅시다.\")],\"ep1:meeting:open\"",
@@ -2508,106 +2509,106 @@
     "binding_route": "dynamic:262",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 476
+    "end_line": 485
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 470,
+    "line": 493,
     "identity": "ep1:meeting:fail",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"neoul\",\"증거가 모자라오. 톡은 광장에 세우겠소.\"),(None,\"톡이 끌려가며 수리점 쪽을 돌아보았다.\")],\"ep1:meeting:fail\"",
+    "call_expression": "[(\"neoul\",(\"결론을 듣지 못했소. 톡의 처분은 그대로 두겠소.\" if r13_debate_ready(\"Q1\") else \"반박된 부분은 기록하겠소. 하지만 남은 의심을 풀지 못했으니 톡의 처분은 그대로요.\")),(None,\"톡이 끌려가며 수리점 쪽을 돌아보았다.\")],\"ep1:meeting:fail\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 470
-  },
-  {
-    "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 477,
-    "identity": "ep1:decision:open",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"neoul\",\"톡은 풀어 주겠소. 실룩은 내가 데려가오.\")],\"ep1:decision:open\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 477
-  },
-  {
-    "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 483,
-    "identity": "ep1:decision:hand",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"너울이 실룩의 팔을 잡아끌었다. 실룩의 아이들이 따라가려다 넘어졌다.\",{\"show\":\"kid_siluk2\",\"expression\":\"anxious\"}),\n            (\"resident_siluk\",\"애들은…… 애들은 건드리지 마시오!\")],\"ep1:decision:hand\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 484
-  },
-  {
-    "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 487,
-    "identity": "ep1:decision:store",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"resident_madam\",\"내 돈으로 산 거예요!\"),(None,\"사람들이 창고 쪽으로 움직였다.\"),\n            (\"resident_madam\",\"이 마을에서 오래 살 생각은 없으신가 보군요.\")],\"ep1:decision:store\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 488
-  },
-  {
-    "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 491,
-    "identity": "ep1:decision:debt",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"resident_madam\",\"……뭐라고요?\"),\n            (\"dad\",\"부인이 산 조각은 훔친 물건입니다. 돌려주시든지, 그 값으로 빚을 지우시든지.\"),\n            (None,\"사람들의 눈이 백 부인에게 쏠렸다. 백 부인이 입술을 깨물었다.\"),\n            (\"resident_madam\",\"……좋아요. 빚은 없던 걸로 하죠. 조각은 돌려주겠어요.\"),\n            (None,\"실룩이 아이들을 끌어안았다.\")],\"ep1:decision:debt\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 495
-  },
-  {
-    "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 500,
-    "identity": "ep1:after:lamp",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"톡이 '광장 3' 조각을 등에 다시 넣었다. 등이 데워졌다. 그런데 숨 몇 번 사이에 온기가 옅어졌다.\"),\n        (\"resident_tok\",\"이 조각, 가을엔 밤새 따뜻했어요. 지금은…….\")],\"ep1:after:lamp\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 501
+    "end_line": 493
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
     "line": 503,
-    "identity": "ep1:after:ubak",
+    "identity": "ep1:decision:open",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"resident_ubak\",\"조각 탓이 아니에요. 【돌이 식고 있어요】.\")],\"ep1:after:ubak\"",
+    "call_expression": "[(\"neoul\",\"톡은 풀어 주겠소. 실룩은 내가 데려가오.\")],\"ep1:decision:open\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 503
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 504,
+    "line": 509,
+    "identity": "ep1:decision:hand",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(None,\"너울이 실룩의 팔을 잡아끌었다. 실룩의 아이들이 따라가려다 넘어졌다.\",{\"show\":\"kid_siluk2\",\"expression\":\"anxious\"}),\n            (\"resident_siluk\",\"애들은…… 애들은 건드리지 마시오!\")],\"ep1:decision:hand\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 510
+  },
+  {
+    "source": "game/systems/room13_ep1_lamp_thief.rpy",
+    "line": 513,
+    "identity": "ep1:decision:store",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(\"resident_madam\",\"내 돈으로 산 거예요!\"),(None,\"사람들이 창고 쪽으로 움직였다.\"),\n            (\"resident_madam\",\"이 마을에서 오래 살 생각은 없으신가 보군요.\")],\"ep1:decision:store\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 514
+  },
+  {
+    "source": "game/systems/room13_ep1_lamp_thief.rpy",
+    "line": 517,
+    "identity": "ep1:decision:debt",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(\"resident_madam\",\"……뭐라고요?\"),\n            (\"dad\",\"부인이 산 조각은 훔친 물건입니다. 돌려주시든지, 그 값으로 빚을 지우시든지.\"),\n            (None,\"사람들의 눈이 백 부인에게 쏠렸다. 백 부인이 입술을 깨물었다.\"),\n            (\"resident_madam\",\"……좋아요. 빚은 없던 걸로 하죠. 조각은 돌려주겠어요.\"),\n            (None,\"실룩이 아이들을 끌어안았다.\")],\"ep1:decision:debt\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 521
+  },
+  {
+    "source": "game/systems/room13_ep1_lamp_thief.rpy",
+    "line": 526,
+    "identity": "ep1:after:lamp",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "r13_q1_lamp_aftermath(),\"ep1:after:lamp\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 526
+  },
+  {
+    "source": "game/systems/room13_ep1_lamp_thief.rpy",
+    "line": 528,
+    "identity": "ep1:after:ubak",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(\"resident_ubak\",\"조각을 돌려놔도 오래 따뜻하지 않아요. 돌 자체가 식고 있어요.\")],\"ep1:after:ubak\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 528
+  },
+  {
+    "source": "game/systems/room13_ep1_lamp_thief.rpy",
+    "line": 529,
     "identity": "ep1:after:thought",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"dad\",\"(실룩이 훔친 건 조각이지만, 피코를 쓰러뜨린 건 이 겨울이다.)\",{\"thought\":True})],\"ep1:after:thought\"",
+    "call_expression": "r13_q1_afterthought(),\"ep1:after:thought\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 504
+    "end_line": 529
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 506,
+    "line": 531,
     "identity": "ep1:after:book",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"그날 밤, 다람이 그림책을 펼쳤다.\",{\"book\":\"U01-opening\"}),\n            (None,\"「아침이 되자, 아저씨는 엄마 코를 다 못 그린 채 잠들어 있었어요.」\",{\"book\":\"U01-ending\"}),\n            (\"daram\",\"……아빠. 이 책, 이제 안 읽을래.\")],\"ep1:after:book\"",
+    "call_expression": "[(None,\"다람이가 품에 넣어 둔 그림책을 펼쳤다.\",{\"book\":\"U01-opening\"}),\n            (None,\"「아침이 되자, 아주머니는 엄마 코를 다 못 그린 채 잠들어 있었어요.」\",{\"book\":\"U01-ending\"}),\n            (\"daram\",\"……아빠. 이 책, 이제 안 읽을래.\"),\n            (\"dad\",\"응. 지금은 덮어 두자.\"),\n            (None,\"다람이가 책을 닫았다. 나는 아이의 손을 잡고 잠시 곁에 서 있었다.\")],\"ep1:after:book\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 508
+    "end_line": 535
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 510,
+    "line": 537,
     "identity": "ep1:after:book_saved",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"그날 밤, 다람이 그림책을 펼쳤다.\",{\"book\":\"U01-opening\"}),\n            (None,\"「아침이 되자, 누군가 아저씨에게 담요를 덮어 주었어요.」\",{\"book\":\"U01-ending\"}),\n            (\"daram\",\"아빠, 이번엔 끝이 바뀌었어.\")],\"ep1:after:book_saved\"",
+    "call_expression": "[(None,\"다람이가 품에 넣어 둔 그림책을 펼쳤다.\",{\"book\":\"U01-opening\"}),\n            (None,\"「아침이 되자, 누군가 아주머니에게 담요를 덮어 주었어요.」\",{\"book\":\"U01-ending\"}),\n            (\"daram\",\"아빠, 이번엔 끝이 바뀌었어.\"),\n            (\"dad\",\"그러네. 담요를 덮어 준 사람이 있었구나.\")],\"ep1:after:book_saved\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 512
+    "end_line": 540
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 518,
+    "line": 546,
     "identity": "ep1:deadline",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"광장에 판자가 덧대진 기둥이 섰다. 톡이 그 앞에 묶여 있었다. 회의는 열리지 않았다.\"),\n        (\"dad\",\"(진짜 범인은 아직 마을 어딘가에 있다.)\",{\"thought\":True})],\"ep1:deadline\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 519
+    "end_line": 547
   },
   {
     "source": "game/systems/room13_ep2_kids.rpy",
@@ -3613,7 +3614,7 @@
     "line": 282,
     "identity": "nt:night8:half",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"강가 쪽 먼 길에서 초롱이 쓰러져 있었다. 이마가 찢기고, 등잔은 깨졌다. 숨은 붙어 있다.\"),\n            (\"resident_lamplighter\",\"미안해요……. 빼앗겼어요. 편지. 그분 글씨였는데…….\")],\"nt:night8:half\"",
+    "call_expression": "[(None,\"강가 쪽 먼 길에서 초롱이 쓰러져 있었다. 이마가 찢기고, 등잔은 깨졌다. 숨은 붙어 있다.\",{\"cut\":\"chorong_injured_alive\",\"no_lead\":True}),\n            (\"resident_lamplighter\",\"미안해요……. 빼앗겼어요. 편지. 그분 글씨였는데…….\")],\"nt:night8:half\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 283
   },
@@ -3693,7 +3694,8 @@
     "binding_status": "dynamic_local_snapshot",
     "call_expression": "[(\"resident_seori\",\"하나 더 있습니다. 9일 새벽, 통로 안에서 목수 따닥 씨가 얼었습니다.\" if r13_has(\"ttadak_dead\") else \"하나 더 있습니다. 9일 새벽, 목수 따닥 씨가 통로 안에 갇혔습니다. 손이 얼어 지금 진료소에 있습니다.\")],\"nt:q4:open\"",
     "content_review_status": "main01916_survival_branch_reviewed",
-    "end_line": 356
+    "end_line": 356,
+    "binding_route": "dynamic:389"
   },
   {
     "source": "game/systems/room13_ep4_night13.rpy",
@@ -3928,7 +3930,7 @@
     "line": 278,
     "identity": "ws:morning:nero_alive",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"노부부 둘이 서로 기댄 채였다. 그 곁에서 네로가 숨을 붙이고 있었다.\"),\n            (\"resident_nero\",\"……내가 다 못 데려왔다. 이름이라도 데려가라.\")],\"ws:morning:nero_alive\"",
+    "call_expression": "[(None,\"노부부 둘이 서로 기댄 채였다. 그 곁에서 네로가 숨을 붙이고 있었다.\",{\"cut\":\"nero_weakened_alive\",\"no_lead\":True}),\n            (\"resident_nero\",\"……내가 다 못 데려왔다. 이름이라도 데려가라.\")],\"ws:morning:nero_alive\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 279
   },
@@ -4066,7 +4068,7 @@
     "line": 406,
     "identity": "ws:meeting:open",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"담요 덮인 자리 앞. 보리가 무릎을 꿇고 도담의 작은 손을 쥐고 있었다. 화상 자국이 있는 손으로.\"),\n        (\"neoul\",\"대피소에서 아이가 죽었소. 오늘 밤 안에 끝냅시다.\"),\n        (\"resident_bori\",\"(고개를 들지 않고) 누구야. 누가 내 애한테.\")],\"ws:meeting:open\"",
+    "call_expression": "[(None,\"담요 덮인 자리 앞. 보리가 무릎을 꿇고 도담의 작은 손을 쥐고 있었다. 화상 자국이 있는 손으로.\",{\"cut\":\"bori_kneels_holding_dodam_hand\",\"no_lead\":True}),\n        (\"neoul\",\"대피소에서 아이가 죽었소. 오늘 밤 안에 끝냅시다.\"),\n        (\"resident_bori\",\"(고개를 들지 않고) 누구야. 누가 내 애한테.\")],\"ws:meeting:open\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 408
   },
@@ -4111,7 +4113,7 @@
     "line": 434,
     "identity": "ws:decision:gone_one",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"선생님이 냄비를 비웠다. 도담 옆에 눕고, 담요를 끌어 덮었다.\"),\n                    (\"resident_teacher\",\"도담아. 선생님 왔어요.\"),\n                    (None,\"……\"),\n                    (None,\"머리맡에 출석부가 남았다. 도담의 이름에만 동그라미가 있었다.\")],\"ws:decision:gone_one\"",
+    "call_expression": "[(None,\"선생님이 냄비를 비웠다. 도담 옆에 눕고, 담요를 끌어 덮었다.\",{\"cut\":\"teacher_blanket_dodam_only\",\"no_lead\":True}),\n                    (\"resident_teacher\",\"도담아. 선생님 왔어요.\"),\n                    (None,\"……\"),\n                    (None,\"머리맡에 출석부가 남았다. 도담의 이름에만 동그라미가 있었다.\")],\"ws:decision:gone_one\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 437
   },
@@ -4120,7 +4122,7 @@
     "line": 439,
     "identity": "ws:decision:gone",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"선생님이 냄비를 비웠다. 아이들 옆에 눕고, 담요를 끌어 덮었다.\"),\n                    (\"resident_teacher\",\"깜이, 몽이, 방울, 도담. 선생님 왔어요.\"),\n                    (None,\"……\"),\n                    (None,\"머리맡에 출석부가 남았다. 새미의 이름에만 동그라미가 없었다.\")],\"ws:decision:gone\"",
+    "call_expression": "[(None,\"선생님이 냄비를 비웠다. 아이들 옆에 눕고, 담요를 끌어 덮었다.\",{\"cut\":\"teacher_blanket_four_children\",\"no_lead\":True}),\n                    (\"resident_teacher\",\"깜이, 몽이, 방울, 도담. 선생님 왔어요.\"),\n                    (None,\"……\"),\n                    (None,\"머리맡에 출석부가 남았다. 새미의 이름에만 동그라미가 없었다.\")],\"ws:decision:gone\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 442
   },
@@ -4138,7 +4140,7 @@
     "line": 454,
     "identity": "ws:after:bori",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"보리가 대피소 구석에 앉아 있었다. 무릎에 깜이, 양옆에 몽이와 방울이 잠들어 있었다.\"),\n            (\"resident_bori\",\"내 애 하나 잃고…… 셋 얻었다.\"),\n            (\"resident_bori\",\"이번엔 안 놓친다.\")],\"ws:after:bori\"",
+    "call_expression": "[(None,\"보리가 대피소 구석에 앉아 있었다. 무릎에 깜이, 양옆에 몽이와 방울이 잠들어 있었다.\",{\"cut\":\"bori_cares_three_after_dodam_loss\",\"no_lead\":True}),\n            (\"resident_bori\",\"내 애 하나 잃고…… 셋 얻었다.\"),\n            (\"resident_bori\",\"이번엔 안 놓친다.\")],\"ws:after:bori\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 456
   },
@@ -4147,7 +4149,7 @@
     "line": 458,
     "identity": "ws:after:bori_home",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"보리가 대피소 구석에 앉아 있었다. 무릎에 도담이 잠들어 있었고, 맡은 아이 셋이 그 옆에 붙어 있었다.\"),\n            (\"resident_bori\",\"우리 집 좁다. ……그래도 넷이면 덜 춥겠지.\"),\n            (\"resident_bori\",\"이번엔 안 놓친다.\")],\"ws:after:bori_home\"",
+    "call_expression": "[(None,\"보리가 대피소 구석에 앉아 있었다. 무릎에 도담이 잠들어 있었고, 맡은 아이 셋이 그 옆에 붙어 있었다.\",{\"cut\":\"bori_adopts_four_alive\",\"no_lead\":True}),\n            (\"resident_bori\",\"우리 집 좁다. ……그래도 넷이면 덜 춥겠지.\"),\n            (\"resident_bori\",\"이번엔 안 놓친다.\")],\"ws:after:bori_home\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 460
   },
@@ -4156,7 +4158,7 @@
     "line": 462,
     "identity": "ws:after:bori_silent",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"보리는 아무 말도 하지 않았다. 도담의 작은 신발 한 짝을 손에 쥐고, 밤새 난로 옆에 앉아 있었다.\")],\"ws:after:bori_silent\"",
+    "call_expression": "[(None,\"보리는 아무 말도 하지 않았다. 도담의 작은 신발 한 짝을 손에 쥐고, 밤새 난로 옆에 앉아 있었다.\",{\"cut\":\"bori_silent_single_shoe\",\"no_lead\":True})],\"ws:after:bori_silent\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 462
   },
@@ -5422,7 +5424,7 @@
     "line": 91,
     "identity": "life:night1:comparison",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"daram\",\"메모에 아빠랑 내가 도착하면 이 방으로 오라고 했지.\"),(\"dad\",\"응. 엄마도 우리가 올 걸 알고 있었어. 그런데 기다리던 방에는 없네.\")],\"life:night1:comparison\"",
+    "call_expression": "[(\"daram\",\"메모에 아빠랑 내가 도착하면 이 방으로 오라고 했지.\"),(\"dad\",\"응. 혹시 우리가 오면 이 방을 찾을 거라고 생각했나 봐. 지금 어디 있는지는 아직 모르고.\")],\"life:night1:comparison\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 91
   },
@@ -5449,7 +5451,7 @@
     "line": 100,
     "identity": "life:night1:rest",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"daram\",\"엄마는 왜 우리를 부르고 없어진 거야?\"),(\"dad\",\"엄마는 이 방에 우리에게 남긴 메모를 두었어. 무엇을 보고, 누구를 만났는지 하나씩 알아보자.\"),(\"daram\",\"엄마 소식 찾으면 나한테도 꼭 말해 줘.\"),(\"dad\",\"응. 같이 찾자.\")],\"life:night1:rest\"",
+    "call_expression": "[(\"daram\",\"엄마는 지금 어디에 있는 거야?\"),(\"dad\",\"엄마는 이 방에 우리에게 남긴 메모를 두었어. 무엇을 보고, 누구를 만났는지 하나씩 알아보자.\"),(\"daram\",\"엄마 소식 찾으면 나한테도 꼭 말해 줘.\"),(\"dad\",\"응. 같이 찾자.\")],\"life:night1:rest\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 100
   },
@@ -5557,39 +5559,39 @@
   },
   {
     "source": "game/systems/room13_intro_clues.rpy",
-    "line": 148,
+    "line": 149,
     "identity": "entry:daram:original",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"dad\",\"예약 종이에 ‘다돌 외 한 사람’이라고 적혀 있네.\"),(\"daram\",\"다돌은 아빠 이름이잖아. 그럼 나머지 한 사람은 나지?\"),(\"dad\",\"응. 초소에서 옮겨 적은 명단도 같이 확인해 보자.\")],\"entry:daram:original\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 148
+    "end_line": 149
   },
   {
     "source": "game/systems/room13_intro_clues.rpy",
-    "line": 150,
+    "line": 151,
     "identity": "entry:daram:look:v2",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"daram\",\"선반에 종이 묶음이 여러 개 있어. 날짜가 적혀 있네.\"),(\"daram\",\"우리 오늘 왔잖아. 오늘이 무슨 요일이지?\")],\"entry:daram:look:v2\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 150
+    "end_line": 151
   },
   {
     "source": "game/systems/room13_intro_clues.rpy",
-    "line": 152,
+    "line": 153,
     "identity": "entry:daram:compare",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"daram\",\"아빠 이름은 예약 종이랑 명단에 다 있는데, 내 이름도 둘 다 있을까?\"),(\"dad\",\"예약 종이와 명단을 나란히 놓고 대조해 보자.\")],\"entry:daram:compare\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 152
+    "end_line": 153
   },
   {
     "source": "game/systems/room13_intro_clues.rpy",
-    "line": 155,
+    "line": 156,
     "identity": "entry:daram:together",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"daram\",\"엄마 만나러 같이 왔는데 아빠만 먼저 들어가면 안 돼.\"),(\"dad\",\"걱정 마. 같이 들어갈 거야. 우리 둘이 함께 예약했다는 기록이 어디 있을까?\")],\"entry:daram:together\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 155
+    "end_line": 156
   },
   {
     "source": "game/systems/room13_life_closeups.rpy",
@@ -5812,7 +5814,7 @@
   },
   {
     "source": "game/systems/room13_memory.rpy",
-    "line": 97,
+    "line": 121,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[(\"dad\",\"(지금 가진 돈으로는 모자라다. %d냥이 있어야 한다.)\"%_gcost,{\"thought\":True})],\"grudge:short:\"+_gk",
@@ -5820,11 +5822,11 @@
     "binding_route": "dynamic:610",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 97
+    "end_line": 121
   },
   {
     "source": "game/systems/room13_memory.rpy",
-    "line": 101,
+    "line": 125,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "_glines,\"grudge:fix:\"+_gk",
@@ -5832,7 +5834,7 @@
     "binding_route": "dynamic:611",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 101
+    "end_line": 125
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
@@ -5848,111 +5850,111 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 239,
+    "line": 237,
     "identity": "newcast:tosil:friend",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"장터 구석, 토실이 다람이 손에 든 과자 봉지를 힐끔힐끔 본다.\"),\n        (\"resident_tosil\",\"……그거 맛있어?\"),\n        (\"daram\",\"응. 근데 반은 엄마 거야. 엄마 만나면 줄 거야.\",{\"expression\":\"flustered\"}),\n        (\"resident_tosil\",\"너희 엄마도 없어? 우리 엄마도 봄에 와.\"),\n        (None,\"다람이가 잠깐 망설이더니 자기 몫에서 반을 뚝 떼어 내밀었다.\"),\n        (\"daram\",\"그럼 이건 내 몫에서 반. 엄마 몫은 안 돼.\",{\"expression\":\"joy\"}),\n        (\"resident_tosil\",\"……고마워. 나는 토실이야. 할머니 손녀.\"),\n        (\"daram\",\"나는 다람이! 13호실에 있어.\",{\"expression\":\"joy\"}),\n        (\"dad\",\"(다람이에게 이 마을에서 처음 생긴 친구다.)\",{\"thought\":True})],\"newcast:tosil:friend\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 247
+    "end_line": 245
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 253,
+    "line": 251,
     "identity": "newcast:tosil:errand:open",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"해가 진 뒤, 접수대 뒤에서 할머니가 토실에게 보온병을 쥐여 주었다.\"),\n        (\"granny\",\"큰 나무 밑에 다시 가 보렴. 부인이 돌아왔으면 이거 드리고, 아무 말 말고 바로 와.\"),\n        (None,\"토실이 여관 뒷문으로 빠져나가 숲 쪽으로 걸어갔다.\")],\"newcast:tosil:errand:open\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 255
+    "end_line": 253
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 258,
+    "line": 256,
     "identity": "newcast:tosil:errand:follow",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"토실은 큰 전나무 뿌리 앞에서 멈춰 서서 구멍 안을 들여다보았다. 안은 비어 있었다.\"),\n                (\"resident_tosil\",\"……오늘도 없네. 저번처럼.\"),\n                (\"dad\",\"토실아, 이 밤에 여기서 뭐 하니?\"),\n                (\"resident_tosil\",\"아, 아저씨! 할머니가 부인이 돌아왔나 보고 오래요. 처음 왔을 땐 발자국만 따라가면 된다고 했는데.\"),\n                (\"dad\",\"(할머니는 아이를 시켜 아내를 쫓게 했다. 할머니는 지금도 아내를 찾고 있다.)\",{\"thought\":True}),\n                (\"dad\",\"오늘은 너무 깜깜해. 같이 돌아가자. 할머니한테는 아무도 없었다고만 하렴.\")],\"newcast:tosil:errand:follow\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 263
+    "end_line": 261
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 266,
+    "line": 264,
     "identity": "newcast:tosil:errand:stay",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"dad\",\"(아이 혼자 숲에……. 하지만 지금 따라가면 할머니 눈에 띌 수도 있다.)\",{\"thought\":True})],\"newcast:tosil:errand:stay\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 266
+    "end_line": 264
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 271,
+    "line": 269,
     "identity": "newcast:mulgyeol:ice:open",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"쩍, 하는 소리와 함께 썰매 배 앞의 얼음이 갈라졌다. 물결이 밧줄을 붙잡은 채 미끄러진다.\"),\n        (\"resident_mulgyeol\",\"밧줄! 밧줄 끝 좀 잡아 줘요!\")],\"newcast:mulgyeol:ice:open\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 272
+    "end_line": 270
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 275,
+    "line": 273,
     "identity": "newcast:mulgyeol:ice:pull",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"밧줄을 힘껏 당기자 썰매 배가 단단한 얼음 위로 끌려 올라왔다.\"),\n                (\"resident_mulgyeol\",\"……휴. 살았다. 고마워요. 이 은혜는 강가 일로 갚을게요.\"),\n                (\"resident_mulgyeol\",\"궁금한 거 있으면 물어봐요. 강가에서 본 건 다 말해 줄게요.\")],\"newcast:mulgyeol:ice:pull\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 277
+    "end_line": 275
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 280,
+    "line": 278,
     "identity": "newcast:mulgyeol:ice:call",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"꽥순을 데리고 돌아왔을 때 물결은 혼자 기어 올라와 젖은 몸을 떨고 있었다.\"),\n                (\"resident_mulgyeol\",\"……다음엔 그냥 밧줄을 잡아 줘요. 그래도 와 줘서 고마워요.\")],\"newcast:mulgyeol:ice:call\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 281
+    "end_line": 279
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 287,
+    "line": 285,
     "identity": "newcast:solbang:open",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_solbang\",\"진료소 약초가 다 떨어졌어요. 숲 안쪽까지 가야 하는데, 혼자는 길 표식 천을 다 못 봐서요.\"),\n        (\"dad\",\"같이 가 드리겠습니다.\")],\"newcast:solbang:open\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 288
+    "end_line": 286
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 289,
+    "line": 287,
     "identity": "newcast:solbang:walk",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"붉은 표식 천을 따라 숲 안쪽으로 들어갔다. 솔방울이 눈을 헤치고 마른 뿌리를 캐낸다.\"),\n        (None,\"돌아오는 길, 큰 전나무 뿌리 쪽 눈이 유난히 단단하게 다져져 있었다.\"),\n        (\"resident_solbang\",\"저기는 요즘 누가 자꾸 드나드나 봐요. 동물 자국은 아니고요.\"),\n        (\"resident_solbang\",\"덕분에 약초를 넉넉히 캤어요. 무쇠 할아버지 약도 이걸로 지을 수 있어요.\")],\"newcast:solbang:walk\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 292
+    "end_line": 290
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 298,
+    "line": 296,
     "identity": "newcast:dalgeurak:open",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_dalgeurak\",\"바깥 소식이오, 바깥 소식! 한 냥이면 고개 너머 이야기를 들려드리지!\")],\"newcast:dalgeurak:open\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 298
+    "end_line": 296
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 302,
+    "line": 300,
     "identity": "newcast:dalgeurak:paid",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_dalgeurak\",\"고개 마차는 눈이 녹아야 와. 내 짐작엔 【보름째】나 돼야 할 거요.\"),\n                (\"resident_dalgeurak\",\"그리고 고개 아래 마을에선 이 마을 이름만 나와도 고개를 돌리더이다. 해마다 사람이 줄어든다고.\"),\n                (\"dad\",\"(바깥에서도 이 마을이 이상하다는 걸 알고 있었다.)\",{\"thought\":True})],\"newcast:dalgeurak:paid\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 304
+    "end_line": 302
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 307,
+    "line": 305,
     "identity": "newcast:dalgeurak:pass",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_dalgeurak\",\"에이, 소식은 상하지도 않는데. 다음에 또 오시오.\")],\"newcast:dalgeurak:pass\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 307
+    "end_line": 305
   },
   {
     "source": "game/systems/room13_new_places.rpy",
@@ -6208,48 +6210,48 @@
   },
   {
     "source": "game/systems/room13_poc_route.rpy",
-    "line": 161,
+    "line": 159,
     "identity": "poc:night:letters",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"daram\",\"엄마는 오라는 편지를 쓴 적 없대. 그럼 우리가 받은 건 누가 쓴 거야?\"),(\"dad\",\"응. 두 편지를 나란히 놓으니 말이 서로 달라.\"),(\"daram\",\"엄마는 우리가 오는 게 싫었던 거야?\",{\"expression\":\"anxious\"}),(\"dad\",\"아니. 엄마 글에는 우리 걱정만 적혀 있었어. 누가 엄마 이름으로 우리를 불렀는지 알아내야 해.\")],\"poc:night:letters\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 159
+  },
+  {
+    "source": "game/systems/room13_poc_route.rpy",
+    "line": 161,
+    "identity": "poc:night:uncompared",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(\"daram\",\"엄마 글에는 오라는 편지를 쓴 적 없다고 적혀 있어.\"),(\"dad\",\"그럼 엄마 이름으로 온 초대 편지는 누가, 왜 쓴 걸까?\")],\"poc:night:uncompared\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 161
   },
   {
     "source": "game/systems/room13_poc_route.rpy",
-    "line": 163,
-    "identity": "poc:night:uncompared",
+    "line": 165,
+    "identity": "poc:night:packet",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"daram\",\"엄마 글에는 오라는 편지를 쓴 적 없다고 적혀 있어.\"),(\"dad\",\"그럼 엄마 이름으로 온 초대 편지는 누가, 왜 쓴 걸까?\")],\"poc:night:uncompared\"",
+    "call_expression": "[(\"daram\",\"어딘가에 엄마가 맡겨 둔 글이 있을지도 몰라.\"),(\"dad\",\"응. 봉투가 있었다는 것만 알아. 안에 뭐가 적혔는지는 봉투를 맡아 둔 사람만 알겠지.\")],\"poc:night:packet\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 163
+    "end_line": 165
   },
   {
     "source": "game/systems/room13_poc_route.rpy",
     "line": 167,
-    "identity": "poc:night:packet",
+    "identity": "poc:night:post",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"daram\",\"어딘가에 엄마가 맡겨 둔 글이 있을지도 몰라.\"),(\"dad\",\"응. 봉투가 있었다는 것만 알아. 안에 뭐가 적혔는지는 봉투를 맡아 둔 사람만 알겠지.\")],\"poc:night:packet\"",
+    "call_expression": "[(\"daram\",\"우체국에도 엄마가 갔었는지 아직 못 물어봤지?\"),(\"dad\",\"응. 우체국 창구는 오전에 열어. 그런데 손님 이야기를 우리한테 해 줄까?\")],\"poc:night:post\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 167
   },
   {
     "source": "game/systems/room13_poc_route.rpy",
     "line": 169,
-    "identity": "poc:night:post",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"daram\",\"우체국에도 엄마가 갔었는지 아직 못 물어봤지?\"),(\"dad\",\"응. 우체국 창구는 오전에 열어. 그런데 손님 이야기를 우리한테 해 줄까?\")],\"poc:night:post\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 169
-  },
-  {
-    "source": "game/systems/room13_poc_route.rpy",
-    "line": 171,
     "identity": "poc:night:search",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"daram\",\"오늘 물어본 건 수첩에 다 적어 뒀지?\"),(\"dad\",\"응. 엄마는 우리가 올 걸 알았는데 왜 기다리지 않았을까. 그게 계속 마음에 걸려.\")],\"poc:night:search\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 171
+    "end_line": 169
   },
   {
     "source": "game/systems/room13_reinspect.rpy",
@@ -6814,187 +6816,187 @@
   },
   {
     "source": "game/systems/room13_town_events2.rpy",
-    "line": 97,
+    "line": 233,
     "identity": "ev:a:offer",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"광장 우물가에서 짐꾼 실룩이 먼저 다가왔다. 잠을 못 잤는지 눈 밑이 거뭇했다.\"),\n        (\"resident_siluk\",\"외곽 초소에서 되돌아온 짐 기다리시죠? 정식 길로 가면 이틀 걸려요. 저는 남들 모르는 지름길을 알아요.\"),\n        (\"resident_siluk\",\"그 짐, 오늘 안에 받아다 드리죠. 선금 다섯 냥만 주세요.\")],\"ev:a:offer\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 99
+    "end_line": 235
   },
   {
     "source": "game/systems/room13_town_events2.rpy",
-    "line": 106,
+    "line": 243,
     "identity": "ev:a:paid",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"resident_siluk\",\"해 지기 전에 짐 가지고 올게요. 걱정 마세요.\"),\n                    (None,\"실룩은 해가 져도, 다음 날이 되어도 오지 않았다.\"),\n                    (\"resident_kongi\",\"실룩 아저씨요? 어제 백 부인네 뒷문으로 들어가던데요.\")],\"ev:a:paid\"",
+    "call_expression": "[(\"resident_siluk\",\"해 지기 전에 짐 가지고 올게요. 걱정 마세요.\"),\n                        (None,\"실룩은 선금을 챙겨 자리를 떠났다.\")],\"ev:a:paid\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 108
+    "end_line": 244
   },
   {
     "source": "game/systems/room13_town_events2.rpy",
-    "line": 112,
+    "line": 248,
     "identity": "ev:a:paid_all",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"resident_siluk\",\"……이것뿐이에요? 뭐, 일단 받죠.\"),\n                    (None,\"그 뒤로 실룩은 다시 나타나지 않았다.\")],\"ev:a:paid_all\"",
+    "call_expression": "[(\"resident_siluk\",\"……이것뿐이에요? 뭐, 일단 받죠.\"),\n                        (None,\"실룩은 내가 건넨 돈을 챙겨 자리를 떠났다.\")],\"ev:a:paid_all\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 113
+    "end_line": 249
   },
   {
     "source": "game/systems/room13_town_events2.rpy",
-    "line": 116,
+    "line": 251,
     "identity": "ev:a:refuse",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_siluk\",\"후회하실 텐데요. 되돌아온 짐은 오래 두면 젖어요.\")],\"ev:a:refuse\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 116
+    "end_line": 251
   },
   {
     "source": "game/systems/room13_town_events2.rpy",
-    "line": 118,
+    "line": 253,
     "identity": "ev:a:later",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_siluk\",\"짐 받아 온 다음에 주신다고요? 저도 돈이 급하다고요!\"),\n                    (\"resident_siluk\",\"……백 부인한테 진 빚을 오늘까지 갚아야 해서요. 아, 아무것도 아니에요.\")],\"ev:a:later\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 119
+    "end_line": 254
   },
   {
     "source": "game/systems/room13_town_events2.rpy",
-    "line": 123,
+    "line": 258,
     "identity": "ev:a:badook",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_badook\",\"실룩, 또 그 지름길 얘기야? 지난주에도 누가 너한테 선금을 떼였다던데.\"),\n                    (\"resident_siluk\",\"……백 부인한테 진 빚 때문이에요. 이자가 매일 붙어요. 안 갚으면 마구간 일자리도 잃어요.\")],\"ev:a:badook\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 124
+    "end_line": 259
   },
   {
     "source": "game/systems/room13_town_events2.rpy",
-    "line": 129,
+    "line": 265,
     "identity": "ev:a:follow",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"실룩은 초소 쪽이 아니라 백 부인 집 뒷골목으로 갔다. 뭉치가 문을 열고 나와 동전을 받아 갔다.\"),\n                    (\"resident_mungchi\",\"이번 주 이자는 받았어요. 부인이 다음 주엔 원금도 받겠대요.\"),\n                    (\"dad\",\"(내가 준 돈은 결국 백 부인 금고로 갔다. 실룩은 심부름꾼일 뿐이다.)\",{\"thought\":True})],\"ev:a:follow\"",
+    "call_expression": "[(None,\"실룩은 초소 쪽이 아니라 백 부인 집 뒷골목으로 갔다. 뭉치가 문을 열고 나와 동전을 받아 갔다.\"),\n                        (\"resident_mungchi\",\"이번 주 이자는 받았어요. 부인이 다음 주엔 원금도 받겠대요.\"),\n                        (\"dad\",\"(내가 준 돈은 결국 백 부인 금고로 갔다. 실룩은 심부름꾼일 뿐이다.)\",{\"thought\":True})],\"ev:a:follow\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 131
+    "end_line": 267
   },
   {
     "source": "game/systems/room13_town_events2.rpy",
-    "line": 134,
+    "line": 270,
     "identity": "ev:a:confront",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_siluk\",\"……제 빚 얘기를 어떻게 알았어요?\"),\n                    (\"resident_siluk\",\"이제는 이자가 원금보다 더 많아요. 갚아도 갚아도 빚이 남아요.\")],\"ev:a:confront\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 135
+    "end_line": 271
   },
   {
     "source": "game/systems/room13_town_events2.rpy",
-    "line": 139,
+    "line": 275,
     "identity": "ev:a:pay_debt",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_siluk\",\"진짜요? ……그럼 이제 제 마차는 탐정님 거예요. 부르시면 언제든 갈게요.\")],\"ev:a:pay_debt\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 139
+    "end_line": 275
   },
   {
     "source": "game/systems/room13_town_events2.rpy",
-    "line": 142,
+    "line": 278,
     "identity": "ev:a:ledger",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"dad\",\"백 부인이 배급 물자를 쌓아 둔 기록이 장부에 남아 있습니다. 그 사람은 빚을 받을 처지가 못 됩니다.\"),\n                            (\"resident_siluk\",\"……그 장부를 들이밀면 부인도 입을 다물겠네요. 이제 제 마차는 탐정님 편에 서겠습니다.\")],\"ev:a:ledger\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 143
+    "end_line": 279
   },
   {
     "source": "game/systems/room13_town_events2.rpy",
-    "line": 147,
+    "line": 283,
     "identity": "ev:a:extort",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_siluk\",\"……그럼 이건 우리끼리만 아는 일로 해요.\"),\n                            (None,\"실룩은 동전을 세며 끝내 고개를 들지 않았다.\")],\"ev:a:extort\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 148
+    "end_line": 284
   },
   {
     "source": "game/systems/room13_town_events2.rpy",
-    "line": 151,
+    "line": 287,
     "identity": "ev:a:let_go",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_siluk\",\"……고마워요. 다음부터는 정직하게 일할게요.\")],\"ev:a:let_go\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 151
+    "end_line": 287
   },
   {
     "source": "game/systems/room13_town_events2.rpy",
-    "line": 159,
+    "line": 360,
     "identity": "ev:q:offer:v2",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"누비 아주머니가 빨래 바구니를 내려놓고 내 소매를 잡았다.\"),\n        (\"resident_nubi\",\"여관방 춥지 않으세요? 우리 집 별채는 불을 넉넉히 때요. 따뜻한 밥도 드리고요.\"),\n        (\"dad\",\"(다람이가 따뜻하게 잘 수 있다면…….)\",{\"thought\":True}),\n        (\"resident_nubi\",\"별채 열쇠는 제가 갖고 있을게요. 밤에 문단속은 제가 해 드려요.\"),\n        (None,\"누비 아주머니는 말하면서 자꾸 초소 쪽을 돌아보았다.\")],\"ev:q:offer:v2\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 163
+    "end_line": 364
   },
   {
     "source": "game/systems/room13_town_events2.rpy",
-    "line": 169,
+    "line": 370,
     "identity": "ev:q:quarantined",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"별채는 따뜻했다. 문이 밖에서 잠기기 전까지는.\"),\n                    (\"neoul\",\"외지 사람은 열병 검사를 받기 전까지 격리요. 신고가 들어왔소.\"),\n                    (\"dad\",\"신고요? 대체 누가……\"),\n                    (None,\"문틈으로 누비 아주머니의 뒷모습이 보였다. 손에 장작 한 묶음을 들고 있었다.\"),\n                    (None,\"다음 날 오후가 되어서야 별채 문이 열렸다.\")],\"ev:q:quarantined\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 173
+    "end_line": 374
   },
   {
     "source": "game/systems/room13_town_events2.rpy",
-    "line": 180,
+    "line": 381,
     "identity": "ev:q:refuse",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_nubi\",\"……그래요. 아무래도 여관이 편하시겠죠.\")],\"ev:q:refuse\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 180
+    "end_line": 381
   },
   {
     "source": "game/systems/room13_town_events2.rpy",
-    "line": 182,
+    "line": 383,
     "identity": "ev:q:ask",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_nubi\",\"빈방을 놀리느니 사람이 있는 게 좋죠.\"),\n                    (\"dad\",\"방에 식사까지 내주시는데, 저희에게 바라는 건 없습니까?\"),\n                    (\"resident_nubi\",\"……너울이 외지 사람을 데려오면 장작을 줘요. 열병 검사한다고 하루 가둬 두는 것뿐이에요.\"),\n                    (\"resident_nubi\",\"우리 집 난로가 꺼지면 애들이 이 겨울을 못 버텨요. 미안해요.\")],\"ev:q:ask\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 185
+    "end_line": 386
   },
   {
     "source": "game/systems/room13_town_events2.rpy",
-    "line": 189,
+    "line": 390,
     "identity": "ev:q:keep_secret",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_nubi\",\"……고마워요. 별채는 그냥 쓰셔도 돼요. 이번엔 문도 잠그지 않을게요.\")],\"ev:q:keep_secret\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 189
+    "end_line": 390
   },
   {
     "source": "game/systems/room13_town_events2.rpy",
-    "line": 192,
+    "line": 393,
     "identity": "ev:q:report",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_seori\",\"검사권도 없는 경비가 주민을 시켜 사람을 가둔다고요? 기록하겠습니다.\"),\n                            (\"resident_nubi\",\"……이제 장작 받는 것도 끝이네요.\")],\"ev:q:report\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 193
+    "end_line": 394
   },
   {
     "source": "game/systems/room13_town_events2.rpy",
-    "line": 196,
+    "line": 397,
     "identity": "ev:q:confront_neoul",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"neoul\",\"격리는 마을을 위한 거요. 누비가 무슨 말을 했든 간에.\"),\n                            (None,\"그날 저녁 누비네 장작더미가 반으로 줄었다는 말을 들었다.\")],\"ev:q:confront_neoul\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 197
+    "end_line": 398
   },
   {
     "source": "game/systems/room13_town_events2.rpy",
-    "line": 200,
+    "line": 401,
     "identity": "ev:q:certificate",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_seori\",\"열 없음, 기침 없음. 외지 사람이라는 건 병이 아닙니다.\"),\n                    (None,\"그날 밤 별채 문 앞에서 너울이 확인서를 읽고 혀를 찼다.\"),\n                    (\"neoul\",\"……검사원 도장이 찍혀 있구려. 그럼 됐소.\"),\n                    (\"resident_nubi\",\"그 신고, 너울이 시킨 거였어요. 미안해요. 방은 그냥 쓰세요. 문도 잠그지 않을게요.\")],\"ev:q:certificate\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 203
+    "end_line": 404
   },
   {
     "source": "game/systems/room13_town_events2.rpy",
-    "line": 208,
+    "line": 409,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "ROOM13[\"topics\"][r13_topic][\"lines\"],\"medkit:\"+r13_topic",
@@ -7002,7 +7004,7 @@
     "binding_route": "dynamic:739",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 208
+    "end_line": 409
   },
   {
     "source": "game/systems/room13_use_knowledge.rpy",
@@ -7033,7 +7035,7 @@
   },
   {
     "source": "game/systems/room13_week1_cases.rpy",
-    "line": 64,
+    "line": 85,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[(None,\"까로가 눈을 털며 다가왔다. 마차 이야기를 하러 온 얼굴이었다.\")]+list(ROOM13[\"topics\"][\"life:karo\"][\"lines\"]),\"w1c:karo:work\"",
@@ -7041,227 +7043,227 @@
     "binding_route": "dynamic:743",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 64
+    "end_line": 85
   },
   {
     "source": "game/systems/room13_week1_cases.rpy",
-    "line": 80,
+    "line": 101,
     "identity": "w1c:letters:safe",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"resident_sling\",\"부인 편지는 제가 할머니 몰래 다른 길로 돌렸어요. 그래서 뒤쫓는 사람은 엉뚱한 편지만 들고 갔어요.\")],\"w1c:letters:safe\"",
+    "call_expression": "[(\"resident_sling\",\"부인 편지는 제가 다른 길로 돌렸어요. 그래서 뒤쫓는 사람은 엉뚱한 편지만 들고 갔어요.\")],\"w1c:letters:safe\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 80
+    "end_line": 101
   },
   {
     "source": "game/systems/room13_week1_cases.rpy",
-    "line": 88,
+    "line": 109,
     "identity": "w1c:portrait:open",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"광장 구석에서 피코가 낡은 판자에 물감을 문지르고 있었다. 그림 속 사람은 백 년 전 옷을 입고 있었다.\"),\n        (\"resident_piko\",\"……‘옛 마을 초상’이에요. 모모 관장님이 이런 걸 사 줘요.\"),\n        (\"resident_piko\",\"오늘 못 팔면 방값이 없어요. 그럼 또 등 밑이죠, 뭐.\")],\"w1c:portrait:open\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 90
+    "end_line": 111
   },
   {
     "source": "game/systems/room13_week1_cases.rpy",
-    "line": 96,
+    "line": 117,
     "identity": "w1c:portrait:expose",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_momo\",\"……옛 그림이라더니 물감이 아직 마르지도 않았군요. 알려 주셔서 고마워요. 사례예요.\"),\n                    (\"resident_piko\",\"……\")],\"w1c:portrait:expose\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 97
+    "end_line": 118
   },
   {
     "source": "game/systems/room13_week1_cases.rpy",
-    "line": 104,
+    "line": 125,
     "identity": "w1c:portrait:mom",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"dad\",\"제 아내입니다. 눈매는 이렇고, 왼쪽 눈썹에 작은 흉터가 있어요.\"),\n                    (\"daram\",\"엄마는 웃을 때 코를 찡그려!\"),\n                    (\"daram\",\"이렇게! 그것도 그려 줘야 돼. 약속!\"),\n                    (None,\"다람이 새끼손가락을 내밀었다. 피코가 물감 묻은 손가락을 걸었다.\"),\n                    (\"resident_piko\",\"약속. 진짜 사람을 그리는 건 오랜만이네요. 내일 아침까지 그려 둘게요.\")],\"w1c:portrait:mom\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 108
-  },
-  {
-    "source": "game/systems/room13_week1_cases.rpy",
-    "line": 113,
-    "identity": "w1c:portrait:snack",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"resident_piko\",\"……오늘 저녁은 이걸로 버틸게요. 그러니 가짜 그림은 안 팔아요.\")],\"w1c:portrait:snack\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 113
-  },
-  {
-    "source": "game/systems/room13_week1_cases.rpy",
-    "line": 124,
-    "identity": "w1c:letters:open",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"우체국 안쪽 화덕 위에서 주전자가 김을 뿜고 있었다. 슬링이 그 김에 봉투 하나를 쐬고 있었다.\"),\n        (\"resident_sling\",\"……! 아, 아니에요. 봉투가 젖어서 말리는 거예요.\")],\"w1c:letters:open\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 125
-  },
-  {
-    "source": "game/systems/room13_week1_cases.rpy",
-    "line": 129,
-    "identity": "w1c:letters:ignore",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"슬링은 김으로 연 봉투에서 편지 한 줄을 베꼈다. 받는 사람 칸에 여관 이름이 보였다.\")],\"w1c:letters:ignore\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 129
   },
   {
     "source": "game/systems/room13_week1_cases.rpy",
-    "line": 132,
-    "identity": "w1c:letters:catch",
+    "line": 134,
+    "identity": "w1c:portrait:snack",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"dad\",\"지금 남의 편지를 몰래 여는 겁니까?\"),\n                (\"resident_sling\",\"……할머니가 시켰어요. 손님 편지 중에 ‘부인’이 보낸 게 있으면 베껴 오라고요. 안 그러면 일자리를 잃는대요.\")],\"w1c:letters:catch\"",
+    "call_expression": "[(\"resident_piko\",\"……오늘 저녁은 이걸로 버틸게요. 그러니 가짜 그림은 안 팔아요.\")],\"w1c:portrait:snack\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 133
-  },
-  {
-    "source": "game/systems/room13_week1_cases.rpy",
-    "line": 136,
-    "identity": "w1c:letters:who",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"dad\",\"누가 부탁한 일입니까?\"),\n                (\"resident_sling\",\"……여관 할머니요. 손님 편지 중에 ‘부인’이 보낸 게 있으면 베껴 오래요. 안 하면 일자리가 없대요.\")],\"w1c:letters:who\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 137
-  },
-  {
-    "source": "game/systems/room13_week1_cases.rpy",
-    "line": 140,
-    "identity": "w1c:letters:neoul",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"neoul\",\"우체국 일은 우체국 일이오. 슬링은 오늘부터 나오지 마시오.\"),\n                (\"resident_sling\",\"……\")],\"w1c:letters:neoul\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 141
-  },
-  {
-    "source": "game/systems/room13_week1_cases.rpy",
-    "line": 145,
-    "identity": "w1c:letters:paid",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"dad\",\"일자리 때문이라면 오늘 품삯은 제가 내겠습니다. 편지는 뜯지 말고 그대로 보내 주세요.\"),\n                (\"resident_sling\",\"오늘 몫은 받았으니…… 이 편지는 그대로 보내겠습니다.\"),\n                (\"resident_sling\",\"시킨 사람은 여관 할머니예요. 손님 편지 중에 ‘부인’이 보낸 게 있으면 베껴 오라고 했어요.\")],\"w1c:letters:paid\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 147
+    "end_line": 134
   },
   {
     "source": "game/systems/room13_week1_cases.rpy",
     "line": 151,
-    "identity": "w1c:letters:portrait",
+    "identity": "w1c:letters:open",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"dad\",\"이 초상, 전에 보여 드렸지요. 이분은 제 아내입니다.\"),\n                (\"resident_sling\",\"그분 가족이었군요. 그러면 이 편지를 함부로 다루면 안 되겠네요.\"),\n                (\"resident_sling\",\"여관 할머니가 시켰어요. 손님 편지 중에 ‘부인’이 보낸 게 있으면 베껴 오라고요.\")],\"w1c:letters:portrait\"",
+    "call_expression": "[(None,\"주전자에서 김이 올랐다. 슬링은 봉투의 붙인 입구만 그 김에 대고 있었다. 풀 붙인 귀퉁이가 조금씩 들렸다.\"),\n        (\"resident_sling\",\"……! 아, 봉투가 젖어서 말리는 거예요.\"),\n        (\"dad\",\"말리는 게 아니라 붙인 데를 떼고 계신데요. 받는 분이 열어 달라고 한 편지입니까?\"),\n        (\"resident_sling\",\"……아니요.\")],\"w1c:letters:open\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 153
+    "end_line": 154
   },
   {
     "source": "game/systems/room13_week1_cases.rpy",
-    "line": 165,
-    "identity": "w1c:letters:stop",
+    "line": 159,
+    "identity": "w1c:letters:ignore",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"resident_sling\",\"……네. 대신 할머니한테는 아무 편지도 없었다고 할게요.\")],\"w1c:letters:stop\"",
+    "call_expression": "[(None,\"슬링은 김으로 연 봉투에서 편지 한 줄을 베꼈다. 받는 사람 칸에 여관 이름이 보였다.\")],\"w1c:letters:ignore\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 165
+    "end_line": 159
+  },
+  {
+    "source": "game/systems/room13_week1_cases.rpy",
+    "line": 166,
+    "identity": "w1c:letters:catch",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(\"dad\",\"편지를 열어서 무엇을 보려는 겁니까?\"),\n                    (\"resident_sling\",\"……편지 내용을 베끼려던 거예요. 시킨 사람이 있지만, 이름은 말 못 해요. 일자리를 잃을 수도 있어서요.\")],\"w1c:letters:catch\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 167
   },
   {
     "source": "game/systems/room13_week1_cases.rpy",
     "line": 174,
-    "identity": "w1c:letters:fake:fail",
+    "identity": "w1c:letters:who",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"resident_sling\",\"할머니가 요즘은 제가 가져가는 편지를 잘 안 믿으세요. 누가 알아챘다고 하시면서요.\")],\"w1c:letters:fake:fail\"",
+    "call_expression": "[(\"dad\",\"직접 읽으려는 겁니까, 누가 부탁한 겁니까?\"),\n                    (\"resident_sling\",\"……부탁받은 일이에요. 누구인지는 말 못 해요. 거절하면 일자리가 없어질 수도 있어서요.\")],\"w1c:letters:who\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 174
+    "end_line": 175
   },
   {
     "source": "game/systems/room13_week1_cases.rpy",
-    "line": 176,
-    "identity": "w1c:letters:fake",
+    "line": 182,
+    "identity": "w1c:letters:neoul",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"dad\",\"할머니께 이 쪽지를 베껴 드리세요. ‘목요일 밤, 북쪽 초소에서 기다린다.’ 서명은 비워 두고요.\"),\n        (\"resident_sling\",\"……할머니가 이 가짜 쪽지를 믿으면요?\"),\n        (\"dad\",\"그럼 목요일 밤에 할머니가 어디로 가는지 보게 되겠죠.\")],\"w1c:letters:fake\"",
+    "call_expression": "[(None,\"나는 경비 너울을 찾아가, 슬링이 배달할 봉투의 입구를 김으로 떼고 있던 일을 전했다.\"),\n                        (\"neoul\",\"받는 사람 허락도 없이 편지를 열려 했소? 슬링은 오늘부터 우체국에 나오지 마시오.\"),\n                        (\"resident_sling\",\"……\")],\"w1c:letters:neoul\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 178
+    "end_line": 184
   },
   {
     "source": "game/systems/room13_week1_cases.rpy",
-    "line": 185,
-    "identity": "w1c:night:open",
+    "line": 223,
+    "identity": "w1c:letters:paid",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"해가 지자 할머니가 등잔을 들고 계단을 내려갔다. 손에는 담요와 굵은 끈이 들려 있었다.\"),\n        (\"granny\",\"잠깐 볼일이 있어서 나가요. 아이는 방에 있게 하세요.\"),\n        (\"dad\",\"(가짜 편지에 적어 둔 바로 그 시각이다.)\",{\"thought\":True})],\"w1c:night:open\"",
+    "call_expression": "[(\"dad\",\"오늘 하루 몫 세 냥은 제가 드리겠습니다. 이 편지는 뜯지 말고 그대로 보내 주세요.\"),\n                    (\"resident_sling\",\"……오늘 몫은 받았으니, 이 편지는 그대로 보내겠습니다.\")],\"w1c:letters:paid\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 187
+    "end_line": 224
   },
   {
     "source": "game/systems/room13_week1_cases.rpy",
-    "line": 190,
-    "identity": "w1c:night:follow",
+    "line": 195,
+    "identity": "w1c:letters:portrait",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"할머니는 북쪽 초소 처마 밑에서 등잔을 낮췄다. 끈을 담요 밑에 감추고, 길 쪽만 보았다.\"),\n                (\"resident_lamplighter\",\"……할머니? 이 늦은 시간에 초소엔 왜 오셨어요.\"),\n                (\"granny\",\"기다리는 사람이 있어요. 아이 엄마가 올 거예요.\"),\n                (\"dad\",\"(아이 엄마를 기다리는 사람이 끈을 숨기고 있다. 초롱도 봤다.)\",{\"thought\":True})],\"w1c:night:follow\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 193
-  },
-  {
-    "source": "game/systems/room13_week1_cases.rpy",
-    "line": 196,
-    "identity": "w1c:night:stay",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"할머니가 나간 뒤 여관은 조용했다. 다람이는 내 무릎을 베고 잠들었다.\")],\"w1c:night:stay\"",
+    "call_expression": "[(\"dad\",\"이 초상, 전에 보여 드렸지요. 이분은 제 아내입니다.\"),\n                (\"resident_sling\",\"그분 가족이었군요. 그러면 이 편지를 함부로 다루면 안 되겠네요.\")],\"w1c:letters:portrait\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 196
   },
   {
     "source": "game/systems/room13_week1_cases.rpy",
-    "line": 198,
-    "identity": "w1c:night:safe",
+    "line": 217,
+    "identity": "w1c:letters:stop",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"resident_owlgp\",\"할머니가 초소 쪽으로 가는 걸 봤소. 오늘 밤은 여기 오지 않겠구려.\"),\n        (\"resident_owlgp\",\"부인에게서 맡아 둔 물건을 돌려드리겠소. 베껴 둔 기록이오.\"),\n        (None,\"그날 밤 13호에서는 아무도 다치지 않았다.\")],\"w1c:night:safe\"",
+    "call_expression": "[(\"dad\",\"편지는 그대로 보내 주세요. 말씀하지 않은 이름을 제가 짐작해 퍼뜨리지는 않겠습니다.\"),\n                (\"resident_sling\",\"……네. 편지는 열지 않을게요. 이 일은 여기서만 이야기해 주세요.\")],\"w1c:letters:stop\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 200
+    "end_line": 218
   },
   {
     "source": "game/systems/room13_week1_cases.rpy",
-    "line": 210,
-    "identity": "w1c:ext:open",
+    "line": 237,
+    "identity": "w1c:letters:fake:fail",
     "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"여관 뒷벽에서 따닥이 판자를 덧대고 있었다. 새 판자 틈으로 오래된 벽돌과 좁은 빈 공간이 보였다.\"),\n        (\"resident_ttadak\",\"보지 마세요. 허가 없이 덧지은 거예요. 너울이 알면 다 뜯기고 벌금이에요.\"),\n        (\"resident_ttadak\",\"……저 안쪽 빈 공간 말이에요? 옛날 하인들이 다니던 통로예요. 13호 책장 뒤까지 이어져요.\")],\"w1c:ext:open\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 212
-  },
-  {
-    "source": "game/systems/room13_week1_cases.rpy",
-    "line": 215,
-    "identity": "w1c:ext:keep",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"resident_ttadak\",\"……고마워요. 대신 필요하면 제가 본 걸 말해 드릴게요. 사람들 앞에서도요.\"),\n                (None,\"따닥이 증축 공사 때 그린 벽 안쪽 도면을 건넸다.\")],\"w1c:ext:keep\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 216
-  },
-  {
-    "source": "game/systems/room13_week1_cases.rpy",
-    "line": 221,
-    "identity": "w1c:ext:buy",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"resident_ttadak\",\"도면은 파는 거예요. 하지만 제 입은 안 팔아요. 사람들 앞에선 모른다고 할 거예요.\")],\"w1c:ext:buy\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 221
-  },
-  {
-    "source": "game/systems/room13_week1_cases.rpy",
-    "line": 224,
-    "identity": "w1c:ext:report",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(\"neoul\",\"허가 없는 증축이라. 신고 사례는 다섯 냥이오. 벽은 내일 봉하겠소.\"),\n                (\"resident_ttadak\",\"……두고 보세요.\")],\"w1c:ext:report\"",
-    "content_review_status": "static_inventory_reviewed",
-    "end_line": 225
-  },
-  {
-    "source": "game/systems/room13_week1_cases.rpy",
-    "line": 236,
-    "identity": "w1c:seal:open",
-    "binding_status": "static_exact_binding_available",
-    "call_expression": "[(None,\"봉해 둔 13호 문 앞에 뜯긴 봉인 종이가 떨어져 있었다. 곧 방 안에서 뭉치가 자루를 들고 나왔다.\"),\n        (\"resident_mungchi\",\"……! 버, 버린 물건인 줄 알았어요. 모모 관장님이 사건 난 방 물건은 비싸게 쳐 준다고 해서.\")],\"w1c:seal:open\"",
+    "call_expression": "[(\"resident_sling\",\"할머니가 요즘은 제가 가져가는 편지를 잘 안 믿으세요. 누가 알아챘다고 하시면서요.\")],\"w1c:letters:fake:fail\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 237
   },
   {
     "source": "game/systems/room13_week1_cases.rpy",
-    "line": 241,
+    "line": 239,
+    "identity": "w1c:letters:fake",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(\"dad\",\"할머니께 이 쪽지를 베껴 드리세요. ‘목요일 밤, 북쪽 초소에서 기다린다.’ 서명은 비워 두고요.\"),\n        (\"resident_sling\",\"……할머니가 이 가짜 쪽지를 믿으면요?\"),\n        (\"dad\",\"그럼 목요일 밤에 할머니가 어디로 가는지 보게 되겠죠.\")],\"w1c:letters:fake\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 241
+  },
+  {
+    "source": "game/systems/room13_week1_cases.rpy",
+    "line": 248,
+    "identity": "w1c:night:open",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(None,\"해가 지자 할머니가 등잔을 들고 계단을 내려갔다. 손에는 담요와 굵은 끈이 들려 있었다.\"),\n        (\"granny\",\"잠깐 볼일이 있어서 나가요. 아이는 방에 있게 하세요.\"),\n        (\"dad\",\"(가짜 편지에 적어 둔 바로 그 시각이다.)\",{\"thought\":True})],\"w1c:night:open\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 250
+  },
+  {
+    "source": "game/systems/room13_week1_cases.rpy",
+    "line": 253,
+    "identity": "w1c:night:follow",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(None,\"할머니는 북쪽 초소 처마 밑에서 등잔을 낮췄다. 끈을 담요 밑에 감추고, 길 쪽만 보았다.\"),\n                (\"resident_lamplighter\",\"……할머니? 이 늦은 시간에 초소엔 왜 오셨어요.\"),\n                (\"granny\",\"기다리는 사람이 있어요. 아이 엄마가 올 거예요.\"),\n                (\"dad\",\"(아이 엄마를 기다리는 사람이 끈을 숨기고 있다. 초롱도 봤다.)\",{\"thought\":True})],\"w1c:night:follow\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 256
+  },
+  {
+    "source": "game/systems/room13_week1_cases.rpy",
+    "line": 259,
+    "identity": "w1c:night:stay",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(None,\"할머니가 나간 뒤 여관은 조용했다. 다람이는 내 무릎을 베고 잠들었다.\")],\"w1c:night:stay\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 259
+  },
+  {
+    "source": "game/systems/room13_week1_cases.rpy",
+    "line": 261,
+    "identity": "w1c:night:safe",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(\"resident_owlgp\",\"할머니가 초소 쪽으로 가는 걸 봤소. 오늘 밤은 여기 오지 않겠구려.\"),\n        (\"resident_owlgp\",\"부인에게서 맡아 둔 물건을 돌려드리겠소. 베껴 둔 기록이오.\"),\n        (None,\"그날 밤 13호에서는 아무도 다치지 않았다.\")],\"w1c:night:safe\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 263
+  },
+  {
+    "source": "game/systems/room13_week1_cases.rpy",
+    "line": 273,
+    "identity": "w1c:ext:open",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(None,\"여관 뒷벽에서 따닥이 판자를 덧대고 있었다. 새 판자 틈으로 오래된 벽돌과 좁은 빈 공간이 보였다.\"),\n        (\"resident_ttadak\",\"보지 마세요. 허가 없이 덧지은 거예요. 너울이 알면 다 뜯기고 벌금이에요.\"),\n        (\"resident_ttadak\",\"……저 안쪽 빈 공간 말이에요? 옛날 하인들이 다니던 통로예요. 13호 책장 뒤까지 이어져요.\")],\"w1c:ext:open\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 275
+  },
+  {
+    "source": "game/systems/room13_week1_cases.rpy",
+    "line": 278,
+    "identity": "w1c:ext:keep",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(\"resident_ttadak\",\"……고마워요. 대신 필요하면 제가 본 걸 말해 드릴게요. 사람들 앞에서도요.\"),\n                (None,\"따닥이 증축 공사 때 그린 벽 안쪽 도면을 건넸다.\")],\"w1c:ext:keep\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 279
+  },
+  {
+    "source": "game/systems/room13_week1_cases.rpy",
+    "line": 284,
+    "identity": "w1c:ext:buy",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(\"resident_ttadak\",\"도면은 파는 거예요. 하지만 제 입은 안 팔아요. 사람들 앞에선 모른다고 할 거예요.\")],\"w1c:ext:buy\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 284
+  },
+  {
+    "source": "game/systems/room13_week1_cases.rpy",
+    "line": 287,
+    "identity": "w1c:ext:report",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(\"neoul\",\"허가 없는 증축이라. 신고 사례는 다섯 냥이오. 벽은 내일 봉하겠소.\"),\n                (\"resident_ttadak\",\"……두고 보세요.\")],\"w1c:ext:report\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 288
+  },
+  {
+    "source": "game/systems/room13_week1_cases.rpy",
+    "line": 299,
+    "identity": "w1c:seal:open",
+    "binding_status": "static_exact_binding_available",
+    "call_expression": "[(None,\"봉해 둔 13호 문 앞에 뜯긴 봉인 종이가 떨어져 있었다. 곧 방 안에서 뭉치가 자루를 들고 나왔다.\"),\n        (\"resident_mungchi\",\"……! 버, 버린 물건인 줄 알았어요. 모모 관장님이 사건 난 방 물건은 비싸게 쳐 준다고 해서.\")],\"w1c:seal:open\"",
+    "content_review_status": "static_inventory_reviewed",
+    "end_line": 300
+  },
+  {
+    "source": "game/systems/room13_week1_cases.rpy",
+    "line": 304,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[(None,\"자루 안에는 다람이의 그림책과 아내가 쓰던 털실 바구니가 있었다.\"),\n                (\"daram\" if room13.get(\"daram_state\") in (\"with_dad\",\"rescued\") else \"dad\",(\"엄마 털실이다…….\" if room13.get(\"daram_state\") in (\"with_dad\",\"rescued\") else \"(다람이에게 돌려줄 것들이다.)\"))],\"w1c:seal:recover\"",
@@ -7269,70 +7271,70 @@
     "binding_route": "dynamic:768",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 242
+    "end_line": 305
   },
   {
     "source": "game/systems/room13_week1_cases.rpy",
-    "line": 245,
+    "line": 308,
     "identity": "w1c:seal:follow",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"뭉치는 박물관 뒷문에서 모모 관장에게 자루를 넘겼다. 모모는 값을 묻지도 않고 동전을 셌다.\"),\n                (\"resident_momo\",\"사건 현장 물건은 오래 남지요. 사람들은 무서운 걸 보러 박물관에 옵니다.\")],\"w1c:seal:follow\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 246
+    "end_line": 309
   },
   {
     "source": "game/systems/room13_week1_cases.rpy",
-    "line": 250,
+    "line": 313,
     "identity": "w1c:seal:neoul",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"neoul\",\"사건 현장 봉인을 뜯었소? 뭉치, 따라오시오. 13호 봉인은 내가 다시 하겠소.\")],\"w1c:seal:neoul\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 250
+    "end_line": 313
   },
   {
     "source": "game/systems/room13_week1_cases.rpy",
-    "line": 260,
+    "line": 323,
     "identity": "w1c:t:open",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"실룩이 내 옆으로 바짝 붙어 목소리를 낮췄다.\"),\n        (\"resident_siluk\",\"내일 재판 있죠. 제가 ‘할머니가 그날 밤 2층에 올라가는 걸 봤다’고 말해 드릴게요. 열 냥이면 돼요.\"),\n        (\"resident_siluk\",\"제가 직접 봤냐고요? 그게 중요해요? 재판에서 이기면 되잖아요.\")],\"w1c:t:open\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 262
+    "end_line": 325
   },
   {
     "source": "game/systems/room13_week1_cases.rpy",
-    "line": 266,
+    "line": 329,
     "identity": "w1c:t:buy",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_siluk\",\"거래 끝. 내일 재판에서 제가 알아서 나설게요.\")],\"w1c:t:buy\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 266
+    "end_line": 329
   },
   {
     "source": "game/systems/room13_week1_cases.rpy",
-    "line": 269,
+    "line": 332,
     "identity": "w1c:t:refuse",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_siluk\",\"손해 보시는 거예요. 이 증언을 다른 사람한테 팔아도 전 몰라요.\")],\"w1c:t:refuse\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 269
+    "end_line": 332
   },
   {
     "source": "game/systems/room13_week1_cases.rpy",
-    "line": 271,
+    "line": 334,
     "identity": "w1c:t:leverage",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"dad\",\"그날 밤 그 시각, 실룩 씨는 어디 있었습니까?\"),\n                (\"resident_siluk\",\"……마구간에 있었어요. 마구간 장부에 이름도 적었고요.\"),\n                (\"dad\",\"그 시각 마구간에 있었다면 2층을 봤을 리가 없군요. 이 거래를 제가 너울에게 말하면 어떻게 됩니까?\"),\n                (\"resident_siluk\",\"……알았어요. 대신 뭐든 하나 도와드릴게요. 썰매든 짐이든.\")],\"w1c:t:leverage\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 274
+    "end_line": 337
   },
   {
     "source": "game/systems/room13_week1_cases.rpy",
-    "line": 277,
+    "line": 340,
     "identity": "w1c:t:neoul",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"neoul\",\"돈 받고 증언을 팔았소? 재판 끝날 때까지 마구간에서 나오지 마시오.\")],\"w1c:t:neoul\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 277
+    "end_line": 340
   },
   {
     "source": "game/systems/room13_week2_events.rpy",
@@ -7579,5 +7581,614 @@
     "call_expression": "[(\"resident_madam\",\"거봐요. 경매로 열 냥이 생겼잖아요.\"),\n                (None,\"줄 끝에 서 있던 사람들이 빈손으로 돌아갔다.\")],\"w2e:share:auction\"",
     "content_review_status": "static_inventory_reviewed",
     "end_line": 202
+  },
+  {
+    "source": "game/systems/room13_meeting_direction.rpy",
+    "line": 364,
+    "end_line": 364,
+    "identity": null,
+    "call_expression": "r13_meeting_murmurs,\"meeting:murmur:\"+claim+\":\"+sid+\":\"+result",
+    "binding_status": "existing_unbound_provider_HOLD",
+    "emit_binding": false,
+    "assets": "HOLD",
+    "content_review_status": "pre_existing_unbound_provider; no exact authored context map supplied; no cue emitted"
+  },
+  {
+    "source": "game/systems/room13_meeting_direction.rpy",
+    "line": 371,
+    "end_line": 371,
+    "identity": null,
+    "call_expression": "r13_meeting_gasp_rows,\"meeting:gasp:\"+claim+\":\"+sid",
+    "binding_status": "existing_unbound_provider_HOLD",
+    "emit_binding": false,
+    "assets": "HOLD",
+    "content_review_status": "pre_existing_unbound_provider; no exact authored context map supplied; no cue emitted"
+  },
+  {
+    "source": "game/systems/room13_piko_causality.rpy",
+    "line": 121,
+    "end_line": 121,
+    "identity": "ep1:piko:notice:v1",
+    "call_expression": "r13_piko_notice_lines(recovery), \"ep1:piko:notice:v1\"",
+    "binding_status": "dynamic_snapshot_binding_available",
+    "binding_route": "dynamic:805",
+    "provider_group": "explicit_function",
+    "provider_scope": {
+      "source": "game/systems/room13_piko_causality.rpy",
+      "function": "r13_piko_notice_lines",
+      "start_line": 23,
+      "end_line": 36
+    },
+    "content_review_status": "exact_context_map_reviewed; runtime_visual_QA_not_performed",
+    "assets": "HOLD",
+    "validation": "pure_source_helper_checks_only; no visual approval"
+  },
+  {
+    "source": "game/systems/room13_poc_route.rpy",
+    "line": 163,
+    "end_line": 163,
+    "identity": "poc:night:promise",
+    "call_expression": "r13_intro_direction_lines(),\"poc:night:promise\"",
+    "binding_status": "existing_unbound_provider_HOLD",
+    "emit_binding": false,
+    "assets": "HOLD",
+    "content_review_status": "pre_existing_unbound_provider; no exact authored context map supplied; no cue emitted"
+  },
+  {
+    "source": "game/systems/room13_q1_difficulty.rpy",
+    "line": 266,
+    "end_line": 266,
+    "identity": null,
+    "call_expression": "[(\"neoul\",_qh_round[\"prompt\"])],\"q1h:counter:\"+sid+\":\"+str(_qh_index)",
+    "binding_status": "existing_unbound_provider_HOLD",
+    "emit_binding": false,
+    "assets": "HOLD",
+    "content_review_status": "pre_existing_unbound_provider; no exact authored context map supplied; no cue emitted"
+  },
+  {
+    "source": "game/systems/room13_q1_difficulty.rpy",
+    "line": 285,
+    "end_line": 285,
+    "identity": null,
+    "call_expression": "_qh_counter[\"correct\"],\"q1h:accepted:\"+sid",
+    "binding_status": "existing_unbound_provider_HOLD",
+    "emit_binding": false,
+    "assets": "HOLD",
+    "content_review_status": "pre_existing_unbound_provider; no exact authored context map supplied; no cue emitted"
+  },
+  {
+    "source": "game/systems/room13_q1_difficulty.rpy",
+    "line": 288,
+    "end_line": 288,
+    "identity": null,
+    "call_expression": "[_qh_counter[\"rounds\"][_qh_failed][\"wrong\"][_qh_choices[_qh_failed]]],\"q1h:rejected:\"+sid",
+    "binding_status": "existing_unbound_provider_HOLD",
+    "emit_binding": false,
+    "assets": "HOLD",
+    "content_review_status": "pre_existing_unbound_provider; no exact authored context map supplied; no cue emitted"
+  },
+  {
+    "source": "game/systems/room13_q1_difficulty.rpy",
+    "line": 303,
+    "end_line": 303,
+    "identity": "q1h:warning",
+    "call_expression": "[(\"neoul\",\"그 반박은 받아들이지 않겠소. 지금까지 %d번이오. 자료와 주장을 다시 살피시오.\"%r13_q1_formal_errors())],\"q1h:warning\"",
+    "binding_status": "existing_unbound_provider_HOLD",
+    "emit_binding": false,
+    "assets": "HOLD",
+    "content_review_status": "pre_existing_unbound_provider; no exact authored context map supplied; no cue emitted"
+  },
+  {
+    "source": "game/systems/room13_q1_difficulty.rpy",
+    "line": 319,
+    "end_line": 319,
+    "identity": "q1h:thesis:commit",
+    "call_expression": "[(\"dad\",R13_Q1_THESES[r13_q1_thesis()][\"claim\"]),(\"neoul\",\"좋소. 그 주장에 필요한 연결을 하나씩 설명하시오.\")],\"q1h:thesis:commit\"",
+    "binding_status": "existing_unbound_provider_HOLD",
+    "emit_binding": false,
+    "assets": "HOLD",
+    "content_review_status": "pre_existing_unbound_provider; no exact authored context map supplied; no cue emitted"
+  },
+  {
+    "source": "game/systems/room13_q1_review.rpy",
+    "line": 183,
+    "end_line": 183,
+    "identity": "ep1:review",
+    "call_expression": "r13_q1_review_lines(),\"ep1:review\"",
+    "binding_status": "existing_unbound_provider_HOLD",
+    "emit_binding": false,
+    "assets": "HOLD",
+    "content_review_status": "pre_existing_unbound_provider; no exact authored context map supplied; no cue emitted"
+  },
+  {
+    "source": "game/systems/room13_q1_review.rpy",
+    "line": 201,
+    "end_line": 201,
+    "identity": "ep1:review:thought",
+    "call_expression": "[(\"dad\",r13_q1_question(_q1_hint)[1],{\"thought\":True}),(\"dad\",r13_q1_question(_q1_hint)[2],{\"thought\":True})],\"ep1:review:thought\"",
+    "binding_status": "existing_unbound_provider_HOLD",
+    "emit_binding": false,
+    "assets": "HOLD",
+    "content_review_status": "pre_existing_unbound_provider; no exact authored context map supplied; no cue emitted"
+  },
+  {
+    "source": "game/systems/room13_q1_review.rpy",
+    "line": 206,
+    "end_line": 206,
+    "identity": "ep1:review:direction",
+    "call_expression": "[(None,r13_q1_question(_q1_hint)[3])],\"ep1:review:direction\"",
+    "binding_status": "existing_unbound_provider_HOLD",
+    "emit_binding": false,
+    "assets": "HOLD",
+    "content_review_status": "pre_existing_unbound_provider; no exact authored context map supplied; no cue emitted"
+  },
+  {
+    "source": "game/systems/room13_bundle3.rpy",
+    "line": 238,
+    "end_line": 240,
+    "identity": "b3:pages:eunho",
+    "call_expression": "[(None,\"우체국 안쪽 기록실 문이 열려 있었다. 은호 사장이 장부 묶음을 끈으로 묶어 자루에 담고 있었다.\"),\n        (\"resident_eunho\",\"지키는 사람 없는 기록이오. 도시 수집가들은 옛 마을 기록을 좋아합니다.\"),\n        (\"dad\",\"(사서 선생님이 지키던 기록이다. 도시로 가면 다시 못 본다.)\",{\"thought\":True})],\"b3:pages:eunho\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_ep1_lamp_thief.rpy",
+    "line": 306,
+    "end_line": 306,
+    "identity": "ep1:dawn:leave",
+    "call_expression": "[(None,\"사람들이 담요에 싸인 피코를 조심히 옮겼다. 나는 다람이 곁에 남았다.\")],\"ep1:dawn:leave\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_ep2_kids.rpy",
+    "line": 390,
+    "end_line": 391,
+    "identity": "ep2:after:somi_gone",
+    "call_expression": "[(None,\"사람들이 흩어졌다. 솜이는 어디에도 없었다.\"),\n            (\"daram\",\"(솜이한테 할아버지 강 이야기를 해 줘야 하는데…….)\",{\"thought\":True})],\"ep2:after:somi_gone\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_episodes.rpy",
+    "line": 346,
+    "end_line": 348,
+    "identity": "ep3:lamps_ubak",
+    "call_expression": "[(\"resident_ubak\",\"초롱 씨가 하던 일이에요. 등을 끄면 돌이 덜 지친다고 했어요. 등은 돌에서 불을 받거든요.\"),\n                (None,\"우박이 등 뚜껑을 하나씩 열었다. 손이 서툴렀다. 광장 등이 절반쯤 꺼지자 돌의 빛이 조금 굵어졌다. 설이가 그제야 종 줄을 놓았다.\"),\n                (\"neoul\",\"……이번 한 번만이오.\")],\"ep3:lamps_ubak\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_first_day_flow.rpy",
+    "line": 93,
+    "end_line": 93,
+    "identity": "life:night1:promised",
+    "call_expression": "[(\"daram\",\"초롱 아저씨가 엄마 봉투를 맡고 있대.\"),(\"dad\",\"응. 어디서 받을 수 있는지 바로 물어볼 수 있어. 엄마가 어떤 글을 남겼을까?\")],\"life:night1:promised\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_first_day_flow.rpy",
+    "line": 95,
+    "end_line": 95,
+    "identity": "life:night1:recognized",
+    "call_expression": "[(\"daram\",\"초롱 아저씨가 엄마를 알아봤지.\"),(\"dad\",\"응. 엄마와 언제 어디서 만났는지도 더 들어 보고 싶어.\")],\"life:night1:recognized\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_granny_reply.rpy",
+    "line": 29,
+    "end_line": 29,
+    "identity": "present:granny:E18:source",
+    "call_expression": "[(\"dad\",\"광장 등 밑 점검함에서 꺼냈습니다.\"),(\"granny\",\"광장에 있었군요. 나도 부인 소식을 기다리고 있어요.\",{\"expression\":\"neutral\"})],\"present:granny:E18:source\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_granny_reply.rpy",
+    "line": 32,
+    "end_line": 32,
+    "identity": "present:granny:E18:why",
+    "call_expression": "[(\"dad\",\"어디서 받았는지는 왜 궁금하십니까?\"),(\"granny\",\"나도 부인 소식을 기다리고 있으니까요. 어디에 소식을 남겼는지 궁금해서요.\",{\"expression\":\"neutral\"})],\"present:granny:E18:why\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_granny_reply.rpy",
+    "line": 35,
+    "end_line": 35,
+    "identity": "present:granny:E18:withhold",
+    "call_expression": "[(\"dad\",\"장소까지 말씀드리지는 않겠습니다.\")],\"present:granny:E18:withhold\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_granny_reply.rpy",
+    "line": 38,
+    "end_line": 38,
+    "identity": "present:granny:E18:withhold:other",
+    "call_expression": "[(\"dad\",\"장소까지 말씀드리지는 않겠습니다.\")],\"present:granny:E18:withhold:other\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_memory.rpy",
+    "line": 109,
+    "end_line": 110,
+    "identity": "grudge:sling:reason",
+    "call_expression": "[(\"dad\",\"그때 왜 편지를 열려 했는지, 이제라도 들을 수 있겠습니까?\"),\n            (\"resident_sling\",\"……편지를 베껴 오라는 부탁을 받았어요. 누구 부탁인지는 말 못 해요. 일도 끊겼는데, 그 이름까지 말할 용기는 없어요.\")],\"grudge:sling:reason\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_q1_arguments.rpy",
+    "line": 248,
+    "end_line": 250,
+    "identity": "q1v:patrol",
+    "call_expression": "[(\"dad\",\"미지근했다고 하셨지요. 등 안도 직접 보셨습니까?\"),\n        (\"resident_lamplighter\",\"2일 밤 첫 순찰 때 받침이 흔들려서 뚜껑을 열었어요. 조각은 안에 있었어요. 틈에 끈도 없었고요.\"),\n        (\"dad\",\"따뜻했다는 것과 직접 확인한 것은 따로 적겠습니다.\")],\"q1v:patrol\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_q1_arguments.rpy",
+    "line": 255,
+    "end_line": 258,
+    "identity": "q1v:removal",
+    "call_expression": "[(\"dad\",\"다음 순찰 때는 어땠습니까?\"),\n        (\"resident_lamplighter\",\"그날 밤 마지막 순찰에서, 맞은편을 보니 짐수레 바퀴가 턱에 걸렸어요. 부리가 도왔고요. 곧 등 위로 빛나는 조각이 들려 나왔어요.\"),\n        (\"resident_lamplighter\",\"얼굴은 안 보였어요. 수리하나 보다 하고 지나쳤죠. 동튼 뒤 다시 가 보니 등 안이 비었어요. 그때 피코를 발견했어요.\"),\n        (\"dad\",\"얼굴을 본 건 아니군요. 직접 보신 움직임과 순서를 적겠습니다.\")],\"q1v:removal\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_q1_arguments.rpy",
+    "line": 263,
+    "end_line": 266,
+    "identity": "q1v:buri",
+    "call_expression": "[(\"dad\",\"그날 밤, 광장에서 무얼 봤니?\"),\n        (\"buri\",\"수리점 공구를 치우고 돌아가던 길이었어요. 수레 바퀴가 턱에 걸렸어요. 제가 밀어 드렸어요. 실룩 씨였어요.\"),\n        (\"dad\",\"얼굴을 직접 봤니?\"),(\"buri\",\"네. 바로 앞에서요. 그 뒤 실룩 씨가 3번 등 앞에서 일하고 내려올 때까지 봤어요.\"),\n        (\"dad\",\"중간에 다른 사람이 올라갔을 수도 있을까?\"),(\"buri\",\"아니요. 자리를 비우지 않았어요. 그런데 몸하고 뚜껑에 가려 손 안은 안 보였어요.\")],\"q1v:buri\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_q1_arguments.rpy",
+    "line": 271,
+    "end_line": 274,
+    "identity": "q1v:receipt",
+    "call_expression": "[(\"dad\",\"아이들 빵값은 어디서 마련하셨습니까?\"),\n        (\"resident_siluk\",\"백 부인에게 물건을 팔았소. 빚부터 갚으라 할 줄 알았는데 돈을 주더군.\"),\n        (\"dad\",\"정산한 기록을 봐도 되겠습니까?\"),(\"resident_siluk\",\"여기 있소. 제값 받고 판 거요.\"),\n        (None,\"쪽지에는 3일 해 질 녘, 거래 27번, 두 냥이라고 쓰여 있었다. 자기 소유 조각 한 점을 판다는 조건도 있었다.\")],\"q1v:receipt\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_q1_arguments.rpy",
+    "line": 293,
+    "end_line": 294,
+    "identity": "q1v:conclusion",
+    "call_expression": "[(\"neoul\",\"톡이 가져갔다는 혐의는 거두겠소. 실룩이 허락 없이 꺼내 팔았다는 것으로 정리하겠소.\"),\n            (\"resident_tok\",\"고맙습니다. 하지만 그 등 밑에 있던 사람을 생각하면… 마음이 편하지는 않네요.\")],\"q1v:conclusion\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_q1_arguments.rpy",
+    "line": 297,
+    "end_line": 297,
+    "identity": "q1v:over",
+    "call_expression": "[(\"neoul\",\"조각을 가져갔다는 것과 죽일 생각이었다는 것은 다른 말이오. 그 결론을 뒷받침할 근거를 듣지 못했소.\")],\"q1v:over\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_q1_arguments.rpy",
+    "line": 299,
+    "end_line": 299,
+    "identity": "q1v:weak",
+    "call_expression": "[(\"neoul\",\"온도를 쟀다는 것만으로 조각을 가져갔다고 확정할 수는 없소.\")],\"q1v:weak\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_q1_arguments.rpy",
+    "line": 301,
+    "end_line": 301,
+    "identity": "q1h:incomplete",
+    "call_expression": "[(\"neoul\",\"그 결론까지 이어지는 근거를 듣지 못했소. 확인한 사실만으로 그 주장이 성립하는지 다시 따져 보시오.\")],\"q1h:incomplete\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_q1_arguments.rpy",
+    "line": 303,
+    "end_line": 303,
+    "identity": "q1v:incomplete",
+    "call_expression": "[(\"neoul\",\"그 결론까지 이어지는 근거를 듣지 못했소. 확인한 부분은 남기되 처분은 그대로 두겠소.\")],\"q1v:incomplete\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_q1_arguments.rpy",
+    "line": 312,
+    "end_line": 312,
+    "identity": "q1v:failure",
+    "call_expression": "[(\"neoul\",\"이 회의에서 톡의 처분을 바꾸지는 않겠소.\"),(None,\"톡이 끌려가며 수리점 쪽을 돌아보았다.\")],\"q1v:failure\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_q1_arguments.rpy",
+    "line": 317,
+    "end_line": 319,
+    "identity": "q1v:public-recovery",
+    "call_expression": "[(\"dad\",\"팔았다는 조각이 지금 어디에 있습니까?\"),(\"resident_siluk\",\"백 부인 창고에 있소. 밑에 광장 3이라는 이름표가 있소.\"),\n            (\"resident_madam\",\"…확인만 하세요.\"),(None,\"사람들이 보는 앞에서 조각을 꺼냈다. 톡이 이름표와 장부를 대조했다.\"),\n            (\"resident_tok\",\"제가 3번 등에 넣은 조각이 맞아요.\")],\"q1v:public-recovery\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_q1_difficulty.rpy",
+    "line": 294,
+    "end_line": 295,
+    "identity": "q1h:rules",
+    "call_expression": "[(None,\"자료 열람과 질문은 자유롭다. 발언에 맞지 않는 자료를 근거로 내거나, 상대의 반론에 잘못된 답을 확정하면 오답이 된다.\"),\n            (None,\"회의에서 내세운 논증은 끝까지 이어야 한다. 오답 세 번이면 이번 회의가 끝난다. 같은 자료로 다시 시작할 때는 다른 논증을 고를 수 있다.\")],\"q1h:rules\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_q1_difficulty.rpy",
+    "line": 301,
+    "end_line": 301,
+    "identity": "q1h:limit",
+    "call_expression": "[(\"neoul\",\"반박이 세 번 무너졌소. 이 회의의 반론은 여기까지 받겠소.\")],\"q1h:limit\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_q1_difficulty.rpy",
+    "line": 309,
+    "end_line": 309,
+    "identity": "q1h:thesis:ask",
+    "call_expression": "[(\"neoul\",\"등을 돌보는 톡이 조각을 가져간 것 아니오? 다르게 본다면 그 근거를 말해 보시오.\")],\"q1h:thesis:ask\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_q1_review.rpy",
+    "line": 170,
+    "end_line": 170,
+    "identity": "ep1:preflight",
+    "call_expression": "[(None,\"회의에서는 지금 가진 자료로 이야기한다. 회의는 4일 오후가 끝나기 전까지 열 수 있다.\"),(None,\"조사나 추리가 끝나지 않았어도 들어갈 수 있다.\")],\"ep1:preflight\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_q1_review.rpy",
+    "line": 182,
+    "end_line": 182,
+    "identity": "ep1:review:opening",
+    "call_expression": "[(None,\"수첩을 펼쳤다. 확인한 사실과 아직 답하지 못한 의문을 나누어 적었다.\")],\"ep1:review:opening\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_town_events2.rpy",
+    "line": 297,
+    "end_line": 297,
+    "identity": "ev:a:overdue:sunset",
+    "call_expression": "[(None,\"해가 졌지만, 실룩이 가져오기로 한 짐은 아직 받지 못했다.\")],\"ev:a:overdue:sunset\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_town_events2.rpy",
+    "line": 299,
+    "end_line": 299,
+    "identity": "ev:a:overdue:late",
+    "call_expression": "[(None,\"실룩이 짐을 가져오겠다고 약속한 날이 지났다. 아직 짐은 받지 못했다.\")],\"ev:a:overdue:late\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_town_events2.rpy",
+    "line": 301,
+    "end_line": 301,
+    "identity": "ev:a:overdue:next_day",
+    "call_expression": "[(None,\"날이 바뀌어도 실룩에게 부탁한 짐은 오지 않았다.\")],\"ev:a:overdue:next_day\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_town_events2.rpy",
+    "line": 303,
+    "end_line": 303,
+    "identity": "ev:a:advance:unknown",
+    "call_expression": "[(\"dad\",\"(실룩에게 선금을 준 일은 기억난다. 부탁한 짐부터 확인해야겠다.)\",{\"thought\":True})],\"ev:a:advance:unknown\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_town_events2.rpy",
+    "line": 308,
+    "end_line": 312,
+    "identity": "ev:a:witness:next_day",
+    "call_expression": "[(\"dad\",\"콩이야, 실룩 아저씨 봤니? 맡긴 짐을 아직 못 받아서 찾고 있어.\"),\n                (\"resident_kongi\",\"어제 백 부인네 뒷문으로 들어가는 걸 봤어요.\"),\n                (\"dad\",\"안에서 뭘 했는지도 봤니?\"),\n                (\"resident_kongi\",\"아뇨. 들어가는 것만 봤어요.\"),\n                (\"dad\",\"그랬구나. 고마워.\")],\"ev:a:witness:next_day\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_town_events2.rpy",
+    "line": 314,
+    "end_line": 318,
+    "identity": "ev:a:witness:later",
+    "call_expression": "[(\"dad\",\"콩이야, 실룩 아저씨 봤니? 맡긴 짐을 아직 못 받아서 찾고 있어.\"),\n                (\"resident_kongi\",\"며칠 전에 백 부인네 뒷문으로 들어가는 걸 봤어요.\"),\n                (\"dad\",\"안에서 뭘 했는지도 봤니?\"),\n                (\"resident_kongi\",\"아뇨. 들어가는 것만 봤어요.\"),\n                (\"dad\",\"그랬구나. 고마워.\")],\"ev:a:witness:later\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_town_events2.rpy",
+    "line": 328,
+    "end_line": 328,
+    "identity": "ev:a:followup:resolved",
+    "call_expression": "[(None,\"이 선금 건은 이미 정리했다. 새로 돈을 건네지는 않았다.\")],\"ev:a:followup:resolved\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_town_events2.rpy",
+    "line": 332,
+    "end_line": 333,
+    "identity": "ev:a:followup:progress",
+    "call_expression": "[(\"dad\",\"선금 드리고 부탁한 짐 말입니다. 어디까지 확인하셨습니까?\"),\n                (\"resident_siluk\",\"……아직 가져오지는 못했어요.\")],\"ev:a:followup:progress\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_town_events2.rpy",
+    "line": 336,
+    "end_line": 337,
+    "identity": "ev:a:followup:explain",
+    "call_expression": "[(\"dad\",\"짐을 가져오기로 한 때가 지났습니다. 어떻게 된 겁니까?\"),\n                (\"resident_siluk\",\"……받은 돈을 백 부인 빚 갚는 데 썼어요. 짐은 아직 못 가져왔어요.\")],\"ev:a:followup:explain\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_town_events2.rpy",
+    "line": 341,
+    "end_line": 343,
+    "identity": "ev:a:followup:refund",
+    "call_expression": "[(\"dad\",\"짐을 못 가져오셨으면 선금을 돌려주세요.\"),\n                (\"resident_siluk\",\"……받은 돈을 백 부인 빚 갚는 데 썼어요. 지금은 돌려드릴 돈이 없어요.\"),\n                (\"dad\",\"그럼 돌려받을 돈으로 남겨 두겠습니다.\")],\"ev:a:followup:refund\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_town_events2.rpy",
+    "line": 347,
+    "end_line": 348,
+    "identity": "ev:a:followup:deliver",
+    "call_expression": "[(\"dad\",\"선금은 이미 드렸습니다. 부탁한 짐부터 가져와 주세요.\"),\n                (\"resident_siluk\",\"……알겠습니다. 아직 가져오지 못했어요.\")],\"ev:a:followup:deliver\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_week1_cases.rpy",
+    "line": 148,
+    "end_line": 150,
+    "identity": "w1c:letters:intro",
+    "call_expression": "[(None,\"우편 일을 하는 사람이 화덕 앞에서 봉투 하나를 들고 있었다.\"),\n            (\"dad\",\"실례합니다. 여기 우편을 맡고 계십니까?\"),\n            (\"resident_sling\",\"예, 슬링입니다. 잠깐만요.\")],\"w1c:letters:intro\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_week1_cases.rpy",
+    "line": 178,
+    "end_line": 179,
+    "identity": "w1c:letters:report:warning",
+    "call_expression": "[(\"dad\",\"남의 편지를 열려던 일을 경비에게 알리겠습니다.\"),\n                (\"resident_sling\",\"너울한테요? 그러면 저는 우체국에서 일 못 해요.\")],\"w1c:letters:report:warning\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_week1_cases.rpy",
+    "line": 191,
+    "end_line": 192,
+    "identity": "w1c:letters:report:reason",
+    "call_expression": "[(\"dad\",\"먼저 왜 그랬는지 듣겠습니다.\"),\n                            (\"resident_sling\",\"……편지를 베껴 오라는 부탁을 받았어요. 누구 부탁인지는 말 못 해요. 그 이름을 꺼내면 일자리를 잃을까 봐요.\")],\"w1c:letters:report:reason\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_week1_cases.rpy",
+    "line": 210,
+    "end_line": 211,
+    "identity": "w1c:letters:wage",
+    "call_expression": "[(\"dad\",\"여기서 하루 일하면 얼마를 받습니까?\"),\n            (\"resident_sling\",\"세 냥이요.\")],\"w1c:letters:wage\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_sling_confidence.rpy",
+    "line": 110,
+    "end_line": 110,
+    "identity": "sling:confidence:confront",
+    "call_expression": "_sling_confront_rows,\"sling:confidence:confront\"",
+    "binding_status": "dynamic_snapshot_binding_available",
+    "binding_route": "dynamic:857",
+    "provider_group": "explicit_function",
+    "provider_scope": {
+      "source": "game/systems/room13_sling_confidence.rpy",
+      "function": "r13_sling_confront_lines",
+      "start_line": 36,
+      "end_line": 50
+    },
+    "content_review_status": "exact_context_map_reviewed; runtime_visual_QA_not_performed",
+    "assets": "HOLD",
+    "validation": "pure_source_helper_checks_only; no visual approval"
+  },
+  {
+    "source": "game/systems/room13_memory.rpy",
+    "line": 106,
+    "end_line": 107,
+    "identity": "grudge:sling:reason:known",
+    "call_expression": "[(\"dad\",\"전에 들은 편지 일을 다시 확인하고 싶습니다.\"),\n            (\"resident_sling\",\"할머니가 베껴 오라고 했다고 말씀드렸죠. 그 사정과 별개로, 저를 경비에게 알리신 건 잊지 못해요.\")],\"grudge:sling:reason:known\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_sling_confidence.rpy",
+    "line": 96,
+    "end_line": 97,
+    "identity": "sling:confidence:promise",
+    "call_expression": "[(\"dad\",\"말씀하신 사정은 함부로 퍼뜨리지 않겠습니다. 말씀하지 않은 이름도 짐작해서 말하지 않겠습니다.\"),\n        (\"resident_sling\",\"……그 약속은 지켜 주세요. 편지에 대해 확인할 건 듣겠습니다.\")],\"sling:confidence:promise\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_week1_cases.rpy",
+    "line": 163,
+    "end_line": 164,
+    "identity": "w1c:letters:catch:known",
+    "call_expression": "[(\"dad\",\"편지를 열어서 무엇을 보려는 겁니까?\"),\n                    (\"resident_sling\",\"전에 말씀드린 할머니의 부탁이에요. 손님 편지를 베껴 오지 않으면 일자리를 잃는다고 하셨죠.\")],\"w1c:letters:catch:known\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_week1_cases.rpy",
+    "line": 171,
+    "end_line": 172,
+    "identity": "w1c:letters:who:known",
+    "call_expression": "[(\"dad\",\"전에 말씀하신 그 부탁입니까?\"),\n                    (\"resident_sling\",\"네. 할머니가 손님 편지를 베껴 오라고 하셨던 일이에요.\")],\"w1c:letters:who:known\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_week1_cases.rpy",
+    "line": 188,
+    "end_line": 189,
+    "identity": "w1c:letters:report:reason:known",
+    "call_expression": "[(\"dad\",\"전에 말씀하신 사정부터 다시 듣겠습니다.\"),\n                            (\"resident_sling\",\"할머니가 손님 편지를 베껴 오라고 했다는 말씀은 드렸죠. 거절하면 일자리를 잃는다고요.\")],\"w1c:letters:report:reason:known\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_week1_cases.rpy",
+    "line": 198,
+    "end_line": 199,
+    "identity": "w1c:letters:portrait:known",
+    "call_expression": "[(\"resident_sling\",\"할머니의 부탁이라고 말씀드렸지만, 이 편지는 열지 않겠어요.\"),\n                    (\"dad\",\"그대로 보내 주세요. 이 이야기를 함부로 퍼뜨리지는 않겠습니다.\")],\"w1c:letters:portrait:known\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_week1_cases.rpy",
+    "line": 201,
+    "end_line": 202,
+    "identity": "w1c:letters:portrait:guarded",
+    "call_expression": "[(\"resident_sling\",\"누가 시켰는지는 말 못 해요. 그 이름을 꺼냈다가 일자리를 잃을까 봐요.\"),\n                    (\"dad\",\"편지는 그대로 보내 주세요. 말씀하지 않은 이름을 제가 짐작해 퍼뜨리지는 않겠습니다.\")],\"w1c:letters:portrait:guarded\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
+  },
+  {
+    "source": "game/systems/room13_week1_cases.rpy",
+    "line": 233,
+    "end_line": 233,
+    "identity": "w1c:letters:fake:unknown",
+    "call_expression": "[(\"resident_sling\",\"누구에게 쪽지를 전하라는 건지, 아직 얘기가 안 됐어요.\")],\"w1c:letters:fake:unknown\"",
+    "binding_status": "static_exact_binding_available",
+    "content_review_status": "source_packet_inventory; reviewed_or_existing_HOLD_preserved"
   }
 ]
