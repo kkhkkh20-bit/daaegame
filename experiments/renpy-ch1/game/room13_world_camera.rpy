@@ -166,21 +166,21 @@ screen r13_world_camera_controls(adjustment):
     timer .3 repeat True action Function(r13_world_edge_refresh,adjustment,edge)
     if edge[0] and r13_field_view=="people":
         textbutton ("‹ "+r13_world_edge_label(edge[0])):
-            style "r13_action_button" xpos 8 ypos 236 padding (12,8) text_size 18
+            style "r13_action_button" xpos 8 ypos 236 padding (12,8) text_size 18 xminimum (80 if r13_touch_ui() else 0) yminimum (80 if r13_touch_ui() else 0)
             action Function(r13_pan_camera,adjustment,-1)
     elif adjustment.value>4:
         # 0.18.75 (design review 2026-10-16, #4): a wide place with nobody off to the side
         # still shows that there is more to see; a plain arrow, no name.
         textbutton "‹":
-            style "r13_action_button" xpos 8 ypos 236 padding (12,8) text_size 22
+            style "r13_action_button" xpos 8 ypos 236 padding (12,8) text_size 22 xminimum (80 if r13_touch_ui() else 0) yminimum (80 if r13_touch_ui() else 0)
             action Function(r13_pan_camera,adjustment,-1) tooltip "옆으로 둘러보기"
     if edge[1] and r13_field_view=="people":
         textbutton (r13_world_edge_label(edge[1])+" ›"):
-            style "r13_action_button" xpos 1272 xanchor 1.0 ypos 236 padding (12,8) text_size 18
+            style "r13_action_button" xpos 1272 xanchor 1.0 ypos 236 padding (12,8) text_size 18 xminimum (80 if r13_touch_ui() else 0) yminimum (80 if r13_touch_ui() else 0)
             action Function(r13_pan_camera,adjustment,1)
     elif adjustment.value<adjustment.range-4:
         textbutton "›":
-            style "r13_action_button" xpos 1272 xanchor 1.0 ypos 236 padding (12,8) text_size 22
+            style "r13_action_button" xpos 1272 xanchor 1.0 ypos 236 padding (12,8) text_size 22 xminimum (80 if r13_touch_ui() else 0) yminimum (80 if r13_touch_ui() else 0)
             action Function(r13_pan_camera,adjustment,1) tooltip "옆으로 둘러보기"
     # First wide place ever: one quiet line on how to look around, for six seconds.
     if not persistent.r13_pan_hint_seen and r13_field_view=="people":

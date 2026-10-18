@@ -23,6 +23,8 @@ init 169 python:
             text="%s까지 %d칸 · 반박할 수 있는 말 %d/%d"%(name,left,ready,need)
             if early and ready==need and now<early[0]*4+4:  # 0.19.8: not after that evening has passed
                 text+=" · %d일 저녁 %s에서 미리 열 수 있다"%(early[0],early[2])
+            if claim=="Q1":
+                text="광장 회의 · 4일 오전부터 오후까지 · 조사 마감까지 %d칸"%left
             rows.append((left,text))
         return min(rows)[1] if rows else None
 

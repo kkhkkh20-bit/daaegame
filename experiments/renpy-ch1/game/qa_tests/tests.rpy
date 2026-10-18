@@ -30,7 +30,7 @@ testcase trial_missing:
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     screenshot "m_board.png"
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "아이만 들어갔다"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -156,7 +156,7 @@ testcase trial_win:
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     screenshot "w_ready.png"
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "누군가가 냈다"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -189,7 +189,7 @@ testcase trial_full:
     pause 0.6
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "아이만 들어갔다"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -223,7 +223,7 @@ testcase trial_full:
     pause 0.6
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "통로를 아는 할머니가 죽였다"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -232,7 +232,7 @@ testcase trial_full:
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     screenshot "f_after_wrong.png"
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "누군가가 냈다"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -258,7 +258,7 @@ testcase trial_full:
     pause 0.6
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "주방에 간 뒤로는"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -298,7 +298,7 @@ testcase trial_full:
     pause 0.6
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "핀이 내려친 쪽 고리에"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -331,7 +331,7 @@ testcase trial_gate_unenforced:
     pause 0.6
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "아이만 들어갔다"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -365,7 +365,7 @@ testcase trial_gate_unenforced:
     pause 0.6
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "통로를 아는 할머니가 죽였다"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -374,7 +374,7 @@ testcase trial_gate_unenforced:
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     screenshot "f_after_wrong.png"
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "누군가가 냈다"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -400,7 +400,7 @@ testcase trial_gate_unenforced:
     pause 0.6
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "주방에 간 뒤로는"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -440,7 +440,7 @@ testcase trial_gate_unenforced:
     pause 0.6
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "핀이 내려친 쪽 고리에"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -474,7 +474,7 @@ testcase trial_gate_no_witness:
     pause 0.6
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "아이만 들어갔다"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -508,7 +508,7 @@ testcase trial_gate_no_witness:
     pause 0.6
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "통로를 아는 할머니가 죽였다"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -517,7 +517,7 @@ testcase trial_gate_no_witness:
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     screenshot "f_after_wrong.png"
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "누군가가 냈다"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -531,7 +531,7 @@ testcase trial_gate_no_witness:
     pause 0.6
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
-    click "발언 기록"
+    click "발언 목록"
     pause 0.4
     click "한참 걸려요"
     pause 0.6
@@ -584,7 +584,7 @@ testcase finale_win:
     pause 0.6
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "아무도 못 돌아온다는"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -630,7 +630,7 @@ testcase finale_win:
     pause 0.6
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "반짝 효과는 짧고"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -668,7 +668,7 @@ testcase finale_win:
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     screenshot "fi_f3_ready.png"
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "학교에 모여 식량을"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -698,7 +698,7 @@ testcase finale_win:
     pause 0.6
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "엄마를 붙잡으려"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -1369,7 +1369,7 @@ testcase trial_fake_testimony:
     pause 0.6
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "아이만 들어갔다"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -1403,7 +1403,7 @@ testcase trial_fake_testimony:
     pause 0.6
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "통로를 아는 할머니가 죽였다"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -1412,7 +1412,7 @@ testcase trial_fake_testimony:
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     screenshot "f_after_wrong.png"
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "누군가가 냈다"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -1438,7 +1438,7 @@ testcase trial_fake_testimony:
     pause 0.6
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "주방에 간 뒤로는"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -1478,7 +1478,7 @@ testcase trial_fake_testimony:
     pause 0.6
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "핀이 내려친 쪽 고리에"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -1513,7 +1513,7 @@ testcase trial_c1_h7:
     pause 0.6
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "아이만 들어갔다"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -2295,8 +2295,11 @@ testcase day1_note_spot:
     $ r13_world_cameras={"room13":0}
     run Call("r13_qa_goto",1,1,"room13")
     pause 2.0
-    $ r13_qa_hitmap("day1_note")
-    click pos r13_qa_pick("mother_note")
+    # 0.19.55: pressing the paper in investigation mode directly inspects it.
+    click "주변 살피기"
+    pause 0.3
+    click pos (ROOM13["objects"]["room13"]["mother_note"]["rect"][0]+ROOM13["objects"]["room13"]["mother_note"]["rect"][2]//2-r13_world_offset(),ROOM13["objects"]["room13"]["mother_note"]["rect"][1]+ROOM13["objects"]["room13"]["mother_note"]["rect"][3]//2)
+    pause 0.5
     click pos (640,600) until screen "r13_hub" timeout 40
     assert eval ("M01" in room13["evidence"] and r13_bed_available("bed") and not r13_object_visible(ROOM13["objects"]["room13"]["mother_note"]))
     pause 1.0
@@ -2438,7 +2441,7 @@ testcase trial_counter:
     pause 0.6
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "아이만 들어갔다"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -2450,7 +2453,7 @@ testcase trial_counter:
     pause 0.6
     click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
-    click "발언 기록"
+    click "발언 목록"
     pause 0.4
     click "다시 휘두를 사람이"
     pause 0.6
@@ -9401,7 +9404,10 @@ testcase karo_comes_day2:
     run Call("r13_qa_roam",dict(day=2,period=0,location="room13",daram_state="with_dad",life_poc=True),("+w1c","entry_corrected","lodging","night1_seen"),(),12)
     pause 1.5
     $ room13["flags"]=[f for f in room13["flags"] if f!="livelihood_open"]
-    click "복도로"
+    # 0.19.50 moved local travel to the map; keep exercising the real travel action.
+    click "지도 · 이동" until screen "r13_map" timeout 30
+    click "2층 복도"
+    click "이곳으로 이동"
     pause 2.5
     screenshot "karo_comes_1.png"
     click pos (640,600)
@@ -10829,18 +10835,20 @@ testcase screen_choice_guard:
     assert eval r13_qa_ok
 
 testcase ep1_meeting:
-    # 에피소드 ① 등 도둑: 광장 회의 Q1을 증거 다섯 개로 깨고, 빚을 지우는 결정까지.
+    # Legacy Q1 save compatibility: retain five-statement meeting and debt decision.
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=4,period=0,location="square",life_poc=True,evidence=["L03","L04","L06","L09","L10","L07","L08"]),("+ep","entry_corrected","lodging","ep4_seen","lt_dawn","piko_dead","lt_open","lt_lib_dawn","siluk_debt_known","ep1_patrol_seen","ep1_eaves_seen","ep1_done"))
+    run Call("r13_qa_roam",dict(day=4,period=0,location="square",life_poc=True,q1_rules=1,evidence=["L03","L04","L06","L09","L10","L07","L08"]),("+ep","+offers","entry_corrected","lodging","ep4_seen","lt_dawn","piko_dead","lt_open","lt_lib_dawn","siluk_debt_known","ep1_patrol_seen","ep1_eaves_seen","ep1_done"))
     pause 1.0
     assert eval (r13_debate_session("Q1")=="ep1" and r13_debate_engageable("Q1"))
     run Call("r13_qa_event","r13_ep1_meeting")
+    click pos (640,600) until screen "choice" timeout 30
+    click "회의에 들어간다"
     click pos (640,600) until eval (getattr(store,"r13_meeting_live_active",False)) timeout 60
     pause 0.6
     screenshot "ep1_live.png"
-    click "발언 고르기" until screen "r13_debate_board" timeout 30
+    click "발언 선택" until screen "r13_debate_board" timeout 30
     pause 0.6
     click "보여주기"
     pause 0.8
@@ -10869,7 +10877,7 @@ testcase ep1_meeting:
     pause 0.6
     pause 0.6
     screenshot "ep1_ready.png"
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "실룩"
     click pos (640,600) until screen "r13_book" timeout 40
@@ -10915,7 +10923,7 @@ testcase ep2_kids:
     click pos (640,600) until eval (getattr(store,"r13_meeting_live_active",False)) timeout 60
     pause 0.6
     screenshot "ep2_live.png"
-    click "발언 고르기" until screen "r13_debate_board" timeout 30
+    click "발언 선택" until screen "r13_debate_board" timeout 30
     pause 0.6
     click "보여주기"
     pause 0.8
@@ -10943,7 +10951,7 @@ testcase ep2_kids:
     click pos (640,600) until eval (r13_debate_is_broken("Q2","s4") and renpy.get_screen("r13_debate_board")) timeout 60
     pause 1.2
     screenshot "ep2_ready.png"
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "밤이는 처마 위에 있었고, 문 사람은 어른이다"
     click pos (640,600) until "회의를 계속한다" timeout 40
@@ -10990,7 +10998,7 @@ testcase ep3_meeting:
     run Call("r13_qa_roam",dict(day=7,period=1,location="school",life_poc=True,evidence=["F01","F04","F05","F06","F09","F11"]),("+ep","entry_corrected","lodging","ep4_seen","lt_dawn","lt_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","kd_done","wf_fire","kkomi_dead","wf_morning","wf_overheard","wf_nabi_defended","wf_bori_trusted","elder_appointment"))
     click pos (640,600) until eval (getattr(store,"r13_meeting_live_active",False)) timeout 60
     pause 0.6
-    click "발언 고르기" until screen "r13_debate_board" timeout 30
+    click "발언 선택" until screen "r13_debate_board" timeout 30
     pause 0.6
     click "보여주기"
     pause 0.8
@@ -11018,7 +11026,7 @@ testcase ep3_meeting:
     click pos (640,600) until eval (r13_debate_is_broken("Q3","s5") and renpy.get_screen("r13_debate_board")) timeout 90
     pause 1.2
     screenshot "ep3_ready.png"
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "누비"
     click pos (640,600) until screen "r13_book" timeout 40
@@ -11062,7 +11070,7 @@ testcase ep4_after_trial:
     run Call("r13_qa_event","r13_nt_after_trial")
     click pos (640,600) until eval (getattr(store,"r13_meeting_live_active",False)) timeout 60
     pause 0.6
-    click "발언 고르기" until screen "r13_debate_board" timeout 30
+    click "발언 선택" until screen "r13_debate_board" timeout 30
     pause 0.6
     click "보여주기"
     pause 0.8
@@ -11084,7 +11092,7 @@ testcase ep4_after_trial:
     click "QA N07"
     click pos (640,600) until eval (r13_debate_is_broken("Q4","s3") and renpy.get_screen("r13_debate_board")) timeout 60
     pause 1.2
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "할머니"
     click pos (640,600) until screen "r13_book" timeout 40
@@ -11119,7 +11127,7 @@ testcase ep5_soup_meeting:
     run Call("r13_qa_roam",dict(day=12,period=2,location="school",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,mom_state="reunited",evidence=["E30","Y06","Y07"]),("+ep","entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","mom_reunited","ws_long_night","ws_lab","ws_teacher_talked","ws_cabinet_locked","evening_brief:12"))
     click pos (640,600) until eval (getattr(store,"r13_meeting_live_active",False)) timeout 120
     pause 0.6
-    click "발언 고르기" until screen "r13_debate_board" timeout 30
+    click "발언 선택" until screen "r13_debate_board" timeout 30
     pause 0.6
     click "보여주기"
     pause 0.8
@@ -11146,7 +11154,7 @@ testcase ep5_soup_meeting:
     click "QA Y14"
     click pos (640,600) until eval (r13_debate_is_broken("Q5","s4") and renpy.get_screen("r13_debate_board")) timeout 90
     pause 1.2
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "사자 선생님"
     click pos (640,600) until screen "r13_book" timeout 40
@@ -11186,7 +11194,7 @@ testcase ep6_cart:
     click "설이에게 네 겨울의 수레 이야기를 한다"
     click pos (640,600) until eval (getattr(store,"r13_meeting_live_active",False)) timeout 120
     pause 0.6
-    click "발언 고르기" until screen "r13_debate_board" timeout 30
+    click "발언 선택" until screen "r13_debate_board" timeout 30
     pause 0.6
     click "보여주기"
     pause 0.8
@@ -11203,7 +11211,7 @@ testcase ep6_cart:
     click "QA V06"
     click pos (640,600) until eval (r13_debate_is_broken("Q6","s3") and renpy.get_screen("r13_debate_board")) timeout 60
     pause 1.2
-    click "결론을 말한다"
+    click "결론 정리"
     pause 1.0
     click "할머니"
     click pos (640,600) until screen "r13_book" timeout 40
@@ -11232,15 +11240,17 @@ testcase meeting_lap_hint:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=4,period=0,location="square",life_poc=True,evidence=["L03","L04","L06","L09","L10","L07","L08"]),("+ep","entry_corrected","lodging","ep4_seen","lt_dawn","piko_dead","lt_open","lt_lib_dawn","siluk_debt_known","ep1_patrol_seen","ep1_eaves_seen","ep1_done"))
+    run Call("r13_qa_roam",dict(day=4,period=0,location="square",life_poc=True,q1_rules=1,evidence=["L03","L04","L06","L09","L10","L07","L08"]),("+ep","+offers","entry_corrected","lodging","ep4_seen","lt_dawn","piko_dead","lt_open","lt_lib_dawn","siluk_debt_known","ep1_patrol_seen","ep1_eaves_seen","ep1_done"))
     pause 1.0
     run Call("r13_qa_event","r13_ep1_meeting")
+    click pos (640,600) until screen "choice" timeout 30
+    click "회의에 들어간다"
     click pos (640,600) until eval (getattr(store,"r13_meeting_live_active",False)) timeout 60
     assert eval (r13_meeting_live_lap==0)
     click pos (640,600) until eval (r13_meeting_live_lap>=1) timeout 90
     pause 1.0
     screenshot "lap_hint.png"
-    click "발언 고르기" until screen "r13_debate_board" timeout 30
+    click "발언 선택" until screen "r13_debate_board" timeout 30
     $ open("qa_result.txt","w").write("lap hint shown after one loop; 발언 고르기 opens the board")
 
 testcase ep_art_tour:
@@ -11663,7 +11673,7 @@ testcase time_flow:
     pause 1.0
     # The QA seed marks finished episodes (R13_QA_EPISODES_SEEN); reopen ①.
     $ r13_edit(flags=[f for f in room13["flags"] if f!="lt_done"])
-    assert eval ((r13_meeting_countdown() or "").startswith("광장 회의까지 "))
+    assert eval ((r13_meeting_countdown() or "").startswith("광장 회의 · 4일 오전부터 오후까지"))
     screenshot "countdown_ep1.png"
     run Call("r13_qa_roam",dict(day=6,period=2,location="school",life_poc=True,evidence=["F04","F05","F06","F09","F11"]),("entry_corrected","lodging","livelihood_open","lt_done","wf_fire","wf_morning","wf_ruins","+offers"))
     pause 1.0
@@ -12359,3 +12369,26 @@ testcase continuity_0195:
         store._c_q3=r13_debate_judge("Q3","s1","F04")
     assert eval (_c_q4[0]=="break" and "직접 말했습니다" in _c_q4[1][1][1] and "썼습니다" not in str(_c_q4[1]))
     assert eval (_c_q3[0]=="break" and "꺼냈어" not in str(_c_q3[1]) and "학교에 있었어요" in str(_c_q3[1]))
+
+testcase q1_argument_access:
+    # Q1 v2 witnesses and ledger contact must remain reachable through real schedules.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=4,period=0,location="workshop",life_poc=True,evidence=["L06"]),("+ep","+offers","lt_dawn","lt_open","lt_siluk_seen","lt_lib_dawn","piko_dead","librarian_dead","ep4_seen","ep1_done","ep1_patrol_seen","ep1_eaves_seen"))
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval (r13_q1_v2() and not r13_has("lt_done"))
+    python:
+        for person,key in (("resident_lamplighter","q1v:patrol"),("buri","q1v:buri"),("resident_siluk","q1v:receipt")):
+            place=r13_where(person)
+            assert place in r13_places(), (person,place)
+            r13_edit(location=place)
+            assert person in r13_people(), person
+            assert key in dict(r13_topics(person)), (person,key)
+            assert r13_contact_has_content(person), person
+        r13_grant(["L09"],"QA ledger contact fixture")
+        r13_edit(location=r13_where("resident_madam"))
+        assert "resident_madam" in r13_people()
+        assert r13_contact_has_content("resident_madam")
+        assert "L09" in r13_contact_presentations("resident_madam")
+        r13_qa_note("Q1 v2: all three investigation routes have reachable people and open contact gates")

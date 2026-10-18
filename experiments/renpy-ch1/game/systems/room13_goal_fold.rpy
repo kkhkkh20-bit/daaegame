@@ -27,14 +27,11 @@ screen r13_goal_fold(goal,ready=False):
     if not renpy.get_screen("r13_evidence_found"):
         fixed:
             area (r13_control_x(4),r13_control_upper_y(),232,r13_control_height())
-            use r13_antique_button("생각","dialogue",[ToggleVariable("r13_goal_open"),SetVariable("r13_thoughts_seen",tuple(sorted(set(r13_thoughts_seen)|set(signature))))],enabled=ready,compact=True,width=232,chosen=r13_goal_open)
+            use r13_antique_button("새 생각" if thought not in r13_thought_toasted and thought not in r13_thoughts_seen else "생각","dialogue",[ToggleVariable("r13_goal_open"),SetVariable("r13_thoughts_seen",tuple(sorted(set(r13_thoughts_seen)|set(signature))))],enabled=ready,compact=True,width=232,chosen=r13_goal_open)
             if any(item not in r13_thoughts_seen for item in signature):
                 add Solid("#d7ad61") xpos 210 ypos 17 xsize 6 ysize 6
         if ready and not r13_goal_open and thought not in r13_thoughts_seen and thought not in r13_thought_toasted:
-            timer 4.5 action SetVariable("r13_thought_toasted",tuple(r13_thought_toasted)+(thought,))
-            frame:
-                xpos 1160 xanchor 1.0 ypos (r13_control_upper_y()-16) yanchor 1.0 xmaximum 620 padding (18,10) background R13PaperFrame()
-                text ("새 생각 · "+thought) size r13_read_size(19,22) color "#496579"
+            timer 2.4 action SetVariable("r13_thought_toasted",tuple(r13_thought_toasted)+(thought,))
         if r13_goal_open:
             button:
                 area (0,0,1280,650) background None

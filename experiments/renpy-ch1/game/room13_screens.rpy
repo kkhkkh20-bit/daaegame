@@ -25,7 +25,7 @@ screen r13_hud():
                 add R13TimeDial() yalign .5
         frame:
             xpos 24 ypos 20 padding (14,8) background R13PaperFrame()
-            text r13_hud_place() size r13_read_size(18,22) color "#493b30"
+            text (r13_hud_place()+(" · 주변 조사" if renpy.get_screen("r13_hub") and r13_field_view=="scene" else "")) size r13_read_size(18,22) color "#493b30"
 
 init 80:
     style r13_toolbar_button is r13_action_button:
@@ -87,8 +87,8 @@ screen r13_hub(entry=False):
         use r13_waiting_window(ready)
     else:
         fixed:
-            area (1020,104,232,64)
-            use r13_antique_button("지도 · 이동","map",Return(("menu","map")),enabled=ready,width=232,height=64)
+            area (1020,104,232,r13_control_height())
+            use r13_antique_button("지도 · 이동","map",Return(("menu","map")),enabled=ready,width=232,height=r13_control_height())
     if not entry and r13_bed_available("bed"):
         fixed:
             area (1020,264,232,64)
@@ -117,19 +117,21 @@ screen r13_hub(entry=False):
             xpos max(12,min(980,renpy.get_mouse_pos()[0]+18)) ypos max(90,min(594,renpy.get_mouse_pos()[1]+22)) padding (14,9) background R13ActionPanel()
             hbox:
                 spacing 6
-                if hint in [r13_object_name(k) for k,spec in ROOM13["objects"].get(room13["location"],{}).items() if r13_object_visible(spec)]:
-                    add R13AntiqueIcon("investigate",size=22) yalign .5
                 text hint size 20 color "#fff2cf" yalign .5
 
 screen r13_world_contents(entry=False,ready=False):
     style_prefix "r13"
+    if r13_field_view=="scene":
+        button:
+            area (0,0,r13_world_width(),720) padding (0,0) background None hover_background None
+            action Function(r13_empty_tap_feedback) sensitive ready alt "배경"
     # Background targets stay behind the visible residents.
     for key,spec in ROOM13["objects"].get(room13["location"],{}).items():
         if r13_object_visible(spec):
             button:
                 area tuple(spec["rect"])
                 background None hover_background None insensitive_background None padding (0,0)
-                action SetVariable("r13_field_pick",(room13["location"],key)) sensitive ready and r13_field_view=="scene"
+                action [Function(r13_click_feedback,key),Return(("object",key))] sensitive ready and r13_field_view=="scene"
                 tooltip r13_object_name(key)
     # 0.18.50 (owner): where a person and an object overlap, the person is pressed. Objects drawn
     # in front of a resident stay pressable around the resident's silhouette.
@@ -137,7 +139,7 @@ screen r13_world_contents(entry=False,ready=False):
         button:
             area rect focus_mask mask
             background None hover_background None insensitive_background None padding (0,0)
-            action SetVariable("r13_field_pick",(room13["location"],key)) sensitive ready and r13_field_view=="scene"
+            action [Function(r13_click_feedback,key),Return(("object",key))] sensitive ready and r13_field_view=="scene"
             tooltip r13_object_name(key)
     # 0.18.63: separate prop layers (systems/room13_map_actions.rpy), behind the residents.
     for prop,px,py in r13_world_props(entry):
@@ -152,8 +154,6 @@ screen r13_world_contents(entry=False,ready=False):
     $ bundle_point=r13_gate_bundle_check_point()
     if bundle_point:
         add TopicTick() xpos bundle_point[0]-13 ypos bundle_point[1]-13
-    if r13_field_view=="scene":
-        use r13_field_spots_overlay(ready)
     use r13_admin_hitboxes()
     if r13_field_view=="people":
         for nameplate in r13_actor_nameplates(r13_stage_people(entry)):
@@ -445,13 +445,13 @@ screen r13_book(target=None,present=False,hearing=False):
             text "먼저 보여주고, 건넬지는 대화 후 결정합니다." xpos 66 ypos 252 xsize 176 size 17 color "#625738"
     $ entries=r13_catalog_entries(archive and not present,hearing)
     $ entries=r13_present_entries(entries,target) if present else entries
-    $ material_filter="all" if (hearing or archive) and material_filter=="transfer" else material_filter
+    $ material_filter="all" if material_filter=="unread" or ((hearing or archive) and material_filter=="transfer") else material_filter
     $ entries=r13_material_subset(entries,material_filter)
     # 0.19.2: 보여줄 때는 단추 없이, 지금 상대(발언자)와 이어진 자료를 앞에 놓는다.
     if chip_person:
         $ entries=r13_record_related_first(entries,chip_person)
     $ selected_record=r13_present_selection(entries,detail,page) if present else r13_record_selected(entries,detail,page)
-    text ("자료 %d개"%len(entries)) xpos 284 ypos 86 size 20 color "#65503b"
+    text ("자료 %d개"%len(entries)) xpos 284 ypos (72 if r13_touch_ui() else 86) size 20 color "#65503b"
     use r13_material_filters("r13_book",material_filter,not hearing and not archive,unread=len(r13_material_subset(r13_catalog_entries(archive and not present,hearing),"unread")))
     use r13_material_grid(entries,selected_record,page,"r13_book",archive and not present)
     use r13_material_detail(selected_record,archive and not present,view_context) id (view_context,selected_record,archive,persistent.room13_large_text)
@@ -460,6 +460,7 @@ screen r13_book(target=None,present=False,hearing=False):
     if present:
         textbutton ("이 주장에 근거로 낸다" if hearing else R13_NAMES.get(target,"상대")+"에게 보여주기"):
             style "r13_compact_button" xpos 824 ypos 584 xsize 398 ysize 82 text_size r13_read_size(20,24)
+            background R13ControlSurface(primary=True) hover_background R13ControlSurface(primary=True,hovered=True) insensitive_background R13ControlSurface(disabled=True)
             action Return(selected_record)
             sensitive ready and detail==selected_record and r13_catalog_can_present(selected_record,hearing) and not archive
     textbutton ("그만두기" if present else "닫기"):

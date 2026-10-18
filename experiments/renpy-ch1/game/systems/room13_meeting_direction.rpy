@@ -268,6 +268,9 @@ init 174 python:
         store.r13_meeting_direction_poses={target:r13_meeting_startle_pose(target)}
 
     def r13_meeting_direct_gasps(claim,sid):
+        # Q1 already ends each proof with an authored reply or a child's reaction.
+        # Generic surprise after those lines interrupts their meaning and pacing.
+        if claim=="Q1":return []
         token=claim+":"+sid+":gasp"
         seen=list(getattr(store,"r13_meeting_direction_seen",[]) or [])
         if token in seen:return []
@@ -294,6 +297,7 @@ init 174 python:
         return base+(36 if beat in ("shaken","recover","reversal","cornered") and not outgoing else 0)
 
     def r13_meeting_direct_murmurs(claim,sid,result):
+        if claim=="Q1":return []
         # One short response per first outcome, from someone actually at this meeting.
         token=claim+":"+sid+":"+result
         seen=list(getattr(store,"r13_meeting_direction_seen",[]) or [])

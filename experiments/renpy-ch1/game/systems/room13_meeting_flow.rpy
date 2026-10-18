@@ -111,12 +111,29 @@ init 100 python:
     def r13_meeting_reaction_lines(vote):
         session=vote["session"]
         lines=[]
+        # Small-case meetings have their own question. They are not altar votes.
+        case_lines={
+            "ep1":("아직 등 사건의 혐의가 풀렸다고 보지는 않아요.","톡이 그랬다는 말을 다시 생각해 봐야겠어요.","이제 톡이 그랬다는 말에 동의하지 않아요."),
+            "ep2":("아직 밤이에 대한 의심이 남아요.","밤이가 그랬다고 단정하기는 어렵겠어요.","이제 밤이가 그랬다는 말에 동의하지 않아요."),
+            "ep3":("아직 장작 사건의 혐의가 풀렸다고 보지는 않아요.","그 혐의를 다시 생각해 봐야겠어요.","이제 그 혐의를 뒷받침할 근거는 없다고 봐요."),
+            "ep4":("아직은 사고였다고 생각해요.","단순한 사고였는지 다시 생각해 봐야겠어요.","누군가 문을 닫았다는 설명에 동의해요."),
+            "ep5a":("아직은 모두 살아남기 어렵다고 생각해요.","더 지켜봐야 할지도 모르겠어요.","지금 포기하지 말고 기다려 봐야겠어요."),
+            "ep5":("아직 감자가 원인이라고 생각해요.","감자 때문인지 다시 생각해 봐야겠어요.","이제는 냄비를 의심해야겠어요."),
+            "ep6":("아직은 보호소로 데려가는 수레라고 생각해요.","보호소로 간다는 말을 다시 생각해 봐야겠어요.","이 수레는 멈춰야 한다고 생각해요."),
+        }
         for change in vote.get("changed",[]):
             who=change["person"];stance=change["to"]
             if session=="trial":
                 text=("아직 그 아이를 의심하고 있어요.","그 아이가 그랬다고 단정할 수는 없겠어요.","이제는 그 아이가 그랬다는 말에 동의하지 않아요.")[stance]
-            else:
+            elif session=="finale":
                 text=("아직은 희생을 이어 가야 한다고 생각해요.","희생을 계속하는 게 맞는지 다시 생각해 봐야겠어요.","더는 사람을 희생하는 데 동의하지 않아요.")[stance]
+            elif session in case_lines:
+                text=case_lines[session][stance]
+                if session=="ep1" and who=="resident_tok":
+                    # His authored conclusion has already expressed his grief.
+                    continue
+            else:
+                continue
             lines.append((who,text))
         return lines
 
@@ -166,7 +183,7 @@ init 100 python:
         session=r13_debate_session(claim)
         rows=[]
         for who,stance in r13_debate_seats(session):
-            grounds=[cid for cid,spec in R13_DEBATE.items() if cid.startswith("C" if session=="trial" else "F") and who in spec.get("sway",[]) and (cid in store.room13.get("propositions",[]) or r13_debate_progress(cid)[0])]
+            grounds=[cid for cid,spec in R13_DEBATE.items() if r13_debate_session(cid)==session and who in spec.get("sway",[]) and (cid in store.room13.get("propositions",[]) or r13_debate_progress(cid)[0])]
             rows.append(dict(person=who,stance=stance,grounds=grounds))
         previous=store.room13.get("meeting_votes",{}).get(claim)
         baseline=({row["person"]:row["stance"] for row in previous["voters"]} if previous else getattr(store,"r13_meeting_opinion_baseline",{}).get(claim,{}))
@@ -312,7 +329,7 @@ screen r13_meeting_ballot(claim,vote):
         vbox:
             spacing 10
             text "공개 의견 확인" size r13_read_size(24,28) color "#493b30"
-            $ my_choice=next((text for kind,text in R13_DEBATE[claim]["conclusion"]["options"] if kind==vote["choice"]),"")
+            $ my_choice=("실룩이 허락 없이 조각을 가져갔다" if claim=="Q1" and r13_q1_v2() and vote["choice"]=="correct" else next((text for kind,text in R13_DEBATE[claim]["conclusion"]["options"] if kind==vote["choice"]),""))
             text ("내가 밝힌 의견 · "+my_choice) size r13_read_size(19,23) color "#795d40"
             hbox:
                 spacing 24

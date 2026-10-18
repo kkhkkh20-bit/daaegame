@@ -99,6 +99,14 @@ class CouncilDirection(unittest.TestCase):
   self.assertEqual(m('C2','s1','countered'),[])
   self.assertEqual(m('C2','s1','wrong'),[])
   self.assertEqual(self.s.room13,before)
+
+ def test_q1_authored_replies_are_not_followed_by_generic_chatter(self):
+  before=copy.deepcopy(self.s.room13)
+  for sid in ('s1','s2','s3','s4','s5'):
+   self.assertEqual(self.e['r13_meeting_direct_gasps']('Q1',sid),[])
+   for result in ('break','half','countered'):
+    self.assertEqual(self.e['r13_meeting_direct_murmurs']('Q1',sid,result),[])
+  self.assertEqual(self.s.room13,before)
  def test_cleanup_without_ownership_does_not_change_quiet_scene_audio(self):
   self.s.r13_meeting_direction_return_audio={}
   self.e['r13_meeting_direct_end']()

@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "route": "physical",
+      "success": true
+    },
+    {
+      "route": "trade",
+      "success": true
+    },
+    {
+      "route": "testimony",
+      "success": true
+    },
+    {
+      "route": "incomplete",
+      "success": false
+    },
+    {
+      "route": "native-restore",
+      "success": true
+    },
+    {
+      "route": "overreach",
+      "success": false
+    }
+  ],
+  "dialogue_pages": 301
+}

@@ -282,17 +282,17 @@ screen r13_meeting_chrome(claim):
         vbox:
             xpos 42
             spacing 2
-            text (r13_meeting_header(session)+("" if r13_meeting_intro else "  ·  반박 %d / %d"%(proved,proof_total))) size r13_read_size(15,17) color "#795d40"
-            text ("참석자들의 이야기" if r13_meeting_intro else "쟁점 · "+R13_MEETING_ISSUES.get(claim,R13_DEBATE[claim]["title"])) size r13_read_size(21,25) color "#493b30"
+            text (r13_meeting_header(session)+("" if r13_meeting_intro else "  ·  확인한 발언 %d"%proved if claim=="Q1" and r13_q1_v2() else "  ·  반박 %d / %d"%(proved,proof_total))) size r13_read_size(15,17) color "#795d40"
+            text ("참석자들의 이야기" if r13_meeting_intro else "쟁점 · 3번 등의 조각을 누가 가져갔는가?" if claim=="Q1" and r13_q1_v2() else "쟁점 · "+R13_MEETING_ISSUES.get(claim,R13_DEBATE[claim]["title"])) size r13_read_size(21,25) color "#493b30"
         if not r13_meeting_intro:
             add Solid("#d6bf98") xpos 0 ypos 51 xysize (868,3)
-            if proved:
+            if proved and not (claim=="Q1" and r13_q1_v2()):
                 add Solid("#a88043") xpos 0 ypos 51 xysize (int(868*proved/max(1,proof_total)),3)
 
 screen r13_meeting_tools(claim,sid=None,board=False,ready=True):
     $ completed=bool(sid and r13_debate_is_broken(claim,sid))
     $ live_controls=r13_meeting_live_active and not r13_meeting_interrupting
-    $ can_conclude=board and r13_debate_ready(claim)
+    $ can_conclude=board and ((claim=="Q1" and r13_q1_v2()) or r13_debate_ready(claim))
     use r13_footer_control(0,"회의 중단" if board else "더보기","settings",Return(("leave",)) if board else Show("r13_more_tools"),enabled=ready)
     use r13_footer_control(1,"결론 정리" if can_conclude else "토론 듣기" if board else "발언 선택","testimony",Return(("conclude",)) if can_conclude else Return(("round",sid)) if board else Function(r13_meeting_request_live_action,"review"),enabled=ready and (board or live_controls))
     use r13_footer_control(2,"다시 듣기" if completed else "되묻기","dialogue",Return(("listen" if completed else "press",sid)) if board else Function(r13_meeting_request_live_action,"press"),enabled=ready and (board or (live_controls and r13_meeting_can_live_press())))

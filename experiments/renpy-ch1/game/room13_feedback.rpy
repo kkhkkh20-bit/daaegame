@@ -71,3 +71,23 @@ screen r13_evidence_found(keys,conversation=False):
         timer 2.4 action SetScreenVariable("item_index",item_index+1)
     else:
         timer 2.4 action Hide("r13_evidence_found")
+
+# A quiet acknowledgement for empty taps; no observation, journal or clock writes.
+init 69 python:
+    def r13_empty_tap_feedback():
+        renpy.show_screen("r13_empty_tap",point=renpy.get_mouse_pos())
+
+    class R13EmptyTap(renpy.Displayable):
+        def render(self,width,height,st,at):
+            r=renpy.Render(32,32)
+            r.canvas().circle("#fff4df99",(16,16),10,2)
+            return r
+
+transform r13_empty_tap_fade:
+    alpha .7
+    linear .35 alpha 0.0
+
+screen r13_empty_tap(point):
+    zorder 90
+    add R13EmptyTap() pos point anchor (.5,.5) at r13_empty_tap_fade
+    timer .4 action Hide("r13_empty_tap")

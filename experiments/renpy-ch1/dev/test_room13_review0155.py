@@ -12,6 +12,7 @@ def edit(**kw):
  n=copy.deepcopy(store.room13);n.update(kw);store.room13=n
 env=dict(ROOM13=content,store=store,persistent=persistent,config=types.SimpleNamespace(history_length=0,history_callbacks=[]),renpy=renpy,winter_copy=copy,r13_edit=edit,R13_NAMES={},R13_PLACES={})
 s=(root/'game/room13_notebook.rpy').read_text().split('init 68 python:\n')[1].split('\ninit 71:')[0]
+env["r13_touch_ui"]=lambda:False
 exec(compile(textwrap.dedent(s),'records','exec'),env)
 entries=env['r13_record_entries'];assert entries(order='recent')==['G2','G3','G1','E01']
 assert entries(order='acquired')==state['evidence'];assert entries(archive=True,present=True,order='recent')==['G2','G3','G1','E01']
@@ -26,6 +27,11 @@ assert store.room13==before
 assert env['r13_record_unread']('G1');env['r13_record_update_ui']('seen','G1',True);assert not env['r13_record_unread']('G1')
 persistent.room13_large_text=True;assert env['r13_record_page_size']()==8;assert env['r13_record_pages'](list(range(34)))==5;assert env['r13_record_selected'](list(range(34)),0,1)==8
 persistent.room13_large_text=False;assert env['r13_record_pages'](list(range(34)))==3
+# Compact touch pages stay bounded even with ordinary text enabled.
+env["r13_touch_ui"]=lambda:True
+assert env["r13_record_page_size"]()==8 and env["r13_record_pages"](list(range(34)))==5
+assert entries(order="recent")==["G2","G3","G1","E01"]
+env["r13_touch_ui"]=lambda:False
 # Execute actual gate helpers with grants/marks isolated, not reconstructed logic.
 store.room13=copy.deepcopy(state);store.room13['evidence']=[]
 def flag(*keys):
