@@ -47,7 +47,7 @@ async def main():
    await q.press('현장으로');await q.wait('r13_hub');await q.press('기록');await asyncio.sleep(.4);await q.shot('06-mobile-records-folded')
    filters=[v for v in (await q.state())['buttons'] if 280<=v['rect'][0]<800 and 90<=v['rect'][1]<190]
    assert all(v['rect'][2]>=80 and v['rect'][3]>=80 for v in filters),filters
-   assert len(filters)==2,filters
+   assert len(filters)==1,filters
    await q.press('초대 편지');await q.press('출처');await q.shot('07-mobile-records-origin-open');await q.press('출처 접기');await q.press('닫기');await q.wait('r13_hub')
    await q.press('주변 살피기');await asyncio.sleep(3.3);assert await q.py('import renpy;result="inn" in renpy.store.r13_scene_hint_seen');await q.shot('08-mobile-investigation-clean')
    before=await q.room()
@@ -66,7 +66,7 @@ async def main():
    await q.py('import renpy;s=renpy.store;s.config.variants=[v for v in s.config.variants if v!="touch"];renpy.exports.restart_interaction();result=True')
    assert await q.py('import renpy;result=renpy.store.r13_control_height()')==64
    await q.shot('11-pc-mouse-field')
-   report['checks']=['Mobile controls grow independently of large text','Map select/cancel preserve exact story state; confirm/back share 232x80 geometry','Sparse owned collection shows two relevant filters with 80px touch targets','Record source opens and folds through real controls','Scene hint folds; empty tap gives feedback without story, evidence or clock changes']
+   report['checks']=['Mobile controls grow independently of large text','Map select/cancel preserve exact story state; confirm/back share 232x80 geometry','Sparse owned collection shows only All; no unread counter filter','Record source opens and folds through real controls','Scene hint folds; empty tap gives feedback without story, evidence or clock changes']
    report['passed']=True
   except Exception as e:
    report['error']=repr(e);await page.screenshot(path=str(OUT/'failure.png'))

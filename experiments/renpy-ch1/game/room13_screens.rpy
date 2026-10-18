@@ -445,7 +445,7 @@ screen r13_book(target=None,present=False,hearing=False):
             text "먼저 보여주고, 건넬지는 대화 후 결정합니다." xpos 66 ypos 252 xsize 176 size 17 color "#625738"
     $ entries=r13_catalog_entries(archive and not present,hearing)
     $ entries=r13_present_entries(entries,target) if present else entries
-    $ material_filter="all" if (hearing or archive) and material_filter=="transfer" else material_filter
+    $ material_filter="all" if material_filter=="unread" or ((hearing or archive) and material_filter=="transfer") else material_filter
     $ entries=r13_material_subset(entries,material_filter)
     # 0.19.2: 보여줄 때는 단추 없이, 지금 상대(발언자)와 이어진 자료를 앞에 놓는다.
     if chip_person:
