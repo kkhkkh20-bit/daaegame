@@ -523,12 +523,12 @@ label r13_talk_dispatch:
             if _return:
                 $ r13_finish_topic(r13_topic)
         jump r13_talk_menu
-    if r13_topic in room13["read_topics"]:
-        # A read question immediately replays the original conversation.
+    if r13_topic in room13["read_topics"] and r13_topic_current_context(r13_topic) is None:
+        # Historical testimony stays verbatim; live companion/corrected topics do not.
         call r13_topic_review(r13_topic)
         $ r13_finish_topic(r13_topic)
         jump r13_talk_menu
-    $ r13_topic_rows=r13_conversation_topic_lines(r13_topic)
+    $ r13_topic_rows=r13_topic_current_lines(r13_topic) if r13_topic_current_context(r13_topic) is not None else r13_conversation_topic_lines(r13_topic)
     call r13_lines(r13_topic_rows,"topic:"+r13_topic, binding_route="dynamic:035")
     $ r13_topic_shown=r13_topic_rows
     $ r13_finish_topic(r13_topic)
