@@ -9,7 +9,7 @@ init 999 python:
         fill=100.0*adj.value/float(adj.range)
         label=renpy.get_displayable("pause_menu",widget_id+"_percent")
         visible="".join(str(part) for part in label.text)
-        return abs(fill-expected)<=1 and r13_mixer_percent(mixer)==int(round(fill)) and visible=="%d%%"%r13_mixer_percent(mixer)
+        return (abs(fill-expected)<0.001 if expected==100 else abs(fill-expected)<=0.5) and r13_mixer_percent(mixer)==int(round(fill)) and visible=="%d%%"%r13_mixer_percent(mixer)
 
 testcase settings_typography:
     pause 2.0
@@ -31,8 +31,8 @@ testcase settings_typography:
     assert eval (r13_qa_mixer_matches("music_volume","music",50))
     assert eval (r13_qa_mixer_matches("fx_volume","sfx",50))
     screenshot "settings-volume-50-percent.png"
-    drag id "music_volume" pos (0.5,0.5) to id "music_volume" pos (0.999,0.5) steps 20
-    drag id "fx_volume" pos (0.5,0.5) to id "fx_volume" pos (0.999,0.5) steps 20
+    drag id "music_volume" pos (0.5,0.5) to id "music_volume" pos (1.1,0.5) steps 20
+    drag id "fx_volume" pos (0.5,0.5) to id "fx_volume" pos (1.1,0.5) steps 20
     pause 0.3
     assert eval (r13_qa_mixer_matches("music_volume","music",100))
     assert eval (r13_qa_mixer_matches("fx_volume","sfx",100))
