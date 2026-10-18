@@ -1,0 +1,8359 @@
+[
+  {
+    "code": "await q.press('처음부터')",
+    "started": 1792285558.2384984,
+    "result": null
+  },
+  {
+    "code": "await shot('01-new-game-opening')",
+    "started": 1792285568.4936028,
+    "result": {
+      "screens": [
+        "say"
+      ],
+      "say": "덜컹.\n마차 바퀴가 돌부리를 넘었다.",
+      "buttons": [
+        {
+          "text": "       백로그",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       자동",
+          "rect": [
+            276,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       대사 건너뛰기",
+          "rect": [
+            524,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       설정",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "      씬 건너뛰기",
+          "rect": [
+            948,
+            24,
+            224,
+            54
+          ]
+        }
+      ],
+      "room": {
+        "day": 1,
+        "period": 0,
+        "location": "gate",
+        "flags": [],
+        "evidence": [],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.input(810,610)",
+    "started": 1792285579.622394,
+    "result": null
+  },
+  {
+    "code": "await shot('02-daram-carriage')",
+    "started": 1792285579.9296353,
+    "result": {
+      "screens": [
+        "say"
+      ],
+      "say": "편지에서 눈을 들자, 옆자리에 있던 다람이가 보이지 않았다.",
+      "buttons": [
+        {
+          "text": "       백로그",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       자동",
+          "rect": [
+            276,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       대사 건너뛰기",
+          "rect": [
+            524,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       설정",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "      씬 건너뛰기",
+          "rect": [
+            948,
+            24,
+            224,
+            54
+          ]
+        }
+      ],
+      "room": {
+        "day": 1,
+        "period": 0,
+        "location": "gate",
+        "flags": [],
+        "evidence": [],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await advance()",
+    "started": 1792285580.4250453,
+    "result": {
+      "screens": [
+        "r13_evidence_found"
+      ],
+      "say": "",
+      "buttons": [],
+      "room": {
+        "day": 1,
+        "period": 1,
+        "location": "gate",
+        "flags": [],
+        "evidence": [
+          "E01"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await brief()",
+    "started": 1792285599.6795747,
+    "result": {
+      "screens": [
+        "say"
+      ],
+      "say": "도착했어요.\n발판이 얼어서 미끄러우니 조심해서 내려요.",
+      "buttons": [
+        {
+          "text": "       백로그",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       자동",
+          "rect": [
+            276,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       대사 건너뛰기",
+          "rect": [
+            524,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 1,
+        "period": 1,
+        "location": "gate",
+        "flags": [],
+        "evidence": [
+          "E01"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await shot('03-gate-arrival')",
+    "started": 1792285599.7807992,
+    "result": {
+      "screens": [
+        "say"
+      ],
+      "say": "도착했어요.\n발판이 얼어서 미끄러우니 조심해서 내려요.",
+      "buttons": [
+        {
+          "text": "       백로그",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       자동",
+          "rect": [
+            276,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       대사 건너뛰기",
+          "rect": [
+            524,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 1,
+        "period": 1,
+        "location": "gate",
+        "flags": [],
+        "evidence": [
+          "E01"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await advance()",
+    "started": 1792285607.981388,
+    "result": {
+      "screens": [
+        "r13_hub"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "            ",
+          "rect": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            346,
+            313,
+            75,
+            114
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            0,
+            469,
+            309,
+            127
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            50,
+            396,
+            178,
+            75
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            440,
+            414,
+            82,
+            177
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            968,
+            534,
+            206,
+            100
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            1240,
+            437,
+            40,
+            111
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            1021,
+            383,
+            201,
+            98
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            0,
+            469,
+            309,
+            127
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            50,
+            396,
+            178,
+            75
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            440,
+            414,
+            82,
+            177
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            968,
+            534,
+            206,
+            100
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            1021,
+            383,
+            201,
+            98
+          ]
+        },
+        {
+          "text": "      ‹",
+          "rect": [
+            8,
+            236,
+            32,
+            42
+          ]
+        },
+        {
+          "text": "      ›",
+          "rect": [
+            1240,
+            236,
+            32,
+            42
+          ]
+        },
+        {
+          "text": "       주변 살피기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       사람과 대화",
+          "rect": [
+            276,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       조사 지점",
+          "rect": [
+            28,
+            104,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       ",
+          "rect": [
+            1190,
+            20,
+            64,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 1,
+        "period": 1,
+        "location": "gate",
+        "flags": [],
+        "evidence": [
+          "E01"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await shot('04-gate-investigation')",
+    "started": 1792285630.85755,
+    "result": {
+      "screens": [
+        "r13_hub"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "            ",
+          "rect": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            346,
+            313,
+            75,
+            114
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            0,
+            469,
+            309,
+            127
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            50,
+            396,
+            178,
+            75
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            440,
+            414,
+            82,
+            177
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            968,
+            534,
+            206,
+            100
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            1240,
+            437,
+            40,
+            111
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            1021,
+            383,
+            201,
+            98
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            0,
+            469,
+            309,
+            127
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            50,
+            396,
+            178,
+            75
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            440,
+            414,
+            82,
+            177
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            968,
+            534,
+            206,
+            100
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            1021,
+            383,
+            201,
+            98
+          ]
+        },
+        {
+          "text": "      ‹",
+          "rect": [
+            8,
+            236,
+            32,
+            42
+          ]
+        },
+        {
+          "text": "      ›",
+          "rect": [
+            1240,
+            236,
+            32,
+            42
+          ]
+        },
+        {
+          "text": "       주변 살피기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       사람과 대화",
+          "rect": [
+            276,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       조사 지점",
+          "rect": [
+            28,
+            104,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       ",
+          "rect": [
+            1190,
+            20,
+            64,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 1,
+        "period": 1,
+        "location": "gate",
+        "flags": [],
+        "evidence": [
+          "E01"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.press('사람과 대화')",
+    "started": 1792285631.5296805,
+    "result": null
+  },
+  {
+    "code": "await shot('05-gate-people')",
+    "started": 1792285632.5063243,
+    "result": {
+      "screens": [
+        "r13_hub"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "                             꽥순       돌목       칼바람       까로       다람",
+          "rect": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            859,
+            410,
+            179,
+            190
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            166,
+            450,
+            127,
+            165
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            532,
+            390,
+            121,
+            230
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            729,
+            416,
+            137,
+            235
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            361,
+            463,
+            156,
+            205
+          ]
+        },
+        {
+          "text": "      꽥순",
+          "rect": [
+            537,
+            340,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "      돌목",
+          "rect": [
+            913,
+            360,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "      칼바람",
+          "rect": [
+            731,
+            366,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "      까로",
+          "rect": [
+            193,
+            400,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "      다람",
+          "rect": [
+            422,
+            413,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "      ‹",
+          "rect": [
+            8,
+            236,
+            32,
+            42
+          ]
+        },
+        {
+          "text": "      ›",
+          "rect": [
+            1240,
+            236,
+            32,
+            42
+          ]
+        },
+        {
+          "text": "       주변 살피기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       사람과 대화",
+          "rect": [
+            276,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       ",
+          "rect": [
+            1190,
+            20,
+            64,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 1,
+        "period": 1,
+        "location": "gate",
+        "flags": [],
+        "evidence": [
+          "E01"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.input(455,530)",
+    "started": 1792285668.693795,
+    "result": null
+  },
+  {
+    "code": "await advance()",
+    "started": 1792285669.0027242,
+    "result": {
+      "screens": [
+        "r13_entry_daram_topics"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "      1 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  우리 이름이 적힌 종이를 같이 본다",
+          "rect": [
+            640,
+            112,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "      2 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  아빠와 같이 가고 싶은지 묻는다",
+          "rect": [
+            640,
+            174,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "       돌아가기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 1,
+        "period": 1,
+        "location": "gate",
+        "flags": [],
+        "evidence": [
+          "E01"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.shot('06-daram-natural-questions')",
+    "started": 1792285688.1577647,
+    "result": null
+  },
+  {
+    "code": "await q.press('우리 이름이 적힌 종이')",
+    "started": 1792285688.652752,
+    "result": null
+  },
+  {
+    "code": "await advance()",
+    "started": 1792285689.5457985,
+    "result": {
+      "screens": [
+        "r13_entry_daram_topics"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "      1 {font=assets/Room13Sans.ttf}✓{/font}  {s}우리 이름이 적힌 종이를 같이 본다{/s}",
+          "rect": [
+            640,
+            112,
+            592,
+            57
+          ]
+        },
+        {
+          "text": "      2 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  아빠와 같이 가고 싶은지 묻는다",
+          "rect": [
+            640,
+            177,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "       돌아가기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 1,
+        "period": 1,
+        "location": "gate",
+        "flags": [
+          "question_read:entry:daram:look"
+        ],
+        "evidence": [
+          "E01"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.press('돌아가기')",
+    "started": 1792285711.7540607,
+    "result": null
+  },
+  {
+    "code": "await q.input(965,453)",
+    "started": 1792285712.6456454,
+    "result": null
+  },
+  {
+    "code": "await q.shot('07-guard-questions')",
+    "started": 1792285712.988468,
+    "result": null
+  },
+  {
+    "code": "await q.press('신청한 것과 이름 목록이 다른 이유')",
+    "started": 1792285713.5100734,
+    "error": "AssertionError(('신청한 것과 이름 목록이 다른 이유', {'screens': ['r13_entry_topics'], 'room': {'campaign_id': 'room13_v1', 'version': 3, 'story_revision': 'father-pov-fire-pooling-v3', 'day': 1, 'period': 1, 'location': 'gate', 'kitchen_switch': False, 'passage_open': False, 'secret_route_unlocked': False, 'case_state': 'pending', 'victim_state': 'alive', 'daram_state': 'with_dad', 'granny_state': 'trusted', 'trial_result': 'pending', 'evidence': ['E01'], 'records': {'E01': {'day': 1, 'period': 0, 'source': '여행 중 가지고 온 편지', 'place': 'gate'}}, 'flags': ['question_read:entry:daram:look'], 'read_topics': [], 'done': [], 'checks': {}, 'encounters': [{'person': 'karo', 'day': 1, 'period': 1, 'place': 'gate'}, {'person': 'guard', 'day': 1, 'period': 1, 'place': 'gate'}, {'person': 'daram', 'day': 1, 'period': 1, 'place': 'gate'}], 'resident_knowledge': {}, 'propositions': [], 'arguments': {}, 'log': [], 'trial_ended': False, 'life_poc': True, 'learning_archive': [], 'mom_state': 'hidden', 'ending': None, 'events': [], 'convoy_revision': 0, 'scout_revision': -1, 'observations': {}, 'week2_started': False, 'finale_started': False, 'world_art_revisions': {'inn': '15d2672eece51b749e5a23c653a4d3dbd825364c5906542375da1b46fced143b', 'school': '002ece0c658efd6ce90754a1717cc1248b581458304198897db0f7d10de8917d', 'workshop': 'fcdb78f8a3b82ef51bb8ba106e183c4d8579154ea0c119ba70ff3742cec2f1a7', 'square': '8f1170c834a547624f948e5354da05fdd6cd547fe6b67189ffaf12500c17e5f6', 'gate': 'd20318972090eae4ff65054d75f1025158aa7dcf993ee66ed27909f76e821252', 'clinic': '3f40df1612c0ab33648592fb27b5fb2080a98e062c4079c023d50a9213592fb6', 'store': '5752ef2f6a0f713182584d2924beb6b98d92872fff5d0da44247943879b5014a', 'greenhouse': 'ca7bbee7242a52ba81a11a38866d06f988810a4e0ba16a0c5cde5e4231d00c0a', 'facility': 'e2e03e40b2f0cd58cdb11b90e838ea37445860b03c4c6a8f3ab0b099f825f7a8', 'altar': 'c12d8a6d6d5cbee725f9624b57256514fa3b58e5b980c3797442657600775136', 'kitchen': '873d5990cc565429f7bcd7f936a409abe5f8de01c3497bbd562802faf98b3c56', 'dining': 'a55eee24f1e6e7be107606e3c99fa759ba0d6e9674ac5b3cfac12b109989708a', 'passage': '1744c533ff0dd5baa6051c7c4b9f2543dc46700f441addd488b4a53866221064', 'hall': '84c3fbf3e2250a0e59c0b3436b0b77cdf459244985a6f855da3b88ada508d451', 'room13': '4dbc0ccf4b327f3e63bcc7746d4d55fcda0221092f47c5f075e7e9350198917b', 'post': 'd2a09eedeb11fc5d8a57338fa33f54cd4323ebce162854b1c768a73584178d56', 'river': '85fc6a5b85a7c24935be067145db94c31f90f304f7b41d885a868ef19f94322e', 'forest': '84938111f0165c2e0f07c21b2e09799ebf1cd145d07c32badcd096e91ac92016', 'market': '099d28f3eecd90974f3024b4819c2c072e7625e64d73153425e5c304c378928d', 'ancient': 'cb1961477b1c2e9d99ccad1c2c4540b63e5607ed75baeac623461f4db1f1607c'}, 'carriage_art_file': 'assets/room13-pixel-carriage-letter0153-morning.webp', 'interaction_revision': 2, 'last_inspection': None, 'visual_revision': 'pixel-b-front-v3', 'run_token': '57fb85ada921'}, 'say': '', 'buttons': [{'text': '      1 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  신청과 이름 목록이 다른 이유를 묻는다', 'value': '', 'rect': [640, 112, 592, 54]}, {'text': '      2 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  원본 담당자를 기다리겠습니다.', 'value': '', 'rect': [640, 174, 592, 54]}, {'text': '       돌아가기', 'value': \"('entry', 'back')\", 'rect': [28, 640, 232, 64]}, {'text': '       기록', 'value': '', 'rect': [1020, 640, 232, 64]}, {'text': '       더보기', 'value': '', 'rect': [772, 640, 232, 64]}, {'text': '       자료 보여주기', 'value': \"('entry', 'argue')\", 'rect': [1020, 560, 232, 64]}]}))"
+  },
+  {
+    "code": "await advance()",
+    "started": 1792285714.3362448,
+    "result": {
+      "screens": [
+        "r13_entry_topics"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "      1 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  신청과 이름 목록이 다른 이유를 묻는다",
+          "rect": [
+            640,
+            112,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "      2 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  원본 담당자를 기다리겠습니다.",
+          "rect": [
+            640,
+            174,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "       돌아가기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       자료 보여주기",
+          "rect": [
+            1020,
+            560,
+            232,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 1,
+        "period": 1,
+        "location": "gate",
+        "flags": [
+          "question_read:entry:daram:look"
+        ],
+        "evidence": [
+          "E01"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.press('신청과 이름 목록')",
+    "started": 1792285739.1840653,
+    "result": null
+  },
+  {
+    "code": "await advance()",
+    "started": 1792285740.0859008,
+    "result": {
+      "screens": [
+        "r13_evidence_found",
+        "r13_entry_topics"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "      1 {font=assets/Room13Sans.ttf}✓{/font}  {s}신청과 이름 목록이 다른 이유를 묻는다{/s}",
+          "rect": [
+            640,
+            112,
+            592,
+            90
+          ]
+        },
+        {
+          "text": "      2 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  원본 담당자를 기다리겠습니다.",
+          "rect": [
+            640,
+            210,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "       돌아가기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       자료 보여주기",
+          "rect": [
+            1020,
+            560,
+            232,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 1,
+        "period": 1,
+        "location": "gate",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain"
+        ],
+        "evidence": [
+          "E01",
+          "G3"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "setattr(q,'saved_room',await q.room())",
+    "started": 1792285768.804666,
+    "result": null
+  },
+  {
+    "code": "await q.press('원본 담당자를 기다리겠습니다.')",
+    "started": 1792285768.8235865,
+    "result": null
+  },
+  {
+    "code": "await q.shot('08-wait-confirm')",
+    "started": 1792285769.7166457,
+    "result": null
+  },
+  {
+    "code": "await q.press('돌아간다')",
+    "started": 1792285770.1958075,
+    "result": null
+  },
+  {
+    "code": "(await q.room()) == q.saved_room",
+    "started": 1792285771.0674055,
+    "result": true
+  },
+  {
+    "code": "await q.press('돌아가기')",
+    "started": 1792285771.1486225,
+    "result": null
+  },
+  {
+    "code": "await q.press('주변 살피기')",
+    "started": 1792285772.03614,
+    "result": null
+  },
+  {
+    "code": "await q.press('›')",
+    "started": 1792285772.9541547,
+    "result": null
+  },
+  {
+    "code": "await q.shot('09-gate-camera-right')",
+    "started": 1792285773.841411,
+    "result": null
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await q.state())['buttons'] if x['text'].strip()]",
+    "started": 1792285774.3875253,
+    "result": [
+      [
+        "      ‹",
+        [
+          8,
+          236,
+          32,
+          42
+        ]
+      ],
+      [
+        "       주변 살피기",
+        [
+          28,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       사람과 대화",
+        [
+          276,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       더보기",
+        [
+          772,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       조사 지점",
+        [
+          28,
+          104,
+          232,
+          64
+        ]
+      ],
+      [
+        "       기록",
+        [
+          1020,
+          640,
+          232,
+          64
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await q.input(830,425)",
+    "started": 1792285802.3965437,
+    "result": null
+  },
+  {
+    "code": "await q.shot('10-original-selected')",
+    "started": 1792285802.7079654,
+    "result": null
+  },
+  {
+    "code": "await q.press('살펴보기')",
+    "started": 1792285803.2674034,
+    "result": null
+  },
+  {
+    "code": "await advance()",
+    "started": 1792285804.177341,
+    "result": {
+      "screens": [
+        "r13_evidence_found",
+        "r13_hub"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "             ",
+          "rect": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            26,
+            313,
+            75,
+            114
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            120,
+            414,
+            82,
+            177
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            648,
+            534,
+            206,
+            100
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            920,
+            437,
+            125,
+            111
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            701,
+            383,
+            201,
+            98
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            120,
+            414,
+            82,
+            177
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            648,
+            534,
+            206,
+            100
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            701,
+            383,
+            201,
+            98
+          ]
+        },
+        {
+          "text": "      ‹",
+          "rect": [
+            8,
+            236,
+            32,
+            42
+          ]
+        },
+        {
+          "text": "       주변 살피기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       사람과 대화",
+          "rect": [
+            276,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       조사 지점",
+          "rect": [
+            28,
+            104,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       살펴보기",
+          "rect": [
+            524,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       ",
+          "rect": [
+            1190,
+            20,
+            64,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 1,
+        "period": 1,
+        "location": "gate",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.press('사람과 대화')",
+    "started": 1792285830.864553,
+    "result": null
+  },
+  {
+    "code": "await q.press('돌목')",
+    "started": 1792285831.7987967,
+    "result": null
+  },
+  {
+    "code": "await q.press('자료 보여주기')",
+    "started": 1792285832.7372057,
+    "result": null
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await q.state())['buttons'] if x['text'].strip()]",
+    "started": 1792285833.6554425,
+    "result": [
+      [
+        "       자료",
+        [
+          66,
+          128,
+          176,
+          56
+        ]
+      ],
+      [
+        "      전체",
+        [
+          284,
+          110,
+          52,
+          38
+        ]
+      ],
+      [
+        "      증언",
+        [
+          341,
+          110,
+          52,
+          38
+        ]
+      ],
+      [
+        "      전달 가능",
+        [
+          398,
+          110,
+          91,
+          38
+        ]
+      ],
+      [
+        "      ● 안 읽음 3",
+        [
+          494,
+          110,
+          115,
+          38
+        ]
+      ],
+      [
+        "       ● 옮겨 쓴 목록",
+        [
+          290,
+          166,
+          119,
+          128
+        ]
+      ],
+      [
+        "       ● 예약 원본",
+        [
+          414,
+          166,
+          119,
+          128
+        ]
+      ],
+      [
+        "       ● 초대 편지",
+        [
+          538,
+          166,
+          119,
+          128
+        ]
+      ],
+      [
+        "      그만두기",
+        [
+          66,
+          584,
+          176,
+          82
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await q.press('예약 원본')",
+    "started": 1792285861.5114338,
+    "result": null
+  },
+  {
+    "code": "await q.shot('11-reservation-record')",
+    "started": 1792285862.4209867,
+    "result": null
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await q.state())['buttons'] if x['text'].strip()]",
+    "started": 1792285862.7164397,
+    "result": [
+      [
+        "       자료",
+        [
+          66,
+          128,
+          176,
+          56
+        ]
+      ],
+      [
+        "      전체",
+        [
+          284,
+          110,
+          52,
+          38
+        ]
+      ],
+      [
+        "      증언",
+        [
+          341,
+          110,
+          52,
+          38
+        ]
+      ],
+      [
+        "      전달 가능",
+        [
+          398,
+          110,
+          91,
+          38
+        ]
+      ],
+      [
+        "      ● 안 읽음 3",
+        [
+          494,
+          110,
+          115,
+          38
+        ]
+      ],
+      [
+        "       ● 옮겨 쓴 목록",
+        [
+          290,
+          166,
+          119,
+          128
+        ]
+      ],
+      [
+        "       예약 원본",
+        [
+          414,
+          166,
+          119,
+          128
+        ]
+      ],
+      [
+        "       ● 초대 편지",
+        [
+          538,
+          166,
+          119,
+          128
+        ]
+      ],
+      [
+        "예약 원본 확인한 내용 다돌과 한 사람 더, 모두 두 명으로 예약되어 있다. 1일 · 오후 · 눈에 막힌 입구 직접 조사해 기록한 물건·문서·관찰 얻은 곳: 초소 선반의 서류를 확대해 직접 확인",
+        [
+          844,
+          218,
+          351,
+          322
+        ]
+      ],
+      [
+        "      돌목에게 보여주기",
+        [
+          824,
+          584,
+          398,
+          82
+        ]
+      ],
+      [
+        "      그만두기",
+        [
+          66,
+          584,
+          176,
+          82
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await q.press('그만두기')",
+    "started": 1792285893.5663395,
+    "result": null
+  },
+  {
+    "code": "await q.press('더보기')",
+    "started": 1792285894.432044,
+    "result": null
+  },
+  {
+    "code": "await q.press('저장 · 불러오기')",
+    "started": 1792285895.3322906,
+    "result": null
+  },
+  {
+    "code": "await q.press('1쪽')",
+    "started": 1792285896.2090974,
+    "result": null
+  },
+  {
+    "code": "await q.press('1쪽 1번')",
+    "started": 1792285897.0959241,
+    "result": null
+  },
+  {
+    "code": "await q.shot('12-natural-gate-save')",
+    "started": 1792285897.9668396,
+    "result": null
+  },
+  {
+    "code": "await q.press('돌아가기')",
+    "started": 1792285898.278721,
+    "result": null
+  },
+  {
+    "code": "await q.press('자료 보여주기')",
+    "started": 1792285899.1642325,
+    "result": null
+  },
+  {
+    "code": "await q.press('예약 원본')",
+    "started": 1792285900.0522223,
+    "result": null
+  },
+  {
+    "code": "await q.press('돌목에게 보여주기')",
+    "started": 1792285900.9304788,
+    "result": null
+  },
+  {
+    "code": "await advance()",
+    "started": 1792285901.7984052,
+    "result": {
+      "screens": [
+        "r13_evidence_found",
+        "r13_hub"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "                           꽥순       돌목       칼바람       까로",
+          "rect": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            539,
+            410,
+            179,
+            190
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            212,
+            390,
+            121,
+            230
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            409,
+            416,
+            137,
+            235
+          ]
+        },
+        {
+          "text": "      꽥순",
+          "rect": [
+            217,
+            340,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "      돌목",
+          "rect": [
+            593,
+            360,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "      칼바람",
+          "rect": [
+            411,
+            366,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "      ‹ 까로",
+          "rect": [
+            8,
+            236,
+            74,
+            37
+          ]
+        },
+        {
+          "text": "       광장으로",
+          "rect": [
+            772,
+            184,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       여관으로",
+          "rect": [
+            1020,
+            184,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       지도 · 이동",
+          "rect": [
+            1020,
+            104,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       주변 살피기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       사람과 대화",
+          "rect": [
+            276,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       ",
+          "rect": [
+            1190,
+            20,
+            64,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 1,
+        "period": 1,
+        "location": "gate",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.press('여관으로')",
+    "started": 1792285937.7307806,
+    "result": null
+  },
+  {
+    "code": "await advance()",
+    "started": 1792285938.6669686,
+    "result": {
+      "screens": [],
+      "say": "",
+      "buttons": [],
+      "room": {
+        "day": 1,
+        "period": 1,
+        "location": "inn",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.shot('13-inn-natural-arrival')",
+    "started": 1792285938.823762,
+    "result": null
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await q.state())['buttons'] if x['text'].strip()]",
+    "started": 1792285939.2849474,
+    "result": []
+  },
+  {
+    "code": "await brief()",
+    "started": 1792285948.3468554,
+    "result": {
+      "screens": [
+        "r13_hub"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "                                            따닥       할머니       토리        부엉이 할아버지",
+          "rect": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            328,
+            277,
+            145,
+            196
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            711,
+            382,
+            119,
+            242
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            83,
+            442,
+            193,
+            250
+          ]
+        },
+        {
+          "text": "      따닥",
+          "rect": [
+            359,
+            227,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "      할머니",
+          "rect": [
+            725,
+            333,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "      토리",
+          "rect": [
+            142,
+            392,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "      ‹ 부엉이 할아버지",
+          "rect": [
+            8,
+            236,
+            172,
+            37
+          ]
+        },
+        {
+          "text": "       여관 밖으로",
+          "rect": [
+            1020,
+            184,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       지도 · 이동",
+          "rect": [
+            1020,
+            104,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       생각",
+          "rect": [
+            1020,
+            560,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       주변 살피기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       사람과 대화",
+          "rect": [
+            276,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       ",
+          "rect": [
+            1190,
+            20,
+            64,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 1,
+        "period": 1,
+        "location": "inn",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await advance()",
+    "started": 1792285948.6222084,
+    "result": {
+      "screens": [
+        "r13_hub"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "                                            따닥       할머니       토리        부엉이 할아버지",
+          "rect": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            328,
+            277,
+            145,
+            196
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            711,
+            382,
+            119,
+            242
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            83,
+            442,
+            193,
+            250
+          ]
+        },
+        {
+          "text": "      따닥",
+          "rect": [
+            359,
+            227,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "      할머니",
+          "rect": [
+            725,
+            333,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "      토리",
+          "rect": [
+            142,
+            392,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "      ‹ 부엉이 할아버지",
+          "rect": [
+            8,
+            236,
+            172,
+            37
+          ]
+        },
+        {
+          "text": "       여관 밖으로",
+          "rect": [
+            1020,
+            184,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       지도 · 이동",
+          "rect": [
+            1020,
+            104,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       생각",
+          "rect": [
+            1020,
+            560,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       주변 살피기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       사람과 대화",
+          "rect": [
+            276,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       ",
+          "rect": [
+            1190,
+            20,
+            64,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 1,
+        "period": 1,
+        "location": "inn",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.shot('13-inn-natural-arrival-settled')",
+    "started": 1792285960.218778,
+    "result": null
+  },
+  {
+    "code": "await q.input(770,425)",
+    "started": 1792285960.7430663,
+    "result": null
+  },
+  {
+    "code": "await advance()",
+    "started": 1792285961.0684423,
+    "result": {
+      "screens": [
+        "r13_resident_approach",
+        "r13_resident_approach"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "      1 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  편지를 받고 왔다고 인사한다",
+          "rect": [
+            640,
+            112,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "      2 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  지금은 말을 걸지 않는다",
+          "rect": [
+            640,
+            174,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "       돌아가기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 1,
+        "period": 1,
+        "location": "inn",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.press('편지를 받고 왔다고')",
+    "started": 1792286010.553349,
+    "result": null
+  },
+  {
+    "code": "await advance()",
+    "started": 1792286011.5080853,
+    "result": {
+      "screens": [
+        "r13_topics"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "      1 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  아내가 머물던 방을 묻는다",
+          "rect": [
+            640,
+            112,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "      2 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  밤에 안쪽 문도 잠그는지 묻는다",
+          "rect": [
+            640,
+            174,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "      3 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  손님이 많은지 묻는다",
+          "rect": [
+            640,
+            236,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "       돌아가기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       자료 보여주기",
+          "rect": [
+            1020,
+            560,
+            232,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 1,
+        "period": 1,
+        "location": "inn",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done",
+          "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+          "calendar:granny:1:1:arrival:10b5e62b61554787"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.press('아내가 머물던 방')",
+    "started": 1792286048.4664974,
+    "result": null
+  },
+  {
+    "code": "await advance()",
+    "started": 1792286049.364206,
+    "result": {
+      "screens": [
+        "r13_topics"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "      1 {font=assets/Room13Sans.ttf}✓{/font}  {s}아내가 머물던 방을 묻는다{/s}",
+          "rect": [
+            640,
+            112,
+            592,
+            57
+          ]
+        },
+        {
+          "text": "      2 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  밤에 안쪽 문도 잠그는지 묻는다",
+          "rect": [
+            640,
+            177,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "      3 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  손님이 많은지 묻는다",
+          "rect": [
+            640,
+            239,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "      4 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  아내가 가족을 불렀는지 묻는다",
+          "rect": [
+            640,
+            301,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "       돌아가기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       자료 보여주기",
+          "rect": [
+            1020,
+            560,
+            232,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 1,
+        "period": 1,
+        "location": "inn",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done",
+          "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+          "calendar:granny:1:1:arrival:10b5e62b61554787",
+          "lodging"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.press('돌아가기')",
+    "started": 1792286119.1873765,
+    "result": null
+  },
+  {
+    "code": "await q.press('2층 복도')",
+    "started": 1792286120.1245906,
+    "result": null
+  },
+  {
+    "code": "await q.wait('r13_hub')",
+    "started": 1792286121.0395494,
+    "result": {
+      "screens": [
+        "r13_hub"
+      ],
+      "room": {
+        "campaign_id": "room13_v1",
+        "version": 3,
+        "story_revision": "father-pov-fire-pooling-v3",
+        "day": 1,
+        "period": 1,
+        "location": "hall",
+        "kitchen_switch": false,
+        "passage_open": false,
+        "secret_route_unlocked": false,
+        "case_state": "pending",
+        "victim_state": "alive",
+        "daram_state": "with_dad",
+        "granny_state": "trusted",
+        "trial_result": "pending",
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02"
+        ],
+        "records": {
+          "E01": {
+            "day": 1,
+            "period": 0,
+            "source": "여행 중 가지고 온 편지",
+            "place": "gate"
+          },
+          "G3": {
+            "day": 1,
+            "period": 1,
+            "source": "돌목이 직접 보여 준 초소 명단",
+            "place": "gate"
+          },
+          "G1": {
+            "day": 1,
+            "period": 1,
+            "source": "초소 선반의 서류를 확대해 직접 확인",
+            "place": "gate"
+          },
+          "E02": {
+            "day": 1,
+            "period": 1,
+            "source": "원본과 맞춰 보고 바로잡은 입장 기록",
+            "place": "gate"
+          }
+        },
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done",
+          "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+          "calendar:granny:1:1:arrival:10b5e62b61554787",
+          "lodging"
+        ],
+        "read_topics": [
+          "register"
+        ],
+        "done": [],
+        "checks": {
+          "gate:booth": [
+            1475,
+            424
+          ],
+          "gate:gate_documents": [
+            1441,
+            432
+          ]
+        },
+        "encounters": [
+          {
+            "person": "karo",
+            "day": 1,
+            "period": 1,
+            "place": "gate"
+          },
+          {
+            "person": "guard",
+            "day": 1,
+            "period": 1,
+            "place": "gate"
+          },
+          {
+            "person": "daram",
+            "day": 1,
+            "period": 1,
+            "place": "gate"
+          },
+          {
+            "person": "granny",
+            "day": 1,
+            "period": 1,
+            "place": "inn"
+          }
+        ],
+        "resident_knowledge": {},
+        "propositions": [],
+        "arguments": {},
+        "log": [],
+        "trial_ended": false,
+        "life_poc": true,
+        "learning_archive": [],
+        "mom_state": "hidden",
+        "ending": null,
+        "events": [],
+        "convoy_revision": 0,
+        "scout_revision": -1,
+        "observations": {},
+        "week2_started": false,
+        "finale_started": false,
+        "world_art_revisions": {
+          "inn": "15d2672eece51b749e5a23c653a4d3dbd825364c5906542375da1b46fced143b",
+          "school": "002ece0c658efd6ce90754a1717cc1248b581458304198897db0f7d10de8917d",
+          "workshop": "fcdb78f8a3b82ef51bb8ba106e183c4d8579154ea0c119ba70ff3742cec2f1a7",
+          "square": "8f1170c834a547624f948e5354da05fdd6cd547fe6b67189ffaf12500c17e5f6",
+          "gate": "d20318972090eae4ff65054d75f1025158aa7dcf993ee66ed27909f76e821252",
+          "clinic": "3f40df1612c0ab33648592fb27b5fb2080a98e062c4079c023d50a9213592fb6",
+          "store": "5752ef2f6a0f713182584d2924beb6b98d92872fff5d0da44247943879b5014a",
+          "greenhouse": "ca7bbee7242a52ba81a11a38866d06f988810a4e0ba16a0c5cde5e4231d00c0a",
+          "facility": "e2e03e40b2f0cd58cdb11b90e838ea37445860b03c4c6a8f3ab0b099f825f7a8",
+          "altar": "c12d8a6d6d5cbee725f9624b57256514fa3b58e5b980c3797442657600775136",
+          "kitchen": "873d5990cc565429f7bcd7f936a409abe5f8de01c3497bbd562802faf98b3c56",
+          "dining": "a55eee24f1e6e7be107606e3c99fa759ba0d6e9674ac5b3cfac12b109989708a",
+          "passage": "1744c533ff0dd5baa6051c7c4b9f2543dc46700f441addd488b4a53866221064",
+          "hall": "84c3fbf3e2250a0e59c0b3436b0b77cdf459244985a6f855da3b88ada508d451",
+          "room13": "4dbc0ccf4b327f3e63bcc7746d4d55fcda0221092f47c5f075e7e9350198917b",
+          "post": "d2a09eedeb11fc5d8a57338fa33f54cd4323ebce162854b1c768a73584178d56",
+          "river": "85fc6a5b85a7c24935be067145db94c31f90f304f7b41d885a868ef19f94322e",
+          "forest": "84938111f0165c2e0f07c21b2e09799ebf1cd145d07c32badcd096e91ac92016",
+          "market": "099d28f3eecd90974f3024b4819c2c072e7625e64d73153425e5c304c378928d",
+          "ancient": "cb1961477b1c2e9d99ccad1c2c4540b63e5607ed75baeac623461f4db1f1607c"
+        },
+        "carriage_art_file": "assets/room13-pixel-carriage-letter0153-morning.webp",
+        "interaction_revision": 2,
+        "last_inspection": {
+          "place": "gate",
+          "key": "gate_documents",
+          "x": 1441,
+          "y": 432
+        },
+        "visual_revision": "pixel-b-front-v3",
+        "run_token": "57fb85ada921",
+        "record_ui": {
+          "seen": [
+            "G1"
+          ]
+        },
+        "topic_order": {
+          "granny": [
+            "register",
+            "granny_rules",
+            "life:granny:work",
+            "granny_letter"
+          ]
+        },
+        "dialogue_views": {
+          "register": {
+            "context": "calendar:granny:1:1:arrival:10b5e62b61554787",
+            "mode": "first"
+          }
+        },
+        "dialogue_dates": {
+          "register": {
+            "day": 1,
+            "period": 1
+          }
+        },
+        "topic_transcripts": {
+          "register": [
+            [
+              "dad",
+              "아내가 머물던 방을 볼 수 있을까요?",
+              false
+            ],
+            [
+              "granny",
+              "13호실이에요. 부인이 잡아 둔 그대로예요. 짐은 거기 두세요.",
+              false
+            ],
+            [
+              "daram",
+              "엄마는 지금 어디 있어요?",
+              false
+            ],
+            [
+              "granny",
+              "며칠째 안 보여요. 나간 뒤로 돌아오지 않았어요.",
+              false
+            ],
+            [
+              "dad",
+              "방에 남긴 것부터 살펴보겠습니다.",
+              false
+            ]
+          ]
+        }
+      },
+      "say": "",
+      "buttons": [
+        {
+          "text": "      ",
+          "value": "",
+          "rect": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        {
+          "text": "      ‹",
+          "value": "",
+          "rect": [
+            8,
+            236,
+            32,
+            42
+          ]
+        },
+        {
+          "text": "      ›",
+          "value": "",
+          "rect": [
+            1240,
+            236,
+            32,
+            42
+          ]
+        },
+        {
+          "text": "       1층 접수대",
+          "value": "('travel', 'inn')",
+          "rect": [
+            772,
+            184,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       13호실",
+          "value": "('travel', 'room13')",
+          "rect": [
+            1020,
+            184,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       지도 · 이동",
+          "value": "('menu', 'map')",
+          "rect": [
+            1020,
+            104,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       생각",
+          "value": "",
+          "rect": [
+            1020,
+            560,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       주변 살피기",
+          "value": "scene",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       사람과 대화",
+          "value": "people",
+          "rect": [
+            276,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "value": "",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "value": "",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       ",
+          "value": "",
+          "rect": [
+            1190,
+            20,
+            64,
+            64
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "code": "await q.press('13호실')",
+    "started": 1792286122.6364617,
+    "result": null
+  },
+  {
+    "code": "await q.wait('r13_hub')",
+    "started": 1792286123.5737338,
+    "result": {
+      "screens": [
+        "r13_hub"
+      ],
+      "room": {
+        "campaign_id": "room13_v1",
+        "version": 3,
+        "story_revision": "father-pov-fire-pooling-v3",
+        "day": 1,
+        "period": 1,
+        "location": "room13",
+        "kitchen_switch": false,
+        "passage_open": false,
+        "secret_route_unlocked": false,
+        "case_state": "pending",
+        "victim_state": "alive",
+        "daram_state": "with_dad",
+        "granny_state": "trusted",
+        "trial_result": "pending",
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02"
+        ],
+        "records": {
+          "E01": {
+            "day": 1,
+            "period": 0,
+            "source": "여행 중 가지고 온 편지",
+            "place": "gate"
+          },
+          "G3": {
+            "day": 1,
+            "period": 1,
+            "source": "돌목이 직접 보여 준 초소 명단",
+            "place": "gate"
+          },
+          "G1": {
+            "day": 1,
+            "period": 1,
+            "source": "초소 선반의 서류를 확대해 직접 확인",
+            "place": "gate"
+          },
+          "E02": {
+            "day": 1,
+            "period": 1,
+            "source": "원본과 맞춰 보고 바로잡은 입장 기록",
+            "place": "gate"
+          }
+        },
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done",
+          "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+          "calendar:granny:1:1:arrival:10b5e62b61554787",
+          "lodging"
+        ],
+        "read_topics": [
+          "register"
+        ],
+        "done": [],
+        "checks": {
+          "gate:booth": [
+            1475,
+            424
+          ],
+          "gate:gate_documents": [
+            1441,
+            432
+          ]
+        },
+        "encounters": [
+          {
+            "person": "karo",
+            "day": 1,
+            "period": 1,
+            "place": "gate"
+          },
+          {
+            "person": "guard",
+            "day": 1,
+            "period": 1,
+            "place": "gate"
+          },
+          {
+            "person": "daram",
+            "day": 1,
+            "period": 1,
+            "place": "gate"
+          },
+          {
+            "person": "granny",
+            "day": 1,
+            "period": 1,
+            "place": "inn"
+          }
+        ],
+        "resident_knowledge": {},
+        "propositions": [],
+        "arguments": {},
+        "log": [],
+        "trial_ended": false,
+        "life_poc": true,
+        "learning_archive": [],
+        "mom_state": "hidden",
+        "ending": null,
+        "events": [],
+        "convoy_revision": 0,
+        "scout_revision": -1,
+        "observations": {},
+        "week2_started": false,
+        "finale_started": false,
+        "world_art_revisions": {
+          "inn": "15d2672eece51b749e5a23c653a4d3dbd825364c5906542375da1b46fced143b",
+          "school": "002ece0c658efd6ce90754a1717cc1248b581458304198897db0f7d10de8917d",
+          "workshop": "fcdb78f8a3b82ef51bb8ba106e183c4d8579154ea0c119ba70ff3742cec2f1a7",
+          "square": "8f1170c834a547624f948e5354da05fdd6cd547fe6b67189ffaf12500c17e5f6",
+          "gate": "d20318972090eae4ff65054d75f1025158aa7dcf993ee66ed27909f76e821252",
+          "clinic": "3f40df1612c0ab33648592fb27b5fb2080a98e062c4079c023d50a9213592fb6",
+          "store": "5752ef2f6a0f713182584d2924beb6b98d92872fff5d0da44247943879b5014a",
+          "greenhouse": "ca7bbee7242a52ba81a11a38866d06f988810a4e0ba16a0c5cde5e4231d00c0a",
+          "facility": "e2e03e40b2f0cd58cdb11b90e838ea37445860b03c4c6a8f3ab0b099f825f7a8",
+          "altar": "c12d8a6d6d5cbee725f9624b57256514fa3b58e5b980c3797442657600775136",
+          "kitchen": "873d5990cc565429f7bcd7f936a409abe5f8de01c3497bbd562802faf98b3c56",
+          "dining": "a55eee24f1e6e7be107606e3c99fa759ba0d6e9674ac5b3cfac12b109989708a",
+          "passage": "1744c533ff0dd5baa6051c7c4b9f2543dc46700f441addd488b4a53866221064",
+          "hall": "84c3fbf3e2250a0e59c0b3436b0b77cdf459244985a6f855da3b88ada508d451",
+          "room13": "4dbc0ccf4b327f3e63bcc7746d4d55fcda0221092f47c5f075e7e9350198917b",
+          "post": "d2a09eedeb11fc5d8a57338fa33f54cd4323ebce162854b1c768a73584178d56",
+          "river": "85fc6a5b85a7c24935be067145db94c31f90f304f7b41d885a868ef19f94322e",
+          "forest": "84938111f0165c2e0f07c21b2e09799ebf1cd145d07c32badcd096e91ac92016",
+          "market": "099d28f3eecd90974f3024b4819c2c072e7625e64d73153425e5c304c378928d",
+          "ancient": "cb1961477b1c2e9d99ccad1c2c4540b63e5607ed75baeac623461f4db1f1607c"
+        },
+        "carriage_art_file": "assets/room13-pixel-carriage-letter0153-morning.webp",
+        "interaction_revision": 2,
+        "last_inspection": {
+          "place": "gate",
+          "key": "gate_documents",
+          "x": 1441,
+          "y": 432
+        },
+        "visual_revision": "pixel-b-front-v3",
+        "run_token": "57fb85ada921",
+        "record_ui": {
+          "seen": [
+            "G1"
+          ]
+        },
+        "topic_order": {
+          "granny": [
+            "register",
+            "granny_rules",
+            "life:granny:work",
+            "granny_letter"
+          ]
+        },
+        "dialogue_views": {
+          "register": {
+            "context": "calendar:granny:1:1:arrival:10b5e62b61554787",
+            "mode": "first"
+          }
+        },
+        "dialogue_dates": {
+          "register": {
+            "day": 1,
+            "period": 1
+          }
+        },
+        "topic_transcripts": {
+          "register": [
+            [
+              "dad",
+              "아내가 머물던 방을 볼 수 있을까요?",
+              false
+            ],
+            [
+              "granny",
+              "13호실이에요. 부인이 잡아 둔 그대로예요. 짐은 거기 두세요.",
+              false
+            ],
+            [
+              "daram",
+              "엄마는 지금 어디 있어요?",
+              false
+            ],
+            [
+              "granny",
+              "며칠째 안 보여요. 나간 뒤로 돌아오지 않았어요.",
+              false
+            ],
+            [
+              "dad",
+              "방에 남긴 것부터 살펴보겠습니다.",
+              false
+            ]
+          ]
+        }
+      },
+      "say": "",
+      "buttons": [
+        {
+          "text": "                          다람",
+          "value": "",
+          "rect": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        {
+          "text": "",
+          "value": "('person', 'daram')",
+          "rect": [
+            629,
+            368,
+            242,
+            253
+          ]
+        },
+        {
+          "text": "      다람",
+          "value": "('person', 'daram')",
+          "rect": [
+            736,
+            318,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "      ‹",
+          "value": "",
+          "rect": [
+            8,
+            236,
+            32,
+            42
+          ]
+        },
+        {
+          "text": "      ›",
+          "value": "",
+          "rect": [
+            1240,
+            236,
+            32,
+            42
+          ]
+        },
+        {
+          "text": "       복도로",
+          "value": "('travel', 'hall')",
+          "rect": [
+            1020,
+            184,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       지도 · 이동",
+          "value": "('menu', 'map')",
+          "rect": [
+            1020,
+            104,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       생각",
+          "value": "",
+          "rect": [
+            1020,
+            560,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       주변 살피기",
+          "value": "scene",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       사람과 대화",
+          "value": "people",
+          "rect": [
+            276,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "value": "",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "value": "",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       ",
+          "value": "",
+          "rect": [
+            1190,
+            20,
+            64,
+            64
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "code": "await q.shot('14-room13-natural-arrival')",
+    "started": 1792286125.300497,
+    "result": null
+  },
+  {
+    "code": "await q.press('주변 살피기')",
+    "started": 1792286256.2183013,
+    "result": null
+  },
+  {
+    "code": "await q.press('‹')",
+    "started": 1792286257.0925343,
+    "result": null
+  },
+  {
+    "code": "await q.shot('15-room13-desk')",
+    "started": 1792286258.0093174,
+    "result": null
+  },
+  {
+    "code": "await q.input(205,399)",
+    "started": 1792286322.2610898,
+    "result": null
+  },
+  {
+    "code": "await q.press('살펴보기')",
+    "started": 1792286322.5810924,
+    "result": null
+  },
+  {
+    "code": "await advance()",
+    "started": 1792286323.5648444,
+    "result": {
+      "screens": [
+        "r13_evidence_found",
+        "r13_hub"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "                 ",
+          "rect": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            0,
+            468,
+            620,
+            47
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            809,
+            337,
+            471,
+            180
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            272,
+            12,
+            293,
+            303
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            19,
+            563,
+            490,
+            157
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            842,
+            498,
+            438,
+            57
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            863,
+            552,
+            215,
+            64
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            321,
+            364,
+            80,
+            66
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            174,
+            395,
+            124,
+            25
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            147,
+            426,
+            210,
+            40
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            593,
+            351,
+            150,
+            255
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            461,
+            285,
+            122,
+            105
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            883,
+            294,
+            86,
+            33
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            401,
+            393,
+            95,
+            40
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            809,
+            337,
+            471,
+            180
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            842,
+            498,
+            438,
+            57
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            863,
+            552,
+            215,
+            64
+          ]
+        },
+        {
+          "text": "      ›",
+          "rect": [
+            1240,
+            236,
+            32,
+            42
+          ]
+        },
+        {
+          "text": "       복도로",
+          "rect": [
+            1020,
+            184,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       지도 · 이동",
+          "rect": [
+            1020,
+            104,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       주변 살피기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       사람과 대화",
+          "rect": [
+            276,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       조사 지점",
+          "rect": [
+            28,
+            104,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       ",
+          "rect": [
+            1190,
+            20,
+            64,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 1,
+        "period": 1,
+        "location": "room13",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done",
+          "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+          "calendar:granny:1:1:arrival:10b5e62b61554787",
+          "lodging"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02",
+          "M01"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.input(1100,420)",
+    "started": 1792286390.9482217,
+    "result": null
+  },
+  {
+    "code": "await q.press('살펴보기')",
+    "started": 1792286391.2893207,
+    "result": null
+  },
+  {
+    "code": "await advance()",
+    "started": 1792286392.205053,
+    "result": {
+      "screens": [
+        "r13_evidence_found",
+        "r13_object_context"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "      침대에서 잠자기\n오늘 일정을 마치고 다음 날 아침으로",
+          "rect": [
+            668,
+            312,
+            498,
+            68
+          ]
+        },
+        {
+          "text": "      그만 살펴본다",
+          "rect": [
+            668,
+            394,
+            498,
+            44
+          ]
+        }
+      ],
+      "room": {
+        "day": 1,
+        "period": 1,
+        "location": "room13",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done",
+          "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+          "calendar:granny:1:1:arrival:10b5e62b61554787",
+          "lodging",
+          "observed:room13:bed"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02",
+          "M01",
+          "E03"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.shot('16-bed-inspected-natural')",
+    "started": 1792286482.4418378,
+    "result": null
+  },
+  {
+    "code": "await q.press('침대에서 잠자기')",
+    "started": 1792286482.9912016,
+    "result": null
+  },
+  {
+    "code": "await q.shot('17-sleep-confirm-natural')",
+    "started": 1792286483.9184072,
+    "result": null
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await q.state())['buttons'] if x['text'].strip()]",
+    "started": 1792286484.4570715,
+    "result": [
+      [
+        "      자기",
+        [
+          197,
+          325,
+          86,
+          54
+        ]
+      ],
+      [
+        "      아직 할 일이 있다",
+        [
+          308,
+          325,
+          241,
+          54
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await q.press('자기')",
+    "started": 1792286556.9704661,
+    "result": null
+  },
+  {
+    "code": "await advance()",
+    "started": 1792286557.8840313,
+    "result": {
+      "screens": [],
+      "say": "",
+      "buttons": [],
+      "room": {
+        "day": 1,
+        "period": 2,
+        "location": "room13",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done",
+          "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+          "calendar:granny:1:1:arrival:10b5e62b61554787",
+          "lodging",
+          "observed:room13:bed"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02",
+          "M01",
+          "E03"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await advance()",
+    "started": 1792286612.0366058,
+    "result": {
+      "screens": [],
+      "say": "",
+      "buttons": [],
+      "room": {
+        "day": 2,
+        "period": 0,
+        "location": "room13",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done",
+          "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+          "calendar:granny:1:1:arrival:10b5e62b61554787",
+          "lodging",
+          "observed:room13:bed",
+          "night1_seen",
+          "travel_money"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02",
+          "M01",
+          "E03"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await advance()",
+    "started": 1792286693.1878493,
+    "result": {
+      "screens": [
+        "r13_hub"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "                ",
+          "rect": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            0,
+            468,
+            620,
+            47
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            809,
+            337,
+            471,
+            180
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            272,
+            12,
+            293,
+            303
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            19,
+            563,
+            490,
+            157
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            842,
+            498,
+            438,
+            57
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            863,
+            552,
+            215,
+            64
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            321,
+            364,
+            80,
+            66
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            174,
+            395,
+            124,
+            25
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            147,
+            426,
+            210,
+            40
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            593,
+            351,
+            150,
+            255
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            461,
+            285,
+            122,
+            105
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            883,
+            294,
+            86,
+            33
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            401,
+            393,
+            95,
+            40
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            809,
+            337,
+            471,
+            180
+          ]
+        },
+        {
+          "text": "      ›",
+          "rect": [
+            1240,
+            236,
+            32,
+            42
+          ]
+        },
+        {
+          "text": "       복도로",
+          "rect": [
+            1020,
+            184,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       지도 · 이동",
+          "rect": [
+            1020,
+            104,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       자기",
+          "rect": [
+            1020,
+            264,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       생각",
+          "rect": [
+            1020,
+            560,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       주변 살피기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       사람과 대화",
+          "rect": [
+            276,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       조사 지점",
+          "rect": [
+            28,
+            104,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       살펴보기",
+          "rect": [
+            524,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       ",
+          "rect": [
+            1190,
+            20,
+            64,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 2,
+        "period": 0,
+        "location": "room13",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done",
+          "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+          "calendar:granny:1:1:arrival:10b5e62b61554787",
+          "lodging",
+          "observed:room13:bed",
+          "night1_seen",
+          "travel_money",
+          "livelihood_open"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02",
+          "M01",
+          "E03"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.shot('18-day2-morning-natural')",
+    "started": 1792286698.3608549,
+    "result": null
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await q.state())['buttons'] if x['text'].strip()]",
+    "started": 1792286699.167338,
+    "result": [
+      [
+        "      ›",
+        [
+          1240,
+          236,
+          32,
+          42
+        ]
+      ],
+      [
+        "       복도로",
+        [
+          1020,
+          184,
+          232,
+          64
+        ]
+      ],
+      [
+        "       지도 · 이동",
+        [
+          1020,
+          104,
+          232,
+          64
+        ]
+      ],
+      [
+        "       자기",
+        [
+          1020,
+          264,
+          232,
+          64
+        ]
+      ],
+      [
+        "       생각",
+        [
+          1020,
+          560,
+          232,
+          64
+        ]
+      ],
+      [
+        "       주변 살피기",
+        [
+          28,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       사람과 대화",
+        [
+          276,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       더보기",
+        [
+          772,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       조사 지점",
+        [
+          28,
+          104,
+          232,
+          64
+        ]
+      ],
+      [
+        "       살펴보기",
+        [
+          524,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       기록",
+        [
+          1020,
+          640,
+          232,
+          64
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await q.press('더보기')",
+    "started": 1792286895.7114327,
+    "result": null
+  },
+  {
+    "code": "await q.press('저장 · 불러오기')",
+    "started": 1792286896.6407661,
+    "result": null
+  },
+  {
+    "code": "await q.press('1쪽')",
+    "started": 1792286897.5644996,
+    "result": null
+  },
+  {
+    "code": "await q.press('1쪽 2번')",
+    "started": 1792286898.463502,
+    "result": null
+  },
+  {
+    "code": "await q.shot('19-day2-natural-save')",
+    "started": 1792286899.3823476,
+    "result": null
+  },
+  {
+    "code": "await q.press('돌아가기')",
+    "started": 1792286899.6769245,
+    "result": null
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await brief())['buttons']]",
+    "started": 1792287123.704971,
+    "result": [
+      [
+        "                ",
+        [
+          0,
+          0,
+          1280,
+          720
+        ]
+      ],
+      [
+        "",
+        [
+          0,
+          468,
+          620,
+          47
+        ]
+      ],
+      [
+        "",
+        [
+          809,
+          337,
+          471,
+          180
+        ]
+      ],
+      [
+        "",
+        [
+          272,
+          12,
+          293,
+          303
+        ]
+      ],
+      [
+        "",
+        [
+          19,
+          563,
+          490,
+          157
+        ]
+      ],
+      [
+        "",
+        [
+          842,
+          498,
+          438,
+          57
+        ]
+      ],
+      [
+        "",
+        [
+          863,
+          552,
+          215,
+          64
+        ]
+      ],
+      [
+        "",
+        [
+          321,
+          364,
+          80,
+          66
+        ]
+      ],
+      [
+        "",
+        [
+          174,
+          395,
+          124,
+          25
+        ]
+      ],
+      [
+        "",
+        [
+          147,
+          426,
+          210,
+          40
+        ]
+      ],
+      [
+        "",
+        [
+          593,
+          351,
+          150,
+          255
+        ]
+      ],
+      [
+        "",
+        [
+          461,
+          285,
+          122,
+          105
+        ]
+      ],
+      [
+        "",
+        [
+          883,
+          294,
+          86,
+          33
+        ]
+      ],
+      [
+        "",
+        [
+          401,
+          393,
+          95,
+          40
+        ]
+      ],
+      [
+        "",
+        [
+          809,
+          337,
+          471,
+          180
+        ]
+      ],
+      [
+        "      ›",
+        [
+          1240,
+          236,
+          32,
+          42
+        ]
+      ],
+      [
+        "       복도로",
+        [
+          1020,
+          184,
+          232,
+          64
+        ]
+      ],
+      [
+        "       지도 · 이동",
+        [
+          1020,
+          104,
+          232,
+          64
+        ]
+      ],
+      [
+        "       자기",
+        [
+          1020,
+          264,
+          232,
+          64
+        ]
+      ],
+      [
+        "       생각",
+        [
+          1020,
+          560,
+          232,
+          64
+        ]
+      ],
+      [
+        "       주변 살피기",
+        [
+          28,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       사람과 대화",
+        [
+          276,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       더보기",
+        [
+          772,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       조사 지점",
+        [
+          28,
+          104,
+          232,
+          64
+        ]
+      ],
+      [
+        "       살펴보기",
+        [
+          524,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       기록",
+        [
+          1020,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       ",
+        [
+          1190,
+          20,
+          64,
+          64
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await page.reload()",
+    "started": 1792287156.3570492,
+    "result": "<Response url='http://127.0.0.1:8891/preview/room13-dev/' request=<Request url='http://127.0.0.1:8891/preview/room13-dev/' method='GET'>>"
+  },
+  {
+    "code": "await page.wait_for_function(\"typeof renpy_exec==='function'\",timeout=240000)",
+    "started": 1792287156.7306428,
+    "result": "true"
+  },
+  {
+    "code": "await q.wait('main_menu')",
+    "started": 1792287156.8129091,
+    "result": {
+      "screens": [
+        "main_menu"
+      ],
+      "room": null,
+      "say": "",
+      "buttons": [
+        {
+          "text": "      이어하기",
+          "value": "",
+          "rect": [
+            62,
+            590,
+            146,
+            82
+          ]
+        },
+        {
+          "text": "      처음부터",
+          "value": "",
+          "rect": [
+            219,
+            590,
+            146,
+            82
+          ]
+        },
+        {
+          "text": "      불러오기",
+          "value": "",
+          "rect": [
+            376,
+            590,
+            146,
+            82
+          ]
+        },
+        {
+          "text": "      설정",
+          "value": "",
+          "rect": [
+            533,
+            590,
+            146,
+            82
+          ]
+        },
+        {
+          "text": "음악 출처",
+          "value": "",
+          "rect": [
+            28,
+            680,
+            76,
+            31
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await brief())['buttons']]",
+    "started": 1792287183.9560416,
+    "result": [
+      [
+        "      이어하기",
+        [
+          62,
+          590,
+          146,
+          82
+        ]
+      ],
+      [
+        "      처음부터",
+        [
+          219,
+          590,
+          146,
+          82
+        ]
+      ],
+      [
+        "      불러오기",
+        [
+          376,
+          590,
+          146,
+          82
+        ]
+      ],
+      [
+        "      설정",
+        [
+          533,
+          590,
+          146,
+          82
+        ]
+      ],
+      [
+        "음악 출처",
+        [
+          28,
+          680,
+          76,
+          31
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await q.press('불러오기')",
+    "started": 1792287195.947966,
+    "result": null
+  },
+  {
+    "code": "await q.press('1쪽')",
+    "started": 1792287196.9074647,
+    "result": null
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await brief())['buttons']]",
+    "started": 1792287197.880942,
+    "result": [
+      [
+        "      1쪽",
+        [
+          244,
+          60,
+          60,
+          37
+        ]
+      ],
+      [
+        "      2쪽",
+        [
+          328,
+          60,
+          63,
+          37
+        ]
+      ],
+      [
+        "      3쪽",
+        [
+          415,
+          60,
+          63,
+          37
+        ]
+      ],
+      [
+        "      최근 자동저장",
+        [
+          502,
+          60,
+          171,
+          49
+        ]
+      ],
+      [
+        "       1일째 · 금요일 · 오후 · 눈에 막힌 입구 “아빠: 응. 여기엔 분명히 두 사람으로 적혀 있어.” 1쪽 1번 · 10-18 01:11 · 0.19.49 · 현재 버전에서 이어갈 수 있음",
+        [
+          84,
+          123,
+          556,
+          150
+        ]
+      ],
+      [
+        "       2일째 · 토요일 · 오전 · 여관 2층 · 13호실 의문 · 누구를 말하며, 언제 엄마를 만났을까? “까로: 그러세요. 누구네 짐인지는 꼭 짐표와 같이 확인하고요.” 1쪽 2번 · 10-18 01:28 · 0.19.49 · 현재 버전에서 이어갈 수 있음",
+        [
+          654,
+          123,
+          556,
+          150
+        ]
+      ],
+      [
+        "      돌아가기",
+        [
+          84,
+          615,
+          132,
+          52
+        ]
+      ],
+      [
+        "      이전 저장 정리",
+        [
+          234,
+          615,
+          172,
+          48
+        ]
+      ],
+      [
+        "      모든 진행 저장 정리",
+        [
+          424,
+          615,
+          220,
+          48
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await q.press('1쪽 2번')",
+    "started": 1792287213.092023,
+    "result": null
+  },
+  {
+    "code": "await q.shot('20-day2-loaded-01951')",
+    "started": 1792287214.0142498,
+    "result": null
+  },
+  {
+    "code": "await q.press('지도 · 이동')",
+    "started": 1792287214.4466152,
+    "result": null
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await brief())['buttons']]",
+    "started": 1792287215.3937576,
+    "result": [
+      [
+        "1층       여관 접수대 ›       식당 ›       주방 › 2층       2층 복도 ›       13호실 현재 위치",
+        [
+          50,
+          120,
+          711,
+          472
+        ]
+      ],
+      [
+        "                       ",
+        [
+          761,
+          120,
+          7,
+          472
+        ]
+      ],
+      [
+        "      현장으로 돌아가기",
+        [
+          1002,
+          629,
+          232,
+          56
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await q.shot('21-day2-map')",
+    "started": 1792287227.7823877,
+    "result": null
+  },
+  {
+    "code": "await q.press('접수대')",
+    "started": 1792287228.238538,
+    "result": null
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await brief())['buttons']]",
+    "started": 1792287229.14057,
+    "result": [
+      [
+        "1층       여관 접수대 선택됨       식당 ›       주방 › 2층       2층 복도 ›       13호실 현재 위치",
+        [
+          50,
+          120,
+          711,
+          472
+        ]
+      ],
+      [
+        "      여관 접수대 선택됨",
+        [
+          50,
+          159,
+          682,
+          58
+        ]
+      ],
+      [
+        "      식당 ›",
+        [
+          50,
+          231,
+          682,
+          58
+        ]
+      ],
+      [
+        "      주방 ›",
+        [
+          50,
+          303,
+          682,
+          58
+        ]
+      ],
+      [
+        "      2층 복도 ›",
+        [
+          50,
+          414,
+          682,
+          58
+        ]
+      ],
+      [
+        "      13호실 현재 위치",
+        [
+          50,
+          486,
+          682,
+          58
+        ]
+      ],
+      [
+        "                       ",
+        [
+          761,
+          120,
+          7,
+          472
+        ]
+      ],
+      [
+        "      이곳으로 이동",
+        [
+          786,
+          629,
+          202,
+          56
+        ]
+      ],
+      [
+        "      마을",
+        [
+          390,
+          632,
+          116,
+          52
+        ]
+      ],
+      [
+        "      여관 안",
+        [
+          514,
+          632,
+          116,
+          52
+        ]
+      ],
+      [
+        "      숲·산길",
+        [
+          638,
+          632,
+          116,
+          52
+        ]
+      ],
+      [
+        "      현장으로 돌아가기",
+        [
+          1002,
+          629,
+          232,
+          56
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await q.press('마을')",
+    "started": 1792287241.2872615,
+    "result": null
+  },
+  {
+    "code": "await q.shot('22-village-map')",
+    "started": 1792287242.277345,
+    "result": null
+  },
+  {
+    "code": "await q.py('import renpy;result=renpy.store.r13_cart_name_rect(\"workshop\")')",
+    "started": 1792287243.377237,
+    "result": [
+      832,
+      384,
+      96,
+      42
+    ]
+  },
+  {
+    "code": "await q.input(880,405)",
+    "started": 1792287255.4029753,
+    "result": null
+  },
+  {
+    "code": "await q.press('이곳으로 이동')",
+    "started": 1792287255.7228534,
+    "result": null
+  },
+  {
+    "code": "await advance()",
+    "started": 1792287256.6897209,
+    "result": {
+      "screens": [],
+      "say": "",
+      "buttons": [],
+      "room": {
+        "day": 2,
+        "period": 0,
+        "location": "workshop",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done",
+          "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+          "calendar:granny:1:1:arrival:10b5e62b61554787",
+          "lodging",
+          "observed:room13:bed",
+          "night1_seen",
+          "travel_money",
+          "livelihood_open"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02",
+          "M01",
+          "E03"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await advance()",
+    "started": 1792287272.2278297,
+    "result": {
+      "screens": [
+        "r13_hub"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "                                           굴돌 할아버지       톡       부리       초롱       따닥       우박       무쇠 할아버지        함께 부품 손질",
+          "rect": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            447,
+            332,
+            139,
+            208
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            534,
+            313,
+            147,
+            220
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            168,
+            357,
+            201,
+            190
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            678,
+            273,
+            187,
+            280
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            1128,
+            351,
+            144,
+            220
+          ]
+        },
+        {
+          "text": "      굴돌 할아버지",
+          "rect": [
+            719,
+            224,
+            149,
+            48
+          ]
+        },
+        {
+          "text": "      톡",
+          "rect": [
+            568,
+            271,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "      부리",
+          "rect": [
+            473,
+            284,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "      초롱",
+          "rect": [
+            1160,
+            301,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "      우박",
+          "rect": [
+            233,
+            307,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "       함께 부품 손질",
+          "rect": [
+            460,
+            190,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "      따닥·무쇠 할아버지 ›",
+          "rect": [
+            1076,
+            236,
+            196,
+            37
+          ]
+        },
+        {
+          "text": "       지도 · 이동",
+          "rect": [
+            1020,
+            104,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       생각",
+          "rect": [
+            1020,
+            560,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       주변 살피기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       ",
+          "rect": [
+            1190,
+            20,
+            64,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 2,
+        "period": 0,
+        "location": "workshop",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done",
+          "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+          "calendar:granny:1:1:arrival:10b5e62b61554787",
+          "lodging",
+          "observed:room13:bed",
+          "night1_seen",
+          "travel_money",
+          "livelihood_open"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02",
+          "M01",
+          "E03"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.shot('23-natural-workshop-group')",
+    "started": 1792287313.6286054,
+    "result": null
+  },
+  {
+    "code": "await q.press('함께 부품 손질')",
+    "started": 1792287315.9147575,
+    "result": null
+  },
+  {
+    "code": "await q.press('계속 듣기')",
+    "started": 1792287316.825573,
+    "result": null
+  },
+  {
+    "code": "await q.press('계속 듣기')",
+    "started": 1792287317.7098684,
+    "result": null
+  },
+  {
+    "code": "await q.press('돌아가기')",
+    "started": 1792287318.635263,
+    "result": null
+  },
+  {
+    "code": "await q.input(1205,400)",
+    "started": 1792287319.5777898,
+    "result": null
+  },
+  {
+    "code": "await advance()",
+    "started": 1792287319.9908626,
+    "result": {
+      "screens": [
+        "r13_resident_approach",
+        "r13_resident_approach"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "      1 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  잠깐 뭐 좀 여쭤도 될까요?",
+          "rect": [
+            640,
+            112,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "      2 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  지금은 말을 걸지 않는다",
+          "rect": [
+            640,
+            174,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "       돌아가기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 2,
+        "period": 0,
+        "location": "workshop",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done",
+          "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+          "calendar:granny:1:1:arrival:10b5e62b61554787",
+          "lodging",
+          "observed:room13:bed",
+          "night1_seen",
+          "travel_money",
+          "livelihood_open"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02",
+          "M01",
+          "E03"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.press('잠깐 뭐 좀')",
+    "started": 1792287335.9376724,
+    "result": null
+  },
+  {
+    "code": "await advance()",
+    "started": 1792287336.8372674,
+    "result": {
+      "screens": [
+        "r13_topics"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "      1 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  등에 문제가 있는지 묻는다",
+          "rect": [
+            640,
+            112,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "      2 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  등마다 밝기가 다른 이유를 묻는다",
+          "rect": [
+            640,
+            174,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "      3 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  점검 뒤 바로 자리를 옮기는지 묻는다",
+          "rect": [
+            640,
+            236,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "      4 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  아내를 아는지 묻는다",
+          "rect": [
+            640,
+            298,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "       돌아가기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       자료 보여주기",
+          "rect": [
+            1020,
+            560,
+            232,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 2,
+        "period": 0,
+        "location": "workshop",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done",
+          "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+          "calendar:granny:1:1:arrival:10b5e62b61554787",
+          "lodging",
+          "observed:room13:bed",
+          "night1_seen",
+          "travel_money",
+          "livelihood_open",
+          "noticed:calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+          "calendar:resident_lamplighter:2:0:settling:10b5e62b61554787"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02",
+          "M01",
+          "E03"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.press('자료 보여주기')",
+    "started": 1792287365.7570026,
+    "result": null
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await brief())['buttons']]",
+    "started": 1792287366.6927717,
+    "result": [
+      [
+        "       자료",
+        [
+          66,
+          128,
+          176,
+          56
+        ]
+      ],
+      [
+        "      전체",
+        [
+          284,
+          110,
+          52,
+          38
+        ]
+      ],
+      [
+        "      증언",
+        [
+          341,
+          110,
+          52,
+          38
+        ]
+      ],
+      [
+        "      전달 가능",
+        [
+          398,
+          110,
+          91,
+          38
+        ]
+      ],
+      [
+        "      ● 안 읽음 5",
+        [
+          494,
+          110,
+          115,
+          38
+        ]
+      ],
+      [
+        "       ● 바느질 흔적",
+        [
+          290,
+          166,
+          119,
+          128
+        ]
+      ],
+      [
+        "       ● 엄마의 메모",
+        [
+          414,
+          166,
+          119,
+          128
+        ]
+      ],
+      [
+        "       ● 고친 입장기록",
+        [
+          538,
+          166,
+          119,
+          128
+        ]
+      ],
+      [
+        "       예약 원본",
+        [
+          662,
+          166,
+          119,
+          128
+        ]
+      ],
+      [
+        "       ● 옮겨 쓴 목록",
+        [
+          290,
+          300,
+          119,
+          128
+        ]
+      ],
+      [
+        "       ● 초대 편지",
+        [
+          414,
+          300,
+          119,
+          128
+        ]
+      ],
+      [
+        "      그만두기",
+        [
+          66,
+          584,
+          176,
+          82
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await q.press('엄마의 메모')",
+    "started": 1792287381.1278002,
+    "result": null
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await brief())['buttons']]",
+    "started": 1792287382.0295215,
+    "result": [
+      [
+        "       자료",
+        [
+          66,
+          128,
+          176,
+          56
+        ]
+      ],
+      [
+        "      전체",
+        [
+          284,
+          110,
+          52,
+          38
+        ]
+      ],
+      [
+        "      증언",
+        [
+          341,
+          110,
+          52,
+          38
+        ]
+      ],
+      [
+        "      전달 가능",
+        [
+          398,
+          110,
+          91,
+          38
+        ]
+      ],
+      [
+        "      ● 안 읽음 5",
+        [
+          494,
+          110,
+          115,
+          38
+        ]
+      ],
+      [
+        "       ● 바느질 흔적",
+        [
+          290,
+          166,
+          119,
+          128
+        ]
+      ],
+      [
+        "       엄마의 메모",
+        [
+          414,
+          166,
+          119,
+          128
+        ]
+      ],
+      [
+        "       ● 고친 입장기록",
+        [
+          538,
+          166,
+          119,
+          128
+        ]
+      ],
+      [
+        "       예약 원본",
+        [
+          662,
+          166,
+          119,
+          128
+        ]
+      ],
+      [
+        "       ● 옮겨 쓴 목록",
+        [
+          290,
+          300,
+          119,
+          128
+        ]
+      ],
+      [
+        "       ● 초대 편지",
+        [
+          414,
+          300,
+          119,
+          128
+        ]
+      ],
+      [
+        "엄마가 남긴 짧은 메모 확인한 내용 다람이 이름 옆에 도토리가 그려진 메모. ‘아빠랑 도착하면 이 방에 짐을 놓아. 내가 없으면 등불을 돌보는 분에게 내 소식을 물어봐.’라고 적혀 있다. 1일 · 오후 · 여관 2층 · 13호실 직접 조사해 기록한 물건·문서·관찰 얻은 곳: 13호실 책상 위의 메모를 읽음",
+        [
+          844,
+          218,
+          351,
+          322
+        ]
+      ],
+      [
+        "                       ",
+        [
+          1195,
+          218,
+          7,
+          322
+        ]
+      ],
+      [
+        "      초롱에게 보여주기",
+        [
+          824,
+          584,
+          398,
+          82
+        ]
+      ],
+      [
+        "      그만두기",
+        [
+          66,
+          584,
+          176,
+          82
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await q.press('초롱에게 보여주기')",
+    "started": 1792287386.856642,
+    "result": null
+  },
+  {
+    "code": "await advance()",
+    "started": 1792287387.848453,
+    "result": {
+      "screens": [
+        "r13_topics"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "      1 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  등에 문제가 있는지 묻는다",
+          "rect": [
+            640,
+            112,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "      2 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  등마다 밝기가 다른 이유를 묻는다",
+          "rect": [
+            640,
+            174,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "      3 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  점검 뒤 바로 자리를 옮기는지 묻는다",
+          "rect": [
+            640,
+            236,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "      4 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  아내를 마지막으로 본 곳을 묻는다",
+          "rect": [
+            640,
+            298,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "       돌아가기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       자료 보여주기",
+          "rect": [
+            1020,
+            560,
+            232,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 2,
+        "period": 0,
+        "location": "workshop",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done",
+          "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+          "calendar:granny:1:1:arrival:10b5e62b61554787",
+          "lodging",
+          "observed:room13:bed",
+          "night1_seen",
+          "travel_money",
+          "livelihood_open",
+          "noticed:calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+          "calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+          "intro:memo_shown",
+          "mother_lamplighter_lead",
+          "mother_letter_promised",
+          "mother_recognized"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02",
+          "M01",
+          "E03"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.press('아내를 마지막으로 본 곳')",
+    "started": 1792287409.5709548,
+    "result": null
+  },
+  {
+    "code": "await advance()",
+    "started": 1792287410.509924,
+    "result": {
+      "screens": [
+        "r13_evidence_found",
+        "r13_topics"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "      1 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  등에 문제가 있는지 묻는다",
+          "rect": [
+            640,
+            112,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "      2 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  등마다 밝기가 다른 이유를 묻는다",
+          "rect": [
+            640,
+            174,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "      3 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  점검 뒤 바로 자리를 옮기는지 묻는다",
+          "rect": [
+            640,
+            236,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "      4 {font=assets/Room13Sans.ttf}✓{/font}  {s}아내를 마지막으로 본 곳을 묻는다{/s}",
+          "rect": [
+            640,
+            298,
+            592,
+            57
+          ]
+        },
+        {
+          "text": "       돌아가기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       자료 보여주기",
+          "rect": [
+            1020,
+            560,
+            232,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 2,
+        "period": 0,
+        "location": "workshop",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done",
+          "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+          "calendar:granny:1:1:arrival:10b5e62b61554787",
+          "lodging",
+          "observed:room13:bed",
+          "night1_seen",
+          "travel_money",
+          "livelihood_open",
+          "noticed:calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+          "calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+          "intro:memo_shown",
+          "mother_lamplighter_lead",
+          "mother_letter_promised",
+          "mother_recognized"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02",
+          "M01",
+          "E03",
+          "J02"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.shot('24-natural-J02')",
+    "started": 1792287433.9679608,
+    "result": null
+  },
+  {
+    "code": "await q.press('돌아가기')",
+    "started": 1792287434.5385697,
+    "result": null
+  },
+  {
+    "code": "await advance()",
+    "started": 1792287435.4254625,
+    "result": {
+      "screens": [
+        "r13_hub"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "                                           굴돌 할아버지       톡       부리       초롱       따닥       우박       무쇠 할아버지        함께 부품 손질",
+          "rect": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            447,
+            332,
+            139,
+            208
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            534,
+            313,
+            147,
+            220
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            168,
+            357,
+            201,
+            190
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            678,
+            273,
+            187,
+            280
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            1128,
+            351,
+            144,
+            220
+          ]
+        },
+        {
+          "text": "      굴돌 할아버지",
+          "rect": [
+            719,
+            224,
+            149,
+            48
+          ]
+        },
+        {
+          "text": "      톡",
+          "rect": [
+            568,
+            271,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "      부리",
+          "rect": [
+            473,
+            284,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "      초롱",
+          "rect": [
+            1160,
+            301,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "      우박",
+          "rect": [
+            233,
+            307,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "       함께 부품 손질",
+          "rect": [
+            460,
+            190,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "      따닥·무쇠 할아버지 ›",
+          "rect": [
+            1076,
+            236,
+            196,
+            37
+          ]
+        },
+        {
+          "text": "       지도 · 이동",
+          "rect": [
+            1020,
+            104,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       생각",
+          "rect": [
+            1020,
+            560,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       주변 살피기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       ",
+          "rect": [
+            1190,
+            20,
+            64,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 2,
+        "period": 0,
+        "location": "workshop",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done",
+          "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+          "calendar:granny:1:1:arrival:10b5e62b61554787",
+          "lodging",
+          "observed:room13:bed",
+          "night1_seen",
+          "travel_money",
+          "livelihood_open",
+          "noticed:calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+          "calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+          "intro:memo_shown",
+          "mother_lamplighter_lead",
+          "mother_letter_promised",
+          "mother_recognized"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02",
+          "M01",
+          "E03",
+          "J02"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.press('지도 · 이동')",
+    "started": 1792287436.202246,
+    "result": null
+  },
+  {
+    "code": "await q.py('import renpy;result=renpy.store.r13_cart_name_rect(\"post\")')",
+    "started": 1792287437.7238069,
+    "result": [
+      702,
+      466,
+      93,
+      42
+    ]
+  },
+  {
+    "code": "await q.input(748,487)",
+    "started": 1792287448.8861103,
+    "result": null
+  },
+  {
+    "code": "await q.press('이곳으로 이동')",
+    "started": 1792287449.2105043,
+    "result": null
+  },
+  {
+    "code": "await advance()",
+    "started": 1792287450.2306907,
+    "result": {
+      "screens": [],
+      "say": "",
+      "buttons": [],
+      "room": {
+        "day": 2,
+        "period": 0,
+        "location": "post",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done",
+          "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+          "calendar:granny:1:1:arrival:10b5e62b61554787",
+          "lodging",
+          "observed:room13:bed",
+          "night1_seen",
+          "travel_money",
+          "livelihood_open",
+          "noticed:calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+          "calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+          "intro:memo_shown",
+          "mother_lamplighter_lead",
+          "mother_letter_promised",
+          "mother_recognized"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02",
+          "M01",
+          "E03",
+          "J02"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await advance()",
+    "started": 1792287491.3593712,
+    "result": {
+      "screens": [
+        "r13_hub"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "                      사서 선생님       종종이       모모       세련       슬링       !",
+          "rect": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            45,
+            411,
+            129,
+            194
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            520,
+            434,
+            135,
+            210
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            0,
+            467,
+            121,
+            218
+          ]
+        },
+        {
+          "text": "",
+          "rect": [
+            371,
+            460,
+            106,
+            230
+          ]
+        },
+        {
+          "text": "      사서 선생님",
+          "rect": [
+            34,
+            367,
+            131,
+            48
+          ]
+        },
+        {
+          "text": "      종종이",
+          "rect": [
+            542,
+            384,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "      모모",
+          "rect": [
+            375,
+            411,
+            88,
+            48
+          ]
+        },
+        {
+          "text": "      슬링",
+          "rect": [
+            0,
+            419,
+            40,
+            48
+          ]
+        },
+        {
+          "text": "      ‹ ! 세련·슬링",
+          "rect": [
+            8,
+            236,
+            130,
+            37
+          ]
+        },
+        {
+          "text": "      ›",
+          "rect": [
+            1240,
+            236,
+            32,
+            42
+          ]
+        },
+        {
+          "text": "       지도 · 이동",
+          "rect": [
+            1020,
+            104,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       생각",
+          "rect": [
+            1020,
+            560,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       주변 살피기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       ",
+          "rect": [
+            1190,
+            20,
+            64,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 2,
+        "period": 0,
+        "location": "post",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done",
+          "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+          "calendar:granny:1:1:arrival:10b5e62b61554787",
+          "lodging",
+          "observed:room13:bed",
+          "night1_seen",
+          "travel_money",
+          "livelihood_open",
+          "noticed:calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+          "calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+          "intro:memo_shown",
+          "mother_lamplighter_lead",
+          "mother_letter_promised",
+          "mother_recognized"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02",
+          "M01",
+          "E03",
+          "J02"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.shot('25-natural-post')",
+    "started": 1792287491.6215274,
+    "result": null
+  },
+  {
+    "code": "await q.press('‹')",
+    "started": 1792287498.9592185,
+    "result": null
+  },
+  {
+    "code": "await asyncio.sleep(.5)",
+    "started": 1792287499.8464682,
+    "result": null
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await brief())['buttons'] if x['text'].strip()]",
+    "started": 1792287500.3554854,
+    "result": [
+      [
+        "                      사서 선생님       종종이       모모       세련       슬링       !",
+        [
+          0,
+          0,
+          1280,
+          720
+        ]
+      ],
+      [
+        "      사서 선생님",
+        [
+          474,
+          367,
+          131,
+          48
+        ]
+      ],
+      [
+        "      종종이",
+        [
+          982,
+          384,
+          88,
+          48
+        ]
+      ],
+      [
+        "      모모",
+        [
+          815,
+          411,
+          88,
+          48
+        ]
+      ],
+      [
+        "      세련",
+        [
+          79,
+          419,
+          88,
+          48
+        ]
+      ],
+      [
+        "      슬링",
+        [
+          392,
+          419,
+          88,
+          48
+        ]
+      ],
+      [
+        "      ›",
+        [
+          1240,
+          236,
+          32,
+          42
+        ]
+      ],
+      [
+        "       지도 · 이동",
+        [
+          1020,
+          104,
+          232,
+          64
+        ]
+      ],
+      [
+        "       생각",
+        [
+          1020,
+          560,
+          232,
+          64
+        ]
+      ],
+      [
+        "       주변 살피기",
+        [
+          28,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       기록",
+        [
+          1020,
+          640,
+          232,
+          64
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await q.input(125,490)",
+    "started": 1792287513.7446077,
+    "result": null
+  },
+  {
+    "code": "await advance()",
+    "started": 1792287514.1064918,
+    "result": {
+      "screens": [
+        "r13_resident_approach",
+        "r13_resident_approach"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "      1 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  아내 앞으로 온 우편에 관해 여쭙겠습니다.",
+          "rect": [
+            640,
+            112,
+            592,
+            82
+          ]
+        },
+        {
+          "text": "      2 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  지금은 말을 걸지 않는다",
+          "rect": [
+            640,
+            202,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "       돌아가기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 2,
+        "period": 0,
+        "location": "post",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done",
+          "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+          "calendar:granny:1:1:arrival:10b5e62b61554787",
+          "lodging",
+          "observed:room13:bed",
+          "night1_seen",
+          "travel_money",
+          "livelihood_open",
+          "noticed:calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+          "calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+          "intro:memo_shown",
+          "mother_lamplighter_lead",
+          "mother_letter_promised",
+          "mother_recognized"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02",
+          "M01",
+          "E03",
+          "J02"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.press('아내 앞으로')",
+    "started": 1792287520.9900196,
+    "result": null
+  },
+  {
+    "code": "await advance()",
+    "started": 1792287521.9295354,
+    "result": {
+      "screens": [
+        "r13_topics"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "      1 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  아내 앞 편지를 받을 수 있는지 묻는다",
+          "rect": [
+            640,
+            112,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "      2 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  아내가 들른 적이 있는지 묻는다",
+          "rect": [
+            640,
+            174,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "       돌아가기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       자료 보여주기",
+          "rect": [
+            1020,
+            560,
+            232,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 2,
+        "period": 0,
+        "location": "post",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done",
+          "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+          "calendar:granny:1:1:arrival:10b5e62b61554787",
+          "lodging",
+          "observed:room13:bed",
+          "night1_seen",
+          "travel_money",
+          "livelihood_open",
+          "noticed:calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+          "calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+          "intro:memo_shown",
+          "mother_lamplighter_lead",
+          "mother_letter_promised",
+          "mother_recognized",
+          "noticed:calendar:seryeon:2:0:settling:10b5e62b61554787",
+          "calendar:seryeon:2:0:settling:10b5e62b61554787"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02",
+          "M01",
+          "E03",
+          "J02"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.press('자료 보여주기')",
+    "started": 1792287523.3730648,
+    "result": null
+  },
+  {
+    "code": "await q.press('초대 편지')",
+    "started": 1792287524.2965822,
+    "result": null
+  },
+  {
+    "code": "await q.press('세련에게 보여주기')",
+    "started": 1792287525.2404811,
+    "result": null
+  },
+  {
+    "code": "await advance()",
+    "started": 1792287526.160835,
+    "result": {
+      "screens": [
+        "r13_topics"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "      1 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  아내 앞 편지를 받을 수 있는지 묻는다",
+          "rect": [
+            640,
+            112,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "      2 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  아내가 들른 적이 있는지 묻는다",
+          "rect": [
+            640,
+            174,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "       돌아가기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       자료 보여주기",
+          "rect": [
+            1020,
+            560,
+            232,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 2,
+        "period": 0,
+        "location": "post",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done",
+          "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+          "calendar:granny:1:1:arrival:10b5e62b61554787",
+          "lodging",
+          "observed:room13:bed",
+          "night1_seen",
+          "travel_money",
+          "livelihood_open",
+          "noticed:calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+          "calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+          "intro:memo_shown",
+          "mother_lamplighter_lead",
+          "mother_letter_promised",
+          "mother_recognized",
+          "noticed:calendar:seryeon:2:0:settling:10b5e62b61554787",
+          "calendar:seryeon:2:0:settling:10b5e62b61554787",
+          "intro:post_letter"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02",
+          "M01",
+          "E03",
+          "J02"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.press('자료 보여주기')",
+    "started": 1792287544.802743,
+    "result": null
+  },
+  {
+    "code": "await q.press('엄마의 메모')",
+    "started": 1792287545.7247043,
+    "result": null
+  },
+  {
+    "code": "await q.press('세련에게 보여주기')",
+    "started": 1792287546.732865,
+    "result": null
+  },
+  {
+    "code": "await advance()",
+    "started": 1792287547.6831615,
+    "result": {
+      "screens": [
+        "r13_topics"
+      ],
+      "say": "",
+      "buttons": [
+        {
+          "text": "      1 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  아내 앞 편지를 받을 수 있는지 묻는다",
+          "rect": [
+            640,
+            112,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "      2 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  아내가 들른 적이 있는지 묻는다",
+          "rect": [
+            640,
+            174,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "      3 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  아내가 여기서 찾던 것을 묻는다",
+          "rect": [
+            640,
+            236,
+            592,
+            54
+          ]
+        },
+        {
+          "text": "       돌아가기",
+          "rect": [
+            28,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       기록",
+          "rect": [
+            1020,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       더보기",
+          "rect": [
+            772,
+            640,
+            232,
+            64
+          ]
+        },
+        {
+          "text": "       자료 보여주기",
+          "rect": [
+            1020,
+            560,
+            232,
+            64
+          ]
+        }
+      ],
+      "room": {
+        "day": 2,
+        "period": 0,
+        "location": "post",
+        "flags": [
+          "question_read:entry:daram:look",
+          "question_read:entry:explain",
+          "observed:gate:gate_documents",
+          "observed:gate:booth",
+          "entry_corrected",
+          "ep4_seen",
+          "ep1_patrol_seen",
+          "ep1_eaves_seen",
+          "ep1_done",
+          "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+          "calendar:granny:1:1:arrival:10b5e62b61554787",
+          "lodging",
+          "observed:room13:bed",
+          "night1_seen",
+          "travel_money",
+          "livelihood_open",
+          "noticed:calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+          "calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+          "intro:memo_shown",
+          "mother_lamplighter_lead",
+          "mother_letter_promised",
+          "mother_recognized",
+          "noticed:calendar:seryeon:2:0:settling:10b5e62b61554787",
+          "calendar:seryeon:2:0:settling:10b5e62b61554787",
+          "intro:post_letter",
+          "intro:post_memo"
+        ],
+        "evidence": [
+          "E01",
+          "G3",
+          "G1",
+          "E02",
+          "M01",
+          "E03",
+          "J02"
+        ],
+        "daram_state": "with_dad"
+      }
+    }
+  },
+  {
+    "code": "await q.press('아내가 여기서 찾던')",
+    "started": 1792287563.0205286,
+    "result": null
+  },
+  {
+    "code": "(await advance())['room']",
+    "started": 1792287563.933073,
+    "result": {
+      "day": 2,
+      "period": 0,
+      "location": "post",
+      "flags": [
+        "question_read:entry:daram:look",
+        "question_read:entry:explain",
+        "observed:gate:gate_documents",
+        "observed:gate:booth",
+        "entry_corrected",
+        "ep4_seen",
+        "ep1_patrol_seen",
+        "ep1_eaves_seen",
+        "ep1_done",
+        "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+        "calendar:granny:1:1:arrival:10b5e62b61554787",
+        "lodging",
+        "observed:room13:bed",
+        "night1_seen",
+        "travel_money",
+        "livelihood_open",
+        "noticed:calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+        "calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+        "intro:memo_shown",
+        "mother_lamplighter_lead",
+        "mother_letter_promised",
+        "mother_recognized",
+        "noticed:calendar:seryeon:2:0:settling:10b5e62b61554787",
+        "calendar:seryeon:2:0:settling:10b5e62b61554787",
+        "intro:post_letter",
+        "intro:post_memo",
+        "mother_first_lead_checked"
+      ],
+      "evidence": [
+        "E01",
+        "G3",
+        "G1",
+        "E02",
+        "M01",
+        "E03",
+        "J02",
+        "J03"
+      ],
+      "daram_state": "with_dad"
+    }
+  },
+  {
+    "code": "await q.shot('26-natural-J03')",
+    "started": 1792287582.2153199,
+    "result": null
+  },
+  {
+    "code": "await q.press('더보기')",
+    "started": 1792287582.69933,
+    "result": null
+  },
+  {
+    "code": "await q.press('저장 · 불러오기')",
+    "started": 1792287583.6125393,
+    "result": null
+  },
+  {
+    "code": "await q.press('1쪽')",
+    "started": 1792287584.501237,
+    "result": null
+  },
+  {
+    "code": "await q.press('1쪽 3번')",
+    "started": 1792287585.4149234,
+    "result": null
+  },
+  {
+    "code": "await q.press('돌아가기')",
+    "started": 1792287586.3329656,
+    "result": null
+  },
+  {
+    "code": "await page.reload()",
+    "started": 1792287587.2499251,
+    "result": "<Response url='http://127.0.0.1:8891/preview/room13-dev/' request=<Request url='http://127.0.0.1:8891/preview/room13-dev/' method='GET'>>"
+  },
+  {
+    "code": "await page.wait_for_function(\"typeof renpy_exec==='function'\",timeout=240000)",
+    "started": 1792287587.3689444,
+    "result": "true"
+  },
+  {
+    "code": "await q.wait('main_menu')",
+    "started": 1792287587.4749413,
+    "result": {
+      "screens": [
+        "main_menu"
+      ],
+      "room": null,
+      "say": "",
+      "buttons": [
+        {
+          "text": "      이어하기",
+          "value": "",
+          "rect": [
+            62,
+            590,
+            146,
+            82
+          ]
+        },
+        {
+          "text": "      처음부터",
+          "value": "",
+          "rect": [
+            219,
+            590,
+            146,
+            82
+          ]
+        },
+        {
+          "text": "      불러오기",
+          "value": "",
+          "rect": [
+            376,
+            590,
+            146,
+            82
+          ]
+        },
+        {
+          "text": "      설정",
+          "value": "",
+          "rect": [
+            533,
+            590,
+            146,
+            82
+          ]
+        },
+        {
+          "text": "음악 출처",
+          "value": "",
+          "rect": [
+            28,
+            680,
+            76,
+            31
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "code": "await q.press('불러오기')",
+    "started": 1792287623.097023,
+    "result": null
+  },
+  {
+    "code": "await q.press('1쪽')",
+    "started": 1792287624.0444815,
+    "result": null
+  },
+  {
+    "code": "await q.press('1쪽 3번')",
+    "started": 1792287624.9511926,
+    "result": null
+  },
+  {
+    "code": "await q.press('돌아가기')",
+    "started": 1792287625.887723,
+    "result": null
+  },
+  {
+    "code": "(await advance())['screens']",
+    "started": 1792287626.8253763,
+    "result": [
+      "r13_evidence_found",
+      "r13_hub"
+    ]
+  },
+  {
+    "code": "await q.press('지도 · 이동')",
+    "started": 1792287627.2521944,
+    "result": null
+  },
+  {
+    "code": "await q.press('여관 안')",
+    "started": 1792287628.1555977,
+    "result": null
+  },
+  {
+    "code": "await q.press('13호실')",
+    "started": 1792287629.0525575,
+    "result": null
+  },
+  {
+    "code": "await q.press('이곳으로 이동')",
+    "started": 1792287629.9722528,
+    "result": null
+  },
+  {
+    "code": "(await advance())['screens']",
+    "started": 1792287658.6241407,
+    "result": [
+      "r13_hub"
+    ]
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await brief())['buttons'] if x['text'].strip()]",
+    "started": 1792287658.884669,
+    "result": [
+      [
+        "                         다람",
+        [
+          0,
+          0,
+          1280,
+          720
+        ]
+      ],
+      [
+        "      다람",
+        [
+          1066,
+          176,
+          88,
+          48
+        ]
+      ],
+      [
+        "      ›",
+        [
+          1240,
+          236,
+          32,
+          42
+        ]
+      ],
+      [
+        "       지도 · 이동",
+        [
+          1020,
+          104,
+          232,
+          64
+        ]
+      ],
+      [
+        "       자기",
+        [
+          1020,
+          264,
+          232,
+          64
+        ]
+      ],
+      [
+        "       생각",
+        [
+          1020,
+          560,
+          232,
+          64
+        ]
+      ],
+      [
+        "       주변 살피기",
+        [
+          28,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       기록",
+        [
+          1020,
+          640,
+          232,
+          64
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await q.press('자기')",
+    "started": 1792287664.9920557,
+    "result": null
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await brief())['buttons'] if x['text'].strip()]",
+    "started": 1792287665.9614313,
+    "result": [
+      [
+        "      자기",
+        [
+          197,
+          356,
+          86,
+          54
+        ]
+      ],
+      [
+        "      아직 할 일이 있다",
+        [
+          308,
+          356,
+          241,
+          54
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await q.press('자기')",
+    "started": 1792287670.5505395,
+    "result": null
+  },
+  {
+    "code": "(await advance())['screens']",
+    "started": 1792287671.4668474,
+    "result": []
+  },
+  {
+    "code": "(await advance())['screens']",
+    "started": 1792287722.663538,
+    "result": [
+      "r13_evidence_found"
+    ]
+  },
+  {
+    "code": "(await brief())['room']",
+    "started": 1792287727.3244746,
+    "result": {
+      "day": 3,
+      "period": 0,
+      "location": "square",
+      "flags": [
+        "question_read:entry:daram:look",
+        "question_read:entry:explain",
+        "observed:gate:gate_documents",
+        "observed:gate:booth",
+        "entry_corrected",
+        "ep4_seen",
+        "ep1_patrol_seen",
+        "ep1_eaves_seen",
+        "ep1_done",
+        "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+        "calendar:granny:1:1:arrival:10b5e62b61554787",
+        "lodging",
+        "observed:room13:bed",
+        "night1_seen",
+        "travel_money",
+        "livelihood_open",
+        "noticed:calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+        "calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+        "intro:memo_shown",
+        "mother_lamplighter_lead",
+        "mother_letter_promised",
+        "mother_recognized",
+        "noticed:calendar:seryeon:2:0:settling:10b5e62b61554787",
+        "calendar:seryeon:2:0:settling:10b5e62b61554787",
+        "intro:post_letter",
+        "intro:post_memo",
+        "mother_first_lead_checked",
+        "poc:night:2",
+        "ev_l_done",
+        "warning_exposed",
+        "lt_dawn",
+        "piko_dead"
+      ],
+      "evidence": [
+        "E01",
+        "G3",
+        "G1",
+        "E02",
+        "M01",
+        "E03",
+        "J02",
+        "J03",
+        "L13",
+        "L00",
+        "L06"
+      ],
+      "daram_state": "with_dad"
+    }
+  },
+  {
+    "code": "await q.shot('27-day3-natural-arrival')",
+    "started": 1792287727.7394652,
+    "result": null
+  },
+  {
+    "code": "(await advance())['screens']",
+    "started": 1792287757.0234747,
+    "result": [
+      "r13_hub"
+    ]
+  },
+  {
+    "code": "await q.shot('28-day3-square')",
+    "started": 1792287757.508243,
+    "result": null
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await brief())['buttons'] if x['text'].strip()]",
+    "started": 1792287758.4934025,
+    "result": [
+      [
+        "                                  설이       도토       부엉이 할아버지",
+        [
+          0,
+          0,
+          1280,
+          720
+        ]
+      ],
+      [
+        "      설이",
+        [
+          0,
+          191,
+          80,
+          48
+        ]
+      ],
+      [
+        "      도토",
+        [
+          532,
+          330,
+          88,
+          48
+        ]
+      ],
+      [
+        "      ‹ 부엉이 할아버지",
+        [
+          8,
+          236,
+          172,
+          37
+        ]
+      ],
+      [
+        "      ›",
+        [
+          1240,
+          236,
+          32,
+          42
+        ]
+      ],
+      [
+        "       지도 · 이동",
+        [
+          1020,
+          104,
+          232,
+          64
+        ]
+      ],
+      [
+        "       생각",
+        [
+          1020,
+          560,
+          232,
+          64
+        ]
+      ],
+      [
+        "       주변 살피기",
+        [
+          28,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       기록",
+        [
+          1020,
+          640,
+          232,
+          64
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await q.input(575,425)",
+    "started": 1792287781.4326272,
+    "result": null
+  },
+  {
+    "code": "(await advance())['screens']",
+    "started": 1792287781.7853172,
+    "result": [
+      "r13_hub"
+    ]
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await brief())['buttons'] if x['text'].strip()]",
+    "started": 1792287782.2204843,
+    "result": [
+      [
+        "                                  설이       도토       부엉이 할아버지",
+        [
+          0,
+          0,
+          1280,
+          720
+        ]
+      ],
+      [
+        "      설이",
+        [
+          0,
+          191,
+          80,
+          48
+        ]
+      ],
+      [
+        "      도토",
+        [
+          532,
+          330,
+          88,
+          48
+        ]
+      ],
+      [
+        "      ‹ 부엉이 할아버지",
+        [
+          8,
+          236,
+          172,
+          37
+        ]
+      ],
+      [
+        "      ›",
+        [
+          1240,
+          236,
+          32,
+          42
+        ]
+      ],
+      [
+        "       지도 · 이동",
+        [
+          1020,
+          104,
+          232,
+          64
+        ]
+      ],
+      [
+        "       생각",
+        [
+          1020,
+          560,
+          232,
+          64
+        ]
+      ],
+      [
+        "       주변 살피기",
+        [
+          28,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       기록",
+        [
+          1020,
+          640,
+          232,
+          64
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await q.press('주변 살피기')",
+    "started": 1792287791.243767,
+    "result": null
+  },
+  {
+    "code": "await q.shot('29-day3-investigation')",
+    "started": 1792287792.304406,
+    "result": null
+  },
+  {
+    "code": "await q.py('import renpy;s=renpy.store;result=s.r13_world_spots()')",
+    "started": 1792287793.0367439,
+    "error": "Error(\"Page.evaluate: AttributeError: 'StoreModule' object has no attribute 'r13_world_spots'\\n    at cmd_callback (http://127.0.0.1:8891/preview/room13-dev/renpy-pre.js?v=a9965199ecff:503:27)\\n    at eval (eval at _emscripten_run_script (http://127.0.0.1:8891/preview/room13-dev/renpy.js:1:327801), <anonymous>:1:1)\\n    at _emscripten_run_script (http://127.0.0.1:8891/preview/room13-dev/renpy.js:1:327801)\\n    at http://127.0.0.1:8891/preview/room13-dev/renpy.wasm:wasm-function[28300]:0xd2fe8b\\n    at http://127.0.0.1:8891/preview/room13-dev/renpy.wasm:wasm-function[21432]:0x7f635a\\n    at http://127.0.0.1:8891/preview/room13-dev/renpy.wasm:wasm-function[30276]:0xe865ef\\n    at http://127.0.0.1:8891/preview/room13-dev/renpy.wasm:wasm-function[905]:0x4f117\\n    at http://127.0.0.1:8891/preview/room13-dev/renpy.wasm:wasm-function[784]:0x40aa7\\n    at http://127.0.0.1:8891/preview/room13-dev/renpy.wasm:wasm-function[9788]:0x66805a\\n    at http://127.0.0.1:8891/preview/room13-dev/renpy.wasm:wasm-function[15022]:0x7da30a\")"
+  },
+  {
+    "code": "await q.input(360,385)",
+    "started": 1792287812.748505,
+    "result": null
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await brief())['buttons'] if x['text'].strip()]",
+    "started": 1792287813.083039,
+    "result": [
+      [
+        "      ‹",
+        [
+          8,
+          236,
+          32,
+          42
+        ]
+      ],
+      [
+        "      ›",
+        [
+          1240,
+          236,
+          32,
+          42
+        ]
+      ],
+      [
+        "       지도 · 이동",
+        [
+          1020,
+          104,
+          232,
+          64
+        ]
+      ],
+      [
+        "       생각",
+        [
+          1020,
+          560,
+          232,
+          64
+        ]
+      ],
+      [
+        "       사람 보기",
+        [
+          28,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       살펴보기",
+        [
+          276,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       기록",
+        [
+          1020,
+          640,
+          232,
+          64
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await q.press('살펴보기')",
+    "started": 1792287819.611921,
+    "result": null
+  },
+  {
+    "code": "(await advance())['screens']",
+    "started": 1792287820.5678244,
+    "result": [
+      "choice"
+    ]
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await brief())['buttons'] if x['text'].strip()]",
+    "started": 1792287822.9020026,
+    "result": [
+      [
+        "      1  {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  선금 다섯 냥을 준다       2  {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  거절한다       3  {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  짐을 받아 오면 돈을 주겠다고 한다       4  {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  돈을 주고 몰래 뒤를 밟는다",
+        [
+          260,
+          180,
+          753,
+          340
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await q.press('짐을 받아 오면')",
+    "started": 1792287841.8779728,
+    "result": null
+  },
+  {
+    "code": "(await advance())['screens']",
+    "started": 1792287842.829583,
+    "result": [
+      "choice"
+    ]
+  },
+  {
+    "code": "await q.shot('30-day3-offer-response')",
+    "started": 1792287843.8998663,
+    "result": null
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await brief())['buttons'] if x['text'].strip()]",
+    "started": 1792287880.271733,
+    "result": [
+      [
+        "      1  {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  선금 다섯 냥을 준다       2  {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  거절한다       3  {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  짐을 받아 오면 돈을 주겠다고 한다       4  {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  돈을 주고 몰래 뒤를 밟는다       5  {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  “백 부인 빚 때문입니까?”",
+        [
+          260,
+          136,
+          753,
+          428
+        ]
+      ],
+      [
+        "      1  {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  선금 다섯 냥을 준다",
+        [
+          260,
+          136,
+          737,
+          72
+        ]
+      ],
+      [
+        "      2  {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  거절한다",
+        [
+          260,
+          224,
+          737,
+          72
+        ]
+      ],
+      [
+        "      3  {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  짐을 받아 오면 돈을 주겠다고 한다",
+        [
+          260,
+          312,
+          737,
+          72
+        ]
+      ],
+      [
+        "      4  {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  돈을 주고 몰래 뒤를 밟는다",
+        [
+          260,
+          400,
+          737,
+          72
+        ]
+      ],
+      [
+        "      5  {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  “백 부인 빚 때문입니까?”",
+        [
+          260,
+          488,
+          737,
+          72
+        ]
+      ],
+      [
+        "       백로그",
+        [
+          28,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       자동",
+        [
+          276,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       더보기",
+        [
+          772,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       기록",
+        [
+          1020,
+          640,
+          232,
+          64
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await q.press('거절한다')",
+    "started": 1792287888.776589,
+    "result": null
+  },
+  {
+    "code": "(await advance())['screens']",
+    "started": 1792287889.7354903,
+    "result": [
+      "r13_hub"
+    ]
+  },
+  {
+    "code": "await q.py('import renpy;s=renpy.store;result=dict(selection=s.r13_field_selection(),offset=s.r13_world_offset())')",
+    "started": 1792287912.4429343,
+    "result": {
+      "selection": "stone",
+      "offset": 320
+    }
+  },
+  {
+    "code": "await q.py('import renpy;s=renpy.store;result={k:v[\"rect\"] for k,v in s.ROOM13[\"objects\"][\"square\"].items()}')",
+    "started": 1792287922.8597074,
+    "result": {
+      "stone": [
+        598,
+        269,
+        170,
+        236
+      ],
+      "offerings": [
+        861,
+        475,
+        121,
+        52
+      ],
+      "lamp": [
+        904,
+        270,
+        187,
+        201
+      ],
+      "stall": [
+        0,
+        278,
+        298,
+        174
+      ],
+      "cart": [
+        326,
+        420,
+        282,
+        144
+      ],
+      "wood": [
+        0,
+        457,
+        147,
+        147
+      ],
+      "bakery": [
+        1528,
+        309,
+        242,
+        176
+      ],
+      "bench": [
+        1718,
+        462,
+        202,
+        186
+      ],
+      "steps": [
+        1193,
+        391,
+        278,
+        175
+      ],
+      "lt_lamp3": [
+        560,
+        150,
+        110,
+        300
+      ]
+    }
+  },
+  {
+    "code": "await q.input(295,300)",
+    "started": 1792287932.306189,
+    "result": null
+  },
+  {
+    "code": "await q.press('살펴보기')",
+    "started": 1792287932.6362615,
+    "result": null
+  },
+  {
+    "code": "(await advance())['screens']",
+    "started": 1792287933.548262,
+    "result": [
+      "choice"
+    ]
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await brief())['buttons'] if x['text'].strip()]",
+    "started": 1792287933.7020648,
+    "result": [
+      [
+        "      등 안을 본다       뚜껑 틈을 본다       그만 본다",
+        [
+          170,
+          266,
+          933,
+          248
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await q.press('등 안을 본다')",
+    "started": 1792287961.0593367,
+    "result": null
+  },
+  {
+    "code": "(await advance())['screens']",
+    "started": 1792287961.955512,
+    "result": [
+      "r13_evidence_found",
+      "choice"
+    ]
+  },
+  {
+    "code": "await q.press('뚜껑 틈을 본다')",
+    "started": 1792287983.717965,
+    "result": null
+  },
+  {
+    "code": "(await advance())['screens']",
+    "started": 1792287984.6408901,
+    "result": [
+      "r13_evidence_found",
+      "choice"
+    ]
+  },
+  {
+    "code": "await q.press('그만 본다')",
+    "started": 1792288017.9496098,
+    "result": null
+  },
+  {
+    "code": "(await advance())['screens']",
+    "started": 1792288018.856513,
+    "result": [
+      "r13_hub"
+    ]
+  },
+  {
+    "code": "await q.shot('31-day3-lamp-evidence')",
+    "started": 1792288019.5257056,
+    "result": null
+  },
+  {
+    "code": "await q.press('지도 · 이동')",
+    "started": 1792288020.1565647,
+    "result": null
+  },
+  {
+    "code": "await q.py('import renpy;result=renpy.store.r13_cart_name_rect(\"post\")')",
+    "started": 1792288021.0676162,
+    "result": [
+      702,
+      466,
+      93,
+      42
+    ]
+  },
+  {
+    "code": "await q.input(748,487)",
+    "started": 1792288039.8656328,
+    "result": null
+  },
+  {
+    "code": "await q.press('이곳으로 이동')",
+    "started": 1792288040.2041142,
+    "result": null
+  },
+  {
+    "code": "(await advance())['screens']",
+    "started": 1792288041.1695483,
+    "result": []
+  },
+  {
+    "code": "(await advance())['screens']",
+    "started": 1792288056.0187953,
+    "result": [
+      "r13_hub"
+    ]
+  },
+  {
+    "code": "await q.py('import renpy;s=renpy.store;result=[dict(person=a[\"person\"],face=s.r13_actor_face(a,0),offset=s.r13_world_offset()) for a in s.r13_stage_people()]')",
+    "started": 1792288056.5187728,
+    "result": [
+      {
+        "person": "resident_librarian",
+        "face": [
+          519.0146666666667,
+          417.984,
+          43.714666666666666,
+          40.158
+        ],
+        "offset": 0
+      },
+      {
+        "person": "resident_momo",
+        "face": [
+          1022.2745098039215,
+          416.33986928104576,
+          56.27450980392157,
+          40.19607843137255
+        ],
+        "offset": 0
+      },
+      {
+        "person": "resident_jongjong",
+        "face": [
+          994.8748445273632,
+          434,
+          64.38432835820895,
+          67.04980842911877
+        ],
+        "offset": 0
+      },
+      {
+        "person": "resident_sling",
+        "face": [
+          1357.7916666666667,
+          387.921875,
+          89.86979166666666,
+          82.03125
+        ],
+        "offset": 0
+      },
+      {
+        "person": "seryeon",
+        "face": [
+          83.59869848156183,
+          469,
+          80.93275488069413,
+          89.3817787418655
+        ],
+        "offset": 0
+      },
+      {
+        "person": "resident_ppul",
+        "face": [
+          387.8385650224215,
+          521,
+          183.12107623318386,
+          98.54708520179372
+        ],
+        "offset": 0
+      }
+    ]
+  },
+  {
+    "code": "await q.input(540,438)",
+    "started": 1792288089.7799385,
+    "result": null
+  },
+  {
+    "code": "(await advance())['screens']",
+    "started": 1792288090.1185904,
+    "result": [
+      "r13_resident_approach",
+      "r13_resident_approach"
+    ]
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await brief())['buttons'] if x['text'].strip()]",
+    "started": 1792288091.0300813,
+    "result": [
+      [
+        "      1 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  마을 기록을 찾아보고 싶습니다.",
+        [
+          640,
+          112,
+          592,
+          54
+        ]
+      ],
+      [
+        "      2 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  지금은 말을 걸지 않는다",
+        [
+          640,
+          174,
+          592,
+          54
+        ]
+      ],
+      [
+        "       돌아가기",
+        [
+          28,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       기록",
+        [
+          1020,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       더보기",
+        [
+          772,
+          640,
+          232,
+          64
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await q.press('마을 기록')",
+    "started": 1792288110.1444993,
+    "result": null
+  },
+  {
+    "code": "(await advance())['screens']",
+    "started": 1792288111.050518,
+    "result": [
+      "r13_topics"
+    ]
+  },
+  {
+    "code": "[(x['text'],x['rect']) for x in (await brief())['buttons'] if x['text'].strip()]",
+    "started": 1792288112.8702505,
+    "result": [
+      [
+        "      1 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  광장 돌의 옛 기록을 보여 달라고 한다",
+        [
+          640,
+          112,
+          592,
+          54
+        ]
+      ],
+      [
+        "      2 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  피코가 여기 자주 왔습니까?",
+        [
+          640,
+          174,
+          592,
+          54
+        ]
+      ],
+      [
+        "       돌아가기",
+        [
+          28,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       기록",
+        [
+          1020,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       더보기",
+        [
+          772,
+          640,
+          232,
+          64
+        ]
+      ],
+      [
+        "       자료 보여주기",
+        [
+          1020,
+          560,
+          232,
+          64
+        ]
+      ]
+    ]
+  },
+  {
+    "code": "await q.press('더보기')",
+    "started": 1792288154.936065,
+    "result": null
+  },
+  {
+    "code": "await q.press('저장 · 불러오기')",
+    "started": 1792288155.8752,
+    "result": null
+  },
+  {
+    "code": "await q.press('1쪽')",
+    "started": 1792288156.7943227,
+    "result": null
+  },
+  {
+    "code": "await q.press('1쪽 4번')",
+    "started": 1792288157.6807964,
+    "result": null
+  },
+  {
+    "code": "await q.shot('32-day3-natural-save')",
+    "started": 1792288158.7650673,
+    "result": null
+  }
+]
