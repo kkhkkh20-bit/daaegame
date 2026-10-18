@@ -54,6 +54,15 @@ class MeetingFlow(unittest.TestCase):
   self.store.r13_meeting_active=True;self.store.r13_packet=('seryeon','주장')
   self.store.r13_meeting_replaying=True
   self.assertFalse(self.env['r13_meeting_can_interrupt']())
+
+ def test_only_altar_votes_can_speak_about_sacrifice(self):
+  lines=self.env['r13_meeting_reaction_lines']
+  for session in ('trial','ep1','ep2','ep3','ep4','ep5a','ep5','ep6'):
+   for stance in (0,1,2):
+    rows=lines(dict(session=session,changed=[dict(person='buri',to=stance)]))
+    self.assertTrue(rows,session)
+    self.assertNotIn('희생',str(rows),session)
+  self.assertIn('희생',str(lines(dict(session='finale',changed=[dict(person='buri',to=2)]))))
  def test_live_round_cannot_reveal_hidden_claims_or_prepare_people(self):
   before=copy.deepcopy(self.store.room13)
   self.assertEqual(self.env['r13_meeting_live_ids']('C1','s1'),['s1'])
