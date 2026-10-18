@@ -141,4 +141,4 @@ init 58 python:
 
 # Compatibility entry point; rendering is owned by r13_control.
 screen r13_antique_button(caption,icon,command,enabled=True,compact=False,chosen=False,width=None,height=None,label_size=None,icon_size=None):
-    use r13_control(caption,icon,command,enabled=enabled,chosen=chosen,width=width or 232,height=height,label_size=label_size,icon_size=icon_size)
+    use r13_control(caption,icon,command,enabled=enabled,chosen=chosen,width=width or R13_CONTROL["width"],height=height,label_size=label_size,icon_size=icon_size)

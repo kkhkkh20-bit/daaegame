@@ -1,9 +1,10 @@
 # Shared controls: composition, geometry and state treatment live here.
-screen r13_control(caption,icon,command,enabled=True,chosen=False,primary=False,width=232,height=None,label_size=None,icon_size=None,control_id=None):
+screen r13_control(caption,icon,command,enabled=True,chosen=False,primary=False,width=None,height=None,label_size=None,icon_size=None,control_id=None):
     $ ch=height or r13_control_height()
+    $ cw=width or R13_CONTROL["width"]
     button:
         id (control_id or ("r13_control_"+caption))
-        xsize width ysize ch padding (16,8)
+        xsize cw ysize ch padding (R13_CONTROL["padding"],8)
         background R13ControlSurface(primary=primary,chosen=chosen)
         hover_background R13ControlSurface(primary=primary,chosen=chosen,hovered=True)
         selected_background R13ControlSurface(primary=primary,chosen=True)

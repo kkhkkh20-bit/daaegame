@@ -111,7 +111,7 @@ screen r13_life_group_labels(entry=False, ready=False):
     if not entry and r13_field_view == "people":
         for group in r13_life_groups_here():
             fixed:
-                area (group["label_position"][0],group["label_position"][1],232,r13_control_height())
+                area (group["label_position"][0],group["label_position"][1],R13_CONTROL["width"],r13_control_height())
                 use r13_control(group["label"],"dialogue",Return(("life_group",group["id"])),enabled=ready,control_id="life_group_"+group["id"])
 
 screen r13_life_group_conversation(key, person=None):
@@ -137,8 +137,8 @@ screen r13_life_group_conversation(key, person=None):
                 text lines[line_index][1] size r13_read_size(26,30) color "#fff2cf" xsize 980
         use r13_footer_control(0,"돌아가기" if line_index == len(lines)-1 else "계속 듣기","dialogue",Return(None) if line_index == len(lines)-1 else SetScreenVariable("line_index",line_index+1),enabled=ready)
         use r13_footer_control(1,"그만 듣기","dialogue",Return(None),enabled=ready)
-        use r13_footer_control(3,"저장","save",ShowMenu("save"))
-        use r13_footer_control(4,"불러오기","load",ShowMenu("load"))
+        use r13_footer_control(3,"저장",None,ShowMenu("save"))
+        use r13_footer_control(4,"불러오기",None,ShowMenu("load"))
         key "game_menu" action Return(None)
 
 label r13_life_group_talk(key, person=None):

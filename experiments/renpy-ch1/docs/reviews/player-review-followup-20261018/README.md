@@ -23,3 +23,5 @@
 - 캡처·최종 결과 JSON은 같은 폴더에 첨부한다. 구버전 기록을 새 전체 게임 리뷰로 소개하지 않는다.
 
 최종 결과:0.19.46 통합본의 공통 UI QA와 입구 대기 의도 QA 모두 passed=true. dev/check.sh와 최종 웹 빌드 compile/lint 통과.
+
+0.19.47 후속 검증: 공통 설정 하나를224px 너비·20px 간격·70/96px 높이로 바꾸면 실제 하단5칸 전체가 함께 바뀌고,232px·16px·64/80px로 복구되는 것을 실제 엔진에서 확인했다. control-token-report.json의 passed=true를 참조한다.

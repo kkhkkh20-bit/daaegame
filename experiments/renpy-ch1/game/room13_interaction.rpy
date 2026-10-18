@@ -120,9 +120,8 @@ init 61 python:
         placed=[]
         # Group labels and the inn's fixed navigation must not cover participant names.
         group_ids={a.get("life_group") for a in actors if a.get("life_group")}
-        reserved=[tuple(g["label_position"])+(232,r13_control_height()) for g in getattr(store,"R13_LIFE_GROUPS",[]) if g["id"] in group_ids]
-        if group_ids and store.room13["location"]=="inn":
-            reserved.append((r13_world_offset()+276,186,976,64))
+        reserved=[tuple(g["label_position"])+(R13_CONTROL["width"],r13_control_height()) for g in getattr(store,"R13_LIFE_GROUPS",[]) if g["id"] in group_ids]
+        inn_nav=(r13_world_offset()+276,186,976,64) if group_ids and store.room13["location"]=="inn" else None
         def overlap(a,b):
             return max(0,min(a[0]+a[2],b[0]+b[2])-max(a[0],b[0]))*max(0,min(a[1]+a[3],b[1]+b[3])-max(a[1],b[1]))
         for actor in sorted(actors,key=lambda a:(faces[a["person"]][1],faces[a["person"]][0])):
@@ -140,6 +139,7 @@ init 61 python:
                 blocked=sum(overlap(rect,f) for f in faces.values())
                 blocked+=sum(overlap(rect,p["rect"]) for p in placed)
                 blocked+=sum(overlap(rect,r) for r in reserved)
+                if actor.get("life_group") and inn_nav:blocked+=overlap(rect,inn_nav)
                 if r13_world_width()==1280:blocked+=overlap(rect,(1075,642,180,62))
                 return blocked*10000+abs(rect[0]-preferred[0])+abs(rect[1]-preferred[1])*1.1
             rect=min(candidates,key=score)
