@@ -20,10 +20,20 @@ init 999 python:
         try:return str(r13_g2_inspect.signature(fn))
         except Exception as error:return "unavailable: "+str(error)
 
+    def r13_g2_prepare_physical_window():
+        # Diagnostic-only window resize BEFORE capture, never a screenshot resize.
+        info=renpy.get_renderer_info()
+        r13_g2_log("window_before_request",physical_size=renpy.get_physical_size(),renderer=info)
+        maximum=info.get("max_window_size",(0,0))
+        assert maximum[0]>=1280 and maximum[1]>=720,"Start Xvfb with1920x1080x24; renderer cannot fit native1280x720"
+        renpy.set_physical_size((1280,720))
+        r13_g2_log("window_resize_requested",requested=[1280,720])
+
     def r13_g2_runtime_probe():
         r13_g2_log("startup",engine_version=getattr(renpy,"version_string",None),
             engine_version_tuple=getattr(renpy,"version_tuple",None),
             virtual_viewport=[config.screen_width,config.screen_height],
+            physical_window=renpy.get_physical_size(),
             renderer=renpy.get_renderer_info(),
             render_to_surface_signature=r13_g2_signature(renpy.render_to_surface),
             tostring_signature=r13_g2_signature(getattr(r13_g2_pygame.image,"tostring",None)),
@@ -32,6 +42,7 @@ init 999 python:
             dialogue_profile_signature=r13_g2_signature(r13_dialogue_source_profile),
             final_helper_available=callable(r13_grid2_final_character_layer),
             preview_enabled=bool(store.R13_CHARACTER_GRID2_PREVIEW))
+        assert tuple(renpy.get_physical_size())==(1280,720),"Window resize not established; see physical_window, do not rescale capture"
         # Isolate API/alpha support before touching character assets.
         probe=renpy.render_to_surface(Fixed(Solid("#34567880",xsize=2,ysize=2),xysize=(1280,720)),1280,720,resize=False)
         data=r13_g2_bytes(probe)
@@ -135,4 +146,6 @@ init 999 python:
 
 testcase character_grid2_source_proof:
     pause 2.0
+    run Function(r13_g2_prepare_physical_window)
+    pause 1.0
     run Function(r13_g2_dialogue_cases)
