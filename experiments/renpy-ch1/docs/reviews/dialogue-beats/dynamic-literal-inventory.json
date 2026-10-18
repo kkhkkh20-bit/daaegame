@@ -38187,6 +38187,42 @@
     "already_static_text": false
   },
   {
+    "source": "game/systems/room13_question_discovery.rpy",
+    "line": 94,
+    "context": "R13_LIFE_CUES={\"life:\"+person+\":work\":cues for person,cues in R13_WORK_CUES.items()}",
+    "person": "dad",
+    "text": "여관 13호실에 묵던 제 아내를 찾고 있습니다. 숲에서 보신 적 있습니까?",
+    "packet": [
+      "dad",
+      "여관 13호실에 묵던 제 아내를 찾고 있습니다. 숲에서 보신 적 있습니까?"
+    ],
+    "already_static_text": false
+  },
+  {
+    "source": "game/systems/room13_question_discovery.rpy",
+    "line": 95,
+    "context": "R13_LIFE_CUES={\"life:\"+person+\":work\":cues for person,cues in R13_WORK_CUES.items()}",
+    "person": "resident_kalbaram",
+    "text": "부인은 못 봤소. 다만 댁 마차가 온 날 밤에 아이 하나를 봤지.",
+    "packet": [
+      "resident_kalbaram",
+      "부인은 못 봤소. 다만 댁 마차가 온 날 밤에 아이 하나를 봤지."
+    ],
+    "already_static_text": false
+  },
+  {
+    "source": "game/systems/room13_question_discovery.rpy",
+    "line": 184,
+    "context": "def r13_conversation_topic_lines(key):",
+    "person": "granny",
+    "text": "눈에 길이 막혀 묵는 분이 늘어서요. 장부를 보면서 날짜를 확인하는 게 낫겠어요.",
+    "packet": [
+      "granny",
+      "눈에 길이 막혀 묵는 분이 늘어서요. 장부를 보면서 날짜를 확인하는 게 낫겠어요."
+    ],
+    "already_static_text": false
+  },
+  {
     "source": "game/systems/room13_reinspect.rpy",
     "line": 20,
     "context": "file scope",

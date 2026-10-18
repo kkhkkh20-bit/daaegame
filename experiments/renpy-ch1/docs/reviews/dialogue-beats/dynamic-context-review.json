@@ -8402,6 +8402,24 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "a88f508f4b6a5c28a0d7cc7959df07e0e1a456bdc0c6b5a6684e71b18412e729"
     },
+    "711": {
+      "source": "game/systems/room13_ep3_woodfire.rpy",
+      "line": 87,
+      "context": "def r13_present(person,key,identity=False):",
+      "person": "resident_teacher",
+      "text": "그 밤 아이들은 학교에 있었어요. 보리 씨는 창고에 아이들이 있는 줄 알고 벽을 뜯은 거예요.",
+      "packet": [
+        "resident_teacher",
+        "그 밤 아이들은 학교에 있었어요. 보리 씨는 창고에 아이들이 있는 줄 알고 벽을 뜯은 거예요."
+      ],
+      "already_static_text": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "학교로 옮긴 아이들의 위치와 보리가 착각한 구조 동기를 구분하여 진술한다.",
+      "batch": "main-01916-context",
+      "application_status": "approved_art_when_available"
+    },
     "712": {
       "source": "game/systems/room13_ep3_woodfire.rpy",
       "line": 87,
@@ -17141,6 +17159,44 @@
       "text_sha256": "d7392259582f3f149017bef7847ed617cb80f000e36acc0d5985213de216eee9"
     },
     "1496": {
+      "source": "game/systems/room13_question_discovery.rpy",
+      "line": 95,
+      "context": "R13_LIFE_CUES={\"life:\"+person+\":work\":cues for person,cues in R13_WORK_CUES.items()}",
+      "person": "resident_kalbaram",
+      "text": "부인은 못 봤소. 다만 댁 마차가 온 날 밤에 아이 하나를 봤지.",
+      "packet": [
+        "resident_kalbaram",
+        "부인은 못 봤소. 다만 댁 마차가 온 날 밤에 아이 하나를 봤지."
+      ],
+      "already_static_text": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "batch": "question-discovery-20261018",
+      "reason": "아내를 찾는 질문에, 부인을 직접 보지는 못했다는 목격 범위를 밝힌 뒤 기존 첫날 밤 아이 목격담으로 이어진다. 원래 alibi:night1:resident_kalbaram의 장소·시각·아이·보온병 사실을 재사용하며, 아내의 행선지나 범인을 단정하지 않는다.",
+      "application_status": "awaiting_approved_runtime_assets",
+      "text_sha256": "b5647642dc52f9e2c8c3dbf376ccd5f0f81c14319417d4f03059e2d7544231f6"
+    },
+    "1497": {
+      "source": "game/systems/room13_question_discovery.rpy",
+      "line": 184,
+      "context": "def r13_conversation_topic_lines(key):",
+      "person": "granny",
+      "text": "눈에 길이 막혀 묵는 분이 늘어서요. 장부를 보면서 날짜를 확인하는 게 낫겠어요.",
+      "packet": [
+        "granny",
+        "눈에 길이 막혀 묵는 분이 늘어서요. 장부를 보면서 날짜를 확인하는 게 낫겠어요."
+      ],
+      "already_static_text": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "batch": "question-discovery-20261018",
+      "reason": "아내가 여관을 떠난 날짜는 장부로 확인하자는 답변 중 손님이 늘었다는 짧은 부연이다. 새 사건이나 범인 추정은 하지 않으며, 이 말을 실제로 들은 뒤 손님 수 후속 질문을 연다.",
+      "application_status": "awaiting_approved_runtime_assets",
+      "text_sha256": "bca6d4e0973b61e0748462fcae0d41fbde8872720eb79f263121102da3f03ba4"
+    },
+    "1499": {
       "source": "game/systems/room13_reinspect.rpy",
       "line": 21,
       "context": "file scope",
@@ -17159,7 +17215,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "2c8a85e64c026d2f4449dd5aa4045c4053cce19a230c0f454739a48ebe6d89a9"
     },
-    "1498": {
+    "1501": {
       "source": "game/systems/room13_reinspect.rpy",
       "line": 23,
       "context": "file scope",
@@ -17178,7 +17234,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "8581349df3f7093e8a2392e5b087a80fbf7e9c7d69d29447342262c4a1005db7"
     },
-    "1499": {
+    "1502": {
       "source": "game/systems/room13_reinspect.rpy",
       "line": 24,
       "context": "file scope",
@@ -17197,7 +17253,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "3373232b4322918615278313e50ddb02e5c291e7bc2f49e6d8ec81e4b4d29759"
     },
-    "1501": {
+    "1504": {
       "source": "game/systems/room13_reinspect.rpy",
       "line": 27,
       "context": "file scope",
@@ -17216,7 +17272,313 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "cb241aa007cc373f7a620c15622e65778a71bdadebc4f67f1cf5e713f9ef1565"
     },
+    "1506": {
+      "source": "game/systems/room13_review_knowledge.rpy",
+      "line": 106,
+      "context": "def r13_intro_direction_lines():",
+      "person": "daram",
+      "text": "엄마가 맡긴 글에는 오라는 편지를 쓴 적이 없다고 적혀 있었지?",
+      "packet": [
+        "daram",
+        "엄마가 맡긴 글에는 오라는 편지를 쓴 적이 없다고 적혀 있었지?"
+      ],
+      "already_static_text": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
+      "batch": "main-01916-context",
+      "application_status": "approved_art_when_available"
+    },
+    "1508": {
+      "source": "game/systems/room13_review_knowledge.rpy",
+      "line": 109,
+      "context": "def r13_intro_direction_lines():",
+      "person": "daram",
+      "text": "초롱 아저씨가 엄마 봉투를 맡고 있댔지?",
+      "packet": [
+        "daram",
+        "초롱 아저씨가 엄마 봉투를 맡고 있댔지?"
+      ],
+      "already_static_text": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
+      "batch": "main-01916-context",
+      "application_status": "approved_art_when_available"
+    },
+    "1509": {
+      "source": "game/systems/room13_review_knowledge.rpy",
+      "line": 113,
+      "context": "def r13_intro_direction_lines():",
+      "person": "daram",
+      "text": "나비 언니가 엄마가 초롱 아저씨에게 봉투를 건네는 걸 봤대.",
+      "packet": [
+        "daram",
+        "나비 언니가 엄마가 초롱 아저씨에게 봉투를 건네는 걸 봤대."
+      ],
+      "already_static_text": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
+      "batch": "main-01916-context",
+      "application_status": "approved_art_when_available"
+    },
+    "1511": {
+      "source": "game/systems/room13_review_knowledge.rpy",
+      "line": 115,
+      "context": "def r13_intro_direction_lines():",
+      "person": "daram",
+      "text": "까로 아저씨가 초롱 아저씨의 점검함에서 봉투를 봤대.",
+      "packet": [
+        "daram",
+        "까로 아저씨가 초롱 아저씨의 점검함에서 봉투를 봤대."
+      ],
+      "already_static_text": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
+      "batch": "main-01916-context",
+      "application_status": "approved_art_when_available"
+    },
+    "1513": {
+      "source": "game/systems/room13_review_knowledge.rpy",
+      "line": 117,
+      "context": "def r13_intro_direction_lines():",
+      "person": "daram",
+      "text": "초롱 아저씨는 엄마를 알아봤지?",
+      "packet": [
+        "daram",
+        "초롱 아저씨는 엄마를 알아봤지?"
+      ],
+      "already_static_text": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
+      "batch": "main-01916-context",
+      "application_status": "approved_art_when_available"
+    },
+    "1516": {
+      "source": "game/systems/room13_review_knowledge.rpy",
+      "line": 153,
+      "context": "def r13_conversation_topic_lines(key):",
+      "person": "resident_tok",
+      "text": "제 장부에는 그 등이 밤마다 깜빡인다고 적혀 있어요. 그런데 이제 조각까지 없어졌다니…….",
+      "packet": [
+        "resident_tok",
+        "제 장부에는 그 등이 밤마다 깜빡인다고 적혀 있어요. 그런데 이제 조각까지 없어졌다니……."
+      ],
+      "already_static_text": false,
+      "emotion": "anxious",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "고장 기록을 설명하던 톡이 조각까지 없어졌다는 사실을 걱정한다.",
+      "batch": "main-01916-context",
+      "application_status": "approved_art_when_available"
+    },
+    "1517": {
+      "source": "game/systems/room13_review_knowledge.rpy",
+      "line": 154,
+      "context": "def r13_conversation_topic_lines(key):",
+      "person": "buri",
+      "text": "온도계는 지난주에 진료소 검사원님이 빌려 갔어요. 등 속 온도를 재는 기구예요.",
+      "packet": [
+        "buri",
+        "온도계는 지난주에 진료소 검사원님이 빌려 갔어요. 등 속 온도를 재는 기구예요."
+      ],
+      "already_static_text": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
+      "batch": "main-01916-context",
+      "application_status": "approved_art_when_available"
+    },
+    "1518": {
+      "source": "game/systems/room13_review_knowledge.rpy",
+      "line": 155,
+      "context": "def r13_conversation_topic_lines(key):",
+      "person": "resident_tok",
+      "text": "제가 열었다고 몰아세우기 전에, 그 도구를 빌려 간 쪽에도 확인해 주세요.",
+      "packet": [
+        "resident_tok",
+        "제가 열었다고 몰아세우기 전에, 그 도구를 빌려 간 쪽에도 확인해 주세요."
+      ],
+      "already_static_text": false,
+      "emotion": "angry",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "도구 대여 사실을 확인하지 않은 채 자신에게 책임을 씌우는 데 항의한다.",
+      "batch": "main-01916-context",
+      "application_status": "approved_art_when_available"
+    },
+    "1519": {
+      "source": "game/systems/room13_review_knowledge.rpy",
+      "line": 159,
+      "context": "def r13_conversation_topic_lines(key):",
+      "person": "resident_lamplighter",
+      "text": "부인이 가족에게 전해 달라고 한 봉투를 맡고 있어요. 지금 어디 계신지는 저도 몰라요.",
+      "packet": [
+        "resident_lamplighter",
+        "부인이 가족에게 전해 달라고 한 봉투를 맡고 있어요. 지금 어디 계신지는 저도 몰라요."
+      ],
+      "already_static_text": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
+      "batch": "main-01916-context",
+      "application_status": "approved_art_when_available"
+    },
+    "1520": {
+      "source": "game/systems/room13_review_knowledge.rpy",
+      "line": 161,
+      "context": "def r13_conversation_topic_lines(key):",
+      "person": "resident_lamplighter",
+      "text": "전에 보여주신 부인은 기억해요. 다만 지금 어디 계신지는 저도 몰라요.",
+      "packet": [
+        "resident_lamplighter",
+        "전에 보여주신 부인은 기억해요. 다만 지금 어디 계신지는 저도 몰라요."
+      ],
+      "already_static_text": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
+      "batch": "main-01916-context",
+      "application_status": "approved_art_when_available"
+    },
+    "1521": {
+      "source": "game/systems/room13_review_knowledge.rpy",
+      "line": 163,
+      "context": "def r13_conversation_topic_lines(key):",
+      "person": "granny",
+      "text": "13호실 그대로 쓰세요. 부인이 잡아 둔 방이에요.",
+      "packet": [
+        "granny",
+        "13호실 그대로 쓰세요. 부인이 잡아 둔 방이에요."
+      ],
+      "already_static_text": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
+      "batch": "main-01916-context",
+      "application_status": "approved_art_when_available"
+    },
+    "1523": {
+      "source": "game/systems/room13_review_knowledge.rpy",
+      "line": 165,
+      "context": "def r13_conversation_topic_lines(key):",
+      "person": "daram",
+      "text": "엄마는 지금 어디 있어요?",
+      "packet": [
+        "daram",
+        "엄마는 지금 어디 있어요?"
+      ],
+      "already_static_text": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
+      "batch": "main-01916-context",
+      "application_status": "approved_art_when_available"
+    },
+    "1524": {
+      "source": "game/systems/room13_review_knowledge.rpy",
+      "line": 165,
+      "context": "def r13_conversation_topic_lines(key):",
+      "person": "granny",
+      "text": "며칠째 안 보여요. 나간 뒤로 돌아오지 않았어요.",
+      "packet": [
+        "granny",
+        "며칠째 안 보여요. 나간 뒤로 돌아오지 않았어요."
+      ],
+      "already_static_text": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
+      "batch": "main-01916-context",
+      "application_status": "approved_art_when_available"
+    },
+    "1527": {
+      "source": "game/systems/room13_review_knowledge.rpy",
+      "line": 168,
+      "context": "def r13_conversation_topic_lines(key):",
+      "person": "granny",
+      "text": "네. 가족이 오면 【13호실】을 그대로 내주라고 했어요.",
+      "packet": [
+        "granny",
+        "네. 가족이 오면 【13호실】을 그대로 내주라고 했어요."
+      ],
+      "already_static_text": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
+      "batch": "main-01916-context",
+      "application_status": "approved_art_when_available"
+    },
+    "1529": {
+      "source": "game/systems/room13_review_knowledge.rpy",
+      "line": 169,
+      "context": "def r13_conversation_topic_lines(key):",
+      "person": "granny",
+      "text": "정확한 날짜는 숙박 장부에 있어요. 어디로 갔는지는 못 들었고요.",
+      "packet": [
+        "granny",
+        "정확한 날짜는 숙박 장부에 있어요. 어디로 갔는지는 못 들었고요."
+      ],
+      "already_static_text": false,
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
+      "batch": "main-01916-context",
+      "application_status": "approved_art_when_available"
+    },
     "1531": {
+      "source": "game/systems/room13_review_knowledge.rpy",
+      "line": 171,
+      "context": "def r13_conversation_topic_lines(key):",
+      "person": "resident_lamplighter",
+      "text": "등 밑 점검함에 두었어요. 여관에는 맡기면 안 되는 글이라고 했어요.",
+      "packet": [
+        "resident_lamplighter",
+        "등 밑 점검함에 두었어요. 여관에는 맡기면 안 되는 글이라고 했어요."
+      ],
+      "already_static_text": false,
+      "emotion": "anxious",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "엄마가 숨긴 봉투의 위치는 알려 주되 여관과 공개 장소에서 글쓴이를 말하지 않도록 조심한다.",
+      "batch": "main-01916-context",
+      "application_status": "approved_art_when_available"
+    },
+    "1532": {
+      "source": "game/systems/room13_review_knowledge.rpy",
+      "line": 172,
+      "context": "def r13_conversation_topic_lines(key):",
+      "person": "resident_lamplighter",
+      "text": "꺼내서 다른 곳에서 읽어 주세요. 누가 보냈는지 여기서 이야기하지 마시고요.",
+      "packet": [
+        "resident_lamplighter",
+        "꺼내서 다른 곳에서 읽어 주세요. 누가 보냈는지 여기서 이야기하지 마시고요."
+      ],
+      "already_static_text": false,
+      "emotion": "anxious",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "엄마가 숨긴 봉투의 위치는 알려 주되 여관과 공개 장소에서 글쓴이를 말하지 않도록 조심한다.",
+      "batch": "main-01916-context",
+      "application_status": "approved_art_when_available"
+    },
+    "1534": {
       "source": "game/systems/room13_shop.rpy",
       "line": 9,
       "context": "R13_ITEM_TOPICS = {",
@@ -17235,7 +17597,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "db618e3c0e3f11e2b13148185052d79af87a9200e85743f617342f77897a51f8"
     },
-    "1533": {
+    "1536": {
       "source": "game/systems/room13_shop.rpy",
       "line": 11,
       "context": "R13_ITEM_TOPICS = {",
@@ -17254,7 +17616,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "7ef39510eecf2f2625d8b9c889808e32c56efebacc8a51f9b0372b6d8cd0d6e7"
     },
-    "1535": {
+    "1538": {
       "source": "game/systems/room13_shop.rpy",
       "line": 14,
       "context": "R13_ITEM_TOPICS = {",
@@ -17273,7 +17635,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "ac409cb1877afffcafd4837fa38ca141297a34042aa8bd6806dbc75bcb44bd20"
     },
-    "1537": {
+    "1540": {
       "source": "game/systems/room13_shop.rpy",
       "line": 16,
       "context": "R13_ITEM_TOPICS = {",
@@ -17292,7 +17654,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "4bd64847f650cddcc4b1dd2b4ccfd474dd5f70dc2506afd9dbb271d9a084d698"
     },
-    "1539": {
+    "1542": {
       "source": "game/systems/room13_shop.rpy",
       "line": 19,
       "context": "R13_ITEM_TOPICS = {",
@@ -17311,7 +17673,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "ba2b671b659968fcc2170e402da1dd2f944060595239ca46dff5b80668a8a6ac"
     },
-    "1540": {
+    "1543": {
       "source": "game/systems/room13_shop.rpy",
       "line": 20,
       "context": "R13_ITEM_TOPICS = {",
@@ -17330,7 +17692,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "b1137f24763c7dd0f6383fda255edafdadfb8d7bbfb6ea78d3bba9feceff9997"
     },
-    "1542": {
+    "1545": {
       "source": "game/systems/room13_shop.rpy",
       "line": 22,
       "context": "R13_ITEM_TOPICS = {",
@@ -17349,7 +17711,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "3cc0190958d16a1a9d2c8a58ebde0c59943ace0bdf5a6db40eeb2c19d1f3ade6"
     },
-    "1544": {
+    "1547": {
       "source": "game/systems/room13_shop.rpy",
       "line": 25,
       "context": "R13_ITEM_TOPICS = {",
@@ -17368,7 +17730,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "52efe364c3a1483759ef184b8882532ce164a445f63c71b255d65187ed4f212b"
     },
-    "1545": {
+    "1548": {
       "source": "game/systems/room13_shop.rpy",
       "line": 26,
       "context": "R13_ITEM_TOPICS = {",
@@ -17387,7 +17749,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "de752a66d37be449705cd610eb0975faff160c034e3c0fcf3c3b079aa9e3c109"
     },
-    "1548": {
+    "1551": {
       "source": "game/systems/room13_shop.rpy",
       "line": 30,
       "context": "R13_ITEM_TOPICS = {",
@@ -17406,7 +17768,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "c23566054ab3b423421c9452fffb9b46032ab37ec8b65e1f77ab613fc7127597"
     },
-    "1549": {
+    "1552": {
       "source": "game/systems/room13_shop.rpy",
       "line": 31,
       "context": "R13_ITEM_TOPICS = {",
@@ -17425,7 +17787,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "fe866806546be1d2c4c9131325606d62c5b5265d3a2b29c2d3ad011b656729a4"
     },
-    "1551": {
+    "1554": {
       "source": "game/systems/room13_shop.rpy",
       "line": 34,
       "context": "R13_ITEM_TOPICS = {",
@@ -17444,7 +17806,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "1b4d6f5e9e7e98a9953bf8c8b0e5e4dd462f47256820e521017f441b27bd7656"
     },
-    "1553": {
+    "1556": {
       "source": "game/systems/room13_shop.rpy",
       "line": 36,
       "context": "R13_ITEM_TOPICS = {",
@@ -17463,7 +17825,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "0bcdc62a5bd45cc725592a45edb0f85268c0864882bd65447374e8c2c36af296"
     },
-    "1555": {
+    "1558": {
       "source": "game/systems/room13_shop.rpy",
       "line": 39,
       "context": "R13_ITEM_TOPICS = {",
@@ -17482,7 +17844,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "858f869f1770d26b4304eeebb734f50903360667129f0fca91284c078026048d"
     },
-    "1556": {
+    "1559": {
       "source": "game/systems/room13_shop.rpy",
       "line": 40,
       "context": "R13_ITEM_TOPICS = {",
@@ -17501,7 +17863,61 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "7d3a7d41cb5de7db57e228ddaa546d1b7b89ec62d5d121889e4a6bd6b33440be"
     },
-    "1562": {
+    "1560": {
+      "source": "game/systems/room13_story_continuity.rpy",
+      "line": 36,
+      "context": "R13_MOM_ABSENT_LINES = dict([",
+      "person": "resident_seori",
+      "text": "등이 전부 밝아졌어요. 돌이 다시 데워진 겁니다. 아이들은…… 안 죽어도 됐어요.",
+      "packet": [
+        "resident_seori",
+        "등이 전부 밝아졌어요. 돌이 다시 데워진 겁니다. 아이들은…… 안 죽어도 됐어요."
+      ],
+      "already_static_text": false,
+      "emotion": "anxious",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "사람을 바치지 않고도 돌이 데워진 것을 확인한 뒤 죽은 아이들의 불필요한 희생을 슬퍼한다. 별도 슬픔 원화는 제작 요청으로 유지.",
+      "batch": "main-01916-context",
+      "application_status": "approved_art_when_available"
+    },
+    "1561": {
+      "source": "game/systems/room13_story_continuity.rpy",
+      "line": 38,
+      "context": "R13_MOM_ABSENT_LINES = dict([",
+      "person": "resident_bori",
+      "text": "(너울을 노려본다) ……그 수레, 대체 어디로 가는 건데.",
+      "packet": [
+        "resident_bori",
+        "(너울을 노려본다) ……그 수레, 대체 어디로 가는 건데."
+      ],
+      "already_static_text": false,
+      "emotion": "angry",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "너울의 이송 명분과 불가피했다는 변명을 실제 밝아진 등으로 반박하며 분노를 드러낸다.",
+      "batch": "main-01916-context",
+      "application_status": "approved_art_when_available"
+    },
+    "1564": {
+      "source": "game/systems/room13_story_continuity.rpy",
+      "line": 44,
+      "context": "R13_MOM_ABSENT_LINES = dict([",
+      "person": "resident_bori",
+      "text": "뭘 어쩔 수 없어. 어젯밤 아무도 안 바쳤는데 등이 밝아졌잖아.",
+      "packet": [
+        "resident_bori",
+        "뭘 어쩔 수 없어. 어젯밤 아무도 안 바쳤는데 등이 밝아졌잖아."
+      ],
+      "already_static_text": false,
+      "emotion": "angry",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "너울의 이송 명분과 불가피했다는 변명을 실제 밝아진 등으로 반박하며 분노를 드러낸다.",
+      "batch": "main-01916-context",
+      "application_status": "approved_art_when_available"
+    },
+    "1565": {
       "source": "game/systems/room13_story_continuity.rpy",
       "line": 72,
       "context": "def r13_debate_seats(session):",
@@ -17520,7 +17936,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "3a2cd3f73928cc3e330f58aebe71ba27ccefdc32010c987c041db4b1097b22c7"
     },
-    "1563": {
+    "1566": {
       "source": "game/systems/room13_story_continuity.rpy",
       "line": 73,
       "context": "def r13_debate_seats(session):",
@@ -17539,7 +17955,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "077d527152c739faf8b3c340706724373ed47a7474c1bd0f097b26b45c60b4aa"
     },
-    "1564": {
+    "1567": {
       "source": "game/systems/room13_story_continuity.rpy",
       "line": 74,
       "context": "def r13_debate_seats(session):",
@@ -17558,7 +17974,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "afce65cf72776f7e329f7834febf01f9b58ae187410ca17a7e09b491b257f310"
     },
-    "1567": {
+    "1570": {
       "source": "game/systems/room13_testimony.rpy",
       "line": 25,
       "context": "def _r13_tm_topic(npc,title,give,lines,need=(\"lodging\",),not_flags=()):",
@@ -17577,7 +17993,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "a8aca1a36eadd12acbcc119491805df9fde34114c79ea9aa827de03dd5221c1f"
     },
-    "1569": {
+    "1572": {
       "source": "game/systems/room13_testimony.rpy",
       "line": 27,
       "context": "def _r13_tm_topic(npc,title,give,lines,need=(\"lodging\",),not_flags=()):",
@@ -17596,7 +18012,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "92333a47c604078feb142379eb7e33695dc2c5ad537c341694cba7deeb3e9c9f"
     },
-    "1572": {
+    "1575": {
       "source": "game/systems/room13_testimony.rpy",
       "line": 30,
       "context": "def _r13_tm_topic(npc,title,give,lines,need=(\"lodging\",),not_flags=()):",
@@ -17615,7 +18031,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "db8bf1c74ffe986a3ddfeeed7e7a6c6d54e7e352dbc9484f635f99068257e186"
     },
-    "1574": {
+    "1577": {
       "source": "game/systems/room13_testimony.rpy",
       "line": 32,
       "context": "def _r13_tm_topic(npc,title,give,lines,need=(\"lodging\",),not_flags=()):",
@@ -17634,7 +18050,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "85302cd70d86664e32d8628b7a216a81d832ea65126c8efc7b0f22e952a03f58"
     },
-    "1576": {
+    "1579": {
       "source": "game/systems/room13_testimony.rpy",
       "line": 35,
       "context": "def _r13_tm_topic(npc,title,give,lines,need=(\"lodging\",),not_flags=()):",
@@ -17653,7 +18069,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "345281f7ff6b3e39118f86858f8c432aa259dbd92d7ac8ec1e32e437153112a5"
     },
-    "1578": {
+    "1581": {
       "source": "game/systems/room13_testimony.rpy",
       "line": 37,
       "context": "def _r13_tm_topic(npc,title,give,lines,need=(\"lodging\",),not_flags=()):",
@@ -17672,7 +18088,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "1f70db30195405b52ef6e3361b05c1777c74eba246a4d6e8de390f5aa6bf959e"
     },
-    "1580": {
+    "1583": {
       "source": "game/systems/room13_testimony.rpy",
       "line": 53,
       "context": "def r13_present(person,key,identity=False):",
@@ -17691,7 +18107,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "31f82293882e0b4aeef7517d5eb836f57a117a5e68e7544346e5608f97308813"
     },
-    "1582": {
+    "1585": {
       "source": "game/systems/room13_testimony.rpy",
       "line": 55,
       "context": "def r13_present(person,key,identity=False):",
@@ -17710,7 +18126,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "372218450c938546294cec476d109bd9aaf82a91a7003ab29fb395f3e0c85834"
     },
-    "1584": {
+    "1587": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 76,
       "context": "def r13_kongi_report(place,day,flags):",
@@ -17729,7 +18145,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "60903b7525dc01851af289e788c306886193efeb07ffb66ef5ce5adc1aa55f1a"
     },
-    "1585": {
+    "1588": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 79,
       "context": "def r13_kongi_report(place,day,flags):",
@@ -17748,7 +18164,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "66dcdead2c335313e9f9c667efc7f6baef920f51ec7dff25cc40e31fc4c03513"
     },
-    "1586": {
+    "1589": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 82,
       "context": "def r13_kongi_report(place,day,flags):",
@@ -17767,7 +18183,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "74e366b837daf4dcd183b1c4788208a8cd6c75eb9f5bbfc2c90f716aa72e0a06"
     },
-    "1587": {
+    "1590": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 86,
       "context": "def r13_kongi_report(place,day,flags):",
@@ -17786,7 +18202,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "a5b7bf5e9d76f48765b598dbc803c6ec9c66f91360c0da9ae65cc3de1fc0b1fb"
     },
-    "1588": {
+    "1591": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 87,
       "context": "def r13_kongi_report(place,day,flags):",
@@ -17805,7 +18221,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "d7a38381ef5be77da2e11b3c87abd7881394c48b1dea377c579ce0761078b3fd"
     },
-    "1589": {
+    "1592": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 90,
       "context": "def r13_kongi_report(place,day,flags):",
@@ -17824,7 +18240,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "8480df66a9055b4703f4125a2d060309b550c57bded420b65adfefb0753e34b3"
     },
-    "1590": {
+    "1593": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 91,
       "context": "def r13_kongi_report(place,day,flags):",
@@ -17843,7 +18259,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "0410e7bb2127c1b72f65f199a756d0064d6402df005130ef2fe4419a9c0c95ae"
     },
-    "1592": {
+    "1595": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 113,
       "context": "def r13_lock_overnight(room_safe):",
@@ -17862,7 +18278,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "b01cc7d299658fbfad1ef41838df555a5b3ef8a2683a88cda9d5386c24697d53"
     },
-    "1594": {
+    "1597": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 115,
       "context": "def r13_lock_overnight(room_safe):",
@@ -17881,7 +18297,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "78a7147988b00947466bd62a3a92163aeb316facce0b2adc87301762dbd1055a"
     },
-    "1596": {
+    "1599": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 117,
       "context": "def r13_lock_overnight(room_safe):",
@@ -17900,7 +18316,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "678249db72166fcdc696e1c1c1de844425a536a3d8a5a91a29d303237922839d"
     },
-    "1597": {
+    "1600": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 119,
       "context": "def r13_lock_overnight(room_safe):",
@@ -17919,7 +18335,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "6634b28f31dafbe2cfd066073ebced1ea60a5dc398db641deddaa40e108209f7"
     },
-    "1598": {
+    "1601": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 120,
       "context": "def r13_lock_overnight(room_safe):",
@@ -17938,7 +18354,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "710f7fb3c656de11d9a4334511e83601b33d8596bcbf6dc4d8a72a9b3c83abf5"
     },
-    "1599": {
+    "1602": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 122,
       "context": "def r13_lock_overnight(room_safe):",
@@ -17957,7 +18373,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "2671a174e1ba7c1c3ac5093fcb9a3cf391361d28ef72f3582e8841c849d34369"
     },
-    "1600": {
+    "1603": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 123,
       "context": "def r13_lock_overnight(room_safe):",
@@ -17976,7 +18392,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "6d1b6e66ba899161ce12ff7d6400411bd21df1ca4a87b1c73db98f62b8202c79"
     },
-    "1602": {
+    "1605": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 126,
       "context": "def r13_lock_overnight(room_safe):",
@@ -17995,7 +18411,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "31a47762c4a2ca9bf9fda10e5e601a7ba4183ab067e01d71c0fcb9b8d14f8565"
     },
-    "1603": {
+    "1606": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 128,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18014,7 +18430,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "1af06437749aea2e7f77e9be510baebf775588cdf3cb136c27b8c5cc79f731a3"
     },
-    "1604": {
+    "1607": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 129,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18033,7 +18449,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "97100e520c229ad32935ff2b6aafdf121d422bb81b1cbbc697e8a8e4932d78d1"
     },
-    "1606": {
+    "1609": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 132,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18052,7 +18468,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "2c5b1c7ea90b5bf7d5d916c26f51f2d2556af9cb7b389908a183437c290ee1e0"
     },
-    "1607": {
+    "1610": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 133,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18071,7 +18487,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "5b3deebb44b28f0ab5504c8f2d5322f1bca3b7cb18a06ff579b18ef2ea2dda65"
     },
-    "1608": {
+    "1611": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 135,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18090,7 +18506,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "3c735d1b97b6664303ade3408d0c9581f72b7f5b5bf6359824bcf6ed31cd160a"
     },
-    "1609": {
+    "1612": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 136,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18109,7 +18525,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "dddcc14c5118d412b22d4f999a2a21afa000a38fbf281601e4c16e7b4e75b59e"
     },
-    "1610": {
+    "1613": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 138,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18128,7 +18544,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "e7b73dd2cf69384ce483619696c943059eef9c3c3e7cc35c3ea5ca4e41bac931"
     },
-    "1611": {
+    "1614": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 139,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18147,7 +18563,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "a10366931e316cfe52e806246d47c1c03e2b29a12c22f4ee2e93b07fcd663c41"
     },
-    "1613": {
+    "1616": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 143,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18166,7 +18582,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "ef905d02720b88c0230a53dc9f402292d927a29dfc8b71baa489e65eb7c554fd"
     },
-    "1615": {
+    "1618": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 145,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18185,7 +18601,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "a402fc0d50817fb0ac3c1f29679c23d15ef363222879259ad8616cab29540f89"
     },
-    "1616": {
+    "1619": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 146,
       "context": "def r13_lock_overnight(room_safe):",
@@ -18204,7 +18620,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "24de25d779fc3c8e6f32e776dc5e0fa637616988f5c237541807bd2ecb1d24f8"
     },
-    "1617": {
+    "1620": {
       "source": "game/systems/room13_town_events2.rpy",
       "line": 49,
       "context": "def _ev2_topic(npc,title,day,need=(),flags=(),give=(),not_flags=(),lines=()):",
@@ -18223,7 +18639,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "589ca5a9641a36c8d9a83e73115f24819d122c472b01506998f5c4b541925e8f"
     },
-    "1619": {
+    "1622": {
       "source": "game/systems/room13_town_events2.rpy",
       "line": 51,
       "context": "def _ev2_topic(npc,title,day,need=(),flags=(),give=(),not_flags=(),lines=()):",
@@ -18242,7 +18658,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "2b4a9cebb352c99ecb91a721b50e61e5b56ceef3003b376bef6e7492918aba80"
     },
-    "1620": {
+    "1623": {
       "source": "game/systems/room13_town_events2.rpy",
       "line": 54,
       "context": "def _ev2_topic(npc,title,day,need=(),flags=(),give=(),not_flags=(),lines=()):",
@@ -18261,7 +18677,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "d59f68ce67ad820b13f7328495c303037ca2b30de6078fe1edfff1b51eaf3bd4"
     },
-    "1622": {
+    "1625": {
       "source": "game/systems/room13_town_events2.rpy",
       "line": 56,
       "context": "def _ev2_topic(npc,title,day,need=(),flags=(),give=(),not_flags=(),lines=()):",
@@ -18280,7 +18696,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "e602b105fa35d98e688c0787f2e5d136972e960f32508e68edf5c58b4b1fd594"
     },
-    "1623": {
+    "1626": {
       "source": "game/systems/room13_town_events2.rpy",
       "line": 58,
       "context": "def _ev2_topic(npc,title,day,need=(),flags=(),give=(),not_flags=(),lines=()):",
@@ -18299,7 +18715,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "e977fa40d53d7402748001e60a6c5df5559028318380725b61f4295e2f8c69f6"
     },
-    "1624": {
+    "1627": {
       "source": "game/systems/room13_town_events2.rpy",
       "line": 59,
       "context": "def _ev2_topic(npc,title,day,need=(),flags=(),give=(),not_flags=(),lines=()):",
@@ -18318,7 +18734,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "e251c829560c53222f9c08d6c92bc2707c5751dd66cf2f6114959e8c73cd3f0c"
     },
-    "1625": {
+    "1628": {
       "source": "game/systems/room13_town_events2.rpy",
       "line": 61,
       "context": "def _ev2_topic(npc,title,day,need=(),flags=(),give=(),not_flags=(),lines=()):",
@@ -18337,7 +18753,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "d5ab82c6d7bac6f388abbde063a5464d770cde4c0b5b985ea9bc48a624e0fa3b"
     },
-    "1626": {
+    "1629": {
       "source": "game/systems/room13_town_events2.rpy",
       "line": 63,
       "context": "def _ev2_topic(npc,title,day,need=(),flags=(),give=(),not_flags=(),lines=()):",
@@ -18356,7 +18772,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "f8a73f9e3f08bb3722fd3e8f7392f9cdd9bd32095909521f1d8e482eba0ccd49"
     },
-    "1627": {
+    "1630": {
       "source": "game/systems/room13_town_events2.rpy",
       "line": 64,
       "context": "def _ev2_topic(npc,title,day,need=(),flags=(),give=(),not_flags=(),lines=()):",
@@ -18375,7 +18791,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "853775d5f6278625fc1d0f5a24b51463a7c57839573e22c0007dbcc3202d6eb8"
     },
-    "1633": {
+    "1636": {
       "source": "game/systems/room13_use_knowledge.rpy",
       "line": 31,
       "context": "file scope",
@@ -18394,7 +18810,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "3fcac98504d44da9cc5b3d98617d5f2d4e36a3ed982b3aea2a06f5d3bdbc244b"
     },
-    "1634": {
+    "1637": {
       "source": "game/systems/room13_use_knowledge.rpy",
       "line": 32,
       "context": "file scope",
@@ -18413,7 +18829,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "d0372c5cfcabe52b54d3eff7b329a6220d5ff96c757adec88b7c69d9c44e42b3"
     },
-    "1636": {
+    "1639": {
       "source": "game/systems/room13_use_knowledge.rpy",
       "line": 35,
       "context": "file scope",
@@ -18432,7 +18848,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "ddc00b3e45288ff4514871b1ea540378067ac3fdcc3b1a7256639e321849f8a6"
     },
-    "1639": {
+    "1642": {
       "source": "game/systems/room13_use_knowledge.rpy",
       "line": 39,
       "context": "file scope",
@@ -18451,7 +18867,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "d486f2ee1ec135066fed63009e6f7b42bb53efeb16f48adaadb23fd3c8e9bf7c"
     },
-    "1640": {
+    "1643": {
       "source": "game/systems/room13_use_knowledge.rpy",
       "line": 40,
       "context": "file scope",
@@ -18470,7 +18886,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "6e8599d7bcf31a1b8d1e4616fd04b7972d84004308800c1ddf264a0755629301"
     },
-    "1642": {
+    "1645": {
       "source": "game/systems/room13_use_knowledge.rpy",
       "line": 43,
       "context": "file scope",
@@ -18489,7 +18905,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "1acaff1582e7a66e61b0c5472f72ae8cc96dc66f692e7a2a80f445755c7db90a"
     },
-    "1645": {
+    "1648": {
       "source": "game/systems/room13_use_knowledge.rpy",
       "line": 47,
       "context": "file scope",
@@ -18508,7 +18924,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "c1cb1ae621de64f3f34368b78102e4c06875ebcd804da65fceab50a13325957c"
     },
-    "1647": {
+    "1650": {
       "source": "game/systems/room13_use_knowledge.rpy",
       "line": 61,
       "context": "def r13_present(person,key,identity=False):",
@@ -18527,7 +18943,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "4f0ac7fbdef426022792ad8e09698a316793dce269d2e69725725a2136e88253"
     },
-    "1648": {
+    "1651": {
       "source": "game/systems/room13_week1_cases.rpy",
       "line": 23,
       "context": "file scope",
@@ -18546,7 +18962,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "ccf477665b55471865b6a728e2ea0527ad0ebbc9f5fa67b31ba144aff8eee2d4"
     },
-    "1650": {
+    "1653": {
       "source": "game/systems/room13_week1_cases.rpy",
       "line": 25,
       "context": "file scope",
@@ -18565,7 +18981,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "163a82eae0c0486e54b7924008d52d5b24f7866f75d734547986319a7e574ffb"
     },
-    "1651": {
+    "1654": {
       "source": "game/systems/room13_week1_cases.rpy",
       "line": 26,
       "context": "file scope",
@@ -18584,7 +19000,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "afce65cf72776f7e329f7834febf01f9b58ae187410ca17a7e09b491b257f310"
     },
-    "1652": {
+    "1655": {
       "source": "game/systems/room13_week1_cases.rpy",
       "line": 32,
       "context": "R13_FAKE_TESTIMONY_LINES=[",
@@ -18603,7 +19019,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "8966fcbacb0dbf3e9ba2e09496bc437cea14b486bb50e206e6a3d0c3c3ad279a"
     },
-    "1653": {
+    "1656": {
       "source": "game/systems/room13_week1_cases.rpy",
       "line": 33,
       "context": "R13_FAKE_TESTIMONY_LINES=[",
@@ -18622,7 +19038,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "c76a32df1dbca3500600100cae2087ce526fa74914c9e8809f5be9a62cbbfb18"
     },
-    "1654": {
+    "1657": {
       "source": "game/systems/room13_week1_cases.rpy",
       "line": 34,
       "context": "R13_FAKE_TESTIMONY_LINES=[",
@@ -18641,7 +19057,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "f06cb9e8668b9b626c0515cbacd48b60d2a34dd4564f2d46c1d45292961d8951"
     },
-    "1655": {
+    "1658": {
       "source": "game/systems/room13_week1_cases.rpy",
       "line": 35,
       "context": "R13_FAKE_TESTIMONY_LINES=[",
@@ -18660,7 +19076,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "011e85a125a0878c8561fad6f036ae04b5ba31a999f45c35be04e954e1831108"
     },
-    "1657": {
+    "1660": {
       "source": "game/systems/room13_week1_cases.rpy",
       "line": 46,
       "context": "R13_FAKE_TESTIMONY_LINES=[",
@@ -18679,7 +19095,7 @@
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "9ddb4f969f5a8891bf9af32e5200a9b9616356ac8128e7d049b6cf9e651254dd"
     },
-    "1660": {
+    "1663": {
       "source": "game/systems/room13_work_clues.rpy",
       "line": 14,
       "context": "R13_WORK_RELATIONS={",
@@ -18697,384 +19113,6 @@
       "reason": "실제 시야·봉인·참석 여부와 기록을 확인하고 증언의 범위를 제한한다.",
       "application_status": "awaiting_approved_runtime_assets",
       "text_sha256": "2aebb893dc5ad0ddc074fbba0c4aa118f22300d476a3884d378db060a3fcbaa5"
-    },
-    "711": {
-      "source": "game/systems/room13_ep3_woodfire.rpy",
-      "line": 87,
-      "context": "def r13_present(person,key,identity=False):",
-      "person": "resident_teacher",
-      "text": "그 밤 아이들은 학교에 있었어요. 보리 씨는 창고에 아이들이 있는 줄 알고 벽을 뜯은 거예요.",
-      "packet": [
-        "resident_teacher",
-        "그 밤 아이들은 학교에 있었어요. 보리 씨는 창고에 아이들이 있는 줄 알고 벽을 뜯은 거예요."
-      ],
-      "already_static_text": false,
-      "emotion": "neutral",
-      "reaction": false,
-      "reviewed": true,
-      "reason": "학교로 옮긴 아이들의 위치와 보리가 착각한 구조 동기를 구분하여 진술한다.",
-      "batch": "main-01916-context",
-      "application_status": "approved_art_when_available"
-    },
-    "1503": {
-      "source": "game/systems/room13_review_knowledge.rpy",
-      "line": 106,
-      "context": "def r13_intro_direction_lines():",
-      "person": "daram",
-      "text": "엄마가 맡긴 글에는 오라는 편지를 쓴 적이 없다고 적혀 있었지?",
-      "packet": [
-        "daram",
-        "엄마가 맡긴 글에는 오라는 편지를 쓴 적이 없다고 적혀 있었지?"
-      ],
-      "already_static_text": false,
-      "emotion": "neutral",
-      "reaction": false,
-      "reviewed": true,
-      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
-      "batch": "main-01916-context",
-      "application_status": "approved_art_when_available"
-    },
-    "1505": {
-      "source": "game/systems/room13_review_knowledge.rpy",
-      "line": 109,
-      "context": "def r13_intro_direction_lines():",
-      "person": "daram",
-      "text": "초롱 아저씨가 엄마 봉투를 맡고 있댔지?",
-      "packet": [
-        "daram",
-        "초롱 아저씨가 엄마 봉투를 맡고 있댔지?"
-      ],
-      "already_static_text": false,
-      "emotion": "neutral",
-      "reaction": false,
-      "reviewed": true,
-      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
-      "batch": "main-01916-context",
-      "application_status": "approved_art_when_available"
-    },
-    "1506": {
-      "source": "game/systems/room13_review_knowledge.rpy",
-      "line": 113,
-      "context": "def r13_intro_direction_lines():",
-      "person": "daram",
-      "text": "나비 언니가 엄마가 초롱 아저씨에게 봉투를 건네는 걸 봤대.",
-      "packet": [
-        "daram",
-        "나비 언니가 엄마가 초롱 아저씨에게 봉투를 건네는 걸 봤대."
-      ],
-      "already_static_text": false,
-      "emotion": "neutral",
-      "reaction": false,
-      "reviewed": true,
-      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
-      "batch": "main-01916-context",
-      "application_status": "approved_art_when_available"
-    },
-    "1508": {
-      "source": "game/systems/room13_review_knowledge.rpy",
-      "line": 115,
-      "context": "def r13_intro_direction_lines():",
-      "person": "daram",
-      "text": "까로 아저씨가 초롱 아저씨의 점검함에서 봉투를 봤대.",
-      "packet": [
-        "daram",
-        "까로 아저씨가 초롱 아저씨의 점검함에서 봉투를 봤대."
-      ],
-      "already_static_text": false,
-      "emotion": "neutral",
-      "reaction": false,
-      "reviewed": true,
-      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
-      "batch": "main-01916-context",
-      "application_status": "approved_art_when_available"
-    },
-    "1510": {
-      "source": "game/systems/room13_review_knowledge.rpy",
-      "line": 117,
-      "context": "def r13_intro_direction_lines():",
-      "person": "daram",
-      "text": "초롱 아저씨는 엄마를 알아봤지?",
-      "packet": [
-        "daram",
-        "초롱 아저씨는 엄마를 알아봤지?"
-      ],
-      "already_static_text": false,
-      "emotion": "neutral",
-      "reaction": false,
-      "reviewed": true,
-      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
-      "batch": "main-01916-context",
-      "application_status": "approved_art_when_available"
-    },
-    "1513": {
-      "source": "game/systems/room13_review_knowledge.rpy",
-      "line": 153,
-      "context": "def r13_conversation_topic_lines(key):",
-      "person": "resident_tok",
-      "text": "제 장부에는 그 등이 밤마다 깜빡인다고 적혀 있어요. 그런데 이제 조각까지 없어졌다니…….",
-      "packet": [
-        "resident_tok",
-        "제 장부에는 그 등이 밤마다 깜빡인다고 적혀 있어요. 그런데 이제 조각까지 없어졌다니……."
-      ],
-      "already_static_text": false,
-      "emotion": "anxious",
-      "reaction": false,
-      "reviewed": true,
-      "reason": "고장 기록을 설명하던 톡이 조각까지 없어졌다는 사실을 걱정한다.",
-      "batch": "main-01916-context",
-      "application_status": "approved_art_when_available"
-    },
-    "1514": {
-      "source": "game/systems/room13_review_knowledge.rpy",
-      "line": 154,
-      "context": "def r13_conversation_topic_lines(key):",
-      "person": "buri",
-      "text": "온도계는 지난주에 진료소 검사원님이 빌려 갔어요. 등 속 온도를 재는 기구예요.",
-      "packet": [
-        "buri",
-        "온도계는 지난주에 진료소 검사원님이 빌려 갔어요. 등 속 온도를 재는 기구예요."
-      ],
-      "already_static_text": false,
-      "emotion": "neutral",
-      "reaction": false,
-      "reviewed": true,
-      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
-      "batch": "main-01916-context",
-      "application_status": "approved_art_when_available"
-    },
-    "1515": {
-      "source": "game/systems/room13_review_knowledge.rpy",
-      "line": 155,
-      "context": "def r13_conversation_topic_lines(key):",
-      "person": "resident_tok",
-      "text": "제가 열었다고 몰아세우기 전에, 그 도구를 빌려 간 쪽에도 확인해 주세요.",
-      "packet": [
-        "resident_tok",
-        "제가 열었다고 몰아세우기 전에, 그 도구를 빌려 간 쪽에도 확인해 주세요."
-      ],
-      "already_static_text": false,
-      "emotion": "angry",
-      "reaction": false,
-      "reviewed": true,
-      "reason": "도구 대여 사실을 확인하지 않은 채 자신에게 책임을 씌우는 데 항의한다.",
-      "batch": "main-01916-context",
-      "application_status": "approved_art_when_available"
-    },
-    "1516": {
-      "source": "game/systems/room13_review_knowledge.rpy",
-      "line": 159,
-      "context": "def r13_conversation_topic_lines(key):",
-      "person": "resident_lamplighter",
-      "text": "부인이 가족에게 전해 달라고 한 봉투를 맡고 있어요. 지금 어디 계신지는 저도 몰라요.",
-      "packet": [
-        "resident_lamplighter",
-        "부인이 가족에게 전해 달라고 한 봉투를 맡고 있어요. 지금 어디 계신지는 저도 몰라요."
-      ],
-      "already_static_text": false,
-      "emotion": "neutral",
-      "reaction": false,
-      "reviewed": true,
-      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
-      "batch": "main-01916-context",
-      "application_status": "approved_art_when_available"
-    },
-    "1517": {
-      "source": "game/systems/room13_review_knowledge.rpy",
-      "line": 161,
-      "context": "def r13_conversation_topic_lines(key):",
-      "person": "resident_lamplighter",
-      "text": "전에 보여주신 부인은 기억해요. 다만 지금 어디 계신지는 저도 몰라요.",
-      "packet": [
-        "resident_lamplighter",
-        "전에 보여주신 부인은 기억해요. 다만 지금 어디 계신지는 저도 몰라요."
-      ],
-      "already_static_text": false,
-      "emotion": "neutral",
-      "reaction": false,
-      "reviewed": true,
-      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
-      "batch": "main-01916-context",
-      "application_status": "approved_art_when_available"
-    },
-    "1518": {
-      "source": "game/systems/room13_review_knowledge.rpy",
-      "line": 163,
-      "context": "def r13_conversation_topic_lines(key):",
-      "person": "granny",
-      "text": "13호실 그대로 쓰세요. 부인이 잡아 둔 방이에요.",
-      "packet": [
-        "granny",
-        "13호실 그대로 쓰세요. 부인이 잡아 둔 방이에요."
-      ],
-      "already_static_text": false,
-      "emotion": "neutral",
-      "reaction": false,
-      "reviewed": true,
-      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
-      "batch": "main-01916-context",
-      "application_status": "approved_art_when_available"
-    },
-    "1520": {
-      "source": "game/systems/room13_review_knowledge.rpy",
-      "line": 165,
-      "context": "def r13_conversation_topic_lines(key):",
-      "person": "daram",
-      "text": "엄마는 지금 어디 있어요?",
-      "packet": [
-        "daram",
-        "엄마는 지금 어디 있어요?"
-      ],
-      "already_static_text": false,
-      "emotion": "neutral",
-      "reaction": false,
-      "reviewed": true,
-      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
-      "batch": "main-01916-context",
-      "application_status": "approved_art_when_available"
-    },
-    "1521": {
-      "source": "game/systems/room13_review_knowledge.rpy",
-      "line": 165,
-      "context": "def r13_conversation_topic_lines(key):",
-      "person": "granny",
-      "text": "며칠째 안 보여요. 나간 뒤로 돌아오지 않았어요.",
-      "packet": [
-        "granny",
-        "며칠째 안 보여요. 나간 뒤로 돌아오지 않았어요."
-      ],
-      "already_static_text": false,
-      "emotion": "neutral",
-      "reaction": false,
-      "reviewed": true,
-      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
-      "batch": "main-01916-context",
-      "application_status": "approved_art_when_available"
-    },
-    "1524": {
-      "source": "game/systems/room13_review_knowledge.rpy",
-      "line": 168,
-      "context": "def r13_conversation_topic_lines(key):",
-      "person": "granny",
-      "text": "네. 가족이 오면 【13호실】을 그대로 내주라고 했어요.",
-      "packet": [
-        "granny",
-        "네. 가족이 오면 【13호실】을 그대로 내주라고 했어요."
-      ],
-      "already_static_text": false,
-      "emotion": "neutral",
-      "reaction": false,
-      "reviewed": true,
-      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
-      "batch": "main-01916-context",
-      "application_status": "approved_art_when_available"
-    },
-    "1526": {
-      "source": "game/systems/room13_review_knowledge.rpy",
-      "line": 169,
-      "context": "def r13_conversation_topic_lines(key):",
-      "person": "granny",
-      "text": "정확한 날짜는 숙박 장부에 있어요. 어디로 갔는지는 못 들었고요.",
-      "packet": [
-        "granny",
-        "정확한 날짜는 숙박 장부에 있어요. 어디로 갔는지는 못 들었고요."
-      ],
-      "already_static_text": false,
-      "emotion": "neutral",
-      "reaction": false,
-      "reviewed": true,
-      "reason": "알게 된 사실과 아직 모르는 현재 행방을 구분하여 대화 상대에게 확인·안내한다. 새 증거 획득 전에는 미래 결과를 드러내지 않는다.",
-      "batch": "main-01916-context",
-      "application_status": "approved_art_when_available"
-    },
-    "1528": {
-      "source": "game/systems/room13_review_knowledge.rpy",
-      "line": 171,
-      "context": "def r13_conversation_topic_lines(key):",
-      "person": "resident_lamplighter",
-      "text": "등 밑 점검함에 두었어요. 여관에는 맡기면 안 되는 글이라고 했어요.",
-      "packet": [
-        "resident_lamplighter",
-        "등 밑 점검함에 두었어요. 여관에는 맡기면 안 되는 글이라고 했어요."
-      ],
-      "already_static_text": false,
-      "emotion": "anxious",
-      "reaction": false,
-      "reviewed": true,
-      "reason": "엄마가 숨긴 봉투의 위치는 알려 주되 여관과 공개 장소에서 글쓴이를 말하지 않도록 조심한다.",
-      "batch": "main-01916-context",
-      "application_status": "approved_art_when_available"
-    },
-    "1529": {
-      "source": "game/systems/room13_review_knowledge.rpy",
-      "line": 172,
-      "context": "def r13_conversation_topic_lines(key):",
-      "person": "resident_lamplighter",
-      "text": "꺼내서 다른 곳에서 읽어 주세요. 누가 보냈는지 여기서 이야기하지 마시고요.",
-      "packet": [
-        "resident_lamplighter",
-        "꺼내서 다른 곳에서 읽어 주세요. 누가 보냈는지 여기서 이야기하지 마시고요."
-      ],
-      "already_static_text": false,
-      "emotion": "anxious",
-      "reaction": false,
-      "reviewed": true,
-      "reason": "엄마가 숨긴 봉투의 위치는 알려 주되 여관과 공개 장소에서 글쓴이를 말하지 않도록 조심한다.",
-      "batch": "main-01916-context",
-      "application_status": "approved_art_when_available"
-    },
-    "1557": {
-      "source": "game/systems/room13_story_continuity.rpy",
-      "line": 36,
-      "context": "R13_MOM_ABSENT_LINES = dict([",
-      "person": "resident_seori",
-      "text": "등이 전부 밝아졌어요. 돌이 다시 데워진 겁니다. 아이들은…… 안 죽어도 됐어요.",
-      "packet": [
-        "resident_seori",
-        "등이 전부 밝아졌어요. 돌이 다시 데워진 겁니다. 아이들은…… 안 죽어도 됐어요."
-      ],
-      "already_static_text": false,
-      "emotion": "anxious",
-      "reaction": false,
-      "reviewed": true,
-      "reason": "사람을 바치지 않고도 돌이 데워진 것을 확인한 뒤 죽은 아이들의 불필요한 희생을 슬퍼한다. 별도 슬픔 원화는 제작 요청으로 유지.",
-      "batch": "main-01916-context",
-      "application_status": "approved_art_when_available"
-    },
-    "1558": {
-      "source": "game/systems/room13_story_continuity.rpy",
-      "line": 38,
-      "context": "R13_MOM_ABSENT_LINES = dict([",
-      "person": "resident_bori",
-      "text": "(너울을 노려본다) ……그 수레, 대체 어디로 가는 건데.",
-      "packet": [
-        "resident_bori",
-        "(너울을 노려본다) ……그 수레, 대체 어디로 가는 건데."
-      ],
-      "already_static_text": false,
-      "emotion": "angry",
-      "reaction": false,
-      "reviewed": true,
-      "reason": "너울의 이송 명분과 불가피했다는 변명을 실제 밝아진 등으로 반박하며 분노를 드러낸다.",
-      "batch": "main-01916-context",
-      "application_status": "approved_art_when_available"
-    },
-    "1561": {
-      "source": "game/systems/room13_story_continuity.rpy",
-      "line": 44,
-      "context": "R13_MOM_ABSENT_LINES = dict([",
-      "person": "resident_bori",
-      "text": "뭘 어쩔 수 없어. 어젯밤 아무도 안 바쳤는데 등이 밝아졌잖아.",
-      "packet": [
-        "resident_bori",
-        "뭘 어쩔 수 없어. 어젯밤 아무도 안 바쳤는데 등이 밝아졌잖아."
-      ],
-      "already_static_text": false,
-      "emotion": "angry",
-      "reaction": false,
-      "reviewed": true,
-      "reason": "너울의 이송 명분과 불가피했다는 변명을 실제 밝아진 등으로 반박하며 분노를 드러낸다.",
-      "batch": "main-01916-context",
-      "application_status": "approved_art_when_available"
     }
   },
   "excluded_rows": {
@@ -19315,7 +19353,7 @@
       "category": "non_dialogue_name_or_topic_title",
       "reviewed": true
     },
-    "1565": {
+    "1568": {
       "source": "game/systems/room13_testimony.rpy",
       "line": 23,
       "context": "def _r13_tm_topic(npc,title,give,lines,need=(\"lodging\",),not_flags=()):",
@@ -19350,7 +19388,7 @@
       "category": "non_dialogue_name_or_topic_title",
       "reviewed": true
     },
-    "1570": {
+    "1573": {
       "source": "game/systems/room13_testimony.rpy",
       "line": 28,
       "context": "def _r13_tm_topic(npc,title,give,lines,need=(\"lodging\",),not_flags=()):",
@@ -19385,7 +19423,7 @@
       "category": "non_dialogue_name_or_topic_title",
       "reviewed": true
     },
-    "1583": {
+    "1586": {
       "source": "game/systems/room13_town_events.rpy",
       "line": 44,
       "context": "R13_KONGI_PLACES=((\"store\",\"공동 창고\"),(\"workshop\",\"수리점 뒤 골목\"),(\"post\",\"우체국\"),(\"kitchen\",\"여관 주방\"))",

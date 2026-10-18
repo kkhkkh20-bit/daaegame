@@ -1,0 +1,20 @@
+{
+  "kind": "Focused causal-question and empty-contact PC/touch fixtures; not a complete story playthrough",
+  "checks": [
+    "Day-2 initial questions contain wife lead, not guests/locks/first-night; actual wife/date dialogue mentions guests and only then adds that follow-up",
+    "PC and touch: when questions are read and relevant record already shown, clicking the real resident keeps field/camera and exact game state; a short notification replaces portrait/empty questions",
+    "An unshown owned relevant record keeps contact available; eligibility checks award no flags, meetings, evidence or knowledge",
+    "Actual mother-search question to hunter delivers the existing first-night witness account, unlocks checking that night with Granny, and avoids a duplicate hunter question"
+  ],
+  "initial_keys": [
+    "granny_letter"
+  ],
+  "learned_sources": {
+    "life:granny:work": {
+      "source": "topic:granny_letter",
+      "day": 2,
+      "period": 0
+    }
+  },
+  "passed": true
+}
