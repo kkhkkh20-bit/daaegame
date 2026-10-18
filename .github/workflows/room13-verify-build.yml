@@ -25,9 +25,11 @@ jobs:
     env:
       SDL_AUDIODRIVER: dummy
       LIBGL_ALWAYS_SOFTWARE: '1'
-      RENPY_SDK: ${{ runner.temp }}/renpy-8.5.3-sdk
-      ROOM13_CI_OUT: ${{ runner.temp }}/room13-ci
     steps:
+      - name: Set job-local build paths
+        run: |
+          echo "RENPY_SDK=$RUNNER_TEMP/renpy-8.5.3-sdk" >> "$GITHUB_ENV"
+          echo "ROOM13_CI_OUT=$RUNNER_TEMP/room13-ci" >> "$GITHUB_ENV"
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
