@@ -768,7 +768,7 @@
     "binding_route": "dynamic:081",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 255
+    "end_line": 259
   },
   {
     "source": "game/room13_life.rpy",
@@ -1990,7 +1990,7 @@
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 670,
+    "line": 680,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "r13_debate_partial_lines(r13_claim),\"debate:partial:\"+r13_claim",
@@ -1998,11 +1998,11 @@
     "binding_route": "dynamic:211",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 666
+    "end_line": 680
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 673,
+    "line": 683,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[(\"dad\",\"(맞는 자료를 찾지 못했다. 저 말은 반박되지 않은 채 그대로 남는다.)\",{\"thought\":True})],\"debate:gave_up:\"+r13_claim",
@@ -2010,11 +2010,11 @@
     "binding_route": "dynamic:212",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 669
+    "end_line": 683
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 679,
+    "line": 689,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[(r13_debate_st[\"who\"],r13_debate_st[\"text\"].replace(\"【\",\"\").replace(\"】\",\"\"))]+r13_debate_st.get(\"press\",[]),\"meeting:replay:\"+r13_claim+\":\"+r13_debate_st[\"id\"]",
@@ -2022,11 +2022,11 @@
     "binding_route": "dynamic:213",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 675
+    "end_line": 689
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 686,
+    "line": 696,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "r13_debate_st.get(\"press_missing\",[(r13_debate_st[\"who\"],\"그래서, 있습니까?\")]),\"debate:press_missing:\"+r13_claim+\":\"+r13_debate_st[\"id\"]",
@@ -2034,11 +2034,11 @@
     "binding_route": "dynamic:214",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 682
+    "end_line": 696
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 688,
+    "line": 698,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "r13_debate_st.get(\"press\",[(r13_debate_st[\"who\"],\"말한 그대로입니다.\"),(\"dad\",\"(저 말을 반박할 자료가 있는지 다시 살펴보자.)\",{\"thought\":True})]),\"debate:press:\"+r13_claim+\":\"+r13_debate_st[\"id\"]",
@@ -2046,11 +2046,11 @@
     "binding_route": "dynamic:215",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 684
+    "end_line": 698
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 715,
+    "line": 725,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "R13_FAKE_TESTIMONY_LINES,\"debate:c4:fake_testimony\"",
@@ -2058,11 +2058,11 @@
     "binding_route": "dynamic:216",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 707
+    "end_line": 725
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 721,
+    "line": 731,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "R13_C4_UNENFORCED,\"debate:c4:unenforced\"",
@@ -2070,11 +2070,11 @@
     "binding_route": "dynamic:217",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 713
+    "end_line": 731
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 741,
+    "line": 751,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[(r13_debate_gap[\"who\"],r13_debate_gap[\"text\"].replace(\"【\",\"\").replace(\"】\",\"\")),\n        (\"dad\",\"(저 말을 뒤집을 자료가 지금 내게는 없다.)\",{\"thought\":True})]+r13_debate_gap_lines(claim,r13_debate_gap)+[\n        (None,\"아무도 그 말을 막지 못했다.\")],\"debate:unanswerable:\"+claim",
@@ -2082,11 +2082,11 @@
     "binding_route": "dynamic:218",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 733
+    "end_line": 753
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 752,
+    "line": 762,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "r13_debate_c[\"lines\"],\"debate:counter:\"+claim+\":\"+sid",
@@ -2094,11 +2094,11 @@
     "binding_route": "dynamic:219",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 739
+    "end_line": 762
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 756,
+    "line": 766,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "r13_debate_c[\"correct\"],\"debate:counter_ok:\"+claim+\":\"+sid",
@@ -2106,11 +2106,11 @@
     "binding_route": "dynamic:220",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 743
+    "end_line": 766
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 760,
+    "line": 770,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[r13_debate_c[\"wrong\"][r13_debate_pick],\n        (\"dad\",\"(내 말이 그대로 되돌아왔다. 자료는 맞다. 답을 다시 생각해 보자.)\",{\"thought\":True})],\"debate:counter_wrong:\"+claim+\":\"+sid+\":\"+r13_debate_pick",
@@ -2118,11 +2118,11 @@
     "binding_route": "dynamic:221",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 748
+    "end_line": 771
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 777,
+    "line": 787,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "r13_debate_spec[\"correct\"],\"debate:conclusion:\"+claim",
@@ -2130,11 +2130,11 @@
     "binding_route": "dynamic:222",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 761
+    "end_line": 787
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 779,
+    "line": 789,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[r13_debate_spec[r13_debate_pick]],\"debate:conclusion_wrong:\"+claim+\":\"+r13_debate_pick",
@@ -2142,11 +2142,11 @@
     "binding_route": "dynamic:223",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 763
+    "end_line": 789
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 791,
+    "line": 801,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[r13_point.get(\"wrong_who\",{}).get(r13_debate_pick,r13_debate_spec[\"over\"])],\"debate:point_wrong:\"+claim+\":\"+r13_debate_pick",
@@ -2154,11 +2154,11 @@
     "binding_route": "dynamic:224",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 775
+    "end_line": 801
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 796,
+    "line": 806,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[(\"dad\",r13_point[\"ask\"])],\"debate:point:\"+claim",
@@ -2166,11 +2166,11 @@
     "binding_route": "dynamic:225",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 780
+    "end_line": 806
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 807,
+    "line": 817,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "list(r13_point[\"decisive\"].get(r13_point_key,[]))+list(r13_debate_spec[\"correct\"]),\"debate:conclusion:\"+claim",
@@ -2178,11 +2178,11 @@
     "binding_route": "dynamic:226",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 790
+    "end_line": 817
   },
   {
     "source": "game/systems/room13_debate.rpy",
-    "line": 809,
+    "line": 819,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[r13_point[\"wrong_key\"]],\"debate:point_key_wrong:\"+claim+\":\"+r13_point_key",
@@ -2190,7 +2190,7 @@
     "binding_route": "dynamic:227",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 793
+    "end_line": 819
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
@@ -2508,7 +2508,7 @@
     "binding_route": "dynamic:262",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 465
+    "end_line": 476
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
@@ -5772,7 +5772,7 @@
     "binding_route": "dynamic:606",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 197
+    "end_line": 215
   },
   {
     "source": "game/systems/room13_meeting_flow.rpy",
@@ -5784,7 +5784,7 @@
     "binding_route": "dynamic:607",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 232
+    "end_line": 250
   },
   {
     "source": "game/systems/room13_meeting_flow.rpy",
@@ -5796,7 +5796,7 @@
     "binding_route": "dynamic:608",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 271
+    "end_line": 293
   },
   {
     "source": "game/systems/room13_meeting_flow.rpy",
@@ -5808,7 +5808,7 @@
     "binding_route": "dynamic:609",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 296
+    "end_line": 322
   },
   {
     "source": "game/systems/room13_memory.rpy",
@@ -6310,7 +6310,7 @@
   },
   {
     "source": "game/systems/room13_topic_record.rpy",
-    "line": 28,
+    "line": 66,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "r13_topic_full_record(key),\"topic:record_full:\"+key",
@@ -6318,11 +6318,11 @@
     "binding_route": "dynamic:664",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 28
+    "end_line": 66
   },
   {
     "source": "game/systems/room13_topic_record.rpy",
-    "line": 31,
+    "line": 69,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "r13_conversation_topic_lines(key),\"topic:review:\"+key",
@@ -6330,7 +6330,7 @@
     "binding_route": "dynamic:665",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 31
+    "end_line": 69
   },
   {
     "source": "game/systems/room13_town_events.rpy",

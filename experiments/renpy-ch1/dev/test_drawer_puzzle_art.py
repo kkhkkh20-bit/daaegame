@@ -1,7 +1,7 @@
 """0.18.63 drawer puzzle art (ART_REQUEST_01822 section 1): sources match the handoff
 MANIFEST, imported files are current, both papers share one rect, the ruler tip lands
 on the groove. Clicks and layer switching: dev/run_renpy_tests.sh drawer_puzzle_art."""
-import hashlib, json, subprocess, sys, unittest
+import hashlib, json, subprocess, sys, tempfile, unittest
 from pathlib import Path
 
 from PIL import Image
@@ -21,6 +21,27 @@ class DrawerPuzzleArt(unittest.TestCase):
     def test_import_is_current(self):
         r = subprocess.run([sys.executable, str(ROOT / "dev/import_drawer_puzzle.py"), "--check"], capture_output=True, text=True)
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+
+    def test_pixel_check_rejects_changed_alpha_rgb_size_and_format(self):
+        from import_drawer_puzzle import imported_pixels_match
+        expected = Image.new("RGBA", (2, 2), (30, 60, 90, 128))
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "candidate.webp"
+            expected.save(path, "WEBP", lossless=True, exact=True)
+            self.assertTrue(imported_pixels_match(path, expected))
+            for pixel in ((31, 60, 90, 128), (30, 60, 90, 127)):
+                changed = expected.copy()
+                changed.putpixel((0, 0), pixel)
+                changed.save(path, "WEBP", lossless=True, exact=True)
+                self.assertFalse(imported_pixels_match(path, expected))
+            Image.new("RGBA", (3, 2)).save(path, "WEBP", lossless=True)
+            self.assertFalse(imported_pixels_match(path, expected))
+            expected.save(path, "PNG")
+            self.assertFalse(imported_pixels_match(path, expected))
+            path.write_bytes(b"invalid")
+            self.assertFalse(imported_pixels_match(path, expected))
+            path.unlink()
+            self.assertFalse(imported_pixels_match(path, expected))
 
     def test_geometry(self):
         states = LAYOUT["drawer_states"]

@@ -21,7 +21,7 @@ class CouncilDirection(unittest.TestCase):
   exec(textwrap.dedent(src),self.e)
   self.s.r13_meeting_active=True;self.s.r13_meeting_claim='C2'
  def test_c2_third_accusation_has_exact_stern_cue_without_next_line_leak(self):
-  direct=self.e['r13_meeting_direct_line'];text='그 방에는 아이 혼자 있었습니다. 다시 휘두를 사람이 누가 있습니까?'
+  direct=self.e['r13_meeting_direct_line'];text='그 방에는 아이 혼자 있었소. 다시 휘두를 사람이 누가 있소?'
   direct('meeting:live:C2:s3',0,('resident_ppul',text),'neutral','neutral')
   self.assertEqual(self.s.r13_meeting_art_slots,{'resident_ppul':'stern_statement'})
   direct('meeting:live:C2:s3',1,('resident_seori','그때 방에 있던 사람이 누구인지 확인하겠습니다.'),'neutral','neutral')
@@ -201,7 +201,9 @@ class CouncilDirection(unittest.TestCase):
    self.assertIsNone(self.s.r13_meeting_reaction)
 
  def test_end_boundary_can_paint_once_on_first_following_gasp(self):
-  rows=self.e['r13_debate_statement']('C2','s2')['broken']
+  # Isolate the end-boundary contract; C2 now includes a middle counter-reply.
+  rows=[row for row in self.e['r13_debate_statement']('C2','s2')['broken'] if row[0]!='resident_ppul']
+  self.assertEqual(self.e['r13_meeting_proof_boundary']('C2','s2',rows),len(rows))
   self.e['r13_meeting_prepare_proof']('C2','s2','E35',rows)
   for i,row in enumerate(rows):
    self.e['r13_meeting_direct_line']('debate:break:C2:s2:E35',i,row,'neutral','neutral')
@@ -211,6 +213,20 @@ class CouncilDirection(unittest.TestCase):
   self.assertEqual(self.s.r13_meeting_listener,'resident_ppul')
   self.assertEqual(set(self.s.r13_meeting_direction_poses),{'nabi','resident_ppul'})
   self.e['r13_meeting_direct_line']('meeting:gasp:C2:s2',1,('granny','그렇다고요?'),'neutral','neutral')
+  self.assertIsNone(self.s.r13_meeting_reaction)
+
+ def test_current_c2_e35_reacts_at_middle_reply_not_again_after_explanation(self):
+  rows=self.e['r13_debate_statement']('C2','s2')['broken']
+  boundary=self.e['r13_meeting_proof_boundary']('C2','s2',rows)
+  self.assertGreater(boundary,0);self.assertLess(boundary,len(rows))
+  self.assertEqual(rows[boundary][0],'resident_ppul')
+  self.e['r13_meeting_prepare_proof']('C2','s2','E35',rows)
+  for i,row in enumerate(rows):
+   self.e['r13_meeting_direct_line']('debate:break:C2:s2:E35',i,row,'neutral','neutral')
+   if i<boundary:self.assertIsNone(self.s.r13_meeting_reaction)
+   if i==boundary:self.assertEqual(self.s.r13_meeting_reaction['phase'],'pending')
+  self.assertIsNone(self.s.r13_meeting_reaction)
+  self.e['r13_meeting_direct_reveal']('C2','s2')
   self.assertIsNone(self.s.r13_meeting_reaction)
 
  def test_load_and_cancel_restore_faces_without_replaying_or_reverting_evidence(self):

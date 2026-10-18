@@ -1,0 +1,136 @@
+name: Room13 verify and build (no deploy)
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'experiments/renpy-ch1/**'
+      - 'design/maps/**'
+      - '.github/workflows/room13-verify-build.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: room13-verify-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: bash
+    env:
+      SDL_AUDIODRIVER: dummy
+      LIBGL_ALWAYS_SOFTWARE: '1'
+    steps:
+      - name: Set job-local build paths
+        run: |
+          echo "RENPY_SDK=$RUNNER_TEMP/renpy-8.5.3-sdk" >> "$GITHUB_ENV"
+          echo "ROOM13_CI_OUT=$RUNNER_TEMP/room13-ci" >> "$GITHUB_ENV"
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            experiments/renpy-ch1
+            preview/room13-dev
+            design/maps
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends xvfb xauth libgl1 libegl1 libasound2t64
+          python -m pip install Pillow==11.3.0 numpy==2.2.6 scipy==1.15.3
+          mkdir -p "$ROOM13_CI_OUT"
+          python -m pip freeze > "$ROOM13_CI_OUT/python-dependencies.txt"
+      - name: Fetch immutable history fixture required by source-art test
+        run: |
+          git fetch --no-tags --depth=1 origin 2ea4d41bb8918b74d95d9cb6dc0bb8705e3297fd
+          git cat-file -e 2ea4d41bb8918b74d95d9cb6dc0bb8705e3297fd^{commit}
+      - name: Download and verify official SDK
+        run: |
+          curl --fail --location --retry 3 --output "$RUNNER_TEMP/renpy-sdk.tar.bz2" https://www.renpy.org/dl/8.5.3/renpy-8.5.3-sdk.tar.bz2
+          echo "eb0a9be7f0fb13632fe25ceade9a8bed5a1b4d6b6e83bd19eeeb29e1a1bb4a45  $RUNNER_TEMP/renpy-sdk.tar.bz2" | sha256sum -c -
+          tar -xjf "$RUNNER_TEMP/renpy-sdk.tar.bz2" -C "$RUNNER_TEMP"
+          rm "$RUNNER_TEMP/renpy-sdk.tar.bz2"
+          git rev-parse HEAD > "$ROOM13_CI_OUT/source-commit.txt"
+          python experiments/renpy-ch1/dev/ci_package_build.py snapshot
+      - name: Diagnose lossless art portability without changing files
+        working-directory: experiments/renpy-ch1
+        run: |
+          python - <<'PY' | tee "$ROOM13_CI_OUT/drawer-pixel-diagnostic.json"
+          import io, json, hashlib
+          import sys
+          sys.path.insert(0, "dev")
+          import PIL, numpy, scipy
+          from PIL import Image, features
+          import import_drawer_puzzle as drawer
+          rows = []
+          for key, (_, asset, _) in drawer.STATES.items():
+              expected = drawer.build(key).convert("RGBA")
+              path = drawer.GAME / "assets" / asset
+              with Image.open(path) as saved:
+                  actual = saved.convert("RGBA")
+              regenerated = drawer.encode(io.BytesIO(drawer._png(drawer.build(key))), lossless=True)
+              with Image.open(io.BytesIO(regenerated)) as encoded:
+                  decoded = encoded.convert("RGBA")
+              rows.append(dict(asset=asset, size=list(actual.size), expected_size=list(expected.size),
+                  rgba_exact=(actual.size == expected.size and actual.tobytes() == expected.tobytes()),
+                  regenerated_rgba_exact=(actual.size == decoded.size and actual.tobytes() == decoded.tobytes()),
+                  file_bytes_equal=path.read_bytes() == regenerated,
+                  original_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
+                  regenerated_sha256=hashlib.sha256(regenerated).hexdigest()))
+          print(json.dumps(dict(pillow=PIL.__version__, libwebp=features.version("webp"),
+              numpy=numpy.__version__, scipy=scipy.__version__, rows=rows), indent=2))
+          PY
+      - name: Unit tests and Ren'Py lint
+        working-directory: experiments/renpy-ch1
+        run: |
+          set -o pipefail
+          if ! xvfb-run -a bash dev/check.sh 2>&1 | tee "$ROOM13_CI_OUT/check.log"; then
+            python -m unittest discover -s dev -p "test_*.py" -v 2>&1 | tee "$ROOM13_CI_OUT/unittest-failure.log"
+            exit 1
+          fi
+      - name: Compile and build web release
+        working-directory: experiments/renpy-ch1
+        run: |
+          set -o pipefail
+          xvfb-run -a python dev/build_web.py --sdk "$RENPY_SDK" --work "$RUNNER_TEMP/room13-build" --part-mb 8 2>&1 | tee "$ROOM13_CI_OUT/build.log"
+      - name: Verify manifest and package changed release files
+        run: python experiments/renpy-ch1/dev/ci_package_build.py package
+      - name: Collect diagnostics
+        if: always()
+        run: |
+          mkdir -p "$ROOM13_CI_OUT"
+          for file in /tmp/room13-lint.txt "$RUNNER_TEMP/room13-build/lint.txt" "$RUNNER_TEMP/room13-build/build-report.json"; do
+            if [ -f "$file" ]; then cp "$file" "$ROOM13_CI_OUT/$(basename "$file")"; fi
+          done
+          git status --short > "$ROOM13_CI_OUT/worktree-status.txt"
+      - name: Bound artifact storage to 100 MiB for one day
+        id: artifact_budget
+        if: always()
+        run: |
+          bytes=$(du -sb "$ROOM13_CI_OUT" | cut -f1)
+          if [ "$bytes" -gt 104857600 ]; then
+            echo "Artifact exceeds authorized 100 MiB run bound; upload stopped."
+            exit 1
+          fi
+          echo "allowed=true" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.artifact_budget.outputs.allowed == 'true' 
+        with:
+          name: room13-build-${{ github.sha }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/room13-ci/
+          retention-days: 1
+          compression-level: 0
+          if-no-files-found: error
+# Deliberately no push, merge, deploy, credentials, Pages or OIDC permissions.
+

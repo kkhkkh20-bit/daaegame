@@ -125,6 +125,7 @@ screen r13_admin():
         vbox:
             spacing 10
             if tab=="next":
+                textbutton "회의 바로 테스트 (진행 보존)" style "r13_action_button" text_size 21 padding (16,10) action Show("r13_admin_meeting_picker")
                 for line in r13_admin_next():
                     text line size 21 color ("#ffd27a" if line.startswith("필요 ·") else "#e8efe8") xsize 1150
             elif tab=="jump":
@@ -208,3 +209,4 @@ init 132 python:
                 screen.scope["typed"]=""
                 screen.scope["wrong"]=True
         renpy.restart_interaction()
+

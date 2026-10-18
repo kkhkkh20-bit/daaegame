@@ -143,13 +143,13 @@ init 174 python:
             dict(slot="stern_statement",pose="neutral"),
         ("meeting:live:Q6:s1",0,"resident_ppul","이 수레는 보호소로 가는 수레요."):
             dict(slot="stern_statement",pose="neutral"),
-        ("meeting:live:C2:s1",0,"resident_ppul","아이가 촛대로 어르신의 머리를 내리쳤다고 했습니다."):
+        ("meeting:live:C2:s1",0,"resident_ppul","아이의 말과 상처 기록 모두 아이가 머리를 쳤다는 증거요."):
             dict(slot="stern_statement",pose="neutral",listener=("buri","neutral")),
         ("meeting:live:C2:s1",1,"buri","잠깐요. 무슨 일이었는지부터 차례로 들어요."):
             dict(slot="measured_interject",pose="neutral",listener=("resident_ppul","neutral")),
         ("meeting:live:C2:s2",1,"nabi","직접 본 일과 들은 말을 섞지는 말아요."):
             dict(pose="neutral",listener=("resident_ppul","neutral")),
-        ("meeting:live:C2:s3",0,"resident_ppul","그 방에는 아이 혼자 있었습니다. 다시 휘두를 사람이 누가 있습니까?"):
+        ("meeting:live:C2:s3",0,"resident_ppul","그 방에는 아이 혼자 있었소. 다시 휘두를 사람이 누가 있소?"):
             dict(slot="stern_statement",pose="neutral"),
         ("meeting:live:C2:s3",1,"resident_seori","그때 방에 있던 사람이 누구인지 확인하겠습니다."):
             dict(pose="neutral",listener=("resident_ppul","neutral")),
