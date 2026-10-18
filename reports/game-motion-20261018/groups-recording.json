@@ -1,0 +1,112 @@
+{
+  "capture": "Actual running SDK video; normal speed, no screenshot montage",
+  "silent": true,
+  "archive_sha256": "12d18452034394013788b07d6d79579b8bc367a86fb414e6851892335eadf743",
+  "raw_duration": 116.48,
+  "clips": [
+    {
+      "name": "workshop_pair",
+      "start": 73560.243727296,
+      "end": 73582.248795881,
+      "initial_fixture": {
+        "location": "workshop",
+        "day": 2,
+        "period": 0,
+        "flags": []
+      },
+      "clicked": "buri",
+      "lines": [
+        [
+          "resident_tok",
+          "이쪽을 잡아 주겠니?"
+        ],
+        [
+          "buri",
+          "잡았어요. 너무 세게 돌리진 마요."
+        ],
+        [
+          "resident_tok",
+          "그래. 조금씩 맞춰 보자."
+        ]
+      ],
+      "trim_start": 31.355864171990547,
+      "clip_seconds": 22.005068585000117
+    },
+    {
+      "name": "inn_mending",
+      "start": 73591.828538519,
+      "end": 73613.836133646,
+      "initial_fixture": {
+        "location": "inn",
+        "day": 2,
+        "period": 1,
+        "flags": []
+      },
+      "clicked": "resident_tori",
+      "lines": [
+        [
+          "resident_tori",
+          "여기 한 땀 더 하면 돼요?"
+        ],
+        [
+          "resident_yeoni",
+          "응. 천부터 펴고. 급하게 당기지는 말고."
+        ],
+        [
+          "resident_tori",
+          "이번엔 제가 해 볼게요."
+        ]
+      ],
+      "trim_start": 62.940675394992,
+      "clip_seconds": 22.00759512699733
+    },
+    {
+      "name": "school_play",
+      "start": 73623.363479854,
+      "end": 73645.367808472,
+      "initial_fixture": {
+        "location": "school",
+        "day": 8,
+        "period": 0,
+        "flags": [
+          "kids_school",
+          "wf_kkomi_saved",
+          "st_kkomi_class_seen"
+        ]
+      },
+      "clicked": "kid_mong",
+      "lines": [
+        [
+          "kid_mong",
+          "하나, 둘! 같이 세고 있어요."
+        ],
+        [
+          "kid_kkam",
+          "이번엔 내가 먼저!"
+        ],
+        [
+          "kid_mong",
+          "같이 해. 하나, 둘!"
+        ],
+        [
+          "kid_bang",
+          "잠깐, 나도!"
+        ],
+        [
+          "kid_kkam",
+          "그럼 다시. 하나!"
+        ]
+      ],
+      "trim_start": 94.47561672999699,
+      "clip_seconds": 22.004328618000727
+    }
+  ],
+  "fixture_common_flags": [
+    "entry_corrected",
+    "lodging",
+    "ev_g_done",
+    "ev_q_done",
+    "night1_seen"
+  ],
+  "notes": "Three separate scene fixtures. Adults open the group button; school opens by clicking Mong. The captured build is the local 0.19.51 integration candidate before remote question-discovery 0.19.51 was merged."
+}

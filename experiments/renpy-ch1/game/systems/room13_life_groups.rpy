@@ -93,7 +93,7 @@ init 181 python:
         if not row:return []
         if person:
             text = row.get("individual_lines", {}).get(person)
-            return [(person, text)] if text else []
+            return ([(person, text)] + list(row["lines"]) if row.get("member_conversation") else [(person, text)]) if text else []
         return row["lines"]
 
     def r13_life_choice_is_group(choice):
@@ -101,15 +101,19 @@ init 181 python:
 
     _r13_life_groups_person_action = r13_person_action
     def r13_person_action(person, entry=False):
-        if not entry:
-            # A stale child button must never fall through to r13_talk and its encounter flags.
+        if not entry and getattr(store,"r13_life_field_active",False):
             for row in R13_LIFE_GROUPS:
-                if person in row.get("individual_lines", {}):return Return(("life_child", person))
+                if person not in row.get("individual_lines", {}):continue
+                # Existing child/event actors have priority over optional play.
+                if r13_offer_for_person(person) or any(a["person"]==person for a in _r13_life_groups_stage(entry)):break
+                # A stale play button is safely consumed; the dispatcher rechecks
+                # group presence before opening any conversation or writing state.
+                return Return(("life_child", person))
         return _r13_life_groups_person_action(person, entry)
 
 screen r13_life_group_labels(entry=False, ready=False):
     if not entry and r13_field_view == "people":
-        for group in r13_life_groups_here():
+        for group in [g for g in r13_life_groups_here() if not g.get("member_conversation")]:
             fixed:
                 area (group["label_position"][0],group["label_position"][1],R13_CONTROL["width"],r13_control_height())
                 use r13_control(group["label"],"dialogue",Return(("life_group",group["id"])),enabled=ready,control_id="life_group_"+group["id"])

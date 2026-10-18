@@ -206,13 +206,28 @@ class LifeGroups(unittest.TestCase):
                 for m in row['members']:
                     p=m['person'];action=e['r13_person_action'](p)
                     if row.get('conditional_cast'):
-                        self.assertEqual(action,('life_child',p));self.assertEqual(e['r13_life_group_lines'](key,p),[(p,row['individual_lines'][p])])
+                        self.assertEqual(action,('life_child',p));self.assertEqual(e['r13_life_group_lines'](key,p),[(p,row['individual_lines'][p])]+row['lines'])
                     else:self.assertEqual(action,('person',p))
                 self.assertEqual(e['r13_person_action']('buri',True),('person','buri'))
                 s.room13=pickle.loads(pickle.dumps(s.room13))  # Python data only, not engine save QA
                 self.assertEqual(s.room13,before)
             s.room13['location']='square';self.assertEqual(e['r13_life_group_lines'](key),[])
             s.room13=copy.deepcopy(before);self.assertEqual(e['r13_life_group_lines'](key),row['lines'])
+    def test_child_event_dispatch_wins_outside_active_play_group(self):
+        e,row,_=environment('school_play')
+        p=row['members'][0]['person'];before=copy.deepcopy(e['store'].room13)
+        self.assertEqual(e['r13_person_action'](p),('life_child',p))
+        self.assertEqual(e['r13_life_group_lines']('school_play',p)[0][0],p)
+        self.assertEqual(len(e['r13_life_group_lines']('school_play',p)),5)
+        e['_r13_life_groups_person_action']=lambda person,entry=False:('authored_event',person)
+        e['store'].r13_life_field_active=False
+        self.assertEqual(e['r13_person_action'](p),('authored_event',p))
+        self.assertEqual(e['r13_life_group_lines']('school_play',p),[])
+        self.assertEqual(e['store'].room13,before)
+        e['store'].r13_life_field_active=True
+        e['_r13_life_groups_stage']=lambda entry=False:[dict(person=p)]
+        self.assertEqual(e['r13_person_action'](p),('authored_event',p))
+
     def test_no_story_api_or_event_reentry_and_explicit_return_sites(self):
         src=SOURCE.read_text();label=src.split('label r13_life_group_talk',1)[1].split('label r13_life_field_person_dispatch',1)[0]
         for token in ('call r13_lines','call r13_talk','r13_flag(','r13_tick(','r13_grant(','r13_note_encounter(','r13_st_kkomi_class','r13_wf_ruins'):self.assertNotIn(token,label)
