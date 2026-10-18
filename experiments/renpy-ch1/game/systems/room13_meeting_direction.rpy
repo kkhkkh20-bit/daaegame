@@ -320,19 +320,34 @@ init 174 python:
 
 # Brief impact, followed by a patient, user-paced evidence explanation.
 transform r13_meeting_objection_appear(motion=True):
-    alpha (0.0 if motion else 1.0)
-    xoffset (-24 if motion else 0)
-    linear (.07 if motion else 0) alpha 1.0 xoffset 0
+    alpha 1.0
+    zoom (1.30 if motion else 1.0)
+    xoffset (-160 if motion else 0)
+    easeout (.14 if motion else 0) alpha 1.0 zoom 1.04 xoffset 8
+    ease (.10 if motion else 0) zoom 1.0 xoffset 0
+
+transform r13_meeting_impact_shake(motion=True):
+    xoffset 0
+    yoffset 0
+    linear (.025 if motion else 0) xoffset (-8 if motion else 0) yoffset (2 if motion else 0)
+    linear (.030 if motion else 0) xoffset (8 if motion else 0) yoffset (-2 if motion else 0)
+    linear (.030 if motion else 0) xoffset (-5 if motion else 0) yoffset (1 if motion else 0)
+    linear (.035 if motion else 0) xoffset (4 if motion else 0) yoffset (-1 if motion else 0)
+    easeout (.060 if motion else 0) xoffset 0 yoffset 0
 
 screen r13_meeting_objection(claim,sid):
     zorder 150
     # A nested record context has no say screen between the picker and explanation.
     # Paint the frozen council here too, not the unrelated exploration backdrop.
-    use r13_meeting_stage(claim,r13_meeting_focus_person(claim),True)
+    fixed:
+        at r13_meeting_impact_shake(persistent.room13_motion)
+        use r13_meeting_stage(claim,r13_meeting_focus_person(claim),True)
     use r13_meeting_chrome(claim)
     add Solid("#11182066")
     # Owner-approved fixed typography image: no live text or button panel.
-    add Transform("assets/room13-ui-objection01917.webp",xysize=(1120,420),fit="contain",nearest=True) xpos 80 ypos 132
+    add Transform("assets/room13-ui-objection01917.webp",xysize=(1120,420),fit="contain",nearest=True):
+        xcenter 640 ycenter 342
+        at r13_meeting_objection_appear(persistent.room13_motion)
     frame:
         area (160,548,960,96) padding (20,14) background R13PaperFrame()
         text r13_meeting_statement_text(claim,sid) size r13_read_size(23,26) color "#493b30" xmaximum 920
@@ -354,7 +369,7 @@ label r13_meeting_direct_interrupt(claim,sid,key):
         show screen r13_meeting_objection(claim,sid)
         $ renpy.music.set_pause(True,channel="music")
         $ source_fx("impact")
-        $ renpy.pause(.68 if persistent.room13_motion else .42)
+        $ renpy.pause(1.68 if persistent.room13_motion else 1.42)
         hide screen r13_meeting_objection
     $ r13_meeting_direct_beat("explain",claim,sid,key)
     show screen r13_meeting_evidence_hold(claim,sid,key)

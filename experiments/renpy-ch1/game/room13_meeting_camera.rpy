@@ -1,5 +1,17 @@
 # A single world-space camera. Seats never animate from one UI card to another.
 # The near table, fixed cast and far architecture share the same continuous yaw.
+# Native ATL owns the small overlay animation; its time is the shot's elapsed time.
+transform r13_meeting_speed_lines_atl(direction=1):
+    animation
+    parallel:
+        alpha 0.0
+        linear .02 alpha .12
+        pause .04
+        linear .09 alpha 0.0
+    parallel:
+        xoffset 0
+        linear .15 xoffset (direction*120)
+
 init 175 python:
     R13_MEETING_SPEED_LINES = True
     import math as r13_orbit_math
@@ -163,6 +175,10 @@ init 175 python:
                 gain=(.065 if self.beat in ("interrupt","explain","shaken","gasp","cornered") else .0) if person==self.focus else (-.01 if person==listener else -.05)-self.shade*.35
                 self.art[person]=Transform(art,nearest=not bool(r13_dialogue_source_profile(person,pose,base)),subpixel=True,matrixcolor=BrightnessMatrix(gain))
                 self.offsets[person]=(r13_close_x(person,pose,base)-640,r13_fullbody_close_y(person,base,96,pose))
+            line_specs=((-60,100,160),(1100,115,180),(-40,130,128),(1080,455,190),(-80,470,170),(1120,485,140))
+            line_art=Fixed(*[Transform(Solid("#dce0e4",xsize=length,ysize=1),xpos=x,ypos=y)
+                for x,y,length in line_specs],xysize=(1280,720))
+            self.speed_lines=At(line_art,r13_meeting_speed_lines_atl(getattr(store,"r13_meeting_pan_direction",1)))
             self.surface=R13MeetingSurface(self.session,0,len(self.people),self.shade) if self.kind in ("round","stone") else None
             self.foreground=AlphaMask(self.surface,R13MeetingForeground(self.session,True)) if self.surface is not None else None
         def render(self,width,height,st,at):
@@ -193,14 +209,7 @@ init 175 python:
             if moving and R13_MEETING_SPEED_LINES:
                 # Transparent edge-only lines; no fill, no central face/dialogue overlay.
                 elapsed=max(0.0,renpy.display.core.get_time()-store.r13_meeting_pan_started)
-                t=min(1.0,elapsed/.15)
-                alpha=.12*(min(1.0,elapsed/.02) if elapsed<.06 else max(0.0,(.15-elapsed)/.09))
-                direction=getattr(store,"r13_meeting_pan_direction",1)
-                shift=int(direction*120*t)
-                canvas=out.canvas()
-                # 1080p proposal scaled to 720p: six 1px lines in upper/lower margins.
-                for x,y,length in ((-60,100,160),(1100,115,180),(-40,130,128),(1080,455,190),(-80,470,170),(1120,485,140)):
-                    canvas.rect((220,224,228,int(round(255*alpha))),(x+shift,y,length,1))
+                out.blit(renpy.render(self.speed_lines,1280,720,elapsed,elapsed),(0,0))
             if moving:renpy.redraw(self,0)
             return out
-        def visit(self):return [self.plate,self.flip]+list(self.art.values())+([self.foreground] if self.foreground is not None else [])
+        def visit(self):return [self.plate,self.flip,self.speed_lines]+list(self.art.values())+([self.foreground] if self.foreground is not None else [])

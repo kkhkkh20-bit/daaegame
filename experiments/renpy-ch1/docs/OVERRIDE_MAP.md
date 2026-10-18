@@ -448,7 +448,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 191 | `systems/room13_meeting_pressure.rpy:44` | _r13_tempo_pressure_proof |
-| 2 | 192 | `systems/room13_meeting_tempo.rpy:79` |  |
+| 2 | 192 | `systems/room13_meeting_tempo.rpy:77` |  |
 
 ## `r13_object_name` (2층)
 

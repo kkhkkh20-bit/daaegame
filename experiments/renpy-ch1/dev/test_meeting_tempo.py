@@ -21,7 +21,7 @@ class Tempo(unittest.TestCase):
   self.assertEqual(self.e['r13_meeting_tempo_path']('council'),self.playing)
   self.s.r13_meeting_collective={'phase':'settled'};path=self.e['r13_meeting_tempo_path']('council');self.assertIn('tempo1',path)
   self.e['r13_meeting_tempo_play'](path);self.e['r13_meeting_tempo_play'](path)
-  self.assertEqual(len(self.calls),2);self.assertIn('<from 9.434>',self.calls[0][1]);self.assertTrue(self.calls[1][2]['loop'])
+  self.assertEqual(len(self.calls),1);self.assertIn('<from 9.434 loop 0>',self.calls[0][1]);self.assertTrue(self.calls[0][2]['loop'])
  def test_muted_position_none_safe_and_new_base_not_wrongly_seeked(self):
   self.pos=None;self.e['r13_meeting_tempo_play']('assets/bgm-council-tempo2.ogg');self.assertNotIn('<from',self.playing)
   self.pos=30;self.e['r13_meeting_tempo_play']('assets/bgm-pressure-tempo2.ogg');self.assertNotIn('<from',self.playing)
@@ -36,6 +36,6 @@ class Tempo(unittest.TestCase):
   self.e['renpy'].music.set_volume=lambda v,**kw:self.calls.append(('volume',v))
   self.e['renpy'].music.set_pause=lambda v,**kw:self.calls.append(('pause',v))
   before=copy.deepcopy(self.s.room13);self.e['r13_meeting_interrupt_with_tempo']('C2','s2')
-  self.assertEqual(self.playing,'<from 21.500>assets/bgm-council-tempo1.ogg')
+  self.assertEqual(self.playing,'<from 21.500 loop 0>assets/bgm-council-tempo1.ogg')
   self.assertEqual(self.calls[-2:],[('volume',.58),('pause',False)])
   self.assertEqual(self.s.room13,before)

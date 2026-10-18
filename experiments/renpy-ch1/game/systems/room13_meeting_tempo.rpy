@@ -49,8 +49,7 @@ init 173 python:
         if old_base and old_base==new_base and position is not None:
             # Map the same musical position; never change playback sample rate/pitch.
             position=max(0.0,position)*R13_MEETING_TEMPO_RATES[old_stage]/R13_MEETING_TEMPO_RATES[new_stage]
-            renpy.music.play("<from %.3f>%s"%(position,path),channel="music",loop=False,fadeout=.12,fadein=.20)
-            renpy.music.queue(path,channel="music",loop=True)
+            renpy.music.play("<from %.3f loop 0>%s"%(position,path),channel="music",loop=True,fadeout=.12,fadein=.20)
         else:
             renpy.music.play(path,channel="music",loop=True,fadeout=.12,fadein=.20)
 
@@ -68,8 +67,7 @@ init 173 python:
         if not path:return
         position=audio.get("position")
         if position is not None:
-            renpy.music.play("<from %.3f>%s"%(max(0.0,position),path),channel="music",loop=False,fadeout=.08,fadein=.12)
-            renpy.music.queue(path,channel="music",loop=True)
+            renpy.music.play("<from %.3f loop 0>%s"%(max(0.0,position),path),channel="music",loop=True,fadeout=.08,fadein=.12)
         else:renpy.music.play(path,channel="music",loop=True,fadeout=.08,fadein=.12)
         renpy.music.set_volume(audio["volume"],channel="music")
         renpy.music.set_pause(audio["paused"],channel="music")
