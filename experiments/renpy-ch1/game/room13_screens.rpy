@@ -369,15 +369,7 @@ screen r13_confirm(message,yes="진행한다",no="돌아간다"):
     default ready=False
     timer .15 action SetScreenVariable("ready",True)
     add Solid("#172a2aa6")
-    frame:
-        xpos 165 ypos 210 xsize 950 padding (32,28)
-        vbox:
-            spacing 25
-            text message size 26 xsize 880
-            hbox:
-                spacing 25
-                textbutton yes action Return(True) sensitive ready text_size 25
-                textbutton no action Return(False) sensitive ready text_size 25
+    use r13_confirmation_card(message,yes,no,ready)
     # 0.18.99 PC: Enter = yes, Esc = no.
     if ready:
         key "K_RETURN" action Return(True)
