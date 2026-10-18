@@ -9,6 +9,8 @@ class QuestionDiscovery(unittest.TestCase):
   topics['life:resident_piko:work']=dict(npc='resident_piko')
   self.messages=[];self.calls=[]
   self.n=dict(store=self.s,R13_ALIBI={('night1','resident_kalbaram'):{'claim':[('dad','질문'),('resident_kalbaram','숲에 있었소.'),('resident_kalbaram','아이를 봤소.')]}},ROOM13={'topics':topics,'presentations':[]},config=types.SimpleNamespace(interact_callbacks=[],after_load_callbacks=[]),
+   # This isolated discovery fixture has no live-topic layer; integration is tested separately.
+   r13_topic_current_fresh=lambda key:False,
    r13_has=lambda k:k in self.s.room13['flags']+self.s.room13['evidence'],r13_edit=lambda **kw:self.s.room13.update(kw),
    r13_topics=lambda p:[(k,v) for k,v in topics.items() if v['npc']==p],r13_before_line=lambda *a:'line',r13_remember_line=lambda k:None,
    r13_conversation_topic_lines=lambda k:[('dad','날짜는요?'),('granny','날짜는 장부에 있어요.'),('dad','확인하겠습니다.')],
