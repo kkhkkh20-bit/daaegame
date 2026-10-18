@@ -11,7 +11,7 @@ screen r13_hud():
             tooltip "마차 이야기를 건너뛰고 마을 입구에 도착합니다"
     if not r13_cg_active and place!="마차 안" and not r13_meeting_active:
         frame:
-            xpos 940 ypos 20 xsize 238 ysize 68 padding (10,8) background R13PaperFrame()
+            xpos (940 if renpy.get_screen("r13_hub") else R13_CONCEPT_RIGHT-238) ypos 20 xsize 238 ysize 68 padding (10,8) background R13PaperFrame()
             hbox:
                 spacing 10
                 vbox:

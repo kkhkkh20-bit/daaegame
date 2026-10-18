@@ -1,4 +1,6 @@
 # REVIEW PROTOTYPE ONLY — isolated design branch; not deployed to main.
+init 80 python:
+    R13_CONCEPT_RIGHT=1232
 screen r13_concept_action(x,w,caption,icon,command,enabled=True,primary=False):
     button:
         area (x,r13_control_y(),w,r13_control_height()) padding (0,0)
@@ -15,14 +17,16 @@ screen r13_concept_action(x,w,caption,icon,command,enabled=True,primary=False):
 
 screen r13_concept_dock(ready=True,show_record=True,person=None,present_action=None):
     $ secondary_width=160
+    $ more_x=R13_CONCEPT_RIGHT-secondary_width
+    $ record_x=more_x-16-secondary_width
     $ line_active=renpy.get_screen("say") is not None and not any(renpy.get_screen(n) for n in ("choice","r13_topics","r13_resident_approach","r13_entry_topics","r13_entry_karo_topics"))
     if line_active:
-        use r13_concept_action(576,304,"현재 대화 건너뛰기","skip",Show("r13_concept_skip_confirm"),enabled=ready)
+        use r13_concept_action(record_x-16-304,304,"현재 대화 건너뛰기","skip",Show("r13_concept_skip_confirm"),enabled=ready)
     if present_action is not None:
-        use r13_concept_action(624,256,"자료 보여주기","present",present_action,enabled=ready,primary=True)
+        use r13_concept_action(record_x-16-256,256,"자료 보여주기","present",present_action,enabled=ready,primary=True)
     if show_record:
-        use r13_concept_action(896,secondary_width,"기록","record",Show("r13_records",target=person,present_action=present_action),enabled=ready)
-    use r13_concept_action(1072,secondary_width,"더보기","settings",Show("r13_more_tools"),enabled=ready)
+        use r13_concept_action(record_x,secondary_width,"기록","record",Show("r13_records",target=person,present_action=present_action),enabled=ready)
+    use r13_concept_action(more_x,secondary_width,"더보기","settings",Show("r13_more_tools"),enabled=ready)
     if _preferences.afm_enable and renpy.get_screen("say") is not None and not any(renpy.get_screen(n) for n in ("choice","r13_topics","r13_resident_approach","r13_entry_topics","r13_entry_karo_topics")):
         use r13_concept_action(28,280,"자동 읽기 중 · 정지",None,Preference("auto-forward","disable"),enabled=ready)
 

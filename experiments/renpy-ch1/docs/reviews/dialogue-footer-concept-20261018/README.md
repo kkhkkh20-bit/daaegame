@@ -1,5 +1,7 @@
 # 대화 하단 UI 시안 — 추천안
 
+최신 3차 시안: [PC 질문 화면](v3/08-pc-questions.png) · [모바일 질문 화면](v3/07-mobile-questions.png). 날짜 패널과 더보기 우측 여백을48로 맞추고, 인물 이름·질문 제목만 정식 Galmuri11 Bold로 강조했다. 라이선스·출처는 game/assets/Galmuri11-Bold-OFL.txt와 docs/design/GALMURI_BOLD_PROVENANCE.json. PC/모바일 실제 렌더링 및 기존 시안 동작 검사를 통과했다.
+
 최신 2차 시안: [대화창](v2/01-pc-dialogue.png) · [질문](v2/08-pc-questions.png). 현재 대화 건너뛰기를 하단에 꺼내고 더보기에서는 중복 제거했다. 기록·더보기 폭은 둘 다160이다. 확인창은 유지한다. PC/모바일 폭 일치와 직접 건너뛰기 확인창 취소, 자동·기록·제시 복귀 검사를 통과했다. 결과는 v2/report.json.
 
 아래는 최초 시안 기록이다.
