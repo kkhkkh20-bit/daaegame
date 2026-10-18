@@ -580,7 +580,11 @@
       "facing": "right-profile"
     }
   },
-  "room": "square",
+  "room": {
+    "location": "square",
+    "day": 2,
+    "period": 1
+  },
   "clicked": [
     "doto"
   ],
