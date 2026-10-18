@@ -59,7 +59,7 @@ label r13_admin_meeting_replay:
 screen r13_admin_meeting_controls():
     zorder 200
     textbutton "테스트 종료 · 다시 선택":
-        style "r13_action_button" xpos 900 ypos 8 xsize 360 ysize 42 text_size 19
+        style "r13_action_button" xpos 942 ypos 92 xsize 314 ysize (80 if r13_touch_ui() else 56) text_size 18
         action EndReplay(confirm=False)
     key "game_menu" action EndReplay(confirm=False)
     if "quick_save" in config.keymap:

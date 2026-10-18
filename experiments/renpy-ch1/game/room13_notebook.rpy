@@ -78,6 +78,23 @@ init 68 python:
         if kind=="unread":return [key for key in entries if r13_record_unread(key) or key in r13_unread_hold]
         return entries
 
+    # Keep every record footer inside the sheet (bottom 676), with a 16px inset.
+    def r13_record_footer_height():
+        return r13_control_height()
+
+    def r13_record_footer_y():
+        return 660-r13_record_footer_height()
+
+    def r13_material_filter_choices(current,allow_transfer=True):
+        owned=r13_catalog_entries(False,False)
+        choices=[(key,title) for key,title in (("all","전체"),("testimony","증언"),("transfer","전달 가능"))
+            if (key!="transfer" or allow_transfer) and (key in ("all",current) or bool(r13_material_subset(owned,key)))]
+        # All has no action to offer when there is no other material category.
+        return choices if len(choices)>1 else []
+
+    def r13_material_filters_visible(current,allow_transfer=True,shelf=None,shelf_count=0):
+        return bool(r13_material_filter_choices(current,allow_transfer) or (shelf is not None and (shelf_count or shelf)))
+
     def r13_material_source_person(key):
         # Only explicit source metadata and people already encountered.
         who=ROOM13["evidence_sources"].get(key)
@@ -253,11 +270,10 @@ screen r13_record_filters(owner,order,archive=False):
 screen r13_material_filters(owner,current,allow_transfer=True,unread=0,shelf=None,shelf_count=0):
     $ big=persistent.room13_large_text
     $ touch=r13_touch_ui()
-    $ owned=r13_catalog_entries(False,False)
+    $ choices=r13_material_filter_choices(current,allow_transfer)
     hbox:
         xpos 284 ypos (100 if touch else 106 if big else 110) spacing 5
-        for key,title in (("all","전체"),("testimony","증언"),("transfer","전달 가능")):
-          if (key!="transfer" or allow_transfer) and (key in ("all",current) or bool(r13_material_subset(owned,key))):
+        for key,title in choices:
             textbutton (("전달" if key=="transfer" else title) if touch else title):
                 style "r13_paper_tab_button" yminimum (80 if touch else 44 if big else 38) xsize 120 xpadding 10 text_size (22 if touch else r13_read_size(16,19)) text_yalign .5
                 selected current==key
@@ -268,17 +284,19 @@ screen r13_material_filters(owner,current,allow_transfer=True,unread=0,shelf=Non
                 selected shelf
                 action [Function(r13_record_select,owner,"shelf",not shelf),Function(r13_record_select,owner,"detail",None),Function(r13_record_select,owner,"page",0)]
 
-screen r13_material_grid(entries,detail,page,owner,archive=False):
+screen r13_material_grid(entries,detail,page,owner,archive=False,filters=True):
     $ actual_page=r13_record_page(entries,page)
     $ page_size=r13_record_page_size()
     $ touch=r13_touch_ui()
     $ columns=3 if persistent.room13_large_text or touch else 4
     $ cell=166 if persistent.room13_large_text or touch else 124
     $ visible=entries[actual_page*page_size:][:page_size]
-    add R13PaperFrame() xpos 278 ypos (190 if touch else 152) xsize 520 ysize (382 if touch else 420)
+    $ grid_top=(190 if touch else 152) if filters else 116
+    $ grid_body_top=(200 if touch else 166) if filters else 126
+    add R13PaperFrame() xpos 278 ypos grid_top xsize 520 ysize (572-grid_top)
     for index,key in enumerate(visible):
         button:
-            area (290+(index%columns)*cell,(200 if touch else 166)+(index//columns)*(122 if touch else 134),cell-5,(116 if touch else 128))
+            area (290+(index%columns)*cell,grid_body_top+(index//columns)*(122 if touch else 134),cell-5,(116 if touch else 128))
             padding (6,6) background R13PaperPanel(key is not None and detail==key,transferable=bool(key and not archive and r13_catalog_transferable(key)))
             action (Function(r13_record_select,owner,"detail",key,not archive) if key else NullAction())
             sensitive key is not None
@@ -292,10 +310,10 @@ screen r13_material_grid(entries,detail,page,owner,archive=False):
                         text "전달 가능" size 14 color "#795714" xalign .5
     if r13_record_pages(entries)>1:
         hbox:
-            xpos 302 ypos 584 spacing 12
-            textbutton "‹ 이전" style "r13_compact_button" xsize 132 ysize 82 text_size 19 sensitive actual_page>0 action Function(r13_record_select,owner,"page",actual_page-1)
+            xpos 302 ypos r13_record_footer_y() spacing 12
+            textbutton "‹ 이전" style "r13_compact_button" xsize 132 ysize r13_record_footer_height() text_size 19 sensitive actual_page>0 action Function(r13_record_select,owner,"page",actual_page-1)
             text ("%d / %d"%(actual_page+1,r13_record_pages(entries))) size 19 color "#65503b" yalign .5 xsize 124 text_align .5
-            textbutton "다음 ›" style "r13_compact_button" xsize 132 ysize 82 text_size 19 sensitive actual_page+1<r13_record_pages(entries) action Function(r13_record_select,owner,"page",actual_page+1)
+            textbutton "다음 ›" style "r13_compact_button" xsize 132 ysize r13_record_footer_height() text_size 19 sensitive actual_page+1<r13_record_pages(entries) action Function(r13_record_select,owner,"page",actual_page+1)
     if not entries:
         text "이 분류에 해당하는 자료가 없습니다." xpos 302 ypos 324 size 21 color "#625738" xsize 470 text_align .5
 
@@ -325,9 +343,10 @@ screen r13_material_detail(detail,archive=False,view_context=("records",),owner=
                             action Function(r13_open_record_relation,owner,source_person)
                     text ("들은 말" if ev.get("kind")=="증언" else "확인한 내용") size 17 color "#765426"
                     text ev["establishes"] size (26 if r13_touch_ui() else r13_read_size(21,26)) color "#493b30" xsize 332
-                    textbutton ("출처 접기" if origin_open else "출처 · 기록 펼치기"):
-                        style "r13_paper_tab_button" xsize 332 ysize (80 if r13_touch_ui() else 48) text_size 20
-                        action SetLocalVariable("origin_open",not origin_open)
+                    if not origin_open:
+                        textbutton "출처 · 기록 펼치기":
+                            style "r13_paper_tab_button" xsize 332 ysize (80 if r13_touch_ui() else 48) text_size 20
+                            action SetLocalVariable("origin_open",True)
                     if origin_open:
                         text ("지난 플레이에서 찾은 것 · 지금은 보여줄 수 없음" if archive else r13_catalog_origin(detail)) size 17 color "#625738" xsize 332
                         if not archive and detail in ROOM13["evidence"]:
@@ -369,7 +388,8 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
     default shelf=False
     default material_filter=r13_records_view.get("material_filter","all")
     default rel_sel=r13_records_view.get("rel_sel")
-    default rel_filter=r13_records_view.get("rel_filter","all")
+    default rel_filter="all"
+    $ rel_filter="all" # Retired status filter must not survive an old saved screen.
     default rel_focus=r13_records_view.get("rel_focus",True)
     on "hide" action [Function(source_fx,"note_close"),Function(r13_records_remember,tab,detail,person,page,archive,rel_sel,rel_filter,rel_focus,material_filter)]
     if r13_meeting_active and r13_meeting_claim in R13_DEBATE:
@@ -384,10 +404,10 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
                 action [SetScreenVariable("archive",not archive),SetScreenVariable("shelf",False),SetScreenVariable("detail",None),SetScreenVariable("page",0)]
         $ material_filter="all" if material_filter=="unread" or (archive and material_filter=="transfer") else material_filter
         $ entries=r13_material_subset(r13_catalog_entries(archive,shelf=shelf and not archive),material_filter)
-        text (("지난 사건 %d개" if shelf and not archive else "자료 %d개")%len(entries)) xpos 284 ypos (72 if r13_touch_ui() else 86) size 20 color "#65503b"
+        text (("지난 사건 %d개" if shelf and not archive else "자료 %d개")%len(entries)) xpos 284 ypos 72 size 20 color "#65503b"
         use r13_material_filters(_scope,material_filter,not archive,unread=len(r13_material_subset(r13_catalog_entries(archive,shelf=shelf and not archive),"unread")),shelf=(None if archive else shelf),shelf_count=len(r13_catalog_entries(shelf=True)))
         $ selected_record=r13_record_selected(entries,detail,page)
-        use r13_material_grid(entries,selected_record,page,_scope,archive)
+        use r13_material_grid(entries,selected_record,page,_scope,archive,filters=r13_material_filters_visible(material_filter,not archive,None if archive else shelf,len(r13_catalog_entries(shelf=True))))
         use r13_material_detail(selected_record,archive,owner=_scope) id ("records",selected_record,archive,persistent.room13_large_text)
     elif tab=="relations":
         use r13_relations_content(_scope,rel_sel,rel_filter,rel_focus)
@@ -414,7 +434,7 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
                             spacing 6
                             text (row["who"]+" · "+row["stamp"]) size 17 color "#625738" xsize 864
                             text row["what"] size r13_read_size(21,26) color (r13_role_color("thought","paper") if row["kind"]=="독백" else r13_role_color("narration","paper") if row["kind"]=="서술" else r13_role_color("speech","paper")) xsize 864
-    textbutton "닫기" style "r13_compact_button" xpos 66 ypos 584 xsize 176 ysize 82 text_size r13_read_size(20,23) action (close_action or Hide("r13_records"))
+    textbutton "닫기" style "r13_compact_button" xpos 66 ypos r13_record_footer_y() xsize 176 ysize r13_record_footer_height() text_size r13_read_size(20,23) action (close_action or Hide("r13_records"))
     key "game_menu" action (close_action or Hide("r13_records"))
 
 screen r13_resident_notes():

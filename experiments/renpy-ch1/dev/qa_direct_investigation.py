@@ -33,13 +33,13 @@ async def main():
    await q.press('처음부터');await q.press('씬 건너뛰기');await q.wait('say')
    for touch in (False,True):
     await page.set_viewport_size({'width':844,'height':390} if touch else {'width':1280,'height':720});q.touch=touch
-    await q.py('import renpy;s=renpy.store;renpy.exports.hide_screen("say");s.room13=s.r13_new();s.r13_upgrade();s.r13_edit(day=1,period=1,location="gate",evidence=["E01"]);s.room13_mode=True;s.persistent.room13_motion=False;s.persistent.room13_large_text=False;s.r13_field_location="gate";s.r13_field_view="scene";s.r13_world_cameras={};s.r13_field_pick=None;s.place=s.R13_PLACES["gate"][0];s.r13_scene_bg=s.R13_PLACES["gate"][1];s.r13_carriage_skip=False;renpy.exports.scene();renpy.exports.show("qa_bg",what=s.r13_background(s.r13_scene_bg));result=True')
+    await q.py('import renpy;s=renpy.store;renpy.exports.hide_screen("say");s.room13=s.r13_new();s.r13_upgrade();s.r13_edit(day=1,period=1,location="gate",evidence=["E01"]);s.room13_mode=True;s.persistent.room13_motion=False;s.persistent.room13_large_text=False;s.r13_field_location="gate";s.r13_field_view="people";s.r13_world_cameras={};s.r13_field_pick=None;s.place=s.R13_PLACES["gate"][0];s.r13_scene_bg=s.R13_PLACES["gate"][1];s.r13_carriage_skip=False;renpy.exports.scene();renpy.exports.show("qa_bg",what=s.r13_background(s.r13_scene_bg));result=True')
     await q.jump('r13_entry');await q.wait('r13_hub');await q.shot(('mobile' if touch else 'pc')+'-background-no-markers')
-    assert not any(x['text'].strip()=='살펴보기' for x in (await q.state())['buttons'])
+    assert not any(x['text'].strip() in ('살펴보기','주변 살피기','사람 보기') for x in (await q.state())['buttons'])
     assert 'G1' not in (await q.room())['evidence']
     await q.input(1120,420);await q.until('r13_hub');assert 'G1' in (await q.room())['evidence']
     await q.shot(('mobile' if touch else 'pc')+'-discovery')
-    await q.press('사람 보기');await q.press('돌목');await q.until('r13_entry_topics')
+    await q.press('돌목');await q.until('r13_entry_topics')
     report['topics_state']=await q.state()
     await q.press('자료');await q.until('r13_book')
     await q.shot(('mobile' if touch else 'pc')+'-owned-record')
@@ -49,7 +49,7 @@ async def main():
     assert 'entry_corrected' in (await q.room())['flags']
     await q.shot(('mobile' if touch else 'pc')+'-after-presentation')
     report['checks'].append(('Touch' if touch else 'PC')+': object tap runs real G1 discovery, owned record can be presented to guard')
-   await q.py('import renpy;s=renpy.store;s.r13_edit(day=2,period=0,location="inn");s.r13_flag("entry_corrected","lodging");s.r13_field_location="inn";s.r13_field_view="scene";s.r13_world_cameras={};s.place=s.R13_PLACES["inn"][0];s.r13_scene_bg=s.R13_PLACES["inn"][1];renpy.exports.scene();renpy.exports.show("qa_bg",what=s.r13_background(s.r13_scene_bg));result=True')
+   await q.py('import renpy;s=renpy.store;s.r13_edit(day=2,period=0,location="inn");s.r13_flag("entry_corrected","lodging");s.r13_field_location="inn";s.r13_field_view="people";s.r13_world_cameras={};s.place=s.R13_PLACES["inn"][0];s.r13_scene_bg=s.R13_PLACES["inn"][1];renpy.exports.scene();renpy.exports.show("qa_bg",what=s.r13_background(s.r13_scene_bg));result=True')
    await q.jump('r13_field');await q.wait('r13_hub')
    for key in ('keys','register'):
     rect=await q.py('import renpy;s=renpy.store;result=s.ROOM13["objects"]["inn"]['+repr(key)+']["rect"]')

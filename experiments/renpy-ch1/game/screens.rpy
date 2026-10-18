@@ -91,19 +91,23 @@ screen main_menu():
         action Show("r13_music_credits")
     text config.version xpos 1172 ypos 674 font r13_ui_font() size 13 color "#b2b8b8"
 
-# Dialogue panels end 16px above the shared gameplay footer.
-define R13_SAY_TOP_NORMAL = 532
-define R13_SAY_TOP_LARGE = 516
+# Two-line panels end 16px above the unchanged shared gameplay footer.
+# Tops are expressed against the historical bottom=632 coordinate.
+define R13_SAY_TOP_NORMAL = 528
+define R13_SAY_TOP_LARGE = 520
 init python:
+    def _r13_say_size():
+        return 31 if r13_touch_ui() else r13_read_size(28,31)
+
     def _r13_say_top(what=None):
-        # 0.18.93: conversations show two lines per click (systems/room13_linebreak.rpy), but a line
-        # spoken outside r13_lines (an old-save notice, a QA line) can wrap to three or more; the
-        # window then grows upward by whole lines so the last line never runs past the frame.
-        large=bool(persistent.room13_large_text)
-        top=min(R13_SAY_TOP_LARGE if large else R13_SAY_TOP_NORMAL,480)
-        lines=_r13_say_lines(what,29 if large else 23) if isinstance(what,str) else 1
+        large=bool(persistent.room13_large_text) or r13_touch_ui()
+        top=R13_SAY_TOP_LARGE if large else R13_SAY_TOP_NORMAL
+        size=_r13_say_size()
+        # r13_lines paginates two lines per click. Keep a safety expansion for
+        # direct say / old-save notices outside that path; never crop their text.
+        lines=_r13_say_lines(what,size,1028) if isinstance(what,str) else 1
         if lines>2:
-            top-=(lines-2)*(34 if large else 28)
+            top-=(lines-2)*(size+7)
         return max(300,top+r13_control_y()-16-632)
 
     import re as _r13_say_re
@@ -185,9 +189,9 @@ screen say(who,what):
             ypos (_r13_say_top(what) if room13_mode else 551)
             xsize (1072 if room13_mode else 1200)
             ysize (r13_control_y()-16-_r13_say_top(what) if room13_mode else 169)
-            background (r13_dialogue_frame() if room13_mode else Solid("#211a16f2")) padding (22,16)
+            background (r13_dialogue_frame() if room13_mode else Solid("#211a16f2")) padding (22,12)
             if room13_mode:
-                r13_dialogue_text what id "what" style "say_dialogue" size (29 if r13_touch_ui() else r13_read_size(26,29)) line_spacing 7 xsize 1028 font r13_ui_font() color r13_say_color()
+                r13_dialogue_text what id "what" style "say_dialogue" size _r13_say_size() line_spacing 7 xsize 1028 font r13_ui_font() color r13_say_color()
             else:
                 text what id "what" xsize 1120 font "assets/Galmuri11.ttf" color "#fff5df"
         if who:
@@ -586,6 +590,7 @@ screen pause_menu():
     modal True
     zorder 50
     style_prefix "r13opt"
+    default typing_preview = R13TypingPreview()
     default tab=(persistent.room13_option_tab if persistent.room13_option_tab in ("sound","screen","reading") else "reading")
     add Solid("#211b18b8")
     add R13TravelSheet() xpos 12 ypos 8 xsize 1256 ysize 704
@@ -605,12 +610,12 @@ screen pause_menu():
             if tab=="sound":
                 use r13_opt_row("배경음", "음악의 크기"):
                     bar value Preference("music volume") style "r13opt_bar" xsize 300 ysize 48 id "music_volume"
-                    text ("%d%%"%round(_preferences.get_volume("music")*100)) size 22 xsize 70 yalign .5
+                    text ("%d%%"%r13_mixer_percent("music")) size 22 xsize 70 yalign .5
                     textbutton ("음소거 중" if _preferences.get_mute("music") else "소리 켜짐"):
                         xsize 164 selected not _preferences.get_mute("music") action Preference("music mute","toggle") text_size 21
                 use r13_opt_row("효과음", "문·버튼·조사 소리"):
                     bar value Preference("sound volume") style "r13opt_bar" xsize 300 ysize 48 id "fx_volume"
-                    text ("%d%%"%round(_preferences.get_volume("sfx")*100)) size 22 xsize 70 yalign .5
+                    text ("%d%%"%r13_mixer_percent("sfx")) size 22 xsize 70 yalign .5
                     textbutton ("음소거 중" if _preferences.get_mute("sfx") else "소리 켜짐"):
                         xsize 164 selected not _preferences.get_mute("sfx") action Preference("sound mute","toggle") text_size 21
                 use r13_opt_row("대사 타이핑 소리", "글자가 나타날 때 나는 소리"):
@@ -626,14 +631,18 @@ screen pause_menu():
                         textbutton name xsize 164 selected r13_text_size()==key action Function(r13_set_text_size,key) text_size 22
                 use r13_opt_row("대사 표시 속도", "글자가 나타나는 빠르기"):
                     for speed_title,speed_value in (("느리게",24),("보통",34),("빠르게",55),("즉시",0)):
-                        textbutton speed_title xsize 132 action Preference("text speed",speed_value) selected _preferences.text_cps==speed_value text_size 22
+                        textbutton speed_title xsize 132 action [Preference("text speed",speed_value),Function(typing_preview.restart)] selected _preferences.text_cps==speed_value text_size 22
                 use r13_opt_row("자동 넘김 대기", "자동 재생 중 다음 대사까지"):
                     for value,name in ((0,"수동"),(5,"짧게"),(15,"보통"),(25,"길게")):
                         textbutton name xsize 132 action Preference("auto-forward time",value) selected (_preferences.afm_time==0 if value==0 else (0<_preferences.afm_time<10) if value==5 else (10<=_preferences.afm_time<20) if value==15 else _preferences.afm_time>=20) text_size 22
                 text "자동 재생은 대화 중 하단의 ‘자동’에서 켜고 끕니다." size 18 color "#796a52"
+                hbox:
+                    spacing 18
+                    text "속도 미리보기 · 소리 없음" size 18 color "#796a52" yalign .5
+                    textbutton "다시 보기" xsize 160 ysize 36 padding (10,4) text_size 18 action Function(typing_preview.restart)
                 frame:
                     xsize 904 ysize 116 padding (18,14) background r13_dialogue_frame()
-                    text "창밖에는 눈이 내리고 있다.\n아직 확인하지 못한 이야기가 남아 있다." size r13_read_size(24,30) color "#efe2c2" xsize 860
+                    add typing_preview xsize 860
             else:
                 use r13_opt_row("대사창 진하기", "배경이 비쳐 보이는 정도"):
                     for value,name in (("99","연하게"),("d4","보통"),("f5","진하게")):

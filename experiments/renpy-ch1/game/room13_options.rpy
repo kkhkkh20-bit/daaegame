@@ -40,3 +40,11 @@ init 70 python:
         renpy.save_persistent()
         renpy.restart_interaction()
         renpy.notify("옵션을 기본값으로 돌렸어요. 진행 기록은 그대로입니다.")
+
+    def r13_mixer_percent(mixer):
+        # The slider is perceptual (dB or quadratic), not linear amplitude.
+        # Read its own normalization so label and thumb always describe the
+        # same position, without changing saved volume or the audio curve.
+        adjustment = MixerValue(mixer).get_adjustment()
+        fraction = adjustment.value / float(adjustment.range) if adjustment.range else 0.0
+        return int(round(100 * max(0.0, min(1.0, fraction))))

@@ -15,9 +15,9 @@ screen r13_concept_action(x,w,caption,icon,command,enabled=True,primary=False):
                     add R13AntiqueIcon(icon,size=20) yalign .5
                 text caption size 22 color ("#fff4df" if enabled else "#a79c8c") font r13_ui_font() yalign .5
 
-screen r13_concept_dock(ready=True,show_record=True,person=None,present_action=None):
+screen r13_concept_dock(ready=True,show_record=True,person=None,present_action=None,reserve_return=False):
     $ secondary_width=160
-    $ more_x=R13_CONCEPT_RIGHT-secondary_width
+    $ more_x=R13_CONCEPT_RIGHT-secondary_width-(248 if reserve_return else 0)
     $ record_x=more_x-16-secondary_width
     $ line_active=renpy.get_screen("say") is not None and not any(renpy.get_screen(n) for n in ("choice","r13_topics","r13_resident_approach","r13_entry_topics","r13_entry_karo_topics"))
     if line_active:

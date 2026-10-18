@@ -1,6 +1,6 @@
 # 대사창 줄바꿈 (소유자 지시, 0.18.12): 문장이 끝나면 다음 줄에서 시작하고, 한 줄이 길면
 # 쉼표·띄어쓰기에서 나눠 두 줄을 쓴다. 대사 원문(읽음 표시·대사집·테스트 기준)은 바꾸지 않고
-# 화면에 보일 때만 나눈다. 한 줄 기준은 보통 30자, 두 줄을 넘으면 33·35자로 넓힌다.
+# 화면에 보일 때만 나눈다. 한 줄 기준은 보통 30자, 두 줄을 넘으면 32·33자로 넓힌다.
 # 0.18.39 (소유자): 대사창은 두 줄 크기. 한 번에 두 줄까지만 보이고 나머지는 다음 클릭으로 넘긴다.
 init 112 python:
     import re as _r13_lb_re
@@ -27,8 +27,9 @@ init 112 python:
     def _r13_lb_blocks(text,large):
         """Sentences, each as its wrapped lines; the line limit widens until it fits one page."""
         best=None
-        for limit in ((26,28,29) if large else (30,33,35)):
-            blocks=[_r13_lb_split(part,limit) for part in _R13_LB_END.split(text.strip()) if part]
+        for limit in ((26,28,29) if large else (30,32,33)):
+            blocks=[_r13_lb_split(part,limit) for written in text.split("\n")
+                    for part in _R13_LB_END.split(written.strip()) if part]
             if best is None or sum(map(len,blocks))<sum(map(len,best)):best=blocks
             if sum(map(len,blocks))<=R13_DIALOGUE_LINES:break
         return best
@@ -40,9 +41,9 @@ init 112 python:
     def r13_dialogue_pages(text):
         """Two lines show at once (the window is two lines tall). Longer text goes two lines per
         click; a sentence starts a new page when it would not fit on the current one."""
-        if not text or '\n' in text:return [text]
+        if not text:return [text]
         n=R13_DIALOGUE_LINES
-        blocks=_r13_lb_blocks(text,bool(persistent.room13_large_text))
+        blocks=_r13_lb_blocks(text,bool(persistent.room13_large_text) or r13_touch_ui())
         if sum(map(len,blocks))<=n:return ['\n'.join(l for b in blocks for l in b)]
         pages=[];cur=[]
         for block in blocks:

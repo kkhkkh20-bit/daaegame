@@ -34194,55 +34194,16 @@
     "line": 91,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_tosil",
-    "text": "무섭기도 하고 다정하기도 해요. 밤에는 꼭 혼자 아래층으로 내려가세요.",
+    "text": "무섭기도 하고 다정하기도 해요.",
     "packet": [
       "resident_tosil",
-      "무섭기도 하고 다정하기도 해요. 밤에는 꼭 혼자 아래층으로 내려가세요."
-    ],
-    "already_static_text": false
-  },
-  {
-    "source": "game/systems/room13_new_cast.rpy",
-    "line": 92,
-    "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
-    "person": "dad",
-    "text": "아래층?",
-    "packet": [
-      "dad",
-      "아래층?"
-    ],
-    "already_static_text": false
-  },
-  {
-    "source": "game/systems/room13_new_cast.rpy",
-    "line": 92,
-    "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
-    "person": "resident_tosil",
-    "text": "창고 쪽이요. 따라가면 혼나요. 한 번 혼났어요.",
-    "packet": [
-      "resident_tosil",
-      "창고 쪽이요. 따라가면 혼나요. 한 번 혼났어요."
+      "무섭기도 하고 다정하기도 해요."
     ],
     "already_static_text": false
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
     "line": 93,
-    "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
-    "person": "dad",
-    "text": "(밤마다 혼자 아래로 내려간다…….)",
-    "packet": [
-      "dad",
-      "(밤마다 혼자 아래로 내려간다…….)",
-      {
-        "thought": true
-      }
-    ],
-    "already_static_text": false
-  },
-  {
-    "source": "game/systems/room13_new_cast.rpy",
-    "line": 95,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "토실아, 숲에 심부름 간 게 그날이 처음이 아니었니?",
@@ -34254,7 +34215,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 96,
+    "line": 94,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_tosil",
     "text": "……네. 처음은 아저씨네 마차가 온 날 밤이었어요. 할머니가 부인한테 따뜻한 차 갖다 드리라고, 발자국 따라가면 된다고 했어요.",
@@ -34266,7 +34227,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 97,
+    "line": 95,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "부인을 만났니?",
@@ -34278,7 +34239,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 97,
+    "line": 95,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_tosil",
     "text": "아뇨. 큰 나무 밑에서 누가 숨 쉬는 소리가 났는데, 무서워서 그냥 울었어요. 칼바람 아저씨가 여관까지 데려다줬어요.",
@@ -34290,7 +34251,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 98,
+    "line": 96,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_tosil",
     "text": "다음 날 다시 가 보니까 담요만 있고 아무도 없었어요.",
@@ -34302,7 +34263,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 99,
+    "line": 97,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_tosil",
     "text": "할머니한테 그대로 말했더니, 잘했다고 꿀떡을 줬어요. ……제가 뭘 잘못한 거예요?",
@@ -34314,7 +34275,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 100,
+    "line": 98,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "아니. 토실이는 심부름을 한 것뿐이야.",
@@ -34326,7 +34287,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 104,
+    "line": 102,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "썰매 배로 강을 건널 수 있습니까?",
@@ -34338,7 +34299,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 104,
+    "line": 102,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_mulgyeol",
     "text": "가까운 얼음판까지만요. 한가운데는 겨울에도 안 얼어요.",
@@ -34350,7 +34311,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 105,
+    "line": 103,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "그럼 강 건너 마을로는?",
@@ -34362,7 +34323,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 105,
+    "line": 103,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_mulgyeol",
     "text": "【봄 해빙】 전엔 못 가요. 해마다 누군가 고집부리다 빠지죠.",
@@ -34374,7 +34335,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 107,
+    "line": 105,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "요즘 새벽에 강에 물 길러 오는 사람이 있습니까?",
@@ -34386,7 +34347,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 108,
+    "line": 106,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_mulgyeol",
     "text": "있었어요. 처음 보는 아주머니였는데, 꼭 해 뜨기 전에 왔다가 숲으로 갔어요.",
@@ -34398,7 +34359,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 109,
+    "line": 107,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "언제까지 왔습니까?",
@@ -34410,7 +34371,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 109,
+    "line": 107,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_mulgyeol",
     "text": "며칠 전부터 안 와요. 마지막 날엔 뒤를 자꾸 돌아보더라고요.",
@@ -34422,7 +34383,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 110,
+    "line": 108,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_mulgyeol",
     "text": "아, 그 아주머니 장갑에 【도토리】 수가 놓여 있었어요. 예뻐서 기억해요.",
@@ -34434,7 +34395,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 112,
+    "line": 110,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "요즘 새벽에 강에 물 길러 오는 사람이 있습니까?",
@@ -34446,7 +34407,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 113,
+    "line": 111,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_mulgyeol",
     "text": "……얼음에 빠졌을 때 지나가던 분이죠? 그때 좀 잡아 주지 그랬어요.",
@@ -34458,7 +34419,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 114,
+    "line": 112,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_mulgyeol",
     "text": "처음 보는 아주머니가 해 뜨기 전에 왔다가 숲으로 가곤 했어요. 그 이상은 몰라요.",
@@ -34470,7 +34431,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 118,
+    "line": 116,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "진료소 약초는 전부 숲에서 납니까?",
@@ -34482,7 +34443,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 118,
+    "line": 116,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_solbang",
     "text": "대부분요. 눈 밑에 숨은 걸 찾아야 해서 손이 많이 가요.",
@@ -34494,7 +34455,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 119,
+    "line": 117,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_solbang",
     "text": "요즘은 아픈 사람이 늘어서 숲 안쪽까지 들어가야 해요.",
@@ -34506,7 +34467,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 121,
+    "line": 119,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "무쇠 할아버지 약은 잘 지어졌습니까?",
@@ -34518,7 +34479,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 122,
+    "line": 120,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_solbang",
     "text": "그날 캔 뿌리로 사흘 치는 됐어요. 그다음은 눈이 얼마나 오느냐에 달렸죠.",
@@ -34530,7 +34491,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 123,
+    "line": 121,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_solbang",
     "text": "약초가 떨어질 때마다 숲 안쪽까지 가야 해요. 그때마다 길 표식 천이 하나씩 줄어 있어요. 누가 떼 가는 건지.",
@@ -34542,7 +34503,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 127,
+    "line": 125,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "어디서 오셨습니까?",
@@ -34554,7 +34515,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 127,
+    "line": 125,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_dalgeurak",
     "text": "고개 너머 장터를 도는 행상이오. 첫눈 오던 날 짐수레 바퀴가 부러져서 이 마을에 발이 묶였지.",
@@ -34566,7 +34527,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 128,
+    "line": 126,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "고개는 넘을 수 있지 않습니까? 저희는 마차로 왔는데요.",
@@ -34578,7 +34539,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 128,
+    "line": 126,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_dalgeurak",
     "text": "빈 마차는 겨우 지나가오. 내 짐을 지고 걸어서는 못 넘어. 까로 양반 마차 고쳐지면 짐을 실어 달라고 해 볼 참이오.",
@@ -34590,7 +34551,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 129,
+    "line": 127,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "여관에 묵으십니까?",
@@ -34602,7 +34563,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 129,
+    "line": 127,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_dalgeurak",
     "text": "식당 구석 자리를 얻었소. 할머니가 물건값으로 숙박비를 깎아 줬지.",
@@ -34614,7 +34575,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 131,
+    "line": 129,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "은호 사장과는 거래하십니까?",
@@ -34626,7 +34587,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 131,
+    "line": 129,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_dalgeurak",
     "text": "은호 사장은 내 물건을 반값에 사서 제값에 팔고 싶어 하지.",
@@ -34638,7 +34599,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 132,
+    "line": 130,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_dalgeurak",
     "text": "그런데 요즘 은호 사장이 나한테 판 냄비 하나가 진료소 것이더구먼. 바닥에 진료소 표시가 있었소.",
@@ -34650,7 +34611,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 133,
+    "line": 131,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "(창고에서 사라진 물건이 행상 손을 거쳐 돌고 있다…….)",
@@ -34665,7 +34626,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 137,
+    "line": 135,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "배달 일은 힘들지 않니?",
@@ -34677,7 +34638,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 137,
+    "line": 135,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_jongjong",
     "text": "하나도요! 슬링 언니가 순서만 정해 주면 저는 뛰기만 하면 돼요.",
@@ -34689,7 +34650,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 138,
+    "line": 136,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_jongjong",
     "text": "대신 봉투는 절대 열면 안 돼요. 열면 해고래요.",
@@ -34701,7 +34662,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 140,
+    "line": 138,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "혹시 여관 할머니가 맡긴 봉투를 부친 적 있니?",
@@ -34713,7 +34674,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 141,
+    "line": 139,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_jongjong",
     "text": "있어요! 눈 오기 전에요. 할머니가 직접 우체국까지 오시기 힘들다고 저한테 줬어요.",
@@ -34725,7 +34686,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 142,
+    "line": 140,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "봉투에 뭐가 그려져 있었니?",
@@ -34737,7 +34698,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 142,
+    "line": 140,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_jongjong",
     "text": "아무것도요. 그냥 하얀 봉투였어요. 받는 사람 이름만 엄청 또박또박 써 있었어요.",
@@ -34749,7 +34710,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 143,
+    "line": 141,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "(도토리 표식이 없는 봉투. 우리 집으로 온 그 편지다.)",
@@ -34764,7 +34725,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 147,
+    "line": 145,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "예전에 돌 일을 하셨다고 들었습니다.",
@@ -34776,7 +34737,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 147,
+    "line": 145,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_guldol",
     "text": "내 아버지 때까지는 마을에 돌 다루는 사람이 여럿 있었소.",
@@ -34788,7 +34749,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 148,
+    "line": 146,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_guldol",
     "text": "지금은 나 하나 남았지. 그나마 깨진 돌을 붙이는 정도요. 새로 만드는 법은 나도 모르오.",
@@ -34800,7 +34761,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 150,
+    "line": 148,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "여관 아래에 돌을 만들던 시설이 있었습니다.",
@@ -34812,7 +34773,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 150,
+    "line": 148,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_guldol",
     "text": "……결국 그걸 봤구먼.",
@@ -34824,7 +34785,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 151,
+    "line": 149,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_guldol",
     "text": "거기가 멈춘 건 지금 여관 할머니의 어머니 대요. 그분이 【룬】을 마지막으로 읽던 사람이었소.",
@@ -34836,7 +34797,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 152,
+    "line": 150,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_guldol",
     "text": "그분이 돌아가시고 나서 아무도 벽의 글을 못 읽었지. 할머니는 평생 그걸 다시 읽을 사람을 찾았소.",
@@ -34848,7 +34809,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 153,
+    "line": 151,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "그래서 아내가 필요했던 거군요.",
@@ -34860,7 +34821,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 161,
+    "line": 159,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "숲 끝에는 무엇이 있습니까?",
@@ -34872,7 +34833,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 161,
+    "line": 159,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_kalbaram",
     "text": "절벽. 그리고 그 아래 옛 길.",
@@ -34884,7 +34845,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 162,
+    "line": 160,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "순찰대는 숲 끝엔 길이 없다고 하던데요.",
@@ -34896,7 +34857,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 162,
+    "line": 160,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "resident_kalbaram",
     "text": "겨울엔 그 말이 맞소. 눈사태가 길을 덮으니까. 봄이 돼야 다시 드러나지. 가지 마시오.",
@@ -34908,7 +34869,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 167,
+    "line": 165,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "숲까지 따라온 발소리 말이야. 토실이었어. 할머니 손녀.",
@@ -34920,7 +34881,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 168,
+    "line": 166,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "mom",
     "text": "……그 아이였구나. 할머니가 차를 보낸 거야?",
@@ -34932,7 +34893,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 169,
+    "line": 167,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "dad",
     "text": "응. 발자국만 따라가면 된다고 했대. 아이는 아무것도 몰랐어.",
@@ -34944,7 +34905,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 170,
+    "line": 168,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "mom",
     "text": "나는 그날 밤 무서워서 짐을 쌌는데. 그 아이도 추운 데서 혼자였겠네.",
@@ -34956,7 +34917,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 171,
+    "line": 169,
     "context": "def _r13_nc_topic(key,npc,title,lines,day=(2,14),need=(),flags=(),not_flags=(),period=None):",
     "person": "mom",
     "text": "다람이한테는 토실이를 미워하지 말라고 해 줘. 그 아이 잘못이 아니야.",
@@ -34968,7 +34929,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 176,
+    "line": 174,
     "context": "R13_NIGHT_TALKS_NEW_CAST=[",
     "person": "daram",
     "text": "아빠, 토실이는 할머니랑 둘이 산대. 엄마 아빠는 봄에 온대.",
@@ -34980,7 +34941,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 177,
+    "line": 175,
     "context": "R13_NIGHT_TALKS_NEW_CAST=[",
     "person": "dad",
     "text": "그래. 다람이랑 비슷하네. 둘 다 엄마를 기다리고.",
@@ -34992,7 +34953,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 178,
+    "line": 176,
     "context": "R13_NIGHT_TALKS_NEW_CAST=[",
     "person": "daram",
     "text": "응. 그래서 과자 반의 반을 줬어. 엄마 몫은 안 건드렸어!",
@@ -35004,7 +34965,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 179,
+    "line": 177,
     "context": "R13_NIGHT_TALKS_NEW_CAST=[",
     "person": "dad",
     "text": "잘했어. 친구가 생겼네.",
@@ -35016,7 +34977,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 181,
+    "line": 179,
     "context": "R13_NIGHT_TALKS_NEW_CAST=[",
     "person": "daram",
     "text": "아빠. 엄마를 따라간 게 토실이였다며.",
@@ -35028,7 +34989,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 182,
+    "line": 180,
     "context": "R13_NIGHT_TALKS_NEW_CAST=[",
     "person": "dad",
     "text": "응. 할머니가 시켜서 간 거래. 토실이는 무슨 일인지 몰랐어.",
@@ -35040,7 +35001,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 183,
+    "line": 181,
     "context": "R13_NIGHT_TALKS_NEW_CAST=[",
     "person": "daram",
     "text": "……그래도 토실이 때문에 엄마가 또 도망간 거잖아. 토실이 미워해야 해?",
@@ -35052,7 +35013,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 184,
+    "line": 182,
     "context": "R13_NIGHT_TALKS_NEW_CAST=[",
     "person": "dad",
     "text": "아니. 토실이도 엄마를 기다리는 아이야. 다람이처럼.",
@@ -35064,7 +35025,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 185,
+    "line": 183,
     "context": "R13_NIGHT_TALKS_NEW_CAST=[",
     "person": "daram",
     "text": "……응. 그럼 내일도 과자 반의 반 줄 거야. 대신 엄마 얘기는 안 할 거야.",
@@ -35076,7 +35037,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 218,
+    "line": 216,
     "context": "label r13_hyeoni_song:",
     "person": "resident_hyeoni",
     "text": "그럼 오늘 소문으로 한 곡.",
@@ -35088,7 +35049,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 219,
+    "line": 217,
     "context": "label r13_hyeoni_song:",
     "person": "dad",
     "text": "(노래는 오늘 마을에 퍼진 말을 그대로 따라간다.)",
@@ -35103,7 +35064,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 239,
+    "line": 237,
     "context": "label r13_nc_tosil_friend:",
     "person": null,
     "text": "장터 구석, 토실이 다람이 손에 든 과자 봉지를 힐끔힐끔 본다.",
@@ -35115,7 +35076,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 240,
+    "line": 238,
     "context": "label r13_nc_tosil_friend:",
     "person": "resident_tosil",
     "text": "……그거 맛있어?",
@@ -35127,7 +35088,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 241,
+    "line": 239,
     "context": "label r13_nc_tosil_friend:",
     "person": "daram",
     "text": "응. 근데 반은 엄마 거야. 엄마 만나면 줄 거야.",
@@ -35142,7 +35103,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 242,
+    "line": 240,
     "context": "label r13_nc_tosil_friend:",
     "person": "resident_tosil",
     "text": "너희 엄마도 없어? 우리 엄마도 봄에 와.",
@@ -35154,7 +35115,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 243,
+    "line": 241,
     "context": "label r13_nc_tosil_friend:",
     "person": null,
     "text": "다람이가 잠깐 망설이더니 자기 몫에서 반을 뚝 떼어 내밀었다.",
@@ -35166,7 +35127,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 244,
+    "line": 242,
     "context": "label r13_nc_tosil_friend:",
     "person": "daram",
     "text": "그럼 이건 내 몫에서 반. 엄마 몫은 안 돼.",
@@ -35181,7 +35142,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 245,
+    "line": 243,
     "context": "label r13_nc_tosil_friend:",
     "person": "resident_tosil",
     "text": "……고마워. 나는 토실이야. 할머니 손녀.",
@@ -35193,7 +35154,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 246,
+    "line": 244,
     "context": "label r13_nc_tosil_friend:",
     "person": "daram",
     "text": "나는 다람이! 13호실에 있어.",
@@ -35208,7 +35169,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 247,
+    "line": 245,
     "context": "label r13_nc_tosil_friend:",
     "person": "dad",
     "text": "(다람이에게 이 마을에서 처음 생긴 친구다.)",
@@ -35223,7 +35184,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 253,
+    "line": 251,
     "context": "label r13_nc_tosil_errand:",
     "person": null,
     "text": "해가 진 뒤, 접수대 뒤에서 할머니가 토실에게 보온병을 쥐여 주었다.",
@@ -35235,7 +35196,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 254,
+    "line": 252,
     "context": "label r13_nc_tosil_errand:",
     "person": "granny",
     "text": "큰 나무 밑에 다시 가 보렴. 부인이 돌아왔으면 이거 드리고, 아무 말 말고 바로 와.",
@@ -35247,7 +35208,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 255,
+    "line": 253,
     "context": "label r13_nc_tosil_errand:",
     "person": null,
     "text": "토실이 여관 뒷문으로 빠져나가 숲 쪽으로 걸어갔다.",
@@ -35259,7 +35220,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 258,
+    "line": 256,
     "context": "label r13_nc_tosil_errand:",
     "person": null,
     "text": "토실은 큰 전나무 뿌리 앞에서 멈춰 서서 구멍 안을 들여다보았다. 안은 비어 있었다.",
@@ -35271,7 +35232,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 259,
+    "line": 257,
     "context": "label r13_nc_tosil_errand:",
     "person": "resident_tosil",
     "text": "……오늘도 없네. 저번처럼.",
@@ -35283,7 +35244,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 260,
+    "line": 258,
     "context": "label r13_nc_tosil_errand:",
     "person": "dad",
     "text": "토실아, 이 밤에 여기서 뭐 하니?",
@@ -35295,7 +35256,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 261,
+    "line": 259,
     "context": "label r13_nc_tosil_errand:",
     "person": "resident_tosil",
     "text": "아, 아저씨! 할머니가 부인이 돌아왔나 보고 오래요. 처음 왔을 땐 발자국만 따라가면 된다고 했는데.",
@@ -35307,7 +35268,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 262,
+    "line": 260,
     "context": "label r13_nc_tosil_errand:",
     "person": "dad",
     "text": "(할머니는 아이를 시켜 아내를 쫓게 했다. 할머니는 지금도 아내를 찾고 있다.)",
@@ -35322,7 +35283,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 263,
+    "line": 261,
     "context": "label r13_nc_tosil_errand:",
     "person": "dad",
     "text": "오늘은 너무 깜깜해. 같이 돌아가자. 할머니한테는 아무도 없었다고만 하렴.",
@@ -35334,7 +35295,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 266,
+    "line": 264,
     "context": "label r13_nc_tosil_errand:",
     "person": "dad",
     "text": "(아이 혼자 숲에……. 하지만 지금 따라가면 할머니 눈에 띌 수도 있다.)",
@@ -35349,7 +35310,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 271,
+    "line": 269,
     "context": "label r13_nc_mulgyeol_ice:",
     "person": null,
     "text": "쩍, 하는 소리와 함께 썰매 배 앞의 얼음이 갈라졌다. 물결이 밧줄을 붙잡은 채 미끄러진다.",
@@ -35361,7 +35322,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 272,
+    "line": 270,
     "context": "label r13_nc_mulgyeol_ice:",
     "person": "resident_mulgyeol",
     "text": "밧줄! 밧줄 끝 좀 잡아 줘요!",
@@ -35373,7 +35334,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 275,
+    "line": 273,
     "context": "label r13_nc_mulgyeol_ice:",
     "person": null,
     "text": "밧줄을 힘껏 당기자 썰매 배가 단단한 얼음 위로 끌려 올라왔다.",
@@ -35385,7 +35346,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 276,
+    "line": 274,
     "context": "label r13_nc_mulgyeol_ice:",
     "person": "resident_mulgyeol",
     "text": "……휴. 살았다. 고마워요. 이 은혜는 강가 일로 갚을게요.",
@@ -35397,7 +35358,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 277,
+    "line": 275,
     "context": "label r13_nc_mulgyeol_ice:",
     "person": "resident_mulgyeol",
     "text": "궁금한 거 있으면 물어봐요. 강가에서 본 건 다 말해 줄게요.",
@@ -35409,7 +35370,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 280,
+    "line": 278,
     "context": "label r13_nc_mulgyeol_ice:",
     "person": null,
     "text": "꽥순을 데리고 돌아왔을 때 물결은 혼자 기어 올라와 젖은 몸을 떨고 있었다.",
@@ -35421,7 +35382,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 281,
+    "line": 279,
     "context": "label r13_nc_mulgyeol_ice:",
     "person": "resident_mulgyeol",
     "text": "……다음엔 그냥 밧줄을 잡아 줘요. 그래도 와 줘서 고마워요.",
@@ -35433,7 +35394,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 287,
+    "line": 285,
     "context": "label r13_nc_solbang_herbs:",
     "person": "resident_solbang",
     "text": "진료소 약초가 다 떨어졌어요. 숲 안쪽까지 가야 하는데, 혼자는 길 표식 천을 다 못 봐서요.",
@@ -35445,7 +35406,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 288,
+    "line": 286,
     "context": "label r13_nc_solbang_herbs:",
     "person": "dad",
     "text": "같이 가 드리겠습니다.",
@@ -35457,7 +35418,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 289,
+    "line": 287,
     "context": "label r13_nc_solbang_herbs:",
     "person": null,
     "text": "붉은 표식 천을 따라 숲 안쪽으로 들어갔다. 솔방울이 눈을 헤치고 마른 뿌리를 캐낸다.",
@@ -35469,7 +35430,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 290,
+    "line": 288,
     "context": "label r13_nc_solbang_herbs:",
     "person": null,
     "text": "돌아오는 길, 큰 전나무 뿌리 쪽 눈이 유난히 단단하게 다져져 있었다.",
@@ -35481,7 +35442,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 291,
+    "line": 289,
     "context": "label r13_nc_solbang_herbs:",
     "person": "resident_solbang",
     "text": "저기는 요즘 누가 자꾸 드나드나 봐요. 동물 자국은 아니고요.",
@@ -35493,7 +35454,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 292,
+    "line": 290,
     "context": "label r13_nc_solbang_herbs:",
     "person": "resident_solbang",
     "text": "덕분에 약초를 넉넉히 캤어요. 무쇠 할아버지 약도 이걸로 지을 수 있어요.",
@@ -35505,7 +35466,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 298,
+    "line": 296,
     "context": "label r13_nc_dalgeurak_news:",
     "person": "resident_dalgeurak",
     "text": "바깥 소식이오, 바깥 소식! 한 냥이면 고개 너머 이야기를 들려드리지!",
@@ -35517,7 +35478,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 302,
+    "line": 300,
     "context": "label r13_nc_dalgeurak_news:",
     "person": "resident_dalgeurak",
     "text": "고개 마차는 눈이 녹아야 와. 내 짐작엔 【보름째】나 돼야 할 거요.",
@@ -35529,7 +35490,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 303,
+    "line": 301,
     "context": "label r13_nc_dalgeurak_news:",
     "person": "resident_dalgeurak",
     "text": "그리고 고개 아래 마을에선 이 마을 이름만 나와도 고개를 돌리더이다. 해마다 사람이 줄어든다고.",
@@ -35541,7 +35502,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 304,
+    "line": 302,
     "context": "label r13_nc_dalgeurak_news:",
     "person": "dad",
     "text": "(바깥에서도 이 마을이 이상하다는 걸 알고 있었다.)",
@@ -35556,7 +35517,7 @@
   },
   {
     "source": "game/systems/room13_new_cast.rpy",
-    "line": 307,
+    "line": 305,
     "context": "label r13_nc_dalgeurak_news:",
     "person": "resident_dalgeurak",
     "text": "에이, 소식은 상하지도 않는데. 다음에 또 오시오.",
@@ -39672,7 +39633,7 @@
   },
   {
     "source": "game/systems/room13_question_discovery.rpy",
-    "line": 184,
+    "line": 187,
     "context": "def r13_conversation_topic_lines(key):",
     "person": "granny",
     "text": "눈에 길이 막혀 묵는 분이 늘어서요. 장부를 보면서 날짜를 확인하는 게 낫겠어요.",

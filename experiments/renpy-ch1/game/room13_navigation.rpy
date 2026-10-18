@@ -136,23 +136,30 @@ screen r13_map(initial_region=None, local_guide=False):
         text ("숲·산길" if region=="mountain" else "마을 지도") xpos 46 ypos 29 size 29 color "#493b30"
         text ("현재 · "+(R13_MAP_LABELS.get(room13["location"],"마을") if r13_map_discovered(room13["location"]) else "마을")) xpos 46 ypos 65 size 17 color "#765b3e" xsize 206
     add R13PaperFrame() xpos 24 ypos 602 xysize (1232,110)
+    # Center every map control in the same footer, including 80px touch targets.
+    $ map_controls_y=602+(110-r13_control_height())//2
     if selected:
         text R13_MAP_LABELS[selected] xpos 48 ypos 627 size 27 color "#493b30"
         $ meeting_venue=r13_meeting_map_venue(selected)
         text (("● 현재 위치" if selected==room13["location"] else "선택됨")+(" · "+meeting_venue[2] if meeting_venue else " · 이동 버튼으로 확정")+(" · 모임 중" if meeting_venue and r13_meeting_map_pending(selected) else "")) xpos 48 ypos 663 size 17 color "#82603a" xsize 334
         $ can_travel=selected!=room13["location"] and (selected in dict(r13_local_connections()) if local_guide else selected in r13_places())
-        use r13_footer_control(3,"이곳으로 이동","map",[Hide("r13_inn_guide"),Return(("travel",selected))] if local_guide else Return(selected),enabled=ready and can_travel,primary=True)
+        fixed:
+            area (r13_control_x(3),map_controls_y,R13_CONTROL["width"],r13_control_height())
+            use r13_control("이곳으로 이동","map",[Hide("r13_inn_guide"),Return(("travel",selected))] if local_guide else Return(selected),enabled=ready and can_travel,primary=True)
     else:
         text "아직 확인한 장소가 없습니다." xpos 48 ypos 642 size 22 color "#765b3e"
     if not local_guide:
         hbox:
-            xpos 390 ypos r13_control_y() spacing 8
+            xpos 390 ypos map_controls_y spacing 8
             for key,title in R13_MAP_REGIONS:
                 if r13_map_nodes(key):
                     textbutton title:
                         style "r13_action_button" xsize 116 ysize r13_control_height() padding (8,8) text_size 19
                         background R13PaperPanel(focused=(region==key)) hover_background R13PaperPanel(focused=True)
                         text_color "#654b30" text_hover_color "#493b30"
+                        text_xalign .5 text_yalign .5
                         action [SetScreenVariable("region",key),SetScreenVariable("selected",r13_map_selection(key,selected)),SetScreenVariable("map_hover",None)]
                         selected region==key sensitive ready
-    use r13_footer_control(4,"현장으로","dialogue",close_action,enabled=ready)
+    fixed:
+        area (r13_control_x(4),map_controls_y,R13_CONTROL["width"],r13_control_height())
+        use r13_control("현장으로","dialogue",close_action,enabled=ready)
