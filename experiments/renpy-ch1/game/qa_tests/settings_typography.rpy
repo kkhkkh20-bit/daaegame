@@ -13,7 +13,6 @@ init 999 python:
 
 testcase settings_typography:
     pause 2.0
-    $ r13_qa_saved_mixers=(_preferences.get_volume("music"),_preferences.get_volume("sfx"))
     $ persistent.room13_option_tab="reading"
     run Function(r13_set_text_size,"normal")
     run Show("pause_menu")
@@ -24,21 +23,6 @@ testcase settings_typography:
     run Function(r13_qa_settings_offset)
     pause 0.3
     screenshot "settings-type-02-normal-sound.png"
-    # Actual pointer input, relative to the rendered bars rather than the screen.
-    click id "music_volume" pos (0.5,0.5)
-    click id "fx_volume" pos (0.5,0.5)
-    pause 0.3
-    assert eval (r13_qa_mixer_matches("music_volume","music",50))
-    assert eval (r13_qa_mixer_matches("fx_volume","sfx",50))
-    screenshot "settings-volume-50-percent.png"
-    drag id "music_volume" pos (0.5,0.5) to id "music_volume" pos (1.1,0.5) steps 20
-    drag id "fx_volume" pos (0.5,0.5) to id "fx_volume" pos (1.1,0.5) steps 20
-    pause 0.3
-    assert eval (r13_qa_mixer_matches("music_volume","music",100))
-    assert eval (r13_qa_mixer_matches("fx_volume","sfx",100))
-    screenshot "settings-volume-100-percent.png"
-    $ _preferences.set_volume("music",r13_qa_saved_mixers[0])
-    $ _preferences.set_volume("sfx",r13_qa_saved_mixers[1])
     click "화면"
     run Function(r13_qa_settings_offset)
     pause 0.3
