@@ -264,7 +264,7 @@ init 190 python:
     def r13_contact_has_content(person):
         s=store.room13 or {}
         read=set(s.get("read_topics",[]))
-        if any(key not in read and not (key.startswith("alibi:") and r13_has(key)) for key,spec in r13_topics(person)):return True
+        if any(r13_topic_current_fresh(key) or (key not in read and not (key.startswith("alibi:") and r13_has(key))) for key,spec in r13_topics(person)):return True
         if r13_contact_presentations(person):return True
         # A first greeting/notice may itself supply a real subject. Predict whether
         # it will, without awarding its knowledge or recording a meeting.
