@@ -43,5 +43,6 @@ class PreviewTest(unittest.TestCase):
   source=(ROOT/'game/screens.rpy').read_text()
   self.assertIn('default typing_preview = R13TypingPreview()',source)
   self.assertIn('[Preference("text speed",speed_value),Function(typing_preview.restart)]',source)
-  self.assertIn('add typing_preview xsize 860',source)
+  self.assertIn('add typing_preview',source)
+  self.assertNotIn('add typing_preview xsize',source)
 if __name__=='__main__':unittest.main(verbosity=2)

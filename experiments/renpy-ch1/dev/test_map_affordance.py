@@ -65,9 +65,9 @@ class MapAffordance(unittest.TestCase):
 
     def test_tabs_and_actions_share_centered_row(self):
         source = (GAME / "room13_navigation.rpy").read_text()
-        self.assertIn('xpos 390 ypos map_controls_y spacing 8', source)
+        self.assertIn('xpos 366 ypos map_controls_y spacing 8', source)
         for column in (3, 4):
-            self.assertIn('area (r13_control_x(%d),map_controls_y,R13_CONTROL["width"],r13_control_height())' % column, source)
+            self.assertIn('area (r13_control_x(%d)-24,map_controls_y,R13_CONTROL["width"],r13_control_height())' % column, source)
         self.assertIn('text_xalign .5 text_yalign .5', source)
         self.assertIn('use r13_control("이곳으로 이동","map",', source)
         self.assertIn('use r13_control("현장으로","dialogue",close_action,enabled=ready)', source)

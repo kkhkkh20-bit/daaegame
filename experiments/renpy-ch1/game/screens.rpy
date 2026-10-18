@@ -561,8 +561,8 @@ init python:
 style r13opt_text is text:
     font r13_ui_font() color "#493b30"
 style r13opt_button is button:
-    background R13PaperFrame() hover_background R13InkPanel(focused=True) selected_background R13InkPanel(focused=True)
-    insensitive_background R13InkPanel(disabled=True)
+    background R13PaperFrame() hover_background R13PaperFrame(ink=True) selected_background R13PaperFrame(ink=True)
+    insensitive_background R13PaperFrame(ink=True)
     padding (10,8) ysize 56
 style r13opt_button_text is text:
     font r13_ui_font() color "#65503b" hover_color "#fff0ce" selected_color "#fff0ce" insensitive_color "#9b917e"
@@ -642,7 +642,7 @@ screen pause_menu():
                     textbutton "다시 보기" xsize 160 ysize 36 padding (10,4) text_size 18 action Function(typing_preview.restart)
                 frame:
                     xsize 904 ysize 116 padding (18,14) background r13_dialogue_frame()
-                    add typing_preview xsize 860
+                    add typing_preview
             else:
                 use r13_opt_row("대사창 진하기", "배경이 비쳐 보이는 정도"):
                     for value,name in (("99","연하게"),("d4","보통"),("f5","진하게")):
