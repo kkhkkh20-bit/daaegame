@@ -62,8 +62,10 @@ screen r13_admin_meeting_controls():
         style "r13_action_button" xpos 900 ypos 8 xsize 360 ysize 42 text_size 19
         action EndReplay(confirm=False)
     key "game_menu" action EndReplay(confirm=False)
-    key "quick_save" action NullAction()
-    key "quick_load" action NullAction()
+    if "quick_save" in config.keymap:
+        key "quick_save" action NullAction()
+    if "quick_load" in config.keymap:
+        key "quick_load" action NullAction()
 
 screen r13_admin_meeting_finished():
     modal True
