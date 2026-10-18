@@ -1,0 +1,276 @@
+{
+  "label": "gate-2-0-False-640",
+  "actors": [
+    {
+      "person": "guard",
+      "pose": "action_1",
+      "x": 1179,
+      "y": 410,
+      "width": 179,
+      "height": 190,
+      "rect": [
+        1179,
+        410,
+        179,
+        190
+      ],
+      "depth": 600,
+      "occlusion": [],
+      "contact": "held_ledger",
+      "slot": null,
+      "activity": "입구 장부에 드나든 사람을 적는다."
+    },
+    {
+      "person": "karo",
+      "pose": "living_axlewrap",
+      "x": 486,
+      "y": 450,
+      "width": 127,
+      "height": 165,
+      "rect": [
+        486,
+        450,
+        127,
+        165
+      ],
+      "depth": 615,
+      "occlusion": [],
+      "contact": "kneeling",
+      "slot": null,
+      "activity": "까로는 마차 축의 감긴 부분을 다시 살폈다."
+    },
+    {
+      "person": "resident_bori",
+      "pose": "map27_carry_firewood_v2",
+      "x": 818,
+      "y": 346,
+      "width": 211,
+      "height": 280,
+      "rect": [
+        818,
+        346,
+        211,
+        280
+      ],
+      "depth": 626,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "작업장갑을 끼고 장작을 나른다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    },
+    {
+      "person": "resident_badook",
+      "pose": "map27_check_rope",
+      "x": 998,
+      "y": 357,
+      "width": 202,
+      "height": 300,
+      "rect": [
+        998,
+        357,
+        202,
+        300
+      ],
+      "depth": 657,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "순찰용 밧줄의 매듭을 살핀다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    }
+  ],
+  "offset": 640,
+  "hits": [
+    {
+      "person": "guard",
+      "point": [
+        637,
+        450
+      ],
+      "actions": [
+        "('person', 'guard')"
+      ]
+    },
+    {
+      "person": "resident_bori",
+      "point": [
+        294,
+        387
+      ],
+      "actions": [
+        "('person', 'resident_bori')"
+      ]
+    },
+    {
+      "person": "resident_badook",
+      "point": [
+        457,
+        399
+      ],
+      "actions": [
+        "('person', 'resident_badook')"
+      ]
+    }
+  ],
+  "specs": {
+    "guard": {
+      "file": "assets/room13-pixel-acting-guard.webp",
+      "crop": [
+        614,
+        504,
+        451,
+        479
+      ],
+      "nearest": true,
+      "facing": "right",
+      "contact": "held_ledger",
+      "foot": [
+        225,
+        478
+      ],
+      "head": [
+        147,
+        0,
+        205,
+        204
+      ],
+      "hand": [
+        390,
+        202
+      ]
+    },
+    "karo": {
+      "file": "assets/room13-action-karo-living_axlewrap.webp",
+      "crop": [
+        0,
+        61,
+        512,
+        664
+      ],
+      "nearest": true,
+      "foot": [
+        294,
+        660
+      ],
+      "head": [
+        150,
+        4,
+        280,
+        150
+      ],
+      "contact": "kneeling",
+      "reviewed": true,
+      "map_action": true,
+      "stature_ratio": 0.72,
+      "source_sha256": "4de994f5c66c053293de74f13e6713859ac823cd26f1330d49054bb034062d08"
+    },
+    "resident_bori": {
+      "file": "assets/map-action27/VA-7--resident_bori.webp",
+      "crop": [
+        0,
+        0,
+        578,
+        768
+      ],
+      "head": [
+        180.625,
+        0,
+        276.25,
+        228.53979238754326
+      ],
+      "foot": [
+        280.234375,
+        752.5868512110727
+      ],
+      "anchors": {
+        "foot_left": [
+          173.1875,
+          698.9065743944637
+        ],
+        "foot_right": [
+          387.28125,
+          752.5868512110727
+        ],
+        "hand_left_image": [
+          231.09375,
+          437.94602076124573
+        ],
+        "hand_right_image": [
+          479.71875,
+          460.8
+        ],
+        "foot": [
+          280.234375,
+          752.5868512110727
+        ]
+      },
+      "contact": "standing",
+      "stature_ratio": 1,
+      "source_sha256": "731a173e63f0415f7b86f81d7bcd1d09b26bbc68e15ba2adfa3100a39597b3fd",
+      "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+    },
+    "resident_badook": {
+      "file": "assets/map-action27/VA-6--resident_badook.webp",
+      "crop": [
+        0,
+        0,
+        516,
+        768
+      ],
+      "head": [
+        120.46692607003891,
+        0,
+        271.05058365758754,
+        215.84313725490196
+      ],
+      "foot": [
+        286.3599221789883,
+        752.4392156862745
+      ],
+      "anchors": {
+        "foot_left": [
+          196.26070038910507,
+          752.4392156862745
+        ],
+        "foot_right": [
+          376.4591439688716,
+          752.4392156862745
+        ],
+        "hand_left_image": [
+          216.84046692607004,
+          276.58039215686273
+        ],
+        "hand_right_image": [
+          418.1206225680934,
+          291.6392156862745
+        ],
+        "foot": [
+          286.3599221789883,
+          752.4392156862745
+        ]
+      },
+      "contact": "standing",
+      "stature_ratio": 1,
+      "source_sha256": "8e6c62f72314ad87814bce487721abffd7339110fa55f33bfc2dd689c02be5a3",
+      "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+    }
+  },
+  "room": {
+    "location": "gate",
+    "day": 2,
+    "period": 0
+  },
+  "clicked": [
+    "resident_badook",
+    "resident_bori"
+  ],
+  "screens": [
+    "r13_hub"
+  ],
+  "game_commit": "1b94f0d5 + 0.19.43 working tree",
+  "archive_sha256": "c9e213cb6c4f3df24eba26dd24dc0479f875414b326cbf9ab1d6a6ec047bfa25",
+  "capture_kind": "explicit schedule fixture in native SDK web engine"
+}

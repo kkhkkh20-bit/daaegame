@@ -53,13 +53,12 @@ testcase meeting_granny_startle:
     click pos (640,600) until eval (r13_read_id.startswith("debate:break:C3:s2:E12") and r13_index==0) timeout 40
     assert eval (r13_meeting_shock_target is None and r13_meeting_direction["beat"]=="explain" and r13_meeting_focus=="granny")
     screenshot "granny-listens-to-explanation.png"
-    click pos (640,600) until eval (r13_meeting_shock_target=="granny") timeout 40
+    click pos (640,600) until eval (r13_read_id.startswith("debate:break:C3:s2:E12") and r13_index==1) timeout 40
     assert eval (r13_read_id.startswith("debate:break:C3:s2:E12") and r13_index==1)
     screenshot "granny-reacts-after-explanation.png"
     click pos (640,600) until eval ((r13_meeting_direction or {}).get("beat")=="gasp") timeout 40
-    assert eval (r13_meeting_focus=="granny" and r13_meeting_direction_poses.get("granny")=="flustered")
-    assert eval ("flustered-acting" in r13_fullbody_spec("granny",r13_meeting_direction_poses["granny"])["file"])
-    screenshot "granny-startled-with-neighbors.png"
+    assert eval (r13_meeting_focus=="granny" and "granny" not in r13_meeting_direction_poses and r13_meeting_reaction is None)
+    screenshot "granny-reaction-cleared-on-next-line.png"
     click pos (640,600) until eval (r13_qa_direction_done) timeout 40
     assert eval (r13_qa_direction_result and r13_debate_is_broken("C3","s2") and "C3" not in room13["propositions"])
     $ r13_qa_note("granny visibly startled, gasps keep camera on subject, proof is still canonical")

@@ -22,4 +22,19 @@ class MeetingSources(unittest.TestCase):
   fit=self.env['r13_dialogue_fit_profile'];p={'840':dict(canvas=[500,900],frames={'neutral':dict(file='x',offset=[20,30])})}
   result=fit(p,876);ratio=876/840
   self.assertAlmostEqual(result['frames']['neutral']['scale'],ratio);self.assertEqual(result['canvas'],[round(500*ratio),round(900*ratio)])
+ def test_meeting_variant_offsets_are_pixels_at_every_venue_height(self):
+  source=(ROOT/'game/room13_meeting_camera.rpy').read_text()
+  block=source.split('    def r13_meeting_slot_art',1)[1].split('    def r13_meeting_reaction_phase',1)[0]
+  registry=json.loads((ROOT/'game/assets/room13-meeting-source-art.json').read_text())
+  transforms=[]
+  env=dict(store=types.SimpleNamespace(r13_meeting_art_slots={}),R13_MEETING_SOURCE_ART=registry,renpy=types.SimpleNamespace(loadable=lambda p:True),Transform=lambda *a,**kw:transforms.append(kw) or kw,Fixed=lambda *a,**kw:kw)
+  exec(textwrap.dedent('    def r13_meeting_slot_art'+block),env)
+  for who,slots in registry.items():
+   for slot,spec in slots.items():
+    env['store'].r13_meeting_art_slots={who:slot}
+    for height in (740,840):
+     env['r13_meeting_slot_art'](who,height)
+     for axis in ('xpos','ypos'):
+      self.assertIs(type(transforms[-1][axis]),int, 'RenPy floats are relative positions')
+      self.assertLess(abs(transforms[-1][axis]),spec["canvas"][0]*height/840)
 if __name__=='__main__':unittest.main()

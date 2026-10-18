@@ -8,6 +8,12 @@ default r13_meeting_direction_return_audio = {}
 default r13_meeting_shock_target = None
 default r13_meeting_shock_at = 0.0
 default r13_meeting_proof_reveal = None
+# Presentation-only state. Older saves receive these defaults; no story flags.
+default r13_meeting_line_token = None
+default r13_meeting_listener = None
+default r13_meeting_art_slots = {}
+default r13_meeting_reaction = None
+default r13_meeting_reaction_tokens = []
 
 init 174 python:
     R13_MEETING_BEATS = {
@@ -27,15 +33,9 @@ init 174 python:
         "cornered": ("마지막 항변", .82, .16, .36),
         "loss": ("남겨진 주장", .68, .26, .18),
     }
-    # Performance styles, not guilt. A composed opponent can gather themselves
-    # between statements; others retain pressure from already-proved contradictions.
-    R13_MEETING_COMPOSED = {"resident_ppul","resident_seori","neoul"}
-    # Granny's legacy surprise slot still points to a calm redesign picture.
-    # Use her inspected, expressive head-in-hands pose inside councils only.
-    R13_MEETING_STARTLE_POSES = {"granny":"flustered"}
-
     def r13_meeting_startle_pose(person):
-        return R13_MEETING_STARTLE_POSES.get(person,"surprise")
+        # Every approved dialogue source now has a real surprise talk frame.
+        return "surprise"
 
     def r13_meeting_direct_beat(beat,claim=None,sid=None,key=None):
         if beat not in R13_MEETING_BEATS:return
@@ -80,6 +80,10 @@ init 174 python:
 
     def r13_meeting_direct_end():
         store.r13_meeting_proof_reveal=None
+        store.r13_meeting_line_token=None
+        store.r13_meeting_art_slots={}
+        store.r13_meeting_listener=None
+        store.r13_meeting_reaction=None
         store.r13_meeting_direction={}
         store.r13_meeting_direction_poses={}
         store.r13_meeting_direction_music=None
@@ -123,39 +127,104 @@ init 174 python:
         if identity.startswith(("debate:press:","debate:press_missing:")):return "press"
         return "listen"
 
+    # Exact public lines, not emotion keywords, allegiance or hidden case state.
+    # Art slots are separate from authored emotions and never infer allegiance.
+    # Their source files/placement live in room13-meeting-source-art.json.
+    R13_MEETING_LINE_CUES = {
+        ("meeting:live:C1:s1",0,"seryeon","복도에 있던 사람들은 아무도 문으로 들어가지 않았다고 했습니다."):
+            dict(slot="confident_report",pose="neutral"),
+        ("meeting:live:C3:s1",0,"granny","비명이 들릴 때 나는 식당에 있었어요. 다들 봤잖아요."):
+            dict(slot="composed_answer",pose="neutral"),
+        ("debate:soft:C2:s2:E07",0,"resident_seori","촛대가 둘로 갈라진 건 보입니다. 하지만 조각만 봐서는 언제 갈라졌는지, 머리 상처를 그 조각이 냈는지 알 수 없습니다. 상처와 맞춰 본 기록이 있습니까?"):
+            dict(slot="evidence_check",pose="neutral"),
+        ("meeting:live:F1:s1",0,"resident_ppul","가족도 못 알아봅니다. 돌아올 수 없는 분들로 판단됐어요."):
+            dict(slot="stern_statement",pose="neutral"),
+        ("meeting:live:Q4:s1",0,"resident_ppul","목수는 혼자 통로에 들어갔다가 문이 저절로 닫혀 갇혔소. 딱한 사고요."):
+            dict(slot="stern_statement",pose="neutral"),
+        ("meeting:live:Q6:s1",0,"resident_ppul","이 수레는 보호소로 가는 수레요."):
+            dict(slot="stern_statement",pose="neutral"),
+        ("meeting:live:C2:s1",0,"resident_ppul","아이가 촛대로 어르신의 머리를 내리쳤다고 했습니다."):
+            dict(slot="stern_statement",pose="neutral",listener=("buri","neutral")),
+        ("meeting:live:C2:s1",1,"buri","잠깐요. 무슨 일이었는지부터 차례로 들어요."):
+            dict(slot="measured_interject",pose="neutral",listener=("resident_ppul","neutral")),
+        ("meeting:live:C2:s2",1,"nabi","직접 본 일과 들은 말을 섞지는 말아요."):
+            dict(pose="neutral",listener=("resident_ppul","neutral")),
+        ("meeting:live:C2:s3",0,"resident_ppul","그 방에는 아이 혼자 있었습니다. 다시 휘두를 사람이 누가 있습니까?"):
+            dict(slot="stern_statement",pose="neutral"),
+        ("meeting:live:C2:s3",1,"resident_seori","그때 방에 있던 사람이 누구인지 확인하겠습니다."):
+            dict(pose="neutral",listener=("resident_ppul","neutral")),
+        ("meeting:live:C3:s1",1,"nabi","첫 비명 때는 할머니와 함께 있었어요."):
+            dict(pose="neutral",listener=("granny","neutral")),
+        ("debate:press:C3:s1",1,"nabi","네. 첫 비명이 났을 때는 할머니랑 같이 있었어요."):
+            dict(pose="neutral",listener=("granny","neutral")),
+        ("debate:break:C3:s2:E12",0,"nabi","할머니가 공구를 가지러 주방에 가신 뒤로는…… 저도 못 봤어요."):
+            dict(slot="witness_hesitate",expression="anxious",pose="anxious",listener=("granny","neutral")),
+    }
+
+    def r13_meeting_reaction_settle():
+        reaction=getattr(store,"r13_meeting_reaction",None)
+        if reaction:
+            store.r13_meeting_reaction=dict(reaction,phase="settled")
+        store.r13_meeting_shock_target=None
+
     def r13_meeting_direct_line(identity,index,packet,expression,pose):
         if not getattr(store,"r13_meeting_active",False):return expression,pose
         claim=getattr(store,"r13_meeting_claim",None)
         if claim not in R13_DEBATE:return expression,pose
         person=packet[0]
+        token=(identity,index,person,packet[1])
+        proof=getattr(store,"r13_meeting_proof_reveal",None)
+        reaction=getattr(store,"r13_meeting_reaction",None)
+        carry=bool(proof and proof.get("at_end") and proof.get("revealed") and reaction
+            and reaction.get("phase")=="pending" and index==0
+            and identity=="meeting:gasp:"+proof["claim"]+":"+proof["sid"])
+        if token!=getattr(store,"r13_meeting_line_token",None):
+            if not carry:
+                r13_meeting_reaction_settle()
+                store.r13_meeting_reaction=None
+            store.r13_meeting_direction_poses={}
+            store.r13_meeting_listener=None
+            store.r13_meeting_line_token=token
         proof=getattr(store,"r13_meeting_proof_reveal",None)
         if proof and identity==proof["identity"] and index==proof["boundary"] and not proof["revealed"]:
             r13_meeting_direct_reveal(proof["claim"],proof["sid"])
         beat=r13_meeting_direct_phase(identity,index,person)
         r13_meeting_direct_beat(beat,claim)
-        # Keep explicit writer/art direction. Neutral fallbacks can use the beat.
-        explicit=(len(packet)>2 and bool(packet[2])) or pose not in ("neutral","interview_neutral")
+        metadata=packet[2] if len(packet)>2 and isinstance(packet[2],dict) else {}
+        explicit=bool(metadata.get("pose") or metadata.get("expression")) or pose not in ("neutral","interview_neutral") or expression not in (None,"neutral")
+        cue=R13_MEETING_LINE_CUES.get(token,{})
+        if not explicit:pose=cue.get("pose",pose)
+        # An authored pose always wins. A matching authored emotion may use a
+        # reviewed variant of that same emotion (Nabi's anxious witness account).
+        use_slot=cue.get("slot") and not metadata.get("pose") and (not explicit or cue.get("expression")==metadata.get("expression",expression))
+        store.r13_meeting_art_slots={person:cue["slot"]} if use_slot else {}
+        poses={}
+        listener=cue.get("listener")
+        attendees={p for p,_ in r13_meeting_cast(claim,r13_debate_session(claim))}
+        if listener and listener[0] in attendees and listener[0] not in (person,r13_viewpoint()):
+            store.r13_meeting_listener=listener[0]
+            poses[listener[0]]=listener[1]
+        else:store.r13_meeting_listener=None
         if person in CAST and person!=r13_viewpoint():
-            if not explicit:
-                group=R13_DEBATE[claim].get("session","trial" if claim.startswith("C") else "finale")
-                count=sum(1 for cid,spec in R13_DEBATE.items()
-                    if spec.get("session","trial" if cid.startswith("C") else "finale")==group
-                    for st in spec["statements"] if st["who"]==person and not st.get("truth")
-                    and not r13_debate_skipped(cid,st) and r13_debate_is_broken(cid,st["id"]))
-                if beat=="listen" and count and person not in R13_MEETING_COMPOSED:
-                    pose="flustered" if count==1 else "anxious"
-                elif beat=="shaken":
-                    # Escalate only already-established contradictions by this speaker.
-                    pose="surprise" if count==0 else "flustered" if count==1 else "anxious"
-                elif beat=="cornered":pose="angry"
-                elif beat=="recover":pose="neutral"
-                elif beat=="reversal":pose="angry"
-                elif beat=="loss":pose="neutral"
-            if beat=="shaken" and person==getattr(store,"r13_meeting_shock_target",None) and (index<=1 or (proof and index==proof["boundary"])):
-                pose="surprise"
             if pose=="surprise":pose=r13_meeting_startle_pose(person)
-            poses=dict(getattr(store,"r13_meeting_direction_poses",{}) or {})
-            poses[person]=pose;store.r13_meeting_direction_poses=poses
+            poses[person]=pose
+        reaction=getattr(store,"r13_meeting_reaction",None)
+        if reaction and reaction["token"]==(getattr(store,"r13_meeting_proof_reveal",None) or {}).get("identity"):
+            target=reaction["person"]
+            if target==person:
+                if not explicit and not cue:
+                    pose=r13_meeting_startle_pose(person)
+                    poses[person]=pose
+                # The authored final face wins, including angry and special poses.
+                store.r13_meeting_reaction=dict(reaction,pose=pose)
+                if explicit and pose not in ("neutral","surprise","flustered","anxious"):
+                    r13_meeting_reaction_settle()
+            elif target in attendees:
+                # A proof reaction replaces (never adds to) the one listener cue.
+                poses={p:v for p,v in poses.items() if p==person}
+                poses[target]=reaction["pose"]
+                store.r13_meeting_listener=target
+        store.r13_meeting_direction_poses=poses
         return expression,pose
 
     def r13_meeting_proof_boundary(claim,sid,rows):
@@ -167,9 +236,10 @@ init 174 python:
 
     def r13_meeting_prepare_proof(claim,sid,key,rows):
         store.r13_meeting_shock_target=None
+        boundary=r13_meeting_proof_boundary(claim,sid,rows)
         store.r13_meeting_proof_reveal=dict(claim=claim,sid=sid,
             identity="debate:break:"+claim+":"+sid+":"+key,
-            boundary=r13_meeting_proof_boundary(claim,sid,rows),revealed=False)
+            boundary=boundary,at_end=boundary==len(rows),revealed=False)
 
     def r13_meeting_direct_reveal(claim,sid):
         proof=getattr(store,"r13_meeting_proof_reveal",None)
@@ -179,14 +249,18 @@ init 174 python:
         r13_meeting_direct_shock(claim,sid)
 
     def r13_meeting_direct_shock(claim,sid):
+        proof=getattr(store,"r13_meeting_proof_reveal",None)
+        # A call without a completed explanation is not an animation trigger.
+        if not proof or not proof.get("revealed") or proof["claim"]!=claim or proof["sid"]!=sid:return
+        token=proof["identity"]
+        tokens=list(getattr(store,"r13_meeting_reaction_tokens",[]) or [])
+        if token in tokens:return
+        tokens.append(token);store.r13_meeting_reaction_tokens=tokens
         target=r13_debate_statement(claim,sid)["who"]
+        store.r13_meeting_reaction=dict(token=token,person=target,phase="pending",pose="surprise")
         store.r13_meeting_shock_target=target
-        poses=dict(getattr(store,"r13_meeting_direction_poses",{}) or {})
-        people=[p for p,_ in r13_meeting_cast(claim,r13_debate_session(claim))]
-        for who in people:
-            if who in CAST and who!=r13_viewpoint():poses[who]=r13_meeting_startle_pose(who)
-        store.r13_meeting_direction_poses=poses
-        store.r13_meeting_shock_at=renpy.display.core.get_time()
+        # Only the person whose statement was challenged reacts. No group flinch.
+        store.r13_meeting_direction_poses={target:r13_meeting_startle_pose(target)}
 
     def r13_meeting_direct_gasps(claim,sid):
         token=claim+":"+sid+":gasp"
@@ -231,6 +305,7 @@ init 174 python:
         return [(people[offset%len(people)],texts[result][offset%2])]
 
     def r13_meeting_direct_after_load():
+        r13_meeting_reaction_settle()
         if getattr(store,"r13_meeting_active",False):
             r13_meeting_direct_audio()
         else:

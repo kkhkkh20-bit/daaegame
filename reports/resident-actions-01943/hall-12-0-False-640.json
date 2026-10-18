@@ -1,0 +1,100 @@
+{
+  "label": "hall-12-0-False-640",
+  "actors": [
+    {
+      "person": "doto",
+      "pose": "map27_write_ledger_v2",
+      "x": 929,
+      "y": 419,
+      "width": 168,
+      "height": 255,
+      "rect": [
+        929,
+        419,
+        168,
+        255
+      ],
+      "depth": 674,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "토시를 끼고 장부에 적는다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    }
+  ],
+  "offset": 640,
+  "hits": [
+    {
+      "person": "doto",
+      "point": [
+        374,
+        461
+      ],
+      "actions": [
+        "('person', 'doto')"
+      ]
+    }
+  ],
+  "specs": {
+    "doto": {
+      "file": "assets/map-action27/VA-9--doto.webp",
+      "crop": [
+        0,
+        0,
+        506,
+        768
+      ],
+      "head": [
+        119.1740412979351,
+        0,
+        278.0727630285153,
+        258.1512605042017
+      ],
+      "foot": [
+        265.1622418879056,
+        752.6102133160957
+      ],
+      "anchors": {
+        "foot_left": [
+          176.77482792527042,
+          752.6102133160957
+        ],
+        "foot_right": [
+          353.54965585054083,
+          737.2204266321913
+        ],
+        "hand_left_image": [
+          288.0039331366765,
+          338.0788623141564
+        ],
+        "hand_right_image": [
+          388.8053097345133,
+          384.2482223658694
+        ],
+        "foot": [
+          265.1622418879056,
+          752.6102133160957
+        ]
+      },
+      "contact": "standing",
+      "stature_ratio": 1,
+      "source_sha256": "10e0eb3c34eb109b0433e507bfb7f97d1a66d28787a0b5cd97f7fd0036a2f334",
+      "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+    }
+  },
+  "room": {
+    "location": "hall",
+    "day": 12,
+    "period": 0
+  },
+  "clicked": [
+    "doto"
+  ],
+  "screens": [
+    "r13_hub"
+  ],
+  "game_commit": "1b94f0d5 + 0.19.43 working tree",
+  "archive_sha256": "c9e213cb6c4f3df24eba26dd24dc0479f875414b326cbf9ab1d6a6ec047bfa25",
+  "capture_kind": "explicit schedule fixture in native SDK web engine"
+}

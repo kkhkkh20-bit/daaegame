@@ -1,0 +1,369 @@
+{
+  "label": "post-2-1-False-0",
+  "actors": [
+    {
+      "person": "resident_momo",
+      "pose": "living_lampnumber",
+      "x": 908,
+      "y": 341,
+      "width": 115,
+      "height": 249,
+      "rect": [
+        908,
+        341,
+        115,
+        249
+      ],
+      "depth": 590,
+      "occlusion": [
+        [
+          366,
+          552
+        ],
+        [
+          1030,
+          466
+        ],
+        [
+          1030,
+          392
+        ],
+        [
+          1279,
+          392
+        ],
+        [
+          1279,
+          720
+        ],
+        [
+          366,
+          720
+        ]
+      ],
+      "contact": "standing",
+      "slot": [
+        757,
+        632,
+        332,
+        "counter"
+      ],
+      "activity": "모모는 전시품 밑의 번호를 다시 읽었다."
+    },
+    {
+      "person": "resident_librarian",
+      "pose": "map27_po_2",
+      "x": 319,
+      "y": 358,
+      "width": 200,
+      "height": 300,
+      "rect": [
+        319,
+        358,
+        200,
+        300
+      ],
+      "depth": 658,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "종이를 펼쳐 말린다.",
+      "map27_occlusion": [
+        [
+          [
+            366,
+            552
+          ],
+          [
+            1030,
+            466
+          ],
+          [
+            1030,
+            392
+          ],
+          [
+            1279,
+            392
+          ],
+          [
+            1279,
+            720
+          ],
+          [
+            366,
+            720
+          ]
+        ]
+      ],
+      "map27_keepouts": []
+    },
+    {
+      "person": "seryeon",
+      "pose": "chair_read",
+      "x": 10,
+      "y": 310,
+      "width": 310,
+      "height": 364,
+      "rect": [
+        10,
+        310,
+        310,
+        364
+      ],
+      "depth": 674,
+      "occlusion": [
+        [
+          188,
+          408
+        ],
+        [
+          317,
+          416
+        ],
+        [
+          324,
+          583
+        ],
+        [
+          184,
+          577
+        ]
+      ],
+      "contact": "background_chair",
+      "slot": null,
+      "activity": "우편 담당자는 돌아온 봉투의 이름을 다시 확인했다."
+    },
+    {
+      "person": "resident_jongjong",
+      "pose": "map27_pack_satchel_v2",
+      "x": 214,
+      "y": 465,
+      "width": 154,
+      "height": 240,
+      "rect": [
+        214,
+        465,
+        154,
+        240
+      ],
+      "depth": 705,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "우편 가방에 편지를 챙긴다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    }
+  ],
+  "offset": 0,
+  "hits": [
+    {
+      "person": "resident_momo",
+      "point": [
+        960,
+        367
+      ],
+      "actions": [
+        "('person', 'resident_momo')"
+      ]
+    },
+    {
+      "person": "resident_librarian",
+      "point": [
+        405,
+        399
+      ],
+      "actions": [
+        "('person', 'resident_librarian')"
+      ]
+    },
+    {
+      "person": "seryeon",
+      "point": [
+        163,
+        373
+      ],
+      "actions": [
+        "('person', 'seryeon')"
+      ]
+    },
+    {
+      "person": "resident_jongjong",
+      "point": [
+        290,
+        503
+      ],
+      "actions": [
+        "('person', 'resident_jongjong')"
+      ]
+    }
+  ],
+  "specs": {
+    "resident_momo": {
+      "file": "assets/room13-action-resident_momo-living_lampnumber.webp",
+      "crop": [
+        93,
+        1,
+        354,
+        765
+      ],
+      "nearest": true,
+      "foot": [
+        192,
+        761
+      ],
+      "head": [
+        57,
+        5,
+        210,
+        150
+      ],
+      "contact": "standing",
+      "reviewed": true,
+      "map_action": true,
+      "stature_ratio": 1,
+      "source_sha256": "5319857cfa25aee94795afd3027f4dadbb3796623c0a47360b3d545b4c94d61b"
+    },
+    "resident_librarian": {
+      "file": "assets/map-action27/PO-2--resident_librarian.webp",
+      "crop": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "head": [
+        134.656,
+        27.647999999999996,
+        173.05599999999998,
+        158.976
+      ],
+      "foot": [
+        296.96,
+        748.8
+      ],
+      "anchors": {
+        "foot": [
+          296.96,
+          748.8
+        ],
+        "foot_left": [
+          222.72,
+          748.8
+        ],
+        "foot_right": [
+          363.52,
+          744.96
+        ],
+        "hand_left": [
+          320,
+          268.79999999999995
+        ],
+        "hand_right": [
+          455.68,
+          188.16
+        ],
+        "prop_support": [
+          410.624,
+          280.32
+        ]
+      },
+      "foreground_parts": [],
+      "contact": "standing",
+      "stature_ratio": 1,
+      "source_sha256": "5fdf72dbf96f1dedff609e7a293f961e72245896dd0890013dd3956859752c94",
+      "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+    },
+    "seryeon": {
+      "file": "assets/room13-pixel-acting-seryeon-chair.webp",
+      "crop": [
+        210,
+        20,
+        716,
+        840
+      ],
+      "nearest": true,
+      "foot": [
+        187,
+        830
+      ],
+      "seat": [
+        380,
+        581
+      ],
+      "hand": [
+        216,
+        354
+      ],
+      "head": [
+        170,
+        0,
+        370,
+        292
+      ],
+      "facing": "rear_left",
+      "contact": "background_chair",
+      "action_ko": "창가 의자에 앉아 편지를 읽는다."
+    },
+    "resident_jongjong": {
+      "file": "assets/map-action27/VA-12--resident_jongjong.webp",
+      "crop": [
+        0,
+        0,
+        492,
+        768
+      ],
+      "head": [
+        127.41035856573706,
+        0,
+        235.21912350597609,
+        245.0542437779196
+      ],
+      "foot": [
+        275.6474103585657,
+        752.806636885769
+      ],
+      "anchors": {
+        "foot_left": [
+          196.996015936255,
+          752.806636885769
+        ],
+        "foot_right": [
+          354.2988047808765,
+          752.806636885769
+        ],
+        "hand_left_image": [
+          270.50199203187253,
+          345.5264837268666
+        ],
+        "hand_right_image": [
+          388.601593625498,
+          353.36821952776006
+        ],
+        "foot": [
+          275.6474103585657,
+          752.806636885769
+        ]
+      },
+      "contact": "standing",
+      "stature_ratio": 1,
+      "source_sha256": "169143ce4a8a4f6aa817c286a20c195d8f41585d605b1d29843ade2fa2674c87",
+      "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+    }
+  },
+  "room": {
+    "location": "post",
+    "day": 2,
+    "period": 1
+  },
+  "clicked": [
+    "resident_jongjong"
+  ],
+  "screens": [
+    "r13_hub"
+  ],
+  "game_commit": "1b94f0d5 + 0.19.43 working tree",
+  "archive_sha256": "c9e213cb6c4f3df24eba26dd24dc0479f875414b326cbf9ab1d6a6ec047bfa25",
+  "capture_kind": "explicit schedule fixture in native SDK web engine"
+}

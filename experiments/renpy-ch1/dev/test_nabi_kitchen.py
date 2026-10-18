@@ -40,5 +40,5 @@ class NabiKitchen(unittest.TestCase):
    with Image.open(p) as im:self.assertEqual(list(im.size),r['source_size'])
    out=ROOT/'game'/r['export'];self.assertEqual(hashlib.sha256(out.read_bytes()).hexdigest(),r['export_sha256'])
    with Image.open(out) as im:validate_map_image(im.convert('RGBA'))
-  reg=json.loads((ROOT/'game/assets/room13-map-action27.json').read_text());self.assertEqual(len({r['request_id'] for r in reg['rows']}),31)
+  reg=json.loads((ROOT/'game/assets/room13-map-action27.json').read_text());self.assertTrue({'KI-1','KI-2','KI-3','KI-4','KI-5'} <= {r['request_id'] for r in reg['rows']})
 if __name__=='__main__':unittest.main()

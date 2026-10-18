@@ -1,0 +1,389 @@
+{
+  "label": "square-6-0-False-640",
+  "actors": [
+    {
+      "person": "resident_seol",
+      "pose": "living_bellrope",
+      "x": 317,
+      "y": 241,
+      "width": 97,
+      "height": 175,
+      "rect": [
+        317,
+        241,
+        97,
+        175
+      ],
+      "depth": 460,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "설이는 줄을 잡았다 놓았다.",
+      "ground_depth": 460,
+      "elevation": 45
+    },
+    {
+      "person": "resident_hyeoni",
+      "pose": "map27_mk_8",
+      "x": 1234,
+      "y": 385,
+      "width": 150,
+      "height": 232,
+      "rect": [
+        1234,
+        385,
+        150,
+        232
+      ],
+      "depth": 617,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "류트 줄을 튕긴다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    },
+    {
+      "person": "doto",
+      "pose": "action_1",
+      "x": 851,
+      "y": 375,
+      "width": 106,
+      "height": 245,
+      "rect": [
+        851,
+        375,
+        106,
+        245
+      ],
+      "depth": 620,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "도토는 쓰던 줄을 끝내고 빈칸을 남겼다."
+    },
+    {
+      "person": "resident_piko",
+      "pose": "map27_paint_sketchboard_v2",
+      "x": 941,
+      "y": 331,
+      "width": 195,
+      "height": 300,
+      "rect": [
+        941,
+        331,
+        195,
+        300
+      ],
+      "depth": 631,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "그림판에 풍경을 그린다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    },
+    {
+      "person": "resident_tosil",
+      "pose": "living_thermos",
+      "x": 1404,
+      "y": 398,
+      "width": 121,
+      "height": 242,
+      "rect": [
+        1404,
+        398,
+        121,
+        242
+      ],
+      "depth": 640,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        1470,
+        640,
+        243,
+        "floor"
+      ],
+      "activity": "광장 우물가에서 물통을 든다."
+    },
+    {
+      "person": "resident_owlgp",
+      "pose": "living_notebook",
+      "x": 153,
+      "y": 478,
+      "width": 123,
+      "height": 198,
+      "rect": [
+        153,
+        478,
+        123,
+        198
+      ],
+      "depth": 676,
+      "occlusion": [],
+      "contact": "portable_stool",
+      "slot": [
+        245,
+        676,
+        255,
+        "floor"
+      ],
+      "activity": "부엉이 할아버지의 수첩이 덮여 있었다."
+    }
+  ],
+  "offset": 640,
+  "hits": [
+    {
+      "person": "resident_hyeoni",
+      "point": [
+        677,
+        417
+      ],
+      "actions": [
+        "('person', 'resident_hyeoni')"
+      ]
+    },
+    {
+      "person": "doto",
+      "point": [
+        256,
+        411
+      ],
+      "actions": [
+        "('person', 'doto')"
+      ]
+    },
+    {
+      "person": "resident_piko",
+      "point": [
+        393,
+        364
+      ],
+      "actions": [
+        "('person', 'resident_piko')"
+      ]
+    },
+    {
+      "person": "resident_tosil",
+      "point": [
+        829,
+        452
+      ],
+      "actions": [
+        "('person', 'resident_tosil')"
+      ]
+    }
+  ],
+  "specs": {
+    "resident_seol": {
+      "file": "assets/room13-action-resident_seol-living_bellrope.webp",
+      "crop": [
+        61,
+        2,
+        423,
+        766
+      ],
+      "nearest": true,
+      "foot": [
+        211,
+        762
+      ],
+      "head": [
+        74,
+        4,
+        205,
+        150
+      ],
+      "contact": "standing",
+      "reviewed": true,
+      "map_action": true,
+      "stature_ratio": 1,
+      "source_sha256": "3d8419c6875d085e71303bb7b8f65d850d6c79883778f7fd88b08de58b412821"
+    },
+    "resident_hyeoni": {
+      "file": "assets/map-action27/MK-8--resident_hyeoni.webp",
+      "crop": [
+        0,
+        0,
+        496,
+        768
+      ],
+      "head": [
+        128.95999999999998,
+        0,
+        297.59999999999997,
+        215.04000000000005
+      ],
+      "foot": [
+        252.96,
+        760.32
+      ],
+      "anchors": {
+        "foot": [
+          252.96,
+          760.32
+        ],
+        "hand_left": [
+          426.56,
+          307.20000000000005
+        ],
+        "hand_right": [
+          243.04,
+          376.32
+        ],
+        "lute_strings": [
+          282.71999999999997,
+          368.64
+        ],
+        "raised_foot": [
+          416.63999999999993,
+          744.96
+        ]
+      },
+      "foreground_parts": [],
+      "contact": "standing",
+      "stature_ratio": 1,
+      "source_sha256": "dd72dfe60cd9d5993c0aadc64dab2743a97f044e0725d481a8c43dbd685af6e0",
+      "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+    },
+    "doto": {
+      "file": "assets/room13-role-doto-batch-action_1-v1.webp",
+      "crop": [
+        198,
+        10,
+        659,
+        1518
+      ],
+      "foot": [
+        329.5,
+        1518
+      ],
+      "head": [
+        98,
+        0,
+        362,
+        455
+      ],
+      "nearest": true,
+      "native_detail": true,
+      "contact": "standing",
+      "stature_ratio": 1,
+      "posture": "standing",
+      "source_sha256": "15436edeb1f6bad390fd7300fa58460a7a4c81aec234bc96fac88c8c2c50aec1",
+      "map_action": true,
+      "reviewed": true
+    },
+    "resident_piko": {
+      "file": "assets/map-action27/VA-2--resident_piko.webp",
+      "crop": [
+        0,
+        0,
+        498,
+        768
+      ],
+      "head": [
+        132.99306243805748,
+        0,
+        206.8780971258672,
+        172.5288831835687
+      ],
+      "foot": [
+        278.30029732408326,
+        752.7188703465982
+      ],
+      "anchors": {
+        "foot_left": [
+          228.55104063429138,
+          752.7188703465982
+        ],
+        "foot_right": [
+          328.04955401387514,
+          752.7188703465982
+        ],
+        "hand_left_image": [
+          283.2259663032706,
+          238.0898587933248
+        ],
+        "hand_right_image": [
+          422.6223984142716,
+          276.53915275994865
+        ],
+        "foot": [
+          278.30029732408326,
+          752.7188703465982
+        ]
+      },
+      "contact": "standing",
+      "stature_ratio": 1,
+      "source_sha256": "e4a2944fce37457cd896255afaf6269c3af157697fd24043469903420c99aab2",
+      "source_commit": "d301395b62ba3bb93b3ab050cbd1cf8d0c741937"
+    },
+    "resident_tosil": {
+      "file": "assets/room13-action-resident_tosil-living_thermos.webp",
+      "crop": [
+        78,
+        28,
+        356,
+        712
+      ],
+      "nearest": true,
+      "foot": [
+        191,
+        708
+      ],
+      "head": [
+        32,
+        4,
+        320,
+        310
+      ],
+      "contact": "standing",
+      "reviewed": true,
+      "map_action": true,
+      "stature_ratio": 1,
+      "source_sha256": "fd640b921511e1ced791a644d34ba579ef045d7d3a17860e601bf31dc3be2262"
+    },
+    "resident_owlgp": {
+      "file": "assets/room13-action-resident_owlgp-living_notebook.webp",
+      "crop": [
+        17,
+        5,
+        467,
+        751
+      ],
+      "nearest": true,
+      "foot": [
+        345,
+        747
+      ],
+      "head": [
+        138,
+        5,
+        295,
+        280
+      ],
+      "contact": "portable_stool",
+      "reviewed": true,
+      "map_action": true,
+      "stature_ratio": 0.78,
+      "source_sha256": "d5c35cdbe005836f14caf450e5e72ccf5200e7ff6dca2cf99e7a98bb7dde7dc8",
+      "seat": [
+        225,
+        544
+      ]
+    }
+  },
+  "room": {
+    "day": 6,
+    "period": 0,
+    "location": "square"
+  },
+  "clicked": "resident_piko",
+  "screens": [
+    "r13_hub"
+  ],
+  "game_commit": "fc8c35c5 + 0.19.42 working tree",
+  "archive_sha256": "9b650609c4165a6b6c585214a9641d08bbac2a87396b13fcf5acaa21866976a2",
+  "capture_kind": "Native SDK explicit schedule fixture"
+}

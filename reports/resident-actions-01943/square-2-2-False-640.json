@@ -1,0 +1,166 @@
+{
+  "label": "square-2-2-False-640",
+  "actors": [
+    {
+      "person": "doto",
+      "pose": "map27_compare_ration_slips_v2",
+      "x": 816,
+      "y": 380,
+      "width": 161,
+      "height": 245,
+      "rect": [
+        816,
+        380,
+        161,
+        245
+      ],
+      "depth": 625,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "두 배급표의 표기를 비교한다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    },
+    {
+      "person": "resident_badook",
+      "pose": "map27_lantern_patrol",
+      "x": 131,
+      "y": 385,
+      "width": 202,
+      "height": 300,
+      "rect": [
+        131,
+        385,
+        202,
+        300
+      ],
+      "depth": 685,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "등불을 들고 광장을 순찰한다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    }
+  ],
+  "offset": 640,
+  "hits": [
+    {
+      "person": "doto",
+      "point": [
+        258,
+        421
+      ],
+      "actions": [
+        "('person', 'doto')"
+      ]
+    }
+  ],
+  "specs": {
+    "doto": {
+      "file": "assets/map-action27/VA-10--doto.webp",
+      "crop": [
+        0,
+        0,
+        504,
+        768
+      ],
+      "head": [
+        119.05511811023622,
+        0,
+        277.79527559055117,
+        258.1512605042017
+      ],
+      "foot": [
+        264.6496062992126,
+        752.6102133160957
+      ],
+      "anchors": {
+        "foot_left": [
+          176.5984251968504,
+          752.6102133160957
+        ],
+        "foot_right": [
+          352.7007874015748,
+          745.1635423400129
+        ],
+        "hand_left_image": [
+          186.51968503937007,
+          307.29928894634776
+        ],
+        "hand_right_image": [
+          443.4803149606299,
+          245.74014221073045
+        ],
+        "foot": [
+          264.6496062992126,
+          752.6102133160957
+        ]
+      },
+      "contact": "standing",
+      "stature_ratio": 1,
+      "source_sha256": "d4a7133a0d6a1d1953be9ee5743d71f1611aed03030023d0effab4149d35ae04",
+      "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+    },
+    "resident_badook": {
+      "file": "assets/map-action27/VA-1--resident_badook.webp",
+      "crop": [
+        0,
+        0,
+        516,
+        768
+      ],
+      "head": [
+        120.46692607003891,
+        10.03921568627451,
+        271.05058365758754,
+        210.8235294117647
+      ],
+      "foot": [
+        291.63035019455253,
+        744.9098039215686
+      ],
+      "anchors": {
+        "foot_left": [
+          201.28015564202335,
+          629.9607843137255
+        ],
+        "foot_right": [
+          381.9805447470817,
+          744.9098039215686
+        ],
+        "hand_left_image": [
+          170.15953307392996,
+          99.89019607843137
+        ],
+        "hand_right_image": [
+          423.1400778210117,
+          337.81960784313725
+        ],
+        "foot": [
+          291.63035019455253,
+          744.9098039215686
+        ]
+      },
+      "contact": "standing",
+      "stature_ratio": 1,
+      "source_sha256": "da6139101310671715ccabcf35aa8eb8ab5e80ea4aa3d6f304f0f17f3e472e3e",
+      "source_commit": "b9ba25ebc0d0ca2baf114f9fc39d3f5d6f9180c2"
+    }
+  },
+  "room": {
+    "location": "square",
+    "day": 2,
+    "period": 2
+  },
+  "clicked": [
+    "doto"
+  ],
+  "screens": [
+    "r13_hub"
+  ],
+  "game_commit": "1b94f0d5 + 0.19.43 working tree",
+  "archive_sha256": "c9e213cb6c4f3df24eba26dd24dc0479f875414b326cbf9ab1d6a6ec047bfa25",
+  "capture_kind": "explicit schedule fixture in native SDK web engine"
+}

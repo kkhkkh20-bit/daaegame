@@ -1,0 +1,226 @@
+{
+  "label": "clinic-12-1-False-550",
+  "actors": [
+    {
+      "person": "resident_piko",
+      "pose": "map27_cl_1",
+      "x": 1075,
+      "y": 263,
+      "width": 160,
+      "height": 240,
+      "rect": [
+        1075,
+        263,
+        160,
+        240
+      ],
+      "depth": 503,
+      "occlusion": [],
+      "contact": "background_bed",
+      "slot": null,
+      "activity": "침대 가장자리에 앉아 담요를 여민다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    },
+    {
+      "person": "resident_ubak",
+      "pose": "living_measure",
+      "x": 142,
+      "y": 414,
+      "width": 258,
+      "height": 244,
+      "rect": [
+        142,
+        414,
+        258,
+        244
+      ],
+      "depth": 658,
+      "occlusion": [],
+      "contact": "self-contained",
+      "slot": [
+        272,
+        656,
+        244,
+        "floor"
+      ],
+      "activity": "우박은 바늘에서 눈을 떼지 않았다."
+    },
+    {
+      "person": "resident_solbang",
+      "pose": "neutral",
+      "x": 1453,
+      "y": 437,
+      "width": 168,
+      "height": 253,
+      "rect": [
+        1453,
+        437,
+        168,
+        253
+      ],
+      "depth": 690,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        1538,
+        689,
+        253,
+        "floor"
+      ],
+      "activity": "진료소 선반에 약초 다발을 채운다."
+    }
+  ],
+  "offset": 550,
+  "hits": [
+    {
+      "person": "resident_piko",
+      "point": [
+        606,
+        295
+      ],
+      "actions": [
+        "('person', 'resident_piko')"
+      ]
+    },
+    {
+      "person": "resident_solbang",
+      "point": [
+        979,
+        481
+      ],
+      "actions": [
+        "('person', 'resident_solbang')"
+      ]
+    }
+  ],
+  "specs": {
+    "resident_piko": {
+      "file": "assets/map-action27/CL-1--resident_piko.webp",
+      "crop": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "head": [
+        136.5,
+        6.5,
+        250,
+        194.5
+      ],
+      "foot": [
+        406.5,
+        731
+      ],
+      "anchors": {
+        "head_center": [
+          285,
+          110.5
+        ],
+        "foot_left": [
+          345.5,
+          731
+        ],
+        "foot_right": [
+          468,
+          727.5
+        ],
+        "foot": [
+          406.5,
+          731
+        ],
+        "buttock": [
+          238.5,
+          465.5
+        ],
+        "seat": [
+          238.5,
+          465.5
+        ],
+        "hand_left": [
+          255,
+          264
+        ],
+        "hand_right": [
+          359,
+          300
+        ],
+        "blanket_left_grip": [
+          241,
+          238
+        ],
+        "blanket_right_grip": [
+          348,
+          280
+        ]
+      },
+      "foreground_parts": [],
+      "contact": "background_bed",
+      "stature_ratio": 0.8,
+      "source_sha256": "6070b407f29748be55d9c4ccff92ba27df242c2b0a8b24d461d1a4847424c4f5",
+      "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+    },
+    "resident_ubak": {
+      "file": "assets/room13-pixel-acting-ubak.webp",
+      "crop": [
+        539,
+        558,
+        441,
+        416
+      ],
+      "nearest": true,
+      "anchor": {
+        "foot": [
+          220,
+          412
+        ]
+      },
+      "action_ko": "계측기 바늘과 종이 눈금을 맞춘다.",
+      "contact": "self-contained",
+      "head": [
+        40,
+        0,
+        401,
+        216
+      ],
+      "facing": "right-profile"
+    },
+    "resident_solbang": {
+      "file": "assets/solbang-chinchilla-map/neutral.webp",
+      "crop": [
+        0,
+        0,
+        280,
+        420
+      ],
+      "foot": [
+        140,
+        418
+      ],
+      "head": [
+        47,
+        0,
+        161,
+        148
+      ],
+      "nearest": true,
+      "contact": "standing",
+      "reviewed": true,
+      "source_sha256": "5eaacbe578e3d52bd92485b9901a91d1572120672ad247caae92151835070bfd",
+      "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+    }
+  },
+  "room": {
+    "day": 12,
+    "period": 1,
+    "location": "clinic"
+  },
+  "clicked": "resident_piko",
+  "screens": [
+    "r13_hub"
+  ],
+  "game_commit": "fc8c35c5 + 0.19.42 working tree",
+  "archive_sha256": "9b650609c4165a6b6c585214a9641d08bbac2a87396b13fcf5acaa21866976a2",
+  "capture_kind": "Native SDK explicit schedule fixture"
+}

@@ -15,6 +15,13 @@ class Venues(unittest.TestCase):
    self.assertEqual(actual[:2],(place,kind))
   self.assertEqual(self.env['r13_meeting_map_venue']('inn'),self.env['r13_meeting_map_venue']('dining'))
   self.assertIsNone(self.env['r13_meeting_map_venue']('passage'))
+ def test_close_table_lowers_edge_without_moving_wide_seat_contacts(self):
+  close=self.env['r13_meeting_close_edge'];wide=self.env['r13_meeting_edge']
+  self.assertEqual(close(640,'trial'),476);self.assertEqual(wide(640,'trial'),396)
+  self.assertEqual(close(0,'trial'),494);self.assertEqual(close(1280,'trial'),494)
+  self.assertEqual(close(640,'finale'),476);self.assertEqual(wide(640,'finale'),432)
+  for session in ('ep1','ep3'):
+   self.assertEqual(close(640,session),wide(640,session))
  def test_existing_episode_plate_wrapper_keeps_round_table_for_ep4(self):
   base=self.env['r13_meeting_plate']
   self.env.update(_r13_e1_plate=base,R13_EP_MEETING_PLACE=dict(ep1='winter_square',ep4='council',ep3='r13_school'),r13_background=lambda key:key)

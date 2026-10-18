@@ -1,0 +1,151 @@
+{
+  "label": "hall-12-1-False-640",
+  "actors": [
+    {
+      "person": "bami",
+      "pose": "action_1",
+      "x": 1200,
+      "y": 131,
+      "width": 123,
+      "height": 143,
+      "rect": [
+        1200,
+        131,
+        123,
+        143
+      ],
+      "depth": 274,
+      "occlusion": [],
+      "contact": "hanging",
+      "slot": null,
+      "activity": "밤이는 앉을 자리를 고르지 않고 먼저 출입구를 봤다."
+    },
+    {
+      "person": "doto",
+      "pose": "map27_compare_ration_slips_v2",
+      "x": 929,
+      "y": 419,
+      "width": 167,
+      "height": 255,
+      "rect": [
+        929,
+        419,
+        167,
+        255
+      ],
+      "depth": 674,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "두 배급표의 표기를 비교한다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    }
+  ],
+  "offset": 640,
+  "hits": [
+    {
+      "person": "bami",
+      "point": [
+        622,
+        236
+      ],
+      "actions": [
+        "('person', 'bami')"
+      ]
+    },
+    {
+      "person": "doto",
+      "point": [
+        374,
+        461
+      ],
+      "actions": [
+        "('person', 'doto')"
+      ]
+    }
+  ],
+  "specs": {
+    "bami": {
+      "file": "assets/room13-pixel-acting-bami.webp",
+      "crop": [
+        652,
+        518,
+        386,
+        448
+      ],
+      "nearest": true,
+      "facing": "front",
+      "contact": "hanging",
+      "foot": [
+        171,
+        1
+      ],
+      "head": [
+        6,
+        213,
+        380,
+        235
+      ]
+    },
+    "doto": {
+      "file": "assets/map-action27/VA-10--doto.webp",
+      "crop": [
+        0,
+        0,
+        504,
+        768
+      ],
+      "head": [
+        119.05511811023622,
+        0,
+        277.79527559055117,
+        258.1512605042017
+      ],
+      "foot": [
+        264.6496062992126,
+        752.6102133160957
+      ],
+      "anchors": {
+        "foot_left": [
+          176.5984251968504,
+          752.6102133160957
+        ],
+        "foot_right": [
+          352.7007874015748,
+          745.1635423400129
+        ],
+        "hand_left_image": [
+          186.51968503937007,
+          307.29928894634776
+        ],
+        "hand_right_image": [
+          443.4803149606299,
+          245.74014221073045
+        ],
+        "foot": [
+          264.6496062992126,
+          752.6102133160957
+        ]
+      },
+      "contact": "standing",
+      "stature_ratio": 1,
+      "source_sha256": "d4a7133a0d6a1d1953be9ee5743d71f1611aed03030023d0effab4149d35ae04",
+      "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+    }
+  },
+  "room": {
+    "location": "hall",
+    "day": 12,
+    "period": 1
+  },
+  "clicked": [
+    "doto"
+  ],
+  "screens": [
+    "r13_hub"
+  ],
+  "game_commit": "1b94f0d5 + 0.19.43 working tree",
+  "archive_sha256": "c9e213cb6c4f3df24eba26dd24dc0479f875414b326cbf9ab1d6a6ec047bfa25",
+  "capture_kind": "explicit schedule fixture in native SDK web engine"
+}

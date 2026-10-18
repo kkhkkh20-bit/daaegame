@@ -7,7 +7,7 @@ class MeetingFlow(unittest.TestCase):
   self.store=types.SimpleNamespace(room13=dict(propositions=[],flags=[],evidence=[],finale_started=False))
   def edit(**kw):
    s=copy.deepcopy(self.store.room13);s.update(kw);self.store.room13=s
-  self.env=dict(config=types.SimpleNamespace(after_load_callbacks=[]),store=self.store,winter_copy=copy,r13_edit=edit,r13_has=lambda f:f in self.store.room13['flags'])
+  self.env=dict(r13_meeting_reaction_settle=lambda:None,config=types.SimpleNamespace(after_load_callbacks=[]),store=self.store,winter_copy=copy,r13_edit=edit,r13_has=lambda f:f in self.store.room13['flags'])
   for file,marker in [('systems/room13_debate.rpy','init 98 python:\n'),('systems/room13_meeting_flow.rpy','init 100 python:\n')]:
    src=(ROOT/'game'/file).read_text().split(marker,1)[1].split('\nlabel ',1)[0]
    exec(textwrap.dedent(src),self.env)

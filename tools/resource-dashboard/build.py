@@ -2,6 +2,7 @@
 """Read-only resource index. No Ren'Py code is executed; unresolved branches stay unknown."""
 import argparse, ast, hashlib, json, os, re, shutil, subprocess, textwrap
 from functools import lru_cache
+import importlib.util
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -175,7 +176,10 @@ def build(repo=REPO, output=None):
                 for i,line in enumerate(t.splitlines()):
                     if pattern.search(line):calls.append(dict(**ref(Path(p),i+1),code=line.strip()))
             audio.append(dict(id=group+':'+key,key=key,group=group,media=media(path),usages=usages,calls=calls,source=ref(sound_source),loop=False if group=='효과음' else True if group=='환경음' else 'unknown: inspect scene music call',volume=(1.0 if key=='heartbeat' else .55) if group=='환경음' else ('r13_scene: .5 if mood == quiet else 1.0; user mixer applies' if group=='BGM' else 'unknown: channel/settings dependent'),resolver=function_refs(['r13_sound_choice','r13_sound_scene_music','r13_sound_ambience','source_fx']) ))
+    credits=read(Path('assets/music-v6-credits.txt'))
     for a in audio:
+        credit=re.search(r'^'+re.escape(Path(a['media']['path']).name)+r'\s+(.+?)\s+—\s+(.+?)\s+(https?://\S+)',credits,re.M)
+        if credit:a.update(track_title=credit[1],artist=credit[2],credit_url=credit[3],credit_source=ref(Path('assets/music-v6-credits.txt')))
         a['resolver']=a['resolver']+[dict(name='r13_scene music playback/volume',source=ref(Path('room13.rpy'),7),code='\n'.join(sources['room13.rpy'].splitlines()[6:39]))]
     used={a['media']['path'] for c in characters for a in c['assets']}|{a['media']['path'] for a in audio}
     # File inventory is generated independently; unlinked means this extractor did not resolve a link.
@@ -184,7 +188,7 @@ def build(repo=REPO, output=None):
         if p.suffix.lower() not in ('.png','.webp','.jpg','.wav','.mp3','.ogg'):continue
         rel=str(p.relative_to(repo))
         if rel not in used:orphan.append(dict(path=rel,status='unresolved',note='미사용 확정 아님: 이 인덱스에서 캐릭터/음향 연결 미해결'))
-    for source_file in [Path(__file__),*(Path(__file__).parent/'web').iterdir()]:
+    for source_file in [Path(__file__),Path(__file__).with_name('gallery.py'),*(Path(__file__).parent/'web').iterdir(),*(Path(__file__).parent/'gallery').iterdir()]:
         inputs[str(source_file.relative_to(repo))]=subprocess_blob_hash(source_file)
     version=hashlib.sha256(json.dumps(inputs,sort_keys=True).encode()).hexdigest()
     result=dict(schema=1,game_commit=sha,data_version=version,generated_at=datetime.fromtimestamp(int(os.environ['SOURCE_DATE_EPOCH']),timezone.utc).isoformat() if os.environ.get('SOURCE_DATE_EPOCH') else datetime.now(timezone.utc).isoformat(),characters=characters,audio=audio,unresolved_assets=orphan,issues=issues,inputs=inputs,limitations=['Static source index, not a RenPy state evaluator. Conditional calls do not prove runtime reachability.','All function override layers are retained as evidence. Unknown conditions are not evaluated.','Existing QA screenshots are historical unless their recorded game commit matches.','Generated art outside game/assets is not exhaustively indexed.'])
@@ -193,7 +197,7 @@ def build(repo=REPO, output=None):
     for c in characters:
         (details/(c['id']+'.json')).write_text(json.dumps(c,ensure_ascii=False,separators=(',',':'))+'\n')
         hero=next((a for a in c['assets'] if a['kind']=='profile' and a['pose']=='source-neutral'),next(iter(c['assets']),None))
-        index_characters.append(dict(id=c['id'],name=c['name'],hero=hero,detail_url='characters/'+c['id']+'.json',asset_count=len(c['assets']),dialogue_count=sum(a['kind']=='dialogue' for a in c['assets']),placement_count=len(c['placements']),captures=[{k:v for k,v in capture.items() if k!='actor'} for capture in c['captures']],statuses=sorted({a['status'] for a in c['assets']}),search=json.dumps([c['name'],c['id'],c['profile'],[(a['pose'],a['media']['path']) for a in c['assets']]],ensure_ascii=False).lower(),schedule=c['schedule'],placements=[dict({k:p[k] for k in ('location','days','periods','pose','capture_status')},media=next((a['media'] for a in c['assets'] if a['kind']=='map' and a['pose']==p['pose']),None)) for p in c['placements']]+[dict(location=cap['location'],days=[cap['day']],periods=[cap['period']],pose=cap['pose'],capture_status='실제 엔진 fixture 관측 · 이 날짜/시간만 확인',media=next((a['media'] for a in c['assets'] if a['kind']=='map' and a['pose']==cap['pose']),None)) for cap in c['captures'] if cap['pose'] and not any(p['pose']==cap['pose'] for p in c['placements'])]))
+        index_characters.append(dict(id=c['id'],name=c['name'],hero=hero,detail_url='characters/'+c['id']+'.json',asset_count=len(c['assets']),dialogue_count=sum(a['kind']=='dialogue' for a in c['assets']),placement_count=len(c['placements']),captures=[{k:v for k,v in capture.items() if k!='actor'} for capture in c['captures']],statuses=sorted({a['status'] for a in c['assets']}),search=json.dumps([c['name'],c['id'],c['profile'],[(a['pose'],a['media']['path']) for a in c['assets']]],ensure_ascii=False).lower(),schedule=c['schedule'],placements=[dict({k:p[k] for k in ('location','days','periods','pose','capture_status')},activity=p.get('activity'),media=next((a['media'] for a in c['assets'] if a['kind']=='map' and a['pose']==p['pose']),None)) for p in c['placements']]+[dict(location=cap['location'],days=[cap['day']],periods=[cap['period']],pose=cap['pose'],capture_status='실제 엔진 fixture 관측 · 이 날짜/시간만 확인',media=next((a['media'] for a in c['assets'] if a['kind']=='map' and a['pose']==cap['pose']),None)) for cap in c['captures'] if cap['pose'] and not any(p['pose']==cap['pose'] for p in c['placements'])]))
     index=dict(result,characters=index_characters,audio=[{k:v for k,v in a.items() if k!='resolver'} for a in audio])
     index['audio_resolver']=audio[0]['resolver'] if audio else []
     (output/'data.json').write_text(json.dumps(index,ensure_ascii=False,separators=(',',':'))+'\n')
@@ -202,6 +206,8 @@ def build(repo=REPO, output=None):
     for p in (output/'thumbs').glob('*.webp'):
         if p.name not in seen_thumbnails:p.unlink()
     for p in (Path(__file__).parent/'web').iterdir():shutil.copy2(p,output/p.name)
+    gallery_spec=importlib.util.spec_from_file_location('dashboard_gallery',Path(__file__).with_name('gallery.py'))
+    gallery_module=importlib.util.module_from_spec(gallery_spec);gallery_spec.loader.exec_module(gallery_module);gallery_module.install(repo)
     print(json.dumps(dict(commit=sha,characters=len(characters),audio=len(audio),issues=len(issues),output=str(output)),ensure_ascii=False))
     return result
 

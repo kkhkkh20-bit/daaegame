@@ -1,0 +1,294 @@
+{
+  "kind": "production renderer with explicit authored-line fixtures",
+  "shots": [
+    {
+      "label": "00-C1-seryeon",
+      "claim": "C1",
+      "person": "seryeon",
+      "slots": {
+        "seryeon": "confident_report"
+      },
+      "listener": null,
+      "poses": {
+        "seryeon": "neutral"
+      },
+      "kind": "round"
+    },
+    {
+      "label": "01-C3-granny",
+      "claim": "C3",
+      "person": "granny",
+      "slots": {
+        "granny": "composed_answer"
+      },
+      "listener": null,
+      "poses": {
+        "granny": "neutral"
+      },
+      "kind": "round"
+    },
+    {
+      "label": "02-C2-resident_seori",
+      "claim": "C2",
+      "person": "resident_seori",
+      "slots": {
+        "resident_seori": "evidence_check"
+      },
+      "listener": null,
+      "poses": {
+        "resident_seori": "neutral"
+      },
+      "kind": "round"
+    },
+    {
+      "label": "03-F1-resident_ppul",
+      "claim": "F1",
+      "person": "resident_ppul",
+      "slots": {
+        "resident_ppul": "stern_statement"
+      },
+      "listener": null,
+      "poses": {
+        "resident_ppul": "neutral"
+      },
+      "kind": "stone"
+    },
+    {
+      "label": "04-Q4-resident_ppul",
+      "claim": "Q4",
+      "person": "resident_ppul",
+      "slots": {
+        "resident_ppul": "stern_statement"
+      },
+      "listener": null,
+      "poses": {
+        "resident_ppul": "neutral"
+      },
+      "kind": "round"
+    },
+    {
+      "label": "05-Q6-resident_ppul",
+      "claim": "Q6",
+      "person": "resident_ppul",
+      "slots": {
+        "resident_ppul": "stern_statement"
+      },
+      "listener": null,
+      "poses": {
+        "resident_ppul": "neutral"
+      },
+      "kind": "field"
+    },
+    {
+      "label": "06-C2-resident_ppul",
+      "claim": "C2",
+      "person": "resident_ppul",
+      "slots": {
+        "resident_ppul": "stern_statement"
+      },
+      "listener": "buri",
+      "poses": {
+        "buri": "neutral",
+        "resident_ppul": "neutral"
+      },
+      "kind": "round"
+    },
+    {
+      "label": "07-C2-buri",
+      "claim": "C2",
+      "person": "buri",
+      "slots": {
+        "buri": "measured_interject"
+      },
+      "listener": "resident_ppul",
+      "poses": {
+        "resident_ppul": "neutral",
+        "buri": "neutral"
+      },
+      "kind": "round"
+    },
+    {
+      "label": "08-C2-resident_ppul",
+      "claim": "C2",
+      "person": "resident_ppul",
+      "slots": {
+        "resident_ppul": "stern_statement"
+      },
+      "listener": null,
+      "poses": {
+        "resident_ppul": "neutral"
+      },
+      "kind": "round"
+    },
+    {
+      "label": "09-C3-nabi",
+      "claim": "C3",
+      "person": "nabi",
+      "slots": {
+        "nabi": "witness_hesitate"
+      },
+      "listener": "granny",
+      "poses": {
+        "granny": "neutral",
+        "nabi": "anxious"
+      },
+      "kind": "round"
+    },
+    {
+      "label": "C2-ensemble",
+      "cast": [
+        [
+          "seryeon",
+          0
+        ],
+        [
+          "resident_ppul",
+          0
+        ],
+        [
+          "buri",
+          0
+        ],
+        [
+          "nabi",
+          0
+        ],
+        [
+          "resident_bori",
+          0
+        ],
+        [
+          "resident_tori",
+          0
+        ],
+        [
+          "doto",
+          0
+        ],
+        [
+          "resident_kongi",
+          0
+        ],
+        [
+          "granny",
+          null
+        ],
+        [
+          "resident_seori",
+          null
+        ]
+      ],
+      "kind": "round"
+    },
+    {
+      "label": "F1-ensemble",
+      "cast": [
+        [
+          "resident_ppul",
+          0
+        ],
+        [
+          "resident_bori",
+          0
+        ],
+        [
+          "nabi",
+          0
+        ],
+        [
+          "buri",
+          0
+        ],
+        [
+          "neoul",
+          0
+        ],
+        [
+          "resident_tori",
+          0
+        ],
+        [
+          "mom",
+          null
+        ],
+        [
+          "resident_seori",
+          null
+        ]
+      ],
+      "kind": "stone"
+    },
+    {
+      "label": "Q1-ensemble",
+      "cast": [
+        [
+          "resident_tok",
+          0
+        ],
+        [
+          "buri",
+          0
+        ],
+        [
+          "resident_lamplighter",
+          0
+        ],
+        [
+          "resident_madam",
+          0
+        ],
+        [
+          "resident_siluk",
+          0
+        ],
+        [
+          "resident_ubak",
+          0
+        ],
+        [
+          "neoul",
+          null
+        ]
+      ],
+      "kind": "field"
+    },
+    {
+      "label": "Q3-ensemble",
+      "cast": [
+        [
+          "resident_ppul",
+          0
+        ],
+        [
+          "resident_teacher",
+          0
+        ],
+        [
+          "resident_bori",
+          0
+        ],
+        [
+          "nabi",
+          0
+        ],
+        [
+          "resident_nubi",
+          0
+        ],
+        [
+          "resident_badook",
+          0
+        ],
+        [
+          "neoul",
+          null
+        ]
+      ],
+      "kind": "room"
+    }
+  ],
+  "status": "captured",
+  "game_commit": "de62ee8c + 0.19.45 working tree",
+  "archive_sha256": "c8178d6bec3f713de33ee5a7b1650a26d16f9c9e7ea2aa3be5038ee10eb640d9",
+  "capture_kind": "Explicit native renderer/state fixture; not full campaign"
+}

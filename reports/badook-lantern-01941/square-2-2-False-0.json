@@ -1,0 +1,154 @@
+{
+  "label": "square-2-2-False-0",
+  "actors": [
+    {
+      "person": "doto",
+      "pose": "action_1",
+      "x": 851,
+      "y": 375,
+      "width": 106,
+      "height": 245,
+      "rect": [
+        851,
+        375,
+        106,
+        245
+      ],
+      "depth": 620,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "도토는 어제 옮긴 줄과 오늘 옮길 줄 사이에 종이를 끼웠다. 찬 바람에 손을 비비며 하던 일을 천천히 정리했다."
+    },
+    {
+      "person": "resident_badook",
+      "pose": "map27_lantern_patrol",
+      "x": 131,
+      "y": 385,
+      "width": 202,
+      "height": 300,
+      "rect": [
+        131,
+        385,
+        202,
+        300
+      ],
+      "depth": 685,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "등불을 들고 광장을 순찰한다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    }
+  ],
+  "offset": 0,
+  "hits": [
+    {
+      "person": "doto",
+      "point": [
+        896,
+        411
+      ],
+      "actions": [
+        "('person', 'doto')"
+      ]
+    },
+    {
+      "person": "resident_badook",
+      "point": [
+        230,
+        430
+      ],
+      "actions": [
+        "('person', 'resident_badook')"
+      ]
+    }
+  ],
+  "specs": {
+    "doto": {
+      "file": "assets/room13-role-doto-batch-action_1-v1.webp",
+      "crop": [
+        198,
+        10,
+        659,
+        1518
+      ],
+      "foot": [
+        329.5,
+        1518
+      ],
+      "head": [
+        98,
+        0,
+        362,
+        455
+      ],
+      "nearest": true,
+      "native_detail": true,
+      "contact": "standing",
+      "stature_ratio": 1,
+      "posture": "standing",
+      "source_sha256": "15436edeb1f6bad390fd7300fa58460a7a4c81aec234bc96fac88c8c2c50aec1",
+      "map_action": true,
+      "reviewed": true
+    },
+    "resident_badook": {
+      "file": "assets/map-action27/VA-1--resident_badook.webp",
+      "crop": [
+        0,
+        0,
+        516,
+        768
+      ],
+      "head": [
+        120.46692607003891,
+        10.03921568627451,
+        271.05058365758754,
+        210.8235294117647
+      ],
+      "foot": [
+        291.63035019455253,
+        744.9098039215686
+      ],
+      "anchors": {
+        "foot_left": [
+          201.28015564202335,
+          629.9607843137255
+        ],
+        "foot_right": [
+          381.9805447470817,
+          744.9098039215686
+        ],
+        "hand_left_image": [
+          170.15953307392996,
+          99.89019607843137
+        ],
+        "hand_right_image": [
+          423.1400778210117,
+          337.81960784313725
+        ],
+        "foot": [
+          291.63035019455253,
+          744.9098039215686
+        ]
+      },
+      "contact": "standing",
+      "stature_ratio": 1,
+      "source_sha256": "da6139101310671715ccabcf35aa8eb8ab5e80ea4aa3d6f304f0f17f3e472e3e",
+      "source_commit": "b9ba25ebc0d0ca2baf114f9fc39d3f5d6f9180c2"
+    }
+  },
+  "room": {
+    "day": 2,
+    "period": 2,
+    "location": "square"
+  },
+  "clicked": "resident_badook",
+  "screens": [
+    "r13_hub"
+  ],
+  "game_commit": "08ff057f + 0.19.41 working tree",
+  "archive_sha256": "04a51d9003f811a10cb08b9c2d1941dc48011905e11ddcfe2033302b2787afc8",
+  "capture_kind": "Native official SDK build with explicit schedule fixture"
+}

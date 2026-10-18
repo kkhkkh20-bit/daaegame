@@ -1,0 +1,604 @@
+{
+  "label": "workshop-2-0-False-0",
+  "actors": [
+    {
+      "person": "resident_tok",
+      "pose": "map27_ws_1",
+      "x": 1529,
+      "y": 271,
+      "width": 131,
+      "height": 196,
+      "rect": [
+        1529,
+        271,
+        131,
+        196
+      ],
+      "depth": 467,
+      "occlusion": [],
+      "contact": "behind_counter",
+      "slot": null,
+      "activity": "랜턴의 나사를 조인다.",
+      "map27_occlusion": [
+        [
+          [
+            1405,
+            374
+          ],
+          [
+            1460,
+            374
+          ],
+          [
+            1460,
+            354
+          ],
+          [
+            1480,
+            353
+          ],
+          [
+            1480,
+            330
+          ],
+          [
+            1560,
+            330
+          ],
+          [
+            1560,
+            370
+          ],
+          [
+            1600,
+            350
+          ],
+          [
+            1710,
+            351
+          ],
+          [
+            1730,
+            380
+          ],
+          [
+            1730,
+            512
+          ],
+          [
+            1405,
+            512
+          ]
+        ]
+      ],
+      "map27_keepouts": [
+        [
+          [
+            1548.140625,
+            333.5260416666667
+          ],
+          [
+            1611.9427083333333,
+            333.5260416666667
+          ],
+          [
+            1611.9427083333333,
+            387.7578125
+          ],
+          [
+            1573.6614583333333,
+            387.7578125
+          ],
+          [
+            1573.6614583333333,
+            357.7708333333333
+          ],
+          [
+            1548.140625,
+            357.7708333333333
+          ]
+        ]
+      ]
+    },
+    {
+      "person": "buri",
+      "pose": "action_1",
+      "x": 570,
+      "y": 303,
+      "width": 98,
+      "height": 208,
+      "rect": [
+        570,
+        303,
+        98,
+        208
+      ],
+      "depth": 511,
+      "occlusion": [
+        [
+          331,
+          460
+        ],
+        [
+          470,
+          439
+        ],
+        [
+          683,
+          441
+        ],
+        [
+          1060,
+          483
+        ],
+        [
+          1060,
+          624
+        ],
+        [
+          890,
+          678
+        ],
+        [
+          350,
+          604
+        ]
+      ],
+      "contact": "tool",
+      "slot": null,
+      "activity": "부리는 닳은 부품을 새 부품 옆에 놓았다."
+    },
+    {
+      "person": "resident_ubak",
+      "pose": "living_measure",
+      "x": 168,
+      "y": 357,
+      "width": 201,
+      "height": 190,
+      "rect": [
+        168,
+        357,
+        201,
+        190
+      ],
+      "depth": 547,
+      "occlusion": [],
+      "contact": "self-contained",
+      "slot": [
+        270,
+        548,
+        226,
+        "doorfloor"
+      ],
+      "activity": "우박은 전날 숫자 옆에 오늘 조건을 적었다."
+    },
+    {
+      "person": "resident_guldol",
+      "pose": "map27_sort_chisels_clean",
+      "x": 678,
+      "y": 273,
+      "width": 187,
+      "height": 280,
+      "rect": [
+        678,
+        273,
+        187,
+        280
+      ],
+      "depth": 553,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "가죽 도구집의 끌을 정리한다.",
+      "map27_occlusion": [
+        [
+          [
+            331,
+            460
+          ],
+          [
+            470,
+            439
+          ],
+          [
+            683,
+            441
+          ],
+          [
+            1060,
+            483
+          ],
+          [
+            1060,
+            624
+          ],
+          [
+            890,
+            678
+          ],
+          [
+            350,
+            604
+          ]
+        ]
+      ],
+      "map27_keepouts": []
+    },
+    {
+      "person": "resident_lamplighter",
+      "pose": "living_inspectlamp",
+      "x": 1128,
+      "y": 351,
+      "width": 144,
+      "height": 220,
+      "rect": [
+        1128,
+        351,
+        144,
+        220
+      ],
+      "depth": 571,
+      "occlusion": [],
+      "contact": "self-contained",
+      "slot": [
+        1200,
+        570,
+        220,
+        "floor"
+      ],
+      "activity": "초롱은 점검함을 열고 전날 매듭을 봤다."
+    },
+    {
+      "person": "resident_ttadak",
+      "pose": "living_repair",
+      "x": 1316,
+      "y": 352,
+      "width": 217,
+      "height": 230,
+      "rect": [
+        1316,
+        352,
+        217,
+        230
+      ],
+      "depth": 582,
+      "occlusion": [],
+      "contact": "self-contained",
+      "slot": [
+        1425,
+        580,
+        230,
+        "floor"
+      ],
+      "activity": "따닥은 어제 댄 나무 조각을 다시 눌렀다."
+    },
+    {
+      "person": "resident_musoe",
+      "pose": "living_foldmap",
+      "x": 1590,
+      "y": 427,
+      "width": 205,
+      "height": 280,
+      "rect": [
+        1590,
+        427,
+        205,
+        280
+      ],
+      "depth": 707,
+      "occlusion": [],
+      "contact": "self-contained",
+      "slot": [
+        1700,
+        705,
+        280,
+        "floor"
+      ],
+      "activity": "무쇠 할아버지는 접은 지도의 모서리를 폈다."
+    }
+  ],
+  "offset": 0,
+  "hits": [
+    {
+      "person": "buri",
+      "point": [
+        623,
+        335
+      ],
+      "actions": [
+        "('person', 'buri')"
+      ]
+    },
+    {
+      "person": "resident_ubak",
+      "point": [
+        277,
+        406
+      ],
+      "actions": [
+        "('person', 'resident_ubak')"
+      ]
+    },
+    {
+      "person": "resident_guldol",
+      "point": [
+        762,
+        318
+      ],
+      "actions": [
+        "('person', 'resident_guldol')"
+      ]
+    },
+    {
+      "person": "resident_lamplighter",
+      "point": [
+        1205,
+        409
+      ],
+      "actions": [
+        "('person', 'resident_lamplighter')"
+      ]
+    }
+  ],
+  "specs": {
+    "resident_tok": {
+      "file": "assets/map-action27/WS-1--resident_tok.webp",
+      "crop": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "head": [
+        138.24,
+        15.36,
+        261.12,
+        238.07999999999998
+      ],
+      "foot": [
+        266.24,
+        754.1759999999999
+      ],
+      "anchors": {
+        "foot": [
+          266.24,
+          754.1759999999999
+        ],
+        "hand_right": [
+          102.4,
+          276.48
+        ],
+        "hand_left": [
+          281.6,
+          391.68
+        ],
+        "driver_screw": [
+          199.68,
+          330.24
+        ],
+        "work_support": [
+          220.16,
+          437.76
+        ]
+      },
+      "foreground_parts": [
+        [
+          [
+            75,
+            245
+          ],
+          [
+            325,
+            245
+          ],
+          [
+            325,
+            457.5
+          ],
+          [
+            175,
+            457.5
+          ],
+          [
+            175,
+            340
+          ],
+          [
+            75,
+            340
+          ]
+        ]
+      ],
+      "contact": "behind_counter",
+      "stature_ratio": 1,
+      "source_sha256": "a7643c1f56f32a599e7e77da2d64d8cf0520ff5d9779766ec33d384aa866edb0",
+      "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376"
+    },
+    "buri": {
+      "file": "assets/room13-action-buri-action_1.webp",
+      "crop": [
+        109,
+        59,
+        319,
+        675
+      ],
+      "nearest": true,
+      "foot": [
+        144,
+        671
+      ],
+      "head": [
+        56,
+        4,
+        235,
+        200
+      ],
+      "contact": "tool",
+      "reviewed": true,
+      "map_action": true,
+      "stature_ratio": 0.83,
+      "source_sha256": "ec64de6dfcb7d17933538f56ff97adb3190bcb7089e7f3fd3720ab4885cc323f",
+      "hand": [
+        161,
+        381
+      ]
+    },
+    "resident_ubak": {
+      "file": "assets/room13-pixel-acting-ubak.webp",
+      "crop": [
+        539,
+        558,
+        441,
+        416
+      ],
+      "nearest": true,
+      "anchor": {
+        "foot": [
+          220,
+          412
+        ]
+      },
+      "action_ko": "계측기 바늘과 종이 눈금을 맞춘다.",
+      "contact": "self-contained",
+      "head": [
+        40,
+        0,
+        401,
+        216
+      ],
+      "facing": "right-profile"
+    },
+    "resident_guldol": {
+      "file": "assets/map-action27/VA-5--resident_guldol.webp",
+      "crop": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "head": [
+        100,
+        5,
+        265,
+        240
+      ],
+      "foot": [
+        279,
+        752.5
+      ],
+      "anchors": {
+        "foot_left": [
+          169,
+          752.5
+        ],
+        "foot_right": [
+          389,
+          737.5
+        ],
+        "hand_left_image": [
+          240.5,
+          307
+        ],
+        "hand_right_image": [
+          425,
+          407
+        ],
+        "foot": [
+          279,
+          752.5
+        ]
+      },
+      "contact": "standing",
+      "stature_ratio": 1,
+      "source_sha256": "cfe69eba2d50787104a5e977707d7bc5c0694511743776bb52da4b5d7221cb1f",
+      "source_commit": "d301395b62ba3bb93b3ab050cbd1cf8d0c741937"
+    },
+    "resident_lamplighter": {
+      "file": "assets/room13-pixel-acting-lamplighter.webp",
+      "crop": [
+        653,
+        514,
+        317,
+        483
+      ],
+      "nearest": true,
+      "anchor": {
+        "foot": [
+          158,
+          479
+        ]
+      },
+      "action_ko": "등의 점검함을 닫고 걸쇠를 확인한다.",
+      "contact": "self-contained",
+      "head": [
+        22,
+        0,
+        295,
+        256
+      ],
+      "facing": "right-profile"
+    },
+    "resident_ttadak": {
+      "file": "assets/room13-pixel-acting-ttadak.webp",
+      "crop": [
+        550,
+        535,
+        417,
+        441
+      ],
+      "nearest": true,
+      "anchor": {
+        "foot": [
+          208,
+          437
+        ]
+      },
+      "action_ko": "나무 조각을 대고 보수할 곳을 살핀다.",
+      "contact": "self-contained",
+      "head": [
+        100,
+        0,
+        317,
+        190
+      ],
+      "facing": "right-profile"
+    },
+    "resident_musoe": {
+      "file": "assets/room13-pixel-acting-musoe.webp",
+      "crop": [
+        622,
+        524,
+        350,
+        476
+      ],
+      "nearest": true,
+      "anchor": {
+        "foot": [
+          175,
+          472
+        ]
+      },
+      "action_ko": "낡은 지도를 접어 정리한다.",
+      "contact": "self-contained",
+      "head": [
+        66,
+        0,
+        284,
+        209
+      ],
+      "facing": "right-profile"
+    }
+  },
+  "room": {
+    "day": 2,
+    "period": 0,
+    "location": "workshop"
+  },
+  "clicked": "resident_guldol",
+  "screens": [
+    "r13_hub"
+  ],
+  "game_commit": "fc8c35c5 + 0.19.42 working tree",
+  "archive_sha256": "9b650609c4165a6b6c585214a9641d08bbac2a87396b13fcf5acaa21866976a2",
+  "capture_kind": "Native SDK explicit schedule fixture"
+}
