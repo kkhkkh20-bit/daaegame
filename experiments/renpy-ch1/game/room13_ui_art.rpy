@@ -36,6 +36,24 @@ init 58 python:
                 c.line('#e6bd69',(cut+2,h-3),(w-cut-3,h-3),2)
             return r
 
+    class R13ControlSurface(renpy.Displayable):
+        """A whole control, never a small band inside a larger invisible button."""
+        def __init__(self,primary=False,chosen=False,hovered=False,disabled=False,**kwargs):
+            super(R13ControlSurface,self).__init__(**kwargs)
+            self.primary=primary;self.chosen=chosen;self.hovered=hovered;self.disabled=disabled
+        def render(self,width,height,st,at):
+            w=max(1,int(width));h=max(1,int(height));r=renpy.Render(w,h);c=r.canvas()
+            def outline(n):
+                return [(n+5,n),(w-n-6,n),(w-n-1,n+5),(w-n-1,h-n-6),
+                    (w-n-6,h-n-1),(n+5,h-n-1),(n,h-n-6),(n,n+5)]
+            # All states share opacity and geometry; state changes use colour.
+            fill="#39312b" if self.disabled else "#51412e" if self.primary or self.chosen else "#44382e" if self.hovered else "#302923"
+            border="#746651" if self.disabled else "#dfbd79" if self.primary or self.chosen or self.hovered else "#a18a68"
+            c.polygon(fill+R13_CONTROL["alpha"],outline(0))
+            c.lines(border,True,outline(1),2)
+            c.line("#ffffff16",(8,4),(w-9,4),1)
+            return r
+
     class R13PaperFrame(renpy.Displayable):
         """Clean inset paper card. Flat colour groups, no texture or metal casing."""
         def __init__(self,corner=6,**kwargs):

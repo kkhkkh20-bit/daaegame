@@ -32,9 +32,9 @@ init 80:
         xsize 128
         ysize 44
         padding (10,6)
-        background R13InkPanel()
-        hover_background R13InkPanel(focused=True)
-        insensitive_background R13InkPanel(disabled=True)
+        background R13ControlSurface()
+        hover_background R13ControlSurface(hovered=True)
+        insensitive_background R13ControlSurface(disabled=True)
     style r13_toolbar_button_text is r13_action_button_text:
         color "#edf0e5"
         hover_color "#ffffff"
@@ -46,39 +46,22 @@ init 80:
 screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode="line",ready=True):
     style_prefix "r13"
     if mode=="talk":
-        fixed:
-            area ((1148,650,132,70) if persistent.room13_large_text else (1168,664,112,56))
-            use r13_antique_button("기록","record",Show("r13_records",target=person,present_action=present_action),enabled=ready,compact=True,width=(132 if persistent.room13_large_text else 112))
+        use r13_footer_control(4,"기록","record",Show("r13_records",target=person,present_action=present_action),enabled=ready)
+        use r13_footer_control(3,"더보기","settings",Show("r13_more_tools"),enabled=ready)
         if present_action is not None:
-            use r13_present_button(present_action,ready,640,572,592,72)
+            use r13_present_button(present_action,ready,r13_control_x(4),r13_control_upper_y(),232,r13_control_height())
     elif mode!="field":
         use r13_playback_footer(show_record=True,ready=ready)
     else:
-        # The investigation badge is a state, not a dead action button.
-        frame:
-            xpos 24 ypos 676 xsize 156 ysize 40 padding (8,4) background None
-            hbox:
-                spacing 6
-                add R13AntiqueIcon("investigate",size=24) yalign .5
-                text "조사 중" size 20 color "#efe2c2" outlines [(1,"#302b25",0,0)] font r13_ui_font() yalign .5
-        frame:
-            area ((1148,650,132,70) if persistent.room13_large_text else (1168,664,112,56)) padding (0,0) background None
-            use r13_antique_button("기록","record",Show("r13_records"),enabled=ready,compact=True,width=(132 if persistent.room13_large_text else 112))
+        use r13_field_view_controls(ready)
+        use r13_footer_control(4,"기록","record",Show("r13_records"),enabled=ready)
         use r13_options_control(ready)
 
 screen r13_options_control(ready=True):
-    # Owned by the active modal screen, so options remain clickable in dialogue.
-    button:
-        id "r13_options_gear"
-        area (1190,20,64,64) padding (0,0)
-        background R13InkPanel(alpha="b8") hover_background R13InkPanel(focused=True)
-        insensitive_background R13InkPanel(disabled=True)
-        action Show("r13_more_tools") sensitive ready
-        tooltip "메뉴" alt "메뉴"
-        fixed:
-            xsize 64 ysize 64
-            add R13AntiqueIcon("settings",size=34) xpos 15 ypos 6
-            text "메뉴" size 14 color "#e6ece2" xalign .5 ypos 45
+    # A compact instance of the same component, not a separate vertical icon layout.
+    fixed:
+        area (1190,20,64,64)
+        use r13_control("","settings",Show("r13_more_tools"),enabled=ready,width=64,height=64,control_id="r13_options_gear")
 
 screen r13_hub(entry=False):
     style_prefix "r13"
@@ -102,27 +85,23 @@ screen r13_hub(entry=False):
         use r13_world_contents(entry,ready)
     if not entry:
         hbox:
-            xpos 1250 xanchor 1.0 ypos 158 spacing 8
+            xpos 1252 xanchor 1.0 ypos 184 spacing 16
             for destination,title in r13_local_connections():
-                textbutton ("› "+title):
-                    style "r13_action_button" padding (16,10) ysize 64
-                    background R13PaperFrame() hover_background R13PaperPanel(focused=True) text_color "#65503b" text_hover_color "#493b30"
-                    text_size 21 action Return(("travel",destination)) sensitive ready
+                use r13_control(title,"map",Return(("travel",destination)),enabled=ready,height=64)
     if entry:
         use r13_waiting_window(ready)
     else:
         fixed:
-            xpos 1070 ypos 82 xsize 180 ysize 64
-            use r13_antique_button("지도 · 이동","map",Return(("menu","map")),enabled=ready,width=180)
+            area (1020,104,232,64)
+            use r13_antique_button("지도 · 이동","map",Return(("menu","map")),enabled=ready,width=232,height=64)
     if not entry and r13_bed_available("bed"):
-        textbutton "자기":
-            style "r13_action_button" area (1010,584,220,56)
-            action Return(("sleep","bed"))
+        fixed:
+            area (1020,264,232,64)
+            use r13_control("자기","auto",Return(("sleep","bed")),enabled=ready,height=64)
     if not entry and r13_evening_missions():
-        textbutton "저녁 할 일":
-            style "r13_action_button" area (730,30,194,56) text_size 21
-            action Return(("menu","evening")) sensitive ready
-            tooltip "오늘 저녁에만 할 수 있는 일"
+        fixed:
+            area (772,104,232,64)
+            use r13_control("저녁 할 일","auto",Return(("menu","evening")),enabled=ready,height=64)
     if not entry and r13_has("livelihood_open"):
         # 0.18.56 (owner): no work/shop board at the top. Work is asked for from the person who
         # gives it, goods are bought from the seller in person; only the purse is shown.
@@ -155,7 +134,7 @@ screen r13_world_contents(entry=False,ready=False):
             button:
                 area tuple(spec["rect"])
                 background None hover_background None insensitive_background None padding (0,0)
-                action [Function(r13_click_feedback,key),Return(("object",key))] sensitive ready
+                action SetVariable("r13_field_pick",(room13["location"],key)) sensitive ready and r13_field_view=="scene"
                 tooltip r13_object_name(key)
     # 0.18.50 (owner): where a person and an object overlap, the person is pressed. Objects drawn
     # in front of a resident stay pressable around the resident's silhouette.
@@ -163,35 +142,39 @@ screen r13_world_contents(entry=False,ready=False):
         button:
             area rect focus_mask mask
             background None hover_background None insensitive_background None padding (0,0)
-            action [Function(r13_click_feedback,key),Return(("object",key))] sensitive ready
+            action SetVariable("r13_field_pick",(room13["location"],key)) sensitive ready and r13_field_view=="scene"
             tooltip r13_object_name(key)
     # 0.18.63: separate prop layers (systems/room13_map_actions.rpy), behind the residents.
     for prop,px,py in r13_world_props(entry):
         add prop xpos px ypos py
-    use r13_resident_stage(entry,ready)
+    if r13_field_view=="people":
+        use r13_resident_stage(entry,ready)
     # Inspection ticks sit under the name tags, never on top of a name.
     for key,point in room13["checks"].items():
         $ point=r13_check_point(key,point)
-        if key.startswith(room13["location"]+":") and r13_visible_check(key,point) and not r13_point_on_face(point,entry):
+        if key.startswith(room13["location"]+":") and r13_visible_check(key,point) and (r13_field_view=="scene" or not r13_point_on_face(point,entry)):
             add TopicTick() xpos point[0]-13 ypos point[1]-13
     $ bundle_point=r13_gate_bundle_check_point()
     if bundle_point:
         add TopicTick() xpos bundle_point[0]-13 ypos bundle_point[1]-13
+    if r13_field_view=="scene" and r13_field_spots:
+        use r13_field_spots_overlay(ready)
     use r13_admin_hitboxes()
-    for nameplate in r13_actor_nameplates(r13_stage_people(entry)):
-        if nameplate["leader"]:
-            $ leader=R13NameLeader(nameplate["leader"])
-            add leader xpos leader.left ypos leader.top
-        textbutton R13_NAMES[nameplate["person"]]:
-            area nameplate["rect"]
-            padding (12,7) background R13ActionPanel() hover_background R13ActionPanel(True) text_size 20 text_color "#fff2cf" text_xalign .5 text_yalign .5
-            action r13_person_action(nameplate["person"],entry) sensitive ready
-        if not entry and r13_offer_for_person(nameplate["person"]):
-            # 0.18.53: something is happening with this person; press them to see it.
-            frame:
-                xpos nameplate["rect"][0]-38 ypos nameplate["rect"][1]+4 xsize 34 ysize 40 padding (0,0)
-                background Solid("#d9a441")
-                text "!" size 28 color "#2a1d10" xalign .5 yalign .5
+    if r13_field_view=="people":
+        for nameplate in r13_actor_nameplates(r13_stage_people(entry)):
+            if nameplate["leader"]:
+                $ leader=R13NameLeader(nameplate["leader"])
+                add leader xpos leader.left ypos leader.top
+            textbutton R13_NAMES[nameplate["person"]]:
+                area nameplate["rect"]
+                padding (12,7) background R13ActionPanel() hover_background R13ActionPanel(True) text_size 20 text_color "#fff2cf" text_xalign .5 text_yalign .5
+                action r13_person_action(nameplate["person"],entry) sensitive ready
+            if not entry and r13_offer_for_person(nameplate["person"]):
+                # 0.18.53: something is happening with this person; press them to see it.
+                frame:
+                    xpos nameplate["rect"][0]-38 ypos nameplate["rect"][1]+4 xsize 34 ysize 40 padding (0,0)
+                    background Solid("#d9a441")
+                    text "!" size 28 color "#2a1d10" xalign .5 yalign .5
 
     use r13_life_group_labels(entry,ready)
 
@@ -258,7 +241,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                 for index,(title,action,was_read) in enumerate(entries):
                     button:
                         xsize list_width-23 yminimum row_h padding (18,17)
-                        background R13InkPanel(alpha="e6",slim=True) hover_background R13InkPanel(focused=True,alpha="f5",slim=True)
+                        background R13ControlSurface() hover_background R13ControlSurface(hovered=True)
                         action r13_safe_question_action(action) sensitive ready
                         text (("%d  "%(index+1) if index<9 else "")+r13_question_caption(title,was_read,mark_unread=True)):
                             xsize list_width-59 text_align .5 xalign .5 yalign .5
@@ -279,11 +262,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
         if return_action is not None:
             # 0.18.42 (owner): not centred under the list, where it read as another choice.
             # Bottom-left corner, on the same row as the tools at the bottom right.
-            textbutton "돌아가기":
-                xpos 0 ypos 676 xsize 150 ysize 44
-                padding (12,6) background R13InkPanel(alpha="e6",slim=True) hover_background R13InkPanel(focused=True,alpha="f5",slim=True)
-                text_size r13_read_size(20,24) text_color "#fff4df" text_xalign .5
-                action return_action sensitive ready
+            use r13_footer_control(0,"돌아가기","dialogue",return_action,enabled=ready)
     else:
         add Solid("#00000020")
         $ compact_width=min(list_width,940)
@@ -344,11 +323,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                 key ("K_%d"%(index+1)) action r13_safe_question_action(action)
                 key ("K_KP%d"%(index+1)) action r13_safe_question_action(action)
         if return_action is not None:
-            textbutton "돌아가기":
-                xpos 0 ypos 676 xsize 150 ysize 44
-                padding (12,6) background R13InkPanel(alpha="e6",slim=True) hover_background R13InkPanel(focused=True,alpha="f5",slim=True)
-                text_size r13_read_size(20,24) text_color "#fff4df" text_xalign .5
-                action return_action sensitive ready
+            use r13_footer_control(0,"돌아가기","dialogue",return_action,enabled=ready)
 
 screen r13_entry_topics():
     style_prefix "r13"
@@ -356,7 +331,7 @@ screen r13_entry_topics():
     zorder 30
     default ready=False
     timer .15 action SetScreenVariable("ready",True)
-    $ questions=[("신청한 것과 이름 목록이 다른 이유가 뭡니까?",Return(("entry","explain")),r13_has("question_read:entry:explain")),("원본과 다시 맞춰 봐 주시겠습니까?",Return(("entry","wait")),r13_has("question_read:entry:wait"))]
+    $ questions=[("신청한 것과 이름 목록이 다른 이유가 뭡니까?",Return(("entry","explain")),r13_has("question_read:entry:explain")),("원본 담당자를 기다리겠습니다.",Return(("entry","wait")),r13_has("question_read:entry:wait"))]
     use r13_question_list("guard","interview_neutral","돌목에게 묻기",questions,ready,return_action=Return(("entry","back")))
     use r13_toolbar(investigate_action=Return(("entry","back")),present_action=Return(("entry","argue")),person="guard",mode="talk",ready=ready)
 
@@ -456,6 +431,8 @@ screen r13_book(target=None,present=False,hearing=False):
     default order="recent"
     $ chip_person=r13_book_person(target,hearing) if present else None
     timer .15 action SetScreenVariable("ready",True)
+    if r13_meeting_active and r13_meeting_claim in R13_DEBATE:
+        use r13_meeting_stage(r13_meeting_claim,r13_meeting_focus_person(r13_meeting_claim),True)
     use r13_reference_record_shell("보여주기" if present else "자료 기록")
     use r13_reference_record_categories("r13_book",category,True,archive and not present)
     if not present and r13_learning_archive_keys():
@@ -578,13 +555,6 @@ screen r13_handoff():
 
 # Approved fixed evidence action, shared by conversation toolbars.
 screen r13_present_button(command,ready,x,y,w=332,h=72):
-    button:
-        id "r13_present_button"
-        area (x,y,w,h) padding (20,10)
-        background R13InkPanel(focused=True,alpha="ef",slim=True)
-        hover_background R13InkPanel(focused=True,alpha="ff",slim=True)
-        action command sensitive ready alt "자료 보여주기"
-        hbox:
-            align (.5,.5) spacing 12
-            add R13AntiqueIcon("present",size=32) yalign .5
-            text "자료 보여주기" size r13_read_size(24,28) color "#f6dfac" font r13_ui_font() yalign .5
+    fixed:
+        area (x,y,w,h)
+        use r13_control("자료 보여주기","present",command,enabled=ready,primary=True,width=w,height=h,control_id="r13_present_button")

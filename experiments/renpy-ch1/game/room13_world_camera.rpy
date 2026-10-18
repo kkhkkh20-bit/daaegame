@@ -162,7 +162,7 @@ screen r13_world_camera_controls(adjustment):
     # the tag also pans toward them.
     $ edge=r13_world_edge_people(adjustment)
     timer .3 repeat True action Function(r13_world_edge_refresh,adjustment,edge)
-    if edge[0]:
+    if edge[0] and r13_field_view=="people":
         textbutton ("‹ "+r13_world_edge_label(edge[0])):
             style "r13_action_button" xpos 8 ypos 236 padding (12,8) text_size 18
             action Function(r13_pan_camera,adjustment,-1)
@@ -172,7 +172,7 @@ screen r13_world_camera_controls(adjustment):
         textbutton "‹":
             style "r13_action_button" xpos 8 ypos 236 padding (12,8) text_size 22
             action Function(r13_pan_camera,adjustment,-1) tooltip "옆으로 둘러보기"
-    if edge[1]:
+    if edge[1] and r13_field_view=="people":
         textbutton (r13_world_edge_label(edge[1])+" ›"):
             style "r13_action_button" xpos 1272 xanchor 1.0 ypos 236 padding (12,8) text_size 18
             action Function(r13_pan_camera,adjustment,1)
@@ -184,7 +184,7 @@ screen r13_world_camera_controls(adjustment):
     if not persistent.r13_pan_hint_seen:
         timer 6.0 action SetField(persistent,"r13_pan_hint_seen",True)
         frame:
-            xalign .5 ypos 640 padding (16,8) background "#000000aa"
+            xalign .5 ypos 584 padding (16,8) background "#000000aa"
             text "화면을 좌우로 끌면 옆을 둘러볼 수 있다" size r13_read_size(18,22) color "#f3e6c8"
 
 # 0.18.75: the one-time "drag to look around" line on the first wide place.

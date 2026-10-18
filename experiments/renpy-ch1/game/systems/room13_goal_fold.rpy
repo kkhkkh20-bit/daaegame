@@ -26,14 +26,14 @@ screen r13_goal_fold(goal,ready=False):
     $ signature=tuple([thought]+[n["title"] for n in notes])
     if not renpy.get_screen("r13_evidence_found"):
         fixed:
-            xpos (1008 if persistent.room13_large_text else 1048) ypos (650 if persistent.room13_large_text else 664) xsize (132 if persistent.room13_large_text else 112) ysize (70 if persistent.room13_large_text else 56)
-            use r13_antique_button("생각","dialogue",[ToggleVariable("r13_goal_open"),SetVariable("r13_thoughts_seen",tuple(sorted(set(r13_thoughts_seen)|set(signature))))],enabled=ready,compact=True,width=(132 if persistent.room13_large_text else 112),chosen=r13_goal_open)
+            area (r13_control_x(4),r13_control_upper_y(),232,r13_control_height())
+            use r13_antique_button("생각","dialogue",[ToggleVariable("r13_goal_open"),SetVariable("r13_thoughts_seen",tuple(sorted(set(r13_thoughts_seen)|set(signature))))],enabled=ready,compact=True,width=232,chosen=r13_goal_open)
             if any(item not in r13_thoughts_seen for item in signature):
-                add Solid("#d7ad61") xpos 94 ypos 17 xsize 6 ysize 6
+                add Solid("#d7ad61") xpos 210 ypos 17 xsize 6 ysize 6
         if ready and not r13_goal_open and thought not in r13_thoughts_seen and thought not in r13_thought_toasted:
             timer 4.5 action SetVariable("r13_thought_toasted",tuple(r13_thought_toasted)+(thought,))
             frame:
-                xpos 1160 xanchor 1.0 ypos 654 yanchor 1.0 xmaximum 620 padding (18,10) background R13PaperFrame()
+                xpos 1160 xanchor 1.0 ypos (r13_control_upper_y()-16) yanchor 1.0 xmaximum 620 padding (18,10) background R13PaperFrame()
                 text ("새 생각 · "+thought) size r13_read_size(19,22) color "#496579"
         if r13_goal_open:
             button:
@@ -41,7 +41,7 @@ screen r13_goal_fold(goal,ready=False):
                 action SetVariable("r13_goal_open",False)
                 alt "생각 접기"
             frame:
-                area (624,644-panel_height,624,panel_height) padding (24,20) background R13PaperFrame()
+                area (624,r13_control_upper_y()-16-panel_height,624,panel_height) padding (24,20) background R13PaperFrame()
                 fixed:
                     xsize 576 ysize (panel_height-40)
                     text "아빠의 생각" size 26 color "#493b30"

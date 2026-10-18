@@ -91,7 +91,7 @@ screen main_menu():
         action Show("r13_music_credits")
     text config.version xpos 1172 ypos 674 font r13_ui_font() size 13 color "#b2b8b8"
 
-# Top of the two-line dialogue window (bottom edge 632): 23px text + padding, or 29px large text.
+# Dialogue panels end 16px above the shared gameplay footer.
 define R13_SAY_TOP_NORMAL = 532
 define R13_SAY_TOP_LARGE = 516
 init python:
@@ -104,7 +104,7 @@ init python:
         lines=_r13_say_lines(what,29 if large else 23) if isinstance(what,str) else 1
         if lines>2:
             top-=(lines-2)*(34 if large else 28)
-        return max(300,top)
+        return max(300,top+r13_control_y()-16-632)
 
     import re as _r13_say_re
     def _r13_say_lines(what,size,width=756):
@@ -125,11 +125,11 @@ screen say(who,what):
         use r13_meeting_chrome(r13_meeting_claim)
         window:
             id "window"
-            area (80,500,1120,132) background R13PaperFrame() padding (22,36,22,14)
-            r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(23,29) line_spacing 5 xsize 1076 font r13_ui_font() color r13_say_color()
+            area (80,r13_control_y()-148,1120,132) background R13InkPanel(alpha="d9",slim=True) padding (22,36,22,14)
+            r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(23,29) line_spacing 5 xsize 1076 font r13_ui_font() color "#fff4df"
         if who:
-            text who id "who" xpos 104 ypos 504 size r13_read_size(24,26) color "#493421" font r13_ui_font() xmaximum 1076
-        text "▸" xpos 1160 ypos 600 size 24 color "#795d40"
+            text who id "who" xpos 104 ypos (r13_control_y()-144) size r13_read_size(24,26) color "#f6dfac" font r13_ui_font() xmaximum 1076
+        text "▸" xpos 1160 ypos (r13_control_y()-48) size 24 color "#e8d9b0"
         timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
         use r13_meeting_tools(r13_meeting_claim,r13_meeting_live_target())
         key "K_h" action Show("r13_backlog")
@@ -180,11 +180,11 @@ screen say(who,what):
             key "K_h" action Show("r13_backlog")
         window:
             id "window"
-            # 0.18.39 (owner): two lines tall in both text sizes; the bottom edge stays at 632.
+            # Two-line body height is preserved while the whole panel follows the shared footer.
             xpos (240 if room13_mode else 40)
             ypos (_r13_say_top(what) if room13_mode else 551)
             xsize (800 if room13_mode else 1200)
-            ysize (632-_r13_say_top(what) if room13_mode else 169)
+            ysize (r13_control_y()-16-_r13_say_top(what) if room13_mode else 169)
             background (r13_dialogue_frame() if room13_mode else Solid("#211a16f2")) padding (22,16)
             if room13_mode:
                 r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(23,29) line_spacing 5 xsize 756 font r13_ui_font() color r13_say_color()
@@ -199,9 +199,9 @@ screen say(who,what):
                 text who id "who" color "#FFF0CC" font r13_ui_font() size r13_read_size(26,28) xmaximum 736
         # Next-line mark breathes slowly like a firefly (0.18.47 storybook tone).
         if r13_fx_active():
-            text "▸" xpos 1002 ypos 600 size 24 color "#d9d4ab" at r13_next_glow
+            text "▸" xpos 1002 ypos (r13_control_y()-48) size 24 color "#d9d4ab" at r13_next_glow
         else:
-            text "▸" xpos 1002 ypos 600 size 24 color "#d9d4ab"
+            text "▸" xpos 1002 ypos (r13_control_y()-48) size 24 color "#d9d4ab"
         if room13_mode:
             timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
             if place != "마차 안" and not r13_cg_active:

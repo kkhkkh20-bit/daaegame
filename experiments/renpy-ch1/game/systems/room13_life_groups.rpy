@@ -108,14 +108,11 @@ init 181 python:
         return _r13_life_groups_person_action(person, entry)
 
 screen r13_life_group_labels(entry=False, ready=False):
-    if not entry:
+    if not entry and r13_field_view == "people":
         for group in r13_life_groups_here():
-            textbutton group["label"]:
-                id ("life_group_"+group["id"])
-                xpos group["label_position"][0] ypos group["label_position"][1]
-                padding (14,9) background R13ActionPanel() hover_background R13ActionPanel(True)
-                text_size 20 text_color "#fff2cf"
-                action Return(("life_group", group["id"])) sensitive ready
+            fixed:
+                area (group["label_position"][0],group["label_position"][1],232,r13_control_height())
+                use r13_control(group["label"],"dialogue",Return(("life_group",group["id"])),enabled=ready,control_id="life_group_"+group["id"])
 
 screen r13_life_group_conversation(key, person=None):
     modal True
@@ -138,15 +135,10 @@ screen r13_life_group_conversation(key, person=None):
                 spacing 12
                 text R13_NAMES[lines[line_index][0]] size 26 color "#f6d18a"
                 text lines[line_index][1] size r13_read_size(26,30) color "#fff2cf" xsize 980
-                hbox:
-                    spacing 24
-                    textbutton ("돌아가기" if line_index == len(lines)-1 else "계속 듣기"):
-                        id "life_group_next"
-                        action (Return(None) if line_index == len(lines)-1 else SetScreenVariable("line_index", line_index+1))
-                        sensitive ready
-                    textbutton "그만 듣기" id "life_group_cancel" action Return(None) sensitive ready
-                    textbutton "저장" action ShowMenu("save")
-                    textbutton "불러오기" action ShowMenu("load")
+        use r13_footer_control(0,"돌아가기" if line_index == len(lines)-1 else "계속 듣기","dialogue",Return(None) if line_index == len(lines)-1 else SetScreenVariable("line_index",line_index+1),enabled=ready)
+        use r13_footer_control(1,"그만 듣기","dialogue",Return(None),enabled=ready)
+        use r13_footer_control(3,"저장","save",ShowMenu("save"))
+        use r13_footer_control(4,"불러오기","load",ShowMenu("load"))
         key "game_menu" action Return(None)
 
 label r13_life_group_talk(key, person=None):

@@ -212,7 +212,7 @@ init 71:
     style r13_paper_tab_button is r13_compact_button:
         background R13PaperPanel(False)
         hover_background R13PaperPanel(True)
-        selected_background R13InkPanel(focused=True)
+        selected_background R13ControlSurface(chosen=True)
     style r13_paper_tab_button_text is r13_compact_button_text:
         color "#303d38"
         hover_color "#724b39"
@@ -364,6 +364,8 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
     default rel_filter=r13_records_view.get("rel_filter","all")
     default rel_focus=r13_records_view.get("rel_focus",True)
     on "hide" action [Function(source_fx,"note_close"),Function(r13_records_remember,tab,detail,person,page,archive,rel_sel,rel_filter,rel_focus,material_filter)]
+    if r13_meeting_active and r13_meeting_claim in R13_DEBATE:
+        use r13_meeting_stage(r13_meeting_claim,r13_meeting_focus_person(r13_meeting_claim),True)
     use r13_reference_record_shell("기록")
     use r13_reference_record_categories(_scope,tab,archive=archive)
     if tab=="all":

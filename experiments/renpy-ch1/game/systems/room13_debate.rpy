@@ -834,17 +834,20 @@ screen r13_debate_board(claim,selected):
     $ visible=[st for st in r13_debate_statements(claim) if r13_debate_visible(claim,st)]
     use r13_meeting_stage(claim,sel["who"],True,ready,selected)
     use r13_meeting_chrome(claim)
-    textbutton "발언 기록":
-        style "r13_action_button" xpos 942 ypos 18 xsize 144 ysize 64 text_size 20
+    frame:
+        area (942,18,314,66) padding (12,8) background R13PaperFrame()
+        vbox:
+            spacing 2
+            text "발언 검토" size 21 color "#493b30" font r13_ui_font()
+            text "자료와 대조" size 14 color "#795d40" font r13_ui_font()
+    textbutton "발언 목록":
+        style "r13_action_button" area (1100,28,144,44) padding (8,4) text_size 20
         action ToggleScreenVariable("statements_open") sensitive ready
-    textbutton "회의 중단":
-        style "r13_action_button" xpos 1096 ypos 18 xsize 160 ysize 64 text_size 20
-        action Return(("leave",)) sensitive ready
     $ half_key=r13_debate_state().get("half",{}).get(claim+":"+selected)
     if half_key and sel.get("pair") and not r13_debate_is_broken(claim,selected):
         # Show only the material actually presented. The missing answer stays hidden.
         frame:
-            area (80,416,1120,72) padding (16,10) background R13PaperFrame()
+            area (80,r13_control_y()-236,1120,72) padding (16,10) background R13PaperFrame()
             hbox:
                 spacing 18 yalign .5
                 add R13AntiqueIcon("present",size=32) yalign .5
@@ -856,7 +859,7 @@ screen r13_debate_board(claim,selected):
                 text "다른 자료로 이어 보기" size r13_read_size(20,23) color "#795d40" yalign .5
     elif r13_meeting_feedback and r13_meeting_feedback.get("claim")==claim:
         frame:
-            area (80,420,1120,68) padding (14,8) background R13PaperPanel()
+            area (80,r13_control_y()-232,1120,68) padding (14,8) background R13PaperPanel()
             vbox:
                 spacing 3
                 text "방금 확인한 말" size 15 color "#795d40"
@@ -864,7 +867,8 @@ screen r13_debate_board(claim,selected):
                     xsize 1092 ysize 38 mousewheel True draggable True scrollbars "vertical" vscrollbar_unscrollable "hide"
                     text r13_meeting_feedback["text"] size r13_read_size(18,21) color "#493b30" xsize 1068
     frame:
-        area (80,500,1120,132) padding (0,0) background R13PaperFrame()
+        area (80,r13_control_y()-148,1120,132) padding (0,0) background R13PaperFrame()
+        add Solid("#b58b47") xysize (1120,4)
         textbutton "‹":
             style "r13_compact_button" area (20,6,52,44) text_size 32 alt "이전 발언"
             action Return(("select",r13_meeting_next_statement(claim,selected,step=-1))) sensitive ready and len(visible)>1

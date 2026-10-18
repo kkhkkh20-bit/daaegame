@@ -36,95 +36,52 @@ screen r13_backlog():
     key "game_menu" action Hide("r13_backlog")
     key "K_h" action Hide("r13_backlog")
 
-# 0.18.99: 큰 글씨(휴대폰 기본값)에서는 칸 112×56 → 132×70, 글씨 20 → 24.
+# Shared five-column footer, including playback states.
 screen r13_strip_button(caption,icon,command,enabled=True,chosen=False,last=False,cell_width=None):
-    $ big=persistent.room13_large_text
-    $ cw,ch=(132,70) if big else (112,56)
-    $ cw=cell_width or cw
-    button:
-        xsize cw ysize ch padding (2,0)
-        background (R13StripCell(True) if chosen else None)
-        hover_background R13StripCell(True)
-        action command sensitive enabled alt caption
-        fixed:
-            xsize (cw-4) ysize ch
-            hbox:
-                xalign .5 yalign .5 spacing 4
-                add R13AntiqueIcon(icon,size=22) yalign .5 alpha (1.0 if enabled else .4)
-                text caption size (24 if big else 20) font r13_ui_font() color ("#d8ccb3" if enabled else "#a59a86") yalign .5
-            if not last:
-                add Solid("#756b5980") xpos (cw-5) ypos 13 xsize 1 ysize (ch-26)
+    use r13_control(caption,icon,command,enabled=enabled,chosen=chosen,width=cell_width or 232)
 
 screen r13_playback_footer(show_record=False,ready=True):
-    $ big=persistent.room13_large_text
-    $ skip_width=234 if big else 196
-    $ footer_width=(4 if show_record else 3)*(132 if big else 112)+skip_width
-    $ footer_height=70 if big else 56
     $ skip_ready=ready and renpy.get_screen("say") is not None and renpy.get_screen("choice") is None
-    fixed:
-        xpos (1280-footer_width) ypos (720-footer_height) xsize footer_width ysize footer_height
-        add R13InkPanel(alpha="b8",slim=True) xsize footer_width ysize footer_height
-        hbox:
-            spacing 0
-            use r13_strip_button("백로그","backlog",Show("r13_backlog"),enabled=ready)
-            use r13_strip_button("자동","auto",Preference("auto-forward","toggle"),enabled=ready,chosen=_preferences.afm_enable)
-            use r13_strip_button("대사 건너뛰기","skip",[SetVariable("r13_conv_skip",True),Function(renpy.end_interaction,True)],enabled=skip_ready,cell_width=skip_width)
-            if show_record:
-                use r13_strip_button("더보기","settings",Show("r13_more_tools"),enabled=ready)
-                use r13_strip_button("기록","record",Show("r13_records"),enabled=ready,last=True)
-            else:
-                use r13_strip_button("설정","settings",ShowMenu("pause_menu"),enabled=ready,last=True)
+    use r13_footer_control(0,"백로그","backlog",Show("r13_backlog"),enabled=ready)
+    use r13_footer_control(1,"자동","auto",Preference("auto-forward","toggle"),enabled=ready,chosen=_preferences.afm_enable)
+    use r13_footer_control(2,"대사 건너뛰기","skip",[SetVariable("r13_conv_skip",True),Function(renpy.end_interaction,True)],enabled=skip_ready)
+    use r13_footer_control(3,"더보기","settings",Show("r13_more_tools"),enabled=ready)
+    use r13_footer_control(4,"기록" if show_record else "설정","record" if show_record else "settings",Show("r13_records") if show_record else ShowMenu("pause_menu"),enabled=ready)
 
 screen r13_more_tools():
-    # 0.19.2 빼기 정리 (소유자 승인 시안): 9개 → 저장·불러오기 / 다시 시작할 아침 / 설정 / 메인화면.
-    # 대사 중에만 「빠르게」(읽은 것만·전부)와 「대화창 숨기기」. 생활 장부는 일거리와 함께 없앴다. 바깥을 누르면 닫힌다.
     modal True
     zorder 105
     $ line_active=renpy.get_screen("say") is not None and renpy.get_screen("choice") is None
     $ meeting_line=line_active and r13_meeting_active
     $ live_listening=meeting_line and r13_meeting_live_active and not r13_meeting_interrupting
+    $ entries=[]
+    if meeting_line:
+        $ entries.append(("자동","auto",[Hide("r13_more_tools"),Preference("auto-forward","toggle")],True,_preferences.afm_enable))
+        $ entries.append(("토론 멈추기" if live_listening else "건너뛰기","skip",[Hide("r13_more_tools"),Function(r13_meeting_request_live_action,"review")] if live_listening else [Hide("r13_more_tools"),SetVariable("r13_conv_skip",True),Function(renpy.end_interaction,True)],True,False))
+    if line_active:
+        $ entries.append(("대화창 숨기기","dialogue",[Hide("r13_more_tools"),HideInterface()],True,False))
+    $ entries.extend([
+        ("저장 · 불러오기","record",[Hide("r13_more_tools"),ShowMenu("save")],True,False),
+        ("다시 시작할 아침","auto",[Hide("r13_more_tools"),Show("r13_morning_pick")],bool(r13_morning_days()),False),
+        ("설정","settings",[Hide("r13_more_tools"),ShowMenu("pause_menu")],True,False),
+        ("메인화면","place_inn",[Hide("r13_more_tools"),Confirm("메인화면으로 돌아가시겠습니까?\n저장하지 않은 게임 진행은 사라집니다.",MainMenu(confirm=False))],True,False)])
     button:
         area (0,0,1280,720) background None action Hide("r13_more_tools") alt "닫기"
     frame:
-        xpos 932 yanchor 1.0 ypos (642 if persistent.room13_large_text else 656) xsize 324 padding (12,12) background R13InkPanel()
+        xpos 548 yanchor 1.0 ypos (r13_control_y()-16) xsize 704 padding (16,16) background R13InkPanel(alpha="e6",slim=True)
         vbox:
-            spacing 6
-            if meeting_line:
-                textbutton "자동":
-                    style "r13_action_button" xsize 300 ysize 48 text_size 20
-                    selected _preferences.afm_enable
-                    action [Hide("r13_more_tools"),Preference("auto-forward","toggle")]
-                textbutton ("토론 멈추기" if live_listening else "건너뛰기"):
-                    style "r13_action_button" xsize 300 ysize 48 text_size 20
-                    action ([Hide("r13_more_tools"),Function(r13_meeting_request_live_action,"review")] if live_listening else [Hide("r13_more_tools"),SetVariable("r13_conv_skip",True),Function(renpy.end_interaction,True)])
+            spacing 16
             if line_active:
-                frame:
-                    xsize 300 ysize 52 padding (10,6) background R13InkPanel(focused=True)
-                    hbox:
-                        spacing 6 yalign .5
-                        text "빠르게" size 18 color "#efe2c2" yalign .5 min_width 62
-                        textbutton "읽은 것만":
-                            style "r13_paper_tab_button" xsize 104 ysize 38 text_size 16
-                            selected r13_fast_read sensitive not live_listening
-                            action [Hide("r13_more_tools"),Function(r13_toggle_read_skip)]
-                        textbutton "전부":
-                            style "r13_paper_tab_button" xsize 104 ysize 38 text_size 16
-                            selected r13_fast_all sensitive not live_listening
-                            action [Hide("r13_more_tools"),Function(r13_toggle_fast_all)]
-                textbutton "대화창 숨기기":
-                    style "r13_action_button" xsize 300 ysize 48 text_size 20
-                    action [Hide("r13_more_tools"),HideInterface()]
-            textbutton "저장 · 불러오기":
-                style "r13_action_button" xsize 300 ysize 48 text_size 20
-                action [Hide("r13_more_tools"),ShowMenu("save")]
-            textbutton "다시 시작할 아침":
-                style "r13_action_button" xsize 300 ysize 48 text_size 20
-                sensitive bool(r13_morning_days())
-                action [Hide("r13_more_tools"),Show("r13_morning_pick")]
-            textbutton "설정":
-                style "r13_action_button" xsize 300 ysize 48 text_size 20
-                action [Hide("r13_more_tools"),ShowMenu("pause_menu")]
-            textbutton "메인화면":
-                style "r13_action_button" xsize 300 ysize 48 text_size 20
-                action [Hide("r13_more_tools"),Confirm("메인화면으로 돌아가시겠습니까?\n저장하지 않은 게임 진행은 사라집니다.",MainMenu(confirm=False))]
+                hbox:
+                    spacing 16
+                    text "빠르게" size 22 color "#efe2c2" yalign .5 xsize 104
+                    use r13_control("읽은 것만",None,[Hide("r13_more_tools"),Function(r13_toggle_read_skip)],enabled=not live_listening,chosen=r13_fast_read,width=268)
+                    use r13_control("전부",None,[Hide("r13_more_tools"),Function(r13_toggle_fast_all)],enabled=not live_listening,chosen=r13_fast_all,width=268)
+            $ menu_rows=(len(entries)+1)//2
+            grid 2 menu_rows:
+                spacing 16
+                for title,icon,command,enabled,chosen in entries:
+                    use r13_control(title,icon,command,enabled=enabled,chosen=chosen,width=328)
+                if len(entries)%2:
+                    null width 328 height r13_control_height()
     key "game_menu" action Hide("r13_more_tools")

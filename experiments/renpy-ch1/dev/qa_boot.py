@@ -19,7 +19,7 @@ ONLY = os.environ.get('QA_BOOT_ONLY', '')
 
 
 Q_EXPLAIN = '신청과 이름 목록이 다른 이유를 묻는다'
-Q_WAIT = '원본과 다시 맞춰 달라고 한다'
+Q_WAIT = '원본 담당자를 기다리겠습니다.'
 
 
 def same_clock(a, b):
