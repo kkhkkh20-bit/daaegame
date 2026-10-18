@@ -205,7 +205,13 @@ def build(repo=REPO, output=None):
     (output/'errors.json').write_text(json.dumps(dict(issues=issues,limitations=result['limitations']),ensure_ascii=False,indent=2)+'\n')
     for p in (output/'thumbs').glob('*.webp'):
         if p.name not in seen_thumbnails:p.unlink()
-    for p in (Path(__file__).parent/'web').iterdir():shutil.copy2(p,output/p.name)
+    web=Path(__file__).parent/'web'
+    for p in web.iterdir():shutil.copy2(p,output/p.name)
+    # Old unversioned app.js rendered character IDs on cards. A content-keyed
+    # URL prevents a cached previous renderer from surviving a page refresh.
+    page=output/'index.html'
+    app_hash=hashlib.sha256((web/'app.js').read_bytes()).hexdigest()[:16]
+    page.write_text(page.read_text().replace('src="app.js"', f'src="app.js?v={app_hash}"'))
     gallery_spec=importlib.util.spec_from_file_location('dashboard_gallery',Path(__file__).with_name('gallery.py'))
     gallery_module=importlib.util.module_from_spec(gallery_spec);gallery_spec.loader.exec_module(gallery_module);gallery_module.install(repo)
     print(json.dumps(dict(commit=sha,characters=len(characters),audio=len(audio),issues=len(issues),output=str(output)),ensure_ascii=False))

@@ -1,0 +1,555 @@
+{
+  "revision": 2,
+  "groups": [
+    {
+      "id": "workshop_pair",
+      "status": "approved",
+      "location": "workshop",
+      "days": [
+        2,
+        3
+      ],
+      "periods": [
+        0,
+        1
+      ],
+      "world_width": 1800,
+      "label": "함께 부품 손질",
+      "label_position": [
+        460,
+        190
+      ],
+      "members": [
+        {
+          "person": "buri",
+          "pose": "group_cooperative",
+          "replace_poses": [
+            "action_1"
+          ],
+          "anchor": "shared_component_contact",
+          "target": [
+            570,
+            425
+          ],
+          "height": 208,
+          "depth": 515,
+          "occlusion": "workshop",
+          "spec": {
+            "file": "assets/room13-group-buri-cooperative.webp",
+            "crop": [
+              0,
+              0,
+              512,
+              768
+            ],
+            "head": [
+              125.0,
+              8.0,
+              275.0,
+              225.0
+            ],
+            "anchors": {
+              "support_hand_left": [
+                304.0,
+                381.0
+              ],
+              "support_hand_right": [
+                416.5,
+                376.5
+              ],
+              "shared_component_contact": [
+                455.0,
+                345.0
+              ],
+              "foot_left": [
+                151.5,
+                737.5
+              ],
+              "foot_right": [
+                327.5,
+                715.5
+              ],
+              "foot": [
+                239.5,
+                737.5
+              ]
+            },
+            "foot": [
+              239.5,
+              737.5
+            ],
+            "contact": "shared_work",
+            "facing": "right-threequarter",
+            "stature_ratio": 1,
+            "source_sha256": "50b893f23339aa69e0e58644c1975ae7a61ac6aada36c6aee540740a7aed5805",
+            "source_commit": "8b553e7ce1e81543c3415f5ba9c3f329907ee78e",
+            "foreground_parts": [
+              [
+                [
+                  200.0,
+                  315.0
+                ],
+                [
+                  467.0,
+                  315.0
+                ],
+                [
+                  467.0,
+                  415.0
+                ],
+                [
+                  200.0,
+                  415.0
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "person": "resident_tok",
+          "pose": "group_cooperative",
+          "replace_poses": [
+            "map27_ws_1"
+          ],
+          "anchor": "screwdriver_tip",
+          "target": [
+            570,
+            425
+          ],
+          "height": 220,
+          "depth": 515,
+          "occlusion": "workshop",
+          "spec": {
+            "file": "assets/room13-group-resident_tok-cooperative.webp",
+            "crop": [
+              0,
+              0,
+              512,
+              768
+            ],
+            "head": [
+              145.0,
+              30.0,
+              260.0,
+              235.0
+            ],
+            "anchors": {
+              "screwdriver_tip": [
+                127.0,
+                389.5
+              ],
+              "guiding_fingertips": [
+                147.0,
+                389.0
+              ],
+              "foot_left": [
+                177.0,
+                726.5
+              ],
+              "foot_right": [
+                447.0,
+                737.5
+              ],
+              "foot": [
+                312.0,
+                737.5
+              ]
+            },
+            "foot": [
+              312.0,
+              737.5
+            ],
+            "contact": "shared_work",
+            "facing": "left-threequarter",
+            "stature_ratio": 1,
+            "source_sha256": "bc68b8c9d499392ee6c1cdc9988d3ff64986cb044d21300d7f3964758b4f3823",
+            "source_commit": "8b553e7ce1e81543c3415f5ba9c3f329907ee78e",
+            "foreground_parts": [
+              [
+                [
+                  60.0,
+                  325.0
+                ],
+                [
+                  165.0,
+                  325.0
+                ],
+                [
+                  290.0,
+                  425.0
+                ],
+                [
+                  165.0,
+                  455.0
+                ],
+                [
+                  60.0,
+                  395.0
+                ]
+              ]
+            ]
+          }
+        }
+      ],
+      "need_flags": [],
+      "not_flags": [],
+      "lines": [
+        [
+          "resident_tok",
+          "이쪽을 잡아 주겠니?"
+        ],
+        [
+          "buri",
+          "잡았어요. 너무 세게 돌리진 마요."
+        ],
+        [
+          "resident_tok",
+          "그래. 조금씩 맞춰 보자."
+        ]
+      ],
+      "art_gap": "",
+      "review": "Native SDK desktop/mobile individual/group clicks and non-consuming conversation checks; reports/life-groups-01946."
+    },
+    {
+      "id": "inn_mending",
+      "status": "approved",
+      "location": "inn",
+      "days": [
+        2,
+        3,
+        6
+      ],
+      "periods": [
+        1
+      ],
+      "world_width": 1920,
+      "label": "함께 바느질",
+      "label_position": [
+        740,
+        104
+      ],
+      "members": [
+        {
+          "person": "resident_yeoni",
+          "pose": "living_mend",
+          "replace_poses": [
+            "neutral",
+            "activity",
+            "living_mend"
+          ],
+          "anchor": "seat",
+          "target": [
+            505,
+            397
+          ],
+          "height": 210,
+          "depth": 470
+        },
+        {
+          "person": "resident_tori",
+          "pose": "group_cooperative",
+          "replace_poses": [
+            "activity",
+            "neutral",
+            "inn_activity"
+          ],
+          "anchor": "foot",
+          "target": [
+            625,
+            545
+          ],
+          "height": 300,
+          "depth": 525,
+          "spec": {
+            "file": "assets/room13-group-resident_tori-cooperative.webp",
+            "crop": [
+              0,
+              0,
+              512,
+              768
+            ],
+            "head": [
+              130.0,
+              5.0,
+              275.0,
+              260.0
+            ],
+            "anchors": {
+              "hands_gathered": [
+                265.0,
+                432.0
+              ],
+              "foot_left": [
+                245.0,
+                736.5
+              ],
+              "foot_right": [
+                384.0,
+                750.0
+              ],
+              "foot": [
+                314.5,
+                750.0
+              ]
+            },
+            "foot": [
+              314.5,
+              750.0
+            ],
+            "contact": "standing",
+            "facing": "left-threequarter",
+            "stature_ratio": 1,
+            "source_sha256": "e47e643683ade9652d6eba6156b7acad53dc4b63fbfba846afca70d3a7f8b669",
+            "source_commit": "8b553e7ce1e81543c3415f5ba9c3f329907ee78e"
+          },
+          "occlusion_polygons": [
+            [
+              [
+                555,
+                458
+              ],
+              [
+                580,
+                453
+              ],
+              [
+                614,
+                466
+              ],
+              [
+                677,
+                466
+              ],
+              [
+                692,
+                382
+              ],
+              [
+                735,
+                379
+              ],
+              [
+                770,
+                402
+              ],
+              [
+                752,
+                551
+              ],
+              [
+                741,
+                615
+              ],
+              [
+                716,
+                620
+              ],
+              [
+                712,
+                554
+              ],
+              [
+                584,
+                548
+              ],
+              [
+                584,
+                607
+              ],
+              [
+                561,
+                608
+              ]
+            ]
+          ]
+        }
+      ],
+      "need_flags": [],
+      "not_flags": [],
+      "lines": [
+        [
+          "resident_tori",
+          "여기 한 땀 더 하면 돼요?"
+        ],
+        [
+          "resident_yeoni",
+          "응. 천부터 펴고. 급하게 당기지는 말고."
+        ],
+        [
+          "resident_tori",
+          "이번엔 제가 해 볼게요."
+        ]
+      ],
+      "art_gap": "",
+      "review": "Native SDK desktop/mobile individual/group clicks and non-consuming conversation checks; reports/life-groups-01946."
+    },
+    {
+      "id": "school_play",
+      "status": "approved",
+      "location": "school",
+      "days": [
+        8,
+        9
+      ],
+      "periods": [
+        0,
+        1
+      ],
+      "world_width": 1800,
+      "label": "아이들과 함께 이야기",
+      "label_position": [
+        1300,
+        290
+      ],
+      "conditional_cast": true,
+      "members": [
+        {
+          "person": "kid_kkam",
+          "pose": "group_play",
+          "anchor": "foot",
+          "target": [
+            1220,
+            620
+          ],
+          "height": 205,
+          "depth": 620,
+          "spec": {
+            "file": "assets/room13-group-kid_kkam-play.webp",
+            "crop": [
+              42,
+              63,
+              965,
+              1435
+            ],
+            "foot": [
+              353,
+              1432
+            ],
+            "head": [
+              183,
+              0,
+              665,
+              650
+            ],
+            "contact": "standing",
+            "facing": "right-three-quarter",
+            "nearest": true,
+            "native_detail": true,
+            "stature_ratio": 1,
+            "source_sha256": "240698c750b4850d314e3a77344f64f763584983f1843f3bed45072426cdc3e6",
+            "source_commit": "e993c8854dc99ac99a2948ae13198c90bbab733b"
+          }
+        },
+        {
+          "person": "kid_mong",
+          "pose": "group_play",
+          "anchor": "foot",
+          "target": [
+            1390,
+            665
+          ],
+          "height": 220,
+          "depth": 665,
+          "spec": {
+            "file": "assets/room13-group-kid_mong-play.webp",
+            "crop": [
+              44,
+              49,
+              949,
+              1454
+            ],
+            "foot": [
+              514,
+              1449
+            ],
+            "head": [
+              56,
+              0,
+              890,
+              720
+            ],
+            "contact": "standing",
+            "facing": "left-three-quarter",
+            "nearest": true,
+            "native_detail": true,
+            "stature_ratio": 1,
+            "source_sha256": "bdf517b4b892a08aa37cd61f276eb1a3c03916d597f640a3a48c8e68da227bad",
+            "source_commit": "e993c8854dc99ac99a2948ae13198c90bbab733b"
+          }
+        },
+        {
+          "person": "kid_bang",
+          "pose": "group_play",
+          "anchor": "foot",
+          "target": [
+            1550,
+            620
+          ],
+          "height": 205,
+          "depth": 620,
+          "spec": {
+            "file": "assets/room13-group-kid_bang-play.webp",
+            "crop": [
+              184,
+              40,
+              720,
+              1475
+            ],
+            "foot": [
+              326,
+              1471
+            ],
+            "head": [
+              0,
+              0,
+              720,
+              640
+            ],
+            "contact": "standing",
+            "facing": "left-three-quarter",
+            "nearest": true,
+            "native_detail": true,
+            "stature_ratio": 1,
+            "source_sha256": "8c0849d522465b113635612696555e3c3fb2b9ebfc472af37390b1418dee00f7",
+            "source_commit": "e993c8854dc99ac99a2948ae13198c90bbab733b"
+          }
+        }
+      ],
+      "need_flags": [
+        "kids_school",
+        "wf_kkomi_saved",
+        "st_kkomi_class_seen"
+      ],
+      "not_flags": [
+        "soup_kids_dead",
+        "kkomi_dead",
+        "kkomi_dead_soup"
+      ],
+      "lines": [
+        [
+          "kid_kkam",
+          "이번엔 내가 먼저!"
+        ],
+        [
+          "kid_mong",
+          "같이 해. 하나, 둘!"
+        ],
+        [
+          "kid_bang",
+          "잠깐, 나도!"
+        ],
+        [
+          "kid_kkam",
+          "그럼 다시. 하나!"
+        ]
+      ],
+      "individual_lines": {
+        "kid_kkam": "이번엔 내 차례예요!",
+        "kid_mong": "하나, 둘! 같이 세고 있어요.",
+        "kid_bang": "잠깐만요. 저도 같이 할래요!"
+      },
+      "art_gap": "",
+      "review": "Native SDK desktop/mobile individual/group clicks and non-consuming conversation checks; reports/life-groups-01946."
+    }
+  ]
+}

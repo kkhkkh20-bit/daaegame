@@ -1,0 +1,5 @@
+# Approved cooperative work originals
+
+Source commit 8b553e7ce1e81543c3415f5ba9c3f329907ee78e, art/incoming/cooperative-work-three-20261018/cooperative-work-three-sources.zip, 4,014,195 bytes, SHA256 efebceeba74efcd1f17f62a3fe4a1d8d279056c716cb2dabea3c6d0d100bbdd4. All three PNGs were visually inspected and verified against manifest hashes; originals remain byte-for-byte unchanged.
+
+`dev/import_cooperative_groups.py` creates common height768/nearest2px/lossless WebP map derivatives. It records source and export hashes in receipt.json, preserves partial alpha through the common resize, and clears only fully transparent RGB. No image generation, mirroring or added duplicate wood/furniture. The single wooden part is in Buri's image; Tok supplies the driver. Their reviewed world contact is 570,425. Tori retains the supplied left-looking angle and visible right-side bag, with the original foreground armchair masking the lower body. Re-importing resets adult rows to awaiting_live_review intentionally.

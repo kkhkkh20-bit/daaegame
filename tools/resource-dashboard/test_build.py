@@ -1,8 +1,16 @@
-import importlib.util, json, tempfile, unittest
+import hashlib, importlib.util, json, tempfile, unittest
 from pathlib import Path
 spec=importlib.util.spec_from_file_location('resource_build',Path(__file__).with_name('build.py'))
 b=importlib.util.module_from_spec(spec);spec.loader.exec_module(b)
 class Extractor(unittest.TestCase):
+    def test_deployed_renderer_url_matches_current_content(self):
+        web=Path(__file__).parent/'web'
+        deployed=b.REPO/'preview/resource-dashboard'
+        self.assertEqual((web/'app.js').read_bytes(),(deployed/'app.js').read_bytes())
+        digest=hashlib.sha256((web/'app.js').read_bytes()).hexdigest()[:16]
+        self.assertIn(f'src="app.js?v={digest}"',(deployed/'index.html').read_text())
+        self.assertNotIn('src="app.js"',(deployed/'index.html').read_text())
+
     def test_gallery_upgrade_preserves_evidence_and_is_idempotent(self):
         spec=importlib.util.spec_from_file_location('gallery',Path(__file__).with_name('gallery.py'))
         module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)

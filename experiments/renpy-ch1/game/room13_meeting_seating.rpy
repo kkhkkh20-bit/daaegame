@@ -106,8 +106,8 @@ init 99 python:
         # Close speaking view: keep the upper body above the table. Wide seats
         # retain their own contact geometry through r13_meeting_edge.
         kind=r13_meeting_kind(session)
-        if kind=="round":return int(476+18*((x-640)/640.0)**2)
-        if kind=="stone":return r13_meeting_edge(x,session)+44
+        if kind=="round":return int(492+4*((x-640)/640.0)**2)
+        if kind=="stone":return r13_meeting_edge(x,session)+60
         return r13_meeting_edge(x,session)
 
     def r13_meeting_seat_position(index,count,session="trial"):
