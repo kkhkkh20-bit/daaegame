@@ -6,6 +6,10 @@ default r13_field_location = None
 default r13_scene_hint_seen = ()
 
 init 85 python:
+    def r13_field_hint_state(location,wide,seen,pan_seen):
+        # Preserve per-place and persistent first-wide-place discovery independently.
+        return (location not in seen, bool(wide and not pan_seen))
+
     def r13_field_selection():
         picked=getattr(store,"r13_field_pick",None)
         if not picked or picked[0]!=store.room13["location"]:return None
@@ -32,8 +36,13 @@ init 85 python:
 
 screen r13_field_view_controls(ready):
     # Keep the legacy screen name for saved screens; no separate mode or toggle.
-    if room13["location"] not in r13_scene_hint_seen:
-        timer 3.0 action SetVariable("r13_scene_hint_seen",tuple(r13_scene_hint_seen)+(room13["location"],))
+    $ wide=r13_world_width()>1280
+    $ scene_hint,pan_hint=r13_field_hint_state(room13["location"],wide,r13_scene_hint_seen,persistent.r13_pan_hint_seen)
+    if scene_hint or pan_hint:
+        if scene_hint:
+            timer 3.0 action SetVariable("r13_scene_hint_seen",tuple(r13_scene_hint_seen)+(room13["location"],))
+        if pan_hint:
+            timer 6.0 action SetField(persistent,"r13_pan_hint_seen",True)
         frame:
             area (28,r13_control_y()-64,944,48) padding (16,8) background R13InkPanel(alpha="e6",slim=True)
-            text "사람이나 궁금한 물건을 직접 누르세요 · 좌우로 끌어 둘러볼 수 있어요" yalign .5 size r13_read_size(21,24) color "#fff4df" font r13_ui_font()
+            text ("사람이나 궁금한 물건을 직접 누르세요 · 좌우로 끌어 둘러볼 수 있어요" if wide else "사람이나 궁금한 물건을 직접 누르세요") yalign .5 size r13_read_size(21,24) color "#fff4df" font r13_ui_font()

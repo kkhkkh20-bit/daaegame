@@ -1,0 +1,611 @@
+{
+  "base_commit": "cda35116e5e10eb8f9b62b819b23ab96890ac586",
+  "purpose": "Six selected pose flags only; diagnostic, not visual approval",
+  "operations": [
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_momo/living_lampnumber",
+      "expected": {
+        "file": "assets/room13-action-resident_momo-living_lampnumber.webp",
+        "crop": [
+          93,
+          1,
+          354,
+          765
+        ],
+        "nearest": true,
+        "foot": [
+          192,
+          761
+        ],
+        "head": [
+          57,
+          5,
+          210,
+          150
+        ],
+        "contact": "standing",
+        "reviewed": true,
+        "map_action": true,
+        "stature_ratio": 1.0,
+        "source_sha256": "5319857cfa25aee94795afd3027f4dadbb3796623c0a47360b3d545b4c94d61b"
+      },
+      "value": {
+        "file": "assets/room13-action-resident_momo-living_lampnumber.webp",
+        "crop": [
+          93,
+          1,
+          354,
+          765
+        ],
+        "nearest": true,
+        "foot": [
+          192,
+          761
+        ],
+        "head": [
+          57,
+          5,
+          210,
+          150
+        ],
+        "contact": "standing",
+        "reviewed": true,
+        "map_action": true,
+        "stature_ratio": 1.0,
+        "source_sha256": "5319857cfa25aee94795afd3027f4dadbb3796623c0a47360b3d545b4c94d61b",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/granny/living_keyledger",
+      "expected": {
+        "file": "assets/room13-action-granny-living_keyledger.webp",
+        "crop": [
+          68,
+          16,
+          369,
+          751
+        ],
+        "nearest": true,
+        "foot": [
+          211,
+          747
+        ],
+        "head": [
+          50,
+          4,
+          264,
+          232
+        ],
+        "contact": "standing",
+        "reviewed": true,
+        "map_action": true,
+        "stature_ratio": 1.0,
+        "source_sha256": "4aab5040bc774feac8db7b459176e21bdd411ff4f42de862cf34304332006280"
+      },
+      "value": {
+        "file": "assets/room13-action-granny-living_keyledger.webp",
+        "crop": [
+          68,
+          16,
+          369,
+          751
+        ],
+        "nearest": true,
+        "foot": [
+          211,
+          747
+        ],
+        "head": [
+          50,
+          4,
+          264,
+          232
+        ],
+        "contact": "standing",
+        "reviewed": true,
+        "map_action": true,
+        "stature_ratio": 1.0,
+        "source_sha256": "4aab5040bc774feac8db7b459176e21bdd411ff4f42de862cf34304332006280",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-life-groups.json",
+      "pointer": "/groups/0/members/0/spec",
+      "expected": {
+        "file": "assets/room13-group-buri-cooperative.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          125.0,
+          8.0,
+          275.0,
+          225.0
+        ],
+        "anchors": {
+          "support_hand_left": [
+            304.0,
+            381.0
+          ],
+          "support_hand_right": [
+            416.5,
+            376.5
+          ],
+          "shared_component_contact": [
+            455.0,
+            345.0
+          ],
+          "foot_left": [
+            151.5,
+            737.5
+          ],
+          "foot_right": [
+            327.5,
+            715.5
+          ],
+          "foot": [
+            239.5,
+            737.5
+          ]
+        },
+        "foot": [
+          239.5,
+          737.5
+        ],
+        "contact": "shared_work",
+        "facing": "right-threequarter",
+        "stature_ratio": 1,
+        "source_sha256": "50b893f23339aa69e0e58644c1975ae7a61ac6aada36c6aee540740a7aed5805",
+        "source_commit": "8b553e7ce1e81543c3415f5ba9c3f329907ee78e",
+        "foreground_parts": [
+          [
+            [
+              200.0,
+              315.0
+            ],
+            [
+              467.0,
+              315.0
+            ],
+            [
+              467.0,
+              415.0
+            ],
+            [
+              200.0,
+              415.0
+            ]
+          ]
+        ]
+      },
+      "value": {
+        "file": "assets/room13-group-buri-cooperative.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          125.0,
+          8.0,
+          275.0,
+          225.0
+        ],
+        "anchors": {
+          "support_hand_left": [
+            304.0,
+            381.0
+          ],
+          "support_hand_right": [
+            416.5,
+            376.5
+          ],
+          "shared_component_contact": [
+            455.0,
+            345.0
+          ],
+          "foot_left": [
+            151.5,
+            737.5
+          ],
+          "foot_right": [
+            327.5,
+            715.5
+          ],
+          "foot": [
+            239.5,
+            737.5
+          ]
+        },
+        "foot": [
+          239.5,
+          737.5
+        ],
+        "contact": "shared_work",
+        "facing": "right-threequarter",
+        "stature_ratio": 1,
+        "source_sha256": "50b893f23339aa69e0e58644c1975ae7a61ac6aada36c6aee540740a7aed5805",
+        "source_commit": "8b553e7ce1e81543c3415f5ba9c3f329907ee78e",
+        "foreground_parts": [
+          [
+            [
+              200.0,
+              315.0
+            ],
+            [
+              467.0,
+              315.0
+            ],
+            [
+              467.0,
+              415.0
+            ],
+            [
+              200.0,
+              415.0
+            ]
+          ]
+        ],
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-life-groups.json",
+      "pointer": "/groups/0/members/1/spec",
+      "expected": {
+        "file": "assets/room13-group-resident_tok-cooperative.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          145.0,
+          30.0,
+          260.0,
+          235.0
+        ],
+        "anchors": {
+          "screwdriver_tip": [
+            127.0,
+            389.5
+          ],
+          "guiding_fingertips": [
+            147.0,
+            389.0
+          ],
+          "foot_left": [
+            177.0,
+            726.5
+          ],
+          "foot_right": [
+            447.0,
+            737.5
+          ],
+          "foot": [
+            312.0,
+            737.5
+          ]
+        },
+        "foot": [
+          312.0,
+          737.5
+        ],
+        "contact": "shared_work",
+        "facing": "left-threequarter",
+        "stature_ratio": 1,
+        "source_sha256": "bc68b8c9d499392ee6c1cdc9988d3ff64986cb044d21300d7f3964758b4f3823",
+        "source_commit": "8b553e7ce1e81543c3415f5ba9c3f329907ee78e",
+        "foreground_parts": [
+          [
+            [
+              60.0,
+              325.0
+            ],
+            [
+              165.0,
+              325.0
+            ],
+            [
+              290.0,
+              425.0
+            ],
+            [
+              165.0,
+              455.0
+            ],
+            [
+              60.0,
+              395.0
+            ]
+          ]
+        ]
+      },
+      "value": {
+        "file": "assets/room13-group-resident_tok-cooperative.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          145.0,
+          30.0,
+          260.0,
+          235.0
+        ],
+        "anchors": {
+          "screwdriver_tip": [
+            127.0,
+            389.5
+          ],
+          "guiding_fingertips": [
+            147.0,
+            389.0
+          ],
+          "foot_left": [
+            177.0,
+            726.5
+          ],
+          "foot_right": [
+            447.0,
+            737.5
+          ],
+          "foot": [
+            312.0,
+            737.5
+          ]
+        },
+        "foot": [
+          312.0,
+          737.5
+        ],
+        "contact": "shared_work",
+        "facing": "left-threequarter",
+        "stature_ratio": 1,
+        "source_sha256": "bc68b8c9d499392ee6c1cdc9988d3ff64986cb044d21300d7f3964758b4f3823",
+        "source_commit": "8b553e7ce1e81543c3415f5ba9c3f329907ee78e",
+        "foreground_parts": [
+          [
+            [
+              60.0,
+              325.0
+            ],
+            [
+              165.0,
+              325.0
+            ],
+            [
+              290.0,
+              425.0
+            ],
+            [
+              165.0,
+              455.0
+            ],
+            [
+              60.0,
+              395.0
+            ]
+          ]
+        ],
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/12/spec",
+      "expected": {
+        "file": "assets/map-action27/VA-5--resident_guldol.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          100.0,
+          5.0,
+          265.0,
+          240.0
+        ],
+        "foot": [
+          279.0,
+          752.5
+        ],
+        "anchors": {
+          "foot_left": [
+            169.0,
+            752.5
+          ],
+          "foot_right": [
+            389.0,
+            737.5
+          ],
+          "hand_left_image": [
+            240.5,
+            307.0
+          ],
+          "hand_right_image": [
+            425.0,
+            407.0
+          ],
+          "foot": [
+            279.0,
+            752.5
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "cfe69eba2d50787104a5e977707d7bc5c0694511743776bb52da4b5d7221cb1f",
+        "source_commit": "d301395b62ba3bb93b3ab050cbd1cf8d0c741937"
+      },
+      "value": {
+        "file": "assets/map-action27/VA-5--resident_guldol.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          100.0,
+          5.0,
+          265.0,
+          240.0
+        ],
+        "foot": [
+          279.0,
+          752.5
+        ],
+        "anchors": {
+          "foot_left": [
+            169.0,
+            752.5
+          ],
+          "foot_right": [
+            389.0,
+            737.5
+          ],
+          "hand_left_image": [
+            240.5,
+            307.0
+          ],
+          "hand_right_image": [
+            425.0,
+            407.0
+          ],
+          "foot": [
+            279.0,
+            752.5
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "cfe69eba2d50787104a5e977707d7bc5c0694511743776bb52da4b5d7221cb1f",
+        "source_commit": "d301395b62ba3bb93b3ab050cbd1cf8d0c741937",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/22/spec",
+      "expected": {
+        "file": "assets/map-action27/PO-2--resident_librarian.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          134.656,
+          27.647999999999996,
+          173.05599999999998,
+          158.976
+        ],
+        "foot": [
+          296.96,
+          748.8
+        ],
+        "anchors": {
+          "foot": [
+            296.96,
+            748.8
+          ],
+          "foot_left": [
+            222.72,
+            748.8
+          ],
+          "foot_right": [
+            363.52,
+            744.96
+          ],
+          "hand_left": [
+            320.0,
+            268.79999999999995
+          ],
+          "hand_right": [
+            455.68,
+            188.16
+          ],
+          "prop_support": [
+            410.624,
+            280.32
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "5fdf72dbf96f1dedff609e7a293f961e72245896dd0890013dd3956859752c94",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "value": {
+        "file": "assets/map-action27/PO-2--resident_librarian.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          134.656,
+          27.647999999999996,
+          173.05599999999998,
+          158.976
+        ],
+        "foot": [
+          296.96,
+          748.8
+        ],
+        "anchors": {
+          "foot": [
+            296.96,
+            748.8
+          ],
+          "foot_left": [
+            222.72,
+            748.8
+          ],
+          "foot_right": [
+            363.52,
+            744.96
+          ],
+          "hand_left": [
+            320.0,
+            268.79999999999995
+          ],
+          "hand_right": [
+            455.68,
+            188.16
+          ],
+          "prop_support": [
+            410.624,
+            280.32
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "5fdf72dbf96f1dedff609e7a293f961e72245896dd0890013dd3956859752c94",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af",
+        "native_detail": true
+      }
+    }
+  ],
+  "baseline_semantic_sha256": {
+    "assets/room13-pixel-acting.json": "cb5427fee77c43338c958b9f9852da77c81fb7f5f25a085db96595a7cc458b3e",
+    "assets/room13-map-action27.json": "b79080398b0e3698e9fe00073f717d3a1f3aca073d4239b1eae2626907270bbc",
+    "assets/room13-life-groups.json": "a061108ffb6330195f497344bac1d6690e28025b55791baa1f26abc6c4a75a71"
+  }
+}

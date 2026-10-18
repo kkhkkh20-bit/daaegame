@@ -13,6 +13,7 @@ init 999 python:
     def r13_pd_check_field(step):
         hub=renpy.get_screen('r13_hub')
         assert hub and hub.scope.get('ready',False),'Real hub not ready'
+        assert r13_pd_scene_ready(),r13_pd_scene_status()
         offset=r13_world_offset();rows=[]
         for actor in r13_stage_people(False):
             row=r13_pd_row(actor,'r13_hub')
@@ -21,7 +22,7 @@ init 999 python:
                 assert row['widget_present'] and row['ancestor_alphas'] and all(a>=.99 for a in row['ancestor_alphas']),('Incomplete entrance render',row)
                 assert min(row['render_bounds'])>0,row
             rows.append(row)
-        r13_pd_flow_log(step,dict(actors=rows,ready=True))
+        r13_pd_flow_log(step,dict(actors=rows,ready=True,scene_status=r13_pd_scene_status()))
 
     def r13_pd_plain_topics(person):
         result=[]
@@ -75,9 +76,12 @@ init 999 python:
         assert renpy.get_screen('r13_topics') and r13_target==r13_pd_person
         available=r13_topics_in_order(r13_target)
         for key,spec,speech in r13_pd_plain_topics(r13_target):
-            store.r13_pd_topic=key;store.r13_pd_topic_title=r13_calendar_topic_title(key,spec)
+            store.r13_pd_topic=key
+            store.r13_pd_topic_source_title=r13_calendar_topic_title(key,spec)
+            # Production side question buttons display the summarized caption, not this source title.
+            store.r13_pd_topic_title=r13_question_summary(store.r13_pd_topic_source_title)
             store.r13_pd_expected_speech=speech
-            r13_pd_flow_log('live-topic-ui-target',dict(person=r13_target,topic=key,title=store.r13_pd_topic_title,expected_resident_lines=speech,available_keys=[k for k,_ in available]))
+            r13_pd_flow_log('live-topic-ui-target',dict(person=r13_target,topic=key,source_title=store.r13_pd_topic_source_title,title=store.r13_pd_topic_title,expected_resident_lines=speech,available_keys=[k for k,_ in available]))
             return
         raise AssertionError(('MISSING_DIALOGUE_COVERAGE: no available unread plain topic with resident speech',r13_target,[k for k,_ in available]))
 
@@ -140,7 +144,10 @@ testcase investigation_flow_baseline_post:
     run Call("r13_qa_roam",dict(day=2,period=0,location="post",life_poc=True,evidence=["E01"]),("entry_corrected","lodging"))
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
+    screenshot "flow-baseline_post-00-entry-hint.png"
     pause 1.2
+    pause until eval (r13_pd_scene_ready()) timeout 8
+    pause 0.2
     run Show("r13_qa_pixel_variant")
     run Function(r13_pd_check_field,"entered-real-field")
     screenshot "flow-baseline_post-01-field.png"
@@ -172,6 +179,7 @@ testcase investigation_flow_baseline_post:
     advance until screen "r13_topics" timeout 40
     pause 0.4
     run Function(r13_pd_choose_topic)
+    run Function(r13_pd_checkpoint,"topics-before-click-"+room13["location"])
     click expression r13_pd_topic_title
     advance until eval (r13_pd_topic_say_ready()) timeout 40
     pause 0.4
@@ -184,6 +192,8 @@ testcase investigation_flow_baseline_post:
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
     pause 1.2
+    pause until eval (r13_pd_scene_ready()) timeout 8
+    pause 0.2
     assert eval (room13["location"]=="post")
     run Function(r13_pd_check_field,"returned-from-resident")
     run Function(r13_pd_choose_object)
@@ -212,6 +222,8 @@ testcase investigation_flow_baseline_post:
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
     pause 1.2
+    pause until eval (r13_pd_scene_ready()) timeout 8
+    pause 0.2
     assert eval (room13["location"]=="post" and room13["day"]==2 and room13["period"]==0)
     run Function(r13_pd_check_field,"returned-from-object")
     screenshot "flow-baseline_post-04-returned.png"
@@ -228,7 +240,10 @@ testcase investigation_flow_baseline_workshop:
     run Call("r13_qa_roam",dict(day=2,period=0,location="workshop",life_poc=True,evidence=["E01"]),("entry_corrected","lodging"))
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
+    screenshot "flow-baseline_workshop-00-entry-hint.png"
     pause 1.2
+    pause until eval (r13_pd_scene_ready()) timeout 8
+    pause 0.2
     run Show("r13_qa_pixel_variant")
     run Function(r13_pd_check_field,"entered-real-field")
     screenshot "flow-baseline_workshop-01-field.png"
@@ -260,6 +275,7 @@ testcase investigation_flow_baseline_workshop:
     advance until screen "r13_topics" timeout 40
     pause 0.4
     run Function(r13_pd_choose_topic)
+    run Function(r13_pd_checkpoint,"topics-before-click-"+room13["location"])
     click expression r13_pd_topic_title
     advance until eval (r13_pd_topic_say_ready()) timeout 40
     pause 0.4
@@ -272,6 +288,8 @@ testcase investigation_flow_baseline_workshop:
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
     pause 1.2
+    pause until eval (r13_pd_scene_ready()) timeout 8
+    pause 0.2
     assert eval (room13["location"]=="workshop")
     run Function(r13_pd_check_field,"returned-from-resident")
     run Function(r13_pd_choose_object)
@@ -300,6 +318,8 @@ testcase investigation_flow_baseline_workshop:
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
     pause 1.2
+    pause until eval (r13_pd_scene_ready()) timeout 8
+    pause 0.2
     assert eval (room13["location"]=="workshop" and room13["day"]==2 and room13["period"]==0)
     run Function(r13_pd_check_field,"returned-from-object")
     screenshot "flow-baseline_workshop-04-returned.png"
@@ -316,7 +336,10 @@ testcase investigation_flow_baseline_inn:
     run Call("r13_qa_roam",dict(day=2,period=0,location="inn",life_poc=True,evidence=["E01"]),("entry_corrected","lodging"))
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
+    screenshot "flow-baseline_inn-00-entry-hint.png"
     pause 1.2
+    pause until eval (r13_pd_scene_ready()) timeout 8
+    pause 0.2
     run Show("r13_qa_pixel_variant")
     run Function(r13_pd_check_field,"entered-real-field")
     screenshot "flow-baseline_inn-01-field.png"
@@ -348,6 +371,7 @@ testcase investigation_flow_baseline_inn:
     advance until screen "r13_topics" timeout 40
     pause 0.4
     run Function(r13_pd_choose_topic)
+    run Function(r13_pd_checkpoint,"topics-before-click-"+room13["location"])
     click expression r13_pd_topic_title
     advance until eval (r13_pd_topic_say_ready()) timeout 40
     pause 0.4
@@ -360,6 +384,8 @@ testcase investigation_flow_baseline_inn:
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
     pause 1.2
+    pause until eval (r13_pd_scene_ready()) timeout 8
+    pause 0.2
     assert eval (room13["location"]=="inn")
     run Function(r13_pd_check_field,"returned-from-resident")
     run Function(r13_pd_choose_object)
@@ -388,6 +414,8 @@ testcase investigation_flow_baseline_inn:
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
     pause 1.2
+    pause until eval (r13_pd_scene_ready()) timeout 8
+    pause 0.2
     assert eval (room13["location"]=="inn" and room13["day"]==2 and room13["period"]==0)
     run Function(r13_pd_check_field,"returned-from-object")
     screenshot "flow-baseline_inn-04-returned.png"
@@ -404,7 +432,10 @@ testcase investigation_flow_proposed_post:
     run Call("r13_qa_roam",dict(day=2,period=0,location="post",life_poc=True,evidence=["E01"]),("entry_corrected","lodging"))
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
+    screenshot "flow-proposed_post-00-entry-hint.png"
     pause 1.2
+    pause until eval (r13_pd_scene_ready()) timeout 8
+    pause 0.2
     run Show("r13_qa_pixel_variant")
     run Function(r13_pd_check_field,"entered-real-field")
     screenshot "flow-proposed_post-01-field.png"
@@ -436,6 +467,7 @@ testcase investigation_flow_proposed_post:
     advance until screen "r13_topics" timeout 40
     pause 0.4
     run Function(r13_pd_choose_topic)
+    run Function(r13_pd_checkpoint,"topics-before-click-"+room13["location"])
     click expression r13_pd_topic_title
     advance until eval (r13_pd_topic_say_ready()) timeout 40
     pause 0.4
@@ -448,6 +480,8 @@ testcase investigation_flow_proposed_post:
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
     pause 1.2
+    pause until eval (r13_pd_scene_ready()) timeout 8
+    pause 0.2
     assert eval (room13["location"]=="post")
     run Function(r13_pd_check_field,"returned-from-resident")
     run Function(r13_pd_choose_object)
@@ -476,6 +510,8 @@ testcase investigation_flow_proposed_post:
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
     pause 1.2
+    pause until eval (r13_pd_scene_ready()) timeout 8
+    pause 0.2
     assert eval (room13["location"]=="post" and room13["day"]==2 and room13["period"]==0)
     run Function(r13_pd_check_field,"returned-from-object")
     screenshot "flow-proposed_post-04-returned.png"
@@ -492,7 +528,10 @@ testcase investigation_flow_proposed_workshop:
     run Call("r13_qa_roam",dict(day=2,period=0,location="workshop",life_poc=True,evidence=["E01"]),("entry_corrected","lodging"))
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
+    screenshot "flow-proposed_workshop-00-entry-hint.png"
     pause 1.2
+    pause until eval (r13_pd_scene_ready()) timeout 8
+    pause 0.2
     run Show("r13_qa_pixel_variant")
     run Function(r13_pd_check_field,"entered-real-field")
     screenshot "flow-proposed_workshop-01-field.png"
@@ -524,6 +563,7 @@ testcase investigation_flow_proposed_workshop:
     advance until screen "r13_topics" timeout 40
     pause 0.4
     run Function(r13_pd_choose_topic)
+    run Function(r13_pd_checkpoint,"topics-before-click-"+room13["location"])
     click expression r13_pd_topic_title
     advance until eval (r13_pd_topic_say_ready()) timeout 40
     pause 0.4
@@ -536,6 +576,8 @@ testcase investigation_flow_proposed_workshop:
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
     pause 1.2
+    pause until eval (r13_pd_scene_ready()) timeout 8
+    pause 0.2
     assert eval (room13["location"]=="workshop")
     run Function(r13_pd_check_field,"returned-from-resident")
     run Function(r13_pd_choose_object)
@@ -564,6 +606,8 @@ testcase investigation_flow_proposed_workshop:
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
     pause 1.2
+    pause until eval (r13_pd_scene_ready()) timeout 8
+    pause 0.2
     assert eval (room13["location"]=="workshop" and room13["day"]==2 and room13["period"]==0)
     run Function(r13_pd_check_field,"returned-from-object")
     screenshot "flow-proposed_workshop-04-returned.png"
@@ -580,7 +624,10 @@ testcase investigation_flow_proposed_inn:
     run Call("r13_qa_roam",dict(day=2,period=0,location="inn",life_poc=True,evidence=["E01"]),("entry_corrected","lodging"))
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
+    screenshot "flow-proposed_inn-00-entry-hint.png"
     pause 1.2
+    pause until eval (r13_pd_scene_ready()) timeout 8
+    pause 0.2
     run Show("r13_qa_pixel_variant")
     run Function(r13_pd_check_field,"entered-real-field")
     screenshot "flow-proposed_inn-01-field.png"
@@ -612,6 +659,7 @@ testcase investigation_flow_proposed_inn:
     advance until screen "r13_topics" timeout 40
     pause 0.4
     run Function(r13_pd_choose_topic)
+    run Function(r13_pd_checkpoint,"topics-before-click-"+room13["location"])
     click expression r13_pd_topic_title
     advance until eval (r13_pd_topic_say_ready()) timeout 40
     pause 0.4
@@ -624,6 +672,8 @@ testcase investigation_flow_proposed_inn:
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
     pause 1.2
+    pause until eval (r13_pd_scene_ready()) timeout 8
+    pause 0.2
     assert eval (room13["location"]=="inn")
     run Function(r13_pd_check_field,"returned-from-resident")
     run Function(r13_pd_choose_object)
@@ -652,6 +702,8 @@ testcase investigation_flow_proposed_inn:
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
     pause 1.2
+    pause until eval (r13_pd_scene_ready()) timeout 8
+    pause 0.2
     assert eval (room13["location"]=="inn" and room13["day"]==2 and room13["period"]==0)
     run Function(r13_pd_check_field,"returned-from-object")
     screenshot "flow-proposed_inn-04-returned.png"

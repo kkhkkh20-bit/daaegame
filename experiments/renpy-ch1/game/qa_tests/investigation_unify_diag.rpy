@@ -13,6 +13,31 @@ init 999 python:
         r13_pd_os.makedirs(path,exist_ok=True)
         return path
 
+    def r13_pd_scene_status():
+        hub=renpy.get_screen('r13_hub')
+        return dict(hub_ready=bool(hub and hub.scope.get('ready',False)),
+            say_present=renpy.get_screen('say') is not None,
+            field_hint_active=room13['location'] not in r13_scene_hint_seen,
+            pan_hint_active=r13_world_width()>1280 and r13_field_view=='people' and not persistent.r13_pan_hint_seen,
+            ongoing_transitions=[str(layer) for layer in (None,'master','screens') if renpy.get_ongoing_transition(layer) is not None])
+
+    def r13_pd_scene_ready():
+        state=r13_pd_scene_status()
+        return state['hub_ready'] and not any(state[key] for key in ('say_present','field_hint_active','pan_hint_active','ongoing_transitions'))
+
+    def r13_pd_checkpoint(step, capture=True):
+        # Flush before capture so a rendering/capture stall leaves its boundary.
+        row=dict(step=step,variant=getattr(store,'r13_pd_variant','unselected'),
+            screens={name:renpy.get_screen(name) is not None for name in ('main_menu','say','r13_hub','r13_topics','r13_qa_pixel_baseline')},
+            done=bool(r13_qa_pixel_diag_done))
+        path=r13_pd_os.path.join(r13_pd_out(),'checkpoints.jsonl')
+        with open(path,'a') as f:
+            f.write(r13_pd_json.dumps(row,ensure_ascii=False)+'\n');f.flush()
+        if capture:
+            ok=renpy.screenshot(r13_pd_os.path.join(r13_pd_out(),'checkpoint-'+step+'.png'))
+            with open(path,'a') as f:
+                f.write(r13_pd_json.dumps(dict(step=step,capture_return=ok))+'\n');f.flush()
+
     def r13_pd_row(actor, screen_name=None):
         person,pose=actor['person'],actor['pose']
         spec=r13_acting_spec(person,pose) or {}
@@ -61,6 +86,11 @@ init 999 python:
             for row in baseline_map27['rows']:
                 if row.get('status')=='approved' and renpy.loadable(row['spec']['file']):
                     R13_ACTING.setdefault(row['person'],{})[row['pose']]=r13_pd_copy.deepcopy(row['spec'])
+            # These init-injected group poses are absent from the baseline acting JSON.
+            # Restore their exact .66 specs too, so proposed flags cannot leak into baseline.
+            groups=r13_pd_json.load(renpy.file('qa_tests/baseline-residual-group-specs.json'))
+            for member in groups:
+                R13_ACTING.setdefault(member['person'],{})[member['pose']]=r13_pd_copy.deepcopy(member['spec'])
         R13_STAGE_CACHE.clear()
 
     def r13_pd_end():
@@ -97,17 +127,26 @@ screen r13_qa_pixel_variant():
     text ('NATIVE FIELD FIXTURE / '+r13_pd_variant) xpos 8 ypos 704 size 13 color '#ffffff' outlines [(1,'#000000',0,0)]
 
 label r13_qa_pixel_diag(variant="proposed"):
+    $ r13_pd_variant=variant
+    $ r13_pd_checkpoint("label-entered")
     $ r13_qa_pixel_diag_done=False
     python:
         r13_pd_begin(variant)
+        r13_pd_checkpoint("registry-ready")
     $ persistent.room13_motion=False
     hide screen say
     hide screen r13_hub
     show screen r13_qa_pixel_baseline
-    $ renpy.pause(1.0, hard=True)
+    $ r13_pd_checkpoint("board-before-pause",False)
+    $ renpy.pause(1.0, hard=True, modal=False)
+    $ r13_pd_checkpoint("board-after-pause")
     python:
-        report={'variant':variant,'source_commit':'24ce3b6037093a562f0bd9b1c35c64a9b690a13d','kind':'bounded three-map native presentation fixture; not campaign replay; equal-height board is not an age/size target','baseline':[r13_pd_row(a) for a in r13_pd_baseline()],'fields':[],'missing':[]}
+        report={'variant':variant,'source_commit':'24ce3b6037093a562f0bd9b1c35c64a9b690a13d','kind':'bounded three-map native presentation fixture; not campaign replay; equal-height board is not an age/size target','baseline':[],'fields':[],'missing':[]}
+        for actor in r13_pd_baseline():
+            r13_pd_checkpoint('board-row-'+actor['person'],False)
+            report['baseline'].append(r13_pd_row(actor))
         renpy.screenshot(r13_pd_os.path.join(r13_pd_out(),'00-neutral-equal-height.png'))
+        r13_pd_checkpoint('board-captured')
     hide screen r13_qa_pixel_baseline
     python:
         base=r13_pd_copy.deepcopy(room13)
@@ -123,7 +162,16 @@ label r13_qa_pixel_diag(variant="proposed"):
             renpy.show('r13_pd_background',what=r13_background(R13_PLACES[location][1]))
             renpy.show_screen('r13_hub',entry=False)
             renpy.show_screen('r13_qa_pixel_variant')
-            renpy.pause(1.2,hard=True)
+            r13_pd_checkpoint('field-'+location+'-before-pause',False)
+            renpy.pause(1.2,hard=True,modal=False)
+            r13_pd_checkpoint('field-'+location+'-after-pause')
+            # Wait for the actual production 3s scene / 6s pan hints to expire, not injected flags.
+            for wait_index in range(40):
+                if r13_pd_scene_ready():break
+                renpy.pause(.2,hard=True,modal=False)
+            assert r13_pd_scene_ready(),r13_pd_scene_status()
+            renpy.pause(.2,hard=True,modal=False)
+            r13_pd_checkpoint('field-'+location+'-stable')
             hub=renpy.get_screen('r13_hub')
             assert hub and hub.scope.get('ready',False), 'Field is not ready'
             actors=r13_stage_people(False)
@@ -133,7 +181,7 @@ label r13_qa_pixel_diag(variant="proposed"):
                 assert min(row['render_bounds'])>0, row
                 assert not row['on_screen'] or (row['widget_present'] and row['widget_alpha'] is not None and row['widget_alpha']>=.99), ('Unverified visible actor',row)
             shot='%02d-d%02d-p%d-%s-x%d.png'%(index+1,day,period,location,offset)
-            report['fields'].append(dict(day=day,period=period,location=location,shot=shot,ready=True,actors=rows,flags=list(room13.get('flags',[]))))
+            report['fields'].append(dict(scene_status=r13_pd_scene_status(),day=day,period=period,location=location,shot=shot,ready=True,actors=rows,flags=list(room13.get('flags',[]))))
             renpy.screenshot(r13_pd_os.path.join(r13_pd_out(),shot))
             with open(r13_pd_os.path.join(r13_pd_out(),'report.json'),'w') as output:r13_pd_json.dump(report,output,ensure_ascii=False,indent=2)
             renpy.hide_screen('r13_hub')
@@ -143,17 +191,23 @@ label r13_qa_pixel_diag(variant="proposed"):
         with open(r13_pd_os.path.join(r13_pd_out(),'report.json'),'w') as output:r13_pd_json.dump(report,output,ensure_ascii=False,indent=2)
         r13_pd_end()
         store.r13_qa_pixel_diag_done=True
+        r13_pd_checkpoint("label-completed")
     return
 
 testcase investigation_unify_diag:
+    run Function(r13_pd_checkpoint,"test-started")
     pause 2.0
     click "처음부터"
     pause 3.0
+    run Function(r13_pd_checkpoint,"before-roam-call")
     run Call("r13_qa_roam",dict(day=2,period=0,location="inn",life_poc=True,evidence=["E01"]),("entry_corrected","lodging"))
     click pos (640,600) until screen "r13_hub" timeout 40
+    run Function(r13_pd_checkpoint,"roam-hub-visible")
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
+    run Function(r13_pd_checkpoint,"before-baseline-call")
     run Call("r13_qa_pixel_diag","baseline")
-    pause until eval (r13_qa_pixel_diag_done) timeout 240
+    pause until eval (r13_qa_pixel_diag_done) timeout 60
     $ r13_qa_pixel_diag_done=False
+    run Function(r13_pd_checkpoint,"before-proposed-call")
     run Call("r13_qa_pixel_diag","proposed")
-    pause until eval (r13_qa_pixel_diag_done) timeout 240
+    pause until eval (r13_qa_pixel_diag_done) timeout 60

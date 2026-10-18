@@ -4,6 +4,7 @@ No resampling, recoloring, schedule, position, or height changes are performed.
 import argparse, copy, hashlib, io, json
 from pathlib import Path
 from PIL import Image
+from investigation_native_residual import restore as restore_residual
 ROOT=Path(__file__).resolve().parents[1]
 RECEIPT='art/investigation-canonical-20261018/receipt.json'
 JOB_ROWS={'VA-9-square','VA-9-hall','VA-10-square','VA-10-hall','VA-11-post','VA-12-post','VA-2','VA-3'}
@@ -24,7 +25,7 @@ def receipt(root=ROOT):
 
 def restored_registries(registries, r):
  """Verify exact new specs, then reverse ONLY this overlay for legacy scope tests."""
- out=copy.deepcopy(registries)
+ out=restore_residual(registries)
  for o in r['operations']:
   path=o['file'].removeprefix('game/');node,k=slot(out[path],o['pointer'])
   assert node[k]==o['value'], 'Noncanonical overlay spec: '+o['pointer']
@@ -33,7 +34,7 @@ def restored_registries(registries, r):
 
 def run(root=ROOT, apply=False):
  r=receipt(root);docs={f:json.loads((root/f).read_text()) for f in {o['file'] for o in r['operations']}};exports=[]
- baseline=copy.deepcopy(docs)
+ baseline={('game/'+p):v for p,v in restore_residual({p.removeprefix('game/'):v for p,v in docs.items()},root).items()}
  for o in r['operations']:
   node,k=slot(baseline[o['file']],o['pointer'])
   assert node[k] in (o['expected'],o['value']), 'Unexpected spec/order: '+o['pointer']

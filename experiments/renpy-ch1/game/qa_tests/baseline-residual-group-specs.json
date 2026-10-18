@@ -1,0 +1,150 @@
+[
+  {
+    "person": "buri",
+    "pose": "group_cooperative",
+    "spec": {
+      "file": "assets/room13-group-buri-cooperative.webp",
+      "crop": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "head": [
+        125.0,
+        8.0,
+        275.0,
+        225.0
+      ],
+      "anchors": {
+        "support_hand_left": [
+          304.0,
+          381.0
+        ],
+        "support_hand_right": [
+          416.5,
+          376.5
+        ],
+        "shared_component_contact": [
+          455.0,
+          345.0
+        ],
+        "foot_left": [
+          151.5,
+          737.5
+        ],
+        "foot_right": [
+          327.5,
+          715.5
+        ],
+        "foot": [
+          239.5,
+          737.5
+        ]
+      },
+      "foot": [
+        239.5,
+        737.5
+      ],
+      "contact": "shared_work",
+      "facing": "right-threequarter",
+      "stature_ratio": 1,
+      "source_sha256": "50b893f23339aa69e0e58644c1975ae7a61ac6aada36c6aee540740a7aed5805",
+      "source_commit": "8b553e7ce1e81543c3415f5ba9c3f329907ee78e",
+      "foreground_parts": [
+        [
+          [
+            200.0,
+            315.0
+          ],
+          [
+            467.0,
+            315.0
+          ],
+          [
+            467.0,
+            415.0
+          ],
+          [
+            200.0,
+            415.0
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "person": "resident_tok",
+    "pose": "group_cooperative",
+    "spec": {
+      "file": "assets/room13-group-resident_tok-cooperative.webp",
+      "crop": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "head": [
+        145.0,
+        30.0,
+        260.0,
+        235.0
+      ],
+      "anchors": {
+        "screwdriver_tip": [
+          127.0,
+          389.5
+        ],
+        "guiding_fingertips": [
+          147.0,
+          389.0
+        ],
+        "foot_left": [
+          177.0,
+          726.5
+        ],
+        "foot_right": [
+          447.0,
+          737.5
+        ],
+        "foot": [
+          312.0,
+          737.5
+        ]
+      },
+      "foot": [
+        312.0,
+        737.5
+      ],
+      "contact": "shared_work",
+      "facing": "left-threequarter",
+      "stature_ratio": 1,
+      "source_sha256": "bc68b8c9d499392ee6c1cdc9988d3ff64986cb044d21300d7f3964758b4f3823",
+      "source_commit": "8b553e7ce1e81543c3415f5ba9c3f329907ee78e",
+      "foreground_parts": [
+        [
+          [
+            60.0,
+            325.0
+          ],
+          [
+            165.0,
+            325.0
+          ],
+          [
+            290.0,
+            425.0
+          ],
+          [
+            165.0,
+            455.0
+          ],
+          [
+            60.0,
+            395.0
+          ]
+        ]
+      ]
+    }
+  }
+]
