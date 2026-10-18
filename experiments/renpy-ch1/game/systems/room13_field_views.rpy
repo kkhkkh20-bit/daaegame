@@ -22,28 +22,15 @@ screen r13_field_spots_overlay(ready):
 
 screen r13_field_view_controls(ready):
     $ people_alert=bool(r13_offers_here())
-    textbutton "주변 살피기":
-        area (24,638 if persistent.room13_large_text else 646,196,80 if persistent.room13_large_text else 64) style "r13_action_button" padding (10,8) text_size r13_read_size(22,25)
-        background R13InkPanel(focused=r13_field_view=="scene",alpha="ef",slim=True)
-        text_color ("#f6dfac" if r13_field_view=="scene" else "#d8d0bf")
-        action SetVariable("r13_field_view","scene") sensitive ready
-    textbutton ("사람과 대화 · !" if people_alert else "사람과 대화"):
-        area (232,638 if persistent.room13_large_text else 646,212,80 if persistent.room13_large_text else 64) style "r13_action_button" padding (10,8) text_size r13_read_size(22,25)
-        background R13InkPanel(focused=r13_field_view=="people",alpha="ef",slim=True)
-        text_color ("#f6dfac" if r13_field_view=="people" else "#d8d0bf")
-        action SetVariable("r13_field_view","people") sensitive ready
+    use r13_footer_control(0,"주변 살피기","investigate",SetVariable("r13_field_view","scene"),enabled=ready,chosen=r13_field_view=="scene")
+    use r13_footer_control(1,"사람과 대화 !" if people_alert else "사람과 대화","dialogue",SetVariable("r13_field_view","people"),enabled=ready,chosen=r13_field_view=="people")
+    use r13_footer_control(3,"더보기","settings",Show("r13_more_tools"),enabled=ready)
     if r13_field_view=="scene":
-        textbutton ("조사 지점 숨기기" if r13_field_spots else "조사 지점 표시"):
-            area (24,110,210,48) style "r13_action_button" padding (10,6) text_size r13_read_size(19,22)
-            action ToggleVariable("r13_field_spots") sensitive ready
+        fixed:
+            area (28,104,232,64)
+            use r13_control("지점 숨기기" if r13_field_spots else "조사 지점","investigate",ToggleVariable("r13_field_spots"),enabled=ready,chosen=r13_field_spots,height=64)
         $ target=r13_field_selection()
         frame:
-            area (460,638 if persistent.room13_large_text else 646,672,80 if persistent.room13_large_text else 64) padding (16,8) background R13InkPanel(alpha="e6",slim=True)
-            if target:
-                text r13_object_name(target) xsize 430 yalign .5 size r13_read_size(23,26) color "#fff4df" font r13_ui_font()
-            else:
-                text "배경의 물건을 눌러 선택하세요" yalign .5 size r13_read_size(21,24) color "#e8d9b0" font r13_ui_font()
-        if target:
-            textbutton "살펴보기":
-                area (940,638 if persistent.room13_large_text else 646,180,80 if persistent.room13_large_text else 64) style "r13_action_button" padding (10,4) text_size r13_read_size(23,26)
-                action [Function(r13_click_feedback,target),Return(("object",target))] sensitive ready
+            area (28,r13_control_y()-64,944,48) padding (16,8) background R13InkPanel(alpha="e6",slim=True)
+            text (r13_object_name(target) if target else "배경의 물건을 눌러 선택하세요") yalign .5 size r13_read_size(21,24) color "#fff4df" font r13_ui_font()
+        use r13_footer_control(2,"살펴보기","investigate",[Function(r13_click_feedback,target),Return(("object",target))] if target else NullAction(),enabled=ready and bool(target),primary=True)

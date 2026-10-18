@@ -23,18 +23,35 @@ class Q(UIQA):
 async def main():
  report={'kind':'Scoped UI fixtures: gate investigation and day-10 C2 council, representative owned evidence; not a story playthrough','checks':[],'captures':[]}
  async with async_playwright() as p:
-  b=await p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox','--enable-unsafe-swiftshader'])
+  OUT.mkdir(parents=True,exist_ok=True)
+  b=await p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox','--enable-unsafe-swiftshader','--use-angle=swiftshader'])
   page=await b.new_page(viewport={'width':1280,'height':720},has_touch=True);q=Q(page,OUT)
+  page.on('console',lambda msg: print('BROWSER',msg.text,flush=True) if msg.type=='error' else None)
+  page.on('pageerror',lambda err: print('PAGEERROR',str(err),flush=True))
   async def shot(name):
    await page.mouse.move(1270,2);await q.shot(name);report['captures'].append(name)
+   st=await q.state()
+   footer=[x for x in st['buttons'] if x['rect'][1]>=624 and x['rect'][2]>180]
+   for button in footer:
+    x,y,w,h=button['rect']
+    assert w==232 and h in (64,80) and y+h==704,(name,button)
+   for a,bn in zip(sorted(footer,key=lambda x:x['rect'][0]),sorted(footer,key=lambda x:x['rect'][0])[1:]):
+    assert a['rect'][0]+a['rect'][2]<=bn['rect'][0],(name,'footer overlap')
   try:
    await page.goto(os.environ.get('ROOM13_UI_QA_URL','http://127.0.0.1:8776/preview/room13-dev/'))
    await page.wait_for_function("typeof renpy_exec==='function'",timeout=240000);await page.wait_for_function("!document.getElementById('presplash')",timeout=240000)
    await q.wait('main_menu');await q.py('import renpy;s=renpy.store;s.preferences.text_cps=0;s.preferences.afm_enable=False;result=True')
+   await q.py('import renpy;renpy.exports.show_screen("r13_control_specimen");renpy.exports.restart_interaction();result=True')
+   await asyncio.sleep(.4);await shot('00-pc-components')
+   await page.set_viewport_size({'width':844,'height':390});q.touch=True
+   await q.py('import renpy;renpy.store.persistent.room13_large_text=True;renpy.exports.restart_interaction();result=True')
+   await shot('00-mobile-components')
+   await q.py('import renpy;renpy.exports.hide_screen("r13_control_specimen");renpy.store.persistent.room13_large_text=False;renpy.exports.restart_interaction();result=True')
+   await page.set_viewport_size({'width':1280,'height':720});q.touch=False
    await q.press('처음부터');await q.press('씬 건너뛰기');await q.wait('say')
    await q.py('import renpy;s=renpy.store;renpy.exports.hide_screen("say");s.room13=s.r13_new();s.r13_upgrade();s.r13_edit(day=1,period=1,location="gate",evidence=["E01"]);s.room13_mode=True;s.persistent.room13_motion=False;s.persistent.room13_large_text=False;s.r13_field_view="scene";s.r13_field_spots=False;s.r13_field_pick=None;s.place=s.R13_PLACES["gate"][0];s.r13_scene_bg=s.R13_PLACES["gate"][1];s.r13_carriage_skip=False;renpy.exports.scene();renpy.exports.show("qa_bg",what=s.r13_background(s.r13_scene_bg));result=True')
    await q.jump('r13_entry');await q.wait('r13_hub');await shot('01-pc-investigate')
-   before=await q.room();await q.press('조사 지점 표시');assert await q.room()==before;await shot('02-pc-hotspots')
+   before=await q.room();await q.press('조사 지점');assert await q.room()==before;await shot('02-pc-hotspots')
    await q.input(1120,420);await asyncio.sleep(.4)
    assert await q.py('import renpy;result=renpy.store.r13_field_selection()') in ['gate_documents','booth']
    assert await q.room()==before;await shot('03-pc-selected-object')
@@ -58,13 +75,13 @@ async def main():
     st=await q.state()
     if any('발언 선택' in x['text'] for x in st['buttons']):break
     await q.input(810,610)
-   await shot('07-pc-listening')
-   before=await q.room();await q.press('이 발언에 자료');await q.wait('r13_book');await shot('08-pc-live-evidence')
+   await shot('07-pc-listening');await q.press('더보기');await shot('07b-pc-more');await page.keyboard.press('Escape');await q.wait('say')
+   before=await q.room();await q.press('자료 보여주기');await q.wait('r13_book');await shot('08-pc-live-evidence')
    assert await q.py('import renpy;result=renpy.store.r13_meeting_active')
    await q.press('그만두기');await q.wait('say');assert await q.room()==before
    await q.press('발언 선택');await q.until('r13_debate_board');await shot('09-pc-review-statement')
    before=await q.room();selected=await q.py('import renpy;result=renpy.store.r13_meeting_live_target()')
-   await q.press('이 발언에 자료');await q.wait('r13_book');await shot('10-pc-review-evidence')
+   await q.press('자료 보여주기');await q.wait('r13_book');await shot('10-pc-review-evidence')
    await q.press('그만두기');await q.wait('r13_debate_board');assert await q.room()==before
    await q.press('기록');assert await q.py('import renpy;result=renpy.display.screen.get_screen("r13_records") is not None')
    await shot('11-pc-meeting-records');await q.press('닫기');await q.wait('r13_debate_board');after=await q.room();assert {k:v for k,v in after.items() if k!='record_ui'}=={k:v for k,v in before.items() if k!='record_ui'};before=after
@@ -72,10 +89,11 @@ async def main():
    await page.set_viewport_size({'width':844,'height':390});q.touch=True
    await q.py('import renpy;renpy.store.persistent.room13_large_text=True;renpy.exports.restart_interaction();result=True')
    await shot('12-mobile-review')
-   await q.press('이 발언에 자료');await q.wait('r13_book');await shot('13-mobile-evidence');await q.press('그만두기');await q.wait('r13_debate_board');assert await q.room()==before
-   await q.press('토론 다시 듣기');await q.until('say');await shot('14-mobile-listening')
+   await q.press('자료 보여주기');await q.wait('r13_book');await shot('13-mobile-evidence');await q.press('그만두기');await q.wait('r13_debate_board');assert await q.room()==before
+   await q.press('토론 듣기');await q.until('say');await shot('14-mobile-listening')
    assert not await q.py('import renpy;result=renpy.display.screen.get_screen("_exception") is not None')
    report['checks'].append('844x390 large text: touch presentation and cancellation, review/listen mode transition pass')
+   report['checks'].append('All captured gameplay footers: equal 232px widths, 64/80px heights, shared baseline and no overlap')
    report['passed']=True
   except Exception as e:
    report['error']=repr(e);await page.screenshot(path=str(OUT/'failure.png'))

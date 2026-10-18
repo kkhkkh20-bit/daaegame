@@ -1,0 +1,20 @@
+{
+  "kind": "Actual conversation dispatcher plus 0/8/12-topic layout fixtures; fixture topics combine story stages and repeat some labels, not simultaneous eligibility or a full playthrough",
+  "checks": [
+    "pc explicit pagination forward/back preserves complete state",
+    "mobile explicit pagination forward/back preserves complete state",
+    "pc actual present/record/cancel preserves story state and returns to topics (records may mark material read)",
+    "mobile actual present/record/cancel preserves story state and returns to topics (records may mark material read)",
+    "numeric shortcut selects actual first question, dialogue plays, returns as read",
+    "actual back closes topics (dispatcher fixture resumes opening context)"
+  ],
+  "captures": [
+    "pc-0",
+    "pc-8",
+    "pc-12",
+    "mobile-0",
+    "mobile-8",
+    "mobile-12"
+  ],
+  "passed": true
+}

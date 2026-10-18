@@ -1,6 +1,19 @@
 # Role tokens. Galmuri11 ships one real weight (Regular); never synthesize
 # Thin/Medium/Black or italic for small Korean pixel text.
 init 57 python:
+    # One 1280x720 grid, shared by every gameplay footer.
+    R13_CONTROL = dict(width=232, gap=16, left=28, bottom=16,
+        height=64, large_height=80, icon=28, icon_gap=10,
+        text=22, large_text=24, alpha="e6", padding=16)
+    def r13_control_height():
+        return R13_CONTROL["large_height" if persistent.room13_large_text else "height"]
+    def r13_control_x(column):
+        return R13_CONTROL["left"]+column*(R13_CONTROL["width"]+R13_CONTROL["gap"])
+    def r13_control_y():
+        return 720-R13_CONTROL["bottom"]-r13_control_height()
+    def r13_control_upper_y():
+        return r13_control_y()-r13_control_height()-R13_CONTROL["gap"]
+
     R13_UI_PADDING = {
         "button": (18,12), "compact": (12,8), "panel": (24,20),
         "row": (18,12), "name": (16,8),
@@ -50,3 +63,21 @@ init 70:
     style r13_say_label:
         bold False
         italic False
+
+# Text-only actions inherit the same centering as icon actions.
+init 81:
+    style r13_button_text:
+        xalign .5
+        yalign .5
+    style r13_action_button:
+        background R13ControlSurface()
+        hover_background R13ControlSurface(hovered=True)
+        selected_background R13ControlSurface(chosen=True)
+        insensitive_background R13ControlSurface(disabled=True)
+        padding (16,8)
+    style r13_action_button_text:
+        xalign .5
+        yalign .5
+        color "#fff4df"
+        selected_color "#f2d28d"
+        insensitive_color "#a79c8c"

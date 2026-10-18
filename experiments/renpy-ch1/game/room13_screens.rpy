@@ -32,9 +32,9 @@ init 80:
         xsize 128
         ysize 44
         padding (10,6)
-        background R13InkPanel()
-        hover_background R13InkPanel(focused=True)
-        insensitive_background R13InkPanel(disabled=True)
+        background R13ControlSurface()
+        hover_background R13ControlSurface(hovered=True)
+        insensitive_background R13ControlSurface(disabled=True)
     style r13_toolbar_button_text is r13_action_button_text:
         color "#edf0e5"
         hover_color "#ffffff"
@@ -46,33 +46,22 @@ init 80:
 screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode="line",ready=True):
     style_prefix "r13"
     if mode=="talk":
-        fixed:
-            area ((1148,650,132,70) if persistent.room13_large_text else (1168,664,112,56))
-            use r13_antique_button("기록","record",Show("r13_records",target=person,present_action=present_action),enabled=ready,compact=True,width=(132 if persistent.room13_large_text else 112))
+        use r13_footer_control(4,"기록","record",Show("r13_records",target=person,present_action=present_action),enabled=ready)
+        use r13_footer_control(3,"더보기","settings",Show("r13_more_tools"),enabled=ready)
         if present_action is not None:
-            use r13_present_button(present_action,ready,640,572,592,72)
+            use r13_present_button(present_action,ready,r13_control_x(4),r13_control_upper_y(),232,r13_control_height())
     elif mode!="field":
         use r13_playback_footer(show_record=True,ready=ready)
     else:
         use r13_field_view_controls(ready)
-        frame:
-            area ((1148,650,132,70) if persistent.room13_large_text else (1168,664,112,56)) padding (0,0) background None
-            use r13_antique_button("기록","record",Show("r13_records"),enabled=ready,compact=True,width=(132 if persistent.room13_large_text else 112))
+        use r13_footer_control(4,"기록","record",Show("r13_records"),enabled=ready)
         use r13_options_control(ready)
 
 screen r13_options_control(ready=True):
-    # Owned by the active modal screen, so options remain clickable in dialogue.
-    button:
-        id "r13_options_gear"
-        area (1190,20,64,64) padding (0,0)
-        background R13InkPanel(alpha="b8") hover_background R13InkPanel(focused=True)
-        insensitive_background R13InkPanel(disabled=True)
-        action Show("r13_more_tools") sensitive ready
-        tooltip "메뉴" alt "메뉴"
-        fixed:
-            xsize 64 ysize 64
-            add R13AntiqueIcon("settings",size=34) xpos 15 ypos 6
-            text "메뉴" size 14 color "#e6ece2" xalign .5 ypos 45
+    # A compact instance of the same component, not a separate vertical icon layout.
+    fixed:
+        area (1190,20,64,64)
+        use r13_control("","settings",Show("r13_more_tools"),enabled=ready,width=64,height=64,control_id="r13_options_gear")
 
 screen r13_hub(entry=False):
     style_prefix "r13"
@@ -96,27 +85,23 @@ screen r13_hub(entry=False):
         use r13_world_contents(entry,ready)
     if not entry:
         hbox:
-            xpos 1250 xanchor 1.0 ypos 158 spacing 8
+            xpos 1252 xanchor 1.0 ypos 184 spacing 16
             for destination,title in r13_local_connections():
-                textbutton ("› "+title):
-                    style "r13_action_button" padding (16,10) ysize 64
-                    background R13PaperFrame() hover_background R13PaperPanel(focused=True) text_color "#65503b" text_hover_color "#493b30"
-                    text_size 21 action Return(("travel",destination)) sensitive ready
+                use r13_control(title,"map",Return(("travel",destination)),enabled=ready,height=64)
     if entry:
         use r13_waiting_window(ready)
     else:
         fixed:
-            xpos 1070 ypos 82 xsize 180 ysize 64
-            use r13_antique_button("지도 · 이동","map",Return(("menu","map")),enabled=ready,width=180)
+            area (1020,104,232,64)
+            use r13_antique_button("지도 · 이동","map",Return(("menu","map")),enabled=ready,width=232,height=64)
     if not entry and r13_bed_available("bed"):
-        textbutton "자기":
-            style "r13_action_button" area (1010,500,220,56)
-            action Return(("sleep","bed"))
+        fixed:
+            area (1020,264,232,64)
+            use r13_control("자기","auto",Return(("sleep","bed")),enabled=ready,height=64)
     if not entry and r13_evening_missions():
-        textbutton "저녁 할 일":
-            style "r13_action_button" area (730,30,194,56) text_size 21
-            action Return(("menu","evening")) sensitive ready
-            tooltip "오늘 저녁에만 할 수 있는 일"
+        fixed:
+            area (772,104,232,64)
+            use r13_control("저녁 할 일","auto",Return(("menu","evening")),enabled=ready,height=64)
     if not entry and r13_has("livelihood_open"):
         # 0.18.56 (owner): no work/shop board at the top. Work is asked for from the person who
         # gives it, goods are bought from the seller in person; only the purse is shown.
@@ -254,7 +239,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                 for index,(title,action,was_read) in enumerate(entries):
                     button:
                         xsize list_width-23 yminimum row_h padding (18,17)
-                        background R13InkPanel(alpha="e6",slim=True) hover_background R13InkPanel(focused=True,alpha="f5",slim=True)
+                        background R13ControlSurface() hover_background R13ControlSurface(hovered=True)
                         action r13_safe_question_action(action) sensitive ready
                         text (("%d  "%(index+1) if index<9 else "")+r13_question_caption(title,was_read,mark_unread=True)):
                             xsize list_width-59 text_align .5 xalign .5 yalign .5
@@ -275,11 +260,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
         if return_action is not None:
             # 0.18.42 (owner): not centred under the list, where it read as another choice.
             # Bottom-left corner, on the same row as the tools at the bottom right.
-            textbutton "돌아가기":
-                xpos 0 ypos 676 xsize 150 ysize 44
-                padding (12,6) background R13InkPanel(alpha="e6",slim=True) hover_background R13InkPanel(focused=True,alpha="f5",slim=True)
-                text_size r13_read_size(20,24) text_color "#fff4df" text_xalign .5
-                action return_action sensitive ready
+            use r13_footer_control(0,"돌아가기","dialogue",return_action,enabled=ready)
     else:
         add Solid("#00000020")
         $ compact_width=min(list_width,940)
@@ -340,11 +321,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                 key ("K_%d"%(index+1)) action r13_safe_question_action(action)
                 key ("K_KP%d"%(index+1)) action r13_safe_question_action(action)
         if return_action is not None:
-            textbutton "돌아가기":
-                xpos 0 ypos 676 xsize 150 ysize 44
-                padding (12,6) background R13InkPanel(alpha="e6",slim=True) hover_background R13InkPanel(focused=True,alpha="f5",slim=True)
-                text_size r13_read_size(20,24) text_color "#fff4df" text_xalign .5
-                action return_action sensitive ready
+            use r13_footer_control(0,"돌아가기","dialogue",return_action,enabled=ready)
 
 screen r13_entry_topics():
     style_prefix "r13"
@@ -576,13 +553,6 @@ screen r13_handoff():
 
 # Approved fixed evidence action, shared by conversation toolbars.
 screen r13_present_button(command,ready,x,y,w=332,h=72):
-    button:
-        id "r13_present_button"
-        area (x,y,w,h) padding (20,10)
-        background R13InkPanel(focused=True,alpha="ef",slim=True)
-        hover_background R13InkPanel(focused=True,alpha="ff",slim=True)
-        action command sensitive ready alt "자료 보여주기"
-        hbox:
-            align (.5,.5) spacing 12
-            add R13AntiqueIcon("present",size=32) yalign .5
-            text "자료 보여주기" size r13_read_size(24,28) color "#f6dfac" font r13_ui_font() yalign .5
+    fixed:
+        area (x,y,w,h)
+        use r13_control("자료 보여주기","present",command,enabled=ready,primary=True,width=w,height=h,control_id="r13_present_button")

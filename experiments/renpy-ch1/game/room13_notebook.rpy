@@ -212,7 +212,7 @@ init 71:
     style r13_paper_tab_button is r13_compact_button:
         background R13PaperPanel(False)
         hover_background R13PaperPanel(True)
-        selected_background R13InkPanel(focused=True)
+        selected_background R13ControlSurface(chosen=True)
     style r13_paper_tab_button_text is r13_compact_button_text:
         color "#303d38"
         hover_color "#724b39"

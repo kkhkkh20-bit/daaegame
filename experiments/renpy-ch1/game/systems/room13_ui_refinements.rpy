@@ -30,21 +30,4 @@ init 79 python:
     def r13_feedback_in_conversation():
         return any(renpy.get_screen(name) for name in ("say","r13_topics","r13_entry_topics","r13_entry_karo_topics","choice"))
 
-init 111:
-    style r13_footer_button:
-        xsize 104
-        ysize 56
-        padding (8,0)
-        hover_background R13TouchSurface(focused=True)
-    style r13_footer_button_text:
-        font r13_ui_font()
-        size 22
-        yalign .6
-    style r13_toolbar_button:
-        ysize 64
-        padding (10,0)
-        background R13TouchSurface()
-        hover_background R13TouchSurface(focused=True)
-        insensitive_background R13TouchSurface(disabled=True)
-    style r13_toolbar_button_text:
-        yalign .75
+# Footer geometry and text alignment are owned by room13_controls.rpy / room13_typography.rpy.

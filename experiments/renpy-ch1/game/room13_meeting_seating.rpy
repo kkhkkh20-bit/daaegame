@@ -271,30 +271,11 @@ screen r13_meeting_tools(claim,sid=None,board=False,ready=True):
     $ completed=bool(sid and r13_debate_is_broken(claim,sid))
     $ live_controls=r13_meeting_live_active and not r13_meeting_interrupting
     $ can_conclude=board and r13_debate_ready(claim)
-    textbutton ("회의 중단" if board else "더보기"):
-        area (24,660,180,48) style "r13_action_button" padding (10,6) text_size 22
-        action (Return(("leave",)) if board else Show("r13_more_tools")) sensitive ready
-    fixed:
-        area ((1148,650,132,70) if persistent.room13_large_text else (1168,664,112,56))
-        use r13_antique_button("기록","record",Show("r13_records"),enabled=ready,compact=True,width=(132 if persistent.room13_large_text else 112))
-    textbutton ("결론 정리" if can_conclude else "토론 다시 듣기" if board else "발언 선택"):
-        area (220,638 if persistent.room13_large_text else 646,240,80 if persistent.room13_large_text else 64) style "r13_action_button" padding (12,8) text_size r13_read_size(22,25)
-        action (Return(("conclude",)) if can_conclude else Return(("round",sid)) if board else Function(r13_meeting_request_live_action,"review"))
-        sensitive ready and (board or live_controls)
-    textbutton ("다시 듣기" if completed else "되묻기"):
-        area (476,638 if persistent.room13_large_text else 646,210,80 if persistent.room13_large_text else 64) style "r13_action_button" padding (12,8) text_size r13_read_size(22,25)
-        action (Return(("listen" if completed else "press",sid)) if board else Function(r13_meeting_request_live_action,"press"))
-        sensitive ready and (board or (live_controls and r13_meeting_can_live_press()))
-    button:
-        area (702,638 if persistent.room13_large_text else 646,430,80 if persistent.room13_large_text else 64) padding (18,8)
-        background R13InkPanel(focused=True,alpha="ef",slim=True) hover_background R13InkPanel(focused=True,alpha="ff",slim=True)
-        insensitive_background R13InkPanel(disabled=True,alpha="b8",slim=True)
-        action (Return(("present",sid)) if board else Function(renpy.call_in_new_context,"r13_meeting_interrupt",claim,r13_meeting_live_target()))
-        sensitive ready and not completed and (board or r13_meeting_can_interrupt())
-        hbox:
-            align (.5,.5) spacing 10
-            add R13AntiqueIcon("present",size=28) yalign .5
-            text ("반박한 발언" if completed else "이 발언에 자료 보여주기") size r13_read_size(22,25) color ("#9a9385" if completed else "#f6dfac") font r13_ui_font() yalign .5
+    use r13_footer_control(0,"회의 중단" if board else "더보기","settings",Return(("leave",)) if board else Show("r13_more_tools"),enabled=ready)
+    use r13_footer_control(1,"결론 정리" if can_conclude else "토론 듣기" if board else "발언 선택","testimony",Return(("conclude",)) if can_conclude else Return(("round",sid)) if board else Function(r13_meeting_request_live_action,"review"),enabled=ready and (board or live_controls))
+    use r13_footer_control(2,"다시 듣기" if completed else "되묻기","dialogue",Return(("listen" if completed else "press",sid)) if board else Function(r13_meeting_request_live_action,"press"),enabled=ready and (board or (live_controls and r13_meeting_can_live_press())))
+    use r13_footer_control(3,"반박한 발언" if completed else "자료 보여주기","present",Return(("present",sid)) if board else Function(renpy.call_in_new_context,"r13_meeting_interrupt",claim,r13_meeting_live_target()),enabled=ready and not completed and (board or r13_meeting_can_interrupt()),primary=True)
+    use r13_footer_control(4,"기록","record",Show("r13_records"),enabled=ready)
     if not board and live_controls:
         $ live_ids=r13_meeting_live_ids(claim,r13_meeting_live_sid)
         $ visible_ids=[st["id"] for st in r13_debate_statements(claim) if r13_debate_visible(claim,st)]
@@ -315,7 +296,7 @@ screen r13_meeting_tools(claim,sid=None,board=False,ready=True):
             key "K_RIGHT" action Function(r13_meeting_request_live_action,"next")
         if r13_meeting_live_lap>=1:
             frame:
-                area (280,448,720,40) padding (12,6) background R13InkPanel(alpha="d9",slim=True)
+                area (280,r13_control_y()-204,720,40) padding (12,6) background R13InkPanel(alpha="d9",slim=True)
                 text "다시 확인할 말은 ‘발언 선택’에서 고를 수 있어요" size r13_read_size(19,22) color "#fff4df" xalign .5 font r13_ui_font()
 
 

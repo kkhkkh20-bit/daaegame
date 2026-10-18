@@ -10,8 +10,10 @@ class Q(UIQA):
 async def main():
  report={'kind':'Actual conversation dispatcher plus 0/8/12-topic layout fixtures; fixture topics combine story stages and repeat some labels, not simultaneous eligibility or a full playthrough','checks':[],'captures':[]}
  async with async_playwright() as p:
-  b=await p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox','--enable-unsafe-swiftshader'])
+  b=await p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox','--enable-unsafe-swiftshader','--use-angle=swiftshader'])
   page=await b.new_page(viewport={'width':1280,'height':720},has_touch=True);q=Q(page,OUT)
+  page.on('console',lambda msg: print('BROWSER',msg.text,flush=True) if msg.type=='error' else None)
+  page.on('pageerror',lambda err: print('PAGEERROR',str(err),flush=True))
   try:
    await page.goto(os.environ.get('ROOM13_URL','http://localhost:8765/preview/room13-dev/'))
    await page.wait_for_function("typeof renpy_exec==='function'",timeout=240000)
@@ -50,8 +52,8 @@ async def main():
      await page.set_viewport_size({'width':844,'height':390});q.touch=True
      await q.py('import renpy;renpy.store.persistent.room13_large_text=True;renpy.exports.restart_interaction();result=True')
     before=await q.room();await q.press('자료 보여주기');await q.wait('r13_book');await q.press('그만두기');await q.wait('r13_topics');assert await q.room()==before
-    await q.press('기록');assert await q.py('import renpy;result=renpy.display.screen.get_screen("r13_records") is not None');await q.press('닫기');await q.wait('r13_topics');assert await q.room()==before
-    report['checks'].append(('mobile' if mobile else 'pc')+' actual present/record/cancel retains state and returns to topics')
+    await q.press('기록');assert await q.py('import renpy;result=renpy.display.screen.get_screen("r13_records") is not None');await q.press('닫기');await q.wait('r13_topics');after=await q.room();assert {k:v for k,v in after.items() if k!='record_ui'}=={k:v for k,v in before.items() if k!='record_ui'}
+    report['checks'].append(('mobile' if mobile else 'pc')+' actual present/record/cancel preserves story state and returns to topics (records may mark material read)')
    await q.shot('mobile-actual-topics')
    await page.set_viewport_size({'width':1280,'height':720});q.touch=False
    await q.py('import renpy;renpy.store.persistent.room13_large_text=False;renpy.exports.restart_interaction();result=True')
@@ -63,7 +65,7 @@ async def main():
     if 'r13_topics' in st['screens']:break
     if 'choice' in st['screens']:
      raise AssertionError('Unexpected story choice in selected topic')
-    await q.input(810,640)
+    await q.input(810,430)
    await q.wait('r13_topics');await q.shot('read-topic-return')
    assert await q.py('import renpy;s=renpy.store;result=s.r13_calendar_topic_seen('+repr(before[0])+',s.ROOM13["topics"].get('+repr(before[0])+',{}))')
    report['checks'].append('numeric shortcut selects actual first question, dialogue plays, returns as read')

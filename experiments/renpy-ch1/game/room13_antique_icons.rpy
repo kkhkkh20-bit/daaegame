@@ -139,22 +139,6 @@ init 58 python:
                 box(gold,14,22,4,5)
             return r
 
+# Compatibility entry point; rendering is owned by r13_control.
 screen r13_antique_button(caption,icon,command,enabled=True,compact=False,chosen=False,width=None,height=None,label_size=None,icon_size=None):
-    button:
-        xsize (width or (104 if compact else 144 if persistent.room13_large_text else 136))
-        ysize (height or ((70 if persistent.room13_large_text else 56) if compact else 64))
-        padding (5,0)
-        # A given height means the whole control is visible (0.19.2 보여주기), not only a 44px band.
-        background R13TouchSurface(focused=chosen,band=height or 44)
-        hover_background R13TouchSurface(focused=True,band=height or 44)
-        selected_background R13TouchSurface(focused=True,band=height or 44)
-        insensitive_background R13TouchSurface(disabled=True,band=height or 44)
-        action command sensitive enabled selected chosen
-        alt caption tooltip (None if caption=="생각" else caption)
-        hbox:
-            xalign .5 yalign (.5 if height else .75) spacing (4 if compact else 6)
-            add R13AntiqueIcon(icon,size=icon_size or (22 if compact else 30)) yalign .5 alpha (1.0 if enabled else .35)
-            text caption:
-                font r13_ui_font() size (label_size or (r13_read_size(20,22) if compact else r13_read_size(20,24)))
-                color ("#efe2c2" if enabled else "#a59a86") hover_color "#fff0ce"
-                yalign .5
+    use r13_control(caption,icon,command,enabled=enabled,chosen=chosen,width=width or 232,height=height,label_size=label_size,icon_size=icon_size)
