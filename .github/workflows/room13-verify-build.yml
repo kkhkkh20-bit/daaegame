@@ -99,6 +99,20 @@ jobs:
             python -m unittest discover -s dev -p "test_*.py" -v 2>&1 | tee "$ROOM13_CI_OUT/unittest-failure.log"
             exit 1
           fi
+      - name: Native meeting smoke in disposable home and save directory
+        working-directory: experiments/renpy-ch1
+        timeout-minutes: 8
+        run: |
+          set -o pipefail
+          export HOME="$RUNNER_TEMP/room13-native-home"
+          export XDG_CONFIG_HOME="$HOME/config"
+          export XDG_DATA_HOME="$HOME/data"
+          export XDG_CACHE_HOME="$HOME/cache"
+          export RENPY_PATH_TO_SAVES="$HOME/saves"
+          export ROOM13_QA_OUT="$ROOM13_CI_OUT/native-qa"
+          export ROOM13_TEST_TIMEOUT=120
+          mkdir -p "$HOME" "$XDG_CONFIG_HOME" "$XDG_DATA_HOME" "$XDG_CACHE_HOME" "$RENPY_PATH_TO_SAVES" "$ROOM13_QA_OUT"
+          bash dev/run_renpy_tests.sh meeting_direction admin_meeting_replay 2>&1 | tee "$ROOM13_CI_OUT/native-qa-summary.log"
       - name: Compile and build web release
         working-directory: experiments/renpy-ch1
         run: |

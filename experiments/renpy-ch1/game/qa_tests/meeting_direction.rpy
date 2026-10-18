@@ -35,7 +35,7 @@ testcase meeting_direction:
     $ r13_qa_direction_done=False
     run Call("r13_qa_direction_present","C2","s3","E09")
     click pos (640,600) until screen "choice" timeout 40
-    click "통로는 주방 레버로만 열린다"
+    click "방 쪽에서는 주방 레버가 필요하다"
     click pos (640,600) until eval (r13_qa_direction_done) timeout 40
     assert eval ("right" in source_effect_log[r13_qa_direction_sound_begin:])
     assert eval (r13_qa_direction_result and r13_debate_is_broken("C2","s3") and "C2" not in room13["propositions"])
