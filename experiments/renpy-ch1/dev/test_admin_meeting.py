@@ -83,6 +83,14 @@ class AdminMeeting(unittest.TestCase):
         self.store.r13_admin_meeting_test=False;self.env['r13_remember_line']('normal')
         self.assertEqual(self.env['persistent'].room13_read,['old','normal'])
 
+    def test_optional_quick_keys_require_registered_events(self):
+        src=SOURCE.read_text()
+        for event in ("quick_save", "quick_load"):
+            expected='    if "'+event+'" in config.keymap:'+chr(10)+'        key "'+event+'" action NullAction()'
+            self.assertIn(expected,src)
+        self.assertIn('$ _autosave=False',src)
+        self.assertIn('action Replay("r13_admin_meeting_replay"',src)
+
     def test_replay_and_exit_contract_and_no_campaign_jump(self):
         src=SOURCE.read_text()
         self.assertIn('action Replay("r13_admin_meeting_replay"',src)
