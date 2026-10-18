@@ -1,0 +1,796 @@
+{
+  "nested_before": {
+    "edit": {
+      "token": [
+        "meeting:live:C2:s1",
+        0,
+        "resident_ppul",
+        "아이가 촛대로 어르신의 머리를 내리쳤다고 했습니다."
+      ],
+      "speaker": "resident_ppul",
+      "pair": null,
+      "listener": "buri",
+      "phase": "playing",
+      "cue": "reaction"
+    },
+    "poses": {},
+    "direction_poses": {
+      "buri": "neutral",
+      "resident_ppul": "neutral"
+    },
+    "packet": [
+      "resident_ppul",
+      "아이가 촛대로 어르신의 머리를 내리쳤다고 했습니다."
+    ],
+    "page": 0,
+    "pressure": 0,
+    "propositions": [
+      "C1"
+    ],
+    "evidence": [
+      "E09"
+    ],
+    "broken": []
+  },
+  "nested_after": {
+    "edit": {
+      "token": [
+        "meeting:live:C2:s1",
+        0,
+        "resident_ppul",
+        "아이가 촛대로 어르신의 머리를 내리쳤다고 했습니다."
+      ],
+      "speaker": "resident_ppul",
+      "pair": null,
+      "listener": "buri",
+      "phase": "settled",
+      "cue": "reaction"
+    },
+    "poses": {},
+    "direction_poses": {
+      "buri": "neutral",
+      "resident_ppul": "neutral"
+    },
+    "packet": [
+      "resident_ppul",
+      "아이가 촛대로 어르신의 머리를 내리쳤다고 했습니다."
+    ],
+    "page": 0,
+    "pressure": 0,
+    "propositions": [
+      "C1"
+    ],
+    "evidence": [
+      "E09"
+    ],
+    "broken": []
+  },
+  "enter": {
+    "edit": {
+      "token": [
+        "debate:counter:C2:s3",
+        0,
+        "resident_ppul",
+        "잠깐 기다리시오. 아까 13호에 다른 길이 있다고 하셨소."
+      ],
+      "speaker": "resident_ppul",
+      "pair": [
+        "resident_ppul",
+        "dad"
+      ],
+      "listener": "buri",
+      "phase": "settled",
+      "cue": "enter"
+    },
+    "poses": {
+      "resident_ppul": "anxious",
+      "dad": "neutral"
+    },
+    "direction_poses": {
+      "resident_ppul": "anxious",
+      "dad": "neutral"
+    },
+    "packet": [
+      "resident_ppul",
+      "잠깐 기다리시오. 아까 13호에 다른 길이 있다고 하셨소."
+    ],
+    "page": 0,
+    "pressure": 1,
+    "propositions": [
+      "C1"
+    ],
+    "evidence": [
+      "E09"
+    ],
+    "broken": []
+  },
+  "pressure_hold": {
+    "edit": {
+      "token": [
+        "debate:counter:C2:s3",
+        1,
+        "resident_ppul",
+        "그럼 그 통로로 아이가 직접 나갔다가 들어왔을 수도 있잖습니까?"
+      ],
+      "speaker": "resident_ppul",
+      "pair": [
+        "resident_ppul",
+        "dad"
+      ],
+      "listener": null,
+      "phase": "settled",
+      "cue": "hold"
+    },
+    "poses": {
+      "resident_ppul": "angry",
+      "dad": "neutral"
+    },
+    "direction_poses": {
+      "resident_ppul": "angry",
+      "dad": "neutral"
+    },
+    "packet": [
+      "resident_ppul",
+      "그럼 그 통로로 아이가 직접 나갔다가 들어왔을 수도 있잖습니까?",
+      {
+        "expression": "angry"
+      }
+    ],
+    "page": 0,
+    "pressure": 1,
+    "propositions": [
+      "C1"
+    ],
+    "evidence": [
+      "E09"
+    ],
+    "broken": []
+  },
+  "speaker_switch": {
+    "edit": {
+      "token": [
+        "debate:counter_ok:C2:s3",
+        0,
+        "dad",
+        "책장 뒤 문은 주방에서 레버를 올려야 열립니다. 아까 이 자리에서 확인한 대로입니다."
+      ],
+      "speaker": "dad",
+      "pair": [
+        "resident_ppul",
+        "dad"
+      ],
+      "listener": "resident_ppul",
+      "phase": "settled",
+      "cue": "hold"
+    },
+    "poses": {
+      "resident_ppul": "angry",
+      "dad": "neutral"
+    },
+    "direction_poses": {
+      "resident_ppul": "angry",
+      "dad": "neutral"
+    },
+    "packet": [
+      "dad",
+      "책장 뒤 문은 주방에서 레버를 올려야 열립니다. 아까 이 자리에서 확인한 대로입니다."
+    ],
+    "page": 0,
+    "pressure": 1,
+    "propositions": [
+      "C1"
+    ],
+    "evidence": [
+      "E09"
+    ],
+    "broken": []
+  },
+  "exit": {
+    "edit": {
+      "token": [
+        "meeting:murmur:C2:s3:break",
+        0,
+        "granny",
+        "……앞의 말과 맞춰 봅시다."
+      ],
+      "speaker": "granny",
+      "pair": null,
+      "listener": "resident_ppul",
+      "phase": "playing",
+      "cue": "exit"
+    },
+    "poses": {},
+    "direction_poses": {
+      "granny": "neutral",
+      "resident_ppul": "anxious"
+    },
+    "packet": [
+      "granny",
+      "……앞의 말과 맞춰 봅시다."
+    ],
+    "page": 0,
+    "pressure": 1,
+    "propositions": [
+      "C1"
+    ],
+    "evidence": [
+      "E09"
+    ],
+    "broken": [
+      "s3"
+    ]
+  },
+  "capture": {
+    "capture": {
+      "audioTracks": 1,
+      "contexts": [
+        {
+          "state": "running",
+          "sampleRate": 44100
+        }
+      ],
+      "width": 1280,
+      "height": 720
+    },
+    "media": {
+      "bytes": 11724158,
+      "mime": "video/webm;codecs=vp8,opus"
+    },
+    "wall": 53.48206380600459
+  },
+  "rollback_diagnostic": {
+    "can": true,
+    "enabled": true,
+    "store": true,
+    "contexts": 1,
+    "context": true,
+    "loglen": 104
+  },
+  "rollback": {
+    "edit": {
+      "token": [
+        "debate:counter_ok:C2:s3",
+        2,
+        "resident_ppul",
+        "……주방에 누군가 있었다는 말이오."
+      ],
+      "speaker": "resident_ppul",
+      "pair": [
+        "resident_ppul",
+        "dad"
+      ],
+      "listener": "dad",
+      "phase": "settled",
+      "cue": "hold"
+    },
+    "poses": {
+      "resident_ppul": "flustered",
+      "dad": "neutral"
+    },
+    "direction_poses": {
+      "resident_ppul": "flustered",
+      "dad": "neutral"
+    },
+    "packet": [
+      "resident_ppul",
+      "……주방에 누군가 있었다는 말이오.",
+      {
+        "expression": "flustered"
+      }
+    ],
+    "page": 0,
+    "pressure": 1,
+    "propositions": [
+      "C1"
+    ],
+    "evidence": [
+      "E09"
+    ],
+    "broken": []
+  },
+  "save_load": {
+    "before": {
+      "edit": {
+        "token": [
+          "debate:counter_ok:C2:s3",
+          2,
+          "resident_ppul",
+          "……주방에 누군가 있었다는 말이오."
+        ],
+        "speaker": "resident_ppul",
+        "pair": [
+          "resident_ppul",
+          "dad"
+        ],
+        "listener": "dad",
+        "phase": "settled",
+        "cue": "hold"
+      },
+      "poses": {
+        "resident_ppul": "flustered",
+        "dad": "neutral"
+      },
+      "direction_poses": {
+        "resident_ppul": "flustered",
+        "dad": "neutral"
+      },
+      "packet": [
+        "resident_ppul",
+        "……주방에 누군가 있었다는 말이오.",
+        {
+          "expression": "flustered"
+        }
+      ],
+      "page": 0,
+      "pressure": 1,
+      "propositions": [
+        "C1"
+      ],
+      "evidence": [
+        "E09"
+      ],
+      "broken": []
+    },
+    "after": {
+      "edit": {
+        "token": [
+          "debate:counter_ok:C2:s3",
+          2,
+          "resident_ppul",
+          "……주방에 누군가 있었다는 말이오."
+        ],
+        "speaker": "resident_ppul",
+        "pair": [
+          "resident_ppul",
+          "dad"
+        ],
+        "listener": "dad",
+        "phase": "settled",
+        "cue": "hold"
+      },
+      "poses": {
+        "resident_ppul": "flustered",
+        "dad": "neutral"
+      },
+      "direction_poses": {
+        "resident_ppul": "flustered",
+        "dad": "neutral"
+      },
+      "packet": [
+        "resident_ppul",
+        "……주방에 누군가 있었다는 말이오.",
+        {
+          "expression": "flustered"
+        }
+      ],
+      "page": 0,
+      "pressure": 1,
+      "propositions": [
+        "C1"
+      ],
+      "evidence": [
+        "E09"
+      ],
+      "broken": []
+    }
+  },
+  "motion_off": {
+    "edit": {
+      "token": [
+        "debate:counter_ok:C2:s3",
+        2,
+        "resident_ppul",
+        "……주방에 누군가 있었다는 말이오."
+      ],
+      "speaker": "resident_ppul",
+      "pair": [
+        "resident_ppul",
+        "dad"
+      ],
+      "listener": "dad",
+      "phase": "settled",
+      "cue": "hold"
+    },
+    "poses": {
+      "resident_ppul": "flustered",
+      "dad": "neutral"
+    },
+    "direction_poses": {
+      "resident_ppul": "flustered",
+      "dad": "neutral"
+    },
+    "packet": [
+      "resident_ppul",
+      "……주방에 누군가 있었다는 말이오.",
+      {
+        "expression": "flustered"
+      }
+    ],
+    "page": 0,
+    "pressure": 1,
+    "propositions": [
+      "C1"
+    ],
+    "evidence": [
+      "E09"
+    ],
+    "broken": []
+  },
+  "before_skip": {
+    "edit": {
+      "token": [
+        "debate:counter:C2:s3",
+        1,
+        "resident_ppul",
+        "그럼 그 통로로 아이가 직접 나갔다가 들어왔을 수도 있잖습니까?"
+      ],
+      "speaker": "resident_ppul",
+      "pair": [
+        "resident_ppul",
+        "dad"
+      ],
+      "listener": null,
+      "phase": "settled",
+      "cue": "hold"
+    },
+    "poses": {
+      "resident_ppul": "angry",
+      "dad": "neutral"
+    },
+    "direction_poses": {
+      "resident_ppul": "angry",
+      "dad": "neutral"
+    },
+    "packet": [
+      "resident_ppul",
+      "그럼 그 통로로 아이가 직접 나갔다가 들어왔을 수도 있잖습니까?",
+      {
+        "expression": "angry"
+      }
+    ],
+    "page": 1,
+    "pressure": 1,
+    "propositions": [
+      "C1"
+    ],
+    "evidence": [
+      "E09"
+    ],
+    "broken": []
+  },
+  "skip": {
+    "edit": {
+      "token": [
+        "debate:counter:C2:s3",
+        1,
+        "resident_ppul",
+        "그럼 그 통로로 아이가 직접 나갔다가 들어왔을 수도 있잖습니까?"
+      ],
+      "speaker": "resident_ppul",
+      "pair": [
+        "resident_ppul",
+        "dad"
+      ],
+      "listener": null,
+      "phase": "settled",
+      "cue": "hold"
+    },
+    "poses": {
+      "resident_ppul": "angry",
+      "dad": "neutral"
+    },
+    "direction_poses": {
+      "resident_ppul": "angry",
+      "dad": "neutral"
+    },
+    "packet": [
+      "resident_ppul",
+      "그럼 그 통로로 아이가 직접 나갔다가 들어왔을 수도 있잖습니까?",
+      {
+        "expression": "angry"
+      }
+    ],
+    "page": 1,
+    "pressure": 1,
+    "propositions": [
+      "C1"
+    ],
+    "evidence": [
+      "E09"
+    ],
+    "broken": []
+  },
+  "third_party": {
+    "edit": {
+      "token": [
+        "debate:counter_wrong:C2:s3:over",
+        0,
+        "resident_seori",
+        "그 길을 누가 썼는지는 아직 아무도 밝히지 못했습니다. 지금 물은 건 아이가 그 길을 쓸 수 있었느냐입니다."
+      ],
+      "speaker": "resident_seori",
+      "pair": null,
+      "listener": "resident_ppul",
+      "phase": "settled",
+      "cue": "exit"
+    },
+    "poses": {},
+    "direction_poses": {
+      "resident_seori": "neutral"
+    },
+    "packet": [
+      "resident_seori",
+      "그 길을 누가 썼는지는 아직 아무도 밝히지 못했습니다. 지금 물은 건 아이가 그 길을 쓸 수 있었느냐입니다."
+    ],
+    "page": 0,
+    "pressure": 0,
+    "propositions": [
+      "C1"
+    ],
+    "evidence": [
+      "E09"
+    ],
+    "broken": []
+  },
+  "passed": true,
+  "events": [
+    {
+      "t": 85538.081433731,
+      "say": "부엉이 어르신이 발견된 13호는 안에서 잠겨 있었습니다.\n그 안에는 다람 양이 있었습니다."
+    },
+    {
+      "t": 85538.67493524,
+      "say": "그냥 ‘발견된 사람’처럼 말하지 마세요.\n우리 할아버지예요."
+    },
+    {
+      "t": 85539.24893201,
+      "say": "오늘 확인할 것은 아이가 그 죽음에 책임이 있는지입니다.\n소문을 본 일처럼 말하지 마십시오."
+    },
+    {
+      "t": 85539.846840977,
+      "say": "아이가 위험하다면 마을의 다른\n아이들부터 지켜야 합니다."
+    },
+    {
+      "t": 85540.464593505,
+      "say": "아이가 위험하다는 판단도 확인된\n사실에 근거해 주십시오."
+    },
+    {
+      "t": 85542.112289339,
+      "say": "아이가 겁을 먹은 건 알겠습니다.\n하지만 아이에게 맞은 사람이 죽었습니다."
+    },
+    {
+      "t": 85542.720404074,
+      "say": "할아버지가 먼저 아이 손을 잡았다는 말도 지금은 들을게요.\n그다음엔 무슨 일이 있었는데요?"
+    },
+    {
+      "t": 85550.976793969,
+      "state": {
+        "edit": {
+          "token": [
+            "meeting:live:C2:s1",
+            0,
+            "resident_ppul",
+            "아이가 촛대로 어르신의 머리를 내리쳤다고 했습니다."
+          ],
+          "speaker": "resident_ppul",
+          "pair": null,
+          "listener": "buri",
+          "phase": "settled",
+          "cue": "reaction"
+        },
+        "poses": {},
+        "direction_poses": {
+          "buri": "neutral",
+          "resident_ppul": "neutral"
+        },
+        "packet": [
+          "resident_ppul",
+          "아이가 촛대로 어르신의 머리를 내리쳤다고 했습니다."
+        ],
+        "page": 0,
+        "pressure": 0,
+        "propositions": [
+          "C1"
+        ],
+        "evidence": [
+          "E09"
+        ],
+        "broken": []
+      }
+    },
+    {
+      "t": 85553.385013649,
+      "state": {
+        "edit": {
+          "token": [
+            "meeting:live:C2:s1",
+            1,
+            "buri",
+            "잠깐요. 무슨 일이었는지부터 차례로 들어요."
+          ],
+          "speaker": "buri",
+          "pair": null,
+          "listener": "resident_ppul",
+          "phase": "settled",
+          "cue": "reaction"
+        },
+        "poses": {},
+        "direction_poses": {
+          "resident_ppul": "neutral",
+          "buri": "neutral"
+        },
+        "packet": [
+          "buri",
+          "잠깐요. 무슨 일이었는지부터 차례로 들어요."
+        ],
+        "page": 0,
+        "pressure": 0,
+        "propositions": [
+          "C1"
+        ],
+        "evidence": [
+          "E09"
+        ],
+        "broken": []
+      }
+    },
+    {
+      "t": 85555.7742706,
+      "state": {
+        "edit": {
+          "token": [
+            "meeting:live:C2:s2",
+            0,
+            "resident_ppul",
+            "촛대는 한 번 휘둘렸을 뿐입니다. 그 한 번에 돌아가셨어요."
+          ],
+          "speaker": "resident_ppul",
+          "pair": null,
+          "listener": "buri",
+          "phase": "settled",
+          "cue": "reaction"
+        },
+        "poses": {},
+        "direction_poses": {
+          "resident_ppul": "neutral"
+        },
+        "packet": [
+          "resident_ppul",
+          "촛대는 한 번 휘둘렸을 뿐입니다. 그 한 번에 돌아가셨어요."
+        ],
+        "page": 0,
+        "pressure": 0,
+        "propositions": [
+          "C1"
+        ],
+        "evidence": [
+          "E09"
+        ],
+        "broken": []
+      }
+    },
+    {
+      "t": 85558.144197229,
+      "state": {
+        "edit": {
+          "token": [
+            "meeting:live:C2:s2",
+            1,
+            "nabi",
+            "직접 본 일과 들은 말을 섞지는 말아요."
+          ],
+          "speaker": "nabi",
+          "pair": null,
+          "listener": "resident_ppul",
+          "phase": "settled",
+          "cue": "reaction"
+        },
+        "poses": {},
+        "direction_poses": {
+          "resident_ppul": "neutral",
+          "nabi": "neutral"
+        },
+        "packet": [
+          "nabi",
+          "직접 본 일과 들은 말을 섞지는 말아요."
+        ],
+        "page": 0,
+        "pressure": 0,
+        "propositions": [
+          "C1"
+        ],
+        "evidence": [
+          "E09"
+        ],
+        "broken": []
+      }
+    },
+    {
+      "t": 85560.554345967,
+      "state": {
+        "edit": {
+          "token": [
+            "meeting:live:C2:s3",
+            0,
+            "resident_ppul",
+            "그 방에는 아이 혼자 있었습니다. 다시 휘두를 사람이 누가 있습니까?"
+          ],
+          "speaker": "resident_ppul",
+          "pair": null,
+          "listener": "nabi",
+          "phase": "settled",
+          "cue": "reaction"
+        },
+        "poses": {},
+        "direction_poses": {
+          "resident_ppul": "neutral"
+        },
+        "packet": [
+          "resident_ppul",
+          "그 방에는 아이 혼자 있었습니다. 다시 휘두를 사람이 누가 있습니까?"
+        ],
+        "page": 0,
+        "pressure": 0,
+        "propositions": [
+          "C1"
+        ],
+        "evidence": [
+          "E09"
+        ],
+        "broken": []
+      }
+    },
+    {
+      "t": 85560.966367507,
+      "say": "그때 방에 있던 사람이 누구인지 확인하겠습니다."
+    },
+    {
+      "t": 85561.639298562,
+      "say": "아이가 촛대로 어르신의 머리를 내리쳤다고 했습니다."
+    },
+    {
+      "t": 85562.288562178,
+      "say": "잠깐요.\n무슨 일이었는지부터 차례로 들어요."
+    },
+    {
+      "t": 85562.902684963,
+      "say": "촛대는 한 번 휘둘렸을 뿐입니다.\n그 한 번에 돌아가셨어요."
+    },
+    {
+      "t": 85563.518363434,
+      "say": "직접 본 일과 들은 말을 섞지는 말아요."
+    },
+    {
+      "t": 85571.855637713,
+      "say": "촛대가 떨어진 뒤 촛농을 밟고 통로\n쪽으로 돌아간 발자국이 있습니다."
+    },
+    {
+      "t": 85572.87628868,
+      "say": "그 위로 피가 번졌습니다.\n촛대가 떨어진 다음에도 그 방에 다른 사람이 있었다는 뜻입니다."
+    },
+    {
+      "t": 85573.882977413,
+      "say": "……그럼 할아버지를 친 사람이 따로 있다는 거예요?"
+    },
+    {
+      "t": 85575.268650324,
+      "say": "정말요?"
+    },
+    {
+      "t": 85576.298186345,
+      "say": "그렇다고요?"
+    },
+    {
+      "t": 85582.475352768,
+      "say": "그럼 그 통로로 아이가 직접\n나갔다가 들어왔을 수도 있잖습니까?"
+    },
+    {
+      "t": 85588.455689646,
+      "say": "책장 뒤 문은 주방에서 레버를 올려야 열립니다.\n아까 이 자리에서 확인한 대로입니다."
+    },
+    {
+      "t": 85590.021286506,
+      "say": "방 쪽에서 열려면 누군가 주방 레버를 올려 둬야 합니다.\n갇힌 아이 혼자서는 열 수 없습니다."
+    }
+  ]
+}

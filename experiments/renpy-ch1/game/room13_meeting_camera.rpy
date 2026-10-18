@@ -147,11 +147,13 @@ init 175 python:
         return R13MeetingReaction(reaction["token"],react,settled)
 
     class R13MeetingOrbit(renpy.Displayable):
-        def __init__(self,claim,focus,revision,beat,poses,line_token=None,listener=None,slots=None,reaction=None,**kwargs):
+        def __init__(self,claim,focus,revision,beat,poses,line_token=None,listener=None,slots=None,reaction=None,portrait_focus=False,**kwargs):
             super(R13MeetingOrbit,self).__init__(**kwargs)
             self.claim=claim;self.focus=focus
             self.session=r13_debate_session(claim);self.kind=r13_meeting_kind(self.session)
             self.people=[p for p,_ in r13_meeting_cast(claim,self.session)]
+            # Reverse portrait composition for the speaking viewpoint, not a new meeting attendee.
+            if portrait_focus and focus in CAST and focus not in self.people:self.people.append(focus)
             self.poses=dict(poses or {});self.beat=beat
             self.shade=R13_MEETING_BEATS.get(beat,R13_MEETING_BEATS["listen"])[3]
             tint="#e4eeff" if self.kind=="stone" else "#fff3df" if self.kind=="round" else "#eef3ff"

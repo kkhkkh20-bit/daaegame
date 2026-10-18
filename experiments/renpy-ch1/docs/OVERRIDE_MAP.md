@@ -224,6 +224,22 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 2 | 166 | `systems/room13_relations.rpy:20` | _r13_shelf_flag |
 | 3 | 170 | `systems/room13_shelf.rpy:28` |  |
 
+## `r13_meeting_direct_end` (3층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 174 | `systems/room13_meeting_direction.rpy:83` | _r13_pressure_direct_end |
+| 2 | 191 | `systems/room13_meeting_pressure.rpy:117` | _r13_c2_direct_end |
+| 3 | 195 | `systems/room13_c2_editorial.rpy:45` |  |
+
+## `r13_meeting_direct_line` (3층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 174 | `systems/room13_meeting_direction.rpy:172` | _r13_pressure_direct_line |
+| 2 | 191 | `systems/room13_meeting_pressure.rpy:74` | _r13_c2_direct_line |
+| 3 | 195 | `systems/room13_c2_editorial.rpy:14` |  |
+
 ## `r13_new` (3층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -415,26 +431,19 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 99 | `room13_meeting_seating.rpy:50` | _r13_e1_cast |
 | 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:181` |  |
 
+## `r13_meeting_collective_art` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 191 | `systems/room13_meeting_pressure.rpy:65` | _r13_c2_collective_art |
+| 2 | 196 | `systems/room13_c2_editorial.rpy:128` |  |
+
 ## `r13_meeting_direct_audio` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 174 | `systems/room13_meeting_direction.rpy:58` | _r13_pressure_direct_audio |
 | 2 | 191 | `systems/room13_meeting_pressure.rpy:93` |  |
-
-## `r13_meeting_direct_end` (2층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 174 | `systems/room13_meeting_direction.rpy:83` | _r13_pressure_direct_end |
-| 2 | 191 | `systems/room13_meeting_pressure.rpy:117` |  |
-
-## `r13_meeting_direct_line` (2층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 174 | `systems/room13_meeting_direction.rpy:172` | _r13_pressure_direct_line |
-| 2 | 191 | `systems/room13_meeting_pressure.rpy:74` |  |
 
 ## `r13_meeting_plate` (2층)
 
@@ -449,6 +458,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 191 | `systems/room13_meeting_pressure.rpy:44` | _r13_tempo_pressure_proof |
 | 2 | 192 | `systems/room13_meeting_tempo.rpy:77` |  |
+
+## `r13_meeting_slot_art` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 175 | `room13_meeting_camera.rpy:96` | _r13_c2_slot_art |
+| 2 | 196 | `systems/room13_c2_editorial.rpy:119` |  |
 
 ## `r13_object_name` (2층)
 

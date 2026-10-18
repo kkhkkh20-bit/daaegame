@@ -184,7 +184,10 @@ transform r13_meeting_pan(revision=0,direction=1,outgoing=False):
 screen r13_meeting_stage(claim,focus=None,close=False,ready=False,selected=None,ballot=False):
     $ session=r13_debate_session(claim)
     if close:
-        add R13MeetingOrbit(claim,focus,r13_meeting_shot_revision,(r13_meeting_direction or {}).get("beat","listen"),r13_meeting_direction_poses,r13_meeting_line_token,r13_meeting_listener,r13_meeting_art_slots,r13_meeting_reaction)
+        if claim=="C2" and r13_meeting_active:
+            add R13C2Editorial(focus)
+        else:
+            add R13MeetingOrbit(claim,focus,r13_meeting_shot_revision,(r13_meeting_direction or {}).get("beat","listen"),r13_meeting_direction_poses,r13_meeting_line_token,r13_meeting_listener,r13_meeting_art_slots,r13_meeting_reaction)
     else:
         add r13_meeting_plate(session,False)
         use r13_meeting_camera_frame(claim,focus,False,ready,selected,ballot)
