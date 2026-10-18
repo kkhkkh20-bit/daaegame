@@ -40,7 +40,17 @@ testcase investigation_source2_ttadak:
     $ persistent.room13_motion=False
     run Function(r13_s2_begin,'resident_ttadak','living_doorframe',1,196,(1043, 472))
     run Call("r13_qa_roam",dict(day=2,period=1,location="inn",life_poc=True,evidence=["E01"]),("entry_corrected","lodging"))
+    # Normal day2 afternoon arrival: resolve Nubi's actual offer through its UI.
+    # Never seed ev_q_done, change the date, or jump past the production event.
+    advance until screen "choice" timeout 40
+    pause until eval (renpy.get_screen("choice").scope.get("choice_ready",False)) timeout 5
+    assert eval (room13['day']==2 and room13['period']==1 and room13['location']=='inn' and r13_has('ev_q_done'))
+    assert eval ('거절한다' in [item.caption for item in renpy.get_screen('choice').scope['items']])
+    run Function(r13_pd_flow_log,"source2-real-arrival-offer",dict(choices=[item.caption for item in renpy.get_screen('choice').scope['items']],state=r13_pd_copy.deepcopy(room13),camera_offset=r13_world_offset()))
+    screenshot "source2-ttadak-00-real-arrival-offer.png"
+    click "거절한다"
     advance until screen "r13_hub" timeout 40
+    assert eval (room13['day']==2 and room13['period']==1 and room13['location']=='inn')
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
     pause 1.2
     pause until eval (r13_pd_scene_ready()) timeout 8
@@ -50,7 +60,24 @@ testcase investigation_source2_ttadak:
     pause 0.2
     pause until eval (r13_pd_hover_clear()) timeout 3
     run Show("r13_qa_pixel_variant")
+    run Function(r13_pd_flow_log,"source2-initial-camera",dict(camera_offset=r13_world_offset(),layout_initial_x=r13_layout().get('initial_x',0),world_width=r13_world_width(),state=r13_pd_copy.deepcopy(room13)))
+    # inn's authored initial_x is640; reach zero with real pan controls.
+    if eval (r13_world_offset()>0):
+        $ r13_s2_before_pan=r13_world_offset()
+        click "‹"
+        pause 0.5
+        assert eval (r13_world_offset()<r13_s2_before_pan)
+    if eval (r13_world_offset()>0):
+        $ r13_s2_before_pan=r13_world_offset()
+        click "‹"
+        pause 0.5
+        assert eval (r13_world_offset()<r13_s2_before_pan)
     assert eval (r13_world_offset()==0)
+    move pos (600,20)
+    pause 0.1
+    move pos (640,20)
+    pause 0.2
+    pause until eval (r13_pd_hover_clear()) timeout 3
     run Function(r13_pd_check_field,"source2-camera-zero")
     run Function(r13_s2_geometry,"source2-target-camera-zero")
     screenshot "source2-ttadak-01-camera-zero.png"
@@ -95,7 +122,8 @@ testcase investigation_source2_ttadak:
         pause 0.4
         if screen "r13_resident_approach":
             run Function(r13_pd_approach_yes)
-            click expression r13_pd_approach_text
+            run Function(r13_pd_flow_log,"source2-live-approach-caption",dict(source_title=r13_pd_approach_text,display_title=r13_question_summary(r13_pd_approach_text)))
+            click expression r13_question_summary(r13_pd_approach_text)
         advance until screen "r13_topics" timeout 40
         pause 0.4
         if eval (bool(r13_pd_plain_topics(r13_pd_person))):
@@ -154,7 +182,24 @@ testcase investigation_source2_tosil:
     pause 0.2
     pause until eval (r13_pd_hover_clear()) timeout 3
     run Show("r13_qa_pixel_variant")
+    run Function(r13_pd_flow_log,"source2-initial-camera",dict(camera_offset=r13_world_offset(),layout_initial_x=r13_layout().get('initial_x',0),world_width=r13_world_width(),state=r13_pd_copy.deepcopy(room13)))
+    # inn's authored initial_x is640; reach zero with real pan controls.
+    if eval (r13_world_offset()>0):
+        $ r13_s2_before_pan=r13_world_offset()
+        click "‹"
+        pause 0.5
+        assert eval (r13_world_offset()<r13_s2_before_pan)
+    if eval (r13_world_offset()>0):
+        $ r13_s2_before_pan=r13_world_offset()
+        click "‹"
+        pause 0.5
+        assert eval (r13_world_offset()<r13_s2_before_pan)
     assert eval (r13_world_offset()==0)
+    move pos (600,20)
+    pause 0.1
+    move pos (640,20)
+    pause 0.2
+    pause until eval (r13_pd_hover_clear()) timeout 3
     run Function(r13_pd_check_field,"source2-camera-zero")
     run Function(r13_s2_geometry,"source2-target-camera-zero")
     screenshot "source2-tosil-01-camera-zero.png"
@@ -199,7 +244,8 @@ testcase investigation_source2_tosil:
         pause 0.4
         if screen "r13_resident_approach":
             run Function(r13_pd_approach_yes)
-            click expression r13_pd_approach_text
+            run Function(r13_pd_flow_log,"source2-live-approach-caption",dict(source_title=r13_pd_approach_text,display_title=r13_question_summary(r13_pd_approach_text)))
+            click expression r13_question_summary(r13_pd_approach_text)
         advance until screen "r13_topics" timeout 40
         pause 0.4
         if eval (bool(r13_pd_plain_topics(r13_pd_person))):
