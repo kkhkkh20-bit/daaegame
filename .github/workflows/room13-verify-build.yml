@@ -48,7 +48,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends xvfb xauth libgl1 libegl1 libasound2t64
-          python -m pip install Pillow==11.3.0 numpy==2.2.6
+          python -m pip install Pillow==11.3.0 numpy==2.2.6 scipy==1.15.3
           mkdir -p "$ROOM13_CI_OUT"
           python -m pip freeze > "$ROOM13_CI_OUT/python-dependencies.txt"
       - name: Fetch immutable history fixture required by source-art test

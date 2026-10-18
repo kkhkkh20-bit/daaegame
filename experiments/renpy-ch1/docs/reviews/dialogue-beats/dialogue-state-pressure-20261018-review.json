@@ -1,0 +1,577 @@
+{
+  "status": "text_context_reviewed_runtime_unverified",
+  "new_art_approved": false,
+  "gameplay_tested": false,
+  "rows": [
+    {
+      "index": 380,
+      "source": "game/systems/room13_debate.rpy",
+      "line": 56,
+      "context": "R13_DEBATE={",
+      "person": "resident_ppul",
+      "text": "그건 아이 말이오. 아이가 친 것까지 없던 일로 하자는 거요?",
+      "packet": [
+        "resident_ppul",
+        "그건 아이 말이오. 아이가 친 것까지 없던 일로 하자는 거요?",
+        {
+          "expression": "flustered"
+        }
+      ],
+      "already_static_text": false,
+      "reviewed": true,
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "reason": "팔을 쳤다는 진술로 자백의 범위가 좁아지자 주장 일부를 방어한다. 원문 명시 flustered 보존. 원문 flustered는 보존하고 승인된 원화의 anxious 프레임에 대응한다(회의 기존 매핑과 동일).",
+      "text_sha256": "5330533037665bfcecfce6b7746ee7c4ce4ca9eb07ed16e1de440d3322845765",
+      "emotion": "anxious",
+      "reaction": false,
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "validation_scope": "Exact source and text intent reviewed; no SDK, gameplay, visual or new asset approval.",
+      "source_expression": "flustered"
+    },
+    {
+      "index": 382,
+      "source": "game/systems/room13_debate.rpy",
+      "line": 58,
+      "context": "R13_DEBATE={",
+      "person": "buri",
+      "text": "……어디를 쳤다는 건지부터 정확히 적어 주세요.",
+      "packet": [
+        "buri",
+        "……어디를 쳤다는 건지부터 정확히 적어 주세요."
+      ],
+      "already_static_text": false,
+      "reviewed": true,
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "reason": "할아버지에게 생긴 일을 정확히 기록해 달라는 절제된 요청. 아직 특정 가해자를 지목하지 않는다.",
+      "text_sha256": "3ff07a23ed29264261902db011ff786ad95abbfaf6cd36dc2d0cb5d435274aa1",
+      "emotion": "neutral",
+      "reaction": false,
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "validation_scope": "Exact source and text intent reviewed; no SDK, gameplay, visual or new asset approval."
+    },
+    {
+      "index": 384,
+      "source": "game/systems/room13_debate.rpy",
+      "line": 60,
+      "context": "R13_DEBATE={",
+      "person": "resident_ppul",
+      "text": "그렇다고 아이가 안 쳤다는 증거도 아니잖소?",
+      "packet": [
+        "resident_ppul",
+        "그렇다고 아이가 안 쳤다는 증거도 아니잖소?",
+        {
+          "expression": "flustered"
+        }
+      ],
+      "already_static_text": false,
+      "reviewed": true,
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "reason": "상처 기록이 공격자를 확정하지 못한다는 반박에 방어적으로 되묻는다. 명시 flustered 보존. 원문 flustered는 보존하고 승인된 원화의 anxious 프레임에 대응한다(회의 기존 매핑과 동일).",
+      "text_sha256": "26c1f61d69484ac6c236f314125d2cbca12e2272f9d3d83e34dae9039a595925",
+      "emotion": "anxious",
+      "reaction": false,
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "validation_scope": "Exact source and text intent reviewed; no SDK, gameplay, visual or new asset approval.",
+      "source_expression": "flustered"
+    },
+    {
+      "index": 386,
+      "source": "game/systems/room13_debate.rpy",
+      "line": 62,
+      "context": "R13_DEBATE={",
+      "person": "buri",
+      "text": "할아버지 상처를 살핀 기록이에요. 거기에 없는 말은 보태지 마세요.",
+      "packet": [
+        "buri",
+        "할아버지 상처를 살핀 기록이에요. 거기에 없는 말은 보태지 마세요."
+      ],
+      "already_static_text": false,
+      "reviewed": true,
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "reason": "고인의 상처 기록에 추정을 보태지 말라는 사실 범위의 요청. 환호나 아이 편으로 전환하지 않는다.",
+      "text_sha256": "47d58aaa6d0fedf8ad7633a912ac462d18bf3a021264259bae19402933b990ea",
+      "emotion": "neutral",
+      "reaction": false,
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "validation_scope": "Exact source and text intent reviewed; no SDK, gameplay, visual or new asset approval."
+    },
+    {
+      "index": 387,
+      "source": "game/systems/room13_debate.rpy",
+      "line": 63,
+      "context": "R13_DEBATE={",
+      "person": "resident_ppul",
+      "text": "지금 따지는 건 아이의 말과 상처 기록이 어디까지 말해 주느냐요.",
+      "packet": [
+        "resident_ppul",
+        "지금 따지는 건 아이의 말과 상처 기록이 어디까지 말해 주느냐요."
+      ],
+      "already_static_text": false,
+      "reviewed": true,
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "reason": "잘못 제시한 자료에 대해 현재 논점의 범위를 재확인한다.",
+      "text_sha256": "840c3182c9dc91d09e5f0c4dc7e0182f78310216dcbeedccfbd428e5cade9f10",
+      "emotion": "neutral",
+      "reaction": false,
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "validation_scope": "Exact source and text intent reviewed; no SDK, gameplay, visual or new asset approval."
+    },
+    {
+      "index": 390,
+      "source": "game/systems/room13_debate.rpy",
+      "line": 69,
+      "context": "R13_DEBATE={",
+      "person": "resident_ppul",
+      "text": "같은 촛대 아니오. 그게 무엇을 바꾸오?",
+      "packet": [
+        "resident_ppul",
+        "같은 촛대 아니오. 그게 무엇을 바꾸오?"
+      ],
+      "already_static_text": false,
+      "reviewed": true,
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "reason": "같은 촛대라는 물건의 동일성을 방어 근거로 내세운다. 아직 순서의 모순을 인정하지 않는다.",
+      "text_sha256": "6298a896b0bf0dc2b63895116fa68f3cabdf7d1e02c267b3c4529a6851ded834",
+      "emotion": "neutral",
+      "reaction": false,
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "validation_scope": "Exact source and text intent reviewed; no SDK, gameplay, visual or new asset approval."
+    },
+    {
+      "index": 393,
+      "source": "game/systems/room13_debate.rpy",
+      "line": 72,
+      "context": "R13_DEBATE={",
+      "person": "resident_seori",
+      "text": "부러진 뒤의 행동을 따로 확인하겠습니다. 누가 조각을 들었는지는 아직 정하지 마십시오.",
+      "packet": [
+        "resident_seori",
+        "부러진 뒤의 행동을 따로 확인하겠습니다. 누가 조각을 들었는지는 아직 정하지 마십시오."
+      ],
+      "already_static_text": false,
+      "reviewed": true,
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "reason": "검사원은 파손 이후 행동과 행위자 특정의 경계를 차분하게 정리한다.",
+      "text_sha256": "8fec2a57a07a8e6e58adbed3c1a4742f7b0936c584f47fbff7aa685e9bc96df3",
+      "emotion": "neutral",
+      "reaction": false,
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "validation_scope": "Exact source and text intent reviewed; no SDK, gameplay, visual or new asset approval."
+    },
+    {
+      "index": 394,
+      "source": "game/systems/room13_debate.rpy",
+      "line": 73,
+      "context": "R13_DEBATE={",
+      "person": "resident_ppul",
+      "text": "그 자료로 부러진 때와 머리를 친 때를 나눌 수 있소?",
+      "packet": [
+        "resident_ppul",
+        "그 자료로 부러진 때와 머리를 친 때를 나눌 수 있소?"
+      ],
+      "already_static_text": false,
+      "reviewed": true,
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "reason": "시점 분리를 입증할 자료인지 따지는 증거 검증 질문이다.",
+      "text_sha256": "e8e123fbde4a6c36f2575cec4baba7a12169ecc292b8eb716a3f68994e1bb3eb",
+      "emotion": "neutral",
+      "reaction": false,
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "validation_scope": "Exact source and text intent reviewed; no SDK, gameplay, visual or new asset approval."
+    },
+    {
+      "index": 397,
+      "source": "game/systems/room13_debate.rpy",
+      "line": 81,
+      "context": "R13_DEBATE={",
+      "person": "resident_ppul",
+      "text": "그럼 그 통로로 아이가 직접 나갔다가 들어왔을 수도 있잖소?",
+      "packet": [
+        "resident_ppul",
+        "그럼 그 통로로 아이가 직접 나갔다가 들어왔을 수도 있잖소?",
+        {
+          "expression": "angry"
+        }
+      ],
+      "already_static_text": false,
+      "reviewed": true,
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "reason": "상대가 증명한 통로를 이용해 아이에게 의심을 되돌리는 강한 반론. 원문 명시 angry 보존.",
+      "text_sha256": "caf4fbc5fab8b48f42de0a229ef7bf7a43aaefde2e09848f9d53f78f4154a869",
+      "emotion": "angry",
+      "reaction": false,
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "validation_scope": "Exact source and text intent reviewed; no SDK, gameplay, visual or new asset approval."
+    },
+    {
+      "index": 399,
+      "source": "game/systems/room13_debate.rpy",
+      "line": 87,
+      "context": "R13_DEBATE={",
+      "person": "resident_ppul",
+      "text": "누군가 미리 레버를 올려 뒀다면 갈 수 있지 않소?",
+      "packet": [
+        "resident_ppul",
+        "누군가 미리 레버를 올려 뒀다면 갈 수 있지 않소?"
+      ],
+      "already_static_text": false,
+      "reviewed": true,
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "reason": "레버가 미리 올라갔을 가능성을 제시하는 계산적인 재반론. 발견하지 않은 사실에 놀라지 않는다.",
+      "text_sha256": "8224e301a448f15299e8da2ae0391d45447d67d5eb2e86b7b97de2c830e5b7dc",
+      "emotion": "neutral",
+      "reaction": false,
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "validation_scope": "Exact source and text intent reviewed; no SDK, gameplay, visual or new asset approval."
+    },
+    {
+      "index": 402,
+      "source": "game/systems/room13_debate.rpy",
+      "line": 90,
+      "context": "R13_DEBATE={",
+      "person": "resident_ppul",
+      "text": "……아이 말고 누가 드나들었는지도 따져야 한다는 거군.",
+      "packet": [
+        "resident_ppul",
+        "……아이 말고 누가 드나들었는지도 따져야 한다는 거군.",
+        {
+          "expression": "flustered"
+        }
+      ],
+      "already_static_text": false,
+      "reviewed": true,
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "reason": "아이 단독이라는 전제를 더 유지할 수 없어 확인 범위를 넓히는 후퇴. 명시 flustered 보존. 원문 flustered는 보존하고 승인된 원화의 anxious 프레임에 대응한다(회의 기존 매핑과 동일).",
+      "text_sha256": "2b46ee6d3abcb2c6bcb09ed44d8b34d65dba7c5e68837372a89df998fe95fbd7",
+      "emotion": "anxious",
+      "reaction": false,
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "validation_scope": "Exact source and text intent reviewed; no SDK, gameplay, visual or new asset approval.",
+      "source_expression": "flustered"
+    },
+    {
+      "index": 406,
+      "source": "game/systems/room13_debate.rpy",
+      "line": 95,
+      "context": "R13_DEBATE={",
+      "person": "resident_ppul",
+      "text": "그 애가 윗조각을 든 사람까지 봤다는 거요?",
+      "packet": [
+        "resident_ppul",
+        "그 애가 윗조각을 든 사람까지 봤다는 거요?"
+      ],
+      "already_static_text": false,
+      "reviewed": true,
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "reason": "밤이의 실제 관찰 범위를 캐묻는 방어 질문. 숨겨진 범인의 정체를 안다는 표정은 없다.",
+      "text_sha256": "ce716f5f9a5262df6804d65977bc57df532bee7cc5d18da8cc3ac831d6d10ca6",
+      "emotion": "neutral",
+      "reaction": false,
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "validation_scope": "Exact source and text intent reviewed; no SDK, gameplay, visual or new asset approval."
+    },
+    {
+      "index": 408,
+      "source": "game/systems/room13_debate.rpy",
+      "line": 97,
+      "context": "R13_DEBATE={",
+      "person": "buri",
+      "text": "……그럼 침대 밑에 있던 애가 다시 나와 쳤다고는 적을 수 없잖아요.",
+      "packet": [
+        "buri",
+        "……그럼 침대 밑에 있던 애가 다시 나와 쳤다고는 적을 수 없잖아요.",
+        {
+          "expression": "surprise"
+        }
+      ],
+      "already_static_text": false,
+      "reviewed": true,
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "reason": "숨은 아이가 나오지 않았다는 관찰이 재타격 주장과 양립하지 않음을 깨닫는다. 원문 명시 surprise 보존.",
+      "text_sha256": "961458db460830ecd9f5fabbfe62be811846b651e7e8dc0009ad2a5d9818d123",
+      "emotion": "surprise",
+      "reaction": false,
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "validation_scope": "Exact source and text intent reviewed; no SDK, gameplay, visual or new asset approval."
+    },
+    {
+      "index": 410,
+      "source": "game/systems/room13_debate.rpy",
+      "line": 99,
+      "context": "R13_DEBATE={",
+      "person": "resident_ppul",
+      "text": "발자국에 이름이 쓰여 있소? 누구 것인지도 모르잖소.",
+      "packet": [
+        "resident_ppul",
+        "발자국에 이름이 쓰여 있소? 누구 것인지도 모르잖소."
+      ],
+      "already_static_text": false,
+      "reviewed": true,
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "reason": "발자국 소유자를 특정하지 못한 한계를 공격한다. 범인을 이미 안다는 표정은 없다.",
+      "text_sha256": "291a78b469589fab74de77b3b789e6adc00b24a9e94ece230f7535c796e13544",
+      "emotion": "neutral",
+      "reaction": false,
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "validation_scope": "Exact source and text intent reviewed; no SDK, gameplay, visual or new asset approval."
+    },
+    {
+      "index": 412,
+      "source": "game/systems/room13_debate.rpy",
+      "line": 101,
+      "context": "R13_DEBATE={",
+      "person": "buri",
+      "text": "누구 건지 모르면 더 확인해야죠. 못 알아봤다고 없던 발자국이 되는 건 아니잖아요.",
+      "packet": [
+        "buri",
+        "누구 건지 모르면 더 확인해야죠. 못 알아봤다고 없던 발자국이 되는 건 아니잖아요.",
+        {
+          "expression": "surprise"
+        }
+      ],
+      "already_static_text": false,
+      "reviewed": true,
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "reason": "소유자 미상과 흔적 부재는 다르다는 점에 반응한다. 원문 명시 surprise 보존, 은신 목격은 빌려오지 않는다.",
+      "text_sha256": "e8bcf836c8b06c2c9ff2322316e54835c65ca68fafde029b4c67c07c5279dbd6",
+      "emotion": "surprise",
+      "reaction": false,
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "validation_scope": "Exact source and text intent reviewed; no SDK, gameplay, visual or new asset approval."
+    },
+    {
+      "index": 413,
+      "source": "game/systems/room13_debate.rpy",
+      "line": 102,
+      "context": "R13_DEBATE={",
+      "person": "resident_ppul",
+      "text": "그 자료가 아이 혼자였다는 말과 어디서 맞지 않소?",
+      "packet": [
+        "resident_ppul",
+        "그 자료가 아이 혼자였다는 말과 어디서 맞지 않소?"
+      ],
+      "already_static_text": false,
+      "reviewed": true,
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "reason": "다른 자료가 아이 단독 주장과 어떻게 충돌하는지 요구한다.",
+      "text_sha256": "3f87590b0ed5ccbefbe0913083820106c3e9765e6561b2f2fb95a920fe03747c",
+      "emotion": "neutral",
+      "reaction": false,
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "validation_scope": "Exact source and text intent reviewed; no SDK, gameplay, visual or new asset approval."
+    },
+    {
+      "index": 415,
+      "source": "game/systems/room13_debate.rpy",
+      "line": 111,
+      "context": "R13_DEBATE={",
+      "person": "resident_seori",
+      "text": "아이가 한 일과 어르신을 죽게 한 일을 같은 일로 적을 수는 없습니다. 뒤의 행동과 그 사람은 따로 밝혀야 합니다.",
+      "packet": [
+        "resident_seori",
+        "아이가 한 일과 어르신을 죽게 한 일을 같은 일로 적을 수는 없습니다. 뒤의 행동과 그 사람은 따로 밝혀야 합니다."
+      ],
+      "already_static_text": false,
+      "reviewed": true,
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "reason": "아이의 행동과 사망 원인을 구분한 공식 정리. 실제 판결이나 석방은 아직 하지 않는다.",
+      "text_sha256": "ae62e7eda6ce62190b326e4e32d9bebce1098091f895ed2003e9841dc14d3baa",
+      "emotion": "neutral",
+      "reaction": false,
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "validation_scope": "Exact source and text intent reviewed; no SDK, gameplay, visual or new asset approval."
+    },
+    {
+      "index": 416,
+      "source": "game/systems/room13_debate.rpy",
+      "line": 112,
+      "context": "R13_DEBATE={",
+      "person": "buri",
+      "text": "……할아버지한테 무슨 일이 있었는지, 거기서 멈추지는 말아 주세요.",
+      "packet": [
+        "buri",
+        "……할아버지한테 무슨 일이 있었는지, 거기서 멈추지는 말아 주세요.",
+        {
+          "expression": "anxious"
+        }
+      ],
+      "already_static_text": false,
+      "reviewed": true,
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "reason": "아이를 탓한 근거가 무너져도 할아버지의 죽음이 미해결이라는 걱정과 부탁이 남는다. 기쁨으로 바꾸지 않는다.",
+      "text_sha256": "5d6082ccc0cd86f525c749499394d7e19d65ac850e4c295383be76135f112115",
+      "emotion": "anxious",
+      "reaction": false,
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "validation_scope": "Exact source and text intent reviewed; no SDK, gameplay, visual or new asset approval."
+    },
+    {
+      "index": 1672,
+      "source": "game/systems/room13_topic_record.rpy",
+      "line": 35,
+      "context": "def r13_topic_current_lines(key):",
+      "person": "granny",
+      "text": "그래요. 손님이 쓰는 문은 아니라고 말씀드렸잖아요.",
+      "packet": [
+        "granny",
+        "그래요. 손님이 쓰는 문은 아니라고 말씀드렸잖아요."
+      ],
+      "already_static_text": false,
+      "reviewed": true,
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "reason": "이미 인정한 통로를 손님용이 아니라며 범위를 줄여 방어한다. 새로운 비밀을 들킨 순간은 아니다.",
+      "text_sha256": "1fd56aa138156f2c0c40800c623c821d549ff11c72406279227cdd69e5b90f2d",
+      "emotion": "neutral",
+      "reaction": false,
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "validation_scope": "Exact source and text intent reviewed; no SDK, gameplay, visual or new asset approval."
+    },
+    {
+      "index": 1674,
+      "source": "game/systems/room13_topic_record.rpy",
+      "line": 37,
+      "context": "def r13_topic_current_lines(key):",
+      "person": "granny",
+      "text": "……오래 쓰지 않은 문까지 세어 말씀드린 건 아니에요.",
+      "packet": [
+        "granny",
+        "……오래 쓰지 않은 문까지 세어 말씀드린 건 아니에요."
+      ],
+      "already_static_text": false,
+      "reviewed": true,
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "reason": "손님용 여부와 문 존재는 별개라는 지적에 말의 범위를 다시 축소한다. 범인 정체에 관한 표정은 아니다. 원문 flustered는 보존하고 승인된 원화의 anxious 프레임에 대응한다(회의 기존 매핑과 동일).",
+      "text_sha256": "85e1e29d246f945e69346e6570e90e0aab6d3fedfdf7b48e4d289d24c164ba5c",
+      "emotion": "anxious",
+      "reaction": false,
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "validation_scope": "Exact source and text intent reviewed; no SDK, gameplay, visual or new asset approval.",
+      "source_expression": "flustered"
+    },
+    {
+      "index": 1676,
+      "source": "game/systems/room13_topic_record.rpy",
+      "line": 40,
+      "context": "def r13_topic_current_lines(key):",
+      "person": "nabi",
+      "text": "네. 목도리 핀이 새것이라 뻑뻑해서 제가 대신 잠가 드렸어요.",
+      "packet": [
+        "nabi",
+        "네. 목도리 핀이 새것이라 뻑뻑해서 제가 대신 잠가 드렸어요."
+      ],
+      "already_static_text": false,
+      "reviewed": true,
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "reason": "첫 비명 당시 핀을 직접 잠가 준 관찰을 담담히 확인한다.",
+      "text_sha256": "d670fc31b9ba284c0ed4e636f0fabb5804fbd684e23256240d682957fbcff309",
+      "emotion": "neutral",
+      "reaction": false,
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "validation_scope": "Exact source and text intent reviewed; no SDK, gameplay, visual or new asset approval."
+    },
+    {
+      "index": 1678,
+      "source": "game/systems/room13_topic_record.rpy",
+      "line": 42,
+      "context": "def r13_topic_current_lines(key):",
+      "person": "nabi",
+      "text": "그때부터는 못 봤어요. 저는 13호 문 앞에 있었고요.",
+      "packet": [
+        "nabi",
+        "그때부터는 못 봤어요. 저는 13호 문 앞에 있었고요."
+      ],
+      "already_static_text": false,
+      "reviewed": true,
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "reason": "이미 밝혀진 관찰 공백을 다시 분명히 말한다. 할머니와 계속 있었다는 거짓된 안정감으로 돌아가지 않는다.",
+      "text_sha256": "3a55e488e7ca3b861efc302ab9179b2a90ee614e9a0f91ac9bad9fd119273451",
+      "emotion": "anxious",
+      "reaction": false,
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "validation_scope": "Exact source and text intent reviewed; no SDK, gameplay, visual or new asset approval."
+    },
+    {
+      "index": 1680,
+      "source": "game/systems/room13_topic_record.rpy",
+      "line": 44,
+      "context": "def r13_topic_current_lines(key):",
+      "person": "nabi",
+      "text": "네. 제가 직접 본 건 거기까지예요.",
+      "packet": [
+        "nabi",
+        "네. 제가 직접 본 건 거기까지예요."
+      ],
+      "already_static_text": false,
+      "reviewed": true,
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "reason": "직접 본 사실과 모르는 부분의 경계를 받아들이고 확인한다.",
+      "text_sha256": "865e2c4be5ffa826f1adb4694e834e9b670d3e087de82da6157a6db5434576dd",
+      "emotion": "neutral",
+      "reaction": false,
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "validation_scope": "Exact source and text intent reviewed; no SDK, gameplay, visual or new asset approval."
+    },
+    {
+      "source": "game/systems/room13_debate.rpy",
+      "line": 50,
+      "person": "resident_ppul",
+      "text": "아이의 말과 상처 기록 모두 【아이가 머리를 쳤다는 증거】요.",
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "공개된 주장에 확신을 보이는 발화다. 기존 stern_statement/neutral 연출 의미를 보존하며 미래 반박이나 범인 정보를 선행하지 않는다.",
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "validation_scope": "Exact text-intent anchor only; visual/runtime verification pending."
+    },
+    {
+      "source": "game/systems/room13_debate.rpy",
+      "line": 64,
+      "person": "resident_ppul",
+      "text": "촛대는 【한 번 휘둘렸을 뿐】이오. 그 한 번에 돌아가셨소.",
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "공개된 주장에 확신을 보이는 발화다. 기존 stern_statement/neutral 연출 의미를 보존하며 미래 반박이나 범인 정보를 선행하지 않는다.",
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "validation_scope": "Exact text-intent anchor only; visual/runtime verification pending."
+    },
+    {
+      "source": "game/systems/room13_debate.rpy",
+      "line": 74,
+      "person": "resident_ppul",
+      "text": "그 방에는 【아이 혼자】 있었소. 다시 휘두를 사람이 누가 있소?",
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "공개된 주장에 확신을 보이는 발화다. 기존 stern_statement/neutral 연출 의미를 보존하며 미래 반박이나 범인 정보를 선행하지 않는다.",
+      "batch": "dialogue-state-pressure-20261018-text-review",
+      "application_status": "text_context_reviewed_runtime_unverified",
+      "validation_scope": "Exact text-intent anchor only; visual/runtime verification pending."
+    }
+  ]
+}
