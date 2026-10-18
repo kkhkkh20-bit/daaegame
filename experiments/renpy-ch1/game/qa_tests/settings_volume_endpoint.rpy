@@ -20,13 +20,13 @@ init 999 python:
                 grabbed=renpy.display.focus.get_grab() is w)
         r13_qa_volume_log(result)
 
-    def r13_qa_volume_point(widget_id, outside=False):
+    def r13_qa_volume_point(widget_id, outside=False, left=False):
         import renpy.test.testfocus as tf
         w=renpy.get_displayable("pause_menu",widget_id)
         f=tf.focus_from_displayable(w)
         # SDK 8.5.3 resolves an outside selector point to its top-left fallback.
         # Compute absolute integer positions from the actual rendered geometry.
-        return (int(f.x+f.w+30 if outside else f.x+f.w/2),int(f.y+f.h/2))
+        return (int(f.x-30 if left else f.x+f.w+30 if outside else f.x+f.w/2),int(f.y+f.h/2))
 
     def r13_qa_volume_trace_start():
         import inspect
@@ -87,9 +87,37 @@ testcase settings_volume_endpoint:
     run Function(r13_qa_volume_state,"after-both-outside-drags")
     screenshot "settings-volume-endpoint-before-assert.png"
     $ r13_qa_volume_full_ok=(r13_qa_mixer_matches("music_volume","music",100) and r13_qa_mixer_matches("fx_volume","sfx",100))
+    # Endpoint legibility at the largest UI size, with unchanged mixer curve.
+    run Function(r13_set_text_size,"large")
+    pause 0.3
+    run Function(r13_qa_volume_state,"large-100")
+    screenshot "settings-volume-large-100.png"
+    $ r13_qa_volume_large_full_ok=(r13_qa_mixer_matches("music_volume","music",100) and r13_qa_mixer_matches("fx_volume","sfx",100))
+    $ r13_qa_music_middle=r13_qa_volume_point("music_volume")
+    $ r13_qa_fx_middle=r13_qa_volume_point("fx_volume")
+    $ r13_qa_music_left=r13_qa_volume_point("music_volume",left=True)
+    $ r13_qa_fx_left=r13_qa_volume_point("fx_volume",left=True)
+    click pos (r13_qa_music_middle[0],r13_qa_music_middle[1])
+    click pos (r13_qa_fx_middle[0],r13_qa_fx_middle[1])
+    pause 0.3
+    run Function(r13_qa_volume_state,"large-50")
+    screenshot "settings-volume-large-50.png"
+    $ r13_qa_volume_large_half_ok=(r13_qa_mixer_matches("music_volume","music",50) and r13_qa_mixer_matches("fx_volume","sfx",50))
+    drag pos (r13_qa_music_middle[0],r13_qa_music_middle[1]) to pos (r13_qa_music_left[0],r13_qa_music_left[1]) steps 20
+    drag pos (r13_qa_fx_middle[0],r13_qa_fx_middle[1]) to pos (r13_qa_fx_left[0],r13_qa_fx_left[1]) steps 20
+    pause 0.3
+    run Function(r13_qa_volume_state,"large-0")
+    screenshot "settings-volume-large-0.png"
+    $ r13_qa_volume_large_zero_ok=(r13_qa_mixer_matches("music_volume","music",0) and r13_qa_mixer_matches("fx_volume","sfx",0) and _preferences.get_volume("music")==0 and _preferences.get_volume("sfx")==0)
+    run Function(r13_set_text_size,"normal")
+    pause 0.3
+    run Function(r13_qa_volume_state,"normal-0")
+    screenshot "settings-volume-normal-0.png"
+    $ r13_qa_volume_zero_ok=(r13_qa_mixer_matches("music_volume","music",0) and r13_qa_mixer_matches("fx_volume","sfx",0) and _preferences.get_volume("music")==0 and _preferences.get_volume("sfx")==0)
     run Function(r13_qa_volume_trace_stop)
     $ _preferences.set_volume("music",r13_qa_saved_mixers[0])
     $ _preferences.set_volume("sfx",r13_qa_saved_mixers[1])
     run Hide("pause_menu")
     assert eval (r13_qa_volume_half_ok)
     assert eval (r13_qa_volume_full_ok)
+    assert eval (r13_qa_volume_large_full_ok and r13_qa_volume_large_half_ok and r13_qa_volume_large_zero_ok and r13_qa_volume_zero_ok)

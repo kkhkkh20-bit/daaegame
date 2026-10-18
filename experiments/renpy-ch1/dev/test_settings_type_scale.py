@@ -18,8 +18,12 @@ class SettingsTypeScale(unittest.TestCase):
   self.assertIn('area (292,124,914,484) mousewheel True draggable True scrollbars "vertical"',A)
   self.assertLessEqual(124+484,630-16)
   self.assertLessEqual(322+4*132+3*8,904)
-  self.assertLessEqual(322+300+70+164+2*8,904)
+  self.assertLessEqual(322+300+8+70+164+3*8,904)
   self.assertLessEqual(322+360+132+8,904)
+ def test_mixer_thumb_does_not_touch_percentage(self):
+  for widget in ('music_volume','fx_volume'):
+   self.assertIn('ysize 48 id "'+widget+'"\n                    null width 8',A)
+  self.assertGreaterEqual(8+8+8-11,12)
  def test_row_labels_and_controls_share_vertical_center(self):
   self.assertIn('xpos 0 yalign .5 xsize 304 spacing 4',A)
   self.assertIn('ypos ((r13_opt_row_height()-56)//2)',A)

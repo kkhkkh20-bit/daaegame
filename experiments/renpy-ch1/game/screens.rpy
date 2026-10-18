@@ -621,11 +621,13 @@ screen pause_menu():
             if tab=="sound":
                 use r13_opt_row("배경음", "음악의 크기"):
                     bar value Preference("music volume") style "r13opt_bar" xsize 300 ysize 48 id "music_volume"
+                    null width 8
                     text ("%d%%"%r13_mixer_percent("music")) id "music_volume_percent" size r13_opt_size() xsize 70 yalign .5
                     textbutton ("음소거 중" if _preferences.get_mute("music") else "소리 켜짐"):
                         xsize 164 selected not _preferences.get_mute("music") action Preference("music mute","toggle") text_size r13_opt_size()
                 use r13_opt_row("효과음", "문·버튼·조사 소리"):
                     bar value Preference("sound volume") style "r13opt_bar" xsize 300 ysize 48 id "fx_volume"
+                    null width 8
                     text ("%d%%"%r13_mixer_percent("sfx")) id "fx_volume_percent" size r13_opt_size() xsize 70 yalign .5
                     textbutton ("음소거 중" if _preferences.get_mute("sfx") else "소리 켜짐"):
                         xsize 164 selected not _preferences.get_mute("sfx") action Preference("sound mute","toggle") text_size r13_opt_size()
