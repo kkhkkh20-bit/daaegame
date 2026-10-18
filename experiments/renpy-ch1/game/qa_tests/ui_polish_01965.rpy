@@ -75,9 +75,12 @@ testcase ui_polish_01965:
     assert eval (not r13_secret_route_available() and not r13_object_visible(ROOM13["objects"]["room13"]["books"]))
     assert eval (r13_object_visible(ROOM13["objects"]["inn"]["keys"]) and not r13_has("observed:inn:keys"))
     $ r13_qa_object_rect=ROOM13["objects"]["inn"]["keys"]["rect"]
-    $ r13_qa_object_x=r13_qa_object_rect[0]+r13_qa_object_rect[2]/2-r13_world_offset()
-    $ r13_qa_object_y=r13_qa_object_rect[1]+r13_qa_object_rect[3]/2
+    $ r13_qa_object_x=int(r13_qa_object_rect[0]+r13_qa_object_rect[2]/2-r13_world_offset())
+    $ r13_qa_object_y=int(r13_qa_object_rect[1]+r13_qa_object_rect[3]/2)
     assert eval (0<r13_qa_object_x<1280 and 0<r13_qa_object_y<720)
+    $ r13_qa_note("ui065 prop pixel target: %r" % ((r13_qa_object_x,r13_qa_object_y),))
+    move pos (r13_qa_object_x,r13_qa_object_y)
+    screenshot "ui065-direct-object-target.png"
     click pos (r13_qa_object_x,r13_qa_object_y)
     pause until eval (r13_has("observed:inn:keys")) timeout 20
     assert screen "say"
