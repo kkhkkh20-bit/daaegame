@@ -46,6 +46,7 @@ init 175 python:
         def __init__(self,session,view,count,shade,**kwargs):
             super(R13MeetingSurface,self).__init__(**kwargs)
             self.view=view;self.count=count
+            self.y=460 if r13_meeting_kind(session)=="round" else 424
             plate=r13_meeting_plate(session,True)
             band=(160,490,960,180) if r13_meeting_kind(session)=="stone" else (160,470,960,250)
             self.art=Transform(Crop(band,plate),xysize=(1280,340),nearest=True,
@@ -54,7 +55,7 @@ init 175 python:
         def render(self,width,height,st,at):
             out=renpy.Render(1280,720)
             a=renpy.render(self.art,1280,340,st,at);b=renpy.render(self.flip,1280,340,st,at)
-            r13_meeting_world_tiles(out,a,b,self.view*5120.0/max(1,self.count),380)
+            r13_meeting_world_tiles(out,a,b,self.view*5120.0/max(1,self.count),self.y)
             return out
         def visit(self):return [self.art,self.flip]
 
@@ -120,7 +121,12 @@ init 175 python:
             self.poses=dict(poses or {});self.beat=beat
             self.shade=R13_MEETING_BEATS.get(beat,R13_MEETING_BEATS["listen"])[3]
             tint="#e4eeff" if self.kind=="stone" else "#fff3df" if self.kind=="round" else "#eef3ff"
-            self.plate=Transform(r13_meeting_plate(self.session,True),
+            # Uniform enlargement and centered crop lowers the authored horizon
+            # with the close table edge; neither the table nor background is squashed.
+            plate=r13_meeting_plate(self.session,True)
+            zoom=1.2 if self.kind=="round" else 1.1 if self.kind=="stone" else 1.0
+            if zoom!=1.0:plate=Crop((int(1280*(zoom-1)/2),0,1280,720),Transform(plate,zoom=zoom))
+            self.plate=Transform(plate,
                 matrixcolor=TintMatrix(tint)*SaturationMatrix(.86)*BrightnessMatrix(-.035-self.shade))
             self.flip=Transform(self.plate,xzoom=-1)
             self.art={};self.offsets={}

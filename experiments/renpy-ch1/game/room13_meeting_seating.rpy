@@ -102,6 +102,14 @@ init 99 python:
         if kind in ("field","room"):return 640
         return int((396 if kind=="round" else 432)+(88 if kind=="round" else 68)*((x-640)/640.0)**2)
 
+    def r13_meeting_close_edge(x,session):
+        # Close speaking view: keep the upper body above the table. Wide seats
+        # retain their own contact geometry through r13_meeting_edge.
+        kind=r13_meeting_kind(session)
+        if kind=="round":return int(476+18*((x-640)/640.0)**2)
+        if kind=="stone":return r13_meeting_edge(x,session)+44
+        return r13_meeting_edge(x,session)
+
     def r13_meeting_seat_position(index,count,session="trial"):
         x=int(240+(index+.5)*980/max(1,count)) if r13_meeting_kind(session)=="room" else int(60+(index+.5)*1160/max(1,count))
         return x,r13_meeting_edge(x,session)
@@ -150,12 +158,8 @@ init 99 python:
         def __init__(self,session,close=False,**kwargs):super(R13MeetingForeground,self).__init__(**kwargs);self.session=session;self.close=close
         def render(self,width,height,st,at):
             out=renpy.Render(1280,720);c=out.canvas()
-            if r13_meeting_kind(self.session)=="stone":
-                edge=[(x,r13_meeting_edge(x,self.session)) for x in range(0,1281,16)]
-            elif self.close:
-                edge=[(x,int(396+98*((x-640)/640.0)**2)) for x in range(0,1281,32)]
-            else:
-                edge=[(x,int(r13_meeting_edge((x+160)/1.25,self.session)*1.25) if self.close else r13_meeting_edge(x,self.session)) for x in range(0,1281,32)]
+            edge_fn=r13_meeting_close_edge if self.close else r13_meeting_edge
+            edge=[(x,edge_fn(x,self.session)) for x in range(0,1281,16)]
             c.polygon("#ffffff",edge+[(1280,720),(0,720)])
             return out
 
