@@ -67,7 +67,10 @@ jobs:
         working-directory: experiments/renpy-ch1
         run: |
           set -o pipefail
-          xvfb-run -a bash dev/check.sh 2>&1 | tee "$ROOM13_CI_OUT/check.log"
+          if ! xvfb-run -a bash dev/check.sh 2>&1 | tee "$ROOM13_CI_OUT/check.log"; then
+            python -m unittest discover -s dev -p "test_*.py" -v 2>&1 | tee "$ROOM13_CI_OUT/unittest-failure.log"
+            exit 1
+          fi
       - name: Compile and build web release
         working-directory: experiments/renpy-ch1
         run: |
