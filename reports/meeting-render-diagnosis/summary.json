@@ -1,0 +1,162 @@
+{
+  "no-capture": {
+    "transitions": {
+      "buri": {
+        "local_times": [
+          0.0087,
+          0.3387,
+          0.6067,
+          0.7007
+        ],
+        "active_calls": 2,
+        "first_gap_ms": 329.0,
+        "timeline_start": 1.4043333530426025
+      },
+      "seryeon": {
+        "local_times": [
+          0.0067,
+          0.3457,
+          0.3597
+        ],
+        "active_calls": 1,
+        "first_gap_ms": 338.0,
+        "timeline_start": 4.904333114624023
+      }
+    },
+    "root_render_ms_max": 10.800000999999781,
+    "root_ids_during_transitions": 1,
+    "primary_views": [
+      {
+        "local_time": 0.008666753768920898,
+        "view": 0.1490772601436514
+      },
+      {
+        "local_time": 0.3386669158935547,
+        "view": 1.999999879450366
+      },
+      {
+        "local_time": 0.006666898727416992,
+        "view": 1.8846407329283252
+      }
+    ],
+    "raf_median_ms": 16.69999999999709,
+    "raf_max_ms": 316.6000000000058
+  },
+  "capture": {
+    "transitions": {
+      "buri": {
+        "local_times": [
+          0.0107,
+          0.3137,
+          0.5647,
+          0.6697
+        ],
+        "active_calls": 2,
+        "first_gap_ms": 304.0,
+        "timeline_start": 1.5793333053588867
+      },
+      "seryeon": {
+        "local_times": [
+          0.0217,
+          0.2727,
+          0.4987,
+          0.5917
+        ],
+        "active_calls": 2,
+        "first_gap_ms": 250.0,
+        "timeline_start": 5.080333232879639
+      }
+    },
+    "root_render_ms_max": 9.799999999998477,
+    "root_ids_during_transitions": 1,
+    "primary_views": [
+      {
+        "local_time": 0.010666608810424805,
+        "view": 0.18239067122694252
+      },
+      {
+        "local_time": 0.31366658210754395,
+        "view": 1.9990707877256548
+      },
+      {
+        "local_time": 0.021666526794433594,
+        "view": 1.64149728065236
+      },
+      {
+        "local_time": 0.27266669273376465,
+        "view": 0.015533992256422824
+      }
+    ],
+    "raf_median_ms": 16.700000000000728,
+    "raf_max_ms": 249.89999999999782
+  },
+  "mp4": {
+    "frame_count": 121,
+    "distinct_exact_frames": 117,
+    "exact_adjacent_duplicates": 2,
+    "static_noise_mae_99": 0.03916796875,
+    "movement_mae_threshold": 0.5,
+    "windows": {
+      "buri": {
+        "window": [
+          1.4793333053588866,
+          2.1293333053588865
+        ],
+        "frames": [
+          {
+            "index": 17,
+            "pts": 1.528,
+            "mae_from_previous": 39.987109375,
+            "hash": "52d44491a6bb6193e8a9b682cac82c0fb58e98e5506f9d1da3906e2e7ac494e6"
+          },
+          {
+            "index": 18,
+            "pts": 1.827,
+            "mae_from_previous": 48.39013671875,
+            "hash": "4e55f34b044f35301ccbb388683988e53c38c05b1feaf5ac3da09683dd370b79"
+          },
+          {
+            "index": 19,
+            "pts": 2.08,
+            "mae_from_previous": 1.50791015625,
+            "hash": "3a3d75984f890bcd46b42aed6b29867240049c170fad5573a34e90888511aa50"
+          }
+        ],
+        "significant_changes": 3
+      },
+      "seryeon": {
+        "window": [
+          4.980333232879639,
+          5.6303332328796385
+        ],
+        "frames": [
+          {
+            "index": 53,
+            "pts": 5.039,
+            "mae_from_previous": 56.9619140625,
+            "hash": "b78f9aad615a08064aacce4cfdf5341ce494a73e50eb4e03b66a48402e029efc"
+          },
+          {
+            "index": 54,
+            "pts": 5.279,
+            "mae_from_previous": 50.6607421875,
+            "hash": "85245bbcc3b8aa0b4357ace29b465783b8875e25235c9f6273d1cdc71de78cab"
+          },
+          {
+            "index": 55,
+            "pts": 5.51,
+            "mae_from_previous": 14.8041015625,
+            "hash": "f5aa414a51cfd9fc8bd68665ae825e1e8aeb312609e123cc00a7b732af8fd0d1"
+          },
+          {
+            "index": 56,
+            "pts": 5.598,
+            "mae_from_previous": 0.27216796875,
+            "hash": "5e79745a1deaedf6068ece3e78c24234196fc6f32dccd14bbba8c2d426d923af"
+          }
+        ],
+        "significant_changes": 3
+      }
+    }
+  }
+}
