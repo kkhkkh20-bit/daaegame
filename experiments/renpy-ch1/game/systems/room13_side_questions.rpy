@@ -64,4 +64,4 @@ screen r13_side_question_list(person,pose,entries,ready,return_action=None,capti
             key ("K_%d"%(i+1)) action r13_safe_question_action(command)
             key ("K_KP%d"%(i+1)) action r13_safe_question_action(command)
     if return_action is not None:
-        use r13_concept_action(28,192,"돌아가기","dialogue",return_action,enabled=ready)
+        use r13_concept_action(R13_CONCEPT_RIGHT-232,232,"돌아가기","dialogue",return_action,enabled=ready)
