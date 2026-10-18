@@ -149,6 +149,8 @@ init 174 python:
             dict(slot="measured_interject",pose="neutral",listener=("resident_ppul","neutral")),
         ("meeting:live:C2:s2",1,"nabi","직접 본 일과 들은 말을 섞지는 말아요."):
             dict(pose="neutral",listener=("resident_ppul","neutral")),
+        ("meeting:live:C2:s3",0,"resident_ppul","그 방에는 아이 혼자 있었습니다. 다시 휘두를 사람이 누가 있습니까?"):
+            dict(slot="stern_statement",pose="neutral"),
         ("meeting:live:C2:s3",1,"resident_seori","그때 방에 있던 사람이 누구인지 확인하겠습니다."):
             dict(pose="neutral",listener=("resident_ppul","neutral")),
         ("meeting:live:C3:s1",1,"nabi","첫 비명 때는 할머니와 함께 있었어요."):

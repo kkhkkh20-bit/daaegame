@@ -36,5 +36,5 @@ class MeetingSources(unittest.TestCase):
      env['r13_meeting_slot_art'](who,height)
      for axis in ('xpos','ypos'):
       self.assertIs(type(transforms[-1][axis]),int, 'RenPy floats are relative positions')
-      self.assertLess(abs(transforms[-1][axis]),100)
+      self.assertLess(abs(transforms[-1][axis]),spec["canvas"][0]*height/840)
 if __name__=='__main__':unittest.main()

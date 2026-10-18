@@ -20,6 +20,14 @@ class CouncilDirection(unittest.TestCase):
   src=(ROOT/'game/systems/room13_meeting_direction.rpy').read_text().split('init 174 python:\n',1)[1].split('\n# Brief impact',1)[0]
   exec(textwrap.dedent(src),self.e)
   self.s.r13_meeting_active=True;self.s.r13_meeting_claim='C2'
+ def test_c2_third_accusation_has_exact_stern_cue_without_next_line_leak(self):
+  direct=self.e['r13_meeting_direct_line'];text='그 방에는 아이 혼자 있었습니다. 다시 휘두를 사람이 누가 있습니까?'
+  direct('meeting:live:C2:s3',0,('resident_ppul',text),'neutral','neutral')
+  self.assertEqual(self.s.r13_meeting_art_slots,{'resident_ppul':'stern_statement'})
+  direct('meeting:live:C2:s3',1,('resident_seori','그때 방에 있던 사람이 누구인지 확인하겠습니다.'),'neutral','neutral')
+  self.assertEqual(self.s.r13_meeting_art_slots,{})
+  direct('meeting:live:C2:s3',0,('resident_ppul',text,{'expression':'angry'}),'angry','angry')
+  self.assertEqual(self.s.r13_meeting_art_slots,{})
  def test_authored_anxious_slot_survives_legacy_avatar_expression(self):
   self.s.r13_meeting_active=True;self.s.r13_meeting_claim='C3'
   text='할머니가 공구를 가지러 주방에 가신 뒤로는…… 저도 못 봤어요.'
