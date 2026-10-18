@@ -9,7 +9,7 @@ class Action27P0(unittest.TestCase):
   for r in receipt['rows']:
    src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
    out=ROOT/'game'/r['export'];self.assertEqual(hashlib.sha256(out.read_bytes()).hexdigest(),r['export_sha256']);validate_map_image(Image.open(out).convert('RGBA'))
-   row=next(x for x in reg['rows'] if x['request_id']==r['request_id']);self.assertEqual(row['spec']['source_sha256'],r['source_sha256']);self.assertFalse(row['spec'].get('native_detail',False));self.assertEqual(row['spec']['crop'],[0,0,512,768])
+   row=next(x for x in reg['rows'] if x['request_id']==r['request_id']);self.assertEqual(row['spec']['source_sha256'],r['source_sha256']);self.assertEqual(bool(row['spec'].get('native_detail',False)),r['request_id']=='SQ-2');self.assertEqual(row['spec']['crop'],[0,0,512,768])
  def test_scene_variants_and_prior_action_scope(self):
   rows=json.loads((ROOT/'game/assets/room13-map-action27.json').read_text())['rows'];sling=next(r for r in rows if r['request_id']=='PO-1')
   self.assertEqual([sling['variants'][p]['world_width'] for p in ['morning','afternoon','evening']],[2160,1280,1280])
