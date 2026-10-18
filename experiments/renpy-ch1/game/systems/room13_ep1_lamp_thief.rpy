@@ -194,10 +194,10 @@ init 152 python:
     # ---- 밤 대화 ----
     for _k,_t,_c,_l in (
         ("night:ep1_promise","다람이가 그림쟁이 이야기를 한다",lambda:r13_has("lt_piko_promise") and store.room13["day"]==2,[
-            ("daram","아빠, 그 아저씨가 엄마 그려 준대. 코 찡그리는 것도."),
+            ("daram","아빠, 그 아주머니가 엄마 그려 준대. 코 찡그리는 것도."),
             ("daram","엄마가 그림 보면 웃겠다. 그치?")]),
         ("night:ep1_cold","다람이가 창밖을 본다",lambda:r13_has("piko_seen") and not r13_has("lt_piko_promise") and store.room13["day"]==2,[
-            ("daram","그 아저씨, 오늘도 밖에서 자?"),
+            ("daram","그 아주머니, 오늘도 밖에서 자?"),
             ("dad","……그럴 거야."),
             ("daram","춥겠다.")]),
     ):
@@ -224,6 +224,9 @@ label r13_ep1_events:
     if _e1d==3 and not r13_has("lt_dawn"):
         call r13_ep1_dawn
         return
+    # Recover only the unheard public notice, never replay discovery or reroll survival.
+    if r13_piko_notice_here():
+        call r13_piko_notice(True)
     if _e1d==3 and _e1p<=1 and _e1loc=="workshop" and not r13_has("lt_open"):
         $ r13_offer("r13_ep1_accused")
     if _e1d==3 and _e1p==2 and _e1loc=="square" and r13_has("piko_dead") and not r13_has("lt_funeral"):
@@ -245,7 +248,7 @@ label r13_ep1_glimpse:
     $ r13_flag("piko_seen")
     call r13_lines([(None,"광장 둘레에 등이 다섯 개 서 있었다. 등 하나 밑에서 누군가 판자에 그림을 그리고 있었다."),
         ("resident_piko","여기가 마을에서 제일 따뜻해요. 등 안에 따뜻한 돌 조각이 들어 있거든요. 밤새 손을 데워 줘요."),
-        ("daram","아저씨 그림 예쁘다!"),
+        ("daram","아주머니 그림 예쁘다!"),
         ("dad","(이 마을에서 등은 불빛이 아니라 난로구나.)",{"thought":True})],"ep1:glimpse")
     return
 
@@ -253,16 +256,16 @@ label r13_ep1_nabi_shelter:
     $ r13_flag("lt_shelter_asked")
     if r13_has("nabi_helped") or r13_has("lt_piko_promise"):
         if r13_has("nabi_helped"):
-            call r13_lines([("nabi","그림쟁이 아저씨를 여기서요? 할머니가 아시면 큰일 나요."),
+            call r13_lines([("nabi","그림쟁이 아주머니를 여기서요? 할머니가 아시면 큰일 나요."),
                 ("nabi","……손님은 제 일 도와주셨으니까요. 식당 의자라도 괜찮다면요. 불 꺼진 뒤에만, 새벽엔 꼭 나가야 해요.")],"ep1:shelter:helped")
         else:
-            call r13_lines([("nabi","그림쟁이 아저씨를 여기서요? 할머니가 아시면 큰일 나요."),
+            call r13_lines([("nabi","그림쟁이 아주머니를 여기서요? 할머니가 아시면 큰일 나요."),
                 ("dad","그 사람이 내 아내를 그려 주고 있어. 아내를 찾는 데 꼭 필요한 그림이야."),
                 ("nabi","……손님 부인을요? 오늘 하루만이에요.")],"ep1:shelter:portrait")
         $ r13_flag("piko_sheltered")
         $ r13_tick()
     else:
-        call r13_lines([("nabi","그림쟁이 아저씨를 여기서요? 할머니가 아시면 큰일 나요."),
+        call r13_lines([("nabi","그림쟁이 아주머니를 여기서요? 할머니가 아시면 큰일 나요."),
             ("nabi","죄송해요. 저도 여기서 쫓겨나면 갈 데가 없어요.")],"ep1:shelter:no")
     return
 
@@ -277,15 +280,18 @@ label r13_ep1_dawn:
             (None,"사람들이 피코를 들어 옮겼다. 손에서 붓이 떨어지지 않았다.")],"ep1:dawn:survived")
         if r13_has("lt_piko_promise"):
             call r13_lines([(None,"피코의 품에서 판자 하나가 나왔다. 엄마의 얼굴. 코를 찡그린 모양까지 다 그려져 있었다."),
-                ("daram","엄마다! 아저씨가 약속 지켰어!")],"ep1:dawn:portrait_done")
+                ("daram","엄마다! 아주머니가 약속 지켰어!")],"ep1:dawn:portrait_done")
             $ r13_flag("mom_portrait")
             $ r13_grant(["P01"],"피코가 끝까지 그린 엄마 초상")
         $ r13_grant(["L00","L06"],"꺼진 3번 등 밑에서 쓰러진 피코")
     else:
         $ r13_flag("piko_dead")
-        call r13_lines([(None,"광장이 이상하게 조용했다. 3번 등이 꺼져 있었다. 그 밑에 담요를 덮은 작은 몸이 웅크려 있었다. 손에는 붓이 쥐여 있었다."),
-            ("resident_lamplighter","새벽에 돌 때만 해도…… 미지근했어요. 분명히."),
-            ("daram","아빠, 아저씨 왜 안 일어나?")],"ep1:dawn:dead")
+        # Scene-only covered-body art is pending; do not resurrect a normal map actor.
+        call r13_lines([(None,"광장이 이상하게 조용했다. 3번 등이 꺼져 있었다. 그 밑에는 담요로 덮인 피코가 누워 있었다. 손에는 붓이 쥐여 있었다."),
+            ("resident_lamplighter","새벽에 돌 때만 해도…… 미지근했어요. 분명히.",{"expression":"anxious"}),
+            ("daram","아빠, 아주머니 왜 안 일어나?",{"expression":"anxious"}),
+            (None,"나는 다람이의 손을 잡았다. 담요 아래의 피코는 움직이지 않았다."),
+            ("dad","……다람아. 아주머니는 돌아가셨어.")],"ep1:dawn:dead")
         call r13_lines([(None,"……눈 내리는 소리만 들렸다.")],"ep1:dawn:silence")
         if r13_has("lt_piko_promise"):
             call r13_lines([(None,"붓 옆에 판자 하나. 엄마의 얼굴이었다. 코만 아직 그려져 있지 않았다."),
@@ -296,7 +302,9 @@ label r13_ep1_dawn:
                 ("dad","(눈썹의 흉터. 아내다. 피코는 아내를 본 적이 있다.)",{"thought":True})],"ep1:dawn:sketch")
             $ r13_grant(["L13"],"피코의 판자 사이에서 나온 스케치")
         $ r13_grant(["L00","L06"],"3일 새벽 광장")
-    call r13_lines([("dad","(등이 꺼진 밤에, 등 밑에서 잔 사람이 쓰러졌다.)",{"thought":True})],"ep1:dawn:thought")
+    if r13_has("piko_dead"):
+        call r13_lines([(None,"사람들이 담요에 싸인 피코를 조심히 옮겼다. 나는 다람이 곁에 남았다.")],"ep1:dawn:leave")
+    call r13_piko_notice
     call r13_q1_checkpoint("investigation")
     return
 
@@ -356,7 +364,7 @@ label r13_ep1_ubak:
     call r13_lines([("dad","꺼진 3번 등 안에 온도를 적은 쪽지가 있었어."),
         ("resident_ubak","……! 제가 했어요. 스승님이 돌이 얼마나 식었는지 몰래 재 오라고 해서요."),
         ("resident_ubak","근데 온도만 재고, 새벽 되기 전에 조각을 【제자리에 돌려놨어요】. 진짜예요."),
-        ("resident_ubak","그 아저씨가…… 저 때문이에요?"),
+        ("resident_ubak","그 아주머니가…… 저 때문이에요?"),
         ("resident_seori","제 심부름이었습니다. 그리고 이 아이가 돌려놨다면, 새벽엔 조각이 등 안에 있었어야 합니다.")],"ep1:ubak")
     $ r13_grant(["L05"],"우박의 말")
     menu:
@@ -390,14 +398,14 @@ label r13_ep1_funeral:
         (None,"아무도 대답하지 않았다.")],"ep1:funeral")
     if r13_has("L12"):
         call r13_lines([(None,"다람이 크레용을 꺼내 엄마 초상 앞에 쪼그려 앉았다."),
-            ("daram","아저씨. 약속 내가 지킬게."),
+            ("daram","아주머니. 약속 내가 지킬게."),
             (None,"다람이 삐뚤빼뚤, 엄마의 코를 찡그린 모양으로 그려 넣었다."),
             (None,"……눈 내리는 소리만 들렸다."),
             ("daram","……이제 엄마 웃는다.")],"ep1:funeral:nose")
         $ r13_flag("portrait_finished_by_daram","mom_portrait")
         $ r13_grant(["P01"],"다람이 코를 그려 넣은 엄마 초상")
     else:
-        call r13_lines([(None,"다람이 피코의 판자 하나에 꽃을 올렸다."),("daram","아저씨 그림 예뻤어요.")],"ep1:funeral:flower")
+        call r13_lines([(None,"다람이 피코의 판자 하나에 꽃을 올렸다."),("daram","아주머니 그림 예뻤어요.")],"ep1:funeral:flower")
     $ r13_flag("piko_mourned")
     $ r13_tick()
     return
@@ -467,6 +475,7 @@ label r13_ep1_store:
     return
 
 label r13_ep1_meeting:
+    call r13_piko_notice(True)
     call r13_q1_checkpoint("meeting")
     call r13_q1_preflight
     if not _return:
@@ -520,13 +529,13 @@ label r13_ep1_aftermath:
     call r13_lines(r13_q1_afterthought(),"ep1:after:thought")
     if r13_has("piko_dead"):
         call r13_lines([(None,"다람이가 품에 넣어 둔 그림책을 펼쳤다.",{"book":"U01-opening"}),
-            (None,"「아침이 되자, 아저씨는 엄마 코를 다 못 그린 채 잠들어 있었어요.」",{"book":"U01-ending"}),
+            (None,"「아침이 되자, 아주머니는 엄마 코를 다 못 그린 채 잠들어 있었어요.」",{"book":"U01-ending"}),
             ("daram","……아빠. 이 책, 이제 안 읽을래."),
             ("dad","응. 지금은 덮어 두자."),
             (None,"다람이가 책을 닫았다. 나는 아이의 손을 잡고 잠시 곁에 서 있었다.")],"ep1:after:book")
     else:
         call r13_lines([(None,"다람이가 품에 넣어 둔 그림책을 펼쳤다.",{"book":"U01-opening"}),
-            (None,"「아침이 되자, 누군가 아저씨에게 담요를 덮어 주었어요.」",{"book":"U01-ending"}),
+            (None,"「아침이 되자, 누군가 아주머니에게 담요를 덮어 주었어요.」",{"book":"U01-ending"}),
             ("daram","아빠, 이번엔 끝이 바뀌었어."),
             ("dad","그러네. 담요를 덮어 준 사람이 있었구나.")],"ep1:after:book_saved")
     call r13_episode_aftermath("ep1")

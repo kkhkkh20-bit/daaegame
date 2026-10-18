@@ -54,6 +54,27 @@ init 110 python:
         if key=="w2_reply" and r13_has("portrait_lamp_seen") and store.room13.get("reply_due") is not None:
             n=winter_copy.deepcopy(store.room13);n["reply_due"]=max(r13_abs_time()+1,(n["reply_due"]//4)*4);store.room13=n
 
+    def r13_sling_note_confession():
+        # New disclosure design: only the completed, evidence-backed confrontation
+        # can create H9. Existing H9/knowledge is never erased or re-granted here.
+        if not r13_has("sling_confront_completed") or not r13_sling_confront_ready():return False
+        if not r13_has("H9"):
+            r13_grant(["H9"],"슬링이 털어놓은 편지 엿보기")
+        r13_flag("know_granny_reads","sling_confession_heard")
+        return True
+
+    def r13_sling_can_support_day():
+        # Pure menu/preview gate. Knowing the wage is not a promise to pay it.
+        return (r13_has("sling_job_pressure_heard") and r13_has("sling_day_wage_known")
+            and not r13_has("sling_day_supported") and r13_cash_now()>=3)
+
+    def r13_sling_support_day():
+        # Only the explicit support choice calls this; protect against a repeated call.
+        if not r13_sling_can_support_day():return False
+        r13_cash(-3,"슬링의 하루 품삯")
+        r13_flag("sling_day_supported")
+        return True
+
 label r13_w1c_events:
     call r13_owl_events
     $ _d,_p,_loc=room13["day"],room13["period"],room13["location"]
@@ -77,7 +98,7 @@ label r13_w1c_events:
     if _d==r13_tl(6) and _p<=1 and _loc in ("gate","store") and room13["case_state"]=="occurred" and not r13_has("ev_t_done"):
         $ r13_offer("r13_w1c_testimony")
     if _d>=R13_WEEK2_DAY and r13_has("letters_safe") and r13_has("pursuit_active") and not r13_has("pursuit_managed"):
-        call r13_lines([("resident_sling","부인 편지는 제가 할머니 몰래 다른 길로 돌렸어요. 그래서 뒤쫓는 사람은 엉뚱한 편지만 들고 갔어요.")],"w1c:letters:safe")
+        call r13_lines([("resident_sling","부인 편지는 제가 다른 길로 돌렸어요. 그래서 뒤쫓는 사람은 엉뚱한 편지만 들고 갔어요.")],"w1c:letters:safe")
         $ r13_flag("pursuit_managed")
     return None
 
@@ -119,56 +140,98 @@ label r13_w1c_portrait:
 
 # ---- L. 슬링의 편지 ----
 label r13_w1c_letters:
+    if r13_has("ev_l_done"):
+        return
     $ r13_flag("ev_l_done")
     call r13_ev_here("search")
-    call r13_lines([(None,"우체국 안쪽 화덕 위에서 주전자가 김을 뿜고 있었다. 슬링이 그 김에 봉투 하나를 쐬고 있었다."),
-        ("resident_sling","……! 아, 아니에요. 봉투가 젖어서 말리는 거예요.")],"w1c:letters:open")
-    # 0.18.17: what Dad says, not a verdict on it. Paid and portrait help get different lines.
+    if "resident_sling" not in r13_met_people():
+        call r13_lines([(None,"우편 일을 하는 사람이 화덕 앞에서 봉투 하나를 들고 있었다."),
+            ("dad","실례합니다. 여기 우편을 맡고 계십니까?"),
+            ("resident_sling","예, 슬링입니다. 잠깐만요.")],"w1c:letters:intro")
+    call r13_lines([(None,"주전자에서 김이 올랐다. 슬링은 봉투의 붙인 입구만 그 김에 대고 있었다. 풀 붙인 귀퉁이가 조금씩 들렸다."),
+        ("resident_sling","……! 아, 봉투가 젖어서 말리는 거예요."),
+        ("dad","말리는 게 아니라 붙인 데를 떼고 계신데요. 받는 분이 열어 달라고 한 편지입니까?"),
+        ("resident_sling","……아니요.")],"w1c:letters:open")
+    $ r13_note_encounter("resident_sling")
+    # Dad can act on the opening he saw, but cannot offer an unknown day's wage yet.
     menu:
-        "“저는 못 본 것으로 하겠습니다.”":
+        "“못 본 것으로 하겠습니다.”":
             call r13_lines([(None,"슬링은 김으로 연 봉투에서 편지 한 줄을 베꼈다. 받는 사람 칸에 여관 이름이 보였다.")],"w1c:letters:ignore")
             $ r13_flag("warning_exposed")
-        "“지금 그 편지를 여는 겁니까?”":
-            call r13_lines([("dad","지금 남의 편지를 몰래 여는 겁니까?"),
-                ("resident_sling","……할머니가 시켰어요. 손님 편지 중에 ‘부인’이 보낸 게 있으면 베껴 오라고요. 안 그러면 일자리를 잃는대요.")],"w1c:letters:catch")
+        "“편지에서 뭘 보려는 겁니까?”":
+            if r13_sling_knows_requester():
+                call r13_lines([("dad","편지를 열어서 무엇을 보려는 겁니까?"),
+                    ("resident_sling","전에 말씀드린 할머니의 부탁이에요. 손님 편지를 베껴 오지 않으면 일자리를 잃는다고 하셨죠.")],"w1c:letters:catch:known")
+            else:
+                call r13_lines([("dad","편지를 열어서 무엇을 보려는 겁니까?"),
+                    ("resident_sling","……편지 내용을 베끼려던 거예요. 시킨 사람이 있지만, 이름은 말 못 해요. 일자리를 잃을 수도 있어서요.")],"w1c:letters:catch")
             call r13_w1c_letters_after
-        "“누가 부탁한 일입니까?”":
-            call r13_lines([("dad","누가 부탁한 일입니까?"),
-                ("resident_sling","……여관 할머니요. 손님 편지 중에 ‘부인’이 보낸 게 있으면 베껴 오래요. 안 하면 일자리가 없대요.")],"w1c:letters:who")
+        "“직접 보려는 겁니까?”":
+            if r13_sling_knows_requester():
+                call r13_lines([("dad","전에 말씀하신 그 부탁입니까?"),
+                    ("resident_sling","네. 할머니가 손님 편지를 베껴 오라고 하셨던 일이에요.")],"w1c:letters:who:known")
+            else:
+                call r13_lines([("dad","직접 읽으려는 겁니까, 누가 부탁한 겁니까?"),
+                    ("resident_sling","……부탁받은 일이에요. 누구인지는 말 못 해요. 거절하면 일자리가 없어질 수도 있어서요.")],"w1c:letters:who")
             call r13_w1c_letters_after
-        "너울에게 알린다":
-            call r13_lines([("neoul","우체국 일은 우체국 일이오. 슬링은 오늘부터 나오지 마시오."),
-                ("resident_sling","……")],"w1c:letters:neoul")
-            $ r13_flag("sling_hostile")
-        "“오늘 품삯은 제가 내겠습니다.” 3냥" if r13_cash_now()>=3:
-            $ r13_cash(-3,"슬링의 하루 품삯")
-            call r13_lines([("dad","일자리 때문이라면 오늘 품삯은 제가 내겠습니다. 편지는 뜯지 말고 그대로 보내 주세요."),
-                ("resident_sling","오늘 몫은 받았으니…… 이 편지는 그대로 보내겠습니다."),
-                ("resident_sling","시킨 사람은 여관 할머니예요. 손님 편지 중에 ‘부인’이 보낸 게 있으면 베껴 오라고 했어요.")],"w1c:letters:paid")
-            $ r13_flag("letters_safe","sling_ally")
-            call r13_w1c_letters_after(False)
-        "“이분 얼굴을 알고 있지요?”" if "P01" in room13["evidence"] and r13_has("portrait_known"):
+        "편지 개봉을 경비에게 알린다":
+            call r13_lines([("dad","남의 편지를 열려던 일을 경비에게 알리겠습니다."),
+                ("resident_sling","너울한테요? 그러면 저는 우체국에서 일 못 해요.")],"w1c:letters:report:warning")
+            menu:
+                "그래도 경비에게 알린다":
+                    call r13_lines([(None,"나는 경비 너울을 찾아가, 슬링이 배달할 봉투의 입구를 김으로 떼고 있던 일을 전했다."),
+                        ("neoul","받는 사람 허락도 없이 편지를 열려 했소? 슬링은 오늘부터 우체국에 나오지 마시오."),
+                        ("resident_sling","……")],"w1c:letters:neoul")
+                    $ r13_flag("sling_hostile")
+                "“먼저 사정을 듣겠습니다.”":
+                    if r13_sling_knows_requester():
+                        call r13_lines([("dad","전에 말씀하신 사정부터 다시 듣겠습니다."),
+                            ("resident_sling","할머니가 손님 편지를 베껴 오라고 했다는 말씀은 드렸죠. 거절하면 일자리를 잃는다고요.")],"w1c:letters:report:reason:known")
+                    else:
+                        call r13_lines([("dad","먼저 왜 그랬는지 듣겠습니다."),
+                            ("resident_sling","……편지를 베껴 오라는 부탁을 받았어요. 누구 부탁인지는 말 못 해요. 그 이름을 꺼내면 일자리를 잃을까 봐요.")],"w1c:letters:report:reason")
+                    call r13_w1c_letters_after
+        "전에 보인 아내 초상을 꺼낸다" if "P01" in room13["evidence"] and r13_has("portrait_known"):
             call r13_lines([("dad","이 초상, 전에 보여 드렸지요. 이분은 제 아내입니다."),
-                ("resident_sling","그분 가족이었군요. 그러면 이 편지를 함부로 다루면 안 되겠네요."),
-                ("resident_sling","여관 할머니가 시켰어요. 손님 편지 중에 ‘부인’이 보낸 게 있으면 베껴 오라고요.")],"w1c:letters:portrait")
-            $ r13_flag("letters_safe","sling_ally")
+                ("resident_sling","그분 가족이었군요. 그러면 이 편지를 함부로 다루면 안 되겠네요.")],"w1c:letters:portrait")
+            if r13_sling_knows_requester():
+                call r13_lines([("resident_sling","할머니의 부탁이라고 말씀드렸지만, 이 편지는 열지 않겠어요."),
+                    ("dad","그대로 보내 주세요. 이 이야기를 함부로 퍼뜨리지는 않겠습니다.")],"w1c:letters:portrait:known")
+            else:
+                call r13_lines([("resident_sling","누가 시켰는지는 말 못 해요. 그 이름을 꺼냈다가 일자리를 잃을까 봐요."),
+                    ("dad","편지는 그대로 보내 주세요. 말씀하지 않은 이름을 제가 짐작해 퍼뜨리지는 않겠습니다.")],"w1c:letters:portrait:guarded")
+            $ r13_flag("letters_safe","sling_ally","sling_nonpaid_trust")
             call r13_w1c_letters_after(False)
     return
 
 label r13_w1c_letters_after(ask_stop=True):
-    $ r13_grant(["H9"],"슬링이 털어놓은 편지 엿보기")
-    $ r13_flag("know_granny_reads")
+    $ r13_flag("sling_job_pressure_heard")
+    if ask_stop:
+        call r13_lines([("dad","여기서 하루 일하면 얼마를 받습니까?"),
+            ("resident_sling","세 냥이요.")],"w1c:letters:wage")
+        $ r13_flag("sling_day_wage_known")
     menu:
-        "“할머니께 쪽지 하나만 전해 주세요.”":
+        "가짜 약속 쪽지를 맡긴다" if r13_sling_fake_letter_ready():
             call r13_w1c_fake_letter
-        "“다시는 편지를 열지 마세요.”" if ask_stop:
-            call r13_lines([("resident_sling","……네. 대신 할머니한테는 아무 편지도 없었다고 할게요.")],"w1c:letters:stop")
-            $ r13_flag("letters_safe","sling_ally")
+        "“남의 편지는 열지 마세요.”" if ask_stop:
+            call r13_lines([("dad","편지는 그대로 보내 주세요. 말씀하지 않은 이름을 제가 짐작해 퍼뜨리지는 않겠습니다."),
+                ("resident_sling","……네. 편지는 열지 않을게요. 이 일은 여기서만 이야기해 주세요.")],"w1c:letters:stop")
+            $ r13_flag("letters_safe","sling_ally","sling_nonpaid_trust")
+        "슬링의 오늘 몫 지원 (내 돈 3냥)" if ask_stop and r13_sling_can_support_day():
+            $ _sling_supported=r13_sling_support_day()
+            if _sling_supported:
+                call r13_lines([("dad","오늘 하루 몫 세 냥은 제가 드리겠습니다. 이 편지는 뜯지 말고 그대로 보내 주세요."),
+                    ("resident_sling","……오늘 몫은 받았으니, 이 편지는 그대로 보내겠습니다.")],"w1c:letters:paid")
+                $ r13_flag("letters_safe","sling_ally")
+                call r13_w1c_letters_after(False)
         "“이 편지는 그대로 보내 주세요.”" if not ask_stop:
             pass
     return
 
 label r13_w1c_fake_letter:
+    if not r13_sling_knows_requester():
+        call r13_lines([("resident_sling","누구에게 쪽지를 전하라는 건지, 아직 얘기가 안 됐어요.")],"w1c:letters:fake:unknown")
+        return
     # Once Granny knows Dad found out (systems/room13_use_knowledge.rpy), a planted letter does not fool her.
     if r13_has("granny_knows_found_out"):
         call r13_lines([("resident_sling","할머니가 요즘은 제가 가져가는 편지를 잘 안 믿으세요. 누가 알아챘다고 하시면서요.")],"w1c:letters:fake:fail")

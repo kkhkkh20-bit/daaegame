@@ -166,7 +166,17 @@ init 75 python:
             return variants.get("free")
         return None
 
+    def r13_siluk_advance_greeting():
+        phase=r13_siluk_advance_phase()
+        if phase=="pending":return [("resident_siluk","짐을 맡기신 분이죠. 선금은 받았습니다.")]
+        if phase=="overdue":return [("resident_siluk","……맡기신 짐 말씀이죠. 아직 가져오지 못했어요.")]
+        if phase=="unknown":return [("resident_siluk","맡기신 짐하고 선금 이야기인가요?")]
+        if phase=="resolved":return [("resident_siluk","그때 맡기신 짐 이야기는 기억해요.")]
+        return []
+
     def r13_conversation_opening(person, first):
+        if person=="resident_siluk" and r13_siluk_advance_record():
+            return r13_siluk_advance_greeting()
         spec = R13_OPENING_SCENES["first_meetings"].get(person)
         if spec is None:
             return []

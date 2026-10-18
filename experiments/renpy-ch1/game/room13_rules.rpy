@@ -420,7 +420,7 @@ init 55 python:
             unlocked="lamplighter_warning";lines=[(person,"그 매듭 안쪽까지 아는군요. 편지를 받을 분이 맞는지 확인하고 싶었어요.")]
         elif person=="granny" and key=="E18":
             r13_flag("warning_exposed")
-            return [(person,"그분이 아직 연락을 하고 있었군요. 어디서 받았어요?"),("dad","장소까지 말씀드리지는 않겠습니다.")]
+            return [(person,"그분이 아직 연락을 하고 있었군요. 어디서 받았어요?")]
         if unlocked:
             r13_flag("topic:"+unlocked)
             spec=ROOM13["topics"].get(unlocked)

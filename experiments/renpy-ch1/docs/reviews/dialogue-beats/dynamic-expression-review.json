@@ -1249,7 +1249,7 @@
     },
     "98": {
       "source": "game/systems/room13_intro_clues.rpy",
-      "line": 57,
+      "line": 58,
       "who_expr": "person",
       "text": "도토리 그림 이야기를 하던 분이군요. 여관 앞에서 만났어요. 무엇이 궁금하십니까?",
       "expression": "'도토리 그림 이야기를 하던 분이군요. 여관 앞에서 만났어요. 무엇이 궁금하십니까?'",
@@ -1262,7 +1262,7 @@
     },
     "99": {
       "source": "game/systems/room13_intro_clues.rpy",
-      "line": 62,
+      "line": 63,
       "who_expr": "person",
       "text": "부인이 가족을 부르고 싶다고 해서 제가 대신 부쳐 드렸어요.",
       "expression": "'부인이 가족을 부르고 싶다고 해서 제가 대신 부쳐 드렸어요.'",
@@ -1275,7 +1275,7 @@
     },
     "100": {
       "source": "game/systems/room13_intro_clues.rpy",
-      "line": 66,
+      "line": 67,
       "who_expr": "person",
       "text": "그분의 우편을 확인하려면 가족이라는 자료부터 보여 주세요. 다른 분이 보셨다는 말만으로는 내드릴 수 없어요.",
       "expression": "'그분의 우편을 확인하려면 가족이라는 자료부터 보여 주세요. 다른 분이 보셨다는 말만으로는 내드릴 수 없어요.'",
@@ -1288,7 +1288,7 @@
     },
     "101": {
       "source": "game/systems/room13_intro_clues.rpy",
-      "line": 71,
+      "line": 72,
       "who_expr": "person",
       "text": "편지와 메모를 함께 보니 말씀하신 분이 누구인지 알겠어요. 방문하셨을 때 무슨 일이 있었는지 물어보세요.",
       "expression": "'편지와 메모를 함께 보니 말씀하신 분이 누구인지 알겠어요. 방문하셨을 때 무슨 일이 있었는지 물어보세요.'",
@@ -1301,7 +1301,7 @@
     },
     "102": {
       "source": "game/systems/room13_intro_clues.rpy",
-      "line": 72,
+      "line": 73,
       "who_expr": "person",
       "text": "여관에서 부친 편지군요. 가족에게 남긴 글도 있으면 함께 보여 주세요.",
       "expression": "'여관에서 부친 편지군요. 가족에게 남긴 글도 있으면 함께 보여 주세요.' if key == 'E01' else '가족에게 남긴 메모군요. 여관에서 받으신 편지도 함께 보여 주시겠어요?'",
@@ -1314,7 +1314,7 @@
     },
     "103": {
       "source": "game/systems/room13_intro_clues.rpy",
-      "line": 72,
+      "line": 73,
       "who_expr": "person",
       "text": "가족에게 남긴 메모군요. 여관에서 받으신 편지도 함께 보여 주시겠어요?",
       "expression": "'여관에서 부친 편지군요. 가족에게 남긴 글도 있으면 함께 보여 주세요.' if key == 'E01' else '가족에게 남긴 메모군요. 여관에서 받으신 편지도 함께 보여 주시겠어요?'",
@@ -1468,22 +1468,9 @@
       "application_status": "awaiting_approved_runtime_assets",
       "runtime_binding": "local_callsite_snapshot_binding_assets_held"
     },
-    "115": {
-      "source": "game/systems/room13_poc_route.rpy",
-      "line": 84,
-      "who_expr": "person",
-      "text": "가족에게 전할 것이 있어요. 오늘은 챙길 일이 남아 있어서, 내일 다시 와 주시겠어요?",
-      "expression": "'가족에게 전할 것이 있어요. 오늘은 챙길 일이 남아 있어서, 내일 다시 와 주시겠어요?'",
-      "emotion": "neutral",
-      "reaction": false,
-      "reviewed": true,
-      "reason": "변수 화자 응답·조건 분기·회의 발언을 해당 호출 문맥에서 검토했다. 증거 확인과 절차 안내는 차분하게 이어가며, 발언의 주장 자체를 사실로 승인하지 않는다. 조합식 문자열은 완성 문장과 분기 확인 후에만 바인딩한다.",
-      "application_status": "awaiting_approved_runtime_assets",
-      "runtime_binding": "local_callsite_snapshot_binding_assets_held"
-    },
     "116": {
       "source": "game/systems/room13_poc_route.rpy",
-      "line": 86,
+      "line": 84,
       "who_expr": "person",
       "text": "맞아요. 먼저 어디서 어떻게 받을지 설명할게요. 물어보세요.",
       "expression": "'맞아요. 먼저 어디서 어떻게 받을지 설명할게요. 물어보세요.'",

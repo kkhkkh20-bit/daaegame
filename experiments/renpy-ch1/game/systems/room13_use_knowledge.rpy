@@ -19,7 +19,7 @@ init 123 python:
 
     ROOM13["activities"]["warning"]["title"]="점검함의 봉투를 그 자리에서 뜯어 읽는다"
     ROOM13["activities"]["warning"]["not_flags"]=list(ROOM13["activities"]["warning"].get("not_flags",[]))+["warning_sealed_held"]
-    ROOM13["activities"]["warning_keep"]=dict(place="square",title="점검함의 봉투를 봉한 채 챙긴다",day=[3,13],need=["warning_location"],
+    ROOM13["activities"]["warning_keep"]=dict(place="square",title="점검함의 봉투를 봉한 채 챙긴다",day=[1,13],need=["warning_location"],
         not_flags=["warning_sealed_held","E18"],flags=["warning_sealed_held"],give=[],cost=0,lines=[
         (None,"봉투 겉에는 우리 가족 이름이 아내 글씨로 적혀 있었다. 봉인은 온전했다. 뜯지 않고 품에 넣었다.")])
     R13_CONTEXT_ACTIVITIES[("square","lamp")]=tuple(R13_CONTEXT_ACTIVITIES.get(("square","lamp"),()))+("warning_keep",)
@@ -38,12 +38,12 @@ init 123 python:
             (None,"도토가 13호 문 앞에 섰다. 고개를 몇 번 기울였다."),
             ("doto","……계단 첫 칸부터는 모퉁이에 가려서 안 보이네요."),
             ("doto","문 앞은 확실히 봤습니다. 그건 변하지 않아요.")],case="occurred"),
-        "warning_open_with":dict(npc="resident_lamplighter",title="“이 봉투를 같이 열어 주시겠습니까?”",day=[3,13],need=["warning_sealed_held"],not_flags=["E18"],give=["E18","J18"],flags=[],lines=[
+        "warning_open_with":dict(npc="resident_lamplighter",title="“이 봉투를 같이 열어 주시겠습니까?”",day=[1,13],need=["warning_sealed_held"],not_flags=["E18"],give=["E18","J18"],flags=[],lines=[
             ("dad","점검함에서 꺼낸 봉투입니다. 뜯지 않았습니다. 같이 열어 주시겠습니까?"),
             ("resident_lamplighter","제가 맡아 둔 봉투가 맞아요. 봉인도 그대로네요."),
             (None,"초롱이 보는 앞에서 봉투를 열었다. 안쪽에 우리 가족끼리만 쓰던 매듭이 지어져 있었다."),
             (None,"「나는 너희한테 오라는 편지를 쓴 적 없어. 내가 어디로 가는지 여관에는 말하지 마. 답장은 등불 고치는 사람을 통해 보내 줘. 누구든 혼자 만나러 가지는 말고.」")]),
-        "warning_open_alone":dict(npc="daram",title="봉투를 우리끼리 열어 본다",day=[3,13],need=["warning_sealed_held"],not_flags=["E18"],give=["E18"],flags=["warning_opened_alone"],lines=[
+        "warning_open_alone":dict(npc="daram",title="봉투를 우리끼리 열어 본다",day=[1,13],need=["warning_sealed_held"],not_flags=["E18"],give=["E18"],flags=["warning_opened_alone"],lines=[
             ("daram","엄마 글씨다. 열어 봐도 돼?"),
             (None,"봉투를 열었다. 「나는 너희한테 오라는 편지를 쓴 적 없어. 내가 어디로 가는지 여관에는 말하지 마. 답장은 등불 고치는 사람을 통해 보내 줘. 누구든 혼자 만나러 가지는 말고.」")]),
     })

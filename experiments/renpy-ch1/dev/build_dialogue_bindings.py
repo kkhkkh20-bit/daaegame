@@ -12,14 +12,18 @@ def dump(path,data):path.write_text(json.dumps(data,ensure_ascii=False,indent=2)
 def rows(name):
  d=read(name)['rows'];return list(d.values()) if isinstance(d,dict) else d
 
-def variants(node):
+def variants(node, finite_locals=None):
  """Finite authored string/conditional alternatives, never evaluate game state."""
  if isinstance(node,ast.Constant):return [node.value]
- if isinstance(node,ast.IfExp):return variants(node.body)+variants(node.orelse)
+ if isinstance(node,ast.Name):return list((finite_locals or {}).get(node.id,[]))
+ if isinstance(node,ast.IfExp):return variants(node.body,finite_locals)+variants(node.orelse,finite_locals)
  if isinstance(node,ast.BinOp) and isinstance(node.op,ast.Add):
-  return [a+b for a,b in itertools.product(variants(node.left),variants(node.right))]
+  return [a+b for a,b in itertools.product(variants(node.left,finite_locals),variants(node.right,finite_locals))]
+ if isinstance(node,ast.BinOp) and isinstance(node.op,ast.Mod):
+  return [a%b for a,b in itertools.product(variants(node.left,finite_locals),variants(node.right,finite_locals))]
  return []
 
+# story-composition finite reviewed providers
 # Calls whose first argument is a data provider rather than inline packets.
 PROVIDERS={
  13:'present',22:'opening',24:'greeting',29:'present',35:'topics',77:'notice',81:'activities',86:'topics',96:'observations',97:'topics',109:'activities',
@@ -41,7 +45,7 @@ def compile_registry():
    reviews.append(dict(r,review_ref=name+':'+str(n)))
  # Exact static packet reuse is only permitted within its source call span or topic.
  for call in q:
-  if call.get('identity') in static:
+  if call.get('active',True) and call.get('identity') in static:
    for r in static[call['identity']].values():
     reviews.append(dict(r,source=call['source'],line=call['line'],context_identity=call['identity'],review_ref='static:'+call['identity']))
  for identity,rr in static.items():
@@ -49,21 +53,24 @@ def compile_registry():
    for r in rr.values():reviews.append(dict(r,source='static_topic',context_identity=identity,review_ref='static:'+identity))
  # Expand only finite composed alternatives; runtime output selects the actual one.
  for n,r in enumerate(read('composed-context-review')['rows']):
-  for who,text in itertools.product(variants(ast.parse(r['who_expression'],mode='eval').body),variants(ast.parse(r['text_expression'],mode='eval').body)):
+  for who,text in itertools.product(variants(ast.parse(r['who_expression'],mode='eval').body,r.get('finite_locals')),variants(ast.parse(r['text_expression'],mode='eval').body,r.get('finite_locals'))):
    reviews.append(dict(r,person=who,text=text,review_ref='composed:'+str(n)))
  # Reviewed 0.19.16 appointment variants: the provider's explicit day choice.
- for day in ('내일','모레'):
-  reviews.append(dict(source='game/systems/room13_review_knowledge.rpy',line=36,person='resident_lamplighter',text='부인이 가족에게 남긴 봉투를 맡아 두었어요. '+day+' 찾아둘 테니 다시 와 주시겠어요?',emotion='neutral',reaction=False,reviewed=True,review_ref='main-01916:appointment'))
+ for day in ('내일','모레') if '부인이 가족에게 남긴 봉투를 맡아 두었어요. ' in (ROOT/'game/systems/room13_review_knowledge.rpy').read_text() else ():
+  reviews.append(dict(source='game/systems/room13_review_knowledge.rpy',line=next(i for i,l in enumerate((ROOT/'game/systems/room13_review_knowledge.rpy').read_text().splitlines(),1) if '부인이 가족에게 남긴 봉투를 맡아 두었어요. ' in l),person='resident_lamplighter',text='부인이 가족에게 남긴 봉투를 맡아 두었어요. '+day+' 찾아둘 테니 다시 와 주시겠어요?',emotion='neutral',reaction=False,reviewed=True,review_ref='main-01916:appointment'))
  # Four reviewed components make one complete postal reply, never four cues.
  base='그분이 남긴 글씨군요. 맡아 둔 것을 찾아볼게요. '
- for day in ('내일','모레'):
-  reviews.append(dict(source='game/systems/room13_first_day_flow.rpy',line=61,person=None,text=base+day+' 다시 와 주시겠어요?',emotion='neutral',reaction=False,reviewed=True,review_ref='expression:assembled-postal-reply'))
+ for day in ('내일','모레') if base in (ROOT/'game/systems/room13_first_day_flow.rpy').read_text() else ():
+  reviews.append(dict(source='game/systems/room13_first_day_flow.rpy',line=next(i for i,l in enumerate((ROOT/'game/systems/room13_first_day_flow.rpy').read_text().splitlines(),1) if base in l),person=None,text=base+day+' 다시 와 주시겠어요?',emotion='neutral',reaction=False,reviewed=True,review_ref='expression:assembled-postal-reply'))
  routes={}
  for i,call in enumerate(q):
-  if call['binding_status']=='static_exact_binding_available':continue
-  group=PROVIDERS.get(i,'inline'); start=call['line'];end=call.get('end_line',start+call['call_expression'].count('\n'))
+  if not call.get('active',True) or not call.get('emit_binding',True) or call['binding_status']=='static_exact_binding_available':continue
+  group=call.get('provider_group',PROVIDERS.get(i,'inline')); start=call['line'];end=call.get('end_line',start+call['call_expression'].count('\n'))
   def allowed(r):
    source=r['source'];line=r.get('line',-1)
+   if group=='explicit_function':
+    scope=call['provider_scope']
+    return source==scope['source'] and scope['start_line']<=line<=scope['end_line']
    if source==call['source'] and start<=line<=end:return True
    if group=='scale' and r.get('context_identity') in ('topic:eunho_scale','topic:review:eunho_scale'):return True
    if group in FILES:

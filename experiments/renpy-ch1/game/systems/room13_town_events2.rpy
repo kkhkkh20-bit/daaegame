@@ -79,7 +79,142 @@ init 104 python:
         """숙박비가 없으므로 방을 바꿔도 차액을 지급하지 않는다."""
         return
 
+    # A deposit is not a missed deadline. These queries never write save state.
+    # No overrides: runtime dependencies are wallet(init 91), town(init 102),
+    # abs_time(init 56), and the final r13_people chain, all called after init.
+    import collections.abc as r13_siluk_abc
+
+    def r13_siluk_advance_record(state=None):
+        s=store.room13 if state is None else state
+        saved=s.get("town",{}).get("siluk_advance")
+        if isinstance(saved,r13_siluk_abc.Mapping):
+            return winter_copy.deepcopy(saved)
+        # Legacy ledger dates are save-local, but the same -5 text was used for
+        # both paid and follow. Never infer their different promises from it.
+        names=("실룩에게 선금","실룩에게 선금(가진 돈 전부)")
+        rows=[r for r in r13_wallet(s)["ledger"] if isinstance(r,r13_siluk_abc.Mapping) and r.get("text") in names]
+        if not rows and "siluk_scammed" not in s.get("flags",[]):return None
+        record=dict(version=1,branch="legacy_unknown",status="unknown_time",payment_day=None,
+            payment_period=None,due_day=None,due_kind=None,due_abs=None,amount=None,
+            overdue_seen=False,next_day_seen=False,witness_seen=True,unknown_seen=False)
+        if len(rows)!=1:return record
+        row=rows[0];day=row.get("day");amount=row.get("amount")
+        if not isinstance(day,int) or isinstance(day,bool) or not 1<=day<=s.get("day",0):return record
+        if not isinstance(amount,int) or isinstance(amount,bool) or amount>=0:return record
+        record.update(payment_day=day,amount=-amount)
+        if row["text"]==names[1] and 0<-amount<5:
+            record.update(branch="legacy_paid_all",status="pending",due_day=day,due_kind="end_of_day",due_abs=day*4)
+        return record
+
+    def r13_siluk_pay_advance(branch):
+        if branch not in ("paid","paid_all","follow"):return False
+        s=store.room13
+        # An existing deposit, including an uncertain legacy one, cannot be paid twice.
+        if r13_siluk_advance_record(s) is not None:return False
+        wallet=r13_wallet(s);cash=wallet["cash"]
+        if branch=="paid_all":
+            if not 0<cash<5:return False
+            amount=cash
+        else:
+            if cash<5:return False
+            amount=5
+        day,period=s["day"],s["period"]
+        due_kind="sunset" if branch=="paid" else "end_of_day"
+        due_abs=(day-1)*4+2 if due_kind=="sunset" else day*4
+        # Money, its ledger row, and the promise are committed in one save-local
+        # assignment. There is no say/checkpoint between deduction and record.
+        n=winter_copy.deepcopy(s)
+        wallet["cash"]-=amount
+        wallet["ledger"].append(dict(day=day,text="실룩에게 선금(가진 돈 전부)" if branch=="paid_all" else "실룩에게 선금",amount=-amount))
+        n["livelihood"]=wallet
+        n.setdefault("town",{})["siluk_advance"]=dict(version=1,branch=branch,amount=amount,
+            payment_day=day,payment_period=period,due_day=day,due_kind=due_kind,due_abs=due_abs,
+            status="pending",overdue_seen=False,next_day_seen=False,witness_seen=False,unknown_seen=False)
+        if "siluk_advance_paid" not in n["flags"]:n["flags"].append("siluk_advance_paid")
+        store.room13=n
+        return True
+
+    def r13_siluk_advance_notice():
+        record=r13_siluk_advance_record()
+        if not record or record.get("status") in ("fulfilled","resolved"):return None
+        day=record.get("payment_day");due=record.get("due_abs")
+        valid=(isinstance(day,int) and not isinstance(day,bool) and 1<=day<=store.room13["day"]
+            and isinstance(due,int) and not isinstance(due,bool) and record.get("due_day")==day
+            and record.get("due_kind") in ("sunset","end_of_day")
+            and due==((day-1)*4+2 if record["due_kind"]=="sunset" else day*4))
+        if record.get("status")=="unknown_time" or not valid:
+            return None if record.get("unknown_seen") else "unknown"
+        if r13_abs_time()<due:return None
+        if not record.get("overdue_seen"):
+            return "sunset" if store.room13["day"]==day else "late"
+        if store.room13["day"]>day and not record.get("next_day_seen"):return "next_day"
+        return None
+
+    def r13_siluk_commit_notice(kind):
+        if kind not in ("unknown","sunset","late","next_day") or kind!=r13_siluk_advance_notice():return False
+        record=r13_siluk_advance_record()
+        if not record:return False
+        if kind=="unknown":record["unknown_seen"]=True
+        else:
+            record.update(status="confronted" if record.get("status")=="confronted" else "overdue",overdue_seen=True)
+            if store.room13["day"]>record["payment_day"]:record["next_day_seen"]=True
+        n=winter_copy.deepcopy(store.room13);n.setdefault("town",{})["siluk_advance"]=record
+        if kind!="unknown" and "siluk_scammed" not in n["flags"]:n["flags"].append("siluk_scammed")
+        store.room13=n
+        return True
+
+    def r13_siluk_witness_ready():
+        record=r13_siluk_advance_record()
+        return bool(record and record.get("branch")=="paid" and record.get("status") not in ("fulfilled","resolved")
+            and not record.get("witness_seen") and r13_siluk_advance_phase()=="overdue"
+            and store.room13["day"]>record["payment_day"] and "resident_kongi" in r13_people())
+
+    def r13_siluk_commit_witness():
+        if not r13_siluk_witness_ready():return False
+        record=r13_siluk_advance_record();record["witness_seen"]=True
+        r13_town_set(siluk_advance=record)
+        return True
+
+    # The live follow-up deliberately does not finish/archive the topic: the
+    # deposit remains discussable; requests alone never count as resolution.
+    ROOM13["topics"]["siluk_advance_followup"]=_ev2_topic("resident_siluk","맡긴 짐과 선금을 묻는다",(1,14),need=["siluk_advance_paid"])
+    R13_TOPIC_LABELS["siluk_advance_followup"]="r13_siluk_advance_followup"
+
+    def r13_siluk_sync_advance():
+        record=r13_siluk_advance_record()
+        if not record:return
+        n=winter_copy.deepcopy(store.room13)
+        n.setdefault("town",{}).setdefault("siluk_advance",record)
+        if "siluk_advance_paid" not in n["flags"]:n["flags"].append("siluk_advance_paid")
+        if n!=store.room13:store.room13=n
+
+    def r13_siluk_advance_phase():
+        record=r13_siluk_advance_record()
+        if not record:return None
+        if record.get("status") in ("fulfilled","resolved"):return "resolved"
+        day=record.get("payment_day");due=record.get("due_abs")
+        valid=(isinstance(day,int) and not isinstance(day,bool) and 1<=day<=store.room13["day"]
+            and isinstance(due,int) and not isinstance(due,bool) and record.get("due_day")==day
+            and record.get("due_kind") in ("sunset","end_of_day")
+            and due==((day-1)*4+2 if record["due_kind"]=="sunset" else day*4))
+        if not valid:return "unknown"
+        return "overdue" if r13_abs_time()>=due else "pending"
+
+    def r13_siluk_record_request(kind):
+        record=r13_siluk_advance_record()
+        if not record or record.get("status") in ("fulfilled","resolved"):return False
+        if kind not in ("progress","explain","refund","deliver"):return False
+        phase=r13_siluk_advance_phase()
+        if kind in ("explain","refund","deliver") and phase!="overdue":return False
+        record["last_request"]=kind
+        record["contact_day"]=store.room13["day"];record["contact_period"]=store.room13["period"]
+        if phase=="overdue":record["status"]="confronted"
+        r13_town_set(siluk_advance=record)
+        return True
+
+
 label r13_town_events2:
+    call r13_siluk_advance_events
     $ r13_cheap_room_refund()
     if room13["day"]==3 and room13["period"]==0 and room13["location"]=="square" and not r13_has("ev_a_done"):
         call r13_ev_a_siluk
@@ -93,6 +228,7 @@ label r13_town_events2:
 
 label r13_ev_a_siluk:
     $ r13_flag("ev_a_done")
+    $ r13_note_encounter("resident_siluk")
     call r13_ev_here("calm")
     call r13_lines([(None,"광장 우물가에서 짐꾼 실룩이 먼저 다가왔다. 잠을 못 잤는지 눈 밑이 거뭇했다."),
         ("resident_siluk","외곽 초소에서 되돌아온 짐 기다리시죠? 정식 길로 가면 이틀 걸려요. 저는 남들 모르는 지름길을 알아요."),
@@ -102,16 +238,15 @@ label r13_ev_a_siluk:
         $ _ep_loop=False
         menu:
             "선금 다섯 냥을 준다" if r13_cash_now()>=5:
-                $ r13_cash(-5,"실룩에게 선금")
-                call r13_lines([("resident_siluk","해 지기 전에 짐 가지고 올게요. 걱정 마세요."),
-                    (None,"실룩은 해가 져도, 다음 날이 되어도 오지 않았다."),
-                    ("resident_kongi","실룩 아저씨요? 어제 백 부인네 뒷문으로 들어가던데요.")],"ev:a:paid")
-                $ r13_flag("siluk_scammed","know_siluk_debt")
+                $ _siluk_paid=r13_siluk_pay_advance("paid")
+                if _siluk_paid:
+                    call r13_lines([("resident_siluk","해 지기 전에 짐 가지고 올게요. 걱정 마세요."),
+                        (None,"실룩은 선금을 챙겨 자리를 떠났다.")],"ev:a:paid")
             "가진 돈을 모두 준다" if 0<r13_cash_now()<5:
-                $ r13_cash(-r13_cash_now(),"실룩에게 선금(가진 돈 전부)")
-                call r13_lines([("resident_siluk","……이것뿐이에요? 뭐, 일단 받죠."),
-                    (None,"그 뒤로 실룩은 다시 나타나지 않았다.")],"ev:a:paid_all")
-                $ r13_flag("siluk_scammed")
+                $ _siluk_paid=r13_siluk_pay_advance("paid_all")
+                if _siluk_paid:
+                    call r13_lines([("resident_siluk","……이것뿐이에요? 뭐, 일단 받죠."),
+                        (None,"실룩은 내가 건넨 돈을 챙겨 자리를 떠났다.")],"ev:a:paid_all")
             "거절한다":
                 call r13_lines([("resident_siluk","후회하실 텐데요. 되돌아온 짐은 오래 두면 젖어요.")],"ev:a:refuse")
             "짐을 받아 오면 돈을 주겠다고 한다":
@@ -125,11 +260,12 @@ label r13_ev_a_siluk:
                 $ r13_flag("know_siluk_debt","siluk_shamed")
                 $ _ep_loop=True
             "돈을 주고 몰래 뒤를 밟는다" if r13_cash_now()>=5:
-                $ r13_cash(-5,"실룩에게 선금")
-                call r13_lines([(None,"실룩은 초소 쪽이 아니라 백 부인 집 뒷골목으로 갔다. 뭉치가 문을 열고 나와 동전을 받아 갔다."),
-                    ("resident_mungchi","이번 주 이자는 받았어요. 부인이 다음 주엔 원금도 받겠대요."),
-                    ("dad","(내가 준 돈은 결국 백 부인 금고로 갔다. 실룩은 심부름꾼일 뿐이다.)",{"thought":True})],"ev:a:follow")
-                $ r13_flag("siluk_scammed","know_siluk_debt","know_madam_hoard")
+                $ _siluk_paid=r13_siluk_pay_advance("follow")
+                if _siluk_paid:
+                    call r13_lines([(None,"실룩은 초소 쪽이 아니라 백 부인 집 뒷골목으로 갔다. 뭉치가 문을 열고 나와 동전을 받아 갔다."),
+                        ("resident_mungchi","이번 주 이자는 받았어요. 부인이 다음 주엔 원금도 받겠대요."),
+                        ("dad","(내가 준 돈은 결국 백 부인 금고로 갔다. 실룩은 심부름꾼일 뿐이다.)",{"thought":True})],"ev:a:follow")
+                    $ r13_flag("know_siluk_debt","know_madam_hoard")
             "“백 부인 빚 때문입니까?”" if r13_has("know_siluk_debt") or r13_has("know_madam_hoard"):
                 call r13_lines([("resident_siluk","……제 빚 얘기를 어떻게 알았어요?"),
                     ("resident_siluk","이제는 이자가 원금보다 더 많아요. 갚아도 갚아도 빚이 남아요.")],"ev:a:confront")
@@ -150,6 +286,71 @@ label r13_ev_a_siluk:
                     "그냥 보내 준다":
                         call r13_lines([("resident_siluk","……고마워요. 다음부터는 정직하게 일할게요.")],"ev:a:let_go")
     return
+
+# Actual clock boundaries, not future narration inside the payment packet.
+label r13_siluk_advance_events:
+    $ r13_siluk_sync_advance()
+    $ _siluk_notice=r13_siluk_advance_notice()
+    if _siluk_notice:
+        call r13_ev_here("calm")
+        if _siluk_notice=="sunset":
+            call r13_lines([(None,"해가 졌지만, 실룩이 가져오기로 한 짐은 아직 받지 못했다.")],"ev:a:overdue:sunset")
+        elif _siluk_notice=="late":
+            call r13_lines([(None,"실룩이 짐을 가져오겠다고 약속한 날이 지났다. 아직 짐은 받지 못했다.")],"ev:a:overdue:late")
+        elif _siluk_notice=="next_day":
+            call r13_lines([(None,"날이 바뀌어도 실룩에게 부탁한 짐은 오지 않았다.")],"ev:a:overdue:next_day")
+        else:
+            call r13_lines([("dad","(실룩에게 선금을 준 일은 기억난다. 부탁한 짐부터 확인해야겠다.)",{"thought":True})],"ev:a:advance:unknown")
+        $ r13_siluk_commit_notice(_siluk_notice)
+    if r13_siluk_witness_ready():
+        call r13_ev_here("calm")
+        if room13["day"]==r13_siluk_advance_record()["payment_day"]+1:
+            call r13_lines([("dad","콩이야, 실룩 아저씨 봤니? 맡긴 짐을 아직 못 받아서 찾고 있어."),
+                ("resident_kongi","어제 백 부인네 뒷문으로 들어가는 걸 봤어요."),
+                ("dad","안에서 뭘 했는지도 봤니?"),
+                ("resident_kongi","아뇨. 들어가는 것만 봤어요."),
+                ("dad","그랬구나. 고마워.")],"ev:a:witness:next_day")
+        else:
+            call r13_lines([("dad","콩이야, 실룩 아저씨 봤니? 맡긴 짐을 아직 못 받아서 찾고 있어."),
+                ("resident_kongi","며칠 전에 백 부인네 뒷문으로 들어가는 걸 봤어요."),
+                ("dad","안에서 뭘 했는지도 봤니?"),
+                ("resident_kongi","아뇨. 들어가는 것만 봤어요."),
+                ("dad","그랬구나. 고마워.")],"ev:a:witness:later")
+        $ r13_siluk_commit_witness()
+    return
+
+label r13_siluk_advance_followup:
+    $ r13_siluk_sync_advance()
+    $ _siluk_phase=r13_siluk_advance_phase()
+    if not _siluk_phase:
+        return
+    if _siluk_phase=="resolved":
+        call r13_lines([(None,"이 선금 건은 이미 정리했다. 새로 돈을 건네지는 않았다.")],"ev:a:followup:resolved")
+        return
+    menu:
+        "맡긴 짐은 어디까지 확인하셨습니까?" if _siluk_phase in ("pending","unknown"):
+            call r13_lines([("dad","선금 드리고 부탁한 짐 말입니다. 어디까지 확인하셨습니까?"),
+                ("resident_siluk","……아직 가져오지는 못했어요.")],"ev:a:followup:progress")
+            $ r13_siluk_record_request("progress")
+        "약속한 때가 지났습니다. 어떻게 된 겁니까?" if _siluk_phase=="overdue":
+            call r13_lines([("dad","짐을 가져오기로 한 때가 지났습니다. 어떻게 된 겁니까?"),
+                ("resident_siluk","……받은 돈을 백 부인 빚 갚는 데 썼어요. 짐은 아직 못 가져왔어요.")],"ev:a:followup:explain")
+            $ r13_flag("know_siluk_debt")
+            $ r13_siluk_record_request("explain")
+        "짐을 못 가져오셨으면 선금을 돌려주세요." if _siluk_phase=="overdue":
+            call r13_lines([("dad","짐을 못 가져오셨으면 선금을 돌려주세요."),
+                ("resident_siluk","……받은 돈을 백 부인 빚 갚는 데 썼어요. 지금은 돌려드릴 돈이 없어요."),
+                ("dad","그럼 돌려받을 돈으로 남겨 두겠습니다.")],"ev:a:followup:refund")
+            $ r13_flag("know_siluk_debt")
+            $ r13_siluk_record_request("refund")
+        "선금은 이미 드렸습니다. 부탁한 짐부터 가져와 주세요." if _siluk_phase=="overdue":
+            call r13_lines([("dad","선금은 이미 드렸습니다. 부탁한 짐부터 가져와 주세요."),
+                ("resident_siluk","……알겠습니다. 아직 가져오지 못했어요.")],"ev:a:followup:deliver")
+            $ r13_siluk_record_request("deliver")
+        "지금은 돌아간다":
+            pass
+    return
+
 
 # ---- Q. 누비의 싼 방 ----
 

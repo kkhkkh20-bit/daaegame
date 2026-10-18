@@ -101,15 +101,15 @@ init 145 python:
     _r13_nc_topic("mulgyeol:crossing","resident_mulgyeol","강 건너 길",[
         ("dad","썰매 배로 강을 건널 수 있습니까?"),("resident_mulgyeol","가까운 얼음판까지만요. 한가운데는 겨울에도 안 얼어요."),
         ("dad","그럼 강 건너 마을로는?"),("resident_mulgyeol","【봄 해빙】 전엔 못 가요. 해마다 누군가 고집부리다 빠지죠.")])
-    _r13_nc_topic("mulgyeol:water","resident_mulgyeol","새벽에 물 길러 온 사람",[
-        ("dad","요즘 새벽에 강에 물 길러 오는 사람이 있습니까?"),
-        ("resident_mulgyeol","있었어요. 처음 보는 아주머니였는데, 꼭 해 뜨기 전에 왔다가 숲으로 갔어요."),
+    _r13_nc_topic("mulgyeol:water","resident_mulgyeol","강가에서 아내를 본 사람이 있을까?",[
+        ("dad","제 아내를 찾고 있습니다. 이 근처에서 보신 적 있습니까?"),
+        ("resident_mulgyeol","찾으시는 분인지는 모르겠어요. 처음 보는 아주머니가 꼭 해 뜨기 전에 왔다가 숲으로 갔어요."),
         ("dad","언제까지 왔습니까?"),("resident_mulgyeol","며칠 전부터 안 와요. 마지막 날엔 뒤를 자꾸 돌아보더라고요."),
         ("resident_mulgyeol","아, 그 아주머니 장갑에 【도토리】 수가 놓여 있었어요. 예뻐서 기억해요.")],need=["mulgyeol_helped"])
-    _r13_nc_topic("mulgyeol:water_cold","resident_mulgyeol","새벽에 물 길러 온 사람",[
-        ("dad","요즘 새벽에 강에 물 길러 오는 사람이 있습니까?"),
+    _r13_nc_topic("mulgyeol:water_cold","resident_mulgyeol","강가에서 아내를 본 사람이 있을까?",[
+        ("dad","제 아내를 찾고 있습니다. 이 근처에서 보신 적 있습니까?"),
         ("resident_mulgyeol","……얼음에 빠졌을 때 지나가던 분이죠? 그때 좀 잡아 주지 그랬어요."),
-        ("resident_mulgyeol","처음 보는 아주머니가 해 뜨기 전에 왔다가 숲으로 가곤 했어요. 그 이상은 몰라요.")],need=["mulgyeol_fell"],not_flags=["mulgyeol_helped"])
+        ("resident_mulgyeol","찾으시는 분인지는 모르지만, 처음 보는 아주머니가 해 뜨기 전에 왔다가 숲으로 가곤 했어요. 그 이상은 몰라요.")],need=["mulgyeol_fell"],not_flags=["mulgyeol_helped"])
 
     # ---- 솔방울 (herbalist) ----
     _r13_nc_topic("solbang:herbs","resident_solbang","약초 이야기",[
