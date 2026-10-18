@@ -120,14 +120,14 @@ init 61 python:
         placed=[]
         # Group labels and the inn's fixed navigation must not cover participant names.
         group_ids={a.get("life_group") for a in actors if a.get("life_group")}
-        reserved=[tuple(g["label_position"])+(R13_CONTROL["width"],r13_control_height()) for g in getattr(store,"R13_LIFE_GROUPS",[]) if g["id"] in group_ids]
+        reserved=[tuple(g["label_position"])+(R13_CONTROL["width"],r13_control_height()) for g in getattr(store,"R13_LIFE_GROUPS",[]) if g["id"] in group_ids and not g.get("member_conversation")]
         inn_nav=(r13_world_offset()+276,186,976,64) if group_ids and store.room13["location"]=="inn" else None
         def overlap(a,b):
             return max(0,min(a[0]+a[2],b[0]+b[2])-max(a[0],b[0]))*max(0,min(a[1]+a[3],b[1]+b[3])-max(a[1],b[1]))
         for actor in sorted(actors,key=lambda a:(faces[a["person"]][1],faces[a["person"]][0])):
             person=actor["person"];face=faces[person]
             cx,top=r13_actor_nameplate(actor)
-            top=max(101,top-14)
+            top=actor.get("nameplate_top",max(101,top-14))
             width=max(88,sum(9 if ch==" " else 18 for ch in R13_NAMES[person])+32)
             preferred=(int(cx-width/2),top,width,48)
             candidates=[]

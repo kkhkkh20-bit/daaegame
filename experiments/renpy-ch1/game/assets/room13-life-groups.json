@@ -1,5 +1,5 @@
 {
-  "revision": 2,
+  "revision": 3,
   "groups": [
     {
       "id": "workshop_pair",
@@ -243,7 +243,8 @@
             397
           ],
           "height": 210,
-          "depth": 470
+          "depth": 470,
+          "nameplate_top": 101
         },
         {
           "person": "resident_tori",
@@ -255,8 +256,8 @@
           ],
           "anchor": "foot",
           "target": [
-            625,
-            545
+            785,
+            555
           ],
           "height": 300,
           "depth": 525,
@@ -361,7 +362,8 @@
                 608
               ]
             ]
-          ]
+          ],
+          "nameplate_top": 101
         }
       ],
       "need_flags": [],
@@ -408,8 +410,8 @@
           "pose": "group_play",
           "anchor": "foot",
           "target": [
-            1220,
-            620
+            1140,
+            610
           ],
           "height": 205,
           "depth": 620,
@@ -445,8 +447,8 @@
           "pose": "group_play",
           "anchor": "foot",
           "target": [
-            1390,
-            665
+            1310,
+            620
           ],
           "height": 220,
           "depth": 665,
@@ -482,8 +484,8 @@
           "pose": "group_play",
           "anchor": "foot",
           "target": [
-            1550,
-            620
+            1470,
+            610
           ],
           "height": 205,
           "depth": 620,
@@ -549,7 +551,8 @@
         "kid_bang": "잠깐만요. 저도 같이 할래요!"
       },
       "art_gap": "",
-      "review": "Native SDK desktop/mobile individual/group clicks and non-consuming conversation checks; reports/life-groups-01946."
+      "review": "Native SDK desktop/mobile individual/group clicks and non-consuming conversation checks; reports/life-groups-01946.",
+      "member_conversation": true
     }
   ]
 }
