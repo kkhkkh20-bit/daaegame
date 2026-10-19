@@ -249,6 +249,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 2 | 191 | `systems/room13_q1_arguments.rpy:153` | _r13_qh_required |
 | 3 | 192 | `systems/room13_q1_difficulty.rpy:194` |  |
 
+## `r13_debate_session` (3층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 98 | `systems/room13_debate.rpy:373` | _r13_e1_session |
+| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:162` | _r13_rec_stage_session_base |
+| 3 | 925 | `systems/room13_recommended_meeting_adapter.rpy:169` |  |
+
 ## `r13_debate_statements` (3층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -272,6 +280,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 55 | `room13_rules.rpy:94` | _r13_rel_flag |
 | 2 | 166 | `systems/room13_relations.rpy:20` | _r13_shelf_flag |
 | 3 | 170 | `systems/room13_shelf.rpy:28` |  |
+
+## `r13_meeting_cast` (3층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 99 | `room13_meeting_seating.rpy:50` | _r13_e1_cast |
+| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:185` | _r13_rec_stage_cast_base |
+| 3 | 925 | `systems/room13_recommended_meeting_adapter.rpy:173` |  |
 
 ## `r13_new` (3층)
 
@@ -347,6 +363,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 190 | `systems/room13_question_discovery.rpy:227` | _r13_qa_contact |
 | 2 | 191 | `systems/room13_q1_arguments.rpy:29` |  |
 
+## `r13_continue_slot` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 100 | `room13_save_ui.rpy:31` | _r13_rec_original_continue_slot |
+| 2 | 920 | `systems/room13_recommended_story.rpy:437` |  |
+
 ## `r13_debate_answerable` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -381,13 +404,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 98 | `systems/room13_debate.rpy:429` | _r13_qa_ready |
 | 2 | 191 | `systems/room13_q1_arguments.rpy:157` |  |
-
-## `r13_debate_session` (2층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 98 | `systems/room13_debate.rpy:373` | _r13_e1_session |
-| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:162` |  |
 
 ## `r13_debate_visible` (2층)
 
@@ -494,6 +510,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 59 | `room13_acting.rpy:270` | _r13_solbang_living_pose |
 | 2 | 177 | `systems/room13_solbang_chinchilla.rpy:4` |  |
 
+## `r13_load_action` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 100 | `room13_save_ui.rpy:45` | _r13_rec_original_load_action |
+| 2 | 920 | `systems/room13_recommended_story.rpy:444` |  |
+
 ## `r13_local_connections` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -501,12 +524,19 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 60 | `room13_navigation.rpy:33` | _r13_firstday_connections |
 | 2 | 94 | `systems/room13_first_day_flow.rpy:25` |  |
 
-## `r13_meeting_cast` (2층)
+## `r13_meeting_direct_line` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 99 | `room13_meeting_seating.rpy:50` | _r13_e1_cast |
-| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:185` |  |
+| 1 | 174 | `systems/room13_meeting_direction.rpy:170` | _r13_rec_stage_line_base |
+| 2 | 925 | `systems/room13_recommended_meeting_adapter.rpy:302` |  |
+
+## `r13_meeting_focus_person` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 99 | `room13_meeting_seating.rpy:57` | _r13_rec_stage_focus_base |
+| 2 | 925 | `systems/room13_recommended_meeting_adapter.rpy:179` |  |
 
 ## `r13_meeting_plate` (2층)
 
@@ -514,6 +544,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 99 | `room13_meeting_seating.rpy:147` | _r13_e1_plate |
 | 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:179` |  |
+
+## `r13_meeting_reaction_art` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 175 | `room13_meeting_camera.rpy:104` | _r13_rec_stage_reaction_art_base |
+| 2 | 925 | `systems/room13_recommended_meeting_adapter.rpy:342` |  |
 
 ## `r13_object_name` (2층)
 
@@ -564,6 +601,34 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 181 | `systems/room13_q1_review.rpy:52` | _r13_qa_review_rows |
 | 2 | 191 | `systems/room13_q1_arguments.rpy:210` |  |
 
+## `r13_rec_available` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 900 | `systems/room13_recommended_story.rpy:152` | _r13_rec_available_before_entry |
+| 2 | 906 | `systems/room13_recommended_opening.rpy:37` |  |
+
+## `r13_rec_block_reason` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 900 | `systems/room13_recommended_story.rpy:220` | _r13_rec_block_before_entry |
+| 2 | 906 | `systems/room13_recommended_opening.rpy:45` |  |
+
+## `r13_rec_card_episode` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 900 | `systems/room13_recommended_story.rpy:357` | _r13_rec_card_episode_before_entry |
+| 2 | 906 | `systems/room13_recommended_opening.rpy:60` |  |
+
+## `r13_rec_next_day` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 900 | `systems/room13_recommended_story.rpy:272` | _r13_rec_day_before_entry |
+| 2 | 906 | `systems/room13_recommended_opening.rpy:52` |  |
+
 ## `r13_record_entries` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -585,6 +650,20 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 57 | `room13_life.rpy:164` | _r13_new_places_resident_where |
 | 2 | 130 | `systems/room13_new_places.rpy:105` |  |
 
+## `r13_save_caption` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 100 | `room13_save_ui.rpy:36` | _r13_rec_original_save_caption |
+| 2 | 920 | `systems/room13_recommended_story.rpy:431` |  |
+
+## `r13_save_status` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 100 | `room13_save_ui.rpy:20` | _r13_rec_original_save_status |
+| 2 | 920 | `systems/room13_recommended_story.rpy:427` |  |
+
 ## `r13_secret_route_available` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -599,12 +678,26 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 91 | `systems/room13_livelihood_model.rpy:32` | _r13_b3_shop_price |
 | 2 | 107 | `systems/room13_bundle3.rpy:50` |  |
 
+## `r13_shortcut_records` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 171 | `systems/room13_shortcuts.rpy:44` | _r13_rec_legacy_shortcut_records |
+| 2 | 935 | `systems/room13_recommended_shortcuts.rpy:4` |  |
+
 ## `r13_sound_scene_music` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 150 | `systems/room13_sound.rpy:123` | _r13_contrast_scene_music |
 | 2 | 163 | `systems/room13_scene_contrast.rpy:25` |  |
+
+## `r13_speaker` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 55 | `room13_rules.rpy:299` | _r13_rec_stage_speaker_base |
+| 2 | 925 | `systems/room13_recommended_meeting_adapter.rpy:331` |  |
 
 ## `r13_staged_visible_art` (2층)
 

@@ -12,6 +12,7 @@ init 920 python:
     _r13_rec_original_save_status = r13_save_status
     _r13_rec_original_save_caption = r13_save_caption
     _r13_rec_original_load_action = r13_load_action
+    _r13_rec_original_continue_slot = r13_continue_slot
     def r13_rec_save_metadata(data):
         state = getattr(store, "r13_recommended", None)
         if state and (getattr(store, "room13", None) or {}).get("campaign_id") in ("room13_recommended_v1","room13_recommended_qa_v1"):
@@ -29,6 +30,9 @@ init 920 python:
             return "추천 검증판 · %s일 · %s" % (data.get("r13_day"), "이어갈 수 있음" if r13_save_status(data)=="compatible" else "새로 시작 필요")
         return _r13_rec_original_save_caption(data)
     def r13_continue_slot():
+        slot = _r13_rec_original_continue_slot()
+        if slot is None or (renpy.slot_json(slot) or {}).get("r13_campaign") != "room13_recommended_qa_v1":
+            return slot
         candidates=[((renpy.slot_json(slot) or {}).get("_ctime",0),slot) for slot in r13_save_slots()
             if (renpy.slot_json(slot) or {}).get("r13_campaign") != "room13_recommended_qa_v1" and r13_save_status(renpy.slot_json(slot))=="compatible"]
         return max(candidates)[1] if candidates else None
@@ -217,7 +221,7 @@ label r13_recommended_hearing:
         if "cloth_contact_matched" in r13_recommended["done"] and r13_rec_piko_geometry_ready(r13_recommended):
             menu (screen="r13_rec_stage_choice"):
                 "이미 직접 확인한 대조를 어떻게 설명할까?"
-                "앞서 확인한 흔적과 나비의 설명을 한 번에 잇는다":
+                "확인한 흔적과 나비의 설명을 잇는다":
                     call r13_lines([("dad","돌을 받은 사람과 17번 번호를 먼저 확인했고, 그다음 허락받은 천을 맞춰 봤어요. 뚜껑 안쪽 조각과 이어졌지요. 꼬미가 빌려줄 때 펼친 천은 온전했고, 그날 돌을 내려놓을 때 그 모서리는 이미 찢어져 있었어요. 그 사이 혼자 쓰셨고 등 안에는 손대지 않았다고 하셨지요. 그 찢김이 뚜껑 안쪽 조각과 이어집니다. 밖의 돌만 담았다는 설명과는 맞지 않아요.")], "recommended:hearing:prior-case")
                     $ r13_recommended = r13_rec_piko_summarize_prior(r13_recommended)
                 "자료를 하나씩 나란히 보여 준다":

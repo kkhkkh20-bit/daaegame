@@ -128,7 +128,7 @@ label r13_rec_e6_night_scene:
             "오늘의 보호는 이어진다. 가족의 다음 계획은?"
             "오늘은 학교에 함께 남는다":
                 $ r13_recommended = r13_rec_e6_choose_future(r13_recommended, "stay")
-            "떠날 길은 아직 확인되지 않았다. 출발을 보류하고 함께 쉰다":
+            "떠날 길이 확인될 때까지 함께 쉰다":
                 $ r13_recommended = r13_rec_e6_choose_future(r13_recommended, "departure_pending")
         call r13_lines([("mom","내일 이후 일은 또 정해야 해. 오늘은 같이 있을 수 있어."),("daram","그럼 오늘은 여기서 같이 자자."),(None,"가족은 확인한 공동 공간에서 이불을 폈다. 다음 교대가 도착하는 것을 보고 불을 낮췄다.")], "recommended:e6:night:family")
     else:

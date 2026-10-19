@@ -23,8 +23,17 @@ class NativeQaIsolation(unittest.TestCase):
   data={'qa':dict(r13_campaign='room13_recommended_qa_v1',r13_recommended_revision=G['r13_rec_revision'],_ctime=20),'normal':dict(r13_campaign='room13_recommended_v1',r13_recommended_revision=G['r13_rec_revision'],_ctime=10)}
   st=types.SimpleNamespace(r13_recommended=dict(revision=G['r13_rec_revision'],episode=1),room13=dict(campaign_id='room13_recommended_qa_v1'))
   ns=dict(store=st,config=types.SimpleNamespace(save_json_callbacks=[]),r13_rec_revision=G['r13_rec_revision'],r13_save_status=lambda d:'incompatible',r13_save_caption=lambda d:'legacy',r13_load_action=lambda slot:('legacy',slot),r13_save_slots=lambda:list(data),renpy=types.SimpleNamespace(slot_json=lambda slot:data[slot]),Confirm=lambda text,action:('confirm',text,action),FileLoad=lambda *a,**k:('load',a,k))
+  import textwrap
+  legacy=(p.parents[1]/'room13_save_ui.rpy').read_text()
+  legacy_continue=legacy.split('    def r13_continue_slot():',1)[1].split('\n    def ',1)[0]
+  exec('def r13_continue_slot():\n'+textwrap.indent(textwrap.dedent(legacy_continue).strip(),'    '),ns)
   exec(body,ns)
   self.assertEqual(ns['r13_save_status'](data['qa']),'compatible')
+  self.assertEqual(ns['r13_continue_slot'](),'normal')
+  saved_normal=data.pop('normal')
+  self.assertIsNone(ns['r13_continue_slot']())
+  data['normal']=saved_normal
+  data['normal']['_ctime']=30
   self.assertEqual(ns['r13_continue_slot'](),'normal')
   self.assertEqual(ns['r13_load_action']('qa')[0],'confirm')
   self.assertEqual(ns['r13_load_action']('normal'),('legacy','normal'))

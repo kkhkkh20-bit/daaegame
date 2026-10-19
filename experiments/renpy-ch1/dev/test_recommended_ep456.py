@@ -206,3 +206,14 @@ class LateRoutes(unittest.TestCase):
    if a['episode'] in (4,5,6):self.assertTrue(a.get('target_person') or a.get('target_object'),key)
 
 if __name__=='__main__':unittest.main(verbosity=2)
+
+
+class InjuryChallengeOutcomeTests(unittest.TestCase):
+    def test_injury_challenge_does_not_invent_death_after_rescue(self):
+        for rescued in (False, True):
+            state = e4_prepared(rescue=rescued)
+            state['episodes']['4']['hearing'] = 2
+            before = copy.deepcopy(state)
+            packet = r13_rec_e456_challenge(state)
+            self.assertEqual(packet, [('neoul', '넘어져 다친 일까지 내 책임이라고 단정할 수는 없잖습니까.')])
+            self.assertEqual(state, before)

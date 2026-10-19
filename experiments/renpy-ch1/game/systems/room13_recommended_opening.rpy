@@ -58,7 +58,7 @@ init 906 python:
     
     _r13_rec_card_episode_before_entry=r13_rec_card_episode
     def r13_rec_card_episode(key):
-     return 0 if key.startswith('entry_') else _r13_rec_card_episode_before_entry(key)
+     return 0 if key.startswith('entry_') or key=='family_travel' else _r13_rec_card_episode_before_entry(key)
     
     r13_rec_cards['family_travel']=('까로 · 함께 떠날 길의 현재 상태','가족이 직접 까로에게 확인한 현재 이동 조건. 마차 축에 금이 가 손님을 태울 수 없고, 고갯길은 폭설로 막혀 있다. 수리나 개통을 확인한 사실은 아직 없다.')
     r13_rec_identity_groups['karo']=('person','까로',('entry_karo','family_travel'))
@@ -69,9 +69,6 @@ init 906 python:
      ('karo','수리나 길 사정이 달라지면 여관으로 알려 드릴게요. 출발 전에 저와 함께 다시 확인합시다.'),
      ('mom','오늘 쉴 곳은 같이 챙기고, 돌아갈 길도 같이 알아보자.')],need=('reunited',),give=('family_travel',),flags=('family_route_checked',),episode=0,target_person='karo')
     
-    _r13_rec_card_episode_with_entry=r13_rec_card_episode
-    def r13_rec_card_episode(key):
-     return 0 if key=='family_travel' else _r13_rec_card_episode_with_entry(key)
     
     def r13_rec_main_objective(s):
      if s.get('entry_pending') and 'entry_inn_arrived' not in s['done']:

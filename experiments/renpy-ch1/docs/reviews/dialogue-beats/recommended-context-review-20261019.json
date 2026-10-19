@@ -1,0 +1,30 @@
+{
+  "status": "source_context_review_complete_runtime_application_held",
+  "review_date_utc": "2026-10-19",
+  "base_pr_head": "bba5cb89d56929defb2b9446809bac7a2498bdec",
+  "source_repairs": "Source SHA-256 values below identify the repaired local candidate, not the initial PR head.",
+  "scope": "549 added literal source occurrences inventoried; 246 non-static NPC occurrences manually read with neighboring action and hearing context. No reachability count or native/visual pass is claimed.",
+  "review_method": "Each of 246 NPC rows has an explicit per-occurrence emotion and contextual reason. No keyword classifier or automatic blanket approval. All onset reactions are false. Existing 1073 reviews and 16 explicit exclusions are preserved exactly except numeric inventory keys. Legacy row iteration order is preserved so ordinal runtime review_ref values remain valid; new reviews append after legacy rows.",
+  "counts": {
+    "added_source_literals": 549,
+    "new_non_static_npc_reviews": 246,
+    "added_non_static_pov_or_narration": 188,
+    "added_static_npc": 54,
+    "added_static_pov_or_narration": 61
+  },
+  "interpretation": "Static classification is the existing extractor classification, not a new acting approval. Papa/narration remain in the full inventory but do not receive NPC expression decisions. Metadata is source specification only; runtime routes and asset approval remain unchanged.",
+  "source_sha256": {
+    "game/systems/room13_recommended_ep23.rpy": "a7d83ab4aad202fa4730d1c5b377bee11933c1c538fe5492a47f04525ad8c3ff",
+    "game/systems/room13_recommended_ep456.rpy": "f05387928e98228d29aed91988786d1934ea6e31a854847ebf97b973bdb4e99e",
+    "game/systems/room13_recommended_opening.rpy": "0743e986e024a75f768988a84b4c9cc1cdefa790da9e0b3448b82472c1ac3530",
+    "game/systems/room13_recommended_story.rpy": "d3e2ef31778326bc03eef86e2673f9250cb2d35eec903023dbaf8d92aa78de5a"
+  },
+  "row_batch": "recommended-context-20261019",
+  "reviewed_entries": "dynamic-context-review.json rows carrying the above batch, exact source/line/person/text/packet and text_sha256",
+  "corrected_source_finding": "EP4 hearing previously asserted death on the fast-rescue/recovering branch. The source owner corrected that challenge before this snapshot; no metadata exclusion hides the line.",
+  "native_validation": false,
+  "runtime_bindings_changed": false,
+  "art_approvals_changed": false,
+  "pending_source_context_rows": 0,
+  "source_provenance_errors": []
+}

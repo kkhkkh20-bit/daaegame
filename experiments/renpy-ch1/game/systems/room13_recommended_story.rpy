@@ -155,7 +155,7 @@ init 900 python:
         have=set(s['done'])
         return [(key,a['title']) for key,a in r13_rec_actions.items() if a.get('min_period',0)<=s.get('period',0)<=a.get('max_period',2) and a.get('episode',1) in (0,s.get('episode',1)) and (key not in have or key=='refresh_reply') and (key!='meet' or s.get('observed',{}).get('reply')==s['day']) and (key!='refresh_reply' or (s['mother']=='M1' and s.get('observed',{}).get('reply')!=s['day'])) and set(a['need'])<=have and not set(a['forbid'])&have and (a['day'] is None or a['day']==s['day'])]
     
-    def r13_rec_apply(s,key):
+    def _r13_rec_apply_core(s,key):
         if key=='contact_match' and not r13_rec_piko_geometry_ready(s):
             raise ValueError('Contact illustration is not verified')
         if key not in dict(r13_rec_available(s)):
@@ -171,7 +171,7 @@ init 900 python:
         if key in r13_rec_effects: n=r13_rec_effects[key](n)
         return n
     
-    def r13_rec_next_day(s):
+    def _r13_rec_next_day_core(s):
         ep=s.get('episode',1)
         if ep in r13_rec_day_advance: return r13_rec_day_advance[ep](copy.deepcopy(s))
         n=copy.deepcopy(s)
@@ -230,7 +230,7 @@ init 900 python:
         ep=s.get('episode',1)
         return ep+1 if r13_rec_episode_done.get(ep,lambda s:False)(s) and ep+1 in r13_rec_episode_start else None
     
-    def r13_rec_begin_episode(s, episode):
+    def _r13_rec_begin_episode_core(s, episode):
         if r13_rec_next_available(s)!=episode: raise ValueError('Episode not unlocked')
         n=r13_rec_episode_start[episode](copy.deepcopy(s))
         if n['episode']!=episode: raise ValueError('Plugin failed to set episode')
@@ -266,17 +266,14 @@ init 900 python:
                 raise ValueError('Completed prevention cannot be undone: '+flag)
         return after
     
-    _r13_rec_apply_core = r13_rec_apply
     def r13_rec_apply(s,key):
         return r13_rec_validate_transition(s,_r13_rec_apply_core(s,key))
     
-    _r13_rec_next_day_core = r13_rec_next_day
     def r13_rec_next_day(s):
         n=_r13_rec_next_day_core(s)
         if n['day']!=s['day']:n['period']=0
         return r13_rec_validate_transition(s,n)
     
-    _r13_rec_begin_episode_core = r13_rec_begin_episode
     def r13_rec_begin_episode(s,episode):
         return r13_rec_validate_transition(s,_r13_rec_begin_episode_core(s,episode))
     
@@ -420,6 +417,7 @@ init 920 python:
     _r13_rec_original_save_status = r13_save_status
     _r13_rec_original_save_caption = r13_save_caption
     _r13_rec_original_load_action = r13_load_action
+    _r13_rec_original_continue_slot = r13_continue_slot
     def r13_rec_save_metadata(data):
         state = getattr(store, "r13_recommended", None)
         if state and (getattr(store, "room13", None) or {}).get("campaign_id") in ("room13_recommended_v1","room13_recommended_qa_v1"):
@@ -437,6 +435,9 @@ init 920 python:
             return "추천 검증판 · %s일 · %s" % (data.get("r13_day"), "이어갈 수 있음" if r13_save_status(data)=="compatible" else "새로 시작 필요")
         return _r13_rec_original_save_caption(data)
     def r13_continue_slot():
+        slot = _r13_rec_original_continue_slot()
+        if slot is None or (renpy.slot_json(slot) or {}).get("r13_campaign") != "room13_recommended_qa_v1":
+            return slot
         candidates=[((renpy.slot_json(slot) or {}).get("_ctime",0),slot) for slot in r13_save_slots()
             if (renpy.slot_json(slot) or {}).get("r13_campaign") != "room13_recommended_qa_v1" and r13_save_status(renpy.slot_json(slot))=="compatible"]
         return max(candidates)[1] if candidates else None
@@ -625,7 +626,7 @@ label r13_recommended_hearing:
         if "cloth_contact_matched" in r13_recommended["done"] and r13_rec_piko_geometry_ready(r13_recommended):
             menu (screen="r13_rec_stage_choice"):
                 "이미 직접 확인한 대조를 어떻게 설명할까?"
-                "앞서 확인한 흔적과 나비의 설명을 한 번에 잇는다":
+                "확인한 흔적과 나비의 설명을 잇는다":
                     call r13_lines([("dad","돌을 받은 사람과 17번 번호를 먼저 확인했고, 그다음 허락받은 천을 맞춰 봤어요. 뚜껑 안쪽 조각과 이어졌지요. 꼬미가 빌려줄 때 펼친 천은 온전했고, 그날 돌을 내려놓을 때 그 모서리는 이미 찢어져 있었어요. 그 사이 혼자 쓰셨고 등 안에는 손대지 않았다고 하셨지요. 그 찢김이 뚜껑 안쪽 조각과 이어집니다. 밖의 돌만 담았다는 설명과는 맞지 않아요.")], "recommended:hearing:prior-case")
                     $ r13_recommended = r13_rec_piko_summarize_prior(r13_recommended)
                 "자료를 하나씩 나란히 보여 준다":

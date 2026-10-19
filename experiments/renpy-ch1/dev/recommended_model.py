@@ -151,7 +151,7 @@ def r13_rec_available(s):
     have=set(s['done'])
     return [(key,a['title']) for key,a in r13_rec_actions.items() if a.get('min_period',0)<=s.get('period',0)<=a.get('max_period',2) and a.get('episode',1) in (0,s.get('episode',1)) and (key not in have or key=='refresh_reply') and (key!='meet' or s.get('observed',{}).get('reply')==s['day']) and (key!='refresh_reply' or (s['mother']=='M1' and s.get('observed',{}).get('reply')!=s['day'])) and set(a['need'])<=have and not set(a['forbid'])&have and (a['day'] is None or a['day']==s['day'])]
 
-def r13_rec_apply(s,key):
+def _r13_rec_apply_core(s,key):
     if key=='contact_match' and not r13_rec_piko_geometry_ready(s):
         raise ValueError('Contact illustration is not verified')
     if key not in dict(r13_rec_available(s)):
@@ -167,7 +167,7 @@ def r13_rec_apply(s,key):
     if key in r13_rec_effects: n=r13_rec_effects[key](n)
     return n
 
-def r13_rec_next_day(s):
+def _r13_rec_next_day_core(s):
     ep=s.get('episode',1)
     if ep in r13_rec_day_advance: return r13_rec_day_advance[ep](copy.deepcopy(s))
     n=copy.deepcopy(s)
@@ -226,7 +226,7 @@ def r13_rec_next_available(s):
     ep=s.get('episode',1)
     return ep+1 if r13_rec_episode_done.get(ep,lambda s:False)(s) and ep+1 in r13_rec_episode_start else None
 
-def r13_rec_begin_episode(s, episode):
+def _r13_rec_begin_episode_core(s, episode):
     if r13_rec_next_available(s)!=episode: raise ValueError('Episode not unlocked')
     n=r13_rec_episode_start[episode](copy.deepcopy(s))
     if n['episode']!=episode: raise ValueError('Plugin failed to set episode')
@@ -262,17 +262,14 @@ def r13_rec_validate_transition(before, after):
             raise ValueError('Completed prevention cannot be undone: '+flag)
     return after
 
-_r13_rec_apply_core = r13_rec_apply
 def r13_rec_apply(s,key):
     return r13_rec_validate_transition(s,_r13_rec_apply_core(s,key))
 
-_r13_rec_next_day_core = r13_rec_next_day
 def r13_rec_next_day(s):
     n=_r13_rec_next_day_core(s)
     if n['day']!=s['day']:n['period']=0
     return r13_rec_validate_transition(s,n)
 
-_r13_rec_begin_episode_core = r13_rec_begin_episode
 def r13_rec_begin_episode(s,episode):
     return r13_rec_validate_transition(s,_r13_rec_begin_episode_core(s,episode))
 
