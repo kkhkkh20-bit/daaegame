@@ -33,12 +33,15 @@ init 995 python:
                     meta=dict(context=context,key=key,size=tuple(size),st=st,at=at,clock=now,
                         phase=R13_M_PHASE if context=='dialogue' else None,
                         view=R13_M_VIEW if context=='meeting' else None)
-                    # Keep first frame per phase/time bucket, plus latest frame.
+                    # Keep the first actual frame per phase/time bucket.
                     bucket=(key,meta['phase'],bool(meta['view'] and meta['view'][1]),int(st*10))
                     if not any(row[0]==bucket for row in R13_M_SAMPLES) and len(R13_M_SAMPLES)<20:
-                        R13_M_SAMPLES.append((bucket,rendered,meta))
-                    elif R13_M_SAMPLES and R13_M_SAMPLES[-1][0]==bucket:
-                        R13_M_SAMPLES[-1]=(bucket,rendered,meta)
+                        # Render.kill clears prior graphs even with Python references.
+                        # Freeze pixels now, before this actual frame can be swept.
+                        meta['render_killed_before_capture']=bool(getattr(rendered,'killed',False))
+                        assert not meta['render_killed_before_capture']
+                        surface=renpy.render_to_surface(rendered,resize=False)
+                        R13_M_SAMPLES.append((bucket,surface,meta))
                 return rendered
             result.render=observed
             R13_M_HOOKS.append(result)
@@ -95,9 +98,9 @@ init 995 python:
             assert any(row[2]['view'] and row[2]['view'][1] for row in rows),'Missing actual moving camera render'
             assert any(row[2]['view'] and not row[2]['view'][1] for row in rows),'Missing actual settled camera render'
         previous={}
-        for index,(_,rendered,meta) in enumerate(rows):
-            # Render input bypasses re-render and ignores st/at by SDK contract.
-            surface=renpy.render_to_surface(rendered,resize=False)
+        for index,(_,surface,meta) in enumerate(rows):
+            # This owned Surface was frozen in the real render callback.
+            # No old Render or displayable is re-rendered during analysis.
             assert tuple(renpy.get_physical_size())==(1280,720)
             assert surface.get_size()==meta['size'] and surface.get_masks()[3]
             data=r13_g2_bytes(surface);bad=r13_c4_bad(data,meta['size'])
@@ -107,7 +110,7 @@ init 995 python:
             old=previous.get(meta['key'])
             changed=sum(data[i:i+4]!=old[i:i+4] for i in range(0,len(data),4)) if old is not None and len(old)==len(data) else None
             previous[meta['key']]=data
-            r13_c4_log('actual-motion-render',index=index,bad_2x2_blocks=bad,changed_rgba_pixels=changed,capture='actual production Render, no re-render',**meta)
+            r13_c4_log('actual-motion-render',index=index,bad_2x2_blocks=bad,changed_rgba_pixels=changed,capture='actual production Render frozen to Surface in same callback, no re-render',**meta)
         persistent.room13_motion=store.r13_m_old_motion
         R13_M_SAMPLES.clear()
         renpy.restart_interaction()
