@@ -52,8 +52,24 @@ testcase character_grid2_field_dialogue_profiles:
     advance until eval (r13_pd_topic_say_ready()) timeout 40
     pause 0.4
     run Function(r13_pd_assert_topic_say)
-    run Function(r13_c4_capture,"dialogue","topic")
     screenshot "grid2-context-field-02-resident-topic-say.png"
+    run Function(r13_c4_capture,"dialogue","topic")
+    # Explicit rendering fixture: redraw current speaker, then approved expression,
+    # without advancing or changing the authored line. Restore before continuing.
+    $ r13_c4_original_expression=dialogue_expression
+    run Function(r13_speaker,r13_pd_person,r13_c4_original_expression)
+    pause 0.2
+    screenshot "grid2-context-dialogue-repeat.png"
+    run Function(r13_c4_capture,"dialogue","repeat")
+    assert eval ("avatar_surprise" in CAST[r13_pd_person])
+    run Function(r13_speaker,r13_pd_person,"surprise")
+    pause 0.4
+    screenshot "grid2-context-dialogue-expression.png"
+    run Function(r13_c4_capture,"dialogue","expression")
+    run Function(r13_speaker,r13_pd_person,r13_c4_original_expression)
+    pause 0.2
+    screenshot "grid2-context-dialogue-restored.png"
+    run Function(r13_c4_capture,"dialogue","restored")
     advance until screen "r13_topics" timeout 40
     assert eval (r13_pd_topic in room13["read_topics"])
     pause 0.3

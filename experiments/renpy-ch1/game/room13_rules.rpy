@@ -336,7 +336,7 @@ init 55 python:
                 if not r13_dialogue_beat_ready(who):what,at_list=r13_react(react,who,actor_pose,what,at_list)
                 if r13_g2_enabled():
                     what=r13_g2_final(Fixed(At(what,*at_list),xysize=(1280,720)))
-                    renpy.hide("r13_visitor"); at_list=[Transform(xpos=0,ypos=0,xanchor=0,yanchor=0,xoffset=0,yoffset=0,zoom=1.0,xzoom=1.0,yzoom=1.0,rotate=0,alpha=1.0,subpixel=False,nearest=True)] # fresh tag: do not inherit former portrait placement
+                    at_list=[Transform(xpos=0,ypos=0,xanchor=0,yanchor=0,xoffset=0,yoffset=0,zoom=1.0,xzoom=1.0,yzoom=1.0,rotate=0,rotate_pad=False,alpha=1.0,subpixel=False,nearest=True)] # no diagonal padding; preserve shown-tag continuity
                 renpy.show("r13_actor",what=what,tag="r13_visitor",at_list=at_list)
             store.r13_motion_person=who
         else:
