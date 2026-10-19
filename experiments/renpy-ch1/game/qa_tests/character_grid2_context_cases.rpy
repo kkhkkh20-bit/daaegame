@@ -19,6 +19,12 @@ testcase character_grid2_field_dialogue_profiles:
     run Function(r13_pd_check_field,"entered-real-field")
     run Function(r13_c4_field,"entered")
     screenshot "grid2-context-field-01-field.png"
+    # Motion preference ON does not enable the separate field-idle feature.
+    run Function(r13_m_arm,"field")
+    pause 0.5
+    screenshot "grid2-motion-field-stable.png"
+    run Function(r13_m_finish,"field")
+    run Function(r13_c4_field,"after-motion-preference-restored")
     run Function(r13_pd_choose_person)
     if eval (not r13_pd_person_ready and r13_world_offset()>0):
         click "‹"
@@ -68,6 +74,18 @@ testcase character_grid2_field_dialogue_profiles:
     run Function(r13_c4_expression_restore,r13_pd_person)
     pause 0.2
     screenshot "grid2-context-dialogue-restored.png"
+    run Function(r13_c4_capture,"dialogue","restored")
+    run Function(r13_m_arm,"dialogue")
+    run Function(r13_m_dialogue_start,r13_pd_person)
+    pause 0.08
+    screenshot "grid2-motion-dialogue-early.png"
+    pause 0.5
+    screenshot "grid2-motion-dialogue-settled.png"
+    assert eval (tuple(renpy.get_image_bounds("r13_visitor",layer="master"))==(0,0,1280,720))
+    run Function(r13_m_finish,"dialogue")
+    run Function(r13_m_dialogue_restore,r13_pd_person)
+    pause 0.2
+    screenshot "grid2-motion-dialogue-restored.png"
     run Function(r13_c4_capture,"dialogue","restored")
     advance until screen "r13_topics" timeout 40
     assert eval (r13_pd_topic in room13["read_topics"])
@@ -186,11 +204,13 @@ testcase character_grid2_meeting_replay:
     assert screen "r13_admin_meeting_controls"
     run Function(r13_c4_capture,"meeting","entry")
     screenshot "grid2-context-meeting-entry.png"
+    run Function(r13_m_arm,"meeting")
     advance
     pause 0.2
-    run Function(r13_c4_capture,"meeting","next-line-early")
+    # No independent st=0 render while observing the live motion clock.
     screenshot "grid2-context-meeting-next-line-early.png"
     pause 0.7
+    run Function(r13_m_finish,"meeting")
     run Function(r13_c4_capture,"meeting","next-line-settled")
     screenshot "grid2-context-meeting-next-line-settled.png"
     run Function(r13_c4_clear_profiles)

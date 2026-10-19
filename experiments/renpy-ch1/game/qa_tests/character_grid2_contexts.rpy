@@ -27,6 +27,7 @@ init 990 python:
                     context='dialogue';key='visitor'
                 if context:
                     R13_C4_RECORDS[(context,key)]=(art,result,tuple(size))
+                    r13_m_watch(result,context,key,tuple(size))
             finally:
                 del frame
         return result
