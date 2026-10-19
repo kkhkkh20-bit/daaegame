@@ -21,7 +21,7 @@ init 999 python:
             # Verify foreground pixels cannot hit the concealed body, not just polygon metadata.
             x,y,w,h=actor['rect']
             rendered=renpy.render(r13_actor_hit_mask(actor),w,h,1.2,1.2)
-            rejected=[]
+            rejected=[];fully_opaque_rejected=0;actual_focus_rejected=0
             for polygon in actor['map27_occlusion']:
                 furniture=renpy.render(R13FurnitureMask(polygon,size=(w,h),origin=(x,y)),w,h,1.2,1.2)
                 for ly in range(2,int(h)-2,3):
@@ -44,9 +44,17 @@ init 999 python:
                                     actual_topmost_bounds=[focus.x,focus.y,focus.w,focus.h] if focus is not None else None,
                                     strict_rejection_preserved=True,visual_acceptance=False))
                             assert not rendered.is_pixel_opaque(lx,ly), ('Masked furniture remains clickable',person,lx,ly)
+                            if furniture.is_pixel_opaque(lx,ly)==255:
+                                fully_opaque_rejected+=1
+                                sx=x+lx-r13_world_offset();sy=y+ly
+                                if 0<=sx<1280 and 0<=sy<720:
+                                    focus=renpy.display.render.focus_at_point(int(sx),int(sy))
+                                    tooltip=focus.widget._get_tooltip() if focus is not None else None
+                                    assert tooltip!=r13_person_caption(person)+' · 말 걸기', ('Furniture selects hidden actor',person,sx,sy,tooltip)
+                                    actual_focus_rejected+=1
                             if len(rejected)<12:rejected.append([x+lx,y+ly])
-            assert rejected, ('No foreground overlap tested',person)
-            r13_pd_flow_log('sofa-furniture-hit-rejection',dict(person=person,world_points=rejected))
+            assert rejected and fully_opaque_rejected, ('No fully opaque foreground overlap tested',person)
+            r13_pd_flow_log('sofa-furniture-hit-rejection',dict(person=person,world_points=rejected,fully_opaque_rejected=fully_opaque_rejected,actual_focus_rejected=actual_focus_rejected))
             r13_pd_flow_log('sofa-person-geometry',dict(step=step,person=person,row=row,visual_acceptance=False))
         r13_pd_target_render(r13_sofa_person,expected[r13_sofa_person][0],step)
 
