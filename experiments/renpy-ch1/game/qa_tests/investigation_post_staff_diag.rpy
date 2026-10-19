@@ -551,7 +551,20 @@ testcase investigation_post_staff_d6:
     $ persistent.room13_motion=False
     run Function(r13_ps_begin,"investigation_post_staff_d6",6,0)
     run Call("r13_qa_roam",dict(day=6,period=0,location="post",life_poc=True,evidence=["E01"]),("entry_corrected","lodging"))
+    # Real day6 arrival event: resolve the authored ledger sale through its actual UI.
+    # Never seed ev_u_done/pages_sold, change the date, or jump over the production event.
+    advance until screen "choice" timeout 40
+    pause until eval (renpy.get_screen("choice").scope.get("choice_ready",False)) timeout 5
+    screenshot "post-staff-d6-00-real-ledger-menu.png"
+    assert eval (room13['day']==6 and room13['period']==0 and room13['location']=='post' and r13_has('ev_u_done'))
+    assert eval ('모른 척 지나간다' in [item.caption for item in renpy.get_screen('choice').scope['items']])
+    run Function(r13_pd_flow_log,"post-staff-real-ledger-menu",dict(choices=[item.caption for item in renpy.get_screen('choice').scope['items']],state=r13_pd_copy.deepcopy(room13),camera_offset=r13_world_offset()),_update_screens=False)
+    click "모른 척 지나간다"
     advance until screen "r13_hub" timeout 40
+    screenshot "post-staff-d6-00-real-ledger-return.png"
+    assert eval (room13['day']==6 and room13['period']==0 and room13['location']=='post' and r13_has('ev_u_done') and r13_has('pages_sold'))
+    assert eval (not r13_has('pages_copy_promised') and not r13_has('know_stone_history') and 'W3' not in room13['evidence'])
+    run Function(r13_pd_flow_log,"post-staff-real-ledger-resolved",dict(choice="모른 척 지나간다",state=r13_pd_copy.deepcopy(room13),camera_offset=r13_world_offset()),_update_screens=False)
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
     pause 1.2
     pause until eval (r13_pd_scene_ready()) timeout 8
