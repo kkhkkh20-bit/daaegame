@@ -1,3 +1,4 @@
+from grid2_test_env import load_grid2
 """Regression coverage for explicit narration actors and retired dialogue beats."""
 import ast
 import json
@@ -69,6 +70,7 @@ class PortraitRefresh(unittest.TestCase):
                    r13_react_kind=lambda *a:self.reactions.append(a), r13_close_art=close_art,
                    r13_portrait_close=lambda *a:None,r13_close_y=lambda *a,**kw:0,r13_close_x=lambda *a:0,
                    r13_react=lambda react,who,pose,what,at:(what,at))
+        load_grid2(env)
         exec(compile(node, 'speaker', 'exec'), env)
         self.speaker = env['r13_speaker']
 
