@@ -27,6 +27,22 @@ init 999 python:
                 for ly in range(2,int(h)-2,3):
                     for lx in range(2,int(w)-2,3):
                         if furniture.is_pixel_opaque(lx,ly):
+                            # Diagnose before preserving the strict rejection below.
+                            # SDK8.5.3 GL2 returns alpha0..255 here, not full-opacity boolean.
+                            if rendered.is_pixel_opaque(lx,ly):
+                                offset=r13_world_offset();wx,wy=x+lx,y+ly;sx=wx-offset
+                                focus=renpy.display.render.focus_at_point(int(sx),int(wy)) if 0<=sx<1280 else None
+                                samples=[]
+                                for dy in (-1,0,1):
+                                    for dx in (-1,0,1):
+                                        samples.append(dict(local=[lx+dx,ly+dy],furniture_alpha=int(furniture.is_pixel_opaque(lx+dx,ly+dy)),hit_alpha=int(rendered.is_pixel_opaque(lx+dx,ly+dy))))
+                                r13_pd_flow_log('sofa-mask-strict-failure-detail',dict(step=step,person=person,
+                                    actor_rect=actor['rect'],world_point=[wx,wy],screen_point=[sx,wy],polygon=polygon,
+                                    mask_samples=samples,renderer=str(renpy.get_renderer_info()),
+                                    expected_actor_tooltip=r13_person_caption(person)+' · 말 걸기',
+                                    actual_topmost_tooltip=focus.widget._get_tooltip() if focus is not None else None,
+                                    actual_topmost_bounds=[focus.x,focus.y,focus.w,focus.h] if focus is not None else None,
+                                    strict_rejection_preserved=True,visual_acceptance=False))
                             assert not rendered.is_pixel_opaque(lx,ly), ('Masked furniture remains clickable',person,lx,ly)
                             if len(rejected)<12:rejected.append([x+lx,y+ly])
             assert rejected, ('No foreground overlap tested',person)
@@ -76,6 +92,7 @@ testcase investigation_sofa_tosil:
     pause 0.2
     pause until eval (r13_pd_hover_clear()) timeout 3
     run Function(r13_pd_check_field,"sofa-camera-zero")
+    screenshot "investigation_sofa_tosil-sofa-target-camera-zero-before-assert.png"
     run Function(r13_sofa_geometry,"sofa-target-camera-zero")
     screenshot "sofa-tosil-01-camera-zero.png"
     if eval (r13_world_offset()<r13_world_width()-1280):
@@ -94,6 +111,7 @@ testcase investigation_sofa_tosil:
     pause 0.2
     pause until eval (r13_pd_hover_clear()) timeout 3
     run Function(r13_pd_check_field,"sofa-camera-right")
+    screenshot "investigation_sofa_tosil-sofa-target-camera-right-before-assert.png"
     run Function(r13_sofa_geometry,"sofa-target-camera-right")
     screenshot "sofa-tosil-02-camera-right.png"
     run Function(r13_pd_choose_person,True)
@@ -108,6 +126,7 @@ testcase investigation_sofa_tosil:
         pause 0.5
         run Function(r13_pd_choose_person,True)
     assert eval (r13_pd_person_ready and r13_pd_person=='resident_tosil')
+    screenshot "investigation_sofa_tosil-sofa-actual-body-click-viewport-before-assert.png"
     run Function(r13_sofa_geometry,"sofa-actual-body-click-viewport")
     click pos (r13_pd_person_x,r13_pd_person_y)
     pause until eval (renpy.get_screen("say") is not None or renpy.get_screen("r13_resident_approach") is not None or renpy.get_screen("r13_topics") is not None or renpy.get_screen("notify") is not None) timeout 5
@@ -159,6 +178,7 @@ testcase investigation_sofa_tosil:
     pause 0.2
     pause until eval (r13_pd_hover_clear()) timeout 3
     run Function(r13_pd_check_field,"sofa-returned-field")
+    screenshot "investigation_sofa_tosil-sofa-target-returned-before-assert.png"
     run Function(r13_sofa_geometry,"sofa-target-returned")
     screenshot "sofa-tosil-05-returned.png"
     run Hide("r13_qa_pixel_variant")
@@ -201,6 +221,7 @@ testcase investigation_sofa_nubi:
     pause 0.2
     pause until eval (r13_pd_hover_clear()) timeout 3
     run Function(r13_pd_check_field,"sofa-camera-zero")
+    screenshot "investigation_sofa_nubi-sofa-target-camera-zero-before-assert.png"
     run Function(r13_sofa_geometry,"sofa-target-camera-zero")
     screenshot "sofa-nubi-01-camera-zero.png"
     if eval (r13_world_offset()<r13_world_width()-1280):
@@ -219,6 +240,7 @@ testcase investigation_sofa_nubi:
     pause 0.2
     pause until eval (r13_pd_hover_clear()) timeout 3
     run Function(r13_pd_check_field,"sofa-camera-right")
+    screenshot "investigation_sofa_nubi-sofa-target-camera-right-before-assert.png"
     run Function(r13_sofa_geometry,"sofa-target-camera-right")
     screenshot "sofa-nubi-02-camera-right.png"
     run Function(r13_pd_choose_person,True)
@@ -233,6 +255,7 @@ testcase investigation_sofa_nubi:
         pause 0.5
         run Function(r13_pd_choose_person,True)
     assert eval (r13_pd_person_ready and r13_pd_person=='resident_nubi')
+    screenshot "investigation_sofa_nubi-sofa-actual-body-click-viewport-before-assert.png"
     run Function(r13_sofa_geometry,"sofa-actual-body-click-viewport")
     click pos (r13_pd_person_x,r13_pd_person_y)
     pause until eval (renpy.get_screen("say") is not None or renpy.get_screen("r13_resident_approach") is not None or renpy.get_screen("r13_topics") is not None or renpy.get_screen("notify") is not None) timeout 5
@@ -284,6 +307,7 @@ testcase investigation_sofa_nubi:
     pause 0.2
     pause until eval (r13_pd_hover_clear()) timeout 3
     run Function(r13_pd_check_field,"sofa-returned-field")
+    screenshot "investigation_sofa_nubi-sofa-target-returned-before-assert.png"
     run Function(r13_sofa_geometry,"sofa-target-returned")
     screenshot "sofa-nubi-05-returned.png"
     run Hide("r13_qa_pixel_variant")
