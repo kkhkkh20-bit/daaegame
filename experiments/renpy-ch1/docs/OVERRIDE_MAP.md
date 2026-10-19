@@ -59,7 +59,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 21 | 191 | `systems/room13_q1_arguments.rpy:61` | _r13_sling_confidence_present |
 | 22 | 206 | `systems/room13_sling_confidence.rpy:74` |  |
 
-## `r13_stage_people` (11층)
+## `r13_stage_people` (12층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
@@ -73,7 +73,8 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 8 | 179 | `systems/room13_spatial_contacts.rpy:38` | _r13_balance_stage |
 | 9 | 180 | `systems/room13_investigation_balance.rpy:43` | _r13_life_groups_stage |
 | 10 | 181 | `systems/room13_life_groups.rpy:73` | _r13_post_staff_stage |
-| 11 | 182 | `systems/room13_post_staff_contact.rpy:39` |  |
+| 11 | 182 | `systems/room13_post_staff_contact.rpy:39` | _r13_pc_upstream_stage |
+| 12 | 184 | `systems/room13_placement_contracts.rpy:366` |  |
 
 ## `r13_conversation_topic_lines` (10층)
 

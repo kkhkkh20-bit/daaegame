@@ -1,0 +1,59 @@
+{
+  "baseline_commit": "91ec49f1c80af18d0c7298f1e4b7463b426c52bb",
+  "baseline_tree": "d98f5c7026b449b10e93c084198600047adfa8ee",
+  "publication_parent": "a2aa6fc0186c9b3a066960eea601f94b9c3095f0",
+  "parent_note": "Publication parent changes workflow only; guarded production/test/doc blobs remain the PR18C baseline.",
+  "reserved_manifest_path": "dev/placement-contract-preimages.json",
+  "preimages": {
+    "game/room13_acting.rpy": "60435bb7a7b3e6688b996daf415921b1a89d0213",
+    "game/room13_world_camera.rpy": "2c0ebd2f4bb1aaf123ef2278ccfb5ec3a23e7ea9",
+    "game/systems/room13_field_views.rpy": "c111d4e3cd22c399809a3bb9d16d2beabd17ce14",
+    "game/systems/room13_daram_home.rpy": "c7e60156fc2571ee5495f733f88d38e2fc26801f",
+    "game/systems/room13_event_offers.rpy": "8bd9857804deaeb9800342484bd42a312f02051d",
+    "game/systems/room13_map_actions.rpy": "c5bd6c3faa6db45f5c5866b355d9fe1b3fe3e506",
+    "game/systems/room13_perspective.rpy": "7ccf8b64f5aca8411470a53b24531256f74ca98e",
+    "game/systems/room13_map_work_nine.rpy": "db77bb1a31707b93eb8fa455b624035ccce1281d",
+    "game/systems/room13_solbang_chinchilla.rpy": "c1f8b5e15caeaf19a1e1d8cdede8c5fefed79df4",
+    "game/systems/room13_map_action27.rpy": "9497a714342e42de060b6cf6dcb7f4a631984ab7",
+    "game/systems/room13_spatial_contacts.rpy": "8a6f848e29c131a145197e2f9dbb4f0165141386",
+    "game/systems/room13_investigation_balance.rpy": "8878eec91cc30dfdb6f8ba35471f16a298e70b2c",
+    "game/systems/room13_life_groups.rpy": "a1423ba8bf043ff58ffbfd34ead2f9d59684a980",
+    "game/systems/room13_new_cast.rpy": "63d9e3f295d727b787820b3ac9b1413fe24e533a",
+    "game/assets/room13-world-layout.json": "ae744dc19cce0bb3459bcd4b51a5edb2ed4c6bee",
+    "game/assets/room13-pixel-acting.json": "34ba2f4e9312aad57ddf67d4c16493bc7e59c8e7",
+    "game/assets/room13-map-action27.json": "ec04efa02251d24ce8ee495f98717df90a53d45f",
+    "game/assets/room13-map-work-nine.json": "39a66a600de0efa980f20fee63d75f6f3ab365b3",
+    "game/assets/room13-seori-review-art.json": "b273d6e424f934b4f6fbf35114f9e5cfc0fd337d",
+    "game/assets/room13-life-groups.json": "ee3f1d3c5bc9c29e6b73d3341d291308ae477f9e",
+    "game/village-residents.json": "28bcf5eb1854dd2b363f8756c8420db89dd04f0a",
+    "game/assets/room13-pixel-layouts.json": "5630af9962e80b18a4fb024df53f3a11262da0d0",
+    "game/systems/room13_post_staff_contact.rpy": "3b90bcbf036a1670ad346a81c479965515866f61",
+    "game/qa_tests/investigation_post_staff_diag.rpy": "d4e6ce9963924fa226fc4488f0d8b672668da777",
+    "dev/test_post_staff_contact.py": "db21d95c1107d7339e440c76a89247214a00ab5a",
+    "docs/OVERRIDE_MAP.md": "cf226c8462fe56347fdb80c068a7d760ed20e3a3",
+    "dev/override_map.py": "aeeebe1e3e693d2d38c156bb20af2b18feb93f3a",
+    "dev/test_override_map.py": "3b8beb631710c5b495c88dc7ea65bfc74b3077e7"
+  },
+  "modifications": {
+    "docs/OVERRIDE_MAP.md": {
+      "before": "cf226c8462fe56347fdb80c068a7d760ed20e3a3",
+      "after": "420c1f8ac35a36e9800493ec6544523015c2f200"
+    }
+  },
+  "additions": {
+    "dev/fixtures/placement-contract-baseline.json": "ce39f99b51d6b92171718d7a48c650d653bdea30",
+    "dev/fixtures/upstream_map27_geometry.py": "b858c4f9c7a3e600b68be1f0d1f77d5e5bde8e4e",
+    "dev/fixtures/upstream_map27_geometry_cases.json": "b7fbaea3424d68033901da273a4191ed804c7993",
+    "dev/fixtures/upstream_spatial_contact_geometry.py": "64aa5daa3aa80e169dfee719b3f1a3d420b6a880",
+    "dev/test_placement_contracts.py": "ceddef7f923b951b2318dadce86eaa50be899ee0",
+    "dev/verify_placement_contract_preimages.py": "7a86ab671704a30402d0c87b6fe5a4c54503fb7a",
+    "docs/placement-contracts/ALL_MAP_INDEX.json": "b0ea8a00ae57c5bae4e3a6c96bbc07dec6e21f4a",
+    "docs/placement-contracts/MAPPING.md": "be9ff7d61b1922d454419e0d71e3241eb73acfcf",
+    "docs/placement-contracts/OTHER_AGENT_HANDOFF.md": "4aa45808022d2dfe80c2bd33c4e65b2ed9b14b33",
+    "docs/placement-contracts/README.md": "b9ad7b46ed3d1e1cfefe8be4e2335c061231a4cd",
+    "docs/placement-contracts/VALIDATION.md": "46f8eba25182620dcbd0180dafa5a1e28c25f87c",
+    "game/assets/room13-placement-contracts.json": "59bb77617849780b3a38f41dfc3f272112407047",
+    "game/assets/room13-placement-contracts.schema.json": "a2225766a92037ab6981616a2c17ff7c913e2a74",
+    "game/systems/room13_placement_contracts.rpy": "fbce9ea7927c27a7b18512e8a13c175fbcbabfe9"
+  }
+}
