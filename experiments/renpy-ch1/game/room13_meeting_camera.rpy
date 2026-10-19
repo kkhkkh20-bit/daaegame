@@ -67,7 +67,7 @@ init 175 python:
         # Same canvas and neutral head placement as the approved dialogue source.
         # No automatic mirroring: front-facing art remains front-facing.
         return Fixed(Transform(spec["file"],xpos=int(round(spec["offset"][0]*ratio)),
-            ypos=int(round(spec["offset"][1]*ratio)),zoom=spec["scale"]*ratio,nearest=False,subpixel=True),
+            ypos=int(round(spec["offset"][1]*ratio)),zoom=spec["scale"]*ratio,nearest=r13_g2_enabled(),subpixel=not r13_g2_enabled()),
             xysize=tuple(int(round(v*ratio)) for v in spec["canvas"]))
 
     def r13_meeting_reaction_phase(reaction,token,claimed,elapsed,disabled=False):
@@ -109,8 +109,16 @@ init 175 python:
         frame=(profile or {}).get("frames",{}).get("surprise_react")
         if not frame or not renpy.loadable(frame["file"]):return settled
         react=Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],
-            zoom=frame.get("scale",1.0),nearest=False,subpixel=True),xysize=tuple(profile["canvas"]))
+            zoom=frame.get("scale",1.0),nearest=r13_g2_enabled(),subpixel=not r13_g2_enabled()),xysize=tuple(profile["canvas"]))
         return R13MeetingReaction(reaction["token"],react,settled)
+
+    class R13G2MeetingActors(renpy.Displayable):
+        def __init__(self,owner,**kwargs):
+            super(R13G2MeetingActors,self).__init__(**kwargs)
+            self.owner=owner
+        def render(self,width,height,st,at):
+            return self.owner.r13_g2_render_actors(self.owner.r13_g2_view,st,at)
+        def visit(self):return list(self.owner.art.values())
 
     class R13MeetingOrbit(renpy.Displayable):
         def __init__(self,claim,focus,revision,beat,poses,line_token=None,listener=None,slots=None,reaction=None,**kwargs):
@@ -139,16 +147,49 @@ init 175 python:
                 if art is None:art=Transform(r13_meeting_actor(person,self.focus,640),ysize=base,fit="contain",nearest=True)
                 art=r13_meeting_reaction_art(person,pose,base,art)
                 gain=(.065 if self.beat in ("interrupt","explain","shaken","gasp","cornered") else .0) if person==self.focus else (-.01 if person==listener else -.05)-self.shade*.35
-                self.art[person]=Transform(art,nearest=not bool(r13_dialogue_source_profile(person,pose,base)),subpixel=True,matrixcolor=BrightnessMatrix(gain))
+                self.art[person]=Transform(art,nearest=(r13_g2_enabled() or not bool(r13_dialogue_source_profile(person,pose,base))),subpixel=not r13_g2_enabled(),matrixcolor=BrightnessMatrix(gain))
                 self.offsets[person]=(r13_close_x(person,pose,base)-640,r13_fullbody_close_y(person,base,96,pose))
             self.surface=R13MeetingSurface(self.session,0,len(self.people),self.shade) if self.kind in ("round","stone") else None
             self.foreground=AlphaMask(self.surface,R13MeetingForeground(self.session,True)) if self.surface is not None else None
+            self.r13_g2_view=0.0
+            self.r13_g2_actors=R13G2MeetingActors(self)
+            self.r13_g2_output=r13_g2_final(self.r13_g2_actors) if r13_g2_enabled() else self.r13_g2_actors
         def render(self,width,height,st,at):
             out=renpy.Render(1280,720)
             if renpy.predicting():view=float(self.people.index(self.focus)) if self.focus in self.people else 0.0;moving=False
             else:view,moving=r13_meeting_world_view(self.claim,self.focus)
             a=renpy.render(self.plate,1280,720,st,at);b=renpy.render(self.flip,1280,720,st,at)
             r13_meeting_world_tiles(out,a,b,view*2560.0/max(1,len(self.people)))
+            if r13_g2_enabled():
+                if self.r13_g2_view!=view:
+                    self.r13_g2_view=view
+                    renpy.redraw(self.r13_g2_actors,0)
+                actors=renpy.render(self.r13_g2_output,1280,720,st,at)
+                out.blit(actors,(0,0))
+            else:
+                slots=[]
+                for index,person in enumerate(self.people):
+                    slot=r13_meeting_world_slot(index,view,len(self.people))
+                    if slot is not None:slots.append((abs(slot[2]),person,slot))
+                for _distance,person,(cx,depth,angle) in sorted(slots,reverse=True):
+                    art=self.art[person]
+                    scale=r13_orbit_math.cos(angle*.35)
+                    if art.zoom!=depth or art.xzoom!=scale:
+                        art.zoom=depth;art.xzoom=scale;renpy.redraw(art,0)
+                    rendered=renpy.render(art,1280,1000,st,at)
+                    dx,dy=self.offsets[person]
+                    x=cx+dx*depth-rendered.get_size()[0]/2
+                    y=dy*depth+(1-depth)*240
+                    out.subpixel_blit(rendered,(x,y))
+            if self.surface is not None:
+                if self.surface.view!=view:
+                    self.surface.view=view;renpy.redraw(self.surface,0)
+                foreground=renpy.render(self.foreground,1280,720,st,at)
+                out.blit(foreground,(0,0))
+            if moving:renpy.redraw(self,0)
+            return out
+        def r13_g2_render_actors(self,view,st,at):
+            out=renpy.Render(1280,720)
             slots=[]
             for index,person in enumerate(self.people):
                 slot=r13_meeting_world_slot(index,view,len(self.people))
@@ -162,12 +203,7 @@ init 175 python:
                 dx,dy=self.offsets[person]
                 x=cx+dx*depth-rendered.get_size()[0]/2
                 y=dy*depth+(1-depth)*240
-                out.subpixel_blit(rendered,(x,y))
-            if self.surface is not None:
-                if self.surface.view!=view:
-                    self.surface.view=view;renpy.redraw(self.surface,0)
-                foreground=renpy.render(self.foreground,1280,720,st,at)
-                out.blit(foreground,(0,0))
-            if moving:renpy.redraw(self,0)
+                if r13_g2_enabled():out.blit(rendered,(r13_g2_snap(x),r13_g2_snap(y)))
+                else:out.subpixel_blit(rendered,(x,y))
             return out
-        def visit(self):return [self.plate,self.flip]+list(self.art.values())+([self.foreground] if self.foreground is not None else [])
+        def visit(self):return [self.plate,self.flip,self.r13_g2_output]+([self.foreground] if self.foreground is not None else [])

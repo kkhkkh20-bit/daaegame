@@ -28,8 +28,7 @@ screen r13_side_question_list(person,pose,entries,ready,return_action=None,capti
     $ page=min(page,len(pages)-1)
     $ visible=pages[page]
     add Solid("#00000088")
-    add r13_close_art(person,pose,840):
-        xpos r13_close_x(person,pose,840)-340 xanchor .5 ypos r13_close_y(person,840,110,pose)
+    add r13_g2_positioned(r13_close_art(person,pose,840),r13_close_x(person,pose,840)-340,r13_close_y(person,840,110,pose))
     text R13_NAMES[person] xpos 80 ypos R13_SIDE_QUESTION_TOP size 30 color "#f6d18a" font r13_ui_font() outlines [(1,"#101515",0,0)]
     text (caption or "묻고 싶은 이야기") xpos 640 ypos R13_SIDE_QUESTION_TOP xsize 360 size 30 color "#fff4df" font r13_ui_font()
     text ("질문 %d개 · 모두 표시"%len(entries) if len(pages)==1 else "질문 %d개 · %d / %d쪽"%(len(entries),page+1,len(pages))) xpos 1000 ypos R13_SIDE_QUESTION_TOP+22 size 17 color "#d4c8b4" font r13_ui_font()

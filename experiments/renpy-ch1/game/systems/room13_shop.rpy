@@ -95,8 +95,7 @@ screen r13_shop(close=Return(False)):
     $ shown=rows[page*6:page*6+6]
     $ blocked=wallet["debt"]>R13_DEBT_LIMIT
     add Solid("#000000a8")
-    add r13_close_art("resident_eunho","neutral",760):
-        xpos 220 xanchor .5 ypos r13_close_y("resident_eunho",760,126,"neutral")
+    add r13_g2_positioned(r13_close_art("resident_eunho","neutral",760),220,r13_close_y("resident_eunho",760,126,"neutral"))
     text "은호 사장의 물건" xpos 450 ypos 26 size r13_read_size(28,32) color "#ebcd8a"
     text ("가진 돈 %d냥 · 갚을 돈 %d냥"%(wallet["cash"],wallet["debt"])) xpos 452 ypos 68 size r13_read_size(19,22) color ("#ffb3a3" if blocked else "#e5ece6")
     textbutton "돌아가기" xpos 1250 xanchor 1.0 ypos 24 xsize 170 action close text_size r13_read_size(22,26)

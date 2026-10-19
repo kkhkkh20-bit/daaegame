@@ -14,7 +14,7 @@ for tc in "${TESTS[@]}"; do
   log=$LOG/$tc.txt; rm -f "$log"
   # Larger display only for pixel-grid proof; testcase requests native1280x720 window.
   qa_display="1280x720x24"
-  [ "$tc" = "character_grid2_source_proof" ] && qa_display="1920x1080x24"
+  case "$tc" in character_grid2_source_proof|character_grid2_field_dialogue_profiles|character_grid2_meeting_replay) qa_display="1920x1080x24" ;; esac
   timeout ${ROOM13_TEST_TIMEOUT:-400} xvfb-run -a -s "-screen 0 $qa_display" "$SDK/renpy.sh" . test "$tc" > "$log" 2>&1 &
   for i in $(seq 1 ${ROOM13_TEST_TIMEOUT:-400}); do grep -q "Status:" "$log" 2>/dev/null && break; sleep 1; done
   sleep 1; ps -eo pid,comm | awk '$2=="renpy"{print $1}' | xargs -r kill -9 2>/dev/null

@@ -127,7 +127,7 @@ init 58 python:
         if source is not None:return source
         spec=r13_fullbody_spec(person,pose)
         if not spec:return None
-        key=(person,spec["emotion"],int(height))
+        key=(person,spec["emotion"],int(height),r13_g2_enabled())
         result=R13_FULLBODY_ART_CACHE.get(key)
         if result is None:
             scale=r13_fullbody_scale(person,height)*spec.get("fit",1.0)
@@ -140,7 +140,7 @@ init 58 python:
                 art=Crop(tuple(spec["crop"]),r13_blink_art(person,spec["emotion"],spec["file"]))
                 if image.get("native_detail"):
                     # Approved opt-in: preserve source detail without the intermediate 3px grid.
-                    result=Transform(art,size=(max(1,int(round(width))),max(1,int(round(native_height)))),nearest=not image.get("smooth_source",False),subpixel=False)
+                    result=Transform(art,size=(max(1,int(round(width))),max(1,int(round(native_height)))),nearest=(r13_g2_enabled() or not image.get("smooth_source",False)),subpixel=False)
                 else:
                     result=r13_pixel_scale(art,width,native_height,R13_CLOSE_PIXEL_GRID)
             result=r13_idle_art(result,person,pose,None,int(round(width)),int(round(native_height)),contact="dialogue_bust",speaking=speaking)
