@@ -102,6 +102,8 @@ testcase investigation_sofa_tosil:
     run Function(r13_pd_check_field,"sofa-camera-zero")
     screenshot "investigation_sofa_tosil-sofa-target-camera-zero-before-assert.png"
     run Function(r13_sofa_geometry,"sofa-target-camera-zero")
+    # Yield after exhaustive GPU/focus checks; keep the normal test watchdog.
+    pause 0.01
     screenshot "sofa-tosil-01-camera-zero.png"
     if eval (r13_world_offset()<r13_world_width()-1280):
         click "›"
@@ -121,6 +123,8 @@ testcase investigation_sofa_tosil:
     run Function(r13_pd_check_field,"sofa-camera-right")
     screenshot "investigation_sofa_tosil-sofa-target-camera-right-before-assert.png"
     run Function(r13_sofa_geometry,"sofa-target-camera-right")
+    # Yield after exhaustive GPU/focus checks; keep the normal test watchdog.
+    pause 0.01
     screenshot "sofa-tosil-02-camera-right.png"
     run Function(r13_pd_choose_person,True)
     assert eval (not r13_pd_person_ready)
@@ -136,6 +140,8 @@ testcase investigation_sofa_tosil:
     assert eval (r13_pd_person_ready and r13_pd_person=='resident_tosil')
     screenshot "investigation_sofa_tosil-sofa-actual-body-click-viewport-before-assert.png"
     run Function(r13_sofa_geometry,"sofa-actual-body-click-viewport")
+    # Yield after exhaustive GPU/focus checks; keep the normal test watchdog.
+    pause 0.01
     click pos (r13_pd_person_x,r13_pd_person_y)
     pause until eval (renpy.get_screen("say") is not None or renpy.get_screen("r13_resident_approach") is not None or renpy.get_screen("r13_topics") is not None or renpy.get_screen("notify") is not None) timeout 5
     if eval (r13_pd_contact_allowed):
@@ -188,9 +194,13 @@ testcase investigation_sofa_tosil:
     run Function(r13_pd_check_field,"sofa-returned-field")
     screenshot "investigation_sofa_tosil-sofa-target-returned-before-assert.png"
     run Function(r13_sofa_geometry,"sofa-target-returned")
+    # Yield after exhaustive GPU/focus checks; keep the normal test watchdog.
+    pause 0.01
     screenshot "sofa-tosil-05-returned.png"
     run Hide("r13_qa_pixel_variant")
     run Function(r13_sofa_result)
+    # Yield after exhaustive GPU/focus checks; keep the normal test watchdog.
+    pause 0.01
 
 
 testcase investigation_sofa_nubi:
@@ -231,6 +241,8 @@ testcase investigation_sofa_nubi:
     run Function(r13_pd_check_field,"sofa-camera-zero")
     screenshot "investigation_sofa_nubi-sofa-target-camera-zero-before-assert.png"
     run Function(r13_sofa_geometry,"sofa-target-camera-zero")
+    # Yield after exhaustive GPU/focus checks; keep the normal test watchdog.
+    pause 0.01
     screenshot "sofa-nubi-01-camera-zero.png"
     if eval (r13_world_offset()<r13_world_width()-1280):
         click "›"
@@ -250,6 +262,8 @@ testcase investigation_sofa_nubi:
     run Function(r13_pd_check_field,"sofa-camera-right")
     screenshot "investigation_sofa_nubi-sofa-target-camera-right-before-assert.png"
     run Function(r13_sofa_geometry,"sofa-target-camera-right")
+    # Yield after exhaustive GPU/focus checks; keep the normal test watchdog.
+    pause 0.01
     screenshot "sofa-nubi-02-camera-right.png"
     run Function(r13_pd_choose_person,True)
     assert eval (not r13_pd_person_ready)
@@ -265,6 +279,8 @@ testcase investigation_sofa_nubi:
     assert eval (r13_pd_person_ready and r13_pd_person=='resident_nubi')
     screenshot "investigation_sofa_nubi-sofa-actual-body-click-viewport-before-assert.png"
     run Function(r13_sofa_geometry,"sofa-actual-body-click-viewport")
+    # Yield after exhaustive GPU/focus checks; keep the normal test watchdog.
+    pause 0.01
     click pos (r13_pd_person_x,r13_pd_person_y)
     pause until eval (renpy.get_screen("say") is not None or renpy.get_screen("r13_resident_approach") is not None or renpy.get_screen("r13_topics") is not None or renpy.get_screen("notify") is not None) timeout 5
     if eval (r13_pd_contact_allowed):
@@ -317,7 +333,11 @@ testcase investigation_sofa_nubi:
     run Function(r13_pd_check_field,"sofa-returned-field")
     screenshot "investigation_sofa_nubi-sofa-target-returned-before-assert.png"
     run Function(r13_sofa_geometry,"sofa-target-returned")
+    # Yield after exhaustive GPU/focus checks; keep the normal test watchdog.
+    pause 0.01
     screenshot "sofa-nubi-05-returned.png"
     run Hide("r13_qa_pixel_variant")
     run Function(r13_sofa_result)
+    # Yield after exhaustive GPU/focus checks; keep the normal test watchdog.
+    pause 0.01
 
