@@ -1,3 +1,4 @@
+from grid2_test_env import load_grid2
 """Renderer clock must begin at first draw, not inherit the screen's age."""
 import ast,textwrap,unittest
 from pathlib import Path
@@ -10,6 +11,7 @@ class RenderClock(unittest.TestCase):
   src=(Path(__file__).resolve().parents[1]/'game/systems/room13_dialogue_beats.rpy').read_text().split('init 170 python:\n',1)[1]
   tree=ast.parse(textwrap.dedent(src));cls=next(n for n in tree.body if isinstance(n,ast.ClassDef));exec(compile(ast.Module(body=[cls],type_ignores=[]),'renderer','exec'),env)
   profile=dict(canvas=[100,200],frames={key:dict(file=key,offset=[0,0]) for key in ('surprise_talk','surprise_react')})
+  load_grid2(env)
   art=env['R13DialogueBeat'](plan,profile)
   self.assertEqual(art.render(100,200,100,100),'surprise_react')
   self.assertEqual(art.render(100,200,100.2,100.2),'surprise_react')

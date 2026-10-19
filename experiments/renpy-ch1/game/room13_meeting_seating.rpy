@@ -215,16 +215,16 @@ screen r13_meeting_camera_frame(claim,focus=None,close=False,ready=False,selecte
                 else:
                     $ side_art=r13_pixel_scale(r13_meeting_neighbor_art(neighbor,is_left,sitting),side_width,side_height,R13_CLOSE_PIXEL_GRID)
                 $ side_x=-side_width//3 if is_left else 1280-side_width*2//3
-                add Transform(side_art,nearest=not bool(side_profile),matrixcolor=BrightnessMatrix(-.08-r13_meeting_direct_shade()*.4)*SaturationMatrix(.90)) xpos side_x ypos (142 if sitting else 164)
+                add r13_g2_positioned(Transform(side_art,nearest=(r13_g2_enabled() or not bool(side_profile)),matrixcolor=BrightnessMatrix(-.08-r13_meeting_direct_shade()*.4)*SaturationMatrix(.90)),side_x,(142 if sitting else 164),center=False)
             # Reuse front-facing interview expressions and their stable torso centre.
             $ pose=r13_meeting_previous_expression if outgoing else (getattr(store,"dialogue_expression","neutral") if getattr(store,"dialogue_speaker",None)==focus else "neutral")
             $ pose=r13_meeting_previous_expression if outgoing else r13_meeting_direct_pose(focus,pose)
             $ close_height=r13_meeting_direct_close_height(venue_kind,outgoing)
             $ portrait=r13_fullbody_close_art(focus,pose,close_height)
             if portrait is not None:
-                add portrait xcenter r13_close_x(focus,pose,close_height) ypos r13_fullbody_close_y(focus,close_height,96,pose)
+                add r13_g2_positioned(portrait,r13_close_x(focus,pose,close_height),r13_fullbody_close_y(focus,close_height,96,pose))
             else:
-                add Transform(r13_meeting_actor(focus,focus,640),ysize=840,fit="contain",nearest=True) xcenter 640 ypos 108
+                add r13_g2_positioned(Transform(r13_meeting_actor(focus,focus,640),ysize=840,fit="contain",nearest=True),640,108)
         else:
             for index,(who,stance) in enumerate(seats):
                 $ cx,edge=r13_meeting_seat_position(index,len(seats),session)
@@ -235,9 +235,9 @@ screen r13_meeting_camera_frame(claim,focus=None,close=False,ready=False,selecte
                     # smooth portrait; the existing table mask hides the lower body.
                     $ source_profile=r13_dialogue_source_profile(who,"neutral",840) if who not in R13_MEETING_SEATED else None
                     if source_profile:
-                        add Transform(r13_fullbody_close_art(who,"neutral",840),ysize=height,fit="contain",nearest=False) xcenter cx ypos top
+                        add r13_g2_positioned(Transform(r13_fullbody_close_art(who,"neutral",840),ysize=height,fit="contain",nearest=r13_g2_enabled()),cx,top)
                     else:
-                        add Transform(r13_meeting_actor(who,focus,cx,seated=True),ysize=height,fit="contain",nearest=True) xcenter cx ypos top
+                        add r13_g2_positioned(Transform(r13_meeting_actor(who,focus,cx,seated=True),ysize=height,fit="contain",nearest=True),cx,top)
                 else:
                     $ stand_width,height,top=r13_meeting_standing_slot(who,len(seats),edge,session)
                     $ source_profile=r13_dialogue_source_profile(who,"neutral",840)
@@ -247,9 +247,9 @@ screen r13_meeting_camera_frame(claim,focus=None,close=False,ready=False,selecte
                         $ height=int(round(stand_width*source_height/float(source_width)))
                         $ source_top=int(edge-height*(1.0 if venue_kind in ("field","room") else .60))
                         $ top=source_top
-                        add Transform(r13_fullbody_close_art(who,"neutral",840),xysize=(stand_width,height),nearest=False) xcenter cx ypos source_top
+                        add r13_g2_positioned(Transform(r13_fullbody_close_art(who,"neutral",840),xysize=(stand_width,height),nearest=r13_g2_enabled()),cx,source_top)
                     else:
-                        add r13_pixel_scale(r13_meeting_actor(who,focus,cx),stand_width,height,R13_CLOSE_PIXEL_GRID) xcenter cx ypos top
+                        add r13_g2_positioned(r13_pixel_scale(r13_meeting_actor(who,focus,cx),stand_width,height,R13_CLOSE_PIXEL_GRID),cx,top)
                 $ own=[st for st in r13_debate_statements(claim) if st["who"]==who and r13_debate_visible(claim,st)]
                 button:
                     area (cx-56,top-28,112,84) padding (0,0) background None hover_background None
@@ -360,7 +360,7 @@ screen r13_meeting_choices(items,ready):
             hbox:
                 align (.5,.5) spacing 14
                 if who and columns==2:
-                    add Transform(r13_art(who,"avatar_neutral"),xysize=(48,48),fit="contain",nearest=r13_profile_nearest(who)) yalign .5
+                    add r13_g2_profile_transform(r13_art(who,"avatar_neutral"),xysize=(48,48),fit="contain",nearest=r13_profile_nearest(who)) yalign .5
                 text (str(index+1)+"  "+item.caption) size r13_read_size(23,27) color "#fff0ce" yalign .5
         if index<9 and ready:
             key ("K_%d"%(index+1)) action r13_safe_question_action(item.action)

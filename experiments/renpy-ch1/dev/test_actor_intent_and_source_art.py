@@ -88,4 +88,7 @@ class SourceMasterArt(unittest.TestCase):
   fullbody=json.loads((ROOT/'game/assets/room13-fullbody-dialogue.json').read_text())['people']
   self.assertEqual(set(data['people']),set(fullbody)-{'dad','elder','bodum','workshop'})
   source=(ROOT/'game/systems/room13_dialogue_beats.rpy').read_text()
-  self.assertIn('nearest=False,subpixel=True',source);self.assertNotIn('nearest=True',source)
+  # The approved source art remains unchanged; only the opt-in sampling mode differs.
+  self.assertIn('nearest=r13_g2_enabled(),subpixel=not r13_g2_enabled()',source)
+  from test_grid2_source_modes import assert_dialogue_source_modes
+  assert_dialogue_source_modes(self)

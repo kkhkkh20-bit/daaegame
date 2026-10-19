@@ -80,7 +80,7 @@ init 170 python:
             for key in (plan["talk"],plan["react"]):
                 if key and key not in self.frames:
                     frame=profile["frames"][key]
-                    self.frames[key]=Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],zoom=frame.get("scale",1.0),nearest=False,subpixel=True),xysize=tuple(profile["canvas"]))
+                    self.frames[key]=Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],zoom=frame.get("scale",1.0),nearest=r13_g2_enabled(),subpixel=not r13_g2_enabled()),xysize=tuple(profile["canvas"]))
         def visit(self):
             return list(self.frames.values())
         def render(self,width,height,st,at):
@@ -132,7 +132,7 @@ init 170 python:
         emotion={"surprise":"surprise_talk","flustered":"anxious"}.get(emotion,emotion)
         frame=profile["frames"].get(emotion,profile["frames"]["neutral"])
         if renpy.loadable(frame["file"]):
-            return Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],zoom=frame.get("scale",1.0),nearest=False,subpixel=True),xysize=tuple(profile["canvas"]))
+            return Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],zoom=frame.get("scale",1.0),nearest=r13_g2_enabled(),subpixel=not r13_g2_enabled()),xysize=tuple(profile["canvas"]))
         # An approved character must never silently revert to the old pixel design.
         # A second shipped size is the same approved neutral, with its whole canvas scaled.
         posed=r13_dialogue_pose_source(person,pose)
@@ -141,9 +141,9 @@ init 170 python:
             other=entry["profiles"][alternate]
             fallback=other["frames"]["neutral"]
             if renpy.loadable(fallback["file"]):
-                art=Fixed(Transform(fallback["file"],xpos=fallback["offset"][0],ypos=fallback["offset"][1],zoom=fallback.get("scale",1.0),nearest=False,subpixel=True),xysize=tuple(other["canvas"]))
+                art=Fixed(Transform(fallback["file"],xpos=fallback["offset"][0],ypos=fallback["offset"][1],zoom=fallback.get("scale",1.0),nearest=r13_g2_enabled(),subpixel=not r13_g2_enabled()),xysize=tuple(other["canvas"]))
                 renpy.log("Approved dialogue size fallback: %s %s -> %s" % (person,height,alternate))
-                return Transform(art,xysize=tuple(profile["canvas"]),nearest=False,subpixel=True)
+                return Transform(art,xysize=tuple(profile["canvas"]),nearest=r13_g2_enabled(),subpixel=not r13_g2_enabled())
         renpy.log("Approved dialogue art unavailable: %s %s" % (person,frame["file"]))
         return Fixed(Text("인물 그림을 불러오지 못했습니다.\n연결을 확인한 뒤 게임을 다시 열어 주세요.",size=22,color="#fff4df",xalign=.5,ypos=100),xysize=tuple(profile["canvas"]))
 

@@ -1,3 +1,4 @@
+from grid2_test_env import load_grid2
 """Father viewpoint contract against the actual speaker function, no renderer mocks claimed as visual QA."""
 import ast
 from pathlib import Path
@@ -38,6 +39,7 @@ class ViewpointSpeaker(unittest.TestCase):
             'r13_dialogue_beat_ready':lambda person:False,
             'r13_react_kind':lambda *args:None,
             'r13_react':lambda kind,who,pose,what,at_list:(what,at_list)}
+        load_grid2(env)
         exec(CODE, env)
         self.speak = env['r13_speaker']
     def test_father_reply_retains_target_pose_without_reentry(self):

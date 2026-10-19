@@ -275,7 +275,7 @@ screen r13_board_face(who,kind):
     fixed:
         xysize (60,60)
         add Solid("#2f7a45" if kind=="saved" else "#8d8579")
-        add Transform(r13_art(who,"avatar_neutral"),xysize=(54,54),fit="contain",nearest=r13_profile_nearest(who),matrixcolor=(SaturationMatrix(0.0) if kind=="dead" else IdentityMatrix())) xpos 3 ypos 3
+        add r13_g2_profile_transform(r13_art(who,"avatar_neutral"),xysize=(54,54),fit="contain",nearest=r13_profile_nearest(who),matrixcolor=(SaturationMatrix(0.0) if kind=="dead" else IdentityMatrix())) xpos 3 ypos 3
         if kind=="dead":
             add Transform(Solid("#b2442a",xsize=74,ysize=6),rotate=45) xanchor .5 yanchor .5 xpos 30 ypos 30
             add Transform(Solid("#b2442a",xsize=74,ysize=6),rotate=-45) xanchor .5 yanchor .5 xpos 30 ypos 30

@@ -33,6 +33,7 @@ init 59 python:
 
     def r13_pixel_scale(art,width,height,grid):
         width=max(1,int(round(width)));height=max(1,int(round(height)))
+        if r13_g2_enabled():grid=1 # final character pass owns the only quantization
         if grid>1:
             # Flatten creates an actual low-resolution render texture. Merely
             # composing two scales can otherwise preserve the full-res source.
@@ -523,6 +524,10 @@ init 59 python:
 
     def r13_staged_art(actor,still=False):
         art=r13_art(actor["person"],actor["pose"])
+        if r13_g2_enabled():
+            sw,sh=actor.get("grid2_source_size",(actor["width"],actor["height"]))
+            art=Transform(art,size=(max(1,int(round(sw))),max(1,int(round(sh)))),yoffset=actor["height"]-max(1,int(round(sh))),nearest=True,subpixel=False)
+            return r13_idle_art(art,actor["person"],actor["pose"],r13_acting_spec(actor["person"],actor["pose"]),sw,sh,contact=actor["contact"],still=still)
         spec=r13_acting_spec(actor["person"],actor["pose"]) or {}
         if spec.get("native_detail"):
             art=Transform(art,size=(max(1,int(round(actor["width"]))),max(1,int(round(actor["height"])))),nearest=True,subpixel=False)
@@ -590,4 +595,3 @@ init 59 python:
             key="chair_listen" if pose=="neutral" else "chair_read" if pose=="thinking" else pose
             if key in R13_ACTING.get(person,{}):return key
         return pose
-

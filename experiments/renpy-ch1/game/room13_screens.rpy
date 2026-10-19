@@ -193,8 +193,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
         # Dad will ask; the question itself is then spoken in dialogue.
         # 0.18.39 (owner): same size and place as in dialogue, so the person does not jump.
         add Solid("#00000030")
-        add r13_close_art(person,pose,840):
-            xpos r13_close_x(person,pose) xanchor .5 ypos r13_close_y(person,840,110,pose)
+        add r13_g2_positioned(r13_close_art(person,pose,840),r13_close_x(person,pose),r13_close_y(person,840,110,pose))
         if title=="선택":
             $ context=r13_choice_context()
             if context:

@@ -334,6 +334,9 @@ init 55 python:
                 what=r13_close_art(who,actor_pose,840,True,(arriving or previous_pose!=store.r13_current_pose) and not pop and not react)
                 at_list=[r13_portrait_close(r13_close_y(who,pose=actor_pose),r13_close_x(who,actor_pose))]+([r13_carriage_pop] if pop else [])
                 if not r13_dialogue_beat_ready(who):what,at_list=r13_react(react,who,actor_pose,what,at_list)
+                if r13_g2_enabled():
+                    what=r13_g2_final(Fixed(At(what,*at_list),xysize=(1280,720)))
+                    at_list=[Transform(xpos=0,ypos=0,xanchor=0,yanchor=0,xoffset=0,yoffset=0,zoom=1.0,xzoom=1.0,yzoom=1.0,rotate=0,rotate_pad=False,alpha=1.0,subpixel=False,nearest=True)] # no diagonal padding; preserve shown-tag continuity
                 renpy.show("r13_actor",what=what,tag="r13_visitor",at_list=at_list)
             store.r13_motion_person=who
         else:

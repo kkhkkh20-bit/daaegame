@@ -1,3 +1,4 @@
+from grid2_test_env import load_grid2
 import json,textwrap,types,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -28,6 +29,7 @@ class MeetingSources(unittest.TestCase):
   registry=json.loads((ROOT/'game/assets/room13-meeting-source-art.json').read_text())
   transforms=[]
   env=dict(store=types.SimpleNamespace(r13_meeting_art_slots={}),R13_MEETING_SOURCE_ART=registry,renpy=types.SimpleNamespace(loadable=lambda p:True),Transform=lambda *a,**kw:transforms.append(kw) or kw,Fixed=lambda *a,**kw:kw)
+  load_grid2(env)
   exec(textwrap.dedent('    def r13_meeting_slot_art'+block),env)
   for who,slots in registry.items():
    for slot,spec in slots.items():
