@@ -41,6 +41,9 @@ init 990 python:
         with open(r13_c4_os.path.join(r13_c4_out(),'metrics.jsonl'),'a') as f:
             f.write(r13_c4_json.dumps(fields,default=str,ensure_ascii=False)+'\n')
 
+    def r13_c4_checkpoint(step):
+        r13_c4_log('checkpoint',step=step,grid_enabled=bool(R13_CHARACTER_GRID2_ENABLED))
+
     def r13_c4_begin():
         global R13_C4_ACTIVE,R13_CHARACTER_GRID2_ENABLED
         assert not R13_C4_ACTIVE and not R13_CHARACTER_GRID2_ENABLED,'Default-off prerequisite failed'
@@ -83,7 +86,10 @@ init 990 python:
         if context=='dialogue':
             assert renpy.get_screen('say') and renpy.get_image_bounds('r13_visitor',layer='master')
         for index,(key,(before,after,size)) in enumerate(records[:12]):
-            a,raw=r13_c4_surface(before,size)
+            # Compare the same pre-grid canvas used by production r13_g2_final.
+            # Source art can be odd-width; padding is transparent, never rescaling.
+            before_canvas=Fixed(before,xysize=size)
+            a,raw=r13_c4_surface(before_canvas,size)
             b,data=r13_c4_surface(after,size)
             nz=sum(v>0 for v in data[3::4]);bad=r13_c4_bad(data,size)
             prefix='%s-%s-%02d'%(context,step,index)

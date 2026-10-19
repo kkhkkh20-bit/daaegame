@@ -15,8 +15,18 @@ for tc in "${TESTS[@]}"; do
   # Larger display only for pixel-grid proof; testcase requests native1280x720 window.
   qa_display="1280x720x24"
   case "$tc" in character_grid2_source_proof|character_grid2_field_dialogue_profiles|character_grid2_meeting_replay) qa_display="1920x1080x24" ;; esac
-  timeout ${ROOM13_TEST_TIMEOUT:-400} xvfb-run -a -s "-screen 0 $qa_display" "$SDK/renpy.sh" . test "$tc" > "$log" 2>&1 &
-  for i in $(seq 1 ${ROOM13_TEST_TIMEOUT:-400}); do grep -q "Status:" "$log" 2>/dev/null && break; sleep 1; done
+  PYTHONFAULTHANDLER=1 timeout ${ROOM13_TEST_TIMEOUT:-400} xvfb-run -a -s "-screen 0 $qa_display" "$SDK/renpy.sh" . test "$tc" > "$log" 2>&1 &
+  qa_pid=$!
+  for i in $(seq 1 ${ROOM13_TEST_TIMEOUT:-400}); do
+    grep -q "Status:" "$log" 2>/dev/null && break
+    # A crashed process is already a failure, not a reason to wait 400 seconds.
+    if ! kill -0 "$qa_pid" 2>/dev/null; then
+      wait "$qa_pid"; qa_exit=$?
+      echo "[native-process] exited before Status with code $qa_exit" >> "$log"
+      break
+    fi
+    sleep 1
+  done
   sleep 1; ps -eo pid,comm | awk '$2=="renpy"{print $1}' | xargs -r kill -9 2>/dev/null
   status=$(grep -o 'Status: [A-Z]*' "$log" | tail -1)
   echo "== $tc $status $(grep -o 'Time: [0-9.]* s' "$log" | tail -1)"

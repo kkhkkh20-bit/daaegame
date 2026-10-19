@@ -122,16 +122,22 @@ testcase character_grid2_field_dialogue_profiles:
 
 
 testcase character_grid2_meeting_replay:
+    run Function(r13_c4_checkpoint,"meeting-testcase-start")
     pause 2.0
+    run Function(r13_c4_checkpoint,"meeting-before-newgame")
     click "처음부터"
+    run Function(r13_c4_checkpoint,"meeting-after-newgame")
     pause 3.0
+    run Function(r13_c4_checkpoint,"meeting-before-window-request")
     run Function(r13_g2_prepare_physical_window)
     pause 1.0
     run Function(r13_g2_runtime_probe)
+    run Function(r13_c4_checkpoint,"meeting-before-grid-enable")
     run Function(r13_c4_begin)
     run Call("r13_qa_roam",dict(day=2,period=0,location="inn",case_state="pending",victim_state="alive",evidence=["E01"],propositions=[]),("entry_corrected","lodging"))
     click pos (640,600) until screen "r13_hub" timeout 40
     pause 1.0
+    run Function(r13_c4_checkpoint,"meeting-hub-ready")
     # Deliberate save in the isolated CI profile, to detect overwrites or new slots.
     $ renpy.save("qa-admin-before")
     $ r13_qa_admin_before=winter_copy.deepcopy(room13)
@@ -141,6 +147,7 @@ testcase character_grid2_meeting_replay:
     $ persistent.room13_admin=True
     run Function(renpy.restart_interaction)
     pause 1.0
+    run Function(r13_c4_checkpoint,"meeting-before-admin")
     click "관리자"
     pause 0.5
     assert screen "r13_admin"
@@ -149,7 +156,9 @@ testcase character_grid2_meeting_replay:
     pause 0.5
     assert screen "r13_admin_meeting_picker"
     screenshot "admin-meeting-01-picker.png"
+    run Function(r13_c4_checkpoint,"meeting-before-replay-choice")
     click "C2 · 아이가 친 촛대 때문에 죽었다"
+    run Function(r13_c4_checkpoint,"meeting-after-replay-choice")
     pause 3.0
     assert eval (_in_replay=="r13_admin_meeting_replay" and r13_admin_meeting_test)
     assert eval (room13["location"]=="dining" and room13["day"]==R13_TRIAL_DAY and room13["propositions"]==["C1"])
@@ -185,7 +194,9 @@ testcase character_grid2_meeting_replay:
     assert eval (r13_qa_admin_persistent_snapshot()==r13_qa_admin_history)
     assert eval (r13_qa_admin_save_snapshot()==r13_qa_admin_slots)
     screenshot "admin-meeting-03-returned-picker.png"
+    run Function(r13_c4_checkpoint,"meeting-before-replay-choice")
     click "C2 · 아이가 친 촛대 때문에 죽었다"
+    run Function(r13_c4_checkpoint,"meeting-after-replay-choice")
     pause 3.0
     assert eval (_in_replay=="r13_admin_meeting_replay" and r13_admin_meeting_test)
     assert eval (room13["propositions"]==["C1"] and not room13["arguments"] and not r13_debate_is_broken("C2","s1"))
