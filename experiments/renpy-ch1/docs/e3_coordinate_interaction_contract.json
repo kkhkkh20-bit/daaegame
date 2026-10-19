@@ -1,0 +1,259 @@
+{
+  "revision": "e3-v3-source-art-reviewed-native-pending",
+  "status": "Source-art PASS for exact day/night-v3 hashes and bounded observations below. Native rendering, hit tests and state tests remain unverified.",
+  "source_canvas": [
+    1584,
+    993
+  ],
+  "logical_world": {
+    "L": [
+      0,
+      0
+    ],
+    "M": [
+      5,
+      0
+    ],
+    "W": [
+      10,
+      0
+    ],
+    "child": [
+      0,
+      1
+    ],
+    "teacher": [
+      6,
+      3
+    ],
+    "child_observed_interval": [
+      0,
+      6
+    ],
+    "teacher_observed_interval": [
+      4,
+      10
+    ],
+    "overlap": [
+      4,
+      6
+    ]
+  },
+  "candidate_native_anchors": {
+    "L": [
+      245,
+      430
+    ],
+    "M": [
+      850,
+      560
+    ],
+    "W": [
+      1300,
+      535
+    ],
+    "child_eye": [
+      245,
+      348
+    ],
+    "teacher_eye": [
+      875,
+      246
+    ],
+    "teacher_ground": [
+      875,
+      387
+    ],
+    "range4": [
+      729,
+      534
+    ],
+    "range6": [
+      940,
+      555
+    ],
+    "can": [
+      1217,
+      512
+    ],
+    "ignition": [
+      1326,
+      526
+    ],
+    "school_junction": [
+      925,
+      503
+    ],
+    "bori_junction": [
+      1430,
+      610
+    ]
+  },
+  "runtime_image_transform": {
+    "source_crop_xywh": [
+      80,
+      150,
+      1500,
+      650
+    ],
+    "display_xywh": [
+      70,
+      116,
+      1140,
+      494
+    ],
+    "uniform_scale": 0.76,
+    "forward": "sx=70+(px-80)*0.76; sy=116+(py-150)*0.76",
+    "inverse": "px=80+(sx-70)/0.76; py=150+(sy-116)/0.76",
+    "round_anchor_to_even_screen_pixels": true,
+    "note": "Single documented transform; do not rescale labels and hotspots separately."
+  },
+  "hotspots_native_candidate": {
+    "L": [
+      210,
+      395,
+      70,
+      70
+    ],
+    "M": [
+      815,
+      525,
+      70,
+      70
+    ],
+    "W": [
+      1170,
+      450,
+      210,
+      115
+    ],
+    "child": [
+      192,
+      290,
+      112,
+      145
+    ],
+    "teacher": [
+      835,
+      205,
+      90,
+      100
+    ],
+    "can": [
+      1187,
+      472,
+      65,
+      64
+    ],
+    "ignition": [
+      1295,
+      470,
+      70,
+      85
+    ],
+    "overlap_polygon": [
+      [
+        721,
+        502
+      ],
+      [
+        946,
+        523
+      ],
+      [
+        948,
+        586
+      ],
+      [
+        735,
+        566
+      ]
+    ],
+    "school_junction": [
+      830,
+      440,
+      230,
+      130
+    ],
+    "Bori_junction": [
+      1380,
+      565,
+      130,
+      100
+    ],
+    "rescue_wall": [
+      1452,
+      380,
+      106,
+      150
+    ]
+  },
+  "interaction_contract": {
+    "steps_0_1": "L/M/W scene-point hotspots only, with same logical Return values. Can endpoint W differs from person return endpoint L.",
+    "step_2": "Child observed interval0..6, semantic answer L-M; show overlap extension beyond M.",
+    "step_3": "Teacher observed interval4..10, semantic answer M-W; show overlap extension before M.",
+    "step_4": "Clickable band4..6 including M. Tracking overlap begins4; teacher fully sees ordinary can/hands by M5. Do not claim the wall is transparent.",
+    "regions": "No full-size transparent button may intercept a different visible point. Inspect-child/teacher/can/wall uses a separate mode from map-answer interactions.",
+    "accessibility": "Every active hotspot has visible focus and minimum44x44 screen pixels. Esc/cancel preserves previous state.",
+    "day_night": "Night ignition+intact sidewall, daytime postfire+rescue hole. Do not display day rescue hole in pre-rescue reconstruction."
+  },
+  "observation_limits": {
+    "teacher": "Carrying/placing/igniting and empty return M5..W10 clear of pillar; continuous person tracking starts4. Night distance/oblique view and return fire backlight prevent confident identity, not physical face invisibility.",
+    "child": "Identified mother face atL before outbound and after empty return, continuously followed only0..6. Do not claim W physically cannot be seen.",
+    "junctions": "Real side approaches remain drawn. No OTHER crossing/handoff during covered brief interval is a witness observation, not zero physical branches.",
+    "Bori": "His stated opposite approach begins offscreen; teacher corroborates first visible arrival after ignition, not the whole unseen approach.",
+    "emergency": "Teacher calls out immediately on ignition while observing brief empty return, then leaves window to help. No extended passive observation."
+  },
+  "pending_tests": [
+    "Verify installed day/night files match reviewed hashes; native day/night screen mapping uses identical transforms.",
+    "Check teacher window-to-W exterior front side and wall/pillar occlusion at4,5,6 andW.",
+    "Check ordinary can/body placement without raising can or contorted head pose.",
+    "Click source-aligned hotspots in real1280x720 RenPy, including keyboard focus and cancel.",
+    "Exercise consent/no-consent, crossed/gapped observation, and safe/loss story branches.",
+    "Confirm final2x quantization once and no double pixelization."
+  ],
+  "night_source": "masters/fire_lmw_night_geometry_v3.png",
+  "night_source_sha256": "f1acb0401f7587b3386d88664ede106aa6eb1a5ce868cde2996871b459ef2ae3",
+  "reviewed_geometry": {
+    "approx_warehouse_front_base": [
+      [
+        1195,
+        480
+      ],
+      [
+        1380,
+        550
+      ]
+    ],
+    "school_ground": [
+      875,
+      387
+    ],
+    "school_margin_in_front_of_extended_facade_pixels": 28.08,
+    "world_coordinates": "Keep specified logical L0/M5/W10 and teacher6,3; native art uses perspective and a gently bending road. Route sampling is piecewise, not affine metres.",
+    "route_polyline": [
+      [
+        245,
+        430
+      ],
+      [
+        850,
+        560
+      ],
+      [
+        1300,
+        535
+      ]
+    ],
+    "visibility": "Teacher is outside/front of warehouse door plane. At far-left4, wall can hide lower legs/can; upper-body tracking stays continuous. By M5 atx850, ordinary carrying/placing/igniting and empty return are clear of pillar. Child directly covers0..6. No forced raised can or head-turn.",
+    "pillar_max_x": 824,
+    "M_actor_ordinary_half_width": 18,
+    "M_actor_leftmost_x": 832,
+    "door_scene_zone": "W is threshold site, not a single pixel: can1217,512; external ignition1326,526; threshold1300,535.",
+    "physical_access": "School forecourt and right approach remain visible. Witnesses report no crossing during relevant interval; Bori joins afterward."
+  },
+  "day_source": "masters/fire_lmw_day_geometry_v3.png",
+  "day_source_sha256": "5c748c1d5fa6a7436464762380e389e1caba6c94a140196ae37ed82586ace7ac",
+  "source_art_review_pass": true,
+  "native_runtime_review_pass": false
+}

@@ -85,6 +85,9 @@ screen main_menu():
         textbutton "설정":
             style "r13_title_button" selected title_focus=="settings"
             hovered SetScreenVariable("title_focus","settings") action ShowMenu("pause_menu")
+    textbutton "추천 스토리 검증판 · 엄마 B / 피코 C":
+        xpos 62 ypos 522 text_size 20
+        action Start("r13_recommended_start")
     textbutton "음악 출처":
         xpos 28 ypos 680 padding (8,5) background None
         text_font "assets/Room13TitleSerif.otf" text_size 14 text_color "#c5c6d2" text_hover_color "#fff0ce"

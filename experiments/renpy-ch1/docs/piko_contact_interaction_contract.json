@@ -1,0 +1,136 @@
+{
+  "revision": "piko-native-v4-source-art-reviewed-native-pending",
+  "source_art_review_pass": true,
+  "native_runtime_review_pass": false,
+  "manifest": "examinations/piko-native-v4/manifest.json",
+  "manifest_sha256": "101b91b24c700082d09320ffaf2e14147577fe56a5c13250a611bd51d5d61443",
+  "approved_panels": {
+    "parent_projection__640x400.png": "c7bdef044df90d08b362e9199bba238ea98b6727f811e14cd24da415dda3a891",
+    "contact__640x400.png": "884ec7326df6c640ebf6b6a972132dd7eb621c21a2cf882f22b35f20f99ed983",
+    "container_unfolded__640x400.png": "791d9a9bc50381d88741c24caf6918221138325072d61fc6be876369499956d4",
+    "empty_before__640x400.png": "cce2a67c45dc63465dd7c4f861ffd2c39bc653c63c828003696f3a16d4e0b946",
+    "fragment_projection__640x400.png": "7452c897bcaf3766af108074e339db25662679031b63479c3a23e20038cb4e8b",
+    "open__640x400.png": "d834a9237a9e46e2ec63e3174d98d57b3f880ae71ce7047b3228af4b8e429649",
+    "inner_fitting_section.png": "dbce3577f03ddca2e51ff9ca220649751ccecb4f9aac7fe68131c1c6a3ad7e11",
+    "grip__640x400.png": "5c886226d6bafada8473e857bc4233023a2e73ab1c1bdb3a1de388469398e336",
+    "canonical_tail_projection__640x400.png": "b9b2ba4930c48ae49226acca353c6b4dfbaa342be6e96e80c972fd9de03a95f7",
+    "lifted__640x400.png": "b790840bae0dab830c1062b2bb0aee0b1c059b2f17761170eef53df31c7086d8",
+    "empty_after__640x400.png": "7d967fb74f690ad48f735944f17e2274b30c2870ce91e56fbe49bcb12288b284"
+  },
+  "logical_size": [
+    320,
+    200
+  ],
+  "display_size": [
+    640,
+    400
+  ],
+  "fastener_logical": [
+    220,
+    74
+  ],
+  "fastener_display": [
+    440,
+    148
+  ],
+  "rim_inspection_hitbox_logical": [
+    207,
+    61,
+    27,
+    27
+  ],
+  "rim_inspection_hitbox_display": [
+    414,
+    122,
+    54,
+    54
+  ],
+  "sequence": [
+    "open",
+    "grip",
+    "contact",
+    "lifted"
+  ],
+  "sequence_meaning": "Current object handling reconstruction, not an eyewitness movie of the original theft. Fixed fastener; ordinary protected grip raises10 then24 logicalpx; fragment stays after contact.",
+  "tear_identity_scope": "The complete decisive torn boundary and both adjacent stripes share canonical UV[190,0,300,174], sampled with same affine triangles/masks. Plain central folded cloth is illustrative, not claimed full-cloth pixel identity.",
+  "canonical_source_sha256": "56c98afccf32affa08c688071177a9a80913f20084edd03f2cee2d1923c44a46",
+  "shared_uv_region": [
+    190,
+    0,
+    300,
+    174
+  ],
+  "projected_quad_contact": [
+    [
+      191,
+      96
+    ],
+    [
+      207,
+      51
+    ],
+    [
+      232,
+      91
+    ],
+    [
+      205,
+      116
+    ]
+  ],
+  "physical_findings": [
+    "Unchanged covered inner metal fitting, not glass",
+    "Ordinary cloth between gloves and stone",
+    "Two support blocks load the frame, leaving finial recess",
+    "Same opaque frame and translucent glass occlusion in every state",
+    "Four-sided peaked-cap hanging lantern family matches square background",
+    "Stone17; no oil, wick or flame"
+  ],
+  "inference_scope": "Cloth fit establishes contact with a lid-covered inner fitting. Story ownership/access and intact-before/torn-after witness timing supply attribution/time; do not infer those solely from art.",
+  "native_tests": [
+    "Inspect exact installed file hashes and one2x final pass",
+    "Play sequence in order; fixed fitting does not jump",
+    "Visible missing piece and stripes align when comparison returns matched",
+    "Use RGBA alpha masks, not L masks with displayable AlphaMask",
+    "Confirm rim hitbox does not point to glass or permit a hidden disabled action",
+    "Revisit/cancel/known result preserve acquired observations"
+  ],
+  "supersedes_revision": "piko-native-v3-source-art-reviewed-native-pending",
+  "floor_identifier_scope": "Fixed original pedestal17 marking restored, partially obscured by seated stone and plainly exposed in empty states. No contact geometry or story facts changed.",
+  "empty_states": {
+    "empty_before": "Same lamp opened with no attached fragment, an examination-state asset; story timing controlled by script.",
+    "empty_after": "Same lamp after contact, fragment fixed to inner fitting, floor17 exposed."
+  },
+  "inventory_container_art": {
+    "state": "Same container with canonical parent lining unfolded for comparison; not a second evidence object.",
+    "canonical_source_sha256": "56c98afccf32affa08c688071177a9a80913f20084edd03f2cee2d1923c44a46",
+    "approved_files": {
+      "transparent/container_canonical_v2__64.png": {
+        "sha256": "73c1f365058acd039524c4af9baf60a647fe5ab93077bf11bdd78c1b5319ed54",
+        "exact_source_mask_reconstruction": true,
+        "exact_2x2": true,
+        "visible_parent_shape": "canonical parent mask; no invented second tear"
+      },
+      "transparent/container_canonical_v2__240.png": {
+        "sha256": "009f8aaeb4c3a232f45b6212cb088e29d27dfb4923d053d4041dfc1bac3ac319",
+        "exact_source_mask_reconstruction": true,
+        "exact_2x2": true,
+        "visible_parent_shape": "canonical parent mask; no invented second tear"
+      }
+    },
+    "exact_mask_identity": true
+  },
+  "runtime_asset_overrides": {
+    "inner_fitting_section": {
+      "path": "delta-v2/game/assets/recommended-story-icons/piko-native-v4/inner_fitting_section.png",
+      "sha256": "63cfc8031705e9402a77691901ffd9cf17a435875abfe86e89620f5389239e94",
+      "size": [
+        640,
+        280
+      ],
+      "exact_2x2": true,
+      "meaning": "Code-native unlabelled closed/open lid section; use this runtime export, not the earlier non2x proof section."
+    }
+  },
+  "delta_validation": "metadata/scene-geometry/final_delta_review_validation.json"
+}

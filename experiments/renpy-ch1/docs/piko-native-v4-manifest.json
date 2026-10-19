@@ -1,0 +1,112 @@
+{
+  "revision": "piko-native-v4",
+  "status": "source_art_review_pass_runtime_pending",
+  "gate_open": false,
+  "logical_size": [
+    320,
+    200
+  ],
+  "display_size": [
+    640,
+    400
+  ],
+  "fastener_logical": [
+    220,
+    74
+  ],
+  "canonical_texture": "masters/cloth_texture.png",
+  "canonical_source_sha256": "56c98afccf32affa08c688071177a9a80913f20084edd03f2cee2d1923c44a46",
+  "canonical_cut_source": "examinations/cloth-mask-v1/fragment_mask.png",
+  "shared_uv_region": [
+    190,
+    0,
+    300,
+    174
+  ],
+  "uv_quad": [
+    [
+      190,
+      0
+    ],
+    [
+      300,
+      0
+    ],
+    [
+      300,
+      174
+    ],
+    [
+      190,
+      174
+    ]
+  ],
+  "projected_quad_contact": [
+    [
+      191,
+      96
+    ],
+    [
+      207,
+      51
+    ],
+    [
+      232,
+      91
+    ],
+    [
+      205,
+      116
+    ]
+  ],
+  "triangles": [
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      2,
+      3
+    ]
+  ],
+  "mask_sampling": "nearest; same affine coordinates as texture",
+  "texture_sampling": "direct source crop to logical scene, bicubic, then final nearest2x",
+  "tail_reconstruction_rgba_exact": true,
+  "central_fold_status": "generated illustrative folded central ivory cloth; NOT claimed to be exact full-cloth UV projection",
+  "tear_identity_scope": "all visible decisive tear edge + both adjacent stripes are shared canonical UV patch; generated core contains no independent stripe or torn edge",
+  "motion_logical": {
+    "open_stone": [
+      153,
+      99
+    ],
+    "grip_delta": 10,
+    "contact_delta": 0,
+    "lifted_parent_grip_delta": -24,
+    "fragment_after_contact_delta": 0
+  },
+  "canonical_fragment_alpha_at_fastener": 253,
+  "occlusion": "same opaque metal frame plus translucent front/side glass below top opening in every state",
+  "new_structural_detail": "native front rim crossbar completes top frame; review as proposed close-up, not old artwork",
+  "floor_identifier": "fixed floor marking; partly obscured by seated stone, clear in empty states",
+  "support": "two ordinary wooden blocks under metal frame, clear central recess for finial; not a new evidence item",
+  "closed_cover": "same inner fitting section proposal as v1; lid conceals plate when closed",
+  "pending": [
+    "independent geometry and handling review",
+    "runtime integration/screenshots"
+  ],
+  "files": {
+    "parent_projection__640x400.png": "c7bdef044df90d08b362e9199bba238ea98b6727f811e14cd24da415dda3a891",
+    "contact__640x400.png": "884ec7326df6c640ebf6b6a972132dd7eb621c21a2cf882f22b35f20f99ed983",
+    "container_unfolded__640x400.png": "791d9a9bc50381d88741c24caf6918221138325072d61fc6be876369499956d4",
+    "empty_before__640x400.png": "cce2a67c45dc63465dd7c4f861ffd2c39bc653c63c828003696f3a16d4e0b946",
+    "fragment_projection__640x400.png": "7452c897bcaf3766af108074e339db25662679031b63479c3a23e20038cb4e8b",
+    "open__640x400.png": "d834a9237a9e46e2ec63e3174d98d57b3f880ae71ce7047b3228af4b8e429649",
+    "inner_fitting_section.png": "dbce3577f03ddca2e51ff9ca220649751ccecb4f9aac7fe68131c1c6a3ad7e11",
+    "grip__640x400.png": "5c886226d6bafada8473e857bc4233023a2e73ab1c1bdb3a1de388469398e336",
+    "canonical_tail_projection__640x400.png": "b9b2ba4930c48ae49226acca353c6b4dfbaa342be6e96e80c972fd9de03a95f7",
+    "lifted__640x400.png": "b790840bae0dab830c1062b2bb0aee0b1c059b2f17761170eef53df31c7086d8",
+    "empty_after__640x400.png": "7d967fb74f690ad48f735944f17e2274b30c2870ce91e56fbe49bcb12288b284"
+  }
+}

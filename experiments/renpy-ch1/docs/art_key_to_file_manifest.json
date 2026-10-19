@@ -1,0 +1,137 @@
+{
+  "revision": "recommended-evidence-art-candidate-v1",
+  "art": {
+    "ledger": {
+      "icon": "assets/recommended-story-icons/ledger__64.png",
+      "detail": "assets/recommended-story-icons/ledger__240.png",
+      "identity": "ledger"
+    },
+    "research": {
+      "icon": "assets/recommended-story-icons/research__64.png",
+      "detail": "assets/recommended-story-icons/research__240.png",
+      "identity": "research"
+    },
+    "stone": {
+      "icon": "assets/recommended-story-icons/stone17__64.png",
+      "detail": "assets/recommended-story-icons/stone17__240.png",
+      "identity": "stone17"
+    },
+    "container": {
+      "icon": "assets/recommended-story-icons/container__64.png",
+      "detail": "assets/recommended-story-icons/container__240.png",
+      "identity": "container"
+    },
+    "e2_card_rail": {
+      "icon": "assets/recommended-story-icons/cart_rail_ties__64.png",
+      "detail": "assets/recommended-story-icons/cart_rail_ties__240.png",
+      "identity": "cart_rail_ties"
+    },
+    "e2_card_ties": {
+      "icon": "assets/recommended-story-icons/cart_rail_ties__64.png",
+      "detail": "assets/recommended-story-icons/cart_rail_ties__240.png",
+      "identity": "cart_rail_ties"
+    },
+    "e3_card_can": {
+      "icon": "assets/recommended-story-icons/oil_can__64.png",
+      "detail": "assets/recommended-story-icons/oil_can__240.png",
+      "identity": "oil_can"
+    },
+    "e4_card_tool": {
+      "icon": "assets/recommended-story-icons/pry_tool_clean__64.png",
+      "detail": "assets/recommended-story-icons/pry_tool_clean__240.png",
+      "identity": "pry_tool_clean"
+    },
+    "e4_card_lever": {
+      "icon": "assets/recommended-story-icons/door_lever__64.png",
+      "detail": "assets/recommended-story-icons/door_lever__240.png",
+      "identity": "door_lever"
+    },
+    "e5_card_pots": {
+      "icon": "assets/recommended-story-icons/soup_pots_swapped__64.png",
+      "detail": "assets/recommended-story-icons/soup_pots_swapped__240.png",
+      "identity": "soup_pots_swapped",
+      "variants": {
+        "original": {
+          "icon": "assets/recommended-story-icons/soup_pots_original__64.png",
+          "detail": "assets/recommended-story-icons/soup_pots_original__240.png"
+        },
+        "swapped": {
+          "icon": "assets/recommended-story-icons/soup_pots_swapped__64.png",
+          "detail": "assets/recommended-story-icons/soup_pots_swapped__240.png"
+        }
+      }
+    },
+    "e5_card_bottle": {
+      "icon": "assets/recommended-story-icons/medicine_bottle__64.png",
+      "detail": "assets/recommended-story-icons/medicine_bottle__240.png",
+      "identity": "medicine_bottle"
+    },
+    "e6_card_board": {
+      "icon": "assets/recommended-story-icons/allocation_board__64.png",
+      "detail": "assets/recommended-story-icons/allocation_board__240.png",
+      "identity": "allocation_board"
+    },
+    "e6_card_manifest": {
+      "icon": "assets/recommended-story-icons/departure_manifest__64.png",
+      "detail": "assets/recommended-story-icons/departure_manifest__240.png",
+      "identity": "departure_manifest"
+    }
+  },
+  "people": {
+    "repair": "buri",
+    "librarian": "resident_librarian",
+    "reply": "mom",
+    "piko": "resident_piko",
+    "chorong": "resident_lamplighter",
+    "child": "kid_kkomi",
+    "e2_card_somi": "resident_somi",
+    "e2_card_bami": "bami",
+    "e2_card_badook": "resident_badook",
+    "e2_card_dolmok": "dolmok",
+    "e3_card_handoff": "resident_teacher",
+    "e3_card_bori": "resident_bori",
+    "e3_card_teacher": "resident_teacher",
+    "e3_card_nubi": "resident_nubi",
+    "e3_card_child": "kid_nubi1",
+    "e4_card_daram": "daram",
+    "e4_card_parent": "dad",
+    "e4_card_seori": "resident_seori",
+    "e4_card_nabi7": "nabi",
+    "e4_card_nabi9": "nabi",
+    "e4_card_ttadak": "resident_ttadak",
+    "e4_card_neoul": "neoul",
+    "e5_card_bori": "resident_bori",
+    "e5_card_saemi": "kid_saemi",
+    "e5_card_cabinet": "resident_seori",
+    "e5_card_seori": "resident_seori",
+    "e5_card_teacher": "resident_teacher",
+    "e6_card_nabi": "nabi",
+    "e6_card_munchi": "resident_mungchi",
+    "e6_card_pandol": "npc_pandol",
+    "e6_card_badook": "resident_badook",
+    "e6_card_siluk": "resident_siluk",
+    "e6_card_granny": "granny"
+  },
+  "scene_reuse": {
+    "room": "existing guestroom scene",
+    "e5_card_notice": "existing school scene",
+    "e6_card_school": "existing school scene"
+  },
+  "existing_object_reuse": {
+    "piko_portrait": "P01 existing mother portrait; integrator retains exact original"
+  },
+  "pending": {
+    "empty_heat": "lamp_empty_clean__64/240 candidate; no theft cloth before theft",
+    "pedestal": "lamp_empty candidate rejected for screw position/cloth identity; do not bind decisive inference",
+    "e3_card_wall": "daytime fire examination candidate; establish as post-rescue hole before binding",
+    "e3_card_layout": "daytime fire examination candidate; sight-line gate remains false"
+  },
+  "technical_contract": "Each export samples immutable source once at half target then nearest2x; RGBA preserved, no threshold/palette/dither. Use64 at64 and240 at240, not a rescaled64. Source-master rendering can replace this on global final-pass integration, not combine both.",
+  "limits": [
+    "No legal/medical inference encoded in art.",
+    "Medicine bottle collar/crack are incidental identity marks, not an extra clue.",
+    "Piko complementary torn-cloth and exact rim fastener still under refinement.",
+    "Fire day/night are separate time states, not witness proof by themselves.",
+    "Pots bodies remain fixed; only lids differ. Prevented incident must use original state."
+  ]
+}

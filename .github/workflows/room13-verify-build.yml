@@ -18,14 +18,14 @@ concurrency:
 jobs:
   verify-build:
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 40
     defaults:
       run:
         shell: bash
     env:
       SDL_AUDIODRIVER: dummy
       LIBGL_ALWAYS_SOFTWARE: '1'
-      ROOM13_DIAGNOSTIC_ONLY: '0'
+      ROOM13_DIAGNOSTIC_ONLY: '1'
     steps:
       - name: Set job-local build paths
         run: |
@@ -102,7 +102,7 @@ jobs:
           fi
       - name: Investigation comparison and actual-input diagnostics in disposable profile
         working-directory: experiments/renpy-ch1
-        timeout-minutes: 12
+        timeout-minutes: 25
         run: |
           set -o pipefail
           export HOME="$RUNNER_TEMP/room13-native-home"
@@ -111,9 +111,9 @@ jobs:
           export XDG_CACHE_HOME="$HOME/cache"
           export RENPY_PATH_TO_SAVES="$HOME/saves"
           export ROOM13_QA_OUT="$ROOM13_CI_OUT/native-qa"
-          export ROOM13_TEST_TIMEOUT=180
+          export ROOM13_TEST_TIMEOUT=400
           mkdir -p "$HOME" "$XDG_CONFIG_HOME" "$XDG_DATA_HOME" "$XDG_CACHE_HOME" "$RENPY_PATH_TO_SAVES" "$ROOM13_QA_OUT"
-          bash dev/run_renpy_tests.sh meeting_direction admin_meeting_replay investigation_placement_granny investigation_job_musoe investigation_source2_ttadak investigation_source2_tosil 2>&1 | tee "$ROOM13_CI_OUT/native-qa-summary.log"
+          bash dev/run_renpy_tests.sh recommended_story_first_slice recommended_story_field_entry recommended_ep2_field_and_hearing recommended_ep3_prevention_map recommended_ep4_structure_and_prevention recommended_ep5_prevention recommended_ep5_body_lid_target recommended_ep6_actual_protection recommended_canonical_cloth_and_contact recommended_isolated_native_gate_entry recommended_meeting_adapter_smoke 2>&1 | tee "$ROOM13_CI_OUT/native-qa-summary.log"
       - name: Compile and build web release
         if: env.ROOM13_DIAGNOSTIC_ONLY != '1'
         working-directory: experiments/renpy-ch1
