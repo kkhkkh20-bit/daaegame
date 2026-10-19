@@ -119,6 +119,7 @@ testcase character_grid2_field_dialogue_profiles:
     screenshot "grid2-context-profiles-notes.png"
     click "닫기"
     run Function(r13_c4_end)
+    assert eval (not R13_CHARACTER_GRID2_ENABLED and not R13_C4_ACTIVE)
 
 
 testcase character_grid2_meeting_replay:
@@ -159,6 +160,8 @@ testcase character_grid2_meeting_replay:
     run Function(r13_c4_checkpoint,"meeting-before-replay-choice")
     click "C2 · 아이가 친 촛대 때문에 죽었다"
     run Function(r13_c4_checkpoint,"meeting-after-replay-choice")
+    pause until eval (_in_replay=="r13_admin_meeting_replay" and r13_admin_meeting_test) timeout 5
+    run Function(r13_c4_replay_enable)
     pause 3.0
     assert eval (_in_replay=="r13_admin_meeting_replay" and r13_admin_meeting_test)
     assert eval (room13["location"]=="dining" and room13["day"]==R13_TRIAL_DAY and room13["propositions"]==["C1"])
@@ -189,6 +192,7 @@ testcase character_grid2_meeting_replay:
     assert eval (r13_debate_is_broken("C2","s1") and "E08" in room13["arguments"]["C2"])
     click "테스트 종료 · 다시 선택"
     pause 0.5
+    run Function(r13_c4_outer_restored)
     assert screen "r13_admin_meeting_picker"
     assert eval (not _in_replay and not r13_admin_meeting_test and room13==r13_qa_admin_before)
     assert eval (r13_qa_admin_persistent_snapshot()==r13_qa_admin_history)
@@ -197,6 +201,8 @@ testcase character_grid2_meeting_replay:
     run Function(r13_c4_checkpoint,"meeting-before-replay-choice")
     click "C2 · 아이가 친 촛대 때문에 죽었다"
     run Function(r13_c4_checkpoint,"meeting-after-replay-choice")
+    pause until eval (_in_replay=="r13_admin_meeting_replay" and r13_admin_meeting_test) timeout 5
+    run Function(r13_c4_replay_enable)
     pause 3.0
     assert eval (_in_replay=="r13_admin_meeting_replay" and r13_admin_meeting_test)
     assert eval (room13["propositions"]==["C1"] and not room13["arguments"] and not r13_debate_is_broken("C2","s1"))
@@ -204,6 +210,7 @@ testcase character_grid2_meeting_replay:
     screenshot "admin-meeting-04-c2-clean-reentry.png"
     click "테스트 종료 · 다시 선택"
     pause 0.5
+    run Function(r13_c4_outer_restored)
     assert eval (not _in_replay and room13==r13_qa_admin_before)
     assert eval (r13_qa_admin_persistent_snapshot()==r13_qa_admin_history and r13_qa_admin_save_snapshot()==r13_qa_admin_slots)
     click "닫기"
@@ -219,3 +226,4 @@ testcase character_grid2_meeting_replay:
     $ r13_qa_note("admin_meeting_replay: actual selector/Replay C2 entry, exit, clean reentry, original room13 and authored persistent histories and save-slot metadata preserved; 5 native screenshots. Rebuttal state mutation was a fixture, not played evidence UI.")
 
     run Function(r13_c4_end)
+    assert eval (not R13_CHARACTER_GRID2_ENABLED and not R13_C4_ACTIVE)

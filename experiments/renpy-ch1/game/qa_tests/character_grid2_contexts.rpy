@@ -54,6 +54,23 @@ init 990 python:
         r13_c4_log('begin',version=R13_CHARACTER_GRID2_VERSION,production_default=False)
         renpy.restart_interaction()
 
+    def r13_c4_replay_enable():
+        global R13_C4_ACTIVE,R13_CHARACTER_GRID2_ENABLED
+        assert _in_replay=='r13_admin_meeting_replay' and r13_admin_meeting_test
+        assert not R13_CHARACTER_GRID2_ENABLED and not R13_C4_ACTIVE,'Replay must start from default-off store'
+        R13_C4_RECORDS.clear()
+        R13_CHARACTER_GRID2_ENABLED=True
+        R13_C4_ACTIVE=True
+        r13_c4_checkpoint('meeting-replay-scoped-enable')
+        # Real production screen evaluates its actual Orbit constructor again.
+        # No synthetic meeting object is inserted into the observer registry.
+        renpy.restart_interaction()
+
+    def r13_c4_outer_restored():
+        assert not _in_replay
+        assert R13_CHARACTER_GRID2_ENABLED and R13_C4_ACTIVE,'Original QA outer store was not restored'
+        r13_c4_checkpoint('meeting-outer-store-restored')
+
     def r13_c4_end():
         global R13_C4_ACTIVE,R13_CHARACTER_GRID2_ENABLED
         R13_C4_ACTIVE=False
@@ -82,9 +99,13 @@ init 990 python:
 
     def r13_c4_capture(context,step):
         records=[(key,value) for (kind,key),value in list(R13_C4_RECORDS.items()) if kind==context]
+        assert r13_g2_enabled() and R13_C4_ACTIVE,('Capture requires actual enabled context',context)
         assert records,('No production displayable observed',context)
         if context=='dialogue':
-            assert renpy.get_screen('say') and renpy.get_image_bounds('r13_visitor',layer='master')
+            assert renpy.get_screen('say')
+            bounds=renpy.get_image_bounds('r13_visitor',layer='master')
+            r13_c4_log('live-dialogue-bounds',bounds=bounds,required=[0,0,1280,720])
+            assert bounds is not None and tuple(bounds)==(0,0,1280,720),('Live visitor layer displaced after show',bounds)
         for index,(key,(before,after,size)) in enumerate(records[:12]):
             # Compare the same pre-grid canvas used by production r13_g2_final.
             # Source art can be odd-width; padding is transparent, never rescaling.
