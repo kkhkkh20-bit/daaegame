@@ -92,7 +92,7 @@ testcase investigation_placement_ubak:
     run Function(r13_pd_check_field,"placement-opposite-camera-end")
     move pos (640,20)
     pause 0.2
-    screenshot "placement-granny-06-before-hover-check.png"
+    screenshot "placement-granny-hover-stage-1.png"
     pause until eval (r13_pd_hover_clear()) timeout 3
     run Function(r13_pd_target_render,"resident_ubak","living_measure","target-camera-right-end")
     screenshot "placement-ubak-04-opposite-camera-end.png"
@@ -120,7 +120,7 @@ testcase investigation_placement_granny:
     run Function(r13_pd_check_field,"entered-real-field")
     move pos (640,20)
     pause 0.2
-    screenshot "placement-granny-06-before-hover-check.png"
+    screenshot "placement-granny-hover-stage-2.png"
     pause until eval (r13_pd_hover_clear()) timeout 3
     screenshot "placement-granny-01-field.png"
     run Function(r13_pd_choose_person)
@@ -170,7 +170,7 @@ testcase investigation_placement_granny:
     run Function(r13_pd_check_field,"returned-from-resident")
     move pos (640,20)
     pause 0.2
-    screenshot "placement-granny-06-before-hover-check.png"
+    screenshot "placement-granny-hover-stage-3.png"
     pause until eval (r13_pd_hover_clear()) timeout 3
     screenshot "placement-granny-03-returned.png"
     $ r13_pd_saved_object_preference=R13_PD_MAP_OBJECTS["inn"]
@@ -207,7 +207,7 @@ testcase investigation_placement_granny:
     run Function(r13_pd_check_field,"returned-from-object")
     move pos (640,20)
     pause 0.2
-    screenshot "placement-granny-06-before-hover-check.png"
+    screenshot "placement-granny-hover-stage-4.png"
     pause until eval (r13_pd_hover_clear()) timeout 3
     screenshot "placement-granny-05-register-returned.png"
     $ R13_PD_MAP_OBJECTS["inn"]=r13_pd_saved_object_preference
@@ -228,7 +228,7 @@ testcase investigation_placement_granny:
     move pos (640,20)
     pause 0.2
     run Function(r13_pd_hover_clear,_update_screens=False)
-    screenshot "placement-granny-06-before-hover-check.png"
+    screenshot "placement-granny-hover-stage-5.png"
     pause until eval (r13_pd_hover_clear()) timeout 3
     screenshot "placement-granny-06-opposite-camera-end.png"
     $ R13_PD_MAP_PEOPLE["inn"]=r13_pd_saved_preference
