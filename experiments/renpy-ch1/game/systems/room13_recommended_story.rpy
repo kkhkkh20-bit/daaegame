@@ -483,8 +483,8 @@ screen r13_recommended_actions():
                             spacing 5
                             for key, caption in r13_rec_available(r13_recommended):
                                 textbutton caption action Return(key) xsize 578 text_size 20
-                    $ commands = r13_rec_controls(r13_recommended)
-                    grid 2 ((len(commands)+1)//2):
+                    $ commands = r13_rec_controls(r13_recommended); command_rows = (len(commands)+1)//2
+                    grid 2 command_rows:
                         spacing 6
                         for command, caption in commands:
                             textbutton caption xsize 285 text_size 18 action (ShowMenu("save") if command=="save" else MainMenu(confirm=True) if command=="title" else Return(command))
