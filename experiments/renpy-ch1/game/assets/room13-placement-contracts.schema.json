@@ -1,0 +1,589 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "revision": {
+      "type": "string"
+    },
+    "default_enabled": {
+      "const": false
+    },
+    "baseline_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "background_variants": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/variant"
+      }
+    },
+    "geometries": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/geometry"
+      }
+    },
+    "assets": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/asset"
+      }
+    },
+    "bindings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/binding"
+      }
+    },
+    "upstream_guards": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "pose",
+          "x",
+          "y",
+          "width",
+          "height",
+          "rect",
+          "depth",
+          "ground_depth",
+          "elevation",
+          "contact",
+          "slot",
+          "occlusion",
+          "map27_occlusion",
+          "map27_keepouts"
+        ],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "revision",
+    "default_enabled",
+    "baseline_commit",
+    "background_variants",
+    "geometries",
+    "assets",
+    "bindings",
+    "upstream_guards"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "room13-placement-contracts.schema.json",
+  "title": "Default-off Room13 placement contract v1",
+  "$defs": {
+    "point": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "rect": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "polygon": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/point"
+      },
+      "minItems": 3
+    },
+    "polygons": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/polygon"
+      }
+    },
+    "slot": {
+      "type": "object",
+      "properties": {
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "contacts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "facing": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "anchor": {
+          "type": "string"
+        },
+        "target": {
+          "$ref": "#/$defs/point"
+        },
+        "scale": {
+          "$ref": "#/$defs/scale"
+        },
+        "size_limits": {
+          "$ref": "#/$defs/point"
+        },
+        "rounding": {
+          "enum": [
+            "round",
+            "truncate"
+          ]
+        },
+        "depth": {
+          "$ref": "#/$defs/depth"
+        },
+        "occlusion": {
+          "$ref": "#/$defs/polygons"
+        },
+        "mask_layer": {
+          "enum": [
+            "base",
+            "map27"
+          ]
+        },
+        "secondary_contacts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "anchor": {
+                "type": "string"
+              },
+              "axes": {
+                "type": "array",
+                "items": {
+                  "enum": [
+                    0,
+                    1
+                  ]
+                },
+                "minItems": 1
+              },
+              "target": {
+                "$ref": "#/$defs/point"
+              },
+              "tolerance": {
+                "type": "number",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "anchor",
+              "axes",
+              "target",
+              "tolerance"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "review_status": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "roles",
+        "contacts",
+        "facing",
+        "anchor",
+        "target",
+        "scale",
+        "size_limits",
+        "depth",
+        "occlusion",
+        "mask_layer"
+      ],
+      "additionalProperties": false
+    },
+    "asset": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "person": {
+          "type": "string"
+        },
+        "pose": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "approved",
+            "candidate",
+            "held",
+            "rejected"
+          ]
+        },
+        "registration": {
+          "enum": [
+            "existing",
+            "isolated_alias"
+          ]
+        },
+        "spec": {
+          "type": "object",
+          "required": [
+            "file",
+            "crop",
+            "head"
+          ],
+          "properties": {
+            "file": {
+              "type": "string"
+            },
+            "crop": {
+              "$ref": "#/$defs/rect"
+            },
+            "head": {
+              "$ref": "#/$defs/rect"
+            }
+          }
+        },
+        "git_blob": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "source_size": {
+          "$ref": "#/$defs/point"
+        },
+        "alpha_bounds": {
+          "$ref": "#/$defs/rect"
+        },
+        "alpha_threshold": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 255
+        },
+        "anchor_map": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "facing": {
+          "type": "string"
+        },
+        "caption_policy": {
+          "const": "authored_pose_on_change"
+        },
+        "source_quality": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "legacy_coarse",
+                "style_unverified",
+                "reference_reviewed"
+              ]
+            },
+            "render_grid_target": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "render_grid_changes_asset_quality": {
+              "const": false
+            }
+          },
+          "required": [
+            "status",
+            "render_grid_target",
+            "render_grid_changes_asset_quality"
+          ],
+          "additionalProperties": false
+        },
+        "review_status": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "person",
+        "pose",
+        "status",
+        "registration",
+        "spec",
+        "git_blob",
+        "source_size",
+        "alpha_bounds",
+        "alpha_threshold",
+        "anchor_map",
+        "facing",
+        "caption_policy",
+        "source_quality",
+        "review_status"
+      ],
+      "additionalProperties": false
+    },
+    "binding": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "approved",
+            "candidate",
+            "held",
+            "rejected"
+          ]
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "variants": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "actor": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "asset": {
+          "type": "string"
+        },
+        "slot": {
+          "type": "string"
+        },
+        "days": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 14
+          },
+          "uniqueItems": true
+        },
+        "periods": {
+          "type": "array",
+          "items": {
+            "enum": [
+              0,
+              1,
+              2
+            ]
+          },
+          "uniqueItems": true
+        },
+        "need_flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "not_flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "replace_poses": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "upstream_guard": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "status",
+        "enabled",
+        "variants",
+        "actor",
+        "role",
+        "asset",
+        "slot",
+        "days",
+        "periods",
+        "need_flags",
+        "not_flags",
+        "replace_poses",
+        "upstream_guard"
+      ],
+      "additionalProperties": false
+    },
+    "scale": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "visible_height",
+            "head_height",
+            "vertical_anchor_span"
+          ]
+        },
+        "pixels": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "pixels"
+      ],
+      "additionalProperties": false
+    },
+    "depth": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "enum": [
+            "fixed",
+            "sprite_bottom"
+          ]
+        },
+        "value": {
+          "type": "number"
+        },
+        "ground_depth": {
+          "type": "number"
+        },
+        "elevation": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "mode"
+      ],
+      "additionalProperties": false
+    },
+    "variant": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "location": {
+          "enum": [
+            "altar",
+            "ancient",
+            "clinic",
+            "dining",
+            "facility",
+            "forest",
+            "gate",
+            "greenhouse",
+            "guestroom",
+            "hall",
+            "inn",
+            "kitchen",
+            "market",
+            "passage",
+            "post",
+            "river",
+            "room13",
+            "school",
+            "square",
+            "store",
+            "workshop"
+          ]
+        },
+        "periods": {
+          "type": "array",
+          "items": {
+            "enum": [
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "geometry": {
+          "type": "string"
+        },
+        "background": {
+          "type": "object",
+          "properties": {
+            "file": {
+              "type": "string"
+            },
+            "crop": {
+              "$ref": "#/$defs/rect"
+            }
+          },
+          "required": [
+            "file",
+            "crop"
+          ],
+          "additionalProperties": false
+        },
+        "git_blob": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        }
+      },
+      "required": [
+        "id",
+        "location",
+        "periods",
+        "geometry",
+        "background",
+        "git_blob"
+      ],
+      "additionalProperties": false
+    },
+    "geometry": {
+      "type": "object",
+      "properties": {
+        "world_size": {
+          "$ref": "#/$defs/point"
+        },
+        "slots": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/slot"
+          }
+        },
+        "critical_rects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/rect"
+          }
+        }
+      },
+      "required": [
+        "world_size",
+        "slots",
+        "critical_rects"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

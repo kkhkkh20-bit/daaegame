@@ -1,0 +1,3754 @@
+{
+  "baseline_commit": "91ec49f1c80af18d0c7298f1e4b7463b426c52bb",
+  "scope": "Source-selected pose/schedule index; no all-location visual approval",
+  "rows": [
+    {
+      "location": "clinic",
+      "actor": "resident_piko",
+      "pose": "map27_cl_1",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/CL-1--resident_piko.webp",
+      "schedule": {
+        "0": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": [
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "clinic",
+      "actor": "resident_seori",
+      "pose": "inspect_paper_threequarter_front",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/map-action27/seori-threequarter-review.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [],
+        "2": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "clinic",
+      "actor": "resident_seori",
+      "pose": "living_notes",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-seori.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "clinic",
+      "actor": "resident_solbang",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/solbang-chinchilla-map/neutral.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          1,
+          3,
+          5,
+          7,
+          8,
+          10,
+          12,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "clinic",
+      "actor": "resident_ubak",
+      "pose": "living_measure",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-ubak.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": [
+          7
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "dining",
+      "actor": "nabi",
+      "pose": "action_2",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-nabi.webp",
+      "schedule": {
+        "0": [
+          1
+        ],
+        "1": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "dining",
+      "actor": "resident_dalgeurak",
+      "pose": "map27_di_1b",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/DI-1b--resident_dalgeurak.webp",
+      "schedule": {
+        "0": [],
+        "1": [],
+        "2": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "dining",
+      "actor": "resident_hyeoni",
+      "pose": "map27_mk_8",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/MK-8--resident_hyeoni.webp",
+      "schedule": {
+        "0": [],
+        "1": [],
+        "2": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "dining",
+      "actor": "resident_mulgyeol",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-role-resident_mulgyeol.webp",
+      "schedule": {
+        "0": [],
+        "1": [],
+        "2": [
+          2,
+          5,
+          9,
+          12
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "dining",
+      "actor": "resident_owlgp",
+      "pose": "living_notebook",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-action-resident_owlgp-living_notebook.webp",
+      "schedule": {
+        "0": [],
+        "1": [],
+        "2": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "dining",
+      "actor": "resident_tok",
+      "pose": "map27_di_1a",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/DI-1a--resident_tok.webp",
+      "schedule": {
+        "0": [],
+        "1": [],
+        "2": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "facility",
+      "actor": "neoul",
+      "pose": "map27_fa_1",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/FA-1--neoul.webp",
+      "schedule": {
+        "0": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": [
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "facility",
+      "actor": "resident_nubi",
+      "pose": "map27_in_1",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/IN-1--resident_nubi.webp",
+      "schedule": {
+        "0": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "forest",
+      "actor": "resident_badook",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-badook.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "forest",
+      "actor": "resident_bori",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-canonical-default-resident_bori.webp",
+      "schedule": {
+        "0": [
+          7
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "forest",
+      "actor": "resident_kalbaram",
+      "pose": "map27_fo_1",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/FO-1--resident_kalbaram.webp",
+      "schedule": {
+        "0": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [
+          2,
+          6,
+          9,
+          13
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "forest",
+      "actor": "resident_kalbaram",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-role-resident_kalbaram.webp",
+      "schedule": {
+        "0": [
+          1
+        ],
+        "1": [],
+        "2": [
+          1
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "forest",
+      "actor": "resident_siluk",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-redesign-resident_siluk.webp",
+      "schedule": {
+        "0": [
+          2,
+          3,
+          4,
+          5,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "forest",
+      "actor": "resident_solbang",
+      "pose": "work_herb_bundle",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/solbang-chinchilla-map/work_herb_bundle.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [
+          4,
+          11
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "forest",
+      "actor": "resident_tosil",
+      "pose": "living_thermos",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/investigation-source2/tosil-thermos-v1.webp",
+      "schedule": {
+        "0": [],
+        "1": [],
+        "2": [
+          1
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "gate",
+      "actor": "guard",
+      "pose": "action_1",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-guard.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "gate",
+      "actor": "karo",
+      "pose": "action_2",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-karo.webp",
+      "schedule": {
+        "0": [],
+        "1": [],
+        "2": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "gate",
+      "actor": "karo",
+      "pose": "living_axlewrap",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-action-karo-living_axlewrap.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "gate",
+      "actor": "resident_badook",
+      "pose": "map27_check_rope",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/VA-6--resident_badook.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "gate",
+      "actor": "resident_bori",
+      "pose": "living_firewood",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-action-resident_bori-living_firewood.webp",
+      "schedule": {
+        "0": [],
+        "1": [],
+        "2": [
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "gate",
+      "actor": "resident_bori",
+      "pose": "map27_carry_firewood_v2",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/VA-7--resident_bori.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          5,
+          8,
+          9,
+          10
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "gate",
+      "actor": "resident_kalbaram",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-role-resident_kalbaram.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          1,
+          3,
+          5,
+          8,
+          10,
+          12
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "gate",
+      "actor": "resident_kkwak",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-role-resident_kkwak-refined-v1.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          1,
+          11
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "gate",
+      "actor": "resident_lamplighter",
+      "pose": "living_inspectlamp",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/investigation-canonical-20261018/resident_lamplighter--neutral.webp",
+      "schedule": {
+        "0": [],
+        "1": [],
+        "2": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "gate",
+      "actor": "resident_nero",
+      "pose": "activity",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-resident_nero.webp",
+      "schedule": {
+        "0": [
+          1,
+          11
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "gate",
+      "actor": "resident_siluk",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-redesign-resident_siluk.webp",
+      "schedule": {
+        "0": [
+          1,
+          6,
+          7,
+          8,
+          14
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "guestroom",
+      "actor": "daram",
+      "pose": "action_1",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-world-daram-gray-gutter.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "guestroom",
+      "actor": "daram",
+      "pose": "action_2",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-world-daram-gray-gutter.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "guestroom",
+      "actor": "daram",
+      "pose": "inspect_floor",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-world-daram-gray-gutter.webp",
+      "schedule": {
+        "0": [],
+        "1": [],
+        "2": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "hall",
+      "actor": "bami",
+      "pose": "action_1",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-bami.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "hall",
+      "actor": "bami",
+      "pose": "action_2",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-bami.webp",
+      "schedule": {
+        "0": [],
+        "1": [],
+        "2": [
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "hall",
+      "actor": "doto",
+      "pose": "map27_compare_ration_slips_v2",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/investigation-canonical-20261018/doto--map27_compare_ration_slips_v2.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "hall",
+      "actor": "doto",
+      "pose": "map27_write_ledger_v2",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/investigation-canonical-20261018/doto--map27_write_ledger_v2.webp",
+      "schedule": {
+        "0": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "hall",
+      "actor": "resident_owlgp",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-redesign-resident_owlgp.webp",
+      "schedule": {
+        "0": [],
+        "1": [],
+        "2": [
+          7
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "inn",
+      "actor": "granny",
+      "pose": "living_keyledger",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-action-granny-living_keyledger.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "inn",
+      "actor": "resident_eunho",
+      "pose": "living_prices",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-eunho.webp",
+      "schedule": {
+        "0": [],
+        "1": [],
+        "2": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "inn",
+      "actor": "resident_guseul",
+      "pose": "living_stamp",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-role-resident_guseul-batch-living_stamp-v1.webp",
+      "schedule": {
+        "0": [],
+        "1": [],
+        "2": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "inn",
+      "actor": "resident_madam",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-role-resident_madam.webp",
+      "schedule": {
+        "0": [],
+        "1": [],
+        "2": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "inn",
+      "actor": "resident_nubi",
+      "pose": "map27_in_1",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/IN-1--resident_nubi.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "1": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "example_contract",
+      "needs_contact_review": true
+    },
+    {
+      "location": "inn",
+      "actor": "resident_owlgp",
+      "pose": "living_notebook",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-action-resident_owlgp-living_notebook.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "inn",
+      "actor": "resident_tori",
+      "pose": "activity",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-resident_tori.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          1,
+          4,
+          8,
+          9,
+          10,
+          11,
+          13
+        ],
+        "2": [
+          7,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "inn",
+      "actor": "resident_tori",
+      "pose": "group_cooperative",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-group-resident_tori-cooperative.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          2,
+          3,
+          6
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "inn",
+      "actor": "resident_tosil",
+      "pose": "living_thermos",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/investigation-source2/tosil-thermos-v1.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          14
+        ],
+        "1": [],
+        "2": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "inn",
+      "actor": "resident_ttadak",
+      "pose": "living_doorframe",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/investigation-source2/ttadak-doorframe-v1.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "inn",
+      "actor": "resident_ubak",
+      "pose": "living_measure",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-ubak.webp",
+      "schedule": {
+        "0": [],
+        "1": [],
+        "2": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "inn",
+      "actor": "resident_yeoni",
+      "pose": "living_mend",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-action-resident_yeoni-living_mend.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          2,
+          3,
+          6
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "inn",
+      "actor": "resident_yeoni",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-redesign-resident_yeoni.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          9,
+          10,
+          13
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "kitchen",
+      "actor": "nabi",
+      "pose": "map27_ki_1",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/KI-1--nabi.webp",
+      "schedule": {
+        "0": [
+          2,
+          7,
+          12
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "kitchen",
+      "actor": "nabi",
+      "pose": "map31_nabi_arrange_tray",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/KI-5--nabi.webp",
+      "schedule": {
+        "0": [
+          6,
+          11
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "kitchen",
+      "actor": "nabi",
+      "pose": "map31_nabi_ladle_soup",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/KI-3--nabi.webp",
+      "schedule": {
+        "0": [
+          4,
+          9,
+          14
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "kitchen",
+      "actor": "nabi",
+      "pose": "map31_nabi_stir_pot",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/KI-2--nabi.webp",
+      "schedule": {
+        "0": [
+          3,
+          8,
+          13
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "kitchen",
+      "actor": "nabi",
+      "pose": "map31_nabi_wash_dishes",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/KI-4--nabi.webp",
+      "schedule": {
+        "0": [
+          5,
+          10
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "market",
+      "actor": "resident_dalgeurak",
+      "pose": "map27_mk_6",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/MK-6--resident_dalgeurak.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [
+          1,
+          3,
+          4,
+          6,
+          7,
+          8,
+          10,
+          11,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "market",
+      "actor": "resident_eunho",
+      "pose": "map27_mk_2",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/MK-2--resident_eunho.webp",
+      "schedule": {
+        "0": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "market",
+      "actor": "resident_guseul",
+      "pose": "map27_mk_3",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/MK-3--resident_guseul.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "market",
+      "actor": "resident_hyeoni",
+      "pose": "map27_mk_8",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/MK-8--resident_hyeoni.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "market",
+      "actor": "resident_jongjong",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-role-resident_jongjong.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          4,
+          11
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "market",
+      "actor": "resident_kongi",
+      "pose": "activity",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-resident_kongi.webp",
+      "schedule": {
+        "0": [
+          3,
+          6,
+          10,
+          13
+        ],
+        "1": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "market",
+      "actor": "resident_madam",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-role-resident_madam.webp",
+      "schedule": {
+        "0": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "market",
+      "actor": "resident_mulgyeol",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-role-resident_mulgyeol.webp",
+      "schedule": {
+        "0": [
+          7,
+          14
+        ],
+        "1": [
+          4,
+          11
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "market",
+      "actor": "resident_mungchi",
+      "pose": "map27_mk_7",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/MK-7--resident_mungchi.webp",
+      "schedule": {
+        "0": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "market",
+      "actor": "resident_nubi",
+      "pose": "map27_mk_4",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/MK-4--resident_nubi.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "market",
+      "actor": "resident_ppul",
+      "pose": "activity",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-resident_ppul.webp",
+      "schedule": {
+        "0": [
+          4,
+          6,
+          11,
+          13
+        ],
+        "1": [
+          2,
+          4,
+          6,
+          9,
+          11,
+          13
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "market",
+      "actor": "resident_solbang",
+      "pose": "map27_mk_1",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/MK-1--resident_solbang.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          2,
+          6,
+          9,
+          13
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "market",
+      "actor": "resident_tori",
+      "pose": "activity",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-resident_tori.webp",
+      "schedule": {
+        "0": [
+          2,
+          6,
+          9,
+          13
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "market",
+      "actor": "resident_tosil",
+      "pose": "living_thermos",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/investigation-source2/tosil-thermos-v1.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          1,
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "market",
+      "actor": "resident_yeoni",
+      "pose": "map27_mk_5",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/MK-5--resident_yeoni.webp",
+      "schedule": {
+        "0": [
+          3,
+          5,
+          7,
+          8,
+          10,
+          12,
+          14
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "post",
+      "actor": "resident_eunho",
+      "pose": "living_prices",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-eunho.webp",
+      "schedule": {
+        "0": [
+          1
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "post",
+      "actor": "resident_guseul",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-role-resident_guseul.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          1,
+          11
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "post",
+      "actor": "resident_jongjong",
+      "pose": "map27_pack_satchel_v2",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/investigation-canonical-20261018/resident_jongjong--map27_pack_satchel_v2.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          2,
+          6,
+          9,
+          13
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "post",
+      "actor": "resident_jongjong",
+      "pose": "map27_sort_letters_v2",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/investigation-canonical-20261018/resident_jongjong--map27_sort_letters_v2.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "post",
+      "actor": "resident_kongi",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-resident_kongi.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          1,
+          11
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "post",
+      "actor": "resident_librarian",
+      "pose": "map27_po_2",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/PO-2--resident_librarian.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "post",
+      "actor": "resident_momo",
+      "pose": "living_lampnumber",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-action-resident_momo-living_lampnumber.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "post",
+      "actor": "resident_ppul",
+      "pose": "activity",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-resident_ppul.webp",
+      "schedule": {
+        "0": [
+          1,
+          3,
+          8,
+          10
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "post",
+      "actor": "resident_ppul",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-resident_ppul.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          1,
+          3,
+          5,
+          7,
+          8,
+          10,
+          12,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "post",
+      "actor": "resident_sling",
+      "pose": "map27_po_1",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/PO-1--resident_sling.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [
+          1,
+          3,
+          5,
+          7,
+          8,
+          10,
+          12,
+          14
+        ],
+        "2": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "example_contract",
+      "needs_contact_review": true
+    },
+    {
+      "location": "post",
+      "actor": "seryeon",
+      "pose": "action_1",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-seryeon.webp",
+      "schedule": {
+        "0": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "post",
+      "actor": "seryeon",
+      "pose": "chair_read",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-seryeon-chair.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "example_contract",
+      "needs_contact_review": true
+    },
+    {
+      "location": "river",
+      "actor": "resident_kkwak",
+      "pose": "map27_ri_1",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/RI-1--resident_kkwak.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "river",
+      "actor": "resident_mulgyeol",
+      "pose": "map27_ri_2",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/RI-2--resident_mulgyeol.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "1": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "river",
+      "actor": "resident_nero",
+      "pose": "activity",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-resident_nero.webp",
+      "schedule": {
+        "0": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "room13",
+      "actor": "daram",
+      "pose": "action_1",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-world-daram-gray-gutter.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "room13",
+      "actor": "daram",
+      "pose": "action_2",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-world-daram-gray-gutter.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "room13",
+      "actor": "daram",
+      "pose": "inspect_floor",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-world-daram-gray-gutter.webp",
+      "schedule": {
+        "0": [],
+        "1": [],
+        "2": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "school",
+      "actor": "resident_bori",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-canonical-default-resident_bori.webp",
+      "schedule": {
+        "0": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [
+          6
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "school",
+      "actor": "resident_nubi",
+      "pose": "map27_in_1",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/IN-1--resident_nubi.webp",
+      "schedule": {
+        "0": [],
+        "1": [],
+        "2": [
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "school",
+      "actor": "resident_owlgp",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-redesign-resident_owlgp.webp",
+      "schedule": {
+        "0": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": [
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "school",
+      "actor": "resident_seori",
+      "pose": "living_notes",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-seori.webp",
+      "schedule": {
+        "0": [],
+        "1": [],
+        "2": [
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "school",
+      "actor": "resident_teacher",
+      "pose": "map27_sc_1",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/SC-1--resident_teacher.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": [
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "school",
+      "actor": "resident_tok",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-resident_tok.webp",
+      "schedule": {
+        "0": [],
+        "1": [],
+        "2": [
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "school",
+      "actor": "resident_yeoni",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-redesign-resident_yeoni.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          7,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "square",
+      "actor": "doto",
+      "pose": "map27_compare_ration_slips_v2",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/investigation-canonical-20261018/doto--map27_compare_ration_slips_v2.webp",
+      "schedule": {
+        "0": [],
+        "1": [],
+        "2": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "square",
+      "actor": "doto",
+      "pose": "map27_write_ledger_v2",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/investigation-canonical-20261018/doto--map27_write_ledger_v2.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "1": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "square",
+      "actor": "resident_badook",
+      "pose": "map27_lantern_patrol",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/VA-1--resident_badook.webp",
+      "schedule": {
+        "0": [],
+        "1": [],
+        "2": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "square",
+      "actor": "resident_bori",
+      "pose": "living_firewood",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-action-resident_bori-living_firewood.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          7
+        ],
+        "2": [
+          1,
+          4,
+          8
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "square",
+      "actor": "resident_dalgeurak",
+      "pose": "map27_sq_1",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/SQ-1--resident_dalgeurak.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          2,
+          5,
+          9,
+          12
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "square",
+      "actor": "resident_guldol",
+      "pose": "map27_inspect_stone_clean",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/VA-4--resident_guldol.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          2,
+          6,
+          9,
+          13
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "square",
+      "actor": "resident_hyeoni",
+      "pose": "map27_mk_8",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/MK-8--resident_hyeoni.webp",
+      "schedule": {
+        "0": [
+          2,
+          6,
+          9,
+          13
+        ],
+        "1": [
+          4,
+          11
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "square",
+      "actor": "resident_jongjong",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-role-resident_jongjong.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          1,
+          3,
+          5,
+          7,
+          8,
+          10,
+          12,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "square",
+      "actor": "resident_lamplighter",
+      "pose": "living_inspectlamp",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/investigation-canonical-20261018/resident_lamplighter--neutral.webp",
+      "schedule": {
+        "0": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "square",
+      "actor": "resident_owlgp",
+      "pose": "living_notebook",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-action-resident_owlgp-living_notebook.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "square",
+      "actor": "resident_piko",
+      "pose": "map27_mix_paint_v2",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/investigation-canonical-20261018/resident_piko--map27_mix_paint_v2.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          2,
+          4,
+          8,
+          10
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "square",
+      "actor": "resident_piko",
+      "pose": "map27_paint_sketchboard_v2",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/investigation-canonical-20261018/resident_piko--map27_paint_sketchboard_v2.webp",
+      "schedule": {
+        "0": [
+          6
+        ],
+        "1": [
+          1,
+          3,
+          5,
+          6,
+          7,
+          9
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "square",
+      "actor": "resident_ppul",
+      "pose": "activity",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-resident_ppul.webp",
+      "schedule": {
+        "0": [
+          2,
+          5,
+          7,
+          9,
+          12,
+          14
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "square",
+      "actor": "resident_seol",
+      "pose": "living_bellrope",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-action-resident_seol-living_bellrope.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [
+          2,
+          5,
+          9,
+          12
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "square",
+      "actor": "resident_sling",
+      "pose": "activity",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-resident_sling.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          2,
+          4,
+          6,
+          9,
+          11,
+          13
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "square",
+      "actor": "resident_somi",
+      "pose": "living_bootice",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-somi.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          2,
+          4,
+          6,
+          7,
+          9,
+          11,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "square",
+      "actor": "resident_tori",
+      "pose": "world_bench_left",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-world-context0156.webp",
+      "schedule": {
+        "0": [
+          1,
+          5,
+          8,
+          12
+        ],
+        "1": [
+          7,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "square",
+      "actor": "resident_tosil",
+      "pose": "living_thermos",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/investigation-source2/tosil-thermos-v1.webp",
+      "schedule": {
+        "0": [
+          6,
+          13
+        ],
+        "1": [
+          3,
+          10
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "square",
+      "actor": "resident_yeoni",
+      "pose": "living_mend",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-action-resident_yeoni-living_mend.webp",
+      "schedule": {
+        "0": [
+          2,
+          9
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "store",
+      "actor": "resident_bori",
+      "pose": "living_firewood",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-action-resident_bori-living_firewood.webp",
+      "schedule": {
+        "0": [
+          4,
+          6
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "store",
+      "actor": "resident_bori",
+      "pose": "map27_check_own_ration_v2",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/VA-8--resident_bori.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          2,
+          5,
+          9,
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "store",
+      "actor": "resident_eunho",
+      "pose": "living_prices",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-eunho.webp",
+      "schedule": {
+        "0": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": [
+          7,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "store",
+      "actor": "resident_guseul",
+      "pose": "living_stamp",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-role-resident_guseul-batch-living_stamp-v1.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [],
+        "2": [
+          7
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "store",
+      "actor": "resident_kkwak",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-role-resident_kkwak-refined-v1.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "store",
+      "actor": "resident_kongi",
+      "pose": "activity",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-resident_kongi.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          4,
+          5,
+          7,
+          8,
+          9,
+          11,
+          12,
+          14
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "store",
+      "actor": "resident_madam",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-role-resident_madam.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": [
+          7
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "store",
+      "actor": "resident_mungchi",
+      "pose": "map27_st_1",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/ST-1--resident_mungchi.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "store",
+      "actor": "resident_nero",
+      "pose": "activity",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-resident_nero.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "store",
+      "actor": "resident_nubi",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-role-resident_nubi.webp",
+      "schedule": {
+        "0": [],
+        "1": [],
+        "2": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "store",
+      "actor": "resident_seori",
+      "pose": "living_notes",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-seori.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "store",
+      "actor": "resident_siluk",
+      "pose": "map27_st_2",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/ST-2--resident_siluk.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "store",
+      "actor": "resident_yeoni",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-redesign-resident_yeoni.webp",
+      "schedule": {
+        "0": [
+          6,
+          13
+        ],
+        "1": [
+          4,
+          11
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "workshop",
+      "actor": "buri",
+      "pose": "action_1",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-action-buri-action_1.webp",
+      "schedule": {
+        "0": [
+          1,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [
+          1,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "workshop",
+      "actor": "buri",
+      "pose": "action_2",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-action-buri-action_2.webp",
+      "schedule": {
+        "0": [],
+        "1": [],
+        "2": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "workshop",
+      "actor": "buri",
+      "pose": "group_cooperative",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-group-buri-cooperative.webp",
+      "schedule": {
+        "0": [
+          2,
+          3
+        ],
+        "1": [
+          2,
+          3
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "workshop",
+      "actor": "resident_bori",
+      "pose": "living_firewood",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-action-resident_bori-living_firewood.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          1,
+          3,
+          4,
+          8,
+          10
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "workshop",
+      "actor": "resident_guldol",
+      "pose": "map27_sort_chisels_clean",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/VA-5--resident_guldol.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "1": [
+          4,
+          7,
+          11,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "workshop",
+      "actor": "resident_lamplighter",
+      "pose": "job_replace_lightstone",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/investigation-jobs-20261018/chorong-replace-lightstone-v1.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "workshop",
+      "actor": "resident_lamplighter",
+      "pose": "living_inspectlamp",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/investigation-canonical-20261018/resident_lamplighter--neutral.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "workshop",
+      "actor": "resident_musoe",
+      "pose": "job_inspect_old_tool",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/investigation-jobs-20261018/musoe-inspect-old-tool-v1.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "workshop",
+      "actor": "resident_musoe",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/investigation-canonical-20261018/resident_musoe--neutral.webp",
+      "schedule": {
+        "0": [
+          4,
+          11
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "workshop",
+      "actor": "resident_nubi",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-role-resident_nubi.webp",
+      "schedule": {
+        "0": [],
+        "1": [
+          1
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "workshop",
+      "actor": "resident_tok",
+      "pose": "group_cooperative",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-group-resident_tok-cooperative.webp",
+      "schedule": {
+        "0": [
+          2,
+          3
+        ],
+        "1": [
+          2,
+          3
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "workshop",
+      "actor": "resident_tok",
+      "pose": "map27_ws_1",
+      "source_registry": "game/assets/room13-map-action27.json",
+      "source_file": "assets/map-action27/WS-1--resident_tok.webp",
+      "schedule": {
+        "0": [
+          1,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [
+          1,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "workshop",
+      "actor": "resident_tori",
+      "pose": "activity",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-resident_tori.webp",
+      "schedule": {
+        "0": [
+          4,
+          11
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "workshop",
+      "actor": "resident_ttadak",
+      "pose": "living_repair",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-ttadak.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "workshop",
+      "actor": "resident_ubak",
+      "pose": "living_measure",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-pixel-acting-ubak.webp",
+      "schedule": {
+        "0": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "1": [],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    },
+    {
+      "location": "workshop",
+      "actor": "resident_yeoni",
+      "pose": "neutral",
+      "source_registry": "game/assets/room13-pixel-acting.json",
+      "source_file": "assets/room13-redesign-resident_yeoni.webp",
+      "schedule": {
+        "0": [
+          4,
+          11
+        ],
+        "1": [
+          1,
+          5,
+          8,
+          12
+        ],
+        "2": []
+      },
+      "migration": "legacy_passthrough",
+      "needs_contact_review": true
+    }
+  ]
+}
