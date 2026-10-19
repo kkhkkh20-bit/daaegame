@@ -5,8 +5,8 @@ init 182 python:
         background="assets/room13-pixel-wide-post-morning.webp", crop=(0,0,2160,720),
         source="assets/room13-pixel-acting-seryeon.webp", source_crop=(596,514,385,461),
         # The clipboard is HELD, not planted on the counter. Crop-relative hand(321,181)
-        # lands at(1566,402); head remains left of the notice and right of Sling's head.
-        hand=(1566,402), height=260, depth=560,
+        # lands at(1566,432); same approved pose, adjusted for reviewed counter depth.
+        hand=(1566,432), height=234, depth=560,
         # Local rear edge of the actual morning counter, not a scaled1280 mask.
         # Only x1368..1606 intersects this actor; bound the mask to this reviewed span.
         foreground=((1368,511),(1410,503),(1450,496),(1500,488),(1550,480),(1606,471),

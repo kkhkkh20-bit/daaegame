@@ -37,13 +37,13 @@ for day in range(2, 15):
     state.room13['day'] = day
     out = ns['r13_stage_people']()
     s = next(a for a in out if a['person'] == 'seryeon')
-    assert s['rect'] == [1385, 300, 217, 260] and s['depth'] == 560
+    assert s['rect'] == [1403, 340, 195, 234] and s['depth'] == 560
     assert s['pose'] == 'action_1' and s['slot'] is None
     assert s['map27_occlusion'] == [list(ns['R13_POST_STAFF_CONTACT']['foreground'])]
     assert not s['map27_keepouts'] and not s['occlusion']
     spec = acting['seryeon']['action_1']; scale = s['height'] / spec['crop'][3]
     hand = [s['x'] + spec['hand'][0] * scale, s['y'] + spec['hand'][1] * scale]
-    assert max(abs(a - b) for a, b in zip(hand, (1566, 402))) < .51
+    assert max(abs(a - b) for a, b in zip(hand, (1566, 432))) < .51
     assert abs(s['width'] - spec['crop'][2] * scale) <= .5
     assert next(a for a in out if a['person'] == 'resident_sling') == before[1]
 assert actors == before, 'Cached input actor dictionaries mutated'

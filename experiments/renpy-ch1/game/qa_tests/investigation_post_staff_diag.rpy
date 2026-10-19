@@ -29,7 +29,7 @@ init 999 python:
         if period==0 and day>1:
             assert 'seryeon' in new,'Do not fabricate staff presence'
             assert not any(r13_offer_for_person(a['person']) for a in actors),'Authored event active: diagnose fixture; do not suppress it'
-            a=new['seryeon'];assert a['pose']=='action_1' and a['rect']==[1385,300,217,260] and a['depth']==560 and a['slot'] is None
+            a=new['seryeon'];assert a['pose']=='action_1' and a['rect']==[1403,340,195,234] and a['depth']==560 and a['slot'] is None
             assert r13_world_width()==2160 and r13_world_file('post','morning')==R13_POST_STAFF_CONTACT['background']
             assert tuple(renpy.image_size(R13_POST_STAFF_CONTACT['background']))==(2160,728)
             assert len(a.get('map27_occlusion',[]))==1 and not a.get('map27_keepouts')
