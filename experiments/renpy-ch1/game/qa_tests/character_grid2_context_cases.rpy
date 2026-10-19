@@ -61,12 +61,11 @@ testcase character_grid2_field_dialogue_profiles:
     pause 0.2
     screenshot "grid2-context-dialogue-repeat.png"
     run Function(r13_c4_capture,"dialogue","repeat")
-    assert eval ("avatar_surprise" in CAST[r13_pd_person])
-    run Function(r13_speaker,r13_pd_person,"surprise")
+    run Function(r13_c4_expression_begin,r13_pd_person)
     pause 0.4
     screenshot "grid2-context-dialogue-expression.png"
     run Function(r13_c4_capture,"dialogue","expression")
-    run Function(r13_speaker,r13_pd_person,r13_c4_original_expression)
+    run Function(r13_c4_expression_restore,r13_pd_person)
     pause 0.2
     screenshot "grid2-context-dialogue-restored.png"
     run Function(r13_c4_capture,"dialogue","restored")

@@ -97,6 +97,36 @@ init 990 python:
                 bad+=int(p!=data[i+4:i+8] or p!=data[i+w*4:i+w*4+4] or p!=data[i+w*4+4:i+w*4+8])
         return bad
 
+    def r13_c4_expression_begin(person):
+        # QA rendering fixture only: use the shipped approved plan/loadability gate.
+        store.r13_c4_saved_expression=store.dialogue_expression
+        store.r13_c4_saved_beat=store.r13_dialogue_beat
+        store.r13_c4_saved_speaker_state=(store.r13_current_pose,store.r13_motion_person,store.dialogue_speaker)
+        previous=(store.r13_dialogue_beat or {}).get('talk','neutral')
+        emotion='angry' if previous=='joy' else 'joy'
+        entry=R13_DIALOGUE_TALK_ART['people'][person]
+        assert entry['status']=='approved_runtime'
+        frames=entry['profiles']['840']['frames']
+        assert emotion in frames and previous in frames
+        assert frames[emotion]['file']!=frames[previous]['file']
+        packet=(None,'',dict(show=person,expression=emotion))
+        r13_dialogue_beat_begin('grid2-qa-render-fixture',0,packet,emotion)
+        plan=store.r13_dialogue_beat
+        assert plan and plan['person']==person and plan['talk']==emotion
+        assert plan['settled'] and not persistent.room13_motion
+        import hashlib
+        with renpy.file(frames[emotion]['file']) as source:
+            source_sha256=hashlib.sha256(source.read()).hexdigest()
+        r13_c4_log('expression-fixture',person=person,previous=previous,talk=emotion,source=frames[emotion]['file'],source_sha256=source_sha256,settled=plan['settled'],motion=persistent.room13_motion)
+        r13_speaker(person)
+
+    def r13_c4_expression_restore(person):
+        store.r13_dialogue_beat=store.r13_c4_saved_beat
+        r13_speaker(person,store.r13_c4_saved_expression,pose=store.r13_c4_saved_speaker_state[0])
+        assert store.r13_dialogue_beat is store.r13_c4_saved_beat
+        assert store.dialogue_expression==store.r13_c4_saved_expression
+        assert (store.r13_current_pose,store.r13_motion_person,store.dialogue_speaker)==store.r13_c4_saved_speaker_state
+
     def r13_c4_capture(context,step):
         records=[(key,value) for (kind,key),value in list(R13_C4_RECORDS.items()) if kind==context]
         assert r13_g2_enabled() and R13_C4_ACTIVE,('Capture requires actual enabled context',context)
@@ -120,6 +150,14 @@ init 990 python:
                 capture='exact production object, independently rendered at current state; screen screenshot is separate',
                 before='same enabled-path geometry before final grid, not full legacy mode')
             assert nz>0 and any(raw[3::4]) and bad==0,(context,key,nz,bad)
+            if context=='dialogue':
+                import hashlib
+                digest=hashlib.sha256(bytes(data)).hexdigest()
+                r13_c4_log('dialogue-render-digest',step=step,sha256=digest)
+                if step=='repeat':store.r13_c4_original_render_digest=digest
+                elif step=='expression':assert digest!=store.r13_c4_original_render_digest,'Approved expression did not change actual pixels'
+                elif step=='restored':assert digest==store.r13_c4_original_render_digest,'Original expression pixels were not restored'
+
 
     def r13_c4_field(step):
         assert renpy.get_screen('r13_hub') and not persistent.room13_motion
