@@ -12,6 +12,15 @@ def dump(path,data):path.write_text(json.dumps(data,ensure_ascii=False,indent=2)
 def rows(name):
  d=read(name)['rows'];return list(d.values()) if isinstance(d,dict) else d
 
+def review_allows_runtime_binding(row):
+ """A source-context review is not a call-site binding authorization.
+
+ Legacy reviews retain their existing eligibility and separate runtime art
+ gates. Explicit source-only reviews remain documented without being swept
+ into the broad legacy topic-provider scopes below.
+ """
+ return row.get('review_scope') != 'manual_source_context_only_not_native_visual_or_runtime_binding_approval'
+
 def variants(node, finite_locals=None):
  """Finite authored string/conditional alternatives, never evaluate game state."""
  if isinstance(node,ast.Constant):return [node.value]
@@ -42,6 +51,7 @@ def compile_registry():
  reviews=[]
  for name in ('dynamic-context-review','dynamic-expression-review','opening-context-review','supplemental-context-review','dynamic-duplicate-review','expanded-context-review','binding-additional-review'):
   for n,r in enumerate(rows(name)):
+   if not review_allows_runtime_binding(r):continue
    reviews.append(dict(r,review_ref=name+':'+str(n)))
  # Exact static packet reuse is only permitted within its source call span or topic.
  for call in q:

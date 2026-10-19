@@ -57,6 +57,29 @@ class RecommendedDialogueReview(unittest.TestCase):
         self.assertFalse(receipt['runtime_bindings_changed'])
         self.assertFalse(receipt['art_approvals_changed'])
 
+    def test_source_review_scope_cannot_authorize_runtime_binding(self):
+        from build_dialogue_bindings import review_allows_runtime_binding
+        held = dict(reviewed=True, emotion='surprise', reaction=True,
+                    application_status='approved_art_when_available',
+                    review_scope='manual_source_context_only_not_native_visual_or_runtime_binding_approval')
+        self.assertFalse(review_allows_runtime_binding(held))
+        # Preserve the existing reviewed runtime path. Asset availability is
+        # still decided by the runtime art gate, not bypassed by this helper.
+        self.assertTrue(review_allows_runtime_binding(dict(reviewed=True)))
+        self.assertTrue(review_allows_runtime_binding(dict(reviewed=True,
+                        application_status='awaiting_approved_runtime_assets')))
+
+    def test_compiler_does_not_cross_bind_recommended_reviews_into_legacy_topics(self):
+        from build_dialogue_bindings import compile_registry
+        compiled = compile_registry()
+        reviews = json.loads((REVIEWS / 'dynamic-context-review.json').read_text())['rows']
+        held = {(r['source'], r['person'], r['text']) for r in reviews.values()
+                if r.get('review_scope') == 'manual_source_context_only_not_native_visual_or_runtime_binding_approval'}
+        self.assertTrue(held)
+        self.assertTrue(compiled['cues'])
+        for cue in compiled['cues'].values():
+            self.assertNotIn((cue['source'], cue['person'], cue['text']), held)
+
 
 if __name__ == '__main__':
     unittest.main()
