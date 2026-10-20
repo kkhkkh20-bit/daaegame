@@ -131,6 +131,7 @@ jobs:
             if [ -f "$file" ]; then cp "$file" "$ROOM13_CI_OUT/$(basename "$file")"; fi
           done
           git status --short > "$ROOM13_CI_OUT/worktree-status.txt"
+          python experiments/renpy-ch1/dev/ci_bound_diagnostics.py
       - name: Bound artifact storage to 100 MiB for one day
         id: artifact_budget
         if: always()

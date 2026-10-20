@@ -41,7 +41,7 @@ async def main():
             await page.wait_for_function("typeof renpy_exec==='function'",timeout=180000);await q.wait('main_menu')
             scenarios={'inn':dict(day=2,period=0,location='inn',life_poc=True),'piko':dict(day=2,period=0,location='square',life_poc=True,offers={'r13_w1c_portrait':dict(day=2,period=0,location='square')})}
             # Select a real scheduled market population, never spawn merchants.
-            await q.py('import renpy\ns=renpy.store\ns.room13=s.r13_new();s.r13_upgrade()\nresult=True')
+            await q.py('import renpy\ns=renpy.store\ns.room13=s.r13_new();s.r13_upgrade();s.room13_mode=True;s.r13_life_field_active=True;s.r13_flag("lodging","entry_corrected","livelihood_open")\nresult=True')
             probes=await q.py('import renpy\ns=renpy.store\nrows=[]\nfor d in range(1,8):\n for p in (0,1):\n  s.r13_edit(day=d,period=p,location="market",life_poc=True)\n  a=s.r13_stage_people()\n  rows.append(dict(day=d,period=p,people=[x["person"] for x in a]))\nresult=rows')
             chosen=max(probes,key=lambda x:len(x['people']));scenarios['market']=dict(day=chosen['day'],period=chosen['period'],location='market',life_poc=True)
             report['market_schedule']=probes
