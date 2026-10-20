@@ -363,6 +363,20 @@ Module.preRun = Module.preRun || [ ];
     // Core zip (runtime + scripts) is unpacked by Ren'Py; preloaded art is
     // written straight into /game so nothing large is unpacked or duplicated.
     let r13Prefetch = [];
+    let r13AssetVersions = {};
+    // Preserve engine paths while giving changed progressive assets fresh HTTP cache keys.
+    if (typeof XMLHttpRequest !== "undefined" && !XMLHttpRequest.prototype.r13Versioned) {
+        const open = XMLHttpRequest.prototype.open;
+        XMLHttpRequest.prototype.open = function(method, url, ...args) {
+            const target = new URL(url, document.baseURI);
+            const base = new URL(".", document.baseURI);
+            const key = target.origin === base.origin && target.pathname.startsWith(base.pathname)
+                ? target.pathname.slice(base.pathname.length) : "";
+            if (r13AssetVersions[key]) target.searchParams.set("v", r13AssetVersions[key]);
+            return open.call(this, method, target.href, ...args);
+        };
+        XMLHttpRequest.prototype.r13Versioned = true;
+    }
 
     function r13Url(file, sha) {
         const url = new URL(file, document.baseURI);
@@ -416,6 +430,8 @@ Module.preRun = Module.preRun || [ ];
             const response = await fetch(r13Url("game-transport.json"), { cache: "no-cache" });
             if (!response.ok) throw new Error("game-transport.json: HTTP " + response.status);
             const transport = await response.json();
+            r13AssetVersions = transport.asset_versions || {};
+            for (const file of Object.keys(r13AssetVersions)) r13MakeDirs("/" + file);
             const preload = transport.preload || [];
             gameZipSize = transport.archive_bytes + preload.reduce((n, f) => n + f.bytes, 0);
             const tick = (n) => { gameZipDownloaded += n; updateDownloadProgress(); };
@@ -452,7 +468,7 @@ Module.preRun = Module.preRun || [ ];
     // so Ren'Py's own download finds them immediately.
     async function r13PrefetchLater() {
         for (const file of r13Prefetch) {
-            try { await (await fetch(r13Url(file), { priority: "low" })).blob(); } catch (e) { /* retried by Ren'Py */ }
+            try { await (await fetch(r13Url(file, r13AssetVersions[file]), { priority: "low" })).blob(); } catch (e) { /* retried by Ren'Py */ }
         }
     }
 

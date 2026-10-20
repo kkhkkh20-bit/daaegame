@@ -13,9 +13,9 @@ async def main():
   await asyncio.sleep(12);await pg.mouse.click(1100,600);await q.wait('main_menu')
   await q.py('import renpy;renpy.store.preferences.text_cps=0;result=True')
   await q.press('처음부터');await q.wait('say');await asyncio.sleep(1)
-  opening=await q.py('import renpy;s=renpy.store;result=dict(version=s.config.version,packet=s.r13_packet,music=renpy.audio.music.get_playing(),fx=renpy.audio.music.get_playing(channel="scene_fx"),master_transforms=len(renpy.game.context().scene_lists.layer_at_list["master"][1]),ms14=s.ms14)')
+  opening=await q.py('import renpy;s=renpy.store;result=dict(version=s.config.version,packet=s.r13_packet,music=renpy.audio.music.get_playing(),fx=renpy.audio.music.get_playing(channel="carriage_ride"),master_transforms=len(renpy.game.context().scene_lists.layer_at_list["master"][1]),ms14=s.ms14)')
   assert opening['packet'][0] is None and opening['packet'][1]=='다람이 과자 봉지를 외투 안쪽으로 당긴다.',opening
-  assert opening['fx'].startswith('assets/ms14-audio/SFX_cart_'),opening
+  assert opening['fx']=='assets/ms14-audio/cart-roll-light.mp3',opening
   assert opening['master_transforms']==1 and opening['ms14'] is None,opening
   buttons=(await q.state())['buttons']
   skip=[x for x in buttons if x['text'].strip()=='건너뛰기'];more=[x for x in buttons if x['text'].strip()=='더보기']
@@ -45,7 +45,7 @@ async def main():
    place=await q.py('import renpy;result=renpy.store.place')
    if place=='눈에 막힌 입구':break
    await asyncio.sleep(.2)
-  end=await q.py('import renpy;s=renpy.store;result=dict(place=s.place,fx=renpy.audio.music.get_playing(channel="scene_fx"),master_transforms=len(renpy.game.context().scene_lists.layer_at_list["master"][1]))')
+  end=await q.py('import renpy;s=renpy.store;result=dict(place=s.place,fx=renpy.audio.music.get_playing(channel="carriage_ride"),master_transforms=len(renpy.game.context().scene_lists.layer_at_list["master"][1]))')
   assert end['place']=='눈에 막힌 입구' and not end['fx'] and end['master_transforms']==0,end
   await q.advance();await q.wait('r13_hub');await q.shot('05-original-gate-after-skip')
   assert not errors,errors

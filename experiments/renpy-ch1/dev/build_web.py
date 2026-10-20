@@ -9,12 +9,10 @@ Release layout (preview/room13-dev):
   game.partNN             core zip: Ren'Py runtime (web/runtime.zip), scripts,
                           data, small UI images, sound effects, placeholders.
                           Unpacked at start, so it is kept small.
-  game/assets/<file>      large art, fonts, title music: fetched in parallel
-                          before start and written straight into the game
-                          folder (see LOADER in this file). Unchanged files keep
-                          their URL and stay in the browser cache and in git.
-                          Music and legacy campaign art are Ren'Py progressive
-                          downloads (renpyweb_remote_files.txt + _placeholders).
+  game/assets/<file>      title/carriage/entrance dependencies are fetched before
+                          start. Other images and audio use Ren'Py progressive
+                          downloads at original quality. Every external request
+                          uses a file hash so replaced art gets a fresh cache key.
   game-transport.json     what the loader fetches; renpy-pre.js reads it.
 
 Art in game/assets is already web-ready (lossy WebP q95, alpha lossless). Add
@@ -40,8 +38,7 @@ REMOTE_IMAGE = "assets/*.png"
 REMOTE_CLOSEUP = ("assets/room13-pixel-life-*.webp", "assets/r13-gimmick-*.webp")
 # Not needed before the game starts (0.18.35): late-story cinematics and the day-14 altar.
 # Fetched when first drawn and warmed in the background once the game runs (transport "prefetch").
-# Dialogue expressions stay in the first load: Ren'Py's web loader unlinks a downloaded remote
-# file after about a minute, so art drawn in every conversation would show its placeholder again.
+# All non-opening expressions now use the existing progressive downloader.
 REMOTE_LATER = ("assets/room13-aftermath-*.webp", "assets/room13-pixel-cinematic-*.webp", "assets/room13-pixel-altar-*.webp",
                 "assets/room13-pixel-ready-altar*.webp")
 # Art replaced by an NPC redesign (dev/apply_npc_redesign.py): kept so old saves
@@ -49,6 +46,35 @@ REMOTE_LATER = ("assets/room13-aftermath-*.webp", "assets/room13-pixel-cinematic
 REDESIGN_BACKUP = ROOT / "art/npc-redesign-20261015/original-entries.json"
 # 0.18.89: the episode art (dev/apply_ep_art.py) replaced the teacher and Neoul the same way.
 REDESIGN_BACKUPS = (REDESIGN_BACKUP, ROOT / "art/ep-art-20261016/original-entries.json")
+
+
+# Only title + carriage + entrance assets block the first interaction. All other
+# images use Ren'Py's existing progressive downloader, at original quality.
+START_PEOPLE = ("daram", "guard", "karo", "resident_kkwak", "resident_kalbaram")
+START_FILES = {"assets/room13-title-winter020.webp", "assets/room13-pixel-carriage-empty-winter.webp",
+               "assets/bgm-title.mp3", "assets/bgm-travel.mp3", "assets/bgm-snow.mp3", "assets/amb-wind.mp3",
+               "assets/type.wav", "assets/ms14-audio/cart-roll-light.mp3"}
+
+def startup_media(rel, startup_files):
+    name = Path(rel).name
+    return (rel in startup_files or name in ICONS or Path(rel).suffix.lower() in (".ttf", ".otf", ".woff2")
+            or any(person in name or "/"+person+"/" in rel for person in START_PEOPLE)
+            or name.startswith("room13-pixel-material-icons"))
+
+def startup_files(game):
+    result = set(START_FILES)
+    layout = json.loads((game / "assets/room13-world-layout.json").read_text())
+    def files(value):
+        if isinstance(value, str) and value.startswith("assets/"):result.add(value)
+        elif isinstance(value, dict):
+            for v in value.values():files(v)
+        elif isinstance(value, list):
+            for v in value:files(v)
+    files(layout.get("gate", {}))
+    fx = json.loads((game / "assets/room13-dot-fx.json").read_text())
+    files(fx.get("lights", {}).get("title", {}))
+    files(fx.get("lights", {}).get("gate", {}))
+    return result
 
 
 def superseded_art():
@@ -83,6 +109,20 @@ LOADER_END = "    // r13-loader-end\n"
 LOADER = LOADER_BEGIN + r"""    // Core zip (runtime + scripts) is unpacked by Ren'Py; preloaded art is
     // written straight into /game so nothing large is unpacked or duplicated.
     let r13Prefetch = [];
+    let r13AssetVersions = {};
+    // Preserve engine paths while giving changed progressive assets fresh HTTP cache keys.
+    if (typeof XMLHttpRequest !== "undefined" && !XMLHttpRequest.prototype.r13Versioned) {
+        const open = XMLHttpRequest.prototype.open;
+        XMLHttpRequest.prototype.open = function(method, url, ...args) {
+            const target = new URL(url, document.baseURI);
+            const base = new URL(".", document.baseURI);
+            const key = target.origin === base.origin && target.pathname.startsWith(base.pathname)
+                ? target.pathname.slice(base.pathname.length) : "";
+            if (r13AssetVersions[key]) target.searchParams.set("v", r13AssetVersions[key]);
+            return open.call(this, method, target.href, ...args);
+        };
+        XMLHttpRequest.prototype.r13Versioned = true;
+    }
 
     function r13Url(file, sha) {
         const url = new URL(file, document.baseURI);
@@ -136,6 +176,8 @@ LOADER = LOADER_BEGIN + r"""    // Core zip (runtime + scripts) is unpacked by R
             const response = await fetch(r13Url("game-transport.json"), { cache: "no-cache" });
             if (!response.ok) throw new Error("game-transport.json: HTTP " + response.status);
             const transport = await response.json();
+            r13AssetVersions = transport.asset_versions || {};
+            for (const file of Object.keys(r13AssetVersions)) r13MakeDirs("/" + file);
             const preload = transport.preload || [];
             gameZipSize = transport.archive_bytes + preload.reduce((n, f) => n + f.bytes, 0);
             const tick = (n) => { gameZipDownloaded += n; updateDownloadProgress(); };
@@ -172,7 +214,7 @@ LOADER = LOADER_BEGIN + r"""    // Core zip (runtime + scripts) is unpacked by R
     // so Ren'Py's own download finds them immediately.
     async function r13PrefetchLater() {
         for (const file of r13Prefetch) {
-            try { await (await fetch(r13Url(file), { priority: "low" })).blob(); } catch (e) { /* retried by Ren'Py */ }
+            try { await (await fetch(r13Url(file, r13AssetVersions[file]), { priority: "low" })).blob(); } catch (e) { /* retried by Ren'Py */ }
         }
     }
 
@@ -310,16 +352,18 @@ def main():
     menu_music = MAIN_MENU_MUSIC.search((game / "options.rpy").read_text())
     menu_music = menu_music.group(1) if menu_music else None
     preload, remote, remote_lines = [], [], []
-    superseded = superseded_art()
+    startup = startup_files(game)
     for path in sorted((game / "assets").rglob("*")):
         rel = path.relative_to(game).as_posix()
-        if not path.is_file() or path.suffix.lower() not in MEDIA:
+        suffix = path.suffix.lower()
+        if not path.is_file() or suffix not in MEDIA:
             continue
-        if fnmatch.fnmatch(rel, REMOTE_MUSIC) and rel != menu_music:
+        if startup_media(rel, startup):
+            if path.stat().st_size >= SMALL:preload.append(rel)
+        elif suffix in (".mp3", ".ogg", ".opus", ".wav"):
             remote.append(rel); remote_lines += [rel, "music -"]
-        elif (fnmatch.fnmatch(rel, REMOTE_IMAGE) and path.name not in ICONS) or any(fnmatch.fnmatch(rel, p) for p in REMOTE_CLOSEUP + REMOTE_LATER) or rel in superseded:
-            data = path.read_bytes()
-            (w, h), thumb = placeholder(data)
+        elif suffix in (".webp", ".png", ".jpg"):
+            (w, h), thumb = placeholder(path.read_bytes())
             ph = stage / "_placeholders" / rel
             ph.parent.mkdir(parents=True, exist_ok=True); ph.write_bytes(thumb)
             remote.append(rel); remote_lines += [rel, "image %d,%d" % (w, h)]
@@ -369,12 +413,14 @@ def main():
         if old.is_file() and old not in shipped:
             removed.append(old.relative_to(release).as_posix()); old.unlink()
     transport = {"multipart": True, "archive_bytes": size, "archive_sha256": digest, "parts": parts,
-                 "preload": preload_entries, "prefetch": ["game/" + r for r in sorted(remote, key=prefetch_order) if prefetch_order(r) < 9]}
+                 "preload": preload_entries, "asset_versions": {"game/"+r: sha((game/r).read_bytes())[:12] for r in remote},
+                 "prefetch": ["game/"+r for r in remote if r in ("assets/bgm-inn.mp3", "assets/amb-fire.mp3")]}
     (release / "game-transport.json").write_text(json.dumps(transport, indent=1))
 
     install_loader(release / "renpy-pre.js")
     index = release / "index.html"; s = index.read_text()
-    s, n = re.subn(r"renpy-pre\.js\?v=[0-9a-f]+", "renpy-pre.js?v=" + digest[:12], s)
+    loader_digest = sha((release / "renpy-pre.js").read_bytes())
+    s, n = re.subn(r"renpy-pre\.js\?v=[0-9a-f]+", "renpy-pre.js?v=" + loader_digest[:12], s)
     assert n == 1; index.write_text(s)
 
     sys.path.insert(0, str(ROOT / "dev"))
