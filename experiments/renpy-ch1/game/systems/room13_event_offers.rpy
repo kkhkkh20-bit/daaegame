@@ -26,7 +26,7 @@ init 124 python:
     # The event pose is used only once its art exists; until then the closest existing pose.
     # 0.18.63: event art delivered 2026-10-15 (art/event-actions9-20261015, dev/apply_map_actions.py).
     R13_OFFER_ACTORS={
-        "r13_w1c_portrait":("resident_piko",("event_paintwipe","living_paint")),
+        "r13_w1c_portrait":("resident_piko",("map27_paint_sketchboard_v2","event_paintwipe","living_paint")),
         "r13_w1c_letters":("resident_sling",("event_steam","thinking")),
         "r13_w1c_extension":("resident_ttadak",("living_doorframe",)),
         "r13_w1c_seal":("resident_mungchi",("event_handrub",)),

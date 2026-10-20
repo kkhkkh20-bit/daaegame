@@ -56,6 +56,7 @@ async def main():
             await q.py('import renpy\nexec('+repr(mask)+',renpy.store.__dict__)\nresult=True')
             for f,target in [('room13-world-layout.json','R13_WORLD_LAYOUTS'),('room13-map-action27.json','R13_MAP_ACTION27')]:
                 data=json.loads((ROOT/'game/assets'/f).read_text());await q.py('import renpy\nrenpy.store.'+target+'='+repr(data)+'\nrenpy.store.R13_STAGE_CACHE.clear()\nresult=True')
+            await q.py('import renpy\nrenpy.store.R13_OFFER_ACTORS["r13_w1c_portrait"]=("resident_piko",("map27_paint_sketchboard_v2","event_paintwipe","living_paint"))\nresult=True')
             for name,state in scenarios.items():
                 report[name+'-after']=await q.py('state='+repr(state)+'\n'+FIELD);await asyncio.sleep(.8);await page.screenshot(path=str(OUT/(name+'-after.png')))
             assert any(x['person']=='resident_piko' for x in report['piko-after'])

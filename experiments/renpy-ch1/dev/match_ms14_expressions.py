@@ -100,6 +100,8 @@ def main():
     write(binding_path,bindings);write(review_path,review)
     live.extend(dynamic)
     write(beats_path,beats);write(full_path,full)
+    from build_dialogue_bindings import compile_registry
+    write(binding_path,compile_registry())
     OUT.mkdir(exist_ok=True)
     write(OUT/'expression-matching.json',dict(scope=route['scope'],matched=matched,missing=missing,
         active_entry_matches=live,counts=dict(collections.Counter(x['emotion'] for x in matched)),
