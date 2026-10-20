@@ -19,8 +19,8 @@ for tc in "${TESTS[@]}"; do
   echo "== $tc $status $(grep -o 'Time: [0-9.]* s' "$log" | tail -1)"
   [ -f qa_result.txt ] && { cat qa_result.txt; echo; }
   [ -f qa_items.json ] && cp qa_items.json "$LOG/$tc-items.json"
-  [ -d tests/screenshots ] && { mkdir -p "$LOG/$tc"; cp tests/screenshots/*.png "$LOG/$tc/" 2>/dev/null; }
-  [ "$status" = "Status: PASSED" ] || { fail=1; grep -E "Error:|line [0-9]+, in testcase" "$log" | head -3; }
+  [ -d tests ] && { mkdir -p "$LOG/$tc"; find tests -type f -name '*.png' -exec cp {} "$LOG/$tc/" \;; find "$LOG/$tc" -name '*.png' -printf 'screenshot: %P (%s bytes)\n'; }
+  [ "$status" = "Status: PASSED" ] || { fail=1; tail -80 "$log"; }
 done
 rm -rf game/saves tests qa_result.txt qa_items.json
 exit $fail

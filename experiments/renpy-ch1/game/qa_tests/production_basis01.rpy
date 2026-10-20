@@ -13,7 +13,11 @@ testcase pb01_input_save_skip:
     $ _preferences.text_cps = 0
     click "더보기"
     pause 0.5
-    click "전부"
+    click "읽은 대사 빠르게"
+    pause 0.5
+    # Exercise the existing fast-all action as well; it must stop at the
+    # mandatory input and cannot acquire the letter on behalf of the player.
+    run Function(r13_toggle_fast_all)
     pause until screen "choice" timeout 40
     pause 0.6
     assert eval (r13_basis01_state["evidence"] == [] and not r13_fast_all and not r13_fast_read)
@@ -74,15 +78,15 @@ testcase pb01_input_save_skip:
     keysym "K_1"
     pause 0.6
     keysym "K_7"
-    click pos (640,600) until "힌트를 생각한다" timeout 30
+    click pos (640,600) until eval (r13_basis01_state["record"] == "MS14_D01_S03_L0024" and renpy.get_screen("choice") is not None) timeout 30
     pause 0.6
     assert eval (not r13_basis01_state["gate_basis_proven"] and not r13_basis01_state["gate_registered"])
     screenshot "pb01_05_wrong_returns_to_argument.png"
-    click "힌트를 생각한다"
-    click pos (640,600) until "자료를 함께 제시한다" timeout 30
+    keysym "K_4"
+    click pos (640,600) until eval (r13_basis01_state["record"] == "MS14_D01_S03_L0027" and renpy.get_screen("choice") is not None) timeout 30
     pause 0.6
     assert eval (not r13_basis01_state["gate_basis_proven"] and r13_basis01_state["elapsed_minutes"] == 35)
-    click "자료를 함께 제시한다"
+    keysym "K_3"
     pause 0.6
     keysym "K_2"
     pause 0.6
@@ -136,15 +140,15 @@ testcase pb01_regular:
     click "자료를 살펴보고 함께 들어갈 이유를 제시한다"
     pause 0.6
     click "두 종이의 항목을 비교한다"
-    click pos (640,600) until "왜 일꾼으로 적혔는지 묻는다" timeout 40
+    click pos (640,600) until eval (r13_basis01_state["purpose_difference_known"] and renpy.get_screen("choice") is not None) timeout 40
     pause 0.6
     assert eval (r13_basis01_state["purpose_difference_known"] and not r13_basis01_state["gate_registered"])
     screenshot "pb01_regular_purpose_compared.png"
-    click "왜 일꾼으로 적혔는지 묻는다"
-    click pos (640,600) until "자료를 함께 제시한다" timeout 40
+    keysym "K_5"
+    click pos (640,600) until eval (r13_basis01_state["reason_heard"] and renpy.get_screen("choice") is not None) timeout 40
     pause 0.6
     assert eval (r13_basis01_state["reason_heard"] and r13_basis01_state["K05"])
-    click "자료를 함께 제시한다"
+    keysym "K_3"
     pause 0.6
     keysym "K_2"
     pause 0.6
