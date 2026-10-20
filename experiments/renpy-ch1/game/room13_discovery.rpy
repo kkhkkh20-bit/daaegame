@@ -45,7 +45,7 @@ init 61 python:
             return response
         if person == "granny" and key == "E01":
             if repeated:
-                return [(person, "그 편지는 부인 부탁으로 제가 부쳤어요. 물어볼 일이 더 있으세요?")]
+                return [(person, "방은 그대로 뒀지. 올라가 봐요.")]
             if r13_has("lodging"):
                 return [(person, "가족에게 돌려줘야 할 물건이 남았잖아요."),
                     ("dad", "아내가 정말 직접 연락해 달라고 부탁했는지도 듣고 싶습니다."),

@@ -3,7 +3,7 @@
 init 97 python:
     ROOM13["evidence"]["E01"].update(name='초대 편지',establishes='다람이를 데리고 와 줘. 여관 13호실에서 기다릴게.',does_not_establish="")
     ROOM13["evidence"]["E03"].update(establishes="13호실 이불 안쪽의 붉은 매듭은 집에서 보던 엄마의 바느질과 닮았다. 다람이도 익숙한 모양이라고 했다.",does_not_establish="")
-    ROOM13["evidence"]["M01"]["establishes"]="다람이 이름 옆에 도토리가 그려진 메모. ‘아빠랑 도착하면 이 방에 짐을 놓아. 내가 없으면 등불을 돌보는 분에게 내 소식을 물어봐.’라고 적혀 있다."
+    ROOM13["evidence"]["M01"].update(name="방의 메모",establishes='내가 자리를 비웠으면 광장 등의 초롱에게 소식을 물어봐. 물건은 책상 아래에 두었어. (끝의 작은 도토리)')
     ROOM13["evidence"]["J02"]=dict(id="J02",name="초롱이 마지막으로 본 엄마",kind="증언",
         establishes="초롱은 엄마와 여관 앞에서 이야기했다고 했다. 가족이 올지도 모른다는 말을 들었고, 헤어진 뒤 엄마가 우체국 쪽 길로 가는 것을 봤다. 우체국 안에 들어갔는지는 보지 못했다.",
         does_not_establish="",scenes=[],current_run_only=True,retained_on_show=True)
@@ -38,7 +38,7 @@ init 97 python:
         if store.room13.get("life_poc") and len(selected)==2 and set(selected)<=owned:
             if set(selected)=={"E01","M01"}:
                 r13_flag("mother_expected_family","letter_no_acorn")
-                return "(메모에는 다람이 이름 옆에 도토리가 있다. 엄마는 다람이에게 쓸 때 늘 도토리를 그린다. 그런데 편지에는 다람이 이름이 나오는데도 도토리가 없다. 글씨도 메모보다 반듯하다. 이 편지는 정말 엄마가 쓴 걸까?)"
+                return "(메모 끝에는 작은 도토리가 있는데 초대 편지에는 없다. 엄마가 잊었을 수도 있고, 누가 대신 썼을 수도 있다. 같은 사람이 썼다고 아직 단정할 수 없다.)"
             if set(selected)=={"M01","J02"}:
                 return "(메모는 등불을 돌보는 사람에게 물어보라고 했다. 초롱은 아내를 만났고 가족이 올지도 모른다는 말을 들었다. 마지막으로 본 방향은 우체국 쪽이지만, 정말 우체국 안에 들어갔을까?)"
             if set(selected)=={"J02","J03"}:
@@ -56,11 +56,11 @@ init 97 python:
                 r13_flag("intro:memo_shown")
                 return [("dad","아내가 이 메모에 등불을 돌보는 분께 물어보라고 적었습니다."),
                     (person,"도토리 그림 이야기를 하던 분이군요. 여관 앞에서 만났어요. 무엇이 궁금하십니까?")]
-            if key=="M01" and person=="daram":
-                return [("daram","엄마가 나한테 쓰는 도토리 표시야. 아빠랑 내가 올 것도 적어 놨네."),
+            if key in ("M01","FAMILY_BUNDLE") and person=="daram":
+                return [("daram","이 그림 가져왔네. 나 팔 세 개 그린 거."),("dad","엄마가 좋아했잖아.")] if key=="FAMILY_BUNDLE" else [("daram","이건 엄마 거다. 도토리 삐뚤어."),
                     ("dad","엄마 편지와 같이 읽어 보자. 엄마가 누구에게 소식을 맡겼는지도 알아봐야겠어.")]
             if key=="E01" and person=="granny":
-                return [(person,"부인이 가족을 부르고 싶다고 해서 제가 대신 부쳐 드렸어요."),
+                return [(person,"방은 그대로 뒀지. 올라가 봐요."),
                     ("dad","13호실에 남긴 것을 살펴보고 다시 여쭤보겠습니다.")]
             if key=="J02" and person=="seryeon":
                 return [("dad","아내가 우체국 쪽으로 갔다고 초롱에게 들었습니다. 여기 들렀습니까?"),

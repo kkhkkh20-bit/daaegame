@@ -1,0 +1,135 @@
+{
+  "checks": [
+    "Original scene music and ambience channels are active",
+    "Natural route entrance to inn check-in to room13",
+    "Actual memo and bundle clicks, unique record after repeat investigation",
+    "Bundle displayed in original records screen"
+  ],
+  "inn_update": {
+    "checkin": [
+      [
+        "granny",
+        "다돌 씨죠? 아이구, 손이 빨갛네. 난로부터 쬐어요."
+      ],
+      [
+        "granny",
+        "손 바로 대면 아파. 이걸로 감싸고 천천히."
+      ],
+      [
+        "daram",
+        "고맙습니다."
+      ],
+      [
+        "dad",
+        "아내는 어디 있습니까?"
+      ],
+      [
+        "granny",
+        "며칠째 안 보여요. 조사하러 나가면 밤낮이 없던 사람이라."
+      ],
+      [
+        "daram",
+        "기다린댔는데."
+      ],
+      [
+        "granny",
+        "방은 그대로 뒀지. 올라가 봐요."
+      ],
+      [
+        "dad",
+        "마지막으로 어디 간다고 했습니까?"
+      ],
+      [
+        "granny",
+        "내게 일일이 말하진 않았어요. 밥도 식혀 놓고 들어오던걸."
+      ],
+      [
+        "dad",
+        "마지막으로 돌아온 날은 기억하십니까?"
+      ],
+      [
+        "granny",
+        "밥상은 매일 차렸죠. 어느 날부터 안 왔더라…… 방부터 보세요. 아이가 떨고 있잖아요."
+      ]
+    ],
+    "note": {
+      "text": "내가 자리를 비웠으면 광장 등의 초롱에게 소식을 물어봐. 물건은 책상 아래에 두었어. (끝의 작은 도토리)",
+      "evidence": [
+        "E01",
+        "G3",
+        "G1",
+        "G2",
+        "E02",
+        "M01"
+      ],
+      "flags": [
+        "question_read:entry:explain",
+        "observed:gate:gate_documents",
+        "observed:gate:booth",
+        "observed:gate:rules",
+        "entry_corrected",
+        "ep4_seen",
+        "ep1_patrol_seen",
+        "ep1_eaves_seen",
+        "ep1_done",
+        "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+        "calendar:granny:1:1:arrival:10b5e62b61554787",
+        "lodging",
+        "mother_lamplighter_lead"
+      ]
+    },
+    "bundle": {
+      "count": 1,
+      "text": "책상 아래: 여벌 목도리, 연필 두 자루, 다람의 가족 그림. 밑바닥까지 보았으나 주소나 다른 봉투는 없다.",
+      "flags": [
+        "question_read:entry:explain",
+        "observed:gate:gate_documents",
+        "observed:gate:booth",
+        "observed:gate:rules",
+        "entry_corrected",
+        "ep4_seen",
+        "ep1_patrol_seen",
+        "ep1_eaves_seen",
+        "ep1_done",
+        "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+        "calendar:granny:1:1:arrival:10b5e62b61554787",
+        "lodging",
+        "mother_lamplighter_lead",
+        "observed:room13:family_bundle",
+        "under_desk_checked"
+      ]
+    }
+  },
+  "status": "passed",
+  "opening": {
+    "ms14": null,
+    "music": "assets/bgm-travel.mp3",
+    "scene": [
+      "winter_carriage",
+      "마차 안",
+      "travel",
+      "morning",
+      "pending"
+    ],
+    "place": "마차 안"
+  },
+  "gate": {
+    "ms14": null,
+    "music": "assets/bgm-snow.mp3",
+    "ambience": "assets/amb-wind.mp3",
+    "actors": [
+      "guard",
+      "karo",
+      "resident_kkwak",
+      "resident_kalbaram",
+      "daram"
+    ],
+    "location": "gate",
+    "evidence": [
+      "E01"
+    ]
+  },
+  "final_location": "room13",
+  "page_errors": [],
+  "scope": "Natural start and real clicks only; game-state probes are read-only except text speed preference"
+}

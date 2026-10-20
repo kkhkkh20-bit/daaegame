@@ -55,7 +55,7 @@ init 61 python:
     }
     R13_OBJECT_NAMES={
         "booth":"초소 선반", "rules":"겨울철 입장 규칙", "ledger":"장부", "road":"마차와 고갯길",
-        "bundles":"마차의 담요", "shovel":"삽", "crates":"채소 상자", "woodpile":"장작 더미",
+        "family_bundle":"책상 아래 보따리", "bundles":"마차의 담요", "shovel":"삽", "crates":"채소 상자", "woodpile":"장작 더미",
         "desk":"접수대", "door":"출입문", "keys":"객실 열쇠", "register":"접수 장부",
         "knitting":"털실 바구니", "coats":"걸린 외투", "cups":"찻잔들", "stone":"광장의 돌",
         "offerings":"남겨 둔 물건", "lamp":"등과 점검함", "stall":"가판대", "cart":"손수레",

@@ -1,5 +1,5 @@
 """Authored icon coverage, cell isolation/alpha, and pure lookup contract."""
-import copy,json,textwrap,unittest
+import copy,json,textwrap,unittest,hashlib
 from pathlib import Path
 from PIL import Image
 ROOT=Path(__file__).resolve().parents[1]
@@ -24,7 +24,11 @@ class MaterialArt(unittest.TestCase):
     self.assertLessEqual(x+w,im.width);self.assertLessEqual(y+h,im.height)
     self.assertIn('A',im.getbands(),key)
     alpha=im.crop((x,y,x+w,y+h)).getchannel('A')
-    self.assertEqual(alpha.getextrema(),(0,255),key)
+    if key=="FAMILY_BUNDLE":
+     original=json.loads((ROOT/"game/ms14/art.json").read_text())["bundle"]
+     self.assertEqual(hashlib.sha256((ROOT/"game"/spec["file"]).read_bytes()).hexdigest(),original["sha256"])
+     self.assertEqual(alpha.getextrema(),(0,254),key) # Preserve the delivered PNG alpha exactly.
+    else:self.assertEqual(alpha.getextrema(),(0,255),key)
     coverage=sum(alpha.histogram()[1:])/(w*h)
     self.assertGreater(coverage,.025,key);self.assertLess(coverage,.995,key)
     for point in ((0,0),(w-1,0),(0,h-1),(w-1,h-1)):

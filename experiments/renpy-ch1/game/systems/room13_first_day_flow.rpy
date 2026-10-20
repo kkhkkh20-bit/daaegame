@@ -71,7 +71,7 @@ label r13_first_day_arrival:
     return
 
 label r13_first_day_checkin:
-    call r13_lines([("dad","아내 편지를 받고 왔습니다. 13호실에 묵고 있다고 하던데요."),("granny","부인이요? 며칠째 안 보여요. 방에 두고 간 물건은 그대로인데."),("daram","……엄마 여기 없어요?",{"expression":"anxious"}),(None,"다람이가 내 소매를 꼭 쥐었다. 마차에서 내내 들고 있던 과자 봉지가 구겨졌다."),("dad","편지에는 여기서 기다린다고 했습니다."),("granny","가족을 부른다는 말은 저도 들었어요. 그런데 며칠 전에 나가서는 돌아오지 않았어요."),("daram","엄마가 있던 방을 봐도 돼요? 엄마 물건이라도 보고 싶어요."),("granny","13호실이에요. 부인이 잡아 둔 그대로예요. 짐은 거기 두세요."),("dad","우선 13호실부터 살펴보겠습니다.")],"life:arrival:inn")
+    call r13_lines([('granny', '다돌 씨죠? 아이구, 손이 빨갛네. 난로부터 쬐어요.'), ('granny', '손 바로 대면 아파. 이걸로 감싸고 천천히.'), ('daram', '고맙습니다.'), ('dad', '아내는 어디 있습니까?'), ('granny', '며칠째 안 보여요. 조사하러 나가면 밤낮이 없던 사람이라.'), ('daram', '기다린댔는데.'), ('granny', '방은 그대로 뒀지. 올라가 봐요.'), ('dad', '마지막으로 어디 간다고 했습니까?'), ('granny', '내게 일일이 말하진 않았어요. 밥도 식혀 놓고 들어오던걸.'), ('dad', '마지막으로 돌아온 날은 기억하십니까?'), ('granny', '밥상은 매일 차렸죠. 어느 날부터 안 왔더라…… 방부터 보세요. 아이가 떨고 있잖아요.')],"life:arrival:inn")
     # 0.18.75 (owner): 다람이's disappointment that mom is not here (systems/room13_daram_mood.rpy).
     call r13_daram_arrival_miss
     $ r13_flag("lodging")
@@ -79,8 +79,8 @@ label r13_first_day_checkin:
     return
 
 label r13_mother_note:
-    call r13_lines([("dad","(책상에 접힌 종이가 있다. 다람이 이름 옆에 작은 도토리가 그려져 있다.)",{"thought":True}),("daram","이 그림은 엄마가 나한테 쓰는 표시야."),(None,"‘다람아, 아빠랑 도착하면 이 방에 짐을 놓아. 내가 없으면 등불을 돌보는 분에게 내 소식을 물어봐. 방에 남긴 건 그대로 두고.’"),("daram","아빠랑 나한테 쓴 메모네. 엄마가 언제 적어 놓은 걸까?"),("dad","글씨 모양도 적어 두자. 가져온 편지하고 같이 다시 읽어 봐야겠어.")],"life:mother:note:v2")
-    $ r13_grant(["M01"],"13호실 책상 위의 메모를 읽음")
+    call r13_lines([(None, '메모: “내가 자리를 비웠으면 광장 등의 초롱에게 소식을 물어봐. 물건은 책상 아래에 두었어.” 끝에 작은 도토리.'), ('daram', '이건 엄마 거다. 도토리 삐뚤어.'), ('dad', '책상 아래라고 했지.')],"life:mother:note:v2")
+    $ r13_grant(["M01"],"13호실 책상 위의 메모를 읽음"); r13_flag("mother_lamplighter_lead")
     return
 
 label r13_life_first_night:
@@ -88,7 +88,7 @@ label r13_life_first_night:
     call r13_scene(R13_PLACES["room13"][1],R13_PLACES["room13"][0],"night")
     call r13_lines([("daram","엄마가 여기 있었던 건 맞지? 이불도 엄마가 꿰맨 것 같아."),("dad","응. 메모도 남겨 뒀고. 그런데 엄마가 지금 어디 있는지는 더 알아봐야겠어.")],"life:night1:plan:v2")
     if r13_has("mother_expected_family"):
-        call r13_lines([("daram","메모에 아빠랑 내가 도착하면 이 방으로 오라고 했지."),("dad","응. 혹시 우리가 오면 이 방을 찾을 거라고 생각했나 봐. 지금 어디 있는지는 아직 모르고.")],"life:night1:comparison")
+        call r13_lines([('dad', '편지에는 도토리가 없네.'), ('daram', '엄마가 잊었나?'), ('dad', '그럴 수도 있고, 누가 대신 써 줬을 수도 있어.'), ('daram', '그럼 초롱한테 물어보자.')],"life:night1:comparison")
     if r13_mother_knowledge()["promised"] and not r13_mother_knowledge()["received"]:
         call r13_lines([("daram","초롱 아저씨가 엄마 봉투를 맡고 있대."),("dad","응. 어디서 받을 수 있는지 바로 물어볼 수 있어. 엄마가 어떤 글을 남겼을까?")],"life:night1:promised")
     elif r13_mother_knowledge()["recognized"]:
@@ -97,7 +97,7 @@ label r13_life_first_night:
         call r13_lines([("daram","메모에 적힌 분은 초롱 아저씨지?"),("dad","응. 그분도 엄마를 기억할까?")],"life:night1:known_lead")
     else:
         call r13_lines([("daram","등불 돌보는 분이 누구인지는 아직 모르지?"),("dad","응. 이 마을 사람이라면 누구 말인지 알 텐데.")],"life:night1:unknown_lead")
-    call r13_lines([("daram","엄마는 지금 어디에 있는 거야?"),("dad","엄마는 이 방에 우리에게 남긴 메모를 두었어. 무엇을 보고, 누구를 만났는지 하나씩 알아보자."),("daram","엄마 소식 찾으면 나한테도 꼭 말해 줘."),("dad","응. 같이 찾자.")],"life:night1:rest")
+    call r13_lines([('daram', '엄마가 내일도 안 오면?'), (None, '나는 방금 펴 놓은 침구를 다시 눌렀다. 마차에서 가운데 자리를 달라던 아이였다.'), ('dad', '아침에 초롱 만나고, 돌아갈 차도 알아볼게. 여기 앉아 기다리기만 하진 않을 거야.'), ('daram', '차도 없으면?'), ('dad', '그다음 방법을 알아봐야지. 너 혼자 남겨 두지는 않아.'), (None, '다람이가 과자 봉지 끝을 두 번 접었다.'), ('daram', '눅눅해지겠다.'), ('dad', '잘 싸 두자.'), ('daram', '여기 놓을래. 엄마가 먼저 올 수도 있잖아.'), ('dad', '그래.'), ('daram', '엄마 오면 깨워 줘.'), ('dad', '응.'), (None, '문밖에서 발소리가 멈췄다. 노크하고 들어온 사람은 침구를 가져온 종업원이었다. 나는 한참 문손잡이를 놓지 못했다.')],"life:night1:rest")
     $ r13_flag("night1_seen")
     return
 
@@ -106,11 +106,11 @@ init 95 python:
     _r13_firstday_topic_lines=r13_conversation_topic_lines
     def r13_conversation_topic_lines(key):
         if store.room13.get("life_poc") and key=="granny_letter":
-            return [("dad","아내가 저희를 부른다는 말을 직접 하던가요?"),("granny","네. 가족이 오면 13호실을 그대로 내주라고 했어요."),("dad","아내가 여관을 나간 건 언제입니까?"),("granny","며칠 됐어요. 날짜는 숙박 장부에 있고요."),("dad","아내가 마지막으로 누구를 만났는지 알아보겠습니다.")]
+            return [('dad', '아내는 어디 있습니까?'), ('granny', '며칠째 안 보여요. 조사하러 나가면 밤낮이 없던 사람이라.'), ('daram', '기다린댔는데.'), ('granny', '방은 그대로 뒀지. 올라가 봐요.'), ('dad', '마지막으로 어디 간다고 했습니까?'), ('granny', '내게 일일이 말하진 않았어요. 밥도 식혀 놓고 들어오던걸.'), ('dad', '마지막으로 돌아온 날은 기억하십니까?'), ('granny', '밥상은 매일 차렸죠. 어느 날부터 안 왔더라…… 방부터 보세요. 아이가 떨고 있잖아요.')]
         if store.room13.get("life_poc") and key=="register":
             if store.room13.get("day",1)>1:
                 return [("granny","13호실 그대로 쓰세요. 부인이 잡아 둔 방이에요.")]
-            return [("dad","아내 편지를 받고 왔습니다. 아내가 묵는 방을 볼 수 있습니까?"),("granny","13호실을 쓰세요. 두고 간 물건도 그대로예요."),("daram","엄마는 지금 어디 있어요?"),("granny","며칠째 안 보여요. 나간 뒤로 돌아오지 않았어요."),("dad","13호실부터 살펴보고, 아내가 언제 나갔는지도 여쭤보겠습니다."),("granny","방은 그대로 두었어요. 부인이 남긴 것부터 살펴보세요."),("daram","아빠, 엄마가 남긴 것도 찾아보자.")]
+            return [('granny', '다돌 씨죠? 아이구, 손이 빨갛네. 난로부터 쬐어요.'), ('granny', '손 바로 대면 아파. 이걸로 감싸고 천천히.'), ('daram', '고맙습니다.'), ('dad', '아내는 어디 있습니까?'), ('granny', '며칠째 안 보여요. 조사하러 나가면 밤낮이 없던 사람이라.'), ('daram', '기다린댔는데.'), ('granny', '방은 그대로 뒀지. 올라가 봐요.'), ('dad', '마지막으로 어디 간다고 했습니까?'), ('granny', '내게 일일이 말하진 않았어요. 밥도 식혀 놓고 들어오던걸.'), ('dad', '마지막으로 돌아온 날은 기억하십니까?'), ('granny', '밥상은 매일 차렸죠. 어느 날부터 안 왔더라…… 방부터 보세요. 아이가 떨고 있잖아요.')]
         return _r13_firstday_topic_lines(key)
     _r13_firstday_topics=r13_topics
     def r13_topics(person):

@@ -261,96 +261,136 @@
       }
     },
     "life:arrival:inn": {
-      "1": {
+      "0": {
         "person": "granny",
-        "text": "부인이요? 며칠째 안 보여요. 방에 두고 간 물건은 그대로인데.",
+        "text": "다돌 씨죠? 아이구, 손이 빨갛네. 난로부터 쬐어요.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "여관 주인이 부인의 부재를 알려 준다. 숨은 사정을 표정으로 단정하지 않는다.",
-        "batch": "opening-inn-case-conflict-02",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
+      },
+      "1": {
+        "person": "granny",
+        "text": "손 바로 대면 아파. 이걸로 감싸고 천천히.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       },
       "2": {
         "person": "daram",
-        "text": "……엄마 여기 없어요?",
-        "emotion": "anxious",
+        "text": "고맙습니다.",
+        "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "엄마를 만날 기대가 무너지는 실망과 불안. 기존 명시적 anxious 의도를 유지한다.",
-        "batch": "opening-inn-case-conflict-02",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
+      },
+      "4": {
+        "person": "granny",
+        "text": "며칠째 안 보여요. 조사하러 나가면 밤낮이 없던 사람이라.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       },
       "5": {
-        "person": "granny",
-        "text": "가족을 부른다는 말은 저도 들었어요. 그런데 며칠 전에 나가서는 돌아오지 않았어요.",
+        "person": "daram",
+        "text": "기다린댔는데.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "출발 이후 돌아오지 않았다는 관찰 사실을 설명한다.",
-        "batch": "opening-inn-case-conflict-02",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       },
       "6": {
-        "person": "daram",
-        "text": "엄마가 있던 방을 봐도 돼요? 엄마 물건이라도 보고 싶어요.",
-        "emotion": "anxious",
-        "reaction": false,
-        "reviewed": true,
-        "reason": "엄마 물건이라도 보고 싶다는 아이의 그리움.",
-        "batch": "opening-inn-case-conflict-02",
-        "application_status": "approved_source_master"
-      },
-      "7": {
         "person": "granny",
-        "text": "13호실이에요. 부인이 잡아 둔 그대로예요. 짐은 거기 두세요.",
+        "text": "방은 그대로 뒀지. 올라가 봐요.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "해당 장면에서 알고 있는 사실과 요청을 침착하게 전달한다.",
-        "review_batch": "main-01916-context",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
+      },
+      "8": {
+        "person": "granny",
+        "text": "내게 일일이 말하진 않았어요. 밥도 식혀 놓고 들어오던걸.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
+      },
+      "10": {
+        "person": "granny",
+        "text": "밥상은 매일 차렸죠. 어느 날부터 안 왔더라…… 방부터 보세요. 아이가 떨고 있잖아요.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       }
     },
     "topic:granny_letter": {
       "1": {
         "person": "granny",
-        "text": "그럼요. 가족이 오면 13호실을 그대로 내주라고 했어요.",
+        "text": "며칠째 안 보여요. 조사하러 나가면 밤낮이 없던 사람이라.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "가족에게 방을 내주라는 부탁을 전달한다.",
-        "batch": "opening-inn-case-conflict-02",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       },
-      "4": {
-        "person": "granny",
-        "text": "부인이 나간 날짜는 숙박 장부에 있어요. 어디로 갔는지는 본 사람이 없고요.",
+      "2": {
+        "person": "daram",
+        "text": "기다린댔는데.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "답을 피하는 몸짓의 맥락이 있으나 대사는 장부와 목격 한계를 설명한다. 죄책감으로 단정하지 않는다.",
-        "batch": "opening-inn-case-conflict-02",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
+      },
+      "3": {
+        "person": "granny",
+        "text": "방은 그대로 뒀지. 올라가 봐요.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       },
       "5": {
-        "person": "daram",
-        "text": "인사도 안 하고 갔어요?",
-        "emotion": "anxious",
+        "person": "granny",
+        "text": "내게 일일이 말하진 않았어요. 밥도 식혀 놓고 들어오던걸.",
+        "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "인사 없이 떠난 엄마에게 느끼는 서운함.",
-        "batch": "opening-inn-case-conflict-02",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       },
-      "6": {
+      "7": {
         "person": "granny",
-        "text": "나도 부인을 기다렸어요. 그래서 기다리는 마음은 알지요.",
-        "emotion": "anxious",
+        "text": "밥상은 매일 차렸죠. 어느 날부터 안 왔더라…… 방부터 보세요. 아이가 떨고 있잖아요.",
+        "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "기다리는 마음을 내세워 가족에게 공감하는 표면 정서. 숨은 동기는 단정하지 않는다.",
-        "batch": "opening-inn-case-conflict-02",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       }
     },
@@ -829,64 +869,84 @@
       }
     },
     "topic:register": {
-      "1": {
+      "0": {
         "person": "granny",
-        "text": "아이고. 두 분이 신발에 눈을 얼마나 묻혀 오셨나.",
+        "text": "다돌 씨죠? 아이구, 손이 빨갛네. 난로부터 쬐어요.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "젖은 아이를 챙기는 여관 주인의 일상적 안내와 엄마를 찾는 아이의 서운함을 구분. 할머니의 회피를 곧바로 악의 표정으로 단정하지 않는다.",
-        "batch": "context-03",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       },
-      "3": {
+      "1": {
         "person": "granny",
-        "text": "부인 편지 보고 오셨군요. 부인은 며칠째 안 보여요. 우선 바닥에 천부터 깔아요. 아이 양말이 다 젖었네.",
+        "text": "손 바로 대면 아파. 이걸로 감싸고 천천히.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "젖은 아이를 챙기는 여관 주인의 일상적 안내와 엄마를 찾는 아이의 서운함을 구분. 할머니의 회피를 곧바로 악의 표정으로 단정하지 않는다.",
-        "batch": "context-03",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
+      },
+      "2": {
+        "person": "daram",
+        "text": "고맙습니다.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       },
       "4": {
-        "person": "daram",
-        "text": "엄마가 묵던 방에 가도 돼요?",
-        "emotion": "anxious",
-        "reaction": false,
-        "reviewed": true,
-        "reason": "젖은 아이를 챙기는 여관 주인의 일상적 안내와 엄마를 찾는 아이의 서운함을 구분. 할머니의 회피를 곧바로 악의 표정으로 단정하지 않는다.",
-        "batch": "context-03",
-        "application_status": "approved_source_master"
-      },
-      "5": {
         "person": "granny",
-        "text": "그 방 그대로 드릴게요. 이층 끝, 13호예요. 이불도 그때 그대로 두었어요.",
+        "text": "며칠째 안 보여요. 조사하러 나가면 밤낮이 없던 사람이라.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "젖은 아이를 챙기는 여관 주인의 일상적 안내와 엄마를 찾는 아이의 서운함을 구분. 할머니의 회피를 곧바로 악의 표정으로 단정하지 않는다.",
-        "batch": "context-03",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
+      },
+      "5": {
+        "person": "daram",
+        "text": "기다린댔는데.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
+      },
+      "6": {
+        "person": "granny",
+        "text": "방은 그대로 뒀지. 올라가 봐요.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       },
       "8": {
         "person": "granny",
-        "text": "숙박 장부를 찾아 둘게요. 두 분 짐부터 놓고 오세요. 젖은 발로 올라가면 밤새 추워요.",
+        "text": "내게 일일이 말하진 않았어요. 밥도 식혀 놓고 들어오던걸.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "젖은 아이를 챙기는 여관 주인의 일상적 안내와 엄마를 찾는 아이의 서운함을 구분. 할머니의 회피를 곧바로 악의 표정으로 단정하지 않는다.",
-        "batch": "context-03",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       },
-      "9": {
-        "person": "daram",
-        "text": "아빠. 나 양말이 바닥에 붙었어.",
-        "emotion": "anxious",
+      "10": {
+        "person": "granny",
+        "text": "밥상은 매일 차렸죠. 어느 날부터 안 왔더라…… 방부터 보세요. 아이가 떨고 있잖아요.",
+        "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "젖은 아이를 챙기는 여관 주인의 일상적 안내와 엄마를 찾는 아이의 서운함을 구분. 할머니의 회피를 곧바로 악의 표정으로 단정하지 않는다.",
-        "batch": "context-03",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       }
     },
@@ -12876,22 +12936,12 @@
     "life:mother:note:v2": {
       "1": {
         "person": "daram",
-        "text": "이 그림은 엄마가 나한테 쓰는 표시야.",
-        "emotion": "joy",
+        "text": "이건 엄마 거다. 도토리 삐뚤어.",
+        "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "엄마 표시를 알아본 기쁨과 작성 시점을 궁금해하는 불안이 이어진다.",
-        "batch": "context-07",
-        "application_status": "approved_source_master"
-      },
-      "3": {
-        "person": "daram",
-        "text": "아빠랑 나한테 쓴 메모네. 엄마가 언제 적어 놓은 걸까?",
-        "emotion": "anxious",
-        "reaction": false,
-        "reviewed": true,
-        "reason": "엄마 표시를 알아본 기쁨과 작성 시점을 궁금해하는 불안이 이어진다.",
-        "batch": "context-07",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       }
     },
@@ -12908,14 +12958,24 @@
       }
     },
     "life:night1:comparison": {
-      "0": {
+      "1": {
         "person": "daram",
-        "text": "메모에 아빠랑 내가 도착하면 이 방으로 오라고 했지.",
+        "text": "엄마가 잊었나?",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "메모의 도착 안내 내용을 다시 확인한다.",
-        "batch": "context-07",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
+      },
+      "3": {
+        "person": "daram",
+        "text": "그럼 초롱한테 물어보자.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       }
     },
@@ -12946,23 +13006,52 @@
     "life:night1:rest": {
       "0": {
         "person": "daram",
-        "text": "엄마는 지금 어디에 있는 거야?",
-        "emotion": "anxious",
+        "text": "엄마가 내일도 안 오면?",
+        "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "엄마의 부재 이유를 아직 모르는 다람이 아빠에게 묻고 소식을 부탁한다.",
-        "review_batch": "main-01916-context",
-        "application_status": "approved_source_master",
-        "text_context_review": "2026-10-18 causal text review; prior expression/asset status retained; runtime unverified."
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
       },
-      "2": {
+      "3": {
         "person": "daram",
-        "text": "엄마 소식 찾으면 나한테도 꼭 말해 줘.",
-        "emotion": "anxious",
+        "text": "차도 없으면?",
+        "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "엄마의 부재 이유를 아직 모르는 다람이 아빠에게 묻고 소식을 부탁한다.",
-        "review_batch": "main-01916-context",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
+      },
+      "6": {
+        "person": "daram",
+        "text": "눅눅해지겠다.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
+      },
+      "8": {
+        "person": "daram",
+        "text": "여기 놓을래. 엄마가 먼저 올 수도 있잖아.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
+      },
+      "10": {
+        "person": "daram",
+        "text": "엄마 오면 깨워 줘.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       }
     },
@@ -15717,47 +15806,53 @@
     "topic:review:granny_letter": {
       "1": {
         "person": "granny",
-        "text": "그럼요. 가족이 오면 13호실을 그대로 내주라고 했어요.",
+        "text": "며칠째 안 보여요. 조사하러 나가면 밤낮이 없던 사람이라.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "가족에게 방을 내주라는 부탁을 전달한다. 재독은 같은 대본을 회상하는 맥락이므로 새 순간 반응을 재생하지 않는다.",
-        "batch": "exact-legacy-topic-replay",
-        "application_status": "approved_source_master",
-        "reuse_from": "topic:granny_letter"
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
       },
-      "4": {
-        "person": "granny",
-        "text": "부인이 나간 날짜는 숙박 장부에 있어요. 어디로 갔는지는 본 사람이 없고요.",
+      "2": {
+        "person": "daram",
+        "text": "기다린댔는데.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "답을 피하는 몸짓의 맥락이 있으나 대사는 장부와 목격 한계를 설명한다. 죄책감으로 단정하지 않는다. 재독은 같은 대본을 회상하는 맥락이므로 새 순간 반응을 재생하지 않는다.",
-        "batch": "exact-legacy-topic-replay",
-        "application_status": "approved_source_master",
-        "reuse_from": "topic:granny_letter"
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
+      },
+      "3": {
+        "person": "granny",
+        "text": "방은 그대로 뒀지. 올라가 봐요.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
       },
       "5": {
-        "person": "daram",
-        "text": "인사도 안 하고 갔어요?",
-        "emotion": "anxious",
-        "reaction": false,
-        "reviewed": true,
-        "reason": "인사 없이 떠난 엄마에게 느끼는 서운함. 재독은 같은 대본을 회상하는 맥락이므로 새 순간 반응을 재생하지 않는다.",
-        "batch": "exact-legacy-topic-replay",
-        "application_status": "approved_source_master",
-        "reuse_from": "topic:granny_letter"
-      },
-      "6": {
         "person": "granny",
-        "text": "나도 부인을 기다렸어요. 그래서 기다리는 마음은 알지요.",
-        "emotion": "anxious",
+        "text": "내게 일일이 말하진 않았어요. 밥도 식혀 놓고 들어오던걸.",
+        "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "기다리는 마음을 내세워 가족에게 공감하는 표면 정서. 숨은 동기는 단정하지 않는다. 재독은 같은 대본을 회상하는 맥락이므로 새 순간 반응을 재생하지 않는다.",
-        "batch": "exact-legacy-topic-replay",
-        "application_status": "approved_source_master",
-        "reuse_from": "topic:granny_letter"
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
+      },
+      "7": {
+        "person": "granny",
+        "text": "밥상은 매일 차렸죠. 어느 날부터 안 왔더라…… 방부터 보세요. 아이가 떨고 있잖아요.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
       }
     },
     "topic:review:granny_rules": {
@@ -15807,71 +15902,85 @@
       }
     },
     "topic:review:register": {
+      "0": {
+        "person": "granny",
+        "text": "다돌 씨죠? 아이구, 손이 빨갛네. 난로부터 쬐어요.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
+      },
       "1": {
         "person": "granny",
-        "text": "아이고. 두 분이 신발에 눈을 얼마나 묻혀 오셨나.",
+        "text": "손 바로 대면 아파. 이걸로 감싸고 천천히.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "젖은 아이를 챙기는 여관 주인의 일상적 안내와 엄마를 찾는 아이의 서운함을 구분. 할머니의 회피를 곧바로 악의 표정으로 단정하지 않는다. 재독은 같은 대본을 회상하는 맥락이므로 새 순간 반응을 재생하지 않는다.",
-        "batch": "exact-legacy-topic-replay",
-        "application_status": "approved_source_master",
-        "reuse_from": "topic:register"
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
       },
-      "3": {
-        "person": "granny",
-        "text": "부인 편지 보고 오셨군요. 부인은 며칠째 안 보여요. 우선 바닥에 천부터 깔아요. 아이 양말이 다 젖었네.",
+      "2": {
+        "person": "daram",
+        "text": "고맙습니다.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "젖은 아이를 챙기는 여관 주인의 일상적 안내와 엄마를 찾는 아이의 서운함을 구분. 할머니의 회피를 곧바로 악의 표정으로 단정하지 않는다. 재독은 같은 대본을 회상하는 맥락이므로 새 순간 반응을 재생하지 않는다.",
-        "batch": "exact-legacy-topic-replay",
-        "application_status": "approved_source_master",
-        "reuse_from": "topic:register"
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
       },
       "4": {
-        "person": "daram",
-        "text": "엄마가 묵던 방에 가도 돼요?",
-        "emotion": "anxious",
-        "reaction": false,
-        "reviewed": true,
-        "reason": "젖은 아이를 챙기는 여관 주인의 일상적 안내와 엄마를 찾는 아이의 서운함을 구분. 할머니의 회피를 곧바로 악의 표정으로 단정하지 않는다. 재독은 같은 대본을 회상하는 맥락이므로 새 순간 반응을 재생하지 않는다.",
-        "batch": "exact-legacy-topic-replay",
-        "application_status": "approved_source_master",
-        "reuse_from": "topic:register"
-      },
-      "5": {
         "person": "granny",
-        "text": "그 방 그대로 드릴게요. 이층 끝, 13호예요. 이불도 그때 그대로 두었어요.",
+        "text": "며칠째 안 보여요. 조사하러 나가면 밤낮이 없던 사람이라.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "젖은 아이를 챙기는 여관 주인의 일상적 안내와 엄마를 찾는 아이의 서운함을 구분. 할머니의 회피를 곧바로 악의 표정으로 단정하지 않는다. 재독은 같은 대본을 회상하는 맥락이므로 새 순간 반응을 재생하지 않는다.",
-        "batch": "exact-legacy-topic-replay",
-        "application_status": "approved_source_master",
-        "reuse_from": "topic:register"
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
+      },
+      "5": {
+        "person": "daram",
+        "text": "기다린댔는데.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
+      },
+      "6": {
+        "person": "granny",
+        "text": "방은 그대로 뒀지. 올라가 봐요.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
       },
       "8": {
         "person": "granny",
-        "text": "숙박 장부를 찾아 둘게요. 두 분 짐부터 놓고 오세요. 젖은 발로 올라가면 밤새 추워요.",
+        "text": "내게 일일이 말하진 않았어요. 밥도 식혀 놓고 들어오던걸.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "젖은 아이를 챙기는 여관 주인의 일상적 안내와 엄마를 찾는 아이의 서운함을 구분. 할머니의 회피를 곧바로 악의 표정으로 단정하지 않는다. 재독은 같은 대본을 회상하는 맥락이므로 새 순간 반응을 재생하지 않는다.",
-        "batch": "exact-legacy-topic-replay",
-        "application_status": "approved_source_master",
-        "reuse_from": "topic:register"
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
       },
-      "9": {
-        "person": "daram",
-        "text": "아빠. 나 양말이 바닥에 붙었어.",
-        "emotion": "anxious",
+      "10": {
+        "person": "granny",
+        "text": "밥상은 매일 차렸죠. 어느 날부터 안 왔더라…… 방부터 보세요. 아이가 떨고 있잖아요.",
+        "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "젖은 아이를 챙기는 여관 주인의 일상적 안내와 엄마를 찾는 아이의 서운함을 구분. 할머니의 회피를 곧바로 악의 표정으로 단정하지 않는다. 재독은 같은 대본을 회상하는 맥락이므로 새 순간 반응을 재생하지 않는다.",
-        "batch": "exact-legacy-topic-replay",
-        "application_status": "approved_source_master",
-        "reuse_from": "topic:register"
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
       }
     },
     "topic:review:karo_road": {
@@ -20659,6 +20768,48 @@
         "visual_qa": false,
         "new_asset_approval": false,
         "context_review_status": "authored_context_review_existing_supported_assets"
+      }
+    },
+    "family:bundle:inspect": {
+      "1": {
+        "person": "daram",
+        "text": "이 그림 가져왔네. 나 팔 세 개 그린 거.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
+      },
+      "3": {
+        "person": "daram",
+        "text": "왜 두고 갔지?",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
+      },
+      "6": {
+        "person": "daram",
+        "text": "다시 와서 가져가려고 그런 거면?",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
+      },
+      "8": {
+        "person": "daram",
+        "text": "편지도 봐.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
       }
     },
     "MS14_D01_S01_L0003": {
