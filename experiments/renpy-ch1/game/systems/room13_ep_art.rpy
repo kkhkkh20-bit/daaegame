@@ -119,6 +119,11 @@ init 160 python:
             if options["music"]:renpy.music.play(R13_BGM[options["music"]],fadeout=1.0,fadein=1.0)
             else:renpy.music.stop(fadeout=1.5)
         if options.get("sfx"):source_fx(options["sfx"])
+        if "carriage_letter" in options and store.place=="마차 안":
+            if options["carriage_letter"]:renpy.show_screen("r13_evidence_card", "E01", "가져온 편지", conversation=True, _zorder=85)
+            else:renpy.hide_screen("r13_evidence_card")
+        if options.get("carriage_reveal") and store.place=="마차 안":
+            store.r13_carriage_narrow=False; renpy.show("r13_carriage_background", what=r13_background("winter_carriage"), zorder=-10)
         if "dim" in options:
             if options["dim"]:renpy.show("r13_ep_dim",what=At(Solid("#05080cb0"),r13_ep_art_fade),zorder=4)
             else:renpy.hide("r13_ep_dim")

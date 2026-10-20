@@ -90,7 +90,7 @@ init 57 python:
         if key=="winter":
             return Transform(r13_art_path("gate"),size=(1280,720),nearest=True)
         if key=="winter_carriage":
-            # Empty interior: Dad is the viewpoint and is never drawn.
+            if getattr(store,"r13_carriage_narrow",False):return r13_carriage_seat_art()
             return Transform("assets/room13-pixel-carriage-empty-winter.webp",size=(1280,720),nearest=True)
         if key=="village_overview":
             return Transform(r13_art_path("overview"),size=(1280,720),nearest=True)

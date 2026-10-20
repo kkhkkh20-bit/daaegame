@@ -1,0 +1,27 @@
+{
+  "scope": "Opening only. Developer walkthrough against authoritative source, not an external player study.",
+  "checks": [
+    {
+      "question": "아빠는 무엇과 대비해 자신을 잡아 달라고 하는가?",
+      "before": "대사부터 시작하여 대상이 불명확",
+      "after": "과자 봉지를 먼저 챙기는 상황을 원문 서술로 전달",
+      "status": "developer_walkthrough_checked"
+    },
+    {
+      "question": "또 읽는 대상과 십삼 호는 무엇인가?",
+      "before": "읽는 대상이 화면에 없음",
+      "after": "기존 자료 카드에 초대 편지 표시",
+      "status": "developer_walkthrough_checked"
+    },
+    {
+      "question": "마을에 도착했는가, 이동 중인가?",
+      "before": "첫 화면에 마을 전체가 보이고 이동 단서가 약함",
+      "after": "좌석 구도, 바퀴음, 작은 흔들림 → 까로 안내에서 창 공개 → 정차음과 입구에서 효과 해제",
+      "status": "developer_walkthrough_checked"
+    }
+  ],
+  "limitations": [
+    "No matching hand close-up exists: use the documented narration fallback, no tabletop cookie CG substitution.",
+    "Full 14-day story and detailed letter interaction are not completed by this change."
+  ]
+}

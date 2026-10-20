@@ -627,6 +627,18 @@
     "source": "game/room13.rpy",
     "line": 256,
     "context": "label r13_carriage:",
+    "person": null,
+    "text": "다람이 과자 봉지를 외투 안쪽으로 당긴다.",
+    "packet": [
+      null,
+      "다람이 과자 봉지를 외투 안쪽으로 당긴다."
+    ],
+    "already_static_text": false
+  },
+  {
+    "source": "game/room13.rpy",
+    "line": 256,
+    "context": "label r13_carriage:",
     "person": "dad",
     "text": "아빠는 안 잡아 줘?",
     "packet": [
@@ -727,7 +739,10 @@
     "text": "또 읽어?",
     "packet": [
       "daram",
-      "또 읽어?"
+      "또 읽어?",
+      {
+        "carriage_letter": true
+      }
     ],
     "already_static_text": false
   },
@@ -763,7 +778,10 @@
     "text": "오늘은 엄마랑 자?",
     "packet": [
       "daram",
-      "오늘은 엄마랑 자?"
+      "오늘은 엄마랑 자?",
+      {
+        "carriage_letter": false
+      }
     ],
     "already_static_text": false
   },
@@ -799,7 +817,10 @@
     "text": "지붕 보입니다. 일어나지 마요. 아직 안 섰어요.",
     "packet": [
       "karo",
-      "지붕 보입니다. 일어나지 마요. 아직 안 섰어요."
+      "지붕 보입니다. 일어나지 마요. 아직 안 섰어요.",
+      {
+        "carriage_reveal": true
+      }
     ],
     "already_static_text": false
   },
