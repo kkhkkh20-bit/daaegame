@@ -21,7 +21,7 @@ screen r13_concept_dock(ready=True,show_record=True,person=None,present_action=N
     $ record_x=more_x-16-secondary_width
     $ line_active=renpy.get_screen("say") is not None and not any(renpy.get_screen(n) for n in ("choice","r13_topics","r13_resident_approach","r13_entry_topics","r13_entry_karo_topics"))
     if line_active:
-        use r13_concept_action(record_x-16-304,304,"현재 대화 건너뛰기","skip",Show("r13_concept_skip_confirm"),enabled=ready)
+        use r13_concept_action((record_x if not show_record else record_x-16-secondary_width),secondary_width,"건너뛰기","skip",([SetVariable("r13_carriage_skip",True),Function(renpy.end_interaction,True)] if place=="마차 안" else Show("r13_concept_skip_confirm")),enabled=ready)
     if present_action is not None:
         use r13_concept_action(record_x-16-256,256,"자료 보여주기","present",present_action,enabled=ready,primary=True)
     if show_record:

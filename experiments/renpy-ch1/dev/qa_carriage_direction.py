@@ -17,6 +17,11 @@ async def main():
   assert opening['packet'][0] is None and opening['packet'][1]=='다람이 과자 봉지를 외투 안쪽으로 당긴다.',opening
   assert opening['fx'].startswith('assets/ms14-audio/SFX_cart_'),opening
   assert opening['master_transforms']==1 and opening['ms14'] is None,opening
+  buttons=(await q.state())['buttons']
+  skip=[x for x in buttons if x['text'].strip()=='건너뛰기'];more=[x for x in buttons if x['text'].strip()=='더보기']
+  assert len(skip)==1 and len(more)==1,(skip,more)
+  a,z=skip[0]['rect'],more[0]['rect']
+  assert a[2:]==z[2:] and a[1]==z[1] and a[0]+a[2]+16==z[0],(a,z)
   await q.shot('01-opening-direction')
   await q.input(900,600);await asyncio.sleep(.8)
   assert '아빠는 안 잡아 줘?' in (await q.state())['say']
@@ -35,7 +40,7 @@ async def main():
   assert packet[0]=='karo',packet
   assert not await q.py('import renpy;result=bool(renpy.display.screen.get_screen("r13_evidence_card"))')
   await q.shot('04-village-reveal')
-  await q.press('씬 건너뛰기');await q.wait('say')
+  await q.press('건너뛰기');await q.wait('say')
   for _ in range(100):
    place=await q.py('import renpy;result=renpy.store.place')
    if place=='눈에 막힌 입구':break
@@ -44,7 +49,7 @@ async def main():
   assert end['place']=='눈에 막힌 입구' and not end['fx'] and end['master_transforms']==0,end
   await q.advance();await q.wait('r13_hub');await q.shot('05-original-gate-after-skip')
   assert not errors,errors
-  report=dict(status='passed',opening=opening,after_skip=end,page_errors=errors)
+  report=dict(status='passed',opening=opening,after_skip=end,page_errors=errors,footer=dict(skip=skip,more=more))
   (OUT/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');print(json.dumps(report,ensure_ascii=False),flush=True)
   await b.close()
 asyncio.run(main())

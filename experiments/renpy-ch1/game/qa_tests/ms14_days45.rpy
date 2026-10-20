@@ -91,7 +91,7 @@ testcase ms14_45_rebuttal:
     $ ms14=ms14_rt.select(ms14,"E24")
     click "선택한 자료를 제시한다"
     pause 0.5
-    click "현재 대화 건너뛰기"
+    click "건너뛰기"
     pause 0.3
     click "건너뛰기"
     pause 0.5
@@ -110,7 +110,7 @@ testcase ms14_45_night:
     pause 0.6
     assert eval (ms14["values"]["carried_dry_blankets"]==2)
     assert eval (ms14["values"]["daram_next_morning_guard"]=="badugi_diner_limited")
-    click "현재 대화 건너뛰기"
+    click "건너뛰기"
     pause 0.3
     click "건너뛰기"
     pause 0.5

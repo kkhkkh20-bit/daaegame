@@ -125,7 +125,7 @@ testcase ms14_skip_save:
     pause 2.0
     click "처음부터"
     pause 1.0
-    click "현재 대화 건너뛰기"
+    click "건너뛰기"
     pause 0.4
     click "건너뛰기"
     pause 0.6

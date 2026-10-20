@@ -11,7 +11,7 @@ testcase existing_carriage_direction:
     pause 0.8
     assert eval (r13_packet[1]=="아빠는 안 잡아 줘?")
     screenshot "carriage_direction_dialogue.png"
-    click "씬 건너뛰기"
+    click "건너뛰기"
     pause 2.0
     assert eval (place=="눈에 막힌 입구")
     assert eval (not renpy.music.get_playing(channel="scene_fx"))
@@ -44,7 +44,7 @@ testcase existing_carriage_paged_skip:
     pause 3.0
     click pos (900,600) until eval (r13_packet[0]=="karo") timeout 60
     assert eval (len(r13_pages)>1)
-    click "씬 건너뛰기"
+    click "건너뛰기"
     pause 2.0
     assert eval (place=="눈에 막힌 입구" and not r13_carriage_narrow)
     assert eval (not renpy.game.context().scene_lists.layer_at_list["master"][1])
