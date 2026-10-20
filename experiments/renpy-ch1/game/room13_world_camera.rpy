@@ -66,7 +66,10 @@ init 58 python:
     class R13WorldCameraChanged:
         def __init__(self,location):
             self.location=location
+            self.destination=None
         def __call__(self,value):
+            if getattr(self,"destination",None) is not None:
+                value=self.destination
             value=int(max(0,min(r13_world_width(self.location)-1280,round(value))))
             cameras=dict(getattr(store,"r13_world_cameras",{}))
             if cameras.get(self.location)!=value:
@@ -78,17 +81,65 @@ init 58 python:
                 # Keep the current viewport when a save resumes this interaction.
                 renpy.retain_after_load()
 
+    def r13_world_zone_offset(location):
+        end=max(0,r13_world_width(location)-1280)
+        return end if r13_world_offset(location)>end/2.0 else 0
+
     def r13_world_adjustment(location):
-        return ui.adjustment(range=max(0,r13_world_width(location)-1280),value=r13_world_offset(location),
+        # Legacy free-pan saves settle at the nearest authored endpoint.
+        value=r13_world_zone_offset(location)
+        R13WorldCameraChanged(location)(value)
+        return ui.adjustment(range=max(0,r13_world_width(location)-1280),value=value,
             step=1,force_step=False,changed=R13WorldCameraChanged(location))
 
     def r13_pan_ease(t):
         return t*t*(3.0-2.0*t)
 
     def r13_pan_camera(adjustment,direction):
-        target=max(0,min(adjustment.range,adjustment.value+direction*480))
-        adjustment.animate(target-adjustment.value,.42,r13_pan_ease)
-        renpy.display.interface.maximum_framerate(.5)
+        hub=renpy.get_screen("r13_hub")
+        if not hub or hub.scope.get("world_moving",False) or adjustment.animation_target is not None:
+            return
+        target=adjustment.range if direction>0 else 0
+        if target==adjustment.value:return
+        # Persist the destination, never a half-travelled view. This is camera
+        # presentation only: no time, evidence, flags or resident schedules.
+        adjustment.changed.destination=target
+        adjustment.changed(target)
+        if not persistent.room13_motion or renpy.is_skipping():
+            adjustment.change(target)
+            adjustment.changed.destination=None
+        else:
+            renpy.set_screen_variable("world_moving",True,screen="r13_hub")
+            adjustment.animate(target-adjustment.value,.65,r13_pan_ease)
+            renpy.display.interface.maximum_framerate(.75)
+        renpy.restart_interaction()
+
+    def r13_world_pan_finish(adjustment):
+        if adjustment.animation_target is not None:return
+        # Finish on the exact endpoint before restoring focus/click rectangles.
+        target=adjustment.changed.destination
+        if target is not None:adjustment.change(target)
+        adjustment.changed.destination=None
+        renpy.set_screen_variable("world_moving",False,screen="r13_hub")
+        renpy.restart_interaction()
+
+    def r13_world_restore_zone():
+        # An adjustment's animation clock is not meaningful across save/load.
+        hub=renpy.get_screen("r13_hub")
+        if hub and getattr(store,"room13",None):
+            location=store.room13["location"]
+            value=r13_world_zone_offset(location)
+            adjustment=hub.scope.get("world_adjustment")
+            if adjustment is not None:
+                # The viewport can retain this object across a screen rebuild.
+                # Cancel it in place before releasing input; replacing scope
+                # alone leaves the old viewport animation running for a frame.
+                adjustment.animation_target=None
+                adjustment.changed=R13WorldCameraChanged(location)
+                adjustment.change(value)
+            else:
+                hub.scope["world_adjustment"]=r13_world_adjustment(location)
+            hub.scope["world_moving"]=False
 
     def r13_world_edge_people(adjustment):
         left=[];right=[]
@@ -152,6 +203,7 @@ init 62 python:
 
     config.interact_callbacks.append(r13_sync_world_rects)
     config.after_load_callbacks.append(r13_sync_world_rects)
+    config.after_load_callbacks.append(r13_world_restore_zone)
 
 init 130 python:
     # Objects registered after init 62 (13호 desk at init 66, the mother's note at
@@ -168,30 +220,15 @@ init 130 python:
             ROOM13["objects"][r13_world_location][r13_world_key]["rect"]=list(r13_world_rect)
 
 screen r13_world_camera_controls(adjustment):
-    # Exploration is moved by the shared world viewport's mouse drag or touch
-    # swipe. People standing outside the view are named at the screen edge;
-    # the tag also pans toward them.
-    $ edge=r13_world_edge_people(adjustment)
-    timer .3 repeat True action Function(r13_world_edge_refresh,adjustment,edge,(adjustment.value<=4,adjustment.value>=adjustment.range-4),_update_screens=False)
-    if edge[0] and r13_field_view=="people":
-        textbutton ("‹ "+r13_world_edge_label(edge[0])):
-            style "r13_action_button" xpos 8 ypos 236 padding (12,8) text_size 18 xminimum (80 if r13_touch_ui() else 0) yminimum (80 if r13_touch_ui() else 0)
-            action Function(r13_pan_camera,adjustment,-1,_update_screens=False)
-    elif adjustment.value>4:
-        # 0.18.75 (design review 2026-10-16, #4): a wide place with nobody off to the side
-        # still shows that there is more to see; a plain arrow, no name.
+    # Fixed screen-edge controls; world art, actors and targets share one viewport.
+    if adjustment.value>4:
         textbutton "‹":
-            style "r13_action_button" xpos 8 ypos 236 padding (12,8) text_size 22 xminimum (80 if r13_touch_ui() else 0) yminimum (80 if r13_touch_ui() else 0)
-            action Function(r13_pan_camera,adjustment,-1,_update_screens=False) tooltip "옆으로 둘러보기"
-    if edge[1] and r13_field_view=="people":
-        textbutton (r13_world_edge_label(edge[1])+" ›"):
-            style "r13_action_button" xpos 1272 xanchor 1.0 ypos 236 padding (12,8) text_size 18 xminimum (80 if r13_touch_ui() else 0) yminimum (80 if r13_touch_ui() else 0)
-            action Function(r13_pan_camera,adjustment,1,_update_screens=False)
-    elif adjustment.value<adjustment.range-4:
+            style "r13_action_button" xpos 8 ypos 236 padding (12,8) text_size 22 xminimum 80 yminimum 80
+            action Function(r13_pan_camera,adjustment,-1) tooltip "왼쪽 구역" alt "왼쪽 구역"
+    if adjustment.value<adjustment.range-4:
         textbutton "›":
-            style "r13_action_button" xpos 1272 xanchor 1.0 ypos 236 padding (12,8) text_size 22 xminimum (80 if r13_touch_ui() else 0) yminimum (80 if r13_touch_ui() else 0)
-            action Function(r13_pan_camera,adjustment,1,_update_screens=False) tooltip "옆으로 둘러보기"
-    # First-wide-place guidance shares the single field instruction panel.
+            style "r13_action_button" xpos 1272 xanchor 1.0 ypos 236 padding (12,8) text_size 22 xminimum 80 yminimum 80
+            action Function(r13_pan_camera,adjustment,1) tooltip "오른쪽 구역" alt "오른쪽 구역"
 
-# 0.18.75: the one-time "drag to look around" line on the first wide place.
+# Retained for existing saves.
 default persistent.r13_pan_hint_seen = False

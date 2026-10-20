@@ -680,7 +680,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 58 | `room13_world_camera.rpy:103` | _r13_offer_edge_label |
+| 1 | 58 | `room13_world_camera.rpy:154` | _r13_offer_edge_label |
 | 2 | 124 | `systems/room13_event_offers.rpy:94` |  |
 
 ## `r13_world_props` (2층)
