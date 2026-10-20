@@ -1,0 +1,51 @@
+{
+  "version": "0.19.76",
+  "build": {
+    "core_zip_bytes": 18419417,
+    "archive_sha256": "2933229312256f679837bbc7b78c1197c8b0c17a9ed9f27ec7fcd190c5f2813f",
+    "parts": 3,
+    "preload_files": 112,
+    "first_load_bytes": 56321140,
+    "remote_files": 2300,
+    "removed_from_release": []
+  },
+  "paths": {
+    "shelter": {
+      "status": "passed",
+      "resume": "v111-sleep3",
+      "final": {
+        "day": 4,
+        "piko_alive": true,
+        "portrait": "complete",
+        "piko.location": "clinic",
+        "nero_bedding_reserved": false,
+        "carried_dry_blankets": 0,
+        "E35.status": null,
+        "public_stones": "restored",
+        "silluk_status": "reporting_obligation",
+        "silluk.children.location": "workshop_with_buri"
+      },
+      "wrong_proof_recovered": false,
+      "page_errors": []
+    },
+    "nero": {
+      "status": "passed",
+      "resume": "v111-loan_read",
+      "final": {
+        "day": 4,
+        "piko_alive": false,
+        "portrait": "child_completed",
+        "piko.location": null,
+        "nero_bedding_reserved": false,
+        "carried_dry_blankets": 2,
+        "E35.status": "received",
+        "public_stones": "with_baek",
+        "silluk_status": "detained_work_waiting_station",
+        "silluk.children.location": "workshop_with_buri"
+      },
+      "wrong_proof_recovered": true,
+      "page_errors": []
+    }
+  },
+  "scope": "Native opening and natural day 1 play confirmed earlier; actual day 2 afternoon branches and day 3 played in segments using actual prior-play saves. No injected story flags. Default RenPy save/load/skip matrix not repeated."
+}

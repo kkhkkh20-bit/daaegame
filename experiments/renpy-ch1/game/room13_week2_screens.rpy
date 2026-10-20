@@ -47,7 +47,7 @@ screen r13_crisis():
                 if r13_has("E29"):
                     textbutton "가족과 빠져나갈 길" style "r13_action_button" xsize 370 ysize 54 text_size 19 action Return("escape") sensitive ready
 
-screen r13_crisis_proof(claim):
+screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장"):
     style_prefix "r13"
     modal True
     default ready=False
@@ -56,7 +56,7 @@ screen r13_crisis_proof(claim):
         area (50,160,1180,450) padding (28,25) background R13PaperPanel()
         vbox:
             spacing 18
-            text "제단 앞 · 맞서야 할 주장" size 22 color "#717367"
+            text heading size 22 color "#717367"
             text R13_CLAIMS[claim]["assertion"] size 31 color "#765426"
             text "직접 내놓은 자료" size 22
             viewport:

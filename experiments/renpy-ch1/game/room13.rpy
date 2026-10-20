@@ -41,7 +41,7 @@ label r13_scene(bg,title,mood="calm"):
 label r13_lines(entries,identity,binding_route=None):
     $ r13_index=0; r13_dialogue_binding=r13_bind_dialogue_rows(entries,identity,binding_route,R13_DIALOGUE_BINDINGS)
     $ r13_conv_skip=False
-    while r13_index<len(entries) and not r13_conv_skip and not r13_meeting_live_should_stop(identity) and not (identity==R13_CARRIAGE_IDENTITY and r13_carriage_skip):
+    while r13_index<len(entries) and not r13_conv_skip and not r13_meeting_live_should_stop(identity) and not ((identity==R13_CARRIAGE_IDENTITY or (r13_v111_active() and place=="마차 안")) and r13_carriage_skip):
         $ r13_packet=r13_dead_stand_in_packet(r13_pov_packet(entries[r13_index]),identity)
         $ r13_thought_active=bool(len(r13_packet)>2 and isinstance(r13_packet[2],dict) and r13_packet[2].get("thought"))
         $ r13_expression,r13_directed_pose=r13_line_performance(identity,r13_index,r13_packet)
@@ -72,11 +72,11 @@ label r13_lines(entries,identity,binding_route=None):
         # Four or more lines on screen: show two lines per click (systems/room13_linebreak.rpy).
         $ r13_pages=r13_dialogue_pages(r13_packet[1])
         $ r13_page_i=0
-        while r13_page_i<len(r13_pages) and not r13_conv_skip and not r13_meeting_live_should_stop(identity) and not (identity==R13_CARRIAGE_IDENTITY and r13_carriage_skip):
+        while r13_page_i<len(r13_pages) and not r13_conv_skip and not r13_meeting_live_should_stop(identity) and not ((identity==R13_CARRIAGE_IDENTITY or (r13_v111_active() and place=="마차 안")) and r13_carriage_skip):
             $ R13_CHARS.get(r13_packet[0],source_thought)(r13_line_markup(r13_pages[r13_page_i]))
             $ r13_dialogue_beat_settle()
             $ r13_page_i+=1
-        if not r13_meeting_live_should_stop(identity) and not (identity==R13_CARRIAGE_IDENTITY and r13_carriage_skip):
+        if not r13_meeting_live_should_stop(identity) and not ((identity==R13_CARRIAGE_IDENTITY or (r13_v111_active() and place=="마차 안")) and r13_carriage_skip):
             $ r13_remember_line(r13_read_id)
             $ r13_meeting_mark_heard(identity,r13_index)
         $ r13_index+=1
@@ -111,7 +111,7 @@ label room13_start:
     hide screen r13_book
     hide screen r13_calendar
     show screen r13_hud
-    # 0.19.2 (owner): the opening cutscene before the carriage talk is no longer played.
+    jump r13_v111_start # Updated story; original labels remain available to old saves.
     call r13_carriage
     $ r13_grant(["E01"],"여행 중 가지고 온 편지")
     $ r13_edit(period=1)

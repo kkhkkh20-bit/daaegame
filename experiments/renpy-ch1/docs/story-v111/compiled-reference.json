@@ -1,0 +1,2475 @@
+{
+  "start": {
+    "kind": "block",
+    "scene": "MS14_D01_S01",
+    "source_block": "MS14_D01_S01_B001",
+    "records": [
+      "MS14_D01_S01_L0001",
+      "MS14_D01_S01_L0002",
+      "MS14_D01_S01_L0003",
+      "MS14_D01_S01_L0004",
+      "MS14_D01_S01_L0005",
+      "MS14_D01_S01_L0006",
+      "MS14_D01_S01_L0007",
+      "MS14_D01_S01_L0008",
+      "MS14_D01_S01_L0009"
+    ],
+    "next": "letter_open"
+  },
+  "letter_open": {
+    "kind": "choice",
+    "scene": "MS14_D01_S01",
+    "title": "편지를 펼친다",
+    "options": [
+      {
+        "title": "편지를 펼친다",
+        "to": "letter_read",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "letter_read": {
+    "kind": "block",
+    "scene": "MS14_D01_S01",
+    "source_block": "MS14_D01_S01_B002",
+    "records": [
+      "MS14_D01_S01_L0010",
+      "MS14_D01_S01_L9101",
+      "MS14_D01_S01_L0011",
+      "MS14_D01_S01_L0012",
+      "MS14_D01_S01_L0013",
+      "MS14_D01_S01_L0014"
+    ],
+    "next": "letter_menu"
+  },
+  "letter_menu": {
+    "kind": "choice",
+    "scene": "MS14_D01_S01",
+    "title": "편지를 살펴볼까?",
+    "options": [
+      {
+        "title": "마지막 줄을 본다",
+        "to": "letter_last",
+        "guard": [],
+        "operations": []
+      },
+      {
+        "title": "글씨를 살핀다",
+        "to": "letter_hand",
+        "guard": [],
+        "operations": []
+      },
+      {
+        "title": "편지를 접는다",
+        "to": "letter_close",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "letter_last": {
+    "kind": "block",
+    "scene": "MS14_D01_S01",
+    "source_block": "MS14_D01_S01_B003",
+    "records": [
+      "MS14_D01_S01_L0015"
+    ],
+    "next": "letter_menu"
+  },
+  "letter_hand": {
+    "kind": "block",
+    "scene": "MS14_D01_S01",
+    "source_block": "MS14_D01_S01_B004",
+    "records": [
+      "MS14_D01_S01_L0016"
+    ],
+    "next": "letter_menu"
+  },
+  "letter_close": {
+    "kind": "branch",
+    "field": "K01a",
+    "value": true,
+    "yes": "letter_any",
+    "no": "letter_close_b"
+  },
+  "letter_close_b": {
+    "kind": "branch",
+    "field": "K01b",
+    "value": true,
+    "yes": "letter_any",
+    "no": "letter_none"
+  },
+  "letter_any": {
+    "kind": "block",
+    "scene": "MS14_D01_S01",
+    "source_block": "MS14_D01_S01_B005",
+    "records": [
+      "MS14_D01_S01_L0017"
+    ],
+    "next": "carriage_end"
+  },
+  "letter_none": {
+    "kind": "block",
+    "scene": "MS14_D01_S01",
+    "source_block": "MS14_D01_S01_B006",
+    "records": [
+      "MS14_D01_S01_L0018"
+    ],
+    "next": "carriage_end"
+  },
+  "carriage_end": {
+    "kind": "block",
+    "scene": "MS14_D01_S01",
+    "source_block": "MS14_D01_S01_B007",
+    "records": [
+      "MS14_D01_S01_L0019",
+      "MS14_D01_S01_L0020",
+      "MS14_D01_S01_L0021",
+      "MS14_D01_S01_L0022"
+    ],
+    "next": "leave_carriage"
+  },
+  "leave_carriage": {
+    "kind": "choice",
+    "scene": "MS14_D01_S01",
+    "title": "마차에서 내린다",
+    "options": [
+      {
+        "title": "마차에서 내린다",
+        "to": "gate_arrival",
+        "guard": [],
+        "operations": [
+          {
+            "op": "set",
+            "field": "carriage_stopped",
+            "value": true
+          }
+        ]
+      }
+    ]
+  },
+  "gate_arrival": {
+    "kind": "block",
+    "scene": "MS14_D01_S02",
+    "source_block": "MS14_D01_S02_B001",
+    "records": [
+      "MS14_D01_S02_L0001",
+      "MS14_D01_S02_L0002",
+      "MS14_D01_S02_L0003",
+      "MS14_D01_S02_L0004",
+      "MS14_D01_S02_L0005",
+      "MS14_D01_S02_L0006",
+      "MS14_D01_S02_L0007",
+      "MS14_D01_S02_L0008",
+      "MS14_D01_S02_L0009",
+      "MS14_D01_S02_L0010",
+      "MS14_D01_S02_L0011",
+      "MS14_D01_S02_L0012",
+      "MS14_D01_S02_L0013",
+      "MS14_D01_S02_L0014",
+      "MS14_D01_S02_L0015",
+      "MS14_D01_S02_L0016",
+      "MS14_D01_S02_L0017",
+      "MS14_D01_S02_L0018"
+    ],
+    "next": "gate_request"
+  },
+  "gate_request": {
+    "kind": "choice",
+    "scene": "MS14_D01_S02",
+    "title": "초소 처리 명단을 읽는다",
+    "options": [
+      {
+        "title": "초소 처리 명단을 읽는다",
+        "to": "gate_list",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "gate_list": {
+    "kind": "block",
+    "scene": "MS14_D01_S02",
+    "source_block": "MS14_D01_S02_B001",
+    "records": [
+      "MS14_D01_S02_L0019",
+      "MS14_D01_S02_L0020",
+      "MS14_D01_S02_L0021",
+      "MS14_D01_S02_L0022"
+    ],
+    "next": "gate_choice"
+  },
+  "gate_choice": {
+    "kind": "choice",
+    "scene": "MS14_D01_S02",
+    "title": "어떤 자료부터 보여 줄까?",
+    "options": [
+      {
+        "title": "초대 편지를 보여 준다",
+        "to": "gate_letter",
+        "guard": [],
+        "operations": []
+      },
+      {
+        "title": "가족 방문 신청서를 찾는다",
+        "to": "gate_original",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "gate_letter": {
+    "kind": "block",
+    "scene": "MS14_D01_S02",
+    "source_block": "MS14_D01_S02_B002",
+    "records": [
+      "MS14_D01_S02_L0023",
+      "MS14_D01_S02_L0024",
+      "MS14_D01_S02_L0025"
+    ],
+    "next": "gate_original_out"
+  },
+  "gate_original": {
+    "kind": "block",
+    "scene": "MS14_D01_S02",
+    "source_block": "MS14_D01_S02_B003",
+    "records": [
+      "MS14_D01_S02_L0026",
+      "MS14_D01_S02_L0027"
+    ],
+    "next": "gate_original_out"
+  },
+  "gate_original_out": {
+    "kind": "block",
+    "scene": "MS14_D01_S02",
+    "source_block": "MS14_D01_S02_B004",
+    "records": [
+      "MS14_D01_S02_L0028"
+    ],
+    "next": "gate_investigate"
+  },
+  "gate_investigate": {
+    "kind": "choice",
+    "scene": "MS14_D01_S03",
+    "title": "자료를 살펴본다",
+    "options": [
+      {
+        "title": "신청 원본을 읽는다",
+        "to": "gate_read_original",
+        "guard": [],
+        "operations": []
+      },
+      {
+        "title": "겨울철 입장 규칙을 읽는다",
+        "to": "gate_read_rules",
+        "guard": [],
+        "operations": []
+      },
+      {
+        "title": "초소 처리 명단을 다시 본다",
+        "to": "gate_reread_list",
+        "guard": [],
+        "operations": []
+      },
+      {
+        "title": "두 종이의 항목을 비교한다",
+        "to": "gate_purpose",
+        "guard": [
+          [
+            "evidence",
+            "E03",
+            true
+          ]
+        ],
+        "operations": []
+      },
+      {
+        "title": "숙소 확인 칸을 본다",
+        "to": "gate_lodging",
+        "guard": [
+          [
+            "evidence",
+            "E03",
+            true
+          ]
+        ],
+        "operations": []
+      },
+      {
+        "title": "자료를 함께 제시한다",
+        "to": "gate_proof",
+        "guard": [],
+        "operations": []
+      },
+      {
+        "title": "힌트를 생각한다",
+        "to": "gate_hint",
+        "guard": [],
+        "operations": []
+      },
+      {
+        "title": "왜 일꾼으로 적혔는지 묻는다",
+        "to": "gate_reason",
+        "guard": [
+          [
+            "state",
+            "purpose_difference_known",
+            true
+          ],
+          [
+            "state",
+            "reason_heard",
+            false
+          ]
+        ],
+        "operations": []
+      }
+    ]
+  },
+  "gate_read_original": {
+    "kind": "block",
+    "scene": "MS14_D01_S03",
+    "source_block": "MS14_D01_S03_B001",
+    "records": [
+      "MS14_D01_S03_L0002",
+      "MS14_D01_S03_L0003",
+      "MS14_D01_S03_L0004",
+      "MS14_D01_S03_L0005",
+      "MS14_D01_S03_L0006"
+    ],
+    "next": "gate_investigate"
+  },
+  "gate_read_rules": {
+    "kind": "block",
+    "scene": "MS14_D01_S03",
+    "source_block": "MS14_D01_S03_B001",
+    "records": [
+      "MS14_D01_S03_L0007"
+    ],
+    "next": "gate_investigate"
+  },
+  "gate_reread_list": {
+    "kind": "read",
+    "key": "E02",
+    "next": "gate_investigate",
+    "scene": "MS14_D01_S03"
+  },
+  "gate_purpose": {
+    "kind": "block",
+    "scene": "MS14_D01_S03",
+    "source_block": "MS14_D01_S03_B002",
+    "records": [
+      "MS14_D01_S03_L0009",
+      "MS14_D01_S03_L0010",
+      "MS14_D01_S03_L0011",
+      "MS14_D01_S03_L0012"
+    ],
+    "next": "gate_investigate"
+  },
+  "gate_lodging": {
+    "kind": "block",
+    "scene": "MS14_D01_S03",
+    "source_block": "MS14_D01_S03_B003",
+    "records": [
+      "MS14_D01_S03_L0013"
+    ],
+    "next": "gate_investigate"
+  },
+  "gate_proof": {
+    "kind": "proof",
+    "scene": "MS14_D01_S03",
+    "title": "함께 들어갈 근거를 고른다",
+    "correct": [
+      "E02",
+      "E03",
+      "E04"
+    ],
+    "to": "gate_proven_dispatch",
+    "wrong": "gate_wrong",
+    "hint": "gate_hint",
+    "requires": [],
+    "wrong_routes": {
+      "E03": "gate_number"
+    }
+  },
+  "gate_proven_dispatch": {
+    "kind": "branch",
+    "field": "purpose_difference_known",
+    "value": true,
+    "yes": "gate_proven",
+    "no": "gate_early"
+  },
+  "gate_proven": {
+    "kind": "block",
+    "scene": "MS14_D01_S03",
+    "source_block": "MS14_D01_S03_B004",
+    "records": [
+      "MS14_D01_S03_L0014",
+      "MS14_D01_S03_L0015",
+      "MS14_D01_S03_L0016",
+      "MS14_D01_S03_L0017",
+      "MS14_D01_S03_L0018",
+      "MS14_D01_S03_L0019"
+    ],
+    "next": "registered"
+  },
+  "gate_early": {
+    "kind": "block",
+    "scene": "MS14_D01_S03",
+    "source_block": "MS14_D01_S03_B005",
+    "records": [
+      "MS14_D01_S03_L0020",
+      "MS14_D01_S03_L0021",
+      "MS14_D01_S03_L0022",
+      "MS14_D01_S03_L0023"
+    ],
+    "next": "registered"
+  },
+  "gate_number": {
+    "kind": "block",
+    "scene": "MS14_D01_S03",
+    "source_block": "MS14_D01_S03_B006",
+    "records": [
+      "MS14_D01_S03_L0024"
+    ],
+    "next": "gate_investigate"
+  },
+  "gate_wrong": {
+    "kind": "block",
+    "scene": "MS14_D01_S03",
+    "source_block": "MS14_D01_S03_B007",
+    "records": [
+      "MS14_D01_S03_L0025"
+    ],
+    "next": "gate_investigate"
+  },
+  "gate_hint": {
+    "kind": "block",
+    "scene": "MS14_D01_S03",
+    "source_block": "MS14_D01_S03_B009",
+    "records": [
+      "MS14_D01_S03_L0027"
+    ],
+    "next": "gate_investigate"
+  },
+  "gate_reason": {
+    "kind": "block",
+    "scene": "MS14_D01_S03",
+    "source_block": "MS14_D01_S03_B010",
+    "records": [
+      "MS14_D01_S03_L0028",
+      "MS14_D01_S03_L0029",
+      "MS14_D01_S03_L0030",
+      "MS14_D01_S03_L0031"
+    ],
+    "next": "gate_investigate"
+  },
+  "registered": {
+    "kind": "block",
+    "scene": "MS14_D01_S04",
+    "source_block": "MS14_D01_S04_B001",
+    "records": [
+      "MS14_D01_S04_L0001",
+      "MS14_D01_S04_L0002",
+      "MS14_D01_S04_L0003",
+      "MS14_D01_S04_L0004",
+      "MS14_D01_S04_L0005",
+      "MS14_D01_S04_L0006",
+      "MS14_D01_S04_L0007",
+      "MS14_D01_S04_L0008",
+      "MS14_D01_S04_L9101",
+      "MS14_D01_S04_L0009",
+      "MS14_D01_S04_L0010",
+      "MS14_D01_S04_L0011",
+      "MS14_D01_S04_L0012"
+    ],
+    "next": "registered_menu"
+  },
+  "registered_menu": {
+    "kind": "choice",
+    "scene": "MS14_D01_S04",
+    "title": "짐을 찾으러 가기 전에",
+    "options": [
+      {
+        "title": "왜 일꾼으로 바뀌었습니까?",
+        "to": "registered_reason",
+        "guard": [
+          [
+            "state",
+            "reason_heard",
+            false
+          ]
+        ],
+        "operations": []
+      },
+      {
+        "title": "짐을 찾아 여관으로 간다",
+        "to": "registered_depart",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "registered_reason": {
+    "kind": "block",
+    "scene": "MS14_D01_S04",
+    "source_block": "MS14_D01_S04_B002",
+    "records": [
+      "MS14_D01_S04_L0013",
+      "MS14_D01_S04_L0014",
+      "MS14_D01_S04_L0015",
+      "MS14_D01_S04_L0016"
+    ],
+    "next": "registered_menu"
+  },
+  "registered_depart": {
+    "kind": "block",
+    "scene": "MS14_D01_S04",
+    "source_block": "MS14_D01_S04_B003",
+    "records": [
+      "MS14_D01_S04_L0017",
+      "MS14_D01_S04_L0018",
+      "MS14_D01_S04_L0019",
+      "MS14_D01_S04_L0020",
+      "MS14_D01_S04_L0021",
+      "MS14_D01_S04_L0022"
+    ],
+    "next": "inn"
+  },
+  "inn": {
+    "kind": "block",
+    "scene": "MS14_D01_S05",
+    "source_block": "MS14_D01_S05_B001",
+    "records": [
+      "MS14_D01_S05_L0001",
+      "MS14_D01_S05_L0002",
+      "MS14_D01_S05_L0003",
+      "MS14_D01_S05_L0004",
+      "MS14_D01_S05_L0005",
+      "MS14_D01_S05_L0006",
+      "MS14_D01_S05_L0007",
+      "MS14_D01_S05_L0008",
+      "MS14_D01_S05_L0009",
+      "MS14_D01_S05_L0010",
+      "MS14_D01_S05_L0011",
+      "MS14_D01_S05_L0012",
+      "MS14_D01_S05_L0013",
+      "MS14_D01_S05_L0014"
+    ],
+    "next": "room_observe"
+  },
+  "room_observe": {
+    "kind": "choice",
+    "scene": "MS14_D01_S05",
+    "title": "빈방을 살핀다",
+    "options": [
+      {
+        "title": "빈방을 살핀다",
+        "to": "room_empty",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "room_empty": {
+    "kind": "block",
+    "scene": "MS14_D01_S05",
+    "source_block": "MS14_D01_S05_B001",
+    "records": [
+      "MS14_D01_S05_L0015",
+      "MS14_D01_S05_L0016",
+      "MS14_D01_S05_L0017"
+    ],
+    "next": "note_pick"
+  },
+  "note_pick": {
+    "kind": "choice",
+    "scene": "MS14_D01_S05",
+    "title": "책상 메모를 집는다",
+    "options": [
+      {
+        "title": "책상 메모를 집는다",
+        "to": "room_note",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "room_note": {
+    "kind": "block",
+    "scene": "MS14_D01_S05",
+    "source_block": "MS14_D01_S05_B001",
+    "records": [
+      "MS14_D01_S05_L0018",
+      "MS14_D01_S05_L0019",
+      "MS14_D01_S05_L9101",
+      "MS14_D01_S05_L0020",
+      "MS14_D01_S05_L0021"
+    ],
+    "next": "bundle_open"
+  },
+  "bundle_open": {
+    "kind": "choice",
+    "scene": "MS14_D01_S05",
+    "title": "책상 아래 보따리를 연다",
+    "options": [
+      {
+        "title": "책상 아래 보따리를 연다",
+        "to": "bundle",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "bundle": {
+    "kind": "block",
+    "scene": "MS14_D01_S05",
+    "source_block": "MS14_D01_S05_B002",
+    "records": [
+      "MS14_D01_S05_L0022",
+      "MS14_D01_S05_L9102",
+      "MS14_D01_S05_L0023",
+      "MS14_D01_S05_L0024",
+      "MS14_D01_S05_L0025",
+      "MS14_D01_S05_L0026",
+      "MS14_D01_S05_L0027",
+      "MS14_D01_S05_L0028",
+      "MS14_D01_S05_L0029",
+      "MS14_D01_S05_L0030"
+    ],
+    "next": "letter_compare"
+  },
+  "letter_compare": {
+    "kind": "proof",
+    "scene": "MS14_D01_S05",
+    "title": "두 편지를 나란히 본다",
+    "correct": [
+      "E01",
+      "E06"
+    ],
+    "to": "room_compare",
+    "wrong": null,
+    "hint": null,
+    "requires": []
+  },
+  "room_compare": {
+    "kind": "block",
+    "scene": "MS14_D01_S05",
+    "source_block": "MS14_D01_S05_B003",
+    "records": [
+      "MS14_D01_S05_L0031",
+      "MS14_D01_S05_L0032",
+      "MS14_D01_S05_L0033",
+      "MS14_D01_S05_L0034",
+      "MS14_D01_S05_L0035",
+      "MS14_D01_S05_L0036",
+      "MS14_D01_S05_L0037",
+      "MS14_D01_S05_L0038",
+      "MS14_D01_S05_L0039",
+      "MS14_D01_S05_L0040",
+      "MS14_D01_S05_L0041",
+      "MS14_D01_S05_L0042",
+      "MS14_D01_S05_L0043",
+      "MS14_D01_S05_L0044",
+      "MS14_D01_S05_L0045",
+      "MS14_D01_S05_L0046",
+      "MS14_D01_S05_L0047",
+      "MS14_D01_S05_L0048",
+      "MS14_D01_S05_L0049",
+      "MS14_D01_S05_L0050",
+      "MS14_D01_S05_L0051",
+      "MS14_D01_S05_L0052"
+    ],
+    "next": "sleep1"
+  },
+  "sleep1": {
+    "kind": "choice",
+    "scene": "MS14_D01_S05",
+    "title": "과자를 두고 잠든다",
+    "options": [
+      {
+        "title": "과자를 두고 잠든다",
+        "to": "day2",
+        "guard": [],
+        "operations": [
+          {
+            "op": "set",
+            "field": "day",
+            "value": 2
+          }
+        ]
+      }
+    ]
+  },
+  "day2": {
+    "kind": "block",
+    "scene": "MS14_D02_S01",
+    "source_block": "MS14_D02_S01_B001",
+    "records": [
+      "MS14_D02_S01_L0001",
+      "MS14_D02_S01_L0002",
+      "MS14_D02_S01_L0003",
+      "MS14_D02_S01_L0004",
+      "MS14_D02_S01_L0005",
+      "MS14_D02_S01_L0006",
+      "MS14_D02_S01_L0007",
+      "MS14_D02_S01_L0008"
+    ],
+    "next": "square2"
+  },
+  "square2": {
+    "kind": "block",
+    "scene": "MS14_D02_S01",
+    "source_block": "MS14_D02_S01_B001",
+    "records": [
+      "MS14_D02_S01_L0009",
+      "MS14_D02_S01_L0010",
+      "MS14_D02_S01_L0011"
+    ],
+    "next": "lamp_rope"
+  },
+  "lamp_rope": {
+    "kind": "choice",
+    "scene": "MS14_D02_S01",
+    "title": "덮개 지지 끈을 잡는다",
+    "options": [
+      {
+        "title": "덮개 지지 끈을 잡는다",
+        "to": "chorong",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "chorong": {
+    "kind": "block",
+    "scene": "MS14_D02_S01",
+    "source_block": "MS14_D02_S01_B002",
+    "records": [
+      "MS14_D02_S01_L0012",
+      "MS14_D02_S01_L0013",
+      "MS14_D02_S01_L0014",
+      "MS14_D02_S01_L0015",
+      "MS14_D02_S01_L0016",
+      "MS14_D02_S01_L0017",
+      "MS14_D02_S01_L0018",
+      "MS14_D02_S01_L0019",
+      "MS14_D02_S01_L0020",
+      "MS14_D02_S01_L0021",
+      "MS14_D02_S01_L0022",
+      "MS14_D02_S01_L0023",
+      "MS14_D02_S01_L0024",
+      "MS14_D02_S01_L0025",
+      "MS14_D02_S01_L0026",
+      "MS14_D02_S01_L0027",
+      "MS14_D02_S01_L0028",
+      "MS14_D02_S01_L0029"
+    ],
+    "next": "go_box"
+  },
+  "go_box": {
+    "kind": "choice",
+    "scene": "MS14_D02_S01",
+    "title": "초롱과 교환함으로 간다",
+    "options": [
+      {
+        "title": "초롱과 교환함으로 간다",
+        "to": "box_path",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "box_path": {
+    "kind": "block",
+    "scene": "MS14_D02_S01",
+    "source_block": "MS14_D02_S01_B002",
+    "records": [
+      "MS14_D02_S01_L0030",
+      "MS14_D02_S01_L0031",
+      "MS14_D02_S01_L0032"
+    ],
+    "next": "box_inspect"
+  },
+  "box_inspect": {
+    "kind": "choice",
+    "scene": "MS14_D02_S01",
+    "title": "함과 주변을 직접 확인한다",
+    "options": [
+      {
+        "title": "함과 주변을 직접 확인한다",
+        "to": "box_empty",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "box_empty": {
+    "kind": "block",
+    "scene": "MS14_D02_S01",
+    "source_block": "MS14_D02_S01_B002",
+    "records": [
+      "MS14_D02_S01_L0033",
+      "MS14_D02_S01_L0034",
+      "MS14_D02_S01_L0035",
+      "MS14_D02_S01_L0036",
+      "MS14_D02_S01_L0037",
+      "MS14_D02_S01_L0038"
+    ],
+    "next": "box_note"
+  },
+  "box_note": {
+    "kind": "choice",
+    "scene": "MS14_D02_S01",
+    "title": "도착 쪽지를 직접 넣는다",
+    "options": [
+      {
+        "title": "도착 쪽지를 직접 넣는다",
+        "to": "box_written",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "box_written": {
+    "kind": "block",
+    "scene": "MS14_D02_S01",
+    "source_block": "MS14_D02_S01_B003",
+    "records": [
+      "MS14_D02_S01_L0039",
+      "MS14_D02_S01_L0040",
+      "MS14_D02_S01_L0041",
+      "MS14_D02_S01_L0042",
+      "MS14_D02_S01_L0043",
+      "MS14_D02_S01_L0044",
+      "MS14_D02_S01_L0045"
+    ],
+    "next": "post"
+  },
+  "post": {
+    "kind": "block",
+    "scene": "MS14_D02_S02",
+    "source_block": "MS14_D02_S02_B001",
+    "records": [
+      "MS14_D02_S02_L0001",
+      "MS14_D02_S02_L0002",
+      "MS14_D02_S02_L0003",
+      "MS14_D02_S02_L0004"
+    ],
+    "next": "envelope_show"
+  },
+  "envelope_show": {
+    "kind": "choice",
+    "scene": "MS14_D02_S02",
+    "title": "초대 편지의 봉투를 보여 준다",
+    "options": [
+      {
+        "title": "초대 편지의 봉투를 보여 준다",
+        "to": "post_checked",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "post_checked": {
+    "kind": "block",
+    "scene": "MS14_D02_S02",
+    "source_block": "MS14_D02_S02_B002",
+    "records": [
+      "MS14_D02_S02_L0005",
+      "MS14_D02_S02_L9101",
+      "MS14_D02_S02_L0006",
+      "MS14_D02_S02_L0007",
+      "MS14_D02_S02_L0008",
+      "MS14_D02_S02_L0009",
+      "MS14_D02_S02_L0010",
+      "MS14_D02_S02_L0011",
+      "MS14_D02_S02_L0012",
+      "MS14_D02_S02_L0013",
+      "MS14_D02_S02_L0014",
+      "MS14_D02_S02_L0015"
+    ],
+    "next": "post_menu"
+  },
+  "post_menu": {
+    "kind": "choice",
+    "scene": "MS14_D02_S02",
+    "title": "더 물을까?",
+    "options": [
+      {
+        "title": "대필도 합니까?",
+        "to": "post_scribe",
+        "guard": [],
+        "operations": []
+      },
+      {
+        "title": "편지를 돌려받는다",
+        "to": "post_return",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "post_scribe": {
+    "kind": "block",
+    "scene": "MS14_D02_S02",
+    "source_block": "MS14_D02_S02_B003",
+    "records": [
+      "MS14_D02_S02_L0016"
+    ],
+    "next": "post_menu"
+  },
+  "post_return": {
+    "kind": "block",
+    "scene": "MS14_D02_S02",
+    "source_block": "MS14_D02_S02_B004",
+    "records": [
+      "MS14_D02_S02_L0017",
+      "MS14_D02_S02_L0018",
+      "MS14_D02_S02_L0019",
+      "MS14_D02_S02_L0020",
+      "MS14_D02_S02_L0021",
+      "MS14_D02_S02_L0022",
+      "MS14_D02_S02_L0023",
+      "MS14_D02_S02_L0024",
+      "MS14_D02_S02_L0025",
+      "MS14_D02_S02_L0026",
+      "MS14_D02_S02_L0027",
+      "MS14_D02_S02_L0028"
+    ],
+    "next": "piko2"
+  },
+  "piko2": {
+    "kind": "block",
+    "scene": "MS14_D02_S03",
+    "source_block": "MS14_D02_S03_B001",
+    "records": [
+      "MS14_D02_S03_L0001",
+      "MS14_D02_S03_L0002",
+      "MS14_D02_S03_L0003",
+      "MS14_D02_S03_L0004",
+      "MS14_D02_S03_L0005",
+      "MS14_D02_S03_L0006",
+      "MS14_D02_S03_L0007",
+      "MS14_D02_S03_L0008"
+    ],
+    "next": "portrait_ask"
+  },
+  "portrait_ask": {
+    "kind": "choice",
+    "scene": "MS14_D02_S03",
+    "title": "스케치를 보여 주고 부탁한다",
+    "options": [
+      {
+        "title": "스케치를 보여 주고 부탁한다",
+        "to": "portrait_commission",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "portrait_commission": {
+    "kind": "block",
+    "scene": "MS14_D02_S03",
+    "source_block": "MS14_D02_S03_B001",
+    "records": [
+      "MS14_D02_S03_L0009",
+      "MS14_D02_S03_L0010",
+      "MS14_D02_S03_L0011",
+      "MS14_D02_S03_L0012",
+      "MS14_D02_S03_L0013",
+      "MS14_D02_S03_L0014",
+      "MS14_D02_S03_L0015",
+      "MS14_D02_S03_L0016",
+      "MS14_D02_S03_L0017",
+      "MS14_D02_S03_L0018",
+      "MS14_D02_S03_L0019",
+      "MS14_D02_S03_L0020",
+      "MS14_D02_S03_L0021",
+      "MS14_D02_S03_L0022",
+      "MS14_D02_S03_L0023",
+      "MS14_D02_S03_L0024"
+    ],
+    "next": "lamp_observe"
+  },
+  "lamp_observe": {
+    "kind": "choice",
+    "scene": "MS14_D02_S03",
+    "title": "3번 등을 살핀다",
+    "options": [
+      {
+        "title": "번호판을 본다",
+        "to": "lamp_seen_0",
+        "guard": [],
+        "operations": []
+      },
+      {
+        "title": "덮개를 본다",
+        "to": "lamp_seen_1",
+        "guard": [],
+        "operations": []
+      },
+      {
+        "title": "담요를 본다",
+        "to": "lamp_seen_2",
+        "guard": [],
+        "operations": []
+      },
+      {
+        "title": "받침과 바닥을 본다",
+        "to": "lamp_seen_3",
+        "guard": [],
+        "operations": []
+      },
+      {
+        "title": "살펴보기를 마친다",
+        "to": "lamp_details",
+        "guard": [
+          [
+            "state",
+            "lamp_part_0",
+            true
+          ],
+          [
+            "state",
+            "lamp_part_1",
+            true
+          ],
+          [
+            "state",
+            "lamp_part_2",
+            true
+          ],
+          [
+            "state",
+            "lamp_part_3",
+            true
+          ]
+        ],
+        "operations": []
+      }
+    ]
+  },
+  "lamp_seen_0": {
+    "kind": "mark",
+    "next": "lamp_observe",
+    "scene": "MS14_D02_S03",
+    "operations": [
+      {
+        "op": "set",
+        "field": "lamp_part_0",
+        "value": true
+      }
+    ]
+  },
+  "lamp_seen_1": {
+    "kind": "mark",
+    "next": "lamp_observe",
+    "scene": "MS14_D02_S03",
+    "operations": [
+      {
+        "op": "set",
+        "field": "lamp_part_1",
+        "value": true
+      }
+    ]
+  },
+  "lamp_seen_2": {
+    "kind": "mark",
+    "next": "lamp_observe",
+    "scene": "MS14_D02_S03",
+    "operations": [
+      {
+        "op": "set",
+        "field": "lamp_part_2",
+        "value": true
+      }
+    ]
+  },
+  "lamp_seen_3": {
+    "kind": "mark",
+    "next": "lamp_observe",
+    "scene": "MS14_D02_S03",
+    "operations": [
+      {
+        "op": "set",
+        "field": "lamp_part_3",
+        "value": true
+      }
+    ]
+  },
+  "lamp_details": {
+    "kind": "block",
+    "scene": "MS14_D02_S03",
+    "source_block": "MS14_D02_S03_B002",
+    "records": [
+      "MS14_D02_S03_L0025",
+      "MS14_D02_S03_L9101",
+      "MS14_D02_S03_L0026",
+      "MS14_D02_S03_L0027",
+      "MS14_D02_S03_L0028",
+      "MS14_D02_S03_L0029",
+      "MS14_D02_S03_L0030",
+      "MS14_D02_S03_L0031",
+      "MS14_D02_S03_L0032",
+      "MS14_D02_S03_L0033",
+      "MS14_D02_S03_L0034",
+      "MS14_D02_S03_L0035",
+      "MS14_D02_S03_L0036",
+      "MS14_D02_S03_L0037",
+      "MS14_D02_S03_L0038",
+      "MS14_D02_S03_L0039",
+      "MS14_D02_S03_L0040",
+      "MS14_D02_S03_L0041",
+      "MS14_D02_S03_L0042",
+      "MS14_D02_S03_L0043",
+      "MS14_D02_S03_L0044",
+      "MS14_D02_S03_L0045",
+      "MS14_D02_S03_L0046",
+      "MS14_D02_S03_L0047"
+    ],
+    "next": "diner_offer"
+  },
+  "diner_offer": {
+    "kind": "block",
+    "scene": "MS14_D02_S04",
+    "source_block": "MS14_D02_S04_B001",
+    "records": [
+      "MS14_D02_S04_L0001",
+      "MS14_D02_S04_L0002",
+      "MS14_D02_S04_L0003",
+      "MS14_D02_S04_L0004",
+      "MS14_D02_S04_L0005",
+      "MS14_D02_S04_L0006",
+      "MS14_D02_S04_L0007",
+      "MS14_D02_S04_L0008",
+      "MS14_D02_S04_L0009",
+      "MS14_D02_S04_L0010",
+      "MS14_D02_S04_L0011",
+      "MS14_D02_S04_L0012",
+      "MS14_D02_S04_L0013",
+      "MS14_D02_S04_L0014",
+      "MS14_D02_S04_L0015",
+      "MS14_D02_S04_L0016",
+      "MS14_D02_S04_L0017",
+      "MS14_D02_S04_L0018",
+      "MS14_D02_S04_L0019",
+      "MS14_D02_S04_L0020"
+    ],
+    "next": "afternoon"
+  },
+  "afternoon": {
+    "kind": "choice",
+    "scene": "MS14_D02_S04",
+    "title": "해가 지기 전에",
+    "options": [
+      {
+        "title": "피코의 잠자리를 마련한다",
+        "to": "shelter_choice",
+        "guard": [],
+        "operations": [
+          {
+            "op": "set",
+            "field": "D02_afternoon",
+            "value": "shelter"
+          }
+        ]
+      },
+      {
+        "title": "네로를 만나러 간다",
+        "to": "nero_choice",
+        "guard": [],
+        "operations": [
+          {
+            "op": "set",
+            "field": "D02_afternoon",
+            "value": "nero"
+          }
+        ]
+      }
+    ]
+  },
+  "shelter_choice": {
+    "kind": "block",
+    "scene": "MS14_D02_S04",
+    "source_block": "MS14_D02_S04_B002",
+    "records": [
+      "MS14_D02_S04_L0021",
+      "MS14_D02_S04_L0022"
+    ],
+    "next": "shelter_work"
+  },
+  "shelter_work": {
+    "kind": "choice",
+    "scene": "MS14_D02_S04",
+    "title": "포대를 옮기고 천을 빌린다",
+    "options": [
+      {
+        "title": "포대를 옮기고 천을 빌린다",
+        "to": "shelter_prepare",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "shelter_prepare": {
+    "kind": "block",
+    "scene": "MS14_D02_S04",
+    "source_block": "MS14_D02_S04_B003",
+    "records": [
+      "MS14_D02_S04_L0023",
+      "MS14_D02_S04_L0024",
+      "MS14_D02_S04_L0025",
+      "MS14_D02_S04_L0026",
+      "MS14_D02_S04_L0027",
+      "MS14_D02_S04_L0028"
+    ],
+    "next": "shelter_enter"
+  },
+  "shelter_enter": {
+    "kind": "choice",
+    "scene": "MS14_D02_S04",
+    "title": "피코와 식당에 들어간다",
+    "options": [
+      {
+        "title": "피코와 식당에 들어간다",
+        "to": "shelter_done",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "shelter_done": {
+    "kind": "block",
+    "scene": "MS14_D02_S04",
+    "source_block": "MS14_D02_S04_B003",
+    "records": [
+      "MS14_D02_S04_L0029",
+      "MS14_D02_S04_L0030",
+      "MS14_D02_S04_L0031",
+      "MS14_D02_S04_L0032",
+      "MS14_D02_S04_L0033",
+      "MS14_D02_S04_L0034",
+      "MS14_D02_S04_L0035",
+      "MS14_D02_S04_L0036",
+      "MS14_D02_S04_L0037",
+      "MS14_D02_S04_L0038"
+    ],
+    "next": "evening2"
+  },
+  "nero_choice": {
+    "kind": "block",
+    "scene": "MS14_D02_S04",
+    "source_block": "MS14_D02_S04_B004",
+    "records": [
+      "MS14_D02_S04_L0039",
+      "MS14_D02_S04_L0040",
+      "MS14_D02_S04_L0041",
+      "MS14_D02_S04_L0042",
+      "MS14_D02_S04_L0043",
+      "MS14_D02_S04_L0044",
+      "MS14_D02_S04_L0045",
+      "MS14_D02_S04_L0046",
+      "MS14_D02_S04_L0047",
+      "MS14_D02_S04_L0048",
+      "MS14_D02_S04_L0049",
+      "MS14_D02_S04_L0050",
+      "MS14_D02_S04_L0051",
+      "MS14_D02_S04_L0052",
+      "MS14_D02_S04_L0053",
+      "MS14_D02_S04_L0054",
+      "MS14_D02_S04_L0055",
+      "MS14_D02_S04_L0056",
+      "MS14_D02_S04_L0057",
+      "MS14_D02_S04_L0058",
+      "MS14_D02_S04_L0059",
+      "MS14_D02_S04_L0060",
+      "MS14_D02_S04_L0061"
+    ],
+    "next": "nero_work"
+  },
+  "nero_work": {
+    "kind": "choice",
+    "scene": "MS14_D02_S04",
+    "title": "침구를 옮겨 묶고 이름을 적는다",
+    "options": [
+      {
+        "title": "침구를 옮겨 묶고 이름을 적는다",
+        "to": "nero_done",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "nero_done": {
+    "kind": "block",
+    "scene": "MS14_D02_S04",
+    "source_block": "MS14_D02_S04_B005",
+    "records": [
+      "MS14_D02_S04_L0062",
+      "MS14_D02_S04_L0063",
+      "MS14_D02_S04_L0064",
+      "MS14_D02_S04_L0065",
+      "MS14_D02_S04_L0066",
+      "MS14_D02_S04_L0067",
+      "MS14_D02_S04_L0068",
+      "MS14_D02_S04_L0069",
+      "MS14_D02_S04_L0070",
+      "MS14_D02_S04_L0071",
+      "MS14_D02_S04_L0072",
+      "MS14_D02_S04_L0073",
+      "MS14_D02_S04_L0074",
+      "MS14_D02_S04_L0075",
+      "MS14_D02_S04_L0076",
+      "MS14_D02_S04_L0077",
+      "MS14_D02_S04_L0078",
+      "MS14_D02_S04_L0079",
+      "MS14_D02_S04_L0080",
+      "MS14_D02_S04_L0081",
+      "MS14_D02_S04_L0082",
+      "MS14_D02_S04_L0083",
+      "MS14_D02_S04_L9101",
+      "MS14_D02_S04_L9102"
+    ],
+    "next": "evening2"
+  },
+  "evening2": {
+    "kind": "block",
+    "scene": "MS14_D02_S05",
+    "source_block": "MS14_D02_S05_B001",
+    "records": [
+      "MS14_D02_S05_L0001",
+      "MS14_D02_S05_L0002",
+      "MS14_D02_S05_L0003",
+      "MS14_D02_S05_L0004",
+      "MS14_D02_S05_L0005",
+      "MS14_D02_S05_L0006",
+      "MS14_D02_S05_L0007",
+      "MS14_D02_S05_L0008",
+      "MS14_D02_S05_L0009"
+    ],
+    "next": "evening2_route"
+  },
+  "evening2_route": {
+    "kind": "branch",
+    "field": "piko_sheltered",
+    "value": true,
+    "yes": "evening2_alive",
+    "no": "evening2_outside"
+  },
+  "evening2_alive": {
+    "kind": "block",
+    "scene": "MS14_D02_S05",
+    "source_block": "MS14_D02_S05_B002",
+    "records": [
+      "MS14_D02_S05_L0010",
+      "MS14_D02_S05_L0011"
+    ],
+    "next": "evening2_end"
+  },
+  "evening2_outside": {
+    "kind": "block",
+    "scene": "MS14_D02_S05",
+    "source_block": "MS14_D02_S05_B003",
+    "records": [
+      "MS14_D02_S05_L0012",
+      "MS14_D02_S05_L0013"
+    ],
+    "next": "evening2_end"
+  },
+  "evening2_end": {
+    "kind": "block",
+    "scene": "MS14_D02_S05",
+    "source_block": "MS14_D02_S05_B004",
+    "records": [
+      "MS14_D02_S05_L0014"
+    ],
+    "next": "sleep2"
+  },
+  "sleep2": {
+    "kind": "choice",
+    "scene": "MS14_D02_S05",
+    "title": "아침 약속을 적고 잠든다",
+    "options": [
+      {
+        "title": "아침 약속을 적고 잠든다",
+        "to": "day3",
+        "guard": [],
+        "operations": [
+          {
+            "op": "set",
+            "field": "day",
+            "value": 3
+          }
+        ]
+      }
+    ]
+  },
+  "day3": {
+    "kind": "branch",
+    "field": "piko_sheltered",
+    "value": true,
+    "yes": "piko_alive3",
+    "no": "piko_dead3"
+  },
+  "piko_alive3": {
+    "kind": "block",
+    "scene": "MS14_D03_S01",
+    "source_block": "MS14_D03_S01_B003",
+    "records": [
+      "MS14_D03_S01_L0022",
+      "MS14_D03_S01_L0023",
+      "MS14_D03_S01_L0024",
+      "MS14_D03_S01_L0025",
+      "MS14_D03_S01_L0026",
+      "MS14_D03_S01_L0027",
+      "MS14_D03_S01_L0028",
+      "MS14_D03_S01_L0029",
+      "MS14_D03_S01_L0030",
+      "MS14_D03_S01_L0031",
+      "MS14_D03_S01_L0032",
+      "MS14_D03_S01_L0033",
+      "MS14_D03_S01_L0034"
+    ],
+    "next": "piko_clean"
+  },
+  "piko_clean": {
+    "kind": "choice",
+    "scene": "MS14_D03_S01",
+    "title": "약속한 자리를 치운다",
+    "options": [
+      {
+        "title": "약속한 자리를 치운다",
+        "to": "piko_receive",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "piko_receive": {
+    "kind": "block",
+    "scene": "MS14_D03_S01",
+    "source_block": "MS14_D03_S01_B003",
+    "records": [
+      "MS14_D03_S01_L0035",
+      "MS14_D03_S01_L0036",
+      "MS14_D03_S01_L0037",
+      "MS14_D03_S01_L0038",
+      "MS14_D03_S01_L0039"
+    ],
+    "next": "lamp3"
+  },
+  "piko_dead3": {
+    "kind": "block",
+    "scene": "MS14_D03_S01",
+    "source_block": "MS14_D03_S01_B002",
+    "records": [
+      "MS14_D03_S01_L0001",
+      "MS14_D03_S01_L0002",
+      "MS14_D03_S01_L0003",
+      "MS14_D03_S01_L0004",
+      "MS14_D03_S01_L0005",
+      "MS14_D03_S01_L0006",
+      "MS14_D03_S01_L0007",
+      "MS14_D03_S01_L0008",
+      "MS14_D03_S01_L0009",
+      "MS14_D03_S01_L0010",
+      "MS14_D03_S01_L0011",
+      "MS14_D03_S01_L0012",
+      "MS14_D03_S01_L0013",
+      "MS14_D03_S01_L0014",
+      "MS14_D03_S01_L0015",
+      "MS14_D03_S01_L0016",
+      "MS14_D03_S01_L0017",
+      "MS14_D03_S01_L0018",
+      "MS14_D03_S01_L0019",
+      "MS14_D03_S01_L0020",
+      "MS14_D03_S01_L0021",
+      "MS14_D03_S01_L9101"
+    ],
+    "next": "lamp3"
+  },
+  "lamp3": {
+    "kind": "block",
+    "scene": "MS14_D03_S02",
+    "source_block": "MS14_D03_S02_B001",
+    "records": [
+      "MS14_D03_S02_L0001",
+      "MS14_D03_S02_L0002",
+      "MS14_D03_S02_L0003",
+      "MS14_D03_S02_L0004",
+      "MS14_D03_S02_L0005",
+      "MS14_D03_S02_L0006",
+      "MS14_D03_S02_L0007",
+      "MS14_D03_S02_L0008",
+      "MS14_D03_S02_L0009",
+      "MS14_D03_S02_L0010",
+      "MS14_D03_S02_L0011"
+    ],
+    "next": "lamp_inspect3"
+  },
+  "lamp_inspect3": {
+    "kind": "choice",
+    "scene": "MS14_D03_S02",
+    "title": "번호판·받침·자국을 살핀다",
+    "options": [
+      {
+        "title": "번호판·받침·자국을 살핀다",
+        "to": "lamp_interior3",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "lamp_interior3": {
+    "kind": "block",
+    "scene": "MS14_D03_S02",
+    "source_block": "MS14_D03_S02_B002",
+    "records": [
+      "MS14_D03_S02_L0012",
+      "MS14_D03_S02_L9101",
+      "MS14_D03_S02_L0013",
+      "MS14_D03_S02_L0014",
+      "MS14_D03_S02_L0015"
+    ],
+    "next": "fragment_request"
+  },
+  "fragment_request": {
+    "kind": "choice",
+    "scene": "MS14_D03_S02",
+    "title": "톡에게 안쪽 파편을 확인받는다",
+    "options": [
+      {
+        "title": "톡에게 안쪽 파편을 확인받는다",
+        "to": "lamp_fragment3",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "lamp_fragment3": {
+    "kind": "block",
+    "scene": "MS14_D03_S02",
+    "source_block": "MS14_D03_S02_B002",
+    "records": [
+      "MS14_D03_S02_L0016",
+      "MS14_D03_S02_L9102",
+      "MS14_D03_S02_L0017",
+      "MS14_D03_S02_L0018",
+      "MS14_D03_S02_L0019",
+      "MS14_D03_S02_L0020",
+      "MS14_D03_S02_L0021",
+      "MS14_D03_S02_L0022",
+      "MS14_D03_S02_L0023",
+      "MS14_D03_S02_L0024",
+      "MS14_D03_S02_L0025",
+      "MS14_D03_S02_L0026"
+    ],
+    "next": "lamp_log_request"
+  },
+  "lamp_log_request": {
+    "kind": "choice",
+    "scene": "MS14_D03_S02",
+    "title": "초롱의 점검장을 확인한다",
+    "options": [
+      {
+        "title": "초롱의 점검장을 확인한다",
+        "to": "lamp_log3",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "lamp_log3": {
+    "kind": "block",
+    "scene": "MS14_D03_S02",
+    "source_block": "MS14_D03_S02_B003",
+    "records": [
+      "MS14_D03_S02_L0027",
+      "MS14_D03_S02_L9103",
+      "MS14_D03_S02_L0028"
+    ],
+    "next": "workshop3"
+  },
+  "workshop3": {
+    "kind": "block",
+    "scene": "MS14_D03_S03",
+    "source_block": "MS14_D03_S03_B001",
+    "records": [
+      "MS14_D03_S03_L0001",
+      "MS14_D03_S03_L0002",
+      "MS14_D03_S03_L0003",
+      "MS14_D03_S03_L0004",
+      "MS14_D03_S03_L0005",
+      "MS14_D03_S03_L0006"
+    ],
+    "next": "loan_read"
+  },
+  "loan_read": {
+    "kind": "choice",
+    "scene": "MS14_D03_S03",
+    "title": "대여 쪽지를 읽는다",
+    "options": [
+      {
+        "title": "대여 쪽지를 읽는다",
+        "to": "loan3",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "loan3": {
+    "kind": "block",
+    "scene": "MS14_D03_S03",
+    "source_block": "MS14_D03_S03_B001",
+    "records": [
+      "MS14_D03_S03_L0007",
+      "MS14_D03_S03_L0008",
+      "MS14_D03_S03_L9101",
+      "MS14_D03_S03_L0009",
+      "MS14_D03_S03_L0010",
+      "MS14_D03_S03_L0011"
+    ],
+    "next": "clinic3"
+  },
+  "clinic3": {
+    "kind": "block",
+    "scene": "MS14_D03_S03",
+    "source_block": "MS14_D03_S03_B001",
+    "records": [
+      "MS14_D03_S03_L0012",
+      "MS14_D03_S03_L0013",
+      "MS14_D03_S03_L0014",
+      "MS14_D03_S03_L0015",
+      "MS14_D03_S03_L0016",
+      "MS14_D03_S03_L0017",
+      "MS14_D03_S03_L0018",
+      "MS14_D03_S03_L0019",
+      "MS14_D03_S03_L0020",
+      "MS14_D03_S03_L0021",
+      "MS14_D03_S03_L0022",
+      "MS14_D03_S03_L0023",
+      "MS14_D03_S03_L0024",
+      "MS14_D03_S03_L0025",
+      "MS14_D03_S03_L0026"
+    ],
+    "next": "measurement_read"
+  },
+  "measurement_read": {
+    "kind": "choice",
+    "scene": "MS14_D03_S03",
+    "title": "측정지를 읽는다",
+    "options": [
+      {
+        "title": "측정지를 읽는다",
+        "to": "measurement3",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "measurement3": {
+    "kind": "block",
+    "scene": "MS14_D03_S03",
+    "source_block": "MS14_D03_S03_B002",
+    "records": [
+      "MS14_D03_S03_L0027",
+      "MS14_D03_S03_L9102",
+      "MS14_D03_S03_L0028",
+      "MS14_D03_S03_L0029",
+      "MS14_D03_S03_L0030",
+      "MS14_D03_S03_L0031"
+    ],
+    "next": "measurement_proof"
+  },
+  "measurement_proof": {
+    "kind": "proof",
+    "scene": "MS14_D03_S03",
+    "title": "측정 종료와 점검 기록을 대조한다",
+    "correct": [
+      "E13",
+      "E11"
+    ],
+    "to": "measurement_correct",
+    "wrong": "measurement_wrong",
+    "hint": "measurement_hint",
+    "requires": []
+  },
+  "measurement_correct": {
+    "kind": "block",
+    "scene": "MS14_D03_S03",
+    "source_block": "MS14_D03_S03_B004",
+    "records": [
+      "MS14_D03_S03_L0032",
+      "MS14_D03_S03_L0033",
+      "MS14_D03_S03_L0034",
+      "MS14_D03_S03_L0035"
+    ],
+    "next": "measurement_after"
+  },
+  "measurement_wrong": {
+    "kind": "block",
+    "scene": "MS14_D03_S03",
+    "source_block": "MS14_D03_S03_B006",
+    "records": [
+      "MS14_D03_S03_L0039",
+      "MS14_D03_S03_L0040"
+    ],
+    "next": "measurement_proof"
+  },
+  "measurement_hint": {
+    "kind": "block",
+    "scene": "MS14_D03_S03",
+    "source_block": "MS14_D03_S03_B007",
+    "records": [
+      "MS14_D03_S03_L0041"
+    ],
+    "next": "measurement_proof"
+  },
+  "measurement_after": {
+    "kind": "block",
+    "scene": "MS14_D03_S03",
+    "source_block": "MS14_D03_S03_B005",
+    "records": [
+      "MS14_D03_S03_L0036",
+      "MS14_D03_S03_L0037",
+      "MS14_D03_S03_L0038"
+    ],
+    "next": "silluk3"
+  },
+  "silluk3": {
+    "kind": "block",
+    "scene": "MS14_D03_S04",
+    "source_block": "MS14_D03_S04_B001",
+    "records": [
+      "MS14_D03_S04_L0001",
+      "MS14_D03_S04_L0002",
+      "MS14_D03_S04_L0003",
+      "MS14_D03_S04_L0004",
+      "MS14_D03_S04_L0005",
+      "MS14_D03_S04_L0006",
+      "MS14_D03_S04_L0007",
+      "MS14_D03_S04_L0008"
+    ],
+    "next": "transport_read"
+  },
+  "transport_read": {
+    "kind": "choice",
+    "scene": "MS14_D03_S04",
+    "title": "운반표를 본다",
+    "options": [
+      {
+        "title": "운반표를 본다",
+        "to": "transport3",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "transport3": {
+    "kind": "block",
+    "scene": "MS14_D03_S04",
+    "source_block": "MS14_D03_S04_B001",
+    "records": [
+      "MS14_D03_S04_L0009",
+      "MS14_D03_S04_L9101"
+    ],
+    "next": "knife_permission"
+  },
+  "knife_permission": {
+    "kind": "choice",
+    "scene": "MS14_D03_S04",
+    "title": "칼을 보여 달라고 요청한다",
+    "options": [
+      {
+        "title": "칼을 보여 달라고 요청한다",
+        "to": "knife_observed",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "knife_observed": {
+    "kind": "block",
+    "scene": "MS14_D03_S04",
+    "source_block": "MS14_D03_S04_B001",
+    "records": [
+      "MS14_D03_S04_L0010",
+      "MS14_D03_S04_L0011",
+      "MS14_D03_S04_L0012",
+      "MS14_D03_S04_L0013",
+      "MS14_D03_S04_L0014",
+      "MS14_D03_S04_L0015",
+      "MS14_D03_S04_L0016",
+      "MS14_D03_S04_L0017",
+      "MS14_D03_S04_L0018",
+      "MS14_D03_S04_L0019",
+      "MS14_D03_S04_L0020"
+    ],
+    "next": "store_visit"
+  },
+  "store_visit": {
+    "kind": "choice",
+    "scene": "MS14_D03_S04",
+    "title": "수취 창고에서 확인한다",
+    "options": [
+      {
+        "title": "수취 창고에서 확인한다",
+        "to": "store3",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "store3": {
+    "kind": "block",
+    "scene": "MS14_D03_S04",
+    "source_block": "MS14_D03_S04_B001",
+    "records": [
+      "MS14_D03_S04_L0021",
+      "MS14_D03_S04_L9001",
+      "MS14_D03_S04_L0022",
+      "MS14_D03_S04_L0023",
+      "MS14_D03_S04_L0024"
+    ],
+    "next": "stone_check"
+  },
+  "stone_check": {
+    "kind": "choice",
+    "scene": "MS14_D03_S04",
+    "title": "톡에게 각인 확인을 부탁한다",
+    "options": [
+      {
+        "title": "톡에게 각인 확인을 부탁한다",
+        "to": "stone3",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "stone3": {
+    "kind": "block",
+    "scene": "MS14_D03_S04",
+    "source_block": "MS14_D03_S04_B001",
+    "records": [
+      "MS14_D03_S04_L0025",
+      "MS14_D03_S04_L0026",
+      "MS14_D03_S04_L0027",
+      "MS14_D03_S04_L0028",
+      "MS14_D03_S04_L9102",
+      "MS14_D03_S04_L0029",
+      "MS14_D03_S04_L0030",
+      "MS14_D03_S04_L0031"
+    ],
+    "next": "sale_check"
+  },
+  "sale_check": {
+    "kind": "choice",
+    "scene": "MS14_D03_S04",
+    "title": "매입 기록을 본다",
+    "options": [
+      {
+        "title": "매입 기록을 본다",
+        "to": "sale3",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "sale3": {
+    "kind": "block",
+    "scene": "MS14_D03_S04",
+    "source_block": "MS14_D03_S04_B001",
+    "records": [
+      "MS14_D03_S04_L0032",
+      "MS14_D03_S04_L9103",
+      "MS14_D03_S04_L0033",
+      "MS14_D03_S04_L0034",
+      "MS14_D03_S04_L0035",
+      "MS14_D03_S04_L0036",
+      "MS14_D03_S04_L0037"
+    ],
+    "next": "trial_open"
+  },
+  "trial_open": {
+    "kind": "block",
+    "scene": "MS14_D03_S05",
+    "source_block": "MS14_D03_S05_B001",
+    "records": [
+      "MS14_D03_S05_L0001",
+      "MS14_D03_S05_L0002"
+    ],
+    "next": "trial_repair"
+  },
+  "trial_repair": {
+    "kind": "proof",
+    "scene": "MS14_D03_S05",
+    "title": "수리와 반출을 가릴 자료를 낸다",
+    "correct": [
+      "E11",
+      "E12",
+      "E13"
+    ],
+    "to": "trial_repair_ok",
+    "wrong": "trial_wrong",
+    "hint": "trial_hint",
+    "requires": []
+  },
+  "trial_repair_ok": {
+    "kind": "block",
+    "scene": "MS14_D03_S05",
+    "source_block": "MS14_D03_S05_B003",
+    "records": [
+      "MS14_D03_S05_L0003",
+      "MS14_D03_S05_L0004",
+      "MS14_D03_S05_L0005"
+    ],
+    "next": "trial_sale"
+  },
+  "trial_sale": {
+    "kind": "proof",
+    "scene": "MS14_D03_S05",
+    "title": "돌과 매입 기록을 낸다",
+    "correct": [
+      "E15",
+      "E16"
+    ],
+    "to": "trial_sale_ok",
+    "wrong": "trial_wrong_sale",
+    "hint": "trial_hint_sale",
+    "requires": []
+  },
+  "trial_sale_ok": {
+    "kind": "block",
+    "scene": "MS14_D03_S05",
+    "source_block": "MS14_D03_S05_B005",
+    "records": [
+      "MS14_D03_S05_L0006",
+      "MS14_D03_S05_L0007",
+      "MS14_D03_S05_L0008",
+      "MS14_D03_S05_L0009",
+      "MS14_D03_S05_L0010"
+    ],
+    "next": "trial_knife"
+  },
+  "trial_knife": {
+    "kind": "choice",
+    "scene": "MS14_D03_S05",
+    "title": "파편과 칼을 살핀다",
+    "options": [
+      {
+        "title": "안쪽 파편과 칼끝을 대조한다",
+        "to": "knife_fit",
+        "guard": [
+          [
+            "state",
+            "silluk_knife_comparison_consent",
+            true
+          ],
+          [
+            "evidence",
+            "E32",
+            true
+          ]
+        ],
+        "operations": []
+      },
+      {
+        "title": "칼 모양만으로 지목한다",
+        "to": "knife_wrong",
+        "guard": [],
+        "operations": []
+      },
+      {
+        "title": "자료를 다시 본다",
+        "to": "trial_knife_records",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "trial_knife_records": {
+    "kind": "notebook",
+    "next": "trial_knife",
+    "scene": "MS14_D03_S05"
+  },
+  "knife_fit": {
+    "kind": "block",
+    "scene": "MS14_D03_S05",
+    "source_block": "MS14_D03_S05_B007",
+    "records": [
+      "MS14_D03_S05_L0011",
+      "MS14_D03_S05_L0012",
+      "MS14_D03_S05_L0013",
+      "MS14_D03_S05_L0014",
+      "MS14_D03_S05_L0015",
+      "MS14_D03_S05_L0016",
+      "MS14_D03_S05_L0017",
+      "MS14_D03_S05_L0018",
+      "MS14_D03_S05_L9101",
+      "MS14_D03_S05_L9102"
+    ],
+    "next": "trial_latch"
+  },
+  "knife_wrong": {
+    "kind": "block",
+    "scene": "MS14_D03_S05",
+    "source_block": "MS14_D03_S05_B021",
+    "records": [
+      "MS14_D03_S05_L0068",
+      "MS14_D03_S05_L0069",
+      "MS14_D03_S05_L0070"
+    ],
+    "next": "trial_knife"
+  },
+  "trial_latch": {
+    "kind": "proof",
+    "scene": "MS14_D03_S05",
+    "title": "바깥 걸쇠 주장과 발견 위치를 대조한다",
+    "correct": [
+      "E17",
+      "E32",
+      "E33"
+    ],
+    "to": "trial_latch_ok",
+    "wrong": "trial_wrong_latch",
+    "hint": "trial_hint_latch",
+    "requires": []
+  },
+  "trial_latch_ok": {
+    "kind": "block",
+    "scene": "MS14_D03_S05",
+    "source_block": "MS14_D03_S05_B009",
+    "records": [
+      "MS14_D03_S05_L0019",
+      "MS14_D03_S05_L0020",
+      "MS14_D03_S05_L0021",
+      "MS14_D03_S05_L0022",
+      "MS14_D03_S05_L0023",
+      "MS14_D03_S05_L0024",
+      "MS14_D03_S05_L0025"
+    ],
+    "next": "trial_stone"
+  },
+  "trial_stone": {
+    "kind": "proof",
+    "scene": "MS14_D03_S05",
+    "title": "마지막 점검과 인수한 돌을 연결한다",
+    "correct": [
+      "E11",
+      "E15",
+      "E16"
+    ],
+    "to": "trial_stone_ok",
+    "wrong": "trial_wrong_stone",
+    "hint": "trial_hint_stone",
+    "requires": []
+  },
+  "trial_stone_ok": {
+    "kind": "block",
+    "scene": "MS14_D03_S05",
+    "source_block": "MS14_D03_S05_B011",
+    "records": [
+      "MS14_D03_S05_L0026",
+      "MS14_D03_S05_L0027",
+      "MS14_D03_S05_L0028",
+      "MS14_D03_S05_L0029"
+    ],
+    "next": "badugi_arrives"
+  },
+  "badugi_arrives": {
+    "kind": "block",
+    "scene": "MS14_D03_S05",
+    "source_block": "MS14_D03_S05_B012",
+    "records": [
+      "MS14_D03_S05_L0030",
+      "MS14_D03_S05_L0031",
+      "MS14_D03_S05_L0032",
+      "MS14_D03_S05_L0033",
+      "MS14_D03_S05_L0034",
+      "MS14_D03_S05_L0035",
+      "MS14_D03_S05_L0036"
+    ],
+    "next": "trial_piko"
+  },
+  "trial_piko": {
+    "kind": "branch",
+    "field": "piko_alive",
+    "value": true,
+    "yes": "trial_alive",
+    "no": "trial_dead"
+  },
+  "trial_alive": {
+    "kind": "block",
+    "scene": "MS14_D03_S05",
+    "source_block": "MS14_D03_S05_B014",
+    "records": [
+      "MS14_D03_S05_L0039"
+    ],
+    "next": "trial_choices"
+  },
+  "trial_dead": {
+    "kind": "block",
+    "scene": "MS14_D03_S05",
+    "source_block": "MS14_D03_S05_B013",
+    "records": [
+      "MS14_D03_S05_L0037",
+      "MS14_D03_S05_L0038"
+    ],
+    "next": "trial_choices"
+  },
+  "trial_choices": {
+    "kind": "block",
+    "scene": "MS14_D03_S05",
+    "source_block": "MS14_D03_S05_B015",
+    "records": [
+      "MS14_D03_S05_L0040",
+      "MS14_D03_S05_L0041",
+      "MS14_D03_S05_L0042",
+      "MS14_D03_S05_L0043",
+      "MS14_D03_S05_L0044",
+      "MS14_D03_S05_L0045",
+      "MS14_D03_S05_L0046",
+      "MS14_D03_S05_L0047",
+      "MS14_D03_S05_L0048"
+    ],
+    "next": "stone_choice"
+  },
+  "stone_choice": {
+    "kind": "choice",
+    "scene": "MS14_D03_S05",
+    "title": "3번 돌은 어떻게 할까?",
+    "options": [
+      {
+        "title": "3번 돌을 돌려받는다",
+        "to": "stone_return",
+        "guard": [],
+        "operations": []
+      },
+      {
+        "title": "지금은 반환을 보류한다",
+        "to": "stone_defer",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "stone_return": {
+    "kind": "block",
+    "scene": "MS14_D03_S05",
+    "source_block": "MS14_D03_S05_B016",
+    "records": [
+      "MS14_D03_S05_L0049",
+      "MS14_D03_S05_L0050",
+      "MS14_D03_S05_L0051",
+      "MS14_D03_S05_L0052"
+    ],
+    "next": "custody_choice"
+  },
+  "stone_defer": {
+    "kind": "block",
+    "scene": "MS14_D03_S05",
+    "source_block": "MS14_D03_S05_B017",
+    "records": [
+      "MS14_D03_S05_L0053",
+      "MS14_D03_S05_L0054",
+      "MS14_D03_S05_L0055"
+    ],
+    "next": "custody_choice"
+  },
+  "custody_choice": {
+    "kind": "choice",
+    "scene": "MS14_D03_S05",
+    "title": "실룩을 지금 데려가겠다는 너울에게",
+    "options": [
+      {
+        "title": "즉시 인계에 반대한다",
+        "to": "silluk_report",
+        "guard": [],
+        "operations": []
+      },
+      {
+        "title": "기록과 함께 인계한다",
+        "to": "silluk_transfer",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "silluk_report": {
+    "kind": "block",
+    "scene": "MS14_D03_S05",
+    "source_block": "MS14_D03_S05_B019",
+    "records": [
+      "MS14_D03_S05_L0057",
+      "MS14_D03_S05_L0058",
+      "MS14_D03_S05_L0059",
+      "MS14_D03_S05_L0060",
+      "MS14_D03_S05_L0061",
+      "MS14_D03_S05_L0062"
+    ],
+    "next": "restore_route"
+  },
+  "silluk_transfer": {
+    "kind": "block",
+    "scene": "MS14_D03_S05",
+    "source_block": "MS14_D03_S05_B020",
+    "records": [
+      "MS14_D03_S05_L0063",
+      "MS14_D03_S05_L0064",
+      "MS14_D03_S05_L0065",
+      "MS14_D03_S05_L0066",
+      "MS14_D03_S05_L0067"
+    ],
+    "next": "restore_route"
+  },
+  "trial_wrong": {
+    "kind": "block",
+    "scene": "MS14_D03_S05",
+    "source_block": "MS14_D03_S05_B022",
+    "records": [
+      "MS14_D03_S05_L0071",
+      "MS14_D03_S05_L0072"
+    ],
+    "next": "trial_repair"
+  },
+  "trial_hint": {
+    "kind": "block",
+    "scene": "MS14_D03_S05",
+    "source_block": "MS14_D03_S05_B023",
+    "records": [
+      "MS14_D03_S05_L0073"
+    ],
+    "next": "trial_repair"
+  },
+  "trial_wrong_sale": {
+    "kind": "block",
+    "scene": "MS14_D03_S05",
+    "source_block": "MS14_D03_S05_B022",
+    "records": [
+      "MS14_D03_S05_L0071",
+      "MS14_D03_S05_L0072"
+    ],
+    "next": "trial_sale"
+  },
+  "trial_hint_sale": {
+    "kind": "block",
+    "scene": "MS14_D03_S05",
+    "source_block": "MS14_D03_S05_B023",
+    "records": [
+      "MS14_D03_S05_L0073"
+    ],
+    "next": "trial_sale"
+  },
+  "trial_wrong_latch": {
+    "kind": "block",
+    "scene": "MS14_D03_S05",
+    "source_block": "MS14_D03_S05_B022",
+    "records": [
+      "MS14_D03_S05_L0071",
+      "MS14_D03_S05_L0072"
+    ],
+    "next": "trial_latch"
+  },
+  "trial_hint_latch": {
+    "kind": "block",
+    "scene": "MS14_D03_S05",
+    "source_block": "MS14_D03_S05_B023",
+    "records": [
+      "MS14_D03_S05_L0073"
+    ],
+    "next": "trial_latch"
+  },
+  "trial_wrong_stone": {
+    "kind": "block",
+    "scene": "MS14_D03_S05",
+    "source_block": "MS14_D03_S05_B022",
+    "records": [
+      "MS14_D03_S05_L0071",
+      "MS14_D03_S05_L0072"
+    ],
+    "next": "trial_stone"
+  },
+  "trial_hint_stone": {
+    "kind": "block",
+    "scene": "MS14_D03_S05",
+    "source_block": "MS14_D03_S05_B023",
+    "records": [
+      "MS14_D03_S05_L0073"
+    ],
+    "next": "trial_stone"
+  },
+  "restore_route": {
+    "kind": "branch",
+    "field": "public_stones",
+    "value": "returned_uninstalled",
+    "yes": "restore_input",
+    "no": "restore_defer"
+  },
+  "restore_input": {
+    "kind": "choice",
+    "scene": "MS14_D03_S06",
+    "title": "톡·초롱과 3번 돌을 복구한다",
+    "options": [
+      {
+        "title": "톡·초롱과 3번 돌을 복구한다",
+        "to": "restore3",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "restore3": {
+    "kind": "block",
+    "scene": "MS14_D03_S06",
+    "source_block": "MS14_D03_S06_B002",
+    "records": [
+      "MS14_D03_S06_L0001",
+      "MS14_D03_S06_L0002",
+      "MS14_D03_S06_L0003",
+      "MS14_D03_S06_L0004"
+    ],
+    "next": "box_news3"
+  },
+  "restore_defer": {
+    "kind": "block",
+    "scene": "MS14_D03_S06",
+    "source_block": "MS14_D03_S06_B003",
+    "records": [
+      "MS14_D03_S06_L0005",
+      "MS14_D03_S06_L0006",
+      "MS14_D03_S06_L0007",
+      "MS14_D03_S06_L0008"
+    ],
+    "next": "box_news3"
+  },
+  "box_news3": {
+    "kind": "block",
+    "scene": "MS14_D03_S06",
+    "source_block": "MS14_D03_S06_B004",
+    "records": [
+      "MS14_D03_S06_L0009",
+      "MS14_D03_S06_L0010",
+      "MS14_D03_S06_L0011"
+    ],
+    "next": "memorial_route"
+  },
+  "memorial_route": {
+    "kind": "branch",
+    "field": "piko_alive",
+    "value": true,
+    "yes": "piko_evening",
+    "no": "piko_memorial"
+  },
+  "piko_evening": {
+    "kind": "block",
+    "scene": "MS14_D03_S06",
+    "source_block": "MS14_D03_S06_B006",
+    "records": [
+      "MS14_D03_S06_L0023",
+      "MS14_D03_S06_L0024",
+      "MS14_D03_S06_L0025",
+      "MS14_D03_S06_L0026",
+      "MS14_D03_S06_L0027",
+      "MS14_D03_S06_L0028",
+      "MS14_D03_S06_L0029",
+      "MS14_D03_S06_L0030"
+    ],
+    "next": "somi_lead"
+  },
+  "piko_memorial": {
+    "kind": "block",
+    "scene": "MS14_D03_S06",
+    "source_block": "MS14_D03_S06_B005",
+    "records": [
+      "MS14_D03_S06_L0012",
+      "MS14_D03_S06_L0013",
+      "MS14_D03_S06_L0014",
+      "MS14_D03_S06_L0015",
+      "MS14_D03_S06_L0016",
+      "MS14_D03_S06_L0017",
+      "MS14_D03_S06_L0018",
+      "MS14_D03_S06_L0019",
+      "MS14_D03_S06_L0020",
+      "MS14_D03_S06_L0021",
+      "MS14_D03_S06_L0022"
+    ],
+    "next": "somi_lead"
+  },
+  "somi_lead": {
+    "kind": "block",
+    "scene": "MS14_D03_S06",
+    "source_block": "MS14_D03_S06_B007",
+    "records": [
+      "MS14_D03_S06_L0031",
+      "MS14_D03_S06_L0032",
+      "MS14_D03_S06_L0033"
+    ],
+    "next": "blankets_route"
+  },
+  "blankets_route": {
+    "kind": "branch",
+    "field": "nero_bedding_reserved",
+    "value": true,
+    "yes": "blankets_receive",
+    "no": "stairs3"
+  },
+  "blankets_receive": {
+    "kind": "choice",
+    "scene": "MS14_D03_S06",
+    "title": "예약한 침구를 확인해 받는다",
+    "options": [
+      {
+        "title": "예약한 침구를 확인해 받는다",
+        "to": "blankets3",
+        "guard": [],
+        "operations": []
+      }
+    ]
+  },
+  "blankets3": {
+    "kind": "block",
+    "scene": "MS14_D03_S06",
+    "source_block": "MS14_D03_S06_B008",
+    "records": [
+      "MS14_D03_S06_L0034",
+      "MS14_D03_S06_L0035",
+      "MS14_D03_S06_L0036",
+      "MS14_D03_S06_L0037",
+      "MS14_D03_S06_L0038",
+      "MS14_D03_S06_L0039",
+      "MS14_D03_S06_L0040",
+      "MS14_D03_S06_L0041"
+    ],
+    "next": "stairs3"
+  },
+  "stairs3": {
+    "kind": "block",
+    "scene": "MS14_D03_S06",
+    "source_block": "MS14_D03_S06_B009",
+    "records": [
+      "MS14_D03_S06_L0042"
+    ],
+    "next": "sleep3"
+  },
+  "sleep3": {
+    "kind": "choice",
+    "scene": "MS14_D03_S06",
+    "title": "그림을 세워 두고 잠든다",
+    "options": [
+      {
+        "title": "그림을 세워 두고 잠든다",
+        "to": "day4",
+        "guard": [],
+        "operations": [
+          {
+            "op": "set",
+            "field": "day",
+            "value": 4
+          }
+        ]
+      }
+    ]
+  }
+}

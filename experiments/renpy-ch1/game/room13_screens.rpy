@@ -100,12 +100,12 @@ screen r13_hub(entry=False):
         frame:
             xpos 24 ypos 74 padding (12,6) background R13InkPanel(alpha="b8")
             text ("가진 돈 %d냥"%r13_wallet(room13)["cash"]) size r13_read_size(18,21) color "#fff2cf"
-    if not entry:
+    if not entry and not r13_v111_active():
         use r13_event_offers(ready)
     use r13_admin_key()
-    if not entry and room13.get("life_poc") and room13["day"]<=2:
+    if not entry and not r13_v111_active() and room13.get("life_poc") and room13["day"]<=2:
         use r13_goal_fold(r13_intro_goal(),ready)
-    elif not entry and room13.get("life_poc") and r13_campaign_goal():
+    elif not entry and not r13_v111_active() and room13.get("life_poc") and r13_campaign_goal():
         use r13_goal_fold(r13_campaign_goal(),ready)
     use r13_toolbar(mode="field",ready=ready)
     $ hint=GetTooltip()
@@ -351,7 +351,7 @@ screen r13_topics(person):
     default ready=False
     timer .15 action SetScreenVariable("ready",True)
     $ actor_pose=r13_conversation_pose(person)
-    $ questions=[(r13_calendar_topic_title(key,spec),Return(key),r13_calendar_topic_seen(key,spec)) for key,spec in r13_topics_in_order(person)]
+    $ questions=r13_v111_questions(person) if r13_v111_active() else [(r13_calendar_topic_title(key,spec),Return(key),r13_calendar_topic_seen(key,spec)) for key,spec in r13_topics_in_order(person)]
     use r13_question_list(person,actor_pose,R13_NAMES[person]+"에게 묻기",questions,ready,return_action=Return("back"))
     use r13_toolbar(investigate_action=Return("back"),present_action=Return("present"),person=person,mode="talk",ready=ready)
 

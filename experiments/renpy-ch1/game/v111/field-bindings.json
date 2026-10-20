@@ -1,0 +1,677 @@
+{
+  "gate_request": {
+    "location": "gate",
+    "people": [
+      "guard",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "초소 처리 명단을 읽는다",
+        "location": "gate",
+        "guard": [],
+        "object": "ledger"
+      }
+    ]
+  },
+  "gate_investigate": {
+    "location": "gate",
+    "people": [
+      "guard",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "신청 원본을 읽는다",
+        "location": "gate",
+        "guard": [],
+        "object": "gate_documents"
+      },
+      {
+        "title": "겨울철 입장 규칙을 읽는다",
+        "location": "gate",
+        "guard": [],
+        "object": "rules"
+      },
+      {
+        "title": "초소 처리 명단을 다시 본다",
+        "location": "gate",
+        "guard": [],
+        "object": "ledger"
+      },
+      {
+        "title": "두 종이의 항목을 비교한다",
+        "location": "gate",
+        "guard": [
+          [
+            "evidence",
+            "E03",
+            true
+          ]
+        ],
+        "person": "guard"
+      },
+      {
+        "title": "숙소 확인 칸을 본다",
+        "location": "gate",
+        "guard": [
+          [
+            "evidence",
+            "E03",
+            true
+          ]
+        ],
+        "person": "guard"
+      },
+      {
+        "title": "자료를 함께 제시한다",
+        "location": "gate",
+        "guard": [],
+        "person": "guard"
+      },
+      {
+        "title": "힌트를 생각한다",
+        "location": "gate",
+        "guard": [],
+        "person": "guard"
+      },
+      {
+        "title": "왜 일꾼으로 적혔는지 묻는다",
+        "location": "gate",
+        "guard": [
+          [
+            "state",
+            "purpose_difference_known",
+            true
+          ],
+          [
+            "state",
+            "reason_heard",
+            false
+          ]
+        ],
+        "person": "guard"
+      }
+    ]
+  },
+  "gate_choice": {
+    "location": "gate",
+    "people": [
+      "guard",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "초대 편지를 보여 준다",
+        "location": "gate",
+        "guard": [],
+        "person": "guard",
+        "present": "V111:E01"
+      },
+      {
+        "title": "가족 방문 신청서를 찾아 달라고 한다",
+        "location": "gate",
+        "guard": [],
+        "person": "guard"
+      }
+    ]
+  },
+  "registered_menu": {
+    "location": "gate",
+    "people": [
+      "guard",
+      "daram",
+      "karo"
+    ],
+    "options": [
+      {
+        "title": "왜 일꾼으로 적혔는지 묻는다",
+        "location": "gate",
+        "guard": [
+          [
+            "state",
+            "reason_heard",
+            false
+          ]
+        ],
+        "person": "guard"
+      },
+      {
+        "title": "짐을 찾아 여관으로 간다",
+        "location": "inn",
+        "guard": [],
+        "move": "inn"
+      }
+    ]
+  },
+  "room_observe": {
+    "location": "room13",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "빈방을 살핀다",
+        "location": "room13",
+        "guard": [],
+        "object": "bed"
+      }
+    ]
+  },
+  "note_pick": {
+    "location": "room13",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "책상 메모를 집는다",
+        "location": "room13",
+        "guard": [],
+        "object": "mother_note"
+      }
+    ]
+  },
+  "bundle_open": {
+    "location": "room13",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "책상 아래 보따리를 연다",
+        "location": "room13",
+        "guard": [],
+        "object": "family_bundle"
+      }
+    ]
+  },
+  "sleep1": {
+    "location": "room13",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "과자를 두고 잠든다",
+        "location": "room13",
+        "guard": [],
+        "object": "bed"
+      }
+    ]
+  },
+  "sleep2": {
+    "location": "room13",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "아침 약속을 적고 잠든다",
+        "location": "room13",
+        "guard": [],
+        "object": "bed"
+      }
+    ]
+  },
+  "sleep3": {
+    "location": "room13",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "그림을 세워 두고 잠든다",
+        "location": "room13",
+        "guard": [],
+        "object": "bed"
+      }
+    ]
+  },
+  "lamp_rope": {
+    "location": "square",
+    "people": [
+      "resident_lamplighter",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "덮개 지지 끈을 잡는다",
+        "location": "square",
+        "guard": [],
+        "object": "lamp"
+      }
+    ]
+  },
+  "go_box": {
+    "location": "square",
+    "people": [
+      "resident_lamplighter",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "초롱과 교환함으로 간다",
+        "location": "forest",
+        "guard": [],
+        "move": "forest"
+      }
+    ]
+  },
+  "box_inspect": {
+    "location": "forest",
+    "people": [
+      "resident_lamplighter",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "함과 주변을 직접 확인한다",
+        "location": "forest",
+        "guard": [],
+        "object": "v111_box"
+      }
+    ]
+  },
+  "box_note": {
+    "location": "forest",
+    "people": [
+      "resident_lamplighter",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "도착 쪽지를 직접 넣는다",
+        "location": "forest",
+        "guard": [],
+        "object": "v111_box"
+      }
+    ]
+  },
+  "envelope_show": {
+    "location": "post",
+    "people": [
+      "seryeon",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "초대 편지의 봉투를 보여 준다",
+        "location": "post",
+        "guard": [],
+        "person": "seryeon",
+        "present": "V111:E01"
+      }
+    ]
+  },
+  "post_menu": {
+    "location": "post",
+    "people": [
+      "seryeon",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "대필도 합니까?",
+        "location": "post",
+        "guard": [],
+        "person": "seryeon"
+      },
+      {
+        "title": "내 편지를 돌려받는다",
+        "location": "post",
+        "guard": [],
+        "person": "seryeon"
+      }
+    ]
+  },
+  "portrait_ask": {
+    "location": "square",
+    "people": [
+      "resident_piko",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "스케치를 보여 주고 부탁한다",
+        "location": "square",
+        "guard": [],
+        "person": "resident_piko"
+      }
+    ]
+  },
+  "lamp_observe": {
+    "location": "square",
+    "people": [
+      "resident_piko",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "번호판을 본다",
+        "location": "square",
+        "guard": [],
+        "object": "lamp"
+      },
+      {
+        "title": "덮개를 본다",
+        "location": "square",
+        "guard": [],
+        "object": "lamp"
+      },
+      {
+        "title": "담요를 본다",
+        "location": "square",
+        "guard": [],
+        "object": "lamp"
+      },
+      {
+        "title": "받침과 바닥을 본다",
+        "location": "square",
+        "guard": [],
+        "object": "lamp"
+      },
+      {
+        "title": "살펴보기를 마친다",
+        "location": "square",
+        "guard": [
+          [
+            "state",
+            "lamp_part_0",
+            true
+          ],
+          [
+            "state",
+            "lamp_part_1",
+            true
+          ],
+          [
+            "state",
+            "lamp_part_2",
+            true
+          ],
+          [
+            "state",
+            "lamp_part_3",
+            true
+          ]
+        ],
+        "object": "lamp"
+      }
+    ]
+  },
+  "shelter_work": {
+    "location": "dining",
+    "people": [
+      "nabi",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "포대를 옮기고 천을 빌린다",
+        "location": "dining",
+        "guard": [],
+        "object": "table"
+      }
+    ]
+  },
+  "shelter_enter": {
+    "location": "square",
+    "people": [
+      "resident_piko",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "피코와 식당에 들어간다",
+        "location": "dining",
+        "guard": [],
+        "move": "dining"
+      }
+    ]
+  },
+  "nero_work": {
+    "location": "forest",
+    "people": [
+      "resident_nero",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "침구를 옮겨 묶고 이름을 적는다",
+        "location": "forest",
+        "guard": [],
+        "person": "resident_nero"
+      }
+    ]
+  },
+  "piko_clean": {
+    "location": "dining",
+    "people": [
+      "resident_piko",
+      "nabi",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "약속한 자리를 치운다",
+        "location": "dining",
+        "guard": [],
+        "object": "table"
+      }
+    ]
+  },
+  "lamp_inspect3": {
+    "location": "square",
+    "people": [
+      "resident_tok",
+      "neoul",
+      "resident_lamplighter",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "번호판·받침·자국을 살핀다",
+        "location": "square",
+        "guard": [],
+        "object": "lamp"
+      }
+    ]
+  },
+  "fragment_request": {
+    "location": "square",
+    "people": [
+      "resident_tok",
+      "resident_lamplighter",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "톡에게 안쪽 파편을 확인받는다",
+        "location": "square",
+        "guard": [],
+        "person": "resident_tok"
+      }
+    ]
+  },
+  "lamp_log_request": {
+    "location": "square",
+    "people": [
+      "resident_lamplighter",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "초롱의 점검장을 확인한다",
+        "location": "square",
+        "guard": [],
+        "person": "resident_lamplighter"
+      }
+    ]
+  },
+  "loan_read": {
+    "location": "workshop",
+    "people": [
+      "buri",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "대여 쪽지를 읽는다",
+        "location": "workshop",
+        "guard": [],
+        "object": "tools"
+      }
+    ]
+  },
+  "measurement_read": {
+    "location": "clinic",
+    "people": [
+      "resident_ubak",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "측정지를 읽는다",
+        "location": "clinic",
+        "guard": [],
+        "object": "notes"
+      }
+    ]
+  },
+  "transport_read": {
+    "location": "square",
+    "people": [
+      "resident_siluk",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "운반표를 본다",
+        "location": "square",
+        "guard": [],
+        "person": "resident_siluk"
+      }
+    ]
+  },
+  "knife_permission": {
+    "location": "square",
+    "people": [
+      "resident_siluk",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "칼을 보여 달라고 요청한다",
+        "location": "square",
+        "guard": [],
+        "person": "resident_siluk"
+      }
+    ]
+  },
+  "store_visit": {
+    "location": "square",
+    "people": [
+      "resident_siluk",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "수취 창고에서 확인한다",
+        "location": "store",
+        "guard": [],
+        "move": "store"
+      }
+    ]
+  },
+  "stone_check": {
+    "location": "store",
+    "people": [
+      "resident_madam",
+      "resident_tok",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "톡에게 각인 확인을 부탁한다",
+        "location": "store",
+        "guard": [],
+        "person": "resident_tok"
+      }
+    ]
+  },
+  "sale_check": {
+    "location": "store",
+    "people": [
+      "resident_madam",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "매입 기록을 본다",
+        "location": "store",
+        "guard": [],
+        "object": "ledger"
+      }
+    ]
+  },
+  "restore_input": {
+    "location": "square",
+    "people": [
+      "resident_tok",
+      "resident_lamplighter",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "톡·초롱과 3번 돌을 복구한다",
+        "location": "square",
+        "guard": [],
+        "object": "lamp"
+      }
+    ]
+  },
+  "blankets_receive": {
+    "location": "square",
+    "people": [
+      "resident_nero",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "예약한 침구를 확인해 받는다",
+        "location": "square",
+        "guard": [],
+        "person": "resident_nero"
+      }
+    ]
+  },
+  "shelter_cloth": {
+    "location": "inn",
+    "people": [
+      "granny",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "마른 천을 빌린다",
+        "location": "inn",
+        "person": "granny"
+      }
+    ]
+  },
+  "shelter_invite": {
+    "location": "square",
+    "people": [
+      "resident_piko",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "비운 벤치와 조건을 전한다",
+        "location": "square",
+        "person": "resident_piko"
+      }
+    ]
+  }
+}
