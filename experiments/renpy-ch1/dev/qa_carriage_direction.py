@@ -16,7 +16,7 @@ async def main():
   opening=await q.py('import renpy;s=renpy.store;result=dict(version=s.config.version,packet=s.r13_packet,music=renpy.audio.music.get_playing(),fx=renpy.audio.music.get_playing(channel="carriage_ride"),master_transforms=len(renpy.game.context().scene_lists.layer_at_list["master"][1]),ms14=s.ms14)')
   assert opening['packet'][0] is None and opening['packet'][1]=='다람이 과자 봉지를 외투 안쪽으로 당긴다.',opening
   assert opening['fx']=='assets/ms14-audio/cart-roll-light.mp3',opening
-  assert opening['master_transforms']==1 and opening['ms14'] is None,opening
+  assert opening['master_transforms']==0 and opening['ms14'] is None,opening
   buttons=(await q.state())['buttons']
   skip=[x for x in buttons if x['text'].strip()=='건너뛰기'];more=[x for x in buttons if x['text'].strip()=='더보기']
   assert len(skip)==1 and len(more)==1,(skip,more)

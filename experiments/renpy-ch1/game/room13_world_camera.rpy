@@ -25,7 +25,7 @@ init 58 python:
         location=location or (store.room13 or {}).get("location")
         initial=r13_layout(location).get("initial_x",0)
         value=getattr(store,"r13_world_cameras",{}).get(location,initial)
-        return int(max(0,min(r13_world_width(location)-1280,round(value/2.0)*2)))
+        return int(max(0,min(r13_world_width(location)-1280,round(value))))
 
     def r13_world_revision(location):
         return r13_hashlib.sha256(json.dumps(R13_WORLD_LAYOUTS[location],sort_keys=True).encode("utf-8")).hexdigest()
@@ -67,12 +67,12 @@ init 58 python:
         def __init__(self,location):
             self.location=location
         def __call__(self,value):
-            value=int(max(0,min(r13_world_width(self.location)-1280,round(value/2.0)*2)))
+            value=int(max(0,min(r13_world_width(self.location)-1280,round(value))))
             cameras=dict(getattr(store,"r13_world_cameras",{}))
             if cameras.get(self.location)!=value:
                 cameras[self.location]=value
                 store.r13_world_cameras=cameras
-                if getattr(store,"r13_field_pick",None) and not r13_field_selection():
+                if getattr(store,"r13_field_pick",None):
                     store.r13_field_pick=None
                 # A pan happens inside call screen, before its next checkpoint.
                 # Keep the current viewport when a save resumes this interaction.
@@ -80,10 +80,15 @@ init 58 python:
 
     def r13_world_adjustment(location):
         return ui.adjustment(range=max(0,r13_world_width(location)-1280),value=r13_world_offset(location),
-            step=2,force_step=True,changed=R13WorldCameraChanged(location))
+            step=1,force_step=False,changed=R13WorldCameraChanged(location))
+
+    def r13_pan_ease(t):
+        return t*t*(3.0-2.0*t)
 
     def r13_pan_camera(adjustment,direction):
-        adjustment.change(max(0,min(adjustment.range,adjustment.value+direction*480)))
+        target=max(0,min(adjustment.range,adjustment.value+direction*480))
+        adjustment.animate(target-adjustment.value,.42,r13_pan_ease)
+        renpy.display.interface.maximum_framerate(.5)
 
     def r13_world_edge_people(adjustment):
         left=[];right=[]
@@ -99,8 +104,12 @@ init 58 python:
         names=[R13_NAMES.get(p,p) for p in people]
         return "·".join(names[:2])+(" 외 %d"%(len(names)-2) if len(names)>2 else "")
 
-    def r13_world_edge_refresh(adjustment,shown):
-        if r13_world_edge_people(adjustment)!=shown:
+    def r13_world_edge_refresh(adjustment,shown,bounds=None):
+        # Polling must not rebuild the whole field every .3 seconds. Refresh
+        # changed labels/limits after the pan, not in its middle.
+        if adjustment.animation_target is not None:return
+        limits=(adjustment.value<=4,adjustment.value>=adjustment.range-4)
+        if r13_world_edge_people(adjustment)!=shown or (bounds is not None and limits!=bounds):
             renpy.restart_interaction()
 
     def r13_world_to_screen(point,location=None):
@@ -163,25 +172,25 @@ screen r13_world_camera_controls(adjustment):
     # swipe. People standing outside the view are named at the screen edge;
     # the tag also pans toward them.
     $ edge=r13_world_edge_people(adjustment)
-    timer .3 repeat True action Function(r13_world_edge_refresh,adjustment,edge)
+    timer .3 repeat True action Function(r13_world_edge_refresh,adjustment,edge,(adjustment.value<=4,adjustment.value>=adjustment.range-4),_update_screens=False)
     if edge[0] and r13_field_view=="people":
         textbutton ("‹ "+r13_world_edge_label(edge[0])):
             style "r13_action_button" xpos 8 ypos 236 padding (12,8) text_size 18 xminimum (80 if r13_touch_ui() else 0) yminimum (80 if r13_touch_ui() else 0)
-            action Function(r13_pan_camera,adjustment,-1)
+            action Function(r13_pan_camera,adjustment,-1,_update_screens=False)
     elif adjustment.value>4:
         # 0.18.75 (design review 2026-10-16, #4): a wide place with nobody off to the side
         # still shows that there is more to see; a plain arrow, no name.
         textbutton "‹":
             style "r13_action_button" xpos 8 ypos 236 padding (12,8) text_size 22 xminimum (80 if r13_touch_ui() else 0) yminimum (80 if r13_touch_ui() else 0)
-            action Function(r13_pan_camera,adjustment,-1) tooltip "옆으로 둘러보기"
+            action Function(r13_pan_camera,adjustment,-1,_update_screens=False) tooltip "옆으로 둘러보기"
     if edge[1] and r13_field_view=="people":
         textbutton (r13_world_edge_label(edge[1])+" ›"):
             style "r13_action_button" xpos 1272 xanchor 1.0 ypos 236 padding (12,8) text_size 18 xminimum (80 if r13_touch_ui() else 0) yminimum (80 if r13_touch_ui() else 0)
-            action Function(r13_pan_camera,adjustment,1)
+            action Function(r13_pan_camera,adjustment,1,_update_screens=False)
     elif adjustment.value<adjustment.range-4:
         textbutton "›":
             style "r13_action_button" xpos 1272 xanchor 1.0 ypos 236 padding (12,8) text_size 22 xminimum (80 if r13_touch_ui() else 0) yminimum (80 if r13_touch_ui() else 0)
-            action Function(r13_pan_camera,adjustment,1) tooltip "옆으로 둘러보기"
+            action Function(r13_pan_camera,adjustment,1,_update_screens=False) tooltip "옆으로 둘러보기"
     # First-wide-place guidance shares the single field instruction panel.
 
 # 0.18.75: the one-time "drag to look around" line on the first wide place.

@@ -253,7 +253,7 @@ label r13_entry_done:
 label r13_carriage:
     $ r13_carriage_skip = False
     call r13_carriage_departure
-    call r13_lines([(None, '다람이 과자 봉지를 외투 안쪽으로 당긴다.'), ('dad', '아빠는 안 잡아 줘?'), ('daram', '아빠는 안 부서지잖아.'), ('dad', '부서질 수도 있는데.'), (None, '아이가 내 소매를 붙잡았다. 빈손으로만.'), ('dad', '많이 남았어?'), ('daram', '하나. 엄마 거.'), ('dad', '제일 큰 거네.'), ('daram', '엄마는 못 먹었잖아.'), ('daram', '또 읽어?', {'carriage_letter':True}), ('dad', '방 번호.'), ('daram', '십삼 호. 내가 외웠어. 아빠는 짐 들어.'), ('daram', '오늘은 엄마랑 자?', {'carriage_letter':False}), ('dad', '엄마부터 만나 보자.'), ('daram', '만나면 내가 가운데야.'), ('karo', '지붕 보입니다. 일어나지 마요. 아직 안 섰어요.', {'carriage_reveal':True}), (None, '다람이를 데리고 와 줘. 여관 13호실에서 기다릴게.')],R13_CARRIAGE_IDENTITY, binding_route="dynamic:016")
+    call r13_lines([(None, '다람이 과자 봉지를 외투 안쪽으로 당긴다.'), ('dad', '아빠는 안 잡아 줘?', {'carriage_jolt':True}), ('daram', '아빠는 안 부서지잖아.'), ('dad', '부서질 수도 있는데.'), (None, '아이가 내 소매를 붙잡았다. 빈손으로만.'), ('dad', '많이 남았어?'), ('daram', '하나. 엄마 거.'), ('dad', '제일 큰 거네.'), ('daram', '엄마는 못 먹었잖아.'), ('daram', '또 읽어?', {'carriage_letter':True}), ('dad', '방 번호.'), ('daram', '십삼 호. 내가 외웠어. 아빠는 짐 들어.'), ('daram', '오늘은 엄마랑 자?', {'carriage_letter':False}), ('dad', '엄마부터 만나 보자.'), ('daram', '만나면 내가 가운데야.'), ('karo', '지붕 보입니다. 일어나지 마요. 아직 안 섰어요.', {'carriage_reveal':True}), (None, '다람이를 데리고 와 줘. 여관 13호실에서 기다릴게.')],R13_CARRIAGE_IDENTITY, binding_route="dynamic:016")
     $ persistent.room13_opening_seen=True; r13_carriage_finish()
     $ r13_carriage_skip = False
     return

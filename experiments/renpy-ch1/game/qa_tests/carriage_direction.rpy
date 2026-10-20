@@ -3,7 +3,7 @@ testcase existing_carriage_direction:
     click "처음부터"
     pause 3.0
     assert screen "say"
-    assert eval (ms14 is None and r13_packet[0] is None and r13_carriage_narrow and not typing_allowed)
+    assert eval (ms14 is None and r13_packet[0] is None and not r13_carriage_narrow and not typing_allowed)
     assert eval (r13_packet[1]=="다람이 과자 봉지를 외투 안쪽으로 당긴다.")
     assert eval (renpy.music.get_playing(channel="carriage_ride") is not None)
     screenshot "carriage_direction_intro.png"

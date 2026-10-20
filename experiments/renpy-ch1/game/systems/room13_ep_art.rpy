@@ -119,6 +119,7 @@ init 160 python:
             if options["music"]:renpy.music.play(R13_BGM[options["music"]],fadeout=1.0,fadein=1.0)
             else:renpy.music.stop(fadeout=1.5)
         if options.get("sfx"):source_fx(options["sfx"])
+        if options.get("carriage_jolt") and store.place=="마차 안":r13_carriage_jolt()
         if "carriage_letter" in options and store.place=="마차 안":
             if options["carriage_letter"]:renpy.show_screen("r13_evidence_card", "E01", "가져온 편지", conversation=True, _zorder=85)
             else:renpy.hide_screen("r13_evidence_card")

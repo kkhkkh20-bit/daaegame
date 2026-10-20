@@ -24,10 +24,10 @@ class WorldCamera(unittest.TestCase):
         self.assertEqual(self.ns["r13_world_to_screen"]((1540, 430)), (900, 430))
         self.assertEqual(self.ns["r13_world_to_screen"]((100, 430)), (-540, 430))
 
-    def test_camera_clamps_and_preserves_pixel_grid(self):
+    def test_camera_clamps_and_preserves_single_pixel_steps(self):
         callback = self.ns["R13WorldCameraChanged"]("school")
         callback(157.3)
-        self.assertEqual(self.ns["r13_world_offset"]("school"), 158)
+        self.assertEqual(self.ns["r13_world_offset"]("school"), 157)
         callback(99999)
         self.assertEqual(self.ns["r13_world_offset"]("school"), 520)
         callback(-50)
@@ -43,6 +43,34 @@ class WorldCamera(unittest.TestCase):
     def test_saved_old_offset_clamps_after_layout_change(self):
         self.store.r13_world_cameras["school"] = 1280
         self.assertEqual(self.ns["r13_world_offset"]("school"), 520)
+
+    def test_unchanged_edge_poll_does_not_restart_field(self):
+        calls=[]
+        self.ns["renpy"].restart_interaction=lambda:calls.append(True)
+        self.ns["r13_world_edge_people"]=lambda adjustment:((),())
+        adjustment=SimpleNamespace(value=200,range=640,animation_target=None)
+        for _ in range(10):
+            self.ns["r13_world_edge_refresh"](adjustment,((),()),(False,False))
+        self.assertEqual(calls,[])
+
+    def test_edge_changes_wait_until_pan_finishes(self):
+        calls=[]
+        self.ns["renpy"].restart_interaction=lambda:calls.append(True)
+        self.ns["r13_world_edge_people"]=lambda adjustment:(("daram",),())
+        adjustment=SimpleNamespace(value=200,range=640,animation_target=500)
+        self.ns["r13_world_edge_refresh"](adjustment,((),()),(False,False))
+        self.assertEqual(calls,[])
+        adjustment.animation_target=None
+        self.ns["r13_world_edge_refresh"](adjustment,((),()),(False,False))
+        self.assertEqual(calls,[True])
+
+    def test_limit_arrow_refreshes_even_when_people_do_not_change(self):
+        calls=[]
+        self.ns["renpy"].restart_interaction=lambda:calls.append(True)
+        self.ns["r13_world_edge_people"]=lambda adjustment:((),())
+        adjustment=SimpleNamespace(value=0,range=640,animation_target=None)
+        self.ns["r13_world_edge_refresh"](adjustment,((),()),(False,False))
+        self.assertEqual(calls,[True])
 
 
 if __name__ == "__main__":
