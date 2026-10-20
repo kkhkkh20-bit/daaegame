@@ -151,9 +151,9 @@ label r13_entry_guard_menu:
     $ r13_choice=_return
     if not r13_screen_choice_ok(r13_choice,"r13_entry_topics"):
         jump r13_entry_guard_menu
-    if r13_choice != ("entry","back"):
-        $ r13_speaker("guard","neutral")
+    $ r13_speaker("guard","neutral") if r13_choice != ("entry","back") else None
 label r13_entry_dispatch:
+    $ renpy.jump("r13_pb01_entry_dispatch") if pb01_active() else None
     if r13_choice==("entry","explain"):
         call r13_lines([('dad', '저희가 낸 신청서와 초소 명단이 서로 다른 거군요.'), ('guard', '예. 제가 받은 명단에는 방문자가 한 분뿐입니다.'), ('dad', '그 명단을 직접 볼 수 있겠습니까?'), ('guard', '여기 있습니다. 예약 서류를 보고 초소에서 옮겨 적은 겁니다.'), (None, '돌목이 내민 명단에는 ‘방문자 다돌, 총 인원 1명’이라고 적혀 있었다.'), ('guard', '예약 서류 원본은 저 선반에 도착 날짜별로 꽂아 두었습니다. 대조해 보시려면 직접 찾아보십시오.')],"entry:explain:v2")
         $ r13_flag("question_read:entry:explain")
@@ -193,8 +193,8 @@ label r13_entry_dispatch:
     if r13_choice[0]=="entry" and r13_choice[1] in ("explain","argue","wait"):
         jump r13_entry_guard_menu
     jump r13_entry
-
 label r13_entry_person(person):
+    $ renpy.jump("r13_pb01_entry_person") if pb01_active() else None
     if person in ("daram", "karo"):
         $ r13_note_encounter(person)
     if person=="daram":
@@ -239,8 +239,8 @@ label r13_entry_karo_menu:
     if r13_entry_karo_choice in ("road","witness","bags"):
         $ r13_flag("question_read:entry:karo:"+r13_entry_karo_choice)
     jump r13_entry_karo_menu
-
 label r13_entry_done:
+    $ renpy.jump("r13_pb01_registered") if pb01_active() else None
     hide screen r13_material_corner
     $ r13_inspection_location=None
     $ r13_grant(["E02"],"원본과 맞춰 보고 바로잡은 입장 기록")
@@ -249,8 +249,8 @@ label r13_entry_done:
     if room13.get("life_poc"):
         call r13_lines([("daram","아빠, 이제 빨리 여관 가자. 엄마가 기다릴 거야."),("dad","그래. 13호실이라고 했지.")],"life:arrival:direction") from r13_intro_direction_return
     jump r13_roam
-
 label r13_carriage:
+    $ renpy.jump("r13_pb01_carriage") if pb01_active() else None
     $ r13_carriage_skip = False
     call r13_scene("winter_carriage","마차 안","travel")
     call r13_lines([(None, '덜컹. 마차 바퀴가 돌부리를 넘었다. 편지에서 눈을 들자, 옆자리에 있던 다람이가 보이지 않았다.', {'no_lead': True}), ('daram', '왁! 놀랐지? 놀랐지, 아빠?', {'expression': 'joy', 'sfx': 'surprise'}), ('dad', '깜짝이야. 언제 거기 들어가 있었어?'), ('daram', '아빠가 편지 읽을 때! 의자 뒤로 살금살금 갔는데, 아빠는 하나도 몰랐지?', 'expressive'), ('dad', '전혀 몰랐어. 우리 다람이 숨기 대장이네.'), ('daram', '헤헤. 그리고 이거 봐. 과자 봉지에서 엄청 큰 과자가 나왔어!', 'joy'), (None, '다람이가 손바닥만 한 과자를 내 코앞에 자랑스럽게 내밀었다.'), ('dad', '그렇게 큰 과자가 봉지 안에 들어 있었어? 아껴 먹어야겠네.'), ('daram', '아니지! 이렇게 큰 건 첫입에 크게 베어 먹어야 돼!', 'expressive'), ('dad', '천천히 먹어. 아무도 안 뺏어 먹어.'), ('daram', '아빠가 쳐다보고 있잖아.'), ('dad', '들켰네.'), (None, '다람이가 웃으며 과자를 베어 물었다. 부스러기 몇 개가 내 무릎 위로 떨어졌다.'), ('daram', '엄마한테도 주고 싶다. 이렇게 큰 과자.', 'thinking'), ('dad', '그래. 오늘 저녁이면 엄마한테 직접 줄 수 있어.'), (None, '나는 무릎 위에 펼쳐 두었던 편지를 다시 읽었다. ‘13호실을 잡아 뒀어. 다람이랑 와서 같이 겨울을 나자.’ 끝에는 아내의 이름이 적혀 있었다. 편지를 접어 주머니에 넣었다.'), ('daram', '아빠, 엄마가 있는 마을은 커?'), ('dad', '아빠도 이 마을은 처음 가 봐. 그러니까 까로 아저씨한테 여쭤볼까?'), ('daram', '아저씨! 마을까지 아직 멀었어요?', 'expressive'), ('karo', '저 앞 모퉁이만 돌아가면 마을 지붕들이 보일 겁니다.'), (None, '다람이가 과자 봉지를 품에 안고 마차 창문 쪽으로 바짝 다가앉았다.'), ('daram', '엄마가 있는 여관도 여기서 보여요?'), ('karo', '여관은 마을 안쪽에 있어요. 도착하면 제가 안내해 드리죠.'), ('daram', '아빠, 도착하면 여관부터 가자.'), ('dad', '응. 엄마가 13호실에서 기다린다고 했어.'), ('daram', '내가 먼저 문 두드려도 돼?', 'thinking'), ('dad', '그럼. 엄마 깜짝 놀라겠다.')],R13_CARRIAGE_IDENTITY, binding_route="dynamic:016")
@@ -367,8 +367,8 @@ label r13_field:
             jump r13_roam
         jump r13_field
     jump r13_field
-
 label r13_object(key):
+    $ renpy.jump("r13_pb01_rules") if pb01_active() and room13["location"] == "gate" and key == "rules" else None
     if key=="door" and r13_life_door_available():
         call r13_life_door
         return

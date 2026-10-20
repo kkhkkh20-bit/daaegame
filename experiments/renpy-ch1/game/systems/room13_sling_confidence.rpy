@@ -73,7 +73,7 @@ init 206 python:
     _r13_sling_confidence_present=r13_present
     def r13_present(person,key,identity=False):
         if person!="resident_sling" or key not in ("E18","J08","J06") or not r13_has(key):
-            return _r13_sling_confidence_present(person,key,identity)
+            return pb01_present_lines(key,identity) if person=="guard" and key.startswith("PB01:") and pb01_active() and r13_has(key) else _r13_sling_confidence_present(person,key,identity)
         # Preserve the actual presentation history and all unrelated lower-layer
         # effects. Merely computing an available-record list never calls this.
         _r13_sling_confidence_present(person,key,identity)

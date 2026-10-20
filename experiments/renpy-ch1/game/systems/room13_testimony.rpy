@@ -42,7 +42,7 @@ init 116 python:
     def r13_compare_result(selected):
         if set(selected)=={"J09","E12"} and {"J09","E12"}<=set((store.room13 or {}).get("evidence",[])):
             return "(나비는 처음에는 첫 비명 뒤에도 할머니가 함께 있었다고 했다. 도토의 기록을 본 뒤에는 첫 비명까지로 좁혔다. 그 뒤 할머니가 어디 있었는지는 나비도 모른다.)"
-        return _r13_tm_compare(selected)
+        return pb01_compare_feedback(selected) if set(selected)=={"PB01:E02","PB01:E03"} and pb01_active() else _r13_tm_compare(selected)
 
     _r13_tm_present=r13_present
     def r13_present(person,key,identity=False):

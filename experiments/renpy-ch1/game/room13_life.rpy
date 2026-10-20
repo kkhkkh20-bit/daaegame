@@ -91,7 +91,7 @@ init 57 python:
             return Transform(r13_art_path("gate"),size=(1280,720),nearest=True)
         if key=="winter_carriage":
             # Empty interior: Dad is the viewpoint and is never drawn.
-            return pb01_carriage_background() if store.r13_basis01_state is not None else Transform("assets/room13-pixel-carriage-empty-winter.webp",size=(1280,720),nearest=True)
+            return pb01_carriage_background() if pb01_active() else Transform("assets/room13-pixel-carriage-empty-winter.webp",size=(1280,720),nearest=True)
         if key=="village_overview":
             return Transform(r13_art_path("overview"),size=(1280,720),nearest=True)
         if key=="r13_altar":
