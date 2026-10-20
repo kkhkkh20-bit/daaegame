@@ -71,6 +71,19 @@ init 179 python:
                     layout=r13_layout("inn");rx,ry,rw,rh=layout["objects"]["register"]
                     actor["map27_occlusion"]=[layout["occlusion"],[(rx,ry),(rx+rw,ry),(rx+rw,ry+rh),(rx,ry+rh)]]
                     actor["map27_keepouts"]=[]
+                elif location=="inn" and r13_world_width()==1920 and (person,actor["pose"]) in (("resident_nubi","map27_in_1"),("resident_tosil","living_thermos")):
+                    # LOCAL CANDIDATE: inner lounge floor, in front of rear bench.
+                    # Preserve presence, approved sources, pose and ordinary event priority.
+                    target,height=((420,535),226) if person=="resident_nubi" else ((535,535),215)
+                    actor=r13_contact_geometry(actor,actor["pose"],"foot",target,height,target[1])
+                    # Foreground furniture also masks the native alpha hit silhouette.
+                    actor["map27_occlusion"]=[
+                        [(475,446),(502,446),(503,450),(512,450),(516,456),(515,469),(508,474),(501,473),(501,482),(480,482),(475,477)],
+                        [(385,445),(400,439),(405,433),(414,432),(414,426),(424,426),(426,433),(443,438),(449,450),(449,470),(438,480),(413,480),(402,473),(398,458),(385,457)],
+                        [(336,477),(409,456),(502,467),(546,477),(546,498),(529,510),(529,591),(491,594),(489,523),(430,519),(430,564),(413,564),(413,513),(338,500)],
+                        [(552,461),(619,482),(655,413),(687,381),(756,374),(783,393),(778,557),(749,580),(748,612),(717,620),(714,585),(588,552),(588,591),(563,590)],
+                    ]
+                    actor["map27_keepouts"]=[]
                 elif location=="workshop" and r13_world_width()==1800 and person=="resident_musoe" and actor["pose"]=="job_inspect_old_tool":
                     # Candidate visitor floor position; preserve approved source, pose and current stature.
                     actor=r13_contact_geometry(actor,actor["pose"],"foot",(130,690),actor["height"],690)

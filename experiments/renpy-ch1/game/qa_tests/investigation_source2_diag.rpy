@@ -170,7 +170,7 @@ testcase investigation_source2_tosil:
     click "처음부터"
     pause 3.0
     $ persistent.room13_motion=False
-    run Function(r13_s2_begin,'resident_tosil','living_thermos',0,265,(485, 706))
+    run Function(r13_s2_begin,'resident_tosil','living_thermos',0,215,(535, 535))
     run Call("r13_qa_roam",dict(day=2,period=0,location="inn",life_poc=True,evidence=["E01"]),("entry_corrected","lodging"))
     advance until screen "r13_hub" timeout 40
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
