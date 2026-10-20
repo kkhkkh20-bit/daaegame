@@ -28,13 +28,23 @@ init 301 python:
         r13_flag("v111:applied:"+event)
     def r13_v111_commit(rid):
         r13_v111_apply(rid,R13_V111["records"][rid]["operations"])
+    # Owner-requested opening dialogue revision, 2026-10-20.
+    # Keep uploaded source records intact; only these reviewed spoken/action lines differ.
+    R13_V111_CARRIAGE_TEXT = {
+        "MS14_D01_S01_L0001": "마차가 덜컹 기울었다. 다람이 과자 봉지를 두 손으로 감쌌다.",
+        "MS14_D01_S01_L0002": "과자는 꼭 잡고, 아빠는?",
+        "MS14_D01_S01_L0004": "넘어지면 아프거든.",
+        "MS14_D01_S01_L0005": "다람이 한 손으로 내 소매를 잡았다. 다른 손에는 과자 봉지를 꼭 안은 채였다.",
+        "MS14_D01_S01_L0006": "과자는 몇 개 남았어?",
+        "MS14_D01_S01_L0008": "제일 큰 걸 남겼네.",
+    }
     def r13_v111_line(rid):
         r=R13_V111["records"][rid]
         if r.get("requires"):raise Exception("Unbound record condition: "+rid)
         who=MS14_SPEAKERS.get(r.get("speaker"))
         if who=="resident_piko" and r13_v111_value("piko_alive") is False:raise Exception("Absent/dead Piko line: "+rid)
         slot=r.get("direction",{}).get("slot") or "neutral"
-        return (who,r["text"],dict(no_lead=True,expression=slot,pose=slot,**({"carriage_jolt":True} if rid=="MS14_D01_S01_L0002" else {})))
+        return (who,R13_V111_CARRIAGE_TEXT.get(rid,r["text"]),dict(no_lead=True,expression=slot,pose=slot,**({"carriage_jolt":True,"show":"daram"} if rid=="MS14_D01_S01_L0001" else {})))
     def r13_v111_binding():
         v=store.room13.get("v111",{})
         if v.get("gate")=="travel":

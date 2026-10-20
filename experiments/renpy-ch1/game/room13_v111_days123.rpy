@@ -8,7 +8,7 @@ label r13_v111_start:
 label r13_v111_start_block:
     $ r13_v111_scene('MS14_D01_S01')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S01_L0002', 'MS14_D01_S01_L0003', 'MS14_D01_S01_L0004', 'MS14_D01_S01_L0005', 'MS14_D01_S01_L0006', 'MS14_D01_S01_L0007', 'MS14_D01_S01_L0008', 'MS14_D01_S01_L0009']], 'v111:start:MS14_D01_S01_L0002')
+    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S01_L0001', 'MS14_D01_S01_L0002', 'MS14_D01_S01_L0003', 'MS14_D01_S01_L0004', 'MS14_D01_S01_L0005', 'MS14_D01_S01_L0006', 'MS14_D01_S01_L0007', 'MS14_D01_S01_L0008', 'MS14_D01_S01_L0009']], 'v111:start:MS14_D01_S01_L0002')
     jump r13_v111_letter_open
 
 label r13_v111_letter_open:

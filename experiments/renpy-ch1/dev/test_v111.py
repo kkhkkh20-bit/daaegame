@@ -43,7 +43,7 @@ class Transactions(unittest.TestCase):
    code=block.split('\nlabel ',1)[0]
    tree=ast.parse(textwrap.dedent(code))
    for node in tree.body:
-    if isinstance(node,ast.FunctionDef) and node.name in wanted or isinstance(node,ast.Assign) and any(isinstance(t,ast.Name) and t.id in ('R13_V111_ENTRY','R13_V111_RECORD_OBJECTS') for t in node.targets):exec(compile(ast.Module(body=[node],type_ignores=[]),'v111','exec'),self.env)
+    if isinstance(node,ast.FunctionDef) and node.name in wanted or isinstance(node,ast.Assign) and any(isinstance(t,ast.Name) and t.id in ('R13_V111_ENTRY','R13_V111_RECORD_OBJECTS','R13_V111_CARRIAGE_TEXT') for t in node.targets):exec(compile(ast.Module(body=[node],type_ignores=[]),'v111','exec'),self.env)
  def test_scenery_reactions_do_not_grant_old_story_evidence(self):
   self.state.room13['location']='gate'
   content=json.loads((ROOT/'game/room13-content.json').read_text())
