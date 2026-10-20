@@ -128,7 +128,7 @@ label winter_lines(entries,identity="dialogue"):
     return
 
 label start:
-    jump room13_start
+    jump ms14_start
 
 label winter_start:
     $ room13_mode=False

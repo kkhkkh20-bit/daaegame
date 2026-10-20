@@ -1,0 +1,910 @@
+{
+  "version": 1,
+  "date": "2026-10-20",
+  "runtime_tested": false,
+  "visual_scope": "Four source PNGs; real light/dark alpha composites; extraction and optional grid candidate detail comparisons.",
+  "native_method": "Preserve all alpha and all RGB wherever alpha > 0. Set RGB to zero only at alpha=0. No threshold, recoloring, dilation, erosion, repainting or new generation.",
+  "extraction_method": "Connected alpha>=128 cores, manually identified by interior seed; all nonzero-alpha pixels assigned to nearest core, exactly once. Crop with even origin/dimensions and transparent padding. Reassembly must reproduce the cleaned source exactly.",
+  "pixel2x_method": "Optional lifestyle-only RGBA 2x2 normalization: majority alpha>=128, retain 2/2 ties, RGB medoid among in-cell foreground source colors, alpha 0/255. Not visually lossless. Fire evidence excluded from resampling.",
+  "excluded": [
+    "Crayon family drawing",
+    "Portraits and faces",
+    "All characters",
+    "Evidence-shape redesign",
+    "Game code and runtime bindings"
+  ],
+  "sources": [
+    {
+      "source": "phase2/daily_objects/D01_open_bundle_base.png",
+      "original_file": "originals/phase2/daily_objects/D01_open_bundle_base.png",
+      "original_sha256": "afca49675f381d5387822dded8bea72d3d6f38dd94b0592e87cfd22a027fb4f9",
+      "cleaned_file": "cleaned_sheets/D01_open_bundle_base.png",
+      "cleaned_sha256": "f4be7f94186a617966f0f2f110623d0563e70227fa24c7474a8b0d6d8542bb22",
+      "size": [
+        1536,
+        1024
+      ],
+      "alpha_before": {
+        "min": 0,
+        "max": 254,
+        "fully_transparent_pixels": 710274,
+        "partially_transparent_pixels": 862590,
+        "opaque_pixels": 0,
+        "alpha_zero_nonzero_rgb_pixels": 628116
+      },
+      "alpha_after": {
+        "min": 0,
+        "max": 254,
+        "fully_transparent_pixels": 710274,
+        "partially_transparent_pixels": 862590,
+        "opaque_pixels": 0,
+        "alpha_zero_nonzero_rgb_pixels": 0
+      },
+      "alpha_unchanged": true,
+      "visible_rgb_unchanged": true,
+      "only_alpha_zero_rgb_changed": true,
+      "grid_original": {
+        "even_dimensions": true,
+        "rgba_identical_2x2": false,
+        "origin": [
+          0,
+          0
+        ],
+        "nonuniform_blocks": 368984
+      },
+      "grid_native_cleaned": {
+        "even_dimensions": true,
+        "rgba_identical_2x2": false,
+        "origin": [
+          0,
+          0
+        ],
+        "nonuniform_blocks": 216966
+      },
+      "component_count": 1,
+      "light_dark_composites_identical": true,
+      "extraction_reassembles_exact_rgba": true
+    },
+    {
+      "source": "phase2/daily_objects/D02_exchange_box_open_empty.png",
+      "original_file": "originals/phase2/daily_objects/D02_exchange_box_open_empty.png",
+      "original_sha256": "2cdd849066496136c3e300e1d8ce64baf7b79ebdf8caf63be4e2250bc36359f7",
+      "cleaned_file": "cleaned_sheets/D02_exchange_box_open_empty.png",
+      "cleaned_sha256": "7e0e6281c568325dfa87d009ab3675569839a4917f27d65e80070a27d41f4a1d",
+      "size": [
+        1536,
+        1024
+      ],
+      "alpha_before": {
+        "min": 0,
+        "max": 254,
+        "fully_transparent_pixels": 670066,
+        "partially_transparent_pixels": 902798,
+        "opaque_pixels": 0,
+        "alpha_zero_nonzero_rgb_pixels": 573494
+      },
+      "alpha_after": {
+        "min": 0,
+        "max": 254,
+        "fully_transparent_pixels": 670066,
+        "partially_transparent_pixels": 902798,
+        "opaque_pixels": 0,
+        "alpha_zero_nonzero_rgb_pixels": 0
+      },
+      "alpha_unchanged": true,
+      "visible_rgb_unchanged": true,
+      "only_alpha_zero_rgb_changed": true,
+      "grid_original": {
+        "even_dimensions": true,
+        "rgba_identical_2x2": false,
+        "origin": [
+          0,
+          0
+        ],
+        "nonuniform_blocks": 364558
+      },
+      "grid_native_cleaned": {
+        "even_dimensions": true,
+        "rgba_identical_2x2": false,
+        "origin": [
+          0,
+          0
+        ],
+        "nonuniform_blocks": 226699
+      },
+      "component_count": 1,
+      "light_dark_composites_identical": true,
+      "extraction_reassembles_exact_rgba": true
+    },
+    {
+      "source": "phase2/daily_objects/D11_family_supplies_sheet.png",
+      "original_file": "originals/phase2/daily_objects/D11_family_supplies_sheet.png",
+      "original_sha256": "1cec1aa85d6c974b3885a1aa6816af2245da9738446f5e788ee0df7584a3160b",
+      "cleaned_file": "cleaned_sheets/D11_family_supplies_sheet.png",
+      "cleaned_sha256": "fcd61bcee59f8cb00c5371be6ee75120432834e1c3c7765f5b5e204f5099a575",
+      "size": [
+        1536,
+        1024
+      ],
+      "alpha_before": {
+        "min": 0,
+        "max": 254,
+        "fully_transparent_pixels": 860078,
+        "partially_transparent_pixels": 712786,
+        "opaque_pixels": 0,
+        "alpha_zero_nonzero_rgb_pixels": 851102
+      },
+      "alpha_after": {
+        "min": 0,
+        "max": 254,
+        "fully_transparent_pixels": 860078,
+        "partially_transparent_pixels": 712786,
+        "opaque_pixels": 0,
+        "alpha_zero_nonzero_rgb_pixels": 0
+      },
+      "alpha_unchanged": true,
+      "visible_rgb_unchanged": true,
+      "only_alpha_zero_rgb_changed": true,
+      "grid_original": {
+        "even_dimensions": true,
+        "rgba_identical_2x2": false,
+        "origin": [
+          0,
+          0
+        ],
+        "nonuniform_blocks": 382250
+      },
+      "grid_native_cleaned": {
+        "even_dimensions": true,
+        "rgba_identical_2x2": false,
+        "origin": [
+          0,
+          0
+        ],
+        "nonuniform_blocks": 182225
+      },
+      "component_count": 6,
+      "light_dark_composites_identical": true,
+      "extraction_reassembles_exact_rgba": true
+    },
+    {
+      "source": "phase2/fire/D06_tincan_oilcloth.png",
+      "original_file": "originals/phase2/fire/D06_tincan_oilcloth.png",
+      "original_sha256": "96cbb51ef832858b8a6410dc5a016899de2461da62862b6809706c2c8af9bea4",
+      "cleaned_file": "cleaned_sheets/D06_tincan_oilcloth.png",
+      "cleaned_sha256": "45786f5c5f52548478604299dec666f8e70a1c8fbf80ce13e35a73138dbf04a3",
+      "size": [
+        1774,
+        887
+      ],
+      "alpha_before": {
+        "min": 0,
+        "max": 255,
+        "fully_transparent_pixels": 1033670,
+        "partially_transparent_pixels": 539055,
+        "opaque_pixels": 813,
+        "alpha_zero_nonzero_rgb_pixels": 938
+      },
+      "alpha_after": {
+        "min": 0,
+        "max": 255,
+        "fully_transparent_pixels": 1033670,
+        "partially_transparent_pixels": 539055,
+        "opaque_pixels": 813,
+        "alpha_zero_nonzero_rgb_pixels": 0
+      },
+      "alpha_unchanged": true,
+      "visible_rgb_unchanged": true,
+      "only_alpha_zero_rgb_changed": true,
+      "grid_original": {
+        "even_dimensions": false,
+        "rgba_identical_2x2": false,
+        "origin": [
+          0,
+          0
+        ],
+        "nonuniform_blocks": null
+      },
+      "grid_native_cleaned": {
+        "even_dimensions": false,
+        "rgba_identical_2x2": false,
+        "origin": [
+          0,
+          0
+        ],
+        "nonuniform_blocks": null
+      },
+      "component_count": 2,
+      "light_dark_composites_identical": true,
+      "extraction_reassembles_exact_rgba": true
+    }
+  ],
+  "assets": [
+    {
+      "id": "D01_open_bundle",
+      "label_ko": "열린 보따리",
+      "source": "phase2/daily_objects/D01_open_bundle_base.png",
+      "native_file": "assets_native/D01_open_bundle.png",
+      "native_sha256": "d0ee4c12dea7fece3c77cede441802f7a6f14bca4b3059da2de34af62ac3a827",
+      "canvas_size": [
+        1484,
+        1038
+      ],
+      "source_bbox_nonzero_alpha_xyxy": [
+        0,
+        3,
+        1468,
+        1024
+      ],
+      "source_position_of_output_top_left_xy": [
+        -8,
+        -6
+      ],
+      "nonzero_alpha_pixel_count": 862590,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "fully_transparent_pixels": 677802,
+        "partially_transparent_pixels": 862590,
+        "opaque_pixels": 0,
+        "alpha_zero_nonzero_rgb_pixels": 0
+      },
+      "grid_native": {
+        "even_dimensions": true,
+        "rgba_identical_2x2": false,
+        "origin": [
+          0,
+          0
+        ],
+        "nonuniform_blocks": 216966
+      },
+      "source_canvas_touched_by_any_alpha_including_faint_noise": true,
+      "source_canvas_clips_visible_shape": false,
+      "runtime_auto_apply": false,
+      "visual_approval": "review_candidate_preserving_source",
+      "pixel2x": {
+        "file": "pixel2x_candidates/D01_open_bundle.png",
+        "sha256": "662d5e37976b48bc896fabb67530d53281536d27aeff1be25208dcf4d78c928a",
+        "grid": {
+          "even_dimensions": true,
+          "rgba_identical_2x2": true,
+          "origin": [
+            0,
+            0
+          ],
+          "nonuniform_blocks": 0
+        },
+        "alpha": {
+          "min": 0,
+          "max": 255,
+          "fully_transparent_pixels": 704776,
+          "partially_transparent_pixels": 0,
+          "opaque_pixels": 835616,
+          "alpha_zero_nonzero_rgb_pixels": 0
+        },
+        "technical_candidate_only": true,
+        "alpha128_silhouette_added_pixels": 1752,
+        "alpha128_silhouette_removed_pixels": 211,
+        "alpha128_silhouette_iou": 0.99765142786725,
+        "maximum_silhouette_displacement_pixels": 1.0,
+        "opaque_core_mean_rgb_abs_difference_0_255": 2.542262864467037,
+        "opaque_core_rgb_unchanged_fraction": 0.2716264807344808,
+        "native_to_grid_not_lossless": true
+      }
+    },
+    {
+      "id": "D02_exchange_box_empty",
+      "label_ko": "교환함 (원본 주머니 유지)",
+      "source": "phase2/daily_objects/D02_exchange_box_open_empty.png",
+      "native_file": "assets_native/D02_exchange_box_empty.png",
+      "native_sha256": "2af8a10e82857a61fb547831fdcf3549bd9c9bace5c2e2cd56c827a749037994",
+      "canvas_size": [
+        1504,
+        1040
+      ],
+      "source_bbox_nonzero_alpha_xyxy": [
+        0,
+        0,
+        1488,
+        1024
+      ],
+      "source_position_of_output_top_left_xy": [
+        -8,
+        -8
+      ],
+      "nonzero_alpha_pixel_count": 902798,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "fully_transparent_pixels": 661362,
+        "partially_transparent_pixels": 902798,
+        "opaque_pixels": 0,
+        "alpha_zero_nonzero_rgb_pixels": 0
+      },
+      "grid_native": {
+        "even_dimensions": true,
+        "rgba_identical_2x2": false,
+        "origin": [
+          0,
+          0
+        ],
+        "nonuniform_blocks": 226699
+      },
+      "source_canvas_touched_by_any_alpha_including_faint_noise": true,
+      "source_canvas_clips_visible_shape": false,
+      "runtime_auto_apply": false,
+      "visual_approval": "review_candidate_preserving_source",
+      "pixel2x": {
+        "file": "pixel2x_candidates/D02_exchange_box_empty.png",
+        "sha256": "cae9bb803db483e58a5cc713fcc4167bb27a4afe64bff5df703a6d96f9b5dc0a",
+        "grid": {
+          "even_dimensions": true,
+          "rgba_identical_2x2": true,
+          "origin": [
+            0,
+            0
+          ],
+          "nonuniform_blocks": 0
+        },
+        "alpha": {
+          "min": 0,
+          "max": 255,
+          "fully_transparent_pixels": 683928,
+          "partially_transparent_pixels": 0,
+          "opaque_pixels": 880232,
+          "alpha_zero_nonzero_rgb_pixels": 0
+        },
+        "technical_candidate_only": true,
+        "alpha128_silhouette_added_pixels": 1598,
+        "alpha128_silhouette_removed_pixels": 203,
+        "alpha128_silhouette_iou": 0.9979544202581678,
+        "maximum_silhouette_displacement_pixels": 1.0,
+        "opaque_core_mean_rgb_abs_difference_0_255": 3.3874384389351637,
+        "opaque_core_rgb_unchanged_fraction": 0.2720581686274827,
+        "native_to_grid_not_lossless": true
+      }
+    },
+    {
+      "id": "D11_blanket_ochre",
+      "label_ko": "황토색 담요 1장",
+      "source": "phase2/daily_objects/D11_family_supplies_sheet.png",
+      "native_file": "assets_native/D11_blanket_ochre.png",
+      "native_sha256": "45a365bf9cf328cfb763c4bcfe0fc5620fca86a70bceebff591c72971ee93da9",
+      "canvas_size": [
+        592,
+        580
+      ],
+      "source_bbox_nonzero_alpha_xyxy": [
+        14,
+        21,
+        590,
+        584
+      ],
+      "source_position_of_output_top_left_xy": [
+        6,
+        12
+      ],
+      "nonzero_alpha_pixel_count": 163575,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "fully_transparent_pixels": 179785,
+        "partially_transparent_pixels": 163575,
+        "opaque_pixels": 0,
+        "alpha_zero_nonzero_rgb_pixels": 0
+      },
+      "grid_native": {
+        "even_dimensions": true,
+        "rgba_identical_2x2": false,
+        "origin": [
+          0,
+          0
+        ],
+        "nonuniform_blocks": 41556
+      },
+      "source_canvas_touched_by_any_alpha_including_faint_noise": false,
+      "source_canvas_clips_visible_shape": false,
+      "runtime_auto_apply": false,
+      "visual_approval": "review_candidate_preserving_source",
+      "pixel2x": {
+        "file": "pixel2x_candidates/D11_blanket_ochre.png",
+        "sha256": "379026a35f5647508cf53410a7371244476c683bef882b6ec7a51cdf616b8765",
+        "grid": {
+          "even_dimensions": true,
+          "rgba_identical_2x2": true,
+          "origin": [
+            0,
+            0
+          ],
+          "nonuniform_blocks": 0
+        },
+        "alpha": {
+          "min": 0,
+          "max": 255,
+          "fully_transparent_pixels": 192416,
+          "partially_transparent_pixels": 0,
+          "opaque_pixels": 150944,
+          "alpha_zero_nonzero_rgb_pixels": 0
+        },
+        "technical_candidate_only": true,
+        "alpha128_silhouette_added_pixels": 607,
+        "alpha128_silhouette_removed_pixels": 126,
+        "alpha128_silhouette_iou": 0.9951479446614152,
+        "maximum_silhouette_displacement_pixels": 1.0,
+        "opaque_core_mean_rgb_abs_difference_0_255": 3.9527118157274974,
+        "opaque_core_rgb_unchanged_fraction": 0.2565569533000172,
+        "native_to_grid_not_lossless": true
+      }
+    },
+    {
+      "id": "D11_blanket_teal",
+      "label_ko": "청록색 담요 1장",
+      "source": "phase2/daily_objects/D11_family_supplies_sheet.png",
+      "native_file": "assets_native/D11_blanket_teal.png",
+      "native_sha256": "b0c41b8e5505a0a9ed88dd4a8f33867a42ff22952ede17ceb763b53588c49a34",
+      "canvas_size": [
+        588,
+        640
+      ],
+      "source_bbox_nonzero_alpha_xyxy": [
+        570,
+        9,
+        1141,
+        632
+      ],
+      "source_position_of_output_top_left_xy": [
+        562,
+        0
+      ],
+      "nonzero_alpha_pixel_count": 174491,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "fully_transparent_pixels": 201829,
+        "partially_transparent_pixels": 174491,
+        "opaque_pixels": 0,
+        "alpha_zero_nonzero_rgb_pixels": 0
+      },
+      "grid_native": {
+        "even_dimensions": true,
+        "rgba_identical_2x2": false,
+        "origin": [
+          0,
+          0
+        ],
+        "nonuniform_blocks": 44518
+      },
+      "source_canvas_touched_by_any_alpha_including_faint_noise": false,
+      "source_canvas_clips_visible_shape": false,
+      "runtime_auto_apply": false,
+      "visual_approval": "review_candidate_preserving_source",
+      "pixel2x": {
+        "file": "pixel2x_candidates/D11_blanket_teal.png",
+        "sha256": "de6d22576333b1150e84b6fb978dbaf14c2ddda0767513992f0bee285cb22083",
+        "grid": {
+          "even_dimensions": true,
+          "rgba_identical_2x2": true,
+          "origin": [
+            0,
+            0
+          ],
+          "nonuniform_blocks": 0
+        },
+        "alpha": {
+          "min": 0,
+          "max": 255,
+          "fully_transparent_pixels": 216204,
+          "partially_transparent_pixels": 0,
+          "opaque_pixels": 160116,
+          "alpha_zero_nonzero_rgb_pixels": 0
+        },
+        "technical_candidate_only": true,
+        "alpha128_silhouette_added_pixels": 615,
+        "alpha128_silhouette_removed_pixels": 125,
+        "alpha128_silhouette_iou": 0.9953819559288821,
+        "maximum_silhouette_displacement_pixels": 1.0,
+        "opaque_core_mean_rgb_abs_difference_0_255": 3.6057269679123016,
+        "opaque_core_rgb_unchanged_fraction": 0.2633553968833064,
+        "native_to_grid_not_lossless": true
+      }
+    },
+    {
+      "id": "D11_mittens_pair",
+      "label_ko": "장갑 한 쌍",
+      "source": "phase2/daily_objects/D11_family_supplies_sheet.png",
+      "native_file": "assets_native/D11_mittens_pair.png",
+      "native_sha256": "2d65d9939b520a76abb71c6206e25a8d47d75d400e204c684eff85ed290101c4",
+      "canvas_size": [
+        436,
+        648
+      ],
+      "source_bbox_nonzero_alpha_xyxy": [
+        1116,
+        3,
+        1536,
+        634
+      ],
+      "source_position_of_output_top_left_xy": [
+        1108,
+        -6
+      ],
+      "nonzero_alpha_pixel_count": 107911,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "fully_transparent_pixels": 174617,
+        "partially_transparent_pixels": 107911,
+        "opaque_pixels": 0,
+        "alpha_zero_nonzero_rgb_pixels": 0
+      },
+      "grid_native": {
+        "even_dimensions": true,
+        "rgba_identical_2x2": false,
+        "origin": [
+          0,
+          0
+        ],
+        "nonuniform_blocks": 27522
+      },
+      "source_canvas_touched_by_any_alpha_including_faint_noise": true,
+      "source_canvas_clips_visible_shape": false,
+      "runtime_auto_apply": false,
+      "visual_approval": "review_candidate_preserving_source",
+      "pixel2x": {
+        "file": "pixel2x_candidates/D11_mittens_pair.png",
+        "sha256": "fbb7194417733c1c0ba35f2ef712c91abe43d5caca00ae6d501cc671c8db71c5",
+        "grid": {
+          "even_dimensions": true,
+          "rgba_identical_2x2": true,
+          "origin": [
+            0,
+            0
+          ],
+          "nonuniform_blocks": 0
+        },
+        "alpha": {
+          "min": 0,
+          "max": 255,
+          "fully_transparent_pixels": 183732,
+          "partially_transparent_pixels": 0,
+          "opaque_pixels": 98796,
+          "alpha_zero_nonzero_rgb_pixels": 0
+        },
+        "technical_candidate_only": true,
+        "alpha128_silhouette_added_pixels": 580,
+        "alpha128_silhouette_removed_pixels": 84,
+        "alpha128_silhouette_iou": 0.9932847896440129,
+        "maximum_silhouette_displacement_pixels": 1.0,
+        "opaque_core_mean_rgb_abs_difference_0_255": 4.748640807383497,
+        "opaque_core_rgb_unchanged_fraction": 0.2570551951164946,
+        "native_to_grid_not_lossless": true
+      }
+    },
+    {
+      "id": "D11_sewing_pouch_group",
+      "label_ko": "바느질 주머니 묶음",
+      "source": "phase2/daily_objects/D11_family_supplies_sheet.png",
+      "native_file": "assets_native/D11_sewing_pouch_group.png",
+      "native_sha256": "525f0ef4ab8571b815cf0bf63e85489a51f2278fc3ba5f95bf74c223bc819780",
+      "canvas_size": [
+        930,
+        592
+      ],
+      "source_bbox_nonzero_alpha_xyxy": [
+        0,
+        449,
+        914,
+        1024
+      ],
+      "source_position_of_output_top_left_xy": [
+        -8,
+        440
+      ],
+      "nonzero_alpha_pixel_count": 216659,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "fully_transparent_pixels": 333901,
+        "partially_transparent_pixels": 216659,
+        "opaque_pixels": 0,
+        "alpha_zero_nonzero_rgb_pixels": 0
+      },
+      "grid_native": {
+        "even_dimensions": true,
+        "rgba_identical_2x2": false,
+        "origin": [
+          0,
+          0
+        ],
+        "nonuniform_blocks": 55119
+      },
+      "source_canvas_touched_by_any_alpha_including_faint_noise": true,
+      "source_canvas_clips_visible_shape": false,
+      "runtime_auto_apply": false,
+      "visual_approval": "review_candidate_preserving_source",
+      "pixel2x": {
+        "file": "pixel2x_candidates/D11_sewing_pouch_group.png",
+        "sha256": "68f521018b145f54d1aa55b972de9892c59ba9712c2b162f39e4dea77c40012e",
+        "grid": {
+          "even_dimensions": true,
+          "rgba_identical_2x2": true,
+          "origin": [
+            0,
+            0
+          ],
+          "nonuniform_blocks": 0
+        },
+        "alpha": {
+          "min": 0,
+          "max": 255,
+          "fully_transparent_pixels": 351008,
+          "partially_transparent_pixels": 0,
+          "opaque_pixels": 199552,
+          "alpha_zero_nonzero_rgb_pixels": 0
+        },
+        "technical_candidate_only": true,
+        "alpha128_silhouette_added_pixels": 1184,
+        "alpha128_silhouette_removed_pixels": 161,
+        "alpha128_silhouette_iou": 0.993265335756811,
+        "maximum_silhouette_displacement_pixels": 1.0,
+        "opaque_core_mean_rgb_abs_difference_0_255": 5.266516770116398,
+        "opaque_core_rgb_unchanged_fraction": 0.2664675083393151,
+        "native_to_grid_not_lossless": true
+      }
+    },
+    {
+      "id": "D11_button",
+      "label_ko": "단추",
+      "source": "phase2/daily_objects/D11_family_supplies_sheet.png",
+      "native_file": "assets_native/D11_button.png",
+      "native_sha256": "87f72cfbd7e83d198b9118a5a113c4fcd8a8ee7326ecab584587e20b8d33358e",
+      "canvas_size": [
+        352,
+        480
+      ],
+      "source_bbox_nonzero_alpha_xyxy": [
+        893,
+        560,
+        1228,
+        1024
+      ],
+      "source_position_of_output_top_left_xy": [
+        884,
+        552
+      ],
+      "nonzero_alpha_pixel_count": 36170,
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "fully_transparent_pixels": 132790,
+        "partially_transparent_pixels": 36170,
+        "opaque_pixels": 0,
+        "alpha_zero_nonzero_rgb_pixels": 0
+      },
+      "grid_native": {
+        "even_dimensions": true,
+        "rgba_identical_2x2": false,
+        "origin": [
+          0,
+          0
+        ],
+        "nonuniform_blocks": 9711
+      },
+      "source_canvas_touched_by_any_alpha_including_faint_noise": true,
+      "source_canvas_clips_visible_shape": false,
+      "runtime_auto_apply": false,
+      "visual_approval": "review_candidate_preserving_source",
+      "pixel2x": {
+        "file": "pixel2x_candidates/D11_button.png",
+        "sha256": "3a5fefa0d3c9ec7b7c0056c06cd90fbc4d4c1bf9c4491ec1d006d51bfe7657d1",
+        "grid": {
+          "even_dimensions": true,
+          "rgba_identical_2x2": true,
+          "origin": [
+            0,
+            0
+          ],
+          "nonuniform_blocks": 0
+        },
+        "alpha": {
+          "min": 0,
+          "max": 255,
+          "fully_transparent_pixels": 138340,
+          "partially_transparent_pixels": 0,
+          "opaque_pixels": 30620,
+          "alpha_zero_nonzero_rgb_pixels": 0
+        },
+        "technical_candidate_only": true,
+        "alpha128_silhouette_added_pixels": 234,
+        "alpha128_silhouette_removed_pixels": 38,
+        "alpha128_silhouette_iou": 0.9911279274577598,
+        "maximum_silhouette_displacement_pixels": 1.0,
+        "opaque_core_mean_rgb_abs_difference_0_255": 4.891476997005527,
+        "opaque_core_rgb_unchanged_fraction": 0.26499307602173067,
+        "native_to_grid_not_lossless": true
+      }
+    },
+    {
+      "id": "D11_short_thread",
+      "label_ko": "짧은 실",
+      "source": "phase2/daily_objects/D11_family_supplies_sheet.png",
+      "native_file": "assets_native/D11_short_thread.png",
+      "native_sha256": "cdd66f586b96d259aeb88f0ee0aa23a1cbe8a01e8c7f940f52e6866e404a5c26",
+      "canvas_size": [
+        338,
+        466
+      ],
+      "source_bbox_nonzero_alpha_xyxy": [
+        1179,
+        575,
+        1500,
+        1024
+      ],
+      "source_position_of_output_top_left_xy": [
+        1170,
+        566
+      ],
+      "nonzero_alpha_pixel_count": 13980,
+      "alpha": {
+        "min": 0,
+        "max": 253,
+        "fully_transparent_pixels": 143528,
+        "partially_transparent_pixels": 13980,
+        "opaque_pixels": 0,
+        "alpha_zero_nonzero_rgb_pixels": 0
+      },
+      "grid_native": {
+        "even_dimensions": true,
+        "rgba_identical_2x2": false,
+        "origin": [
+          0,
+          0
+        ],
+        "nonuniform_blocks": 3837
+      },
+      "source_canvas_touched_by_any_alpha_including_faint_noise": true,
+      "source_canvas_clips_visible_shape": false,
+      "runtime_auto_apply": false,
+      "visual_approval": "review_candidate_preserving_source",
+      "pixel2x": {
+        "file": "pixel2x_candidates/D11_short_thread.png",
+        "sha256": "a5dfc223a228525fb7501da1262e737c7e082bc5d6dd7bd0e5afddd6a6bfda10",
+        "grid": {
+          "even_dimensions": true,
+          "rgba_identical_2x2": true,
+          "origin": [
+            0,
+            0
+          ],
+          "nonuniform_blocks": 0
+        },
+        "alpha": {
+          "min": 0,
+          "max": 255,
+          "fully_transparent_pixels": 149820,
+          "partially_transparent_pixels": 0,
+          "opaque_pixels": 7688,
+          "alpha_zero_nonzero_rgb_pixels": 0
+        },
+        "technical_candidate_only": true,
+        "alpha128_silhouette_added_pixels": 373,
+        "alpha128_silhouette_removed_pixels": 69,
+        "alpha128_silhouette_iou": 0.9430192084568777,
+        "maximum_silhouette_displacement_pixels": 1.0,
+        "opaque_core_mean_rgb_abs_difference_0_255": 13.865630511463845,
+        "opaque_core_rgb_unchanged_fraction": 0.23743386243386244,
+        "native_to_grid_not_lossless": true
+      }
+    },
+    {
+      "id": "D06_tincan_alarm",
+      "label_ko": "깡통 경보기",
+      "source": "phase2/fire/D06_tincan_oilcloth.png",
+      "native_file": "assets_native/D06_tincan_alarm.png",
+      "native_sha256": "6e07fb43165a834af14e1361fa19c5af8dd2c0487ab37e83b468717734215f52",
+      "canvas_size": [
+        808,
+        904
+      ],
+      "source_bbox_nonzero_alpha_xyxy": [
+        0,
+        0,
+        792,
+        887
+      ],
+      "source_position_of_output_top_left_xy": [
+        -8,
+        -8
+      ],
+      "nonzero_alpha_pixel_count": 217238,
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "fully_transparent_pixels": 513194,
+        "partially_transparent_pixels": 216761,
+        "opaque_pixels": 477,
+        "alpha_zero_nonzero_rgb_pixels": 0
+      },
+      "grid_native": {
+        "even_dimensions": true,
+        "rgba_identical_2x2": false,
+        "origin": [
+          0,
+          0
+        ],
+        "nonuniform_blocks": 54370
+      },
+      "source_canvas_touched_by_any_alpha_including_faint_noise": true,
+      "source_canvas_clips_visible_shape": true,
+      "runtime_auto_apply": false,
+      "visual_approval": "review_candidate_preserving_source",
+      "pixel2x": {
+        "file": null,
+        "status": "not_resampled_to_preserve_evidence_shape"
+      }
+    },
+    {
+      "id": "D06_oilcloth",
+      "label_ko": "기름 묻은 천",
+      "source": "phase2/fire/D06_tincan_oilcloth.png",
+      "native_file": "assets_native/D06_oilcloth.png",
+      "native_sha256": "579eb1806ed8f01d506fb671ad06ca7e39ba7646e27e8d9df1ccc36174509d1e",
+      "canvas_size": [
+        1066,
+        842
+      ],
+      "source_bbox_nonzero_alpha_xyxy": [
+        672,
+        63,
+        1722,
+        887
+      ],
+      "source_position_of_output_top_left_xy": [
+        664,
+        54
+      ],
+      "nonzero_alpha_pixel_count": 322630,
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "fully_transparent_pixels": 574942,
+        "partially_transparent_pixels": 322294,
+        "opaque_pixels": 336,
+        "alpha_zero_nonzero_rgb_pixels": 0
+      },
+      "grid_native": {
+        "even_dimensions": true,
+        "rgba_identical_2x2": false,
+        "origin": [
+          0,
+          0
+        ],
+        "nonuniform_blocks": 80815
+      },
+      "source_canvas_touched_by_any_alpha_including_faint_noise": true,
+      "source_canvas_clips_visible_shape": false,
+      "runtime_auto_apply": false,
+      "visual_approval": "review_candidate_preserving_source",
+      "pixel2x": {
+        "file": null,
+        "status": "not_resampled_to_preserve_evidence_shape"
+      }
+    }
+  ],
+  "limitations": [
+    "Normal alpha composites already hide most wide apparent glow. Clearing hidden RGB must not be described as a major visible halo removal.",
+    "Native outputs preserve all semi-transparency, including fine edge pixels. No legitimate translucent detail is hard-thresholded.",
+    "D06 tin rope reaches and is cut by the original top canvas edge; no missing rope is reconstructed.",
+    "Mittens, sewing pouch/needle/spool, scarf/pencils and exchange-box pouch overlap their bases and are not separated or reconstructed.",
+    "Native image grid is not strict 2x2. Only the eight optional lifestyle variants meet the strict RGBA grid check.",
+    "Strict 2x2 technical validity is not art approval. Texture and thin edges change in optional grid variants.",
+    "No game-engine, mobile display, branch count, collision, story or evidence proof verification."
+  ],
+  "counts": {
+    "original_source_pngs": 4,
+    "native_cleaned_sheets": 4,
+    "native_individual_assets": 10,
+    "optional_strict_2x2_assets": 8,
+    "excluded_fire_resamples": 2
+  }
+}

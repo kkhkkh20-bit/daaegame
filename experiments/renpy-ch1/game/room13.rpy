@@ -84,7 +84,7 @@ label r13_lines(entries,identity,binding_route=None):
     hide r13_visitor
     $ r13_ep_line_art_clear()
     $ dialogue_speaker=None
-    $ r13_thought_active=False
+    $ r13_thought_active=False; ms14_block_skip = bool(ms14 and r13_conv_skip)
     $ r13_conv_skip=False
     return
 

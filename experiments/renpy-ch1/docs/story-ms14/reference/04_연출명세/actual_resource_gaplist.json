@@ -1,0 +1,225 @@
+{
+  "version": "DT_CINEMATIC_SPEC_01_20261020",
+  "scope": "72연출앵커와 관련된 실제 확인 리소스/남은 제작 작업. 전체 게임 리소스 완비 주장 아님.",
+  "items": [
+    {
+      "id": "fire",
+      "cutscene": "A02",
+      "existing_files": [
+        {
+          "package_path": "phase2/branches/D06_woodshed_intact.png",
+          "exists": true
+        },
+        {
+          "package_path": "phase2/branches/D06_woodshed_after_fire.png",
+          "exists": true
+        },
+        {
+          "package_path": "phase2/branches/D06_tin_empty_alarm.png",
+          "exists": true
+        },
+        {
+          "package_path": "phase2/branches/D06_tin_acorn_alarm.png",
+          "exists": true
+        }
+      ],
+      "remaining_work": "분리 연기·불빛/실제 구조 손동작은 신규 제작 또는 단순 오버레이 필요. 기존 전후 배경은 동일 원근·좌표 정합 검사 필요.",
+      "low_cost_fallback": "2정지 배경+환경음. 발화 위치를 새로 확정하지 않음.",
+      "status": "제작 후보 파일 존재 확인; 최종 미술·물리·실행 승인 아님"
+    },
+    {
+      "id": "door",
+      "cutscene": "A03",
+      "existing_files": [
+        {
+          "package_path": "phase2/layouts/room_door_gap_candidate.png",
+          "exists": true
+        },
+        {
+          "package_path": "phase2/candlestick/D10_candlestick_lower.png",
+          "exists": true
+        }
+      ],
+      "remaining_work": "도토→아빠 손 인계 연속컷, 실제 문틈 손 두 개 가시성·지렛대 작업 자세, 목재 파손음 필요.",
+      "low_cost_fallback": "복도 원화+중립 손잡이 확대+원문 서술. 검증 안 된 틈 단면 확대 금지.",
+      "status": "제작 후보 파일 존재 확인; 최종 미술·물리·실행 승인 아님"
+    },
+    {
+      "id": "fatal",
+      "cutscene": "A04",
+      "existing_files": [
+        {
+          "package_path": "phase2/candlestick/D10_upper_wrapped_observed.png",
+          "exists": true
+        },
+        {
+          "package_path": "phase2/candlestick/D10_pin_connection_observed.png",
+          "exists": true
+        },
+        {
+          "package_path": "phase2/candlestick/D10_wire_main.png",
+          "exists": true
+        },
+        {
+          "package_path": "phase2/candlestick/D10_wire_fragment.png",
+          "exists": true
+        }
+      ],
+      "remaining_work": "확정 배치·핀 길이·구리 돌출 끝·상처 접촉면 물리 검증 남음. 수리 끝 안쪽 말림과 돌출 양립 확인. DEV 재구성 컷은 공개 이미지가 아님.",
+      "low_cost_fallback": "관찰된 소품 따로 표시. 결합 확정 및 특정 휘두름 영상 보류.",
+      "status": "제작 후보 파일 존재 확인; 최종 미술·물리·실행 승인 아님"
+    },
+    {
+      "id": "court",
+      "cutscene": "A04",
+      "existing_files": [
+        {
+          "package_path": "phase2/layouts/special_backgrounds/hearing_hall_candidate.png",
+          "exists": true
+        }
+      ],
+      "remaining_work": "회관 실제 인물 배치·증인 부재 대체·문서 공개면 마스킹 구현 필요.",
+      "low_cost_fallback": "기존 회관 BG, 실제 화자 스프라이트. 비밀 편지 썸네일 숨김.",
+      "status": "제작 후보 파일 존재 확인; 최종 미술·물리·실행 승인 아님"
+    },
+    {
+      "id": "cart",
+      "cutscene": "A05",
+      "existing_files": [
+        {
+          "package_path": "phase2/branches/D13_cart_wheel_still.png",
+          "exists": true
+        },
+        {
+          "package_path": "phase2/branches/D13_cart_wheel_moving_keyframe.png",
+          "exists": true
+        },
+        {
+          "package_path": "phase2/audio/SFX_cart_start.wav",
+          "exists": true
+        },
+        {
+          "package_path": "phase2/audio/SFX_cart_stop.wav",
+          "exists": true
+        }
+      ],
+      "remaining_work": "움직임 키프레임은 완성 애니메이션 아님. 손/고삐/발판/실제 하차자 레이어와 프레임 정합 검증 필요.",
+      "low_cost_fallback": "바퀴 정지컷 전환+저음 바퀴소리. 실제 정지 성공조건 유지.",
+      "status": "제작 후보 파일 존재 확인; 최종 미술·물리·실행 승인 아님"
+    },
+    {
+      "id": "altar",
+      "cutscene": "A06",
+      "existing_files": [
+        {
+          "package_path": "phase2/branches/D14_binding_ring_intact.png",
+          "exists": true
+        },
+        {
+          "package_path": "phase2/branches/D14_binding_ring_removed.png",
+          "exists": true
+        },
+        {
+          "package_path": "phase2/audio/SFX_tool_rub_quiet.wav",
+          "exists": true
+        }
+      ],
+      "remaining_work": "고리 제거 외의 잔열 전달부 픽셀 일치·실제 손/공구 컷 필요. 촌장 장소·쿠키 대체 P0 미해결.",
+      "low_cost_fallback": "분리 전후 중 해당 상태 이미지 1장; 완료하지 않았으면 전 상태 유지.",
+      "status": "제작 후보 파일 존재 확인; 최종 미술·물리·실행 승인 아님"
+    },
+    {
+      "id": "portrait",
+      "cutscene": "B01",
+      "existing_files": [
+        {
+          "package_path": "phase2/branches/D03_mother_portrait_unfinished.png",
+          "exists": true
+        },
+        {
+          "package_path": "phase2/branches/D03_mother_portrait_completed.png",
+          "exists": true
+        },
+        {
+          "package_path": "phase2/branches/D03_mother_portrait_child_stroke.png",
+          "exists": true
+        },
+        {
+          "package_path": "phase2/family/D01_family_drawing_three_arms.png",
+          "exists": true
+        }
+      ],
+      "remaining_work": "사용자 최신 요청의 서툰 크레파스 눈·코·입 느낌 검수 필요. 존재만으로 채택하지 않음.",
+      "low_cost_fallback": "구버전 승인 이미지가 확인되면 유지. 미승인 새 그림 자동 교체 금지.",
+      "status": "제작 후보 파일 존재 확인; 최종 미술·물리·실행 승인 아님"
+    },
+    {
+      "id": "warning",
+      "cutscene": "B04",
+      "existing_files": [
+        {
+          "package_path": "phase2/documents/D05_warning_private.png",
+          "exists": true
+        }
+      ],
+      "remaining_work": "공개 제시창·회관에 비밀 경고 렌더 금지. 실제 스마트폰 글씨 크기 검증 필요.",
+      "low_cost_fallback": "기존 개인 수첩 읽기, 새 회상 영상 없음.",
+      "status": "제작 후보 파일 존재 확인; 최종 미술·물리·실행 승인 아님"
+    },
+    {
+      "id": "soup",
+      "cutscene": "B07",
+      "existing_files": [
+        {
+          "package_path": "phase2/layouts/school_serving_washstand_candidate.png",
+          "exists": true
+        }
+      ],
+      "remaining_work": "병과 파편 같은 원본 형상 데이터는 proofs에 있으나 실제 시야·손 가림·왕복 배제 배치 검증 필요. 만능 목격 영상 만들지 않음.",
+      "low_cost_fallback": "같은 원본 소품 대조+증언 범위 도식. 약 성분·치사량 시각 확정 금지.",
+      "status": "제작 후보 파일 존재 확인; 최종 미술·물리·실행 승인 아님"
+    }
+  ],
+  "common": [
+    "입력 전/후 이미지 별도 역할 지정",
+    "스프라이트 존재·표정·투명 가장자리·실제 모바일 크기는 렌더 검수 필요",
+    "신규 음향 이름은 제안이며 없는 파일을 재생 가능하다고 표시하지 않음",
+    "컷신 시스템·저장·스킵·롤백·재열람 중복 효과 검증은 엔진 연결 후"
+  ],
+  "verification_matrix": [
+    {
+      "check": "82장면 배치/13군/72앵커 실제 ID",
+      "status": "정적 확인 완료"
+    },
+    {
+      "check": "모든 이미지 최종 도트 스타일/얼굴 크레파스 수정",
+      "status": "미완료; 별도 미술 검수"
+    },
+    {
+      "check": "10일 물증 접촉 역학·12일 실제 시야",
+      "status": "보류"
+    },
+    {
+      "check": "예방/부분/철수/폭력 경로 실제 엔진 재생",
+      "status": "미실시"
+    },
+    {
+      "check": "저장/불러오기/스킵/재열람 1회 효과",
+      "status": "미실시"
+    },
+    {
+      "check": "모바일 크롭/프레임/저사양 재생",
+      "status": "미실시"
+    },
+    {
+      "check": "신규 플레이어 재미",
+      "status": "미실시"
+    }
+  ],
+  "demo_order": [
+    "1일 오프닝→입구 추리",
+    "3일 절도 반박",
+    "4일 일상 대화 호흡",
+    "10일 물증 검증 완료 후 대표 대결"
+  ]
+}

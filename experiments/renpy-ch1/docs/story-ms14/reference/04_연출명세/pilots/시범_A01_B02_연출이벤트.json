@@ -1,0 +1,1224 @@
+{
+  "kind": "presentation_authoring_spec_not_engine_code",
+  "version": "DT_CINEMATIC_SPEC_01_20261020",
+  "story_version": "DT_STORY_1.1_PRODUCTION_BASIS_01_20261020",
+  "source_sha256": "2da28b3699e5195a99fc8dfcf53109e52e7a4d9eb526863169a10dcdba5e9c8e",
+  "viewport": {
+    "base": "existing engine approved landscape viewport; do not change project resolution",
+    "pixel_policy": "nearest-neighbor; 2px source-snapped translation; fixed scale during shot, no continuous zoom; validate existing asset grid separately",
+    "evidence": "800x640 common canvases; never independently enlarge fragment and knife; preserve transparent origin",
+    "mobile": "fit whole evidence incl fracture inside safe viewing area, no stretch. If fit loses readability use two equal-scale panels and tap-to-open, not tiny hidden hotspots."
+  },
+  "runtime_contract": {
+    "state_owner": "original story executor only; these events do not independently grant evidence or mutate story",
+    "completion": "pure visual can finish/skip immediately; mandatory choice/evidence gate remains. Story effects remain attached to original record and commit once by original scene/record/effect key in existing save transaction",
+    "save_load": "persist existing source record cursor, selected callback, input pending state, existing effect execution ledger plus presentation cursor if supported. On resume restore static endframe rather than replay sound/awards",
+    "replay": "gallery/reference replay read-only; no story awards, time costs or conditions changed",
+    "skip": "skip visual tween/silence but stop at unread required input; never synthesize correct evidence, letter-close, return-stone or custody choices",
+    "failed_asset_or_sound": "stop dependent visual; use same-source text+existing BG; no fabricate crime reconstruction; image hold remains visible to developer",
+    "idempotency": "source effects must not run again on loading after a committed effect. No new named story flags invented in this document.",
+    "click_semantics": "While text types: first click reveals current whole line only, second independent click advances. Do not carry same pointer-up into choice/evidence underneath. Repeated rapid click cannot invoke multiple callbacks or skip mandatory input. Existing skip/read preferences preserved.",
+    "qa_cases": [
+      "Save before/after E01, E03, E04 original effects; load and inspect again, one grant only",
+      "Repeat click during scene change and choice activation, exactly one selected callback",
+      "Skip A01 ends visual, letter interaction still waits",
+      "S03 all three proofs immediately: B005 direct success; optional reason not required",
+      "S03 wrong/hint then retry: correct branch unique, time0",
+      "D03 compare incomplete evidence: no matched geometry reveal, no E33 or E17 fabrication",
+      "D03 return choice vs custody independent, S06 installs only returned3"
+    ]
+  },
+  "bgm": "retain actual scene existing licensed BGM if engine mapping verified; otherwise silence. No invented music filename or presumed third-party license. Reused SFX candidates need listening/mix QA.",
+  "assets": {
+    "forest": {
+      "path": "resources02/phase2/reuse/backgrounds/wide-forest-morning.webp",
+      "exists": true,
+      "sha256": "ffae3617438a3f11a2f1607eba06272b4af78f68c90f4cb22d4cfe4bfd4b4307",
+      "size_px": [
+        2172,
+        724
+      ],
+      "approval": "EXISTING_CANDIDATE_REQUIRES_IN_ENGINE_QA"
+    },
+    "carriage": {
+      "path": "resources02/phase2/reuse/backgrounds/carriage-empty-winter.webp",
+      "exists": true,
+      "sha256": "c209bad206a6c24a7b4b5d53336ba30a4b9ea4eccf164533952ad72a8bbc75dc",
+      "size_px": [
+        1386,
+        780
+      ],
+      "approval": "EXISTING_CANDIDATE_REQUIRES_IN_ENGINE_QA"
+    },
+    "gate": {
+      "path": "resources02/phase2/reuse/backgrounds/gate-morning.webp",
+      "exists": true,
+      "sha256": "0edc16266d091655e7fd3c74f76c87a5e95029c019862d742b525712b7b9ab57",
+      "size_px": [
+        1672,
+        941
+      ],
+      "approval": "EXISTING_CANDIDATE_REQUIRES_IN_ENGINE_QA"
+    },
+    "square": {
+      "path": "resources02/phase2/reuse/backgrounds/square.webp",
+      "exists": true,
+      "sha256": "212f0dd839b6f937619f4acaeda1094446b5a0d060cc1be14a692b2838a04f30",
+      "size_px": [
+        2048,
+        768
+      ],
+      "approval": "EXISTING_CANDIDATE_REQUIRES_IN_ENGINE_QA"
+    },
+    "cookie_reference": {
+      "path": "resources02/phase2/reuse/cutscenes/CH01_cookiebag_waiting_v2.png",
+      "exists": true,
+      "sha256": "5f433b291b43ebb06594816475a27577a89e78b4075730458b59d6f25b73fb53",
+      "size_px": [
+        1672,
+        941
+      ],
+      "approval": "REFERENCE_ONLY_NOT_APPLY_APPROVAL"
+    },
+    "knife": {
+      "path": "resource_corrections03/evidence/D03_knife_broken.png",
+      "exists": true,
+      "sha256": "f2f96ec7586859a25161ff3fc47dd67ab2bf71d2fb405a7419c7fbaeffa7735e",
+      "size_px": [
+        800,
+        640
+      ],
+      "approval": "VISUAL_AND_PHYSICS_HOLD"
+    },
+    "fragment": {
+      "path": "resource_corrections03/evidence/D03_knife_fragment.png",
+      "exists": true,
+      "sha256": "2beafac26b2f7205c217737811c6a416b509ab86141f6a07ca70d0939cdc447e",
+      "size_px": [
+        800,
+        640
+      ],
+      "approval": "VISUAL_AND_PHYSICS_HOLD"
+    },
+    "lantern": {
+      "path": "resource_corrections03/evidence/D03_lantern_open_empty.png",
+      "exists": true,
+      "sha256": "20194ab859397cb0955aba5717ebe1283d727c88393a7885e25180f9ac6579c3",
+      "size_px": [
+        800,
+        640
+      ],
+      "approval": "VISUAL_AND_PHYSICS_HOLD"
+    },
+    "roll": {
+      "path": "resources02/phase2/audio/SFX_cart_wood_roll_loop.wav",
+      "exists": true,
+      "sha256": "e9452256b9dc0be123745af524f2f8df3a2946573543cebc95be7e7fdff618d7",
+      "size_px": null,
+      "approval": "EXISTING_CANDIDATE_REQUIRES_IN_ENGINE_QA"
+    },
+    "stop": {
+      "path": "resources02/phase2/audio/SFX_cart_stop.wav",
+      "exists": true,
+      "sha256": "1e1ae91552d107a971e3edd8f04266f3271a0db68ab0a8eaf29c92778e867e29",
+      "size_px": null,
+      "approval": "EXISTING_CANDIDATE_REQUIRES_IN_ENGINE_QA"
+    },
+    "wind": {
+      "path": "resources02/phase2/audio/AMB_cold_wind_loop.wav",
+      "exists": true,
+      "sha256": "26e4449b6f172a44bc8314a2885d407e5c20619f24fbea9197c25a580ae3919e",
+      "size_px": null,
+      "approval": "EXISTING_CANDIDATE_REQUIRES_IN_ENGINE_QA"
+    },
+    "cloth": {
+      "path": "resources02/phase2/audio/SFX_cloth_rub_quiet.wav",
+      "exists": true,
+      "sha256": "d9fa6cf172dd247cd8a379fc58cb5172b0c78e5cef2418592ac567d0155bbfc7",
+      "size_px": null,
+      "approval": "EXISTING_CANDIDATE_REQUIRES_IN_ENGINE_QA"
+    },
+    "tool": {
+      "path": "resources02/phase2/audio/SFX_tool_rub_quiet.wav",
+      "exists": true,
+      "sha256": "e92b78eb64ee29019327187551d04cbe9a8fd02465aa03427a9e0b5d8f0cf7f3",
+      "size_px": null,
+      "approval": "EXISTING_CANDIDATE_REQUIRES_IN_ENGINE_QA"
+    },
+    "D01_invitation": {
+      "path": "resource_corrections03/documents/D01_invitation.png",
+      "exists": true,
+      "size_px": [
+        960,
+        840
+      ],
+      "approval": "EXISTING_CANDIDATE_NOT_AUTO_APPROVED; runtime fields require source values"
+    },
+    "D03_chorong_inspection": {
+      "path": "resource_corrections03/documents/D03_chorong_inspection.png",
+      "exists": true,
+      "size_px": [
+        960,
+        1280
+      ],
+      "approval": "EXISTING_CANDIDATE_NOT_AUTO_APPROVED; runtime fields require source values"
+    },
+    "D03_tool_loan": {
+      "path": "resource_corrections03/documents/D03_tool_loan.png",
+      "exists": true,
+      "size_px": [
+        960,
+        1280
+      ],
+      "approval": "EXISTING_CANDIDATE_NOT_AUTO_APPROVED; runtime fields require source values"
+    },
+    "D03_ubak_measurement_template": {
+      "path": "resource_corrections03/documents/D03_ubak_measurement_template.png",
+      "exists": true,
+      "size_px": [
+        960,
+        1280
+      ],
+      "approval": "EXISTING_CANDIDATE_NOT_AUTO_APPROVED; runtime fields require source values"
+    },
+    "D03_transport_note": {
+      "path": "resource_corrections03/documents/D03_transport_note.png",
+      "exists": true,
+      "size_px": [
+        960,
+        1280
+      ],
+      "approval": "EXISTING_CANDIDATE_NOT_AUTO_APPROVED; runtime fields require source values"
+    },
+    "D03_silluk_sale_template": {
+      "path": "resource_corrections03/documents/D03_silluk_sale_template.png",
+      "exists": true,
+      "size_px": [
+        960,
+        1280
+      ],
+      "approval": "EXISTING_CANDIDATE_NOT_AUTO_APPROVED; runtime fields require source values"
+    },
+    "D03_stone_number3_matched": {
+      "path": "resources02/phase2/documents/D03_stone_number3_matched.png",
+      "exists": true,
+      "size_px": [
+        960,
+        1280
+      ],
+      "approval": "EXISTING_CANDIDATE_NOT_AUTO_APPROVED; runtime fields require source values"
+    },
+    "D01_E02_gate_processing": {
+      "path": "resource_corrections03/documents/D01_E02_gate_processing.png",
+      "exists": true,
+      "size_px": [
+        960,
+        1280
+      ],
+      "approval": "USER_VISIT_APPLICATION_ART_DISLIKED; do not silently adopt final03; layout binding only pending art review"
+    },
+    "D01_E03_visit_application": {
+      "path": "resource_corrections03/documents/D01_E03_visit_application.png",
+      "exists": true,
+      "size_px": [
+        960,
+        1280
+      ],
+      "approval": "USER_VISIT_APPLICATION_ART_DISLIKED; do not silently adopt final03; layout binding only pending art review"
+    },
+    "D01_E03_lodging_detail": {
+      "path": "resource_corrections03/documents/D01_E03_lodging_detail.png",
+      "exists": true,
+      "size_px": [
+        688,
+        230
+      ],
+      "approval": "USER_VISIT_APPLICATION_ART_DISLIKED; do not silently adopt final03; layout binding only pending art review"
+    },
+    "D01_E04_winter_rules": {
+      "path": "resource_corrections03/documents/D01_E04_winter_rules.png",
+      "exists": true,
+      "size_px": [
+        960,
+        1280
+      ],
+      "approval": "USER_VISIT_APPLICATION_ART_DISLIKED; do not silently adopt final03; layout binding only pending art review"
+    }
+  },
+  "pilots": [
+    {
+      "id": "A01",
+      "scenes": [
+        "MS14_D01_S01",
+        "MS14_D01_S02"
+      ],
+      "enter_when": [
+        "new_game=true",
+        "day=1",
+        "father.alive=true",
+        "daram.alive=true",
+        "father.location=carriage",
+        "daram.location=carriage"
+      ],
+      "visual_target_seconds": [
+        20,
+        35
+      ],
+      "shot_duration_note": "A01_01/02/03/04/07 total20–35s; A01_08 belongs to following stop scene. No target implies compulsory wait.",
+      "shots": [
+        {
+          "shot_id": "A01_01",
+          "source_scene": "MS14_D01_S01",
+          "source_block": "MS14_D01_S01_B001",
+          "source_record": "MS14_D01_S01_L0001",
+          "source_text": "나무 바퀴 소리. 다람이 과자 봉지를 외투 안쪽으로 당긴다.",
+          "source_kind": "action",
+          "source_player_visible": false,
+          "source_block_guard_verbatim": "always",
+          "source_record_guard_verbatim": null,
+          "source_effects_verbatim": [],
+          "source_next_verbatim": "CONTINUE",
+          "target_visual_duration_seconds": [
+            6,
+            10
+          ],
+          "duration_policy": "click may finish visual early; no automatic answer or choice; reading/input excluded",
+          "visual": "아빠 시점의 숲길 정지 원화 팬. 원본 창 [0,0,1280,720]에서 [892,0,1280,720]까지 2픽셀 좌표만 이동. 처음엔 대사창 숨김, 다음 입력은 허용. 원경/중경 분리된 것처럼 속도를 나누지 않음.",
+          "sfx_asset_keys": [
+            "wind",
+            "roll"
+          ],
+          "asset_keys": [
+            "forest"
+          ],
+          "input_gate": null,
+          "notes": "창 크기는 16:9 소스 관찰안. 실제 UI 기본 해상도와 별도 검증. 실제 마차 외부/바퀴 레이어 없음."
+        },
+        {
+          "shot_id": "A01_02",
+          "source_scene": "MS14_D01_S01",
+          "source_block": "MS14_D01_S01_B001",
+          "source_record": "MS14_D01_S01_L0001",
+          "source_text": "나무 바퀴 소리. 다람이 과자 봉지를 외투 안쪽으로 당긴다.",
+          "source_kind": "action",
+          "source_player_visible": false,
+          "source_block_guard_verbatim": "always",
+          "source_record_guard_verbatim": null,
+          "source_effects_verbatim": [],
+          "source_next_verbatim": "CONTINUE",
+          "target_visual_duration_seconds": [
+            3,
+            5
+          ],
+          "duration_policy": "click may finish visual early; no automatic answer or choice; reading/input excluded",
+          "visual": "동일 마차 내부 오른쪽 좌석 [650,0,736,780]만 고정배율로 보여 주는 좁은 프레임. 좌우 여백은 기존 UI 색으로 처리. 창밖 마을은 아직 보이지 않음. 다람의 기존 동일 인물 스프라이트만 배치하며 착석 포즈 없으면 서 있는 전신을 좌석에 억지 배치하지 않음.",
+          "sfx_asset_keys": [
+            "roll",
+            "cloth"
+          ],
+          "asset_keys": [
+            "carriage"
+          ],
+          "input_gate": null,
+          "notes": ""
+        },
+        {
+          "shot_id": "A01_03",
+          "source_scene": "MS14_D01_S01",
+          "source_block": "MS14_D01_S01_B001",
+          "source_record": "MS14_D01_S01_L0005",
+          "source_text": "아이가 내 소매를 붙잡았다. 빈손으로만.",
+          "source_kind": "narration",
+          "source_player_visible": true,
+          "source_block_guard_verbatim": "always",
+          "source_record_guard_verbatim": null,
+          "source_effects_verbatim": [],
+          "source_next_verbatim": "CONTINUE",
+          "target_visual_duration_seconds": [
+            2,
+            4
+          ],
+          "duration_policy": "click may finish visual early; no automatic answer or choice; reading/input excluded",
+          "visual": "아빠의 소매를 잡는 다람의 빈손 동작. 손 전용 일치 아트 없으면 서술+다람 표정으로 대체, 과자 봉지를 잡은 손과 바꾸지 않는다.",
+          "sfx_asset_keys": [
+            "cloth"
+          ],
+          "asset_keys": [],
+          "input_gate": null,
+          "notes": "신규 손 컷 미제작. 아빠 얼굴 역숏이나 엄마 회상 없음."
+        },
+        {
+          "shot_id": "A01_04",
+          "source_scene": "MS14_D01_S01",
+          "source_block": "MS14_D01_S01_B001",
+          "source_record": "MS14_D01_S01_L0007",
+          "source_text": "하나. 엄마 거.",
+          "source_kind": "dialogue",
+          "source_player_visible": true,
+          "source_block_guard_verbatim": "always",
+          "source_record_guard_verbatim": null,
+          "source_effects_verbatim": [],
+          "source_next_verbatim": "CONTINUE",
+          "target_visual_duration_seconds": [
+            3,
+            5
+          ],
+          "duration_policy": "click may finish visual early; no automatic answer or choice; reading/input excluded",
+          "visual": "엄마 몫 하나라는 대사와 함께 봉지에 시선. 승인된 무릎 위 봉지 컷 없으므로 현재는 기존 다람 표정+서술. 탁자 위 과자 CG는 참고만.",
+          "sfx_asset_keys": [
+            "cloth"
+          ],
+          "asset_keys": [
+            "cookie_reference"
+          ],
+          "input_gate": null,
+          "notes": "기존 CG를 무릎 위 소품인 것처럼 잘라 위조하지 않는다. 14일과 같은 과자 형태 보존."
+        },
+        {
+          "shot_id": "A01_05",
+          "source_scene": "MS14_D01_S01",
+          "source_block": "MS14_D01_S01_B002",
+          "source_record": "MS14_D01_S01_L0010",
+          "source_text": "조작: 편지 펼치기. “다람이를 데리고 와 줘. 여관 13호실에서 기다릴게.”",
+          "source_kind": "action",
+          "source_player_visible": false,
+          "source_block_guard_verbatim": "always AND input_completed(MS14_D01_S01:2)",
+          "source_record_guard_verbatim": null,
+          "source_effects_verbatim": [
+            "acquire(E01)"
+          ],
+          "source_next_verbatim": "CONTINUE",
+          "target_visual_duration_seconds": [
+            0,
+            0
+          ],
+          "duration_policy": "click may finish visual early; no automatic answer or choice; reading/input excluded",
+          "visual": "기존 편지 펼치기 입력을 기다린다. 애니메이션 완료로 E01을 지급하지 않는다.",
+          "sfx_asset_keys": [],
+          "asset_keys": [],
+          "input_gate": "input_completed(MS14_D01_S01:2)",
+          "notes": "원문 L0010만 acquire(E01)의 소유자. 컷신 스킵은 이 입력을 대신하지 않음."
+        },
+        {
+          "shot_id": "A01_06",
+          "source_scene": "MS14_D01_S01",
+          "source_block": "MS14_D01_S01_B002",
+          "source_record": "MS14_D01_S01_L0014",
+          "source_text": "편지를 살펴볼까?",
+          "source_kind": "choice",
+          "source_player_visible": true,
+          "source_block_guard_verbatim": "always AND input_completed(MS14_D01_S01:2)",
+          "source_record_guard_verbatim": null,
+          "source_effects_verbatim": [],
+          "source_next_verbatim": "CONTINUE",
+          "target_visual_duration_seconds": [
+            0,
+            0
+          ],
+          "duration_policy": "click may finish visual early; no automatic answer or choice; reading/input excluded",
+          "visual": "원래 세 선택지와 증거 읽기 화면. 마지막 줄/글씨 비교는 선택한 경우만.",
+          "sfx_asset_keys": [],
+          "asset_keys": [],
+          "input_gate": "MS14_D01_S01_L0014_O1/O2/O3, original dispatch",
+          "notes": ""
+        },
+        {
+          "shot_id": "A01_07",
+          "source_scene": "MS14_D01_S01",
+          "source_block": "MS14_D01_S01_B007",
+          "source_record": "MS14_D01_S01_L0022",
+          "source_text": "지붕 보입니다. 일어나지 마요. 아직 안 섰어요.",
+          "source_kind": "dialogue",
+          "source_player_visible": true,
+          "source_block_guard_verbatim": "always",
+          "source_record_guard_verbatim": null,
+          "source_effects_verbatim": [],
+          "source_next_verbatim": "CONTINUE",
+          "target_visual_duration_seconds": [
+            6,
+            11
+          ],
+          "duration_policy": "click may finish visual early; no automatic answer or choice; reading/input excluded",
+          "visual": "까로의 안내 뒤에 처음 마차 내부 전체 창을 보여 준다. 마을이 이미 원화 창밖에 있으므로 추가 마을 전경이라고 다른 배경을 먼저 삽입하지 않는다. 이어 기존 정차 입력·이동 흐름으로 연결.",
+          "sfx_asset_keys": [
+            "roll"
+          ],
+          "asset_keys": [
+            "carriage"
+          ],
+          "input_gate": null,
+          "notes": ""
+        },
+        {
+          "shot_id": "A01_08",
+          "source_scene": "MS14_D01_S02",
+          "source_block": "MS14_D01_S02_B001",
+          "source_record": "MS14_D01_S02_L0001",
+          "source_text": "마차가 멈춘다. 까로가 얼어 있는 발판을 가리킨다.",
+          "source_kind": "action",
+          "source_player_visible": false,
+          "source_block_guard_verbatim": "always",
+          "source_record_guard_verbatim": null,
+          "source_effects_verbatim": [],
+          "source_next_verbatim": "CONTINUE",
+          "target_visual_duration_seconds": [
+            2,
+            4
+          ],
+          "duration_policy": "click may finish visual early; no automatic answer or choice; reading/input excluded",
+          "visual": "정차 상태가 원래 진행에서 확정된 뒤 바퀴음을 정지하고 발판/초소 도착 원화로 연결. 얼어 있는 발판 전용 그림 없으면 원문 행동을 서술로 전달.",
+          "sfx_asset_keys": [
+            "stop"
+          ],
+          "asset_keys": [
+            "gate"
+          ],
+          "input_gate": null,
+          "notes": "MS14_D01_S02 진입은 carriage_stopped=true 필요. 이 파일이 생산자 없는 플래그를 새로 써 주지 않는다."
+        }
+      ],
+      "source_exits": [
+        {
+          "when": "모든 필수 행동·해당 선택 결과 완료 AND player_continue_confirmed=true",
+          "to": "MS14_D01_S02"
+        }
+      ],
+      "blocking_gaps": [
+        "true parallax layers, exterior carriage/wheel separate layer not delivered",
+        "matching Daram hand/sleeve/cookie lap insert not delivered",
+        "carriage_stopped state producer must be mapped in current engine; do not use cutscene to bypass S02 entry guard"
+      ]
+    },
+    {
+      "id": "B02",
+      "scenes": [
+        "MS14_D03_S02",
+        "MS14_D03_S03",
+        "MS14_D03_S04",
+        "MS14_D03_S05"
+      ],
+      "enter_when": [
+        "day=3",
+        "E11,E12,E13,E14,E15,E16,E32 acquired",
+        "silluk_knife_comparison_consent=true",
+        "silluk.children.location=workshop_with_buri"
+      ],
+      "shots": [
+        {
+          "shot_id": "B02_OBSERVE",
+          "source_scene": "MS14_D03_S02",
+          "source_block": "MS14_D03_S02_B002",
+          "source_record": "MS14_D03_S02_L0012",
+          "source_text": "조사: 번호판 3 / 돌받침의 빈자리 / 덮개 테두리의 둥근 압흔 / 걸쇠 안쪽의 새 곧은 긁힘. 초롱 허락 아래 종이를 대고 자국을 옮긴다. 빈 돌받침 아래 좁은 틈에는 작은 금속 파편이 박혀 있다. 돌이 빠진 지금에야 보이는 위치다.",
+          "source_kind": "action",
+          "source_player_visible": false,
+          "source_block_guard_verbatim": "always AND input_completed(MS14_D03_S02:2)",
+          "source_record_guard_verbatim": null,
+          "source_effects_verbatim": [
+            "acquire(E10)"
+          ],
+          "source_next_verbatim": "CONTINUE",
+          "target_visual_duration_seconds": [
+            2,
+            4
+          ],
+          "duration_policy": "click may finish visual early; no automatic answer or choice; reading/input excluded",
+          "visual": "플레이어가 실제 상세조사 입력한 뒤 등 전체 관찰. 3번 번호/빈 받침/기존 자국을 볼 수 있게 한다. 파편에 자동 반짝임 또는 정답 방향 화살표 없음.",
+          "sfx_asset_keys": [],
+          "asset_keys": [
+            "lantern"
+          ],
+          "input_gate": "input_completed(MS14_D03_S02:2)",
+          "notes": ""
+        },
+        {
+          "shot_id": "B02_FRAGMENT",
+          "source_scene": "MS14_D03_S02",
+          "source_block": "MS14_D03_S02_B002",
+          "source_record": "MS14_D03_S02_L0016",
+          "source_text": "톡이 모두 보는 앞에서 파편을 집어 천 위에 놓는다. 안쪽 틈에서 꺼낸 위치도 그림에 남긴다.",
+          "source_kind": "action",
+          "source_player_visible": false,
+          "source_block_guard_verbatim": "always AND input_completed(MS14_D03_S02:2)",
+          "source_record_guard_verbatim": null,
+          "source_effects_verbatim": [
+            "acquire(E32)"
+          ],
+          "source_next_verbatim": "CONTINUE",
+          "target_visual_duration_seconds": [
+            2,
+            4
+          ],
+          "duration_policy": "click may finish visual early; no automatic answer or choice; reading/input excluded",
+          "visual": "톡이 허락된 현장 조사 뒤 파편을 천 위에 올린다. 발견 위치와 파편을 각각 보여 주되 아직 실룩 칼과 접합하지 않는다.",
+          "sfx_asset_keys": [
+            "tool"
+          ],
+          "asset_keys": [
+            "fragment"
+          ],
+          "input_gate": null,
+          "notes": ""
+        },
+        {
+          "shot_id": "B02_GEOMETRY_LEARN",
+          "source_scene": "MS14_D03_S02",
+          "source_block": "MS14_D03_S02_B002",
+          "source_record": "MS14_D03_S02_L0018",
+          "source_text": "톡이 무딘 공구 끝을 빈 홈 입구에 대고 들어 올리는 방향만 보여 준다. 이어 바깥 걸쇠에 대면 내부 받침에는 닿지 않는 것을 보여 준다. 새 자국을 만들지 않는다.",
+          "source_kind": "action",
+          "source_player_visible": false,
+          "source_block_guard_verbatim": "always AND input_completed(MS14_D03_S02:2)",
+          "source_record_guard_verbatim": null,
+          "source_effects_verbatim": [],
+          "source_next_verbatim": "CONTINUE",
+          "target_visual_duration_seconds": [
+            2,
+            4
+          ],
+          "duration_policy": "click may finish visual early; no automatic answer or choice; reading/input excluded",
+          "visual": "원문에서 이미 허용한 빈 홈과 바깥 걸쇠의 구조 관찰만. 범인의 손/실룩 칼 사용 장면을 추가하지 않는다. 실제 배경과 소품 구조 일치 승인 전에는 최종 물증 화면 승인 보류.",
+          "sfx_asset_keys": [],
+          "asset_keys": [
+            "lantern"
+          ],
+          "input_gate": null,
+          "notes": ""
+        },
+        {
+          "shot_id": "B02_REVISE_HYPOTHESIS",
+          "source_scene": "MS14_D03_S03",
+          "source_block": "MS14_D03_S03_B004",
+          "source_record": "MS14_D03_S03_L0032",
+          "source_text": "조작: 우박의 종료 시각 뒤에 있는 초롱의 내부 점검 기록 제시.",
+          "source_kind": "action",
+          "source_player_visible": false,
+          "source_block_guard_verbatim": "input=connect(E13.end_time,E11.later_internal_check) AND input_completed(MS14_D03_S03:4)",
+          "source_record_guard_verbatim": null,
+          "source_effects_verbatim": [],
+          "source_next_verbatim": "CONTINUE",
+          "target_visual_duration_seconds": [
+            2,
+            4
+          ],
+          "duration_policy": "click may finish visual early; no automatic answer or choice; reading/input excluded",
+          "visual": "플레이어가 측정 종료와 그 뒤 내부 점검을 연결한 후에만 두 기록을 같은 축에 나란히 둔다. 실제 미확정 숫자 시각을 만들어 표시하지 않는다.",
+          "sfx_asset_keys": [],
+          "asset_keys": [],
+          "input_gate": "input=connect(E13.end_time,E11.later_internal_check) AND input_completed(MS14_D03_S03:4)",
+          "notes": ""
+        },
+        {
+          "shot_id": "B02_R1",
+          "source_scene": "MS14_D03_S05",
+          "source_block": "MS14_D03_S05_B003",
+          "source_record": "MS14_D03_S05_L0003",
+          "source_text": "반박: 수리와 반출을 분리한다. 공구 대여와 점검 시각 제시.",
+          "source_kind": "action",
+          "source_player_visible": false,
+          "source_block_guard_verbatim": "input=submit(E11,E12,E13) AND input_completed(MS14_D03_S05:3)",
+          "source_record_guard_verbatim": null,
+          "source_effects_verbatim": [],
+          "source_next_verbatim": "CONTINUE",
+          "target_visual_duration_seconds": [
+            2,
+            4
+          ],
+          "duration_policy": "click may finish visual early; no automatic answer or choice; reading/input excluded",
+          "visual": "첫 정답 뒤 공구 대여/측정/점검 순서의 이미 획득한 기록만 펼친다. 너울 반응으로 바로 복귀.",
+          "sfx_asset_keys": [],
+          "asset_keys": [],
+          "input_gate": "input=submit(E11,E12,E13) AND input_completed(MS14_D03_S05:3)",
+          "notes": ""
+        },
+        {
+          "shot_id": "B02_SALE_NOT_THEFT",
+          "source_scene": "MS14_D03_S05",
+          "source_block": "MS14_D03_S05_B005",
+          "source_record": "MS14_D03_S05_L0006",
+          "source_text": "제시: 백 부인에게서 확인한 3번 돌과 매입 장부.",
+          "source_kind": "action",
+          "source_player_visible": false,
+          "source_block_guard_verbatim": "repair_opening_separated=true AND input=submit(E15,E16) AND input_completed(MS14_D03_S05:5)",
+          "source_record_guard_verbatim": null,
+          "source_effects_verbatim": [],
+          "source_next_verbatim": "CONTINUE",
+          "target_visual_duration_seconds": [
+            1,
+            2
+          ],
+          "duration_policy": "click may finish visual early; no automatic answer or choice; reading/input excluded",
+          "visual": "돌과 장부 제시 뒤 실룩의 주웠다는 반박을 그대로 듣는다. 승리 효과/범인 확정 배지 금지.",
+          "sfx_asset_keys": [],
+          "asset_keys": [],
+          "input_gate": "repair_opening_separated=true AND input=submit(E15,E16) AND input_completed(MS14_D03_S05:5)",
+          "notes": ""
+        },
+        {
+          "shot_id": "B02_MATCH",
+          "source_scene": "MS14_D03_S05",
+          "source_block": "MS14_D03_S05_B007",
+          "source_record": "MS14_D03_S05_L0015",
+          "source_text": "실룩이 탁자에 칼을 놓는다. 톡이 양쪽을 확대해 보이고, 파편을 결손부에 가볍게 맞춘다. 들쭉날쭉한 파단면과 날의 연마선이 연속된다.",
+          "source_kind": "action",
+          "source_player_visible": false,
+          "source_block_guard_verbatim": "input=compare(E32,silluk_consented_knife) AND repair_opening_separated=true AND input_completed(MS14_D03_S05:7)",
+          "source_record_guard_verbatim": null,
+          "source_effects_verbatim": [],
+          "source_next_verbatim": "CONTINUE",
+          "target_visual_duration_seconds": [
+            4,
+            7
+          ],
+          "duration_policy": "click may finish visual early; no automatic answer or choice; reading/input excluded",
+          "visual": "정답 비교 입력 이후에만 파편과 깨진 칼을 동일 원본 800×640 좌표·동일 배율로 합친다. 접합 전 별도 도형은 플레이어 관찰용이며, 흡착 애니메이션은 이미 정답이 확정된 뒤만.",
+          "sfx_asset_keys": [
+            "tool"
+          ],
+          "asset_keys": [
+            "knife",
+            "fragment"
+          ],
+          "input_gate": "input=compare(E32,silluk_consented_knife) AND repair_opening_separated=true AND input_completed(MS14_D03_S05:7)",
+          "notes": "final03 접합 픽셀 일치는 확인자료일 뿐 실제 물리·배경 검증 완료가 아님. DEV 온전한 칼을 발견 물증처럼 제공 금지."
+        },
+        {
+          "shot_id": "B02_CLAIM",
+          "source_scene": "MS14_D03_S05",
+          "source_block": "MS14_D03_S05_B007",
+          "source_record": "MS14_D03_S05_L0017",
+          "source_text": "그날 새벽, 초롱이 지나간 뒤에 내가 거기 간 건 맞아요. 바깥 걸쇠가 벌어져서 이 칼로 밀어 닫아 줬어요. 돌은 길에서 주웠고. 닫아 준 게 죄예요?",
+          "source_kind": "dialogue",
+          "source_player_visible": true,
+          "source_block_guard_verbatim": "input=compare(E32,silluk_consented_knife) AND repair_opening_separated=true AND input_completed(MS14_D03_S05:7)",
+          "source_record_guard_verbatim": null,
+          "source_effects_verbatim": [],
+          "source_next_verbatim": "CONTINUE",
+          "target_visual_duration_seconds": [
+            0,
+            0
+          ],
+          "duration_policy": "click may finish visual early; no automatic answer or choice; reading/input excluded",
+          "visual": "실룩이 바깥 걸쇠만 닫았다고 말하는 기본 대화. 새 주장 고정 뒤 입력을 다시 연다. 접합 성공만으로 절도 성공 처리 금지.",
+          "sfx_asset_keys": [],
+          "asset_keys": [],
+          "input_gate": null,
+          "notes": ""
+        },
+        {
+          "shot_id": "B02_R2",
+          "source_scene": "MS14_D03_S05",
+          "source_block": "MS14_D03_S05_B009",
+          "source_record": "MS14_D03_S05_L0022",
+          "source_text": "톡이 빈 등 앞에서 넓고 무딘 공구를 바깥 걸쇠에 대 본다. 내부 받침에 닿지 않는다. 이어 돌받침 옆 지렛대 틈을 가리킨다.",
+          "source_kind": "action",
+          "source_player_visible": false,
+          "source_block_guard_verbatim": "input=connect(E17,E32,E33) AND input_completed(MS14_D03_S05:9)",
+          "source_record_guard_verbatim": null,
+          "source_effects_verbatim": [],
+          "source_next_verbatim": "CONTINUE",
+          "target_visual_duration_seconds": [
+            4,
+            7
+          ],
+          "duration_policy": "click may finish visual early; no automatic answer or choice; reading/input excluded",
+          "visual": "다음 정답 뒤 바깥 판이 막는 위치와 안쪽 받침을 같은 방향·같은 배율로 순차 비교. 손잡이/내부 홈 도식 실제 배경 일치 전 출시 보류.",
+          "sfx_asset_keys": [
+            "tool"
+          ],
+          "asset_keys": [
+            "lantern"
+          ],
+          "input_gate": "input=connect(E17,E32,E33) AND input_completed(MS14_D03_S05:9)",
+          "notes": ""
+        },
+        {
+          "shot_id": "B02_R3",
+          "source_scene": "MS14_D03_S05",
+          "source_block": "MS14_D03_S05_B011",
+          "source_record": "MS14_D03_S05_L0026",
+          "source_text": "마지막 연결: 돌 3의 각인·금 방향 표시 ↔ 백 부인이 인수한 실제 돌.",
+          "source_kind": "action",
+          "source_player_visible": false,
+          "source_block_guard_verbatim": "outer_latch_claim_refuted=true AND input=connect(E11,E15,E16) AND input_completed(MS14_D03_S05:11)",
+          "source_record_guard_verbatim": null,
+          "source_effects_verbatim": [],
+          "source_next_verbatim": "CONTINUE",
+          "target_visual_duration_seconds": [
+            3,
+            5
+          ],
+          "duration_policy": "click may finish visual early; no automatic answer or choice; reading/input excluded",
+          "visual": "마지막 정답 뒤 3번 각인/금 방향 표시/실제 매입 기록을 연결한다. 나머지 두 돌에는 공공 소유 마크를 붙이지 않는다.",
+          "sfx_asset_keys": [],
+          "asset_keys": [],
+          "input_gate": "outer_latch_claim_refuted=true AND input=connect(E11,E15,E16) AND input_completed(MS14_D03_S05:11)",
+          "notes": ""
+        },
+        {
+          "shot_id": "B02_RESULT",
+          "source_scene": "MS14_D03_S05",
+          "source_block": "MS14_D03_S05_B012",
+          "source_record": "MS14_D03_S05_L0030",
+          "source_text": "초소 쪽에서 온 사람이 탁자 앞에 섰다. 실룩이 칼을 집으려 하자, 그가 천을 접어 칼과 파편 앞을 가렸다.",
+          "source_kind": "narration",
+          "source_player_visible": true,
+          "source_block_guard_verbatim": "always",
+          "source_record_guard_verbatim": null,
+          "source_effects_verbatim": [],
+          "source_next_verbatim": "CONTINUE",
+          "target_visual_duration_seconds": [
+            1,
+            2
+          ],
+          "duration_policy": "click may finish visual early; no automatic answer or choice; reading/input excluded",
+          "visual": "실룩의 칼 쪽으로 손이 움직이고 바둑이가 천을 접어 가리는 원문 행동. 관객 박수나 과장 승리 컷 없이 표정/침묵으로 돌아온다.",
+          "sfx_asset_keys": [
+            "cloth"
+          ],
+          "asset_keys": [],
+          "input_gate": null,
+          "notes": "바둑이 실제 도착은 이 원문 행동에 맞춘다. 실룩 자녀는 공방에 있어 광장에 보이지 않음."
+        },
+        {
+          "shot_id": "B02_RETURN_CHOICE",
+          "source_scene": "MS14_D03_S05",
+          "source_block": "MS14_D03_S05_B015",
+          "source_record": "MS14_D03_S05_L0048",
+          "source_text": "3번 돌은 어떻게 할까?",
+          "source_kind": "choice",
+          "source_player_visible": true,
+          "source_block_guard_verbatim": "always",
+          "source_record_guard_verbatim": null,
+          "source_effects_verbatim": [],
+          "source_next_verbatim": "CONTINUE",
+          "target_visual_duration_seconds": [
+            0,
+            0
+          ],
+          "duration_policy": "click may finish visual early; no automatic answer or choice; reading/input excluded",
+          "visual": "돌 반환 여부 선택. 사건 해결이 자동 반환·등 복구가 아니다.",
+          "sfx_asset_keys": [],
+          "asset_keys": [],
+          "input_gate": "original choice options",
+          "notes": ""
+        },
+        {
+          "shot_id": "B02_CUSTODY_CHOICE",
+          "source_scene": "MS14_D03_S05",
+          "source_block": "MS14_D03_S05_B018",
+          "source_record": "MS14_D03_S05_L0056",
+          "source_text": "실룩을 지금 데려가겠다는 너울에게",
+          "source_kind": "choice",
+          "source_player_visible": true,
+          "source_block_guard_verbatim": "always",
+          "source_record_guard_verbatim": null,
+          "source_effects_verbatim": [],
+          "source_next_verbatim": "CONTINUE",
+          "target_visual_duration_seconds": [
+            0,
+            0
+          ],
+          "duration_policy": "click may finish visual early; no automatic answer or choice; reading/input excluded",
+          "visual": "실룩 처리의 독립 선택. 자동 강제 이송 금지.",
+          "sfx_asset_keys": [],
+          "asset_keys": [],
+          "input_gate": "original choice options",
+          "notes": ""
+        }
+      ],
+      "source_exits": [
+        {
+          "when": "모든 필수 행동·해당 선택 결과 완료 AND player_continue_confirmed=true",
+          "to": "MS14_D03_S06"
+        }
+      ],
+      "wrong": [
+        {
+          "when": "input=submit_knife_shape_only",
+          "block_id": "MS14_D03_S05_B021",
+          "record_ids": [
+            "MS14_D03_S05_L0068",
+            "MS14_D03_S05_L0069",
+            "MS14_D03_S05_L0070"
+          ],
+          "return": "same investigation, zero time, no success effects"
+        },
+        {
+          "when": "input=unsupported_evidence_combination",
+          "block_id": "MS14_D03_S05_B022",
+          "record_ids": [
+            "MS14_D03_S05_L0071",
+            "MS14_D03_S05_L0072"
+          ],
+          "return": "same investigation, zero time, no success effects"
+        }
+      ],
+      "hint": [
+        {
+          "when": "input=hint",
+          "block_id": "MS14_D03_S05_B023",
+          "record_ids": [
+            "MS14_D03_S05_L0073"
+          ],
+          "activation": "explicit hint input only"
+        }
+      ],
+      "input_dispatch_verbatim": [
+        {
+          "when": "input=submit(E11,E12,E13)",
+          "target_blocks": [
+            "MS14_D03_S05_B002",
+            "MS14_D03_S05_B003"
+          ],
+          "priority": 10
+        },
+        {
+          "when": "repair_opening_separated=true AND input=submit(E15,E16)",
+          "target_blocks": [
+            "MS14_D03_S05_B004",
+            "MS14_D03_S05_B005"
+          ],
+          "priority": 10
+        },
+        {
+          "when": "input=compare(E32,silluk_consented_knife) AND repair_opening_separated=true",
+          "target_blocks": [
+            "MS14_D03_S05_B006",
+            "MS14_D03_S05_B007"
+          ],
+          "priority": 10
+        },
+        {
+          "when": "input=connect(E17,E32,E33)",
+          "target_blocks": [
+            "MS14_D03_S05_B008",
+            "MS14_D03_S05_B009"
+          ],
+          "priority": 10
+        },
+        {
+          "when": "outer_latch_claim_refuted=true AND input=connect(E11,E15,E16)",
+          "target_blocks": [
+            "MS14_D03_S05_B010",
+            "MS14_D03_S05_B011"
+          ],
+          "priority": 10
+        },
+        {
+          "when": "input=return_stone",
+          "target_blocks": [
+            "MS14_D03_S05_B016"
+          ],
+          "priority": 10
+        },
+        {
+          "when": "input=defer_stone",
+          "target_blocks": [
+            "MS14_D03_S05_B017"
+          ],
+          "priority": 10
+        },
+        {
+          "when": "input=oppose_immediate_transfer",
+          "target_blocks": [
+            "MS14_D03_S05_B019"
+          ],
+          "priority": 10
+        },
+        {
+          "when": "input=transfer_to_neoul",
+          "target_blocks": [
+            "MS14_D03_S05_B020"
+          ],
+          "priority": 10
+        },
+        {
+          "when": "input=submit_knife_shape_only",
+          "target_blocks": [
+            "MS14_D03_S05_B021"
+          ],
+          "priority": 10
+        },
+        {
+          "when": "input=unsupported_evidence_combination",
+          "target_blocks": [
+            "MS14_D03_S05_B022"
+          ],
+          "priority": 10
+        },
+        {
+          "when": "input=hint",
+          "target_blocks": [
+            "MS14_D03_S05_B023"
+          ],
+          "priority": 10
+        }
+      ],
+      "source_warning": "E32 displayed source record L9102 already mentions unreachable inner position; do not invent earlier hint before its actual discovery. Source B012/15/18 always still governed by mandatory input sequence, not scene-entered batch playback.",
+      "blocking_gaps": [
+        "final03 player unconditional allowlist empty; D03 art remains candidate",
+        "real lamp outer plate/internal socket distance and force direction must be matched to source background",
+        "undefined numeric times/payment fields must not be generated by animation"
+      ]
+    }
+  ],
+  "opening_to_gate_bridge": {
+    "scene_id": "MS14_D01_S03",
+    "enter_when_verbatim": [
+      "day=1",
+      "E02 acquired",
+      "father.location=guardhouse",
+      "daram.location=guardhouse",
+      "gate_registered=false"
+    ],
+    "flow": [
+      "MS14_D01_S01 original exit requires completed actual actions/choice and continue",
+      "MS14_D01_S02 must already satisfy carriage_stopped and father_with_daram",
+      "S02_L0008 move to guardhouse; S02_L0019 acquires E02 at original record",
+      "S02_L0022 choice show invitation OR request original, preserve callbacks; S02_L0028 original papers produced",
+      "S03 original investigation input and correct dispatch; S04 only after actual proof"
+    ],
+    "source_contract_verbatim": "진입: 초소 안, 아빠·다람·돌목, E02. 클릭 ‘신청 원본’→E03, ‘겨울 방문 규정’→E04, ‘처리표’→E02 재열람. 연결 ‘가족 방문↔신규 일꾼’→purpose_difference_known=true. 제시 ‘가족 방문·2인 숙소 확인+가족 등록 규정’→E02·E03·E04 보유 시 purpose_difference_known=true, gate_basis_proven=true, D01S04. 연결을 먼저 하지 않았어도 즉시 성공. ‘신청 2명만 제시’·‘까로의 승객 확인만 제시’·‘다른 신청서 제시’→대본의 불충분 응답, 이 장면 유지. ‘힌트를 부탁한다’→힌트 발화, 상태 그대로. 선택 질문 ‘왜 일꾼으로 바뀌었습니까?’는 purpose_difference_known=true일 때만 노출, reason_heard=true, 조사로 복귀. 이유를 듣지 않아도 성공.",
+    "anchors": [
+      {
+        "record_id": "MS14_D01_S03_L0001",
+        "kind": "action",
+        "text": "목표: 다람과 함께 들어간다. 세 문서는 각각 초소 입장 명단, 다돌이 낸 방문 신청서, 겨울철 입장 규칙으로 표시한다.",
+        "block_when": "always",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0002",
+        "kind": "evidence",
+        "text": "다돌이 낸 방문 신청서: 같은 도착일 / 신청자 다돌 외 1명 / 동행 아동 있음 / 총 2명 / 가족 방문 / 동행인 성명 다람 / 여관 13호, 방문 가족 2명 숙박 확인.",
+        "block_when": "always",
+        "effects": [
+          "acquire(E03)"
+        ]
+      },
+      {
+        "record_id": "MS14_D01_S03_L0003",
+        "kind": "dialogue",
+        "text": "여기 아빠 이름.",
+        "block_when": "always",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0004",
+        "kind": "dialogue",
+        "text": "맞아. 날짜도 같네.",
+        "block_when": "always",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0005",
+        "kind": "dialogue",
+        "text": "‘외 한 명’은 나야? 내 이름도 썼는데.",
+        "block_when": "always",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0006",
+        "kind": "dialogue",
+        "text": "아래에 있네. 다람. 둘이 온다고 제대로 썼어.",
+        "block_when": "always",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0007",
+        "kind": "evidence",
+        "text": "겨울철 입장 규칙: 가족 방문은 숙소가 확인된 동행 인원으로 등록한다. 초소는 실제 인원과 숙소를 확인해 현장 등록·정정할 수 있다. 신규 일꾼은 작업 명단의 본인만 등록한다.",
+        "block_when": "always",
+        "effects": [
+          "acquire(E04)"
+        ]
+      },
+      {
+        "record_id": "MS14_D01_S03_L0008",
+        "kind": "choice",
+        "text": "자료를 살펴보고 함께 들어갈 이유를 제시한다.",
+        "block_when": "always",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0009",
+        "kind": "dialogue",
+        "text": "가족 방문이라고 썼잖습니까. 왜 여기엔 일꾼입니까?",
+        "block_when": "input=connect(E03.family_visit,E02.worker) AND gate_basis_proven=false",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0010",
+        "kind": "dialogue",
+        "text": "……그렇군.",
+        "block_when": "input=connect(E03.family_visit,E02.worker) AND gate_basis_proven=false",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0011",
+        "kind": "dialogue",
+        "text": "그럼 나도 들어가?",
+        "block_when": "input=connect(E03.family_visit,E02.worker) AND gate_basis_proven=false",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0012",
+        "kind": "dialogue",
+        "text": "둘이 잘 곳까지 확인해야 하오.",
+        "block_when": "input=connect(E03.family_visit,E02.worker) AND gate_basis_proven=false",
+        "effects": [
+          "purpose_difference_known=true"
+        ]
+      },
+      {
+        "record_id": "MS14_D01_S03_L0013",
+        "kind": "dialogue",
+        "text": "13호실, 가족 두 명. 여관 확인도 여기 있습니다.",
+        "block_when": "input=inspect(E03.lodging) AND gate_basis_proven=false",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0014",
+        "kind": "dialogue",
+        "text": "저 규칙대로면 가족이고 잘 방도 있으니, 딸도 들어가잖습니까.",
+        "block_when": "input=submit AND E02,E03,E04 acquired AND selected=family_visit+two_person_lodging+family_registration_rule AND purpose_difference_known=true",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0015",
+        "kind": "dialogue",
+        "text": "두 사람 방은 확인됐소.",
+        "block_when": "input=submit AND E02,E03,E04 acquired AND selected=family_visit+two_person_lodging+family_registration_rule AND purpose_difference_known=true",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0016",
+        "kind": "dialogue",
+        "text": "그럼 저를 일꾼으로 적은 걸 고쳐 주세요. 딸도 같이 들어가게요.",
+        "block_when": "input=submit AND E02,E03,E04 acquired AND selected=family_visit+two_person_lodging+family_registration_rule AND purpose_difference_known=true",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0017",
+        "kind": "dialogue",
+        "text": "너울이 보내 온 표인데…….",
+        "block_when": "input=submit AND E02,E03,E04 acquired AND selected=family_visit+two_person_lodging+family_registration_rule AND purpose_difference_known=true",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0018",
+        "kind": "dialogue",
+        "text": "여기서 고칠 수 있다고도 써 있네요. 다른 데로 또 가라는 말은 하지 마세요. 애 손이 얼었습니다.",
+        "block_when": "input=submit AND E02,E03,E04 acquired AND selected=family_visit+two_person_lodging+family_registration_rule AND purpose_difference_known=true",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0019",
+        "kind": "dialogue",
+        "text": "안 고친다는 말 아니오. 종이에서 손 좀 떼시오. 써야 하니.",
+        "block_when": "input=submit AND E02,E03,E04 acquired AND selected=family_visit+two_person_lodging+family_registration_rule AND purpose_difference_known=true",
+        "effects": [
+          "gate_basis_proven=true"
+        ]
+      },
+      {
+        "record_id": "MS14_D01_S03_L0020",
+        "kind": "dialogue",
+        "text": "가족 방문이고 둘이 잘 방도 확인됐습니다. 저 규칙대로 딸도 들여보내 주세요.",
+        "block_when": "input=submit AND E02,E03,E04 acquired AND selected=family_visit+two_person_lodging+family_registration_rule AND purpose_difference_known=false",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0021",
+        "kind": "dialogue",
+        "text": "가족 방문을 일꾼으로 옮겨 놨군.",
+        "block_when": "input=submit AND E02,E03,E04 acquired AND selected=family_visit+two_person_lodging+family_registration_rule AND purpose_difference_known=false",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0022",
+        "kind": "dialogue",
+        "text": "네. 그래서 아이가 빠졌습니다.",
+        "block_when": "input=submit AND E02,E03,E04 acquired AND selected=family_visit+two_person_lodging+family_registration_rule AND purpose_difference_known=false",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0023",
+        "kind": "dialogue",
+        "text": "여기서 고치겠소.",
+        "block_when": "input=submit AND E02,E03,E04 acquired AND selected=family_visit+two_person_lodging+family_registration_rule AND purpose_difference_known=false",
+        "effects": [
+          "purpose_difference_known=true",
+          "gate_basis_proven=true"
+        ]
+      },
+      {
+        "record_id": "MS14_D01_S03_L0024",
+        "kind": "dialogue",
+        "text": "둘인 건 봤소. 가족을 만나러 왔는지, 둘이 잘 방은 있는지도 확인해야 하오.",
+        "block_when": "input=submit_only_application_count",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0025",
+        "kind": "dialogue",
+        "text": "같이 온 건 알겠소. 둘이 묵을 방은 확인됐소?",
+        "block_when": "input=submit_only_passenger_confirmation",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0026",
+        "kind": "dialogue",
+        "text": "다른 집 종이오. 날짜와 이름부터 보시오.",
+        "block_when": "input=submit_other_house_application",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0027",
+        "kind": "narration",
+        "text": "가족을 만나러 온다는 신청, 둘이 잘 방. 벽에 쓰인 조건과 맞춰 보자.",
+        "block_when": "input=hint",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0028",
+        "kind": "dialogue",
+        "text": "그런데 왜 저를 일꾼으로 적은 겁니까?",
+        "block_when": "input=ask_worker_reason AND purpose_difference_known=true AND reason_heard=false",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0029",
+        "kind": "dialogue",
+        "text": "너울이 새로 오는 어른은 가족 방문이어도 먼저 작업 명단에 넣으라더군. 장작 나를 사람이 모자라오.",
+        "block_when": "input=ask_worker_reason AND purpose_difference_known=true AND reason_heard=false",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0030",
+        "kind": "dialogue",
+        "text": "전 하겠다고 한 적 없습니다.",
+        "block_when": "input=ask_worker_reason AND purpose_difference_known=true AND reason_heard=false",
+        "effects": []
+      },
+      {
+        "record_id": "MS14_D01_S03_L0031",
+        "kind": "dialogue",
+        "text": "그건 너울에게 말하시오. 잘못 적힌 걸 고칠 때 기록은 남기겠소.",
+        "block_when": "input=ask_worker_reason AND purpose_difference_known=true AND reason_heard=false",
+        "effects": [
+          "reason_heard=true",
+          "K05=true"
+        ]
+      }
+    ],
+    "ui_mapping": "Existing notebook/evidence panels only. E02 processing roster, E03 original application with lodging crop (same document, not independent new evidence), E04 wall rule. No new fullscreen minigame. Readable labels, no automatic correct field highlight.",
+    "source_ambiguity_hold": "S03_B001 is always and contains E03/E04 acquire records, while author_contract explicitly says clicking source papers acquires them. Do not flatten B001 to auto grant both on entry. Engine adapter must bind those record executions to existing inspection interaction per author contract; mark mapping for review and test before calling playable. Source JSON unchanged.",
+    "correct": "B004 if difference already observed, B005 direct correct if not; do not force optional reason question or replay slower route",
+    "wrong": "B006 application count only, B007 passenger confirmation only, B008 other-house paper; same investigation, no evidence deletion or time penalty",
+    "hint": "B009 only explicit request",
+    "optional": "B010 worker reason only purpose_difference_known=true and reason_heard=false; never gate success on it",
+    "assets_hold": "Owner rejected visit form art. Keep prior art available and review before replacing. Current filenames are binding candidates, not approval."
+  }
+}

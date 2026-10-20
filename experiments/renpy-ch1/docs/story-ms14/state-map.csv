@@ -1,0 +1,66 @@
+source_state,engine_field,initial,change_events,branch_references,saved
+D02_afternoon,ms14.values.D02_afternoon,unset until authored event,input:afternoon;input:afternoon,,yes / native save and rollback
+E35.status,ms14.values.E35.status,unset until authored event,MS14_D03_S06_L0041,,yes / native save and rollback
+K01a,ms14.values.K01a,False,MS14_D01_S01_L0015;MS14_D01_S05_L0031,letter_close,yes / native save and rollback
+K01b,ms14.values.K01b,False,MS14_D01_S01_L0016;MS14_D01_S05_L0031,letter_close_b,yes / native save and rollback
+K05,ms14.values.K05,False,MS14_D01_S03_L0031;MS14_D01_S04_L0016,,yes / native save and rollback
+arrival_note_sent,ms14.values.arrival_note_sent,unset until authored event,MS14_D02_S01_L0039,,yes / native save and rollback
+box_rechecked_day2,ms14.values.box_rechecked_day2,False,MS14_D02_S04_L0038;MS14_D02_S04_L0083,,yes / native save and rollback
+carriage_stopped,ms14.values.carriage_stopped,False,input:leave_carriage,,yes / native save and rollback
+carried_dry_blankets,ms14.values.carried_dry_blankets,0,MS14_D02_S04_L0083;MS14_D03_S06_L0041;MS14_D04_S01_L0033,,yes / native save and rollback
+cookie.location,ms14.values.cookie.location,unset until authored event,MS14_D01_S05_L0048,,yes / native save and rollback
+day,ms14.values.day,1,input:sleep1;input:sleep2;input:sleep3,,yes / native save and rollback
+evidence.E01,ms14.evidence.E01,not acquired,MS14_D01_S01_L0010,,yes / native save and rollback
+evidence.E02,ms14.evidence.E02,not acquired,MS14_D01_S02_L0019,,yes / native save and rollback
+evidence.E03,ms14.evidence.E03,not acquired,MS14_D01_S03_L0002,,yes / native save and rollback
+evidence.E04,ms14.evidence.E04,not acquired,MS14_D01_S03_L0007,,yes / native save and rollback
+evidence.E05,ms14.evidence.E05,not acquired,MS14_D01_S04_L0008,,yes / native save and rollback
+evidence.E06,ms14.evidence.E06,not acquired,MS14_D01_S05_L0019,,yes / native save and rollback
+evidence.E07,ms14.evidence.E07,not acquired,MS14_D02_S02_L0005,,yes / native save and rollback
+evidence.E08,ms14.evidence.E08,not acquired,MS14_D02_S03_L0025,,yes / native save and rollback
+evidence.E09,ms14.evidence.E09,not acquired,MS14_D03_S01_L0021;MS14_D03_S01_L0039,,yes / native save and rollback
+evidence.E10,ms14.evidence.E10,not acquired,MS14_D03_S02_L0012,,yes / native save and rollback
+evidence.E11,ms14.evidence.E11,not acquired,MS14_D03_S02_L0027,,yes / native save and rollback
+evidence.E12,ms14.evidence.E12,not acquired,MS14_D03_S03_L0008,,yes / native save and rollback
+evidence.E13,ms14.evidence.E13,not acquired,MS14_D03_S03_L0027,,yes / native save and rollback
+evidence.E14,ms14.evidence.E14,not acquired,MS14_D03_S04_L0009,,yes / native save and rollback
+evidence.E15,ms14.evidence.E15,not acquired,MS14_D03_S04_L0028,,yes / native save and rollback
+evidence.E16,ms14.evidence.E16,not acquired,MS14_D03_S04_L0032,,yes / native save and rollback
+evidence.E17,ms14.evidence.E17,not acquired,MS14_D03_S05_L0018,,yes / native save and rollback
+evidence.E18,ms14.evidence.E18,not acquired,MS14_D04_S01_L0050,,yes / native save and rollback
+evidence.E30,ms14.evidence.E30,not acquired,MS14_D01_S05_L0022,,yes / native save and rollback
+evidence.E31,ms14.evidence.E31,not acquired,MS14_D02_S04_L0083;MS14_D04_S01_L0033,,yes / native save and rollback
+evidence.E32,ms14.evidence.E32,not acquired,MS14_D03_S02_L0016,,yes / native save and rollback
+evidence.E33,ms14.evidence.E33,not acquired,MS14_D03_S05_L0018,,yes / native save and rollback
+evidence.E34,ms14.evidence.E34,not acquired,MS14_D04_S01_L0015,,yes / native save and rollback
+evidence.E35,ms14.evidence.E35,not acquired,MS14_D02_S04_L0083,,yes / native save and rollback
+gate_basis_proven,ms14.values.gate_basis_proven,False,MS14_D01_S03_L0019;MS14_D01_S03_L0023,,yes / native save and rollback
+gate_mother_report_instruction_heard,ms14.values.gate_mother_report_instruction_heard,unset until authored event,MS14_D01_S04_L0020,,yes / native save and rollback
+gate_registered,ms14.values.gate_registered,False,MS14_D01_S04_L0008,,yes / native save and rollback
+lamp_theft_supported,ms14.values.lamp_theft_supported,False,MS14_D03_S05_L0029,,yes / native save and rollback
+measurement_separated_from_theft,ms14.values.measurement_separated_from_theft,unset until authored event,MS14_D03_S03_L0035,,yes / native save and rollback
+mother_box_checked_day2,ms14.values.mother_box_checked_day2,False,MS14_D02_S01_L0033,,yes / native save and rollback
+nero_bedding_reserved,ms14.values.nero_bedding_reserved,False,MS14_D02_S04_L0083;MS14_D03_S06_L0041,blankets_route,yes / native save and rollback
+nero_contact_lead,ms14.values.nero_contact_lead,False,MS14_D02_S03_L0047,,yes / native save and rollback
+nero_met_day2,ms14.values.nero_met_day2,False,MS14_D02_S04_L0038;MS14_D02_S04_L0083,nero4_route,yes / native save and rollback
+nero_supply_route_known,ms14.values.nero_supply_route_known,False,MS14_D02_S04_L0083;MS14_D04_S01_L0033,,yes / native save and rollback
+outer_latch_claim_refuted,ms14.values.outer_latch_claim_refuted,unset until authored event,MS14_D03_S05_L0025,,yes / native save and rollback
+pending_post_search,ms14.values.pending_post_search,unset until authored event,MS14_D02_S02_L0025,,yes / native save and rollback
+piko.location,ms14.values.piko.location,unset until authored event,MS14_D03_S01_L0039,,yes / native save and rollback
+piko_alive,ms14.values.piko_alive,True,MS14_D03_S01_L0021;MS14_D03_S01_L0039,trial_piko;memorial_route,yes / native save and rollback
+piko_sheltered,ms14.values.piko_sheltered,False,MS14_D02_S04_L0038;MS14_D02_S04_L0083,evening2_route;day3,yes / native save and rollback
+portrait,ms14.values.portrait,none,MS14_D03_S01_L0021;MS14_D03_S01_L0039;MS14_D03_S06_L0022,,yes / native save and rollback
+portrait_commissioned,ms14.values.portrait_commissioned,unset until authored event,MS14_D02_S03_L0020,,yes / native save and rollback
+public_stones,ms14.values.public_stones,with_baek,MS14_D03_S05_L0052;MS14_D03_S05_L0055;MS14_D03_S06_L0004,restore_route,yes / native save and rollback
+purpose_difference_known,ms14.values.purpose_difference_known,False,MS14_D01_S03_L0012;MS14_D01_S03_L0023,gate_investigate;gate_proven_dispatch,yes / native save and rollback
+reason_heard,ms14.values.reason_heard,False,MS14_D01_S03_L0031;MS14_D01_S04_L0016,gate_investigate;registered_menu,yes / native save and rollback
+repair_opening_separated,ms14.values.repair_opening_separated,unset until authored event,MS14_D03_S05_L0005,,yes / native save and rollback
+return_transport_inquiry_pending,ms14.values.return_transport_inquiry_pending,unset until authored event,MS14_D02_S01_L0008,,yes / native save and rollback
+selected_afternoon_work_completed,ms14.values.selected_afternoon_work_completed,unset until authored event,MS14_D02_S04_L0038;MS14_D02_S04_L0083,,yes / native save and rollback
+silluk.children.location,ms14.values.silluk.children.location,unset until authored event,MS14_D03_S04_L0037,,yes / native save and rollback
+silluk_knife_comparison_consent,ms14.values.silluk_knife_comparison_consent,unset until authored event,MS14_D03_S04_L0016,trial_knife,yes / native save and rollback
+silluk_labor_transfer_known,ms14.values.silluk_labor_transfer_known,False,MS14_D04_S01_L0015,,yes / native save and rollback
+silluk_status,ms14.values.silluk_status,free,MS14_D03_S05_L0062;MS14_D03_S05_L0067;MS14_D04_S01_L0015,day4,yes / native save and rollback
+stone_choice_completed,ms14.values.stone_choice_completed,unset until authored event,MS14_D03_S05_L0052;MS14_D03_S05_L0055,,yes / native save and rollback
+under_desk_checked,ms14.values.under_desk_checked,False,MS14_D01_S05_L0022,,yes / native save and rollback
+unverified_stones_status,ms14.values.unverified_stones_status,with_baek,MS14_D03_S05_L0052;MS14_D03_S05_L0055,,yes / native save and rollback

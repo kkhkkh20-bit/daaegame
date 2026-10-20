@@ -1,0 +1,366 @@
+{
+  "status": "NOT_RUN",
+  "reason": "Cloud execution failed before code access due usage limit.",
+  "cases": [
+    {
+      "id": "INPUT01",
+      "scenario": "타이핑 중 1회 탭",
+      "expected": "현재 문장 전체 표시만. 다음 대사/선택 제출 없음",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "INPUT02",
+      "scenario": "표시 완료 뒤 1회 탭",
+      "expected": "다음 허용 대사로 한 번 진행",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "INPUT03",
+      "scenario": "선택지가 열리는 순간 연속 탭",
+      "expected": "이전 입력으로 임의 선택/중복 콜백 없음",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "INPUT04",
+      "scenario": "자동 진행·읽은 대사 스킵",
+      "expected": "필수 조사/선택/반박 앞에서 정지",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "SAVE01",
+      "scenario": "문장 중간 저장 후 로드",
+      "expected": "같은 장면·분기·글자 상태로 재개",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "SAVE02",
+      "scenario": "음향/카메라 중간 저장 후 로드",
+      "expected": "분기 유지, 일회성 소리/효과 중복 없음",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "SAVE03",
+      "scenario": "효과 확정 직전/직후 각각 로드",
+      "expected": "아이템·시간·물자·관계 변경 각각 한 번",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "SKIP01",
+      "scenario": "정답 제출 전 컷신 스킵",
+      "expected": "회상/정답/다음 반박 자동 성공 없음",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "SKIP02",
+      "scenario": "정답 제출 후 컷신 스킵",
+      "expected": "같은 실제 결과 및 다음 입력 지점 도착",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "REPLAY01",
+      "scenario": "완료 컷신 재감상",
+      "expected": "현재 회차 상태 불변, 지급/차감 없음",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "D01_01",
+      "scenario": "마차→입구 처음 플레이",
+      "expected": "목표·엄마 부재·편지 조사를 본래 순서로 이해",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "D01_02",
+      "scenario": "근거 세 개 먼저 확보",
+      "expected": "불필요한 반복 질문 없이 정답 처리 가능",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "D01_03",
+      "scenario": "서류 도착일 값 렌더",
+      "expected": "같은 정확한 날짜, 공란 템플릿 노출 없음",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "D03_01",
+      "scenario": "Piko 보호/미보호 두 진행",
+      "expected": "각각 맞는 인물 상태·초상만 표시",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "D03_02",
+      "scenario": "등 전체 조사 후 직접 확대",
+      "expected": "내부/외부 구분, 자동 정답 강조 없음",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "D03_03",
+      "scenario": "칼 파편 정답/오답/힌트",
+      "expected": "세 흐름 분리, 오답 뒤 정답 확대 재생 없음",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "D03_04",
+      "scenario": "3번 돌 반환",
+      "expected": "미확인 다른 두 돌 소유/반환 자동 확정 없음",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "D04_01",
+      "scenario": "Nero 작업 중 질문",
+      "expected": "원래 작업과 참석자만 표시. 대사 추가·정보 강제 없음",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "D04_02",
+      "scenario": "Somi 문닫기/아빠 손거둠",
+      "expected": "원문 행동 순서, 미등장 인물/없는 포즈 조작 없음",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "D05_01",
+      "scenario": "경고 문구 도달·즉시표시·스킵",
+      "expected": "적절한 음악 변화, 비밀 편지 공개 대결 노출 없음",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "D07_01",
+      "scenario": "예방 A/B",
+      "expected": "살인·시체·다람 구금 컷 없음",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "D07_02",
+      "scenario": "살인 C",
+      "expected": "실제 인계 완료 등 원래 조건 충족 시에만 사건 컷",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "D07_03",
+      "scenario": "귀환 아빠의 문밖 시점",
+      "expected": "이미 지난 첫 비명/잠금 동작을 현재 사건으로 재생하지 않음",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "D10_01",
+      "scenario": "증거 미획득 상태",
+      "expected": "선택창에 없는 증거 표시/제시 불가",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "D10_02",
+      "scenario": "정답 제시 전/후",
+      "expected": "입력 전 연결 결론 없음, 후에도 미검증 동작을 사실처럼 재현하지 않음",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "D10_03",
+      "scenario": "생존 대체 경로",
+      "expected": "살인 컷 없는 기록/증언 대결. 엄마 비밀 경고 유출 없음",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "D11_01",
+      "scenario": "담요0/1/2장",
+      "expected": "실제 수량과 가족/학교 자원 상태를 따름",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "D12_01",
+      "scenario": "배식 전 예방/배식 후 조기/늦은발견",
+      "expected": "해당 피해·의료 결과만 표시, always 피해 대사 없음",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "D13_01",
+      "scenario": "촌장 새 전언 직후 빠른 반박",
+      "expected": "즉시 선택 가능, 정답 전 아침 회상 없음",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "D13_02",
+      "scenario": "담요 모순 정답 이후",
+      "expected": "모과 생사/수레 정지/전원 구조 자동 확정 없음",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "D13_03",
+      "scenario": "전원/부분/철수/폭력",
+      "expected": "실제 하차·참석자만 표시. 중복 결과 우선순위 미결이면 차단",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "D14_01",
+      "scenario": "협력·공구·작업 미완료",
+      "expected": "쇠고리 제거 성공 컷 금지",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "D14_02",
+      "scenario": "촌장 현장/감독 장소",
+      "expected": "정확히 한 곳에서만 명령·거부 장면",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "D14_03",
+      "scenario": "과자 일반/폭력 대체",
+      "expected": "모순되는 양쪽 손동작 연속 재생 금지",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "MOBILE01",
+      "scenario": "실제 가로 휴대폰 작은 화면",
+      "expected": "대사·선택·소품 가림/터치 충돌 없음",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "MOBILE02",
+      "scenario": "백그라운드 복귀·저성능·동작감소",
+      "expected": "진행 불변, 정지 대체 동일정보, 중복 음향 없음",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "ART01",
+      "scenario": "표정 전환",
+      "expected": "인물 실높이·발·얼굴·의상·화풍 연속성",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "ART02",
+      "scenario": "일반 배경/시트/구버전 아이콘",
+      "expected": "정확한 장소영역·시간상태,17돌/냄비교환 구버전 차단",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "HUMAN01",
+      "scenario": "새 플레이어 첫10분 관찰",
+      "expected": "목표와 미스터리를 자기 말로 설명: 관찰 기록, 자동합격 금지",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    },
+    {
+      "id": "HUMAN02",
+      "scenario": "D3추리·D4대화 후 자발적 계속 진행",
+      "expected": "정답 이해/다음 행동 궁금함과 지루한 위치 기록, 유도 질문 금지",
+      "result": "NOT_RUN",
+      "build": null,
+      "device": null,
+      "evidence": null
+    }
+  ]
+}
