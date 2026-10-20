@@ -63,7 +63,7 @@ class ViewpointSpeaker(unittest.TestCase):
         self.speak('daram','joy')
         self.assertEqual(self.store.r13_motion_person,'daram')
         self.assertEqual(self.calls[-1][2]['what'][0],'daram')
-        self.assertIs(self.calls[-1][2]['at_list'][-1],'pop') # springs up, no fade
+        self.assertNotIn('pop',self.calls[-1][2]['at_list']) # seated calmly; no surprise entrance
         self.assertFalse(self.calls[-1][2]['what'][-1])
         shown=len(self.calls)
         self.speak('dad','thinking');self.speak('karo','neutral')

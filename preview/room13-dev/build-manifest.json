@@ -1,23 +1,23 @@
 {
  "engine": "Ren'Py 8.5.3",
  "game_transport": {
-  "archive_bytes": 17064450,
-  "archive_sha256": "2b374978c0242df9e8255b04441390535c90fccf9b052663b6f693eee4f1cc2b",
+  "archive_bytes": 17162093,
+  "archive_sha256": "6422ddfd4727bfe2e8d839102ff3611e4b3f854b241fcd19424e7585a6bcc960",
   "parts": [
    {
     "file": "game.part01",
     "bytes": 8388608,
-    "sha256": "e44c4812cab752b8e29d1653f9941066350abea4846dde59c924573d2f401b8d"
+    "sha256": "fc22296b59f408b65acaa8ad2fd2819a9189bfc5f81b394779172a3d180faac7"
    },
    {
     "file": "game.part02",
     "bytes": 8388608,
-    "sha256": "3e97862cc13a1b5de835f3d763bef52013ad4a3d6f7f00d908c7e8058a70bc80"
+    "sha256": "5f72143d614512690626e30a16839772bc25167a543cb1a6b7a14906a7e2f889"
    },
    {
     "file": "game.part03",
-    "bytes": 287234,
-    "sha256": "73a48fb5704c83d52c5c160b4277d17a971ab26d21ff68049df7df40bbbebb36"
+    "bytes": 384877,
+    "sha256": "1ccf6b4a598242adedbb6e361e14657ac9bcc8f62a26ebfbc9f713a4d7704b7d"
    }
   ]
  },
@@ -39,20 +39,20 @@
    "sha256": "6bb23b55d259a317d6c3a496f5c8892bd820bc4f0730a172d030b4497c534bfe"
   },
   "game-transport.json": {
-   "bytes": 194176,
-   "sha256": "cf7a3848aafb38774fcf33bb7965563e2661fcbb64431d8c3468fdae91d7cb1d"
+   "bytes": 194108,
+   "sha256": "b944c0294239a945d1f6064c3101aab0ad934fcfc981e22fff9ced0c12792711"
   },
   "game.part01": {
    "bytes": 8388608,
-   "sha256": "e44c4812cab752b8e29d1653f9941066350abea4846dde59c924573d2f401b8d"
+   "sha256": "fc22296b59f408b65acaa8ad2fd2819a9189bfc5f81b394779172a3d180faac7"
   },
   "game.part02": {
    "bytes": 8388608,
-   "sha256": "3e97862cc13a1b5de835f3d763bef52013ad4a3d6f7f00d908c7e8058a70bc80"
+   "sha256": "5f72143d614512690626e30a16839772bc25167a543cb1a6b7a14906a7e2f889"
   },
   "game.part03": {
-   "bytes": 287234,
-   "sha256": "73a48fb5704c83d52c5c160b4277d17a971ab26d21ff68049df7df40bbbebb36"
+   "bytes": 384877,
+   "sha256": "1ccf6b4a598242adedbb6e361e14657ac9bcc8f62a26ebfbc9f713a4d7704b7d"
   },
   "game/assets/Galmuri11.ttf": {
    "bytes": 1964416,
@@ -7746,10 +7746,6 @@
    "bytes": 7650,
    "sha256": "a6dd72dcbdf6070e7037b61999be084a1cbbf3e07b5e086644c7611d57ab8597"
   },
-  "game/assets/room13-fx-carriage-window-mask.webp": {
-   "bytes": 1110,
-   "sha256": "bb526e73126c8d09015cd1e726192d4117a26b20c91b6636c19d4c34fa7a8b4d"
-  },
   "game/assets/room13-fx-cine-e0.webp": {
    "bytes": 322,
    "sha256": "6d9b6f2165c09add028e393f22f690b45ca6e95edf9ed1f64ca62da994099a10"
@@ -9675,8 +9671,8 @@
    "sha256": "38d3400703d63b202e9ae4c77dd5e16f3d12f3bbe2a01e279d23b30f6b9e0f52"
   },
   "game/assets/room13-title-winter020.webp": {
-   "bytes": 390092,
-   "sha256": "ec7b0a4ecfea53f3ceb12c606fe733061a0e31ff31aea2fcbf6ca0d9dc97c2d6"
+   "bytes": 1759252,
+   "sha256": "0b146b2716d19e429c1fa1855674b542aafdc5ea48b96ec3a44d586639e1abee"
   },
   "game/assets/room13-ui-frame-aged-paper.webp": {
    "bytes": 216,
@@ -9717,6 +9713,10 @@
   "game/assets/sfx-bell.wav": {
    "bytes": 118166,
    "sha256": "bc9bb232f95c7f686b351b74d48311d4a61232a8a3ba28fe979745391012f6be"
+  },
+  "game/assets/sfx-carriage-hooves.wav": {
+   "bytes": 197612,
+   "sha256": "f561b62c9929c9c8d5665091467e7810a309b16b8bb4c45d1574914e77cc65f2"
   },
   "game/assets/sfx-click.wav": {
    "bytes": 12494,
@@ -10123,8 +10123,8 @@
    "sha256": "83363cfd9b6875b05271528928affecceb0acb95a5ef5a2b84cd0b6d772aa1e9"
   },
   "loading-scene.webp": {
-   "bytes": 390092,
-   "sha256": "ec7b0a4ecfea53f3ceb12c606fe733061a0e31ff31aea2fcbf6ca0d9dc97c2d6"
+   "bytes": 1759252,
+   "sha256": "0b146b2716d19e429c1fa1855674b542aafdc5ea48b96ec3a44d586639e1abee"
   },
   "manifest.json": {
    "bytes": 1959,
@@ -10151,5 +10151,5 @@
    "sha256": "0ef27bfe65a2917248171666649a51d85e3a200a3ae87bbaaa7085748bc4f0c5"
   }
  },
- "total_bytes": 567373849
+ "total_bytes": 570406246
 }

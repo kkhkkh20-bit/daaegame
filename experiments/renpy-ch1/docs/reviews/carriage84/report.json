@@ -1,0 +1,107 @@
+{
+  "gate-right": {
+    "samples": [
+      {
+        "x": 0,
+        "moving": true,
+        "ready": false
+      },
+      {
+        "x": 246.73659632409522,
+        "moving": true,
+        "ready": false
+      },
+      {
+        "x": 445.42300918091007,
+        "moving": true,
+        "ready": false
+      },
+      {
+        "x": 637.4468549422287,
+        "moving": true,
+        "ready": false
+      },
+      {
+        "x": 640,
+        "moving": false,
+        "ready": true
+      },
+      {
+        "x": 640,
+        "moving": false,
+        "ready": true
+      },
+      {
+        "x": 640,
+        "moving": false,
+        "ready": true
+      },
+      {
+        "x": 640,
+        "moving": false,
+        "ready": true
+      }
+    ],
+    "endpoint": 640,
+    "state_unchanged": true,
+    "actors_unchanged": true
+  },
+  "gate-left": {
+    "samples": [
+      {
+        "x": 640,
+        "moving": true,
+        "ready": false
+      },
+      {
+        "x": 432.9878573587224,
+        "moving": true,
+        "ready": false
+      },
+      {
+        "x": 238.1104347171385,
+        "moving": true,
+        "ready": false
+      },
+      {
+        "x": 121.24005043002633,
+        "moving": true,
+        "ready": false
+      },
+      {
+        "x": 0,
+        "moving": false,
+        "ready": true
+      },
+      {
+        "x": 0,
+        "moving": false,
+        "ready": true
+      },
+      {
+        "x": 0,
+        "moving": false,
+        "ready": true
+      },
+      {
+        "x": 0,
+        "moving": false,
+        "ready": true
+      }
+    ],
+    "endpoint": 0,
+    "state_unchanged": true,
+    "actors_unchanged": true
+  },
+  "status": "passed",
+  "version": "0.19.84",
+  "opening": {
+    "line": "아빠, 숲이 아직 깜깜해.",
+    "hooves": "assets/sfx-carriage-hooves.wav",
+    "ride": "assets/ms14-audio/cart-roll-light.mp3",
+    "tags": [
+      "r13_carriage_background",
+      "r13_visitor"
+    ]
+  }
+}

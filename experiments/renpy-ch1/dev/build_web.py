@@ -54,7 +54,8 @@ REDESIGN_BACKUPS = (REDESIGN_BACKUP, ROOT / "art/ep-art-20261016/original-entrie
 START_PEOPLE = ("daram",)
 START_FILES = {"assets/room13-opening-coach-landscape.webp","assets/room13-title-winter020.webp", "assets/room13-pixel-carriage-empty-winter.webp",
                "assets/bgm-title.mp3", "assets/bgm-travel.mp3", "assets/bgm-snow.mp3", "assets/amb-wind.mp3",
-               "assets/type.wav", "assets/ms14-audio/cart-roll-light.mp3"}
+               "assets/type.wav", "assets/ms14-audio/cart-roll-light.mp3",
+               "assets/room13-fx-shade-carriage.webp", "assets/room13-fx-glow-carriage-0.webp", "assets/room13-fx-carriage-window-mask.webp"}
 
 def startup_media(rel, startup_files):
     name = Path(rel).name

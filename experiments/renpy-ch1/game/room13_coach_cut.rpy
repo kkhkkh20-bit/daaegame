@@ -24,5 +24,6 @@ label r13_coach_travel_cut:
         $ source_pulse(False); renpy.music.stop(channel="scene_fx"); renpy.music.stop(channel="typing")
         $ renpy.music.play("assets/bgm-travel.mp3", fadein=.6, if_changed=True)
         $ renpy.music.play("assets/ms14-audio/cart-roll-light.mp3",channel="carriage_ride",loop=True,fadein=.2,relative_volume=.2)
+        $ renpy.music.play("assets/sfx-carriage-hooves.wav",channel="carriage_hooves",loop=True,fadein=.4,relative_volume=.18)
         call screen r13_coach_exterior
     return

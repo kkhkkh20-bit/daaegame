@@ -602,8 +602,12 @@ def light_rig(key, art, lights, shade, sway=None, size=None):
     return spec
 
 
+def carriage_light_rig():
+    return light_rig("carriage", None, [(1080,110,600,.38,"lamp")], .18, size=(1280,720))
+
+
 def light_rigs():
-    rigs = {}
+    rigs = {"carriage": carriage_light_rig()}
     inn_lights = [(150, 365, 820, 1.0, "fire"), (353, 292, 280, .55, "lamp"), (411, 197, 240, .5, "lamp"),
                   (1428, 204, 260, .5, "lamp"), (1561, 309, 260, .55, "lamp"),
                   (156, 84, 110, .45, "candle"), (190, 108, 110, .45, "candle")]
@@ -698,9 +702,18 @@ def title_only():
     print("updated title lamps", META_FILE)
 
 
+def carriage_only():
+    with open(META_FILE, encoding="utf-8") as f:
+        meta = json.load(f)
+    meta["lights"]["carriage"] = carriage_light_rig()
+    with open(META_FILE,"w",encoding="utf-8") as f:
+        json.dump(meta,f,ensure_ascii=False,indent=1)
+
+
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--title-only", action="store_true")
+    parser.add_argument("--carriage-only",action="store_true")
     args = parser.parse_args()
-    title_only() if args.title_only else main()
+    carriage_only() if args.carriage_only else title_only() if args.title_only else main()

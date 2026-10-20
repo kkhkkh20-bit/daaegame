@@ -8,6 +8,10 @@ testcase carriage_dialogue_reaction:
     pause until eval (renpy.get_screen("say") is not None) timeout 20
     pause 1.0
     assert screen "say"
+    assert eval (r13_packet[0]=="daram" and r13_packet[1]=="아빠, 숲이 아직 깜깜해.")
+    assert eval (renpy.music.get_playing(channel="carriage_hooves") is not None)
+    screenshot "carriage84_before.png"
+    click pos (900,600) until "마차가 덜컹 기울었다." timeout 20
     assert eval (r13_packet[0] is None and r13_packet[1].startswith("마차가 덜컹 기울었다."))
     assert eval (r13_packet[2].get("carriage_jolt") and "r13_visitor" in renpy.get_showing_tags())
     screenshot "carriage79_action.png"
