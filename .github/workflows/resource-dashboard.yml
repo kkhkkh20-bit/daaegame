@@ -11,6 +11,7 @@ permissions:
 jobs:
   resource-index:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -22,9 +23,12 @@ jobs:
       - name: Verify extractor and real data
         run: python3 -m unittest discover -s tools/resource-dashboard -p 'test_*.py' -v
       - run: node --check tools/resource-dashboard/web/app.js
+      - name: Bound review artifact storage
+        run: test "$(du -sb preview/resource-dashboard | cut -f1)" -le 104857600
       - uses: actions/upload-artifact@v4
         with:
           name: resource-dashboard
           path: preview/resource-dashboard/
+          retention-days: 1
 # Deliberately no deploy or branch-writing permissions.
 # The single integration owner regenerates this directory before the existing Pages publish.

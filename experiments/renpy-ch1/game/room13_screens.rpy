@@ -1,7 +1,7 @@
 screen r13_hud():
     style_prefix "r13"
     zorder 20
-    if place == "마차 안":
+    if place == "마차 안" and r13_basis01_state is None:
         # The opening carriage can always be skipped straight to the village gate.
         textbutton "씬 건너뛰기":
             style "r13_action_button"

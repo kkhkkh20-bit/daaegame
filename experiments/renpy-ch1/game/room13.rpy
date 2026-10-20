@@ -111,7 +111,7 @@ label room13_start:
     hide screen r13_book
     hide screen r13_calendar
     show screen r13_hud
-    # 0.19.2 (owner): the opening cutscene before the carriage talk is no longer played.
+    jump pb01_start # Production basis; preserve legacy source line provenance.
     call r13_carriage
     $ r13_grant(["E01"],"여행 중 가지고 온 편지")
     $ r13_edit(period=1)
