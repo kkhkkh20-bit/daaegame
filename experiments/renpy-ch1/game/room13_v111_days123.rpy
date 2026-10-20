@@ -12,9 +12,6 @@ label r13_v111_start_block:
     jump r13_v111_letter_open
 
 label r13_v111_letter_open:
-    call screen r13_confirm('편지를 펼친다',yes='편지를 펼친다')
-    if not _return:
-        jump r13_v111_letter_open
     $ v111_answer=0
     if v111_answer==0:
         jump r13_v111_letter_read
@@ -86,9 +83,6 @@ label r13_v111_carriage_end:
     jump r13_v111_leave_carriage
 
 label r13_v111_leave_carriage:
-    call screen r13_confirm('마차에서 내린다',yes='마차에서 내린다')
-    if not _return:
-        jump r13_v111_leave_carriage
     $ v111_answer=0
     if v111_answer==0:
         $ r13_v111_apply('option:leave_carriage:0',[{'op': 'set', 'field': 'carriage_stopped', 'value': True}])
@@ -193,7 +187,7 @@ label r13_v111_gate_read_rules:
 
 label r13_v111_gate_reread_list:
     show screen r13_material_corner('V111:E02')
-    call screen r13_confirm("기록을 다시 확인했다.",yes="닫는다")
+    call r13_lines([(None,ROOM13["evidence"]['V111:E02']["establishes"])],'v111:read:gate_reread_list')
     hide screen r13_material_corner
     jump r13_v111_gate_investigate
 
@@ -646,15 +640,6 @@ label r13_v111_nero_work:
     call r13_v111_travel('forest','nero_work')
     call r13_v111_wait('nero_work')
     $ v111_answer=_return
-    call screen r13_confirm('젖은 빈 포대를 분리한다',yes='젖은 빈 포대를 분리한다')
-    if not _return:
-        jump r13_v111_nero_work
-    call screen r13_confirm('마른 받침으로 침구를 옮긴다',yes='마른 받침으로 침구를 옮긴다')
-    if not _return:
-        jump r13_v111_nero_work
-    call screen r13_confirm('끈을 묶고 운반표에 이름을 적는다',yes='끈을 묶고 운반표에 이름을 적는다')
-    if not _return:
-        jump r13_v111_nero_work
     if v111_answer==0:
         jump r13_v111_nero_done
     jump r13_v111_nero_work

@@ -1,0 +1,32 @@
+{
+  "version": "0.19.77",
+  "status": "core routes passed; one day-2 scenery overlap remains",
+  "routes": {
+    "shelter": {
+      "resume": "v111-lamp_inspect3",
+      "day": 4,
+      "piko_alive": true,
+      "blankets": 0,
+      "stones": "restored",
+      "custody": "reporting_obligation",
+      "page_errors": []
+    },
+    "nero": {
+      "resume": "v111-lamp_observe",
+      "day": 4,
+      "piko_alive": false,
+      "blankets": 2,
+      "stones": "with_baek",
+      "custody": "detained_work_waiting_station",
+      "page_errors": []
+    }
+  },
+  "day1": "new game to actual first-night save; see day1-play-log.txt",
+  "day2": "resumed actual first-night save through second night; see day2-play-log.txt",
+  "pending": [
+    "Day 2 square offerings: sampled clicks reached residents; Day 3 observation passed. Keep original person-first hit priority and existing placements.",
+    "Other residents new story placements await user instructions.",
+    "Days 4–14 and major endings are not verified or completed."
+  ],
+  "method": "Actual field, map, topics and notebook inputs. Only text speed preference modified. No story state injection. No generic save/load/skip matrix."
+}

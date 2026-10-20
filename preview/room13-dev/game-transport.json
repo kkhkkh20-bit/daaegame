@@ -1,22 +1,22 @@
 {
  "multipart": true,
- "archive_bytes": 18419417,
- "archive_sha256": "2933229312256f679837bbc7b78c1197c8b0c17a9ed9f27ec7fcd190c5f2813f",
+ "archive_bytes": 17053044,
+ "archive_sha256": "df743a9ed6228a228f427f12bc343955ea4393a06513dacb461fde5b606fbf93",
  "parts": [
   {
    "file": "game.part01",
    "bytes": 8388608,
-   "sha256": "1c1a4fe51fd41da93b342e38807ab70be6872a3b5e500ee752748ceeedd7bd72"
+   "sha256": "f9b3bf6758f854fa194771cacaa3825cdd0774534a102fff46669a19389ccd7a"
   },
   {
    "file": "game.part02",
    "bytes": 8388608,
-   "sha256": "54f26e06a16f13b4154170a9bcb66599174e7ec08e72f06ae994d9d07bab280e"
+   "sha256": "530e524f752e04b48b1d836be0707f05320c050bcfedc1a60471a96fa1f18ffd"
   },
   {
    "file": "game.part03",
-   "bytes": 1642201,
-   "sha256": "7a200f3e291887d88bc7d522395500de4435b020d95305298c2cbdbf573b6627"
+   "bytes": 275828,
+   "sha256": "e9ce4b3e81cbd768804d18e8059482937e9a152eae69e74ee70f89cf406c2cc2"
   }
  ],
  "preload": [
@@ -44,11 +44,6 @@
    "file": "game/assets/bgm-travel.mp3",
    "bytes": 3893288,
    "sha256": "3718affb14e42729bb96b37d48eaea8aa723cc076f16fb81c92c622a1a1846e2"
-  },
-  {
-   "file": "game/assets/dialogue-context-master/resident_lamplighter/840/guarded_relief.webp",
-   "bytes": 98208,
-   "sha256": "dddd50c46aa3cd394c845152282c1a22d5ed5760d049706a81bb5ebb4ca1b597"
   },
   {
    "file": "game/assets/dialogue-source-master/daram/760/angry.webp",
@@ -186,111 +181,6 @@
    "sha256": "dc507a0043dbeec7b54b245be0ef63d1857ba9f9d3c6e4e32fdd18ad33cba7af"
   },
   {
-   "file": "game/assets/dialogue-source-master/resident_kalbaram/840/angry.webp",
-   "bytes": 116748,
-   "sha256": "6a2baa938cc3c24cfbd706a6759c57846e68f31b8d00def92d866662f7c9b41e"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/resident_kalbaram/840/anxious.webp",
-   "bytes": 101066,
-   "sha256": "a2c941ad7cd9ba550fd447ca554d7463d967ff78b23a273e40723fa0527a25e1"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/resident_kalbaram/840/joy.webp",
-   "bytes": 109894,
-   "sha256": "0efdbbfc16cff0cbaa9a37622563d5e490f4120ed8383d4fd187ee407b3b7266"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/resident_kalbaram/840/neutral.webp",
-   "bytes": 103898,
-   "sha256": "0fe393f7e4ac90de7b591f4a367b602e6aa892eddb1f610f8c6072c1512b533e"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/resident_kalbaram/840/surprise_react.webp",
-   "bytes": 105730,
-   "sha256": "d140cfcaf1777ee9e49451cdb4c277c4af3370bc64d8122515d12ee4f06a16d4"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/resident_kalbaram/840/surprise_talk.webp",
-   "bytes": 105822,
-   "sha256": "93bd895ef7719eda50e36d47d0907eb9bc0cb5334c63756895e885c233eef7da"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/resident_kkwak/560/angry.webp",
-   "bytes": 83534,
-   "sha256": "4fda8d29da8dc77e8489583d54db84be3ce8b3c71bc457c1b73f3b18c85fadd6"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/resident_kkwak/560/joy.webp",
-   "bytes": 81272,
-   "sha256": "cad41108c13c95971e8aa7b6b6f7014da445c79f16b535f12bfde26c86c745d1"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/resident_kkwak/760/angry.webp",
-   "bytes": 86762,
-   "sha256": "c8a1b353a224b2f0f43a529bb97d2760be5f5961442dfe6a88f48eb78bf2a834"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/resident_kkwak/760/joy.webp",
-   "bytes": 84292,
-   "sha256": "4f3a9f1f25bb61075a2a505b83569d298e1bd8c9ab9686694c1cfcad86fb18d4"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/resident_kkwak/840/angry.webp",
-   "bytes": 167924,
-   "sha256": "2e156f97fc19604fdc20a306c0b68c49b9c4d6d7b2fbafe737ec5e33ab77c4e2"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/resident_kkwak/840/anxious.webp",
-   "bytes": 93714,
-   "sha256": "531f3c8f84425ce1c44bd2044ea50a32a3307cfec05542cdd5c88ecba6790664"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/resident_kkwak/840/joy.webp",
-   "bytes": 163924,
-   "sha256": "3c4fb2c1442d71aafd68c805a655536282c709ab88eb9038f4be067014ea5e83"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/resident_kkwak/840/neutral.webp",
-   "bytes": 100582,
-   "sha256": "cc32ec5f58611b3cfdfaead66788c4488bfe09ad701c35fdd2f996a0154b6591"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/resident_kkwak/840/surprise_react.webp",
-   "bytes": 105106,
-   "sha256": "aa121b6fa793e31e4015e0975402fa1883b1fd3a90043894b02be8d986769224"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/resident_kkwak/840/surprise_talk.webp",
-   "bytes": 96214,
-   "sha256": "1ca04169514db7c9664c1d25c70d1ccabc3eda92007afa4aeb6eb1e876186818"
-  },
-  {
-   "file": "game/assets/map-action27/FO-1--resident_kalbaram.webp",
-   "bytes": 114158,
-   "sha256": "b365048b2af6d26c63035f00233cdb1b9e47fffd56ccb96bc3ebf60b2156f1a3"
-  },
-  {
-   "file": "game/assets/map-action27/RI-1--resident_kkwak.webp",
-   "bytes": 96436,
-   "sha256": "aa4f38ee1275fbb11e2c80ab1a5239363363f953108629483afeabf8d692f06c"
-  },
-  {
-   "file": "game/assets/map-work-nine/resident_kkwak--river_haul_net.webp",
-   "bytes": 920920,
-   "sha256": "7d648c270bd48e590fa8510d92fcbd9bc85da45dff4c53ee86155116889c3b48"
-  },
-  {
-   "file": "game/assets/ms14/guardroom.webp",
-   "bytes": 200008,
-   "sha256": "2554661cc47896a091c775d65794193f91ad812db82a2196ef7ae057f17a32d8"
-  },
-  {
-   "file": "game/assets/room13-action-karo-living_axlewrap.webp",
-   "bytes": 95916,
-   "sha256": "0a8b655584fc2a450c483a86001846b7656a50b8a22f4da54b08edbf8724b7b8"
-  },
-  {
    "file": "game/assets/room13-fullbody-daram-angry.webp",
    "bytes": 74156,
    "sha256": "0423246541bbe19f65116665a2d346732326c712151fe01d343bf947633088d4"
@@ -321,119 +211,9 @@
    "sha256": "5a4bf59db9ad96a22c84d4056560343ff9128a146b9f7a3fc719e0951b9e1d05"
   },
   {
-   "file": "game/assets/room13-fullbody-guard-angry.webp",
-   "bytes": 76384,
-   "sha256": "0557200fef6660055946a4a526140234028cb372656868e6019afc5d72003abc"
-  },
-  {
-   "file": "game/assets/room13-fullbody-guard-anxious.webp",
-   "bytes": 81828,
-   "sha256": "a11043e4e8721b0ff2d821d88275af0fe7e1decb5bc959d367e70b3bfa51b88d"
-  },
-  {
-   "file": "game/assets/room13-fullbody-guard-flustered.webp",
-   "bytes": 70810,
-   "sha256": "605371045ba529bc088fa8df2148e4087e5af4a60680ff3fdedfcce734a3291f"
-  },
-  {
-   "file": "game/assets/room13-fullbody-guard-joy.webp",
-   "bytes": 80834,
-   "sha256": "12d410bed17790faa9572f2e0339765794768c206253bbb329ae99430abfaf31"
-  },
-  {
-   "file": "game/assets/room13-fullbody-guard-neutral.webp",
-   "bytes": 70668,
-   "sha256": "7af5a93fb6ecfffc86b912a11d988635a5329ca0fa5710ff2b34505869f94cb9"
-  },
-  {
-   "file": "game/assets/room13-fullbody-guard-surprise.webp",
-   "bytes": 75236,
-   "sha256": "c62398af866814c949c7c22f3332b2241e4ad61c2fef4f3f6d6ae7b4e8079aa6"
-  },
-  {
-   "file": "game/assets/room13-fullbody-karo-angry.webp",
-   "bytes": 91010,
-   "sha256": "bc1725fdd5fc6df808294c402a0fee27377b2f00117a6074ad1add9f7dacf0bd"
-  },
-  {
-   "file": "game/assets/room13-fullbody-karo-anxious.webp",
-   "bytes": 96688,
-   "sha256": "cd0a8e97187a422f7b2052b3421f82e262111aa4ac9254828a1394c56505e851"
-  },
-  {
-   "file": "game/assets/room13-fullbody-karo-flustered.webp",
-   "bytes": 100518,
-   "sha256": "4d4796c6ec20978eef822e3289f87ae6b536cf14edbeb1b86c3db717484104b2"
-  },
-  {
-   "file": "game/assets/room13-fullbody-karo-joy.webp",
-   "bytes": 84930,
-   "sha256": "8caa1e871553b79cdde0023ce1fbf67e5b4181c640143acb5a576d7fbb3087e0"
-  },
-  {
-   "file": "game/assets/room13-fullbody-karo-neutral.webp",
-   "bytes": 85090,
-   "sha256": "d3383f8fee5463f6138392befb41131f6e88570e108a5ae6387116adf2a6ef43"
-  },
-  {
-   "file": "game/assets/room13-fullbody-karo-surprise.webp",
-   "bytes": 91288,
-   "sha256": "ab10e9b21dc010fe95dfa2ffa778f5ef6f877e58f0637d4d2d871917550c61c3"
-  },
-  {
-   "file": "game/assets/room13-fullbody-resident_kkwak-angry.webp",
-   "bytes": 76666,
-   "sha256": "ae25470184f03ae8152fe4b8132bb01b45a073ac06123f98a85b397dd1f2e3f1"
-  },
-  {
-   "file": "game/assets/room13-fullbody-resident_kkwak-anxious.webp",
-   "bytes": 71580,
-   "sha256": "8df1d8b32c311ab0f86e1138410d9b3dfbacbed5c305e7a97cc0bc2ed8b0b912"
-  },
-  {
-   "file": "game/assets/room13-fullbody-resident_kkwak-flustered.webp",
-   "bytes": 77460,
-   "sha256": "bbf81304d3c5969478b1283df6e2e95f4908afc9441e3004993987f793ad935e"
-  },
-  {
-   "file": "game/assets/room13-fullbody-resident_kkwak-joy.webp",
-   "bytes": 73522,
-   "sha256": "1c0cebd9d0511507c201caa8b89ae25f732005a6ff40c0dd1958a535f3a316bb"
-  },
-  {
-   "file": "game/assets/room13-fullbody-resident_kkwak-neutral.webp",
-   "bytes": 66850,
-   "sha256": "718c781e025ea6d4e4d460f6d6ac6cb7ec34f1b8a1c95d9003fac12a55878fe7"
-  },
-  {
-   "file": "game/assets/room13-fullbody-resident_kkwak-surprise.webp",
-   "bytes": 76882,
-   "sha256": "a925ed0e06f5888737f31b84ee50a7f4f7d885446e07e6ce280e771f3a02bf90"
-  },
-  {
    "file": "game/assets/room13-pixel-acting-daram.webp",
    "bytes": 328144,
    "sha256": "70939cc65638b449fc447bb775834a50cc61e2728a2f060be050d4a9f74a2ed9"
-  },
-  {
-   "file": "game/assets/room13-pixel-acting-guard-extra.webp",
-   "bytes": 253194,
-   "sha256": "f34c0d19a11fb3be4b316091292855230ae6813c18a2e73d3190a3bcdd90d2c9"
-  },
-  {
-   "file": "game/assets/room13-pixel-acting-guard.webp",
-   "bytes": 339952,
-   "sha256": "a7934889fea5c3ebcda20a01d3d1ad469b1f432357cd043e2cd25509e65ff0d2"
-  },
-  {
-   "file": "game/assets/room13-pixel-acting-karo.webp",
-   "bytes": 334278,
-   "sha256": "3183786f4151728689ab6a8b2aa0afa0bcdf39852bf7b5a4a38fbc5c425a4b61"
-  },
-  {
-   "file": "game/assets/room13-pixel-acting-resident_kkwak.webp",
-   "bytes": 279406,
-   "sha256": "063f562e248f70616d8d40e9541bf5259cc4d35ad14d1ea20e32497acdc38ff0"
   },
   {
    "file": "game/assets/room13-pixel-carriage-empty-winter.webp",
@@ -449,46 +229,6 @@
    "file": "game/assets/room13-pixel-dialogue-daram.webp",
    "bytes": 331566,
    "sha256": "4129f95c46839e4322e8b80eee199f5bc95e1ab89a98d4a7206db9958ef05693"
-  },
-  {
-   "file": "game/assets/room13-pixel-dialogue-guard.webp",
-   "bytes": 198096,
-   "sha256": "c6667d8707a0e819d2c7d0ac040c8820280837fb802fd3db71af03b48c00b164"
-  },
-  {
-   "file": "game/assets/room13-pixel-dialogue-karo.webp",
-   "bytes": 222574,
-   "sha256": "3e916b209c8ce001224ed8906301a96d24c552bc689b3e9d88df19a6bc51455c"
-  },
-  {
-   "file": "game/assets/room13-pixel-karo-fullbody.webp",
-   "bytes": 203998,
-   "sha256": "d9277cbf95562779b6de22b6c7b62513f7fa9cc87616b0f9f746119ad89ee967"
-  },
-  {
-   "file": "game/assets/room13-pixel-material-icons079-objects.webp",
-   "bytes": 791140,
-   "sha256": "9e23cdee35bd00c837bbb940fede42fca73e003e1274e972c87f67eca4794600"
-  },
-  {
-   "file": "game/assets/room13-pixel-material-icons079-records1.webp",
-   "bytes": 930222,
-   "sha256": "ac523c89e4503502426c9b40b9e9dcbb06fc4f330dd7e86111c514ca8fa2a971"
-  },
-  {
-   "file": "game/assets/room13-pixel-material-icons079-records2.webp",
-   "bytes": 911672,
-   "sha256": "f4a02156c36df20aeaaaf9ba20274b27c69413449af23d0f9d168c6eca88fde6"
-  },
-  {
-   "file": "game/assets/room13-pixel-material-icons079-records3.webp",
-   "bytes": 949870,
-   "sha256": "0c8b45689daa6738703ad2b802ee9eb19073fccc6e63cc5ab1b7886f0140e40f"
-  },
-  {
-   "file": "game/assets/room13-pixel-material-icons079-records4.webp",
-   "bytes": 741866,
-   "sha256": "4c2f0c0a91f633efca9182d606e737881d71631112025dc9a6f3693c8bf50a78"
   },
   {
    "file": "game/assets/room13-pixel-ready-gate0173-afternoon.webp",
@@ -511,74 +251,9 @@
    "sha256": "7ed92445ebe1b70e90ef79fb1ad6853a3abdd9a46570da1ebb6cd184e20438c6"
   },
   {
-   "file": "game/assets/room13-role-guard-batch-angry-v1.webp",
-   "bytes": 705852,
-   "sha256": "c5a2f20e0554b9afb09d06f0bdb51ebacb3f54d85c5d0e394c0d02fd7bf3771e"
-  },
-  {
-   "file": "game/assets/room13-role-guard-batch-anxious-v1.webp",
-   "bytes": 704756,
-   "sha256": "9e92fc7bdc8de09840c34b423c6b50ed04357dfd3103c1dc6bd0f434d2aeb763"
-  },
-  {
-   "file": "game/assets/room13-role-guard-batch-flustered-v1.webp",
-   "bytes": 758744,
-   "sha256": "0d78ee9b1a080f0918e2b9c1b8748ba91103ce24d73009b60e9e09b29cb24ef3"
-  },
-  {
-   "file": "game/assets/room13-role-guard-batch-joy-v1.webp",
-   "bytes": 707714,
-   "sha256": "c429940115c561a3174a3364dffdf637d6f80a75c9a32e14bc64ce93d72e0a9c"
-  },
-  {
-   "file": "game/assets/room13-role-guard-batch-surprise-v1.webp",
-   "bytes": 733676,
-   "sha256": "05eb407de2665094d2cefe989d28e7fb58b4b2fce5acfbbf050df653b92b988d"
-  },
-  {
-   "file": "game/assets/room13-role-resident_kalbaram.webp",
-   "bytes": 80268,
-   "sha256": "d49453b5b600a64c34371411acf35b75aea0b43388e2fc84969b266e5df5a417"
-  },
-  {
-   "file": "game/assets/room13-role-resident_kkwak-expression-angry-v1.webp",
-   "bytes": 823894,
-   "sha256": "d45131d2686c33d608e4d2a83a8b8ed01747e0b954e41f4a2b363f5e222cb5ba"
-  },
-  {
-   "file": "game/assets/room13-role-resident_kkwak-expression-anxious-v1.webp",
-   "bytes": 658142,
-   "sha256": "e7a0264fe2d398c57195c149f9867de204b79e99a65e095812216d5bda42a0f2"
-  },
-  {
-   "file": "game/assets/room13-role-resident_kkwak-expression-flustered-v1.webp",
-   "bytes": 701202,
-   "sha256": "8dc2407d6d652bc4b288c9ac9d88b58ee4be5ffddbfe960ea438a80abe5f34a7"
-  },
-  {
-   "file": "game/assets/room13-role-resident_kkwak-expression-joy-v1.webp",
-   "bytes": 854990,
-   "sha256": "a6f84e73fc4886492ed985790100d783b48979c29b146b98b9dad5d65a8cc903"
-  },
-  {
-   "file": "game/assets/room13-role-resident_kkwak-expression-surprise-v1.webp",
-   "bytes": 921316,
-   "sha256": "eef90a489b3cb06d1b4ae4b48d6e9f18ca1064e7afbea1a2935ee7ea0769ebea"
-  },
-  {
-   "file": "game/assets/room13-role-resident_kkwak-refined-v1.webp",
-   "bytes": 680710,
-   "sha256": "bb2fe8b3ac6980b6c4d8846dda9581403cb9b63c13bc90f4ec3f0770ac5e6fe4"
-  },
-  {
    "file": "game/assets/room13-title-winter020.webp",
    "bytes": 390092,
    "sha256": "ec7b0a4ecfea53f3ceb12c606fe733061a0e31ff31aea2fcbf6ca0d9dc97c2d6"
-  },
-  {
-   "file": "game/assets/winter-guard.webp",
-   "bytes": 223946,
-   "sha256": "36c9bd81b60cc3823379df24857d96aff4cdaa5ba0945aea5a6195b3d22805fd"
   }
  ],
  "asset_versions": {
@@ -615,6 +290,9 @@
   "game/assets/dialogue-context-master/kid_kkomi/560/resilient_pride.webp": "af41a9626caf",
   "game/assets/dialogue-context-master/kid_kkomi/760/resilient_pride.webp": "e9850290b6d6",
   "game/assets/dialogue-context-master/kid_kkomi/840/resilient_pride.webp": "7dad1969616b",
+  "game/assets/dialogue-context-master/resident_lamplighter/560/guarded_relief.webp": "1e452ff7a4a4",
+  "game/assets/dialogue-context-master/resident_lamplighter/760/guarded_relief.webp": "8cb26222c2eb",
+  "game/assets/dialogue-context-master/resident_lamplighter/840/guarded_relief.webp": "dddd50c46aa3",
   "game/assets/dialogue-context-master/resident_tosil/560/empathetic_confusion.webp": "26fb6641ec65",
   "game/assets/dialogue-context-master/resident_tosil/760/empathetic_confusion.webp": "0812be764ee6",
   "game/assets/dialogue-context-master/resident_tosil/840/empathetic_confusion.webp": "41e3d953b008",
@@ -1150,6 +828,42 @@
   "game/assets/dialogue-source-master/resident_jongjong/840/neutral.webp": "4e12ff498298",
   "game/assets/dialogue-source-master/resident_jongjong/840/surprise_react.webp": "18dabb158105",
   "game/assets/dialogue-source-master/resident_jongjong/840/surprise_talk.webp": "b7ce04f2e3c7",
+  "game/assets/dialogue-source-master/resident_kalbaram/560/angry.webp": "97cb01d60f32",
+  "game/assets/dialogue-source-master/resident_kalbaram/560/anxious.webp": "976e216c4e33",
+  "game/assets/dialogue-source-master/resident_kalbaram/560/joy.webp": "4b5980b8b596",
+  "game/assets/dialogue-source-master/resident_kalbaram/560/neutral.webp": "1cc47f132599",
+  "game/assets/dialogue-source-master/resident_kalbaram/560/surprise_react.webp": "e4d24cb68112",
+  "game/assets/dialogue-source-master/resident_kalbaram/560/surprise_talk.webp": "077163859849",
+  "game/assets/dialogue-source-master/resident_kalbaram/760/angry.webp": "97cb01d60f32",
+  "game/assets/dialogue-source-master/resident_kalbaram/760/anxious.webp": "976e216c4e33",
+  "game/assets/dialogue-source-master/resident_kalbaram/760/joy.webp": "4b5980b8b596",
+  "game/assets/dialogue-source-master/resident_kalbaram/760/neutral.webp": "1cc47f132599",
+  "game/assets/dialogue-source-master/resident_kalbaram/760/surprise_react.webp": "e4d24cb68112",
+  "game/assets/dialogue-source-master/resident_kalbaram/760/surprise_talk.webp": "077163859849",
+  "game/assets/dialogue-source-master/resident_kalbaram/840/angry.webp": "6a2baa938cc3",
+  "game/assets/dialogue-source-master/resident_kalbaram/840/anxious.webp": "a2c941ad7cd9",
+  "game/assets/dialogue-source-master/resident_kalbaram/840/joy.webp": "0efdbbfc16cf",
+  "game/assets/dialogue-source-master/resident_kalbaram/840/neutral.webp": "0fe393f7e4ac",
+  "game/assets/dialogue-source-master/resident_kalbaram/840/surprise_react.webp": "d140cfcaf177",
+  "game/assets/dialogue-source-master/resident_kalbaram/840/surprise_talk.webp": "93bd895ef771",
+  "game/assets/dialogue-source-master/resident_kkwak/560/angry.webp": "4fda8d29da8d",
+  "game/assets/dialogue-source-master/resident_kkwak/560/anxious.webp": "077b9f7c327e",
+  "game/assets/dialogue-source-master/resident_kkwak/560/joy.webp": "cad41108c13c",
+  "game/assets/dialogue-source-master/resident_kkwak/560/neutral.webp": "d658ced3c491",
+  "game/assets/dialogue-source-master/resident_kkwak/560/surprise_react.webp": "f610b3854299",
+  "game/assets/dialogue-source-master/resident_kkwak/560/surprise_talk.webp": "89cf3dedeab4",
+  "game/assets/dialogue-source-master/resident_kkwak/760/angry.webp": "c8a1b353a224",
+  "game/assets/dialogue-source-master/resident_kkwak/760/anxious.webp": "05dd23dfdd15",
+  "game/assets/dialogue-source-master/resident_kkwak/760/joy.webp": "4f3a9f1f25bb",
+  "game/assets/dialogue-source-master/resident_kkwak/760/neutral.webp": "0a2a1f82b3a3",
+  "game/assets/dialogue-source-master/resident_kkwak/760/surprise_react.webp": "5140bfabc1bf",
+  "game/assets/dialogue-source-master/resident_kkwak/760/surprise_talk.webp": "9ecfcda138ef",
+  "game/assets/dialogue-source-master/resident_kkwak/840/angry.webp": "2e156f97fc19",
+  "game/assets/dialogue-source-master/resident_kkwak/840/anxious.webp": "531f3c8f8442",
+  "game/assets/dialogue-source-master/resident_kkwak/840/joy.webp": "3c4fb2c1442d",
+  "game/assets/dialogue-source-master/resident_kkwak/840/neutral.webp": "cc32ec5f5861",
+  "game/assets/dialogue-source-master/resident_kkwak/840/surprise_react.webp": "aa121b6fa793",
+  "game/assets/dialogue-source-master/resident_kkwak/840/surprise_talk.webp": "1ca04169514d",
   "game/assets/dialogue-source-master/resident_kongi/560/angry.webp": "b096b2aba0bc",
   "game/assets/dialogue-source-master/resident_kongi/560/anxious.webp": "00250727d62d",
   "game/assets/dialogue-source-master/resident_kongi/560/joy.webp": "7c8ba0b6b238",
@@ -1678,6 +1392,7 @@
   "game/assets/map-action27/DI-1a--resident_tok.webp": "d480e3cee510",
   "game/assets/map-action27/DI-1b--resident_dalgeurak.webp": "975e67ec3999",
   "game/assets/map-action27/FA-1--neoul.webp": "9f7def04c59a",
+  "game/assets/map-action27/FO-1--resident_kalbaram.webp": "b365048b2af6",
   "game/assets/map-action27/GA-1--neoul.webp": "24b05e489f79",
   "game/assets/map-action27/IN-1--resident_nubi.webp": "229bfc6ad116",
   "game/assets/map-action27/KI-1--nabi.webp": "48adfef70e98",
@@ -1696,6 +1411,7 @@
   "game/assets/map-action27/PO-1--resident_sling.webp": "7e89e07a4268",
   "game/assets/map-action27/PO-2--resident_librarian.webp": "0ae895da144f",
   "game/assets/map-action27/PO-3--resident_jongjong.webp": "3af2fbef3d52",
+  "game/assets/map-action27/RI-1--resident_kkwak.webp": "aa4f38ee1275",
   "game/assets/map-action27/RI-2--resident_mulgyeol.webp": "aa113a9599ab",
   "game/assets/map-action27/SC-1--resident_teacher.webp": "98caa05e6ee4",
   "game/assets/map-action27/SQ-1--resident_dalgeurak.webp": "08296288a5cd",
@@ -1719,6 +1435,7 @@
   "game/assets/map-work-nine/resident_dalgeurak--pots_display.webp": "24206e03f6d0",
   "game/assets/map-work-nine/resident_guldol--stone_tapping.webp": "3c2d3bcd88b1",
   "game/assets/map-work-nine/resident_jongjong--letters_waiting.webp": "df0aff4c1b59",
+  "game/assets/map-work-nine/resident_kkwak--river_haul_net.webp": "7d648c270bd4",
   "game/assets/map-work-nine/resident_mulgyeol--rope_coiling.webp": "acd0d2d9a6ec",
   "game/assets/map-work-nine/resident_mungchi--store_sort_boxes.webp": "9d4ff9f7187e",
   "game/assets/map-work-nine/resident_nubi--inn_sort_tie_laundry.webp": "96aac34bb275",
@@ -1742,6 +1459,7 @@
   "game/assets/ms14/family.png": "f4e8557b97fa",
   "game/assets/ms14/forest.webp": "ffae3617438a",
   "game/assets/ms14/gate.webp": "0edc16266d09",
+  "game/assets/ms14/guardroom.webp": "2554661cc478",
   "game/assets/ms14/hall.webp": "aab029b0a78e",
   "game/assets/ms14/inn.webp": "a22de71c6785",
   "game/assets/ms14/portrait_child.png": "b32874a3f4fe",
@@ -1774,6 +1492,8 @@
   "game/assets/profile-source-master/chorong_mother.webp": "91fded97c0ca",
   "game/assets/profile-source-master/doto.webp": "170f0ae42d92",
   "game/assets/profile-source-master/granny.webp": "b66c1b1f6f80",
+  "game/assets/profile-source-master/guard.webp": "5ed7844ff07e",
+  "game/assets/profile-source-master/karo.webp": "ed320a91f3de",
   "game/assets/profile-source-master/kid_bang.webp": "61c129d2a142",
   "game/assets/profile-source-master/kid_dodam.webp": "190fd3475371",
   "game/assets/profile-source-master/kid_kkam.webp": "452332e811ee",
@@ -1796,6 +1516,8 @@
   "game/assets/profile-source-master/resident_guseul.webp": "013e3b547af9",
   "game/assets/profile-source-master/resident_hyeoni.webp": "e12079a0ba1b",
   "game/assets/profile-source-master/resident_jongjong.webp": "78f7d589ac59",
+  "game/assets/profile-source-master/resident_kalbaram.webp": "0222eba34ada",
+  "game/assets/profile-source-master/resident_kkwak.webp": "7cbbacfb34b4",
   "game/assets/profile-source-master/resident_kongi.webp": "2039a468f569",
   "game/assets/profile-source-master/resident_lamplighter.webp": "c7c72f31fad0",
   "game/assets/profile-source-master/resident_librarian.webp": "cccfb64be1d4",
@@ -1845,6 +1567,8 @@
   "game/assets/resident_eunho-face.png": "4ff0944daed0",
   "game/assets/resident_guseul-body.png": "6240cd6417a5",
   "game/assets/resident_guseul-face.png": "311d09641e9b",
+  "game/assets/resident_kkwak-body.png": "7934b8f9339d",
+  "game/assets/resident_kkwak-face.png": "02020ad8a196",
   "game/assets/resident_kongi-body.png": "86c2b297cae9",
   "game/assets/resident_kongi-face.png": "54f60ae96c50",
   "game/assets/resident_lamplighter-body.png": "b1c4ec5289c9",
@@ -1892,6 +1616,7 @@
   "game/assets/room13-action-buri-action_2.webp": "0059775a0b83",
   "game/assets/room13-action-buri-event_toolbox.webp": "7db5aba71c5f",
   "game/assets/room13-action-granny-living_keyledger.webp": "ef9e7e4c7237",
+  "game/assets/room13-action-karo-living_axlewrap.webp": "0a8b655584fc",
   "game/assets/room13-action-resident_bori-living_firewood.webp": "d8a693e4510e",
   "game/assets/room13-action-resident_librarian-event_ledgertie.webp": "dbdf6c63af08",
   "game/assets/room13-action-resident_librarian-living_bookpaper.webp": "13c6b781cc5d",
@@ -2074,6 +1799,20 @@
   "game/assets/room13-fullbody-granny-neutral.webp": "413e8814d4c8",
   "game/assets/room13-fullbody-granny-pose-withdraw_hand.webp": "822c2d392904",
   "game/assets/room13-fullbody-granny-surprise.webp": "e0764707acd2",
+  "game/assets/room13-fullbody-guard-angry.webp": "0557200fef66",
+  "game/assets/room13-fullbody-guard-anxious.webp": "a11043e4e872",
+  "game/assets/room13-fullbody-guard-flustered.webp": "605371045ba5",
+  "game/assets/room13-fullbody-guard-joy.webp": "12d410bed177",
+  "game/assets/room13-fullbody-guard-neutral.webp": "7af5a93fb6ec",
+  "game/assets/room13-fullbody-guard-surprise.webp": "c62398af8668",
+  "game/assets/room13-fullbody-karo-angry.webp": "bc1725fdd5fc",
+  "game/assets/room13-fullbody-karo-anxious-acting.webp": "d36185dd380f",
+  "game/assets/room13-fullbody-karo-anxious.webp": "cd0a8e97187a",
+  "game/assets/room13-fullbody-karo-flustered.webp": "4d4796c6ec20",
+  "game/assets/room13-fullbody-karo-joy.webp": "8caa1e871553",
+  "game/assets/room13-fullbody-karo-neutral-acting.webp": "8562fddab83a",
+  "game/assets/room13-fullbody-karo-neutral.webp": "d3383f8fee54",
+  "game/assets/room13-fullbody-karo-surprise.webp": "ab10e9b21dc0",
   "game/assets/room13-fullbody-kid_bang-anxious.webp": "aa07889eac97",
   "game/assets/room13-fullbody-kid_bang-joy.webp": "d58cb50ffae0",
   "game/assets/room13-fullbody-kid_bang-neutral.webp": "2566f6b286b9",
@@ -2171,6 +1910,12 @@
   "game/assets/room13-fullbody-resident_guseul-joy.webp": "b477f99472c2",
   "game/assets/room13-fullbody-resident_guseul-neutral.webp": "7e1f7a952a60",
   "game/assets/room13-fullbody-resident_guseul-surprise.webp": "de548c100425",
+  "game/assets/room13-fullbody-resident_kkwak-angry.webp": "ae25470184f0",
+  "game/assets/room13-fullbody-resident_kkwak-anxious.webp": "8df1d8b32c31",
+  "game/assets/room13-fullbody-resident_kkwak-flustered.webp": "bbf81304d3c5",
+  "game/assets/room13-fullbody-resident_kkwak-joy.webp": "1c0cebd9d051",
+  "game/assets/room13-fullbody-resident_kkwak-neutral.webp": "718c781e025e",
+  "game/assets/room13-fullbody-resident_kkwak-surprise.webp": "a925ed0e06f5",
   "game/assets/room13-fullbody-resident_kongi-angry.webp": "bd6934f189a5",
   "game/assets/room13-fullbody-resident_kongi-anxious.webp": "86f47588a221",
   "game/assets/room13-fullbody-resident_kongi-flustered.webp": "2d775f1dccd4",
@@ -2552,7 +2297,10 @@
   "game/assets/room13-pixel-acting-eunho.webp": "e3561e8080fc",
   "game/assets/room13-pixel-acting-family-extra.webp": "56fb6da0e410",
   "game/assets/room13-pixel-acting-granny.webp": "be629b0a5aab",
+  "game/assets/room13-pixel-acting-guard-extra.webp": "f34c0d19a11f",
+  "game/assets/room13-pixel-acting-guard.webp": "a7934889fea5",
   "game/assets/room13-pixel-acting-guseul.webp": "c67ceab99ba7",
+  "game/assets/room13-pixel-acting-karo.webp": "3183786f4151",
   "game/assets/room13-pixel-acting-lamplighter.webp": "e50bdea301fc",
   "game/assets/room13-pixel-acting-madam.webp": "1615a8a3e135",
   "game/assets/room13-pixel-acting-mom.webp": "abe161e90828",
@@ -2564,6 +2312,7 @@
   "game/assets/room13-pixel-acting-nubi.webp": "c25f4065a74c",
   "game/assets/room13-pixel-acting-piko.webp": "5a9b9c778223",
   "game/assets/room13-pixel-acting-resident_bori.webp": "94a6618cce6b",
+  "game/assets/room13-pixel-acting-resident_kkwak.webp": "063f562e248f",
   "game/assets/room13-pixel-acting-resident_kongi.webp": "5ddde1c6da28",
   "game/assets/room13-pixel-acting-resident_librarian.webp": "8091d723e1a4",
   "game/assets/room13-pixel-acting-resident_nero.webp": "432a03f46112",
@@ -2612,6 +2361,8 @@
   "game/assets/room13-pixel-dialogue-dad.webp": "b32b1392f61e",
   "game/assets/room13-pixel-dialogue-doto.webp": "c0294fdcb435",
   "game/assets/room13-pixel-dialogue-granny.webp": "5b53f5ca074c",
+  "game/assets/room13-pixel-dialogue-guard.webp": "c6667d8707a0",
+  "game/assets/room13-pixel-dialogue-karo.webp": "3e916b209c8c",
   "game/assets/room13-pixel-dialogue-mom.webp": "70f4507bf69a",
   "game/assets/room13-pixel-dialogue-nabi.webp": "a9856f42ed42",
   "game/assets/room13-pixel-dialogue-neoul.webp": "b5ffac660f2c",
@@ -2654,6 +2405,7 @@
   "game/assets/room13-pixel-inspect-items.webp": "04eee23e4316",
   "game/assets/room13-pixel-inspect-rubbing-done.webp": "abcdada6c40a",
   "game/assets/room13-pixel-inspect-rubbing-paper.webp": "e8451b9257aa",
+  "game/assets/room13-pixel-karo-fullbody.webp": "d9277cbf9556",
   "game/assets/room13-pixel-life-delivery-after.webp": "cd8db75ac4f8",
   "game/assets/room13-pixel-life-delivery-before.webp": "9daaeafdddcd",
   "game/assets/room13-pixel-life-door-after.webp": "ec5ae12bea9c",
@@ -2667,6 +2419,11 @@
   "game/assets/room13-pixel-main-profile-b.webp": "6f29c6772b73",
   "game/assets/room13-pixel-main-profile-c.webp": "787377fc6b25",
   "game/assets/room13-pixel-main-profile-granny.webp": "170209e664e9",
+  "game/assets/room13-pixel-material-icons079-objects.webp": "9e23cdee35bd",
+  "game/assets/room13-pixel-material-icons079-records1.webp": "ac523c89e450",
+  "game/assets/room13-pixel-material-icons079-records2.webp": "f4a02156c36d",
+  "game/assets/room13-pixel-material-icons079-records3.webp": "0c8b45689daa",
+  "game/assets/room13-pixel-material-icons079-records4.webp": "4c2f0c0a91f6",
   "game/assets/room13-pixel-meeting-altar-standing072.webp": "637a437530f1",
   "game/assets/room13-pixel-meeting-altar056.webp": "3b213ecddf08",
   "game/assets/room13-pixel-meeting-interview066.webp": "459aebf662c3",
@@ -2789,6 +2546,12 @@
   "game/assets/room13-role-doto-batch-joy-v1.webp": "16d1f5ff206f",
   "game/assets/room13-role-doto-batch-surprise-v1.webp": "8d6509b76856",
   "game/assets/room13-role-doto.webp": "97950644ed35",
+  "game/assets/room13-role-guard-batch-angry-v1.webp": "c5a2f20e0554",
+  "game/assets/room13-role-guard-batch-anxious-v1.webp": "9e92fc7bdc8d",
+  "game/assets/room13-role-guard-batch-flustered-v1.webp": "0d78ee9b1a08",
+  "game/assets/room13-role-guard-batch-joy-v1.webp": "c429940115c5",
+  "game/assets/room13-role-guard-batch-surprise-v1.webp": "05eb407de266",
+  "game/assets/room13-role-guard-neutral.webp": "fb34ddfbe3fd",
   "game/assets/room13-role-neoul-batch-angry-v1.webp": "283d32493062",
   "game/assets/room13-role-neoul-batch-anxious-v1.webp": "b8b865e85e7b",
   "game/assets/room13-role-neoul-batch-flustered-v1.webp": "324e9108306f",
@@ -2809,6 +2572,14 @@
   "game/assets/room13-role-resident_guseul.webp": "a35317063fdf",
   "game/assets/room13-role-resident_hyeoni.webp": "67ef5349048d",
   "game/assets/room13-role-resident_jongjong.webp": "aff023fc1cba",
+  "game/assets/room13-role-resident_kalbaram.webp": "d49453b5b600",
+  "game/assets/room13-role-resident_kkwak-expression-angry-v1.webp": "d45131d2686c",
+  "game/assets/room13-role-resident_kkwak-expression-anxious-v1.webp": "e7a0264fe2d3",
+  "game/assets/room13-role-resident_kkwak-expression-flustered-v1.webp": "8dc2407d6d65",
+  "game/assets/room13-role-resident_kkwak-expression-joy-v1.webp": "a6f84e73fc48",
+  "game/assets/room13-role-resident_kkwak-expression-surprise-v1.webp": "eef90a489b3c",
+  "game/assets/room13-role-resident_kkwak-refined-v1.webp": "bb2fe8b3ac69",
+  "game/assets/room13-role-resident_kkwak.webp": "eb6abcf2244d",
   "game/assets/room13-role-resident_lamplighter-batch-angry-v1.webp": "85ff9252ac00",
   "game/assets/room13-role-resident_lamplighter-batch-joy-v1.webp": "b1fc4f8ea0e9",
   "game/assets/room13-role-resident_lamplighter-batch-surprise-v1.webp": "adddbc2b1fee",
@@ -2880,6 +2651,7 @@
   "game/assets/winter-carriage.png": "c17bba428d2f",
   "game/assets/winter-gate-clean.png": "f12cd8b64d28",
   "game/assets/winter-gate.webp": "32b2d5d84150",
+  "game/assets/winter-guard.webp": "36c9bd81b60c",
   "game/assets/winter-places.webp": "009cae11205d",
   "game/assets/witnesses.png": "c30bda2a8734"
  },

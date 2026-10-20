@@ -48,9 +48,10 @@ REDESIGN_BACKUP = ROOT / "art/npc-redesign-20261015/original-entries.json"
 REDESIGN_BACKUPS = (REDESIGN_BACKUP, ROOT / "art/ep-art-20261016/original-entries.json")
 
 
-# Only title + carriage + entrance assets block the first interaction. All other
+# Only title + carriage and shared entrance scenery block the first interaction.
+# Gate residents and notebook atlases load when used, not before the title. All other
 # images use Ren'Py's existing progressive downloader, at original quality.
-START_PEOPLE = ("daram", "guard", "karo", "resident_kkwak", "resident_kalbaram")
+START_PEOPLE = ("daram",)
 START_FILES = {"assets/room13-title-winter020.webp", "assets/room13-pixel-carriage-empty-winter.webp",
                "assets/bgm-title.mp3", "assets/bgm-travel.mp3", "assets/bgm-snow.mp3", "assets/amb-wind.mp3",
                "assets/type.wav", "assets/ms14-audio/cart-roll-light.mp3"}
@@ -59,7 +60,7 @@ def startup_media(rel, startup_files):
     name = Path(rel).name
     return (rel in startup_files or name in ICONS or Path(rel).suffix.lower() in (".ttf", ".otf", ".woff2")
             or any(person in name or "/"+person+"/" in rel for person in START_PEOPLE)
-            or name.startswith("room13-pixel-material-icons"))
+            or any(rel.startswith("assets/"+family+"/"+person+"/") for family in ("dialogue-source-master", "profile-source-master") for person in ("guard", "karo")))
 
 def startup_files(game):
     result = set(START_FILES)

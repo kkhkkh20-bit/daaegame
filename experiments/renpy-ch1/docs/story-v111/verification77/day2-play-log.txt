@@ -1,0 +1,133 @@
+STATE 0 sleep1 ['r13_hub'] letter_menu room13
+SHOT audit-reaction-room13-desk
+AMBIENT desk '우리 여행 필기함을 펼칠 책상이다.'
+SHOT audit-room13-desk
+SHOT audit-reaction-room13-window
+AMBIENT window '창밖으로 다른 집의 지붕이 내려다보인다.\n여기는 2층이다.'
+SHOT audit-room13-window
+SAVED v111-sleep1
+STATE 2 travel ['r13_hub'] letter_menu room13
+STATE 3 travel ['r13_map'] letter_menu room13
+STATE 4 travel [] letter_menu gate
+STATE 10 travel ['say'] letter_menu gate
+STATE 17 travel ['r13_hub'] letter_menu gate
+SHOT audit-reaction-gate-road
+AMBIENT road '마차 축이 갈라졌다.\n고갯길의 바퀴 자국은 눈보라 속으로 끊긴다.'
+SHOT audit-gate-road
+SHOT audit-reaction-gate-bundles
+AMBIENT bundles '수레의 담요를 끈으로 동여맸다.\n여관에 짐을 풀기 전까지 젖지 않게 덮어 둔 것이다.'
+SHOT audit-gate-bundles
+STATE 19 travel ['r13_map'] letter_menu gate
+STATE 20 travel [] letter_menu square
+STATE 27 travel ['say'] letter_menu square
+STATE 30 lamp_rope ['r13_hub'] letter_menu square
+SHOT audit-reaction-square-stone
+AMBIENT stone '돌에서 나온 관이 집들로 이어진다.\n가까운 난간만 눈이 녹아 있다.'
+SHOT audit-square-stone
+SHOT overlap-square-offerings
+STATE 32 lamp_rope ['say'] letter_menu square
+STATE 50 go_box ['r13_hub'] letter_menu square
+STATE 51 go_box ['r13_map'] letter_menu square
+STATE 52 go_box [] letter_menu forest
+STATE 60 go_box ['say'] letter_menu forest
+STATE 63 box_inspect ['r13_hub'] letter_menu forest
+SHOT audit-reaction-forest-forest_roots
+AMBIENT forest_roots '굵은 뿌리가 눈 위로 드러나 서로 엉켜 있다.\n길은 보이지 않는다.'
+SHOT audit-forest-forest_roots
+SHOT audit-reaction-forest-forest_trunk
+AMBIENT forest_trunk '아름드리 전나무 줄기에 눈이 들러붙어 있다.'
+SHOT audit-forest-forest_trunk
+SAVED v111-box_inspect
+SHOT shelter-box_inspect
+STATE 66 box_inspect ['say'] letter_menu forest
+STATE 71 box_note ['r13_hub'] letter_menu forest
+STATE 72 box_note ['r13_topics'] letter_menu forest
+STATE 73 box_note ['r13_hub'] letter_menu forest
+STATE 74 box_note ['say'] letter_menu forest
+STATE 82 travel ['r13_hub'] letter_menu forest
+STATE 83 travel ['r13_map'] letter_menu forest
+STATE 84 travel [] letter_menu post
+STATE 89 travel ['say'] letter_menu post
+STATE 92 envelope_show ['r13_hub'] letter_menu post
+SHOT audit-reaction-post-notice
+AMBIENT notice '닫힌 문에 영업 공고가 붙어 있다.\n마을 밖 우편은 고갯길이 열려야 출발한다.'
+SHOT audit-post-notice
+SHOT audit-reaction-post-parcels
+AMBIENT parcels '끈과 포장지가 제각각인 소포들이다.'
+SHOT audit-post-parcels
+STATE 96 envelope_show ['r13_topics'] letter_menu post
+STATE 97 envelope_show ['say'] letter_menu post
+STATE 110 post_menu ['r13_hub'] letter_menu post
+SAVED v111-post_menu
+STATE 111 post_menu ['r13_topics'] letter_menu post
+STATE 112 post_menu ['say'] letter_menu post
+STATE 124 travel ['r13_hub'] letter_menu post
+STATE 125 travel ['r13_map'] letter_menu post
+STATE 126 travel [] letter_menu square
+STATE 133 travel ['say'] letter_menu square
+STATE 140 portrait_ask ['r13_hub'] letter_menu square
+STATE 142 portrait_ask ['r13_topics'] letter_menu square
+STATE 143 portrait_ask ['say'] letter_menu square
+STATE 160 lamp_observe ['r13_hub'] letter_menu square
+SAVED v111-lamp_observe
+STATE 161 lamp_observe ['r13_topics'] letter_menu square
+STATE 162 lamp_observe ['r13_hub'] letter_menu square
+STATE 163 lamp_observe ['r13_topics'] letter_menu square
+STATE 164 lamp_observe ['r13_hub'] letter_menu square
+STATE 165 lamp_observe ['choice'] letter_menu square
+STATE 166 lamp_observe ['r13_hub'] letter_menu square
+STATE 167 lamp_observe ['choice'] letter_menu square
+STATE 168 lamp_observe ['r13_hub'] letter_menu square
+STATE 169 lamp_observe ['choice'] letter_menu square
+STATE 170 lamp_observe ['r13_hub'] letter_menu square
+STATE 171 lamp_observe ['r13_topics'] letter_menu square
+STATE 172 lamp_observe ['r13_hub'] letter_menu square
+STATE 173 lamp_observe ['choice'] letter_menu square
+STATE 174 lamp_observe ['say'] letter_menu square
+STATE 203 travel ['r13_hub'] letter_menu square
+STATE 204 travel ['r13_map'] letter_menu square
+STATE 205 travel [] letter_menu dining
+STATE 212 travel ['say'] letter_menu dining
+STATE 232 travel ['choice'] afternoon dining
+SHOT shelter-afternoon
+STATE 233 travel ['say'] afternoon dining
+STATE 238 shelter_work ['r13_hub'] afternoon dining
+SHOT audit-reaction-dining-mittens
+AMBIENT mittens '천장 가까이에 장갑을 널었다.\n모양이 제각각이라 같은 가족의 물건 같지는 않다.'
+SHOT audit-dining-mittens
+SHOT audit-reaction-dining-blankets
+AMBIENT blankets '의자에 담요를 접어 두었다.\n난로에서 먼 자리에 앉는 사람에게 주려는 것일까.'
+SHOT audit-dining-blankets
+STATE 240 shelter_work ['say'] afternoon dining
+STATE 241 shelter_work ['r13_hub'] afternoon dining
+STATE 242 travel ['r13_hub'] afternoon dining
+STATE 243 travel ['r13_map'] afternoon dining
+STATE 244 travel [] afternoon inn
+STATE 252 shelter_cloth ['r13_hub'] afternoon inn
+SHOT audit-reaction-inn-desk
+AMBIENT desk '접수대의 장부와 열쇠패.\n13호는 우리 가족에게 내준 방이다.'
+SHOT audit-inn-desk
+SHOT audit-reaction-inn-door
+AMBIENT door '여관 현관이다.\n눈 묻은 신발을 털도록 작은 깔개와 우산꽂이를 두었다.'
+SHOT audit-inn-door
+STATE 254 shelter_cloth ['r13_topics'] afternoon inn
+STATE 255 travel ['r13_hub'] afternoon inn
+STATE 256 travel ['r13_map'] afternoon inn
+STATE 257 travel [] afternoon square
+STATE 264 shelter_invite ['r13_hub'] afternoon square
+STATE 266 shelter_invite ['r13_topics'] afternoon square
+STATE 267 shelter_invite ['say'] afternoon square
+STATE 275 shelter_enter ['r13_hub'] afternoon square
+STATE 276 shelter_enter ['r13_map'] afternoon square
+STATE 277 shelter_enter [] afternoon dining
+STATE 285 shelter_enter ['say'] afternoon dining
+STATE 294 travel ['r13_hub'] afternoon dining
+STATE 295 travel ['r13_map'] afternoon dining
+STATE 296 travel [] afternoon inn
+STATE 304 travel ['say'] afternoon inn
+STATE 309 travel ['r13_hub'] afternoon inn
+STATE 310 travel ['r13_map'] afternoon inn
+STATE 311 travel [] afternoon room13
+STATE 319 travel ['say'] afternoon room13
+STATE 324 sleep2 ['r13_hub'] afternoon room13
+SAVED v111-sleep2

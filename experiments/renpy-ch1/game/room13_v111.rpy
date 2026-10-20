@@ -56,7 +56,16 @@ init 301 python:
     _r13_v111_visible_people=r13_visible_people
     def r13_visible_people():
         if not r13_v111_active():return _r13_v111_visible_people()
-        return [p for p in r13_v111_binding().get("people",["daram"]) if p!="resident_piko" or r13_v111_value("piko_alive")]
+        authored=r13_v111_binding().get("people",["daram"])
+        # Preserve the existing residents and their scheduled staging. Explicit
+        # V1.1.1 survival, relocation and custody results still take precedence.
+        people=list(_r13_v111_visible_people())
+        if r13_v111_value("piko.location") and r13_v111_value("piko.location")!=store.room13["location"]:
+            people=[p for p in people if p!="resident_piko"]
+        if r13_v111_value("silluk_status")=="detained_work_waiting_station":
+            people=[p for p in people if p!="resident_siluk"]
+        people=list(dict.fromkeys(people+list(authored)))
+        return [p for p in people if (p!="resident_piko" or r13_v111_value("piko_alive")) and (p!="resident_musoe" or r13_v111_value("musoe_alive"))]
     _r13_v111_stage_people=r13_stage_people
     def r13_stage_people(entry=False):
         rows=_r13_v111_stage_people(entry)
@@ -64,11 +73,28 @@ init 301 python:
     _r13_v111_person_action=r13_person_action
     def r13_person_action(person,entry=False):
         return Return(("person",person)) if r13_v111_active() else _r13_v111_person_action(person,entry)
+    R13_V111_RECORD_OBJECTS={
+        ("gate","ledger"):"E02",("gate","booth"):"E03",("gate","gate_documents"):"E03",("gate","rules"):"E04",
+        ("room13","mother_note"):"E06",("room13","family_bundle"):"E30",
+        ("clinic","notes"):"E13",("store","ledger"):"E16",
+    }
+    def r13_v111_ambient_text(key,spec):
+        location=store.room13["location"]
+        record=R13_V111_RECORD_OBJECTS.get((location,key))
+        if record:
+            return ROOM13["evidence"]["V111:"+record]["establishes"] if r13_v111_owned(record) else ROOM13["evidence"]["V111:"+record]["name"]
+        # Keep the existing scenery observations, but never run an old case's
+        # grants, latch events, deductions or secret-room handlers in this story.
+        if (location,key)==("square","lamp"):return "등 받침에 작은 점검함이 있다."
+        if spec.get("give") or spec.get("flags") or spec.get("special"):
+            return r13_object_name(key) if _r13_v111_object_visible(spec) else None
+        return spec.get("text") if _r13_v111_object_visible(spec) else None
     _r13_v111_object_visible=r13_object_visible
     def r13_object_visible(spec):
         if not r13_v111_active():return _r13_v111_object_visible(spec)
         objects=ROOM13["objects"].get(store.room13["location"],{})
-        return any(spec is objects.get(o.get("object")) for o in r13_v111_binding().get("options",[]) if o.get("location")==store.room13["location"])
+        return (any(spec is objects.get(o.get("object")) for o in r13_v111_binding().get("options",[]) if o.get("location")==store.room13["location"])
+            or any(spec is value and r13_v111_ambient_text(key,value) for key,value in objects.items()))
     ROOM13["objects"].setdefault("forest",{})["v111_box"]=dict(rect=[1150,548,220,152],need=[],give=[],flags=[],text="북쪽 물자 길 교환함")
     R13_OBJECT_NAMES["v111_box"]="교환함"
     _r13_v111_props=r13_world_props
@@ -103,7 +129,10 @@ label r13_v111_wait_again:
         jump r13_v111_wait_again
     if v111_pick[0]=="person":
         $ v111_person=v111_pick[1]
-        if r13_v111_questions(v111_person):
+        if key=="gate_request" and v111_person=="guard":
+            $ r13_v111_time("inspect:gate_request:ledger",15)
+            return 0
+        if v111_person in r13_visible_people():
             call screen r13_topics(v111_person)
             if isinstance(_return,int):
                 $ r13_v111_time("topic:"+key+":"+str(_return),0 if (key=="gate_investigate" and _return in (5,6)) or (key=="post_menu" and _return==1) else 10)
@@ -114,6 +143,8 @@ label r13_v111_wait_again:
                 $ v111_match=next((i for i,o in enumerate(v111_binding.get("options",[])) if o.get("present")==v111_shown),None)
                 if v111_match is not None:
                     return v111_binding["options"][v111_match].get("index",v111_match)
+                if v111_shown:
+                    $ renpy.notify("지금은 이 자료로 더 확인할 내용이 없다.")
         jump r13_v111_wait_again
     if v111_pick[0]=="object":
         $ v111_matches=[i for i,o in enumerate(v111_binding.get("options",[])) if o.get("object")==v111_pick[1] and o.get("location")==room13["location"]]
@@ -124,6 +155,10 @@ label r13_v111_wait_again:
             $ v111_object_options=[(v111_binding["options"][i]["title"],i) for i in v111_matches]
             $ v111_result=renpy.display_menu(v111_object_options)
             return v111_binding["options"][v111_result].get("index",v111_result)
+        $ v111_object_spec=ROOM13["objects"].get(room13["location"],{}).get(v111_pick[1],{})
+        $ v111_ambient=r13_v111_ambient_text(v111_pick[1],v111_object_spec)
+        if v111_ambient:
+            call r13_lines([(None,v111_ambient)],"v111:ambient:"+room13["location"]+":"+v111_pick[1])
     jump r13_v111_wait_again
 
 label r13_v111_proof(key,correct,success,wrong=None,hint=None):
@@ -158,12 +193,23 @@ label r13_v111_travel(destination,travel_id):
     return
 
 init 302 python:
+    # Reuse by meaning, not by the old campaign's numeric evidence ID.
+    R13_V111_MATERIAL_ART={
+        "E01":"E01","E02":"G3","E03":"G1","E04":"G2","E05":"E02",
+        "E06":"tool:paper","E07":"G3","E08":"bag:lantern","E11":"E17",
+        "E12":"tool:paper","E13":"E20","E14":"G3","E16":"E17",
+        "E31":"E29","E33":"bag:knife","E34":"G3","E35":"bag:blanket",
+        "E27":"E01","E28":"bag:postcard",
+    }
     _r13_v111_material_art=r13_material_art
     def r13_material_art(key):
         if r13_v111_active() and key in ("V111:E09","V111:E30"):
             art=("portrait_"+r13_v111_value("portrait")) if key=="V111:E09" else "bundle"
             if art=="portrait_child_completed":art="portrait_child"
             if art in MS14_ART:return Transform(MS14_ART[art]["file"],xysize=(160,100),fit="contain",nearest=True)
+        if r13_v111_active() and isinstance(key,str) and key.startswith("V111:"):
+            original=R13_V111_MATERIAL_ART.get(key[5:])
+            if original:return _r13_v111_material_art(original)
         return _r13_v111_material_art(key)
 
 init 303 python:

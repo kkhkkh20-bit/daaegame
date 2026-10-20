@@ -10,7 +10,12 @@ class Fast(UIQA):
   vp=self.p.viewport_size;s=min(vp['width']/1280,vp['height']/720);x=(vp['width']-1280*s)/2+x*s;y=(vp['height']-720*s)/2+y*s
   await self.p.mouse.click(x,y);await asyncio.sleep(.08)
  async def value(self,value):
-  await asyncio.sleep(.5);return await super().value(value)
+  await asyncio.sleep(.5)
+  if isinstance(value,tuple) and value[0]=='person':
+   st=await self.state();bs=[b for b in st['buttons'] if b.get('value')==repr(value) and b['text'].strip()]
+   if bs:
+    x,y,w,h=min(bs,key=lambda b:b['rect'][2]*b['rect'][3])['rect'];await self.input(x+w/2,y+h/2);return
+  return await super().value(value)
  async def press(self,label):
   for _ in range(40):
    st=await self.state();bs=[b for b in st['buttons'] if label in b['text'] and b['rect'][3]>12]
@@ -27,7 +32,7 @@ async def main():
   for previous in b.pages:await previous.close()
   pg=await b.new_page();q=Fast(pg,OUT);errors=[];pg.on('pageerror',lambda e:errors.append(str(e)));events=[];shots=set()
   async def snap():
-   return await q.py('import renpy;s=renpy.store;result=dict(screens=[n for n in ("main_menu","say","choice","r13_confirm","r13_hub","r13_topics","r13_map","r13_book","r13_crisis_proof","_exception") if renpy.display.screen.get_screen(n)],gate=(s.room13 or {}).get("v111",{}).get("gate"),choice=getattr(s,"v111_menu_owner",None),claim=getattr(s,"v111_claim",None),binding=s.r13_v111_binding() if s.r13_v111_active() else {},values=(s.room13 or {}).get("v111",{}).get("values",{}),evidence=(s.room13 or {}).get("evidence",[]),location=(s.room13 or {}).get("location"),music=renpy.audio.music.get_playing())')
+   return await q.py('import renpy;s=renpy.store;result=dict(screens=[n for n in ("main_menu","say","choice","r13_confirm","r13_hub","r13_topics","r13_map","r13_book","r13_records","r13_crisis_proof","_exception") if renpy.display.screen.get_screen(n)],gate=(s.room13 or {}).get("v111",{}).get("gate"),choice=getattr(s,"v111_menu_owner",None),claim=getattr(s,"v111_claim",None),binding=s.r13_v111_binding() if s.r13_v111_active() else {},values=(s.room13 or {}).get("v111",{}).get("values",{}),evidence=(s.room13 or {}).get("evidence",[]),location=(s.room13 or {}).get("location"),music=renpy.audio.music.get_playing(),people=s.r13_visible_people() if s.r13_v111_active() else [])')
   try:
    await pg.goto(os.environ.get('ROOM13_URL','http://localhost:8766/preview/room13-dev/'),wait_until='domcontentloaded',timeout=180000)
    await pg.wait_for_function("typeof renpy_exec==='function'",timeout=180000);await asyncio.sleep(12);await q.input(1100,600);await q.wait('main_menu')
@@ -38,10 +43,22 @@ async def main():
     await asyncio.sleep(3)
     await pg.evaluate("window._renpy_cmd_callback({data:true})")
    else:await q.press('처음부터')
-   wrong_probe=0;proof_keys=[];book_target=None;last=None;checkpoints=set();object_attempts={}
+   if route=='nero' and os.environ.get('V111_RESUME'):
+    await q.wait('r13_hub');await q.press('기록');await q.wait('r13_records')
+    for _ in range(8):
+     try:await q.press('초대 편지');break
+     except AssertionError:
+      paging=await q.py('import renpy;s=renpy.store;c=renpy.display.screen.get_screen("r13_records").scope;e=c["entries"];result=[e.index("V111:E01")//s.r13_record_page_size(),s.r13_record_page(e,c["page"])]')
+      await q.press('이전' if paging[0]<paging[1] else '다음')
+    else:raise AssertionError('Letter record unavailable')
+    assert await q.py('import renpy;result=renpy.store.r13_material_art("V111:E01") is not None')
+    await q.shot('nero-letter-icon');await q.press('닫기')
+   reread_checked=False;audit_seen=set();audit_rows=[];smoke_daram=False;wrong_probe=0;proof_keys=[];book_target=None;last=None;checkpoints=set();object_attempts={}
    for step in range(4500):
     st=await snap();sc=st['screens'];assert '_exception' not in sc,st
     state=(st['gate'],tuple(sc),st['choice'],st['claim'])
+    if os.environ.get('V111_SMOKE') and st['gate']=='room_observe' and 'r13_hub' in sc:
+     await q.shot('smoke-room-observe');break
     if state!=last:events.append(dict(step=step,**st));last=state;print('STATE',step,st['gate'],sc,st['choice'],st['location'],flush=True)
     if st['gate']=='checkpoint' and 'r13_confirm' in sc:
      assert st['values']['piko_alive']==(route=='shelter'),st
@@ -88,14 +105,20 @@ async def main():
       except AssertionError:
        paging=await q.py('import renpy;s=renpy.store;c=renpy.display.screen.get_screen("r13_book").scope;e=c["entries"];result=[e.index('+repr(book_target)+')//s.r13_record_page_size(),s.r13_record_page(e,c["page"])]')
        await q.press('이전' if paging[0]<paging[1] else '다음');continue
+      if 'record-icons' not in shots:
+       await q.shot(route+'-record-icons');shots.add('record-icons')
       await q.press('보여주기');book_target=None
      else:await q.press('그만두기')
      continue
+    if 'r13_records' in sc:
+     await q.press('닫기');continue
     if 'r13_topics' in sc:
      options=st['binding']['options'];person=await q.py('import renpy;result=renpy.display.screen.get_screen("r13_topics").scope["person"]')
      eligible=[o for o in options if o.get('person')==person]
      gate=st['gate']
      preferred={'gate_investigate':5,'gate_choice':1,'registered_menu':1,'post_menu':1}.get(gate)
+     if not eligible:
+      await q.press('돌아가기');await asyncio.sleep(.3);continue
      option=next((o for o in eligible if o.get('index')==preferred),eligible[0])
      await q.press(option['title']);continue
     if 'r13_map' in sc:
@@ -110,10 +133,55 @@ async def main():
       slot='v111-'+gate
       await q.py('import renpy;renpy.exports.save('+repr(slot)+');result=True');checkpoints.add(gate)
       print('SAVED',slot,flush=True)
+     if os.environ.get('V111_AUDIT') and st['location'] not in audit_seen:
+      loc=st['location'];audit_seen.add(loc)
+      candidates=await q.py('import renpy;s=renpy.store;bound={o.get("object") for o in s.r13_v111_binding().get("options",[])};result=[(k,s.r13_v111_ambient_text(k,v)) for k,v in s.ROOM13["objects"].get(s.room13["location"],{}).items() if k not in bound and s.r13_object_visible(v) and s.r13_v111_ambient_text(k,v) and not v.get("give") and not v.get("flags") and not v.get("special")]')
+      for obj,text in candidates[:2]:
+       observed=False
+       for attempt in range(20):
+        fx,fy=((.5,.5),(.05,.5),(.95,.5),(.05,.05),(.95,.05),(.05,.95),(.95,.95),(.25,.25),(.75,.75))[attempt%9]
+        pos=await q.py('import renpy;s=renpy.store;x,y,w,h=s.ROOM13["objects"][s.room13["location"]]['+repr(obj)+']["rect"];result=[x+w*'+str(fx)+'-s.r13_world_offset(),y+h*'+str(fy)+']')
+        if not 24<pos[0]<1230:
+         arrow='‹' if pos[0]<24 else '›'
+         if any(arrow in b['text'] for b in (await q.state())['buttons']):
+          await q.press(arrow);await asyncio.sleep(.6)
+         continue
+        await asyncio.sleep(.25);await q.input(*pos);await asyncio.sleep(.15);current=await snap()
+        if 'say' in current['screens']:
+         said=(await q.state())['say'];observed=''.join(text[:16].split()) in ''.join(said.split())
+         if observed:
+          await q.shot('audit-reaction-'+loc+'-'+obj)
+          print('AMBIENT',obj,repr((await q.state())['say']),flush=True)
+         if not observed:print('MISSED',loc,obj,'expected',repr(text),'got',repr(said),flush=True)
+         for _ in range(10):
+          if 'say' not in (await snap())['screens']:break
+          await q.input(900,590)
+         if observed:break
+         continue
+        if 'r13_topics' in current['screens']:
+         await q.press('돌아가기');await asyncio.sleep(.3)
+       after=await snap()
+       assert after['values']==st['values'] and after['evidence']==st['evidence'] and after['gate']==st['gate'],('Ambient changed story',loc,obj,after)
+       if not observed:
+        audit_rows.append(dict(location=loc,object=obj,status='not reached by sampled clicks; inspect overlap'));await q.shot('overlap-'+loc+'-'+obj);continue
+       audit_rows.append(dict(location=loc,object=obj,reaction=text));await q.shot('audit-'+loc+'-'+obj)
+      people=await q.py('import renpy;s=renpy.store;result=[p for p in s.r13_visible_people() if not s.r13_v111_questions(p)]')
+      for person in people:
+       state=await q.state()
+       if not any(b.get('value')==repr(('person',person)) and b['text'].strip() for b in state['buttons']):continue
+       await q.value(('person',person));await q.wait('r13_topics');await q.press('돌아가기');await q.wait('r13_hub')
+       after=await snap();assert after['values']==st['values'] and after['evidence']==st['evidence'],('Empty topic changed story',person)
+       audit_rows.append(dict(location=loc,person=person,empty_topics='opened and returned'))
+      continue
+     if os.environ.get('V111_SMOKE') and gate=='gate_request' and not smoke_daram:
+      await q.value(('person','daram'));await q.wait('r13_topics');await q.shot('smoke-daram-response');await q.press('돌아가기');await q.wait('r13_hub');smoke_daram=True;continue
      gate=st['gate'];options=st['binding'].get('options',[])
      if gate not in shots and gate in ('gate_investigate','box_inspect','afternoon','sleep2','piko_clean','lamp_inspect3','measurement_read','sleep3'):
       await q.shot(route+'-'+gate);shots.add(gate)
-     if gate=='gate_investigate':idx=0 if 'V111:E03' not in st['evidence'] else 1 if 'V111:E04' not in st['evidence'] else 5;option=next(o for o in options if o['index']==idx)
+     if gate=='gate_investigate':
+      idx=0 if 'V111:E03' not in st['evidence'] else 1 if 'V111:E04' not in st['evidence'] else 5
+      if os.environ.get('V111_AUDIT') and idx==5 and not reread_checked:idx=2;reread_checked=True
+      option=next(o for o in options if o['index']==idx)
      elif gate=='lamp_observe':idx=next(i for i in range(4) if not st['values'].get('lamp_part_'+str(i)));option=next(o for o in options if o['index']==idx)
      elif gate=='registered_menu':option=next(o for o in options if o.get('move'))
      else:option=options[0]
@@ -129,17 +197,17 @@ async def main():
       continue
      if option.get('object'):
       obj=option['object'];attempt=object_attempts.get((gate,obj),0);object_attempts[(gate,obj)]=attempt+1
-      fx,fy=((.5,.5),(.2,.8),(.8,.8),(.2,.2),(.8,.2))[attempt%5]
+      fx,fy=((.5,.5),(.05,.5),(.95,.5),(.05,.05),(.95,.05),(.05,.95),(.95,.95),(.25,.25),(.75,.75))[attempt%9]
       pos=await q.py('import renpy;s=renpy.store;x,y,w,h=s.ROOM13["objects"][s.room13["location"]]['+repr(obj)+']["rect"];result=[x+w*'+str(fx)+'-s.r13_world_offset(),y+h*'+str(fy)+']')
-      if not 0<pos[0]<1280:
+      if not 24<pos[0]<1200:
        direction=-1 if pos[0]<0 else 1
        await q.press('‹' if direction<0 else '›');await asyncio.sleep(.6);continue
-      await q.input(*pos);continue
+      await asyncio.sleep(.25);await q.input(*pos);continue
     await asyncio.sleep(.1)
    else:raise AssertionError(('Play did not complete',st))
    assert not errors,errors
-   report=dict(status='passed',route=route,stone=stone,custody=custody,final=st,events=events,page_errors=errors,wrong_proof_recovered=(wrong_probe==2),resume=os.environ.get('V111_RESUME'),scope='Actual field/map/topic/record clicks; starts new or resumes an actual prior-play save. Only text speed preference changed.')
-   (OUT/(route+'-report.json')).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');print('PASSED',route,flush=True)
+   report=dict(status='passed',route=route,stone=stone,custody=custody,final=st,events=events,page_errors=errors,ambient_audit=audit_rows,wrong_proof_recovered=(wrong_probe==2),resume=os.environ.get('V111_RESUME'),scope='Actual field/map/topic/record clicks; starts new or resumes an actual prior-play save. Only text speed preference changed.')
+   (OUT/(('smoke' if os.environ.get('V111_SMOKE') else route)+'-report.json')).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');print('PASSED',route,flush=True)
   except Exception:
    await pg.screenshot(path=str(OUT/(route+'-failure.png')));(OUT/(route+'-events.json')).write_text(json.dumps(events,ensure_ascii=False,indent=2));raise
   finally:await b.close()

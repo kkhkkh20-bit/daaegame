@@ -1,0 +1,82 @@
+STATE 0  [] None gate
+STATE 15  ['say'] None gate
+STATE 29  ['choice'] letter_menu gate
+STATE 30  ['say'] letter_menu gate
+STATE 37  [] letter_menu gate
+STATE 44  ['say'] letter_menu gate
+STATE 60 gate_request ['r13_hub'] letter_menu gate
+SHOT audit-reaction-gate-road
+AMBIENT road '마차 축이 갈라졌다.\n고갯길의 바퀴 자국은 눈보라 속으로 끊긴다.'
+SHOT audit-gate-road
+SHOT audit-reaction-gate-bundles
+AMBIENT bundles '수레의 담요를 끈으로 동여맸다.\n여관에 짐을 풀기 전까지 젖지 않게 덮어 둔 것이다.'
+SHOT audit-gate-bundles
+STATE 62 gate_request ['say'] letter_menu gate
+STATE 68 gate_choice ['r13_hub'] letter_menu gate
+STATE 70 gate_choice ['r13_topics'] letter_menu gate
+STATE 71 gate_choice ['say'] letter_menu gate
+STATE 75 gate_investigate ['r13_hub'] letter_menu gate
+SHOT shelter-gate_investigate
+STATE 76 gate_investigate ['say'] letter_menu gate
+STATE 83 gate_investigate ['r13_hub'] letter_menu gate
+STATE 84 gate_investigate ['say'] letter_menu gate
+STATE 87 gate_investigate ['r13_hub'] letter_menu gate
+STATE 88 gate_investigate ['say'] letter_menu gate
+STATE 95 gate_investigate ['r13_hub'] letter_menu gate
+STATE 97 gate_investigate ['r13_topics'] letter_menu gate
+STATE 98 gate_investigate ['r13_crisis_proof'] letter_menu gate
+STATE 99 gate_investigate ['r13_book'] letter_menu gate
+STATE 100 gate_investigate ['r13_crisis_proof'] letter_menu gate
+STATE 101 gate_investigate ['say'] letter_menu gate
+STATE 102 gate_investigate ['r13_hub'] letter_menu gate
+STATE 104 gate_investigate ['r13_topics'] letter_menu gate
+STATE 105 gate_investigate ['r13_crisis_proof'] letter_menu gate
+STATE 106 gate_investigate ['r13_book'] letter_menu gate
+STATE 107 gate_investigate ['r13_crisis_proof'] letter_menu gate
+STATE 108 gate_investigate ['r13_book'] letter_menu gate
+STATE 109 gate_investigate ['r13_crisis_proof'] letter_menu gate
+STATE 110 gate_investigate ['r13_book'] letter_menu gate
+STATE 111 gate_investigate ['r13_crisis_proof'] letter_menu gate
+SHOT shelter-proof
+STATE 112 gate_investigate ['say'] letter_menu gate
+STATE 129 registered_menu ['r13_hub'] letter_menu gate
+STATE 130 registered_menu ['r13_map'] letter_menu gate
+STATE 131 registered_menu [] letter_menu inn
+STATE 138 registered_menu ['say'] letter_menu inn
+STATE 155 travel ['r13_hub'] letter_menu inn
+SHOT audit-reaction-inn-desk
+AMBIENT desk '접수대의 장부와 열쇠패.\n13호는 우리 가족에게 내준 방이다.'
+SHOT audit-inn-desk
+SHOT audit-reaction-inn-door
+AMBIENT door '여관 현관이다.\n눈 묻은 신발을 털도록 작은 깔개와 우산꽂이를 두었다.'
+SHOT audit-inn-door
+STATE 157 travel ['r13_map'] letter_menu inn
+STATE 158 travel [] letter_menu room13
+STATE 164 room_observe ['r13_hub'] letter_menu room13
+SHOT audit-reaction-room13-desk
+AMBIENT desk '우리 여행 필기함을 펼칠 책상이다.'
+SHOT audit-room13-desk
+SHOT audit-reaction-room13-window
+AMBIENT window '창밖으로 다른 집의 지붕이 내려다보인다.\n여기는 2층이다.'
+SHOT audit-room13-window
+STATE 166 room_observe ['say'] letter_menu room13
+STATE 169 note_pick ['r13_hub'] letter_menu room13
+STATE 170 note_pick ['say'] letter_menu room13
+STATE 176 bundle_open ['r13_hub'] letter_menu room13
+STATE 177 bundle_open ['say'] letter_menu room13
+STATE 188 bundle_open ['r13_crisis_proof'] letter_menu room13
+STATE 189 bundle_open ['r13_book'] letter_menu room13
+STATE 190 bundle_open ['r13_crisis_proof'] letter_menu room13
+STATE 191 bundle_open ['r13_book'] letter_menu room13
+STATE 192 bundle_open ['r13_crisis_proof'] letter_menu room13
+STATE 193 bundle_open ['say'] letter_menu room13
+STATE 197 travel ['r13_hub'] letter_menu room13
+STATE 198 travel ['r13_map'] letter_menu room13
+STATE 199 travel [] letter_menu inn
+STATE 207 travel ['say'] letter_menu inn
+STATE 210 travel ['r13_hub'] letter_menu inn
+STATE 211 travel ['r13_map'] letter_menu inn
+STATE 212 travel [] letter_menu room13
+STATE 219 travel ['say'] letter_menu room13
+STATE 233 sleep1 ['r13_hub'] letter_menu room13
+SAVED v111-sleep1

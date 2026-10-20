@@ -46,6 +46,7 @@ for key,(loc,people,kind) in field.items():
   else:row['object']=kind
   if key=='envelope_show':row['present']='V111:E01'
   if key=='gate_choice' and i==0:row['present']='V111:E01'
+  if key=='gate_request':row['person']='guard'
   opts.append(row)
  bindings[key]=dict(location=loc,people=people,options=opts)
 bindings['shelter_cloth']=dict(location='inn',people=['granny','daram'],options=[dict(title='마른 천을 빌린다',location='inn',person='granny')])
@@ -93,7 +94,7 @@ for key,node in N.items():
  elif kind=='proof':
   lines+=['    call r13_v111_proof('+q(node['title'])+','+q(node['correct'])+','+q(dest(node['to']))+','+q(dest(node['wrong']) if node.get('wrong') else None)+','+q(dest(node['hint']) if node.get('hint') else None)+')','    jump expression _return']
  elif kind=='notebook':lines+=['    call screen r13_book','    jump '+dest(node['next'])]
- elif kind=='read':lines+=['    show screen r13_material_corner('+q('V111:'+node['key'])+')','    call screen r13_confirm("기록을 다시 확인했다.",yes="닫는다")','    hide screen r13_material_corner','    jump '+dest(node['next'])]
+ elif kind=='read':lines+=['    show screen r13_material_corner('+q('V111:'+node['key'])+')','    call r13_lines([(None,ROOM13["evidence"]['+q('V111:'+node['key'])+']["establishes"])],'+q('v111:read:'+key)+')','    hide screen r13_material_corner','    jump '+dest(node['next'])]
  elif kind=='choice':
   if key=='lamp_observe':
    lines+=['    if all(r13_v111_value("lamp_part_%d"%i) for i in range(4)):','        jump '+dest('lamp_details')]
@@ -102,7 +103,7 @@ for key,node in N.items():
    if key not in ('shelter_enter','registered_menu','go_box','store_visit'):lines+=travel(field[key][0],key)
    lines+=['    call r13_v111_wait('+q(key)+')','    $ v111_answer=_return']
   elif key in ('letter_open','leave_carriage'):
-   lines+=['    call screen r13_confirm('+q(node['title'])+',yes='+q(node['title'])+')','    if not _return:','        jump '+dest(key),'    $ v111_answer=0']
+   lines+=['    $ v111_answer=0']
   else:
    opts=[]
    for i,o in enumerate(node['options']):
@@ -112,9 +113,6 @@ for key,node in N.items():
    lines+=['    $ v111_menu='+(' + '.join('['+x+']' for x in opts)),'    $ v111_answer=renpy.display_menu(v111_menu)']
   if key=='shelter_work':
    lines+=['    call r13_v111_travel("inn","shelter_cloth")','    call r13_v111_wait("shelter_cloth")','    call r13_v111_travel("square","shelter_invite")','    call r13_v111_wait("shelter_invite")']
-  if key=='nero_work':
-   for work in ('젖은 빈 포대를 분리한다','마른 받침으로 침구를 옮긴다','끈을 묶고 운반표에 이름을 적는다'):
-    lines+=['    call screen r13_confirm('+q(work)+',yes='+q(work)+')','    if not _return:','        jump '+dest(key)]
   for i,o in enumerate(node['options']):
    lines+=['    if v111_answer=='+str(i)+':']
    source_index=i-3 if key=='gate_investigate' else i
