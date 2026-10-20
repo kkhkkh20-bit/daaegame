@@ -1,5 +1,7 @@
 # Uses the existing Ren'Py test runner. No scene setup/evidence grants are
 # injected: all story progress below comes from the shipped new-game inputs.
+default pb01_qa_awards = []
+
 testcase pb01_input_save_skip:
     pause 2.0
     $ _preferences.text_cps = 1
@@ -103,11 +105,11 @@ testcase pb01_input_save_skip:
     pause 0.3
     assert eval (r13_basis01_state["gate_basis_proven"] and not r13_basis01_state["reason_heard"])
     assert eval (room13["evidence"].count("PB01:E05") == 1 and r13_basis01_state["evidence"].count("E05") == 1)
-    $ pb01_qa_awards = list(r13_basis01_state["applied"])
+    $ renpy.store.pb01_qa_awards = list(r13_basis01_state["applied"])
     $ renpy.save("qa-pb01-registered","qa")
     run Function(renpy.load,"qa-pb01-registered")
     pause 1.0
-    assert eval (r13_basis01_state["gate_registered"] and r13_basis01_state["applied"] == pb01_qa_awards)
+    assert eval (r13_basis01_state["gate_registered"] and r13_basis01_state["applied"] == renpy.store.pb01_qa_awards)
     screenshot "pb01_07_registration_after_load.png"
     $ open("qa_result.txt","w").write(json.dumps(dict(test="pb01_input_save_skip",state=r13_basis01_state,notebook=room13["evidence"]),ensure_ascii=False,indent=2))
 

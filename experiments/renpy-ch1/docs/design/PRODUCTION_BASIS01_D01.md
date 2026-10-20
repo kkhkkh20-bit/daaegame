@@ -120,10 +120,15 @@ workflow는 Python 3.12, Node 22, xvfb 등 OS 의존성, Pillow/numpy/scipy,
 공식 Ren'Py 8.5.3 SDK와 SHA-256 검증, 고정 과거 아트 커밋
 `2ea4d41bb8918b74d95d9cb6dc0bb8705e3297fd`를 준비한다.
 `dev/check.sh`가 전체 단위 검사와 Ren'Py lint를 실행한다.
-이번 D01 검토에서는 기존 화면 테스트 6개 대신 전용 `pb01_input_save_skip`, `pb01_regular`를 실행한다.
+최종 검토에서는 전용 `pb01_input_save_skip`, `pb01_regular`와 기존 native 회귀 6개를 함께 실행한다.
 기존 harness를 사용하고 시작 상태나 증거를 주입하지 않는다. 새 게임부터 실제 클릭/숫자키 입력,
 편지 획득 전후 저장/로드, 재조사, 오답/힌트, 직행/정규 반박, 등록 후 저장/로드와 캡처를 포함한다.
 실제 통과 여부는 각 CI run의 native-qa-summary와 스크린샷으로 판정한다.
+초기 집중 진단 head c048fa9e/57d4d253에서 SDK·단위·lint가 통과했다.
+57d4d253에서 정규 D01 경로는 실제 입력으로 등록까지 통과했으며 캡처가 생성됐다.
+저장/스킵 검사는 등록 후 로드까지 도달한 뒤 테스트용 비교 변수가 저장되지 않아 실패했다.
+최종 검토는 이 테스트 변수를 Ren'Py default 저장 변수로 바꾼 상태에서 새로 판정한다.
+로컬 아티팩트 다운로드는 별도 호스트의 HTTP403/DNS 실패로 차단되어 캡처 원격 파일의 로컬 시각 검수는 아직 하지 않았다.
 현재 workflow에는 브라우저 테스트 단계도 없다.
 `import_production_basis01.py --check`의 원문 대조까지 CI에서 실행하려면 별도로 검증된
 `01_스토리기준본` 폴더를 제공해야 한다. 현재 sparse checkout에는 전달 폴더가 포함되지 않는다.
