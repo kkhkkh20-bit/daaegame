@@ -66,8 +66,8 @@ init 67 python:
         if spec.get("inspection_child") == "gate_documents":
             return False
         return r13_before_gate_bundle_visible(spec)
-
 label r13_inspect_gate_documents(start_key=None):
+    $ renpy.jump("r13_pb01_documents") if pb01_active() else None
     $ r13_flag("observed:gate:gate_documents")
     if "G1" in room13["evidence"]:
         call r13_lines([("dad","(선반의 예약 서류 묶음. 우리 예약 원본은 이미 확인했다.)",{"thought":True})],"gate:shelf:again")

@@ -1,0 +1,1594 @@
+{
+  "version": "DT_STORY_1.1_PRODUCTION_BASIS_01_20261020",
+  "source_sha256": "2da28b3699e5195a99fc8dfcf53109e52e7a4d9eb526863169a10dcdba5e9c8e",
+  "scenes": [
+    {
+      "scene_id": "MS14_D01_S01",
+      "day": 1,
+      "title": "1. 마차 / 엄마 몫",
+      "location": "1일 낮 / 움직이는 마차",
+      "enter_when": [
+        "new_game=true",
+        "day=1",
+        "father.alive=true",
+        "daram.alive=true",
+        "father.location=carriage",
+        "daram.location=carriage"
+      ],
+      "actors": [
+        {
+          "actor_id": "daram",
+          "alive_when_visible": true,
+          "location": "동석, 과자를 외투 안으로/아빠 소매/성에문지름",
+          "custody": "기존 actor/world 상태 유지; 구금·노동은 해당 조건 블록에서만 변경",
+          "visible_when": "현재 저작 블록에서 실제 도착·동석이 확인됨"
+        },
+        {
+          "actor_id": "karo",
+          "alive_when_visible": true,
+          "location": "앞좌석; 정차 전 안내만",
+          "custody": "기존 actor/world 상태 유지; 구금·노동은 해당 조건 블록에서만 변경",
+          "visible_when": "현재 저작 블록에서 실제 도착·동석이 확인됨"
+        },
+        {
+          "actor_id": "father",
+          "alive_when_visible": true,
+          "location": "아빠 1인칭, 다람과 실제 이동",
+          "custody": "free",
+          "visible_when": "현재 저작 블록에서 실제 도착·동석이 확인됨"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "MS14_D01_S01_B001",
+          "when": "always",
+          "records": [
+            {
+              "id": "MS14_D01_S01_L0001",
+              "kind": "action",
+              "text": "나무 바퀴 소리. 다람이 과자 봉지를 외투 안쪽으로 당긴다.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": false
+            },
+            {
+              "id": "MS14_D01_S01_L0002",
+              "kind": "dialogue",
+              "text": "아빠는 안 잡아 줘?",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S01_L0003",
+              "kind": "dialogue",
+              "text": "아빠는 안 부서지잖아.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "다람"
+            },
+            {
+              "id": "MS14_D01_S01_L0004",
+              "kind": "dialogue",
+              "text": "부서질 수도 있는데.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S01_L0005",
+              "kind": "narration",
+              "text": "아이가 내 소매를 붙잡았다. 빈손으로만.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true
+            },
+            {
+              "id": "MS14_D01_S01_L0006",
+              "kind": "dialogue",
+              "text": "많이 남았어?",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S01_L0007",
+              "kind": "dialogue",
+              "text": "하나. 엄마 거.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "다람"
+            },
+            {
+              "id": "MS14_D01_S01_L0008",
+              "kind": "dialogue",
+              "text": "제일 큰 거네.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S01_L0009",
+              "kind": "dialogue",
+              "text": "엄마는 못 먹었잖아.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "다람"
+            }
+          ],
+          "execution": "ordered_conditional"
+        },
+        {
+          "id": "MS14_D01_S01_B002",
+          "when": "always AND input_completed(MS14_D01_S01:2)",
+          "records": [
+            {
+              "id": "MS14_D01_S01_L0010",
+              "kind": "action",
+              "text": "조작: 편지 펼치기. “다람이를 데리고 와 줘. 여관 13호실에서 기다릴게.”",
+              "expression": "default",
+              "effects": [
+                "acquire(E01)"
+              ],
+              "next": "CONTINUE",
+              "player_visible": false
+            },
+            {
+              "id": "MS14_D01_S01_L9101",
+              "kind": "evidence",
+              "text": "다람이를 데리고 와 줘. 여관 13호실에서 기다릴게.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true
+            },
+            {
+              "id": "MS14_D01_S01_L0011",
+              "kind": "dialogue",
+              "text": "또 읽어?",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "다람"
+            },
+            {
+              "id": "MS14_D01_S01_L0012",
+              "kind": "dialogue",
+              "text": "방 번호.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S01_L0013",
+              "kind": "dialogue",
+              "text": "십삼 호. 내가 외웠어. 아빠는 짐 들어.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "다람"
+            },
+            {
+              "id": "MS14_D01_S01_L0014",
+              "kind": "choice",
+              "text": "편지를 살펴볼까?",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "options": [
+                {
+                  "id": "MS14_D01_S01_L0014_O1",
+                  "label": "마지막 줄을 본다",
+                  "when": "always",
+                  "target_block": "MS14_D01_S01_B003",
+                  "effects": [
+                    "input=inspect_letter_last"
+                  ]
+                },
+                {
+                  "id": "MS14_D01_S01_L0014_O2",
+                  "label": "글씨를 살핀다",
+                  "when": "always",
+                  "target_block": "MS14_D01_S01_B004",
+                  "effects": [
+                    "input=inspect_letter_hand"
+                  ]
+                },
+                {
+                  "id": "MS14_D01_S01_L0014_O3",
+                  "label": "편지를 접는다",
+                  "when": "always",
+                  "target_block": "MS14_D01_S01_B006",
+                  "effects": [
+                    "letter_close_selected=true"
+                  ],
+                  "dispatch": "K01a OR K01b이면 letter_any; 아니면 letter_close"
+                }
+              ]
+            }
+          ],
+          "execution": "mandatory_input_completion"
+        },
+        {
+          "id": "MS14_D01_S01_B003",
+          "when": "input=inspect_letter_last",
+          "records": [
+            {
+              "id": "MS14_D01_S01_L0015",
+              "kind": "narration",
+              "text": "늘 그리던 도토리가 없다. 이번에는 그냥 끝냈네.",
+              "expression": "default",
+              "effects": [
+                "K01a=true"
+              ],
+              "next": "RETURN_TO_INVESTIGATION",
+              "player_visible": true
+            }
+          ],
+          "execution": "input_callback"
+        },
+        {
+          "id": "MS14_D01_S01_B004",
+          "when": "input=inspect_letter_hand",
+          "records": [
+            {
+              "id": "MS14_D01_S01_L0016",
+              "kind": "narration",
+              "text": "획이 반듯하다. 급히 쓴 편지는 아닌 것 같은데.",
+              "expression": "default",
+              "effects": [
+                "K01b=true"
+              ],
+              "next": "RETURN_TO_INVESTIGATION",
+              "player_visible": true
+            }
+          ],
+          "execution": "input_callback"
+        },
+        {
+          "id": "MS14_D01_S01_B005",
+          "when": "(K01a=true OR K01b=true) AND letter_close_selected=true",
+          "records": [
+            {
+              "id": "MS14_D01_S01_L0017",
+              "kind": "narration",
+              "text": "누가 대신 써 줬을 수도 있지. 만나면 물어보자.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true
+            }
+          ],
+          "execution": "ordered_conditional"
+        },
+        {
+          "id": "MS14_D01_S01_B006",
+          "when": "letter_close_selected=true AND K01a=false AND K01b=false",
+          "records": [
+            {
+              "id": "MS14_D01_S01_L0018",
+              "kind": "narration",
+              "text": "십삼 호. 도착하면 거기부터.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true
+            }
+          ],
+          "execution": "ordered_conditional"
+        },
+        {
+          "id": "MS14_D01_S01_B007",
+          "when": "always",
+          "records": [
+            {
+              "id": "MS14_D01_S01_L0019",
+              "kind": "dialogue",
+              "text": "오늘은 엄마랑 자?",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "다람"
+            },
+            {
+              "id": "MS14_D01_S01_L0020",
+              "kind": "dialogue",
+              "text": "엄마부터 만나 보자.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S01_L0021",
+              "kind": "dialogue",
+              "text": "만나면 내가 가운데야.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "다람"
+            },
+            {
+              "id": "MS14_D01_S01_L0022",
+              "kind": "dialogue",
+              "text": "지붕 보입니다. 일어나지 마요. 아직 안 섰어요.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "까로"
+            }
+          ],
+          "execution": "ordered_conditional"
+        }
+      ],
+      "exits": [
+        {
+          "when": "모든 필수 행동·해당 선택 결과 완료 AND player_continue_confirmed=true",
+          "to": "MS14_D01_S02"
+        }
+      ],
+      "release_holds": [],
+      "resource_refs": {
+        "backgrounds": [
+          "BG_CARRIAGE"
+        ],
+        "assets": [
+          "PROP_INVITATION",
+          "CS_CARRIAGE"
+        ],
+        "source": "RESOURCE_CONTRACT_01_05.json#MS14_D01_S01",
+        "mapping_verified": false
+      },
+      "author_contract": {
+        "state_and_navigation": "진입: 신규 시작, 마차, 아빠·다람·까로(앞좌석). 필수 E01 표시. 선택 ‘마지막 줄을 본다’→K01a; ‘글씨를 살핀다’→K01b; ‘편지를 접는다’→관찰 종료. 같은 관찰은 재열람 가능, 효과 중복 없음. 다음 ‘마차에서 내린다’→D01S02.",
+        "flow": "배열 순서에서 현재 경로 조건이 맞는 블록만 진행. input 조건 블록은 해당 입력에서만 호출. RETURN_TO_INVESTIGATION은 가장 가까운 조사 메뉴로 복귀, 성공 우선 평가. choice는 target_block로 분기하며 상호배타 결과 블록을 중복 재생하지 않는다. 원문 계약에 없는 장소·선택은 열지 않는다.  필수 입력 대기 중에는 뒤의 공통 블록으로 건너뛰지 않는다. 입력 이벤트는 완료 때 소비한다. 선택 콜백은 재생 후 지정 합류 지점으로 돌아가며 다른 선택 결과를 순차 재생하지 않는다.",
+        "time": "이동 5분, 새 주제 10분, 상세 조사 15분은 완료된 고유 행동마다 한 번. 대사·힌트·오답·재열람 0분. D2 두 작업 선택은 약속 충돌이며 실시간 타이머가 아니다."
+      },
+      "input_dispatch": [
+        {
+          "when": "input=inspect_letter_last",
+          "target_blocks": [
+            "MS14_D01_S01_B003"
+          ],
+          "priority": 10
+        },
+        {
+          "when": "input=inspect_letter_hand",
+          "target_blocks": [
+            "MS14_D01_S01_B004"
+          ],
+          "priority": 10
+        }
+      ]
+    },
+    {
+      "scene_id": "MS14_D01_S02",
+      "day": 1,
+      "title": "2. 초소 / 한 사람의 허가",
+      "location": "1일 도착 / 초소 입구→내부",
+      "enter_when": [
+        "day=1",
+        "carriage_stopped=true",
+        "father_with_daram=true"
+      ],
+      "actors": [
+        {
+          "actor_id": "daram",
+          "alive_when_visible": true,
+          "location": "발판 내려서기/작은가방/표읽기",
+          "custody": "기존 actor/world 상태 유지; 구금·노동은 해당 조건 블록에서만 변경",
+          "visible_when": "현재 저작 블록에서 실제 도착·동석이 확인됨"
+        },
+        {
+          "actor_id": "karo",
+          "alive_when_visible": true,
+          "location": "발판 안전 안내 뒤 큰짐 곁",
+          "custody": "기존 actor/world 상태 유지; 구금·노동은 해당 조건 블록에서만 변경",
+          "visible_when": "현재 저작 블록에서 실제 도착·동석이 확인됨"
+        },
+        {
+          "actor_id": "dolmok",
+          "alive_when_visible": true,
+          "location": "책상에서 처리표 펼침",
+          "custody": "기존 actor/world 상태 유지; 구금·노동은 해당 조건 블록에서만 변경",
+          "visible_when": "현재 저작 블록에서 실제 도착·동석이 확인됨"
+        },
+        {
+          "actor_id": "father",
+          "alive_when_visible": true,
+          "location": "아빠 1인칭, 다람과 실제 이동",
+          "custody": "free",
+          "visible_when": "현재 저작 블록에서 실제 도착·동석이 확인됨"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "MS14_D01_S02_B001",
+          "when": "always",
+          "records": [
+            {
+              "id": "MS14_D01_S02_L0001",
+              "kind": "action",
+              "text": "마차가 멈춘다. 까로가 얼어 있는 발판을 가리킨다.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": false
+            },
+            {
+              "id": "MS14_D01_S02_L0002",
+              "kind": "dialogue",
+              "text": "안아 주지는 마.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "다람"
+            },
+            {
+              "id": "MS14_D01_S02_L0003",
+              "kind": "dialogue",
+              "text": "손만 잡을게.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S02_L0004",
+              "kind": "action",
+              "text": "마지막 발을 내리는 아이의 허리를 받친다. 다람은 모른 척한다.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": false
+            },
+            {
+              "id": "MS14_D01_S02_L0005",
+              "kind": "dialogue",
+              "text": "큰 짐은 두고 가세요. 축에 금이 갔네. 돌아가는 건 수리부터 해야겠어요.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "까로"
+            },
+            {
+              "id": "MS14_D01_S02_L0006",
+              "kind": "dialogue",
+              "text": "어디로 가면 됩니까?",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S02_L0007",
+              "kind": "dialogue",
+              "text": "초소요. 방문 확인 먼저.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "까로"
+            },
+            {
+              "id": "MS14_D01_S02_L0008",
+              "kind": "action",
+              "text": "작은 가방을 멘 다람과 초소로 간다.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": false
+            },
+            {
+              "id": "MS14_D01_S02_L0009",
+              "kind": "dialogue",
+              "text": "성함.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "돌목"
+            },
+            {
+              "id": "MS14_D01_S02_L0010",
+              "kind": "dialogue",
+              "text": "다돌입니다. 딸하고 왔습니다.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S02_L0011",
+              "kind": "dialogue",
+              "text": "아버지만 들어가실 수 있소. 아이는 일꾼으로 받을 수 없소.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "돌목"
+            },
+            {
+              "id": "MS14_D01_S02_L0012",
+              "kind": "dialogue",
+              "text": "일꾼이요? 아내 만나러 왔는데요.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S02_L0013",
+              "kind": "dialogue",
+              "text": "내게 온 종이엔 그렇게 적혀 있소.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "돌목"
+            },
+            {
+              "id": "MS14_D01_S02_L0014",
+              "kind": "dialogue",
+              "text": "그럼 얘는 어쩌고요?",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S02_L0015",
+              "kind": "dialogue",
+              "text": "혼자 두라는 말 아니오. 둘 다 여기서 기다리시오.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "돌목"
+            },
+            {
+              "id": "MS14_D01_S02_L0016",
+              "kind": "action",
+              "text": "다람이 외투를 당긴다. 아이를 내 옆으로 붙인다.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": false
+            },
+            {
+              "id": "MS14_D01_S02_L0017",
+              "kind": "dialogue",
+              "text": "아빠, 나 때문에 못 들어가?",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "다람"
+            },
+            {
+              "id": "MS14_D01_S02_L0018",
+              "kind": "dialogue",
+              "text": "아니야. 잘못 적힌 게 있나 봐. 같이 보자.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S02_L0019",
+              "kind": "evidence",
+              "text": "초소 입장 명단: 같은 도착일 / 다돌 / 신청 2명 / 신규 일꾼 본인 1명 / 동행 아동 모집 제외 / 내일부터 장작 운반 / 처리 너울.",
+              "expression": "default",
+              "effects": [
+                "acquire(E02)"
+              ],
+              "next": "CONTINUE",
+              "player_visible": true
+            },
+            {
+              "id": "MS14_D01_S02_L0020",
+              "kind": "dialogue",
+              "text": "장작이요? 그런 신청 안 했습니다. 제가 낸 종이부터 보여 주세요.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S02_L0021",
+              "kind": "dialogue",
+              "text": "날짜와 이름을 찾으면 되오. 잠깐 기다리시오.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "돌목"
+            },
+            {
+              "id": "MS14_D01_S02_L0022",
+              "kind": "choice",
+              "text": "어떤 자료부터 보여 줄까?",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "options": [
+                {
+                  "id": "MS14_D01_S02_L0022_O1",
+                  "label": "초대 편지를 보여 준다",
+                  "when": "always",
+                  "target_block": "MS14_D01_S02_B002",
+                  "effects": [
+                    "input=show_invitation"
+                  ]
+                },
+                {
+                  "id": "MS14_D01_S02_L0022_O2",
+                  "label": "가족 방문 신청서를 찾아 달라고 한다",
+                  "when": "always",
+                  "target_block": "MS14_D01_S02_B003",
+                  "effects": [
+                    "input=request_original"
+                  ]
+                }
+              ]
+            }
+          ],
+          "execution": "ordered_conditional"
+        },
+        {
+          "id": "MS14_D01_S02_B002",
+          "when": "input=show_invitation",
+          "records": [
+            {
+              "id": "MS14_D01_S02_L0023",
+              "kind": "dialogue",
+              "text": "이 편지도 있습니다.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S02_L0024",
+              "kind": "dialogue",
+              "text": "초대받은 건 알겠소. 두 사람이 묵을 방도 확인해야 하오.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "돌목"
+            },
+            {
+              "id": "MS14_D01_S02_L0025",
+              "kind": "dialogue",
+              "text": "여관으로 신청했습니다. 원본을 찾아 주십시오.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            }
+          ],
+          "execution": "input_callback"
+        },
+        {
+          "id": "MS14_D01_S02_B003",
+          "when": "input=request_original",
+          "records": [
+            {
+              "id": "MS14_D01_S02_L0026",
+              "kind": "dialogue",
+              "text": "가족 방문으로 낸 신청서를 봐 주십시오.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S02_L0027",
+              "kind": "dialogue",
+              "text": "여기 있소. 이름부터 보시오.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "돌목"
+            }
+          ],
+          "execution": "input_callback"
+        },
+        {
+          "id": "MS14_D01_S02_B004",
+          "when": "always",
+          "records": [
+            {
+              "id": "MS14_D01_S02_L0028",
+              "kind": "action",
+              "text": "돌목이 같은 날짜의 원본을 꺼낸다.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": false
+            }
+          ],
+          "execution": "ordered_conditional"
+        }
+      ],
+      "exits": [
+        {
+          "when": "모든 필수 행동·해당 선택 결과 완료 AND player_continue_confirmed=true",
+          "to": "MS14_D01_S03"
+        }
+      ],
+      "release_holds": [],
+      "resource_refs": {
+        "backgrounds": [
+          "BG_VILLAGE_GATE",
+          "BG_GUARDHOUSE"
+        ],
+        "assets": [
+          "PROP_GATE_PROCESSING"
+        ],
+        "source": "RESOURCE_CONTRACT_01_05.json#MS14_D01_S02",
+        "mapping_verified": false
+      },
+      "author_contract": {
+        "state_and_navigation": "진입: 마차 정차, 아빠·다람·까로, 초소 돌목. 큰 짐은 까로 곁, 작은 가방은 다람. 처리표 읽기로 E02. 선택 ‘초대 편지를 보여 준다’→불충분 설명 뒤 원본 요청; ‘가족 방문 신청을 확인해 달라고 한다’→즉시 원본 요청. 두 선택 모두 D01S03. 선택에 따른 관계 벌점 없음.",
+        "flow": "배열 순서에서 현재 경로 조건이 맞는 블록만 진행. input 조건 블록은 해당 입력에서만 호출. RETURN_TO_INVESTIGATION은 가장 가까운 조사 메뉴로 복귀, 성공 우선 평가. choice는 target_block로 분기하며 상호배타 결과 블록을 중복 재생하지 않는다. 원문 계약에 없는 장소·선택은 열지 않는다.  필수 입력 대기 중에는 뒤의 공통 블록으로 건너뛰지 않는다. 입력 이벤트는 완료 때 소비한다. 선택 콜백은 재생 후 지정 합류 지점으로 돌아가며 다른 선택 결과를 순차 재생하지 않는다.",
+        "time": "이동 5분, 새 주제 10분, 상세 조사 15분은 완료된 고유 행동마다 한 번. 대사·힌트·오답·재열람 0분. D2 두 작업 선택은 약속 충돌이며 실시간 타이머가 아니다."
+      },
+      "input_dispatch": [
+        {
+          "when": "input=show_invitation",
+          "target_blocks": [
+            "MS14_D01_S02_B002"
+          ],
+          "priority": 10
+        },
+        {
+          "when": "input=request_original",
+          "target_blocks": [
+            "MS14_D01_S02_B003"
+          ],
+          "priority": 10
+        }
+      ]
+    },
+    {
+      "scene_id": "MS14_D01_S03",
+      "day": 1,
+      "title": "3. 초소 / 둘이 들어갈 근거",
+      "location": "1일 / 초소 첫 추리",
+      "enter_when": [
+        "day=1",
+        "E02 acquired",
+        "father.location=guardhouse",
+        "daram.location=guardhouse",
+        "gate_registered=false"
+      ],
+      "actors": [
+        {
+          "actor_id": "daram",
+          "alive_when_visible": true,
+          "location": "아빠와 함께 문서 내려다보기",
+          "custody": "기존 actor/world 상태 유지; 구금·노동은 해당 조건 블록에서만 변경",
+          "visible_when": "현재 저작 블록에서 실제 도착·동석이 확인됨"
+        },
+        {
+          "actor_id": "dolmok",
+          "alive_when_visible": true,
+          "location": "대조 기다림/불충분 근거 반응",
+          "custody": "기존 actor/world 상태 유지; 구금·노동은 해당 조건 블록에서만 변경",
+          "visible_when": "현재 저작 블록에서 실제 도착·동석이 확인됨"
+        },
+        {
+          "actor_id": "father",
+          "alive_when_visible": true,
+          "location": "아빠 1인칭, 다람과 실제 이동",
+          "custody": "free",
+          "visible_when": "현재 저작 블록에서 실제 도착·동석이 확인됨"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "MS14_D01_S03_B001",
+          "when": "always",
+          "records": [
+            {
+              "id": "MS14_D01_S03_L0001",
+              "kind": "action",
+              "text": "목표: 다람과 함께 들어간다. 세 문서는 각각 초소 입장 명단, 다돌이 낸 방문 신청서, 겨울철 입장 규칙으로 표시한다.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": false
+            },
+            {
+              "id": "MS14_D01_S03_L0002",
+              "kind": "evidence",
+              "text": "다돌이 낸 방문 신청서: 같은 도착일 / 신청자 다돌 외 1명 / 동행 아동 있음 / 총 2명 / 가족 방문 / 동행인 성명 다람 / 여관 13호, 방문 가족 2명 숙박 확인.",
+              "expression": "default",
+              "effects": [
+                "acquire(E03)"
+              ],
+              "next": "CONTINUE",
+              "player_visible": true
+            },
+            {
+              "id": "MS14_D01_S03_L0003",
+              "kind": "dialogue",
+              "text": "여기 아빠 이름.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "다람"
+            },
+            {
+              "id": "MS14_D01_S03_L0004",
+              "kind": "dialogue",
+              "text": "맞아. 날짜도 같네.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S03_L0005",
+              "kind": "dialogue",
+              "text": "‘외 한 명’은 나야? 내 이름도 썼는데.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "다람"
+            },
+            {
+              "id": "MS14_D01_S03_L0006",
+              "kind": "dialogue",
+              "text": "아래에 있네. 다람. 둘이 온다고 제대로 썼어.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S03_L0007",
+              "kind": "evidence",
+              "text": "겨울철 입장 규칙: 가족 방문은 숙소가 확인된 동행 인원으로 등록한다. 초소는 실제 인원과 숙소를 확인해 현장 등록·정정할 수 있다. 신규 일꾼은 작업 명단의 본인만 등록한다.",
+              "expression": "default",
+              "effects": [
+                "acquire(E04)"
+              ],
+              "next": "CONTINUE",
+              "player_visible": true
+            },
+            {
+              "id": "MS14_D01_S03_L0008",
+              "kind": "choice",
+              "text": "자료를 살펴보고 함께 들어갈 이유를 제시한다.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "options": [
+                {
+                  "id": "MS14_D01_S03_L0008_O1",
+                  "label": "두 종이의 항목을 비교한다",
+                  "when": "E03 acquired",
+                  "target_block": "MS14_D01_S03_B002",
+                  "effects": [
+                    "input=connect(E03.family_visit,E02.worker)"
+                  ]
+                },
+                {
+                  "id": "MS14_D01_S03_L0008_O2",
+                  "label": "숙소 확인 칸을 본다",
+                  "when": "E03 acquired",
+                  "target_block": "MS14_D01_S03_B003",
+                  "effects": [
+                    "input=inspect(E03.lodging)"
+                  ]
+                },
+                {
+                  "id": "MS14_D01_S03_L0008_O3",
+                  "label": "자료를 함께 제시한다",
+                  "when": "gate_basis_proven=false",
+                  "target_block": "RETURN_TO_INVESTIGATION",
+                  "effects": [
+                    "input=submit_player_selected_evidence"
+                  ],
+                  "dispatch": "input_dispatch: gate_regular / gate_early / gate_number / gate_passenger / gate_other; 정답 묶음 우선, 대상 입력에 맞게 분기"
+                },
+                {
+                  "id": "MS14_D01_S03_L0008_O4",
+                  "label": "힌트를 생각한다",
+                  "when": "always",
+                  "target_block": "MS14_D01_S03_B009",
+                  "effects": [
+                    "input=hint"
+                  ]
+                },
+                {
+                  "id": "MS14_D01_S03_L0008_O5",
+                  "label": "왜 일꾼으로 적혔는지 묻는다",
+                  "when": "purpose_difference_known=true AND reason_heard=false",
+                  "target_block": "MS14_D01_S03_B010",
+                  "effects": [
+                    "input=ask_worker_reason"
+                  ]
+                }
+              ]
+            }
+          ],
+          "execution": "ordered_conditional"
+        },
+        {
+          "id": "MS14_D01_S03_B002",
+          "when": "input=connect(E03.family_visit,E02.worker) AND gate_basis_proven=false",
+          "records": [
+            {
+              "id": "MS14_D01_S03_L0009",
+              "kind": "dialogue",
+              "text": "가족 방문이라고 썼잖습니까. 왜 여기엔 일꾼입니까?",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S03_L0010",
+              "kind": "dialogue",
+              "text": "……그렇군.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "돌목"
+            },
+            {
+              "id": "MS14_D01_S03_L0011",
+              "kind": "dialogue",
+              "text": "그럼 나도 들어가?",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "다람"
+            },
+            {
+              "id": "MS14_D01_S03_L0012",
+              "kind": "dialogue",
+              "text": "둘이 잘 곳까지 확인해야 하오.",
+              "expression": "default",
+              "effects": [
+                "purpose_difference_known=true"
+              ],
+              "next": "RETURN_TO_INVESTIGATION",
+              "player_visible": true,
+              "speaker": "돌목"
+            }
+          ],
+          "execution": "input_callback"
+        },
+        {
+          "id": "MS14_D01_S03_B003",
+          "when": "input=inspect(E03.lodging) AND gate_basis_proven=false",
+          "records": [
+            {
+              "id": "MS14_D01_S03_L0013",
+              "kind": "dialogue",
+              "text": "13호실, 가족 두 명. 여관 확인도 여기 있습니다.",
+              "expression": "default",
+              "effects": [],
+              "next": "RETURN_TO_INVESTIGATION",
+              "player_visible": true,
+              "speaker": "아빠"
+            }
+          ],
+          "execution": "input_callback"
+        },
+        {
+          "id": "MS14_D01_S03_B004",
+          "when": "input=submit AND E02,E03,E04 acquired AND selected=family_visit+two_person_lodging+family_registration_rule AND purpose_difference_known=true",
+          "records": [
+            {
+              "id": "MS14_D01_S03_L0014",
+              "kind": "dialogue",
+              "text": "저 규칙대로면 가족이고 잘 방도 있으니, 딸도 들어가잖습니까.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S03_L0015",
+              "kind": "dialogue",
+              "text": "두 사람 방은 확인됐소.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "돌목"
+            },
+            {
+              "id": "MS14_D01_S03_L0016",
+              "kind": "dialogue",
+              "text": "그럼 저를 일꾼으로 적은 걸 고쳐 주세요. 딸도 같이 들어가게요.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S03_L0017",
+              "kind": "dialogue",
+              "text": "너울이 보내 온 표인데…….",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "돌목"
+            },
+            {
+              "id": "MS14_D01_S03_L0018",
+              "kind": "dialogue",
+              "text": "여기서 고칠 수 있다고도 써 있네요. 다른 데로 또 가라는 말은 하지 마세요. 애 손이 얼었습니다.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S03_L0019",
+              "kind": "dialogue",
+              "text": "안 고친다는 말 아니오. 종이에서 손 좀 떼시오. 써야 하니.",
+              "expression": "default",
+              "effects": [
+                "gate_basis_proven=true"
+              ],
+              "next": "END_SCENE",
+              "player_visible": true,
+              "speaker": "돌목"
+            }
+          ],
+          "execution": "input_callback"
+        },
+        {
+          "id": "MS14_D01_S03_B005",
+          "when": "input=submit AND E02,E03,E04 acquired AND selected=family_visit+two_person_lodging+family_registration_rule AND purpose_difference_known=false",
+          "records": [
+            {
+              "id": "MS14_D01_S03_L0020",
+              "kind": "dialogue",
+              "text": "가족 방문이고 둘이 잘 방도 확인됐습니다. 저 규칙대로 딸도 들여보내 주세요.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S03_L0021",
+              "kind": "dialogue",
+              "text": "가족 방문을 일꾼으로 옮겨 놨군.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "돌목"
+            },
+            {
+              "id": "MS14_D01_S03_L0022",
+              "kind": "dialogue",
+              "text": "네. 그래서 아이가 빠졌습니다.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S03_L0023",
+              "kind": "dialogue",
+              "text": "여기서 고치겠소.",
+              "expression": "default",
+              "effects": [
+                "purpose_difference_known=true",
+                "gate_basis_proven=true"
+              ],
+              "next": "END_SCENE",
+              "player_visible": true,
+              "speaker": "돌목"
+            }
+          ],
+          "execution": "input_callback"
+        },
+        {
+          "id": "MS14_D01_S03_B006",
+          "when": "input=submit_only_application_count",
+          "records": [
+            {
+              "id": "MS14_D01_S03_L0024",
+              "kind": "dialogue",
+              "text": "둘인 건 봤소. 가족을 만나러 왔는지, 둘이 잘 방은 있는지도 확인해야 하오.",
+              "expression": "default",
+              "effects": [],
+              "next": "RETURN_TO_INVESTIGATION",
+              "player_visible": true,
+              "speaker": "돌목"
+            }
+          ],
+          "execution": "input_callback"
+        },
+        {
+          "id": "MS14_D01_S03_B007",
+          "when": "input=submit_only_passenger_confirmation",
+          "records": [
+            {
+              "id": "MS14_D01_S03_L0025",
+              "kind": "dialogue",
+              "text": "같이 온 건 알겠소. 둘이 묵을 방은 확인됐소?",
+              "expression": "default",
+              "effects": [],
+              "next": "RETURN_TO_INVESTIGATION",
+              "player_visible": true,
+              "speaker": "돌목"
+            }
+          ],
+          "execution": "input_callback"
+        },
+        {
+          "id": "MS14_D01_S03_B008",
+          "when": "input=submit_other_house_application",
+          "records": [
+            {
+              "id": "MS14_D01_S03_L0026",
+              "kind": "dialogue",
+              "text": "다른 집 종이오. 날짜와 이름부터 보시오.",
+              "expression": "default",
+              "effects": [],
+              "next": "RETURN_TO_INVESTIGATION",
+              "player_visible": true,
+              "speaker": "돌목"
+            }
+          ],
+          "execution": "input_callback"
+        },
+        {
+          "id": "MS14_D01_S03_B009",
+          "when": "input=hint",
+          "records": [
+            {
+              "id": "MS14_D01_S03_L0027",
+              "kind": "narration",
+              "text": "가족을 만나러 온다는 신청, 둘이 잘 방. 벽에 쓰인 조건과 맞춰 보자.",
+              "expression": "default",
+              "effects": [],
+              "next": "RETURN_TO_INVESTIGATION",
+              "player_visible": true
+            }
+          ],
+          "execution": "input_callback"
+        },
+        {
+          "id": "MS14_D01_S03_B010",
+          "when": "input=ask_worker_reason AND purpose_difference_known=true AND reason_heard=false",
+          "records": [
+            {
+              "id": "MS14_D01_S03_L0028",
+              "kind": "dialogue",
+              "text": "그런데 왜 저를 일꾼으로 적은 겁니까?",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S03_L0029",
+              "kind": "dialogue",
+              "text": "너울이 새로 오는 어른은 가족 방문이어도 먼저 작업 명단에 넣으라더군. 장작 나를 사람이 모자라오.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "돌목"
+            },
+            {
+              "id": "MS14_D01_S03_L0030",
+              "kind": "dialogue",
+              "text": "전 하겠다고 한 적 없습니다.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S03_L0031",
+              "kind": "dialogue",
+              "text": "그건 너울에게 말하시오. 잘못 적힌 걸 고칠 때 기록은 남기겠소.",
+              "expression": "default",
+              "effects": [
+                "reason_heard=true",
+                "K05=true"
+              ],
+              "next": "RETURN_TO_INVESTIGATION",
+              "player_visible": true,
+              "speaker": "돌목"
+            }
+          ],
+          "execution": "input_callback"
+        }
+      ],
+      "exits": [
+        {
+          "when": "gate_basis_proven=true",
+          "to": "MS14_D01_S04"
+        }
+      ],
+      "release_holds": [],
+      "resource_refs": {
+        "backgrounds": [
+          "BG_GUARDHOUSE"
+        ],
+        "assets": [
+          "PROP_GATE_ORIGINAL",
+          "PROP_GATE_RULES"
+        ],
+        "source": "RESOURCE_CONTRACT_01_05.json#MS14_D01_S03",
+        "mapping_verified": false
+      },
+      "author_contract": {
+        "state_and_navigation": "진입: 초소 안, 아빠·다람·돌목, E02. 클릭 ‘신청 원본’→E03, ‘겨울 방문 규정’→E04, ‘처리표’→E02 재열람. 연결 ‘가족 방문↔신규 일꾼’→purpose_difference_known=true. 제시 ‘가족 방문·2인 숙소 확인+가족 등록 규정’→E02·E03·E04 보유 시 purpose_difference_known=true, gate_basis_proven=true, D01S04. 연결을 먼저 하지 않았어도 즉시 성공. ‘신청 2명만 제시’·‘까로의 승객 확인만 제시’·‘다른 신청서 제시’→대본의 불충분 응답, 이 장면 유지. ‘힌트를 부탁한다’→힌트 발화, 상태 그대로. 선택 질문 ‘왜 일꾼으로 바뀌었습니까?’는 purpose_difference_known=true일 때만 노출, reason_heard=true, 조사로 복귀. 이유를 듣지 않아도 성공.",
+        "flow": "배열 순서에서 현재 경로 조건이 맞는 블록만 진행. input 조건 블록은 해당 입력에서만 호출. RETURN_TO_INVESTIGATION은 가장 가까운 조사 메뉴로 복귀, 성공 우선 평가. choice는 target_block로 분기하며 상호배타 결과 블록을 중복 재생하지 않는다. 원문 계약에 없는 장소·선택은 열지 않는다.  필수 입력 대기 중에는 뒤의 공통 블록으로 건너뛰지 않는다. 입력 이벤트는 완료 때 소비한다. 선택 콜백은 재생 후 지정 합류 지점으로 돌아가며 다른 선택 결과를 순차 재생하지 않는다.",
+        "time": "이동 5분, 새 주제 10분, 상세 조사 15분은 완료된 고유 행동마다 한 번. 대사·힌트·오답·재열람 0분. D2 두 작업 선택은 약속 충돌이며 실시간 타이머가 아니다."
+      },
+      "input_dispatch": [
+        {
+          "when": "input=connect(E03.family_visit,E02.worker) AND gate_basis_proven=false",
+          "target_blocks": [
+            "MS14_D01_S03_B002"
+          ],
+          "priority": 10
+        },
+        {
+          "when": "input=inspect(E03.lodging) AND gate_basis_proven=false",
+          "target_blocks": [
+            "MS14_D01_S03_B003"
+          ],
+          "priority": 10
+        },
+        {
+          "when": "input=submit AND E02,E03,E04 acquired AND selected=family_visit+two_person_lodging+family_registration_rule AND purpose_difference_known=true",
+          "target_blocks": [
+            "MS14_D01_S03_B004"
+          ],
+          "priority": 0
+        },
+        {
+          "when": "input=submit AND E02,E03,E04 acquired AND selected=family_visit+two_person_lodging+family_registration_rule AND purpose_difference_known=false",
+          "target_blocks": [
+            "MS14_D01_S03_B005"
+          ],
+          "priority": 0
+        },
+        {
+          "when": "input=submit_only_application_count",
+          "target_blocks": [
+            "MS14_D01_S03_B006"
+          ],
+          "priority": 10
+        },
+        {
+          "when": "input=submit_only_passenger_confirmation",
+          "target_blocks": [
+            "MS14_D01_S03_B007"
+          ],
+          "priority": 10
+        },
+        {
+          "when": "input=submit_other_house_application",
+          "target_blocks": [
+            "MS14_D01_S03_B008"
+          ],
+          "priority": 10
+        },
+        {
+          "when": "input=hint",
+          "target_blocks": [
+            "MS14_D01_S03_B009"
+          ],
+          "priority": 10
+        },
+        {
+          "when": "input=ask_worker_reason AND purpose_difference_known=true AND reason_heard=false",
+          "target_blocks": [
+            "MS14_D01_S03_B010"
+          ],
+          "priority": 10
+        }
+      ]
+    },
+    {
+      "scene_id": "MS14_D01_S04",
+      "day": 1,
+      "title": "4. 문이 열릴 때 / 이름",
+      "location": "1일 / 초소 등록 후 입장",
+      "enter_when": [
+        "day=1",
+        "gate_basis_proven=true",
+        "gate_registered=false"
+      ],
+      "actors": [
+        {
+          "actor_id": "dolmok",
+          "alive_when_visible": true,
+          "location": "정정·다람 실명기재",
+          "custody": "기존 actor/world 상태 유지; 구금·노동은 해당 조건 블록에서만 변경",
+          "visible_when": "현재 저작 블록에서 실제 도착·동석이 확인됨"
+        },
+        {
+          "actor_id": "daram",
+          "alive_when_visible": true,
+          "location": "이름 요구/감사",
+          "custody": "기존 actor/world 상태 유지; 구금·노동은 해당 조건 블록에서만 변경",
+          "visible_when": "현재 저작 블록에서 실제 도착·동석이 확인됨"
+        },
+        {
+          "actor_id": "neoul",
+          "alive_when_visible": true,
+          "location": "정정 뒤 도착해 표읽고 소재문의",
+          "custody": "기존 actor/world 상태 유지; 구금·노동은 해당 조건 블록에서만 변경",
+          "visible_when": "현재 저작 블록에서 실제 도착·동석이 확인됨"
+        },
+        {
+          "actor_id": "karo",
+          "alive_when_visible": true,
+          "location": "큰짐 회수 시 마차 곁",
+          "custody": "기존 actor/world 상태 유지; 구금·노동은 해당 조건 블록에서만 변경",
+          "visible_when": "현재 저작 블록에서 실제 도착·동석이 확인됨"
+        },
+        {
+          "actor_id": "father",
+          "alive_when_visible": true,
+          "location": "아빠 1인칭, 다람과 실제 이동",
+          "custody": "free",
+          "visible_when": "현재 저작 블록에서 실제 도착·동석이 확인됨"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "MS14_D01_S04_B001",
+          "when": "always",
+          "records": [
+            {
+              "id": "MS14_D01_S04_L0001",
+              "kind": "action",
+              "text": "돌목이 신규 일꾼을 지우고 가족 방문으로 고친다.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": false
+            },
+            {
+              "id": "MS14_D01_S04_L0002",
+              "kind": "dialogue",
+              "text": "아직 기다려?",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "다람"
+            },
+            {
+              "id": "MS14_D01_S04_L0003",
+              "kind": "dialogue",
+              "text": "이름 적는 동안만.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "돌목"
+            },
+            {
+              "id": "MS14_D01_S04_L0004",
+              "kind": "dialogue",
+              "text": "둘 다 들어가는 거죠?",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S04_L0005",
+              "kind": "dialogue",
+              "text": "그렇소. 가족 방문. 다돌, 동행 아동 한 명.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "돌목"
+            },
+            {
+              "id": "MS14_D01_S04_L0006",
+              "kind": "dialogue",
+              "text": "외 한 명 말고, 다람.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "다람"
+            },
+            {
+              "id": "MS14_D01_S04_L0007",
+              "kind": "action",
+              "text": "펜이 멈췄다가 다시 움직인다.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": false
+            },
+            {
+              "id": "MS14_D01_S04_L0008",
+              "kind": "dialogue",
+              "text": "다람. 됐소.",
+              "expression": "default",
+              "effects": [
+                "acquire(E05)",
+                "gate_registered=true"
+              ],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "돌목"
+            },
+            {
+              "id": "MS14_D01_S04_L9101",
+              "kind": "evidence",
+              "text": "가족 방문 원본 및 숙소 확인에 따라 현장 정정. 다돌, 동행인 다람. 확인자 돌목.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true
+            },
+            {
+              "id": "MS14_D01_S04_L0009",
+              "kind": "dialogue",
+              "text": "자, 들어가자.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "아빠"
+            },
+            {
+              "id": "MS14_D01_S04_L0010",
+              "kind": "dialogue",
+              "text": "잠깐. 고맙습니다.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "다람"
+            },
+            {
+              "id": "MS14_D01_S04_L0011",
+              "kind": "dialogue",
+              "text": "발판 조심하시오.",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "speaker": "돌목"
+            },
+            {
+              "id": "MS14_D01_S04_L0012",
+              "kind": "choice",
+              "text": "짐을 찾으러 가기 전에",
+              "expression": "default",
+              "effects": [],
+              "next": "CONTINUE",
+              "player_visible": true,
+              "options": [
+                {
+                  "id": "MS14_D01_S04_L0012_O1",
+                  "label": "왜 일꾼으로 적혔는지 묻는다",
+                  "when": "reason_heard=false",
+                  "target_block": "MS14_D01_S04_B002",
+                  "effects": [
+                    "input=ask_worker_reason"
+                  ]
+                },
+                {
+                  "id": "MS14_D01_S04_L0012_O2",
+                  "label": "짐을 찾아 여관으로 간다",
+                  "when": "always",
+                  "target_block": "CONTINUE",
+                  "effects": []
+                }
+              ]
+            }
+          ],
+          "execution": "ordered_conditional"
+        }
+      ],
+      "exits": [
+        {
+          "when": "모든 필수 행동·해당 선택 결과 완료 AND player_continue_confirmed=true",
+          "to": "MS14_D01_S05"
+        }
+      ],
+      "release_holds": [],
+      "resource_refs": {
+        "backgrounds": [
+          "BG_GUARDHOUSE",
+          "BG_VILLAGE_GATE"
+        ],
+        "assets": [
+          "PROP_GATE_PROCESSING"
+        ],
+        "source": "RESOURCE_CONTRACT_01_05.json#MS14_D01_S04",
+        "mapping_verified": false
+      },
+      "author_contract": {
+        "state_and_navigation": "진입: gate_basis_proven=true, 초소, 아빠·다람·돌목. 등록 완료→E05, gate_registered=true. 아직 reason_heard=false면 ‘왜 일꾼으로 바뀌었습니까?’ 추가 질문 가능, 완료 후 바로 이 장면 복귀. 너울이 도착해 소재·엄마 연락 지시를 아빠가 직접 들음→gate_mother_report_instruction_heard=true. 다음 ‘짐을 찾아 여관으로 간다’→D01S05. 너울은 초소에 남고 까로에게서 큰 짐 회수.",
+        "flow": "배열 순서에서 현재 경로 조건이 맞는 블록만 진행. input 조건 블록은 해당 입력에서만 호출. RETURN_TO_INVESTIGATION은 가장 가까운 조사 메뉴로 복귀, 성공 우선 평가. choice는 target_block로 분기하며 상호배타 결과 블록을 중복 재생하지 않는다. 원문 계약에 없는 장소·선택은 열지 않는다.  필수 입력 대기 중에는 뒤의 공통 블록으로 건너뛰지 않는다. 입력 이벤트는 완료 때 소비한다. 선택 콜백은 재생 후 지정 합류 지점으로 돌아가며 다른 선택 결과를 순차 재생하지 않는다.",
+        "time": "이동 5분, 새 주제 10분, 상세 조사 15분은 완료된 고유 행동마다 한 번. 대사·힌트·오답·재열람 0분. D2 두 작업 선택은 약속 충돌이며 실시간 타이머가 아니다."
+      },
+      "input_dispatch": [
+        {
+          "when": "input=ask_worker_reason AND purpose_difference_known=true AND reason_heard=false",
+          "target_blocks": [
+            "MS14_D01_S04_B002"
+          ],
+          "priority": 10
+        }
+      ]
+    }
+  ]
+}
