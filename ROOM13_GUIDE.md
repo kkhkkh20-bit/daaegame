@@ -11,7 +11,7 @@
 | 그림 원본 | `experiments/renpy-ch1/game/assets/` (웹에 나가는 파일 그대로) | 지난 공개본 game.zip 안에만 있었음 |
 | 빌드 | `python3 dev/build_web.py --sdk $RENPY_SDK` (10초 남짓) | 지난 공개본을 풀어 덮어쓰고 다시 압축 (수 분) |
 | 공개본 | `preview/room13-dev/` (GitHub Pages) | 같음 |
-| 첫 로딩 | 0.19.74: 핵심 약16.4MB + 시작 필수 파일 약37.9MB (게임 자료 약54.3MB) | 모든 표정·후기 그림까지 약299MB |
+| 첫 로딩 | 0.19.74: 핵심 약18.3MB + 시작 필수 파일 약37.9MB (게임 자료 약56.2MB) | 모든 표정·후기 그림까지 약299MB |
 | 다른 세션과 합치기 | 평범한 `git pull`(텍스트 병합) | zip 3-way 병합 |
 
 ## 2. 작업 순서
@@ -58,7 +58,7 @@ python3 dev/qa_carriage.py && python3 dev/qa_navigation.py && python3 dev/qa_sav
 - 0.19.74부터 `dev/build_web.py`의 `startup_media/startup_files`가 타이틀·마차·입구의 필수 파일만 첫 로딩에 넣는다. 작은 후기 그림도 핵심 zip에서 빼고 기존 progressive downloader로 전달한다. 원화 품질은 유지하며, 예전 저장이 참조하는 파일은 임의 삭제하지 않는다.
 - 웹 로딩 분류(`dev/build_web.py` 위쪽 상수)
   - **첫 로딩:** 시작 화이트리스트의 큰 그림·글꼴·타이틀/마차/입구 음악. 시작 전에 병렬로 받는다.
-  - **핵심 zip:** 작은 파일과 스크립트.
+  - **핵심 zip:** 작은 파일·스크립트와 공유 WAV 효과음. 첫 클릭의 무음 대체 재생을 막기 위해 짧은 효과음은 지연 로딩하지 않는다.
   - **필요할 때 받음:** 그 외 그림·배경음·효과음. 기존 Ren'Py progressive download를 사용하며, `asset_versions`로 교체 파일의 HTTP 캐시 키를 구분한다. 시작 직후 전체 후기 리소스를 받지 않는다.
 
 ### 함수 덮어쓰기 (중요)

@@ -358,6 +358,10 @@ def main():
         suffix = path.suffix.lower()
         if not path.is_file() or suffix not in MEDIA:
             continue
+        # One-shot interface sounds cannot rely on a remote silent placeholder.
+        # Keep the small shared root WAV set compressed in the core archive.
+        if suffix == ".wav" and path.parent == game / "assets":
+            continue
         if startup_media(rel, startup):
             if path.stat().st_size >= SMALL:preload.append(rel)
         elif suffix in (".mp3", ".ogg", ".opus", ".wav"):
@@ -399,7 +403,9 @@ def main():
         parts.append({"file": name, "bytes": len(chunk), "sha256": sha(chunk)})
     shipped = set()
     preload_entries = []
-    for rel in preload + remote:
+    # Retain stable URLs for older open tabs while new clients read these from core.
+    shared_sfx = [p.relative_to(game).as_posix() for p in (game / "assets").glob("*.wav")]
+    for rel in dict.fromkeys(preload + remote + shared_sfx):
         src = game / rel; dest = release / "game" / rel
         dest.parent.mkdir(parents=True, exist_ok=True)
         blob = src.read_bytes()

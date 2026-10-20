@@ -1,18 +1,23 @@
 {
  "engine": "Ren'Py 8.5.3",
  "game_transport": {
-  "archive_bytes": 16352856,
-  "archive_sha256": "6911c91f894a47df05010867e170dd59d0e8dda05290a20ee42d9f8ecdffaf31",
+  "archive_bytes": 18312641,
+  "archive_sha256": "0c20b50087f0c90f439921569d5b87fb9b2654e572249ec9081e1c22052093fd",
   "parts": [
    {
     "file": "game.part01",
     "bytes": 8388608,
-    "sha256": "7486d3486bf2120924bec5ffb1e37d32a252180b2902a7d5e6f71998cfa89937"
+    "sha256": "d1f43876bf8c66d932c69dab5ff015cf160f907e605a7afc919a3f22bf0683d1"
    },
    {
     "file": "game.part02",
-    "bytes": 7964248,
-    "sha256": "0151c9dba69b1b8fa933eecf095b5f60eed9368bc9bb310520471ced4ccff6ca"
+    "bytes": 8388608,
+    "sha256": "117944cc799e9fe1be3570e7a60e40cd369e0f31c22491b2281ccbf94769d10d"
+   },
+   {
+    "file": "game.part03",
+    "bytes": 1535425,
+    "sha256": "938b9df1e2287a3c2d05a11f71af6f295a80afe05f1ab902522a8dae7b7d608f"
    }
   ]
  },
@@ -34,16 +39,20 @@
    "sha256": "6bb23b55d259a317d6c3a496f5c8892bd820bc4f0730a172d030b4497c534bfe"
   },
   "game-transport.json": {
-   "bytes": 200145,
-   "sha256": "c9c025f13f9596f0d669dab8980657188bb978442e033828819ab2408a276d0f"
+   "bytes": 197764,
+   "sha256": "bc9425e6703682b95c901eb22d120f9402ec20b7699a77d30112203bdda7f83c"
   },
   "game.part01": {
    "bytes": 8388608,
-   "sha256": "7486d3486bf2120924bec5ffb1e37d32a252180b2902a7d5e6f71998cfa89937"
+   "sha256": "d1f43876bf8c66d932c69dab5ff015cf160f907e605a7afc919a3f22bf0683d1"
   },
   "game.part02": {
-   "bytes": 7964248,
-   "sha256": "0151c9dba69b1b8fa933eecf095b5f60eed9368bc9bb310520471ced4ccff6ca"
+   "bytes": 8388608,
+   "sha256": "117944cc799e9fe1be3570e7a60e40cd369e0f31c22491b2281ccbf94769d10d"
+  },
+  "game.part03": {
+   "bytes": 1535425,
+   "sha256": "938b9df1e2287a3c2d05a11f71af6f295a80afe05f1ab902522a8dae7b7d608f"
   },
   "game/assets/Galmuri11.ttf": {
    "bytes": 1964416,
@@ -9861,6 +9870,10 @@
    "bytes": 1820720,
    "sha256": "ae70a95360ac2cd23607b7305c57e0f61c23d49e553ec771260de5a5862cfe8d"
   },
+  "game/assets/type.wav": {
+   "bytes": 12740,
+   "sha256": "40f506ad3a5513e10398f7084bce2b0fdf5963756f8383b855d5d69ec2c37463"
+  },
   "game/assets/village-activities.png": {
    "bytes": 1737039,
    "sha256": "e61afbf68e54eb9bcdaec66ddbfaa2c179c8d398ffc8655210754e964f91341d"
@@ -9998,5 +10011,5 @@
    "sha256": "0ef27bfe65a2917248171666649a51d85e3a200a3ae87bbaaa7085748bc4f0c5"
   }
  },
- "total_bytes": 563872857
+ "total_bytes": 565843001
 }
