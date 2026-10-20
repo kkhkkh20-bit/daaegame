@@ -1,3 +1,4 @@
+default r13_field_reading = False
 # V1.1.1 story data in the existing Room13 state and native Ren'Py labels.
 # No alternate controller, natural-language evaluator, or separate save state.
 init 301 python:
@@ -158,7 +159,9 @@ label r13_v111_wait_again:
         $ v111_object_spec=ROOM13["objects"].get(room13["location"],{}).get(v111_pick[1],{})
         $ v111_ambient=r13_v111_ambient_text(v111_pick[1],v111_object_spec)
         if v111_ambient:
+            $ r13_field_reading=True
             call r13_lines([(None,v111_ambient)],"v111:ambient:"+room13["location"]+":"+v111_pick[1])
+            $ r13_field_reading=False
     jump r13_v111_wait_again
 
 label r13_v111_proof(key,correct,success,wrong=None,hint=None):

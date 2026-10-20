@@ -84,8 +84,8 @@ screen r13_hub(entry=False):
         use r13_waiting_window(ready)
     else:
         fixed:
-            area (1020,104,232,r13_control_height())
-            use r13_antique_button("지도 · 이동","map",Return(("menu","map")),enabled=ready,width=232,height=r13_control_height())
+            area (772,r13_control_y(),232,r13_control_height())
+            use r13_antique_button("지도","map",Return(("menu","map")),enabled=ready,width=232,height=r13_control_height())
     if not entry and r13_bed_available("bed"):
         fixed:
             area (1020,264,232,64)

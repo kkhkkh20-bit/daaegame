@@ -108,6 +108,7 @@ init python:
         lines=_r13_say_lines(what,size,1028) if isinstance(what,str) else 1
         if lines>2:
             top-=(lines-2)*(size+7)
+        if getattr(store,"r13_field_reading",False):return max(300,top+72)
         return max(300,top+r13_control_y()-16-632)
 
     import re as _r13_say_re
@@ -175,7 +176,9 @@ screen say(who,what):
         text "▸" xpos (1092 if room13_mode else 1190) ypos (610 if room13_mode else 682) size 30 color "#e8c75c"
         if room13_mode:
             timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
-            if place != "마차 안" and not r13_cg_active:
+            if r13_field_reading:
+                pass
+            elif place != "마차 안" and not r13_cg_active:
                 use r13_toolbar(mode="line")
             else:
                 use r13_playback_footer()
@@ -188,7 +191,7 @@ screen say(who,what):
             xpos (160 if room13_mode else 40)
             ypos (_r13_say_top(what) if room13_mode else 551)
             xsize (1072 if room13_mode else 1200)
-            ysize (r13_control_y()-16-_r13_say_top(what) if room13_mode else 169)
+            ysize ((704 if r13_field_reading else r13_control_y()-16)-_r13_say_top(what) if room13_mode else 169)
             background (r13_dialogue_frame() if room13_mode else Solid("#211a16f2")) padding (22,12)
             if room13_mode:
                 r13_dialogue_text what id "what" style "say_dialogue" size _r13_say_size() line_spacing 7 xsize 1028 font r13_ui_font() color r13_say_color()
@@ -203,12 +206,14 @@ screen say(who,what):
                 text who id "who" color "#FFF0CC" font r13_ui_font() size r13_read_size(26,28) xmaximum 736
         # Next-line mark breathes slowly like a firefly (0.18.47 storybook tone).
         if r13_fx_active():
-            text "▸" xpos 1190 ypos (r13_control_y()-48) size 24 color "#d9d4ab" at r13_next_glow
+            text "▸" xpos 1190 ypos (676 if r13_field_reading else r13_control_y()-48) size 24 color "#d9d4ab" at r13_next_glow
         else:
-            text "▸" xpos 1190 ypos (r13_control_y()-48) size 24 color "#d9d4ab"
+            text "▸" xpos 1190 ypos (676 if r13_field_reading else r13_control_y()-48) size 24 color "#d9d4ab"
         if room13_mode:
             timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
-            if place != "마차 안" and not r13_cg_active:
+            if r13_field_reading:
+                pass
+            elif place != "마차 안" and not r13_cg_active:
                 use r13_toolbar(mode="line")
             else:
                 use r13_playback_footer()

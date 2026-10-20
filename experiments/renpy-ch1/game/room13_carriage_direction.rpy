@@ -47,12 +47,14 @@ transform r13_carriage_bump:
     ease .18 yoffset 0 xoffset 0
 
 label r13_carriage_departure:
+    call r13_coach_travel_cut
     $ source_pulse(False); renpy.music.stop(channel="sound"); renpy.music.stop(channel="typing"); renpy.music.stop(channel="scene_fx")
     $ r13_carriage_narrow = False
     call r13_scene("winter_carriage","마차 안","travel")
     scene expression r13_carriage_seat_art() as r13_carriage_background zorder -10
     $ renpy.show_layer_at([], reset=True)
     $ typing_allowed=False; renpy.music.stop(channel="typing")
-    $ renpy.music.play("assets/ms14-audio/cart-roll-light.mp3", channel="carriage_ride", loop=True, fadein=.6, relative_volume=.2)
+    if renpy.music.get_playing(channel="carriage_ride") is None:
+        $ renpy.music.play("assets/ms14-audio/cart-roll-light.mp3", channel="carriage_ride", loop=True, fadein=.6, relative_volume=.2)
     $ renpy.pause(.65)
     return

@@ -14,7 +14,7 @@ block = '    def _r13_say_size():' + block
 class CompactDialogue(unittest.TestCase):
     def env(self, large=False, touch=False, small=False):
         state = types.SimpleNamespace(room13_large_text=large)
-        env = dict(persistent=state, r13_touch_ui=lambda:touch,
+        env = dict(persistent=state, store=types.SimpleNamespace(r13_field_reading=False), r13_touch_ui=lambda:touch,
                    r13_control_y=lambda:624 if large or touch else 640,
                    r13_read_size=lambda base,big:big if large else int(max(base-3,round(base*.9))) if small else base)
         for name in ('R13_SAY_TOP_NORMAL', 'R13_SAY_TOP_LARGE'):

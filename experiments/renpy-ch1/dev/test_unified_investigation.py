@@ -30,7 +30,7 @@ class UnifiedInvestigation(unittest.TestCase):
   self.assertNotIn('주변 살피기',FIELD);self.assertNotIn('사람 보기',FIELD)
   self.assertIn('config.after_load_callbacks.append(r13_field_sync)',FIELD)
   self.assertIn('timer 3.0 action SetVariable',FIELD)
-  self.assertIn('사람이나 궁금한 물건을 직접 누르세요',FIELD)
+  self.assertIn('인물이나 사물을 눌러 조사하세요',FIELD)
  def test_no_new_story_or_travel_side_effects(self):
   self.assertNotIn('r13_tick(',FIELD);self.assertNotIn('r13_grant(',FIELD)
   self.assertIn('Function(r13_empty_tap_feedback) sensitive ready',SCREEN)

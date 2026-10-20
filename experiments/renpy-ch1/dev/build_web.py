@@ -52,7 +52,7 @@ REDESIGN_BACKUPS = (REDESIGN_BACKUP, ROOT / "art/ep-art-20261016/original-entrie
 # Gate residents and notebook atlases load when used, not before the title. All other
 # images use Ren'Py's existing progressive downloader, at original quality.
 START_PEOPLE = ("daram",)
-START_FILES = {"assets/room13-title-winter020.webp", "assets/room13-pixel-carriage-empty-winter.webp",
+START_FILES = {"assets/room13-opening-coach-away.webp", "assets/room13-opening-village-road.webp","assets/room13-title-winter020.webp", "assets/room13-pixel-carriage-empty-winter.webp",
                "assets/bgm-title.mp3", "assets/bgm-travel.mp3", "assets/bgm-snow.mp3", "assets/amb-wind.mp3",
                "assets/type.wav", "assets/ms14-audio/cart-roll-light.mp3"}
 
