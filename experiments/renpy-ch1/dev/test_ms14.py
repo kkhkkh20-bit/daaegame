@@ -19,19 +19,19 @@ def advance(state):
             state = rt.finish_record(state,DATA['records'][rid])
         return rt.enter(state,node['next'])
     if node['kind']=='branch':
-        return rt.enter(state,node['yes'] if state['values'][node['field']]==node['value'] else node['no'])
+        return rt.enter(state,rt.branch_target(state,node))
     if node['kind']=='mark':
         return rt.enter(rt.apply(state,state['node'],node['operations']),node['next'])
     if node['kind']=='read':return rt.enter(state,node['next'])
     raise ValueError('Interaction needed: '+state['node'])
 
 
-def play(afternoon='shelter',stone=0,custody=0,early=True):
+def play(afternoon='shelter',stone=0,custody=0,early=True,stop_at='d4_depart',review=False):
     state=rt.new_state(DATA)
     path=[]
     for _ in range(1000):
         key=state['node'];node=DATA['nodes'][key];path.append(key)
-        if node['kind']=='end':return state,path
+        if node['kind']=='end' or key==stop_at:return state,path
         if node['kind']=='proof':
             for evidence in node['correct']:state=rt.select(state,evidence)
             state=rt.submit(state,node)
@@ -51,6 +51,9 @@ def play(afternoon='shelter',stone=0,custody=0,early=True):
             elif key=='afternoon':index=0 if afternoon=='shelter' else 1
             elif key=='stone_choice':index=stone
             elif key=='custody_choice':index=custody
+            elif key=='d4_field':index=next((i for i,k in enumerate(('fence','tracks','bucket')) if not state['values']['d4_'+k+'_seen']),3)
+            elif key=='d5_rebuttal_menu':index=1
+            elif key=='d5_review_choice':index=0 if review else 1
             state=rt.choose(state,node,index)
         else:state=advance(state)
         # Every acquired variant is readable; catches swapped/missing authored cards.
@@ -59,6 +62,74 @@ def play(afternoon='shelter',stone=0,custody=0,early=True):
 
 
 class MS14Tests(unittest.TestCase):
+    def test_days45_keep_all_prior_outcomes_and_private_warning(self):
+        for afternoon,custody,review in itertools.product(('shelter','nero'),range(2),(False,True)):
+            with self.subTest(afternoon=afternoon,custody=custody,review=review):
+                state,path=play(afternoon=afternoon,custody=custody,stop_at='review_end',review=review)
+                v=state['values']
+                self.assertEqual(v['day'],5)
+                self.assertEqual(v['bami_status'],'cleared')
+                self.assertEqual(v['musoe_care'],'nero_badugi_night_rotation')
+                self.assertTrue(v['family_safety_changed'])
+                self.assertTrue(v['mother_denies_invitation'])
+                self.assertEqual(v['invitation_author'],'unknown')
+                self.assertTrue(v['inn_information_hub_risk_known'])
+                self.assertEqual(v['E28.handed_to'],'chorong')
+                self.assertEqual(v['cookie.location'],'daram_bag')
+                self.assertEqual(v['carried_dry_blankets'],2 if afternoon=='nero' else 0)
+                self.assertEqual('d5_review_day1' in path,review)
+                self.assertIn('E29',state['evidence'])
+                self.assertNotEqual(rt.observed(DATA,state,'E25')['establishes'],rt.observed(DATA,state,'E26')['establishes'])
+
+    def test_cloth_and_nero_observation_do_not_alone_clear_bami(self):
+        state,_=play(stop_at='d5_proof')
+        self.assertEqual(state['values']['bami_status'],'with_badugi_at_diner')
+        self.assertNotIn('E25',state['evidence'])
+        state=rt.select(state,'E23')
+        result=rt.submit(state,DATA['nodes']['d5_proof'])
+        self.assertEqual(result['node'],'d5_wrong')
+        self.assertEqual(result['values']['bami_status'],'with_badugi_at_diner')
+
+    def test_private_letters_never_appear_in_public_evidence_picker(self):
+        state,_=play(stop_at='d5_warning_compare')
+        self.assertTrue(rt.presentable(DATA,state,'E27'))
+        first,rest=rt.warning_parts(DATA['records']['MS14_D05_S04_L0006']['text'])
+        self.assertEqual(first,'“당신과 다람이를 부른 적 없어.')
+        self.assertEqual(first+rest,DATA['records']['MS14_D05_S04_L0006']['text'])
+        state=rt.enter(state,'d5_proof')
+        self.assertFalse(rt.presentable(DATA,state,'E27'))
+        self.assertTrue(rt.presentable(DATA,state,'E20'))
+        self.assertIsNotNone(rt.observed(DATA,state,'E27'))
+
+    def test_v1_save_upgrade_retains_choices_and_can_continue(self):
+        state,_=play(afternoon='nero',custody=1)
+        state.pop('schema');state.pop('presentation')
+        for key in ('d4_fence_seen','d4_tracks_seen','d4_bucket_seen'):state['values'].pop(key)
+        state['node']='review_end'
+        old=copy.deepcopy(state)
+        upgraded=rt.upgrade(state,DATA)
+        self.assertEqual(upgraded['evidence'],old['evidence'])
+        self.assertEqual(upgraded['applied'],old['applied'])
+        self.assertEqual(upgraded['values']['carried_dry_blankets'],2)
+        self.assertEqual(upgraded['values']['silluk_status'],'supervised_compulsory_labor')
+        self.assertFalse(upgraded['values']['d4_fence_seen'])
+        self.assertEqual(rt.upgrade(upgraded,DATA),upgraded)
+        self.assertEqual(state,old)
+
+    def test_music_cue_is_once_and_saved_without_story_effects(self):
+        state,_=play(stop_at='d5_warning')
+        silent=rt.silence(state)
+        self.assertEqual(silent['values'],state['values'])
+        self.assertEqual(silent['evidence'],state['evidence'])
+        self.assertEqual(len(silent['presentation']['cues']),1)
+        restored=json.loads(json.dumps(silent))
+        self.assertEqual(rt.silence(restored),restored)
+
+    def test_day5_cannot_describe_one_blanket_as_zero(self):
+        state=rt.new_state(DATA)
+        state['values']['carried_dry_blankets']=1
+        with self.assertRaises(ValueError):rt.branch_target(state,DATA['nodes']['d5_blanket_route'])
+
     def test_all_eight_outcomes_and_both_gate_routes(self):
         for afternoon,stone,custody,early in itertools.product(('shelter','nero'),range(2),range(2),(False,True)):
             with self.subTest(afternoon=afternoon,stone=stone,custody=custody,early=early):

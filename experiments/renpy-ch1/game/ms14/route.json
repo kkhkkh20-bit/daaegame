@@ -1,6 +1,7 @@
 {
   "version": "DT_STORY_1.1_PRODUCTION_BASIS_01_20261020",
-  "scope": "D01-D03 + D04 S01 pilot",
+  "runtime_schema": 2,
+  "scope": "D01-D05",
   "source_sha256": "2da28b3699e5195a99fc8dfcf53109e52e7a4d9eb526863169a10dcdba5e9c8e",
   "initial": {
     "day": 1,
@@ -38,7 +39,15 @@
     "lamp_part_0": false,
     "lamp_part_1": false,
     "lamp_part_2": false,
-    "lamp_part_3": false
+    "lamp_part_3": false,
+    "d4_fence_seen": false,
+    "d4_tracks_seen": false,
+    "d4_bucket_seen": false,
+    "afternoon_visit_declined": false,
+    "somi_entry_consent": false,
+    "mother_denies_invitation": false,
+    "supply_contact_pending": false,
+    "family_safety_changed": false
   },
   "nodes": {
     "start": {
@@ -2651,11 +2660,991 @@
         "MS14_D04_S01_L0060",
         "MS14_D04_S01_L0061"
       ],
-      "next": "review_end"
+      "next": "d4_depart"
+    },
+    "d4_depart": {
+      "kind": "choice",
+      "scene": "MS14_D04_S01",
+      "title": "광장으로 돌아간다",
+      "options": [
+        {
+          "title": "광장으로 돌아간다",
+          "to": "d4_eaves",
+          "guard": [],
+          "operations": []
+        }
+      ]
+    },
+    "d4_eaves": {
+      "kind": "block",
+      "scene": "MS14_D04_S02",
+      "source_block": "MS14_D04_S02_B001",
+      "records": [
+        "MS14_D04_S02_L0001",
+        "MS14_D04_S02_L0002",
+        "MS14_D04_S02_L0003",
+        "MS14_D04_S02_L0004",
+        "MS14_D04_S02_L0005",
+        "MS14_D04_S02_L0006",
+        "MS14_D04_S02_L0007",
+        "MS14_D04_S02_L0008",
+        "MS14_D04_S02_L0009",
+        "MS14_D04_S02_L0010",
+        "MS14_D04_S02_L0011",
+        "MS14_D04_S02_L0012",
+        "MS14_D04_S02_L0013",
+        "MS14_D04_S02_L0014",
+        "MS14_D04_S02_L0015"
+      ],
+      "next": "d4_portrait_offer"
+    },
+    "d4_portrait_offer": {
+      "kind": "choice",
+      "scene": "MS14_D04_S02",
+      "title": "초상을 기대 놓고 물러난다",
+      "options": [
+        {
+          "title": "초상을 기대 놓고 물러난다",
+          "to": "d4_bami",
+          "guard": [],
+          "operations": []
+        }
+      ]
+    },
+    "d4_bami": {
+      "kind": "block",
+      "scene": "MS14_D04_S02",
+      "source_block": "MS14_D04_S02_B001",
+      "records": [
+        "MS14_D04_S02_L0016",
+        "MS14_D04_S02_L0017",
+        "MS14_D04_S02_L0018",
+        "MS14_D04_S02_L0019",
+        "MS14_D04_S02_L0020",
+        "MS14_D04_S02_L0021",
+        "MS14_D04_S02_L0022",
+        "MS14_D04_S02_L0023",
+        "MS14_D04_S02_L0024",
+        "MS14_D04_S02_L0025",
+        "MS14_D04_S02_L9101",
+        "MS14_D04_S02_L0026",
+        "MS14_D04_S02_L0027",
+        "MS14_D04_S02_L0028"
+      ],
+      "next": "d4_afternoon_visit"
+    },
+    "d4_afternoon_visit": {
+      "kind": "choice",
+      "scene": "MS14_D04_S02",
+      "title": "오후에 솜이네를 다시 찾는다",
+      "options": [
+        {
+          "title": "오후에 솜이네를 다시 찾는다",
+          "to": "d4_visit_declined",
+          "guard": [],
+          "operations": []
+        }
+      ]
+    },
+    "d4_visit_declined": {
+      "kind": "block",
+      "scene": "MS14_D04_S02",
+      "source_block": "MS14_D04_S02_B001",
+      "records": [
+        "MS14_D04_S02_L0029",
+        "MS14_D04_S02_L0030",
+        "MS14_D04_S02_L0031"
+      ],
+      "next": "d4_gate_cry"
+    },
+    "d4_gate_cry": {
+      "kind": "block",
+      "scene": "MS14_D04_S03",
+      "source_block": "MS14_D04_S03_B001",
+      "records": [
+        "MS14_D04_S03_L0001",
+        "MS14_D04_S03_L0002"
+      ],
+      "next": "d4_light_observe"
+    },
+    "d4_light_observe": {
+      "kind": "choice",
+      "scene": "MS14_D04_S03",
+      "title": "다람을 뒤에 세우고 살핀다",
+      "options": [
+        {
+          "title": "다람을 뒤에 세우고 살핀다",
+          "to": "d4_first_statement",
+          "guard": [],
+          "operations": []
+        }
+      ]
+    },
+    "d4_first_statement": {
+      "kind": "block",
+      "scene": "MS14_D04_S03",
+      "source_block": "MS14_D04_S03_B002",
+      "records": [
+        "MS14_D04_S03_L0003",
+        "MS14_D04_S03_L9101",
+        "MS14_D04_S03_L0004",
+        "MS14_D04_S03_L0005",
+        "MS14_D04_S03_L0006",
+        "MS14_D04_S03_L0007",
+        "MS14_D04_S03_L0008",
+        "MS14_D04_S03_L0009",
+        "MS14_D04_S03_L0010",
+        "MS14_D04_S03_L0011",
+        "MS14_D04_S03_L0012",
+        "MS14_D04_S03_L0013",
+        "MS14_D04_S03_L0014",
+        "MS14_D04_S03_L0015",
+        "MS14_D04_S03_L0016",
+        "MS14_D04_S03_L0017",
+        "MS14_D04_S03_L0018",
+        "MS14_D04_S03_L0019",
+        "MS14_D04_S03_L0020",
+        "MS14_D04_S03_L0021",
+        "MS14_D04_S03_L0022",
+        "MS14_D04_S03_L0023",
+        "MS14_D04_S03_L0024",
+        "MS14_D04_S03_L0025",
+        "MS14_D04_S03_L0026"
+      ],
+      "next": "d4_hear_bami"
+    },
+    "d4_hear_bami": {
+      "kind": "block",
+      "scene": "MS14_D04_S04",
+      "source_block": "MS14_D04_S04_B001",
+      "records": [
+        "MS14_D04_S04_L0001",
+        "MS14_D04_S04_L0002",
+        "MS14_D04_S04_L0003",
+        "MS14_D04_S04_L0004",
+        "MS14_D04_S04_L0005",
+        "MS14_D04_S04_L0006",
+        "MS14_D04_S04_L0007",
+        "MS14_D04_S04_L0008",
+        "MS14_D04_S04_L0009",
+        "MS14_D04_S04_L0010",
+        "MS14_D04_S04_L0011",
+        "MS14_D04_S04_L0012",
+        "MS14_D04_S04_L0013",
+        "MS14_D04_S04_L0014",
+        "MS14_D04_S04_L0015",
+        "MS14_D04_S04_L0016",
+        "MS14_D04_S04_L0017",
+        "MS14_D04_S04_L0018",
+        "MS14_D04_S04_L0019",
+        "MS14_D04_S04_L0020",
+        "MS14_D04_S04_L0021",
+        "MS14_D04_S04_L0022",
+        "MS14_D04_S04_L0023",
+        "MS14_D04_S04_L0024",
+        "MS14_D04_S04_L0025",
+        "MS14_D04_S04_L0026",
+        "MS14_D04_S04_L0027",
+        "MS14_D04_S04_L0028",
+        "MS14_D04_S04_L0029",
+        "MS14_D04_S04_L0030",
+        "MS14_D04_S04_L0031",
+        "MS14_D04_S04_L0032"
+      ],
+      "next": "d4_field"
+    },
+    "d4_field": {
+      "kind": "choice",
+      "scene": "MS14_D04_S04",
+      "title": "초소 불빛 안에서 살핀다",
+      "options": [
+        {
+          "title": "울타리의 천을 본다",
+          "to": "d4_seen_fence",
+          "guard": [],
+          "operations": []
+        },
+        {
+          "title": "겹친 발자국을 본다",
+          "to": "d4_seen_tracks",
+          "guard": [],
+          "operations": []
+        },
+        {
+          "title": "엎어진 양동이를 본다",
+          "to": "d4_seen_bucket",
+          "guard": [],
+          "operations": []
+        },
+        {
+          "title": "관찰을 정리한다",
+          "to": "d4_field_talk",
+          "guard": [
+            [
+              "state",
+              "d4_fence_seen",
+              true
+            ],
+            [
+              "state",
+              "d4_tracks_seen",
+              true
+            ],
+            [
+              "state",
+              "d4_bucket_seen",
+              true
+            ]
+          ],
+          "operations": []
+        }
+      ]
+    },
+    "d4_seen_fence": {
+      "kind": "mark",
+      "scene": "MS14_D04_S04",
+      "next": "d4_field",
+      "operations": [
+        {
+          "op": "set",
+          "field": "d4_fence_seen",
+          "value": true
+        }
+      ]
+    },
+    "d4_seen_tracks": {
+      "kind": "mark",
+      "scene": "MS14_D04_S04",
+      "next": "d4_field",
+      "operations": [
+        {
+          "op": "set",
+          "field": "d4_tracks_seen",
+          "value": true
+        }
+      ]
+    },
+    "d4_seen_bucket": {
+      "kind": "mark",
+      "scene": "MS14_D04_S04",
+      "next": "d4_field",
+      "operations": [
+        {
+          "op": "set",
+          "field": "d4_bucket_seen",
+          "value": true
+        }
+      ]
+    },
+    "d4_field_talk": {
+      "kind": "block",
+      "scene": "MS14_D04_S04",
+      "source_block": "MS14_D04_S04_B002",
+      "records": [
+        "MS14_D04_S04_L0034",
+        "MS14_D04_S04_L0035",
+        "MS14_D04_S04_L0036",
+        "MS14_D04_S04_L0037",
+        "MS14_D04_S04_L0038",
+        "MS14_D04_S04_L0039",
+        "MS14_D04_S04_L0040"
+      ],
+      "next": "d4_collect_input"
+    },
+    "d4_collect_input": {
+      "kind": "choice",
+      "scene": "MS14_D04_S04",
+      "title": "위치를 그리고 바둑이를 부른다",
+      "options": [
+        {
+          "title": "위치를 그리고 바둑이를 부른다",
+          "to": "d4_collect",
+          "guard": [],
+          "operations": []
+        }
+      ]
+    },
+    "d4_collect": {
+      "kind": "block",
+      "scene": "MS14_D04_S04",
+      "source_block": "MS14_D04_S04_B003",
+      "records": [
+        "MS14_D04_S04_L0041",
+        "MS14_D04_S04_L0042",
+        "MS14_D04_S04_L0043",
+        "MS14_D04_S04_L0044",
+        "MS14_D04_S04_L9101",
+        "MS14_D04_S04_L0045",
+        "MS14_D04_S04_L0046",
+        "MS14_D04_S04_L0047",
+        "MS14_D04_S04_L0048",
+        "MS14_D04_S04_L0049",
+        "MS14_D04_S04_L0050"
+      ],
+      "next": "d4_diner"
+    },
+    "d4_diner": {
+      "kind": "block",
+      "scene": "MS14_D04_S04",
+      "source_block": "MS14_D04_S04_B003",
+      "records": [
+        "MS14_D04_S04_L0051",
+        "MS14_D04_S04_L0052",
+        "MS14_D04_S04_L0053",
+        "MS14_D04_S04_L0054",
+        "MS14_D04_S04_L0055",
+        "MS14_D04_S04_L0056",
+        "MS14_D04_S04_L0057",
+        "MS14_D04_S04_L0058",
+        "MS14_D04_S04_L0059"
+      ],
+      "next": "d4_box_news"
+    },
+    "d4_box_news": {
+      "kind": "block",
+      "scene": "MS14_D04_S04",
+      "source_block": "MS14_D04_S04_B003",
+      "records": [
+        "MS14_D04_S04_L0060",
+        "MS14_D04_S04_L0061",
+        "MS14_D04_S04_L0062",
+        "MS14_D04_S04_L0063",
+        "MS14_D04_S04_L0064",
+        "MS14_D04_S04_L0065"
+      ],
+      "next": "sleep4"
+    },
+    "sleep4": {
+      "kind": "choice",
+      "scene": "MS14_D04_S04",
+      "title": "관찰과 추측을 나눠 적고 잔다",
+      "options": [
+        {
+          "title": "관찰과 추측을 나눠 적고 잔다",
+          "to": "day5",
+          "guard": [],
+          "operations": [
+            {
+              "op": "set",
+              "field": "day",
+              "value": 5
+            }
+          ]
+        }
+      ]
+    },
+    "day5": {
+      "kind": "block",
+      "scene": "MS14_D05_S01",
+      "source_block": "MS14_D05_S01_B001",
+      "records": [
+        "MS14_D05_S01_L0001",
+        "MS14_D05_S01_L0002",
+        "MS14_D05_S01_L0003",
+        "MS14_D05_S01_L0004",
+        "MS14_D05_S01_L0005",
+        "MS14_D05_S01_L0006",
+        "MS14_D05_S01_L0007"
+      ],
+      "next": "d5_enter"
+    },
+    "d5_enter": {
+      "kind": "choice",
+      "scene": "MS14_D05_S01",
+      "title": "솜이의 동의를 받고 들어간다",
+      "options": [
+        {
+          "title": "솜이의 동의를 받고 들어간다",
+          "to": "d5_inside",
+          "guard": [],
+          "operations": []
+        }
+      ]
+    },
+    "d5_inside": {
+      "kind": "block",
+      "scene": "MS14_D05_S01",
+      "source_block": "MS14_D05_S01_B001",
+      "records": [
+        "MS14_D05_S01_L0008",
+        "MS14_D05_S01_L0009",
+        "MS14_D05_S01_L0010",
+        "MS14_D05_S01_L0011",
+        "MS14_D05_S01_L0012",
+        "MS14_D05_S01_L0013",
+        "MS14_D05_S01_L0014",
+        "MS14_D05_S01_L0015",
+        "MS14_D05_S01_L0016",
+        "MS14_D05_S01_L0017",
+        "MS14_D05_S01_L0018",
+        "MS14_D05_S01_L0019",
+        "MS14_D05_S01_L0020",
+        "MS14_D05_S01_L0021",
+        "MS14_D05_S01_L0022",
+        "MS14_D05_S01_L0023",
+        "MS14_D05_S01_L0024"
+      ],
+      "next": "d5_wait"
+    },
+    "d5_wait": {
+      "kind": "choice",
+      "scene": "MS14_D05_S01",
+      "title": "기다렸다가 옷을 확인한다",
+      "options": [
+        {
+          "title": "기다렸다가 옷을 확인한다",
+          "to": "d5_consent",
+          "guard": [],
+          "operations": []
+        }
+      ]
+    },
+    "d5_consent": {
+      "kind": "block",
+      "scene": "MS14_D05_S02",
+      "source_block": "MS14_D05_S02_B001",
+      "records": [
+        "MS14_D05_S02_L0001",
+        "MS14_D05_S02_L0002",
+        "MS14_D05_S02_L0003",
+        "MS14_D05_S02_L0004",
+        "MS14_D05_S02_L0005",
+        "MS14_D05_S02_L0006",
+        "MS14_D05_S02_L0007",
+        "MS14_D05_S02_L0008",
+        "MS14_D05_S02_L0009",
+        "MS14_D05_S02_L0010",
+        "MS14_D05_S02_L0011",
+        "MS14_D05_S02_L0012",
+        "MS14_D05_S02_L0013",
+        "MS14_D05_S02_L0014",
+        "MS14_D05_S02_L0015"
+      ],
+      "next": "d5_cloth_input"
+    },
+    "d5_cloth_input": {
+      "kind": "choice",
+      "scene": "MS14_D05_S02",
+      "title": "허락받은 옷과 천을 나란히 본다",
+      "options": [
+        {
+          "title": "허락받은 옷과 천을 나란히 본다",
+          "to": "d5_cloth_compare",
+          "guard": [],
+          "operations": []
+        }
+      ]
+    },
+    "d5_cloth_compare": {
+      "kind": "block",
+      "scene": "MS14_D05_S02",
+      "source_block": "MS14_D05_S02_B002",
+      "records": [
+        "MS14_D05_S02_L0016",
+        "MS14_D05_S02_L9101",
+        "MS14_D05_S02_L0017",
+        "MS14_D05_S02_L0018",
+        "MS14_D05_S02_L0019",
+        "MS14_D05_S02_L0020",
+        "MS14_D05_S02_L0021",
+        "MS14_D05_S02_L0022",
+        "MS14_D05_S02_L0023",
+        "MS14_D05_S02_L0024",
+        "MS14_D05_S02_L0025",
+        "MS14_D05_S02_L9102",
+        "MS14_D05_S02_L0026",
+        "MS14_D05_S02_L0027",
+        "MS14_D05_S02_L0028"
+      ],
+      "next": "d5_clinic_handover"
+    },
+    "d5_clinic_handover": {
+      "kind": "block",
+      "scene": "MS14_D05_S02",
+      "source_block": "MS14_D05_S02_B002",
+      "records": [
+        "MS14_D05_S02_L0029",
+        "MS14_D05_S02_L0030",
+        "MS14_D05_S02_L0031"
+      ],
+      "next": "d5_gate_visit"
+    },
+    "d5_gate_visit": {
+      "kind": "choice",
+      "scene": "MS14_D05_S02",
+      "title": "돌목의 말을 다시 확인한다",
+      "options": [
+        {
+          "title": "돌목의 말을 다시 확인한다",
+          "to": "d5_gate_open",
+          "guard": [],
+          "operations": []
+        }
+      ]
+    },
+    "d5_gate_open": {
+      "kind": "block",
+      "scene": "MS14_D05_S03",
+      "source_block": "MS14_D05_S03_B001",
+      "records": [
+        "MS14_D05_S03_L0001",
+        "MS14_D05_S03_L0002",
+        "MS14_D05_S03_L0003",
+        "MS14_D05_S03_L0004",
+        "MS14_D05_S03_L0005",
+        "MS14_D05_S03_L0006",
+        "MS14_D05_S03_L0007",
+        "MS14_D05_S03_L0008",
+        "MS14_D05_S03_L0009"
+      ],
+      "next": "d5_rebuttal_menu"
+    },
+    "d5_rebuttal_menu": {
+      "kind": "choice",
+      "scene": "MS14_D05_S03",
+      "title": "밤이를 붙잡아 둘 근거를 확인한다",
+      "options": [
+        {
+          "title": "키가 작으니 불가능하다고 한다",
+          "to": "d5_height_wrong",
+          "guard": [],
+          "operations": []
+        },
+        {
+          "title": "자료를 함께 제시한다",
+          "to": "d5_proof",
+          "guard": [],
+          "operations": []
+        },
+        {
+          "title": "힌트를 생각한다",
+          "to": "d5_hint",
+          "guard": [],
+          "operations": []
+        }
+      ]
+    },
+    "d5_height_wrong": {
+      "kind": "block",
+      "scene": "MS14_D05_S03",
+      "source_block": "MS14_D05_S03_B003",
+      "records": [
+        "MS14_D05_S03_L0010",
+        "MS14_D05_S03_L0011"
+      ],
+      "next": "d5_rebuttal_menu"
+    },
+    "d5_proof": {
+      "kind": "proof",
+      "scene": "MS14_D05_S03",
+      "title": "최초 진술과 현장·귀가 관찰을 제시한다",
+      "correct": [
+        "E20",
+        "E22",
+        "E23",
+        "E24"
+      ],
+      "to": "d5_bami_cleared",
+      "wrong": "d5_wrong",
+      "hint": "d5_hint",
+      "requires": []
+    },
+    "d5_wrong": {
+      "kind": "block",
+      "scene": "MS14_D05_S03",
+      "source_block": "MS14_D05_S03_B005",
+      "records": [
+        "MS14_D05_S03_L0038",
+        "MS14_D05_S03_L0039"
+      ],
+      "next": "d5_rebuttal_menu"
+    },
+    "d5_hint": {
+      "kind": "block",
+      "scene": "MS14_D05_S03",
+      "source_block": "MS14_D05_S03_B006",
+      "records": [
+        "MS14_D05_S03_L0040"
+      ],
+      "next": "d5_rebuttal_menu"
+    },
+    "d5_bami_cleared": {
+      "kind": "block",
+      "scene": "MS14_D05_S03",
+      "source_block": "MS14_D05_S03_B004",
+      "records": [
+        "MS14_D05_S03_L0012",
+        "MS14_D05_S03_L0013",
+        "MS14_D05_S03_L0014",
+        "MS14_D05_S03_L0015",
+        "MS14_D05_S03_L0016",
+        "MS14_D05_S03_L0017",
+        "MS14_D05_S03_L0018",
+        "MS14_D05_S03_L0019",
+        "MS14_D05_S03_L0020",
+        "MS14_D05_S03_L0021",
+        "MS14_D05_S03_L0022",
+        "MS14_D05_S03_L0023",
+        "MS14_D05_S03_L0024",
+        "MS14_D05_S03_L0025",
+        "MS14_D05_S03_L0026",
+        "MS14_D05_S03_L0027",
+        "MS14_D05_S03_L0028",
+        "MS14_D05_S03_L0029",
+        "MS14_D05_S03_L0030",
+        "MS14_D05_S03_L0031",
+        "MS14_D05_S03_L0032",
+        "MS14_D05_S03_L0033",
+        "MS14_D05_S03_L0034",
+        "MS14_D05_S03_L0035",
+        "MS14_D05_S03_L0036",
+        "MS14_D05_S03_L0037",
+        "MS14_D05_S03_L9101",
+        "MS14_D05_S03_L9102"
+      ],
+      "next": "d5_chorong"
+    },
+    "d5_chorong": {
+      "kind": "block",
+      "scene": "MS14_D05_S04",
+      "source_block": "MS14_D05_S04_B001",
+      "records": [
+        "MS14_D05_S04_L0001",
+        "MS14_D05_S04_L0002",
+        "MS14_D05_S04_L0003",
+        "MS14_D05_S04_L0004"
+      ],
+      "next": "d5_open_letter"
+    },
+    "d5_open_letter": {
+      "kind": "choice",
+      "scene": "MS14_D05_S04",
+      "title": "바람을 피해 봉투를 연다",
+      "options": [
+        {
+          "title": "바람을 피해 봉투를 연다",
+          "to": "d5_warning",
+          "guard": [],
+          "operations": []
+        }
+      ]
+    },
+    "d5_warning": {
+      "kind": "block",
+      "scene": "MS14_D05_S04",
+      "source_block": "MS14_D05_S04_B001",
+      "records": [
+        "MS14_D05_S04_L0005",
+        "MS14_D05_S04_L0006",
+        "MS14_D05_S04_L0007",
+        "MS14_D05_S04_L0008",
+        "MS14_D05_S04_L0009",
+        "MS14_D05_S04_L0010",
+        "MS14_D05_S04_L0011",
+        "MS14_D05_S04_L0012",
+        "MS14_D05_S04_L0013"
+      ],
+      "next": "d5_warning_compare"
+    },
+    "d5_warning_compare": {
+      "kind": "proof",
+      "scene": "MS14_D05_S04",
+      "title": "초대 편지와 답장을 비교한다",
+      "correct": [
+        "E01",
+        "E27"
+      ],
+      "to": "d5_warning_contrast",
+      "wrong": null,
+      "hint": null,
+      "requires": []
+    },
+    "d5_warning_contrast": {
+      "kind": "block",
+      "scene": "MS14_D05_S04",
+      "source_block": "MS14_D05_S04_B002",
+      "records": [
+        "MS14_D05_S04_L0014",
+        "MS14_D05_S04_L0015",
+        "MS14_D05_S04_L0016"
+      ],
+      "next": "d5_review_choice"
+    },
+    "d5_review_choice": {
+      "kind": "choice",
+      "scene": "MS14_D05_S04",
+      "title": "앞서 들은 말도 다시 볼까?",
+      "options": [
+        {
+          "title": "여관과 연락에 관한 말을 다시 본다",
+          "to": "d5_review_day1",
+          "guard": [],
+          "operations": []
+        },
+        {
+          "title": "지금의 편지 이야기를 이어간다",
+          "to": "d5_warning_talk",
+          "guard": [],
+          "operations": []
+        }
+      ]
+    },
+    "d5_review_day1": {
+      "kind": "block",
+      "scene": "MS14_D05_S04",
+      "source_block": "MS14_D05_S04_B003",
+      "records": [
+        "MS14_D05_S04_L0017"
+      ],
+      "next": "d5_warning_talk"
+    },
+    "d5_warning_talk": {
+      "kind": "block",
+      "scene": "MS14_D05_S04",
+      "source_block": "MS14_D05_S04_B004",
+      "records": [
+        "MS14_D05_S04_L0018",
+        "MS14_D05_S04_L0019",
+        "MS14_D05_S04_L0020",
+        "MS14_D05_S04_L0021",
+        "MS14_D05_S04_L0022",
+        "MS14_D05_S04_L0023",
+        "MS14_D05_S04_L0024",
+        "MS14_D05_S04_L0025",
+        "MS14_D05_S04_L0026"
+      ],
+      "next": "d5_reply_input"
+    },
+    "d5_reply_input": {
+      "kind": "choice",
+      "scene": "MS14_D05_S04",
+      "title": "함께 답장을 쓴다",
+      "options": [
+        {
+          "title": "함께 답장을 쓴다",
+          "to": "d5_reply",
+          "guard": [],
+          "operations": []
+        }
+      ]
+    },
+    "d5_reply": {
+      "kind": "block",
+      "scene": "MS14_D05_S04",
+      "source_block": "MS14_D05_S04_B004",
+      "records": [
+        "MS14_D05_S04_L0027",
+        "MS14_D05_S04_L0028",
+        "MS14_D05_S04_L0029",
+        "MS14_D05_S04_L0030"
+      ],
+      "next": "d5_reply_handover"
+    },
+    "d5_reply_handover": {
+      "kind": "choice",
+      "scene": "MS14_D05_S04",
+      "title": "초롱에게 직접 답장을 건넨다",
+      "options": [
+        {
+          "title": "초롱에게 직접 답장을 건넨다",
+          "to": "d5_reply_given",
+          "guard": [],
+          "operations": []
+        }
+      ]
+    },
+    "d5_reply_given": {
+      "kind": "block",
+      "scene": "MS14_D05_S04",
+      "source_block": "MS14_D05_S04_B004",
+      "records": [
+        "MS14_D05_S04_L9501",
+        "MS14_D05_S04_L9502",
+        "MS14_D05_S04_L9503"
+      ],
+      "next": "d5_water_return"
+    },
+    "d5_water_return": {
+      "kind": "choice",
+      "scene": "MS14_D05_S04",
+      "title": "솜이네에 물통을 돌려준다",
+      "options": [
+        {
+          "title": "솜이네에 물통을 돌려준다",
+          "to": "d5_night_visit",
+          "guard": [],
+          "operations": []
+        }
+      ]
+    },
+    "d5_night_visit": {
+      "kind": "block",
+      "scene": "MS14_D05_S05",
+      "source_block": "MS14_D05_S05_B001",
+      "records": [
+        "MS14_D05_S05_L0001",
+        "MS14_D05_S05_L0002",
+        "MS14_D05_S05_L0003",
+        "MS14_D05_S05_L0004",
+        "MS14_D05_S05_L0005",
+        "MS14_D05_S05_L0006",
+        "MS14_D05_S05_L0007",
+        "MS14_D05_S05_L0008",
+        "MS14_D05_S05_L0009",
+        "MS14_D05_S05_L0010",
+        "MS14_D05_S05_L0011",
+        "MS14_D05_S05_L0012",
+        "MS14_D05_S05_L0013",
+        "MS14_D05_S05_L0014",
+        "MS14_D05_S05_L0015",
+        "MS14_D05_S05_L0016",
+        "MS14_D05_S05_L0017"
+      ],
+      "next": "d5_diner_guard"
+    },
+    "d5_diner_guard": {
+      "kind": "block",
+      "scene": "MS14_D05_S05",
+      "source_block": "MS14_D05_S05_B001",
+      "records": [
+        "MS14_D05_S05_L0018",
+        "MS14_D05_S05_L0019",
+        "MS14_D05_S05_L0020",
+        "MS14_D05_S05_L0021",
+        "MS14_D05_S05_L0022",
+        "MS14_D05_S05_L0023",
+        "MS14_D05_S05_L0024",
+        "MS14_D05_S05_L0025",
+        "MS14_D05_S05_L0026",
+        "MS14_D05_S05_L9501",
+        "MS14_D05_S05_L9502"
+      ],
+      "next": "d5_inn_lobby"
+    },
+    "d5_inn_lobby": {
+      "kind": "block",
+      "scene": "MS14_D05_S05",
+      "source_block": "MS14_D05_S05_B001",
+      "records": [
+        "MS14_D05_S05_L0027",
+        "MS14_D05_S05_L9101",
+        "MS14_D05_S05_L0028",
+        "MS14_D05_S05_L0029",
+        "MS14_D05_S05_L0030",
+        "MS14_D05_S05_L0031",
+        "MS14_D05_S05_L0032"
+      ],
+      "next": "d5_hall"
+    },
+    "d5_hall": {
+      "kind": "block",
+      "scene": "MS14_D05_S05",
+      "source_block": "MS14_D05_S05_B001",
+      "records": [
+        "MS14_D05_S05_L0033",
+        "MS14_D05_S05_L0034",
+        "MS14_D05_S05_L0035",
+        "MS14_D05_S05_L0036",
+        "MS14_D05_S05_L0037"
+      ],
+      "next": "d5_lock_input"
+    },
+    "d5_lock_input": {
+      "kind": "choice",
+      "scene": "MS14_D05_S05",
+      "title": "걸쇠와 창문 잠금을 확인한다",
+      "options": [
+        {
+          "title": "걸쇠와 창문 잠금을 확인한다",
+          "to": "d5_safety",
+          "guard": [],
+          "operations": []
+        }
+      ]
+    },
+    "d5_safety": {
+      "kind": "block",
+      "scene": "MS14_D05_S05",
+      "source_block": "MS14_D05_S05_B001",
+      "records": [
+        "MS14_D05_S05_L0038",
+        "MS14_D05_S05_L0039",
+        "MS14_D05_S05_L0040",
+        "MS14_D05_S05_L0041",
+        "MS14_D05_S05_L0042",
+        "MS14_D05_S05_L0043",
+        "MS14_D05_S05_L0044"
+      ],
+      "next": "d5_blanket_route"
+    },
+    "d5_blanket_route": {
+      "kind": "branch",
+      "field": "carried_dry_blankets",
+      "value": 2,
+      "yes": "d5_pack_blankets",
+      "no": "d5_no_blankets",
+      "otherwise_value": 0
+    },
+    "d5_pack_blankets": {
+      "kind": "block",
+      "scene": "MS14_D05_S05",
+      "source_block": "MS14_D05_S05_B002",
+      "records": [
+        "MS14_D05_S05_L0045",
+        "MS14_D05_S05_L0046",
+        "MS14_D05_S05_L0047",
+        "MS14_D05_S05_L0048"
+      ],
+      "next": "d5_cookie"
+    },
+    "d5_no_blankets": {
+      "kind": "block",
+      "scene": "MS14_D05_S05",
+      "source_block": "MS14_D05_S05_B003",
+      "records": [
+        "MS14_D05_S05_L0049",
+        "MS14_D05_S05_L0050",
+        "MS14_D05_S05_L0051",
+        "MS14_D05_S05_L0052"
+      ],
+      "next": "d5_cookie"
+    },
+    "d5_cookie": {
+      "kind": "block",
+      "scene": "MS14_D05_S05",
+      "source_block": "MS14_D05_S05_B004",
+      "records": [
+        "MS14_D05_S05_L0053",
+        "MS14_D05_S05_L0054",
+        "MS14_D05_S05_L0055",
+        "MS14_D05_S05_L0056",
+        "MS14_D05_S05_L0057",
+        "MS14_D05_S05_L0058",
+        "MS14_D05_S05_L0059",
+        "MS14_D05_S05_L0060",
+        "MS14_D05_S05_L0061",
+        "MS14_D05_S05_L0062",
+        "MS14_D05_S05_L0063",
+        "MS14_D05_S05_L0064"
+      ],
+      "next": "sleep5"
+    },
+    "sleep5": {
+      "kind": "choice",
+      "scene": "MS14_D05_S05",
+      "title": "아침 일정을 정하고 잠든다",
+      "options": [
+        {
+          "title": "아침 일정을 정하고 잠든다",
+          "to": "review_end",
+          "guard": [],
+          "operations": []
+        }
+      ]
     },
     "review_end": {
       "kind": "end",
-      "scene": "MS14_D04_S01"
+      "scene": "MS14_D05_S05"
     }
   },
   "records": {
@@ -11054,6 +12043,3720 @@
       "next": "CONTINUE",
       "player_visible": true,
       "operations": []
+    },
+    "MS14_D04_S02_L0001": {
+      "id": "MS14_D04_S02_L0001",
+      "kind": "action",
+      "text": "광장으로 돌아가는 길. 콩이가 토실에게 밤에 봤다는 이야기를 한다. 아빠는 가까이에서 초상에 묻은 물기를 닦고 있다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D04_S02_L0002": {
+      "id": "MS14_D04_S02_L0002",
+      "kind": "dialogue",
+      "text": "밤이가 또 남의 식량 훔쳤대. 내가 다 알아.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "콩이",
+      "operations": []
+    },
+    "MS14_D04_S02_L0003": {
+      "id": "MS14_D04_S02_L0003",
+      "kind": "dialogue",
+      "text": "네가 봤어?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D04_S02_L0004": {
+      "id": "MS14_D04_S02_L0004",
+      "kind": "dialogue",
+      "text": "아랫길에서 그러던데.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "콩이",
+      "operations": []
+    },
+    "MS14_D04_S02_L0005": {
+      "id": "MS14_D04_S02_L0005",
+      "kind": "dialogue",
+      "text": "그러면 들은 거잖아.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D04_S02_L0006": {
+      "id": "MS14_D04_S02_L0006",
+      "kind": "dialogue",
+      "text": "들은 걸 팔면 안 돼?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "콩이",
+      "operations": []
+    },
+    "MS14_D04_S02_L0007": {
+      "id": "MS14_D04_S02_L0007",
+      "kind": "dialogue",
+      "text": "팔지 말고 말해.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D04_S02_L0008": {
+      "id": "MS14_D04_S02_L0008",
+      "kind": "action",
+      "text": "다람이 가방에서 도토리 세 개를 꺼낸다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D04_S02_L0009": {
+      "id": "MS14_D04_S02_L0009",
+      "kind": "dialogue",
+      "text": "엄마 찾는 거 도와주면 하나씩.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D04_S02_L0010": {
+      "id": "MS14_D04_S02_L0010",
+      "kind": "dialogue",
+      "text": "모르는 걸 어떻게 도와?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "토실",
+      "operations": []
+    },
+    "MS14_D04_S02_L0011": {
+      "id": "MS14_D04_S02_L0011",
+      "kind": "dialogue",
+      "text": "그럼 모른다고 해. 봤으면 봤다고 하고.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D04_S02_L0012": {
+      "id": "MS14_D04_S02_L0012",
+      "kind": "dialogue",
+      "text": "모른다는 말도 한 개야?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "콩이",
+      "operations": []
+    },
+    "MS14_D04_S02_L0013": {
+      "id": "MS14_D04_S02_L0013",
+      "kind": "narration",
+      "text": "처마 끝에서 작은 돌 하나가 굴러 내려왔다. 밤이가 그림을 보고 있었다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D04_S02_L0014": {
+      "id": "MS14_D04_S02_L0014",
+      "kind": "dialogue",
+      "text": "가까이서 볼래?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D04_S02_L0015": {
+      "id": "MS14_D04_S02_L0015",
+      "kind": "dialogue",
+      "text": "거기 두면 볼게요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "밤이",
+      "operations": []
+    },
+    "MS14_D04_S02_L0016": {
+      "id": "MS14_D04_S02_L0016",
+      "kind": "action",
+      "text": "아빠가 판자를 벽에 기대고 두 걸음 물러난다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D04_S02_L0017": {
+      "id": "MS14_D04_S02_L0017",
+      "kind": "dialogue",
+      "text": "이 사람, 강 쪽에서 봤어요. 전에요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "밤이",
+      "operations": []
+    },
+    "MS14_D04_S02_L0018": {
+      "id": "MS14_D04_S02_L0018",
+      "kind": "dialogue",
+      "text": "어제니?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D04_S02_L0019": {
+      "id": "MS14_D04_S02_L0019",
+      "kind": "dialogue",
+      "text": "아니요. 전에.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "밤이",
+      "operations": []
+    },
+    "MS14_D04_S02_L0020": {
+      "id": "MS14_D04_S02_L0020",
+      "kind": "dialogue",
+      "text": "어디로 갔는지는?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D04_S02_L0021": {
+      "id": "MS14_D04_S02_L0021",
+      "kind": "dialogue",
+      "text": "안 따라갔어요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "밤이",
+      "operations": []
+    },
+    "MS14_D04_S02_L0022": {
+      "id": "MS14_D04_S02_L0022",
+      "kind": "dialogue",
+      "text": "그럼 그건 모르는 거네.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D04_S02_L0023": {
+      "id": "MS14_D04_S02_L0023",
+      "kind": "dialogue",
+      "text": "내가 안다고 했어?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "밤이",
+      "operations": []
+    },
+    "MS14_D04_S02_L0024": {
+      "id": "MS14_D04_S02_L0024",
+      "kind": "dialogue",
+      "text": "아니. 적으려고.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D04_S02_L0025": {
+      "id": "MS14_D04_S02_L0025",
+      "kind": "action",
+      "text": "다람이 수첩에 쓰다가 ‘강’ 자를 아빠에게 묻는다. 아빠가 작은 종이에 써 준다.",
+      "expression": "default",
+      "effects": [
+        "acquire(E19)"
+      ],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": [
+        {
+          "op": "acquire",
+          "key": "E19",
+          "variant": "observed"
+        }
+      ]
+    },
+    "MS14_D04_S02_L0026": {
+      "id": "MS14_D04_S02_L0026",
+      "kind": "dialogue",
+      "text": "네가 혼자 찾으러 가진 마. 우리가 물어볼게.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D04_S02_L0027": {
+      "id": "MS14_D04_S02_L0027",
+      "kind": "dialogue",
+      "text": "나도 가는데.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D04_S02_L0028": {
+      "id": "MS14_D04_S02_L0028",
+      "kind": "dialogue",
+      "text": "같이. 혼자 말고.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D04_S02_L0029": {
+      "id": "MS14_D04_S02_L0029",
+      "kind": "action",
+      "text": "오후, 솜이네 문 앞.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D04_S02_L0030": {
+      "id": "MS14_D04_S02_L0030",
+      "kind": "dialogue",
+      "text": "지금 잠들었어요. 아침에 와요. 깨우면 오늘 밤 더 힘들어.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "네로",
+      "operations": []
+    },
+    "MS14_D04_S02_L0031": {
+      "id": "MS14_D04_S02_L0031",
+      "kind": "dialogue",
+      "text": "그럼 내일 아침에요.",
+      "expression": "default",
+      "effects": [
+        "afternoon_visit_declined=true"
+      ],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": [
+        {
+          "op": "set",
+          "field": "afternoon_visit_declined",
+          "value": true
+        }
+      ]
+    },
+    "MS14_D04_S02_L9101": {
+      "id": "MS14_D04_S02_L9101",
+      "kind": "evidence",
+      "text": "밤이: 전에 강 쪽에서 엄마를 봤다. 언제 어디로 갔는지는 모른다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D04_S03_L0001": {
+      "id": "MS14_D04_S03_L0001",
+      "kind": "action",
+      "text": "돌아오는 길, 초소 뒤에서 돌목의 짧은 비명과 양동이 넘어지는 소리가 난다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D04_S03_L0002": {
+      "id": "MS14_D04_S03_L0002",
+      "kind": "dialogue",
+      "text": "놔! 거기 서!",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "돌목",
+      "operations": []
+    },
+    "MS14_D04_S03_L0003": {
+      "id": "MS14_D04_S03_L0003",
+      "kind": "action",
+      "text": "조작: 다람을 등 뒤에 세우고 밝은 초소 쪽으로 한 걸음 이동한 뒤 현장을 본다. 어두운 골목으로 사람 그림자 하나가 사라진다. 얼굴은 보이지 않는다.",
+      "expression": "default",
+      "effects": [
+        "acquire(E20)"
+      ],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": [
+        {
+          "op": "acquire",
+          "key": "E20",
+          "variant": "observed"
+        }
+      ]
+    },
+    "MS14_D04_S03_L0004": {
+      "id": "MS14_D04_S03_L0004",
+      "kind": "dialogue",
+      "text": "무슨 일입니까?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D04_S03_L0005": {
+      "id": "MS14_D04_S03_L0005",
+      "kind": "dialogue",
+      "text": "물었소. 팔을…… 젠장.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "돌목",
+      "operations": []
+    },
+    "MS14_D04_S03_L0006": {
+      "id": "MS14_D04_S03_L0006",
+      "kind": "narration",
+      "text": "돌목이 어깨 아래 외투를 움켜잡고 있었다. 나는 먼저 초소의 의자를 끌어왔다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D04_S03_L0007": {
+      "id": "MS14_D04_S03_L0007",
+      "kind": "dialogue",
+      "text": "앉으십시오. 진료소에 사람을 보내겠습니다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D04_S03_L0008": {
+      "id": "MS14_D04_S03_L0008",
+      "kind": "dialogue",
+      "text": "누가 물었소?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "너울",
+      "operations": []
+    },
+    "MS14_D04_S03_L0009": {
+      "id": "MS14_D04_S03_L0009",
+      "kind": "dialogue",
+      "text": "등 뒤에서…… 누가 울타리 옆으로 나가길래 붙잡았는데.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "돌목",
+      "operations": []
+    },
+    "MS14_D04_S03_L0010": {
+      "id": "MS14_D04_S03_L0010",
+      "kind": "dialogue",
+      "text": "저기 밤이 아니오?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "너울",
+      "operations": []
+    },
+    "MS14_D04_S03_L0011": {
+      "id": "MS14_D04_S03_L0011",
+      "kind": "action",
+      "text": "처마 위 밤이가 몸을 일으킨다. 너울은 그쪽을 가리킨다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D04_S03_L0012": {
+      "id": "MS14_D04_S03_L0012",
+      "kind": "dialogue",
+      "text": "나 아니에요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "밤이",
+      "operations": []
+    },
+    "MS14_D04_S03_L0013": {
+      "id": "MS14_D04_S03_L0013",
+      "kind": "dialogue",
+      "text": "늘 이 근처 돌아다녔지.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "너울",
+      "operations": []
+    },
+    "MS14_D04_S03_L0014": {
+      "id": "MS14_D04_S03_L0014",
+      "kind": "dialogue",
+      "text": "그래서 내가 물었어요?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "밤이",
+      "operations": []
+    },
+    "MS14_D04_S03_L0015": {
+      "id": "MS14_D04_S03_L0015",
+      "kind": "narration",
+      "text": "다람이가 앞으로 나가려 했다. 나는 손을 잡았다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D04_S03_L0016": {
+      "id": "MS14_D04_S03_L0016",
+      "kind": "dialogue",
+      "text": "잠깐. 돌목 씨, 얼굴을 보셨습니까?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D04_S03_L0017": {
+      "id": "MS14_D04_S03_L0017",
+      "kind": "dialogue",
+      "text": "검었소. 털인지 옷인지…… 어두웠고.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "돌목",
+      "operations": []
+    },
+    "MS14_D04_S03_L0018": {
+      "id": "MS14_D04_S03_L0018",
+      "kind": "dialogue",
+      "text": "그 아이가 검잖소.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "너울",
+      "operations": []
+    },
+    "MS14_D04_S03_L0019": {
+      "id": "MS14_D04_S03_L0019",
+      "kind": "dialogue",
+      "text": "내 말 끝까지 들으시오. 붙잡고 허리를 숙였다가 물렸소. 키는 제대로 못 봤고.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "돌목",
+      "operations": []
+    },
+    "MS14_D04_S03_L0020": {
+      "id": "MS14_D04_S03_L0020",
+      "kind": "action",
+      "text": "돌목이 진료소로 이동한다. 바둑이가 와서 너울과 밤이 사이에 선다.",
+      "expression": "default",
+      "effects": [
+        "bami_status=temporarily_with_badugi"
+      ],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": [
+        {
+          "op": "set",
+          "field": "bami_status",
+          "value": "temporarily_with_badugi"
+        }
+      ]
+    },
+    "MS14_D04_S03_L0021": {
+      "id": "MS14_D04_S03_L0021",
+      "kind": "dialogue",
+      "text": "다친 사람부터 보내고요. 아이는 내가 여기서 이야기 듣겠습니다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "바둑이",
+      "operations": []
+    },
+    "MS14_D04_S03_L0022": {
+      "id": "MS14_D04_S03_L0022",
+      "kind": "dialogue",
+      "text": "보호소에 보내야 달아나지 않지.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "너울",
+      "operations": []
+    },
+    "MS14_D04_S03_L0023": {
+      "id": "MS14_D04_S03_L0023",
+      "kind": "narration",
+      "text": "빵 바구니를 안은 사람이 멈췄다. 밤이와 너울을 번갈아 보더니, 가게 안에서 부르는 소리에 다시 걸었다. 바둑이는 자리를 비키지 않았다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D04_S03_L0024": {
+      "id": "MS14_D04_S03_L0024",
+      "kind": "dialogue",
+      "text": "돌목 씨도 얼굴을 못 봤잖습니까. 오늘 밤은 데려가지 마세요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D04_S03_L0025": {
+      "id": "MS14_D04_S03_L0025",
+      "kind": "dialogue",
+      "text": "책임질 거요?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "너울",
+      "operations": []
+    },
+    "MS14_D04_S03_L0026": {
+      "id": "MS14_D04_S03_L0026",
+      "kind": "dialogue",
+      "text": "내가 같이 있겠다고 했소. 진료부터 받아요, 돌목 씨.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "바둑이",
+      "operations": []
+    },
+    "MS14_D04_S03_L9101": {
+      "id": "MS14_D04_S03_L9101",
+      "kind": "evidence",
+      "text": "돌목의 첫 말: 얼굴은 못 봤다. 검은 것이 털인지 옷인지도 모른다. 붙잡고 허리를 숙였다가 물렸다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D04_S04_L0001": {
+      "id": "MS14_D04_S04_L0001",
+      "kind": "action",
+      "text": "밝은 초소 안. 바둑이가 문가에 앉고, 밤이는 문이 보이는 의자를 고른다. 아빠와 다람도 함께 있다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D04_S04_L0002": {
+      "id": "MS14_D04_S04_L0002",
+      "kind": "dialogue",
+      "text": "엄마 소식도 물어야 하는데. 아침까지 또……",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D04_S04_L0003": {
+      "id": "MS14_D04_S04_L0003",
+      "kind": "dialogue",
+      "text": "밤이는 내일 끌려가?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D04_S04_L0004": {
+      "id": "MS14_D04_S04_L0004",
+      "kind": "narration",
+      "text": "나는 접으려던 수첩을 다시 폈다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D04_S04_L0005": {
+      "id": "MS14_D04_S04_L0005",
+      "kind": "dialogue",
+      "text": "……밤이, 네 얘기부터 듣자. 그냥 두고 가면 잠을 못 잘 것 같다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D04_S04_L0006": {
+      "id": "MS14_D04_S04_L0006",
+      "kind": "dialogue",
+      "text": "아무도 내 말 안 물어봤어요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "밤이",
+      "operations": []
+    },
+    "MS14_D04_S04_L0007": {
+      "id": "MS14_D04_S04_L0007",
+      "kind": "dialogue",
+      "text": "내가 들을게. 어디서부터 봤어?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D04_S04_L0008": {
+      "id": "MS14_D04_S04_L0008",
+      "kind": "dialogue",
+      "text": "저 처마요. 양동이 넘어졌을 때도 거기 있었어요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "밤이",
+      "operations": []
+    },
+    "MS14_D04_S04_L0009": {
+      "id": "MS14_D04_S04_L0009",
+      "kind": "dialogue",
+      "text": "우리 그림 볼 때랑 같은 데?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D04_S04_L0010": {
+      "id": "MS14_D04_S04_L0010",
+      "kind": "dialogue",
+      "text": "그건 낮이고. 밤에도 거기 있었어.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "밤이",
+      "operations": []
+    },
+    "MS14_D04_S04_L0011": {
+      "id": "MS14_D04_S04_L0011",
+      "kind": "dialogue",
+      "text": "다른 사람을 봤니?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D04_S04_L0012": {
+      "id": "MS14_D04_S04_L0012",
+      "kind": "dialogue",
+      "text": "맨발이었어요. 울타리 쪽으로 가는 사람. 얼굴은 못 봤어요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "밤이",
+      "operations": []
+    },
+    "MS14_D04_S04_L0013": {
+      "id": "MS14_D04_S04_L0013",
+      "kind": "dialogue",
+      "text": "아이였니, 어른이었니?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D04_S04_L0014": {
+      "id": "MS14_D04_S04_L0014",
+      "kind": "dialogue",
+      "text": "몰라요. 구부리고 있었어요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "밤이",
+      "operations": []
+    },
+    "MS14_D04_S04_L0015": {
+      "id": "MS14_D04_S04_L0015",
+      "kind": "narration",
+      "text": "다람이가 수첩에 썼던 ‘큰 사람’에 줄을 그었다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D04_S04_L0016": {
+      "id": "MS14_D04_S04_L0016",
+      "kind": "dialogue",
+      "text": "나는 할아버지인 줄…….",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D04_S04_L0017": {
+      "id": "MS14_D04_S04_L0017",
+      "kind": "dialogue",
+      "text": "난 그렇게 말 안 했어.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "밤이",
+      "operations": []
+    },
+    "MS14_D04_S04_L0018": {
+      "id": "MS14_D04_S04_L0018",
+      "kind": "dialogue",
+      "text": "응. 지웠어.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D04_S04_L0019": {
+      "id": "MS14_D04_S04_L0019",
+      "kind": "action",
+      "text": "나비의 심부름으로 물을 가져온 콩이가 문에서 멈춘다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D04_S04_L0020": {
+      "id": "MS14_D04_S04_L0020",
+      "kind": "dialogue",
+      "text": "밤이가 문 거 아니야?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "콩이",
+      "operations": []
+    },
+    "MS14_D04_S04_L0021": {
+      "id": "MS14_D04_S04_L0021",
+      "kind": "dialogue",
+      "text": "본 사람이 없대. 네가 봤어?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D04_S04_L0022": {
+      "id": "MS14_D04_S04_L0022",
+      "kind": "dialogue",
+      "text": "왜 나한테만 그래? 어른들도 다 그랬어.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "콩이",
+      "operations": []
+    },
+    "MS14_D04_S04_L0023": {
+      "id": "MS14_D04_S04_L0023",
+      "kind": "dialogue",
+      "text": "네가 나 봤다고 했잖아.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "밤이",
+      "operations": []
+    },
+    "MS14_D04_S04_L0024": {
+      "id": "MS14_D04_S04_L0024",
+      "kind": "dialogue",
+      "text": "낮에 봤지! 네가 맨날 여기 있으니까…….",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "콩이",
+      "operations": []
+    },
+    "MS14_D04_S04_L0025": {
+      "id": "MS14_D04_S04_L0025",
+      "kind": "dialogue",
+      "text": "문 건 못 봤네.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D04_S04_L0026": {
+      "id": "MS14_D04_S04_L0026",
+      "kind": "narration",
+      "text": "콩이가 주전자를 내려놓았다. 물이 조금 넘쳤다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D04_S04_L0027": {
+      "id": "MS14_D04_S04_L0027",
+      "kind": "dialogue",
+      "text": "……그건 못 봤어. 됐어?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "콩이",
+      "operations": []
+    },
+    "MS14_D04_S04_L0028": {
+      "id": "MS14_D04_S04_L0028",
+      "kind": "dialogue",
+      "text": "내일도 그렇게 말해 줘. 사람들 앞에서.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "바둑이",
+      "operations": []
+    },
+    "MS14_D04_S04_L0029": {
+      "id": "MS14_D04_S04_L0029",
+      "kind": "dialogue",
+      "text": "다 나만 쳐다볼 텐데.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "콩이",
+      "operations": []
+    },
+    "MS14_D04_S04_L0030": {
+      "id": "MS14_D04_S04_L0030",
+      "kind": "dialogue",
+      "text": "내가 옆에 있을게.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "바둑이",
+      "operations": []
+    },
+    "MS14_D04_S04_L0031": {
+      "id": "MS14_D04_S04_L0031",
+      "kind": "dialogue",
+      "text": "……나비한테 먼저 말할 거야.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "콩이",
+      "operations": []
+    },
+    "MS14_D04_S04_L0032": {
+      "id": "MS14_D04_S04_L0032",
+      "kind": "action",
+      "text": "콩이는 식당으로 돌아간다. 아빠는 수첩에서 콩이의 소문에 ‘목격 아님’을 직접 쓴다.",
+      "expression": "default",
+      "effects": [
+        "rumor_not_eyewitness=true"
+      ],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": [
+        {
+          "op": "set",
+          "field": "rumor_not_eyewitness",
+          "value": true
+        }
+      ]
+    },
+    "MS14_D04_S04_L0034": {
+      "id": "MS14_D04_S04_L0034",
+      "kind": "action",
+      "text": "조사: 울타리 못에 걸린 회색 천 / 눈 위의 겹친 발자국 / 엎어진 양동이.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D04_S04_L0035": {
+      "id": "MS14_D04_S04_L0035",
+      "kind": "dialogue",
+      "text": "밤이가 본 사람은 맨발이랬지? 여기 발자국도 맨발이야.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D04_S04_L0036": {
+      "id": "MS14_D04_S04_L0036",
+      "kind": "action",
+      "text": "다람이 울타리의 회색 천을 먼저 가리킨다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D04_S04_L0037": {
+      "id": "MS14_D04_S04_L0037",
+      "kind": "dialogue",
+      "text": "저 천도 걸렸어. 발자국이랑 같은 쪽이야. 따라가면 되겠다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D04_S04_L0038": {
+      "id": "MS14_D04_S04_L0038",
+      "kind": "dialogue",
+      "text": "발자국이 겹쳤어. 눈도 더 오고…… 같은 발인지 모르겠는데.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D04_S04_L0039": {
+      "id": "MS14_D04_S04_L0039",
+      "kind": "dialogue",
+      "text": "저 집 쪽인데.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D04_S04_L0040": {
+      "id": "MS14_D04_S04_L0040",
+      "kind": "dialogue",
+      "text": "어느 쪽으로 갔는지만 적자. 사람 이름 말고.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D04_S04_L0041": {
+      "id": "MS14_D04_S04_L0041",
+      "kind": "action",
+      "text": "조작: 걸린 천의 위치와 방향을 그린 뒤 바둑이를 부른다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D04_S04_L0042": {
+      "id": "MS14_D04_S04_L0042",
+      "kind": "dialogue",
+      "text": "밤이, 나도 문가로 잠깐 갈 거다. 같이 올래, 여기서 기다릴래?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "바둑이",
+      "operations": []
+    },
+    "MS14_D04_S04_L0043": {
+      "id": "MS14_D04_S04_L0043",
+      "kind": "dialogue",
+      "text": "같이 갈래요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "밤이",
+      "operations": []
+    },
+    "MS14_D04_S04_L0044": {
+      "id": "MS14_D04_S04_L0044",
+      "kind": "action",
+      "text": "밤이가 문 불빛 안에 선다. 바둑이가 아빠와 문 앞 울타리에서 천을 수거한다.",
+      "expression": "default",
+      "effects": [
+        "acquire(E22)"
+      ],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": [
+        {
+          "op": "acquire",
+          "key": "E22",
+          "variant": "observed"
+        }
+      ]
+    },
+    "MS14_D04_S04_L0045": {
+      "id": "MS14_D04_S04_L0045",
+      "kind": "dialogue",
+      "text": "솜이가 아까 천막 쪽이라고 했는데…… 집 쪽에 더 가까워.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D04_S04_L0046": {
+      "id": "MS14_D04_S04_L0046",
+      "kind": "dialogue",
+      "text": "솜이가 언제 그랬어?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D04_S04_L0047": {
+      "id": "MS14_D04_S04_L0047",
+      "kind": "dialogue",
+      "text": "낮에 그랬잖아. 천막에 있다면서, 집 안에선 기침했어.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D04_S04_L0048": {
+      "id": "MS14_D04_S04_L0048",
+      "kind": "dialogue",
+      "text": "기침한 얼굴은 못 봤지. 내일 솜이한테 물어보자.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D04_S04_L0049": {
+      "id": "MS14_D04_S04_L0049",
+      "kind": "dialogue",
+      "text": "밤이 이야기 틀렸다는 거 찾으러 가는 거야?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D04_S04_L0050": {
+      "id": "MS14_D04_S04_L0050",
+      "kind": "dialogue",
+      "text": "아니. 밤이를 그냥 끌고 가게 둘 순 없잖아. 붙잡을 만한 이유가 있나 봐야지.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D04_S04_L0051": {
+      "id": "MS14_D04_S04_L0051",
+      "kind": "action",
+      "text": "귀가 전, 함께 식당으로 간다.",
+      "expression": "default",
+      "effects": [
+        "bami_status=with_badugi_at_diner"
+      ],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": [
+        {
+          "op": "set",
+          "field": "bami_status",
+          "value": "with_badugi_at_diner"
+        }
+      ]
+    },
+    "MS14_D04_S04_L0052": {
+      "id": "MS14_D04_S04_L0052",
+      "kind": "dialogue",
+      "text": "오늘 밤은 나도 이 아이 곁에 있겠소. 문 닫기 전에 자리 좀 봅시다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "바둑이",
+      "operations": []
+    },
+    "MS14_D04_S04_L0053": {
+      "id": "MS14_D04_S04_L0053",
+      "kind": "dialogue",
+      "text": "앞자리요. 제가 문 닫을 때까지 여기 계세요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "나비",
+      "operations": []
+    },
+    "MS14_D04_S04_L0054": {
+      "id": "MS14_D04_S04_L0054",
+      "kind": "dialogue",
+      "text": "나가고 싶으면요?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "밤이",
+      "operations": []
+    },
+    "MS14_D04_S04_L0055": {
+      "id": "MS14_D04_S04_L0055",
+      "kind": "dialogue",
+      "text": "나한테 말해. 같이 나가면 되지.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "바둑이",
+      "operations": []
+    },
+    "MS14_D04_S04_L0056": {
+      "id": "MS14_D04_S04_L0056",
+      "kind": "dialogue",
+      "text": "아빠 수첩에도 큰 사람이라고 썼어?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D04_S04_L0057": {
+      "id": "MS14_D04_S04_L0057",
+      "kind": "dialogue",
+      "text": "응. 그랬네.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D04_S04_L0058": {
+      "id": "MS14_D04_S04_L0058",
+      "kind": "dialogue",
+      "text": "나는 지웠는데.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D04_S04_L0059": {
+      "id": "MS14_D04_S04_L0059",
+      "kind": "dialogue",
+      "text": "연필 좀 줘. 아빠 것도 고치게.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D04_S04_L0060": {
+      "id": "MS14_D04_S04_L0060",
+      "kind": "action",
+      "text": "광장, 여관으로 돌아가기 전.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D04_S04_L0061": {
+      "id": "MS14_D04_S04_L0061",
+      "kind": "dialogue",
+      "text": "오늘도 답은 없었어요. 당신 쪽지도 그대로고요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "초롱",
+      "operations": []
+    },
+    "MS14_D04_S04_L0062": {
+      "id": "MS14_D04_S04_L0062",
+      "kind": "dialogue",
+      "text": "누가 왔다 간 흔적은요?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D04_S04_L0063": {
+      "id": "MS14_D04_S04_L0063",
+      "kind": "dialogue",
+      "text": "발자국이 겹쳤어요. 누군지는 모르겠어요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "초롱",
+      "operations": []
+    },
+    "MS14_D04_S04_L0064": {
+      "id": "MS14_D04_S04_L0064",
+      "kind": "dialogue",
+      "text": "내일도 봐 주세요. 부탁합니다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D04_S04_L0065": {
+      "id": "MS14_D04_S04_L0065",
+      "kind": "action",
+      "text": "방에서 초상 옆에 천의 그림을 놓는다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D04_S04_L9101": {
+      "id": "MS14_D04_S04_L9101",
+      "kind": "evidence",
+      "text": "초소 문 앞 울타리의 회색 천. 걸린 위치와 방향을 그린 뒤 바둑이와 함께 수거했다. 발자국은 겹쳐 있다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D05_S01_L0001": {
+      "id": "MS14_D05_S01_L0001",
+      "kind": "action",
+      "text": "아침. 네로가 문을 반쯤 열고 선다. 아빠가 먼저 조사 목적을 낮은 목소리로 말한다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S01_L0002": {
+      "id": "MS14_D05_S01_L0002",
+      "kind": "dialogue",
+      "text": "어젯밤 초소에서 사람이 다쳤습니다. 어르신이 밤에 나가셨는지 아십니까?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S01_L0003": {
+      "id": "MS14_D05_S01_L0003",
+      "kind": "dialogue",
+      "text": "무쇠 어르신요? 저 집 애를 잡겠다더니, 이젠 이 집이에요?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "네로",
+      "operations": []
+    },
+    "MS14_D05_S01_L0004": {
+      "id": "MS14_D05_S01_L0004",
+      "kind": "dialogue",
+      "text": "누군지 몰라서 온 겁니다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S01_L0005": {
+      "id": "MS14_D05_S01_L0005",
+      "kind": "dialogue",
+      "text": "정하지 않은 사람 얼굴이 왜 그래요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "네로",
+      "operations": []
+    },
+    "MS14_D05_S01_L0006": {
+      "id": "MS14_D05_S01_L0006",
+      "kind": "narration",
+      "text": "나는 들고 온 수첩을 닫았다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D05_S01_L0007": {
+      "id": "MS14_D05_S01_L0007",
+      "kind": "dialogue",
+      "text": "안에서 이야기해도 되겠습니까?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S01_L0008": {
+      "id": "MS14_D05_S01_L0008",
+      "kind": "action",
+      "text": "솜이가 안에서 고개를 끄덕인다. 아빠와 다람이 들어간다. 무쇠가 창가에서 손바닥을 펴고 있다. 잉크로 ‘솜이’. 그 아래 지워 쓴 흔적들.",
+      "expression": "default",
+      "effects": [
+        "somi_entry_consent=true"
+      ],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": [
+        {
+          "op": "set",
+          "field": "somi_entry_consent",
+          "value": true
+        }
+      ]
+    },
+    "MS14_D05_S01_L0009": {
+      "id": "MS14_D05_S01_L0009",
+      "kind": "dialogue",
+      "text": "물이…… 손님 왔나?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "무쇠",
+      "operations": []
+    },
+    "MS14_D05_S01_L0010": {
+      "id": "MS14_D05_S01_L0010",
+      "kind": "dialogue",
+      "text": "할아버지, 다람이야. 어제 왔던 애.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "솜이",
+      "operations": []
+    },
+    "MS14_D05_S01_L0011": {
+      "id": "MS14_D05_S01_L0011",
+      "kind": "dialogue",
+      "text": "우리 손녀랑 닮았네.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "무쇠",
+      "operations": []
+    },
+    "MS14_D05_S01_L0012": {
+      "id": "MS14_D05_S01_L0012",
+      "kind": "dialogue",
+      "text": "걔는 다람이고. 나는 솜이.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "솜이",
+      "operations": []
+    },
+    "MS14_D05_S01_L0013": {
+      "id": "MS14_D05_S01_L0013",
+      "kind": "dialogue",
+      "text": "그래. 솜이. 손 씻으면 안 되는데.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "무쇠",
+      "operations": []
+    },
+    "MS14_D05_S01_L0014": {
+      "id": "MS14_D05_S01_L0014",
+      "kind": "action",
+      "text": "솜이가 무쇠의 젖은 소매를 걷어 준다. 팔꿈치 아래 회색 겉옷 가장자리가 찢어져 있다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S01_L0015": {
+      "id": "MS14_D05_S01_L0015",
+      "kind": "dialogue",
+      "text": "이 옷을 어제 입으셨습니까?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S01_L0016": {
+      "id": "MS14_D05_S01_L0016",
+      "kind": "dialogue",
+      "text": "제가 입혔어요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "솜이",
+      "operations": []
+    },
+    "MS14_D05_S01_L0017": {
+      "id": "MS14_D05_S01_L0017",
+      "kind": "dialogue",
+      "text": "울타리에서 이 천이 나왔어. 옷 벗으시면 옆에 대 봐도 될까?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S01_L0018": {
+      "id": "MS14_D05_S01_L0018",
+      "kind": "dialogue",
+      "text": "그러면 데려가요?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "솜이",
+      "operations": []
+    },
+    "MS14_D05_S01_L0019": {
+      "id": "MS14_D05_S01_L0019",
+      "kind": "dialogue",
+      "text": "옷부터 보려는 거야. 안 데려간단 약속은 못 해도, 너 몰래 넘기진 않을게.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S01_L0020": {
+      "id": "MS14_D05_S01_L0020",
+      "kind": "dialogue",
+      "text": "그럼 싫어요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "솜이",
+      "operations": []
+    },
+    "MS14_D05_S01_L0021": {
+      "id": "MS14_D05_S01_L0021",
+      "kind": "narration",
+      "text": "네로가 자기 장갑을 벗어 탁자 위에 놓았다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D05_S01_L0022": {
+      "id": "MS14_D05_S01_L0022",
+      "kind": "dialogue",
+      "text": "어젯밤 나갔어요. 내가 늦게 봤어. 돌아올 때 소매가 이랬고. 애한테 계속 묻지 마요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "네로",
+      "operations": []
+    },
+    "MS14_D05_S01_L0023": {
+      "id": "MS14_D05_S01_L0023",
+      "kind": "dialogue",
+      "text": "왜 처음에 말씀하지 않으셨습니까?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S01_L0024": {
+      "id": "MS14_D05_S01_L0024",
+      "kind": "dialogue",
+      "text": "말하면 내가 돌보는 게 아니라 넘기는 게 되니까.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "네로",
+      "operations": []
+    },
+    "MS14_D05_S02_L0001": {
+      "id": "MS14_D05_S02_L0001",
+      "kind": "action",
+      "text": "솜이가 무쇠에게 다른 겉옷을 입혀 준다. 무쇠가 손목을 잡히자 놀라 팔을 뺀다. 아빠가 즉시 거리를 둔다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S02_L0002": {
+      "id": "MS14_D05_S02_L0002",
+      "kind": "dialogue",
+      "text": "놓으시오. 집에 간다니까.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "무쇠",
+      "operations": []
+    },
+    "MS14_D05_S02_L0003": {
+      "id": "MS14_D05_S02_L0003",
+      "kind": "dialogue",
+      "text": "집이야. 여기 집.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "솜이",
+      "operations": []
+    },
+    "MS14_D05_S02_L0004": {
+      "id": "MS14_D05_S02_L0004",
+      "kind": "dialogue",
+      "text": "문이 저쪽인데.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "무쇠",
+      "operations": []
+    },
+    "MS14_D05_S02_L0005": {
+      "id": "MS14_D05_S02_L0005",
+      "kind": "action",
+      "text": "침묵. 솜이가 문을 가리킨 뒤 자기 옆 의자를 가리킨다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S02_L0006": {
+      "id": "MS14_D05_S02_L0006",
+      "kind": "dialogue",
+      "text": "먼저 앉자. 나도 앉을게.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "솜이",
+      "operations": []
+    },
+    "MS14_D05_S02_L0007": {
+      "id": "MS14_D05_S02_L0007",
+      "kind": "narration",
+      "text": "무쇠가 천천히 앉았다. 나는 손을 주머니 밖으로 꺼낸 채 기다렸다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D05_S02_L0008": {
+      "id": "MS14_D05_S02_L0008",
+      "kind": "dialogue",
+      "text": "어젯밤 누가 붙잡았습니까?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S02_L0009": {
+      "id": "MS14_D05_S02_L0009",
+      "kind": "dialogue",
+      "text": "무거운…… 손. 내 팔을. 내가 가야 하는데.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "무쇠",
+      "operations": []
+    },
+    "MS14_D05_S02_L0010": {
+      "id": "MS14_D05_S02_L0010",
+      "kind": "dialogue",
+      "text": "그래서 무셨습니까?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S02_L0011": {
+      "id": "MS14_D05_S02_L0011",
+      "kind": "dialogue",
+      "text": "내가?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "무쇠",
+      "operations": []
+    },
+    "MS14_D05_S02_L0012": {
+      "id": "MS14_D05_S02_L0012",
+      "kind": "narration",
+      "text": "그는 자신의 입을 만졌다. 같은 질문을 다시 하지 않았다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D05_S02_L0013": {
+      "id": "MS14_D05_S02_L0013",
+      "kind": "dialogue",
+      "text": "잡아당기지 마세요. 할아버지 옷이니까.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "솜이",
+      "operations": []
+    },
+    "MS14_D05_S02_L0014": {
+      "id": "MS14_D05_S02_L0014",
+      "kind": "dialogue",
+      "text": "옆에 놓고 보기만 할게.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S02_L0015": {
+      "id": "MS14_D05_S02_L0015",
+      "kind": "dialogue",
+      "text": "……네.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "솜이",
+      "operations": []
+    },
+    "MS14_D05_S02_L0016": {
+      "id": "MS14_D05_S02_L0016",
+      "kind": "action",
+      "text": "조작: 솜이가 허락한 뒤 벗은 겉옷의 찢어진 끝을 보관한 천과 나란히 놓는다. 날카로운 울타리 못에 뜯긴 지그재그 절단선과 두 줄 수선실이 이어진다. 돌목의 진술과 합쳐 이동 경로를 뒷받침하지만 이것만으로 물림을 확정하지 않는다.",
+      "expression": "default",
+      "effects": [
+        "acquire(E23)"
+      ],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": [
+        {
+          "op": "acquire",
+          "key": "E23",
+          "variant": "observed"
+        }
+      ]
+    },
+    "MS14_D05_S02_L0017": {
+      "id": "MS14_D05_S02_L0017",
+      "kind": "dialogue",
+      "text": "돌아왔을 때 ‘놓으라는데 안 놓더라’고 했어요. 입에 피가 조금 묻어 있었고. 지금은 그 말도 기억 못 하겠죠.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "네로",
+      "operations": []
+    },
+    "MS14_D05_S02_L0018": {
+      "id": "MS14_D05_S02_L0018",
+      "kind": "dialogue",
+      "text": "돌목 씨에게도 묻겠습니다. 어떻게 붙잡았는지.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S02_L0019": {
+      "id": "MS14_D05_S02_L0019",
+      "kind": "dialogue",
+      "text": "밤이 아니라고만 하면 안 돼요?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "솜이",
+      "operations": []
+    },
+    "MS14_D05_S02_L0020": {
+      "id": "MS14_D05_S02_L0020",
+      "kind": "dialogue",
+      "text": "밤이 얘기는 해야지. 할아버지 이름까지 광장에 외칠 건 아니야.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S02_L0021": {
+      "id": "MS14_D05_S02_L0021",
+      "kind": "dialogue",
+      "text": "다람아, 너도 말하지 마.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "솜이",
+      "operations": []
+    },
+    "MS14_D05_S02_L0022": {
+      "id": "MS14_D05_S02_L0022",
+      "kind": "narration",
+      "text": "다람이 나를 보았다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D05_S02_L0023": {
+      "id": "MS14_D05_S02_L0023",
+      "kind": "dialogue",
+      "text": "밤이는 풀어 줘야 하잖아.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D05_S02_L0024": {
+      "id": "MS14_D05_S02_L0024",
+      "kind": "dialogue",
+      "text": "나도 알아!",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "솜이",
+      "operations": []
+    },
+    "MS14_D05_S02_L0025": {
+      "id": "MS14_D05_S02_L0025",
+      "kind": "action",
+      "text": "다람이 손을 내밀었다가 내린다. 두 아이가 곧바로 화해하지 않는다.",
+      "expression": "default",
+      "effects": [
+        "E24.status=complete",
+        "acquire(E24)"
+      ],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": [
+        {
+          "op": "set",
+          "field": "E24.status",
+          "value": "complete"
+        },
+        {
+          "op": "acquire",
+          "key": "E24",
+          "variant": "observed"
+        }
+      ]
+    },
+    "MS14_D05_S02_L0026": {
+      "id": "MS14_D05_S02_L0026",
+      "kind": "dialogue",
+      "text": "진료소 문 앞까진 내가 같이 갑시다. 솜이도 함께 들어가고.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "바둑이",
+      "operations": []
+    },
+    "MS14_D05_S02_L0027": {
+      "id": "MS14_D05_S02_L0027",
+      "kind": "dialogue",
+      "text": "나를 내보내면 안 가요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "솜이",
+      "operations": []
+    },
+    "MS14_D05_S02_L0028": {
+      "id": "MS14_D05_S02_L0028",
+      "kind": "dialogue",
+      "text": "같이 설명해 달라고 할게. 네로 씨는 이야기 끝나면 이쪽으로 와요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "바둑이",
+      "operations": []
+    },
+    "MS14_D05_S02_L0029": {
+      "id": "MS14_D05_S02_L0029",
+      "kind": "action",
+      "text": "진료소 문 앞.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S02_L0030": {
+      "id": "MS14_D05_S02_L0030",
+      "kind": "dialogue",
+      "text": "두 분 같이 들어오세요. 먼저 다친 데가 있는지 보겠습니다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "진료 담당자",
+      "operations": []
+    },
+    "MS14_D05_S02_L0031": {
+      "id": "MS14_D05_S02_L0031",
+      "kind": "action",
+      "text": "솜이와 어르신이 함께 들어간 것을 본다. 아빠·다람·바둑이·네로는 초소로 간다.",
+      "expression": "default",
+      "effects": [
+        "musoe.location=clinic",
+        "somi.location=clinic"
+      ],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": [
+        {
+          "op": "set",
+          "field": "musoe.location",
+          "value": "clinic"
+        },
+        {
+          "op": "set",
+          "field": "somi.location",
+          "value": "clinic"
+        }
+      ]
+    },
+    "MS14_D05_S02_L9101": {
+      "id": "MS14_D05_S02_L9101",
+      "kind": "evidence",
+      "text": "울타리 천과 벗은 겉옷의 찢어진 선, 두 줄 수선실이 이어진다. 천만으로 물린 순간은 알 수 없다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D05_S02_L9102": {
+      "id": "MS14_D05_S02_L9102",
+      "kind": "evidence",
+      "text": "네로: 어젯밤 나갔다가 소매가 찢어진 채 돌아왔다. 입에 피가 조금 있었다. 공격 장면은 보지 못했다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D05_S03_L0001": {
+      "id": "MS14_D05_S03_L0001",
+      "kind": "action",
+      "text": "초소. 바둑이·돌목·너울이 기다린다. 아빠·다람·네로가 들어온다. 솜이와 무쇠는 진료소에서 함께 진료받는 중이다. 증거 제출 전에는 확인 결과를 설명하지 않는다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S03_L0002": {
+      "id": "MS14_D05_S03_L0002",
+      "kind": "action",
+      "text": "콩이가 바둑이 옆으로 와서 어제 퍼뜨린 말부터 바로잡는다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S03_L0003": {
+      "id": "MS14_D05_S03_L0003",
+      "kind": "dialogue",
+      "text": "저번에 내가…… 밤이 봤다는 거요. 낮에 본 거예요. 문 건 아니고.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "콩이",
+      "operations": []
+    },
+    "MS14_D05_S03_L0004": {
+      "id": "MS14_D05_S03_L0004",
+      "kind": "action",
+      "text": "콩이가 바둑이의 소매를 잡은 채 덧붙인다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S03_L0005": {
+      "id": "MS14_D05_S03_L0005",
+      "kind": "dialogue",
+      "text": "그때는 못 봤어요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "콩이",
+      "operations": []
+    },
+    "MS14_D05_S03_L0006": {
+      "id": "MS14_D05_S03_L0006",
+      "kind": "dialogue",
+      "text": "애들 말이야 늘 바뀌지.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "너울",
+      "operations": []
+    },
+    "MS14_D05_S03_L0007": {
+      "id": "MS14_D05_S03_L0007",
+      "kind": "dialogue",
+      "text": "그럼 처음 말도 증거로 쓰면 안 되죠.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D05_S03_L0008": {
+      "id": "MS14_D05_S03_L0008",
+      "kind": "action",
+      "text": "콩이는 바둑이 옆에 앉아 끝까지 듣는다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S03_L0009": {
+      "id": "MS14_D05_S03_L0009",
+      "kind": "dialogue",
+      "text": "키가 맞으면 밤이일 수도 있소. 달아나기도 빠르고.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "너울",
+      "operations": []
+    },
+    "MS14_D05_S03_L0010": {
+      "id": "MS14_D05_S03_L0010",
+      "kind": "action",
+      "text": "반박 선택: ‘밤이는 작으므로 불가능’은 불충분.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S03_L0011": {
+      "id": "MS14_D05_S03_L0011",
+      "kind": "dialogue",
+      "text": "내가 허리를 숙였다고 했소. 키만 재서는 안 되오.",
+      "expression": "default",
+      "effects": [],
+      "next": "RETURN_TO_INVESTIGATION",
+      "player_visible": true,
+      "speaker": "돌목",
+      "operations": []
+    },
+    "MS14_D05_S03_L0012": {
+      "id": "MS14_D05_S03_L0012",
+      "kind": "action",
+      "text": "올바른 제시: 얼굴을 못 봤다는 최초 진술, 맨발 관찰, 울타리 천과 겉옷, 네로의 귀가 목격.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S03_L0013": {
+      "id": "MS14_D05_S03_L0013",
+      "kind": "dialogue",
+      "text": "밤이가 문 걸 본 사람은 없습니다. 천은 어르신 옷에 맞고, 돌아오신 건 네로 씨가 봤습니다. 그래도 밤이를 잡아 두겠습니까?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S03_L0014": {
+      "id": "MS14_D05_S03_L0014",
+      "kind": "dialogue",
+      "text": "그럼 무쇠가 물었다는 거요?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "너울",
+      "operations": []
+    },
+    "MS14_D05_S03_L0015": {
+      "id": "MS14_D05_S03_L0015",
+      "kind": "dialogue",
+      "text": "기억도 못 하시는데 그 말만 받아 적고 끝내려고요? 옷하고 네로 씨 얘기도 보십시오.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S03_L0016": {
+      "id": "MS14_D05_S03_L0016",
+      "kind": "dialogue",
+      "text": "뒤에서 팔을 잡았소. 멈추라는데 계속 가서. 돌아서다가 물었소.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "돌목",
+      "operations": []
+    },
+    "MS14_D05_S03_L0017": {
+      "id": "MS14_D05_S03_L0017",
+      "kind": "dialogue",
+      "text": "못 알아들었을 거예요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "네로",
+      "operations": []
+    },
+    "MS14_D05_S03_L0018": {
+      "id": "MS14_D05_S03_L0018",
+      "kind": "dialogue",
+      "text": "그러면 내 팔은 안 다친 게 되오?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "돌목",
+      "operations": []
+    },
+    "MS14_D05_S03_L0019": {
+      "id": "MS14_D05_S03_L0019",
+      "kind": "dialogue",
+      "text": "그 말은 아니잖아요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "네로",
+      "operations": []
+    },
+    "MS14_D05_S03_L0020": {
+      "id": "MS14_D05_S03_L0020",
+      "kind": "action",
+      "text": "아빠가 두 사람 사이에 서되 붙잡지 않는다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S03_L0021": {
+      "id": "MS14_D05_S03_L0021",
+      "kind": "dialogue",
+      "text": "팔을 다치셨죠. 치료받으셔야 합니다. 밤에 어르신 곁에 누가 있을지도 정해야죠. 그렇다고 밤이를 잡아 두면 뭐가 달라집니까.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S03_L0022": {
+      "id": "MS14_D05_S03_L0022",
+      "kind": "dialogue",
+      "text": "보호소로 보내면 밤에도 사람이 붙지 않소.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "너울",
+      "operations": []
+    },
+    "MS14_D05_S03_L0023": {
+      "id": "MS14_D05_S03_L0023",
+      "kind": "dialogue",
+      "text": "어디 방에 누가 붙습니까? 가족은 언제 만나고?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "네로",
+      "operations": []
+    },
+    "MS14_D05_S03_L0024": {
+      "id": "MS14_D05_S03_L0024",
+      "kind": "dialogue",
+      "text": "그건 보내서 정하는 거요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "너울",
+      "operations": []
+    },
+    "MS14_D05_S03_L0025": {
+      "id": "MS14_D05_S03_L0025",
+      "kind": "dialogue",
+      "text": "어디로 가는지도 모르는데 오늘은 못 넘깁니다. 진료소에서 내가 모셔 오죠. 오늘 밤은 네로와 교대로 있고, 내일 다시 정합시다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "바둑이",
+      "operations": []
+    },
+    "MS14_D05_S03_L0026": {
+      "id": "MS14_D05_S03_L0026",
+      "kind": "dialogue",
+      "text": "초소 뒤쪽 문에도 종을 달겠소. 사람을 보고 부르지, 손부터 대지 않겠소.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "돌목",
+      "operations": []
+    },
+    "MS14_D05_S03_L0027": {
+      "id": "MS14_D05_S03_L0027",
+      "kind": "action",
+      "text": "밤이가 바깥에서 들어온다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S03_L0028": {
+      "id": "MS14_D05_S03_L0028",
+      "kind": "dialogue",
+      "text": "오늘은 가도 된다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "너울",
+      "operations": []
+    },
+    "MS14_D05_S03_L0029": {
+      "id": "MS14_D05_S03_L0029",
+      "kind": "dialogue",
+      "text": "오늘만요?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "밤이",
+      "operations": []
+    },
+    "MS14_D05_S03_L0030": {
+      "id": "MS14_D05_S03_L0030",
+      "kind": "dialogue",
+      "text": "오늘만이라뇨. 목격자도 없고 다른 사람 옷까지 맞췄는데. 그걸 적어 주세요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S03_L0031": {
+      "id": "MS14_D05_S03_L0031",
+      "kind": "dialogue",
+      "text": "내가 적었소. 밤이, 보고 싶으면 봐.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "바둑이",
+      "operations": []
+    },
+    "MS14_D05_S03_L0032": {
+      "id": "MS14_D05_S03_L0032",
+      "kind": "narration",
+      "text": "밤이가 종이에 손가락을 얹었다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D05_S03_L0033": {
+      "id": "MS14_D05_S03_L0033",
+      "kind": "dialogue",
+      "text": "읽어 줘요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "밤이",
+      "operations": []
+    },
+    "MS14_D05_S03_L0034": {
+      "id": "MS14_D05_S03_L0034",
+      "kind": "dialogue",
+      "text": "밤이가 물었다는 걸 본 사람은 없다. 울타리에서 나온 천은 다른 사람 옷과 맞는다. 밤이를 붙잡아 두지 않는다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "바둑이",
+      "operations": []
+    },
+    "MS14_D05_S03_L0035": {
+      "id": "MS14_D05_S03_L0035",
+      "kind": "dialogue",
+      "text": "내 이름 맞게 썼죠?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "밤이",
+      "operations": []
+    },
+    "MS14_D05_S03_L0036": {
+      "id": "MS14_D05_S03_L0036",
+      "kind": "dialogue",
+      "text": "밤이. 여기.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "바둑이",
+      "operations": []
+    },
+    "MS14_D05_S03_L0037": {
+      "id": "MS14_D05_S03_L0037",
+      "kind": "action",
+      "text": "밤이가 기록을 끝까지 듣고 나간다. 다람은 아빠가 볼 수 있는 문 앞에 머문다.",
+      "expression": "default",
+      "effects": [
+        "acquire(E25)",
+        "acquire(E26)",
+        "bami_status=cleared",
+        "musoe_care=nero_badugi_night_rotation"
+      ],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": [
+        {
+          "op": "acquire",
+          "key": "E25",
+          "variant": "observed"
+        },
+        {
+          "op": "acquire",
+          "key": "E26",
+          "variant": "observed"
+        },
+        {
+          "op": "set",
+          "field": "bami_status",
+          "value": "cleared"
+        },
+        {
+          "op": "set",
+          "field": "musoe_care",
+          "value": "nero_badugi_night_rotation"
+        }
+      ]
+    },
+    "MS14_D05_S03_L0038": {
+      "id": "MS14_D05_S03_L0038",
+      "kind": "dialogue",
+      "text": "그 얘기로 밤이가 아니라고 할 수 있소?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "너울",
+      "operations": []
+    },
+    "MS14_D05_S03_L0039": {
+      "id": "MS14_D05_S03_L0039",
+      "kind": "dialogue",
+      "text": "다른 사람 이름부터 댈 생각은 없습니다. 누가 뭘 봤는지 다시 보죠.",
+      "expression": "default",
+      "effects": [],
+      "next": "RETURN_TO_INVESTIGATION",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S03_L0040": {
+      "id": "MS14_D05_S03_L0040",
+      "kind": "narration",
+      "text": "얼굴을 봤다는 사람은 없다. 울타리에 남은 천과 그날 밤 돌아온 모습을 함께 보자.",
+      "expression": "default",
+      "effects": [],
+      "next": "RETURN_TO_INVESTIGATION",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D05_S03_L9101": {
+      "id": "MS14_D05_S03_L9101",
+      "kind": "evidence",
+      "text": "돌목: 뒤에서 팔을 잡았고, 멈추지 않아 붙잡고 있었다. 돌아서다가 물렸다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D05_S03_L9102": {
+      "id": "MS14_D05_S03_L9102",
+      "kind": "evidence",
+      "text": "밤이가 물었다는 걸 본 사람은 없다. 다른 사람의 옷이 울타리 천과 맞는다. 밤이를 붙잡아 두지 않는다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D05_S04_L0001": {
+      "id": "MS14_D05_S04_L0001",
+      "kind": "action",
+      "text": "초소 앞. 초롱이 아빠를 찾는다. 봉투는 젖지 않게 기름종이에 싸여 있다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S04_L0002": {
+      "id": "MS14_D05_S04_L0002",
+      "kind": "dialogue",
+      "text": "오늘은 답이 있었습니다. 당신 쪽지가 없어지고 이게 있었어요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "초롱",
+      "operations": []
+    },
+    "MS14_D05_S04_L0003": {
+      "id": "MS14_D05_S04_L0003",
+      "kind": "dialogue",
+      "text": "누가 넣는 걸 봤습니까?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S04_L0004": {
+      "id": "MS14_D05_S04_L0004",
+      "kind": "dialogue",
+      "text": "아니요. 어제까지 비어 있던 답장 칸에요. 봉인은 안 열었습니다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "초롱",
+      "operations": []
+    },
+    "MS14_D05_S04_L0005": {
+      "id": "MS14_D05_S04_L0005",
+      "kind": "action",
+      "text": "아빠가 다람과 바람 없는 곳으로 옮겨 봉투를 연다. 메모의 도토리와 익숙한 글씨.",
+      "expression": "default",
+      "effects": [
+        "acquire(E27)",
+        "mother_warning_received=true"
+      ],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": [
+        {
+          "op": "acquire",
+          "key": "E27",
+          "variant": "observed"
+        },
+        {
+          "op": "set",
+          "field": "mother_warning_received",
+          "value": true
+        }
+      ]
+    },
+    "MS14_D05_S04_L0006": {
+      "id": "MS14_D05_S04_L0006",
+      "kind": "evidence",
+      "text": "“당신과 다람이를 부른 적 없어. 그 편지는 내가 쓴 게 아니야. 나를 찾는 곳이나 이 편지 이야기를 여관에 말하지 마. 당장 만나러 내려갈 수 없어. 초롱에게 답을 맡겨 줘. 먹을 것과 마른 천이 필요해. 다람이 손은 괜찮아? 겨울이면 또 트는데.”",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D05_S04_L0007": {
+      "id": "MS14_D05_S04_L0007",
+      "kind": "dialogue",
+      "text": "엄마잖아.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D05_S04_L0008": {
+      "id": "MS14_D05_S04_L0008",
+      "kind": "narration",
+      "text": "아이는 갈라진 엄지 옆을 주머니 안에 감췄다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D05_S04_L0009": {
+      "id": "MS14_D05_S04_L0009",
+      "kind": "dialogue",
+      "text": "응. 엄마가 보낸 것 같아.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S04_L0010": {
+      "id": "MS14_D05_S04_L0010",
+      "kind": "dialogue",
+      "text": "그럼 왜 안 와?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D05_S04_L0011": {
+      "id": "MS14_D05_S04_L0011",
+      "kind": "dialogue",
+      "text": "못 내려오는 이유가 있나 봐. 물어볼게.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S04_L0012": {
+      "id": "MS14_D05_S04_L0012",
+      "kind": "dialogue",
+      "text": "아빠가 가면 되잖아.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D05_S04_L0013": {
+      "id": "MS14_D05_S04_L0013",
+      "kind": "dialogue",
+      "text": "어디로 가야 할지가 없어. 이 편지에도.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S04_L0014": {
+      "id": "MS14_D05_S04_L0014",
+      "kind": "action",
+      "text": "조작: 초대 편지와 경고 비교. ‘다람이를 데리고 와 줘’ / ‘부른 적 없어’.",
+      "expression": "default",
+      "effects": [
+        "mother_denies_invitation=true"
+      ],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": [
+        {
+          "op": "set",
+          "field": "mother_denies_invitation",
+          "value": true
+        }
+      ]
+    },
+    "MS14_D05_S04_L0015": {
+      "id": "MS14_D05_S04_L0015",
+      "kind": "narration",
+      "text": "도토리가 빠진 것 때문이 아니다. 아내가 직접 초대한 적 없다고 썼다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D05_S04_L0016": {
+      "id": "MS14_D05_S04_L0016",
+      "kind": "choice",
+      "text": "앞서 여관에서 들은 말도 다시 볼까?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "options": [
+        {
+          "id": "MS14_D05_S04_L0016_O1",
+          "label": "첫날 기록을 다시 본다",
+          "when": "always",
+          "target_block": "MS14_D05_S04_B003",
+          "effects": [
+            "input=review_day1_records"
+          ]
+        },
+        {
+          "id": "MS14_D05_S04_L0016_O2",
+          "label": "답장을 쓴다",
+          "when": "always",
+          "target_block": "CONTINUE",
+          "effects": []
+        }
+      ],
+      "operations": []
+    },
+    "MS14_D05_S04_L0017": {
+      "id": "MS14_D05_S04_L0017",
+      "kind": "narration",
+      "text": "편지는 여관 묶음으로 왔다. 할머니는 소식을 알려 달랬고, 너울도 여관에 연락하라고 했다.",
+      "expression": "default",
+      "effects": [],
+      "next": "RETURN_TO_INVESTIGATION",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D05_S04_L0018": {
+      "id": "MS14_D05_S04_L0018",
+      "kind": "dialogue",
+      "text": "여관에서 보낸 거니까 할머니가 쓴 거야?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D05_S04_L0019": {
+      "id": "MS14_D05_S04_L0019",
+      "kind": "dialogue",
+      "text": "묶음에 넣었다고 쓴 사람인 건 아니지. 누가 썼는진 몰라.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S04_L0020": {
+      "id": "MS14_D05_S04_L0020",
+      "kind": "dialogue",
+      "text": "그럼 왜 말하지 말래?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D05_S04_L0021": {
+      "id": "MS14_D05_S04_L0021",
+      "kind": "dialogue",
+      "text": "몰라. 엄마가 안 불렀는데 우린 여기까지 왔어. 누가 불렀는지도 모르고. ……우리 얘기는 이제 함부로 하지 말자.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S04_L0022": {
+      "id": "MS14_D05_S04_L0022",
+      "kind": "narration",
+      "text": "나는 초롱에게 주려던 답장을 뒤집었다. 여관에서 언제 나갈지까지 쓰려던 줄을 지웠다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D05_S04_L0023": {
+      "id": "MS14_D05_S04_L0023",
+      "kind": "dialogue",
+      "text": "이 편지를 다른 데 보여 줬습니까?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S04_L0024": {
+      "id": "MS14_D05_S04_L0024",
+      "kind": "dialogue",
+      "text": "당신한테 곧장 왔어요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "초롱",
+      "operations": []
+    },
+    "MS14_D05_S04_L0025": {
+      "id": "MS14_D05_S04_L0025",
+      "kind": "dialogue",
+      "text": "여관엔 말하지 말아 주세요. 답장에 물자 받는 법도 물을 겁니다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S04_L0026": {
+      "id": "MS14_D05_S04_L0026",
+      "kind": "dialogue",
+      "text": "함은 계속 볼게요. 답 있으면 바로 가져올게요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "초롱",
+      "operations": []
+    },
+    "MS14_D05_S04_L0027": {
+      "id": "MS14_D05_S04_L0027",
+      "kind": "action",
+      "text": "아빠가 쓴 답을 화면에서 직접 확인한다.",
+      "expression": "default",
+      "effects": [
+        "acquire(E28)",
+        "supply_contact_pending=true",
+        "inn_information_hub_risk_known=true"
+      ],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": [
+        {
+          "op": "acquire",
+          "key": "E28",
+          "variant": "observed"
+        },
+        {
+          "op": "set",
+          "field": "supply_contact_pending",
+          "value": true
+        },
+        {
+          "op": "set",
+          "field": "inn_information_hub_risk_known",
+          "value": true
+        }
+      ]
+    },
+    "MS14_D05_S04_L0028": {
+      "id": "MS14_D05_S04_L0028",
+      "kind": "evidence",
+      "text": "“편지 받았어. 다람이는 나와 함께 있어. 여관에 말하지 않을게. 먹을 것과 천을 준비할게. 안전하게 만날 방법과 지금 있는 곳을 알려 줘. 답은 초롱에게.”",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D05_S04_L0029": {
+      "id": "MS14_D05_S04_L0029",
+      "kind": "dialogue",
+      "text": "나도 써.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D05_S04_L0030": {
+      "id": "MS14_D05_S04_L0030",
+      "kind": "action",
+      "text": "다람이 아래에 덧쓴다. “과자 아직 있어. 빨리 와.”",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S04_L9501": {
+      "id": "MS14_D05_S04_L9501",
+      "kind": "action",
+      "text": "다람이 쓴 줄까지 접어 봉투에 넣고 초롱에게 직접 건넨다.",
+      "expression": "default",
+      "effects": [
+        "E28.handed_to=chorong"
+      ],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": [
+        {
+          "op": "set",
+          "field": "E28.handed_to",
+          "value": "chorong"
+        }
+      ]
+    },
+    "MS14_D05_S04_L9502": {
+      "id": "MS14_D05_S04_L9502",
+      "kind": "dialogue",
+      "text": "이것도 함에 부탁드립니다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S04_L9503": {
+      "id": "MS14_D05_S04_L9503",
+      "kind": "dialogue",
+      "text": "네. 여관에는 말하지 않을게요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "초롱",
+      "operations": []
+    },
+    "MS14_D05_S05_L0001": {
+      "id": "MS14_D05_S05_L0001",
+      "kind": "action",
+      "text": "아빠와 다람은 먼저 솜이네에 들른다. 무쇠가 깨어 있고, 네로가 밤 교대 시간을 바둑이와 확인한다. 출입문 작은 종은 솜이 동의 아래 달려 있다. 문을 잠가 가두지 않는다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S05_L0002": {
+      "id": "MS14_D05_S05_L0002",
+      "kind": "dialogue",
+      "text": "왜 또 왔어?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "솜이",
+      "operations": []
+    },
+    "MS14_D05_S05_L0003": {
+      "id": "MS14_D05_S05_L0003",
+      "kind": "dialogue",
+      "text": "이거. 아까 네가 두고 갔어.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D05_S05_L0004": {
+      "id": "MS14_D05_S05_L0004",
+      "kind": "action",
+      "text": "다람이 솜이의 물통을 문턱에 놓는다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S05_L0005": {
+      "id": "MS14_D05_S05_L0005",
+      "kind": "dialogue",
+      "text": "우리 할아버지 이름 다 알아?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "솜이",
+      "operations": []
+    },
+    "MS14_D05_S05_L0006": {
+      "id": "MS14_D05_S05_L0006",
+      "kind": "dialogue",
+      "text": "사람들한테 내가 말한 건 아니야.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D05_S05_L0007": {
+      "id": "MS14_D05_S05_L0007",
+      "kind": "dialogue",
+      "text": "그래도 알잖아.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "솜이",
+      "operations": []
+    },
+    "MS14_D05_S05_L0008": {
+      "id": "MS14_D05_S05_L0008",
+      "kind": "dialogue",
+      "text": "……응.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D05_S05_L0009": {
+      "id": "MS14_D05_S05_L0009",
+      "kind": "dialogue",
+      "text": "솜아, 손님 물 줘야지.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "무쇠",
+      "operations": []
+    },
+    "MS14_D05_S05_L0010": {
+      "id": "MS14_D05_S05_L0010",
+      "kind": "narration",
+      "text": "솜이가 빠르게 할아버지를 보았다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D05_S05_L0011": {
+      "id": "MS14_D05_S05_L0011",
+      "kind": "dialogue",
+      "text": "나 알아?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "솜이",
+      "operations": []
+    },
+    "MS14_D05_S05_L0012": {
+      "id": "MS14_D05_S05_L0012",
+      "kind": "dialogue",
+      "text": "물부터 줘. 먼 길 왔는데.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "무쇠",
+      "operations": []
+    },
+    "MS14_D05_S05_L0013": {
+      "id": "MS14_D05_S05_L0013",
+      "kind": "narration",
+      "text": "솜이는 대답을 더 묻지 않았다. 물 두 잔을 가져와 하나는 다람에게 내밀었다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D05_S05_L0014": {
+      "id": "MS14_D05_S05_L0014",
+      "kind": "dialogue",
+      "text": "먼저 내가 있을게요. 순찰 끝나면 와요.",
+      "expression": "default",
+      "effects": [
+        "nero.location=somi_house",
+        "musoe.location=somi_house",
+        "somi.location=somi_house"
+      ],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "네로",
+      "operations": [
+        {
+          "op": "set",
+          "field": "nero.location",
+          "value": "somi_house"
+        },
+        {
+          "op": "set",
+          "field": "musoe.location",
+          "value": "somi_house"
+        },
+        {
+          "op": "set",
+          "field": "somi.location",
+          "value": "somi_house"
+        }
+      ]
+    },
+    "MS14_D05_S05_L0015": {
+      "id": "MS14_D05_S05_L0015",
+      "kind": "dialogue",
+      "text": "얼굴 보고 바꿉시다. 내가 오기 전에 나가지 마시오.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "바둑이",
+      "operations": []
+    },
+    "MS14_D05_S05_L0016": {
+      "id": "MS14_D05_S05_L0016",
+      "kind": "dialogue",
+      "text": "알아요. 솜이 혼자 두고 안 가요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "네로",
+      "operations": []
+    },
+    "MS14_D05_S05_L0017": {
+      "id": "MS14_D05_S05_L0017",
+      "kind": "action",
+      "text": "바둑이가 아빠·다람과 식당으로 가고 네로는 무쇠 곁에 남는다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S05_L0018": {
+      "id": "MS14_D05_S05_L0018",
+      "kind": "action",
+      "text": "여관으로 돌아오는 길. 아빠는 다람과 함께 식당에 들러 나비·바둑이에게 다음 날 잠깐의 동행을 직접 묻는다. 엄마 편지나 거처는 공개하지 않는다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S05_L0019": {
+      "id": "MS14_D05_S05_L0019",
+      "kind": "dialogue",
+      "text": "내일 물자 알아볼 동안 다람이 곁에 있어 주실 수 있습니까? 혼자는 못 두겠습니다. 둘 중 한 분만이라도.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S05_L0020": {
+      "id": "MS14_D05_S05_L0020",
+      "kind": "dialogue",
+      "text": "손님 받는 동안 뒤쪽까지 볼 수는 없어요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "나비",
+      "operations": []
+    },
+    "MS14_D05_S05_L0021": {
+      "id": "MS14_D05_S05_L0021",
+      "kind": "dialogue",
+      "text": "식당 앞자리에서 아침 먹는 동안은 내가 있겠소. 그 뒤엔 나도 순찰이오.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "바둑이",
+      "operations": []
+    },
+    "MS14_D05_S05_L0022": {
+      "id": "MS14_D05_S05_L0022",
+      "kind": "dialogue",
+      "text": "그 전에 오겠습니다. 늦으면 다람이도 초소로 데려가 주세요. 여관엔 혼자 보내지 마시고요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S05_L0023": {
+      "id": "MS14_D05_S05_L0023",
+      "kind": "dialogue",
+      "text": "나한테도 말해야지.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D05_S05_L0024": {
+      "id": "MS14_D05_S05_L0024",
+      "kind": "dialogue",
+      "text": "아, 너한테 먼저 물어야지. 아저씨랑 여기서 기다릴 수 있겠어?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S05_L0025": {
+      "id": "MS14_D05_S05_L0025",
+      "kind": "dialogue",
+      "text": "창문 보이는 자리에 앉을래.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D05_S05_L0026": {
+      "id": "MS14_D05_S05_L0026",
+      "kind": "dialogue",
+      "text": "그 자리는 내가 먼저 앉으면 네가 옮기라고 해.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "바둑이",
+      "operations": []
+    },
+    "MS14_D05_S05_L0027": {
+      "id": "MS14_D05_S05_L0027",
+      "kind": "action",
+      "text": "여관 입구. 할머니가 다람의 작은 가방을 받으려 손을 내민다.",
+      "expression": "default",
+      "effects": [
+        "acquire(E29)",
+        "daram_next_morning_guard=badugi_diner_limited"
+      ],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": [
+        {
+          "op": "acquire",
+          "key": "E29",
+          "variant": "observed"
+        },
+        {
+          "op": "set",
+          "field": "daram_next_morning_guard",
+          "value": "badugi_diner_limited"
+        }
+      ]
+    },
+    "MS14_D05_S05_L0028": {
+      "id": "MS14_D05_S05_L0028",
+      "kind": "dialogue",
+      "text": "내일은 아이 두고 다녀요. 내가 보고 있을 테니.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "할머니",
+      "operations": []
+    },
+    "MS14_D05_S05_L0029": {
+      "id": "MS14_D05_S05_L0029",
+      "kind": "dialogue",
+      "text": "내일도 같이 나가겠습니다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S05_L0030": {
+      "id": "MS14_D05_S05_L0030",
+      "kind": "dialogue",
+      "text": "둘 다 고생할 것 없는데. 어디까지 가려고요?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "할머니",
+      "operations": []
+    },
+    "MS14_D05_S05_L0031": {
+      "id": "MS14_D05_S05_L0031",
+      "kind": "dialogue",
+      "text": "필요한 물건을 좀 구하려고요. 저녁은 돌아와 먹겠습니다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S05_L0032": {
+      "id": "MS14_D05_S05_L0032",
+      "kind": "narration",
+      "text": "나는 가방을 내가 받았다. 다람이는 빈손으로 내 소매를 잡았다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D05_S05_L0033": {
+      "id": "MS14_D05_S05_L0033",
+      "kind": "action",
+      "text": "같은 13호 복도. 첫날 침구를 들고 왔던 종업원이 빈 대야를 들고 지나간다. 발소리가 문 앞에서 잠깐 멈춘다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S05_L0034": {
+      "id": "MS14_D05_S05_L0034",
+      "kind": "dialogue",
+      "text": "대야 수거할까요?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "종업원",
+      "operations": []
+    },
+    "MS14_D05_S05_L0035": {
+      "id": "MS14_D05_S05_L0035",
+      "kind": "dialogue",
+      "text": "문밖에 내놓겠습니다. 잠깐만요.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S05_L0036": {
+      "id": "MS14_D05_S05_L0036",
+      "kind": "action",
+      "text": "아빠가 다람에게 문에서 물러나라고 말하고 대야를 건넨 뒤 닫는다. 종업원은 그대로 계단을 내려간다. 미확인 발소리나 새 용의자를 만들지 않는다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S05_L0037": {
+      "id": "MS14_D05_S05_L0037",
+      "kind": "narration",
+      "text": "첫날에는 문소리가 날 때마다 아내가 왔나 싶었다. 오늘은 아이가 내 뒤에 있는지 먼저 보았다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D05_S05_L0038": {
+      "id": "MS14_D05_S05_L0038",
+      "kind": "action",
+      "text": "방에 들어가 출입문 걸쇠와 창문 잠금을 직접 확인한다. 숨은 통로나 범인을 안다는 독백은 없다.",
+      "expression": "default",
+      "effects": [
+        "family_safety_changed=true"
+      ],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": [
+        {
+          "op": "set",
+          "field": "family_safety_changed",
+          "value": true
+        }
+      ]
+    },
+    "MS14_D05_S05_L0039": {
+      "id": "MS14_D05_S05_L0039",
+      "kind": "dialogue",
+      "text": "내일부터는 어디 갈 때 서로 말하기. 모르는 사람이 엄마가 보냈다고 해도 바로 따라가지 말고.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S05_L0040": {
+      "id": "MS14_D05_S05_L0040",
+      "kind": "dialogue",
+      "text": "엄마가 진짜 보냈으면?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D05_S05_L0041": {
+      "id": "MS14_D05_S05_L0041",
+      "kind": "dialogue",
+      "text": "아빠하고 같이 확인하자.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S05_L0042": {
+      "id": "MS14_D05_S05_L0042",
+      "kind": "dialogue",
+      "text": "아빠도 혼자 따라가지 마.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D05_S05_L0043": {
+      "id": "MS14_D05_S05_L0043",
+      "kind": "dialogue",
+      "text": "응. 나도.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S05_L0044": {
+      "id": "MS14_D05_S05_L0044",
+      "kind": "action",
+      "text": "편지는 가방 깊숙이 넣고, 물자 목록에는 먹을 것·마른 천·아이 손에 바를 것을 적는다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S05_L0045": {
+      "id": "MS14_D05_S05_L0045",
+      "kind": "dialogue",
+      "text": "담요는 내일도 같이 가져가자. 방에 돌아오지 못해도 덮을 수 있게.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S05_L0046": {
+      "id": "MS14_D05_S05_L0046",
+      "kind": "dialogue",
+      "text": "두 개 다?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D05_S05_L0047": {
+      "id": "MS14_D05_S05_L0047",
+      "kind": "dialogue",
+      "text": "응. 네가 들 건 아니고. 아빠 큰 가방에.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S05_L0048": {
+      "id": "MS14_D05_S05_L0048",
+      "kind": "action",
+      "text": "아빠가 마른 담요 두 장을 다시 싸 큰 가방에 고정한다. 아직 누구에게도 기부·소모하지 않는다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S05_L0049": {
+      "id": "MS14_D05_S05_L0049",
+      "kind": "dialogue",
+      "text": "밖에서 쉴 데를 구하면 덮을 것도 같이 부탁해야겠다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S05_L0050": {
+      "id": "MS14_D05_S05_L0050",
+      "kind": "dialogue",
+      "text": "방 이불 가져가면 안 돼?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D05_S05_L0051": {
+      "id": "MS14_D05_S05_L0051",
+      "kind": "dialogue",
+      "text": "빌린 걸 그냥 가져갈 순 없지. 내일 덮을 것도 물어보자.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S05_L0052": {
+      "id": "MS14_D05_S05_L0052",
+      "kind": "action",
+      "text": "없는 담요를 생성하지 않는다. 학교 차용·물자 확보는 이후 별도 행동이다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S05_L0053": {
+      "id": "MS14_D05_S05_L0053",
+      "kind": "dialogue",
+      "text": "여관에 말하지 말랬지?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D05_S05_L0054": {
+      "id": "MS14_D05_S05_L0054",
+      "kind": "dialogue",
+      "text": "응.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S05_L0055": {
+      "id": "MS14_D05_S05_L0055",
+      "kind": "dialogue",
+      "text": "엄마가 그랬으니까?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D05_S05_L0056": {
+      "id": "MS14_D05_S05_L0056",
+      "kind": "dialogue",
+      "text": "그 말도 있고. 누가 엄마 이름으로 우리를 불렀는지 모르니까.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S05_L0057": {
+      "id": "MS14_D05_S05_L0057",
+      "kind": "dialogue",
+      "text": "나도 알아야 안 말하지.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D05_S05_L0058": {
+      "id": "MS14_D05_S05_L0058",
+      "kind": "dialogue",
+      "text": "너도 알아야지. 알아내면 숨기지 않을게.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S05_L0059": {
+      "id": "MS14_D05_S05_L0059",
+      "kind": "action",
+      "text": "다람이 책상 접시에서 과자 봉지를 가져와 작은 가방에 넣는다.",
+      "expression": "default",
+      "effects": [
+        "cookie.location=daram_bag"
+      ],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": [
+        {
+          "op": "set",
+          "field": "cookie.location",
+          "value": "daram_bag"
+        }
+      ]
+    },
+    "MS14_D05_S05_L0060": {
+      "id": "MS14_D05_S05_L0060",
+      "kind": "dialogue",
+      "text": "이제 가지고 다니게?",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S05_L0061": {
+      "id": "MS14_D05_S05_L0061",
+      "kind": "dialogue",
+      "text": "엄마가 우리가 어디 있는지 모르잖아. 만나면 바로 줘야지.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "다람",
+      "operations": []
+    },
+    "MS14_D05_S05_L0062": {
+      "id": "MS14_D05_S05_L0062",
+      "kind": "dialogue",
+      "text": "그래. 눌리지 않는 데 넣자.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "아빠",
+      "operations": []
+    },
+    "MS14_D05_S05_L0063": {
+      "id": "MS14_D05_S05_L0063",
+      "kind": "narration",
+      "text": "다람이가 봉지 속 큰 과자를 한 번 만졌다. 나는 종이에 쓰던 ‘내일’을 지우고 아침에 나갈 시간을 적었다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D05_S05_L0064": {
+      "id": "MS14_D05_S05_L0064",
+      "kind": "action",
+      "text": "아빠와 다람이 함께 잠자리에 든다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": []
+    },
+    "MS14_D05_S05_L9101": {
+      "id": "MS14_D05_S05_L9101",
+      "kind": "evidence",
+      "text": "내일 아침, 식당 앞자리에서 바둑이와 다람이 함께 기다린다. 순찰 전까지 아빠가 안 오면 둘이 초소로 간다. 종일 보호 약속은 아니다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "operations": []
+    },
+    "MS14_D05_S05_L9501": {
+      "id": "MS14_D05_S05_L9501",
+      "kind": "dialogue",
+      "text": "난 이제 교대하러 갑니다. 내일 아침에 여기서 봅시다.",
+      "expression": "default",
+      "effects": [],
+      "next": "CONTINUE",
+      "player_visible": true,
+      "speaker": "바둑이",
+      "operations": []
+    },
+    "MS14_D05_S05_L9502": {
+      "id": "MS14_D05_S05_L9502",
+      "kind": "action",
+      "text": "바둑이는 솜이네 밤 교대로 돌아간다. 아빠와 다람만 여관으로 간다.",
+      "expression": "default",
+      "effects": [
+        "badugi.location=somi_house"
+      ],
+      "next": "CONTINUE",
+      "player_visible": false,
+      "operations": [
+        {
+          "op": "set",
+          "field": "badugi.location",
+          "value": "somi_house"
+        }
+      ]
     }
   },
   "evidence": {
@@ -11225,6 +15928,78 @@
       "variants": {
         "observed": "솜이: 엄마는 할아버지에게 책을 읽어 줬다. 같은 것을 두 번 읽어도 기다려 줬다."
       }
+    },
+    "E19": {
+      "name": "밤이의 제한된 목격",
+      "kind": "증언",
+      "variants": {
+        "observed": "밤이: 전에 강 쪽에서 엄마를 봤다. 언제 어디로 갔는지는 모른다."
+      }
+    },
+    "E20": {
+      "name": "돌목의 최초 진술",
+      "kind": "증언",
+      "variants": {
+        "observed": "돌목의 첫 말: 얼굴은 못 봤다. 검은 것이 털인지 옷인지도 모른다. 붙잡고 허리를 숙였다가 물렸다."
+      }
+    },
+    "E22": {
+      "name": "울타리에서 수거한 천",
+      "kind": "기록",
+      "variants": {
+        "observed": "초소 문 앞 울타리의 회색 천. 걸린 위치와 방향을 그린 뒤 바둑이와 함께 수거했다. 발자국은 겹쳐 있다."
+      }
+    },
+    "E23": {
+      "name": "허락받고 대조한 겉옷",
+      "kind": "기록",
+      "variants": {
+        "observed": "울타리 천과 벗은 겉옷의 찢어진 선, 두 줄 수선실이 이어진다. 천만으로 물린 순간은 알 수 없다."
+      }
+    },
+    "E24": {
+      "name": "네로의 귀가 관찰",
+      "kind": "증언",
+      "variants": {
+        "observed": "네로: 어젯밤 나갔다가 소매가 찢어진 채 돌아왔다. 입에 피가 조금 있었다. 공격 장면은 보지 못했다."
+      }
+    },
+    "E25": {
+      "name": "돌목의 재확인 진술",
+      "kind": "증언",
+      "variants": {
+        "observed": "돌목: 뒤에서 팔을 잡았고, 멈추지 않아 붙잡고 있었다. 돌아서다가 물렸다."
+      }
+    },
+    "E26": {
+      "name": "밤이 혐의 정정 기록",
+      "kind": "기록",
+      "variants": {
+        "observed": "밤이가 물었다는 걸 본 사람은 없다. 다른 사람의 옷이 울타리 천과 맞는다. 밤이를 붙잡아 두지 않는다."
+      }
+    },
+    "E27": {
+      "name": "엄마의 경고 편지",
+      "kind": "기록",
+      "variants": {
+        "observed": "“당신과 다람이를 부른 적 없어. 그 편지는 내가 쓴 게 아니야. 나를 찾는 곳이나 이 편지 이야기를 여관에 말하지 마. 당장 만나러 내려갈 수 없어. 초롱에게 답을 맡겨 줘. 먹을 것과 마른 천이 필요해. 다람이 손은 괜찮아? 겨울이면 또 트는데.”"
+      },
+      "private": true
+    },
+    "E28": {
+      "name": "엄마에게 쓰는 답장",
+      "kind": "기록",
+      "variants": {
+        "observed": "“편지 받았어. 다람이는 나와 함께 있어. 여관에 말하지 않을게. 먹을 것과 천을 준비할게. 안전하게 만날 방법과 지금 있는 곳을 알려 줘. 답은 초롱에게.”"
+      },
+      "private": true
+    },
+    "E29": {
+      "name": "다음 날 아침 보호 약속",
+      "kind": "기록",
+      "variants": {
+        "observed": "내일 아침, 식당 앞자리에서 바둑이와 다람이 함께 기다린다. 순찰 전까지 아빠가 안 오면 둘이 초소로 간다. 종일 보호 약속은 아니다."
+      }
     }
   },
   "scenes": {
@@ -11312,6 +16087,46 @@
       "title": "1. 솜이네 골목 / 닫힌 뒷문",
       "location": "4일 아침 / 조건부노동현장→솜이네문",
       "day": 4
+    },
+    "MS14_D04_S02": {
+      "title": "2. 처마 / 도토리 세 개",
+      "location": "4일 낮 / 광장처마→오후방문후퇴",
+      "day": 4
+    },
+    "MS14_D04_S03": {
+      "title": "3. 저녁 초소 뒤 / 비명",
+      "location": "4일 저녁 / 초소뒷길",
+      "day": 4
+    },
+    "MS14_D04_S04": {
+      "title": "4. 같은 밤 / 잘못 적은 키",
+      "location": "4일 밤 / 밝은초소→문앞울타리→식당",
+      "day": 4
+    },
+    "MS14_D05_S01": {
+      "title": "1. 솜이네 / 손바닥",
+      "location": "5일 아침 / 솜이네안",
+      "day": 5
+    },
+    "MS14_D05_S02": {
+      "title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "location": "5일 오전 / 솜이네→진료소문→초소",
+      "day": 5
+    },
+    "MS14_D05_S03": {
+      "title": "3. 초소 / 사라지지 않는 상처",
+      "location": "5일 낮 / 초소밤이혐의검증",
+      "day": 5
+    },
+    "MS14_D05_S04": {
+      "title": "4. 점심 무렵 / 이제 도착한 경고",
+      "location": "5일 점심무렵 / 초소앞바람막힌곳",
+      "day": 5
+    },
+    "MS14_D05_S05": {
+      "title": "5. 저녁 / 맡긴다는 말의 무게",
+      "location": "5일 저녁 / 솜이네→식당→같은복도→13호",
+      "day": 5
     }
   }
 }

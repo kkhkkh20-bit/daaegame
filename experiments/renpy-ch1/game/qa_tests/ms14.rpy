@@ -23,12 +23,15 @@ init 900 python:
                 elif key=="afternoon":index=0 if afternoon=="shelter" else 1
                 elif key=="stone_choice":index=stone
                 elif key=="custody_choice":index=custody
+                elif key=="d4_field":index=next((i for i,k in enumerate(("fence","tracks","bucket")) if not state["values"]["d4_"+k+"_seen"]),3)
+                elif key=="d5_rebuttal_menu":index=1
+                elif key=="d5_review_choice":index=1
                 state=ms14_rt.choose(state,node,index)
             elif node["kind"]=="block":
                 for rid in node["records"][state["cursor"]:]:state=ms14_rt.finish_record(state,MS14_DATA["records"][rid])
                 state=ms14_rt.enter(state,node["next"])
             elif node["kind"]=="branch":
-                state=ms14_rt.enter(state,node["yes"] if state["values"][node["field"]]==node["value"] else node["no"])
+                state=ms14_rt.enter(state,ms14_rt.branch_target(state,node))
             elif node["kind"]=="mark":state=ms14_rt.enter(ms14_rt.apply(state,key,node["operations"]),node["next"])
             elif node["kind"]=="read":state=ms14_rt.enter(state,node["next"])
             else:raise Exception("QA unexpected route: "+key)
@@ -83,6 +86,7 @@ label ms14_qa_gate_setup:
     jump expression "ms14_qa_gate_enter"
 label ms14_qa_gate_enter:
     call ms14_qa_at("gate_investigate")
+    return
 
 testcase ms14_present:
     pause 2.0
@@ -100,6 +104,7 @@ label ms14_qa_present_setup:
     # the captured production screen for this UI check, leaving legacy tests alone.
     $ renpy.display.screen.screens[("r13_book",None)] = MS14_QA_REAL_BOOK
     call ms14_qa_at("trial_latch")
+    return
 
 testcase ms14_somi:
     pause 2.0
@@ -114,6 +119,7 @@ testcase ms14_somi:
 
 label ms14_qa_somi_setup:
     call ms14_qa_at("somi4","nero",0,1)
+    return
 
 testcase ms14_skip_save:
     pause 2.0

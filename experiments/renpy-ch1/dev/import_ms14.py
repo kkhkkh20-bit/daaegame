@@ -211,8 +211,77 @@ block('nero4',4,1,3,'nero4_route')
 branch('nero4_route','nero_met_day2',True,'nero4_again','nero4_first')
 block('nero4_again',4,1,4,'somi4');block('nero4_first',4,1,5,'nero4_help')
 gate('nero4_help',sid(4,1),'물통을 바꾸고 침구를 함께 짠다', 'nero4_work')
-block('nero4_work',4,1,6,'somi4');block('somi4',4,1,7,'review_end')
-nodes['review_end']=dict(kind='end',scene=sid(4,1))
+block('nero4_work',4,1,6,'somi4');block('somi4',4,1,7,'d4_depart')
+
+# Days 4-5: source actions are explicit inputs. No guessed suspect, witness or timer.
+gate('d4_depart',sid(4,1),'광장으로 돌아간다','d4_eaves')
+block('d4_eaves',4,2,1,'d4_portrait_offer',stop='L0016')
+gate('d4_portrait_offer',sid(4,2),'초상을 기대 놓고 물러난다','d4_bami')
+block('d4_bami',4,2,1,'d4_afternoon_visit',start='L0016',stop='L0029')
+gate('d4_afternoon_visit',sid(4,2),'오후에 솜이네를 다시 찾는다','d4_visit_declined')
+block('d4_visit_declined',4,2,1,'d4_gate_cry',start='L0029')
+block('d4_gate_cry',4,3,1,'d4_light_observe')
+gate('d4_light_observe',sid(4,3),'다람을 뒤에 세우고 살핀다','d4_first_statement')
+block('d4_first_statement',4,3,2,'d4_hear_bami')
+block('d4_hear_bami',4,4,1,'d4_field',stop='L0033')
+choice('d4_field',sid(4,4),'초소 불빛 안에서 살핀다',[
+    ('울타리의 천을 본다','d4_seen_fence'),('겹친 발자국을 본다','d4_seen_tracks'),
+    ('엎어진 양동이를 본다','d4_seen_bucket'),
+    ('관찰을 정리한다','d4_field_talk',[['state','d4_fence_seen',True],['state','d4_tracks_seen',True],['state','d4_bucket_seen',True]])])
+for key in ('fence','tracks','bucket'):
+    nodes['d4_seen_'+key]=dict(kind='mark',scene=sid(4,4),effects=['d4_'+key+'_seen=true'],next='d4_field')
+block('d4_field_talk',4,4,2,'d4_collect_input')
+gate('d4_collect_input',sid(4,4),'위치를 그리고 바둑이를 부른다','d4_collect')
+block('d4_collect',4,4,3,'d4_diner',stop='L0051')
+block('d4_diner',4,4,3,'d4_box_news',start='L0051',stop='L0060')
+block('d4_box_news',4,4,3,'sleep4',start='L0060')
+gate('sleep4',sid(4,4),'관찰과 추측을 나눠 적고 잔다','day5')
+nodes['sleep4']['options'][0]['effects']=['day=5']
+
+block('day5',5,1,1,'d5_enter',stop='L0008')
+gate('d5_enter',sid(5,1),'솜이의 동의를 받고 들어간다','d5_inside')
+block('d5_inside',5,1,1,'d5_wait',start='L0008')
+gate('d5_wait',sid(5,1),'기다렸다가 옷을 확인한다','d5_consent')
+block('d5_consent',5,2,1,'d5_cloth_input')
+gate('d5_cloth_input',sid(5,2),'허락받은 옷과 천을 나란히 본다','d5_cloth_compare')
+block('d5_cloth_compare',5,2,2,'d5_clinic_handover',stop='L0029')
+block('d5_clinic_handover',5,2,2,'d5_gate_visit',start='L0029')
+gate('d5_gate_visit',sid(5,2),'돌목의 말을 다시 확인한다','d5_gate_open')
+block('d5_gate_open',5,3,1,'d5_rebuttal_menu')
+choice('d5_rebuttal_menu',sid(5,3),'밤이를 붙잡아 둘 근거를 확인한다',[
+    ('키가 작으니 불가능하다고 한다','d5_height_wrong'),('자료를 함께 제시한다','d5_proof'),
+    ('힌트를 생각한다','d5_hint')])
+block('d5_height_wrong',5,3,3,'d5_rebuttal_menu')
+proof('d5_proof',sid(5,3),'최초 진술과 현장·귀가 관찰을 제시한다',['E20','E22','E23','E24'],
+    'd5_bami_cleared','d5_wrong','d5_hint')
+block('d5_wrong',5,3,5,'d5_rebuttal_menu');block('d5_hint',5,3,6,'d5_rebuttal_menu')
+block('d5_bami_cleared',5,3,4,'d5_chorong')
+block('d5_chorong',5,4,1,'d5_open_letter',stop='L0005')
+gate('d5_open_letter',sid(5,4),'바람을 피해 봉투를 연다','d5_warning')
+block('d5_warning',5,4,1,'d5_warning_compare',start='L0005')
+proof('d5_warning_compare',sid(5,4),'초대 편지와 답장을 비교한다',['E01','E27'],'d5_warning_contrast',None,None)
+block('d5_warning_contrast',5,4,2,'d5_review_choice')
+choice('d5_review_choice',sid(5,4),'앞서 들은 말도 다시 볼까?',[
+    ('여관과 연락에 관한 말을 다시 본다','d5_review_day1'),('지금의 편지 이야기를 이어간다','d5_warning_talk')])
+block('d5_review_day1',5,4,3,'d5_warning_talk')
+block('d5_warning_talk',5,4,4,'d5_reply_input',stop='L0027')
+gate('d5_reply_input',sid(5,4),'함께 답장을 쓴다','d5_reply')
+block('d5_reply',5,4,4,'d5_reply_handover',start='L0027',stop='L9501')
+gate('d5_reply_handover',sid(5,4),'초롱에게 직접 답장을 건넨다','d5_reply_given')
+block('d5_reply_given',5,4,4,'d5_water_return',start='L9501')
+gate('d5_water_return',sid(5,4),'솜이네에 물통을 돌려준다','d5_night_visit')
+block('d5_night_visit',5,5,1,'d5_diner_guard',stop='L0018')
+block('d5_diner_guard',5,5,1,'d5_inn_lobby',start='L0018',stop='L0027')
+block('d5_inn_lobby',5,5,1,'d5_hall',start='L0027',stop='L0033')
+block('d5_hall',5,5,1,'d5_lock_input',start='L0033',stop='L0038')
+gate('d5_lock_input',sid(5,5),'걸쇠와 창문 잠금을 확인한다','d5_safety')
+block('d5_safety',5,5,1,'d5_blanket_route',start='L0038')
+branch('d5_blanket_route','carried_dry_blankets',2,'d5_pack_blankets','d5_no_blankets')
+nodes['d5_blanket_route']['otherwise_value']=0
+block('d5_pack_blankets',5,5,2,'d5_cookie');block('d5_no_blankets',5,5,3,'d5_cookie')
+block('d5_cookie',5,5,4,'sleep5')
+gate('sleep5',sid(5,5),'아침 일정을 정하고 잠든다','review_end')
+nodes['review_end']=dict(kind='end',scene=sid(5,5))
 
 # Only known, exact effects are compiled. Author natural-language guards are retained as provenance.
 def operation(text):
@@ -238,9 +307,12 @@ export_records={rid:dict(records[rid],operations=[operation(e) for e in records[
 
 # Evidence is namespaced, so older saves and their E01..E35 meanings remain intact.
 names={'E01':'초대 편지','E02':'초소 처리 명단','E03':'가족 방문 신청 원본','E04':'겨울철 입장 규칙','E05':'정정된 입장 기록','E06':'방의 메모','E07':'초대 봉투 접수 기록','E08':'3번 등의 상태','E09':'엄마의 초상','E10':'빈 받침과 자국','E11':'초롱의 점검장','E12':'공구 대여 쪽지','E13':'우박의 측정지','E14':'실룩의 운반표','E15':'창고의 3번 돌','E16':'백 부인의 매입 장부','E17':'실룩의 걸쇠 진술','E18':'솜이의 이야기','E30':'책상 아래 보따리','E31':'네로의 공급 경로','E32':'안쪽 받침의 칼끝 파편','E33':'동의받고 대조한 칼','E34':'실룩의 작업표','E35':'가족 침구 예약'}
+names.update(E19='밤이의 제한된 목격',E20='돌목의 최초 진술',E22='울타리에서 수거한 천',E23='허락받고 대조한 겉옷',
+    E24='네로의 귀가 관찰',E25='돌목의 재확인 진술',E26='밤이 혐의 정정 기록',
+    E27='엄마의 경고 편지',E28='엄마에게 쓰는 답장',E29='다음 날 아침 보호 약속')
 evidence={}
 for s in story['scenes']:
-    if s['day']>4:continue
+    if s['day']>5:continue
     for b in s['blocks']:
         for i,r in enumerate(b['records']):
             for text in r['effects']:
@@ -256,12 +328,18 @@ for key in names:
 evidence['E17']['variants']['observed']=records[line(3,5,9102)]['text']
 evidence['E35']['variants']['reserved']=records[line(2,4,9102)]['text']
 evidence['E09']['variants']['complete']=records[line(3,1,9101)]['text']
+evidence['E26']['variants']['observed']=records[line(5,3,9102)]['text']
+for key in ('E19','E20','E24','E25'):evidence[key]['kind']='증언'
+for key in ('E27','E28'):evidence[key]['private']=True
 
 initial=dict(day=1,carriage_stopped=False,father_with_daram=True,piko_sheltered=False,piko_alive=True,portrait='none',gate_registered=False,gate_basis_proven=False,reason_heard=False,purpose_difference_known=False,invitation_author='unknown',mother_warning_received=False,public_stones='with_baek',silluk_status='free',silluk_labor_transfer_known=False,unverified_stones_status='with_baek',nero_bedding_reserved=False,carried_dry_blankets=0,bami_status='free',musoe_alive=True,mother_box_checked_day2=False,nero_met_day2=False,nero_supply_route_known=False,under_desk_checked=False,lamp_theft_supported=False,nero_contact_lead=False,box_rechecked_day2=False,rumor_not_eyewitness=False,inn_information_hub_risk_known=False,K01a=False,K01b=False,K05=False)
 for i in range(4):initial['lamp_part_'+str(i)]=False
+initial.update(d4_fence_seen=False,d4_tracks_seen=False,d4_bucket_seen=False,
+    afternoon_visit_declined=False,somi_entry_consent=False,mother_denies_invitation=False,
+    supply_contact_pending=False,family_safety_changed=False)
 
-result=dict(version=story['version'],scope='D01-D03 + D04 S01 pilot',source_sha256=hashlib.sha256(story_path.read_bytes()).hexdigest(),initial=initial,nodes=nodes,records=export_records,evidence=evidence,
-    scenes={key:dict(title=s['title'],location=s['location'],day=s['day']) for key,s in scenes.items() if s['day']<=3 or key==sid(4,1)})
+result=dict(version=story['version'],runtime_schema=2,scope='D01-D05',source_sha256=hashlib.sha256(story_path.read_bytes()).hexdigest(),initial=initial,nodes=nodes,records=export_records,evidence=evidence,
+    scenes={key:dict(title=s['title'],location=s['location'],day=s['day']) for key,s in scenes.items() if s['day']<=5})
 (DATA/'route.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
 print('Compiled',len(nodes),'nodes,',len(export_records),'records;',len(story['scenes']),'source scenes preserved')
 
@@ -282,11 +360,15 @@ def add(key, path, role, status='existing_art_reused'):
 for key,file in dict(carriage='carriage-empty-winter.webp',gate='gate-morning.webp',room='wide-room13-before-morning.webp',
         inn='inn-morning.webp',square='square.webp',post='post.webp',dining='wide-dining-morning.webp',
         stable='wide-stable-afternoon.webp',clinic='ready-clinic0177-morning.webp',workshop='workshop.webp',
-        store='ready-store0177-morning.webp',forest='wide-forest-morning.webp').items():
+        store='ready-store0177-morning.webp',forest='wide-forest-morning.webp',
+        somi_inside='wide-somi-home-afternoon.webp',hall='wide-hall-before-morning.webp',
+        guardroom='ready-facility0177-morning.webp').items():
     add(key,BASE/'reuse/backgrounds'/file,'background')
 for key,file in dict(bundle='D01_open_bundle.png',box='D02_exchange_box_empty.png',blanket_ochre='D11_blanket_ochre.png',blanket_teal='D11_blanket_teal.png').items():
     add(key,PROPS/'assets_native'/file,'prop','source_preserving_review_candidate')
 add('family',BASE/'family/D01_family_drawing_three_arms.png','prop','original_crayon_media_preserved')
+add('warning_private',SOURCE/'03_검수교체/replacement_assets/documents/D05_warning_private.png',
+    'family_only_document','exact_text_guarded_review_candidate')
 for key,file in dict(portrait_complete='D03_mother_portrait_completed.png',portrait_unfinished='D03_mother_portrait_unfinished.png',portrait_child='D03_mother_portrait_child_stroke.png').items():
     add(key,BASE/'branches'/file,'prop','branch_guarded_review_candidate')
 (ROOT/'game/ms14/art.json').write_text(json.dumps(entries,ensure_ascii=False,indent=2)+'\n')

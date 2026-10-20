@@ -135,7 +135,7 @@ init 68 python:
         owned=(store.room13 or {}).get("evidence",[])
         store.r13_present_priority=(target,tuple(k for k in keys if k in owned))
     def r13_present_entries(entries,target):
-        pending=getattr(store,"r13_present_priority",None)
+        entries=ms14_present_entries(entries) if ms14 else entries; pending=getattr(store,"r13_present_priority",None)
         keys=pending[1] if pending and pending[0]==target else ()
         return [k for k in keys if k in entries]+[k for k in entries if k not in keys]
     def r13_present_selection(entries,detail,page):

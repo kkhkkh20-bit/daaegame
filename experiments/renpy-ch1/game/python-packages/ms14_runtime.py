@@ -7,8 +7,55 @@ from copy import deepcopy
 
 
 def new_state(data):
-    return dict(node='start', cursor=0, values=deepcopy(data['initial']),
+    return dict(schema=data.get('runtime_schema',1),node='start', cursor=0, values=deepcopy(data['initial']),
+                presentation=dict(music_silent=False,cues=[]),
                 evidence={}, applied=[], selected=[], last_record=None)
+
+
+def upgrade(state, data):
+    """Add declared initial fields to v1 saves; never recompute past choices/effects."""
+    if state.get('schema',1) == data.get('runtime_schema',1):
+        return state
+    if state.get('schema',1) != 1 or data.get('runtime_schema',1) != 2:
+        raise ValueError('Unsupported MS14 save schema')
+    out=deepcopy(state)
+    for key,value in data['initial'].items():
+        if key not in out['values']:out['values'][key]=deepcopy(value)
+    out.setdefault('presentation',dict(music_silent=False,cues=[]))
+    out['schema']=2
+    return out
+
+
+def silence(state):
+    out=deepcopy(state)
+    presentation=out.setdefault('presentation',dict(music_silent=False,cues=[]))
+    cue='MS14_D05_S04_L0006:first_sentence_done'
+    if cue not in presentation['cues']:presentation['cues'].append(cue)
+    presentation['music_silent']=True
+    return out
+
+
+def warning_parts(text):
+    anchor='당신과 다람이를 부른 적 없어.'
+    if not text.startswith('“'+anchor):raise ValueError('Warning anchor changed')
+    index=len('“'+anchor)
+    return text[:index],text[index:]
+
+
+def presentable(data, state, key):
+    """Private documents can be picked only for the family's private comparison."""
+    if key not in state['evidence']:return False
+    return not data['evidence'][key].get('private',False) or state['node']=='d5_warning_compare'
+
+
+def branch_target(state, node):
+    if node['field'] not in state['values']:
+        raise ValueError('Missing compiled branch field: '+node['field'])
+    value=state['values'][node['field']]
+    if value==node['value']:return node['yes']
+    if 'otherwise_value' in node and value!=node['otherwise_value']:
+        raise ValueError('No authored branch for '+node['field']+'='+str(value))
+    return node['no']
 
 
 def allowed(state, guards):
