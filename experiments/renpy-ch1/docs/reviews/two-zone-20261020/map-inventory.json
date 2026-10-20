@@ -1,0 +1,2599 @@
+[
+  {
+    "location": "altar",
+    "name": "북쪽 산길 · 숲속 제단",
+    "scene_key": "r13_altar",
+    "width": 1920,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      640
+    ],
+    "overlap": 640,
+    "missing_width": 640,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "initial_x": 320,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-ready-altar0177-afternoon.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-ready-altar0177-evening.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-ready-altar0177-morning.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      }
+    ],
+    "objects": {
+      "valve": [
+        1110,
+        274,
+        133,
+        112
+      ],
+      "offerings": [
+        1134,
+        495,
+        293,
+        170
+      ],
+      "ledger": [
+        514,
+        277,
+        66,
+        27
+      ],
+      "supplies": [
+        392,
+        253,
+        125,
+        138
+      ],
+      "village_view": [
+        1434,
+        347,
+        254,
+        155
+      ],
+      "approach": [
+        322,
+        414,
+        395,
+        112
+      ]
+    },
+    "late_objects": {},
+    "slots": [
+      [
+        806,
+        628,
+        248,
+        "floor"
+      ],
+      [
+        1069,
+        666,
+        253,
+        "floor"
+      ],
+      [
+        534,
+        661,
+        253,
+        "floor"
+      ],
+      [
+        338,
+        553,
+        211,
+        "floor"
+      ],
+      [
+        947,
+        483,
+        192,
+        "floor"
+      ],
+      [
+        1247,
+        694,
+        253,
+        "floor"
+      ]
+    ],
+    "requires_new_art": true,
+    "note": "Existing continuous source; fewer than two full views"
+  },
+  {
+    "location": "ancient",
+    "name": "돌을 만들던 옛 시설",
+    "scene_key": "wide_ancient",
+    "width": 2160,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      880
+    ],
+    "overlap": 400,
+    "missing_width": 400,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "initial_x": 440,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-wide-ancient-day.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      }
+    ],
+    "objects": {},
+    "late_objects": {},
+    "slots": [
+      [
+        760,
+        702,
+        256,
+        "waiting"
+      ],
+      [
+        1060,
+        690,
+        250,
+        "waiting"
+      ],
+      [
+        1360,
+        698,
+        254,
+        "waiting"
+      ]
+    ],
+    "requires_new_art": true,
+    "note": "Existing continuous source; fewer than two full views"
+  },
+  {
+    "location": "clinic",
+    "name": "임시 진료실",
+    "scene_key": "r13_clinic",
+    "width": 1920,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      640
+    ],
+    "overlap": 640,
+    "missing_width": 640,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "initial_x": 320,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-ready-clinic0177-afternoon.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-ready-clinic0177-evening.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-ready-clinic0177-morning.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      }
+    ],
+    "objects": {
+      "notes": [
+        625,
+        463,
+        316,
+        79
+      ],
+      "bed": [
+        1012,
+        322,
+        431,
+        221
+      ],
+      "basin": [
+        598,
+        344,
+        142,
+        60
+      ],
+      "bottles": [
+        322,
+        85,
+        179,
+        302
+      ],
+      "curtain": [
+        1112,
+        78,
+        124,
+        296
+      ]
+    },
+    "late_objects": {},
+    "slots": [
+      [
+        1359,
+        647,
+        262,
+        "floor"
+      ],
+      [
+        1697,
+        652,
+        244,
+        "floor"
+      ],
+      [
+        1125,
+        684,
+        239,
+        "floor"
+      ],
+      [
+        272,
+        656,
+        244,
+        "floor"
+      ],
+      [
+        1538,
+        689,
+        253,
+        "floor"
+      ]
+    ],
+    "requires_new_art": true,
+    "note": "Existing continuous source; fewer than two full views"
+  },
+  {
+    "location": "dining",
+    "name": "여관 식당",
+    "scene_key": "council",
+    "width": 2160,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      880
+    ],
+    "overlap": 400,
+    "missing_width": 400,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "initial_x": 0,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-wide-dining-afternoon.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-wide-dining-evening.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-wide-dining-morning.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      }
+    ],
+    "objects": {
+      "table": [
+        946,
+        480,
+        1190,
+        130
+      ],
+      "mittens": [
+        1517,
+        0,
+        103,
+        186
+      ],
+      "blankets": [
+        731,
+        437,
+        156,
+        247
+      ],
+      "breadboard": [
+        1303,
+        483,
+        290,
+        98
+      ],
+      "pot": [
+        1215,
+        410,
+        200,
+        124
+      ]
+    },
+    "late_objects": {},
+    "slots": [
+      [
+        325,
+        655,
+        260,
+        "floor"
+      ],
+      [
+        540,
+        680,
+        260,
+        "floor"
+      ],
+      [
+        135,
+        690,
+        265,
+        "floor"
+      ],
+      [
+        170,
+        535,
+        190,
+        "floor"
+      ],
+      [
+        385,
+        550,
+        205,
+        "floor"
+      ],
+      [
+        600,
+        550,
+        205,
+        "floor"
+      ]
+    ],
+    "requires_new_art": true,
+    "note": "Existing continuous source; fewer than two full views"
+  },
+  {
+    "location": "facility",
+    "name": "북쪽 보호시설 접견실",
+    "scene_key": "r13_facility",
+    "width": 1920,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      640
+    ],
+    "overlap": 640,
+    "missing_width": 640,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "initial_x": 320,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-ready-facility0177-afternoon.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-ready-facility0177-evening.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-ready-facility0177-morning.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      }
+    ],
+    "objects": {
+      "notice": [
+        1357,
+        112,
+        122,
+        219
+      ],
+      "sidegate": [
+        434,
+        116,
+        216,
+        406
+      ],
+      "blankets": [
+        0,
+        412,
+        293,
+        208
+      ],
+      "mug": [
+        963,
+        377,
+        59,
+        34
+      ]
+    },
+    "late_objects": {},
+    "slots": [
+      [
+        638,
+        668,
+        258,
+        "floor"
+      ],
+      [
+        1697,
+        666,
+        253,
+        "floor"
+      ],
+      [
+        1003,
+        701,
+        258,
+        "floor"
+      ],
+      [
+        394,
+        680,
+        244,
+        "floor"
+      ],
+      [
+        1434,
+        698,
+        244,
+        "floor"
+      ]
+    ],
+    "requires_new_art": true,
+    "note": "Existing continuous source; fewer than two full views"
+  },
+  {
+    "location": "forest",
+    "name": "마을 서쪽 · 길 없는 숲",
+    "scene_key": "r13_forest",
+    "width": 2160,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      880
+    ],
+    "overlap": 400,
+    "missing_width": 400,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "initial_x": 440,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-wide-forest-afternoon.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-wide-forest-evening.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-wide-forest-morning.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      }
+    ],
+    "objects": {
+      "forest_roots": [
+        108,
+        454,
+        650,
+        194
+      ],
+      "forest_trunk": [
+        194,
+        0,
+        281,
+        454
+      ],
+      "forest_rock": [
+        1134,
+        605,
+        140,
+        65
+      ],
+      "forest_branches": [
+        1274,
+        0,
+        346,
+        324
+      ]
+    },
+    "late_objects": {},
+    "slots": [
+      [
+        1000,
+        700,
+        250,
+        "floor"
+      ],
+      [
+        1450,
+        706,
+        255,
+        "floor"
+      ],
+      [
+        1900,
+        712,
+        258,
+        "floor"
+      ]
+    ],
+    "requires_new_art": true,
+    "note": "Existing continuous source; fewer than two full views"
+  },
+  {
+    "location": "gate",
+    "name": "눈에 막힌 입구",
+    "scene_key": "winter",
+    "width": 1920,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      640
+    ],
+    "overlap": 640,
+    "missing_width": 640,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "initial_x": 320,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-ready-gate0173-afternoon.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-ready-gate0173-evening.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-ready-gate0173-morning.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      }
+    ],
+    "objects": {
+      "booth": [
+        1420,
+        398,
+        110,
+        52
+      ],
+      "ledger": [
+        1380,
+        440,
+        126,
+        30
+      ],
+      "rules": [
+        666,
+        313,
+        75,
+        114
+      ],
+      "road": [
+        216,
+        469,
+        413,
+        127
+      ],
+      "bundles": [
+        370,
+        396,
+        178,
+        75
+      ],
+      "shovel": [
+        760,
+        414,
+        82,
+        177
+      ],
+      "crates": [
+        1288,
+        534,
+        206,
+        100
+      ],
+      "woodpile": [
+        1560,
+        437,
+        125,
+        111
+      ]
+    },
+    "late_objects": {},
+    "slots": [
+      [
+        920,
+        620,
+        230,
+        "floor"
+      ],
+      [
+        1110,
+        651,
+        245,
+        "floor"
+      ],
+      [
+        780,
+        652,
+        230,
+        "floor"
+      ],
+      [
+        1780,
+        635,
+        230,
+        "floor"
+      ],
+      [
+        1030,
+        570,
+        200,
+        "floor"
+      ],
+      [
+        1250,
+        690,
+        245,
+        "floor"
+      ],
+      [
+        390,
+        690,
+        240,
+        "floor"
+      ],
+      [
+        720,
+        700,
+        230,
+        "floor"
+      ]
+    ],
+    "requires_new_art": true,
+    "note": "Existing continuous source; fewer than two full views"
+  },
+  {
+    "location": "greenhouse",
+    "name": "폐온실의 지하 작업실",
+    "scene_key": "r13_greenhouse",
+    "width": 1920,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      640
+    ],
+    "overlap": 640,
+    "missing_width": 640,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "initial_x": 320,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-ready-greenhouse0177-afternoon.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-ready-greenhouse0177-evening.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-ready-greenhouse0177-morning.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      }
+    ],
+    "objects": {
+      "cloth": [
+        1322,
+        370,
+        139,
+        98
+      ],
+      "signal": [
+        442,
+        198,
+        86,
+        116
+      ],
+      "pots": [
+        1121,
+        208,
+        342,
+        193
+      ],
+      "tools": [
+        303,
+        194,
+        133,
+        119
+      ],
+      "watercan": [
+        1399,
+        483,
+        112,
+        122
+      ]
+    },
+    "late_objects": {},
+    "slots": [
+      [
+        1650,
+        661,
+        262,
+        "floor"
+      ],
+      [
+        328,
+        656,
+        239,
+        "floor"
+      ],
+      [
+        1369,
+        696,
+        253,
+        "floor"
+      ],
+      [
+        131,
+        647,
+        230,
+        "floor"
+      ],
+      [
+        1828,
+        689,
+        216,
+        "floor"
+      ]
+    ],
+    "requires_new_art": true,
+    "note": "Existing continuous source; fewer than two full views"
+  },
+  {
+    "location": "guestroom",
+    "name": "여관 2층 · 임시 객실",
+    "scene_key": "guestroom",
+    "width": 1280,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      0
+    ],
+    "overlap": 1280,
+    "missing_width": 1280,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "initial_x": 0,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-room-before-afternoon.webp",
+        "native_size": [
+          1672,
+          941
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-room-before-evening.webp",
+        "native_size": [
+          1672,
+          941
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-room-before-morning.webp",
+        "native_size": [
+          1672,
+          941
+        ]
+      }
+    ],
+    "objects": {},
+    "late_objects": {},
+    "slots": [],
+    "requires_new_art": true,
+    "note": "No panorama; existing scene fallback"
+  },
+  {
+    "location": "hall",
+    "name": "여관 2층 복도",
+    "scene_key": "hall",
+    "width": 2160,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      880
+    ],
+    "overlap": 400,
+    "missing_width": 400,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "initial_x": 440,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-wide-hall-after-afternoon.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-wide-hall-after-evening.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-wide-hall-after-morning.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-wide-hall-before-afternoon.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-wide-hall-before-evening.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-wide-hall-before-morning.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      }
+    ],
+    "objects": {
+      "rail": [
+        0,
+        215,
+        860,
+        473
+      ],
+      "door": [
+        975,
+        180,
+        245,
+        290
+      ],
+      "towels": [
+        530,
+        466,
+        200,
+        76
+      ],
+      "boots": [
+        861,
+        401,
+        126,
+        88
+      ],
+      "bucket": [
+        1236,
+        335,
+        125,
+        164
+      ],
+      "lamp": [
+        916,
+        192,
+        72,
+        95
+      ]
+    },
+    "late_objects": {},
+    "slots": [
+      [
+        1017,
+        669,
+        255,
+        "waiting"
+      ],
+      [
+        1471,
+        616,
+        238,
+        "waiting"
+      ],
+      [
+        1880,
+        677,
+        260,
+        "waiting"
+      ]
+    ],
+    "requires_new_art": true,
+    "note": "Existing continuous source; fewer than two full views"
+  },
+  {
+    "location": "inn",
+    "name": "여관 접수대",
+    "scene_key": "front",
+    "width": 1920,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      640
+    ],
+    "overlap": 640,
+    "missing_width": 640,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "initial_x": 640,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-panorama-inn-afternoon.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-panorama-inn-evening.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-panorama-inn-morning.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      }
+    ],
+    "objects": {
+      "desk": [
+        1600,
+        440,
+        240,
+        230
+      ],
+      "door": [
+        980,
+        165,
+        131,
+        273
+      ],
+      "keys": [
+        1670,
+        136,
+        150,
+        170
+      ],
+      "register": [
+        1556,
+        355,
+        127,
+        46
+      ],
+      "knitting": [
+        1713,
+        353,
+        134,
+        82
+      ],
+      "coats": [
+        1158,
+        155,
+        121,
+        201
+      ],
+      "cups": [
+        1422,
+        101,
+        180,
+        63
+      ]
+    },
+    "late_objects": {},
+    "slots": [
+      [
+        90,
+        680,
+        260,
+        "waiting"
+      ],
+      [
+        485,
+        706,
+        265,
+        "waiting"
+      ],
+      [
+        890,
+        620,
+        238,
+        "waiting"
+      ],
+      [
+        1080,
+        540,
+        216,
+        "waiting"
+      ],
+      [
+        1260,
+        610,
+        245,
+        "waiting"
+      ],
+      [
+        1090,
+        700,
+        270,
+        "waiting"
+      ]
+    ],
+    "requires_new_art": true,
+    "note": "Existing continuous source; fewer than two full views"
+  },
+  {
+    "location": "kitchen",
+    "name": "여관 1층 · 주방",
+    "scene_key": "kitchen",
+    "width": 2160,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      880
+    ],
+    "overlap": 400,
+    "missing_width": 400,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "initial_x": 440,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-wide-kitchen-afternoon.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-wide-kitchen-evening.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-wide-kitchen-morning.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      }
+    ],
+    "objects": {
+      "shelf": [
+        743,
+        363,
+        68,
+        36
+      ],
+      "stove": [
+        1589,
+        179,
+        495,
+        427
+      ],
+      "rear": [
+        204,
+        61,
+        300,
+        559
+      ],
+      "vegetables": [
+        780,
+        463,
+        446,
+        142
+      ],
+      "flour": [
+        1290,
+        429,
+        153,
+        146
+      ],
+      "dishes": [
+        656,
+        132,
+        234,
+        134
+      ],
+      "herbs": [
+        929,
+        0,
+        225,
+        188
+      ],
+      "ladles": [
+        1044,
+        183,
+        150,
+        160
+      ]
+    },
+    "late_objects": {},
+    "slots": [
+      [
+        176,
+        684,
+        255,
+        "waiting"
+      ],
+      [
+        475,
+        672,
+        250,
+        "waiting"
+      ]
+    ],
+    "requires_new_art": true,
+    "note": "Existing continuous source; fewer than two full views"
+  },
+  {
+    "location": "market",
+    "name": "여관 앞 · 장터",
+    "scene_key": "r13_market",
+    "width": 2160,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      880
+    ],
+    "overlap": 400,
+    "missing_width": 400,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "initial_x": 440,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-wide-market-afternoon.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-wide-market-evening.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-wide-market-morning.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      }
+    ],
+    "objects": {
+      "market_produce": [
+        594,
+        389,
+        335,
+        86
+      ],
+      "market_oven": [
+        432,
+        324,
+        108,
+        108
+      ],
+      "market_firewood": [
+        335,
+        443,
+        173,
+        151
+      ],
+      "market_cheese": [
+        1210,
+        346,
+        356,
+        162
+      ],
+      "market_cloth": [
+        1728,
+        400,
+        216,
+        108
+      ],
+      "market_pots": [
+        2030,
+        367,
+        119,
+        140
+      ]
+    },
+    "late_objects": {},
+    "slots": [
+      [
+        900,
+        640,
+        225,
+        "floor"
+      ],
+      [
+        1150,
+        605,
+        205,
+        "floor"
+      ],
+      [
+        1420,
+        655,
+        230,
+        "floor"
+      ],
+      [
+        1650,
+        700,
+        250,
+        "floor"
+      ],
+      [
+        760,
+        705,
+        253,
+        "floor"
+      ],
+      [
+        1040,
+        700,
+        251,
+        "floor"
+      ],
+      [
+        1640,
+        690,
+        246,
+        "floor"
+      ],
+      [
+        1990,
+        705,
+        253,
+        "floor"
+      ],
+      [
+        480,
+        690,
+        246,
+        "floor"
+      ]
+    ],
+    "requires_new_art": true,
+    "note": "Existing continuous source; fewer than two full views"
+  },
+  {
+    "location": "ms14_guardroom",
+    "name": "밝은 초소 안",
+    "scene_key": "winter",
+    "width": 1280,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      0
+    ],
+    "overlap": 1280,
+    "missing_width": 1280,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "initial_x": 0,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-ready-gate0173-afternoon.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-ready-gate0173-evening.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-ready-gate0173-morning.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      }
+    ],
+    "objects": {},
+    "late_objects": {},
+    "slots": [],
+    "requires_new_art": true,
+    "note": "No panorama; existing scene fallback"
+  },
+  {
+    "location": "ms14_somi",
+    "name": "솜이네 골목",
+    "scene_key": "winter",
+    "width": 1280,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      0
+    ],
+    "overlap": 1280,
+    "missing_width": 1280,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "initial_x": 0,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-ready-gate0173-afternoon.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-ready-gate0173-evening.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-ready-gate0173-morning.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      }
+    ],
+    "objects": {},
+    "late_objects": {},
+    "slots": [],
+    "requires_new_art": true,
+    "note": "No panorama; existing scene fallback"
+  },
+  {
+    "location": "ms14_somi_inside",
+    "name": "솜이네 방",
+    "scene_key": "ep_somi_home",
+    "width": 1280,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      0
+    ],
+    "overlap": 1280,
+    "missing_width": 1280,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "initial_x": 0,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-wide-somi-home-afternoon.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      }
+    ],
+    "objects": {},
+    "late_objects": {},
+    "slots": [],
+    "requires_new_art": true,
+    "note": "No panorama; existing scene fallback"
+  },
+  {
+    "location": "ms14_stable",
+    "name": "마구간 앞",
+    "scene_key": "ep_stable",
+    "width": 1280,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      0
+    ],
+    "overlap": 1280,
+    "missing_width": 1280,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "initial_x": 0,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-wide-stable-afternoon.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      }
+    ],
+    "objects": {},
+    "late_objects": {},
+    "slots": [],
+    "requires_new_art": true,
+    "note": "No panorama; existing scene fallback"
+  },
+  {
+    "location": "passage",
+    "name": "13호 뒤 서비스 통로",
+    "scene_key": "winter_passage",
+    "width": 2160,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      880
+    ],
+    "overlap": 400,
+    "missing_width": 400,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "initial_x": 440,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-wide-passage-afternoon.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-wide-passage-evening.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-wide-passage-morning.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      }
+    ],
+    "objects": {
+      "steps": [
+        696,
+        279,
+        410,
+        265
+      ],
+      "handle": [
+        1534,
+        135,
+        217,
+        247
+      ],
+      "linen": [
+        0,
+        0,
+        360,
+        360
+      ],
+      "mop": [
+        356,
+        149,
+        198,
+        530
+      ],
+      "baskets": [
+        0,
+        409,
+        396,
+        310
+      ]
+    },
+    "late_objects": {},
+    "slots": [
+      [
+        703,
+        672,
+        240,
+        "waiting"
+      ],
+      [
+        1248,
+        660,
+        230,
+        "waiting"
+      ],
+      [
+        1802,
+        687,
+        245,
+        "waiting"
+      ]
+    ],
+    "requires_new_art": true,
+    "note": "Existing continuous source; fewer than two full views"
+  },
+  {
+    "location": "post",
+    "name": "우체국 입구",
+    "scene_key": "winter_post",
+    "width": 2160,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      880
+    ],
+    "overlap": 400,
+    "missing_width": 400,
+    "periods": [
+      "morning"
+    ],
+    "initial_x": 440,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-wide-post-morning.webp",
+        "native_size": [
+          2160,
+          728
+        ]
+      }
+    ],
+    "objects": {
+      "notice": [
+        1602,
+        252,
+        87,
+        116
+      ],
+      "parcels": [
+        1690,
+        328,
+        420,
+        166
+      ],
+      "cup": [
+        2031,
+        469,
+        123,
+        122
+      ],
+      "scarf": [
+        645,
+        396,
+        112,
+        203
+      ],
+      "twine": [
+        1135,
+        282,
+        310,
+        184
+      ]
+    },
+    "late_objects": {},
+    "slots": [
+      [
+        90,
+        675,
+        220,
+        "waiting"
+      ],
+      [
+        285,
+        635,
+        205,
+        "waiting"
+      ],
+      [
+        480,
+        685,
+        230,
+        "waiting"
+      ],
+      [
+        585,
+        712,
+        240,
+        "waiting"
+      ],
+      [
+        870,
+        690,
+        230,
+        "waiting"
+      ],
+      [
+        1060,
+        620,
+        205,
+        "waiting"
+      ]
+    ],
+    "requires_new_art": true,
+    "note": "Existing continuous source; fewer than two full views"
+  },
+  {
+    "location": "river",
+    "name": "마을 아래 · 큰 강가",
+    "scene_key": "r13_river",
+    "width": 2160,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      880
+    ],
+    "overlap": 400,
+    "missing_width": 400,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "initial_x": 440,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-wide-river-afternoon.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-wide-river-evening.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-wide-river-morning.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      }
+    ],
+    "objects": {
+      "river_reeds": [
+        10,
+        410,
+        160,
+        250
+      ],
+      "river_rocks": [
+        162,
+        529,
+        195,
+        80
+      ],
+      "river_ice": [
+        1437,
+        632,
+        330,
+        70
+      ],
+      "river_water": [
+        700,
+        300,
+        700,
+        200
+      ],
+      "river_cliffs": [
+        1717,
+        151,
+        227,
+        119
+      ]
+    },
+    "late_objects": {},
+    "slots": [
+      [
+        260,
+        705,
+        250,
+        "floor"
+      ],
+      [
+        520,
+        712,
+        255,
+        "floor"
+      ],
+      [
+        640,
+        710,
+        256,
+        "floor"
+      ]
+    ],
+    "requires_new_art": true,
+    "note": "Existing continuous source; fewer than two full views"
+  },
+  {
+    "location": "room13",
+    "name": "여관 2층 · 13호실",
+    "scene_key": "room",
+    "width": 2160,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      880
+    ],
+    "overlap": 400,
+    "missing_width": 400,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "initial_x": 440,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-wide-room13-after-afternoon.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-wide-room13-after-evening.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-wide-room13-after-morning.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-wide-room13-before-afternoon.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-wide-room13-before-evening.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-wide-room13-before-morning.webp",
+        "native_size": [
+          2172,
+          724
+        ]
+      }
+    ],
+    "objects": {
+      "bed": [
+        809,
+        337,
+        675,
+        180
+      ],
+      "window": [
+        272,
+        12,
+        293,
+        303
+      ],
+      "boxes": [
+        19,
+        563,
+        490,
+        157
+      ],
+      "under": [
+        842,
+        498,
+        438,
+        57
+      ],
+      "floor": [
+        863,
+        552,
+        215,
+        64
+      ],
+      "books": [
+        1700,
+        375,
+        35,
+        67
+      ],
+      "cup": [
+        321,
+        364,
+        80,
+        66
+      ],
+      "letters": [
+        174,
+        395,
+        124,
+        25
+      ],
+      "notebook": [
+        147,
+        426,
+        210,
+        40
+      ],
+      "coat": [
+        593,
+        351,
+        150,
+        255
+      ],
+      "sewing": [
+        1541,
+        419,
+        150,
+        126
+      ],
+      "socks": [
+        461,
+        285,
+        122,
+        105
+      ],
+      "bedside_books": [
+        883,
+        294,
+        86,
+        33
+      ],
+      "bread": [
+        401,
+        393,
+        95,
+        40
+      ],
+      "family_bundle": [
+        485,
+        585,
+        126,
+        88
+      ]
+    },
+    "late_objects": {
+      "desk": [
+        0,
+        468,
+        620,
+        47
+      ],
+      "mother_note": [
+        160,
+        383,
+        152,
+        49
+      ]
+    },
+    "slots": [
+      [
+        924,
+        675,
+        230,
+        "waiting"
+      ],
+      [
+        1806,
+        645,
+        225,
+        "waiting"
+      ],
+      [
+        1990,
+        691,
+        240,
+        "waiting"
+      ]
+    ],
+    "requires_new_art": true,
+    "note": "Existing continuous source; fewer than two full views"
+  },
+  {
+    "location": "school",
+    "name": "마을 학교",
+    "scene_key": "r13_school",
+    "width": 1800,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      520
+    ],
+    "overlap": 760,
+    "missing_width": 760,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "initial_x": 0,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-panorama-school-afternoon.webp",
+        "native_size": [
+          1983,
+          793
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-panorama-school-evening.webp",
+        "native_size": [
+          1983,
+          793
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-panorama-school-morning.webp",
+        "native_size": [
+          1984,
+          793
+        ]
+      }
+    ],
+    "objects": {
+      "desks": [
+        32,
+        386,
+        702,
+        181
+      ],
+      "stove": [
+        865,
+        399,
+        158,
+        182
+      ],
+      "blankets": [
+        0,
+        482,
+        260,
+        127
+      ],
+      "lessons": [
+        235,
+        419,
+        123,
+        28
+      ],
+      "firewood": [
+        965,
+        470,
+        80,
+        94
+      ]
+    },
+    "late_objects": {},
+    "slots": [
+      [
+        120,
+        525,
+        235,
+        "class_back"
+      ],
+      [
+        309,
+        535,
+        240,
+        "class_back"
+      ],
+      [
+        510,
+        540,
+        240,
+        "class_back"
+      ],
+      [
+        120,
+        695,
+        260,
+        "waiting"
+      ],
+      [
+        397,
+        684,
+        263,
+        "waiting"
+      ],
+      [
+        615,
+        697,
+        272,
+        "waiting"
+      ],
+      [
+        776,
+        600,
+        250,
+        "waiting"
+      ],
+      [
+        1150,
+        520,
+        208,
+        "cloak_back"
+      ],
+      [
+        1365,
+        510,
+        205,
+        "cloak_back"
+      ],
+      [
+        1740,
+        585,
+        233,
+        "waiting"
+      ],
+      [
+        1110,
+        691,
+        258,
+        "waiting"
+      ],
+      [
+        1370,
+        690,
+        269,
+        "waiting"
+      ],
+      [
+        1660,
+        688,
+        277,
+        "waiting"
+      ]
+    ],
+    "requires_new_art": true,
+    "note": "Existing continuous source; fewer than two full views"
+  },
+  {
+    "location": "square",
+    "name": "돌이 있는 광장",
+    "scene_key": "winter_square",
+    "width": 1920,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      640
+    ],
+    "overlap": 640,
+    "missing_width": 640,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "initial_x": 320,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-panorama-square-afternoon.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-panorama-square-evening.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-panorama-square-morning.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      }
+    ],
+    "objects": {
+      "stone": [
+        598,
+        269,
+        170,
+        236
+      ],
+      "offerings": [
+        861,
+        475,
+        121,
+        52
+      ],
+      "lamp": [
+        904,
+        270,
+        187,
+        201
+      ],
+      "stall": [
+        0,
+        278,
+        298,
+        174
+      ],
+      "cart": [
+        326,
+        420,
+        282,
+        144
+      ],
+      "wood": [
+        0,
+        457,
+        147,
+        147
+      ]
+    },
+    "late_objects": {},
+    "slots": [
+      [
+        245,
+        676,
+        255,
+        "floor"
+      ],
+      [
+        475,
+        617,
+        234,
+        "floor"
+      ],
+      [
+        710,
+        580,
+        220,
+        "floor"
+      ],
+      [
+        950,
+        691,
+        265,
+        "floor"
+      ],
+      [
+        1220,
+        667,
+        252,
+        "floor"
+      ],
+      [
+        1470,
+        640,
+        243,
+        "floor"
+      ],
+      [
+        1700,
+        707,
+        269,
+        "floor"
+      ],
+      [
+        1510,
+        714,
+        275,
+        "floor"
+      ],
+      [
+        710,
+        706,
+        270,
+        "floor"
+      ]
+    ],
+    "requires_new_art": true,
+    "note": "Existing continuous source; fewer than two full views"
+  },
+  {
+    "location": "store",
+    "name": "공동 물품 창고",
+    "scene_key": "r13_store",
+    "width": 1920,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      640
+    ],
+    "overlap": 640,
+    "missing_width": 640,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "initial_x": 320,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-ready-store0177-afternoon.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-ready-store0177-evening.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-ready-store0177-morning.webp",
+        "native_size": [
+          2048,
+          768
+        ]
+      }
+    ],
+    "objects": {
+      "ledger": [
+        422,
+        422,
+        338,
+        94
+      ],
+      "sacks": [
+        1359,
+        225,
+        281,
+        291
+      ],
+      "scale": [
+        444,
+        293,
+        243,
+        139
+      ],
+      "burlap": [
+        822,
+        330,
+        163,
+        62
+      ]
+    },
+    "late_objects": {},
+    "slots": [
+      [
+        1116,
+        647,
+        324,
+        "floor"
+      ],
+      [
+        1350,
+        689,
+        354,
+        "floor"
+      ],
+      [
+        216,
+        666,
+        338,
+        "floor"
+      ],
+      [
+        1725,
+        684,
+        351,
+        "floor"
+      ],
+      [
+        975,
+        544,
+        250,
+        "floor"
+      ],
+      [
+        984,
+        703,
+        364,
+        "floor"
+      ],
+      [
+        1519,
+        699,
+        362,
+        "floor"
+      ],
+      [
+        609,
+        708,
+        368,
+        "floor"
+      ],
+      [
+        881,
+        708,
+        368,
+        "floor"
+      ]
+    ],
+    "requires_new_art": true,
+    "note": "Existing continuous source; fewer than two full views"
+  },
+  {
+    "location": "workshop",
+    "name": "수리점",
+    "scene_key": "winter_workshop",
+    "width": 1800,
+    "height": 720,
+    "endpoint_offsets": [
+      0,
+      520
+    ],
+    "overlap": 760,
+    "missing_width": 760,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "initial_x": 0,
+    "sources": [
+      {
+        "file": "assets/room13-pixel-panorama-workshop-afternoon.webp",
+        "native_size": [
+          1983,
+          793
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-panorama-workshop-evening.webp",
+        "native_size": [
+          1983,
+          793
+        ]
+      },
+      {
+        "file": "assets/room13-pixel-panorama-workshop-morning.webp",
+        "native_size": [
+          1983,
+          793
+        ]
+      }
+    ],
+    "objects": {
+      "plans": [
+        696,
+        113,
+        219,
+        203
+      ],
+      "wood": [
+        0,
+        381,
+        173,
+        170
+      ],
+      "axle": [
+        528,
+        360,
+        350,
+        93
+      ],
+      "bolts": [
+        470,
+        438,
+        145,
+        54
+      ],
+      "rag": [
+        789,
+        471,
+        150,
+        117
+      ],
+      "wheel": [
+        835,
+        245,
+        226,
+        241
+      ],
+      "tools": [
+        0,
+        56,
+        237,
+        281
+      ]
+    },
+    "late_objects": {},
+    "slots": [
+      [
+        90,
+        660,
+        270,
+        "floor"
+      ],
+      [
+        270,
+        548,
+        226,
+        "doorfloor"
+      ],
+      [
+        1200,
+        570,
+        220,
+        "floor"
+      ],
+      [
+        1425,
+        580,
+        230,
+        "floor"
+      ],
+      [
+        1120,
+        705,
+        275,
+        "floor"
+      ],
+      [
+        1370,
+        710,
+        280,
+        "floor"
+      ],
+      [
+        1700,
+        705,
+        280,
+        "floor"
+      ],
+      [
+        1750,
+        584,
+        229,
+        "floor"
+      ]
+    ],
+    "requires_new_art": true,
+    "note": "Existing continuous source; fewer than two full views"
+  }
+]

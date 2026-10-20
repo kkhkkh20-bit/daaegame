@@ -65,6 +65,8 @@ screen r13_hub(entry=False):
     modal True
     default ready=False
     timer .15 action SetScreenVariable("ready",True)
+    default world_moving=False
+    $ input_ready=ready and not world_moving
     default world_adjustment=r13_world_adjustment(room13["location"])
 
     if r13_world_width()>1280:
@@ -72,28 +74,29 @@ screen r13_hub(entry=False):
             id "r13_world_viewport"
             area (0,0,1280,720)
             xadjustment world_adjustment
-            draggable True mousewheel "horizontal" arrowkeys False
+            draggable False mousewheel False arrowkeys False
             fixed:
                 xsize r13_world_width() ysize 720
                 add r13_world_background()
-                use r13_world_contents(entry,ready)
-        use r13_world_camera_controls(world_adjustment)
+                use r13_world_contents(entry,input_ready)
+        if not world_moving:
+            use r13_world_camera_controls(world_adjustment)
     else:
-        use r13_world_contents(entry,ready)
+        use r13_world_contents(entry,input_ready)
     if entry:
-        use r13_waiting_window(ready)
+        use r13_waiting_window(input_ready)
     else:
         fixed:
             area (772,r13_control_y(),232,r13_control_height())
-            use r13_antique_button("지도","map",Return(("menu","map")),enabled=ready,width=232,height=r13_control_height())
+            use r13_antique_button("지도","map",Return(("menu","map")),enabled=input_ready,width=232,height=r13_control_height())
     if not entry and r13_bed_available("bed"):
         fixed:
             area (1020,264,232,64)
-            use r13_control("자기","auto",Return(("sleep","bed")),enabled=ready,height=64)
+            use r13_control("자기","auto",Return(("sleep","bed")),enabled=input_ready,height=64)
     if not entry and r13_evening_missions():
         fixed:
             area (772,104,232,64)
-            use r13_control("저녁 할 일","auto",Return(("menu","evening")),enabled=ready,height=64)
+            use r13_control("저녁 할 일","auto",Return(("menu","evening")),enabled=input_ready,height=64)
     if not entry and r13_has("livelihood_open"):
         # 0.18.56 (owner): no work/shop board at the top. Work is asked for from the person who
         # gives it, goods are bought from the seller in person; only the purse is shown.
@@ -101,13 +104,13 @@ screen r13_hub(entry=False):
             xpos 24 ypos 74 padding (12,6) background R13InkPanel(alpha="b8")
             text ("가진 돈 %d냥"%r13_wallet(room13)["cash"]) size r13_read_size(18,21) color "#fff2cf"
     if not entry and not r13_v111_active():
-        use r13_event_offers(ready)
+        use r13_event_offers(input_ready)
     use r13_admin_key()
     if not entry and not r13_v111_active() and room13.get("life_poc") and room13["day"]<=2:
-        use r13_goal_fold(r13_intro_goal(),ready)
+        use r13_goal_fold(r13_intro_goal(),input_ready)
     elif not entry and not r13_v111_active() and room13.get("life_poc") and r13_campaign_goal():
-        use r13_goal_fold(r13_campaign_goal(),ready)
-    use r13_toolbar(mode="field",ready=ready)
+        use r13_goal_fold(r13_campaign_goal(),input_ready)
+    use r13_toolbar(mode="field",ready=input_ready)
     $ hint=GetTooltip()
     if hint:
         frame:
@@ -115,6 +118,17 @@ screen r13_hub(entry=False):
             hbox:
                 spacing 6
                 text hint size 20 color "#fff2cf" yalign .5
+
+    if world_moving:
+        timer .05 repeat True action Function(r13_world_pan_finish,world_adjustment,_update_screens=False)
+        # Eat pointer presses and releases through the entire slide, including
+        # the dock. Disabled field actions alone still permit click-through.
+        button:
+            area (0,0,1280,720) background None hover_background None
+            action NullAction() keyboard_focus False
+        key "game_menu" action NullAction()
+        key "rollback" action NullAction()
+        key "rollforward" action NullAction()
 
 screen r13_world_contents(entry=False,ready=False):
     style_prefix "r13"
@@ -129,18 +143,19 @@ screen r13_world_contents(entry=False,ready=False):
                 background None hover_background None insensitive_background None padding (0,0)
                 action [Function(r13_click_feedback,key),Return(("object",key))] sensitive ready
                 tooltip r13_object_name(key) alt r13_object_name(key)
-    # 0.18.50 (owner): where a person and an object overlap, the person is pressed. Objects drawn
-    # in front of a resident stay pressable around the resident's silhouette.
+    # 0.18.63: separate prop layers (systems/room13_map_actions.rpy), behind the residents.
+    for prop,px,py in r13_world_props(entry):
+        add prop xpos px ypos py
+    use r13_resident_stage(entry,ready)
+    # Re-add masked object targets AFTER resident buttons. The existing mask
+    # excludes faces and later small props; transparent sprite padding already
+    # passes through via r13_actor_hit_mask. Drawing order must match this policy.
     for key,rect,mask in r13_objects_over_actors(entry):
         button:
             area rect focus_mask mask
             background None hover_background None insensitive_background None padding (0,0)
             action [Function(r13_click_feedback,key),Return(("object",key))] sensitive ready
             tooltip r13_object_name(key) alt r13_object_name(key)
-    # 0.18.63: separate prop layers (systems/room13_map_actions.rpy), behind the residents.
-    for prop,px,py in r13_world_props(entry):
-        add prop xpos px ypos py
-    use r13_resident_stage(entry,ready)
     # Inspection ticks sit under the name tags, never on top of a name.
     for key,point in room13["checks"].items():
         $ point=r13_check_point(key,point)

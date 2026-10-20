@@ -1,0 +1,21 @@
+{
+  "unit_command": "python3 -m unittest discover -s dev -p 'test_*.py'",
+  "unit_tests": 778,
+  "unit_seconds": 42.017,
+  "unit_status": "OK",
+  "renderer_command": "ROOM13_QA_OUT=/tmp/two-zone-qa python3 dev/qa_two_zone_camera.py",
+  "renderer_status": "passed",
+  "renderer_mode": "local source overlay; existing RenPy web runtime",
+  "diff_check": "passed",
+  "sdk_download": "failed: curl (56) CONNECT tunnel failed, response 403; not retried",
+  "not_run": [
+    "SDK lint",
+    "new web build",
+    "native screen tests",
+    "real save-file restart/load",
+    "full game regression",
+    "real mobile hardware",
+    "all maps all periods clicks"
+  ],
+  "remote_actions": []
+}

@@ -20,10 +20,13 @@ class UnifiedInvestigation(unittest.TestCase):
   self.assertIn('area rect focus_mask mask',world)
   self.assertNotIn('r13_field_view',world)
   self.assertEqual(world.count('tooltip r13_object_name(key) alt r13_object_name(key)'),2)
- def test_residents_keep_foreground_hit_priority(self):
+ def test_masked_objects_keep_faces_and_names_reachable(self):
   world=SCREEN.split('screen r13_world_contents(',1)[1].split('\nscreen r13_resident_stage',1)[0]
   self.assertLess(world.index('for key,spec in ROOM13'),world.index('use r13_resident_stage(entry,ready)'))
-  self.assertLess(world.index('for key,rect,mask'),world.index('use r13_resident_stage(entry,ready)'))
+  self.assertGreater(world.index('for key,rect,mask'),world.index('use r13_resident_stage(entry,ready)'))
+  self.assertLess(world.index('for key,rect,mask'),world.index('for nameplate in r13_actor_nameplates'))
+  acting=(ROOT/'game/room13_acting.rpy').read_text()
+  self.assertIn('r13_object_mask(spec["rect"],[r13_actor_face(a) for a in actors]+later)',acting)
   self.assertIn('focus_mask r13_actor_hit_mask(actor)',SCREEN)
   self.assertIn('and not r13_point_on_face(point,entry)',world)
  def test_toggle_removed_but_hint_and_callback_retained(self):
