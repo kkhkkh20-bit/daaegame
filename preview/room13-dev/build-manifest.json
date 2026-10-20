@@ -1,13 +1,43 @@
 {
  "engine": "Ren'Py 8.5.3",
  "game_transport": {
-  "archive_bytes": 53780591,
-  "archive_sha256": "8774facac45368301ac69f3700a12738f94376c71c44686609dbe831107ae2bf",
+  "archive_bytes": 53774003,
+  "archive_sha256": "9ada8239e3cb48b86100743e2c442dd28bd64f0c18c073a41f7508a60740ddb9",
   "parts": [
    {
     "file": "game.part01",
-    "bytes": 53780591,
-    "sha256": "8774facac45368301ac69f3700a12738f94376c71c44686609dbe831107ae2bf"
+    "bytes": 8388608,
+    "sha256": "434333d440592d897b568717bfcf88fc0ca64f71746b88f06f51199352f8b0fc"
+   },
+   {
+    "file": "game.part02",
+    "bytes": 8388608,
+    "sha256": "da36a60cfca01385d8a3e585cdffbfbe3f5931db67aecf365f60a0db2f2825f4"
+   },
+   {
+    "file": "game.part03",
+    "bytes": 8388608,
+    "sha256": "d0ad2968368a00ce49731f2d3941f6d3be1287bff075a279bd8b9e2fa37aa8d9"
+   },
+   {
+    "file": "game.part04",
+    "bytes": 8388608,
+    "sha256": "49b6a4e4d86a6a2604a1c3dd8adc6b6353105d43a2aa9fc16e1f40e69a7baaa4"
+   },
+   {
+    "file": "game.part05",
+    "bytes": 8388608,
+    "sha256": "f481fb95f14757ab273ee77ef27489273baadc66c9840011781270f1e2f2d67f"
+   },
+   {
+    "file": "game.part06",
+    "bytes": 8388608,
+    "sha256": "3eee02b75a00e88e2dd61710352131f73c7a4164a72e777e2c4179c65901cbb3"
+   },
+   {
+    "file": "game.part07",
+    "bytes": 3442355,
+    "sha256": "4ba77d9dcd57694909d2af7a948a239384ac3e2d60402291cbff9b5accda9246"
    }
   ]
  },
@@ -29,12 +59,36 @@
    "sha256": "6bb23b55d259a317d6c3a496f5c8892bd820bc4f0730a172d030b4497c534bfe"
   },
   "game-transport.json": {
-   "bytes": 227097,
-   "sha256": "022dcf7395fba007b23b0f4ee4dab6d30ac895166cae269605f4814e9b272b95"
+   "bytes": 227912,
+   "sha256": "216f99233acccc2b2f37ecdf329e6261c6289c25b5b0899f815afaa83042d81a"
   },
   "game.part01": {
-   "bytes": 53780591,
-   "sha256": "8774facac45368301ac69f3700a12738f94376c71c44686609dbe831107ae2bf"
+   "bytes": 8388608,
+   "sha256": "434333d440592d897b568717bfcf88fc0ca64f71746b88f06f51199352f8b0fc"
+  },
+  "game.part02": {
+   "bytes": 8388608,
+   "sha256": "da36a60cfca01385d8a3e585cdffbfbe3f5931db67aecf365f60a0db2f2825f4"
+  },
+  "game.part03": {
+   "bytes": 8388608,
+   "sha256": "d0ad2968368a00ce49731f2d3941f6d3be1287bff075a279bd8b9e2fa37aa8d9"
+  },
+  "game.part04": {
+   "bytes": 8388608,
+   "sha256": "49b6a4e4d86a6a2604a1c3dd8adc6b6353105d43a2aa9fc16e1f40e69a7baaa4"
+  },
+  "game.part05": {
+   "bytes": 8388608,
+   "sha256": "f481fb95f14757ab273ee77ef27489273baadc66c9840011781270f1e2f2d67f"
+  },
+  "game.part06": {
+   "bytes": 8388608,
+   "sha256": "3eee02b75a00e88e2dd61710352131f73c7a4164a72e777e2c4179c65901cbb3"
+  },
+  "game.part07": {
+   "bytes": 3442355,
+   "sha256": "4ba77d9dcd57694909d2af7a948a239384ac3e2d60402291cbff9b5accda9246"
   },
   "game/assets/Galmuri11.ttf": {
    "bytes": 1964416,
@@ -6234,7 +6288,7 @@
   },
   "index.html": {
    "bytes": 9504,
-   "sha256": "b76f6aad534a1e2353c610b619a64ef0595fb0c7742b0bfe101332747e601480"
+   "sha256": "276b717fb0f88a5d5b5e8c21aeb16b3a7c8c6c9afd803ca278f4d1efb8573c9a"
   },
   "loading-scene.png": {
    "bytes": 1946111,
@@ -6269,5 +6323,5 @@
    "sha256": "0ef27bfe65a2917248171666649a51d85e3a200a3ae87bbaaa7085748bc4f0c5"
   }
  },
- "total_bytes": 557853373
+ "total_bytes": 557847600
 }

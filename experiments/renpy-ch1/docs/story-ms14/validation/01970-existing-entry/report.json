@@ -1,0 +1,38 @@
+{
+  "checks": [
+    "Original scene music and ambience play and produce a nonzero WebAudio signal"
+  ],
+  "audio_rms_peak": 0.008285391029054014,
+  "status": "passed",
+  "opening": {
+    "ms14": null,
+    "music": "assets/bgm-travel.mp3",
+    "scene": [
+      "winter_carriage",
+      "마차 안",
+      "travel",
+      "morning",
+      "pending"
+    ],
+    "place": "마차 안"
+  },
+  "gate": {
+    "ms14": null,
+    "music": "assets/bgm-snow.mp3",
+    "ambience": "assets/amb-wind.mp3",
+    "actors": [
+      "guard",
+      "karo",
+      "resident_kkwak",
+      "resident_kalbaram",
+      "daram"
+    ],
+    "location": "gate",
+    "evidence": [
+      "E01"
+    ]
+  },
+  "final_location": "gate",
+  "page_errors": [],
+  "scope": "Natural start and real clicks only; game-state probes are read-only except text speed preference"
+}

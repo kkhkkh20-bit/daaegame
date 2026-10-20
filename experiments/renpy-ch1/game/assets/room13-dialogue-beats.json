@@ -5,134 +5,84 @@
     "entry:arrival": {
       "0": {
         "person": "guard",
-        "text": "안녕하십니까. 어떤 일로 오셨습니까?",
+        "text": "성함.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "돌목의 정중한 입장 확인. 위협이나 분노가 아니다.",
-        "batch": "arrival-01",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       },
-      "3": {
+      "2": {
         "person": "guard",
-        "text": "다돌 님 맞으십니까?",
+        "text": "아버지만 들어가실 수 있소. 아이는 일꾼으로 받을 수 없소.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "서류의 이름을 확인하는 절차적 질문.",
-        "batch": "arrival-01",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       },
-      "5": {
-        "person": "daram",
-        "text": "제 이름은 다람이예요.",
-        "emotion": "joy",
+      "4": {
+        "person": "guard",
+        "text": "내게 온 종이엔 그렇게 적혀 있소.",
+        "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "다람이의 밝은 자기소개. 놀람 반응 없이 플레이어를 본다.",
-        "batch": "arrival-01",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       },
       "6": {
         "person": "guard",
-        "text": "잠시만 기다려 주십시오. 제가 가진 명단에는 다돌 님 한 분만 적혀 있습니다.",
+        "text": "혼자 두라는 말 아니오. 둘 다 여기서 기다리시오.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "명단 누락을 설명하는 차분한 경비원.",
-        "batch": "arrival-01",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       },
-      "9": {
-        "person": "guard",
-        "text": "제가 받은 명단에는 한 분만 적혀 있습니다. 처음 신청할 때 내신 원본 서류를 확인해 봐야겠습니다.",
-        "emotion": "neutral",
-        "reaction": false,
-        "reviewed": true,
-        "reason": "서류 불일치를 확인 중이며 단정하거나 화내지 않는다.",
-        "batch": "arrival-01",
-        "application_status": "approved_source_master"
-      },
-      "11": {
-        "person": "guard",
-        "text": "확인이 끝날 때까지 두 분 모두 대기소 앞에서 기다려 주십시오.",
-        "emotion": "neutral",
-        "reaction": false,
-        "reviewed": true,
-        "reason": "절차에 따른 대기 안내.",
-        "batch": "arrival-01",
-        "application_status": "approved_source_master"
-      },
-      "12": {
+      "7": {
         "person": "daram",
-        "text": "아빠, 확인하는 거 오래 걸려?",
-        "emotion": "anxious",
-        "reaction": false,
-        "reviewed": true,
-        "reason": "아이의 기다림에 대한 불안. 과장된 놀람이 아니다.",
-        "batch": "arrival-01",
-        "application_status": "approved_source_master"
-      },
-      "14": {
-        "person": "guard",
-        "text": "담당자는 저녁에나 돌아옵니다. 그때까지 기다리시면 제가 대조해 드리겠습니다.",
+        "text": "아빠, 나 때문에 못 들어가?",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "담당자 귀환 시간을 알려 주는 사실 설명.",
-        "batch": "arrival-01",
-        "application_status": "approved_source_master"
-      },
-      "16": {
-        "person": "guard",
-        "text": "저기 선반에 예약 서류 원본이 있습니다. 직접 찾아보시겠습니까?",
-        "emotion": "neutral",
-        "reaction": false,
-        "reviewed": true,
-        "reason": "직접 원본을 찾도록 안내하며 대화 시선은 플레이어에게 유지.",
-        "batch": "arrival-01",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       }
     },
     "entry:karo:arrival": {
       "0": {
-        "person": "karo",
-        "text": "도착했어요. 발판이 얼어서 미끄러우니 조심해서 내려요.",
+        "person": "daram",
+        "text": "안아 주지는 마.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "까로의 침착한 안전 안내.",
-        "batch": "arrival-01",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       },
-      "1": {
-        "person": "daram",
-        "text": "까로 아저씨, 이 가방도 같이 내려 주세요.",
+      "2": {
+        "person": "karo",
+        "text": "큰 짐은 두고 가세요. 축에 금이 갔네. 돌아가는 건 수리부터 해야겠어요.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "익숙한 어른에게 짐을 부탁하는 다람이.",
-        "batch": "arrival-01",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       },
       "4": {
         "person": "karo",
-        "text": "바퀴 축에 금이 갔네요. 짐부터 내리고 살펴봐야겠습니다.",
-        "emotion": "anxious",
-        "reaction": false,
-        "reviewed": true,
-        "reason": "바퀴 축의 금을 발견한 직업적 걱정. 대화 유지 자세는 서 있기.",
-        "batch": "arrival-01",
-        "application_status": "approved_source_master"
-      },
-      "6": {
-        "person": "karo",
-        "text": "먼저 방문 등록부터 하고 오세요. 짐은 제가 보고 있을게요. 저쪽 경비 초소에서 확인을 받으시면 됩니다.",
+        "text": "초소요. 방문 확인 먼저.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "짐을 맡고 등록을 안내하는 믿음직한 태도.",
-        "batch": "arrival-01",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       }
     },
@@ -169,110 +119,80 @@
       }
     },
     "entry:explain:v2": {
-      "1": {
+      "2": {
         "person": "guard",
-        "text": "예. 제가 받은 명단에는 방문자가 한 분뿐입니다.",
+        "text": "날짜와 이름을 찾으면 되오. 잠깐 기다리시오.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "명단 불일치의 원인을 아직 모르는 절차적 답변.",
-        "batch": "opening-inn-case-conflict-02",
-        "application_status": "approved_source_master"
-      },
-      "3": {
-        "person": "guard",
-        "text": "여기 있습니다. 예약 서류를 보고 초소에서 옮겨 적은 겁니다.",
-        "emotion": "neutral",
-        "reaction": false,
-        "reviewed": true,
-        "reason": "명단 작성 경위를 보여 주며 확인에 협조한다.",
-        "batch": "opening-inn-case-conflict-02",
-        "application_status": "approved_source_master"
-      },
-      "5": {
-        "person": "guard",
-        "text": "예약 서류 원본은 저 선반에 도착 날짜별로 꽂아 두었습니다. 대조해 보시려면 직접 찾아보십시오.",
-        "emotion": "neutral",
-        "reaction": false,
-        "reviewed": true,
-        "reason": "원본 보관 위치를 안내한다. 지시 대사라도 과장된 지적 몸짓을 요구하지 않는다.",
-        "batch": "opening-inn-case-conflict-02",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       }
     },
     "entry:corrected:v2": {
       "1": {
         "person": "guard",
-        "text": "다돌 님과 동행 한 분…… 총 두 분이 맞습니다. 제 명단에는 다돌 님 한 분만 적혀 있었습니다.",
+        "text": "가족 방문을 일꾼으로 옮겨 놨군.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "원본과 명단을 대조해 사실을 인정한다. 돌발 충격이 아니다.",
-        "batch": "opening-inn-case-conflict-02",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       },
       "3": {
         "person": "guard",
-        "text": "네. 제가 잘못 옮겨 적었습니다. 두 분으로 바로잡겠습니다. 추운데 기다리게 해서 죄송합니다.",
-        "emotion": "anxious",
+        "text": "여기서 고치겠소.",
+        "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "자신의 전사 실수를 인정하고 추위에 기다린 가족에게 미안해한다.",
-        "batch": "opening-inn-case-conflict-02",
-        "application_status": "approved_source_master"
-      },
-      "4": {
-        "person": "daram",
-        "text": "아빠, 이제 같이 들어갈 수 있는 거지?",
-        "emotion": "joy",
-        "reaction": false,
-        "reviewed": true,
-        "reason": "아빠와 함께 입장할 수 있다는 안도와 기대.",
-        "batch": "opening-inn-case-conflict-02",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       }
     },
     "entry:wait": {
-      "0": {
+      "1": {
         "person": "guard",
-        "text": "원본에는 두 분으로 되어 있는데 제가 한 분으로 잘못 옮겨 적었습니다. 명단을 고쳤으니 함께 들어가십시오.",
-        "emotion": "anxious",
+        "text": "가족 방문을 일꾼으로 옮겨 놨군.",
+        "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "오래 기다리게 한 실수를 시인하는 미안함.",
-        "batch": "opening-inn-case-conflict-02",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       },
-      "1": {
-        "person": "daram",
-        "text": "아빠, 추워서 손이 잘 안 펴져.",
-        "emotion": "anxious",
+      "3": {
+        "person": "guard",
+        "text": "여기서 고치겠소.",
+        "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "추위에 지친 아이의 신체 불편. 화를 내거나 신나는 상황이 아니다.",
-        "batch": "opening-inn-case-conflict-02",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       }
     },
     "entry:daram:waiting": {
       "0": {
         "person": "daram",
-        "text": "아빠, 엄마도 들어올 때 여기서 이름을 썼을까?",
+        "text": "여기 아빠 이름.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "엄마도 같은 절차를 밟았을지 궁금해한다.",
-        "batch": "opening-inn-case-conflict-02",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       },
       "2": {
         "person": "daram",
-        "text": "그럼 내 이름도 빠지지 않게 잘 써 달라고 해.",
-        "emotion": "anxious",
+        "text": "‘외 한 명’은 나야? 내 이름도 썼는데.",
+        "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "자기 이름이 또 빠질까 걱정하며 확인을 부탁한다.",
-        "batch": "opening-inn-case-conflict-02",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       }
     },
@@ -4997,38 +4917,38 @@
       }
     },
     "entry:copy:v2": {
-      "1": {
+      "0": {
         "person": "guard",
-        "text": "예. 예약 서류에서 보고 옮겨 적은 것입니다. 원본 서류도 직접 확인해 보시겠습니까?",
+        "text": "둘인 건 봤소. 가족을 만나러 왔는지, 둘이 잘 방은 있는지도 확인해야 하오.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "돌목의 원본 서류 대조 안내.",
-        "batch": "context-04",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       }
     },
     "entry:rules:v2": {
       "0": {
         "person": "guard",
-        "text": "그 안내는 초소에서 아이를 넘겨받을 때 따르는 절차입니다. 예약 인원은 예약표에서 따로 확인하시면 됩니다.",
+        "text": "같이 온 건 알겠소. 둘이 묵을 방은 확인됐소?",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "돌목은 인계 절차와 예약 인원 근거를 구분한다.",
-        "batch": "context-05",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       }
     },
     "entry:letter": {
-      "0": {
+      "1": {
         "person": "guard",
-        "text": "여관에서 부친 편지구려. 다만 이 편지만 보고 출입 명단을 고칠 수는 없습니다. 예약 원본을 확인해야 합니다.",
+        "text": "초대받은 건 알겠소. 두 사람이 묵을 방도 확인해야 하오.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "편지와 출입 원본의 증명 범위를 구분한다.",
-        "batch": "context-05",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       }
     },
@@ -5045,24 +4965,14 @@
       }
     },
     "entry:departure": {
-      "0": {
-        "person": "karo",
-        "text": "짐은 여관까지 제가 옮겨 드릴게요. 마차는 당분간 여기에 세워 둬야겠네요.",
+      "3": {
+        "person": "guard",
+        "text": "지금은 이 두 사람 등록 중이오.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "짐을 옮기는 까로와 아빠 손을 챙기는 다람의 조용한 배려.",
-        "batch": "context-05",
-        "application_status": "approved_source_master"
-      },
-      "1": {
-        "person": "daram",
-        "text": "……작은 가방은 내가 들게. 아빠 손 시려.",
-        "emotion": "neutral",
-        "reaction": false,
-        "reviewed": true,
-        "reason": "짐을 옮기는 까로와 아빠 손을 챙기는 다람의 조용한 배려.",
-        "batch": "context-05",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       }
     },
@@ -5915,14 +5825,24 @@
       }
     },
     "gate:shelf:find": {
-      "3": {
+      "1": {
         "person": "daram",
-        "text": "아빠, 거기 ‘외 한 명’이 나야?",
+        "text": "여기 아빠 이름.",
         "emotion": "neutral",
         "reaction": false,
         "reviewed": true,
-        "reason": "예약표에서 자기 몫을 확인하는 아이의 질문.",
-        "batch": "context-05",
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
+        "application_status": "approved_source_master"
+      },
+      "3": {
+        "person": "daram",
+        "text": "‘외 한 명’은 나야? 내 이름도 썼는데.",
+        "emotion": "neutral",
+        "reaction": false,
+        "reviewed": true,
+        "reason": "전달 원문 expression=default. 기존 승인 neutral 자산에 연결하며 새 감정·동작을 추정하지 않는다.",
+        "batch": "entry-content-update-20261020",
         "application_status": "approved_source_master"
       }
     },

@@ -2,8 +2,8 @@
 # keys and their checkmarks survive; only their separate scene hitboxes retire.
 init 63 python:
     R13_GATE_DOCUMENTS = {
-        "G1": dict(object="booth", tab="예약 원본", heading="예약 원본 · 함께 온 사람 수", text="예약한 사람: 다돌과 한 명 더. 모두 2명."),
-        "G3": dict(object="ledger", tab="옮겨 쓴 이름 목록", heading="옮겨 쓴 이름 목록 · 함께 온 사람 수", text="방문자: 다돌. 총 인원: 1명."),
+        "G1": dict(object="booth", tab="예약 원본", heading="예약 원본 · 함께 온 사람 수", text='다돌이 낸 방문 신청서: 같은 도착일 / 신청자 다돌 외 1명 / 동행 아동 있음 / 총 2명 / 가족 방문 / 동행인 성명 다람 / 여관 13호, 방문 가족 2명 숙박 확인.'),
+        "G3": dict(object="ledger", tab="옮겨 쓴 이름 목록", heading="옮겨 쓴 이름 목록 · 함께 온 사람 수", text='초소 입장 명단: 같은 도착일 / 다돌 / 신청 2명 / 신규 일꾼 본인 1명 / 동행 아동 모집 제외 / 내일부터 장작 운반 / 처리 너울.'),
     }
     # 0.18.22 (owner): no document popup. The guard hands over his own list (G3) in conversation;
     # clicking the shelf finds the original (G1) in a short scene, like the posted rules.
@@ -72,10 +72,10 @@ label r13_inspect_gate_documents(start_key=None):
     if "G1" in room13["evidence"]:
         call r13_lines([("dad","(선반의 예약 서류 묶음. 우리 예약 원본은 이미 확인했다.)",{"thought":True})],"gate:shelf:again")
         return
-    call r13_lines([(None,"초소 선반에 예약 서류 묶음이 날짜별로 꽂혀 있었다."),
-        (None,"금요일 묶음을 넘기자 낯익은 글씨가 나왔다. 신청할 때 내가 쓴 예약 서류다."),
-        ("dad","(예약한 사람 다돌 외 한 명. 모두 2명.)",{"thought":True}),
-        ("daram","아빠, 거기 ‘외 한 명’이 나야?"),
-        ("dad","응. 여기엔 분명히 두 사람으로 적혀 있어.")],"gate:shelf:find")
+    call r13_lines([(None, '다돌이 낸 방문 신청서: 같은 도착일 / 신청자 다돌 외 1명 / 동행 아동 있음 / 총 2명 / 가족 방문 / 동행인 성명 다람 / 여관 13호, 방문 가족 2명 숙박 확인.'), ('daram', '여기 아빠 이름.'), ('dad', '맞아. 날짜도 같네.'), ('daram', '‘외 한 명’은 나야? 내 이름도 썼는데.'), ('dad', '아래에 있네. 다람. 둘이 온다고 제대로 썼어.')],"gate:shelf:find")
+
+
+
+
     $ r13_gate_record_document("G1")
     return

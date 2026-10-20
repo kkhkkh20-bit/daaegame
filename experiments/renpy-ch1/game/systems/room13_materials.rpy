@@ -31,7 +31,7 @@ init 148 python:
     def r13_catalog_observed(key):
         """0.18.99: while a case is open a record shows only what was observed; the meaning
         ("그래서 무슨 뜻? …") is for the meeting to reveal. Shelved (finished) records show it again."""
-        ev=ms14_observed(key) if isinstance(key,str) and key.startswith("MS14:") else ROOM13["evidence"].get(key)
+        ev=ROOM13["evidence"].get(key)
         if not ev or "그래서 무슨 뜻?" not in ev.get("establishes",""):return ev
         if key in getattr(store,"r13_shelved_keys",lambda:set())():return ev
         ev=dict(ev);ev["establishes"]=ev["establishes"].split("그래서 무슨 뜻?")[0].strip()

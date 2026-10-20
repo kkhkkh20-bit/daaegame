@@ -319,7 +319,7 @@ screen r13_entry_topics():
     zorder 30
     default ready=False
     timer .15 action SetScreenVariable("ready",True)
-    $ questions=[("신청한 것과 이름 목록이 다른 이유가 뭡니까?",Return(("entry","explain")),r13_has("question_read:entry:explain")),("원본 담당자를 기다리겠습니다.",Return(("entry","wait")),r13_has("question_read:entry:wait"))]
+    $ questions=[("제가 낸 신청서와 초소 명단을 보겠습니다.",Return(("entry","explain")),r13_has("question_read:entry:explain")),("원본 담당자를 기다리겠습니다.",Return(("entry","wait")),r13_has("question_read:entry:wait"))]
     use r13_question_list("guard","interview_neutral","돌목에게 묻기",questions,ready,return_action=Return(("entry","back")))
     use r13_toolbar(investigate_action=Return(("entry","back")),present_action=Return(("entry","argue")),person="guard",mode="talk",ready=ready)
 

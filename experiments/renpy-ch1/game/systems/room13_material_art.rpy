@@ -6,8 +6,6 @@ init 150 python:
         R13_MATERIAL_ART=r13_material_json.load(r13_material_file)["icons"]
 
     def r13_material_art(key):
-        if isinstance(key,str) and key.startswith("MS14:"):
-            return ms14_material_art(key)
         spec=R13_MATERIAL_ART.get(key)
         if spec is None:return None
         # Simple 48px sprites retain a stable dot scale in 60px lists and

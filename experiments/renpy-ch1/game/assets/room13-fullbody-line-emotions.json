@@ -1,692 +1,668 @@
 {
- "note": "대화 전신 표정(room13-fullbody-dialogue.json)의 대사별 지정. person·text가 실제 대사와 같을 때만 적용한다. 지정이 없는 대사는 기존 감정 키를 legacy_map으로 바꾼다.",
- "legacy_map": {
-  "neutral": "neutral",
-  "thinking": "neutral",
-  "distressed": "anxious",
-  "expressive": "joy",
-  "panic": "surprise",
-  "breakdown": "anxious",
-  "joy": "joy"
- },
- "lines": {
-  "entry:wait": {
-   "1": {
-    "person": "daram",
-    "text": "아빠, 추워서 손이 잘 안 펴져.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "night1:knocking": {
-   "4": {
-    "person": "nabi",
-    "text": "……밥 식기 전에 얼른 먹어.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "night1:stay": {
-   "0": {
-    "person": "daram",
-    "text": "아빠, 우리도 길 잃어버리면 저 아저씨처럼 저기로 끌려가?",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "case:father:return:v3": {
-   "5": {
-    "person": "daram",
-    "text": "아빠…… 나 여기 있어.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "case:discovery:v3": {
-   "3": {
-    "person": "daram",
-    "text": "내가 할아버지를 때렸어.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   },
-   "5": {
-    "person": "daram",
-    "text": "아빠, 내가 때렸다니까.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "case:unpreserved:v3": {
-   "0": {
-    "person": "buri",
-    "text": "할아버지! 비켜요!",
-    "emotion": "surprise",
-    "legacy": "distressed"
-   },
-   "1": {
-    "person": "neoul",
-    "text": "조심하십시오. 발밑에 떨어진 물건이 있습니다.",
-    "emotion": "surprise",
-    "legacy": "distressed"
-   }
-  },
-  "case:sealing:v3": {
-   "2": {
-    "person": "daram",
-    "text": "내가 놓으라고 했어. 그런데 할아버지가 안 놔줘서…….",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "case:displaced:v3": {
-   "0": {
-    "person": "nabi",
-    "text": "짐은 옆방으로 옮겨 둘게요. 오늘부터는 옆방에서 묵으세요.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "case:prevented:watch": {
-   "1": {
-    "person": "resident_owlgp",
-    "text": "그럼 이 방에서 기다리지 맙시다. 아래층으로 내려갑시다.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "case:prevented:accompany": {
-   "4": {
-    "person": "resident_owlgp",
-    "text": "아래층에서 이야기합시다. 이 방은 너무 답답하오.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "trial:C2:done": {
-   "3": {
-    "person": "daram",
-    "text": "그럼…… 내가 때린 건 어떻게 돼?",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "trial:C2:wrong": {
-   "0": {
-    "person": "buri",
-    "text": "할아버지도 착한 사람이었어요. 그런 말로 대충 끝내지 마세요.",
-    "emotion": "angry",
-    "legacy": "distressed"
-   }
-  },
-  "trial:C3:wrong": {
-   "0": {
-    "person": "nabi",
-    "text": "제가 할머니와 같이 있었던 시간까지 없던 일로 만들지는 마세요.",
-    "emotion": "angry",
-    "legacy": "expressive"
-   }
-  },
-  "trial:C4:done": {
-   "4": {
-    "person": "granny",
-    "text": "…….",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "buri:consent:refused": {
-   "0": {
-    "person": "buri",
-    "text": "우리 할아버지를 괴물로 만들면 탐정님 아이가 무사히 돌아오나요?",
-    "emotion": "angry",
-    "legacy": "expressive"
-   }
-  },
-  "reunion:after_intervention:v3": {
-   "1": {
-    "person": "mom",
-    "text": "뒤따라온 사람 때문에 숨을 자리를 한 번 옮겼어. 여기 신호는 초롱하고 새로 정했고.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "reunion:held:question": {
-   "0": {
-    "person": "mom",
-    "text": "다람이는 어디 있어?",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   },
-   "2": {
-    "person": "mom",
-    "text": "만나 봤어? 직접 봤어?",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "reunion:free": {
-   "0": {
-    "person": "daram",
-    "text": "……엄마?",
-    "emotion": "surprise",
-    "legacy": "distressed"
-   },
-   "2": {
-    "person": "mom",
-    "text": "손 좀 보자. 어디 다쳤어?",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "reunion:injured": {
-   "0": {
-    "person": "daram",
-    "text": "이제 하나도 안 아파.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "finale:arrival": {
-   "1": {
-    "person": "resident_ppul",
-    "text": "지금 연결해야 합니다. 이러다 대피소 쪽도 버티지 못하오!",
-    "emotion": "flustered",
-    "legacy": "expressive"
-   }
-  },
-  "finale:child_on_convoy": {
-   "0": {
-    "person": "daram",
-    "text": "아빠!",
-    "emotion": "surprise",
-    "legacy": "distressed"
-   },
-   "1": {
-    "person": "mom",
-    "text": "말만 하다가 아이를 저기 그대로 두지는 말자.",
-    "emotion": "anxious",
-    "legacy": "expressive"
-   }
-  },
-  "finale:escape_blocked": {
-   "0": {
-    "person": "karo",
-    "text": "뒤를 밟는 사람을 떼어 내지 못했어요. 이대로 나가면 약속한 안전한 길이 아니게 돼요.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "finale:emergency_rescue": {
-   "1": {
-    "person": "buri",
-    "text": "보리, 이쪽을 받쳐요!",
-    "emotion": "flustered",
-    "legacy": "expressive"
-   },
-   "3": {
-    "person": "daram",
-    "text": "아빠, 놓지 마.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "ending:E0": {
-   "2": {
-    "person": "daram",
-    "text": "그럼 못 찾은 건 아니라고 적어 줘. 아직 못 만난 거라고.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "ending:E2": {
-   "0": {
-    "person": "daram",
-    "text": "뒤에 마을 불이 꺼졌어.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "ending:E4": {
-   "0": {
-    "person": "nabi",
-    "text": "이쪽 방은 닫아야 해요. 다들 한 곳으로 모여요.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "ending:elder_dead": {
-   "1": {
-    "person": "buri",
-    "text": "그날 기록은 돌려받을게요. 함께 보관할 사본은 남겨 두고요.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "ending:family": {
-   "3": {
-    "person": "daram",
-    "text": "조금이면 나도 같이 해도 되지?",
-    "emotion": "joy",
-    "legacy": "neutral"
-   }
-  },
-  "negotiation:erased:start": {
-   "0": {
-    "person": "resident_seori",
-    "text": "회복 기록의 그 줄은 제가 지웠습니다. 환자가 다시 나빠졌으니 회복이라고 쓰면 안 된다고 할머니가 그러셨죠.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "negotiation:erased:accepted": {
-   "2": {
-    "person": "resident_seori",
-    "text": "……가족에게는 제가 먼저 말하겠습니다. 고치기 전에 베껴 둔 기록에는 할머니가 확인한 흔적도 남아 있습니다.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "negotiation:erased:threat": {
-   "0": {
-    "person": "resident_seori",
-    "text": "제 잘못은 기록에 남기겠습니다. 하지만 협박에 못 이겨 한 말로 만들어 놓고, 그 말을 믿어 달라고 하실 겁니까?",
-    "emotion": "angry",
-    "legacy": "expressive"
-   }
-  },
-  "topic:buri_consent": {
-   "0": {
-    "person": "buri",
-    "text": "밖에서는 할아버지가 아이를 잡아먹으려 했대요.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   },
-   "2": {
-    "person": "buri",
-    "text": "누군가는 그렇게 소문을 냈어요. 다람이를 살인 혐의에서 빼내려고요.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "topic:review:buri_consent": {
-   "0": {
-    "person": "buri",
-    "text": "밖에서는 할아버지가 아이를 잡아먹으려 했대요.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   },
-   "2": {
-    "person": "buri",
-    "text": "누군가는 그렇게 소문을 냈어요. 다람이를 살인 혐의에서 빼내려고요.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "topic:buri_records": {
-   "1": {
-    "person": "buri",
-    "text": "사건 전날 저녁엔 할아버지 증세가 많이 심했어요. 손주인 저조차 못 알아보실 때도 있었고요.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "topic:review:buri_records": {
-   "1": {
-    "person": "buri",
-    "text": "사건 전날 저녁엔 할아버지 증세가 많이 심했어요. 손주인 저조차 못 알아보실 때도 있었고요.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "topic:w2_contact": {
-   "0": {
-    "person": "resident_lamplighter",
-    "text": "아이 어머니와 친해서 숨기는 게 아닙니다. 어디 있는지 내가 말하면 부인이 죽어요.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "topic:review:w2_contact": {
-   "0": {
-    "person": "resident_lamplighter",
-    "text": "아이 어머니와 친해서 숨기는 게 아닙니다. 어디 있는지 내가 말하면 부인이 죽어요.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "topic:w2_erased": {
-   "0": {
-    "person": "resident_seori",
-    "text": "기록의 이 줄은 제가 지웠습니다. 다음 검사 때 다시 나빠졌으니 회복이라고 쓰면 안 된다고 했죠.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   },
-   "4": {
-    "person": "resident_seori",
-    "text": "할머니입니다. 기록을 고치기 전에 베껴 둔 사본에 할머니의 확인 표시도 남아 있습니다.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "topic:review:w2_erased": {
-   "0": {
-    "person": "resident_seori",
-    "text": "기록의 이 줄은 제가 지웠습니다. 다음 검사 때 다시 나빠졌으니 회복이라고 쓰면 안 된다고 했죠.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   },
-   "4": {
-    "person": "resident_seori",
-    "text": "할머니입니다. 기록을 고치기 전에 베껴 둔 사본에 할머니의 확인 표시도 남아 있습니다.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "topic:life:resident_nero:privacy": {
-   "2": {
-    "person": "resident_nero",
-    "text": "길 아는 것하고 입 다무는 건 달라요. 이 종이는 다른 사람 앞에 펼치지 마세요.",
-    "emotion": "angry",
-    "legacy": "expressive"
-   }
-  },
-  "topic:review:life:resident_nero:privacy": {
-   "2": {
-    "person": "resident_nero",
-    "text": "길 아는 것하고 입 다무는 건 달라요. 이 종이는 다른 사람 앞에 펼치지 마세요.",
-    "emotion": "angry",
-    "legacy": "expressive"
-   }
-  },
-  "entry:arrival": {
-   "12": {
-    "person": "daram",
-    "text": "아빠, 확인하는 거 오래 걸려?",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "topic:register": {
-   "9": {
-    "person": "daram",
-    "text": "아빠. 나 양말이 바닥에 붙었어.",
-    "emotion": "flustered",
-    "legacy": "distressed"
-   }
-  },
-  "topic:review:register": {
-   "9": {
-    "person": "daram",
-    "text": "아빠. 나 양말이 바닥에 붙었어.",
-    "emotion": "flustered",
-    "legacy": "distressed"
-   }
-  },
-  "topic:owl_glove": {
-   "1": {
-    "person": "daram",
-    "text": "맞아요! 어디 있었어요?",
-    "emotion": "joy",
-    "legacy": "expressive"
-   }
-  },
-  "topic:review:owl_glove": {
-   "1": {
-    "person": "daram",
-    "text": "맞아요! 어디 있었어요?",
-    "emotion": "joy",
-    "legacy": "expressive"
-   }
-  },
-  "topic:nabi_food": {
-   "4": {
-    "person": "daram",
-    "text": "멋진 탐정은 원래 손이 빨라야 하니까!",
-    "emotion": "joy",
-    "legacy": "expressive"
-   }
-  },
-  "topic:review:nabi_food": {
-   "4": {
-    "person": "daram",
-    "text": "멋진 탐정은 원래 손이 빨라야 하니까!",
-    "emotion": "joy",
-    "legacy": "expressive"
-   }
-  },
-  "entry:corrected:v2": {
-   "4": {
-    "person": "daram",
-    "text": "아빠, 이제 같이 들어갈 수 있는 거지?",
-    "emotion": "joy",
-    "legacy": "expressive"
-   }
-  },
-  "case:separate:v4": {
-   "1": {
-    "person": "daram",
-    "text": "아빠, 금방 와?",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "verdict:child": {
-   "0": {
-    "person": "daram",
-    "text": "이제 할아버지는 다시 못 만나지.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   },
-   "2": {
-    "person": "daram",
-    "text": "나 할아버지 안 죽였다고 말하고 싶은데.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "verdict:held": {
-   "3": {
-    "person": "daram",
-    "text": "아빠는 같이 못 와?",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   },
-   "6": {
-    "person": "daram",
-    "text": "아빠도. 아빠가 못 오면…… 누가 대신 오는지 말해 줘.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "case:interview:opening:v3": {
-   "0": {
-    "person": "daram",
-    "text": "아빠가 내 탓이 아니라고 말하면…… 그럼 아닌 거야?",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   },
-   "2": {
-    "person": "daram",
-    "text": "그런데 왜 자꾸 내 탓이 아니라고 해?",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   },
-   "4": {
-    "person": "daram",
-    "text": "내가 할아버지 때린 건 맞아.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "case:interview:arm:v3": {
-   "1": {
-    "person": "daram",
-    "text": "여기, 나 잡은 팔. 할아버지가 안 놔줘서 때렸어. 촛대가 무거워서 두 손으로 들었어.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   },
-   "3": {
-    "person": "daram",
-    "text": "했어. 놔 달라고 계속 말했어.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "case:interview:bed:v3": {
-   "3": {
-    "person": "daram",
-    "text": "침대 밑이라 이불밖에 안 보였어. 바닥은 연기 때문에 매웠고. 누가 문 두드릴 때마다 눈 감았어.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "case:interview:record:v3": {
-   "1": {
-    "person": "daram",
-    "text": "촛대 놓쳤어. 바닥에 떨어져서 쨍 했고. 또 잡힐까 봐 침대 밑으로 들어갔어.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   },
-   "3": {
-    "person": "daram",
-    "text": "할아버지가 잠갔어. 종이를 꺼내다가 밖에서 발소리가 나니까 문에 빗장을 걸었어.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   },
-   "5": {
-    "person": "daram",
-    "text": "……모르겠어. 내가 때렸잖아. 그다음에 할아버지가 안 일어났잖아.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "rescue:child": {
-   "0": {
-    "person": "daram",
-    "text": "이번엔 같이 가는 거지?",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "rescue:mother_unknown": {
-   "0": {
-    "person": "daram",
-    "text": "엄마는 어디 있어?",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "ev:lamp:open": {
-   "2": {
-    "person": "daram",
-    "text": "아빠, 등에 이름표가 붙어 있어!",
-    "emotion": "joy",
-    "legacy": "expressive"
-   }
-  },
-  "ev:lamp:name": {
-   "0": {
-    "person": "daram",
-    "text": "이 등은 ‘도토리’! 제일 작은데 제일 밝아.",
-    "emotion": "joy",
-    "legacy": "expressive"
-   }
-  },
-  "ev:visit:snack": {
-   "0": {
-    "person": "daram",
-    "text": "따뜻해……. 아빠, 구운 밤 반은 아빠 거야.",
-    "emotion": "joy",
-    "legacy": "expressive"
-   }
-  },
-  "ev:visit:story": {
-   "1": {
-    "person": "daram",
-    "text": "……그 도토리, 결국 집에 가?",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "ev:visit:trial": {
-   "1": {
-    "person": "daram",
-    "text": "모르는 건 어떻게 해?",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "ev:visit:caught": {
-   "2": {
-    "person": "daram",
-    "text": "아빠……!",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "life:arrival:inn": {
-   "6": {
-    "person": "daram",
-    "text": "엄마가 있던 방을 봐도 돼요? 엄마 물건이라도 보고 싶어요.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "life:mother:note:v2": {
-   "1": {
-    "person": "daram",
-    "text": "이 그림은 엄마가 나한테 쓰는 표시야.",
-    "emotion": "joy",
-    "legacy": "expressive"
-   }
-  },
-  "life:night1:plan:v2": {
-   "0": {
-    "person": "daram",
-    "text": "엄마가 여기 있었던 건 맞지? 이불도 엄마가 꿰맨 것 같아.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "life:night1:rest": {
-   "2": {
-    "person": "daram",
-    "text": "엄마 소식 찾으면 나한테도 꼭 말해 줘.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "case:noticed:door": {
-   "4": {
-    "person": "daram",
-    "text": "아빠…… 나 여기 있어.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "case:noticed:room": {
-   "3": {
-    "person": "daram",
-    "text": "내가 할아버지를 때렸어. 할아버지가 안 놔줘서……",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "entry:daram:together": {
-   "0": {
-    "person": "daram",
-    "text": "엄마 만나러 같이 왔는데 아빠만 먼저 들어가면 안 돼.",
-    "emotion": "angry",
-    "legacy": "distressed"
-   }
-  },
-  "w1c:portrait:mom": {
-   "1": {
-    "person": "daram",
-    "text": "엄마는 웃을 때 코를 찡그려!",
-    "emotion": "joy",
-    "legacy": "expressive"
-   }
+  "note": "대화 전신 표정(room13-fullbody-dialogue.json)의 대사별 지정. person·text가 실제 대사와 같을 때만 적용한다. 지정이 없는 대사는 기존 감정 키를 legacy_map으로 바꾼다.",
+  "legacy_map": {
+    "neutral": "neutral",
+    "thinking": "neutral",
+    "distressed": "anxious",
+    "expressive": "joy",
+    "panic": "surprise",
+    "breakdown": "anxious",
+    "joy": "joy"
+  },
+  "lines": {
+    "night1:knocking": {
+      "4": {
+        "person": "nabi",
+        "text": "……밥 식기 전에 얼른 먹어.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "night1:stay": {
+      "0": {
+        "person": "daram",
+        "text": "아빠, 우리도 길 잃어버리면 저 아저씨처럼 저기로 끌려가?",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "case:father:return:v3": {
+      "5": {
+        "person": "daram",
+        "text": "아빠…… 나 여기 있어.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "case:discovery:v3": {
+      "3": {
+        "person": "daram",
+        "text": "내가 할아버지를 때렸어.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      },
+      "5": {
+        "person": "daram",
+        "text": "아빠, 내가 때렸다니까.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "case:unpreserved:v3": {
+      "0": {
+        "person": "buri",
+        "text": "할아버지! 비켜요!",
+        "emotion": "surprise",
+        "legacy": "distressed"
+      },
+      "1": {
+        "person": "neoul",
+        "text": "조심하십시오. 발밑에 떨어진 물건이 있습니다.",
+        "emotion": "surprise",
+        "legacy": "distressed"
+      }
+    },
+    "case:sealing:v3": {
+      "2": {
+        "person": "daram",
+        "text": "내가 놓으라고 했어. 그런데 할아버지가 안 놔줘서…….",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "case:displaced:v3": {
+      "0": {
+        "person": "nabi",
+        "text": "짐은 옆방으로 옮겨 둘게요. 오늘부터는 옆방에서 묵으세요.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "case:prevented:watch": {
+      "1": {
+        "person": "resident_owlgp",
+        "text": "그럼 이 방에서 기다리지 맙시다. 아래층으로 내려갑시다.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "case:prevented:accompany": {
+      "4": {
+        "person": "resident_owlgp",
+        "text": "아래층에서 이야기합시다. 이 방은 너무 답답하오.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "trial:C2:done": {
+      "3": {
+        "person": "daram",
+        "text": "그럼…… 내가 때린 건 어떻게 돼?",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "trial:C2:wrong": {
+      "0": {
+        "person": "buri",
+        "text": "할아버지도 착한 사람이었어요. 그런 말로 대충 끝내지 마세요.",
+        "emotion": "angry",
+        "legacy": "distressed"
+      }
+    },
+    "trial:C3:wrong": {
+      "0": {
+        "person": "nabi",
+        "text": "제가 할머니와 같이 있었던 시간까지 없던 일로 만들지는 마세요.",
+        "emotion": "angry",
+        "legacy": "expressive"
+      }
+    },
+    "trial:C4:done": {
+      "4": {
+        "person": "granny",
+        "text": "…….",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "buri:consent:refused": {
+      "0": {
+        "person": "buri",
+        "text": "우리 할아버지를 괴물로 만들면 탐정님 아이가 무사히 돌아오나요?",
+        "emotion": "angry",
+        "legacy": "expressive"
+      }
+    },
+    "reunion:after_intervention:v3": {
+      "1": {
+        "person": "mom",
+        "text": "뒤따라온 사람 때문에 숨을 자리를 한 번 옮겼어. 여기 신호는 초롱하고 새로 정했고.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "reunion:held:question": {
+      "0": {
+        "person": "mom",
+        "text": "다람이는 어디 있어?",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      },
+      "2": {
+        "person": "mom",
+        "text": "만나 봤어? 직접 봤어?",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "reunion:free": {
+      "0": {
+        "person": "daram",
+        "text": "……엄마?",
+        "emotion": "surprise",
+        "legacy": "distressed"
+      },
+      "2": {
+        "person": "mom",
+        "text": "손 좀 보자. 어디 다쳤어?",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "reunion:injured": {
+      "0": {
+        "person": "daram",
+        "text": "이제 하나도 안 아파.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "finale:arrival": {
+      "1": {
+        "person": "resident_ppul",
+        "text": "지금 연결해야 합니다. 이러다 대피소 쪽도 버티지 못하오!",
+        "emotion": "flustered",
+        "legacy": "expressive"
+      }
+    },
+    "finale:child_on_convoy": {
+      "0": {
+        "person": "daram",
+        "text": "아빠!",
+        "emotion": "surprise",
+        "legacy": "distressed"
+      },
+      "1": {
+        "person": "mom",
+        "text": "말만 하다가 아이를 저기 그대로 두지는 말자.",
+        "emotion": "anxious",
+        "legacy": "expressive"
+      }
+    },
+    "finale:escape_blocked": {
+      "0": {
+        "person": "karo",
+        "text": "뒤를 밟는 사람을 떼어 내지 못했어요. 이대로 나가면 약속한 안전한 길이 아니게 돼요.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "finale:emergency_rescue": {
+      "1": {
+        "person": "buri",
+        "text": "보리, 이쪽을 받쳐요!",
+        "emotion": "flustered",
+        "legacy": "expressive"
+      },
+      "3": {
+        "person": "daram",
+        "text": "아빠, 놓지 마.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "ending:E0": {
+      "2": {
+        "person": "daram",
+        "text": "그럼 못 찾은 건 아니라고 적어 줘. 아직 못 만난 거라고.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "ending:E2": {
+      "0": {
+        "person": "daram",
+        "text": "뒤에 마을 불이 꺼졌어.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "ending:E4": {
+      "0": {
+        "person": "nabi",
+        "text": "이쪽 방은 닫아야 해요. 다들 한 곳으로 모여요.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "ending:elder_dead": {
+      "1": {
+        "person": "buri",
+        "text": "그날 기록은 돌려받을게요. 함께 보관할 사본은 남겨 두고요.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "ending:family": {
+      "3": {
+        "person": "daram",
+        "text": "조금이면 나도 같이 해도 되지?",
+        "emotion": "joy",
+        "legacy": "neutral"
+      }
+    },
+    "negotiation:erased:start": {
+      "0": {
+        "person": "resident_seori",
+        "text": "회복 기록의 그 줄은 제가 지웠습니다. 환자가 다시 나빠졌으니 회복이라고 쓰면 안 된다고 할머니가 그러셨죠.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "negotiation:erased:accepted": {
+      "2": {
+        "person": "resident_seori",
+        "text": "……가족에게는 제가 먼저 말하겠습니다. 고치기 전에 베껴 둔 기록에는 할머니가 확인한 흔적도 남아 있습니다.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "negotiation:erased:threat": {
+      "0": {
+        "person": "resident_seori",
+        "text": "제 잘못은 기록에 남기겠습니다. 하지만 협박에 못 이겨 한 말로 만들어 놓고, 그 말을 믿어 달라고 하실 겁니까?",
+        "emotion": "angry",
+        "legacy": "expressive"
+      }
+    },
+    "topic:buri_consent": {
+      "0": {
+        "person": "buri",
+        "text": "밖에서는 할아버지가 아이를 잡아먹으려 했대요.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      },
+      "2": {
+        "person": "buri",
+        "text": "누군가는 그렇게 소문을 냈어요. 다람이를 살인 혐의에서 빼내려고요.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "topic:review:buri_consent": {
+      "0": {
+        "person": "buri",
+        "text": "밖에서는 할아버지가 아이를 잡아먹으려 했대요.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      },
+      "2": {
+        "person": "buri",
+        "text": "누군가는 그렇게 소문을 냈어요. 다람이를 살인 혐의에서 빼내려고요.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "topic:buri_records": {
+      "1": {
+        "person": "buri",
+        "text": "사건 전날 저녁엔 할아버지 증세가 많이 심했어요. 손주인 저조차 못 알아보실 때도 있었고요.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "topic:review:buri_records": {
+      "1": {
+        "person": "buri",
+        "text": "사건 전날 저녁엔 할아버지 증세가 많이 심했어요. 손주인 저조차 못 알아보실 때도 있었고요.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "topic:w2_contact": {
+      "0": {
+        "person": "resident_lamplighter",
+        "text": "아이 어머니와 친해서 숨기는 게 아닙니다. 어디 있는지 내가 말하면 부인이 죽어요.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "topic:review:w2_contact": {
+      "0": {
+        "person": "resident_lamplighter",
+        "text": "아이 어머니와 친해서 숨기는 게 아닙니다. 어디 있는지 내가 말하면 부인이 죽어요.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "topic:w2_erased": {
+      "0": {
+        "person": "resident_seori",
+        "text": "기록의 이 줄은 제가 지웠습니다. 다음 검사 때 다시 나빠졌으니 회복이라고 쓰면 안 된다고 했죠.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      },
+      "4": {
+        "person": "resident_seori",
+        "text": "할머니입니다. 기록을 고치기 전에 베껴 둔 사본에 할머니의 확인 표시도 남아 있습니다.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "topic:review:w2_erased": {
+      "0": {
+        "person": "resident_seori",
+        "text": "기록의 이 줄은 제가 지웠습니다. 다음 검사 때 다시 나빠졌으니 회복이라고 쓰면 안 된다고 했죠.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      },
+      "4": {
+        "person": "resident_seori",
+        "text": "할머니입니다. 기록을 고치기 전에 베껴 둔 사본에 할머니의 확인 표시도 남아 있습니다.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "topic:life:resident_nero:privacy": {
+      "2": {
+        "person": "resident_nero",
+        "text": "길 아는 것하고 입 다무는 건 달라요. 이 종이는 다른 사람 앞에 펼치지 마세요.",
+        "emotion": "angry",
+        "legacy": "expressive"
+      }
+    },
+    "topic:review:life:resident_nero:privacy": {
+      "2": {
+        "person": "resident_nero",
+        "text": "길 아는 것하고 입 다무는 건 달라요. 이 종이는 다른 사람 앞에 펼치지 마세요.",
+        "emotion": "angry",
+        "legacy": "expressive"
+      }
+    },
+    "topic:register": {
+      "9": {
+        "person": "daram",
+        "text": "아빠. 나 양말이 바닥에 붙었어.",
+        "emotion": "flustered",
+        "legacy": "distressed"
+      }
+    },
+    "topic:review:register": {
+      "9": {
+        "person": "daram",
+        "text": "아빠. 나 양말이 바닥에 붙었어.",
+        "emotion": "flustered",
+        "legacy": "distressed"
+      }
+    },
+    "topic:owl_glove": {
+      "1": {
+        "person": "daram",
+        "text": "맞아요! 어디 있었어요?",
+        "emotion": "joy",
+        "legacy": "expressive"
+      }
+    },
+    "topic:review:owl_glove": {
+      "1": {
+        "person": "daram",
+        "text": "맞아요! 어디 있었어요?",
+        "emotion": "joy",
+        "legacy": "expressive"
+      }
+    },
+    "topic:nabi_food": {
+      "4": {
+        "person": "daram",
+        "text": "멋진 탐정은 원래 손이 빨라야 하니까!",
+        "emotion": "joy",
+        "legacy": "expressive"
+      }
+    },
+    "topic:review:nabi_food": {
+      "4": {
+        "person": "daram",
+        "text": "멋진 탐정은 원래 손이 빨라야 하니까!",
+        "emotion": "joy",
+        "legacy": "expressive"
+      }
+    },
+    "case:separate:v4": {
+      "1": {
+        "person": "daram",
+        "text": "아빠, 금방 와?",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "verdict:child": {
+      "0": {
+        "person": "daram",
+        "text": "이제 할아버지는 다시 못 만나지.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      },
+      "2": {
+        "person": "daram",
+        "text": "나 할아버지 안 죽였다고 말하고 싶은데.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "verdict:held": {
+      "3": {
+        "person": "daram",
+        "text": "아빠는 같이 못 와?",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      },
+      "6": {
+        "person": "daram",
+        "text": "아빠도. 아빠가 못 오면…… 누가 대신 오는지 말해 줘.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "case:interview:opening:v3": {
+      "0": {
+        "person": "daram",
+        "text": "아빠가 내 탓이 아니라고 말하면…… 그럼 아닌 거야?",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      },
+      "2": {
+        "person": "daram",
+        "text": "그런데 왜 자꾸 내 탓이 아니라고 해?",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      },
+      "4": {
+        "person": "daram",
+        "text": "내가 할아버지 때린 건 맞아.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "case:interview:arm:v3": {
+      "1": {
+        "person": "daram",
+        "text": "여기, 나 잡은 팔. 할아버지가 안 놔줘서 때렸어. 촛대가 무거워서 두 손으로 들었어.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      },
+      "3": {
+        "person": "daram",
+        "text": "했어. 놔 달라고 계속 말했어.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "case:interview:bed:v3": {
+      "3": {
+        "person": "daram",
+        "text": "침대 밑이라 이불밖에 안 보였어. 바닥은 연기 때문에 매웠고. 누가 문 두드릴 때마다 눈 감았어.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "case:interview:record:v3": {
+      "1": {
+        "person": "daram",
+        "text": "촛대 놓쳤어. 바닥에 떨어져서 쨍 했고. 또 잡힐까 봐 침대 밑으로 들어갔어.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      },
+      "3": {
+        "person": "daram",
+        "text": "할아버지가 잠갔어. 종이를 꺼내다가 밖에서 발소리가 나니까 문에 빗장을 걸었어.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      },
+      "5": {
+        "person": "daram",
+        "text": "……모르겠어. 내가 때렸잖아. 그다음에 할아버지가 안 일어났잖아.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "rescue:child": {
+      "0": {
+        "person": "daram",
+        "text": "이번엔 같이 가는 거지?",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "rescue:mother_unknown": {
+      "0": {
+        "person": "daram",
+        "text": "엄마는 어디 있어?",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "ev:lamp:open": {
+      "2": {
+        "person": "daram",
+        "text": "아빠, 등에 이름표가 붙어 있어!",
+        "emotion": "joy",
+        "legacy": "expressive"
+      }
+    },
+    "ev:lamp:name": {
+      "0": {
+        "person": "daram",
+        "text": "이 등은 ‘도토리’! 제일 작은데 제일 밝아.",
+        "emotion": "joy",
+        "legacy": "expressive"
+      }
+    },
+    "ev:visit:snack": {
+      "0": {
+        "person": "daram",
+        "text": "따뜻해……. 아빠, 구운 밤 반은 아빠 거야.",
+        "emotion": "joy",
+        "legacy": "expressive"
+      }
+    },
+    "ev:visit:story": {
+      "1": {
+        "person": "daram",
+        "text": "……그 도토리, 결국 집에 가?",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "ev:visit:trial": {
+      "1": {
+        "person": "daram",
+        "text": "모르는 건 어떻게 해?",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "ev:visit:caught": {
+      "2": {
+        "person": "daram",
+        "text": "아빠……!",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "life:arrival:inn": {
+      "6": {
+        "person": "daram",
+        "text": "엄마가 있던 방을 봐도 돼요? 엄마 물건이라도 보고 싶어요.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "life:mother:note:v2": {
+      "1": {
+        "person": "daram",
+        "text": "이 그림은 엄마가 나한테 쓰는 표시야.",
+        "emotion": "joy",
+        "legacy": "expressive"
+      }
+    },
+    "life:night1:plan:v2": {
+      "0": {
+        "person": "daram",
+        "text": "엄마가 여기 있었던 건 맞지? 이불도 엄마가 꿰맨 것 같아.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "life:night1:rest": {
+      "2": {
+        "person": "daram",
+        "text": "엄마 소식 찾으면 나한테도 꼭 말해 줘.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "case:noticed:door": {
+      "4": {
+        "person": "daram",
+        "text": "아빠…… 나 여기 있어.",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "case:noticed:room": {
+      "3": {
+        "person": "daram",
+        "text": "내가 할아버지를 때렸어. 할아버지가 안 놔줘서……",
+        "emotion": "anxious",
+        "legacy": "distressed"
+      }
+    },
+    "entry:daram:together": {
+      "0": {
+        "person": "daram",
+        "text": "엄마 만나러 같이 왔는데 아빠만 먼저 들어가면 안 돼.",
+        "emotion": "angry",
+        "legacy": "distressed"
+      }
+    },
+    "w1c:portrait:mom": {
+      "1": {
+        "person": "daram",
+        "text": "엄마는 웃을 때 코를 찡그려!",
+        "emotion": "joy",
+        "legacy": "expressive"
+      }
+    }
   }
- }
 }

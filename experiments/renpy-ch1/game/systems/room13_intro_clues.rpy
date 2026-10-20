@@ -1,7 +1,7 @@
 # First-run investigation: reading -> owned-record comparison -> presentation
 # -> an explicit follow-up conversation. General movement never spends time.
 init 97 python:
-    ROOM13["evidence"]["E01"].update(name="아내의 초대 편지",establishes="아내 이름으로 여관에서 온 편지. ‘13호실을 잡아 뒀어. 다람이랑 와서 같이 겨울을 나자.’ 이 편지를 받고 아내를 만나러 왔다.",does_not_establish="")
+    ROOM13["evidence"]["E01"].update(name='초대 편지',establishes='다람이를 데리고 와 줘. 여관 13호실에서 기다릴게.',does_not_establish="")
     ROOM13["evidence"]["E03"].update(establishes="13호실 이불 안쪽의 붉은 매듭은 집에서 보던 엄마의 바느질과 닮았다. 다람이도 익숙한 모양이라고 했다.",does_not_establish="")
     ROOM13["evidence"]["M01"]["establishes"]="다람이 이름 옆에 도토리가 그려진 메모. ‘아빠랑 도착하면 이 방에 짐을 놓아. 내가 없으면 등불을 돌보는 분에게 내 소식을 물어봐.’라고 적혀 있다."
     ROOM13["evidence"]["J02"]=dict(id="J02",name="초롱이 마지막으로 본 엄마",kind="증언",
