@@ -2347,9 +2347,10 @@ testcase compare_j09:
 
 testcase typography_roles:
     # 0.18.24: narration grey, thought blue with one pair of parentheses, item span in entity colour.
+    $ preferences.text_cps=0
     pause 2.0
     click "처음부터"
-    pause 3.0
+    pause until eval (renpy.get_screen("say") is not None) timeout 20
     run Call("r13_qa_roam",dict(day=2,period=0,location="inn",life_poc=True,evidence=["E01","G1"]),("lodging","entry_corrected"))
     click pos (640,600) until screen "r13_hub" timeout 40
     run Jump("r13_qa_type_lines")
