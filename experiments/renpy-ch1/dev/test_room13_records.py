@@ -11,7 +11,8 @@ names={v['npc']:v['npc'] for v in content['topics'].values()}
 env=dict(ROOM13=content,store=s,persistent=persistent,config=config,R13_NAMES=names,R13_PLACES={'inn':('여관',)},renpy=types.SimpleNamespace(filter_text_tags=lambda t,allow:t,loadable=lambda p:False))
 env["r13_touch_ui"]=lambda:False
 exec(compile(textwrap.dedent(source),'records-init','exec'),env)
-assert len(content['evidence'])==40
+assert len(content['evidence'])==41
+assert 'FAMILY_BUNDLE' in content['evidence']
 assert {k for k in content['evidence'] if env['r13_record_category'](k)=='testimony'}=={'E06','E10','E11','E12','E15','E34'}
 assert config.history_length==250 and len(config.history_callbacks)==1
 s.room13={'evidence':['E01','E06','E06','unknown','E10'],'encounters':[],'read_topics':[],'resident_knowledge':{}}

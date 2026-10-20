@@ -93,7 +93,8 @@ class LetterContinuity(unittest.TestCase):
  def test_chronology_is_conditional_and_granny_followup_not_a_second_wait(self):
   night=(ROOT/'game/systems/room13_first_day_flow.rpy').read_text()
   self.assertNotIn('엄마도 우리가 올 걸 알고 있었어',night)
-  self.assertIn('혹시 우리가 오면 이 방을 찾을 거라고 생각했나 봐',night)
+  self.assertIn('그럴 수도 있고, 누가 대신 써 줬을 수도 있어.',night)
+  self.assertNotIn('엄마가 우리를 불렀으니',night)
   route=(ROOT/'game/systems/room13_poc_route.rpy').read_text()
   self.assertIn('title="아내는 쓴 적 없다는데, 그 편지는 누가 썼습니까?",day=[2,4],need=["poc:letter_conflict","warning_exposed"]',route)
 

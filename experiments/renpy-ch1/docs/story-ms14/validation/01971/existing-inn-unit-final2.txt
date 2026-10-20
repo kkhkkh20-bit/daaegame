@@ -1,0 +1,187 @@
+/workspace/daaegame/experiments/renpy-ch1/dev/test_action27_p0.py:29: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels=list(im.crop((250,140,370,300)).getdata());greens=[p for p in pixels if p[3]>128 and p[1]>p[0]*1.15 and p[1]>p[2]*1.15]
+./workspace/daaegame/experiments/renpy-ch1/dev/test_action27_p0.py:13: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/art/approved-action27-p0/originals/MK-2--resident_eunho.png'>
+  src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_action27_p0.py:13: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/art/approved-action27-p0/originals/MK-3--resident_guseul.png'>
+  src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_action27_p0.py:13: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/art/approved-action27-p0/originals/WS-1--resident_tok.png'>
+  src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_action27_p0.py:13: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/art/approved-action27-p0/originals/MK-4--resident_nubi.png'>
+  src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_action27_p0.py:13: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/art/approved-action27-p0/originals/MK-5--resident_yeoni.png'>
+  src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_action27_p0.py:13: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/art/approved-action27-p0/originals/PO-1--resident_sling.png'>
+  src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_action27_p0.py:13: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/art/approved-action27-p0/originals/SQ-2--resident_piko.png'>
+  src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_action27_p0.py:13: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/art/approved-action27-p0/originals/MK-6--resident_dalgeurak.png'>
+  src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+............................................................................................................/workspace/daaegame/experiments/renpy-ch1/dev/test_drawer_puzzle_art.py:52: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/room13-pixel-inspect-rubbing-paper.webp'>
+  sizes = {Image.open(ROOT / "game" / states[k]["file"]).size for k in ("paper", "rubbing")}
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_drawer_puzzle_art.py:52: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/room13-pixel-inspect-rubbing-done.webp'>
+  sizes = {Image.open(ROOT / "game" / states[k]["file"]).size for k in ("paper", "rubbing")}
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+............................................................................................................................................./workspace/daaegame/experiments/renpy-ch1/dev/map27_pixel_derivative.py:19: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  image.putdata([(r,g,b,a) if a else (0,0,0,0) for r,g,b,a in image.getdata()])
+............................................................................................................................................................................................................................................................................./workspace/daaegame/experiments/renpy-ch1/dev/test_role_connect.py:37: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/art/role-connect-20261016/sources/approved/approved-change.csv' mode='r' encoding='utf-8-sig'>
+  for r in csv.DictReader((ART / "sources/approved" / name).open(encoding="utf-8-sig")):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_role_connect.py:37: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/art/role-connect-20261016/sources/approved/three-approved-changes.csv' mode='r' encoding='utf-8-sig'>
+  for r in csv.DictReader((ART / "sources/approved" / name).open(encoding="utf-8-sig")):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+................................................................................................................................................................../workspace/daaegame/experiments/renpy-ch1/dev/test_spatial_contacts.py:43: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/art/approved-seori-threequarter-v2/source-original.png'>
+  self.assertEqual(Image.open(source).size,(1037,1516))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+........<string>:1: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/game/assets/room13-special-scenes.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+............<string>:2: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/room13-typography-tokens.json'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.<string>:2: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/room13-typography-tokens.json'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.<string>:2: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/room13-typography-tokens.json'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.<string>:2: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/room13-typography-tokens.json'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.<string>:2: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/room13-typography-tokens.json'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.<string>:2: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/room13-typography-tokens.json'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.<string>:2: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/room13-typography-tokens.json'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.<string>:2: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/room13-typography-tokens.json'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+..................................
+----------------------------------------------------------------------
+Ran 742 tests in 69.336s
+
+OK
+PASS: 9 actual init94/97/100/173 same-day learning routes; legacy pending until live opening; calendar/notebook purity; owned-only evidence; no automatic pickup; post-case delegation; five Seori responses; Tok historical replay
+{
+  "passed": true,
+  "checks": [
+    "8 claims, statements, conclusions and evidence ids are consistent",
+    "counters: options, replies and gates are consistent",
+    "accepted evidence is a subset of the original support sets",
+    "break / soft (other statement, consent) / wrong; one record, one claim",
+    "press reveals hidden statement; true statements are not required",
+    "conclusion unlocks after all required statements; propositions untouched",
+    "partial rebuttal: engageable with some evidence, stuck when nothing breakable is left",
+    "partial close is safe when all or none of the statements were broken",
+    "C2 passage counter appears only after C1",
+    "no trust meter; missing evidence makes a claim unarguable; give-up closes per session",
+    "C3 opens after C2, C4 after C3",
+    "F3 manpower depends on real preparation flags",
+    "F4 s2 skipped after C4",
+    "seat stances derived from progress; sessions separated",
+    "conclusion positions vary per claim",
+    "selection skips true statements after a break",
+    "goal line shows meeting countdown and evidence/preparation readiness"
+  ]
+}
+{
+  "passed": true,
+  "checks": [
+    "all diagram candidate pairs",
+    "reasonable wrong hypothesis rejected",
+    "read-only notes no unseen clue disclosure",
+    "tool ownership check",
+    "once-only old activity reward/time",
+    "owned evidence required; base presentation always invoked",
+    "presentation changes response without opening passage",
+    "first/repeat admission and late-case preserved",
+    "old completed save no re-payment",
+    "trial cancel returns same claim"
+  ]
+}
+{
+  "pass": true,
+  "checks": [
+    "unique pickups including repeated clicks",
+    "wrong motions and a released groove do not open; nothing consumed",
+    "wrong item/target keeps inventory",
+    "placed paper never respawns or duplicates",
+    "save-roundtrip mid-puzzle preserves completion and one reward",
+    "reusable magnifier returns real render targets in both views",
+    "repeat completion cannot farm anything",
+    "portable state follows family; active crime scene rejects new kit",
+    "known motion opens without rubbing"
+  ],
+  "final_items": [
+    "pencil",
+    "ruler",
+    "magnifier"
+  ]
+}
+{
+  "pass": true,
+  "evidence": 34,
+  "testimony": 6,
+  "page_size": 12,
+  "checks": [
+    "explicit categories",
+    "acquired only and no duplicates",
+    "archive never submitted",
+    "34 entries pagination",
+    "old save factual people recovery without mutations",
+    "real history and thought distinction",
+    "limitation copy removed only from UI"
+  ]
+}
+{
+  "passed": true,
+  "checks": [
+    "same-period chronological/recent order",
+    "current evidence only in presentation",
+    "retired favorites do not mutate state; seen changes UI only",
+    "unknown record rejected",
+    "legacy missing UI fields safe",
+    "8/12 pagination",
+    "separate documents do not imply comparison",
+    "explicit comparison grants once without time cost"
+  ],
+  "retain_callbacks": 1
+}
+{
+  "passed": true,
+  "checks": [
+    "same-period chronological/recent order",
+    "current evidence only in presentation",
+    "retired favorites do not mutate state; seen changes UI only",
+    "unknown record rejected",
+    "legacy missing UI fields safe",
+    "8/12 pagination",
+    "separate documents do not imply comparison",
+    "explicit comparison grants once without time cost"
+  ],
+  "retain_callbacks": 1
+}
+PASS: archive filter and read isolation; all known appointments; past/unknown appointments absent; current record read tracking
+PASS: automatic read action never exits its parent interaction
+PASS: fresh / legacy route gates; new runs never inherit the route from earlier runs
+{"status": "passed", "conditions": 168, "optional_people": ["resident_kongi", "resident_piko", "resident_ppul", "resident_seol", "resident_sling", "resident_somi", "resident_tori", "resident_yeoni"], "changed_schedule_entries": 190, "all_35_content_residents_reachable": 35, "first_day_square": [{"period": 0, "before": ["doto", "resident_kongi", "resident_owlgp", "resident_piko", "resident_ppul", "resident_seol", "resident_tori"], "after": ["doto", "resident_owlgp", "resident_seol", "resident_tori"]}, {"period": 1, "before": ["doto", "resident_lamplighter", "resident_piko", "resident_seol", "resident_sling", "resident_somi", "resident_tori", "resident_yeoni"], "after": ["doto", "resident_lamplighter", "resident_piko"]}, {"period": 2, "before": ["doto", "resident_badook", "resident_bori"], "after": ["doto", "resident_badook", "resident_bori"]}], "maxima": {"gate": 6, "clinic": 2, "store": 8, "dining": 3, "square": 6, "workshop": 8, "school": 12, "post": 7, "inn": 6, "hall": 2, "kitchen": 1, "facility": 2, "greenhouse": 1}, "checks": ["Non-optional story-critical locations unchanged for all states", "Piko clinic and shelter/patient overrides preserved", "Dead/detained residents absent", "Period3 remains evening, home is not field presence", "No schedule query mutates any story state"]}
+{
+  "pass": true,
+  "checks": [
+    "No tool, no direct object observation, wrong location or missing E03 cannot record",
+    "Before-E04 diagram observation adds only one optional note; no evidence/time/flags/passages",
+    "JSON save/load and repeated use retain one note with original timestamp",
+    "Only the actually recorded observation exposes its own question",
+    "Comparison hint follows existing map day/time availability; cost/grant remain only on map",
+    "Presentation retains original pipeline and requires owned record plus completed optional question",
+    "Daram follow-up remains unavailable while child is held",
+    "Legacy save view is read-only; notes associate with E04 without falsely granting it",
+    "Commit occurs after screen Return; first-save signal true once and repeat false",
+    "Seam popup directly reaches child conversation only when companion is present and note exists"
+  ]
+}
+PASS: testimony requires conversation; owned-only comparison; presentation; no jobs
+PASS: all-skip crosses unread lines; ten choice/menu boundaries restore both original preferences; read-only mode and external stops restore the preference
