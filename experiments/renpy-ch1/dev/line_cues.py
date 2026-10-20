@@ -50,6 +50,9 @@ def scene_rows():
             try:lines=ast.literal_eval(s[i:j+1])
             except Exception:continue
             rows.setdefault(ident.group(1),[tuple(r) for r in lines])
+    # New-story cues are checked against the actual existing packet adapter.
+    from match_ms14_expressions import current_source_packets
+    rows.update(current_source_packets())
     return rows
 
 def cues(kind):

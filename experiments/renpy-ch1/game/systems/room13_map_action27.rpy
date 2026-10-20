@@ -73,6 +73,16 @@ init 178 python:
                     result[index]=r13_ma_place(actor,actor["pose"],move["foot"][0],move["foot"][1],actor["height"])
         return sorted(result,key=lambda actor:actor["depth"])
 
+    class R13Map27FurnitureAlphaMask(AlphaMask):
+        # Furniture is authored on virtual pixels. Drawable-resolution RTTs
+        # resample its edges at small windows, exposing concealed click pixels.
+        # Keep the same exact composition for visible art and its focus mask.
+        def render(self,width,height,st,at):
+            result=super(R13Map27FurnitureAlphaMask,self).render(width,height,st,at)
+            result.add_property("drawable_resolution",False)
+            result.add_property("texture_scaling","nearest")
+            return result
+
     _r13_map27_visible=r13_staged_visible_art
     def r13_staged_visible_art(actor,still=False):
         # r13_actor_hit_mask calls this same function: no second rectangle-only picker.
@@ -82,6 +92,6 @@ init 178 python:
             mask=R13FurnitureMask(polygon,size=size,origin=origin)
             # Authored hand/prop silhouettes may rest ON a counter, in front of its mask.
             for keepout in actor.get("map27_keepouts",[]):
-                mask=AlphaMask(mask,R13FurnitureMask(keepout,size=size,origin=origin),invert=True)
-            art=AlphaMask(art,mask,invert=True)
+                mask=R13Map27FurnitureAlphaMask(mask,R13FurnitureMask(keepout,size=size,origin=origin),invert=True)
+            art=R13Map27FurnitureAlphaMask(art,mask,invert=True)
         return art

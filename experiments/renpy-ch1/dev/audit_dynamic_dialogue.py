@@ -21,7 +21,7 @@ FILES = ('dynamic-context-review.json', 'dynamic-expression-review.json',
 
 def literal_inventory():
     people = json.loads((ROOT / 'game/assets/room13-fullbody-dialogue.json').read_text())['people']
-    pairs = {(p[0], p[1]) for rows in line_cues.scene_rows().values() for p in rows}
+    pairs = {(p[0], p[1]) for identity,rows in line_cues.scene_rows().items() if not identity.startswith("MS14_") for p in rows}
     result = []
     for path in sorted((ROOT / 'game').rglob('*.rpy')):
         if not path.name.startswith('room13') or 'qa_tests' in path.parts:

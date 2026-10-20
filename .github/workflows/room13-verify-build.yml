@@ -113,7 +113,7 @@ jobs:
           export ROOM13_QA_OUT="$ROOM13_CI_OUT/native-qa"
           export ROOM13_TEST_TIMEOUT=180
           mkdir -p "$HOME" "$XDG_CONFIG_HOME" "$XDG_DATA_HOME" "$XDG_CACHE_HOME" "$RENPY_PATH_TO_SAVES" "$ROOM13_QA_OUT"
-          bash dev/run_renpy_tests.sh meeting_direction admin_meeting_replay investigation_placement_granny investigation_job_musoe investigation_source2_ttadak investigation_source2_tosil 2>&1 | tee "$ROOM13_CI_OUT/native-qa-summary.log"
+          bash dev/run_renpy_tests.sh design_restore_piko investigation_sofa_tosil investigation_sofa_nubi meeting_direction admin_meeting_replay investigation_placement_granny investigation_job_musoe investigation_source2_ttadak investigation_source2_tosil 2>&1 | tee "$ROOM13_CI_OUT/native-qa-summary.log"
       - name: Compile and build web release
         if: env.ROOM13_DIAGNOSTIC_ONLY != '1'
         working-directory: experiments/renpy-ch1
@@ -131,6 +131,7 @@ jobs:
             if [ -f "$file" ]; then cp "$file" "$ROOM13_CI_OUT/$(basename "$file")"; fi
           done
           git status --short > "$ROOM13_CI_OUT/worktree-status.txt"
+          python experiments/renpy-ch1/dev/ci_bound_diagnostics.py
       - name: Bound artifact storage to 100 MiB for one day
         id: artifact_budget
         if: always()

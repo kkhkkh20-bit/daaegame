@@ -3,13 +3,24 @@ import io,json,textwrap,types,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 
+class FakeMaskRender:
+    def __init__(self):self.properties={}
+    def add_property(self,key,value):self.properties[key]=value
+
+class FakeAlphaMask(tuple):
+    def __new__(cls,art,mask,**kwargs):return tuple.__new__(cls,('alpha',art,mask,kwargs))
+    def render(self,width,height,st,at):
+        self.render_args=(width,height,st,at)
+        self.result=FakeMaskRender()
+        return self.result
+
 def environment(rows=None):
     actor=dict(person='resident_sling',pose='activity',x=5,y=6,width=30,height=40,rect=[5,6,30,40],depth=46,occlusion=[])
     env=dict(json=json,renpy=types.SimpleNamespace(file=lambda p:io.StringIO('{"rows":[]}'),loadable=lambda p:True),
         r13_stage_people=lambda entry=False:[actor],r13_staged_visible_art=lambda a,still=False:('original',a['person'],still),
         store=types.SimpleNamespace(room13=dict(location='post',period=0,day=2,flags=['lodging'])),
         r13_world_width=lambda:2160,r13_daylight=lambda:'morning',r13_offer_for_person=lambda who:None,
-        R13_ACTING={},R13FurnitureMask=lambda poly,**kw:('mask',poly,kw),AlphaMask=lambda a,m,**kw:('alpha',a,m,kw))
+        R13_ACTING={},R13FurnitureMask=lambda poly,**kw:('mask',poly,kw),AlphaMask=FakeAlphaMask)
     src=(ROOT/'game/systems/room13_map_action27.rpy').read_text().split('init 178 python:\n',1)[1]
     exec(textwrap.dedent(src),env)
     if rows is not None:env['R13_MAP_ACTION27']['rows']=rows
@@ -61,6 +72,22 @@ class MapAction27(unittest.TestCase):
         src=(ROOT/'game/room13_acting.rpy').read_text();start=src.index('    def r13_actor_hit_mask(actor):');end=src.index('    def r13_actor_face',start)
         env['Crop']=lambda rect,art:(rect,art);exec(textwrap.dedent(src[start:end]),env)
         self.assertEqual(env['r13_actor_hit_mask'](actor)[1],visible)
+    def test_furniture_rtt_uses_virtual_pixels_without_resizing_child(self):
+        env,actor=environment()
+        mask=env['R13Map27FurnitureAlphaMask']('art','mask',invert=True)
+        rendered=mask.render(151,226,1.2,1.2)
+        self.assertIs(rendered,mask.result)
+        self.assertEqual(mask.render_args,(151,226,1.2,1.2))
+        self.assertEqual(rendered.properties,{'drawable_resolution':False,'texture_scaling':'nearest'})
+        self.assertEqual(mask[1:3],('art','mask'))
+        self.assertTrue(mask[3]['invert'])
+    def test_keepouts_and_art_use_same_virtual_pixel_mask_class(self):
+        env,actor=environment()
+        actor.update(map27_occlusion=[[[0,0],[20,0],[20,30]]],map27_keepouts=[[[5,5],[10,5],[10,10]]])
+        visible=env['r13_staged_visible_art'](actor,True)
+        self.assertIsInstance(visible,env['R13Map27FurnitureAlphaMask'])
+        self.assertIsInstance(visible[2],env['R13Map27FurnitureAlphaMask'])
+
     def test_clearance_preserves_event_poses_and_existing_scale(self):
         row=approved();row['clearance']=[dict(person='resident_ttadak',poses=['living_repair'],foot=[1540,640])]
         env,actor=environment([row]);other=dict(actor,person='resident_ttadak',pose='event_door',height=260)
