@@ -330,7 +330,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 68 | `room13_notebook.rpy:182` | _r13_review_promises |
+| 1 | 68 | `room13_notebook.rpy:195` | _r13_review_promises |
 | 2 | 173 | `systems/room13_review_knowledge.rpy:128` |  |
 
 ## `r13_click_feedback` (2층)
@@ -400,7 +400,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 170 | `systems/room13_dialogue_beats.rpy:150` | _r13_context_beat_art |
+| 1 | 170 | `systems/room13_dialogue_beats.rpy:154` | _r13_context_beat_art |
 | 2 | 172 | `systems/room13_dialogue_context_art.rpy:28` |  |
 
 ## `r13_dialogue_beat_begin` (2층)
@@ -611,7 +611,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 59 | `room13_acting.rpy:533` | _r13_map27_visible |
-| 2 | 178 | `systems/room13_map_action27.rpy:77` |  |
+| 2 | 178 | `systems/room13_map_action27.rpy:87` |  |
 
 ## `r13_topic_current_context` (2층)
 

@@ -1,0 +1,689 @@
+{
+  "kind": "existing web build + production-function/image overlay; not rebuilt game",
+  "natural_d01": {
+    "packet": [
+      "daram",
+      "아빠는 안 부서지잖아."
+    ],
+    "beat": {
+      "person": "daram",
+      "talk": "joy",
+      "react": null,
+      "settled": true,
+      "duration": 0.35
+    }
+  },
+  "piko_diagnostic": {
+    "people": [
+      "resident_seol",
+      "resident_hyeoni",
+      "resident_yeoni",
+      "doto",
+      "resident_tori",
+      "resident_ppul",
+      "resident_owlgp"
+    ],
+    "offer": "r13_w1c_portrait",
+    "staged": false,
+    "world_offset": 320,
+    "piko": []
+  },
+  "status": "passed",
+  "profiles": {
+    "daram": {
+      "status": "approved_runtime",
+      "art_style": "storybook_source",
+      "source_kind": "source_master",
+      "profiles": {
+        "560": {
+          "canvas": [
+            300,
+            524
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-source-master/qa-fit/daram/560/neutral.webp",
+              "offset": [
+                7,
+                24
+              ],
+              "source_master": "highres/daram/source.png",
+              "source_commit": "a59c4fed98b707febd7d9572f4d0bd555f2f194b",
+              "source_sha256": "b705401956952ae5dbfd02c443469e94bf1caabebcc54824d2077d6a74fbb3fd",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "joy": {
+              "file": "assets/dialogue-source-master/qa-fit/daram/560/joy.webp",
+              "offset": [
+                8,
+                24
+              ],
+              "source_master": "sources/daram/joy.png",
+              "source_sha256": "8ff109cb822cf596a7985a021a432917427f8cf0af9b8b8d240ab75339c2c9b2",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "angry": {
+              "file": "assets/dialogue-source-master/qa-fit/daram/560/angry.webp",
+              "offset": [
+                8,
+                33
+              ],
+              "source_master": "sources/daram/angry.png",
+              "source_sha256": "3a38fe974bad66f9af117430d3f2d0df8bbd31c8f532bb1aca7c8741a5fe677f",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "anxious": {
+              "file": "assets/dialogue-source-master/qa-fit/daram/560/anxious.webp",
+              "offset": [
+                8,
+                22
+              ],
+              "source_master": "sources/daram/anxious.png",
+              "source_sha256": "169c516bb1500f2beb021e25b55c2b24ad8d534e03f878b73f4b70b995a03221",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-source-master/qa-fit/daram/560/surprise_talk.webp",
+              "offset": [
+                8,
+                30
+              ],
+              "source_master": "sources/daram/surprise_talk.png",
+              "source_sha256": "c7eca2a84f2eb2b9a31bd2eb9e7e2ed2aee6987bffcc12b6b013c7aad1bc92e5",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-source-master/qa-fit/daram/560/surprise_react.webp",
+              "offset": [
+                8,
+                29
+              ],
+              "source_master": "sources/daram/surprise_react.png",
+              "source_sha256": "981a89d5a6f039d8046c0d2d3ee8e2cf073a4e6aa45f0c4ec17472ae9f314e44",
+              "pixel_filter": "nearest-final-grid2"
+            }
+          },
+          "pixel_grid": 2
+        },
+        "760": {
+          "canvas": [
+            402,
+            702
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-source-master/qa-fit/daram/760/neutral.webp",
+              "offset": [
+                8,
+                27
+              ],
+              "source_master": "highres/daram/source.png",
+              "source_commit": "a59c4fed98b707febd7d9572f4d0bd555f2f194b",
+              "source_sha256": "b705401956952ae5dbfd02c443469e94bf1caabebcc54824d2077d6a74fbb3fd",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "joy": {
+              "file": "assets/dialogue-source-master/qa-fit/daram/760/joy.webp",
+              "offset": [
+                8,
+                27
+              ],
+              "source_master": "sources/daram/joy.png",
+              "source_sha256": "8ff109cb822cf596a7985a021a432917427f8cf0af9b8b8d240ab75339c2c9b2",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "angry": {
+              "file": "assets/dialogue-source-master/qa-fit/daram/760/angry.webp",
+              "offset": [
+                8,
+                40
+              ],
+              "source_master": "sources/daram/angry.png",
+              "source_sha256": "3a38fe974bad66f9af117430d3f2d0df8bbd31c8f532bb1aca7c8741a5fe677f",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "anxious": {
+              "file": "assets/dialogue-source-master/qa-fit/daram/760/anxious.webp",
+              "offset": [
+                8,
+                24
+              ],
+              "source_master": "sources/daram/anxious.png",
+              "source_sha256": "169c516bb1500f2beb021e25b55c2b24ad8d534e03f878b73f4b70b995a03221",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-source-master/qa-fit/daram/760/surprise_talk.webp",
+              "offset": [
+                8,
+                35
+              ],
+              "source_master": "sources/daram/surprise_talk.png",
+              "source_sha256": "c7eca2a84f2eb2b9a31bd2eb9e7e2ed2aee6987bffcc12b6b013c7aad1bc92e5",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-source-master/qa-fit/daram/760/surprise_react.webp",
+              "offset": [
+                8,
+                34
+              ],
+              "source_master": "sources/daram/surprise_react.png",
+              "source_sha256": "981a89d5a6f039d8046c0d2d3ee8e2cf073a4e6aa45f0c4ec17472ae9f314e44",
+              "pixel_filter": "nearest-final-grid2"
+            }
+          },
+          "pixel_grid": 2
+        },
+        "840": {
+          "canvas": [
+            442,
+            774
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-source-master/qa-fit/daram/840/neutral.webp",
+              "offset": [
+                7,
+                29
+              ],
+              "source_master": "highres/daram/source.png",
+              "source_commit": "a59c4fed98b707febd7d9572f4d0bd555f2f194b",
+              "source_sha256": "b705401956952ae5dbfd02c443469e94bf1caabebcc54824d2077d6a74fbb3fd",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "joy": {
+              "file": "assets/dialogue-source-master/qa-fit/daram/840/joy.webp",
+              "offset": [
+                8,
+                29
+              ],
+              "source_master": "sources/daram/joy.png",
+              "source_sha256": "8ff109cb822cf596a7985a021a432917427f8cf0af9b8b8d240ab75339c2c9b2",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "angry": {
+              "file": "assets/dialogue-source-master/qa-fit/daram/840/angry.webp",
+              "offset": [
+                8,
+                42
+              ],
+              "source_master": "sources/daram/angry.png",
+              "source_sha256": "3a38fe974bad66f9af117430d3f2d0df8bbd31c8f532bb1aca7c8741a5fe677f",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "anxious": {
+              "file": "assets/dialogue-source-master/qa-fit/daram/840/anxious.webp",
+              "offset": [
+                8,
+                25
+              ],
+              "source_master": "sources/daram/anxious.png",
+              "source_sha256": "169c516bb1500f2beb021e25b55c2b24ad8d534e03f878b73f4b70b995a03221",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-source-master/qa-fit/daram/840/surprise_talk.webp",
+              "offset": [
+                8,
+                37
+              ],
+              "source_master": "sources/daram/surprise_talk.png",
+              "source_sha256": "c7eca2a84f2eb2b9a31bd2eb9e7e2ed2aee6987bffcc12b6b013c7aad1bc92e5",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-source-master/qa-fit/daram/840/surprise_react.webp",
+              "offset": [
+                8,
+                35
+              ],
+              "source_master": "sources/daram/surprise_react.png",
+              "source_sha256": "981a89d5a6f039d8046c0d2d3ee8e2cf073a4e6aa45f0c4ec17472ae9f314e44",
+              "pixel_filter": "nearest-final-grid2"
+            }
+          },
+          "pixel_grid": 2
+        }
+      },
+      "stance": "standing",
+      "gaze": "player",
+      "source_commit": "8c80550dda6ecf7af335827bba7e4fa6f4052ddf",
+      "neutral_source_commit": "a59c4fed98b707febd7d9572f4d0bd555f2f194b"
+    },
+    "karo": {
+      "status": "approved_runtime",
+      "art_style": "storybook_source",
+      "source_kind": "source_master",
+      "profiles": {
+        "560": {
+          "canvas": [
+            386,
+            612
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-source-master/qa-fit/karo/560/neutral.webp",
+              "offset": [
+                8,
+                22
+              ],
+              "source_master": "sources/karo/neutral.png",
+              "source_sha256": "f15da6440d98e60813f44b38dbd2b18469e4555cd8c3fa8d25d54d1ec5f03c56",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "joy": {
+              "file": "assets/dialogue-source-master/qa-fit/karo/560/joy.webp",
+              "offset": [
+                8,
+                35
+              ],
+              "source_master": "sources/karo/joy.png",
+              "source_sha256": "1efd571285962fd814819cc41992895230d7ec3c1c03871a066af23bb5eea7ca",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "angry": {
+              "file": "assets/dialogue-source-master/qa-fit/karo/560/angry.webp",
+              "offset": [
+                8,
+                17
+              ],
+              "source_master": "sources/karo/angry.png",
+              "source_sha256": "792ea874eed748672c8ccf3dbd684c16d100a512969e89a5d33f39bd68fd055e",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "anxious": {
+              "file": "assets/dialogue-source-master/qa-fit/karo/560/anxious.webp",
+              "offset": [
+                8,
+                22
+              ],
+              "source_master": "sources/karo/anxious.png",
+              "source_sha256": "9976f3ae33a04fab577ab4b293c6242287d1a221c64c42b1031998fc17ed37fa",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-source-master/qa-fit/karo/560/surprise_talk.webp",
+              "offset": [
+                8,
+                20
+              ],
+              "source_master": "sources/karo/surprise_talk.png",
+              "source_sha256": "8d37c637373ebacf3e7df3e8150c629c5271ef48d005754ab04789745ff7c3ec",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-source-master/qa-fit/karo/560/surprise_react.webp",
+              "offset": [
+                8,
+                24
+              ],
+              "source_master": "sources/karo/surprise_react.png",
+              "source_sha256": "8fc5743f9811c9e4e7b0aebda79c62cca4914cc7d4ec9d4c09e6f4c6e84ec1a8",
+              "pixel_filter": "nearest-final-grid2"
+            }
+          },
+          "pixel_grid": 2
+        },
+        "760": {
+          "canvas": [
+            416,
+            660
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-source-master/qa-fit/karo/760/neutral.webp",
+              "offset": [
+                8,
+                23
+              ],
+              "source_master": "sources/karo/neutral.png",
+              "source_sha256": "f15da6440d98e60813f44b38dbd2b18469e4555cd8c3fa8d25d54d1ec5f03c56",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "joy": {
+              "file": "assets/dialogue-source-master/qa-fit/karo/760/joy.webp",
+              "offset": [
+                8,
+                36
+              ],
+              "source_master": "sources/karo/joy.png",
+              "source_sha256": "1efd571285962fd814819cc41992895230d7ec3c1c03871a066af23bb5eea7ca",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "angry": {
+              "file": "assets/dialogue-source-master/qa-fit/karo/760/angry.webp",
+              "offset": [
+                8,
+                18
+              ],
+              "source_master": "sources/karo/angry.png",
+              "source_sha256": "792ea874eed748672c8ccf3dbd684c16d100a512969e89a5d33f39bd68fd055e",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "anxious": {
+              "file": "assets/dialogue-source-master/qa-fit/karo/760/anxious.webp",
+              "offset": [
+                8,
+                23
+              ],
+              "source_master": "sources/karo/anxious.png",
+              "source_sha256": "9976f3ae33a04fab577ab4b293c6242287d1a221c64c42b1031998fc17ed37fa",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-source-master/qa-fit/karo/760/surprise_talk.webp",
+              "offset": [
+                8,
+                21
+              ],
+              "source_master": "sources/karo/surprise_talk.png",
+              "source_sha256": "8d37c637373ebacf3e7df3e8150c629c5271ef48d005754ab04789745ff7c3ec",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-source-master/qa-fit/karo/760/surprise_react.webp",
+              "offset": [
+                8,
+                24
+              ],
+              "source_master": "sources/karo/surprise_react.png",
+              "source_sha256": "8fc5743f9811c9e4e7b0aebda79c62cca4914cc7d4ec9d4c09e6f4c6e84ec1a8",
+              "pixel_filter": "nearest-final-grid2"
+            }
+          },
+          "pixel_grid": 2
+        },
+        "840": {
+          "canvas": [
+            571,
+            906
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-source-master/qa-fit/karo/840/neutral.webp",
+              "offset": [
+                8,
+                25
+              ],
+              "source_master": "sources/karo/neutral.png",
+              "source_sha256": "f15da6440d98e60813f44b38dbd2b18469e4555cd8c3fa8d25d54d1ec5f03c56",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "joy": {
+              "file": "assets/dialogue-source-master/qa-fit/karo/840/joy.webp",
+              "offset": [
+                8,
+                44
+              ],
+              "source_master": "sources/karo/joy.png",
+              "source_sha256": "1efd571285962fd814819cc41992895230d7ec3c1c03871a066af23bb5eea7ca",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "angry": {
+              "file": "assets/dialogue-source-master/qa-fit/karo/840/angry.webp",
+              "offset": [
+                8,
+                18
+              ],
+              "source_master": "sources/karo/angry.png",
+              "source_sha256": "792ea874eed748672c8ccf3dbd684c16d100a512969e89a5d33f39bd68fd055e",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "anxious": {
+              "file": "assets/dialogue-source-master/qa-fit/karo/840/anxious.webp",
+              "offset": [
+                8,
+                25
+              ],
+              "source_master": "sources/karo/anxious.png",
+              "source_sha256": "9976f3ae33a04fab577ab4b293c6242287d1a221c64c42b1031998fc17ed37fa",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-source-master/qa-fit/karo/840/surprise_talk.webp",
+              "offset": [
+                8,
+                23
+              ],
+              "source_master": "sources/karo/surprise_talk.png",
+              "source_sha256": "8d37c637373ebacf3e7df3e8150c629c5271ef48d005754ab04789745ff7c3ec",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-source-master/qa-fit/karo/840/surprise_react.webp",
+              "offset": [
+                8,
+                28
+              ],
+              "source_master": "sources/karo/surprise_react.png",
+              "source_sha256": "8fc5743f9811c9e4e7b0aebda79c62cca4914cc7d4ec9d4c09e6f4c6e84ec1a8",
+              "pixel_filter": "nearest-final-grid2"
+            }
+          },
+          "pixel_grid": 2
+        }
+      },
+      "stance": "standing",
+      "gaze": "player",
+      "source_commit": "8c80550dda6ecf7af335827bba7e4fa6f4052ddf"
+    },
+    "guard": {
+      "status": "approved_runtime",
+      "art_style": "storybook_source",
+      "source_kind": "source_master",
+      "profiles": {
+        "560": {
+          "canvas": [
+            373,
+            612
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-source-master/qa-fit/guard/560/neutral.webp",
+              "offset": [
+                8,
+                23
+              ],
+              "source_master": "sources/guard/neutral.png",
+              "source_sha256": "8ab65c0e733eb660158280bbe6e3237cc1fc17251802916c3226bf083d8c67ba",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "joy": {
+              "file": "assets/dialogue-source-master/qa-fit/guard/560/joy.webp",
+              "offset": [
+                8,
+                31
+              ],
+              "source_master": "sources/guard/joy.png",
+              "source_sha256": "13b77836fd6cc4a2876a70eb0930470d46c3dc0afb5167f7bb97020563de08fd",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "angry": {
+              "file": "assets/dialogue-source-master/qa-fit/guard/560/angry.webp",
+              "offset": [
+                8,
+                28
+              ],
+              "source_master": "sources/guard/angry.png",
+              "source_sha256": "3e2b989588149166569dba201aea474e2914aaa071e7806c351769584116b667",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "anxious": {
+              "file": "assets/dialogue-source-master/qa-fit/guard/560/anxious.webp",
+              "offset": [
+                8,
+                30
+              ],
+              "source_master": "sources/guard/anxious.png",
+              "source_sha256": "60f4dc14f2f3e9191e755edda519c9b7954842913cf47a451cc5835f469d52b8",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-source-master/qa-fit/guard/560/surprise_talk.webp",
+              "offset": [
+                8,
+                22
+              ],
+              "source_master": "sources/guard/surprise_talk.png",
+              "source_sha256": "83b8b7375a4853f41c61871f450d574c3a866fb244a2ca38c3a8cbb59283a9fe",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-source-master/qa-fit/guard/560/surprise_react.webp",
+              "offset": [
+                8,
+                31
+              ],
+              "source_master": "sources/guard/surprise_react.png",
+              "source_sha256": "d60eb68d3b9ea34851df4b588b2634e74aa72a7728316517f8879d3c6d138a75",
+              "pixel_filter": "nearest-final-grid2"
+            }
+          },
+          "pixel_grid": 2
+        },
+        "760": {
+          "canvas": [
+            416,
+            682
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-source-master/qa-fit/guard/760/neutral.webp",
+              "offset": [
+                8,
+                23
+              ],
+              "source_master": "sources/guard/neutral.png",
+              "source_sha256": "8ab65c0e733eb660158280bbe6e3237cc1fc17251802916c3226bf083d8c67ba",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "joy": {
+              "file": "assets/dialogue-source-master/qa-fit/guard/760/joy.webp",
+              "offset": [
+                8,
+                32
+              ],
+              "source_master": "sources/guard/joy.png",
+              "source_sha256": "13b77836fd6cc4a2876a70eb0930470d46c3dc0afb5167f7bb97020563de08fd",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "angry": {
+              "file": "assets/dialogue-source-master/qa-fit/guard/760/angry.webp",
+              "offset": [
+                8,
+                29
+              ],
+              "source_master": "sources/guard/angry.png",
+              "source_sha256": "3e2b989588149166569dba201aea474e2914aaa071e7806c351769584116b667",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "anxious": {
+              "file": "assets/dialogue-source-master/qa-fit/guard/760/anxious.webp",
+              "offset": [
+                8,
+                31
+              ],
+              "source_master": "sources/guard/anxious.png",
+              "source_sha256": "60f4dc14f2f3e9191e755edda519c9b7954842913cf47a451cc5835f469d52b8",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-source-master/qa-fit/guard/760/surprise_talk.webp",
+              "offset": [
+                8,
+                23
+              ],
+              "source_master": "sources/guard/surprise_talk.png",
+              "source_sha256": "83b8b7375a4853f41c61871f450d574c3a866fb244a2ca38c3a8cbb59283a9fe",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-source-master/qa-fit/guard/760/surprise_react.webp",
+              "offset": [
+                8,
+                32
+              ],
+              "source_master": "sources/guard/surprise_react.png",
+              "source_sha256": "d60eb68d3b9ea34851df4b588b2634e74aa72a7728316517f8879d3c6d138a75",
+              "pixel_filter": "nearest-final-grid2"
+            }
+          },
+          "pixel_grid": 2
+        },
+        "840": {
+          "canvas": [
+            552,
+            906
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-source-master/qa-fit/guard/840/neutral.webp",
+              "offset": [
+                8,
+                26
+              ],
+              "source_master": "sources/guard/neutral.png",
+              "source_sha256": "8ab65c0e733eb660158280bbe6e3237cc1fc17251802916c3226bf083d8c67ba",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "joy": {
+              "file": "assets/dialogue-source-master/qa-fit/guard/840/joy.webp",
+              "offset": [
+                8,
+                38
+              ],
+              "source_master": "sources/guard/joy.png",
+              "source_sha256": "13b77836fd6cc4a2876a70eb0930470d46c3dc0afb5167f7bb97020563de08fd",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "angry": {
+              "file": "assets/dialogue-source-master/qa-fit/guard/840/angry.webp",
+              "offset": [
+                8,
+                34
+              ],
+              "source_master": "sources/guard/angry.png",
+              "source_sha256": "3e2b989588149166569dba201aea474e2914aaa071e7806c351769584116b667",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "anxious": {
+              "file": "assets/dialogue-source-master/qa-fit/guard/840/anxious.webp",
+              "offset": [
+                8,
+                36
+              ],
+              "source_master": "sources/guard/anxious.png",
+              "source_sha256": "60f4dc14f2f3e9191e755edda519c9b7954842913cf47a451cc5835f469d52b8",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-source-master/qa-fit/guard/840/surprise_talk.webp",
+              "offset": [
+                8,
+                25
+              ],
+              "source_master": "sources/guard/surprise_talk.png",
+              "source_sha256": "83b8b7375a4853f41c61871f450d574c3a866fb244a2ca38c3a8cbb59283a9fe",
+              "pixel_filter": "nearest-final-grid2"
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-source-master/qa-fit/guard/840/surprise_react.webp",
+              "offset": [
+                8,
+                38
+              ],
+              "source_master": "sources/guard/surprise_react.png",
+              "source_sha256": "d60eb68d3b9ea34851df4b588b2634e74aa72a7728316517f8879d3c6d138a75",
+              "pixel_filter": "nearest-final-grid2"
+            }
+          },
+          "pixel_grid": 2
+        }
+      },
+      "stance": "standing",
+      "gaze": "player",
+      "source_commit": "8c80550dda6ecf7af335827bba7e4fa6f4052ddf"
+    }
+  }
+}

@@ -101,7 +101,7 @@ init 97 python:
             if not r13_has("M01") or not r13_has("E03"):
                 return "엄마가 머물던 13호실에는 무엇이 남아 있을까?"
             if not r13_has("mother_lamplighter_lead"):return "메모에 적힌 ‘등불을 돌보는 분’은 누구일까?"
-            if r13_has("letter_no_acorn"):return "편지에는 도토리가 없다. 정말 엄마가 쓴 편지일까?"
+            if r13_has("letter_no_acorn"):return "엄마 소식은 내일 이어서 찾아보자. 방에 돌아가서 쉴까?" if not r13_has("night1_seen") else "편지에는 도토리가 없다. 정말 엄마가 쓴 편지일까?"
             return "엄마는 왜 13호실을 비우고 돌아오지 않았을까?"
         if not r13_has("livelihood_open"):return "까로 아저씨의 마차는 언제 고쳐질까?"
         if r13_has("J03"):return "우체국을 나온 엄마는 누구를 만났을까?"

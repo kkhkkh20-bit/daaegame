@@ -95,6 +95,19 @@ init 68 python:
     def r13_material_filters_visible(current,allow_transfer=True,shelf=None,shelf_count=0):
         return bool(r13_material_filter_choices(current,allow_transfer) or (shelf is not None and (shelf_count or shelf)))
 
+    def r13_material_body(ev):
+        # Presentation only: never rewrite evidence facts or the catalogue.
+        import re
+        body=ev.get("establishes","")
+        title=ev.get("name","")
+        for separator in (" / ",": ","：", "\n"):
+            prefix=title+separator
+            if title and body.startswith(prefix):
+                body=body[len(prefix):].lstrip()
+                break
+        # Only spaced list separators before words; keep dates, fractions and URLs.
+        return re.sub(r"\s+/\s+(?=[가-힣A-Za-z「‘“])","\n",body)
+
     def r13_material_source_person(key):
         # Only explicit source metadata and people already encountered.
         who=ROOM13["evidence_sources"].get(key)
@@ -342,7 +355,7 @@ screen r13_material_detail(detail,archive=False,view_context=("records",),owner=
                             style "r13_paper_tab_button" xsize 332 ysize (80 if r13_touch_ui() else 48) text_size 19
                             action Function(r13_open_record_relation,owner,source_person)
                     text ("들은 말" if ev.get("kind")=="증언" else "확인한 내용") size 17 color "#765426"
-                    text ev["establishes"] size (26 if r13_touch_ui() else r13_read_size(21,26)) color "#493b30" xsize 332
+                    text r13_material_body(ev) size (26 if r13_touch_ui() else r13_read_size(21,26)) color "#493b30" xsize 332
                     if not origin_open:
                         textbutton "출처 · 기록 펼치기":
                             style "r13_paper_tab_button" xsize 332 ysize (80 if r13_touch_ui() else 48) text_size 20

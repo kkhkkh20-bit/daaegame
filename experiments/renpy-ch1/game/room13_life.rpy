@@ -169,7 +169,7 @@ init 57 python:
         if s["day"]>=r13_tl(11) and r13_has("shelter_ready") and person in ("resident_tori","resident_yeoni","resident_kongi","resident_somi","resident_musoe"):
             return "school"
         where=R13_WEEKLY_ROUTINES.get(person,R13_RESIDENTS[person]["weekly_locations"])[(s["day"]-1)%7][min(s["period"],2)]
-        return {"home":None,"library":"post","lowroad":"gate","tower":"square"}.get(where,where)
+        return "square" if person=="resident_piko" and s.get("location")=="square" and s.get("offers",{}).get("r13_w1c_portrait")==dict(day=s["day"],period=s["period"],location="square") else {"home":None,"library":"post","lowroad":"gate","tower":"square"}.get(where,where)
 
     def r13_activity_text(person):
         if person in R13_CALENDAR:return r13_calendar_activity(person)

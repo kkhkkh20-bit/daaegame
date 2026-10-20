@@ -81,6 +81,8 @@ init 170 python:
                 if key and key not in self.frames:
                     frame=profile["frames"][key]
                     self.frames[key]=Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],zoom=frame.get("scale",1.0),nearest=False,subpixel=True),xysize=tuple(profile["canvas"]))
+                    if profile.get("pixel_grid")==2:
+                        self.frames[key]=r13_pixel_scale(self.frames[key],profile["canvas"][0],profile["canvas"][1],2)
         def visit(self):
             return list(self.frames.values())
         def render(self,width,height,st,at):
@@ -107,7 +109,7 @@ init 170 python:
         base=min(profiles,key=lambda h:abs(int(h)-int(height)))
         ratio=float(height)/int(base);profile=profiles[base]
         frames={key:dict(frame,offset=[int(round(v*ratio)) for v in frame["offset"]],scale=frame.get("scale",1.0)*ratio) for key,frame in profile["frames"].items()}
-        return dict(canvas=[max(1,int(round(v*ratio))) for v in profile["canvas"]],frames=frames)
+        return dict(canvas=[max(1,int(round(v*ratio))) for v in profile["canvas"]],frames=frames,**({"pixel_grid":2} if profile.get("pixel_grid")==2 else {}))
 
     def r13_dialogue_pose_source(person,pose):
         entry=R13_DIALOGUE_POSE_SOURCE["people"].get(person,{})
@@ -132,7 +134,8 @@ init 170 python:
         emotion={"surprise":"surprise_talk","flustered":"anxious"}.get(emotion,emotion)
         frame=profile["frames"].get(emotion,profile["frames"]["neutral"])
         if renpy.loadable(frame["file"]):
-            return Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],zoom=frame.get("scale",1.0),nearest=False,subpixel=True),xysize=tuple(profile["canvas"]))
+            art=Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],zoom=frame.get("scale",1.0),nearest=False,subpixel=True),xysize=tuple(profile["canvas"]))
+            return r13_pixel_scale(art,profile["canvas"][0],profile["canvas"][1],2) if profile.get("pixel_grid")==2 else art
         # An approved character must never silently revert to the old pixel design.
         # A second shipped size is the same approved neutral, with its whole canvas scaled.
         posed=r13_dialogue_pose_source(person,pose)
@@ -143,7 +146,8 @@ init 170 python:
             if renpy.loadable(fallback["file"]):
                 art=Fixed(Transform(fallback["file"],xpos=fallback["offset"][0],ypos=fallback["offset"][1],zoom=fallback.get("scale",1.0),nearest=False,subpixel=True),xysize=tuple(other["canvas"]))
                 renpy.log("Approved dialogue size fallback: %s %s -> %s" % (person,height,alternate))
-                return Transform(art,xysize=tuple(profile["canvas"]),nearest=False,subpixel=True)
+                art=Transform(art,xysize=tuple(profile["canvas"]),nearest=False,subpixel=True)
+                return r13_pixel_scale(art,profile["canvas"][0],profile["canvas"][1],2) if profile.get("pixel_grid")==2 else art
         renpy.log("Approved dialogue art unavailable: %s %s" % (person,frame["file"]))
         return Fixed(Text("인물 그림을 불러오지 못했습니다.\n연결을 확인한 뒤 게임을 다시 열어 주세요.",size=22,color="#fff4df",xalign=.5,ypos=100),xysize=tuple(profile["canvas"]))
 
