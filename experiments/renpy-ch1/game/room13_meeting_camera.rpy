@@ -36,6 +36,12 @@ init 175 python:
         depth=max(.65,1.0-.18*(1-r13_orbit_math.cos(angle))/max(.01,1-r13_orbit_math.cos(step)))
         return x,depth,angle
 
+    def r13_meeting_orbit_height(session):
+        return 840 if r13_meeting_kind(session) in ("round","stone") else 740
+
+    def r13_meeting_portrait_x(session,x,width,focused=False):
+        return x
+
     def r13_meeting_world_tiles(out,normal,mirror,position,y=0):
         width=normal.get_size()[0]
         start=-(position%(2*width))
@@ -130,7 +136,7 @@ init 175 python:
                 matrixcolor=TintMatrix(tint)*SaturationMatrix(.86)*BrightnessMatrix(-.035-self.shade))
             self.flip=Transform(self.plate,xzoom=-1)
             self.art={};self.offsets={}
-            base=840 if self.kind in ("round","stone") else 740
+            base=r13_meeting_orbit_height(self.session)
             # Build/predict each portrait once per shot, never inside the frame loop.
             for person in self.people:
                 pose=self.poses.get(person,"neutral")
@@ -161,6 +167,7 @@ init 175 python:
                 rendered=renpy.render(art,1280,1000,st,at)
                 dx,dy=self.offsets[person]
                 x=cx+dx*depth-rendered.get_size()[0]/2
+                x=r13_meeting_portrait_x(self.session,x,rendered.get_size()[0],person==self.focus)
                 y=dy*depth+(1-depth)*240
                 out.subpixel_blit(rendered,(x,y))
             if self.surface is not None:

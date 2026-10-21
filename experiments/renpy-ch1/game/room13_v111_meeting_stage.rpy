@@ -112,12 +112,31 @@ init 321 python:
             return focused if focused in people else (people[0] if people else None)
         return _r13_nw_meeting_focus_person(claim)
 
+    def r13_nw_meeting_session(session):
+        return isinstance(session,str) and session.startswith("nw_")
+
+    _r13_nw_meeting_orbit_height=r13_meeting_orbit_height
+    def r13_meeting_orbit_height(session):
+        # Select the same approved 840 portrait profile as the round-table close view.
+        if r13_nw_meeting_session(session) and r13_meeting_kind(session) in ("room","field"):
+            return 840
+        return _r13_nw_meeting_orbit_height(session)
+
+    _r13_nw_meeting_portrait_x=r13_meeting_portrait_x
+    def r13_meeting_portrait_x(session,x,width,focused=False):
+        # Source profiles have no face bounds: approximate the middle 45% of
+        # the rendered canvas. Let shoulders/tails crop at the screen edges.
+        if r13_nw_meeting_session(session):
+            if focused:return x
+            return max(24-width*.275,min(x,1280-24-width*.725))
+        return _r13_nw_meeting_portrait_x(session,x,width,focused)
+
     _r13_nw_meeting_plate=r13_meeting_plate
     def r13_meeting_plate(session,close=False):
         if isinstance(session,str) and session.startswith("nw_") and r13_meeting_kind(session) in ("field","room"):
             # Field and indoor meetings stand in the scene's own place picture.
             location=store.room13["location"]
-            return Transform(r13_background(R13_PLACES.get(location,(None,location))[1]),xysize=(1280,720),nearest=True)
+            return Transform(r13_background(R13_PLACES.get(location,(None,location))[1]),xysize=(1280,720),nearest=True,matrixcolor=BrightnessMatrix(-.12))
         return _r13_nw_meeting_plate(session,close)
 
     _r13_nw_meeting_header=r13_meeting_header
