@@ -10,7 +10,8 @@
 #            a record that only the new world has; the generators acquire it with r13_nw_acquire
 #   blocks   {name: [line, ...]}                     new-world lines with no authored record
 #            (new meetings); the generators show them with r13_nw_block(name)
-# A new line: {"id": "NW_...", "speaker": name|null, "text": ..., "kind"?, "expression"?,
+# A new line: {"id": "NW_...", "speaker": name|null, "text": ..., "kind"?: dialogue|narration|thought, "expression"?,
+#              (thought: the father's unspoken line; text without brackets, the engine adds them)
 #              "when"?: condition name in R13_NW_WHEN, "cut"?: existing ep art name}
 # Conditions are named Python predicates, never evaluated strings.
 # With every file empty the game shows the same lines in the same order as before.
@@ -58,7 +59,7 @@ init 319 python:
         "lamp_not_win":lambda:r13_v111_value("meeting:lamp") in ("partial","lose"),
         # Event 04: the day-5 gate-post meeting.
         "gate_post_lose":lambda:r13_v111_value("meeting:gate_post")=="lose",
-        "gate_post_half":lambda:r13_v111_value("gate_post_hardened") is True and r13_v111_value("meeting:gate_post") is None,
+        "gate_post_half":lambda:(r13_v111_value("tries:gate_post") or 0)>0 and r13_v111_value("meeting:gate_post") is None,
         # Event 05: the day-7 fire meeting.
         "fire_win":lambda:r13_v111_value("meeting:fire")=="win",
         "fire_partial":lambda:r13_v111_value("meeting:fire")=="partial",
@@ -143,6 +144,8 @@ init 319 python:
                     if not nid.startswith("NW_") or nid in seen or nid in records:out.append(where+": bad or repeated id "+repr(nid))
                     seen.add(nid)
                     if not row.get("text"):out.append(where+": empty text "+nid)
+                    if row.get("kind","dialogue") not in ("dialogue","narration","thought"):out.append(where+": unknown kind %s %s"%(nid,row.get("kind")))
+                    if row.get("kind")=="thought" and (row.get("speaker")!="아빠" or row["text"].startswith("(")):out.append(where+": thought must be the father's, without brackets "+nid)
                     if row.get("speaker") is not None and row["speaker"] not in MS14_SPEAKERS:out.append(where+": unknown speaker %s %s"%(nid,row["speaker"]))
                     if row.get("when","always") not in R13_NW_WHEN:out.append(where+": unknown condition %s %s"%(nid,row.get("when")))
                     cut=row.get("cut")
@@ -160,6 +163,9 @@ init 319 python:
         if revised and R13_NW_WHEN[revised.get("when","always")]():packet=(packet[0],revised["text"])+tuple(packet[2:])
         return packet
     def r13_nw_added_line(row):
+        if row.get("kind")=="thought":
+            # The father's unspoken thought, shown like the authored thought lines.
+            return ("dad","("+row["text"]+")",dict(no_lead=True,thought=True,expression="thinking",pose="thinking"))
         who=MS14_SPEAKERS.get(row.get("speaker")) if row.get("speaker") is not None else None
         if who and not r13_v111_person_alive(who):raise Exception("Absent/dead new-world speaker: "+row["id"])
         slot=row.get("expression") or "neutral"

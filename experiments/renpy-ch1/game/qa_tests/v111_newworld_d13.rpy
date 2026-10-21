@@ -21,6 +21,7 @@ testcase v111_nw_d13_cart_left_with_daram:
     run Function(r13_v111_set,"false_message_admitted",False)
     run Function(r13_nw_list,"daram","room13_lose")
     run Function(r13_nw_list,"resident_tok","lamp_lose")
+    run Function(r13_v111_set,"tries:blanket",2)
     run Jump("r13_v111_mending_wrong13")
     click pos (900,600) until screen "r13_hub" timeout 120
     assert eval (r13_v111_value("meeting:blanket")=="lose" and r13_v111_value("departed:daram") is True and r13_v111_value("departed:resident_tok") is True and r13_v111_value("departed:npc_pandol") is True)
@@ -35,6 +36,7 @@ testcase v111_nw_d13_badook_partial:
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day13)
     run SetVariable("v111_last_presented",["V111:E01"])
+    run Function(r13_v111_set,"tries:blanket",2)
     run Jump("r13_v111_badook_wrong13")
     click pos (900,600) until screen "r13_hub" timeout 120
     assert eval (r13_v111_value("meeting:blanket")=="partial" and qa_nw_seen("어르신 곁에 있었습니다") and qa_nw_seen("내리겠소"))
@@ -94,6 +96,7 @@ testcase v111_nw_d13_rein_painting_first:
     run Function(qa_nw_day13)
     run Function(r13_v111_set,"meeting:blanket","win")
     run Function(r13_grant,["V111:E16","V111:NW_PIKO_PAINTING"],"qa")
+    run Function(r13_v111_set,"tries:piko",2)
     run Jump("r13_v111_rein13")
     click pos (900,600) until screen "r13_crisis_proof" timeout 60
     pause 1.0

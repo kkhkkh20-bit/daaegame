@@ -141,7 +141,7 @@ talk('bori_witness7','laundry',['resident_nubi','resident_bori'],'resident_bori'
 label('bori_witness_heard7');lines.append('    call r13_lines([("resident_bori","불이 번지기 전에 누비 씨가 창고 문 앞에 서 있는 건 봤소.",{"no_lead":True})],"v111:bori_fire_door_witness")');code('r13_v111_set("bori_nubi_door_witness_heard",True)');goto('nubi_proof7')
 proof('nubi_proof7','불이 시작된 곳과 진술을 대조한다',['E06_FIRE'],'nubi_admission7','nubi_wrong7')
 # New world (event 05): one presentation. Losing Nubi's fire (gate) makes Bori the arsonist.
-label('nubi_wrong7');code('r13_nw_meeting_end("fire","lose")');code('r13_nw_list("resident_bori","fire_lose")');segment(s,46,47);goto('responsibility7')
+label('nubi_wrong7');lines.extend(['    if r13_nw_retry("fire"):','        call r13_lines(r13_v111_lines(["MS14_D07_S01_L0046","MS14_D07_S01_L0047"]),"v111:nubi_wrong7:retry")','        jump r13_v111_nubi_proof7']);code('r13_nw_meeting_end("fire","lose")');code('r13_nw_list("resident_bori","fire_lose")');segment(s,46,47);goto('responsibility7')
 label('nubi_admission7');lines.append('    if not r13_v111_value("bori_nubi_door_witness_heard"):');lines.append('        jump r13_v111_bori_witness7');segment(s,30,45);goto('responsibility7')
 s='MS14_D07_S02';begin(s,'school','responsibility7',['nabi','resident_bori','resident_nubi','neoul']);segment(s,1,2)
 lines.extend(['    if r13_v111_value("meeting:fire")=="lose":','        jump r13_v111_responsibility_answers7'])
@@ -151,9 +151,7 @@ proof('rescue_fire_basis7','불의 원인과 아이 구조를 구분한다',['E0
 # Weighing the three faults (non-gate): a half presentation gets one more try; otherwise
 # '셋 다 책임' stands, Bori is listed for hiding, and Neoul's promise is not recorded.
 label('responsibility_wrong7')
-lines.extend(['    if (r13_nw_half(["E06_FIRE","E06_EMPTY","E07_NUBI"]) or r13_nw_half(["E06_FIRE","E06_RESCUE","E07_NUBI"])) and not r13_v111_value("fire_hardened"):',
- '        $ r13_v111_set("fire_hardened",True)',
- '        $ renpy.notify("너울이 고개를 젓는다. 불의 원인과 그날 밤 일을 함께 묶어야 한다.")',
+lines.extend(['    if r13_nw_retry("fire",["E06_FIRE","E06_EMPTY","E07_NUBI"] if r13_v111_value("FIRE_EVACUATED") else ["E06_FIRE","E06_RESCUE","E07_NUBI"],"너울이 고개를 젓는다. 불의 원인과 그날 밤 일을 함께 묶어야 한다."):',
  '        jump r13_v111_fire_basis_route7'])
 code('r13_nw_meeting_end("fire","partial")');code('r13_nw_list("resident_bori","fire_partial")');goto('responsibility_answers7')
 label('responsibility_answers7');code('r13_nw_meeting_end("fire","win")');lines.extend(['    if r13_v111_value("meeting:fire")=="win":','        $ r13_v111_set("fire_neoul_promise_recorded",True)']);segment(s,4,14);goto('school_names7')
@@ -229,10 +227,9 @@ label('passage_answer10');segment(s,34,46);goto('owner10')
 # lists Daram for the cart; losing a later point frees Daram but leaves Granny free.
 def nw_half_retry(key,correct,a,b,proof_key,note):
  label(key)
- lines.extend(['    if r13_nw_half(%r) and not r13_v111_value("half:%s"):'%(correct,proof_key),
-  '        $ r13_v111_set("half:%s",True)'%proof_key])
+ lines.append('    if r13_nw_retry("room13",%r,%r):'%(correct,note))
  lines.append('        call r13_lines(r13_v111_lines(%r),%r)'%(['MS14_D10_S0%d_L%04d'%(3 if key in R13_S03_WRONG else 2,n) for n in range(a,b+1) if 'MS14_D10_S0%d_L%04d'%(3 if key in R13_S03_WRONG else 2,n) in DATA['records'] and DATA['records']['MS14_D10_S0%d_L%04d'%(3 if key in R13_S03_WRONG else 2,n)]['kind'] in ('dialogue','narration')],'v111:'+key+':half'))
- lines.extend(['        $ renpy.notify(%r)'%note,'        jump r13_v111_'+proof_key])
+ lines.extend(['        jump r13_v111_'+proof_key])
 R13_S03_WRONG=('owner_wrong10','time_wrong10','contact_wrong10')
 def room13_end(key,a,b,result,kind=None):
  code('r13_nw_meeting_end("room13",%r)'%result)
@@ -275,10 +272,9 @@ label('public_paper10');code('r13_v111_arrive(["daram","resident_owlgp","granny"
 def records_half(key,correct,a,b,proof_key,note):
  label(key)
  rids=['MS14_D10_P01_L%04d'%n for n in range(a,b+1) if 'MS14_D10_P01_L%04d'%n in DATA['records']]
- lines.extend(['    if r13_nw_half(%r) and not r13_v111_value("half:%s"):'%(correct,proof_key),
-  '        $ r13_v111_set("half:%s",True)'%proof_key,
+ lines.extend(['    if r13_nw_retry("records",%r,%r):'%(correct,note),
   '        call r13_lines(r13_v111_lines(%r),%r)'%(rids,'v111:'+key+':half'),
-  '        $ renpy.notify(%r)'%note,'        jump r13_v111_'+proof_key])
+  '        jump r13_v111_'+proof_key])
 records_half('authority_wrong10',['E06_CONTACT','E09_MAIL'],84,85,'authority_proof10','부엉이가 손을 거둔다. 받는 사람과 그 기록을 함께 놓아야 한다.')
 code('r13_nw_meeting_end("records","lose")');code('r13_nw_list("resident_owlgp","records_lose")');segment(s,84,85);code("r13_v111_commit('MS14_D10_P01_L0083')");goto('prevent_return10')
 records_half('writing_wrong10',['E01','E07','E09_MAIL'],86,86,'writing_proof10','슬링이 고개를 젓는다. 편지와 봉투, 필사본을 함께 놓아야 한다.')

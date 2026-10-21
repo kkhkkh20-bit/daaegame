@@ -522,6 +522,9 @@ label r13_v111_hypothesis11:
     $ r13_v111_arrive(["daram","resident_teacher","guard","resident_madam","npc_pandol","resident_lamplighter"])
     call r13_lines(r13_nw_block('hyp_open11'),'nw:hyp_open11')
     $ r13_nw_acquire("NW_SICK_BEDS")
+    jump r13_v111_hyp0_menu11
+
+label r13_v111_hyp0_menu11:
     menu:
         '야생화는 옮는 병이다':
             jump r13_v111_hyp0_sick11
@@ -534,14 +537,20 @@ label r13_v111_hypothesis11:
 
 label r13_v111_hyp0_sick11:
     call r13_lines(r13_nw_block('hyp0_sick11'),'nw:hyp0_sick11')
+    if r13_nw_retry("hypothesis"):
+        jump r13_v111_hyp0_menu11
     jump r13_v111_hyp_lost_gate11
 
 label r13_v111_hyp0_call11:
     call r13_lines(r13_nw_block('hyp0_call11'),'nw:hyp0_call11')
+    if r13_nw_retry("hypothesis"):
+        jump r13_v111_hyp0_menu11
     jump r13_v111_hyp_lost_gate11
 
 label r13_v111_hyp0_old11:
     call r13_lines(r13_nw_block('hyp0_old11'),'nw:hyp0_old11')
+    if r13_nw_retry("hypothesis"):
+        jump r13_v111_hyp0_menu11
     jump r13_v111_hyp_lost_gate11
 
 label r13_v111_hyp0_won11:
@@ -554,9 +563,15 @@ label r13_v111_hyp1_q11:
         '만지는 것보다 곁에서 오래 지내는 게 문제다':
             jump r13_v111_hyp1_reason11
         '초롱은 젊어서 버틴다':
-            jump r13_v111_hyp1_lost11
+            jump r13_v111_hyp1_badreason11
         '초롱은 장갑을 끼고 만진다':
-            jump r13_v111_hyp1_lost11
+            jump r13_v111_hyp1_badreason11
+
+label r13_v111_hyp1_badreason11:
+    if r13_nw_retry("hypothesis"):
+        call r13_lines(r13_nw_block("hyp1_lost11"),"nw:hyp1_lost11:retry")
+        jump r13_v111_hyp1_q11
+    jump r13_v111_hyp1_lost11
 
 label r13_v111_hyp1_reason11:
     call r13_lines(r13_nw_block('hyp1_reason11'),'nw:hyp1_reason11')
@@ -567,9 +582,7 @@ label r13_v111_hyp1_proof11:
     jump expression _return
 
 label r13_v111_hyp1_wrong11:
-    if r13_nw_half(['E11', 'E08', 'NW_PIKO_TREMOR']) and not r13_v111_value("half:hyp1"):
-        $ r13_v111_set("half:hyp1",True)
-        $ renpy.notify('돌목이 팔짱을 낀다. 초롱의 하루와 피코의 밤을 함께 놓아야 한다.')
+    if r13_nw_retry("hypothesis",['E11', 'E08', 'NW_PIKO_TREMOR'],'돌목이 팔짱을 낀다. 초롱의 하루와 피코의 밤을 함께 놓아야 한다.'):
         jump r13_v111_hyp1_proof11
     jump r13_v111_hyp1_lost11
 
@@ -587,11 +600,17 @@ label r13_v111_hyp2_q11:
     call r13_lines(r13_nw_block('hyp2_q11'),'nw:hyp2_q11')
     menu:
         '켜지 않고 쌓아 둔 돌은 아무 해가 없다':
-            jump r13_v111_hyp2_lost11
+            jump r13_v111_hyp2_badreason11
         '백 부인은 그 돌 곁에서 잠을 자지 않는다':
             jump r13_v111_hyp2_reason11
         '백 부인은 돌을 팔기만 한다':
-            jump r13_v111_hyp2_lost11
+            jump r13_v111_hyp2_badreason11
+
+label r13_v111_hyp2_badreason11:
+    if r13_nw_retry("hypothesis"):
+        call r13_lines(r13_nw_block("hyp2_lost11"),"nw:hyp2_lost11:retry")
+        jump r13_v111_hyp2_q11
+    jump r13_v111_hyp2_lost11
 
 label r13_v111_hyp2_reason11:
     call r13_lines(r13_nw_block('hyp2_reason11'),'nw:hyp2_reason11')
@@ -602,9 +621,7 @@ label r13_v111_hyp2_proof11:
     jump expression _return
 
 label r13_v111_hyp2_wrong11:
-    if r13_nw_half(['NW_KEEPER_DATE']) and not r13_v111_value("half:hyp2"):
-        $ r13_v111_set("half:hyp2",True)
-        $ renpy.notify('백 부인이 고개를 돌린다. 창고에서 자는 사람을 짚어야 한다.')
+    if r13_nw_retry("hypothesis",['NW_KEEPER_DATE'],'백 부인이 고개를 돌린다. 창고에서 자는 사람을 짚어야 한다.'):
         jump r13_v111_hyp2_proof11
     jump r13_v111_hyp2_lost11
 
@@ -622,11 +639,17 @@ label r13_v111_hyp3_q11:
     call r13_lines(r13_nw_block('hyp3_q11'),'nw:hyp3_q11')
     menu:
         '요즘 사람들이 약해졌다':
-            jump r13_v111_hyp3_lost11
+            jump r13_v111_hyp3_badreason11
         '외지 사람이 병을 들여왔다':
-            jump r13_v111_hyp3_lost11
+            jump r13_v111_hyp3_badreason11
         '요즘 태우는 돌이 더 독하다':
             jump r13_v111_hyp3_reason11
+
+label r13_v111_hyp3_badreason11:
+    if r13_nw_retry("hypothesis"):
+        call r13_lines(r13_nw_block("hyp3_lost11"),"nw:hyp3_lost11:retry")
+        jump r13_v111_hyp3_q11
+    jump r13_v111_hyp3_lost11
 
 label r13_v111_hyp3_reason11:
     call r13_lines(r13_nw_block('hyp3_reason11'),'nw:hyp3_reason11')
@@ -637,9 +660,7 @@ label r13_v111_hyp3_proof11:
     jump expression _return
 
 label r13_v111_hyp3_wrong11:
-    if r13_nw_half(['NW_INNER_PRICE', 'NW_MUSOE_DEEP']) and not r13_v111_value("half:hyp3"):
-        $ r13_v111_set("half:hyp3",True)
-        $ renpy.notify('판돌이 고개를 젓는다. “무쇠는 원래 고집이 셌소.” 돌값과 갱도 이야기를 함께 놓아야 한다.')
+    if r13_nw_retry("hypothesis",['NW_INNER_PRICE', 'NW_MUSOE_DEEP'],'판돌이 고개를 젓는다. “무쇠는 원래 고집이 셌소.” 돌값과 갱도 이야기를 함께 놓아야 한다.'):
         jump r13_v111_hyp3_proof11
     jump r13_v111_hyp3_lost11
 
@@ -659,9 +680,15 @@ label r13_v111_hyp4_q11:
         '아이 방에도 아르카등이 밤새 켜져 있었다':
             jump r13_v111_hyp4_reason11
         '아이들은 어른보다 약하다':
-            jump r13_v111_hyp4_lost11
+            jump r13_v111_hyp4_badreason11
         '아이들이 아르카를 만지고 논다':
-            jump r13_v111_hyp4_lost11
+            jump r13_v111_hyp4_badreason11
+
+label r13_v111_hyp4_badreason11:
+    if r13_nw_retry("hypothesis"):
+        call r13_lines(r13_nw_block("hyp4_lost11"),"nw:hyp4_lost11:retry")
+        jump r13_v111_hyp4_q11
+    jump r13_v111_hyp4_lost11
 
 label r13_v111_hyp4_reason11:
     call r13_lines(r13_nw_block('hyp4_reason11'),'nw:hyp4_reason11')
@@ -672,9 +699,7 @@ label r13_v111_hyp4_proof11:
     jump expression _return
 
 label r13_v111_hyp4_wrong11:
-    if r13_nw_half(['NW_KKOMI_NOSTONE', 'NW_SICK_BEDS']) and not r13_v111_value("half:hyp4"):
-        $ r13_v111_set("half:hyp4",True)
-        $ renpy.notify('주민이 아이를 끌어안는다. 돌이 없는 아이들과 표시가 붙은 아이들을 함께 놓아야 한다.')
+    if r13_nw_retry("hypothesis",['NW_KKOMI_NOSTONE', 'NW_SICK_BEDS'],'주민이 아이를 끌어안는다. 돌이 없는 아이들과 표시가 붙은 아이들을 함께 놓아야 한다.'):
         jump r13_v111_hyp4_proof11
     jump r13_v111_hyp4_lost11
 
@@ -696,17 +721,28 @@ label r13_v111_hyp5_q11:
         '한 방의 돌을 치우자 무너지던 사람이 돌아왔다' if r13_v111_value('OWL_ALIVE') is not False:
             jump r13_v111_hyp5_reason11
         '부엉이 어르신은 원래 아팠다':
-            jump r13_v111_hyp5_lost11
+            jump r13_v111_hyp5_badreason11
         '13호가 추워서 그렇다':
-            jump r13_v111_hyp5_lost11
+            jump r13_v111_hyp5_badreason11
+
+label r13_v111_hyp5_badreason11:
+    if r13_nw_retry("hypothesis"):
+        call r13_lines(r13_nw_block("hyp5_lost11"),"nw:hyp5_lost11:retry")
+        jump r13_v111_hyp5_q11
+    jump r13_v111_hyp5_lost11
 
 label r13_v111_hyp5_reason11:
     call r13_lines(r13_nw_block('hyp5_reason11'),'nw:hyp5_reason11')
     jump r13_v111_hyp5_proof11
 
 label r13_v111_hyp5_proof11:
-    call r13_v111_proof('13호 난로의 돌을 내놓는다',['NW_STONE'],'r13_v111_hyp5_won11','r13_v111_hyp5_lost11',None)
+    call r13_v111_proof('13호 난로의 돌을 내놓는다',['NW_STONE'],'r13_v111_hyp5_won11','r13_v111_hyp5_wrong11',None)
     jump expression _return
+
+label r13_v111_hyp5_wrong11:
+    if r13_nw_retry("hypothesis"):
+        jump r13_v111_hyp5_proof11
+    jump r13_v111_hyp5_lost11
 
 label r13_v111_hyp5_lost11:
     call r13_lines(r13_nw_block('hyp5_lost11'),'nw:hyp5_lost11')
@@ -1333,9 +1369,7 @@ label r13_v111_list_proof12:
     jump expression _return
 
 label r13_v111_list_wrong12:
-    if r13_nw_half(["NW_TRANSFER_LIST","NW_WHITE_BOWLS"]) and not r13_v111_value("half:list12"):
-        $ r13_v111_set("half:list12",True)
-        $ renpy.notify("선생님이 출석부를 끌어안는다. 명단의 칸과 흰 그릇을 함께 놓아야 한다.")
+    if r13_nw_retry("soup",["NW_TRANSFER_LIST","NW_WHITE_BOWLS"],"선생님이 출석부를 끌어안는다. 명단의 칸과 흰 그릇을 함께 놓아야 한다."):
         jump r13_v111_list_proof12
     $ r13_nw_meeting_end("soup","partial")
     call r13_lines(r13_nw_block('soup_list_lost12'),'nw:soup_list_lost12')
@@ -1353,10 +1387,8 @@ label r13_v111_soup_after_route12:
     jump r13_v111_aftermath_pre12
 
 label r13_v111_medicine_wrong12:
-    if r13_nw_half(['E12_FRAGMENT', 'E12_SEAL']) and not r13_v111_value("half:seal_proof12"):
-        $ r13_v111_set("half:seal_proof12",True)
+    if r13_nw_retry("soup",['E12_FRAGMENT', 'E12_SEAL'],'선생님이 병을 감싼다. 파편과 봉인을 함께 놓아야 한다.'):
         call r13_lines(r13_v111_lines(['MS14_D12_S04_L0089', 'MS14_D12_S04_L0090']),'v111:medicine_wrong12:half')
-        $ renpy.notify('선생님이 병을 감싼다. 파편과 봉인을 함께 놓아야 한다.')
         jump r13_v111_seal_proof12
     $ r13_nw_meeting_end("soup","lose")
     $ r13_v111_set('soup_lose_kind','stolen')
@@ -1366,10 +1398,8 @@ label r13_v111_medicine_wrong12:
     jump r13_v111_soup_lost12
 
 label r13_v111_fragment_wrong12:
-    if r13_nw_half(['E12_FRAGMENT', 'E12_SEAL', 'E12_HANDLING']) and not r13_v111_value("half:soup_final12"):
-        $ r13_v111_set("half:soup_final12",True)
+    if r13_nw_retry("soup",['E12_FRAGMENT', 'E12_SEAL', 'E12_HANDLING'],'나비가 고개를 젓는다. 파편과 봉인, 냄비를 건넨 구간을 함께 놓아야 한다.'):
         call r13_lines(r13_v111_lines(['MS14_D12_S04_L0091', 'MS14_D12_S04_L0092']),'v111:fragment_wrong12:half')
-        $ renpy.notify('나비가 고개를 젓는다. 파편과 봉인, 냄비를 건넨 구간을 함께 놓아야 한다.')
         jump r13_v111_soup_final12
     $ r13_nw_meeting_end("soup","lose")
     $ r13_v111_set('soup_lose_kind','nabi')
@@ -1739,6 +1769,9 @@ label r13_v111_badook_proof13:
     jump expression _return
 
 label r13_v111_badook_wrong13:
+    if r13_nw_retry("blanket"):
+        call r13_lines(r13_nw_block("badook_q13"),"nw:badook_q13:retry")
+        jump r13_v111_badook_proof13
     $ r13_nw_meeting_end("blanket","partial")
     call r13_lines(r13_nw_block('badook_lost13'),'nw:badook_lost13')
     jump r13_v111_mending_rest13
@@ -1762,6 +1795,9 @@ label r13_v111_mending_rest13:
     jump r13_v111_cart_inspect13
 
 label r13_v111_mending_wrong13:
+    if r13_nw_retry("blanket"):
+        call r13_lines(r13_v111_lines(["MS14_D13_S03_L0043","MS14_D13_S03_L0044"]),"v111:mending_wrong13:retry")
+        jump r13_v111_mending_proof13
     $ r13_nw_meeting_end("blanket","lose")
     call r13_lines(r13_v111_lines(['MS14_D13_S03_L0043']),'v111:MS14_D13_S03_L0043')
     call r13_lines(r13_v111_lines(['MS14_D13_S03_L0044']),'v111:MS14_D13_S03_L0044')
@@ -1850,7 +1886,7 @@ label r13_v111_rein13:
     jump r13_v111_rein_ledger13p
 
 label r13_v111_rein_ledger13p:
-    call r13_v111_proof('장부의 두 배를 실룩에게 보인다',['E16'],'r13_v111_rein_ledger13','r13_v111_rein_wrong13',None)
+    call r13_v111_proof('장부의 두 배를 실룩에게 보인다',['E16'],'r13_v111_rein_ledger13','r13_v111_rein_wrong13a',None)
     jump expression _return
 
 label r13_v111_rein_ledger13:
@@ -1858,7 +1894,7 @@ label r13_v111_rein_ledger13:
     jump r13_v111_rein_painting13p
 
 label r13_v111_rein_painting13p:
-    call r13_v111_proof('피코가 막혀야 했던 까닭을 보인다',['NW_PIKO_PAINTING'],'r13_v111_rein_won13','r13_v111_rein_wrong13',None)
+    call r13_v111_proof('피코가 막혀야 했던 까닭을 보인다',['NW_PIKO_PAINTING'],'r13_v111_rein_won13','r13_v111_rein_wrong13b',None)
     jump expression _return
 
 label r13_v111_rein_won13:
@@ -1867,6 +1903,18 @@ label r13_v111_rein_won13:
     $ r13_v111_set('neoul_held',True)
     $ r13_nw_acquire("NW_NEOUL_LEDGER","full" if r13_v111_value("meeting:hypothesis")=="win" else "some" if r13_v111_value("meeting:hypothesis")=="partial" else "observed")
     jump r13_v111_after_rein13
+
+label r13_v111_rein_wrong13a:
+    if r13_nw_retry("piko"):
+        call r13_lines(r13_nw_block("rein_retry13"),"nw:rein_retry13")
+        jump r13_v111_rein_ledger13p
+    jump r13_v111_rein_wrong13
+
+label r13_v111_rein_wrong13b:
+    if r13_nw_retry("piko"):
+        call r13_lines(r13_nw_block("rein_retry13"),"nw:rein_retry13")
+        jump r13_v111_rein_painting13p
+    jump r13_v111_rein_wrong13
 
 label r13_v111_rein_wrong13:
     $ r13_nw_meeting_end("piko","lose")
@@ -2522,6 +2570,9 @@ label r13_v111_altar1_proof14:
     jump expression _return
 
 label r13_v111_altar1_wrong14:
+    if not ("V111:E14_SUPPLY" in (v111_last_presented or []) and not r13_v111_owned("NW_NEOUL_LEDGER")) and r13_nw_retry("altar"):
+        call r13_lines(r13_nw_block("altar1_lost14"),"nw:altar1_lost14:retry")
+        jump r13_v111_altar1_proof14
     if "V111:E14_SUPPLY" in (v111_last_presented or []) and not r13_v111_owned("NW_NEOUL_LEDGER"):
         $ r13_v111_set("altar_half1",True)
         $ r13_v111_set("altar_issue:1","half")
@@ -2544,9 +2595,8 @@ label r13_v111_altar2_proof14:
     jump expression _return
 
 label r13_v111_altar2_wrong14:
-    if r13_nw_half(['NW_TABLET_A', 'NW_TABLET_B']) and not r13_v111_value("half:altar2"):
-        $ r13_v111_set("half:altar2",True)
-        $ renpy.notify('촌장이 고개를 젓는다. 돌판의 앞 반쪽과 밑돌의 글자를 함께 놓아야 한다.')
+    if r13_nw_retry("altar",['NW_TABLET_A', 'NW_TABLET_B'],'촌장이 고개를 젓는다. 돌판의 앞 반쪽과 밑돌의 글자를 함께 놓아야 한다.'):
+        call r13_lines(r13_nw_block("altar2_lost14"),"nw:altar2_lost14:retry")
         jump r13_v111_altar2_proof14
     call r13_lines(r13_nw_block('altar2_lost14'),'nw:altar2_lost14')
     $ r13_v111_set('altar_issue:2','lost')
@@ -2566,6 +2616,9 @@ label r13_v111_altar3_proof14:
     jump expression _return
 
 label r13_v111_altar3_wrong14:
+    if r13_nw_retry("altar",['NW_IRON_MARK'],None):
+        call r13_lines(r13_nw_block("altar3_lost14"),"nw:altar3_lost14:retry")
+        jump r13_v111_altar3_proof14
     call r13_lines(r13_nw_block('altar3_lost14'),'nw:altar3_lost14')
     $ r13_v111_set('altar_issue:3','lost')
     jump r13_v111_altar4_q14
@@ -2584,9 +2637,8 @@ label r13_v111_altar4_proof14:
     jump expression _return
 
 label r13_v111_altar4_wrong14:
-    if r13_nw_half(['NW_NAMES', 'NW_NEOUL_LEDGER']) and not r13_v111_value("half:altar4"):
-        $ r13_v111_set("half:altar4",True)
-        $ renpy.notify('촌장의 손이 떨린다. 벽의 이름과 그해 장부를 함께 놓아야 한다.')
+    if r13_nw_retry("altar",['NW_NAMES', 'NW_NEOUL_LEDGER'],'촌장의 손이 떨린다. 벽의 이름과 그해 장부를 함께 놓아야 한다.'):
+        call r13_lines(r13_nw_block("altar4_lost14"),"nw:altar4_lost14:retry")
         jump r13_v111_altar4_proof14
     call r13_lines(r13_nw_block('altar4_lost14'),'nw:altar4_lost14')
     $ r13_v111_set('altar_issue:4','lost')

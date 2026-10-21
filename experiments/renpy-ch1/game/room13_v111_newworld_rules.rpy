@@ -83,3 +83,19 @@ init 318 python:
         if r13_v111_value("ending14")!="morning" or r13_nw_loss_count():return False
         if not r13_v111_owned("NW_NEOUL_LEDGER"):return False
         return all(r13_v111_value("meeting:"+m)=="win" for m in ("records","hypothesis","blanket","altar"))
+
+    # Three chances per meeting (owner decision 2026-10-22, replaces "one presentation").
+    # A wrong answer shows the rebuttal and costs a chance; the third wrong answer stands.
+    R13_NW_TRIES=3
+    def r13_nw_tries_left(meeting):
+        return max(0,R13_NW_TRIES-(r13_v111_value("tries:"+meeting) or 0))
+    def r13_nw_retry(meeting,correct=None,note=None):
+        """True (and one chance used) when this wrong answer may be tried again."""
+        if r13_v111_value("meeting:"+meeting) is not None:return False
+        used=(r13_v111_value("tries:"+meeting) or 0)+1
+        r13_v111_set("tries:"+meeting,used)
+        left=R13_NW_TRIES-used
+        if left<=0:return False
+        hint=note if (note and correct and r13_nw_half(correct)) else "맞지 않는다."
+        renpy.notify("%s 남은 기회 %d번."%(hint,left))
+        return True

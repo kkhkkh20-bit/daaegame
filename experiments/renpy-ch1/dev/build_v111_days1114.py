@@ -178,25 +178,30 @@ HYP=[
   [('아이 방에도 아르카등이 밤새 켜져 있었다',True),('아이들은 어른보다 약하다',False),('아이들이 아르카를 만지고 논다',False)]),
 ]
 label('hypothesis11');code('r13_v111_arrive(["daram","resident_teacher","guard","resident_madam","npc_pandol","resident_lamplighter"])')
-nwblock('hyp_open11');code('r13_nw_acquire("NW_SICK_BEDS")')
+nwblock('hyp_open11');code('r13_nw_acquire("NW_SICK_BEDS")');goto('hyp0_menu11')
+label('hyp0_menu11')
 select([('야생화는 옮는 병이다','hyp0_sick11',None),('아르카가 사람을 부른다','hyp0_call11',None),('꺼낸 아르카 곁에 오래 있던 사람부터 무너진다','hyp0_won11',None),('늙으면 누구나 그렇게 된다','hyp0_old11',None)])
-for key in ('hyp0_sick11','hyp0_call11','hyp0_old11'):label(key);nwblock(key);goto('hyp_lost_gate11')
+for key in ('hyp0_sick11','hyp0_call11','hyp0_old11'):
+ label(key);nwblock(key);lines.extend(['    if r13_nw_retry("hypothesis"):','        jump r13_v111_hyp0_menu11']);goto('hyp_lost_gate11')
 label('hyp0_won11');nwblock('hyp0_won11');goto('hyp1_q11')
 for n,title,correct,note,reasons in HYP:
  nxt='hyp%d_q11'%(n+1)
  label('hyp%d_q11'%n);nwblock('hyp%d_q11'%n)
- select([(t,('hyp%d_reason11'%n) if ok else ('hyp%d_lost11'%n),None) for t,ok in reasons])
+ select([(t,('hyp%d_reason11'%n) if ok else ('hyp%d_badreason11'%n),None) for t,ok in reasons])
+ label('hyp%d_badreason11'%n);lines.extend(['    if r13_nw_retry("hypothesis"):','        call r13_lines(r13_nw_block("hyp%d_lost11"),"nw:hyp%d_lost11:retry")'%(n,n),'        jump r13_v111_hyp%d_q11'%n]);goto('hyp%d_lost11'%n)
  label('hyp%d_reason11'%n);nwblock('hyp%d_reason11'%n);goto('hyp%d_proof11'%n)
  proof('hyp%d_proof11'%n,title,correct,'hyp%d_won11'%n,'hyp%d_wrong11'%n)
  label('hyp%d_wrong11'%n)
- lines.extend(['    if r13_nw_half(%r) and not r13_v111_value("half:hyp%d"):'%(correct,n),'        $ r13_v111_set("half:hyp%d",True)'%n,'        $ renpy.notify(%r)'%note,'        jump r13_v111_hyp%d_proof11'%n])
+ lines.extend(['    if r13_nw_retry("hypothesis",%r,%r):'%(correct,note),'        jump r13_v111_hyp%d_proof11'%n])
  goto('hyp%d_lost11'%n)
  label('hyp%d_lost11'%n);nwblock('hyp%d_lost11'%n);setv('hyp_issue:%d'%n,'lost');goto(nxt)
  label('hyp%d_won11'%n);nwblock('hyp%d_won11'%n);setv('hyp_issue:%d'%n,'won');goto(nxt)
 label('hyp5_q11');nwblock('hyp5_q11')
-select([('한 방의 돌이 바뀌자 한 사람이 한 저녁 사이에 무너졌다','hyp5_reason11',V('OWL_ALIVE')+' is False'),('한 방의 돌을 치우자 무너지던 사람이 돌아왔다','hyp5_reason11',V('OWL_ALIVE')+' is not False'),('부엉이 어르신은 원래 아팠다','hyp5_lost11',None),('13호가 추워서 그렇다','hyp5_lost11',None)])
+select([('한 방의 돌이 바뀌자 한 사람이 한 저녁 사이에 무너졌다','hyp5_reason11',V('OWL_ALIVE')+' is False'),('한 방의 돌을 치우자 무너지던 사람이 돌아왔다','hyp5_reason11',V('OWL_ALIVE')+' is not False'),('부엉이 어르신은 원래 아팠다','hyp5_badreason11',None),('13호가 추워서 그렇다','hyp5_badreason11',None)])
+label('hyp5_badreason11');lines.extend(['    if r13_nw_retry("hypothesis"):','        call r13_lines(r13_nw_block("hyp5_lost11"),"nw:hyp5_lost11:retry")','        jump r13_v111_hyp5_q11']);goto('hyp5_lost11')
 label('hyp5_reason11');nwblock('hyp5_reason11');goto('hyp5_proof11')
-proof('hyp5_proof11','13호 난로의 돌을 내놓는다',['NW_STONE'],'hyp5_won11','hyp5_lost11')
+proof('hyp5_proof11','13호 난로의 돌을 내놓는다',['NW_STONE'],'hyp5_won11','hyp5_wrong11')
+label('hyp5_wrong11');lines.extend(['    if r13_nw_retry("hypothesis"):','        jump r13_v111_hyp5_proof11']);goto('hyp5_lost11')
 label('hyp5_lost11');nwblock('hyp5_lost11');goto('hyp_lost_gate11')
 label('hyp5_won11');nwblock('hyp5_won11')
 code('r13_nw_meeting_end("hypothesis","win" if all(r13_v111_value("hyp_issue:%d"%i)=="won" for i in (1,2,3,4)) else "partial")')
@@ -283,7 +288,7 @@ label('confessed12');late(s,57,61);setv('teacher_confessed',True);nwblock('soup_
 # New world (event 09): who the white bowls were for. Losing it leaves the list with Neoul.
 proof('list_proof12','명단과 흰 그릇을 대조한다',['NW_TRANSFER_LIST','NW_WHITE_BOWLS'],'list_won12','list_wrong12')
 label('list_wrong12')
-lines.extend(['    if r13_nw_half(["NW_TRANSFER_LIST","NW_WHITE_BOWLS"]) and not r13_v111_value("half:list12"):','        $ r13_v111_set("half:list12",True)','        $ renpy.notify("선생님이 출석부를 끌어안는다. 명단의 칸과 흰 그릇을 함께 놓아야 한다.")','        jump r13_v111_list_proof12'])
+lines.extend(['    if r13_nw_retry("soup",["NW_TRANSFER_LIST","NW_WHITE_BOWLS"],"선생님이 출석부를 끌어안는다. 명단의 칸과 흰 그릇을 함께 놓아야 한다."):','        jump r13_v111_list_proof12'])
 code('r13_nw_meeting_end("soup","partial")');nwblock('soup_list_lost12');goto('soup_after_route12')
 label('list_won12');code('r13_nw_meeting_end("soup","win")');setv('transfer_list_secured',True);nwblock('soup_list_won12');goto('soup_after_route12')
 branch('soup_after_route12',V('route12')+"=='late_exposure'",'aftermath_late12','aftermath_pre12')
@@ -292,8 +297,8 @@ branch('soup_after_route12',V('route12')+"=='late_exposure'",'aftermath_late12',
 def soup_wrong(key,correct,a,b,proof_key,note,kind):
  label(key)
  rids=['MS14_D12_S04_L%04d'%n for n in range(a,b+1) if 'MS14_D12_S04_L%04d'%n in DATA['records']]
- lines.extend(['    if r13_nw_half(%r) and not r13_v111_value("half:%s"):'%(correct,proof_key),'        $ r13_v111_set("half:%s",True)'%proof_key,
-  '        call r13_lines(r13_v111_lines(%r),%r)'%(rids,'v111:'+key+':half'),'        $ renpy.notify(%r)'%note,'        jump r13_v111_'+proof_key])
+ lines.extend(['    if r13_nw_retry("soup",%r,%r):'%(correct,note),
+  '        call r13_lines(r13_v111_lines(%r),%r)'%(rids,'v111:'+key+':half'),'        jump r13_v111_'+proof_key])
  code('r13_nw_meeting_end("soup","lose")');setv('soup_lose_kind',kind)
  if kind=='nabi':code('r13_nw_list("nabi","soup_lose")')
  else:setv('seori_disciplined',True)
@@ -347,10 +352,10 @@ proof('mending_proof13','아내가 봤다는 담요의 시점을 확인한다',[
 # Badook's word about last night decides whether he holds the reins (win) or not (partial).
 label('mending_answer13');late(s,18,28);nwblock('badook_q13');goto('badook_proof13')
 proof('badook_proof13','촌장이 어젯밤 있던 곳을 확인한다',['NW_HALL_WINDOW'],'badook_won13','badook_wrong13')
-label('badook_wrong13');code('r13_nw_meeting_end("blanket","partial")');nwblock('badook_lost13');goto('mending_rest13')
+label('badook_wrong13');lines.extend(['    if r13_nw_retry("blanket"):','        call r13_lines(r13_nw_block("badook_q13"),"nw:badook_q13:retry")','        jump r13_v111_badook_proof13']);code('r13_nw_meeting_end("blanket","partial")');nwblock('badook_lost13');goto('mending_rest13')
 label('badook_won13');code('r13_nw_meeting_end("blanket","win")');nwblock('badook_won13');goto('mending_rest13')
 label('mending_rest13');late(s,29,40);setv('false_message_admitted',True);goto('cart_inspect13')
-label('mending_wrong13');code('r13_nw_meeting_end("blanket","lose")');late(s,43,44);nwblock('blanket_lost13')
+label('mending_wrong13');lines.extend(['    if r13_nw_retry("blanket"):','        call r13_lines(r13_v111_lines(["MS14_D13_S03_L0043","MS14_D13_S03_L0044"]),"v111:mending_wrong13:retry")','        jump r13_v111_mending_proof13']);code('r13_nw_meeting_end("blanket","lose")');late(s,43,44);nwblock('blanket_lost13')
 lines.extend(['    python:',
  '        _aboard=list(r13_v111_value("cart_roster") or ["npc_pandol","resident_momo","resident_guldol"])',
  '        if r13_v111_value("teacher_transfer")=="listed" and r13_v111_person_alive("resident_teacher"):_aboard.append("resident_teacher")',
@@ -375,11 +380,13 @@ label('silluk_board_observation13');setv('location:resident_siluk','square');lin
 s='MS14_D13_S04';start(s,'square','stop_cart13',['mom','daram','karo','guard','resident_badook','npc_pandol','resident_momo','resident_guldol','resident_ppul','neoul'],2);late(s,1,6);setv('cart_stopped',True);setv('stop_actor','resident_badook');setv('busy:resident_badook','stop_cart');code('r13_v111_set("cart_roster",r13_v111_value("cart_roster") or ["npc_pandol","resident_momo","resident_guldol"])');goto('rein13')
 # New world (event 03, closed on day 13): why Piko died under lamp 3. One gate, fixed order.
 label('rein13');nwblock('rein_open13');goto('rein_ledger13p')
-proof('rein_ledger13p','장부의 두 배를 실룩에게 보인다',['E16'],'rein_ledger13','rein_wrong13')
+proof('rein_ledger13p','장부의 두 배를 실룩에게 보인다',['E16'],'rein_ledger13','rein_wrong13a')
 label('rein_ledger13');nwblock('rein_ledger13');goto('rein_painting13p')
-proof('rein_painting13p','피코가 막혀야 했던 까닭을 보인다',['NW_PIKO_PAINTING'],'rein_won13','rein_wrong13')
+proof('rein_painting13p','피코가 막혀야 했던 까닭을 보인다',['NW_PIKO_PAINTING'],'rein_won13','rein_wrong13b')
 label('rein_won13');code('r13_nw_meeting_end("piko","win")');nwblock('rein_won13');setv('neoul_held',True)
 code('r13_nw_acquire("NW_NEOUL_LEDGER","full" if r13_v111_value("meeting:hypothesis")=="win" else "some" if r13_v111_value("meeting:hypothesis")=="partial" else "observed")');goto('after_rein13')
+for key,back in (('rein_wrong13a','rein_ledger13p'),('rein_wrong13b','rein_painting13p')):
+ label(key);lines.extend(['    if r13_nw_retry("piko"):','        call r13_lines(r13_nw_block("rein_retry13"),"nw:rein_retry13")','        jump r13_v111_'+back]);goto('rein_wrong13')
 label('rein_wrong13');code('r13_nw_meeting_end("piko","lose")');nwblock('rein_lost13');goto('after_rein13')
 label('after_rein13');lines.extend(['    if r13_v111_value("meeting:blanket")=="partial":','        jump r13_v111_partial13']);late(s,10,14);goto('family_position13')
 label('family_position13');select([('곁에 남는다','family_stay13',None),('까로와 학교로 간다','family_karo13','not '+V('busy:karo')),('네로와 학교로 간다','family_nero13',V('nero_alive')+' and not '+V('busy:resident_nero')+' and r13_v111_actor_ready("resident_nero")')])
@@ -476,6 +483,7 @@ label('mayor_interview14');travel('gate','mayor_interview14');arrive(['mom','res
 label('altar1_q14');nwblock('altar1_q14');goto('altar1_proof14')
 proof('altar1_proof14','희생의 숫자와 장부를 대조한다',['NW_NEOUL_LEDGER'],'altar1_won14','altar1_wrong14')
 label('altar1_wrong14')
+lines.extend(['    if not ("V111:E14_SUPPLY" in (v111_last_presented or []) and not r13_v111_owned("NW_NEOUL_LEDGER")) and r13_nw_retry("altar"):','        call r13_lines(r13_nw_block("altar1_lost14"),"nw:altar1_lost14:retry")','        jump r13_v111_altar1_proof14'])
 lines.extend(['    if "V111:E14_SUPPLY" in (v111_last_presented or []) and not r13_v111_owned("NW_NEOUL_LEDGER"):','        $ r13_v111_set("altar_half1",True)','        $ r13_v111_set("altar_issue:1","half")','        call r13_lines(r13_nw_block("altar1_half14"),"nw:altar1_half14")','        jump r13_v111_altar2_q14'])
 nwblock('altar1_lost14');goto('altar_lost14')
 label('altar1_won14');nwblock('altar1_won14');setv('altar_issue:1','won');goto('altar2_q14')
@@ -486,7 +494,7 @@ for n,title,correct,note in [(2,'아르카가 부른다는 말과 옛 기록을 
  label('altar%d_q14'%n);nwblock('altar%d_q14'%n);goto('altar%d_proof14'%n)
  proof('altar%d_proof14'%n,title,correct,'altar%d_won14'%n,'altar%d_wrong14'%n)
  label('altar%d_wrong14'%n)
- if note:lines.extend(['    if r13_nw_half(%r) and not r13_v111_value("half:altar%d"):'%(correct,n),'        $ r13_v111_set("half:altar%d",True)'%n,'        $ renpy.notify(%r)'%note,'        jump r13_v111_altar%d_proof14'%n])
+ lines.extend(['    if r13_nw_retry("altar",%r,%r):'%(correct,note),'        call r13_lines(r13_nw_block("altar%d_lost14"),"nw:altar%d_lost14:retry")'%(n,n),'        jump r13_v111_altar%d_proof14'%n])
  nwblock('altar%d_lost14'%n);setv('altar_issue:%d'%n,'lost');goto(nxt)
  label('altar%d_won14'%n);nwblock('altar%d_won14'%n);setv('altar_issue:%d'%n,'won')
  if n==4:setv('dallae_first_victim_known',True)

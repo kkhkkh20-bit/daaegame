@@ -454,6 +454,9 @@ label r13_v111_nubi_proof7:
     jump expression _return
 
 label r13_v111_nubi_wrong7:
+    if r13_nw_retry("fire"):
+        call r13_lines(r13_v111_lines(["MS14_D07_S01_L0046","MS14_D07_S01_L0047"]),"v111:nubi_wrong7:retry")
+        jump r13_v111_nubi_proof7
     $ r13_nw_meeting_end("fire","lose")
     $ r13_nw_list("resident_bori","fire_lose")
     call r13_lines(r13_v111_lines(['MS14_D07_S01_L0046']),'v111:MS14_D07_S01_L0046')
@@ -507,9 +510,7 @@ label r13_v111_rescue_fire_basis7:
     jump expression _return
 
 label r13_v111_responsibility_wrong7:
-    if (r13_nw_half(["E06_FIRE","E06_EMPTY","E07_NUBI"]) or r13_nw_half(["E06_FIRE","E06_RESCUE","E07_NUBI"])) and not r13_v111_value("fire_hardened"):
-        $ r13_v111_set("fire_hardened",True)
-        $ renpy.notify("너울이 고개를 젓는다. 불의 원인과 그날 밤 일을 함께 묶어야 한다.")
+    if r13_nw_retry("fire",["E06_FIRE","E06_EMPTY","E07_NUBI"] if r13_v111_value("FIRE_EVACUATED") else ["E06_FIRE","E06_RESCUE","E07_NUBI"],"너울이 고개를 젓는다. 불의 원인과 그날 밤 일을 함께 묶어야 한다."):
         jump r13_v111_fire_basis_route7
     $ r13_nw_meeting_end("fire","partial")
     $ r13_nw_list("resident_bori","fire_partial")
@@ -1411,10 +1412,8 @@ label r13_v111_passage_answer10:
     jump r13_v111_owner10
 
 label r13_v111_hearing_wrong10:
-    if r13_nw_half(['E08_CHILD_ACCOUNT', 'E08_TOOL']) and not r13_v111_value("half:wound_proof10"):
-        $ r13_v111_set("half:wound_proof10",True)
+    if r13_nw_retry("room13",['E08_CHILD_ACCOUNT', 'E08_TOOL'],'너울이 고개를 젓는다. 아이의 말과 촛대 조각을 함께 놓아야 한다.'):
         call r13_lines(r13_v111_lines(['MS14_D10_S02_L0047', 'MS14_D10_S02_L0048']),'v111:hearing_wrong10:half')
-        $ renpy.notify('너울이 고개를 젓는다. 아이의 말과 촛대 조각을 함께 놓아야 한다.')
         jump r13_v111_wound_proof10
     $ r13_nw_meeting_end("room13",'lose')
     $ r13_nw_list("daram","room13_lose")
@@ -1424,10 +1423,8 @@ label r13_v111_hearing_wrong10:
     jump r13_v111_bench10
 
 label r13_v111_passage_wrong10:
-    if r13_nw_half(['E09_PASSAGE', 'E08_ROOM']) and not r13_v111_value("half:passage_proof10"):
-        $ r13_v111_set("half:passage_proof10",True)
+    if r13_nw_retry("room13",['E09_PASSAGE', 'E08_ROOM'],'따닥이 고개를 젓는다. 직접 걸어 본 길과 현장 배치를 함께 놓아야 한다.'):
         call r13_lines(r13_v111_lines(['MS14_D10_S02_L0050']),'v111:passage_wrong10:half')
-        $ renpy.notify('따닥이 고개를 젓는다. 직접 걸어 본 길과 현장 배치를 함께 놓아야 한다.')
         jump r13_v111_passage_proof10
     $ r13_nw_meeting_end("room13",'lose')
     $ r13_nw_list("daram","room13_lose")
@@ -1560,10 +1557,8 @@ label r13_v111_contact_answer10:
     jump r13_v111_bench10
 
 label r13_v111_owner_wrong10:
-    if r13_nw_half(['E08_WOUND_WIRE', 'E09_PIN_OWNER']) and not r13_v111_value("half:owner_proof10"):
-        $ r13_v111_set("half:owner_proof10",True)
+    if r13_nw_retry("room13",['E08_WOUND_WIRE', 'E09_PIN_OWNER'],'할머니가 웃는다. 구리선과 수선 기록을 함께 놓아야 한다.'):
         call r13_lines(r13_v111_lines(['MS14_D10_S03_L0089']),'v111:owner_wrong10:half')
-        $ renpy.notify('할머니가 웃는다. 구리선과 수선 기록을 함께 놓아야 한다.')
         jump r13_v111_owner_proof10
     $ r13_nw_meeting_end("room13",'partial')
     $ r13_v111_set("room13_partial_kind",'unknown')
@@ -1572,10 +1567,8 @@ label r13_v111_owner_wrong10:
     jump r13_v111_bench10
 
 label r13_v111_time_wrong10:
-    if r13_nw_half(['E09_PIN_TIME', 'E09_PIN_HANDOVER_TIME']) and not r13_v111_value("half:time_proof10"):
-        $ r13_v111_set("half:time_proof10",True)
+    if r13_nw_retry("room13",['E09_PIN_TIME', 'E09_PIN_HANDOVER_TIME'],'나비가 고개를 젓는다. 핀을 다시 채운 때와 계단참의 핀을 함께 놓아야 한다.'):
         call r13_lines(r13_v111_lines(['MS14_D10_S03_L0090']),'v111:time_wrong10:half')
-        $ renpy.notify('나비가 고개를 젓는다. 핀을 다시 채운 때와 계단참의 핀을 함께 놓아야 한다.')
         jump r13_v111_time_proof10
     $ r13_nw_meeting_end("room13",'partial')
     $ r13_v111_set("room13_partial_kind",'unknown')
@@ -1584,10 +1577,8 @@ label r13_v111_time_wrong10:
     jump r13_v111_bench10
 
 label r13_v111_contact_wrong10:
-    if r13_nw_half(['E08_CONTACT_ASSEMBLY', 'E08_WOUND_WIRE', 'E08_CHILD_POSITION', 'E08_ROOM_REACH', 'E09_SCARF']) and not r13_v111_value("half:contact_proof10"):
-        $ r13_v111_set("half:contact_proof10",True)
+    if r13_nw_retry("room13",['E08_CONTACT_ASSEMBLY', 'E08_WOUND_WIRE', 'E08_CHILD_POSITION', 'E08_ROOM_REACH', 'E09_SCARF'],'할머니가 목도리를 여민다. 천과 핀, 상처, 아이의 자리를 함께 놓아야 한다.'):
         call r13_lines(r13_v111_lines(['MS14_D10_S03_L0091', 'MS14_D10_S03_L0092']),'v111:contact_wrong10:half')
-        $ renpy.notify('할머니가 목도리를 여민다. 천과 핀, 상처, 아이의 자리를 함께 놓아야 한다.')
         jump r13_v111_contact_proof10
     $ r13_nw_meeting_end("room13",'partial')
     $ r13_v111_set("room13_partial_kind",'accident')
@@ -1757,10 +1748,8 @@ label r13_v111_public_paper10:
     jump r13_v111_prevent_return10
 
 label r13_v111_authority_wrong10:
-    if r13_nw_half(['E06_CONTACT', 'E09_MAIL']) and not r13_v111_value("half:authority_proof10"):
-        $ r13_v111_set("half:authority_proof10",True)
+    if r13_nw_retry("records",['E06_CONTACT', 'E09_MAIL'],'부엉이가 손을 거둔다. 받는 사람과 그 기록을 함께 놓아야 한다.'):
         call r13_lines(r13_v111_lines(['MS14_D10_P01_L0084', 'MS14_D10_P01_L0085']),'v111:authority_wrong10:half')
-        $ renpy.notify('부엉이가 손을 거둔다. 받는 사람과 그 기록을 함께 놓아야 한다.')
         jump r13_v111_authority_proof10
     $ r13_nw_meeting_end("records","lose")
     $ r13_nw_list("resident_owlgp","records_lose")
@@ -1770,10 +1759,8 @@ label r13_v111_authority_wrong10:
     jump r13_v111_prevent_return10
 
 label r13_v111_writing_wrong10:
-    if r13_nw_half(['E01', 'E07', 'E09_MAIL']) and not r13_v111_value("half:writing_proof10"):
-        $ r13_v111_set("half:writing_proof10",True)
+    if r13_nw_retry("records",['E01', 'E07', 'E09_MAIL'],'슬링이 고개를 젓는다. 편지와 봉투, 필사본을 함께 놓아야 한다.'):
         call r13_lines(r13_v111_lines(['MS14_D10_P01_L0086']),'v111:writing_wrong10:half')
-        $ renpy.notify('슬링이 고개를 젓는다. 편지와 봉투, 필사본을 함께 놓아야 한다.')
         jump r13_v111_writing_proof10
     $ r13_nw_meeting_end("records","partial")
     call r13_lines(r13_v111_lines(['MS14_D10_P01_L0086']),'v111:MS14_D10_P01_L0086')

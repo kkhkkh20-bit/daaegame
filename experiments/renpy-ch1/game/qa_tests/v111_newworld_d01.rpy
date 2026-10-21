@@ -12,6 +12,7 @@ testcase v111_nw_d01_gate_lost:
     click pos (900,600) until screen "r13_hub" timeout 90
     assert eval (qa_nw_seen("꼭 별 같아") and qa_nw_seen("기계 난로") and qa_nw_seen("등갓에 손을"))
     run Function(r13_v111_commit,"MS14_D01_S02_L0019")
+    run Function(r13_v111_set,"tries:gate",2)
     run Jump("r13_v111_gate_wrong")
     pause 1.0
     click pos (900,600) until screen "r13_hub" timeout 90

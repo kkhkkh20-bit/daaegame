@@ -17,6 +17,7 @@ testcase v111_nw_d11_hyp_lost:
     click "편지를 접는다"
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day11)
+    run Function(r13_v111_set,"tries:hypothesis",2)
     run Jump("r13_v111_hypothesis11")
     click pos (900,600) until "아르카가 사람을 부른다" timeout 60
     click "아르카가 사람을 부른다"
@@ -32,6 +33,7 @@ testcase v111_nw_d11_hyp_wrong_reason:
     click "편지를 접는다"
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day11)
+    run Function(r13_v111_set,"tries:hypothesis",2)
     run Jump("r13_v111_hyp1_q11")
     click pos (900,600) until "초롱은 젊어서 버틴다" timeout 60
     click "초롱은 젊어서 버틴다"

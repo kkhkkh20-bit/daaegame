@@ -13,10 +13,11 @@ testcase v111_nw_d05_half_then_lost:
     click "편지를 접는다"
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day5,["V111:E20"])
+    run Function(r13_v111_set,"tries:gate_post",1)
     run Jump("r13_v111_wrong5")
     pause 1.0
     click pos (900,600) until screen "r13_crisis_proof" timeout 60
-    assert eval (r13_v111_value("gate_post_hardened") is True and r13_v111_value("meeting:gate_post") is None)
+    assert eval (r13_v111_value("tries:gate_post")==2 and r13_v111_value("meeting:gate_post") is None)
     assert eval (qa_nw_seen("키로는 못 가리오") and not qa_nw_seen("명단에 올리시오"))
     run Function(qa_nw_day5,["V111:E20"])
     run Jump("r13_v111_wrong5")

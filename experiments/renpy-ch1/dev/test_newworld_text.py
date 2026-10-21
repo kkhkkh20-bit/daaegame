@@ -115,6 +115,14 @@ class NewWorldText(Layer):
   env=self.fixture('d03',dict(after={'MS14_D03_S01_L0001':[dict(id='NW_T_P',speaker='피코',text='x')]}))
   self.env['r13_v111_set']('piko_alive',False)
   with self.assertRaisesRegex(Exception,'dead new-world speaker'):env['r13_v111_lines'](['MS14_D03_S01_L0001'])
+ def test_thought_row_is_the_fathers_unspoken_line(self):
+  env=self.fixture('d01',dict(after={'MS14_D01_S05_L0004':[dict(id='NW_T_T1',speaker='아빠',kind='thought',text='책상 밑을 다시 보자.')]}))
+  out=env['r13_v111_lines'](['MS14_D01_S05_L0004'])
+  self.assertEqual(out[-1][:2],('dad','(책상 밑을 다시 보자.)'))
+  self.assertTrue(out[-1][2]['thought'])
+ def test_thought_row_must_be_the_father_without_brackets(self):
+  for row in (dict(id='NW_T_T2',speaker='다람',kind='thought',text='x'),dict(id='NW_T_T3',speaker='아빠',kind='thought',text='(x)')):
+   with self.assertRaisesRegex(Exception,"thought must be the father"):self.fixture('d01',dict(after={'MS14_D01_S05_L0004':[row]}))
  def test_evidence_name_and_text_revision(self):
   key=next(iter(source_tests.DATA['evidence']));variant=next(iter(source_tests.DATA['evidence'][key]['variants']))
   env=self.fixture('d01',dict(evidence={key:{'name':'새 이름','variants':{variant:'새 설명'}}}))
@@ -152,6 +160,15 @@ class NewWorldText(Layer):
   for name in DAYS:
    for m in re.finditer(r"call r13_v111_proof\([^\[]*(\[[^\]]*\])",(ROOT/'game'/name).read_text()):
     for key in ast.literal_eval(m.group(1)):self.assertIn(key,keys,name)
+ def test_every_meeting_loss_comes_after_its_retry(self):
+  # Three chances (2026-10-22): no meeting result may be written before the retry check.
+  for name in DAYS:
+   text=(ROOT/'game'/name).read_text()
+   for block in text.split('\nlabel ')[1:]:
+    if 'r13_nw_retry(' not in block:continue
+    first=block.index('r13_nw_retry(')
+    for bad in ("r13_nw_meeting_end(","r13_nw_list("):
+     if bad in block:self.assertGreater(block.index(bad),first,(name,block.split(':',1)[0]))
  def test_list_conditions_cover_the_transfer_list(self):
   env=self.load()
   rules=(ROOT/'game/room13_v111_newworld_rules.rpy').read_text()
@@ -191,11 +208,13 @@ class Event01Gate(Layer):
   after=[r[1] for r in env['r13_v111_lines'](['MS14_D01_S04_L0021'])]
   self.assertNotIn('정정한 표',' '.join(after));self.assertEqual(len(after),3)
   self.assertTrue(env['R13_V111']['evidence']['E05']['variants']['unlisted'].startswith('정정 없음.'))
- def test_gate_flow_is_one_shot(self):
+ def test_gate_flow_has_three_chances(self):
   day=(ROOT/'game/room13_v111_days123.rpy').read_text()
   wrong=day.split('label r13_v111_gate_wrong:\n',1)[1].split('\nlabel ',1)[0]
   self.assertIn("r13_v111_set('gate_daram_unlisted',True)",wrong);self.assertIn('jump r13_v111_registered',wrong)
-  self.assertNotIn('gate_investigate',wrong)
+  retry,final=wrong.split("if r13_nw_retry('gate'):",1)
+  self.assertIn('jump r13_v111_gate_investigate',final.split('\n')[1])
+  self.assertLess(wrong.index('r13_nw_retry'),wrong.index('gate_daram_unlisted'))
   number=day.split('label r13_v111_gate_number:\n',1)[1].split('\nlabel ',1)[0]
   self.assertIn("r13_v111_set('gate_hardened',True)",number)
   proof=(ROOT/'game/room13_v111.rpy').read_text()

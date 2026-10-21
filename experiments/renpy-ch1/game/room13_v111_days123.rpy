@@ -240,7 +240,10 @@ label r13_v111_gate_wrong:
     $ r13_v111_scene('MS14_D01_S03')
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D01_S03_L0025']), 'v111:gate_wrong:MS14_D01_S03_L0025')
-    # New world (event 01, plan A): the gate proof is one-shot. Daram enters as '외 한 명'.
+    # New world: three chances per meeting (2026-10-22); the third wrong answer stands
+    # and Daram enters as '외 한 명' (plan A).
+    if r13_nw_retry('gate'):
+        jump r13_v111_gate_investigate
     $ r13_v111_set('gate_daram_unlisted',True)
     jump r13_v111_registered
 
@@ -1028,9 +1031,12 @@ label r13_v111_knife_fit:
 
 label r13_v111_knife_wrong:
     $ r13_v111_scene('MS14_D03_S05')
-    # New world (event 03): naming by the knife's shape alone loses the knife issue.
-    $ r13_nw_meeting_end('lamp','partial')
+    # New world (event 03): naming by the knife's shape alone costs a chance; the third loses the knife issue.
     $ r13_v111_score()
+    if r13_nw_retry('lamp'):
+        call r13_lines(r13_v111_lines(['MS14_D03_S05_L0068', 'MS14_D03_S05_L0069', 'MS14_D03_S05_L0070']), 'v111:knife_wrong:retry')
+        jump r13_v111_trial_knife
+    $ r13_nw_meeting_end('lamp','partial')
     call r13_lines(r13_v111_lines(['MS14_D03_S05_L0068', 'MS14_D03_S05_L0069', 'MS14_D03_S05_L0070']), 'v111:knife_wrong:MS14_D03_S05_L0068')
     jump r13_v111_trial_choices
 
@@ -1147,6 +1153,9 @@ label r13_v111_silluk_transfer:
 label r13_v111_trial_wrong:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
+    if r13_nw_retry('lamp'):
+        call r13_lines(r13_v111_lines(['MS14_D03_S05_L0071', 'MS14_D03_S05_L0072']), 'v111:trial_wrong:retry:MS14_D03_S05_L0071')
+        jump r13_v111_trial_repair
     # New world (event 03): one presentation. Losing Tok's innocence (gate) ends the meeting.
     $ r13_nw_meeting_end('lamp','lose')
     $ r13_nw_list('resident_tok','lamp_lose')
@@ -1161,9 +1170,12 @@ label r13_v111_trial_hint:
 
 label r13_v111_trial_wrong_sale:
     $ r13_v111_scene('MS14_D03_S05')
+    $ r13_v111_score()
+    if r13_nw_retry('lamp'):
+        call r13_lines(r13_v111_lines(['MS14_D03_S05_L0071', 'MS14_D03_S05_L0072']), 'v111:trial_wrong_sale:retry:MS14_D03_S05_L0071')
+        jump r13_v111_trial_sale
     # New world (event 03): a lost later issue ends the meeting as partial.
     $ r13_nw_meeting_end('lamp','partial')
-    $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D03_S05_L0071', 'MS14_D03_S05_L0072']), 'v111:trial_wrong_sale:MS14_D03_S05_L0071')
     jump r13_v111_trial_choices
 
@@ -1175,9 +1187,12 @@ label r13_v111_trial_hint_sale:
 
 label r13_v111_trial_wrong_latch:
     $ r13_v111_scene('MS14_D03_S05')
+    $ r13_v111_score()
+    if r13_nw_retry('lamp'):
+        call r13_lines(r13_v111_lines(['MS14_D03_S05_L0071', 'MS14_D03_S05_L0072']), 'v111:trial_wrong_latch:retry:MS14_D03_S05_L0071')
+        jump r13_v111_trial_latch
     # New world (event 03): a lost later issue ends the meeting as partial.
     $ r13_nw_meeting_end('lamp','partial')
-    $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D03_S05_L0071', 'MS14_D03_S05_L0072']), 'v111:trial_wrong_latch:MS14_D03_S05_L0071')
     jump r13_v111_trial_choices
 
@@ -1189,9 +1204,12 @@ label r13_v111_trial_hint_latch:
 
 label r13_v111_trial_wrong_stone:
     $ r13_v111_scene('MS14_D03_S05')
+    $ r13_v111_score()
+    if r13_nw_retry('lamp'):
+        call r13_lines(r13_v111_lines(['MS14_D03_S05_L0071', 'MS14_D03_S05_L0072']), 'v111:trial_wrong_stone:retry:MS14_D03_S05_L0071')
+        jump r13_v111_trial_stone
     # New world (event 03): a lost later issue ends the meeting as partial.
     $ r13_nw_meeting_end('lamp','partial')
-    $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D03_S05_L0071', 'MS14_D03_S05_L0072']), 'v111:trial_wrong_stone:MS14_D03_S05_L0071')
     jump r13_v111_trial_choices
 
