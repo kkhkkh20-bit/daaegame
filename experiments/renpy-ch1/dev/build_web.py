@@ -51,9 +51,8 @@ REDESIGN_BACKUPS = (REDESIGN_BACKUP, ROOT / "art/ep-art-20261016/original-entrie
 # Only title + carriage and shared entrance scenery block the first interaction.
 # Gate residents and notebook atlases load when used, not before the title. All other
 # images use Ren'Py's existing progressive downloader, at original quality.
-START_PEOPLE = ("daram",)
 START_FILES = {"assets/room13-opening-coach-landscape.webp","assets/room13-title-winter020.webp", "assets/room13-pixel-carriage-empty-winter.webp",
-               "assets/bgm-title.mp3", "assets/bgm-travel.mp3", "assets/bgm-snow.mp3", "assets/amb-wind.mp3",
+               "assets/bgm-title.mp3", "assets/bgm-travel.mp3",
                "assets/type.wav", "assets/ms14-audio/cart-roll-light.mp3",
                "assets/room13-fx-shade-carriage.webp", "assets/room13-fx-glow-carriage-0.webp", "assets/room13-fx-carriage-window-mask.webp"}
 
@@ -63,9 +62,7 @@ def startup_media(rel, startup_files):
     # do not let the broad Daram compatibility whitelist preload every pose.
     if rel.startswith("assets/dialogue-context-master/daram/") and "/intake21_" in rel:
         return Path(rel).stem=="intake21_01_bravado"
-    return (rel in startup_files or name in ICONS or Path(rel).suffix.lower() in (".ttf", ".otf", ".woff2")
-            or any(person in name or "/"+person+"/" in rel for person in START_PEOPLE)
-            or any(rel.startswith("assets/"+family+"/"+person+"/") for family in ("dialogue-source-master", "profile-source-master") for person in ("guard", "karo")))
+    return (rel in startup_files or name in ICONS or Path(rel).suffix.lower() in (".ttf", ".otf", ".woff2"))
 
 def startup_files(game):
     result = set(START_FILES)
@@ -76,7 +73,11 @@ def startup_files(game):
             for v in value.values():files(v)
         elif isinstance(value, list):
             for v in value:files(v)
-    files(layout.get("gate", {}))
+    # Only the first gate period is needed near the opening; later daylight
+    # and every obsolete Daram atlas remain compatible progressive assets.
+    files(layout.get("gate", {}).get("files", {}).get("morning"))
+    talking=json.loads((game / "assets/room13-dialogue-talk-art.json").read_text())
+    files(talking["people"]["daram"])
     fx = json.loads((game / "assets/room13-dot-fx.json").read_text())
     files(fx.get("lights", {}).get("title", {}))
     files(fx.get("lights", {}).get("gate", {}))
@@ -426,7 +427,7 @@ def main():
             removed.append(old.relative_to(release).as_posix()); old.unlink()
     transport = {"multipart": True, "archive_bytes": size, "archive_sha256": digest, "parts": parts,
                  "preload": preload_entries, "asset_versions": {"game/"+r: sha((game/r).read_bytes())[:12] for r in remote},
-                 "prefetch": ["game/"+r for r in remote if r in ("assets/bgm-inn.mp3", "assets/amb-fire.mp3")]}
+                 "prefetch": ["game/"+r for r in remote if r in ("assets/bgm-snow.mp3", "assets/amb-wind.mp3", "assets/bgm-inn.mp3", "assets/amb-fire.mp3")]}
     (release / "game-transport.json").write_text(json.dumps(transport, indent=1))
 
     install_loader(release / "renpy-pre.js")

@@ -52,6 +52,18 @@ async def main():
    report['natural_scene']=snap
    print('NATURAL',snap,flush=True)
    await page.screenshot(path=str(OUT/'natural-bravado.png'))
+   if os.environ.get('INTAKE_QA_GATE_SMOKE'):
+    for _ in range(160):
+     st=await q.state()
+     state=await q.py('import renpy;result=renpy.store.room13')
+     if 'r13_hub' in st['screens'] and state.get('location')=='gate':break
+     if 'say' in st['screens']:await q.input(810,400)
+     elif any(x in st['screens'] for x in ('choice','r13_question_list')):await q.press('편지를 접는다')
+     elif 'r13_cinematic_view' in st['screens']:await q.press('계속')
+     else:await asyncio.sleep(.2)
+    assert 'r13_hub' in st['screens'] and state.get('location')=='gate',st['screens']
+    await asyncio.sleep(1);await q.shot('first-gate-lazy-assets')
+    report['first_gate']=state
    if os.environ.get('INTAKE_QA_SKIP_SAVE'):
     report['status']='passed';return
    await q.py('import renpy;renpy.store.persistent.room13_motion=False;result=True')

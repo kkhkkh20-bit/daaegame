@@ -337,13 +337,16 @@ init 59 python:
         layout=r13_layout(location)
         world_width=int(layout.get("width",1280))
         world_height=int(layout.get("height",720))
+        ui_rects=[]
+        for offset in {0,max(0,world_width-1280),layout.get("initial_x",0)}:
+            ui_rects.extend(r13_field_ui_rects(offset))
         # Permission changes the available conversation, not who is standing
         # at this place at the same time. Entry uses the ordinary schedule too.
         people=r13_visible_people()
         state=store.room13
         cache_key=(entry,state["day"],period,location,world_width,layout.get("revision",0),tuple(people),
             tuple(sorted(state.get("flags",[]))),state.get("case_state"),
-            state.get("victim_state"),state.get("granny_state"),state.get("daram_state"))
+            state.get("victim_state"),state.get("granny_state"),state.get("daram_state"),r13_control_height())
         if cache_key in R13_STAGE_CACHE:return R13_STAGE_CACHE[cache_key]
         floors=layout.get("floors") or R13_STAGE_FLOORS.get(location,R13_STAGE_FLOORS["square"])
         staged=[]
@@ -468,6 +471,9 @@ init 59 python:
                 score=0.0
                 if body[0]<5 or body[0]+body[2]>world_width-5:score+=50000
                 if face[1]<104 or face[1]+face[3]>618:score+=50000
+                # Keep existing furniture/poses and schedules. Only free depth
+                # slots compete differently when the head is behind field UI.
+                score+=sum(overlap(face,r) for r in ui_rects)*80
                 score+=sum(masked(point,c["occlusion"]) for point in samples(face))*5000
                 for old in staged:
                     ob=[old["x"],old["y"],old["width"],old["height"]];of=face_box(old)

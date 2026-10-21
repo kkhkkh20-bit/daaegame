@@ -128,17 +128,24 @@ init 61 python:
             cx,top=r13_actor_nameplate(actor)
             top=max(101,top-14)
             width=max(88,sum(9 if ch==" " else 18 for ch in R13_NAMES[person])+32)
-            preferred=(int(cx-width/2),top,width,48)
+            # A head can straddle the panorama edge while its name used to
+            # remain outside the visible window. Keep that label in view.
+            left=0;right=r13_world_width()
+            offset=r13_world_offset()
+            if face[0]<offset+1280 and face[0]+face[2]>offset:
+                left=offset;right=min(right,offset+1280)
+            preferred=(max(left+8,min(right-8-width,int(cx-width/2))),top,width,48)
             candidates=[]
             for dy in (0,-52,-104,52):
                 for dx in (0,-32,32,-64,64):
-                    candidates.append((max(8,min(r13_world_width()-8-width,preferred[0]+dx)),max(101,min(676,top+dy)),width,48))
-            candidates.append((max(8,min(r13_world_width()-8-width,preferred[0])),min(676,face[1]+face[3]+6),width,48))
+                    candidates.append((max(left+8,min(right-8-width,preferred[0]+dx)),max(101,min(676,top+dy)),width,48))
+            candidates.append((max(left+8,min(right-8-width,preferred[0])),min(676,face[1]+face[3]+6),width,48))
             def score(rect):
                 blocked=sum(overlap(rect,f) for f in faces.values())
                 blocked+=sum(overlap(rect,p["rect"]) for p in placed)
                 blocked+=sum(overlap(rect,r) for r in reserved)
-                if r13_world_width()==1280:blocked+=overlap(rect,(1075,642,180,62))
+                for offset in {0,max(0,r13_world_width()-1280),r13_layout().get("initial_x",0)}:
+                    blocked+=sum(overlap(rect,r) for r in r13_field_ui_rects(offset))
                 return blocked*10000+abs(rect[0]-preferred[0])+abs(rect[1]-preferred[1])*1.1
             rect=min(candidates,key=score)
             leader=None

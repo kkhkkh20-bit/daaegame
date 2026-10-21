@@ -1,22 +1,17 @@
 {
  "multipart": true,
- "archive_bytes": 17730719,
- "archive_sha256": "88e1d8fc995b2fb119879c0491521a087499f99865363bc11fe48e85b8b6c1d9",
+ "archive_bytes": 16419343,
+ "archive_sha256": "f0a2d7084a614e28b0495f5581588881cad5eeb32249b2b092945df0a82820c3",
  "parts": [
   {
    "file": "game.part01",
    "bytes": 8388608,
-   "sha256": "feabb97c438f2e69634e0eb9299e82deabdf44474598d593829290adcdd4a353"
+   "sha256": "b5e9e46ee119ef8781963ddd1df02ed065027db05f6e8edf869c9001c4be9129"
   },
   {
    "file": "game.part02",
-   "bytes": 8388608,
-   "sha256": "1822872b4326b5ce44b3de2ab8c743a6d061d420a069215217f917daa400879a"
-  },
-  {
-   "file": "game.part03",
-   "bytes": 953503,
-   "sha256": "1b5d4fbbe64dfa492e40500854524cf140b013a637752e367b21a9aacdb10ee0"
+   "bytes": 8030735,
+   "sha256": "ed350c2488870c7d3c58884b878fefb4d357d9985848bc159f2c6e5cefbc2e07"
   }
  ],
  "preload": [
@@ -29,11 +24,6 @@
    "file": "game/assets/Room13Sans.ttf",
    "bytes": 216572,
    "sha256": "3d78103f88408e1dfec40da20078f9cffadf07397815959b71908468d9b8e5c5"
-  },
-  {
-   "file": "game/assets/bgm-snow.mp3",
-   "bytes": 3385050,
-   "sha256": "a94f5aecd61fb192e78ce56224c5309e1be8f8f9b77b48340d55188c8708b197"
   },
   {
    "file": "game/assets/bgm-title.mp3",
@@ -106,134 +96,9 @@
    "sha256": "1b4feacb26b6d1b4dda483f6a291759dc8abbdf3f610f2e8d2569b0a16d8ba1c"
   },
   {
-   "file": "game/assets/dialogue-source-master/guard/760/angry.webp",
-   "bytes": 74712,
-   "sha256": "a12bf39dd350872c071ca0e3453b090d74b988154b45f30301951e560b75a5c6"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/guard/760/anxious.webp",
-   "bytes": 68618,
-   "sha256": "321de49b24283652602869decadad6b83d874a7c0615c7ce03407393ff68cfe6"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/guard/760/joy.webp",
-   "bytes": 72402,
-   "sha256": "42d741fc6843a5c9e1d4915327d59f9abfe0d5311c109717f51f939b91b73378"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/guard/760/neutral.webp",
-   "bytes": 72026,
-   "sha256": "9a2e5f61e0ed92f8a7bc6c03ca32513ac451e5f8890c0b8cc76e33acf021abae"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/guard/760/surprise_react.webp",
-   "bytes": 72146,
-   "sha256": "17f4c0df8a7a07b2a40f4134baa2e949ee3a094809c8d989299fc71fbcef9dbc"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/guard/760/surprise_talk.webp",
-   "bytes": 70014,
-   "sha256": "c7b1b78e4b1bb1961c869cdd7f89c32b106d3ee23d5766e548e5c50b4a97e05e"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/guard/840/angry.webp",
-   "bytes": 123126,
-   "sha256": "f8c6870ae95417e0b9268caed36541a741cf572891821803bf15463121f03cb5"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/guard/840/anxious.webp",
-   "bytes": 112588,
-   "sha256": "87f5a5cc22349dffafee92c067c12898e7a158d9e495ec1fcbfb570db557a907"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/guard/840/joy.webp",
-   "bytes": 119322,
-   "sha256": "cf16a2ffc28b97c08c40535ec74b6ac7104e1645c12c561c60e9ccc189d9b136"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/guard/840/neutral.webp",
-   "bytes": 118336,
-   "sha256": "d8e313d9e51c11356c57ea0d9200c0f6ee6a60f2a084b262853cb19addb016c8"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/guard/840/surprise_react.webp",
-   "bytes": 118192,
-   "sha256": "df47d39b506c0b54a41c7672fdbcf664f9ee1d17df8bbab036ed3bfd98786e69"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/guard/840/surprise_talk.webp",
-   "bytes": 114680,
-   "sha256": "4d438de1dc384b5c68c4b7146023c10f42af7904351a804d285193bbc1d1ef96"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/karo/840/angry.webp",
-   "bytes": 107038,
-   "sha256": "69281ef70082f6354ac49214d49b4697e9914078f4efd45aac49aa6c76c655a9"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/karo/840/anxious.webp",
-   "bytes": 110332,
-   "sha256": "c0062b2bb6a076d3028998312b83c6c63cb35db28c545761a6ded987208e9e55"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/karo/840/joy.webp",
-   "bytes": 99260,
-   "sha256": "8eb23c0415d19ed574f54546ee9b8fa4cea41833cbacaa0b27ae361c1db8d29f"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/karo/840/neutral.webp",
-   "bytes": 112822,
-   "sha256": "7a7a922c2bf380139760041550e7a88dd09af042990b24a515dba899ea5d2523"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/karo/840/surprise_react.webp",
-   "bytes": 108610,
-   "sha256": "f35cd6acc1211c9dbaeec4c418ba74368e41843101ec28f4a79746eb0f7a4794"
-  },
-  {
-   "file": "game/assets/dialogue-source-master/karo/840/surprise_talk.webp",
-   "bytes": 102090,
-   "sha256": "dc507a0043dbeec7b54b245be0ef63d1857ba9f9d3c6e4e32fdd18ad33cba7af"
-  },
-  {
-   "file": "game/assets/room13-fullbody-daram-angry.webp",
-   "bytes": 74156,
-   "sha256": "0423246541bbe19f65116665a2d346732326c712151fe01d343bf947633088d4"
-  },
-  {
-   "file": "game/assets/room13-fullbody-daram-anxious.webp",
-   "bytes": 74646,
-   "sha256": "0a1fcff45f347b1949816306e356457725b0c95a128feefb006401027b4a8beb"
-  },
-  {
-   "file": "game/assets/room13-fullbody-daram-flustered.webp",
-   "bytes": 74550,
-   "sha256": "a42345291d1693ffa8ff27643750692ab3882af0f73d4188aebe639cd35f938c"
-  },
-  {
-   "file": "game/assets/room13-fullbody-daram-joy.webp",
-   "bytes": 74646,
-   "sha256": "6b849024b0062a7ebcdc9c3e0f4e93dafbf424c19ebded64bd1f80bd5aec0f1c"
-  },
-  {
-   "file": "game/assets/room13-fullbody-daram-neutral.webp",
-   "bytes": 73238,
-   "sha256": "5c9e40ad437cccee0dd5ee47de136f366dda97be505de5ead9f3c77679263b5b"
-  },
-  {
-   "file": "game/assets/room13-fullbody-daram-surprise.webp",
-   "bytes": 74406,
-   "sha256": "5a4bf59db9ad96a22c84d4056560343ff9128a146b9f7a3fc719e0951b9e1d05"
-  },
-  {
    "file": "game/assets/room13-opening-coach-landscape.webp",
    "bytes": 221750,
    "sha256": "3a0c98473c3f724b1d5eca3b31f34168fa78bfe41a14e598c03ebaf2f02c48ac"
-  },
-  {
-   "file": "game/assets/room13-pixel-acting-daram.webp",
-   "bytes": 328144,
-   "sha256": "70939cc65638b449fc447bb775834a50cc61e2728a2f060be050d4a9f74a2ed9"
   },
   {
    "file": "game/assets/room13-pixel-carriage-empty-winter.webp",
@@ -241,34 +106,9 @@
    "sha256": "c209bad206a6c24a7b4b5d53336ba30a4b9ea4eccf164533952ad72a8bbc75dc"
   },
   {
-   "file": "game/assets/room13-pixel-daram-motion.webp",
-   "bytes": 314924,
-   "sha256": "49d8c09e08097a86426846bd809cddcd3c38059365447d4d5c0a90e60807f5a7"
-  },
-  {
-   "file": "game/assets/room13-pixel-dialogue-daram.webp",
-   "bytes": 331566,
-   "sha256": "4129f95c46839e4322e8b80eee199f5bc95e1ab89a98d4a7206db9958ef05693"
-  },
-  {
-   "file": "game/assets/room13-pixel-ready-gate0173-afternoon.webp",
-   "bytes": 443182,
-   "sha256": "bff50fcc532f59acd9b4544ffb68c857e4c5c43d370480341a68e9ae92d118c9"
-  },
-  {
-   "file": "game/assets/room13-pixel-ready-gate0173-evening.webp",
-   "bytes": 386560,
-   "sha256": "3dd1c0e83a9f026abb04658e1fe02dfde7cd492866eed0c3dadfeb0a321da6c9"
-  },
-  {
    "file": "game/assets/room13-pixel-ready-gate0173-morning.webp",
    "bytes": 441494,
    "sha256": "c482a5ea43c5111377ac9f3cc3705e640537d4f85261e96127b5d028504be9f3"
-  },
-  {
-   "file": "game/assets/room13-pixel-world-daram-gray-gutter.webp",
-   "bytes": 478692,
-   "sha256": "7ed92445ebe1b70e90ef79fb1ad6853a3abdd9a46570da1ebb6cd184e20438c6"
   },
   {
    "file": "game/assets/room13-title-winter020.webp",
@@ -280,6 +120,7 @@
   "game/assets/after.mp3": "7326fa27210d",
   "game/assets/amb-clock.mp3": "d7774b1118da",
   "game/assets/amb-fire.mp3": "ccdfa2c468a2",
+  "game/assets/amb-wind.mp3": "509bda7c964d",
   "game/assets/approach.png": "9180aa5660a8",
   "game/assets/basket-world.png": "e68393acd7c1",
   "game/assets/bgm-altar.mp3": "32d5a6f27f29",
@@ -292,6 +133,7 @@
   "game/assets/bgm-night.mp3": "8644b72d52ff",
   "game/assets/bgm-pressure.mp3": "03ca6c061e85",
   "game/assets/bgm-search.mp3": "57daec8efc95",
+  "game/assets/bgm-snow.mp3": "a94f5aecd61f",
   "game/assets/bgm-think.mp3": "6525abfd6904",
   "game/assets/bgm-village.mp3": "fb971211b62a",
   "game/assets/bgm-village2.mp3": "589440f33ba9",
@@ -497,6 +339,42 @@
   "game/assets/dialogue-source-master/granny/840/neutral.webp": "72240845a291",
   "game/assets/dialogue-source-master/granny/840/surprise_react.webp": "96c335315f2d",
   "game/assets/dialogue-source-master/granny/840/surprise_talk.webp": "09aa096f1dcc",
+  "game/assets/dialogue-source-master/guard/560/angry.webp": "eb0e7f847edc",
+  "game/assets/dialogue-source-master/guard/560/anxious.webp": "d62d853438c2",
+  "game/assets/dialogue-source-master/guard/560/joy.webp": "2d6f6c96f4f0",
+  "game/assets/dialogue-source-master/guard/560/neutral.webp": "99904c332e87",
+  "game/assets/dialogue-source-master/guard/560/surprise_react.webp": "cbdcbf6adea5",
+  "game/assets/dialogue-source-master/guard/560/surprise_talk.webp": "4711f35fd643",
+  "game/assets/dialogue-source-master/guard/760/angry.webp": "a12bf39dd350",
+  "game/assets/dialogue-source-master/guard/760/anxious.webp": "321de49b2428",
+  "game/assets/dialogue-source-master/guard/760/joy.webp": "42d741fc6843",
+  "game/assets/dialogue-source-master/guard/760/neutral.webp": "9a2e5f61e0ed",
+  "game/assets/dialogue-source-master/guard/760/surprise_react.webp": "17f4c0df8a7a",
+  "game/assets/dialogue-source-master/guard/760/surprise_talk.webp": "c7b1b78e4b1b",
+  "game/assets/dialogue-source-master/guard/840/angry.webp": "f8c6870ae954",
+  "game/assets/dialogue-source-master/guard/840/anxious.webp": "87f5a5cc2234",
+  "game/assets/dialogue-source-master/guard/840/joy.webp": "cf16a2ffc28b",
+  "game/assets/dialogue-source-master/guard/840/neutral.webp": "d8e313d9e51c",
+  "game/assets/dialogue-source-master/guard/840/surprise_react.webp": "df47d39b506c",
+  "game/assets/dialogue-source-master/guard/840/surprise_talk.webp": "4d438de1dc38",
+  "game/assets/dialogue-source-master/karo/560/angry.webp": "46458158029f",
+  "game/assets/dialogue-source-master/karo/560/anxious.webp": "182630f1bba5",
+  "game/assets/dialogue-source-master/karo/560/joy.webp": "7fb6260d9e71",
+  "game/assets/dialogue-source-master/karo/560/neutral.webp": "b5259c8a1103",
+  "game/assets/dialogue-source-master/karo/560/surprise_react.webp": "155cdeb35c1b",
+  "game/assets/dialogue-source-master/karo/560/surprise_talk.webp": "4c36c72d744d",
+  "game/assets/dialogue-source-master/karo/760/angry.webp": "d75db6f5ee93",
+  "game/assets/dialogue-source-master/karo/760/anxious.webp": "ed4aa3b795db",
+  "game/assets/dialogue-source-master/karo/760/joy.webp": "81cd2a905c05",
+  "game/assets/dialogue-source-master/karo/760/neutral.webp": "2a917c0e7aa2",
+  "game/assets/dialogue-source-master/karo/760/surprise_react.webp": "67b67842a105",
+  "game/assets/dialogue-source-master/karo/760/surprise_talk.webp": "c7a56944b981",
+  "game/assets/dialogue-source-master/karo/840/angry.webp": "69281ef70082",
+  "game/assets/dialogue-source-master/karo/840/anxious.webp": "c0062b2bb6a0",
+  "game/assets/dialogue-source-master/karo/840/joy.webp": "8eb23c0415d1",
+  "game/assets/dialogue-source-master/karo/840/neutral.webp": "7a7a922c2bf3",
+  "game/assets/dialogue-source-master/karo/840/surprise_react.webp": "f35cd6acc121",
+  "game/assets/dialogue-source-master/karo/840/surprise_talk.webp": "dc507a0043db",
   "game/assets/dialogue-source-master/kid_bang/560/angry.webp": "41c89f181f89",
   "game/assets/dialogue-source-master/kid_bang/560/anxious.webp": "689ff9d3ae53",
   "game/assets/dialogue-source-master/kid_bang/560/joy.webp": "a8774044fd55",
@@ -1555,6 +1433,7 @@
   "game/assets/profile-source-master/bami.webp": "bd0f0000c3c6",
   "game/assets/profile-source-master/buri.webp": "2020c58ab2de",
   "game/assets/profile-source-master/chorong_mother.webp": "91fded97c0ca",
+  "game/assets/profile-source-master/daram.webp": "f9003a1d0703",
   "game/assets/profile-source-master/doto.webp": "170f0ae42d92",
   "game/assets/profile-source-master/granny.webp": "b66c1b1f6f80",
   "game/assets/profile-source-master/guard.webp": "5ed7844ff07e",
@@ -1841,6 +1720,18 @@
   "game/assets/room13-fullbody-dad-neutral.webp": "b35006e52047",
   "game/assets/room13-fullbody-dad-surprise-acting.webp": "97b7a106805a",
   "game/assets/room13-fullbody-dad-surprise.webp": "4b180f538040",
+  "game/assets/room13-fullbody-daram-angry-acting.webp": "27786442c429",
+  "game/assets/room13-fullbody-daram-angry.webp": "0423246541bb",
+  "game/assets/room13-fullbody-daram-anxious-acting.webp": "eb707c82fe7d",
+  "game/assets/room13-fullbody-daram-anxious.webp": "0a1fcff45f34",
+  "game/assets/room13-fullbody-daram-flustered-acting.webp": "10a15fdd5817",
+  "game/assets/room13-fullbody-daram-flustered.webp": "a42345291d16",
+  "game/assets/room13-fullbody-daram-joy-acting.webp": "282580c8e8cf",
+  "game/assets/room13-fullbody-daram-joy.webp": "6b849024b006",
+  "game/assets/room13-fullbody-daram-neutral-acting.webp": "217a387ca478",
+  "game/assets/room13-fullbody-daram-neutral.webp": "5c9e40ad437c",
+  "game/assets/room13-fullbody-daram-surprise-acting.webp": "72e18e77f1e4",
+  "game/assets/room13-fullbody-daram-surprise.webp": "5a4bf59db9ad",
   "game/assets/room13-fullbody-doto-angry.webp": "f61aeacbaf7d",
   "game/assets/room13-fullbody-doto-anxious.webp": "324a48b5f424",
   "game/assets/room13-fullbody-doto-flustered.webp": "c43b51f1e1eb",
@@ -2180,6 +2071,16 @@
   "game/assets/room13-fx-blink-buri-neutral-half.webp": "7a4d5f080b71",
   "game/assets/room13-fx-blink-buri-surprise-closed.webp": "d7e7ddc6e863",
   "game/assets/room13-fx-blink-buri-surprise-half.webp": "9c519a1d359d",
+  "game/assets/room13-fx-blink-daram-angry-closed.webp": "96196fa562f3",
+  "game/assets/room13-fx-blink-daram-angry-half.webp": "5273e12d8ca1",
+  "game/assets/room13-fx-blink-daram-anxious-closed.webp": "d16818331b3f",
+  "game/assets/room13-fx-blink-daram-anxious-half.webp": "78332b6e3dad",
+  "game/assets/room13-fx-blink-daram-flustered-closed.webp": "fbdd96efc982",
+  "game/assets/room13-fx-blink-daram-flustered-half.webp": "3a07e8fe630f",
+  "game/assets/room13-fx-blink-daram-neutral-closed.webp": "b85ddedec912",
+  "game/assets/room13-fx-blink-daram-neutral-half.webp": "df78f761ba93",
+  "game/assets/room13-fx-blink-daram-surprise-closed.webp": "4d3533154f18",
+  "game/assets/room13-fx-blink-daram-surprise-half.webp": "98e6dad0fea8",
   "game/assets/room13-fx-blink-mom-angry-closed.webp": "61dc0ce810e6",
   "game/assets/room13-fx-blink-mom-angry-half.webp": "44669cb6c170",
   "game/assets/room13-fx-blink-mom-anxious-closed.webp": "3986dc57365d",
@@ -2358,6 +2259,7 @@
   "game/assets/room13-pixel-acting-bodum.webp": "121c2a37ffe3",
   "game/assets/room13-pixel-acting-buri.webp": "e01cd165027d",
   "game/assets/room13-pixel-acting-dad.webp": "87bef2227f03",
+  "game/assets/room13-pixel-acting-daram.webp": "70939cc65638",
   "game/assets/room13-pixel-acting-doto.webp": "15501f229f3b",
   "game/assets/room13-pixel-acting-elder.webp": "de7c75b360ad",
   "game/assets/room13-pixel-acting-eunho.webp": "e3561e8080fc",
@@ -2422,9 +2324,12 @@
   "game/assets/room13-pixel-cinematic-ending-E6074.webp": "ac987fb125ee",
   "game/assets/room13-pixel-cinematic-key-family015.webp": "b21dbc6a778a",
   "game/assets/room13-pixel-cinematic-key.webp": "18d36c82cc39",
+  "game/assets/room13-pixel-daram-motion.webp": "49d8c09e0809",
   "game/assets/room13-pixel-dialogue-bami.webp": "501cd9b91ca4",
   "game/assets/room13-pixel-dialogue-buri.webp": "d2f9727b92e4",
   "game/assets/room13-pixel-dialogue-dad.webp": "b32b1392f61e",
+  "game/assets/room13-pixel-dialogue-daram-joy.webp": "c58867f46148",
+  "game/assets/room13-pixel-dialogue-daram.webp": "4129f95c4683",
   "game/assets/room13-pixel-dialogue-doto.webp": "c0294fdcb435",
   "game/assets/room13-pixel-dialogue-granny.webp": "5b53f5ca074c",
   "game/assets/room13-pixel-dialogue-guard.webp": "c6667d8707a0",
@@ -2532,6 +2437,8 @@
   "game/assets/room13-pixel-ready-facility0177-afternoon.webp": "3a77163c46d4",
   "game/assets/room13-pixel-ready-facility0177-evening.webp": "3ff89dc849bf",
   "game/assets/room13-pixel-ready-facility0177-morning.webp": "2554661cc478",
+  "game/assets/room13-pixel-ready-gate0173-afternoon.webp": "bff50fcc532f",
+  "game/assets/room13-pixel-ready-gate0173-evening.webp": "3dd1c0e83a9f",
   "game/assets/room13-pixel-ready-greenhouse0177-afternoon.webp": "c3654951359b",
   "game/assets/room13-pixel-ready-greenhouse0177-evening.webp": "ca3afe9e7abb",
   "game/assets/room13-pixel-ready-greenhouse0177-morning.webp": "2a2ba4b3b5f3",
@@ -2585,6 +2492,7 @@
   "game/assets/room13-pixel-wide-stable-afternoon.webp": "c4d915c38818",
   "game/assets/room13-pixel-world-context0156.webp": "7c1e89bbadbc",
   "game/assets/room13-pixel-world-dad-gray.webp": "0bf7a82ac910",
+  "game/assets/room13-pixel-world-daram-gray-gutter.webp": "7ed92445ebe1",
   "game/assets/room13-pixel-world-family-extra-gray.webp": "f4ac1fc77aed",
   "game/assets/room13-pixel-world-mom-gray-gutter.webp": "08b0e893dca1",
   "game/assets/room13-prop-inn-doorframe-repair.webp": "83d9de710407",
@@ -2725,6 +2633,8 @@
  },
  "prefetch": [
   "game/assets/amb-fire.mp3",
-  "game/assets/bgm-inn.mp3"
+  "game/assets/amb-wind.mp3",
+  "game/assets/bgm-inn.mp3",
+  "game/assets/bgm-snow.mp3"
  ]
 }

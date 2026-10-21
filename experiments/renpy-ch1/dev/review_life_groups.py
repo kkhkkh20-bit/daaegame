@@ -9,7 +9,8 @@ def stage_environment(key):
     e,row,_=environment(key);group_stage=e['r13_stage_people']
     selected(e,'room13_world_camera.rpy',{'r13_layout','r13_world_width'})
     selected(e,'room13_acting.rpy',{'R13_STAGE_FLOORS','R13_STAGE_COUNTERS','R13_STAGE_CACHE','R13_CROWD_SLOTS','R13_STAGE_CRITICAL','R13_STAGE_POSITIONS','R13_LIVING_ALLOWED','r13_acting_spec','r13_actor_geometry','r13_acting_head','r13_living_pose','r13_world_display_height','r13_stage_people','r13_staged_activity'})
-    e.update(R13_CALENDAR={},r13_activity_text=lambda p:'',r13_calendar_activity=lambda p:'')
+    selected(e,'room13_typography.rpy',{'r13_field_ui_rects'})
+    e.update(R13_CALENDAR={},r13_activity_text=lambda p:'',r13_calendar_activity=lambda p:'',r13_control_height=lambda:64,r13_control_y=lambda:640,r13_control_upper_y=lambda:560)
     e['store'].R13_WORLD_LAYOUTS=e['R13_WORLD_LAYOUTS']
     for filename,names in [
         ('systems/room13_daram_home.rpy',{'_r13_daram_home_stage','r13_stage_people','r13_daram_home_activity'}),

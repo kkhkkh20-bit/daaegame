@@ -10,6 +10,7 @@ class TwoZoneCamera(unittest.TestCase):
         test_world_camera.WorldCamera.setUp(self)
         self.hub = SimpleNamespace(scope={"world_moving": False})
         self.restarts = []
+        self.ns['R13_STAGE_CACHE']={'old-save': ['old geometry']}
         self.ns['persistent'] = SimpleNamespace(room13_motion=True)
         self.ns['renpy'] = SimpleNamespace(
             get_screen=lambda _: self.hub,
@@ -79,6 +80,7 @@ class TwoZoneCamera(unittest.TestCase):
         self.assertEqual(restored.value, 520)
         self.assertIsNone(restored.animation_target)
         self.assertFalse(self.hub.scope['world_moving'])
+        self.assertFalse(self.ns['R13_STAGE_CACHE'])
         self.assertEqual(self.store.room13, self.before)
 
     def test_legacy_middle_offset_snaps_only_camera(self):

@@ -1,23 +1,18 @@
 {
  "engine": "Ren'Py 8.5.3",
  "game_transport": {
-  "archive_bytes": 17730719,
-  "archive_sha256": "88e1d8fc995b2fb119879c0491521a087499f99865363bc11fe48e85b8b6c1d9",
+  "archive_bytes": 16419343,
+  "archive_sha256": "f0a2d7084a614e28b0495f5581588881cad5eeb32249b2b092945df0a82820c3",
   "parts": [
    {
     "file": "game.part01",
     "bytes": 8388608,
-    "sha256": "feabb97c438f2e69634e0eb9299e82deabdf44474598d593829290adcdd4a353"
+    "sha256": "b5e9e46ee119ef8781963ddd1df02ed065027db05f6e8edf869c9001c4be9129"
    },
    {
     "file": "game.part02",
-    "bytes": 8388608,
-    "sha256": "1822872b4326b5ce44b3de2ab8c743a6d061d420a069215217f917daa400879a"
-   },
-   {
-    "file": "game.part03",
-    "bytes": 953503,
-    "sha256": "1b5d4fbbe64dfa492e40500854524cf140b013a637752e367b21a9aacdb10ee0"
+    "bytes": 8030735,
+    "sha256": "ed350c2488870c7d3c58884b878fefb4d357d9985848bc159f2c6e5cefbc2e07"
    }
   ]
  },
@@ -39,20 +34,16 @@
    "sha256": "6bb23b55d259a317d6c3a496f5c8892bd820bc4f0730a172d030b4497c534bfe"
   },
   "game-transport.json": {
-   "bytes": 199151,
-   "sha256": "3e1ab3d393f8910b1dc4c392ee0bab5bbd4600c60cbcaf27ae6551d2a38d0971"
+   "bytes": 198728,
+   "sha256": "52da7699de360337a714dd7686a41d061fa7c5dc49ee586895ec4ef6d0cb12fe"
   },
   "game.part01": {
    "bytes": 8388608,
-   "sha256": "feabb97c438f2e69634e0eb9299e82deabdf44474598d593829290adcdd4a353"
+   "sha256": "b5e9e46ee119ef8781963ddd1df02ed065027db05f6e8edf869c9001c4be9129"
   },
   "game.part02": {
-   "bytes": 8388608,
-   "sha256": "1822872b4326b5ce44b3de2ab8c743a6d061d420a069215217f917daa400879a"
-  },
-  "game.part03": {
-   "bytes": 953503,
-   "sha256": "1b5d4fbbe64dfa492e40500854524cf140b013a637752e367b21a9aacdb10ee0"
+   "bytes": 8030735,
+   "sha256": "ed350c2488870c7d3c58884b878fefb4d357d9985848bc159f2c6e5cefbc2e07"
   },
   "game/assets/Galmuri11.ttf": {
    "bytes": 1964416,
@@ -73,6 +64,10 @@
   "game/assets/amb-fire.mp3": {
    "bytes": 234683,
    "sha256": "ccdfa2c468a21e48b8b95feb0165b32e95f9d83ef8aee2bbc8df35f468bf2ea3"
+  },
+  "game/assets/amb-wind.mp3": {
+   "bytes": 53706,
+   "sha256": "509bda7c964d410936fffaefe4a729921fcf2aab5c991b3479f4c3463bb6b7cf"
   },
   "game/assets/approach.png": {
    "bytes": 2571407,
@@ -1030,6 +1025,30 @@
    "bytes": 96914,
    "sha256": "09aa096f1dcc9ff2abbaafa1a0f8b0685ebcffa66c4ddac99ae6783907d6b804"
   },
+  "game/assets/dialogue-source-master/guard/560/angry.webp": {
+   "bytes": 61256,
+   "sha256": "eb0e7f847edc0150c47200b28a5e973b6fc2f8d60ab038637eb82a782c249f4f"
+  },
+  "game/assets/dialogue-source-master/guard/560/anxious.webp": {
+   "bytes": 56184,
+   "sha256": "d62d853438c27d61b22c7a95b0a64a34a3dc857ba6ee012360e41865c8e22716"
+  },
+  "game/assets/dialogue-source-master/guard/560/joy.webp": {
+   "bytes": 59526,
+   "sha256": "2d6f6c96f4f021341a6cc43894d3cfa51777f5079c042f7beb5a55f188471f53"
+  },
+  "game/assets/dialogue-source-master/guard/560/neutral.webp": {
+   "bytes": 59790,
+   "sha256": "99904c332e87bad993970e94228cefe69425ce23365f6bd6e27b81fd3e0fa40d"
+  },
+  "game/assets/dialogue-source-master/guard/560/surprise_react.webp": {
+   "bytes": 59046,
+   "sha256": "cbdcbf6adea55b50ebc9cf0825aded3cc070a84199b8a252c3c3e380b915c75f"
+  },
+  "game/assets/dialogue-source-master/guard/560/surprise_talk.webp": {
+   "bytes": 57426,
+   "sha256": "4711f35fd643656e6af46a0676c8180266c4e4887e7d7e5529742ccbb6bc9dae"
+  },
   "game/assets/dialogue-source-master/guard/760/angry.webp": {
    "bytes": 74712,
    "sha256": "a12bf39dd350872c071ca0e3453b090d74b988154b45f30301951e560b75a5c6"
@@ -1077,6 +1096,54 @@
   "game/assets/dialogue-source-master/guard/840/surprise_talk.webp": {
    "bytes": 114680,
    "sha256": "4d438de1dc384b5c68c4b7146023c10f42af7904351a804d285193bbc1d1ef96"
+  },
+  "game/assets/dialogue-source-master/karo/560/angry.webp": {
+   "bytes": 53334,
+   "sha256": "46458158029f431d7d95924cae5cd336bb4fe18cd100d2cd4de4d988f96bc001"
+  },
+  "game/assets/dialogue-source-master/karo/560/anxious.webp": {
+   "bytes": 55186,
+   "sha256": "182630f1bba5f4616245e48fe7c9a45223cb4f81ced52ed69c86efd55402797d"
+  },
+  "game/assets/dialogue-source-master/karo/560/joy.webp": {
+   "bytes": 50134,
+   "sha256": "7fb6260d9e71b2d3b994b10d999f9899c523103349eb0bead990b7e3ef6e0b32"
+  },
+  "game/assets/dialogue-source-master/karo/560/neutral.webp": {
+   "bytes": 56854,
+   "sha256": "b5259c8a110321dbba0609312b16bf3d771027e51e2cf1fd0c32ac6b8778e27f"
+  },
+  "game/assets/dialogue-source-master/karo/560/surprise_react.webp": {
+   "bytes": 54758,
+   "sha256": "155cdeb35c1b4eb4850f524b493c76c942774f7404454bd749f1b5c13ae59d24"
+  },
+  "game/assets/dialogue-source-master/karo/560/surprise_talk.webp": {
+   "bytes": 51306,
+   "sha256": "4c36c72d744db4e97fac799eedb2dd56e359eff2a60e31207b914e185fc5205e"
+  },
+  "game/assets/dialogue-source-master/karo/760/angry.webp": {
+   "bytes": 61228,
+   "sha256": "d75db6f5ee93b866beb33d693dac04887e17033b72f69818ac871b4c93e446d2"
+  },
+  "game/assets/dialogue-source-master/karo/760/anxious.webp": {
+   "bytes": 63472,
+   "sha256": "ed4aa3b795dbb8bafecfb8dc133cd5a5708d120e4947a2f65828563c6fa0475a"
+  },
+  "game/assets/dialogue-source-master/karo/760/joy.webp": {
+   "bytes": 57256,
+   "sha256": "81cd2a905c05ca8042aa7e371cc5bca9a5a68308611063ce351bdd6f946437d6"
+  },
+  "game/assets/dialogue-source-master/karo/760/neutral.webp": {
+   "bytes": 65092,
+   "sha256": "2a917c0e7aa2bccfd7e68f2a8637f4bc7a4855a67e778758f8bf9e193b6ca89d"
+  },
+  "game/assets/dialogue-source-master/karo/760/surprise_react.webp": {
+   "bytes": 62568,
+   "sha256": "67b67842a10576d4c63b86e00a6f544a39825e874b1410b412daf0b1b32d1fc1"
+  },
+  "game/assets/dialogue-source-master/karo/760/surprise_talk.webp": {
+   "bytes": 59054,
+   "sha256": "c7a56944b98139f3ddbb79416b376f544727ba9d6e772d4bf40115ae13e98ca0"
   },
   "game/assets/dialogue-source-master/karo/840/angry.webp": {
    "bytes": 107038,
@@ -5338,6 +5405,10 @@
    "bytes": 53148,
    "sha256": "91fded97c0caf0ac4e11c8cfe1ea1a089e71659b995f278b391d45588951dafb"
   },
+  "game/assets/profile-source-master/daram.webp": {
+   "bytes": 55242,
+   "sha256": "f9003a1d07039b71c774519b38c20fd8116130970aff912abf45335c17d253b9"
+  },
   "game/assets/profile-source-master/doto.webp": {
    "bytes": 50432,
    "sha256": "170f0ae42d922dbe58ddde2648143cf2cdd7232470878dcd636a1c5d49896d99"
@@ -6482,25 +6553,49 @@
    "bytes": 69806,
    "sha256": "4b180f53804057a741f48fc2d10b233025b1e9877769ab4f420c26727957771d"
   },
+  "game/assets/room13-fullbody-daram-angry-acting.webp": {
+   "bytes": 23940,
+   "sha256": "27786442c4291685d7daf14d5a1c26cec7348fb96f4f3057f1e41d1dc2eb6893"
+  },
   "game/assets/room13-fullbody-daram-angry.webp": {
    "bytes": 74156,
    "sha256": "0423246541bbe19f65116665a2d346732326c712151fe01d343bf947633088d4"
+  },
+  "game/assets/room13-fullbody-daram-anxious-acting.webp": {
+   "bytes": 22406,
+   "sha256": "eb707c82fe7d0422640c881be617bd086edf45e649f30a7f8d21421e601a53dd"
   },
   "game/assets/room13-fullbody-daram-anxious.webp": {
    "bytes": 74646,
    "sha256": "0a1fcff45f347b1949816306e356457725b0c95a128feefb006401027b4a8beb"
   },
+  "game/assets/room13-fullbody-daram-flustered-acting.webp": {
+   "bytes": 23950,
+   "sha256": "10a15fdd5817f1c3854bbe7560ad03a4181196e67c6a57ba297f4f982970a29b"
+  },
   "game/assets/room13-fullbody-daram-flustered.webp": {
    "bytes": 74550,
    "sha256": "a42345291d1693ffa8ff27643750692ab3882af0f73d4188aebe639cd35f938c"
+  },
+  "game/assets/room13-fullbody-daram-joy-acting.webp": {
+   "bytes": 22438,
+   "sha256": "282580c8e8cf4348f7c20843f0f0fcc758c72d3d21b4140000f3cd34513756e9"
   },
   "game/assets/room13-fullbody-daram-joy.webp": {
    "bytes": 74646,
    "sha256": "6b849024b0062a7ebcdc9c3e0f4e93dafbf424c19ebded64bd1f80bd5aec0f1c"
   },
+  "game/assets/room13-fullbody-daram-neutral-acting.webp": {
+   "bytes": 22634,
+   "sha256": "217a387ca478d33d3017bea5dbbb624444311d82cf96380453dbff96a8ecba43"
+  },
   "game/assets/room13-fullbody-daram-neutral.webp": {
    "bytes": 73238,
    "sha256": "5c9e40ad437cccee0dd5ee47de136f366dda97be505de5ead9f3c77679263b5b"
+  },
+  "game/assets/room13-fullbody-daram-surprise-acting.webp": {
+   "bytes": 23586,
+   "sha256": "72e18e77f1e415fa251220681116e3c6d5dd1238b32fef92b7e928d67ae11de1"
   },
   "game/assets/room13-fullbody-daram-surprise.webp": {
    "bytes": 74406,
@@ -7862,6 +7957,46 @@
    "bytes": 10268,
    "sha256": "9c519a1d359d2631290f147774e5977e2fa503913a1534fe072614a6dee10ce6"
   },
+  "game/assets/room13-fx-blink-daram-angry-closed.webp": {
+   "bytes": 5546,
+   "sha256": "96196fa562f303c749a33e8285a0f8a10b7c4b6613921aeafdf9b5a5cfafd942"
+  },
+  "game/assets/room13-fx-blink-daram-angry-half.webp": {
+   "bytes": 7448,
+   "sha256": "5273e12d8ca1fa2614a450f4abbd6ddbe33531e5b42972827e397151caf6a75e"
+  },
+  "game/assets/room13-fx-blink-daram-anxious-closed.webp": {
+   "bytes": 5020,
+   "sha256": "d16818331b3f3baa9a12ab703b4c2aaf9d80c7db73baa20974f0e4cf23194599"
+  },
+  "game/assets/room13-fx-blink-daram-anxious-half.webp": {
+   "bytes": 6922,
+   "sha256": "78332b6e3dadd0e29441d66ac4d1bbc73e12b0ad7ca0b537f3b4aad845a7e3e9"
+  },
+  "game/assets/room13-fx-blink-daram-flustered-closed.webp": {
+   "bytes": 7956,
+   "sha256": "fbdd96efc9826d7f19611c0453de7b770361a7d3bbc40354be0667a917b69e97"
+  },
+  "game/assets/room13-fx-blink-daram-flustered-half.webp": {
+   "bytes": 9896,
+   "sha256": "3a07e8fe630f36f45f208051faf6d56ca0bd4d98cc29a3782142ad2459a94ec7"
+  },
+  "game/assets/room13-fx-blink-daram-neutral-closed.webp": {
+   "bytes": 6284,
+   "sha256": "b85ddedec91223214d251f0a1f47343240fd771e817c06e11f894f49dea51f0f"
+  },
+  "game/assets/room13-fx-blink-daram-neutral-half.webp": {
+   "bytes": 8190,
+   "sha256": "df78f761ba93b03ad36bebdf8d4dea2be03df3feb78849242bf359b1033a48b7"
+  },
+  "game/assets/room13-fx-blink-daram-surprise-closed.webp": {
+   "bytes": 6850,
+   "sha256": "4d3533154f183342ef05fe6730c0263c61dccf7c9117a8ecb94cd2a12b0a1877"
+  },
+  "game/assets/room13-fx-blink-daram-surprise-half.webp": {
+   "bytes": 8820,
+   "sha256": "98e6dad0fea831c18ccfe552883b4a856f39fd045a7227ab3e94e555d97a48da"
+  },
   "game/assets/room13-fx-blink-mom-angry-closed.webp": {
    "bytes": 6594,
    "sha256": "61dc0ce810e656ad88f4e461f089942a871497835b7b90882a0399778021fdc9"
@@ -8857,6 +8992,10 @@
   "game/assets/room13-pixel-dialogue-dad.webp": {
    "bytes": 336898,
    "sha256": "b32b1392f61e614b8c3669b0e8eeea74089eb1528c9f5367b92d7079f898f483"
+  },
+  "game/assets/room13-pixel-dialogue-daram-joy.webp": {
+   "bytes": 26388,
+   "sha256": "c58867f461488b27b163f973c3835e41702b00eb996a490c4d5b67398dd0d38b"
   },
   "game/assets/room13-pixel-dialogue-daram.webp": {
    "bytes": 331566,
@@ -10351,5 +10490,5 @@
    "sha256": "0ef27bfe65a2917248171666649a51d85e3a200a3ae87bbaaa7085748bc4f0c5"
   }
  },
- "total_bytes": 579906011
+ "total_bytes": 579984904
 }

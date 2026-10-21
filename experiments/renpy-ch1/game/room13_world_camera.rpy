@@ -60,8 +60,11 @@ init 58 python:
         return Transform(source,size=(int(spec["width"]),720),nearest=True,subpixel=False)
 
     def r13_camera_background(st,at,location,daylight):
-        # Re-evaluated on a new dialogue interaction, retaining the field view.
-        return Crop((r13_world_offset(location),0,1280,720),r13_world_background(location,daylight)),None
+        # A period can change during a native dialogue, without calling scene.
+        # Follow the current place's live clock rather than the constructor's
+        # old morning value; do not change the clock or the saved camera.
+        period=r13_daylight() if location==store.room13.get("location") else daylight
+        return Crop((r13_world_offset(location),0,1280,720),r13_world_background(location,period)),None
 
     class R13WorldCameraChanged:
         def __init__(self,location):
@@ -140,6 +143,9 @@ init 58 python:
             else:
                 hub.scope["world_adjustment"]=r13_world_adjustment(location)
             hub.scope["world_moving"]=False
+            # Old saved hub render scopes must redraw with current geometry.
+            R13_STAGE_CACHE.clear()
+            renpy.restart_interaction()
 
     def r13_world_edge_people(adjustment):
         left=[];right=[]

@@ -52,6 +52,31 @@ async def main():
      assert '_exception' not in screens,('Game exception',sc if 'sc' in locals() else None)
      extra=st.pop('v111_probe')
      sc=extra['scene']
+     if os.environ.get('V111_FIELD_AUDIT') and 'r13_hub' in screens:
+      await asyncio.sleep(.8)
+      snapshots=[];before=json.dumps(room,sort_keys=True)
+      width=await q.py('import renpy;result=renpy.store.r13_world_width()')
+      for view in (('initial','right','left') if width>1280 else ('initial',)):
+       if view!='initial':
+        arrow='›' if view=='right' else '‹'
+        current=await q.state()
+        if not any(b.get('text','').strip()==arrow for b in current.get('buttons',[])):continue
+        await q.press(arrow);await asyncio.sleep(1)
+       geometry=await q.py('import renpy;s=renpy.store;actors=s.r13_stage_people();result=dict(offset=s.r13_world_offset(),ui=s.r13_field_ui_rects(s.r13_world_offset()),faces=[dict(person=a["person"],rect=s.r13_actor_face_target(a)) for a in actors],labels=s.r13_actor_nameplates(actors),period=s.r13_daylight(),background=s.r13_world_file(s.room13["location"],s.r13_daylight()))')
+       def overlap(a,b):return bool(a and max(a[0],b[0])<min(a[0]+a[2],b[0]+b[2]) and max(a[1],b[1])<min(a[1]+a[3],b[1]+b[3]))
+       issues=[(kind,row['person'],row['rect']) for kind in ('faces','labels') for row in geometry[kind] if any(overlap(row['rect'],r) for r in geometry['ui'])]
+       geometry['issues']=issues;snapshots.append(geometry);await q.shot('field-audit-'+view)
+      for name,viewport in [('portrait',dict(width=390,height=844)),('phone-landscape',dict(width=844,height=390))]:
+       await pg.set_viewport_size(viewport);await asyncio.sleep(1)
+       geometry=await q.py('import renpy;s=renpy.store;actors=s.r13_stage_people();result=dict(offset=s.r13_world_offset(),ui=s.r13_field_ui_rects(s.r13_world_offset()),faces=[dict(person=a["person"],rect=s.r13_actor_face_target(a)) for a in actors],labels=s.r13_actor_nameplates(actors),period=s.r13_daylight(),background=s.r13_world_file(s.room13["location"],s.r13_daylight()))')
+       geometry['view']=name
+       geometry['control_height']=await q.py('import renpy;result=renpy.store.r13_control_height()')
+       geometry['issues']=[(kind,row['person'],row['rect']) for kind in ('faces','labels') for row in geometry[kind] if any(overlap(row['rect'],r) for r in geometry['ui'])]
+       snapshots.append(geometry);await q.shot('field-audit-'+name)
+      after=await q.py('import renpy;result=renpy.store.room13');assert before==json.dumps(after,sort_keys=True),'Field presentation changed story state'
+      report=dict(status='passed' if not any(x['issues'] for x in snapshots) else 'issues',scope='Actual saved field, existing pan controls, phone viewports; no story-state injection',snapshots=snapshots)
+      (OUT/'field-audit.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));assert report['status']=='passed',report
+      return
      if os.environ.get('V111_WRONG_RECIPIENT') and wrong_recipient==2:
       assert 'say' not in screens,('Wrong recipient advanced story',gate,st.get('say'))
       if 'r13_hub' in screens:
