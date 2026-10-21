@@ -245,7 +245,7 @@ label r13_v111_proof_again:
     if _return=="argue":
         if set("V111:"+x for x in correct)==set(room13["arguments"][v111_claim]):
             return success
-        $ v111_wrong_target="r13_v111_gate_number" if v111_claim=="v111:함께 들어갈 근거를 고른다" and room13["arguments"][v111_claim]==["V111:E03"] else wrong
+        $ v111_wrong_target="r13_v111_gate_number" if v111_claim=="v111:함께 들어갈 근거를 고른다" and room13["arguments"][v111_claim]==["V111:E03"] and not r13_v111_value("gate_hardened") else wrong
         $ v111_copy=winter_copy.deepcopy(room13); v111_copy["arguments"][v111_claim]=[]; room13=v111_copy
         if v111_wrong_target:
             return v111_wrong_target

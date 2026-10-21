@@ -78,7 +78,7 @@ for key,node in N.items():
   pending=[]
   def flush():
    if pending:
-    lines.append('    call r13_lines([r13_v111_line(x) for x in '+repr(list(pending))+'], '+q('v111:'+key+':'+pending[0])+')');pending.clear()
+    lines.append('    call r13_lines(r13_v111_lines('+repr(list(pending))+'), '+q('v111:'+key+':'+pending[0])+')');pending.clear()
   for rid in node['records']:
    r=D['records'][rid]
    if rid in move:flush();lines+=travel(move[rid],rid)

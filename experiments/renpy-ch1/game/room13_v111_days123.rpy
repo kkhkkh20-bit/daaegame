@@ -9,7 +9,7 @@ label r13_v111_start_block:
     $ r13_v111_scene('MS14_D01_S01')
     $ r13_v111_score()
     call r13_lines([('daram','아빠, 숲이 아직 깜깜해.',{'no_lead':True}),('dad','조금 있으면 날이 밝을 거야.',{'no_lead':True}),('daram','엄마는 벌써 일어났을까?',{'no_lead':True}),('dad','만나면 물어보자.',{'no_lead':True})], 'v111:carriage:before-bump')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S01_L0001', 'MS14_D01_S01_L0002', 'MS14_D01_S01_L0003', 'MS14_D01_S01_L0004', 'MS14_D01_S01_L0005', 'MS14_D01_S01_L0006', 'MS14_D01_S01_L0007', 'MS14_D01_S01_L0008', 'MS14_D01_S01_L0009']], 'v111:start:MS14_D01_S01_L0002')
+    call r13_lines(r13_v111_lines(['MS14_D01_S01_L0001', 'MS14_D01_S01_L0002', 'MS14_D01_S01_L0003', 'MS14_D01_S01_L0004', 'MS14_D01_S01_L0005', 'MS14_D01_S01_L0006', 'MS14_D01_S01_L0007', 'MS14_D01_S01_L0008', 'MS14_D01_S01_L0009']), 'v111:start:MS14_D01_S01_L0002')
     jump r13_v111_letter_open
 
 label r13_v111_letter_open:
@@ -23,7 +23,7 @@ label r13_v111_letter_read:
     call r13_v111_travel('gate','letter_read')
     $ r13_v111_score()
     $ r13_v111_commit('MS14_D01_S01_L0010')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S01_L9101', 'MS14_D01_S01_L0011', 'MS14_D01_S01_L0012', 'MS14_D01_S01_L0013', 'MS14_D01_S01_L0014']], 'v111:letter_read:MS14_D01_S01_L9101')
+    call r13_lines(r13_v111_lines(['MS14_D01_S01_L9101', 'MS14_D01_S01_L0011', 'MS14_D01_S01_L0012', 'MS14_D01_S01_L0013', 'MS14_D01_S01_L0014']), 'v111:letter_read:MS14_D01_S01_L9101')
     jump r13_v111_letter_menu
 
 label r13_v111_letter_menu:
@@ -44,14 +44,14 @@ label r13_v111_letter_menu:
 label r13_v111_letter_last:
     $ r13_v111_scene('MS14_D01_S01')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S01_L0015']], 'v111:letter_last:MS14_D01_S01_L0015')
+    call r13_lines(r13_v111_lines(['MS14_D01_S01_L0015']), 'v111:letter_last:MS14_D01_S01_L0015')
     $ r13_v111_commit('MS14_D01_S01_L0015')
     jump r13_v111_letter_menu
 
 label r13_v111_letter_hand:
     $ r13_v111_scene('MS14_D01_S01')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S01_L0016']], 'v111:letter_hand:MS14_D01_S01_L0016')
+    call r13_lines(r13_v111_lines(['MS14_D01_S01_L0016']), 'v111:letter_hand:MS14_D01_S01_L0016')
     $ r13_v111_commit('MS14_D01_S01_L0016')
     jump r13_v111_letter_menu
 
@@ -68,19 +68,19 @@ label r13_v111_letter_close_b:
 label r13_v111_letter_any:
     $ r13_v111_scene('MS14_D01_S01')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S01_L0017']], 'v111:letter_any:MS14_D01_S01_L0017')
+    call r13_lines(r13_v111_lines(['MS14_D01_S01_L0017']), 'v111:letter_any:MS14_D01_S01_L0017')
     jump r13_v111_carriage_end
 
 label r13_v111_letter_none:
     $ r13_v111_scene('MS14_D01_S01')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S01_L0018']], 'v111:letter_none:MS14_D01_S01_L0018')
+    call r13_lines(r13_v111_lines(['MS14_D01_S01_L0018']), 'v111:letter_none:MS14_D01_S01_L0018')
     jump r13_v111_carriage_end
 
 label r13_v111_carriage_end:
     $ r13_v111_scene('MS14_D01_S01')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S01_L0019', 'MS14_D01_S01_L0020', 'MS14_D01_S01_L0021', 'MS14_D01_S01_L0022']], 'v111:carriage_end:MS14_D01_S01_L0019')
+    call r13_lines(r13_v111_lines(['MS14_D01_S01_L0019', 'MS14_D01_S01_L0020', 'MS14_D01_S01_L0021', 'MS14_D01_S01_L0022']), 'v111:carriage_end:MS14_D01_S01_L0019')
     jump r13_v111_leave_carriage
 
 label r13_v111_leave_carriage:
@@ -96,7 +96,7 @@ label r13_v111_gate_arrival:
     $ r13_v111_score()
     $ r13_carriage_finish(); r13_carriage_skip=False
     call r13_scene("winter","눈에 막힌 입구","calm")
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S02_L0002', 'MS14_D01_S02_L0003', 'MS14_D01_S02_L0005', 'MS14_D01_S02_L0006', 'MS14_D01_S02_L0007', 'MS14_D01_S02_L0009', 'MS14_D01_S02_L0010', 'MS14_D01_S02_L0011', 'MS14_D01_S02_L0012', 'MS14_D01_S02_L0013', 'MS14_D01_S02_L0014', 'MS14_D01_S02_L0015', 'MS14_D01_S02_L0017', 'MS14_D01_S02_L0018']], 'v111:gate_arrival:MS14_D01_S02_L0002')
+    call r13_lines(r13_v111_lines(['MS14_D01_S02_L0002', 'MS14_D01_S02_L0003', 'MS14_D01_S02_L0005', 'MS14_D01_S02_L0006', 'MS14_D01_S02_L0007', 'MS14_D01_S02_L0009', 'MS14_D01_S02_L0010', 'MS14_D01_S02_L0011', 'MS14_D01_S02_L0012', 'MS14_D01_S02_L0013', 'MS14_D01_S02_L0014', 'MS14_D01_S02_L0015', 'MS14_D01_S02_L0017', 'MS14_D01_S02_L0018']), 'v111:gate_arrival:MS14_D01_S02_L0002')
     jump r13_v111_gate_request
 
 label r13_v111_gate_request:
@@ -110,9 +110,9 @@ label r13_v111_gate_request:
 label r13_v111_gate_list:
     $ r13_v111_scene('MS14_D01_S02')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S02_L0019']], 'v111:gate_list:MS14_D01_S02_L0019')
+    call r13_lines(r13_v111_lines(['MS14_D01_S02_L0019']), 'v111:gate_list:MS14_D01_S02_L0019')
     $ r13_v111_commit('MS14_D01_S02_L0019')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S02_L0020', 'MS14_D01_S02_L0021', 'MS14_D01_S02_L0022']], 'v111:gate_list:MS14_D01_S02_L0020')
+    call r13_lines(r13_v111_lines(['MS14_D01_S02_L0020', 'MS14_D01_S02_L0021', 'MS14_D01_S02_L0022']), 'v111:gate_list:MS14_D01_S02_L0020')
     jump r13_v111_gate_choice
 
 label r13_v111_gate_choice:
@@ -130,13 +130,13 @@ label r13_v111_gate_choice:
 label r13_v111_gate_letter:
     $ r13_v111_scene('MS14_D01_S02')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S02_L0023', 'MS14_D01_S02_L0024', 'MS14_D01_S02_L0025']], 'v111:gate_letter:MS14_D01_S02_L0023')
+    call r13_lines(r13_v111_lines(['MS14_D01_S02_L0023', 'MS14_D01_S02_L0024', 'MS14_D01_S02_L0025']), 'v111:gate_letter:MS14_D01_S02_L0023')
     jump r13_v111_gate_original_out
 
 label r13_v111_gate_original:
     $ r13_v111_scene('MS14_D01_S02')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S02_L0026', 'MS14_D01_S02_L0027']], 'v111:gate_original:MS14_D01_S02_L0026')
+    call r13_lines(r13_v111_lines(['MS14_D01_S02_L0026', 'MS14_D01_S02_L0027']), 'v111:gate_original:MS14_D01_S02_L0026')
     jump r13_v111_gate_original_out
 
 label r13_v111_gate_original_out:
@@ -174,15 +174,15 @@ label r13_v111_gate_investigate:
 label r13_v111_gate_read_original:
     $ r13_v111_scene('MS14_D01_S03')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S03_L0002']], 'v111:gate_read_original:MS14_D01_S03_L0002')
+    call r13_lines(r13_v111_lines(['MS14_D01_S03_L0002']), 'v111:gate_read_original:MS14_D01_S03_L0002')
     $ r13_v111_commit('MS14_D01_S03_L0002')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S03_L0003', 'MS14_D01_S03_L0004', 'MS14_D01_S03_L0005', 'MS14_D01_S03_L0006']], 'v111:gate_read_original:MS14_D01_S03_L0003')
+    call r13_lines(r13_v111_lines(['MS14_D01_S03_L0003', 'MS14_D01_S03_L0004', 'MS14_D01_S03_L0005', 'MS14_D01_S03_L0006']), 'v111:gate_read_original:MS14_D01_S03_L0003')
     jump r13_v111_gate_investigate
 
 label r13_v111_gate_read_rules:
     $ r13_v111_scene('MS14_D01_S03')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S03_L0007']], 'v111:gate_read_rules:MS14_D01_S03_L0007')
+    call r13_lines(r13_v111_lines(['MS14_D01_S03_L0007']), 'v111:gate_read_rules:MS14_D01_S03_L0007')
     $ r13_v111_commit('MS14_D01_S03_L0007')
     jump r13_v111_gate_investigate
 
@@ -195,14 +195,14 @@ label r13_v111_gate_reread_list:
 label r13_v111_gate_purpose:
     $ r13_v111_scene('MS14_D01_S03')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S03_L0009', 'MS14_D01_S03_L0010', 'MS14_D01_S03_L0011', 'MS14_D01_S03_L0012']], 'v111:gate_purpose:MS14_D01_S03_L0009')
+    call r13_lines(r13_v111_lines(['MS14_D01_S03_L0009', 'MS14_D01_S03_L0010', 'MS14_D01_S03_L0011', 'MS14_D01_S03_L0012']), 'v111:gate_purpose:MS14_D01_S03_L0009')
     $ r13_v111_commit('MS14_D01_S03_L0012')
     jump r13_v111_gate_investigate
 
 label r13_v111_gate_lodging:
     $ r13_v111_scene('MS14_D01_S03')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S03_L0013']], 'v111:gate_lodging:MS14_D01_S03_L0013')
+    call r13_lines(r13_v111_lines(['MS14_D01_S03_L0013']), 'v111:gate_lodging:MS14_D01_S03_L0013')
     jump r13_v111_gate_investigate
 
 label r13_v111_gate_proof:
@@ -217,39 +217,43 @@ label r13_v111_gate_proven_dispatch:
 label r13_v111_gate_proven:
     $ r13_v111_scene('MS14_D01_S03')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S03_L0014', 'MS14_D01_S03_L0015', 'MS14_D01_S03_L0016', 'MS14_D01_S03_L0017', 'MS14_D01_S03_L0018', 'MS14_D01_S03_L0019']], 'v111:gate_proven:MS14_D01_S03_L0014')
+    call r13_lines(r13_v111_lines(['MS14_D01_S03_L0014', 'MS14_D01_S03_L0015', 'MS14_D01_S03_L0016', 'MS14_D01_S03_L0017', 'MS14_D01_S03_L0018', 'MS14_D01_S03_L0019']), 'v111:gate_proven:MS14_D01_S03_L0014')
     $ r13_v111_commit('MS14_D01_S03_L0019')
     jump r13_v111_registered
 
 label r13_v111_gate_early:
     $ r13_v111_scene('MS14_D01_S03')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S03_L0020', 'MS14_D01_S03_L0021', 'MS14_D01_S03_L0022', 'MS14_D01_S03_L0023']], 'v111:gate_early:MS14_D01_S03_L0020')
+    call r13_lines(r13_v111_lines(['MS14_D01_S03_L0020', 'MS14_D01_S03_L0021', 'MS14_D01_S03_L0022', 'MS14_D01_S03_L0023']), 'v111:gate_early:MS14_D01_S03_L0020')
     $ r13_v111_commit('MS14_D01_S03_L0023')
     jump r13_v111_registered
 
 label r13_v111_gate_number:
     $ r13_v111_scene('MS14_D01_S03')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S03_L0024']], 'v111:gate_number:MS14_D01_S03_L0024')
+    call r13_lines(r13_v111_lines(['MS14_D01_S03_L0024']), 'v111:gate_number:MS14_D01_S03_L0024')
+    # New world (event 01, plan A): a half presentation earns one more try only.
+    $ r13_v111_set('gate_hardened',True)
     jump r13_v111_gate_investigate
 
 label r13_v111_gate_wrong:
     $ r13_v111_scene('MS14_D01_S03')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S03_L0025']], 'v111:gate_wrong:MS14_D01_S03_L0025')
-    jump r13_v111_gate_investigate
+    call r13_lines(r13_v111_lines(['MS14_D01_S03_L0025']), 'v111:gate_wrong:MS14_D01_S03_L0025')
+    # New world (event 01, plan A): the gate proof is one-shot. Daram enters as '외 한 명'.
+    $ r13_v111_set('gate_daram_unlisted',True)
+    jump r13_v111_registered
 
 label r13_v111_gate_hint:
     $ r13_v111_scene('MS14_D01_S03')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S03_L0027']], 'v111:gate_hint:MS14_D01_S03_L0027')
+    call r13_lines(r13_v111_lines(['MS14_D01_S03_L0027']), 'v111:gate_hint:MS14_D01_S03_L0027')
     jump r13_v111_gate_investigate
 
 label r13_v111_gate_reason:
     $ r13_v111_scene('MS14_D01_S03')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S03_L0028', 'MS14_D01_S03_L0029', 'MS14_D01_S03_L0030', 'MS14_D01_S03_L0031']], 'v111:gate_reason:MS14_D01_S03_L0028')
+    call r13_lines(r13_v111_lines(['MS14_D01_S03_L0028', 'MS14_D01_S03_L0029', 'MS14_D01_S03_L0030', 'MS14_D01_S03_L0031']), 'v111:gate_reason:MS14_D01_S03_L0028')
     $ r13_v111_commit('MS14_D01_S03_L0031')
     jump r13_v111_gate_investigate
 
@@ -257,9 +261,11 @@ label r13_v111_registered:
     $ r13_v111_scene('MS14_D01_S04')
     call r13_v111_travel('gate','registered')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S04_L0002', 'MS14_D01_S04_L0003', 'MS14_D01_S04_L0004', 'MS14_D01_S04_L0005', 'MS14_D01_S04_L0006', 'MS14_D01_S04_L0008']], 'v111:registered:MS14_D01_S04_L0002')
+    call r13_lines(r13_v111_lines(['MS14_D01_S04_L0002', 'MS14_D01_S04_L0003', 'MS14_D01_S04_L0004', 'MS14_D01_S04_L0005', 'MS14_D01_S04_L0006', 'MS14_D01_S04_L0008']), 'v111:registered:MS14_D01_S04_L0002')
     $ r13_v111_commit('MS14_D01_S04_L0008')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S04_L9101', 'MS14_D01_S04_L0009', 'MS14_D01_S04_L0010', 'MS14_D01_S04_L0011', 'MS14_D01_S04_L0012']], 'v111:registered:MS14_D01_S04_L9101')
+    if r13_v111_value('gate_daram_unlisted'):
+        $ r13_v111_set('E05.variant','unlisted')
+    call r13_lines(r13_v111_lines(['MS14_D01_S04_L9101', 'MS14_D01_S04_L0009', 'MS14_D01_S04_L0010', 'MS14_D01_S04_L0011', 'MS14_D01_S04_L0012']), 'v111:registered:MS14_D01_S04_L9101')
     jump r13_v111_registered_menu
 
 label r13_v111_registered_menu:
@@ -276,23 +282,23 @@ label r13_v111_registered_menu:
 label r13_v111_registered_reason:
     $ r13_v111_scene('MS14_D01_S04')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S04_L0013', 'MS14_D01_S04_L0014', 'MS14_D01_S04_L0015', 'MS14_D01_S04_L0016']], 'v111:registered_reason:MS14_D01_S04_L0013')
+    call r13_lines(r13_v111_lines(['MS14_D01_S04_L0013', 'MS14_D01_S04_L0014', 'MS14_D01_S04_L0015', 'MS14_D01_S04_L0016']), 'v111:registered_reason:MS14_D01_S04_L0013')
     $ r13_v111_commit('MS14_D01_S04_L0016')
     jump r13_v111_registered_menu
 
 label r13_v111_registered_depart:
     $ r13_v111_scene('MS14_D01_S04')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S04_L0018', 'MS14_D01_S04_L0019', 'MS14_D01_S04_L0020']], 'v111:registered_depart:MS14_D01_S04_L0018')
+    call r13_lines(r13_v111_lines(['MS14_D01_S04_L0018', 'MS14_D01_S04_L0019', 'MS14_D01_S04_L0020']), 'v111:registered_depart:MS14_D01_S04_L0018')
     $ r13_v111_commit('MS14_D01_S04_L0020')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S04_L0021']], 'v111:registered_depart:MS14_D01_S04_L0021')
+    call r13_lines(r13_v111_lines(['MS14_D01_S04_L0021']), 'v111:registered_depart:MS14_D01_S04_L0021')
     jump r13_v111_inn
 
 label r13_v111_inn:
     $ r13_v111_scene('MS14_D01_S05')
     call r13_v111_travel('inn','inn')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S05_L0001', 'MS14_D01_S05_L0003', 'MS14_D01_S05_L0004', 'MS14_D01_S05_L0006', 'MS14_D01_S05_L0007', 'MS14_D01_S05_L0008', 'MS14_D01_S05_L0009', 'MS14_D01_S05_L0010', 'MS14_D01_S05_L0011', 'MS14_D01_S05_L0012', 'MS14_D01_S05_L0013']], 'v111:inn:MS14_D01_S05_L0001')
+    call r13_lines(r13_v111_lines(['MS14_D01_S05_L0001', 'MS14_D01_S05_L0003', 'MS14_D01_S05_L0004', 'MS14_D01_S05_L0006', 'MS14_D01_S05_L0007', 'MS14_D01_S05_L0008', 'MS14_D01_S05_L0009', 'MS14_D01_S05_L0010', 'MS14_D01_S05_L0011', 'MS14_D01_S05_L0012', 'MS14_D01_S05_L0013']), 'v111:inn:MS14_D01_S05_L0001')
     jump r13_v111_room_observe
 
 label r13_v111_room_observe:
@@ -307,7 +313,7 @@ label r13_v111_room_empty:
     $ r13_v111_scene('MS14_D01_S05')
     call r13_v111_travel('room13','room_empty')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S05_L0016', 'MS14_D01_S05_L0017']], 'v111:room_empty:MS14_D01_S05_L0016')
+    call r13_lines(r13_v111_lines(['MS14_D01_S05_L0016', 'MS14_D01_S05_L0017']), 'v111:room_empty:MS14_D01_S05_L0016')
     jump r13_v111_note_pick
 
 label r13_v111_note_pick:
@@ -322,9 +328,9 @@ label r13_v111_room_note:
     $ r13_v111_scene('MS14_D01_S05')
     call r13_v111_travel('room13','room_note')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S05_L0018']], 'v111:room_note:MS14_D01_S05_L0018')
+    call r13_lines(r13_v111_lines(['MS14_D01_S05_L0018']), 'v111:room_note:MS14_D01_S05_L0018')
     $ r13_v111_commit('MS14_D01_S05_L0019')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S05_L9101', 'MS14_D01_S05_L0020', 'MS14_D01_S05_L0021']], 'v111:room_note:MS14_D01_S05_L9101')
+    call r13_lines(r13_v111_lines(['MS14_D01_S05_L9101', 'MS14_D01_S05_L0020', 'MS14_D01_S05_L0021']), 'v111:room_note:MS14_D01_S05_L9101')
     jump r13_v111_bundle_open
 
 label r13_v111_bundle_open:
@@ -340,7 +346,7 @@ label r13_v111_bundle:
     call r13_v111_travel('room13','bundle')
     $ r13_v111_score()
     $ r13_v111_commit('MS14_D01_S05_L0022')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S05_L9102', 'MS14_D01_S05_L0023', 'MS14_D01_S05_L0024', 'MS14_D01_S05_L0025', 'MS14_D01_S05_L0026', 'MS14_D01_S05_L0027', 'MS14_D01_S05_L0028', 'MS14_D01_S05_L0029', 'MS14_D01_S05_L0030']], 'v111:bundle:MS14_D01_S05_L9102')
+    call r13_lines(r13_v111_lines(['MS14_D01_S05_L9102', 'MS14_D01_S05_L0023', 'MS14_D01_S05_L0024', 'MS14_D01_S05_L0025', 'MS14_D01_S05_L0026', 'MS14_D01_S05_L0027', 'MS14_D01_S05_L0028', 'MS14_D01_S05_L0029', 'MS14_D01_S05_L0030']), 'v111:bundle:MS14_D01_S05_L9102')
     jump r13_v111_letter_compare
 
 label r13_v111_letter_compare:
@@ -353,13 +359,13 @@ label r13_v111_room_compare:
     call r13_v111_travel('room13','room_compare')
     $ r13_v111_score()
     $ r13_v111_commit('MS14_D01_S05_L0031')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S05_L0032', 'MS14_D01_S05_L0033', 'MS14_D01_S05_L0034', 'MS14_D01_S05_L0035']], 'v111:room_compare:MS14_D01_S05_L0032')
+    call r13_lines(r13_v111_lines(['MS14_D01_S05_L0032', 'MS14_D01_S05_L0033', 'MS14_D01_S05_L0034', 'MS14_D01_S05_L0035']), 'v111:room_compare:MS14_D01_S05_L0032')
     call r13_v111_travel('inn','MS14_D01_S05_L0036')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S05_L0037', 'MS14_D01_S05_L0038']], 'v111:room_compare:MS14_D01_S05_L0037')
+    call r13_lines(r13_v111_lines(['MS14_D01_S05_L0037', 'MS14_D01_S05_L0038']), 'v111:room_compare:MS14_D01_S05_L0037')
     call r13_v111_travel('room13','MS14_D01_S05_L0039')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S05_L0040', 'MS14_D01_S05_L0041', 'MS14_D01_S05_L0042', 'MS14_D01_S05_L0043', 'MS14_D01_S05_L0044', 'MS14_D01_S05_L0045', 'MS14_D01_S05_L0046', 'MS14_D01_S05_L0047', 'MS14_D01_S05_L0048']], 'v111:room_compare:MS14_D01_S05_L0040')
+    call r13_lines(r13_v111_lines(['MS14_D01_S05_L0040', 'MS14_D01_S05_L0041', 'MS14_D01_S05_L0042', 'MS14_D01_S05_L0043', 'MS14_D01_S05_L0044', 'MS14_D01_S05_L0045', 'MS14_D01_S05_L0046', 'MS14_D01_S05_L0047', 'MS14_D01_S05_L0048']), 'v111:room_compare:MS14_D01_S05_L0040')
     $ r13_v111_commit('MS14_D01_S05_L0048')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D01_S05_L0049', 'MS14_D01_S05_L0050', 'MS14_D01_S05_L0051', 'MS14_D01_S05_L0052']], 'v111:room_compare:MS14_D01_S05_L0049')
+    call r13_lines(r13_v111_lines(['MS14_D01_S05_L0049', 'MS14_D01_S05_L0050', 'MS14_D01_S05_L0051', 'MS14_D01_S05_L0052']), 'v111:room_compare:MS14_D01_S05_L0049')
     jump r13_v111_sleep1
 
 label r13_v111_sleep1:
@@ -375,7 +381,7 @@ label r13_v111_day2:
     $ r13_v111_scene('MS14_D02_S01')
     call r13_v111_travel('gate','day2')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S01_L0002', 'MS14_D02_S01_L0003', 'MS14_D02_S01_L0004', 'MS14_D02_S01_L0005', 'MS14_D02_S01_L0006', 'MS14_D02_S01_L0007']], 'v111:day2:MS14_D02_S01_L0002')
+    call r13_lines(r13_v111_lines(['MS14_D02_S01_L0002', 'MS14_D02_S01_L0003', 'MS14_D02_S01_L0004', 'MS14_D02_S01_L0005', 'MS14_D02_S01_L0006', 'MS14_D02_S01_L0007']), 'v111:day2:MS14_D02_S01_L0002')
     $ r13_v111_commit('MS14_D02_S01_L0008')
     jump r13_v111_square2
 
@@ -383,7 +389,7 @@ label r13_v111_square2:
     $ r13_v111_scene('MS14_D02_S01')
     call r13_v111_travel('square','square2')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S01_L0010', 'MS14_D02_S01_L0011']], 'v111:square2:MS14_D02_S01_L0010')
+    call r13_lines(r13_v111_lines(['MS14_D02_S01_L0010', 'MS14_D02_S01_L0011']), 'v111:square2:MS14_D02_S01_L0010')
     jump r13_v111_lamp_rope
 
 label r13_v111_lamp_rope:
@@ -398,7 +404,7 @@ label r13_v111_chorong:
     $ r13_v111_scene('MS14_D02_S01')
     call r13_v111_travel('square','chorong')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S01_L0014', 'MS14_D02_S01_L0015', 'MS14_D02_S01_L0016', 'MS14_D02_S01_L0017', 'MS14_D02_S01_L0018', 'MS14_D02_S01_L0019', 'MS14_D02_S01_L0020', 'MS14_D02_S01_L0021', 'MS14_D02_S01_L0022', 'MS14_D02_S01_L0023', 'MS14_D02_S01_L0024', 'MS14_D02_S01_L0025', 'MS14_D02_S01_L0026', 'MS14_D02_S01_L0027', 'MS14_D02_S01_L0028', 'MS14_D02_S01_L0029']], 'v111:chorong:MS14_D02_S01_L0014')
+    call r13_lines(r13_v111_lines(['MS14_D02_S01_L0014', 'MS14_D02_S01_L0015', 'MS14_D02_S01_L0016', 'MS14_D02_S01_L0017', 'MS14_D02_S01_L0018', 'MS14_D02_S01_L0019', 'MS14_D02_S01_L0020', 'MS14_D02_S01_L0021', 'MS14_D02_S01_L0022', 'MS14_D02_S01_L0023', 'MS14_D02_S01_L0024', 'MS14_D02_S01_L0025', 'MS14_D02_S01_L0026', 'MS14_D02_S01_L0027', 'MS14_D02_S01_L0028', 'MS14_D02_S01_L0029']), 'v111:chorong:MS14_D02_S01_L0014')
     jump r13_v111_go_box
 
 label r13_v111_go_box:
@@ -412,7 +418,7 @@ label r13_v111_box_path:
     $ r13_v111_scene('MS14_D02_S01')
     call r13_v111_travel('forest','box_path')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S01_L0031', 'MS14_D02_S01_L0032']], 'v111:box_path:MS14_D02_S01_L0031')
+    call r13_lines(r13_v111_lines(['MS14_D02_S01_L0031', 'MS14_D02_S01_L0032']), 'v111:box_path:MS14_D02_S01_L0031')
     jump r13_v111_box_inspect
 
 label r13_v111_box_inspect:
@@ -428,7 +434,7 @@ label r13_v111_box_empty:
     call r13_v111_travel('forest','box_empty')
     $ r13_v111_score()
     $ r13_v111_commit('MS14_D02_S01_L0033')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S01_L0034', 'MS14_D02_S01_L0035', 'MS14_D02_S01_L0036', 'MS14_D02_S01_L0037', 'MS14_D02_S01_L0038']], 'v111:box_empty:MS14_D02_S01_L0034')
+    call r13_lines(r13_v111_lines(['MS14_D02_S01_L0034', 'MS14_D02_S01_L0035', 'MS14_D02_S01_L0036', 'MS14_D02_S01_L0037', 'MS14_D02_S01_L0038']), 'v111:box_empty:MS14_D02_S01_L0034')
     jump r13_v111_box_note
 
 label r13_v111_box_note:
@@ -444,14 +450,14 @@ label r13_v111_box_written:
     call r13_v111_travel('forest','box_written')
     $ r13_v111_score()
     $ r13_v111_commit('MS14_D02_S01_L0039')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S01_L0040', 'MS14_D02_S01_L0041', 'MS14_D02_S01_L0042', 'MS14_D02_S01_L0043', 'MS14_D02_S01_L0044', 'MS14_D02_S01_L0045']], 'v111:box_written:MS14_D02_S01_L0040')
+    call r13_lines(r13_v111_lines(['MS14_D02_S01_L0040', 'MS14_D02_S01_L0041', 'MS14_D02_S01_L0042', 'MS14_D02_S01_L0043', 'MS14_D02_S01_L0044', 'MS14_D02_S01_L0045']), 'v111:box_written:MS14_D02_S01_L0040')
     jump r13_v111_post
 
 label r13_v111_post:
     $ r13_v111_scene('MS14_D02_S02')
     call r13_v111_travel('post','post')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S02_L0002', 'MS14_D02_S02_L0003', 'MS14_D02_S02_L0004']], 'v111:post:MS14_D02_S02_L0002')
+    call r13_lines(r13_v111_lines(['MS14_D02_S02_L0002', 'MS14_D02_S02_L0003', 'MS14_D02_S02_L0004']), 'v111:post:MS14_D02_S02_L0002')
     jump r13_v111_envelope_show
 
 label r13_v111_envelope_show:
@@ -467,7 +473,7 @@ label r13_v111_post_checked:
     call r13_v111_travel('post','post_checked')
     $ r13_v111_score()
     $ r13_v111_commit('MS14_D02_S02_L0005')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S02_L9101', 'MS14_D02_S02_L0006', 'MS14_D02_S02_L0007', 'MS14_D02_S02_L0008', 'MS14_D02_S02_L0009', 'MS14_D02_S02_L0010', 'MS14_D02_S02_L0011', 'MS14_D02_S02_L0012', 'MS14_D02_S02_L0013', 'MS14_D02_S02_L0014', 'MS14_D02_S02_L0015']], 'v111:post_checked:MS14_D02_S02_L9101')
+    call r13_lines(r13_v111_lines(['MS14_D02_S02_L9101', 'MS14_D02_S02_L0006', 'MS14_D02_S02_L0007', 'MS14_D02_S02_L0008', 'MS14_D02_S02_L0009', 'MS14_D02_S02_L0010', 'MS14_D02_S02_L0011', 'MS14_D02_S02_L0012', 'MS14_D02_S02_L0013', 'MS14_D02_S02_L0014', 'MS14_D02_S02_L0015']), 'v111:post_checked:MS14_D02_S02_L9101')
     jump r13_v111_post_menu
 
 label r13_v111_post_menu:
@@ -485,22 +491,22 @@ label r13_v111_post_menu:
 label r13_v111_post_scribe:
     $ r13_v111_scene('MS14_D02_S02')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S02_L0016']], 'v111:post_scribe:MS14_D02_S02_L0016')
+    call r13_lines(r13_v111_lines(['MS14_D02_S02_L0016']), 'v111:post_scribe:MS14_D02_S02_L0016')
     jump r13_v111_post_menu
 
 label r13_v111_post_return:
     $ r13_v111_scene('MS14_D02_S02')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S02_L0017', 'MS14_D02_S02_L0018', 'MS14_D02_S02_L0019', 'MS14_D02_S02_L0020', 'MS14_D02_S02_L0021', 'MS14_D02_S02_L0022', 'MS14_D02_S02_L0023', 'MS14_D02_S02_L0024']], 'v111:post_return:MS14_D02_S02_L0017')
+    call r13_lines(r13_v111_lines(['MS14_D02_S02_L0017', 'MS14_D02_S02_L0018', 'MS14_D02_S02_L0019', 'MS14_D02_S02_L0020', 'MS14_D02_S02_L0021', 'MS14_D02_S02_L0022', 'MS14_D02_S02_L0023', 'MS14_D02_S02_L0024']), 'v111:post_return:MS14_D02_S02_L0017')
     $ r13_v111_commit('MS14_D02_S02_L0025')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S02_L0026', 'MS14_D02_S02_L0027', 'MS14_D02_S02_L0028']], 'v111:post_return:MS14_D02_S02_L0026')
+    call r13_lines(r13_v111_lines(['MS14_D02_S02_L0026', 'MS14_D02_S02_L0027', 'MS14_D02_S02_L0028']), 'v111:post_return:MS14_D02_S02_L0026')
     jump r13_v111_piko2
 
 label r13_v111_piko2:
     $ r13_v111_scene('MS14_D02_S03')
     call r13_v111_travel('square','piko2')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S03_L0002', 'MS14_D02_S03_L0003', 'MS14_D02_S03_L0004', 'MS14_D02_S03_L0005', 'MS14_D02_S03_L0006', 'MS14_D02_S03_L0007', 'MS14_D02_S03_L0008']], 'v111:piko2:MS14_D02_S03_L0002')
+    call r13_lines(r13_v111_lines(['MS14_D02_S03_L0002', 'MS14_D02_S03_L0003', 'MS14_D02_S03_L0004', 'MS14_D02_S03_L0005', 'MS14_D02_S03_L0006', 'MS14_D02_S03_L0007', 'MS14_D02_S03_L0008']), 'v111:piko2:MS14_D02_S03_L0002')
     jump r13_v111_portrait_ask
 
 label r13_v111_portrait_ask:
@@ -515,9 +521,9 @@ label r13_v111_portrait_commission:
     $ r13_v111_scene('MS14_D02_S03')
     call r13_v111_travel('square','portrait_commission')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S03_L0010', 'MS14_D02_S03_L0011', 'MS14_D02_S03_L0012', 'MS14_D02_S03_L0013', 'MS14_D02_S03_L0014', 'MS14_D02_S03_L0015', 'MS14_D02_S03_L0016', 'MS14_D02_S03_L0017', 'MS14_D02_S03_L0018', 'MS14_D02_S03_L0019']], 'v111:portrait_commission:MS14_D02_S03_L0010')
+    call r13_lines(r13_v111_lines(['MS14_D02_S03_L0010', 'MS14_D02_S03_L0011', 'MS14_D02_S03_L0012', 'MS14_D02_S03_L0013', 'MS14_D02_S03_L0014', 'MS14_D02_S03_L0015', 'MS14_D02_S03_L0016', 'MS14_D02_S03_L0017', 'MS14_D02_S03_L0018', 'MS14_D02_S03_L0019']), 'v111:portrait_commission:MS14_D02_S03_L0010')
     $ r13_v111_commit('MS14_D02_S03_L0020')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S03_L0021', 'MS14_D02_S03_L0022', 'MS14_D02_S03_L0023', 'MS14_D02_S03_L0024']], 'v111:portrait_commission:MS14_D02_S03_L0021')
+    call r13_lines(r13_v111_lines(['MS14_D02_S03_L0021', 'MS14_D02_S03_L0022', 'MS14_D02_S03_L0023', 'MS14_D02_S03_L0024']), 'v111:portrait_commission:MS14_D02_S03_L0021')
     jump r13_v111_lamp_observe
 
 label r13_v111_lamp_observe:
@@ -559,7 +565,7 @@ label r13_v111_lamp_details:
     call r13_v111_travel('square','lamp_details')
     $ r13_v111_score()
     $ r13_v111_commit('MS14_D02_S03_L0025')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S03_L9101', 'MS14_D02_S03_L0026', 'MS14_D02_S03_L0027', 'MS14_D02_S03_L0028', 'MS14_D02_S03_L0029', 'MS14_D02_S03_L0030', 'MS14_D02_S03_L0031', 'MS14_D02_S03_L0032', 'MS14_D02_S03_L0033', 'MS14_D02_S03_L0034', 'MS14_D02_S03_L0035', 'MS14_D02_S03_L0037', 'MS14_D02_S03_L0038', 'MS14_D02_S03_L0039', 'MS14_D02_S03_L0040', 'MS14_D02_S03_L0041', 'MS14_D02_S03_L0042', 'MS14_D02_S03_L0043', 'MS14_D02_S03_L0044', 'MS14_D02_S03_L0045', 'MS14_D02_S03_L0046']], 'v111:lamp_details:MS14_D02_S03_L9101')
+    call r13_lines(r13_v111_lines(['MS14_D02_S03_L9101', 'MS14_D02_S03_L0026', 'MS14_D02_S03_L0027', 'MS14_D02_S03_L0028', 'MS14_D02_S03_L0029', 'MS14_D02_S03_L0030', 'MS14_D02_S03_L0031', 'MS14_D02_S03_L0032', 'MS14_D02_S03_L0033', 'MS14_D02_S03_L0034', 'MS14_D02_S03_L0035', 'MS14_D02_S03_L0037', 'MS14_D02_S03_L0038', 'MS14_D02_S03_L0039', 'MS14_D02_S03_L0040', 'MS14_D02_S03_L0041', 'MS14_D02_S03_L0042', 'MS14_D02_S03_L0043', 'MS14_D02_S03_L0044', 'MS14_D02_S03_L0045', 'MS14_D02_S03_L0046']), 'v111:lamp_details:MS14_D02_S03_L9101')
     $ r13_v111_commit('MS14_D02_S03_L0047')
     jump r13_v111_diner_offer
 
@@ -568,7 +574,7 @@ label r13_v111_diner_offer:
     $ r13_v111_scene('MS14_D02_S04')
     call r13_v111_travel('dining','diner_offer')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S04_L0002', 'MS14_D02_S04_L0003', 'MS14_D02_S04_L0004', 'MS14_D02_S04_L0005', 'MS14_D02_S04_L0006', 'MS14_D02_S04_L0007', 'MS14_D02_S04_L0008', 'MS14_D02_S04_L0009', 'MS14_D02_S04_L0010', 'MS14_D02_S04_L0012', 'MS14_D02_S04_L0013', 'MS14_D02_S04_L0014', 'MS14_D02_S04_L0016', 'MS14_D02_S04_L0017', 'MS14_D02_S04_L0018', 'MS14_D02_S04_L0019', 'MS14_D02_S04_L0020']], 'v111:diner_offer:MS14_D02_S04_L0002')
+    call r13_lines(r13_v111_lines(['MS14_D02_S04_L0002', 'MS14_D02_S04_L0003', 'MS14_D02_S04_L0004', 'MS14_D02_S04_L0005', 'MS14_D02_S04_L0006', 'MS14_D02_S04_L0007', 'MS14_D02_S04_L0008', 'MS14_D02_S04_L0009', 'MS14_D02_S04_L0010', 'MS14_D02_S04_L0012', 'MS14_D02_S04_L0013', 'MS14_D02_S04_L0014', 'MS14_D02_S04_L0016', 'MS14_D02_S04_L0017', 'MS14_D02_S04_L0018', 'MS14_D02_S04_L0019', 'MS14_D02_S04_L0020']), 'v111:diner_offer:MS14_D02_S04_L0002')
     jump r13_v111_afternoon
 
 label r13_v111_afternoon:
@@ -589,7 +595,7 @@ label r13_v111_shelter_choice:
     $ r13_v111_scene('MS14_D02_S04')
     call r13_v111_travel('dining','shelter_choice')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S04_L0021', 'MS14_D02_S04_L0022']], 'v111:shelter_choice:MS14_D02_S04_L0021')
+    call r13_lines(r13_v111_lines(['MS14_D02_S04_L0021', 'MS14_D02_S04_L0022']), 'v111:shelter_choice:MS14_D02_S04_L0021')
     jump r13_v111_shelter_work
 
 label r13_v111_shelter_work:
@@ -608,7 +614,7 @@ label r13_v111_shelter_prepare:
     $ r13_v111_scene('MS14_D02_S04')
     call r13_v111_travel('square','shelter_prepare')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S04_L0024', 'MS14_D02_S04_L0025', 'MS14_D02_S04_L0026', 'MS14_D02_S04_L0027', 'MS14_D02_S04_L0028']], 'v111:shelter_prepare:MS14_D02_S04_L0024')
+    call r13_lines(r13_v111_lines(['MS14_D02_S04_L0024', 'MS14_D02_S04_L0025', 'MS14_D02_S04_L0026', 'MS14_D02_S04_L0027', 'MS14_D02_S04_L0028']), 'v111:shelter_prepare:MS14_D02_S04_L0024')
     jump r13_v111_shelter_enter
 
 label r13_v111_shelter_enter:
@@ -622,7 +628,7 @@ label r13_v111_shelter_done:
     $ r13_v111_scene('MS14_D02_S04')
     call r13_v111_travel('dining','shelter_done')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S04_L0030', 'MS14_D02_S04_L0031', 'MS14_D02_S04_L0032', 'MS14_D02_S04_L0033', 'MS14_D02_S04_L0034', 'MS14_D02_S04_L0035', 'MS14_D02_S04_L0036', 'MS14_D02_S04_L0038']], 'v111:shelter_done:MS14_D02_S04_L0030')
+    call r13_lines(r13_v111_lines(['MS14_D02_S04_L0030', 'MS14_D02_S04_L0031', 'MS14_D02_S04_L0032', 'MS14_D02_S04_L0033', 'MS14_D02_S04_L0034', 'MS14_D02_S04_L0035', 'MS14_D02_S04_L0036', 'MS14_D02_S04_L0038']), 'v111:shelter_done:MS14_D02_S04_L0030')
     $ r13_v111_commit('MS14_D02_S04_L0038')
     jump r13_v111_evening2
 
@@ -630,11 +636,11 @@ label r13_v111_nero_choice:
     $ r13_v111_scene('MS14_D02_S04')
     call r13_v111_travel('dining','nero_choice')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S04_L0039', 'MS14_D02_S04_L0040', 'MS14_D02_S04_L0041']], 'v111:nero_choice:MS14_D02_S04_L0039')
+    call r13_lines(r13_v111_lines(['MS14_D02_S04_L0039', 'MS14_D02_S04_L0040', 'MS14_D02_S04_L0041']), 'v111:nero_choice:MS14_D02_S04_L0039')
     call r13_v111_travel('square','MS14_D02_S04_L0042')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S04_L0043', 'MS14_D02_S04_L0044', 'MS14_D02_S04_L0045', 'MS14_D02_S04_L0046', 'MS14_D02_S04_L0047', 'MS14_D02_S04_L0048']], 'v111:nero_choice:MS14_D02_S04_L0043')
+    call r13_lines(r13_v111_lines(['MS14_D02_S04_L0043', 'MS14_D02_S04_L0044', 'MS14_D02_S04_L0045', 'MS14_D02_S04_L0046', 'MS14_D02_S04_L0047', 'MS14_D02_S04_L0048']), 'v111:nero_choice:MS14_D02_S04_L0043')
     call r13_v111_travel('forest','MS14_D02_S04_L0049')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S04_L0050', 'MS14_D02_S04_L0051', 'MS14_D02_S04_L0052', 'MS14_D02_S04_L0053', 'MS14_D02_S04_L0054', 'MS14_D02_S04_L0055', 'MS14_D02_S04_L0057', 'MS14_D02_S04_L0058', 'MS14_D02_S04_L0059', 'MS14_D02_S04_L0060', 'MS14_D02_S04_L0061']], 'v111:nero_choice:MS14_D02_S04_L0050')
+    call r13_lines(r13_v111_lines(['MS14_D02_S04_L0050', 'MS14_D02_S04_L0051', 'MS14_D02_S04_L0052', 'MS14_D02_S04_L0053', 'MS14_D02_S04_L0054', 'MS14_D02_S04_L0055', 'MS14_D02_S04_L0057', 'MS14_D02_S04_L0058', 'MS14_D02_S04_L0059', 'MS14_D02_S04_L0060', 'MS14_D02_S04_L0061']), 'v111:nero_choice:MS14_D02_S04_L0050')
     jump r13_v111_nero_work
 
 label r13_v111_nero_work:
@@ -649,14 +655,14 @@ label r13_v111_nero_done:
     $ r13_v111_scene('MS14_D02_S04')
     call r13_v111_travel('forest','nero_done')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S04_L0063', 'MS14_D02_S04_L0065', 'MS14_D02_S04_L0066', 'MS14_D02_S04_L0067', 'MS14_D02_S04_L0068', 'MS14_D02_S04_L0069', 'MS14_D02_S04_L0070', 'MS14_D02_S04_L0071', 'MS14_D02_S04_L0073', 'MS14_D02_S04_L0074', 'MS14_D02_S04_L0075']], 'v111:nero_done:MS14_D02_S04_L0063')
+    call r13_lines(r13_v111_lines(['MS14_D02_S04_L0063', 'MS14_D02_S04_L0065', 'MS14_D02_S04_L0066', 'MS14_D02_S04_L0067', 'MS14_D02_S04_L0068', 'MS14_D02_S04_L0069', 'MS14_D02_S04_L0070', 'MS14_D02_S04_L0071', 'MS14_D02_S04_L0073', 'MS14_D02_S04_L0074', 'MS14_D02_S04_L0075']), 'v111:nero_done:MS14_D02_S04_L0063')
     call r13_v111_travel('square','MS14_D02_S04_L0076')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S04_L0077', 'MS14_D02_S04_L0078']], 'v111:nero_done:MS14_D02_S04_L0077')
+    call r13_lines(r13_v111_lines(['MS14_D02_S04_L0077', 'MS14_D02_S04_L0078']), 'v111:nero_done:MS14_D02_S04_L0077')
     call r13_v111_travel('inn','MS14_D02_S04_L0079')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S04_L0080', 'MS14_D02_S04_L0081']], 'v111:nero_done:MS14_D02_S04_L0080')
+    call r13_lines(r13_v111_lines(['MS14_D02_S04_L0080', 'MS14_D02_S04_L0081']), 'v111:nero_done:MS14_D02_S04_L0080')
     call r13_v111_travel('room13','MS14_D02_S04_L0083')
     $ r13_v111_commit('MS14_D02_S04_L0083')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S04_L9101', 'MS14_D02_S04_L9102']], 'v111:nero_done:MS14_D02_S04_L9101')
+    call r13_lines(r13_v111_lines(['MS14_D02_S04_L9101', 'MS14_D02_S04_L9102']), 'v111:nero_done:MS14_D02_S04_L9101')
     jump r13_v111_evening2
 
 label r13_v111_evening2:
@@ -664,9 +670,9 @@ label r13_v111_evening2:
     $ r13_v111_scene('MS14_D02_S05')
     call r13_v111_travel('inn','evening2')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S05_L0001', 'MS14_D02_S05_L0002', 'MS14_D02_S05_L0003', 'MS14_D02_S05_L0004', 'MS14_D02_S05_L0005']], 'v111:evening2:MS14_D02_S05_L0001')
+    call r13_lines(r13_v111_lines(['MS14_D02_S05_L0001', 'MS14_D02_S05_L0002', 'MS14_D02_S05_L0003', 'MS14_D02_S05_L0004', 'MS14_D02_S05_L0005']), 'v111:evening2:MS14_D02_S05_L0001')
     call r13_v111_travel('room13','MS14_D02_S05_L0006')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S05_L0007', 'MS14_D02_S05_L0008', 'MS14_D02_S05_L0009']], 'v111:evening2:MS14_D02_S05_L0007')
+    call r13_lines(r13_v111_lines(['MS14_D02_S05_L0007', 'MS14_D02_S05_L0008', 'MS14_D02_S05_L0009']), 'v111:evening2:MS14_D02_S05_L0007')
     jump r13_v111_evening2_route
 
 label r13_v111_evening2_route:
@@ -677,13 +683,13 @@ label r13_v111_evening2_route:
 label r13_v111_evening2_alive:
     $ r13_v111_scene('MS14_D02_S05')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S05_L0010', 'MS14_D02_S05_L0011']], 'v111:evening2_alive:MS14_D02_S05_L0010')
+    call r13_lines(r13_v111_lines(['MS14_D02_S05_L0010', 'MS14_D02_S05_L0011']), 'v111:evening2_alive:MS14_D02_S05_L0010')
     jump r13_v111_evening2_end
 
 label r13_v111_evening2_outside:
     $ r13_v111_scene('MS14_D02_S05')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D02_S05_L0012', 'MS14_D02_S05_L0013']], 'v111:evening2_outside:MS14_D02_S05_L0012')
+    call r13_lines(r13_v111_lines(['MS14_D02_S05_L0012', 'MS14_D02_S05_L0013']), 'v111:evening2_outside:MS14_D02_S05_L0012')
     jump r13_v111_evening2_end
 
 label r13_v111_evening2_end:
@@ -712,7 +718,7 @@ label r13_v111_piko_alive3:
     $ r13_v111_scene('MS14_D03_S01')
     call r13_v111_travel('dining','piko_alive3')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S01_L0023', 'MS14_D03_S01_L0024', 'MS14_D03_S01_L0025', 'MS14_D03_S01_L0026', 'MS14_D03_S01_L0028', 'MS14_D03_S01_L0029', 'MS14_D03_S01_L0030', 'MS14_D03_S01_L0031', 'MS14_D03_S01_L0032', 'MS14_D03_S01_L0033', 'MS14_D03_S01_L0034']], 'v111:piko_alive3:MS14_D03_S01_L0023')
+    call r13_lines(r13_v111_lines(['MS14_D03_S01_L0023', 'MS14_D03_S01_L0024', 'MS14_D03_S01_L0025', 'MS14_D03_S01_L0026', 'MS14_D03_S01_L0028', 'MS14_D03_S01_L0029', 'MS14_D03_S01_L0030', 'MS14_D03_S01_L0031', 'MS14_D03_S01_L0032', 'MS14_D03_S01_L0033', 'MS14_D03_S01_L0034']), 'v111:piko_alive3:MS14_D03_S01_L0023')
     jump r13_v111_piko_clean
 
 label r13_v111_piko_clean:
@@ -727,7 +733,7 @@ label r13_v111_piko_receive:
     $ r13_v111_scene('MS14_D03_S01')
     call r13_v111_travel('dining','piko_receive')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S01_L0036', 'MS14_D03_S01_L0037', 'MS14_D03_S01_L0038']], 'v111:piko_receive:MS14_D03_S01_L0036')
+    call r13_lines(r13_v111_lines(['MS14_D03_S01_L0036', 'MS14_D03_S01_L0037', 'MS14_D03_S01_L0038']), 'v111:piko_receive:MS14_D03_S01_L0036')
     $ r13_v111_commit('MS14_D03_S01_L0039')
     jump r13_v111_lamp3
 
@@ -736,16 +742,16 @@ label r13_v111_piko_dead3:
     $ r13_v111_scene('MS14_D03_S01')
     call r13_v111_travel('square','piko_dead3')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S01_L0002', 'MS14_D03_S01_L0003', 'MS14_D03_S01_L0004', 'MS14_D03_S01_L0005', 'MS14_D03_S01_L0006', 'MS14_D03_S01_L0007', 'MS14_D03_S01_L0008', 'MS14_D03_S01_L0009', 'MS14_D03_S01_L0010', 'MS14_D03_S01_L0011', 'MS14_D03_S01_L0012', 'MS14_D03_S01_L0013', 'MS14_D03_S01_L0014', 'MS14_D03_S01_L0015', 'MS14_D03_S01_L0016', 'MS14_D03_S01_L0018', 'MS14_D03_S01_L0019', 'MS14_D03_S01_L0020']], 'v111:piko_dead3:MS14_D03_S01_L0002')
+    call r13_lines(r13_v111_lines(['MS14_D03_S01_L0002', 'MS14_D03_S01_L0003', 'MS14_D03_S01_L0004', 'MS14_D03_S01_L0005', 'MS14_D03_S01_L0006', 'MS14_D03_S01_L0007', 'MS14_D03_S01_L0008', 'MS14_D03_S01_L0009', 'MS14_D03_S01_L0010', 'MS14_D03_S01_L0011', 'MS14_D03_S01_L0012', 'MS14_D03_S01_L0013', 'MS14_D03_S01_L0014', 'MS14_D03_S01_L0015', 'MS14_D03_S01_L0016', 'MS14_D03_S01_L0018', 'MS14_D03_S01_L0019', 'MS14_D03_S01_L0020']), 'v111:piko_dead3:MS14_D03_S01_L0002')
     $ r13_v111_commit('MS14_D03_S01_L0021')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S01_L9101']], 'v111:piko_dead3:MS14_D03_S01_L9101')
+    call r13_lines(r13_v111_lines(['MS14_D03_S01_L9101']), 'v111:piko_dead3:MS14_D03_S01_L9101')
     jump r13_v111_lamp3
 
 label r13_v111_lamp3:
     $ r13_v111_scene('MS14_D03_S02')
     call r13_v111_travel('square','lamp3')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S02_L0002', 'MS14_D03_S02_L0003', 'MS14_D03_S02_L0004', 'MS14_D03_S02_L0005', 'MS14_D03_S02_L0006', 'MS14_D03_S02_L0007', 'MS14_D03_S02_L0008', 'MS14_D03_S02_L0009', 'MS14_D03_S02_L0010', 'MS14_D03_S02_L0011']], 'v111:lamp3:MS14_D03_S02_L0002')
+    call r13_lines(r13_v111_lines(['MS14_D03_S02_L0002', 'MS14_D03_S02_L0003', 'MS14_D03_S02_L0004', 'MS14_D03_S02_L0005', 'MS14_D03_S02_L0006', 'MS14_D03_S02_L0007', 'MS14_D03_S02_L0008', 'MS14_D03_S02_L0009', 'MS14_D03_S02_L0010', 'MS14_D03_S02_L0011']), 'v111:lamp3:MS14_D03_S02_L0002')
     jump r13_v111_lamp_inspect3
 
 label r13_v111_lamp_inspect3:
@@ -761,7 +767,7 @@ label r13_v111_lamp_interior3:
     call r13_v111_travel('square','lamp_interior3')
     $ r13_v111_score()
     $ r13_v111_commit('MS14_D03_S02_L0012')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S02_L9101', 'MS14_D03_S02_L0013', 'MS14_D03_S02_L0014', 'MS14_D03_S02_L0015']], 'v111:lamp_interior3:MS14_D03_S02_L9101')
+    call r13_lines(r13_v111_lines(['MS14_D03_S02_L9101', 'MS14_D03_S02_L0013', 'MS14_D03_S02_L0014', 'MS14_D03_S02_L0015']), 'v111:lamp_interior3:MS14_D03_S02_L9101')
     jump r13_v111_fragment_request
 
 label r13_v111_fragment_request:
@@ -777,7 +783,7 @@ label r13_v111_lamp_fragment3:
     call r13_v111_travel('square','lamp_fragment3')
     $ r13_v111_score()
     $ r13_v111_commit('MS14_D03_S02_L0016')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S02_L9102', 'MS14_D03_S02_L0017', 'MS14_D03_S02_L0019', 'MS14_D03_S02_L0020', 'MS14_D03_S02_L0021', 'MS14_D03_S02_L0022', 'MS14_D03_S02_L0023', 'MS14_D03_S02_L0024', 'MS14_D03_S02_L0025']], 'v111:lamp_fragment3:MS14_D03_S02_L9102')
+    call r13_lines(r13_v111_lines(['MS14_D03_S02_L9102', 'MS14_D03_S02_L0017', 'MS14_D03_S02_L0019', 'MS14_D03_S02_L0020', 'MS14_D03_S02_L0021', 'MS14_D03_S02_L0022', 'MS14_D03_S02_L0023', 'MS14_D03_S02_L0024', 'MS14_D03_S02_L0025']), 'v111:lamp_fragment3:MS14_D03_S02_L9102')
     jump r13_v111_lamp_log_request
 
 label r13_v111_lamp_log_request:
@@ -793,14 +799,14 @@ label r13_v111_lamp_log3:
     call r13_v111_travel('square','lamp_log3')
     $ r13_v111_score()
     $ r13_v111_commit('MS14_D03_S02_L0027')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S02_L9103', 'MS14_D03_S02_L0028']], 'v111:lamp_log3:MS14_D03_S02_L9103')
+    call r13_lines(r13_v111_lines(['MS14_D03_S02_L9103', 'MS14_D03_S02_L0028']), 'v111:lamp_log3:MS14_D03_S02_L9103')
     jump r13_v111_workshop3
 
 label r13_v111_workshop3:
     $ r13_v111_scene('MS14_D03_S03')
     call r13_v111_travel('workshop','workshop3')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S03_L0002', 'MS14_D03_S03_L0003', 'MS14_D03_S03_L0004', 'MS14_D03_S03_L0005', 'MS14_D03_S03_L0006']], 'v111:workshop3:MS14_D03_S03_L0002')
+    call r13_lines(r13_v111_lines(['MS14_D03_S03_L0002', 'MS14_D03_S03_L0003', 'MS14_D03_S03_L0004', 'MS14_D03_S03_L0005', 'MS14_D03_S03_L0006']), 'v111:workshop3:MS14_D03_S03_L0002')
     jump r13_v111_loan_read
 
 label r13_v111_loan_read:
@@ -815,16 +821,16 @@ label r13_v111_loan3:
     $ r13_v111_scene('MS14_D03_S03')
     call r13_v111_travel('workshop','loan3')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S03_L0007']], 'v111:loan3:MS14_D03_S03_L0007')
+    call r13_lines(r13_v111_lines(['MS14_D03_S03_L0007']), 'v111:loan3:MS14_D03_S03_L0007')
     $ r13_v111_commit('MS14_D03_S03_L0008')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S03_L9101', 'MS14_D03_S03_L0009', 'MS14_D03_S03_L0010', 'MS14_D03_S03_L0011']], 'v111:loan3:MS14_D03_S03_L9101')
+    call r13_lines(r13_v111_lines(['MS14_D03_S03_L9101', 'MS14_D03_S03_L0009', 'MS14_D03_S03_L0010', 'MS14_D03_S03_L0011']), 'v111:loan3:MS14_D03_S03_L9101')
     jump r13_v111_clinic3
 
 label r13_v111_clinic3:
     $ r13_v111_scene('MS14_D03_S03')
     call r13_v111_travel('clinic','clinic3')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S03_L0013', 'MS14_D03_S03_L0014', 'MS14_D03_S03_L0015', 'MS14_D03_S03_L0016', 'MS14_D03_S03_L0017', 'MS14_D03_S03_L0018', 'MS14_D03_S03_L0019', 'MS14_D03_S03_L0020', 'MS14_D03_S03_L0021', 'MS14_D03_S03_L0022', 'MS14_D03_S03_L0023', 'MS14_D03_S03_L0024', 'MS14_D03_S03_L0025', 'MS14_D03_S03_L0026']], 'v111:clinic3:MS14_D03_S03_L0013')
+    call r13_lines(r13_v111_lines(['MS14_D03_S03_L0013', 'MS14_D03_S03_L0014', 'MS14_D03_S03_L0015', 'MS14_D03_S03_L0016', 'MS14_D03_S03_L0017', 'MS14_D03_S03_L0018', 'MS14_D03_S03_L0019', 'MS14_D03_S03_L0020', 'MS14_D03_S03_L0021', 'MS14_D03_S03_L0022', 'MS14_D03_S03_L0023', 'MS14_D03_S03_L0024', 'MS14_D03_S03_L0025', 'MS14_D03_S03_L0026']), 'v111:clinic3:MS14_D03_S03_L0013')
     jump r13_v111_measurement_read
 
 label r13_v111_measurement_read:
@@ -840,7 +846,7 @@ label r13_v111_measurement3:
     call r13_v111_travel('clinic','measurement3')
     $ r13_v111_score()
     $ r13_v111_commit('MS14_D03_S03_L0027')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S03_L9102', 'MS14_D03_S03_L0028', 'MS14_D03_S03_L0029', 'MS14_D03_S03_L0030', 'MS14_D03_S03_L0031']], 'v111:measurement3:MS14_D03_S03_L9102')
+    call r13_lines(r13_v111_lines(['MS14_D03_S03_L9102', 'MS14_D03_S03_L0028', 'MS14_D03_S03_L0029', 'MS14_D03_S03_L0030', 'MS14_D03_S03_L0031']), 'v111:measurement3:MS14_D03_S03_L9102')
     jump r13_v111_measurement_proof
 
 label r13_v111_measurement_proof:
@@ -850,33 +856,33 @@ label r13_v111_measurement_proof:
 label r13_v111_measurement_correct:
     $ r13_v111_scene('MS14_D03_S03')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S03_L0033', 'MS14_D03_S03_L0034', 'MS14_D03_S03_L0035']], 'v111:measurement_correct:MS14_D03_S03_L0033')
+    call r13_lines(r13_v111_lines(['MS14_D03_S03_L0033', 'MS14_D03_S03_L0034', 'MS14_D03_S03_L0035']), 'v111:measurement_correct:MS14_D03_S03_L0033')
     $ r13_v111_commit('MS14_D03_S03_L0035')
     jump r13_v111_measurement_after
 
 label r13_v111_measurement_wrong:
     $ r13_v111_scene('MS14_D03_S03')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S03_L0039', 'MS14_D03_S03_L0040']], 'v111:measurement_wrong:MS14_D03_S03_L0039')
+    call r13_lines(r13_v111_lines(['MS14_D03_S03_L0039', 'MS14_D03_S03_L0040']), 'v111:measurement_wrong:MS14_D03_S03_L0039')
     jump r13_v111_measurement_proof
 
 label r13_v111_measurement_hint:
     $ r13_v111_scene('MS14_D03_S03')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S03_L0041']], 'v111:measurement_hint:MS14_D03_S03_L0041')
+    call r13_lines(r13_v111_lines(['MS14_D03_S03_L0041']), 'v111:measurement_hint:MS14_D03_S03_L0041')
     jump r13_v111_measurement_proof
 
 label r13_v111_measurement_after:
     $ r13_v111_scene('MS14_D03_S03')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S03_L0036', 'MS14_D03_S03_L0037', 'MS14_D03_S03_L0038']], 'v111:measurement_after:MS14_D03_S03_L0036')
+    call r13_lines(r13_v111_lines(['MS14_D03_S03_L0036', 'MS14_D03_S03_L0037', 'MS14_D03_S03_L0038']), 'v111:measurement_after:MS14_D03_S03_L0036')
     jump r13_v111_silluk3
 
 label r13_v111_silluk3:
     $ r13_v111_scene('MS14_D03_S04')
     call r13_v111_travel('square','silluk3')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S04_L0002', 'MS14_D03_S04_L0003', 'MS14_D03_S04_L0004', 'MS14_D03_S04_L0005', 'MS14_D03_S04_L0006', 'MS14_D03_S04_L0007', 'MS14_D03_S04_L0008']], 'v111:silluk3:MS14_D03_S04_L0002')
+    call r13_lines(r13_v111_lines(['MS14_D03_S04_L0002', 'MS14_D03_S04_L0003', 'MS14_D03_S04_L0004', 'MS14_D03_S04_L0005', 'MS14_D03_S04_L0006', 'MS14_D03_S04_L0007', 'MS14_D03_S04_L0008']), 'v111:silluk3:MS14_D03_S04_L0002')
     jump r13_v111_transport_read
 
 label r13_v111_transport_read:
@@ -892,7 +898,7 @@ label r13_v111_transport3:
     call r13_v111_travel('square','transport3')
     $ r13_v111_score()
     $ r13_v111_commit('MS14_D03_S04_L0009')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S04_L9101']], 'v111:transport3:MS14_D03_S04_L9101')
+    call r13_lines(r13_v111_lines(['MS14_D03_S04_L9101']), 'v111:transport3:MS14_D03_S04_L9101')
     jump r13_v111_knife_permission
 
 label r13_v111_knife_permission:
@@ -907,9 +913,9 @@ label r13_v111_knife_observed:
     $ r13_v111_scene('MS14_D03_S04')
     call r13_v111_travel('square','knife_observed')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S04_L0010', 'MS14_D03_S04_L0011', 'MS14_D03_S04_L0013', 'MS14_D03_S04_L0014', 'MS14_D03_S04_L0015']], 'v111:knife_observed:MS14_D03_S04_L0010')
+    call r13_lines(r13_v111_lines(['MS14_D03_S04_L0010', 'MS14_D03_S04_L0011', 'MS14_D03_S04_L0013', 'MS14_D03_S04_L0014', 'MS14_D03_S04_L0015']), 'v111:knife_observed:MS14_D03_S04_L0010')
     $ r13_v111_commit('MS14_D03_S04_L0016')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S04_L0017', 'MS14_D03_S04_L0018', 'MS14_D03_S04_L0019', 'MS14_D03_S04_L0020']], 'v111:knife_observed:MS14_D03_S04_L0017')
+    call r13_lines(r13_v111_lines(['MS14_D03_S04_L0017', 'MS14_D03_S04_L0018', 'MS14_D03_S04_L0019', 'MS14_D03_S04_L0020']), 'v111:knife_observed:MS14_D03_S04_L0017')
     jump r13_v111_store_visit
 
 label r13_v111_store_visit:
@@ -923,7 +929,7 @@ label r13_v111_store3:
     $ r13_v111_scene('MS14_D03_S04')
     call r13_v111_travel('store','store3')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S04_L9001', 'MS14_D03_S04_L0022', 'MS14_D03_S04_L0023', 'MS14_D03_S04_L0024']], 'v111:store3:MS14_D03_S04_L9001')
+    call r13_lines(r13_v111_lines(['MS14_D03_S04_L9001', 'MS14_D03_S04_L0022', 'MS14_D03_S04_L0023', 'MS14_D03_S04_L0024']), 'v111:store3:MS14_D03_S04_L9001')
     jump r13_v111_stone_check
 
 label r13_v111_stone_check:
@@ -939,10 +945,10 @@ label r13_v111_stone3:
     call r13_v111_travel('store','stone3')
     $ r13_v111_score()
     call r13_v111_travel('workshop','MS14_D03_S04_L0026')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S04_L0026', 'MS14_D03_S04_L0027']], 'v111:stone3:MS14_D03_S04_L0026')
+    call r13_lines(r13_v111_lines(['MS14_D03_S04_L0026', 'MS14_D03_S04_L0027']), 'v111:stone3:MS14_D03_S04_L0026')
     call r13_v111_travel('store','MS14_D03_S04_L0028')
     $ r13_v111_commit('MS14_D03_S04_L0028')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S04_L9102', 'MS14_D03_S04_L0029', 'MS14_D03_S04_L0030', 'MS14_D03_S04_L0031']], 'v111:stone3:MS14_D03_S04_L9102')
+    call r13_lines(r13_v111_lines(['MS14_D03_S04_L9102', 'MS14_D03_S04_L0029', 'MS14_D03_S04_L0030', 'MS14_D03_S04_L0031']), 'v111:stone3:MS14_D03_S04_L9102')
     jump r13_v111_sale_check
 
 label r13_v111_sale_check:
@@ -958,9 +964,9 @@ label r13_v111_sale3:
     call r13_v111_travel('store','sale3')
     $ r13_v111_score()
     $ r13_v111_commit('MS14_D03_S04_L0032')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S04_L9103', 'MS14_D03_S04_L0033']], 'v111:sale3:MS14_D03_S04_L9103')
+    call r13_lines(r13_v111_lines(['MS14_D03_S04_L9103', 'MS14_D03_S04_L0033']), 'v111:sale3:MS14_D03_S04_L9103')
     call r13_v111_travel('workshop','MS14_D03_S04_L0034')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S04_L0035', 'MS14_D03_S04_L0036', 'MS14_D03_S04_L0037']], 'v111:sale3:MS14_D03_S04_L0035')
+    call r13_lines(r13_v111_lines(['MS14_D03_S04_L0035', 'MS14_D03_S04_L0036', 'MS14_D03_S04_L0037']), 'v111:sale3:MS14_D03_S04_L0035')
     $ r13_v111_commit('MS14_D03_S04_L0037')
     jump r13_v111_trial_open
 
@@ -969,7 +975,7 @@ label r13_v111_trial_open:
     $ r13_v111_scene('MS14_D03_S05')
     call r13_v111_travel('workshop','trial_open')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S05_L0002']], 'v111:trial_open:MS14_D03_S05_L0002')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0002']), 'v111:trial_open:MS14_D03_S05_L0002')
     jump r13_v111_trial_repair
 
 label r13_v111_trial_repair:
@@ -979,7 +985,7 @@ label r13_v111_trial_repair:
 label r13_v111_trial_repair_ok:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S05_L0004', 'MS14_D03_S05_L0005']], 'v111:trial_repair_ok:MS14_D03_S05_L0004')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0004', 'MS14_D03_S05_L0005']), 'v111:trial_repair_ok:MS14_D03_S05_L0004')
     $ r13_v111_commit('MS14_D03_S05_L0005')
     jump r13_v111_trial_sale
 
@@ -990,7 +996,7 @@ label r13_v111_trial_sale:
 label r13_v111_trial_sale_ok:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S05_L0007', 'MS14_D03_S05_L0008', 'MS14_D03_S05_L0009']], 'v111:trial_sale_ok:MS14_D03_S05_L0007')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0007', 'MS14_D03_S05_L0008', 'MS14_D03_S05_L0009']), 'v111:trial_sale_ok:MS14_D03_S05_L0007')
     jump r13_v111_trial_knife
 
 label r13_v111_trial_knife:
@@ -1012,15 +1018,15 @@ label r13_v111_trial_knife_records:
 label r13_v111_knife_fit:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S05_L0012', 'MS14_D03_S05_L0013', 'MS14_D03_S05_L0014', 'MS14_D03_S05_L0016', 'MS14_D03_S05_L0017']], 'v111:knife_fit:MS14_D03_S05_L0012')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0012', 'MS14_D03_S05_L0013', 'MS14_D03_S05_L0014', 'MS14_D03_S05_L0016', 'MS14_D03_S05_L0017']), 'v111:knife_fit:MS14_D03_S05_L0012')
     $ r13_v111_commit('MS14_D03_S05_L0018')
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S05_L9101', 'MS14_D03_S05_L9102']], 'v111:knife_fit:MS14_D03_S05_L9101')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L9101', 'MS14_D03_S05_L9102']), 'v111:knife_fit:MS14_D03_S05_L9101')
     jump r13_v111_trial_latch
 
 label r13_v111_knife_wrong:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S05_L0068', 'MS14_D03_S05_L0069', 'MS14_D03_S05_L0070']], 'v111:knife_wrong:MS14_D03_S05_L0068')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0068', 'MS14_D03_S05_L0069', 'MS14_D03_S05_L0070']), 'v111:knife_wrong:MS14_D03_S05_L0068')
     jump r13_v111_trial_knife
 
 label r13_v111_trial_latch:
@@ -1030,7 +1036,7 @@ label r13_v111_trial_latch:
 label r13_v111_trial_latch_ok:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S05_L0020', 'MS14_D03_S05_L0021', 'MS14_D03_S05_L0023', 'MS14_D03_S05_L0024', 'MS14_D03_S05_L0025']], 'v111:trial_latch_ok:MS14_D03_S05_L0020')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0020', 'MS14_D03_S05_L0021', 'MS14_D03_S05_L0023', 'MS14_D03_S05_L0024', 'MS14_D03_S05_L0025']), 'v111:trial_latch_ok:MS14_D03_S05_L0020')
     $ r13_v111_commit('MS14_D03_S05_L0025')
     jump r13_v111_trial_stone
 
@@ -1041,14 +1047,14 @@ label r13_v111_trial_stone:
 label r13_v111_trial_stone_ok:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S05_L0027', 'MS14_D03_S05_L0028', 'MS14_D03_S05_L0029']], 'v111:trial_stone_ok:MS14_D03_S05_L0027')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0027', 'MS14_D03_S05_L0028', 'MS14_D03_S05_L0029']), 'v111:trial_stone_ok:MS14_D03_S05_L0027')
     $ r13_v111_commit('MS14_D03_S05_L0029')
     jump r13_v111_badugi_arrives
 
 label r13_v111_badugi_arrives:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S05_L0030', 'MS14_D03_S05_L0032', 'MS14_D03_S05_L0033', 'MS14_D03_S05_L0034', 'MS14_D03_S05_L0036']], 'v111:badugi_arrives:MS14_D03_S05_L0030')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0030', 'MS14_D03_S05_L0032', 'MS14_D03_S05_L0033', 'MS14_D03_S05_L0034', 'MS14_D03_S05_L0036']), 'v111:badugi_arrives:MS14_D03_S05_L0030')
     jump r13_v111_trial_piko
 
 label r13_v111_trial_piko:
@@ -1059,19 +1065,19 @@ label r13_v111_trial_piko:
 label r13_v111_trial_alive:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S05_L0039']], 'v111:trial_alive:MS14_D03_S05_L0039')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0039']), 'v111:trial_alive:MS14_D03_S05_L0039')
     jump r13_v111_trial_choices
 
 label r13_v111_trial_dead:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S05_L0037', 'MS14_D03_S05_L0038']], 'v111:trial_dead:MS14_D03_S05_L0037')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0037', 'MS14_D03_S05_L0038']), 'v111:trial_dead:MS14_D03_S05_L0037')
     jump r13_v111_trial_choices
 
 label r13_v111_trial_choices:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S05_L0040', 'MS14_D03_S05_L0041', 'MS14_D03_S05_L0042', 'MS14_D03_S05_L0043', 'MS14_D03_S05_L0044', 'MS14_D03_S05_L0045', 'MS14_D03_S05_L0046', 'MS14_D03_S05_L0048']], 'v111:trial_choices:MS14_D03_S05_L0040')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0040', 'MS14_D03_S05_L0041', 'MS14_D03_S05_L0042', 'MS14_D03_S05_L0043', 'MS14_D03_S05_L0044', 'MS14_D03_S05_L0045', 'MS14_D03_S05_L0046', 'MS14_D03_S05_L0048']), 'v111:trial_choices:MS14_D03_S05_L0040')
     jump r13_v111_stone_choice
 
 label r13_v111_stone_choice:
@@ -1089,14 +1095,14 @@ label r13_v111_stone_choice:
 label r13_v111_stone_return:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S05_L0049', 'MS14_D03_S05_L0050', 'MS14_D03_S05_L0051']], 'v111:stone_return:MS14_D03_S05_L0049')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0049', 'MS14_D03_S05_L0050', 'MS14_D03_S05_L0051']), 'v111:stone_return:MS14_D03_S05_L0049')
     $ r13_v111_commit('MS14_D03_S05_L0052')
     jump r13_v111_custody_choice
 
 label r13_v111_stone_defer:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S05_L0053', 'MS14_D03_S05_L0054']], 'v111:stone_defer:MS14_D03_S05_L0053')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0053', 'MS14_D03_S05_L0054']), 'v111:stone_defer:MS14_D03_S05_L0053')
     $ r13_v111_commit('MS14_D03_S05_L0055')
     jump r13_v111_custody_choice
 
@@ -1115,63 +1121,63 @@ label r13_v111_custody_choice:
 label r13_v111_silluk_report:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S05_L0057', 'MS14_D03_S05_L0058', 'MS14_D03_S05_L0059', 'MS14_D03_S05_L0060', 'MS14_D03_S05_L0061', 'MS14_D03_S05_L0062']], 'v111:silluk_report:MS14_D03_S05_L0057')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0057', 'MS14_D03_S05_L0058', 'MS14_D03_S05_L0059', 'MS14_D03_S05_L0060', 'MS14_D03_S05_L0061', 'MS14_D03_S05_L0062']), 'v111:silluk_report:MS14_D03_S05_L0057')
     $ r13_v111_commit('MS14_D03_S05_L0062')
     jump r13_v111_restore_route
 
 label r13_v111_silluk_transfer:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S05_L0063', 'MS14_D03_S05_L0064', 'MS14_D03_S05_L0065', 'MS14_D03_S05_L0066']], 'v111:silluk_transfer:MS14_D03_S05_L0063')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0063', 'MS14_D03_S05_L0064', 'MS14_D03_S05_L0065', 'MS14_D03_S05_L0066']), 'v111:silluk_transfer:MS14_D03_S05_L0063')
     $ r13_v111_commit('MS14_D03_S05_L0067')
     jump r13_v111_restore_route
 
 label r13_v111_trial_wrong:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S05_L0071', 'MS14_D03_S05_L0072']], 'v111:trial_wrong:MS14_D03_S05_L0071')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0071', 'MS14_D03_S05_L0072']), 'v111:trial_wrong:MS14_D03_S05_L0071')
     jump r13_v111_trial_repair
 
 label r13_v111_trial_hint:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S05_L0073']], 'v111:trial_hint:MS14_D03_S05_L0073')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0073']), 'v111:trial_hint:MS14_D03_S05_L0073')
     jump r13_v111_trial_repair
 
 label r13_v111_trial_wrong_sale:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S05_L0071', 'MS14_D03_S05_L0072']], 'v111:trial_wrong_sale:MS14_D03_S05_L0071')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0071', 'MS14_D03_S05_L0072']), 'v111:trial_wrong_sale:MS14_D03_S05_L0071')
     jump r13_v111_trial_sale
 
 label r13_v111_trial_hint_sale:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S05_L0073']], 'v111:trial_hint_sale:MS14_D03_S05_L0073')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0073']), 'v111:trial_hint_sale:MS14_D03_S05_L0073')
     jump r13_v111_trial_sale
 
 label r13_v111_trial_wrong_latch:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S05_L0071', 'MS14_D03_S05_L0072']], 'v111:trial_wrong_latch:MS14_D03_S05_L0071')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0071', 'MS14_D03_S05_L0072']), 'v111:trial_wrong_latch:MS14_D03_S05_L0071')
     jump r13_v111_trial_latch
 
 label r13_v111_trial_hint_latch:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S05_L0073']], 'v111:trial_hint_latch:MS14_D03_S05_L0073')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0073']), 'v111:trial_hint_latch:MS14_D03_S05_L0073')
     jump r13_v111_trial_latch
 
 label r13_v111_trial_wrong_stone:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S05_L0071', 'MS14_D03_S05_L0072']], 'v111:trial_wrong_stone:MS14_D03_S05_L0071')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0071', 'MS14_D03_S05_L0072']), 'v111:trial_wrong_stone:MS14_D03_S05_L0071')
     jump r13_v111_trial_stone
 
 label r13_v111_trial_hint_stone:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S05_L0073']], 'v111:trial_hint_stone:MS14_D03_S05_L0073')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0073']), 'v111:trial_hint_stone:MS14_D03_S05_L0073')
     jump r13_v111_trial_stone
 
 label r13_v111_restore_route:
@@ -1192,7 +1198,7 @@ label r13_v111_restore3:
     $ r13_v111_scene('MS14_D03_S06')
     call r13_v111_travel('square','restore3')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S06_L0002', 'MS14_D03_S06_L0003', 'MS14_D03_S06_L0004']], 'v111:restore3:MS14_D03_S06_L0002')
+    call r13_lines(r13_v111_lines(['MS14_D03_S06_L0002', 'MS14_D03_S06_L0003', 'MS14_D03_S06_L0004']), 'v111:restore3:MS14_D03_S06_L0002')
     $ r13_v111_commit('MS14_D03_S06_L0004')
     jump r13_v111_box_news3
 
@@ -1201,7 +1207,7 @@ label r13_v111_restore_defer:
     $ r13_v111_scene('MS14_D03_S06')
     call r13_v111_travel('square','restore_defer')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S06_L0006', 'MS14_D03_S06_L0007', 'MS14_D03_S06_L0008']], 'v111:restore_defer:MS14_D03_S06_L0006')
+    call r13_lines(r13_v111_lines(['MS14_D03_S06_L0006', 'MS14_D03_S06_L0007', 'MS14_D03_S06_L0008']), 'v111:restore_defer:MS14_D03_S06_L0006')
     jump r13_v111_box_news3
 
 label r13_v111_box_news3:
@@ -1209,7 +1215,7 @@ label r13_v111_box_news3:
     $ r13_v111_scene('MS14_D03_S06')
     call r13_v111_travel('square','box_news3')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S06_L0009', 'MS14_D03_S06_L0010', 'MS14_D03_S06_L0011']], 'v111:box_news3:MS14_D03_S06_L0009')
+    call r13_lines(r13_v111_lines(['MS14_D03_S06_L0009', 'MS14_D03_S06_L0010', 'MS14_D03_S06_L0011']), 'v111:box_news3:MS14_D03_S06_L0009')
     jump r13_v111_memorial_route
 
 label r13_v111_memorial_route:
@@ -1222,7 +1228,7 @@ label r13_v111_piko_evening:
     $ r13_v111_scene('MS14_D03_S06')
     call r13_v111_travel('clinic','piko_evening')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S06_L0024', 'MS14_D03_S06_L0025', 'MS14_D03_S06_L0026', 'MS14_D03_S06_L0027', 'MS14_D03_S06_L0028', 'MS14_D03_S06_L0029', 'MS14_D03_S06_L0030']], 'v111:piko_evening:MS14_D03_S06_L0024')
+    call r13_lines(r13_v111_lines(['MS14_D03_S06_L0024', 'MS14_D03_S06_L0025', 'MS14_D03_S06_L0026', 'MS14_D03_S06_L0027', 'MS14_D03_S06_L0028', 'MS14_D03_S06_L0029', 'MS14_D03_S06_L0030']), 'v111:piko_evening:MS14_D03_S06_L0024')
     jump r13_v111_somi_lead
 
 label r13_v111_piko_memorial:
@@ -1230,7 +1236,7 @@ label r13_v111_piko_memorial:
     $ r13_v111_scene('MS14_D03_S06')
     call r13_v111_travel('square','piko_memorial')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S06_L0013', 'MS14_D03_S06_L0014', 'MS14_D03_S06_L0015', 'MS14_D03_S06_L0016', 'MS14_D03_S06_L0018', 'MS14_D03_S06_L0019', 'MS14_D03_S06_L0020', 'MS14_D03_S06_L0021', 'MS14_D03_S06_L0022']], 'v111:piko_memorial:MS14_D03_S06_L0013')
+    call r13_lines(r13_v111_lines(['MS14_D03_S06_L0013', 'MS14_D03_S06_L0014', 'MS14_D03_S06_L0015', 'MS14_D03_S06_L0016', 'MS14_D03_S06_L0018', 'MS14_D03_S06_L0019', 'MS14_D03_S06_L0020', 'MS14_D03_S06_L0021', 'MS14_D03_S06_L0022']), 'v111:piko_memorial:MS14_D03_S06_L0013')
     $ r13_v111_commit('MS14_D03_S06_L0022')
     jump r13_v111_somi_lead
 
@@ -1238,7 +1244,7 @@ label r13_v111_somi_lead:
     $ r13_v111_scene('MS14_D03_S06')
     call r13_v111_travel('square','somi_lead')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S06_L0032', 'MS14_D03_S06_L0033']], 'v111:somi_lead:MS14_D03_S06_L0032')
+    call r13_lines(r13_v111_lines(['MS14_D03_S06_L0032', 'MS14_D03_S06_L0033']), 'v111:somi_lead:MS14_D03_S06_L0032')
     jump r13_v111_blankets_route
 
 label r13_v111_blankets_route:
@@ -1258,7 +1264,7 @@ label r13_v111_blankets3:
     $ r13_v111_scene('MS14_D03_S06')
     call r13_v111_travel('square','blankets3')
     $ r13_v111_score()
-    call r13_lines([r13_v111_line(x) for x in ['MS14_D03_S06_L0035', 'MS14_D03_S06_L0037', 'MS14_D03_S06_L0038', 'MS14_D03_S06_L0039', 'MS14_D03_S06_L0040']], 'v111:blankets3:MS14_D03_S06_L0035')
+    call r13_lines(r13_v111_lines(['MS14_D03_S06_L0035', 'MS14_D03_S06_L0037', 'MS14_D03_S06_L0038', 'MS14_D03_S06_L0039', 'MS14_D03_S06_L0040']), 'v111:blankets3:MS14_D03_S06_L0035')
     $ r13_v111_commit('MS14_D03_S06_L0041')
     jump r13_v111_stairs3
 

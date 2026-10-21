@@ -50,8 +50,11 @@ def v111_bindings():
  for m in re.finditer(r'call r13_lines\(',source):
   start=m.end()-1;end=_match_bracket(source,start)
   call=ast.parse('f'+source[start:end+1],mode='eval').body
-  if not isinstance(call.args[0],ast.ListComp):continue
-  ids=ast.literal_eval(call.args[0].generators[0].iter)
+  first=call.args[0]
+  # 0.19.89: the day files call r13_v111_lines([...]) (new-world text layer).
+  if isinstance(first,ast.Call) and getattr(first.func,'id',None)=='r13_v111_lines':ids=ast.literal_eval(first.args[0])
+  elif isinstance(first,ast.ListComp):ids=ast.literal_eval(first.generators[0].iter)
+  else:continue
   identity=ast.literal_eval(call.args[1])
   for i,rid in enumerate(ids):
    r=records[rid]

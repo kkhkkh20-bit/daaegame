@@ -21,7 +21,7 @@ cd experiments/renpy-ch1
 export RENPY_SDK=$(dev/setup_sdk.sh)        # 처음 한 번 (~/.cache/renpy 에 받음)
 
 # 1) 고친다 (game/*.rpy, game/*.json, game/assets/...)
-# 2) 필수 검사: 단위 테스트 802개 + lint (0.19.88 기준 약45초)
+# 2) 필수 검사: 단위 테스트 818개 + lint (0.19.89 기준 약55초)
 dev/check.sh
 # 3) 화면 테스트: 고친 곳과 관련된 것만, 또는 이름 없이 표준 묶음(약 4분)
 dev/run_renpy_tests.sh carriage_skip trial_win
