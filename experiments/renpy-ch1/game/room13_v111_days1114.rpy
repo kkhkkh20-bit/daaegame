@@ -1537,6 +1537,9 @@ label r13_v111_early12:
 
 label r13_v111_sleep12:
     call r13_lines(r13_nw_block('portrait12'),'nw:portrait12')
+    $ r13_nw_acquire("NW_HALL_WINDOW")
+    if r13_v111_value("piko_alive") is False:
+        $ r13_nw_acquire("NW_PIKO_PAINTING")
     jump r13_v111_sleep12_bed
 
 label r13_v111_sleep12_bed:
@@ -1562,6 +1565,8 @@ label r13_v111_day13:
     $ r13_v111_score()
     $ r13_v111_arrive(['mom', 'daram', 'npc_pandol', 'karo'])
     $ r13_v111_set('busy:karo',False)
+    if r13_v111_value("piko_alive") is not False:
+        $ r13_nw_list("resident_piko","street")
     call r13_lines(r13_v111_lines(['MS14_D13_S01_L0002']),'v111:MS14_D13_S01_L0002')
     call r13_lines(r13_v111_lines(['MS14_D13_S01_L0003']),'v111:MS14_D13_S01_L0003')
     call r13_lines(r13_v111_lines(['MS14_D13_S01_L0004']),'v111:MS14_D13_S01_L0004')
@@ -1675,6 +1680,9 @@ label r13_v111_offer_accept13:
     call r13_lines(r13_v111_lines(['MS14_D13_S02_L0038']),'v111:MS14_D13_S02_L0038')
     call r13_lines(r13_v111_lines(['MS14_D13_S02_L0039']),'v111:MS14_D13_S02_L0039')
     $ r13_v111_set('family_deal',True)
+    if r13_v111_value("listed:daram"):
+        $ r13_v111_set("listed:daram",False)
+        $ r13_v111_set("daram_deal_freed",True)
     jump r13_v111_family_exit13
 
 label r13_v111_offer_refuse13:
@@ -1723,6 +1731,24 @@ label r13_v111_mending_answer13:
     call r13_lines(r13_v111_lines(['MS14_D13_S03_L0026']),'v111:MS14_D13_S03_L0026')
     call r13_lines(r13_v111_lines(['MS14_D13_S03_L0027']),'v111:MS14_D13_S03_L0027')
     call r13_lines(r13_v111_lines(['MS14_D13_S03_L0028']),'v111:MS14_D13_S03_L0028')
+    call r13_lines(r13_nw_block('badook_q13'),'nw:badook_q13')
+    jump r13_v111_badook_proof13
+
+label r13_v111_badook_proof13:
+    call r13_v111_proof('촌장이 어젯밤 있던 곳을 확인한다',['NW_HALL_WINDOW'],'r13_v111_badook_won13','r13_v111_badook_wrong13',None)
+    jump expression _return
+
+label r13_v111_badook_wrong13:
+    $ r13_nw_meeting_end("blanket","partial")
+    call r13_lines(r13_nw_block('badook_lost13'),'nw:badook_lost13')
+    jump r13_v111_mending_rest13
+
+label r13_v111_badook_won13:
+    $ r13_nw_meeting_end("blanket","win")
+    call r13_lines(r13_nw_block('badook_won13'),'nw:badook_won13')
+    jump r13_v111_mending_rest13
+
+label r13_v111_mending_rest13:
     call r13_lines(r13_v111_lines(['MS14_D13_S03_L0030']),'v111:MS14_D13_S03_L0030')
     call r13_lines(r13_v111_lines(['MS14_D13_S03_L0031']),'v111:MS14_D13_S03_L0031')
     call r13_lines(r13_v111_lines(['MS14_D13_S03_L0032']),'v111:MS14_D13_S03_L0032')
@@ -1736,9 +1762,32 @@ label r13_v111_mending_answer13:
     jump r13_v111_cart_inspect13
 
 label r13_v111_mending_wrong13:
+    $ r13_nw_meeting_end("blanket","lose")
     call r13_lines(r13_v111_lines(['MS14_D13_S03_L0043']),'v111:MS14_D13_S03_L0043')
     call r13_lines(r13_v111_lines(['MS14_D13_S03_L0044']),'v111:MS14_D13_S03_L0044')
-    jump r13_v111_mending_proof13
+    call r13_lines(r13_nw_block('blanket_lost13'),'nw:blanket_lost13')
+    python:
+        _aboard=list(r13_v111_value("cart_roster") or ["npc_pandol","resident_momo","resident_guldol"])
+        if r13_v111_value("teacher_transfer")=="listed" and r13_v111_person_alive("resident_teacher"):_aboard.append("resident_teacher")
+        if r13_v111_value("silluk_status")=="supervised_compulsory_labor" and r13_v111_person_alive("resident_siluk"):_aboard.append("resident_siluk")
+        _aboard=[p for p in dict.fromkeys(_aboard+r13_nw_listed()) if not r13_v111_value("handed:"+p)]
+        r13_v111_set("departed_names",_aboard)
+        for _p in _aboard:r13_v111_set("departed:"+_p,True)
+        if "daram" in _aboard:r13_v111_set("location:daram","cart")
+    $ r13_v111_set('cart_departed',True)
+    $ r13_v111_set('outcome13','partial_rescue')
+    jump r13_v111_departed_night13
+
+label r13_v111_departed_night13:
+    call r13_v111_travel('school','departed_night13',['mom'])
+    $ r13_v111_arrive(['mom', 'nabi'])
+    jump r13_v111_departed_bed13
+
+label r13_v111_departed_bed13:
+    call r13_v111_wait('departed_bed13')
+    if _return==0:
+        jump r13_v111_morning14
+    jump r13_v111_departed_bed13
 
 label r13_v111_mending_hint13:
     call r13_lines(r13_v111_lines(['MS14_D13_S03_L0045']),'v111:MS14_D13_S03_L0045')
@@ -1752,6 +1801,9 @@ label r13_v111_cart_inspect13:
 
 label r13_v111_cart_observed13:
     $ r13_v111_set('cart_roster',['npc_pandol', 'resident_momo', 'resident_guldol'])
+    call r13_lines(r13_nw_block('cart_names13'),'nw:cart_names13')
+    if r13_v111_value("listed:resident_piko"):
+        $ r13_nw_acquire("NW_PIKO_PAINTING","told")
     if r13_v111_value("silluk_status")=="supervised_compulsory_labor" and r13_v111_person_alive("resident_siluk"):
         call r13_v111_silluk_board_observation13
     if r13_v111_value("teacher_transfer")=="listed" and r13_v111_person_alive("resident_teacher"):
@@ -1791,6 +1843,39 @@ label r13_v111_stop_cart13:
     $ r13_v111_set('stop_actor','resident_badook')
     $ r13_v111_set('busy:resident_badook','stop_cart')
     $ r13_v111_set("cart_roster",r13_v111_value("cart_roster") or ["npc_pandol","resident_momo","resident_guldol"])
+    jump r13_v111_rein13
+
+label r13_v111_rein13:
+    call r13_lines(r13_nw_block('rein_open13'),'nw:rein_open13')
+    jump r13_v111_rein_ledger13p
+
+label r13_v111_rein_ledger13p:
+    call r13_v111_proof('장부의 두 배를 실룩에게 보인다',['E16'],'r13_v111_rein_ledger13','r13_v111_rein_wrong13',None)
+    jump expression _return
+
+label r13_v111_rein_ledger13:
+    call r13_lines(r13_nw_block('rein_ledger13'),'nw:rein_ledger13')
+    jump r13_v111_rein_painting13p
+
+label r13_v111_rein_painting13p:
+    call r13_v111_proof('피코가 막혀야 했던 까닭을 보인다',['NW_PIKO_PAINTING'],'r13_v111_rein_won13','r13_v111_rein_wrong13',None)
+    jump expression _return
+
+label r13_v111_rein_won13:
+    $ r13_nw_meeting_end("piko","win")
+    call r13_lines(r13_nw_block('rein_won13'),'nw:rein_won13')
+    $ r13_v111_set('neoul_held',True)
+    $ r13_nw_acquire("NW_NEOUL_LEDGER","full" if r13_v111_value("meeting:hypothesis")=="win" else "some" if r13_v111_value("meeting:hypothesis")=="partial" else "observed")
+    jump r13_v111_after_rein13
+
+label r13_v111_rein_wrong13:
+    $ r13_nw_meeting_end("piko","lose")
+    call r13_lines(r13_nw_block('rein_lost13'),'nw:rein_lost13')
+    jump r13_v111_after_rein13
+
+label r13_v111_after_rein13:
+    if r13_v111_value("meeting:blanket")=="partial":
+        jump r13_v111_partial13
     call r13_lines(r13_v111_lines(['MS14_D13_S04_L0011']),'v111:MS14_D13_S04_L0011')
     if r13_v111_actor_ready('guard'):
         call r13_lines(r13_v111_lines(['MS14_D13_S04_L0012']),'v111:MS14_D13_S04_L0012')
@@ -1966,6 +2051,9 @@ label r13_v111_last_cart13:
         call r13_v111_family_already_school13
     if not all(r13_v111_value("handed:"+p) for p in r13_v111_value("cart_roster")):
         jump r13_v111_partial13
+    call r13_lines(r13_nw_block('listed_down13'),'nw:listed_down13')
+    python:
+        for _p in r13_nw_listed():r13_v111_set("handed:"+_p,True)
     $ room13["v111"]["music_hold"]=None
     $ room13["v111"]["music_override"]={'scene': 'MS14_D13_S04', 'path': 'assets/bgm-village.mp3'}
     $ renpy.music.play('assets/bgm-village.mp3',fadein=1.0,relative_volume=.28)

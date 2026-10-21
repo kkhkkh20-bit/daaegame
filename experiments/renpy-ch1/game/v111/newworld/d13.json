@@ -1,7 +1,356 @@
 {
-  "replace": {},
+  "replace": {
+    "MS14_D13_S03_L0010": {
+      "text": "그렇소. 어젯밤, 학교 종이 울리기 전에 모과를 보고 왔소."
+    }
+  },
   "before": {},
-  "after": {},
+  "after": {
+    "MS14_D13_S01_L0018": [
+      {
+        "id": "NW_D13_S01_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "회관 쪽에서 촌장이 지나가다 보급대의 담요를 펼쳐 본다. 새 무늬를 한참 보더니, 언제 꿰맸는지는 묻지 않고 지나간다."
+      },
+      {
+        "id": "NW_D13_S01_A02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "판돌이 난로 곁 초상 앞을 지나다 걸음을 멈춘다. 들뜬 덧칠 아래 붉은 목도리에서 눈을 떼지 못한다.",
+        "when": "piko_dead"
+      }
+    ],
+    "MS14_D13_S02_L0015": [
+      {
+        "id": "NW_D13_S02_A01",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "아이도 명단에 있소.",
+        "expression": "neutral",
+        "when": "listed:daram"
+      },
+      {
+        "id": "NW_D13_S02_A02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "순찰대원이 다람의 손목 끈을 짐칸 고리에 건다. 나는 그 손을 쳐낸다. 너울은 눈도 깜박이지 않는다.",
+        "when": "listed:daram"
+      },
+      {
+        "id": "NW_D13_S02_A03",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "수레가 서면 그때 내려 주시오. 서지 않으면 가는 거요.",
+        "expression": "neutral",
+        "when": "listed:daram"
+      }
+    ],
+    "MS14_D13_S02_L0017": [
+      {
+        "id": "NW_D13_S02_A04",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "아이 이름도 빼 주겠소.",
+        "expression": "neutral",
+        "when": "listed:daram"
+      }
+    ],
+    "MS14_D13_A_L0003": [
+      {
+        "id": "NW_D13_A_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "순찰대원이 짐칸 고리에서 다람의 끈을 푼다. 다람이 내게 뛰어온다. 손목에는 끈 자국이 남아 있다.",
+        "when": "daram_deal_freed"
+      }
+    ]
+  },
   "drop": [],
-  "evidence": {}
+  "evidence": {},
+  "new_evidence": {
+    "NW_NEOUL_LEDGER": {
+      "name": "너울의 장부",
+      "kind": "기록",
+      "variants": {
+        "observed": "너울의 장부 상자. ‘11일, 아랫길 등 끊음’. 수레마다 실은 이름과 날짜. 뒤쪽에 ‘보미’라는 이름과 날짜가 따로 적혀 있다.",
+        "full": "너울의 장부 상자. ‘11일부터 집집의 돌 회수’, ‘11일, 아랫길 등 끊음’. 수레마다 실은 이름과 날짜. 뒤쪽에 ‘보미’라는 이름과 날짜가 따로 적혀 있다.",
+        "some": "너울의 장부 상자. ‘11일부터 일부 집의 돌 회수’, ‘11일, 아랫길 등 끊음’. 수레마다 실은 이름과 날짜. 뒤쪽에 ‘보미’라는 이름과 날짜가 따로 적혀 있다."
+      }
+    }
+  },
+  "blocks": {
+    "badook_q13": [
+      {
+        "id": "NW_BQ_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "어젯밤 학교 종이 울리기 전에 모과 씨를 보고 오셨다고 하셨죠. 바둑이 씨, 어젯밤 어디 계셨습니까?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_BQ_02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "바둑이는 고삐 쪽을 본다. 대답하지 않는다."
+      },
+      {
+        "id": "NW_BQ_03",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "바둑이도 같이 있었소. 그렇지?",
+        "expression": "neutral"
+      }
+    ],
+    "badook_won13": [
+      {
+        "id": "NW_BW_01",
+        "speaker": "바둑이",
+        "kind": "dialogue",
+        "text": "……어르신은 어젯밤 회관에서 안 나가셨습니다. 그제도요. 제가 문 옆에 있었습니다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_BW_02",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "바둑이.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_BW_03",
+        "speaker": "바둑이",
+        "kind": "dialogue",
+        "text": "직접 확인했다고 하셔서 제가 맡았습니다. 확인하신 적이 없잖습니까.",
+        "expression": "neutral"
+      }
+    ],
+    "badook_lost13": [
+      {
+        "id": "NW_BL_01",
+        "speaker": "바둑이",
+        "kind": "dialogue",
+        "text": "어르신 곁에 있었습니다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_BL_02",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "그래, 바둑이도 같이 있었지. 날짜쯤이야 헷갈릴 수 있소.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_BL_03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "바둑이가 고삐에서 손을 뗀다. 더는 말하지 않는다."
+      }
+    ],
+    "blanket_lost13": [
+      {
+        "id": "NW_KL_01",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "출발하시오.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_KL_02",
+        "speaker": "판돌",
+        "kind": "dialogue",
+        "text": "……모과가 기다린다니까.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_KL_03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "바퀴가 돈다. 바둑이는 고삐를 잡지 않는다. 짐칸에서 담요 끝의 새가 흔들린다."
+      },
+      {
+        "id": "NW_KL_04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "수레에 실린 이름들이 산길 쪽으로 멀어진다. 아무도 내리지 못한다."
+      },
+      {
+        "id": "NW_KL_05",
+        "speaker": null,
+        "kind": "narration",
+        "text": "짐칸 끝에서 다람이 나를 돌아본다. 손목의 흰 끈이 고리에 묶여 있다. 나는 끈을 잡으려고 뛰지만 바퀴가 더 빠르다.",
+        "when": "listed:daram"
+      },
+      {
+        "id": "NW_KL_06",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "아빠!",
+        "expression": "anxious",
+        "when": "listed:daram"
+      },
+      {
+        "id": "NW_KL_07",
+        "speaker": null,
+        "kind": "narration",
+        "text": "엄마가 내 팔을 붙잡는다. 엄마도 아무 말을 하지 못한다.",
+        "when": "listed:daram"
+      }
+    ],
+    "cart_names13": [
+      {
+        "id": "NW_CN_00",
+        "speaker": null,
+        "kind": "narration",
+        "text": "짐칸에는 명단의 이름들이 더 앉아 있다."
+      },
+      {
+        "id": "NW_CN_TOK",
+        "speaker": null,
+        "kind": "narration",
+        "text": "톡이 공구 자루를 무릎에 안고 있다.",
+        "when": "listed:resident_tok"
+      },
+      {
+        "id": "NW_CN_BAMI",
+        "speaker": null,
+        "kind": "narration",
+        "text": "밤이가 맨발을 담요 속에 넣고 웅크려 있다.",
+        "when": "listed:bami"
+      },
+      {
+        "id": "NW_CN_BORI",
+        "speaker": null,
+        "kind": "narration",
+        "text": "보리가 빈손을 쥐었다 폈다 한다.",
+        "when": "listed:resident_bori"
+      },
+      {
+        "id": "NW_CN_NABI",
+        "speaker": null,
+        "kind": "narration",
+        "text": "나비가 앞치마를 두른 채 앉아 있다. 이쪽을 보지 않는다.",
+        "when": "listed:nabi"
+      },
+      {
+        "id": "NW_CN_OWL",
+        "speaker": null,
+        "kind": "narration",
+        "text": "부엉이가 겉옷 품을 누르고 앉아 있다.",
+        "when": "listed:resident_owlgp"
+      },
+      {
+        "id": "NW_CN_PIKO",
+        "speaker": null,
+        "kind": "narration",
+        "text": "짐칸 구석에 피코가 있다. 길에서 자는 사람이라고 적혔다.",
+        "when": "listed:resident_piko"
+      },
+      {
+        "id": "NW_CN_PIKO2",
+        "speaker": "피코",
+        "kind": "dialogue",
+        "text": "초상 밑그림요. 버린 게 아니에요. 모과 씨예요. 첫눈 무렵 밤에 이 수레에 묶여 갔어요. 붉은 목도리를 하고.",
+        "expression": "neutral",
+        "when": "listed:resident_piko"
+      }
+    ],
+    "rein_open13": [
+      {
+        "id": "NW_RO_01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "수레가 멈춘 틈에 나는 실룩 앞으로 간다. 수첩에 적어 둔 3일의 장부 줄을 편다."
+      },
+      {
+        "id": "NW_RO_02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "실룩 씨. 백 부인 장부에 3번 줄만 값이 두 배였습니다.",
+        "expression": "neutral"
+      }
+    ],
+    "rein_ledger13": [
+      {
+        "id": "NW_RL_01",
+        "speaker": "실룩",
+        "kind": "dialogue",
+        "text": "두 배를 왜 줬겠어요. 3번이니까요. 그 아래 누가 자는지 마을 사람 다 알아요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_RL_02",
+        "speaker": "실룩",
+        "kind": "dialogue",
+        "text": "……너울 씨가 시켰어요. 오늘 밤 3번 돌을 빼라고. 백 부인이 두 배로 산다고.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_RL_03",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "도둑의 말이오.",
+        "expression": "neutral"
+      }
+    ],
+    "rein_won13": [
+      {
+        "id": "NW_RW_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "피코는 판돌 씨에게 보여 줄 그림이 있다고 했습니다. 2일 낮에요. 장부를 들고 지나가던 분이 그 말을 들었고요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_RW_02",
+        "speaker": "판돌",
+        "kind": "dialogue",
+        "text": "붉은 목도리…… 모과 거요. 첫눈 오던 날 아침에 없어졌소.",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_RW_03",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "그 그림이 돌았으면 이번 겨울에 아무도 수레에 안 탔소. 그럼 다 죽소.",
+        "expression": "angry"
+      },
+      {
+        "id": "NW_RW_04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "바둑이가 너울의 팔을 붙잡는다. 너울은 뿌리치지 않는다. 장부 상자가 바둑이의 손으로 넘어간다."
+      }
+    ],
+    "rein_lost13": [
+      {
+        "id": "NW_RX_01",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "죽은 화가의 낙서요. 도둑의 말이고.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_RX_02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "실룩이 입을 닫는다. 너울은 장부 상자를 옆구리에 낀 채 수레 곁을 떠나지 않는다."
+      }
+    ],
+    "listed_down13": [
+      {
+        "id": "NW_LD_01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "명단으로 실린 사람들도 하나씩 내린다. 인계표에 이름과 받을 사람을 적는다. 셋째 이름부터는 나비가 대신 적는다."
+      },
+      {
+        "id": "NW_LD_02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "다람의 손목 끈을 바둑이가 푼다. 다람이 내 쪽으로 뛰어내린다.",
+        "when": "listed:daram"
+      }
+    ]
+  }
 }

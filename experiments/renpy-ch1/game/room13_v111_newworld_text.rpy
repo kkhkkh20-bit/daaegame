@@ -93,6 +93,11 @@ init 319 python:
         "soup_late":lambda:r13_v111_value("route12")=="late_exposure",
         "soup_lose_stolen":lambda:r13_v111_value("meeting:soup")=="lose" and r13_v111_value("soup_lose_kind")=="stolen",
         "soup_lose_nabi":lambda:r13_v111_value("meeting:soup")=="lose" and r13_v111_value("soup_lose_kind")=="nabi",
+        # Event 10: the day-13 cart.
+        "daram_deal_freed":lambda:r13_v111_value("daram_deal_freed") is True,
+        "cart_departed":lambda:r13_v111_value("cart_departed") is True,
+        "daram_departed":lambda:r13_v111_value("departed:daram") is True,
+        "neoul_held":lambda:r13_v111_value("neoul_held") is True,
     }
     # One condition per person who can be on the transfer list (same names as R13_NW_LISTABLE).
     R13_NW_LIST_NAMES=("resident_tok","bami","resident_bori","nabi","daram","resident_owlgp","resident_piko","resident_siluk","resident_guldol","resident_teacher","mom","dad")
