@@ -412,16 +412,16 @@
     {
       "id": "G03",
       "scope": "모든 등장 인물",
-      "issue": "40명×6 원본 슬롯 식별은 확인. canonical runtime 개별 파일과 표시크기 승인 2×2 도트 파생본 연결 미확인",
-      "fallback": "현재 승인 동일 인물 초상. 없으면 원문 이름창만, 다른 인물 얼굴 대체 금지",
-      "needed": "room13-dialogue-talk-art.json 및 OVERRIDE_MAP에서 개별 실제 키/파일 추출·표시크기 검수"
+      "issue": "승인된 기존 인물/표정 파이프라인을 재사용. 4~14일에서도 다른 얼굴을 대체·신규 생성하지 않음.",
+      "fallback": "기존 승인 표정. 몸 그림 없는 익명 화자는 이름창/화면 밖 역할 유지.",
+      "needed": "토리 추가 동작 자산의 실제 장면·포즈 매칭만 후속 확인"
     },
     {
       "id": "G04",
       "scope": "D01 정차/입장 및 D06–D14",
-      "issue": "기능은 존재하나 모든 82씬 source 상태/입력 어댑터 연결 검증 전. route.json은 D01–D05까지만 확인",
-      "fallback": "원본 enter_when/blocks/author_contract/input_dispatch 그대로 유지; 연출로 상태 생성 금지",
-      "needed": "실제 레코드→입력 콜백/상태 생산자 매핑 검수"
+      "issue": "4~14일 native 장면·명시적 조건/입력 콜백 연결. 주요 네 결말 실제 확인.",
+      "fallback": "기존 조사/질문/지도/기록 화면 유지. 선택/실제 인수 효과 구분.",
+      "needed": "verification414/PLAY_REPORT.md의 미실행 변형을 구분. 새 해석기 없음"
     },
     {
       "id": "G05",

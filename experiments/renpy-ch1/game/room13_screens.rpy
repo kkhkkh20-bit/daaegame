@@ -106,7 +106,9 @@ screen r13_hub(entry=False):
     if not entry and not r13_v111_active():
         use r13_event_offers(input_ready)
     use r13_admin_key()
-    if not entry and not r13_v111_active() and room13.get("life_poc") and room13["day"]<=2:
+    if not entry and r13_v111_active() and r13_v111_goal():
+        use r13_goal_fold(r13_v111_goal(),input_ready)
+    elif not entry and not r13_v111_active() and room13.get("life_poc") and room13["day"]<=2:
         use r13_goal_fold(r13_intro_goal(),input_ready)
     elif not entry and not r13_v111_active() and room13.get("life_poc") and r13_campaign_goal():
         use r13_goal_fold(r13_campaign_goal(),input_ready)

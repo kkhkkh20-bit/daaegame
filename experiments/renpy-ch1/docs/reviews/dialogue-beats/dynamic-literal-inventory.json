@@ -5793,6 +5793,77 @@
     "already_static_text": false
   },
   {
+    "source": "game/room13_v111_days1114.rpy",
+    "line": 728,
+    "context": "label r13_v111_madam_invite12:",
+    "person": "resident_madam",
+    "text": "내놓은 돌이 어디 쓰이는지는 보겠어요.",
+    "packet": [
+      "resident_madam",
+      "내놓은 돌이 어디 쓰이는지는 보겠어요.",
+      {
+        "no_lead": true
+      }
+    ],
+    "already_static_text": true
+  },
+  {
+    "source": "game/room13_v111_days1114.rpy",
+    "line": 1500,
+    "context": "label r13_v111_teacher_board_observation13:",
+    "person": null,
+    "text": "사자 선생님이 출석부를 품에 안고 앉아 있었다.",
+    "packet": [
+      null,
+      "사자 선생님이 출석부를 품에 안고 앉아 있었다.",
+      {
+        "show": "resident_teacher",
+        "pose": "collapse_attendance"
+      }
+    ],
+    "already_static_text": true
+  },
+  {
+    "source": "game/room13_v111_days1114.rpy",
+    "line": 1507,
+    "context": "label r13_v111_silluk_board_observation13:",
+    "person": null,
+    "text": "짐칸 끝에 실룩. 고개를 숙이고 있었다.",
+    "packet": [
+      null,
+      "짐칸 끝에 실룩. 고개를 숙이고 있었다."
+    ],
+    "already_static_text": true
+  },
+  {
+    "source": "game/room13_v111_days1114.rpy",
+    "line": 1597,
+    "context": "label r13_v111_family_walk_karo13:",
+    "person": null,
+    "text": "잠시 뒤, 까로가 혼자 광장으로 돌아왔다.",
+    "packet": [
+      null,
+      "잠시 뒤, 까로가 혼자 광장으로 돌아왔다.",
+      {
+        "show": "karo",
+        "no_lead": true
+      }
+    ],
+    "already_static_text": true
+  },
+  {
+    "source": "game/room13_v111_days1114.rpy",
+    "line": 1888,
+    "context": "label r13_v111_buri_tools13:",
+    "person": null,
+    "text": "부리가 공구와 받침을 챙겼다. 내일 현장에 함께 가겠다고 했다.",
+    "packet": [
+      null,
+      "부리가 공구와 받침을 챙겼다. 내일 현장에 함께 가겠다고 했다."
+    ],
+    "already_static_text": true
+  },
+  {
     "source": "game/room13_v111_days123.rpy",
     "line": 11,
     "context": "label r13_v111_start_block:",
@@ -5849,6 +5920,87 @@
       {
         "no_lead": true
       }
+    ],
+    "already_static_text": false
+  },
+  {
+    "source": "game/room13_v111_days610.rpy",
+    "line": 21,
+    "context": "label r13_v111_day6:",
+    "person": "resident_teacher",
+    "text": "낮 동안은 이쪽에 앉아 있어도 됩니다. 먹을 건 따로 챙겨 주세요.",
+    "packet": [
+      "resident_teacher",
+      "낮 동안은 이쪽에 앉아 있어도 됩니다. 먹을 건 따로 챙겨 주세요.",
+      {
+        "no_lead": true
+      }
+    ],
+    "already_static_text": true
+  },
+  {
+    "source": "game/room13_v111_days610.rpy",
+    "line": 171,
+    "context": "label r13_v111_acorn_recovered6:",
+    "person": null,
+    "text": "꼬미가 깡통에서 도토리를 꺼내 손에 쥐었다.",
+    "packet": [
+      null,
+      "꼬미가 깡통에서 도토리를 꺼내 손에 쥐었다."
+    ],
+    "already_static_text": true
+  },
+  {
+    "source": "game/room13_v111_days610.rpy",
+    "line": 447,
+    "context": "label r13_v111_bori_witness_heard7:",
+    "person": "resident_bori",
+    "text": "불이 번지기 전에 누비 씨가 창고 문 앞에 서 있는 건 봤소.",
+    "packet": [
+      "resident_bori",
+      "불이 번지기 전에 누비 씨가 창고 문 앞에 서 있는 건 봤소.",
+      {
+        "no_lead": true
+      }
+    ],
+    "already_static_text": true
+  },
+  {
+    "source": "game/room13_v111_days610.rpy",
+    "line": 1680,
+    "context": "label r13_v111_owl_invitation10:",
+    "person": "resident_owlgp",
+    "text": "부인이 직접 준 게 아니네. 편지는 할머니가 전했지.",
+    "packet": [
+      "resident_owlgp",
+      "부인이 직접 준 게 아니네. 편지는 할머니가 전했지.",
+      {
+        "no_lead": true
+      }
+    ],
+    "already_static_text": true
+  },
+  {
+    "source": "game/room13_v111_later_bindings.rpy",
+    "line": 29,
+    "context": "file scope",
+    "person": "kid_nubi1",
+    "text": "누비의 큰아이",
+    "packet": [
+      "kid_nubi1",
+      "누비의 큰아이"
+    ],
+    "already_static_text": false
+  },
+  {
+    "source": "game/room13_v111_later_bindings.rpy",
+    "line": 29,
+    "context": "file scope",
+    "person": "kid_nubi2",
+    "text": "누비의 둘째",
+    "packet": [
+      "kid_nubi2",
+      "누비의 둘째"
     ],
     "already_static_text": false
   },
@@ -26572,7 +26724,7 @@
       null,
       "짐칸 끝에 실룩. 고개를 숙이고 있었다."
     ],
-    "already_static_text": false
+    "already_static_text": true
   },
   {
     "source": "game/systems/room13_ep6_cart.rpy",
@@ -26588,7 +26740,7 @@
         "pose": "collapse_attendance"
       }
     ],
-    "already_static_text": false
+    "already_static_text": true
   },
   {
     "source": "game/systems/room13_ep6_cart.rpy",

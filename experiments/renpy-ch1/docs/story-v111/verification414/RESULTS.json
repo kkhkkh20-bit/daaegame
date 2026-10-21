@@ -1,0 +1,508 @@
+{
+  "version": "0.19.85",
+  "base_commit": "31f838c71daa1109fd9f2039fae7fe215e4e2f4c",
+  "method": "Existing genuine play saves + actual field/map/topics/notebook mouse input. Text speed only changed; no narrative state injection.",
+  "source_contract": {
+    "scenes": 82,
+    "records": 3162,
+    "individual_requires": 113
+  },
+  "checks": {
+    "required": "dev/check.sh",
+    "unit_tests": 793,
+    "unit_result": "OK",
+    "renpy_lint": "ok",
+    "sdk": "8.5.3",
+    "basic_save_load_skip_matrix": "not repeated"
+  },
+  "actual_routes": [
+    {
+      "case": "primary",
+      "status": "passed",
+      "day": 14,
+      "checks": [
+        "Blanket quantity never negative at completion",
+        "Prevented case keeps Owl alive and Daram free",
+        "Prevention does not create late ingestion death",
+        "Every actual passenger handed over; transport stopped; device jointly locked"
+      ],
+      "state": {
+        "route7": "prevented",
+        "prevention": "A",
+        "KKOMI_ALIVE": true,
+        "OWL_ALIVE": true,
+        "DARAM_DETAINED": false,
+        "grandmother_custody": "free",
+        "nero_alive": true,
+        "alive:kid_dodam": null,
+        "alive:kid_saemi": null,
+        "lower_road_handover": 3,
+        "lower_road_lost": null,
+        "carried_dry_blankets": 2,
+        "route12": "premeal_stopped",
+        "school_heat_connected": true,
+        "madam_observer_consent": null,
+        "outcome13": "all_rescued",
+        "family_location": "school",
+        "night14_lodging": "school",
+        "cart_roster": [
+          "npc_pandol",
+          "resident_momo",
+          "resident_guldol",
+          "resident_siluk"
+        ],
+        "all_cart_handed": true,
+        "teacher_transfer": "not_aboard",
+        "silluk_transfer": "aboard",
+        "busy:v111_patrol": "silluk_supervision",
+        "busy:neoul": null,
+        "current_transport_chain_stopped": true,
+        "device_record_kind": "rescue",
+        "buri_device_present": null,
+        "device_joint_control": true,
+        "story14_completed": true
+      },
+      "passengers": {
+        "npc_pandol": {
+          "handed": true,
+          "location": "square"
+        },
+        "resident_momo": {
+          "handed": true,
+          "location": "school"
+        },
+        "resident_guldol": {
+          "handed": true,
+          "location": "school"
+        },
+        "resident_siluk": {
+          "handed": true,
+          "location": "v111_labor"
+        }
+      },
+      "scope": "Existing-save continuation; actual field/map/topic/notebook clicks, no narrative state injection"
+    },
+    {
+      "case": "incident-family",
+      "status": "passed",
+      "day": 14,
+      "checks": [
+        "Blanket quantity never negative at completion",
+        "Incident remains fatal; day10 actual release persists",
+        "Late medical findings keep Dodam and Saemi distinct",
+        "Family departure keeps gate lodging without inventing other rescues"
+      ],
+      "state": {
+        "route7": "murder",
+        "prevention": null,
+        "KKOMI_ALIVE": false,
+        "OWL_ALIVE": false,
+        "DARAM_DETAINED": false,
+        "grandmother_custody": "detained",
+        "nero_alive": false,
+        "alive:kid_dodam": false,
+        "alive:kid_saemi": true,
+        "lower_road_handover": null,
+        "lower_road_lost": true,
+        "carried_dry_blankets": 2,
+        "route12": "late_exposure",
+        "school_heat_connected": false,
+        "madam_observer_consent": null,
+        "outcome13": "family_priority",
+        "family_location": null,
+        "night14_lodging": "gate",
+        "cart_roster": null,
+        "all_cart_handed": null,
+        "teacher_transfer": "not_aboard",
+        "silluk_transfer": null,
+        "busy:v111_patrol": "teacher_supervision",
+        "busy:neoul": null,
+        "current_transport_chain_stopped": null,
+        "device_record_kind": null,
+        "buri_device_present": null,
+        "device_joint_control": null,
+        "story14_completed": true
+      },
+      "passengers": {},
+      "scope": "Existing-save continuation; actual field/map/topic/notebook clicks, no narrative state injection"
+    },
+    {
+      "case": "early-partial",
+      "status": "passed",
+      "day": 14,
+      "checks": [
+        "Blanket quantity never negative at completion",
+        "Incident remains fatal; day10 actual release persists",
+        "Prevention does not create late ingestion death",
+        "Partial receipt does not become full rescue"
+      ],
+      "state": {
+        "route7": "murder",
+        "prevention": null,
+        "KKOMI_ALIVE": false,
+        "OWL_ALIVE": false,
+        "DARAM_DETAINED": false,
+        "grandmother_custody": "detained",
+        "nero_alive": true,
+        "alive:kid_dodam": null,
+        "alive:kid_saemi": null,
+        "lower_road_handover": 3,
+        "lower_road_lost": null,
+        "carried_dry_blankets": 1,
+        "route12": "early_prevented",
+        "school_heat_connected": true,
+        "madam_observer_consent": true,
+        "outcome13": "partial_rescue",
+        "family_location": "school",
+        "night14_lodging": "school",
+        "cart_roster": [
+          "npc_pandol",
+          "resident_momo",
+          "resident_guldol",
+          "resident_siluk"
+        ],
+        "all_cart_handed": null,
+        "teacher_transfer": null,
+        "silluk_transfer": "aboard",
+        "busy:v111_patrol": null,
+        "busy:neoul": null,
+        "current_transport_chain_stopped": null,
+        "device_record_kind": null,
+        "buri_device_present": null,
+        "device_joint_control": null,
+        "story14_completed": true
+      },
+      "passengers": {
+        "npc_pandol": {
+          "handed": true,
+          "location": "school"
+        },
+        "resident_momo": {
+          "handed": false,
+          "location": "square"
+        },
+        "resident_guldol": {
+          "handed": false,
+          "location": "square"
+        },
+        "resident_siluk": {
+          "handed": false,
+          "location": "square"
+        }
+      },
+      "scope": "Existing-save continuation; actual field/map/topic/notebook clicks, no narrative state injection"
+    },
+    {
+      "case": "violence",
+      "status": "passed",
+      "day": 14,
+      "checks": [
+        "Blanket quantity never negative at completion",
+        "Incident remains fatal; day10 actual release persists",
+        "Prevention does not create late ingestion death",
+        "Violence consequence retained through ending",
+        "Off-site child dialogue and immediate Dad cookie reconciliation excluded"
+      ],
+      "state": {
+        "route7": "murder",
+        "prevention": null,
+        "KKOMI_ALIVE": false,
+        "OWL_ALIVE": false,
+        "DARAM_DETAINED": false,
+        "grandmother_custody": "detained",
+        "nero_alive": true,
+        "alive:kid_dodam": null,
+        "alive:kid_saemi": null,
+        "lower_road_handover": 3,
+        "lower_road_lost": null,
+        "carried_dry_blankets": 1,
+        "route12": "early_prevented",
+        "school_heat_connected": true,
+        "madam_observer_consent": true,
+        "outcome13": "crowd_violence",
+        "family_location": "school",
+        "night14_lodging": "school",
+        "cart_roster": [
+          "npc_pandol",
+          "resident_momo",
+          "resident_guldol",
+          "resident_siluk"
+        ],
+        "all_cart_handed": null,
+        "teacher_transfer": null,
+        "silluk_transfer": "aboard",
+        "busy:v111_patrol": null,
+        "busy:neoul": null,
+        "current_transport_chain_stopped": null,
+        "device_record_kind": null,
+        "buri_device_present": null,
+        "device_joint_control": null,
+        "story14_completed": true
+      },
+      "passengers": {
+        "npc_pandol": {
+          "handed": false,
+          "location": "square"
+        },
+        "resident_momo": {
+          "handed": false,
+          "location": "square"
+        },
+        "resident_guldol": {
+          "handed": false,
+          "location": "square"
+        },
+        "resident_siluk": {
+          "handed": false,
+          "location": "square"
+        }
+      },
+      "scope": "Existing-save continuation; actual field/map/topic/notebook clicks, no narrative state injection"
+    },
+    {
+      "case": "buri-rescue",
+      "status": "passed",
+      "day": 14,
+      "checks": [
+        "Blanket quantity never negative at completion",
+        "Incident remains fatal; day10 actual release persists",
+        "Late medical findings keep Dodam and Saemi distinct",
+        "Every actual passenger handed over; transport stopped; device jointly locked"
+      ],
+      "state": {
+        "route7": "murder",
+        "prevention": null,
+        "KKOMI_ALIVE": false,
+        "OWL_ALIVE": false,
+        "DARAM_DETAINED": false,
+        "grandmother_custody": "detained",
+        "nero_alive": false,
+        "alive:kid_dodam": false,
+        "alive:kid_saemi": true,
+        "lower_road_handover": null,
+        "lower_road_lost": true,
+        "carried_dry_blankets": 2,
+        "route12": "late_exposure",
+        "school_heat_connected": true,
+        "madam_observer_consent": null,
+        "outcome13": "all_rescued",
+        "family_location": "school",
+        "night14_lodging": "school",
+        "cart_roster": [
+          "npc_pandol",
+          "resident_momo",
+          "resident_guldol",
+          "resident_siluk"
+        ],
+        "all_cart_handed": true,
+        "teacher_transfer": "not_aboard",
+        "silluk_transfer": "aboard",
+        "busy:v111_patrol": "teacher_supervision",
+        "busy:neoul": "silluk_supervision",
+        "current_transport_chain_stopped": true,
+        "device_record_kind": "rescue",
+        "buri_device_present": true,
+        "device_joint_control": true,
+        "story14_completed": true
+      },
+      "passengers": {
+        "npc_pandol": {
+          "handed": true,
+          "location": "square"
+        },
+        "resident_momo": {
+          "handed": true,
+          "location": "school"
+        },
+        "resident_guldol": {
+          "handed": true,
+          "location": "school"
+        },
+        "resident_siluk": {
+          "handed": true,
+          "location": "v111_labor"
+        }
+      },
+      "scope": "Existing-save continuation; actual field/map/topic/notebook clicks, no narrative state injection"
+    },
+    {
+      "case": "buri-supply",
+      "status": "passed",
+      "day": 14,
+      "checks": [
+        "Blanket quantity never negative at completion",
+        "Incident remains fatal; day10 actual release persists",
+        "Prevention does not create late ingestion death",
+        "Every actual passenger handed over; transport stopped; device jointly locked",
+        "Non-participating Buri never claims hauling school supplies"
+      ],
+      "state": {
+        "route7": "murder",
+        "prevention": null,
+        "KKOMI_ALIVE": false,
+        "OWL_ALIVE": false,
+        "DARAM_DETAINED": false,
+        "grandmother_custody": "detained",
+        "nero_alive": true,
+        "alive:kid_dodam": null,
+        "alive:kid_saemi": null,
+        "lower_road_handover": 3,
+        "lower_road_lost": null,
+        "carried_dry_blankets": 1,
+        "route12": "early_prevented",
+        "school_heat_connected": true,
+        "madam_observer_consent": true,
+        "outcome13": "all_rescued",
+        "family_location": "school",
+        "night14_lodging": "school",
+        "cart_roster": [
+          "npc_pandol",
+          "resident_momo",
+          "resident_guldol",
+          "resident_siluk"
+        ],
+        "all_cart_handed": true,
+        "teacher_transfer": null,
+        "silluk_transfer": "handed_over",
+        "busy:v111_patrol": "silluk_supervision",
+        "busy:neoul": null,
+        "current_transport_chain_stopped": true,
+        "device_record_kind": "supply",
+        "buri_device_present": true,
+        "device_joint_control": true,
+        "story14_completed": true
+      },
+      "passengers": {
+        "npc_pandol": {
+          "handed": true,
+          "location": "square"
+        },
+        "resident_momo": {
+          "handed": true,
+          "location": "school"
+        },
+        "resident_guldol": {
+          "handed": true,
+          "location": "school"
+        },
+        "resident_siluk": {
+          "handed": true,
+          "location": "v111_labor"
+        }
+      },
+      "scope": "Existing-save continuation; actual field/map/topic/notebook clicks, no narrative state injection"
+    },
+    {
+      "case": "teacher-extra",
+      "status": "checkpoint_reached",
+      "day": 14,
+      "checks": [],
+      "state": {
+        "route7": "murder",
+        "prevention": null,
+        "KKOMI_ALIVE": false,
+        "OWL_ALIVE": false,
+        "DARAM_DETAINED": false,
+        "grandmother_custody": "detained",
+        "nero_alive": false,
+        "alive:kid_dodam": false,
+        "alive:kid_saemi": true,
+        "lower_road_handover": null,
+        "lower_road_lost": true,
+        "carried_dry_blankets": 2,
+        "route12": "late_exposure",
+        "school_heat_connected": false,
+        "madam_observer_consent": null,
+        "outcome13": "all_rescued",
+        "family_location": "school",
+        "night14_lodging": null,
+        "cart_roster": [
+          "npc_pandol",
+          "resident_momo",
+          "resident_guldol",
+          "resident_siluk",
+          "resident_teacher"
+        ],
+        "all_cart_handed": true,
+        "teacher_transfer": "handed_over",
+        "silluk_transfer": "handed_over",
+        "busy:v111_patrol": null,
+        "busy:neoul": "teacher_supervision",
+        "current_transport_chain_stopped": true,
+        "device_record_kind": null,
+        "buri_device_present": null,
+        "device_joint_control": null,
+        "story14_completed": null
+      },
+      "passengers": {
+        "npc_pandol": {
+          "handed": true,
+          "location": "school"
+        },
+        "resident_momo": {
+          "handed": true,
+          "location": "school"
+        },
+        "resident_guldol": {
+          "handed": true,
+          "location": "school"
+        },
+        "resident_siluk": {
+          "handed": true,
+          "location": "v111_labor"
+        },
+        "resident_teacher": {
+          "handed": true,
+          "location": "v111_supervised"
+        }
+      },
+      "scope": "Actual clicks from previous genuine save; later days not yet tested"
+    },
+    {
+      "case": "protected-family-stays-at-school",
+      "status": "checkpoint_reached",
+      "day": 14,
+      "scope": "Actual escort then repeated School/Square/labor handovers; family location asserted at every eligible interaction",
+      "state": {
+        "family_location": "school",
+        "location:mom": "school",
+        "location:daram": "school",
+        "all_cart_handed": true,
+        "current_transport_chain_stopped": true
+      }
+    }
+  ],
+  "final_build_checks": {
+    "version_read_in_engine": "0.19.85",
+    "readiness_branch": {
+      "day": 13,
+      "route12": "early_prevented",
+      "choice_menus": 1
+    },
+    "family_ending": {
+      "day": 14,
+      "period": 2,
+      "location": "gate",
+      "completed": true
+    }
+  },
+  "limitations": [
+    "0/1 blanket starting inventories and every optional cross-product not fully replayed",
+    "Separate failed direct-intervention input contract not invented",
+    "Exact prop/pose/space matching remains listed in RESOURCE_REQUESTS.md",
+    "Actual browser checks are local official web builds, not public-host direct browsing"
+  ],
+  "official_build": {
+    "core_zip_bytes": 17671985,
+    "first_load_bytes": 37772768,
+    "preload_files": 48,
+    "remote_files": 2398,
+    "removed_from_release": [],
+    "archive_sha256": "cd1d82c9bcda9063e7d2d2f9e3c07c838e1f71c30ce309dd3138b5ecf23a6ab7"
+  },
+  "publication": {
+    "url": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-dev/?v=0.19.85",
+    "verification": "Compare pushed HEAD with the built commit in GitHub Pages build metadata after publishing. The archive above identifies the tested game independently of documentation commits.",
+    "build_metadata": "https://api.github.com/repos/kkhkkh20-bit/daaegame/pages/builds/latest"
+  }
+}

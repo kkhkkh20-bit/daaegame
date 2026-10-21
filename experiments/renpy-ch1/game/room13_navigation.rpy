@@ -46,10 +46,21 @@ init 60 python:
 
     def r13_map_nodes(region):
         allowed=set(r13_places())|{store.room13["location"]}
-        return [(key,point) for key,point in R13_MAP_NODES[region].items()
+        rows=[(key,point) for key,point in R13_MAP_NODES[region].items()
             if key in allowed and r13_map_discovered(key)]
+        if globals().get("r13_v111_active",lambda:False)():
+            destination=store.room13.get("v111",{}).get("travel_to") if store.room13.get("v111",{}).get("gate")=="travel" else None
+            if destination and destination in dict(rows):
+                aliases=globals().get("R13_V111_MAP_ALIASES",{})
+                footprint=aliases.get(destination,destination)
+                rows=[(k,p) for k,p in rows if k==destination or aliases.get(k,k)!=footprint]
+        return rows
 
     def r13_map_discovered(key):
+        if globals().get("r13_v111_active",lambda:False)():
+            if key=="greenhouse":return bool(r13_v111_value("greenhouse_address_known") and r13_v111_value("tosil_safe_handoff_confirmed"))
+            if key=="altar":return bool(r13_v111_value("altar_guide_confirmed"))
+            if key=="passage":return bool(r13_v111_value("E09_PASSAGE"))
         # Do not expose secret names through stale/legacy current-location saves.
         if key=="ancient":return r13_ancient_open()
         if key=="passage":return bool(store.room13.get("passage_open") and r13_secret_route_available())

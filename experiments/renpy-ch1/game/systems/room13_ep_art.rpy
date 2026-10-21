@@ -42,6 +42,10 @@ init 160 python:
 
     _r13_ep_art_background=r13_background
     def r13_background(key):
+        if globals().get("r13_v111_active",lambda:False)():
+            location=store.room13["location"]
+            if r13_layout(location) and R13_PLACES.get(location,(None,None))[1]==key:
+                return DynamicDisplayable(r13_camera_background,location,r13_daylight())
         if key in R13_EP_BACKGROUNDS:return r13_ep_background(key)
         return _r13_ep_art_background(key)
 

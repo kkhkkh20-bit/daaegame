@@ -1277,11 +1277,3 @@ label r13_v111_sleep3:
         $ r13_v111_apply('option:sleep3:0',[{'op': 'set', 'field': 'day', 'value': 4}])
         jump r13_v111_day4
     jump r13_v111_sleep3
-
-label r13_v111_day4:
-    $ r13_v111_context("checkpoint")
-    call screen r13_confirm("이번 공개분은 3일차까지입니다. 현재 진행을 저장해 둘 수 있습니다.",yes="메인 화면으로",no="저장하기")
-    if not _return:
-        call screen save
-        jump r13_v111_day4
-    return

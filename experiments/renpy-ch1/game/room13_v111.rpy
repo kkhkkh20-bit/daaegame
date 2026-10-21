@@ -12,8 +12,16 @@ init 301 python:
         n=winter_copy.deepcopy(store.room13)
         n["v111"]["values"][key]=value
         if key=="day":n["day"]=value;n["period"]=0;n["v111"]["values"]["elapsed_minutes"]=0
-        if key=="piko_alive" and not value and "piko_dead" not in n["flags"]:n["flags"].append("piko_dead")
+        if key=="DARAM_DETAINED":n["daram_state"]="held" if value else "with_dad"
+        if key=="OWL_ALIVE":
+            n["victim_state"]="alive" if value else "dead"
+            if not value:n["case_state"]="occurred"
+            elif n["v111"]["values"].get("route7")=="prevented":n["case_state"]="prevented"
+        if key=="grandmother_custody":n["granny_state"]="detained" if value=="detained" else "trusted"
+        if key=="family_reunited" and value:n["mom_state"]="reunited"
         store.room13=n
+        death={"piko_alive":"piko_dead","KKOMI_ALIVE":"kkomi_dead","alive:kid_dodam":"dodam_dead","nero_alive":"nero_dead","TOK_ALIVE":"tok_dead","OWL_ALIVE":"v111:owl_dead"}
+        if key in death and value is False:r13_flag(death[key])
     def r13_v111_owned(key):
         return "V111:"+key in store.room13["evidence"]
     def r13_v111_apply(event,operations):
@@ -31,6 +39,8 @@ init 301 python:
     # Owner-requested opening dialogue revision, 2026-10-20.
     # Keep uploaded source records intact; only these reviewed spoken/action lines differ.
     R13_V111_CARRIAGE_TEXT = {
+        "MS14_D13_S04_L0037": "오늘 밤은 넘겨도, 내일은 어쩌겠소?",
+        "MS14_D06_S04_L0046": "다람이 도토리는 내가 꺼내 왔어.",
         "MS14_D01_S01_L0001": "마차가 덜컹 기울었다. 다람이 과자 봉지를 두 손으로 감쌌다.",
         "MS14_D01_S01_L0002": "과자는 꼭 잡고, 아빠는?",
         "MS14_D01_S01_L0004": "넘어지면 아프거든.",
@@ -38,11 +48,16 @@ init 301 python:
         "MS14_D01_S01_L0006": "과자는 몇 개 남았어?",
         "MS14_D01_S01_L0008": "제일 큰 걸 남겼네.",
     }
+    def r13_v111_person_alive(person):
+        life={"resident_nero":"nero_alive","resident_owlgp":"OWL_ALIVE","kid_kkomi":"KKOMI_ALIVE","resident_tok":"TOK_ALIVE","resident_piko":"piko_alive","resident_musoe":"musoe_alive","kid_dodam":"alive:kid_dodam"}
+        return r13_v111_value(life.get(person,"alive:"+person)) is not False
     def r13_v111_line(rid):
         r=R13_V111["records"][rid]
-        if r.get("requires"):raise Exception("Unbound record condition: "+rid)
+        if r.get("requires") and not r13_v111_record_allowed(rid):raise Exception("Unmet authored record condition: "+rid)
         who=MS14_SPEAKERS.get(r.get("speaker"))
+        if r.get("speaker") and who is None:raise Exception("Unmapped authored speaker: "+r["speaker"])
         if who=="resident_piko" and r13_v111_value("piko_alive") is False:raise Exception("Absent/dead Piko line: "+rid)
+        if who and not r13_v111_person_alive(who):raise Exception("Absent/dead authored speaker: "+rid)
         slot=r.get("direction",{}).get("slot") or "neutral"
         return (who,R13_V111_CARRIAGE_TEXT.get(rid,r["text"]),dict(no_lead=True,expression=slot,pose=slot,**({"carriage_jolt":True,"show":"daram"} if rid=="MS14_D01_S01_L0001" else {})))
     def r13_v111_binding():
@@ -52,13 +67,26 @@ init 301 python:
             return dict(people=v.get("people",["daram"]),options=[dict(title=R13_PLACES[target][0],location=target,move=target)])
         b=dict(R13_V111_BINDINGS.get(v.get("gate"),{}))
         b["options"]=[dict(o,index=i) for i,o in enumerate(b.get("options",[])) if all((r13_v111_owned(k)==expected if kind=="evidence" else r13_v111_value(k)==expected) for kind,k,expected in o.get("guard",[]))]
+        if v.get("gate")=="transport_cleanup13":
+            guard_place=r13_v111_value("location:guard") if r13_v111_value("busy:guard")=="silluk_supervision" else "square"
+            for option in b["options"]:
+                if option.get("person")=="guard":option["location"]=guard_place
+            square_people=["karo","resident_badook"]+([] if guard_place!="square" else ["guard"])
+            b["people_by_location"]={"square":square_people,"school":["nabi","mom","daram"],"v111_labor":["guard","resident_siluk"],"v111_supervised":["neoul","resident_teacher"],"workshop":["buri"]}
+        if v.get("gate")=="device_detach14" and r13_v111_value("buri_device_present"):b["people"]=["mom","daram","buri","resident_ppul","resident_badook","karo"]
+        if v.get("gate")=="guard_relief_check14":b["people"]=["guard","resident_siluk",r13_v111_value("guard_relief_person") or "v111_patrol"]
         b.setdefault("people",v.get("people",["daram"]))
+        if v.get("scene") in ("MS14_D14_S02","MS14_D14_S04") and r13_v111_value("madam_observer_consent") and r13_v111_value("location:resident_madam")==store.room13["location"] and r13_v111_person_alive("resident_madam"):
+            b["people"]=list(dict.fromkeys(b["people"]+["resident_madam"]))
+        if v.get("gate")=="partial_receipt14" and getattr(store,"v111_pending_patient",None):b["people"]=list(dict.fromkeys(b["people"]+[store.v111_pending_patient]))
+        if b.get("daram_if_free") and r13_v111_value("DARAM_DETAINED"):b["people"]=[p for p in b["people"] if p!="daram"]
+        if b.get("people_by_location") is not None:b["people"]=b["people_by_location"].get(store.room13["location"],[])
         return b
     def r13_v111_context(key):
         n=winter_copy.deepcopy(store.room13);n["v111"]["gate"]=key;store.room13=n
     def r13_v111_questions(person):
         b=r13_v111_binding()
-        return [(o["title"],Return(o.get("index",i)),False) for i,o in enumerate(b.get("options",[])) if o.get("person")==person]
+        return [(o["title"],Return(o.get("index",i)),False) for i,o in enumerate(b.get("options",[])) if o.get("person")==person and o.get("location")==store.room13["location"]]
     for title in R13_V111["proof_claims"]:R13_CLAIMS["v111:"+title]=dict(assertion=title)
     for key,spec in R13_V111["evidence"].items():
         rid="V111:"+key
@@ -71,12 +99,21 @@ init 301 python:
         # Preserve the existing residents and their scheduled staging. Explicit
         # V1.1.1 survival, relocation and custody results still take precedence.
         people=list(_r13_v111_visible_people())
+        people=[p for p in people if not r13_v111_value("busy:"+p) or r13_v111_value("location:"+p) in (None,store.room13["location"])]
         if r13_v111_value("piko.location") and r13_v111_value("piko.location")!=store.room13["location"]:
             people=[p for p in people if p!="resident_piko"]
-        if r13_v111_value("silluk_status")=="detained_work_waiting_station":
+        if r13_v111_value("silluk_status") in ("detained_work_waiting_station","supervised_compulsory_labor"):
             people=[p for p in people if p!="resident_siluk"]
+        if r13_v111_value("grandmother_custody")=="detained":people=[p for p in people if p!="granny"]
+        if r13_v111_value("teacher_custody") in ("guard","neoul"):people=[p for p in people if p!="resident_teacher"]
         people=list(dict.fromkeys(people+list(authored)))
-        return [p for p in people if (p!="resident_piko" or r13_v111_value("piko_alive")) and (p!="resident_musoe" or r13_v111_value("musoe_alive"))]
+        if r13_v111_value("DARAM_DETAINED") and "daram" not in authored:people=[p for p in people if p!="daram"]
+        for family_person in ("daram","mom"):
+            physical=r13_v111_value("location:"+family_person)
+            if physical and physical!=store.room13["location"] and family_person not in authored:people=[p for p in people if p!=family_person]
+        # Unnamed off-screen speakers have no authored body in CAST. Keep their
+        # location/role state, but do not feed a missing sprite to the stage.
+        return [p for p in people if p in CAST and (p!="resident_piko" or r13_v111_value("piko_alive")) and (p!="resident_musoe" or r13_v111_value("musoe_alive")) and r13_v111_person_alive(p)]
     _r13_v111_stage_people=r13_stage_people
     def r13_stage_people(entry=False):
         rows=_r13_v111_stage_people(entry)
@@ -89,8 +126,13 @@ init 301 python:
         ("room13","mother_note"):"E06",("room13","family_bundle"):"E30",
         ("clinic","notes"):"E13",("store","ledger"):"E16",
     }
+    def r13_v111_object_key(key):
+        if store.room13["location"]=="kitchen" and key in ("rear_after","rear_after_known"):return "rear"
+        return key
     def r13_v111_ambient_text(key,spec):
         location=store.room13["location"]
+        key=r13_v111_object_key(key)
+        spec=ROOM13["objects"].get(location,{}).get(key,spec)
         record=R13_V111_RECORD_OBJECTS.get((location,key))
         if record:
             return ROOM13["evidence"]["V111:"+record]["establishes"] if r13_v111_owned(record) else ROOM13["evidence"]["V111:"+record]["name"]
@@ -104,13 +146,14 @@ init 301 python:
     def r13_object_visible(spec):
         if not r13_v111_active():return _r13_v111_object_visible(spec)
         objects=ROOM13["objects"].get(store.room13["location"],{})
+        if any(spec is value and r13_v111_object_key(key)!=key for key,value in objects.items()):return False
         return (any(spec is objects.get(o.get("object")) for o in r13_v111_binding().get("options",[]) if o.get("location")==store.room13["location"])
             or any(spec is value and r13_v111_ambient_text(key,value) for key,value in objects.items()))
     ROOM13["objects"].setdefault("forest",{})["v111_box"]=dict(rect=[1150,548,220,152],need=[],give=[],flags=[],text="북쪽 물자 길 교환함")
     R13_OBJECT_NAMES["v111_box"]="교환함"
     _r13_v111_props=r13_world_props
     def r13_world_props(entry=False):
-        if r13_v111_active() and store.room13["location"]=="forest":
+        if r13_v111_active() and store.room13["location"]=="forest" and store.room13["v111"].get("scene") in ("MS14_D02_S01","MS14_D11_S00"):
             return [(Transform("assets/ms14/box.png",xysize=(220,152),fit="contain",nearest=True),1150,548)]
         return _r13_v111_props(entry)
     _r13_v111_places=r13_places
@@ -146,7 +189,7 @@ label r13_v111_wait_again:
         if v111_person in r13_visible_people():
             call screen r13_topics(v111_person)
             if isinstance(_return,int):
-                $ r13_v111_time("topic:"+key+":"+str(_return),0 if (key=="gate_investigate" and _return in (5,6)) or (key=="post_menu" and _return==1) else 10)
+                $ r13_v111_time("topic:"+key+":"+str(_return),0 if (key=="gate_investigate" and _return in (5,6)) or (key=="post_menu" and _return==1) or key in ("safe_passage9","passage_after9") else 10)
                 return _return
             if _return=="present":
                 call screen r13_book(v111_person,present=True)
@@ -158,6 +201,7 @@ label r13_v111_wait_again:
                     $ renpy.notify("지금은 이 자료로 더 확인할 내용이 없다.")
         jump r13_v111_wait_again
     if v111_pick[0]=="object":
+        $ v111_pick=("object",r13_v111_object_key(v111_pick[1]))
         $ v111_matches=[i for i,o in enumerate(v111_binding.get("options",[])) if o.get("object")==v111_pick[1] and o.get("location")==room13["location"]]
         if len(v111_matches)==1:
             $ r13_v111_time("inspect:"+key+":"+v111_pick[1],0 if key=="gate_investigate" and v111_pick[1]=="ledger" else 15)
@@ -198,11 +242,19 @@ label r13_v111_proof_again:
         call screen r13_book
     jump r13_v111_proof_again
 
-label r13_v111_travel(destination,travel_id):
+label r13_v111_travel(destination,travel_id,companions=None):
     if room13["location"]==destination:
         return
+    $ v111_travel_origin=room13["location"]
+    if companions is None:
+        $ companions=[]
+        if not r13_v111_value("DARAM_DETAINED") and r13_v111_value("location:daram") in (None,v111_travel_origin) and not (r13_v111_value("busy:mom")=="daram_guard") and not (r13_v111_value("DARAM_location")=="school" and r13_v111_value("busy:nabi")=="daram_guard") and not (r13_v111_value("DARAM_location")=="room13" and room13["v111"].get("scene")=="MS14_D07_S04"):
+            $ companions.append("daram")
+        if r13_v111_value("family_reunited") and r13_v111_value("location:mom")==v111_travel_origin and not r13_v111_value("busy:mom"):
+            $ companions.append("mom")
     $ room13["v111"]["travel_to"]=destination
     call r13_v111_wait("travel")
+    $ r13_v111_arrive(companions)
     return
 
 init 302 python:
@@ -256,6 +308,8 @@ init 303 python:
         if scene=="MS14_D02_S04" and r13_v111_value("D02_afternoon") not in (None,"uncommitted"):raise Exception("Afternoon already committed")
         if scene=="MS14_D02_S05" and r13_v111_value("D02_afternoon") not in ("shelter","nero"):raise Exception("Missing afternoon decision")
         if scene=="MS14_D03_S06" and r13_v111_value("silluk_status") not in ("reporting_obligation","detained_work_waiting_station"):raise Exception("Missing custody decision")
+        check=globals().get("R13_V111_SCENE_CHECKS",{}).get(scene)
+        if check and not check():raise Exception("Unmet authored scene state: "+scene)
         items,values=R13_V111_ENTRY.get(scene,([],{}))
         if not all(r13_v111_owned(x) for x in items) or not all(r13_v111_value(k)==v for k,v in values.items()):raise Exception("Unmet authored scene entry: "+scene)
         if scene=="MS14_D02_S01" and not r13_has("v111:applied:option:sleep1:0"):raise Exception("Missing actual first-night sleep")
@@ -266,7 +320,10 @@ init 303 python:
 init 304 python:
     def r13_v111_score():
         scene=store.room13.get("v111",{}).get("scene")
-        track=R13_V111.get("audio",{}).get(scene)
+        r13_sound_ambience(R13_V111.get("ambience",{}).get(scene))
+        if store.room13["v111"].get("music_hold")==scene:return
+        override=store.room13["v111"].get("music_override",{})
+        track=override.get("path") if override.get("scene")==scene else R13_V111.get("audio",{}).get(scene)
         if track and renpy.music.get_playing()!=track:
             renpy.music.play(track,fadeout=.2,fadein=.2)
 
@@ -295,6 +352,9 @@ init 306 python:
             else:
                 record["name"]="엄마의 초상 · 완성"
                 record["establishes"]="피코가 완성해 건네준 엄마의 초상. 등 절도 순간은 피코가 식당 안에 있었으므로 보지 못했다."
+        elif key=="V111:E14_SUPPLY":
+            record=dict(record)
+            record["establishes"]=("인수한 온기 상자와 학교 받침을 실제 연결해 사용하고 있다. 사용처와 남은 양을 확인했다." if r13_v111_value("school_heat_connected") else "온기 상자의 실제 학교 인수는 확인했다. 아직 연결해 사용한 기록은 없다.")
         elif key=="V111:E35":
             record=dict(record)
             received=r13_v111_value("E35.status")=="received"
@@ -306,6 +366,10 @@ init 307 python:
     _r13_v111_scene_music=r13_sound_scene_music
     def r13_sound_scene_music(bg,title,mood="calm"):
         if r13_v111_active():
-            track=R13_V111.get("audio",{}).get(store.room13["v111"].get("scene"))
-            if track:return track
+            scene=store.room13["v111"].get("scene")
+            r13_sound_ambience(R13_V111.get("ambience",{}).get(scene))
+            if store.room13["v111"].get("music_hold")==scene:return None
+            override=store.room13["v111"].get("music_override",{})
+            if override.get("scene")==scene:return override["path"]
+            if scene in R13_V111.get("audio",{}):return R13_V111["audio"][scene]
         return _r13_v111_scene_music(bg,title,mood)

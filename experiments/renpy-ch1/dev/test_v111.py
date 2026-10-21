@@ -10,7 +10,7 @@ class SourceContract(unittest.TestCase):
   records={c['source_record']['id']:c['source_record'] for s in MASTER['scenes'] for b in s['blocks'] for c in b['cues']}
   for key,r in DATA['records'].items():self.assertEqual({k:v for k,v in r.items() if k not in ('operations','direction')},records[key])
   self.assertEqual(sum(bool(r.get('requires')) for r in records.values()),113)
-  self.assertEqual(sum(bool(r.get('requires')) for r in DATA['records'].values()),0)
+  self.assertEqual(sum(bool(r.get('requires')) for r in DATA['records'].values()),113)
  def test_full_source_and_all_audits_are_preserved(self):
   self.assertEqual(len(MASTER['scenes']),82)
   self.assertEqual(sum(len(b['cues']) for s in MASTER['scenes'] for b in s['blocks']),3162)
@@ -22,7 +22,7 @@ class SourceContract(unittest.TestCase):
   self.assertNotEqual(old['E03']['name'],DATA['evidence']['E03']['name'])
   source=(ROOT/'game/room13_v111.rpy').read_text();self.assertIn('rid="V111:"+key',source)
  def test_native_control_flow_has_no_unresolved_jump(self):
-  files=[ROOT/'game/room13_v111.rpy',ROOT/'game/room13_v111_days123.rpy']
+  files=sorted((ROOT/'game').glob('room13_v111*.rpy'))
   text='\n'.join(p.read_text() for p in files);labels=set(re.findall(r'^label (\w+)',text,re.M))
   for label in re.findall(r'^\s+jump (r13_v111_\w+)',text,re.M):self.assertIn(label,labels)
   self.assertNotIn('ms14_rt.',text);self.assertNotIn('while ms14',text)
@@ -37,8 +37,8 @@ class Transactions(unittest.TestCase):
   def grant(keys,source):
    for k in keys:
     if k not in self.state.room13['evidence']:self.state.room13['evidence'].append(k)
-  self.env=dict(store=self.state,winter_copy=SimpleNamespace(deepcopy=copy.deepcopy),R13_V111=DATA,r13_has=lambda k:k in self.state.room13['flags'],r13_flag=flag,r13_grant=grant,MS14_SPEAKERS={'피코':'resident_piko'})
-  source=(ROOT/'game/room13_v111.rpy').read_text();wanted={'r13_v111_value','r13_v111_set','r13_v111_owned','r13_v111_apply','r13_v111_commit','r13_v111_option','r13_v111_scene','r13_v111_time','r13_v111_line','r13_v111_ambient_text','r13_visible_people'}
+  self.env=dict(CAST=json.loads((ROOT/"game/assets/room13-fullbody-dialogue.json").read_text())["people"],store=self.state,winter_copy=SimpleNamespace(deepcopy=copy.deepcopy),R13_V111=DATA,r13_has=lambda k:k in self.state.room13['flags'],r13_flag=flag,r13_grant=grant,MS14_SPEAKERS={'피코':'resident_piko'})
+  source=(ROOT/'game/room13_v111.rpy').read_text();wanted={'r13_v111_value','r13_v111_set','r13_v111_owned','r13_v111_apply','r13_v111_commit','r13_v111_option','r13_v111_scene','r13_v111_time','r13_v111_line','r13_v111_person_alive','r13_v111_ambient_text','r13_v111_object_key','r13_object_visible','r13_visible_people'}
   for block in re.split(r'^init \d+ python:\n',source,flags=re.M)[1:]:
    code=block.split('\nlabel ',1)[0]
    tree=ast.parse(textwrap.dedent(code))

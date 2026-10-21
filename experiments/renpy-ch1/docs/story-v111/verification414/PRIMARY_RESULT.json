@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "method": "Existing-save continuation; actual field/map/topic/notebook clicks, no narrative state injection",
+  "checks": [
+    "Blanket quantity never negative at completion",
+    "Prevented case keeps Owl alive and Daram free",
+    "Prevention does not create late ingestion death",
+    "Every actual passenger handed over; transport stopped; device jointly locked"
+  ],
+  "route": {
+    "route7": "prevented",
+    "prevention": "A",
+    "route12": "premeal_stopped",
+    "outcome13": "all_rescued",
+    "carried_dry_blankets": 2,
+    "all_cart_handed": true,
+    "cart_roster": [
+      "npc_pandol",
+      "resident_momo",
+      "resident_guldol",
+      "resident_siluk"
+    ],
+    "current_transport_chain_stopped": true,
+    "device_joint_control": true,
+    "story14_completed": true
+  },
+  "handover": {
+    "npc_pandol": true,
+    "resident_momo": true,
+    "resident_guldol": true,
+    "resident_siluk": true
+  },
+  "restarts": [
+    "D03 genuine save → D04–D07",
+    "free_sleep7_input → D11",
+    "sleep10_input → D13",
+    "nabi_beds13 → D14",
+    "device_detach14 → ending"
+  ],
+  "note": "실제 클릭으로 만든 저장에서 이어 진행했다. 이야기 상태를 주입하지 않았다. 실행 오류 수정 후 해당 구간을 다시 검사했다.",
+  "release": "local development build based on 0.19.84; not a deployment assertion"
+}

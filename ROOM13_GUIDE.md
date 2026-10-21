@@ -11,7 +11,7 @@
 | 그림 원본 | `experiments/renpy-ch1/game/assets/` (웹에 나가는 파일 그대로) | 지난 공개본 game.zip 안에만 있었음 |
 | 빌드 | `python3 dev/build_web.py --sdk $RENPY_SDK` (10초 남짓) | 지난 공개본을 풀어 덮어쓰고 다시 압축 (수 분) |
 | 공개본 | `preview/room13-dev/` (GitHub Pages) | 같음 |
-| 첫 로딩 | 0.19.84: 핵심 약17.2MB + 시작 필수 파일 약20.1MB (게임 자료 약37.3MB, 승인 타이틀 교체 포함) | 모든 표정·후기 그림까지 약299MB |
+| 첫 로딩 | 0.19.85: 핵심 약17.7MB + 시작 필수 파일 약20.1MB (게임 자료 약37.8MB, 후기 미디어 지연 로딩 유지) | 모든 표정·후기 그림까지 약299MB |
 | 다른 세션과 합치기 | 평범한 `git pull`(텍스트 병합) | zip 3-way 병합 |
 
 ## 2. 작업 순서
@@ -21,7 +21,7 @@ cd experiments/renpy-ch1
 export RENPY_SDK=$(dev/setup_sdk.sh)        # 처음 한 번 (~/.cache/renpy 에 받음)
 
 # 1) 고친다 (game/*.rpy, game/*.json, game/assets/...)
-# 2) 빠른 검사: 단위 테스트 100개 + lint, 몇 초
+# 2) 필수 검사: 단위 테스트 793개 + lint (0.19.85 기준 약45초)
 dev/check.sh
 # 3) 화면 테스트: 고친 곳과 관련된 것만, 또는 이름 없이 표준 묶음(약 4분)
 dev/run_renpy_tests.sh carriage_skip trial_win

@@ -674,5 +674,1460 @@
         "person": "resident_piko"
       }
     ]
+  },
+  "labor_sheet4": {
+    "location": "v111_labor",
+    "people": [
+      "daram",
+      "resident_siluk",
+      "neoul"
+    ],
+    "options": [
+      {
+        "title": "작업표를 보여 주십시오.",
+        "location": "v111_labor",
+        "person": "neoul"
+      }
+    ]
+  },
+  "nero_help4": {
+    "location": "ms14_somi",
+    "people": [
+      "daram",
+      "resident_nero"
+    ],
+    "options": [
+      {
+        "title": "침구와 물통을 돕는다",
+        "location": "ms14_somi",
+        "object": "v111_bedding"
+      }
+    ]
+  },
+  "portrait_show4": {
+    "location": "ms14_somi",
+    "people": [
+      "daram",
+      "resident_nero",
+      "resident_somi"
+    ],
+    "options": [
+      {
+        "title": "이분을 보셨습니까?",
+        "location": "ms14_somi",
+        "person": "resident_nero",
+        "present": "V111:E09"
+      }
+    ]
+  },
+  "portrait_place4": {
+    "location": "square",
+    "people": [
+      "daram",
+      "resident_kongi",
+      "resident_tosil",
+      "bami"
+    ],
+    "options": [
+      {
+        "title": "여기 두고 물러날게.",
+        "location": "square",
+        "person": "bami",
+        "present": "V111:E09"
+      }
+    ]
+  },
+  "look_gate4": {
+    "location": "gate",
+    "people": [
+      "daram",
+      "guard",
+      "neoul",
+      "resident_badook"
+    ],
+    "options": [
+      {
+        "title": "밝은 쪽에서 살핀다",
+        "location": "gate",
+        "object": "road"
+      }
+    ]
+  },
+  "bami_ask4": {
+    "location": "ms14_guardroom",
+    "people": [
+      "daram",
+      "resident_badook",
+      "bami"
+    ],
+    "options": [
+      {
+        "title": "어디서 봤니?",
+        "location": "ms14_guardroom",
+        "person": "bami"
+      }
+    ]
+  },
+  "inspect_gate4": {
+    "location": "gate",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "울타리 천",
+        "location": "gate",
+        "object": "v111_fence"
+      },
+      {
+        "title": "겹친 발자국",
+        "location": "gate",
+        "object": "road"
+      },
+      {
+        "title": "엎어진 양동이",
+        "location": "gate",
+        "object": "v111_bucket"
+      }
+    ]
+  },
+  "collect4": {
+    "location": "gate",
+    "people": [
+      "daram",
+      "resident_badook",
+      "bami"
+    ],
+    "options": [
+      {
+        "title": "같이 천을 수거해 주십시오.",
+        "location": "gate",
+        "person": "resident_badook"
+      }
+    ]
+  },
+  "sleep4": {
+    "location": "room13",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "관찰과 추측을 나눠 적고 잔다",
+        "location": "room13",
+        "object": "bed"
+      }
+    ]
+  },
+  "compare_cloth5": {
+    "location": "ms14_somi_inside",
+    "people": [
+      "daram",
+      "resident_nero",
+      "resident_somi",
+      "resident_musoe"
+    ],
+    "options": [
+      {
+        "title": "허락받은 옷과 천을 대조한다",
+        "location": "ms14_somi_inside",
+        "object": "v111_coat"
+      }
+    ]
+  },
+  "envelope5": {
+    "location": "gate",
+    "people": [
+      "daram",
+      "resident_lamplighter"
+    ],
+    "options": [
+      {
+        "title": "봉투를 받겠습니다.",
+        "location": "gate",
+        "person": "resident_lamplighter"
+      }
+    ]
+  },
+  "reply_handoff5": {
+    "location": "gate",
+    "people": [
+      "daram",
+      "resident_lamplighter"
+    ],
+    "options": [
+      {
+        "title": "답장을 맡기겠습니다.",
+        "location": "gate",
+        "person": "resident_lamplighter",
+        "present": "V111:E28"
+      }
+    ]
+  },
+  "lock_check5": {
+    "location": "room13",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "문과 창문 잠금을 확인한다",
+        "location": "room13",
+        "object": "window"
+      }
+    ]
+  },
+  "sleep5": {
+    "location": "room13",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "아침 일정을 정하고 잔다",
+        "location": "room13",
+        "object": "bed"
+      }
+    ]
+  },
+  "board6": {
+    "location": "dining",
+    "people": [
+      "daram",
+      "nabi"
+    ],
+    "options": [
+      {
+        "title": "공개 보급판을 확인한다",
+        "location": "dining",
+        "object": "table"
+      }
+    ]
+  },
+  "woodshed_check6": {
+    "location": "v111_woodshed",
+    "people": [
+      "daram",
+      "kid_kkomi",
+      "resident_bori"
+    ],
+    "options": [
+      {
+        "title": "문 앞과 뒤창을 살핀다",
+        "location": "v111_woodshed",
+        "object": "v111_wood"
+      }
+    ]
+  },
+  "handoff6": {
+    "location": "school",
+    "people": [
+      "daram",
+      "resident_teacher",
+      "doto",
+      "kid_kkomi"
+    ],
+    "options": [
+      {
+        "title": "네 아이와 물자를 확인한다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ]
+  },
+  "wet_cloth6": {
+    "location": "v111_fire",
+    "people": [
+      "resident_bori"
+    ],
+    "options": [
+      {
+        "title": "물에 적신 천을 건넨다",
+        "location": "v111_fire",
+        "object": "v111_water"
+      }
+    ]
+  },
+  "clear_wood6": {
+    "location": "v111_fire",
+    "people": [
+      "resident_bori"
+    ],
+    "options": [
+      {
+        "title": "옆문 장작을 치운다",
+        "location": "v111_fire",
+        "object": "v111_wood"
+      }
+    ]
+  },
+  "fire_evidence6": {
+    "location": "v111_ruin",
+    "people": [
+      "doto"
+    ],
+    "options": [
+      {
+        "title": "등잔과 천을 따로 확인한다",
+        "location": "v111_ruin",
+        "object": "v111_lamp"
+      }
+    ]
+  },
+  "sleep6": {
+    "location": "school",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "잠자리를 정리한다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ]
+  },
+  "school_names7": {
+    "location": "school",
+    "people": [
+      "nabi",
+      "resident_teacher"
+    ],
+    "options": [
+      {
+        "title": "명부와 실제 침구를 확인한다",
+        "location": "school",
+        "object": "desks"
+      }
+    ]
+  },
+  "sleep7": {
+    "location": "school",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "잠자리를 정리한다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ]
+  },
+  "room_check8": {
+    "location": "room13",
+    "people": [
+      "doto",
+      "buri"
+    ],
+    "options": [
+      {
+        "title": "문틈과 발견 자리를 살핀다",
+        "location": "room13",
+        "object": "floor"
+      }
+    ]
+  },
+  "escort8": {
+    "location": "square",
+    "people": [
+      "resident_lamplighter",
+      "doto",
+      "resident_badook"
+    ],
+    "options": [
+      {
+        "title": "공개 길 동행을 부탁합니다.",
+        "location": "square",
+        "person": "resident_badook"
+      }
+    ]
+  },
+  "sleep8": {
+    "location": "school",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "잠자리를 정리한다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ]
+  },
+  "safe_passage9": {
+    "location": "kitchen",
+    "people": [
+      "doto",
+      "resident_ttadak"
+    ],
+    "options": [
+      {
+        "title": "쐐기·안전줄·문지기를 확인한다",
+        "location": "kitchen",
+        "object": "rear"
+      },
+      {
+        "title": "들어가기 전에 확인할 것은요?",
+        "location": "kitchen",
+        "person": "resident_ttadak"
+      }
+    ]
+  },
+  "pin_question9": {
+    "location": "dining",
+    "people": [
+      "nabi"
+    ],
+    "options": [
+      {
+        "title": "핀을 다시 채운 때를 묻겠습니다.",
+        "location": "dining",
+        "person": "nabi"
+      }
+    ]
+  },
+  "scarf_compare9": {
+    "location": "dining",
+    "people": [
+      "nabi"
+    ],
+    "options": [
+      {
+        "title": "목도리 끝과 핀을 대조한다",
+        "location": "dining",
+        "object": "mittens"
+      }
+    ]
+  },
+  "safe_prevent9": {
+    "location": "kitchen",
+    "people": [
+      "doto",
+      "resident_ttadak"
+    ],
+    "options": [
+      {
+        "title": "쐐기·안전줄·문지기를 확인한다",
+        "location": "kitchen",
+        "object": "rear"
+      }
+    ]
+  },
+  "papers_check9": {
+    "location": "room13",
+    "people": [
+      "resident_owlgp",
+      "granny"
+    ],
+    "options": [
+      {
+        "title": "반환 장수와 빈 자리를 확인한다",
+        "location": "room13",
+        "object": "books"
+      }
+    ]
+  },
+  "sleep9": {
+    "location": "school",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "잠자리를 정리한다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ]
+  },
+  "pocket10": {
+    "location": "school",
+    "people": [
+      "resident_owlgp"
+    ],
+    "options": [
+      {
+        "title": "어제는 전부라고 하셨습니다.",
+        "location": "school",
+        "person": "resident_owlgp"
+      }
+    ]
+  },
+  "sleep10": {
+    "location": "school",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "잠자리를 정리한다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ]
+  },
+  "pump_open11": {
+    "location": "forest",
+    "people": [
+      "daram",
+      "karo"
+    ],
+    "options": [
+      {
+        "title": "셋째 말뚝 아래 통을 연다",
+        "location": "forest",
+        "object": "v111_box"
+      }
+    ]
+  },
+  "root_note11": {
+    "location": "forest",
+    "people": [
+      "daram",
+      "resident_tosil"
+    ],
+    "options": [
+      {
+        "title": "눌러 둔 돌 아래 쪽지를 본다",
+        "location": "forest",
+        "object": "forest_roots"
+      }
+    ]
+  },
+  "tosil_handoff11": {
+    "location": "school",
+    "people": [
+      "daram",
+      "resident_tosil",
+      "nabi"
+    ],
+    "options": [
+      {
+        "title": "토실의 보호를 부탁합니다.",
+        "location": "school",
+        "person": "nabi"
+      }
+    ]
+  },
+  "mother_questions11": {
+    "location": "greenhouse",
+    "people": [
+      "daram",
+      "mom"
+    ],
+    "options": [
+      {
+        "title": "어떻게 지냈어?",
+        "location": "greenhouse",
+        "person": "mom"
+      },
+      {
+        "title": "왜 우리를 부르지 않았어?",
+        "location": "greenhouse",
+        "person": "mom"
+      },
+      {
+        "title": "왜 돌아오지 못했어?",
+        "location": "greenhouse",
+        "person": "mom"
+      }
+    ]
+  },
+  "heat_check11": {
+    "location": "facility",
+    "people": [
+      "daram",
+      "mom",
+      "resident_guldol",
+      "resident_lamplighter",
+      "guard",
+      "karo"
+    ],
+    "options": [
+      {
+        "title": "조각과 잔열을 확인한다",
+        "location": "facility",
+        "object": "blankets"
+      }
+    ]
+  },
+  "rescue_cart11": {
+    "location": "square",
+    "people": [
+      "mom",
+      "daram",
+      "karo",
+      "resident_nero",
+      "resident_lamplighter"
+    ],
+    "options": [
+      {
+        "title": "빈 수레와 덮개를 부탁합니다.",
+        "location": "square",
+        "person": "karo"
+      }
+    ]
+  },
+  "day_rescue_door11": {
+    "location": "forest",
+    "people": [
+      "karo",
+      "resident_nero"
+    ],
+    "options": [
+      {
+        "title": "아랫길 사람들의 문을 연다",
+        "location": "forest",
+        "object": "v111_box"
+      }
+    ]
+  },
+  "snow_door11": {
+    "location": "forest",
+    "people": [
+      "karo",
+      "resident_nero"
+    ],
+    "options": [
+      {
+        "title": "눈에 막힌 문을 연다",
+        "location": "forest",
+        "object": "v111_box"
+      }
+    ]
+  },
+  "sleep11": {
+    "location": "school",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "잠자리를 정리한다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ]
+  },
+  "morning_prep12": {
+    "location": "school",
+    "people": [
+      "mom",
+      "daram",
+      "guard",
+      "resident_teacher"
+    ],
+    "options": [
+      {
+        "title": "약장 관리를 확인합니다.",
+        "location": "clinic",
+        "person": "resident_seori"
+      },
+      {
+        "title": "온기 자리를 부탁드립니다.",
+        "location": "school",
+        "person": "resident_teacher"
+      },
+      {
+        "title": "학교 운반을 부탁한다.",
+        "location": "square",
+        "person": "karo"
+      },
+      {
+        "title": "배식 준비를 살핀다",
+        "location": "school",
+        "object": "desks"
+      },
+      {
+        "title": "학교 물자를 함께 확인하시겠습니까?",
+        "location": "store",
+        "person": "resident_madam"
+      }
+    ],
+    "people_by_location": {
+      "school": [
+        "mom",
+        "daram",
+        "guard",
+        "resident_teacher"
+      ],
+      "clinic": [
+        "resident_seori"
+      ],
+      "square": [
+        "karo"
+      ],
+      "store": [
+        "resident_madam"
+      ]
+    }
+  },
+  "pickup_box12": {
+    "location": "facility",
+    "people": [
+      "mom"
+    ],
+    "options": [
+      {
+        "title": "준비된 온기 상자를 인수한다",
+        "location": "facility",
+        "object": "blankets"
+      }
+    ]
+  },
+  "soup_fragment12": {
+    "location": "school",
+    "people": [
+      "nabi",
+      "resident_teacher"
+    ],
+    "options": [
+      {
+        "title": "작은 냄비의 남은 수프를 보존한다",
+        "location": "school",
+        "object": "stove"
+      }
+    ]
+  },
+  "bottle_match12": {
+    "location": "school",
+    "people": [
+      "nabi",
+      "resident_teacher"
+    ],
+    "options": [
+      {
+        "title": "병과 파편의 경계를 대조한다",
+        "location": "school",
+        "object": "desks"
+      }
+    ]
+  },
+  "sleep12": {
+    "location": "school",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "잠자리를 정리한다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ]
+  },
+  "blanket_mend13": {
+    "location": "school",
+    "people": [
+      "mom",
+      "daram",
+      "npc_pandol",
+      "karo"
+    ],
+    "options": [
+      {
+        "title": "회색 담요를 실제로 수선한다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ]
+  },
+  "cart_inspect13": {
+    "location": "square",
+    "people": [
+      "mom",
+      "daram",
+      "karo",
+      "guard"
+    ],
+    "options": [
+      {
+        "title": "실제 탑승자와 하차 준비를 확인한다",
+        "location": "square",
+        "object": "cart"
+      }
+    ]
+  },
+  "nabi_beds13": {
+    "location": "school",
+    "people": [
+      "nabi",
+      "karo"
+    ],
+    "options": [
+      {
+        "title": "침상과 인수를 부탁합니다.",
+        "location": "school",
+        "person": "nabi"
+      }
+    ]
+  },
+  "momo_down13": {
+    "location": "square",
+    "people": [
+      "karo",
+      "guard",
+      "resident_badook",
+      "resident_momo"
+    ],
+    "options": [
+      {
+        "title": "모모를 발판으로 부축한다",
+        "location": "square",
+        "object": "cart"
+      }
+    ]
+  },
+  "guldol_down13": {
+    "location": "square",
+    "people": [
+      "karo",
+      "guard",
+      "resident_badook",
+      "resident_guldol"
+    ],
+    "options": [
+      {
+        "title": "굴돌을 발판으로 부축한다",
+        "location": "square",
+        "object": "cart"
+      }
+    ]
+  },
+  "transport_cleanup13": {
+    "location": "square",
+    "people": [
+      "karo",
+      "guard",
+      "resident_badook"
+    ],
+    "options": [
+      {
+        "title": "앞으로의 호송을 확인한다",
+        "location": "square",
+        "person": "resident_badook"
+      },
+      {
+        "title": "명령 전체를 중지해 주십시오.",
+        "location": "square",
+        "person": "guard"
+      },
+      {
+        "title": "강제 운반을 맡지 않을 거지?",
+        "location": "square",
+        "person": "karo"
+      },
+      {
+        "title": "빈 수레 반환을 요청한다.",
+        "location": "square",
+        "person": "karo"
+      },
+      {
+        "title": "중지 명령을 직접 전달한다.",
+        "location": "square",
+        "person": "guard"
+      },
+      {
+        "title": "학교로 돌아간다",
+        "location": "school",
+        "move": "school"
+      },
+      {
+        "title": "내일 고정부 작업과 공구를 부탁합니다.",
+        "location": "workshop",
+        "person": "buri"
+      }
+    ]
+  },
+  "sleep13_input": {
+    "location": "school",
+    "people": [
+      "mom",
+      "daram",
+      "nabi"
+    ],
+    "options": [
+      {
+        "title": "오늘 밤 자리를 확인한다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ]
+  },
+  "altar_guide14": {
+    "location": "school",
+    "people": [
+      "mom",
+      "daram",
+      "resident_badook"
+    ],
+    "options": [
+      {
+        "title": "제단 접근로를 확인해 주십시오.",
+        "location": "school",
+        "person": "resident_badook"
+      }
+    ]
+  },
+  "device_detach14": {
+    "location": "altar",
+    "people": [
+      "mom",
+      "daram",
+      "karo",
+      "resident_badook"
+    ],
+    "options": [
+      {
+        "title": "기록한 고정부를 안전하게 분리한다",
+        "location": "altar",
+        "object": "valve"
+      }
+    ]
+  },
+  "device_lock14": {
+    "location": "school",
+    "people": [
+      "mom",
+      "daram",
+      "karo",
+      "nabi",
+      "guard"
+    ],
+    "options": [
+      {
+        "title": "부품·기록판·열쇠 인수를 확인한다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ]
+  },
+  "supply_inventory14": {
+    "location": "school",
+    "people": [
+      "mom",
+      "daram",
+      "nabi",
+      "guard"
+    ],
+    "options": [
+      {
+        "title": "실물·사용처·남은 양을 함께 확인한다",
+        "location": "school",
+        "object": "stove"
+      }
+    ]
+  },
+  "partial_handoff14": {
+    "location": "square",
+    "people": [
+      "karo",
+      "guard",
+      "resident_badook"
+    ],
+    "options": [
+      {
+        "title": "남은 인계에 직접 참여한다",
+        "location": "square",
+        "object": "cart"
+      }
+    ]
+  },
+  "free_sleep7": {
+    "location": "school",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "잠자리를 정리한다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ]
+  },
+  "detained_bed7": {
+    "location": "room13",
+    "people": [],
+    "options": [
+      {
+        "title": "다음 날 면회를 준비한다",
+        "location": "room13",
+        "object": "bed"
+      }
+    ]
+  },
+  "tool_faces8": {
+    "location": "clinic",
+    "people": [
+      "resident_seori",
+      "buri"
+    ],
+    "options": [
+      {
+        "title": "손잡이·파단면·고리를 확인한다",
+        "location": "clinic",
+        "object": "notes"
+      }
+    ]
+  },
+  "wire_curve8": {
+    "location": "clinic",
+    "people": [
+      "resident_seori",
+      "buri"
+    ],
+    "options": [
+      {
+        "title": "구리 조각과 핀 끝을 대조한다",
+        "location": "clinic",
+        "object": "notes"
+      }
+    ]
+  },
+  "family_place_check11": {
+    "location": "school",
+    "people": [
+      "mom",
+      "daram",
+      "nabi",
+      "resident_teacher"
+    ],
+    "options": [
+      {
+        "title": "가족 세 사람이 쓸 자리를 확인한다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ]
+  },
+  "family_space_after_supply11": {
+    "location": "school",
+    "people": [
+      "mom",
+      "daram",
+      "nabi",
+      "resident_teacher"
+    ],
+    "options": [
+      {
+        "title": "가족 세 사람의 실제 자리를 확인한다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ]
+  },
+  "night_rescue_prepare11": {
+    "location": "school",
+    "people": [
+      "mom",
+      "daram",
+      "resident_teacher",
+      "karo",
+      "resident_nero"
+    ],
+    "options": [
+      {
+        "title": "운반 인력·길등·덮개를 확인한다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ]
+  },
+  "partial_receipt14": {
+    "location": "school",
+    "people": [
+      "mom",
+      "daram",
+      "nabi",
+      "karo",
+      "guard"
+    ],
+    "options": [
+      {
+        "title": "새로 난 침상의 인수를 확인한다",
+        "location": "school",
+        "person": "nabi"
+      }
+    ]
+  },
+  "acorn_recover6": {
+    "location": "v111_woodshed",
+    "people": [
+      "daram",
+      "kid_kkomi",
+      "doto"
+    ],
+    "options": [
+      {
+        "title": "깡통의 도토리도 챙겨 줄래?",
+        "location": "v111_woodshed",
+        "person": "kid_kkomi"
+      }
+    ]
+  },
+  "bori_witness7": {
+    "location": "laundry",
+    "people": [
+      "resident_nubi",
+      "resident_bori"
+    ],
+    "options": [
+      {
+        "title": "창고 문 앞에서 무엇을 보셨습니까?",
+        "location": "laundry",
+        "person": "resident_bori"
+      }
+    ]
+  },
+  "sleep6_input": {
+    "location": "school",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "잠자리를 정리한다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ],
+    "daram_if_free": true
+  },
+  "free_sleep7_input": {
+    "location": "school",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "잠자리를 정리한다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ],
+    "daram_if_free": true
+  },
+  "sleep8_input": {
+    "location": "school",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "잠자리를 정리한다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ],
+    "daram_if_free": true
+  },
+  "sleep9_input": {
+    "location": "school",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "잠자리를 정리한다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ],
+    "daram_if_free": true
+  },
+  "private_handoff10": {
+    "location": "school",
+    "people": [
+      "daram",
+      "resident_owlgp",
+      "granny"
+    ],
+    "options": [
+      {
+        "title": "아내가 직접 편지를 건넸습니까?",
+        "location": "school",
+        "person": "resident_owlgp"
+      },
+      {
+        "title": "공개 수치만 대조하고 인계해 주십시오.",
+        "location": "school",
+        "person": "resident_owlgp"
+      }
+    ]
+  },
+  "sleep10_input": {
+    "location": "school",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "잠자리를 정리한다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ],
+    "daram_if_free": true
+  },
+  "sleep11_input": {
+    "location": "school",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "잠자리를 정리한다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ],
+    "daram_if_free": true
+  },
+  "sleep12_input": {
+    "location": "school",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "잠자리를 정리한다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ],
+    "daram_if_free": true
+  },
+  "device_pause14": {
+    "location": "altar",
+    "people": [
+      "mom",
+      "daram",
+      "karo",
+      "resident_badook"
+    ],
+    "options": [
+      {
+        "title": "장치를 살피며 기록을 다시 확인한다",
+        "location": "altar",
+        "object": "valve"
+      }
+    ]
+  },
+  "teacher_down13": {
+    "location": "square",
+    "people": [
+      "karo",
+      "guard",
+      "resident_badook",
+      "resident_teacher",
+      "neoul"
+    ],
+    "options": [
+      {
+        "title": "교사를 분리된 감독 자리로 옮긴다",
+        "location": "square",
+        "object": "cart"
+      }
+    ]
+  },
+  "teacher_receipt13": {
+    "location": "v111_supervised",
+    "people": [
+      "karo",
+      "resident_teacher",
+      "neoul"
+    ],
+    "options": [
+      {
+        "title": "분리된 감독 자리의 인수를 확인한다",
+        "location": "v111_supervised",
+        "person": "neoul"
+      }
+    ]
+  },
+  "silluk_supervision13": {
+    "location": "square",
+    "people": [
+      "karo",
+      "guard",
+      "resident_badook",
+      "resident_siluk"
+    ],
+    "options": [
+      {
+        "title": "하차 전 감독 교대를 확인합니다.",
+        "location": "square",
+        "person": "guard"
+      }
+    ]
+  },
+  "silluk_receipt13": {
+    "location": "v111_labor",
+    "people": [
+      "karo",
+      "guard",
+      "resident_siluk"
+    ],
+    "options": [
+      {
+        "title": "원래 감독 장소의 인수를 확인한다",
+        "location": "v111_labor",
+        "person": "guard"
+      }
+    ]
+  },
+  "sleep13_gate_input": {
+    "location": "gate",
+    "people": [
+      "mom",
+      "daram",
+      "guard"
+    ],
+    "options": [
+      {
+        "title": "가족 세 사람의 오늘 밤 자리를 확인한다",
+        "location": "gate",
+        "person": "guard"
+      }
+    ]
+  },
+  "nabi_wait11": {
+    "location": "school",
+    "people": [
+      "daram",
+      "resident_tosil"
+    ],
+    "options": [
+      {
+        "title": "나비가 올 때까지 토실과 기다린다",
+        "location": "school",
+        "object": "desks"
+      }
+    ]
+  },
+  "guard_relief_check14": {
+    "location": "v111_labor",
+    "people": [
+      "guard",
+      "resident_siluk",
+      "v111_patrol"
+    ],
+    "options": [
+      {
+        "title": "학교 인수 동안의 감독 교대를 확인합니다.",
+        "location": "v111_labor",
+        "person": "guard"
+      }
+    ]
+  },
+  "mayor_site_request14": {
+    "location": "gate",
+    "people": [
+      "mom",
+      "daram",
+      "resident_ppul",
+      "resident_badook",
+      "karo"
+    ],
+    "options": [
+      {
+        "title": "감독 아래 현장 확인에 동행해 주십시오.",
+        "location": "gate",
+        "person": "resident_ppul"
+      },
+      {
+        "title": "이 자리에서만 확인하겠습니다.",
+        "location": "gate",
+        "person": "resident_ppul"
+      }
+    ]
+  },
+  "teacher_relief_check13": {
+    "location": "school",
+    "people": [
+      "mom",
+      "daram",
+      "guard",
+      "resident_teacher",
+      "v111_patrol"
+    ],
+    "options": [
+      {
+        "title": "초소로 가기 전 교사 감독 교대를 확인한다",
+        "location": "school",
+        "person": "guard"
+      }
+    ]
+  },
+  "passage_after9": {
+    "location": "kitchen",
+    "people": [
+      "doto",
+      "resident_ttadak"
+    ],
+    "options": [
+      {
+        "title": "작업장으로 간다",
+        "location": "workshop",
+        "move": "workshop"
+      },
+      {
+        "title": "실측한 길을 다시 확인합니다.",
+        "location": "kitchen",
+        "person": "resident_ttadak"
+      }
+    ]
+  },
+  "late_supply_handoff11": {
+    "location": "school",
+    "people": [
+      "mom",
+      "daram",
+      "resident_teacher",
+      "karo"
+    ],
+    "options": [
+      {
+        "title": "온기 상자 인수를 확인한다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ]
+  },
+  "nubi_children_receipt7": {
+    "location": "school",
+    "people": [
+      "nabi",
+      "resident_teacher",
+      "kid_nubi1",
+      "kid_nubi2",
+      "kid_nubi3"
+    ],
+    "options": [
+      {
+        "title": "누비 씨의 아이 셋 인수를 확인한다",
+        "location": "school",
+        "person": "resident_teacher"
+      }
+    ]
+  },
+  "carrier_receipt12": {
+    "location": "school",
+    "people": [
+      "karo",
+      "mom",
+      "daram",
+      "resident_teacher"
+    ],
+    "options": [
+      {
+        "title": "도착한 온기 상자의 인수를 확인한다",
+        "location": "school",
+        "person": "resident_teacher"
+      }
+    ]
   }
 }

@@ -494,7 +494,9 @@ init 59 python:
                 # Extra depth variants keep all actual residents visible.
                 if not layout and len(people)>len(slots) and location!="inn":
                     candidates += [make_candidate((a,b-35,int(c*.86),zone)) for a,b,c,zone in slots]
-                elif layout.get("ignore_legacy_positions",False) and len(people)>len(slots):
+                elif layout and len(people)>len(slots) and (layout.get("ignore_legacy_positions",False) or not candidates):
+                    # Retain authored positions; only add depth when a busy layout
+                    # would otherwise run out of candidates (V1.1.1 D05 inn).
                     # New panoramas retain all scheduled residents on busy days.
                     # Extra depth rows use the same reviewed floor/counter zones.
                     for depth in range(1,(len(people)+len(slots)-1)//len(slots)):

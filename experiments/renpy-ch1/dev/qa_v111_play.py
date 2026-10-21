@@ -211,4 +211,4 @@ async def main():
   except Exception:
    await pg.screenshot(path=str(OUT/(route+'-failure.png')));(OUT/(route+'-events.json')).write_text(json.dumps(events,ensure_ascii=False,indent=2));raise
   finally:await b.close()
-asyncio.run(main())
+if __name__=="__main__":asyncio.run(main())

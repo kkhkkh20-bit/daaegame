@@ -12,7 +12,8 @@ init 61 python:
         return a,b,c-a,d-b
 
     def r13_cart_layer(region,key,highlight=False,outline=False):
-        path="assets/room13-map-%s-%s%s.webp" % (region,key,"-outline" if outline else "")
+        art_key=R13_CARTOGRAPHY["regions"][region]["nodes"][key].get("art_key",key)
+        path="assets/room13-map-%s-%s%s.webp" % (region,art_key,"-outline" if outline else "")
         art=Transform(path,size=r13_cart_rect(region,key)[2:],nearest=True)
         return Transform(art,matrixcolor=BrightnessMatrix(.09)) if highlight else art
 

@@ -20,7 +20,7 @@ init 60 python:
             return r
 
 screen r13_goal_fold(goal,ready=False):
-    $ notes=r13_first_mystery_notes()
+    $ notes=[] if r13_v111_active() else r13_first_mystery_notes()
     $ thought = "편지는 이곳에서 왔다. 그런데 아내는 어디에 있을까." if goal.startswith(("편지를 보낸 여관","엄마가 기다린다던 여관")) else goal
     $ panel_height=280
     $ signature=tuple([thought]+[n["title"] for n in notes])

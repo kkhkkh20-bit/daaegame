@@ -1,0 +1,2815 @@
+# Reviewed D11–D14 source records and native callbacks.
+
+label r13_v111_day11:
+    $ r13_v111_scene('MS14_D11_S00')
+    $ r13_edit(period=0)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('school','day11',['daram'])
+    $ r13_v111_arrive(['daram', 'karo'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['daram', 'karo'])
+    if r13_v111_actor_ready('karo'):
+        call r13_lines([r13_v111_line('MS14_D11_S00_L0002')],'v111:MS14_D11_S00_L0002')
+    call r13_lines([r13_v111_line('MS14_D11_S00_L0003')],'v111:MS14_D11_S00_L0003')
+    if r13_v111_actor_ready('karo'):
+        call r13_lines([r13_v111_line('MS14_D11_S00_L0004')],'v111:MS14_D11_S00_L0004')
+    call r13_lines([r13_v111_line('MS14_D11_S00_L0005')],'v111:MS14_D11_S00_L0005')
+    call r13_v111_travel('forest','pump11')
+    $ r13_v111_arrive(['daram', 'karo'])
+    call r13_lines([r13_v111_line('MS14_D11_S00_L0007')],'v111:MS14_D11_S00_L0007')
+    call r13_lines([r13_v111_line('MS14_D11_S00_L0008')],'v111:MS14_D11_S00_L0008')
+    jump r13_v111_pump_open11
+
+label r13_v111_pump_open11:
+    call r13_v111_wait('pump_open11')
+    if _return==0:
+        jump r13_v111_pump_reply11
+    jump r13_v111_pump_open11
+
+label r13_v111_pump_reply11:
+    call r13_lines([r13_v111_line('MS14_D11_S00_L0010')],'v111:MS14_D11_S00_L0010')
+    call r13_lines([r13_v111_line('MS14_D11_S00_L0011')],'v111:MS14_D11_S00_L0011')
+    call r13_lines([r13_v111_line('MS14_D11_S00_L0012')],'v111:MS14_D11_S00_L0012')
+    call r13_lines([r13_v111_line('MS14_D11_S00_L0013')],'v111:MS14_D11_S00_L0013')
+    $ r13_v111_set('root_address_known',True)
+    jump r13_v111_root11
+
+label r13_v111_root11:
+    $ r13_v111_scene('MS14_D11_S01')
+    $ r13_edit(period=0)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('forest','root11',['daram'])
+    $ r13_v111_arrive(['daram', 'resident_tosil'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['daram', 'resident_tosil'])
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0002')],'v111:MS14_D11_S01_L0002')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0003')],'v111:MS14_D11_S01_L0003')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0004')],'v111:MS14_D11_S01_L0004')
+    jump r13_v111_root_note11
+
+label r13_v111_root_note11:
+    call r13_v111_wait('root_note11')
+    if _return==0:
+        jump r13_v111_root_read11
+    jump r13_v111_root_note11
+
+label r13_v111_root_read11:
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0006')],'v111:MS14_D11_S01_L0006')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0008')],'v111:MS14_D11_S01_L0008')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0009')],'v111:MS14_D11_S01_L0009')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0010')],'v111:MS14_D11_S01_L0010')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0011')],'v111:MS14_D11_S01_L0011')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0013')],'v111:MS14_D11_S01_L0013')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0014')],'v111:MS14_D11_S01_L0014')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0015')],'v111:MS14_D11_S01_L0015')
+    $ r13_v111_set('greenhouse_address_known',True)
+    if r13_v111_value('grandmother_custody')=='detained':
+        call r13_v111_tosil_detained11
+    else:
+        call r13_v111_tosil_free11
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0025')],'v111:MS14_D11_S01_L0025')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0026')],'v111:MS14_D11_S01_L0026')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0027')],'v111:MS14_D11_S01_L0027')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0028')],'v111:MS14_D11_S01_L0028')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0029')],'v111:MS14_D11_S01_L0029')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0030')],'v111:MS14_D11_S01_L0030')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0032')],'v111:MS14_D11_S01_L0032')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0033')],'v111:MS14_D11_S01_L0033')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0034')],'v111:MS14_D11_S01_L0034')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0035')],'v111:MS14_D11_S01_L0035')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0036')],'v111:MS14_D11_S01_L0036')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0037')],'v111:MS14_D11_S01_L0037')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0038')],'v111:MS14_D11_S01_L0038')
+    call r13_v111_travel('school','tosil_school11')
+    $ r13_v111_arrive(['daram', 'resident_tosil'])
+    if r13_v111_value("location:nabi") not in (None,"school"):
+        jump r13_v111_nabi_waiting11
+    jump r13_v111_nabi_arrival11
+
+label r13_v111_tosil_detained11:
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0021')],'v111:MS14_D11_S01_L0021')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0022')],'v111:MS14_D11_S01_L0022')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0023')],'v111:MS14_D11_S01_L0023')
+    return
+
+label r13_v111_tosil_free11:
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0017')],'v111:MS14_D11_S01_L0017')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0018')],'v111:MS14_D11_S01_L0018')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0019')],'v111:MS14_D11_S01_L0019')
+    return
+
+label r13_v111_nabi_waiting11:
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0048')],'v111:MS14_D11_S01_L0048')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0049')],'v111:MS14_D11_S01_L0049')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0050')],'v111:MS14_D11_S01_L0050')
+    jump r13_v111_nabi_wait11
+
+label r13_v111_nabi_wait11:
+    call r13_v111_wait('nabi_wait11')
+    if _return==0:
+        jump r13_v111_nabi_arrival11
+    jump r13_v111_nabi_wait11
+
+label r13_v111_nabi_arrival11:
+    $ r13_v111_arrive(['daram', 'resident_tosil', 'nabi'])
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0041')],'v111:MS14_D11_S01_L0041')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0042')],'v111:MS14_D11_S01_L0042')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0043')],'v111:MS14_D11_S01_L0043')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0044')],'v111:MS14_D11_S01_L0044')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0045')],'v111:MS14_D11_S01_L0045')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0046')],'v111:MS14_D11_S01_L0046')
+    jump r13_v111_tosil_handoff11
+
+label r13_v111_tosil_handoff11:
+    call r13_v111_wait('tosil_handoff11')
+    if _return==0:
+        jump r13_v111_tosil_safe11
+    jump r13_v111_tosil_handoff11
+
+label r13_v111_tosil_safe11:
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0051')],'v111:MS14_D11_S01_L0051')
+    call r13_lines([r13_v111_line('MS14_D11_S01_L0052')],'v111:MS14_D11_S01_L0052')
+    $ r13_v111_commit('MS14_D11_S01_L0052')
+    jump r13_v111_reunion11
+
+label r13_v111_reunion11:
+    $ r13_v111_scene('MS14_D11_S02')
+    $ r13_edit(period=0)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('greenhouse','reunion11',['daram', 'mom'])
+    $ r13_v111_arrive(['daram', 'mom'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['daram', 'mom'])
+    call r13_lines([r13_v111_line('MS14_D11_S02_L0002')],'v111:MS14_D11_S02_L0002')
+    call r13_lines([r13_v111_line('MS14_D11_S02_L0004')],'v111:MS14_D11_S02_L0004')
+    call r13_lines([r13_v111_line('MS14_D11_S02_L0005')],'v111:MS14_D11_S02_L0005')
+    call r13_lines([r13_v111_line('MS14_D11_S02_L0006')],'v111:MS14_D11_S02_L0006')
+    call r13_lines([r13_v111_line('MS14_D11_S02_L0007')],'v111:MS14_D11_S02_L0007')
+    call r13_lines([r13_v111_line('MS14_D11_S02_L0009')],'v111:MS14_D11_S02_L0009')
+    call r13_lines([r13_v111_line('MS14_D11_S02_L0010')],'v111:MS14_D11_S02_L0010')
+    call r13_lines([r13_v111_line('MS14_D11_S02_L0011')],'v111:MS14_D11_S02_L0011')
+    call r13_lines([r13_v111_line('MS14_D11_S02_L0013')],'v111:MS14_D11_S02_L0013')
+    call r13_lines([r13_v111_line('MS14_D11_S02_L0014')],'v111:MS14_D11_S02_L0014')
+    call r13_lines([r13_v111_line('MS14_D11_S02_L0015')],'v111:MS14_D11_S02_L0015')
+    call r13_lines([r13_v111_line('MS14_D11_S02_L0016')],'v111:MS14_D11_S02_L0016')
+    $ r13_v111_set('family_reunited',True)
+    jump r13_v111_dry11
+
+label r13_v111_dry11:
+    $ r13_v111_scene('MS14_D11_S02A')
+    $ r13_edit(period=0)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('greenhouse','dry11',['daram', 'mom'])
+    $ r13_v111_arrive(['daram', 'mom'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['daram', 'mom'])
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0002')],'v111:MS14_D11_S02A_L0002')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0003')],'v111:MS14_D11_S02A_L0003')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0005')],'v111:MS14_D11_S02A_L0005')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0006')],'v111:MS14_D11_S02A_L0006')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0008')],'v111:MS14_D11_S02A_L0008')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0009')],'v111:MS14_D11_S02A_L0009')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0010')],'v111:MS14_D11_S02A_L0010')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0011')],'v111:MS14_D11_S02A_L0011')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0013')],'v111:MS14_D11_S02A_L0013')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0014')],'v111:MS14_D11_S02A_L0014')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0016')],'v111:MS14_D11_S02A_L0016')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0017')],'v111:MS14_D11_S02A_L0017')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0018')],'v111:MS14_D11_S02A_L0018')
+    if r13_v111_value('carried_dry_blankets')==0:
+        jump r13_v111_coat_use11
+    menu:
+        '두 장을 꺼내 덮는다' if r13_v111_value('carried_dry_blankets')==2:
+            jump r13_v111_blanket_use11
+        '한 장을 함께 덮는다' if r13_v111_value('carried_dry_blankets')==1:
+            jump r13_v111_blanket_one11
+        '짐 안에 둔다' if r13_v111_value('carried_dry_blankets')>0:
+            jump r13_v111_blanket_keep11
+        '외투 안쪽을 함께 덮는다' if r13_v111_value('carried_dry_blankets')==0:
+            jump r13_v111_coat_use11
+
+label r13_v111_blanket_use11:
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0022')],'v111:MS14_D11_S02A_L0022')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0023')],'v111:MS14_D11_S02A_L0023')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0024')],'v111:MS14_D11_S02A_L0024')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0025')],'v111:MS14_D11_S02A_L0025')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0027')],'v111:MS14_D11_S02A_L0027')
+    jump r13_v111_dry_done11
+
+label r13_v111_blanket_one11:
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0036')],'v111:MS14_D11_S02A_L0036')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0037')],'v111:MS14_D11_S02A_L0037')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0038')],'v111:MS14_D11_S02A_L0038')
+    jump r13_v111_dry_done11
+
+label r13_v111_blanket_keep11:
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0029')],'v111:MS14_D11_S02A_L0029')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0030')],'v111:MS14_D11_S02A_L0030')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0031')],'v111:MS14_D11_S02A_L0031')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0033')],'v111:MS14_D11_S02A_L0033')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0034')],'v111:MS14_D11_S02A_L0034')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0035')],'v111:MS14_D11_S02A_L0035')
+    jump r13_v111_dry_done11
+
+label r13_v111_coat_use11:
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0029')],'v111:MS14_D11_S02A_L0029')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0030')],'v111:MS14_D11_S02A_L0030')
+    call r13_lines([r13_v111_line('MS14_D11_S02A_L0031')],'v111:MS14_D11_S02A_L0031')
+    jump r13_v111_dry_done11
+
+label r13_v111_dry_done11:
+    jump r13_v111_button11
+
+label r13_v111_button11:
+    $ r13_v111_scene('MS14_D11_S02B')
+    $ r13_edit(period=0)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('greenhouse','button11',['daram', 'mom'])
+    $ r13_v111_arrive(['daram', 'mom'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['daram', 'mom'])
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0002')],'v111:MS14_D11_S02B_L0002')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0003')],'v111:MS14_D11_S02B_L0003')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0004')],'v111:MS14_D11_S02B_L0004')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0005')],'v111:MS14_D11_S02B_L0005')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0007')],'v111:MS14_D11_S02B_L0007')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0008')],'v111:MS14_D11_S02B_L0008')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0010')],'v111:MS14_D11_S02B_L0010')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0011')],'v111:MS14_D11_S02B_L0011')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0012')],'v111:MS14_D11_S02B_L0012')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0014')],'v111:MS14_D11_S02B_L0014')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0015')],'v111:MS14_D11_S02B_L0015')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0016')],'v111:MS14_D11_S02B_L0016')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0018')],'v111:MS14_D11_S02B_L0018')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0019')],'v111:MS14_D11_S02B_L0019')
+    jump r13_v111_mother_questions11
+
+label r13_v111_mother_questions11:
+    call r13_v111_wait('mother_questions11')
+    if _return==0:
+        jump r13_v111_mother_life11
+    if _return==1:
+        jump r13_v111_mother_invitation11
+    if _return==2:
+        jump r13_v111_mother_return11
+    jump r13_v111_mother_questions11
+
+label r13_v111_mother_life11:
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0022')],'v111:MS14_D11_S02B_L0022')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0023')],'v111:MS14_D11_S02B_L0023')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0024')],'v111:MS14_D11_S02B_L0024')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0025')],'v111:MS14_D11_S02B_L0025')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0026')],'v111:MS14_D11_S02B_L0026')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0027')],'v111:MS14_D11_S02B_L0027')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0028')],'v111:MS14_D11_S02B_L0028')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0029')],'v111:MS14_D11_S02B_L0029')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0030')],'v111:MS14_D11_S02B_L0030')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0031')],'v111:MS14_D11_S02B_L0031')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0032')],'v111:MS14_D11_S02B_L0032')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0033')],'v111:MS14_D11_S02B_L0033')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0034')],'v111:MS14_D11_S02B_L0034')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0035')],'v111:MS14_D11_S02B_L0035')
+    $ r13_v111_set('mother_q_life',True)
+    jump r13_v111_mother_ready11
+
+label r13_v111_mother_invitation11:
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0037')],'v111:MS14_D11_S02B_L0037')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0038')],'v111:MS14_D11_S02B_L0038')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0039')],'v111:MS14_D11_S02B_L0039')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0040')],'v111:MS14_D11_S02B_L0040')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0041')],'v111:MS14_D11_S02B_L0041')
+    $ r13_v111_set('mother_q_invitation',True)
+    jump r13_v111_mother_ready11
+
+label r13_v111_mother_return11:
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0043')],'v111:MS14_D11_S02B_L0043')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0044')],'v111:MS14_D11_S02B_L0044')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0045')],'v111:MS14_D11_S02B_L0045')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0046')],'v111:MS14_D11_S02B_L0046')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0047')],'v111:MS14_D11_S02B_L0047')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0048')],'v111:MS14_D11_S02B_L0048')
+    $ r13_v111_set('mother_q_return',True)
+    jump r13_v111_mother_ready11
+
+label r13_v111_mother_ready11:
+    if all(r13_v111_value(k) for k in ['mother_q_life', 'mother_q_invitation', 'mother_q_return']):
+        jump r13_v111_mother_last11
+    jump r13_v111_mother_questions11
+
+label r13_v111_mother_last11:
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0050')],'v111:MS14_D11_S02B_L0050')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0051')],'v111:MS14_D11_S02B_L0051')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0052')],'v111:MS14_D11_S02B_L0052')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0053')],'v111:MS14_D11_S02B_L0053')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0054')],'v111:MS14_D11_S02B_L0054')
+    if r13_v111_value('forgery_confirmed'):
+        call r13_v111_forgery_question11
+    if r13_v111_value('OWL_ALIVE') and r13_v111_value('owl_invitation_testimony'):
+        call r13_v111_owl_question11
+    jump r13_v111_facility11
+
+label r13_v111_forgery_question11:
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0055')],'v111:MS14_D11_S02B_L0055')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0056')],'v111:MS14_D11_S02B_L0056')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0057')],'v111:MS14_D11_S02B_L0057')
+    return
+
+label r13_v111_owl_question11:
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0058')],'v111:MS14_D11_S02B_L0058')
+    call r13_lines([r13_v111_line('MS14_D11_S02B_L0059')],'v111:MS14_D11_S02B_L0059')
+    return
+
+label r13_v111_facility11:
+    $ r13_v111_scene('MS14_D11_S03')
+    $ r13_edit(period=1)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('facility','facility11',['daram', 'mom'])
+    $ r13_v111_arrive(['daram', 'mom', 'resident_guldol', 'resident_lamplighter', 'guard', 'karo'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['daram', 'mom', 'resident_guldol', 'resident_lamplighter', 'guard', 'karo'])
+    if r13_v111_actor_ready("resident_guldol"):
+        call r13_v111_guldol_heat11
+    else:
+        call r13_v111_mother_heat11
+    jump r13_v111_heat_check11
+
+label r13_v111_guldol_heat11:
+    if r13_v111_actor_ready('resident_guldol'):
+        call r13_lines([r13_v111_line('MS14_D11_S03_L0002')],'v111:MS14_D11_S03_L0002')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0003')],'v111:MS14_D11_S03_L0003')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0004')],'v111:MS14_D11_S03_L0004')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0005')],'v111:MS14_D11_S03_L0005')
+    if r13_v111_actor_ready('resident_guldol'):
+        call r13_lines([r13_v111_line('MS14_D11_S03_L0006')],'v111:MS14_D11_S03_L0006')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0008')],'v111:MS14_D11_S03_L0008')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0009')],'v111:MS14_D11_S03_L0009')
+    return
+
+label r13_v111_mother_heat11:
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0043')],'v111:MS14_D11_S03_L0043')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0044')],'v111:MS14_D11_S03_L0044')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0045')],'v111:MS14_D11_S03_L0045')
+    return
+
+label r13_v111_heat_check11:
+    call r13_v111_wait('heat_check11')
+    if _return==0:
+        jump r13_v111_heat_seen11
+    jump r13_v111_heat_check11
+
+label r13_v111_heat_seen11:
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0011')],'v111:MS14_D11_S03_L0011')
+    if r13_v111_actor_ready('resident_lamplighter'):
+        call r13_lines([r13_v111_line('MS14_D11_S03_L0012')],'v111:MS14_D11_S03_L0012')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0013')],'v111:MS14_D11_S03_L0013')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0014')],'v111:MS14_D11_S03_L0014')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0015')],'v111:MS14_D11_S03_L0015')
+    if r13_v111_actor_ready('resident_guldol'):
+        call r13_lines([r13_v111_line('MS14_D11_S03_L0016')],'v111:MS14_D11_S03_L0016')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0018')],'v111:MS14_D11_S03_L0018')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0019')],'v111:MS14_D11_S03_L0019')
+    $ r13_v111_set('heat_inventory_observed',True)
+    if r13_v111_value('carried_dry_blankets')>0:
+        call r13_v111_family_blankets11
+    else:
+        call r13_v111_no_blankets11
+    menu:
+        '가족 자리부터 본다':
+            jump r13_v111_family_place11
+        '아랫길 대피 준비를 확인한다':
+            jump r13_v111_rescue_prepare11
+        '준비된 물자를 학교로 옮긴다':
+            jump r13_v111_supply_school11
+
+label r13_v111_family_blankets11:
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0021')],'v111:MS14_D11_S03_L0021')
+    return
+
+label r13_v111_no_blankets11:
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0023')],'v111:MS14_D11_S03_L0023')
+    return
+
+label r13_v111_family_place11:
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0048')],'v111:MS14_D11_S03_L0048')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0049')],'v111:MS14_D11_S03_L0049')
+    call r13_v111_travel('school','family_place11')
+    $ r13_v111_arrive(['mom', 'daram', 'nabi', 'resident_teacher'])
+    jump r13_v111_family_place_check11
+
+label r13_v111_family_place_check11:
+    call r13_v111_wait('family_place_check11')
+    if _return==0:
+        jump r13_v111_family_place_done11
+    jump r13_v111_family_place_check11
+
+label r13_v111_family_place_done11:
+    $ r13_v111_set('family_school_place',True)
+    jump r13_v111_school_visit11
+
+label r13_v111_rescue_prepare11:
+    call r13_v111_travel('square','rescue_prepare11')
+    $ r13_v111_arrive(['mom', 'daram', 'karo', 'resident_nero', 'resident_lamplighter'])
+    jump r13_v111_rescue_cart11
+
+label r13_v111_rescue_cart11:
+    call r13_v111_wait('rescue_cart11')
+    if _return==0:
+        jump r13_v111_rescue_ready11
+    jump r13_v111_rescue_cart11
+
+label r13_v111_rescue_ready11:
+    $ r13_v111_set('rescue_cart_ready',True)
+    $ r13_v111_set('rescue_cover_ready',True)
+    $ r13_v111_set('rescue_driver_ready',True)
+    $ r13_v111_set('rescue_lights_ready',True)
+    jump r13_v111_day_rescue11
+
+label r13_v111_day_rescue11:
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0050')],'v111:MS14_D11_S03_L0050')
+    if r13_v111_actor_ready('resident_nero'):
+        call r13_lines([r13_v111_line('MS14_D11_S03_L0051')],'v111:MS14_D11_S03_L0051')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0052')],'v111:MS14_D11_S03_L0052')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0053')],'v111:MS14_D11_S03_L0053')
+    call r13_v111_travel('forest','day_rescue11',[])
+    $ r13_v111_arrive(['karo', 'resident_nero'])
+    jump r13_v111_day_rescue_door11
+
+label r13_v111_day_rescue_door11:
+    call r13_v111_wait('day_rescue_door11')
+    if _return==0:
+        jump r13_v111_day_rescue_school11
+    jump r13_v111_day_rescue_door11
+
+label r13_v111_day_rescue_school11:
+    call r13_v111_travel('school','day_rescue_school11')
+    $ r13_v111_arrive(['mom', 'daram', 'nabi', 'resident_teacher', 'resident_nero', 'karo'])
+    $ r13_v111_set('lower_road_handover',3)
+    jump r13_v111_school_visit11
+
+label r13_v111_supply_school11:
+    call r13_v111_travel('school','supply_school11')
+    $ r13_v111_arrive(['mom', 'daram', 'karo', 'resident_teacher', 'nabi'])
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0025')],'v111:MS14_D11_S03_L0025')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0026')],'v111:MS14_D11_S03_L0026')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0027')],'v111:MS14_D11_S03_L0027')
+    $ r13_v111_set('school_supply_handed',True)
+    $ r13_v111_set('school_heat_connected',False)
+    $ r13_v111_apply('actual_school_supply11',[dict(op="acquire",key='E14_SUPPLY',variant="observed")])
+    jump r13_v111_school_visit11
+
+label r13_v111_school_visit11:
+    $ r13_v111_arrive(['mom', 'daram', 'nabi', 'resident_teacher', 'resident_tosil'])
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0029')],'v111:MS14_D11_S03_L0029')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0030')],'v111:MS14_D11_S03_L0030')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0031')],'v111:MS14_D11_S03_L0031')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0032')],'v111:MS14_D11_S03_L0032')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0033')],'v111:MS14_D11_S03_L0033')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0035')],'v111:MS14_D11_S03_L0035')
+    if not r13_v111_value("family_school_place"):
+        jump r13_v111_family_space_after_supply11
+    jump r13_v111_family_space_ready11
+
+label r13_v111_family_space_after_supply11:
+    call r13_v111_wait('family_space_after_supply11')
+    if _return==0:
+        jump r13_v111_family_space_checked11
+    jump r13_v111_family_space_after_supply11
+
+label r13_v111_family_space_checked11:
+    $ r13_v111_set('family_school_place',True)
+    jump r13_v111_family_space_ready11
+
+label r13_v111_family_space_ready11:
+    if r13_v111_value('carried_dry_blankets')>0 and not r13_v111_value('tosil_blanket_given'):
+        jump r13_v111_blanket_choice11
+    jump r13_v111_night11
+
+label r13_v111_blanket_choice11:
+    menu:
+        '가족 짐에 보관한다':
+            jump r13_v111_blanket_store11
+        '토실에게 한 장을 건넨다':
+            jump r13_v111_tosil_blanket11
+
+label r13_v111_blanket_store11:
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0054')],'v111:MS14_D11_S03_L0054')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0055')],'v111:MS14_D11_S03_L0055')
+    jump r13_v111_night11
+
+label r13_v111_tosil_blanket11:
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0038')],'v111:MS14_D11_S03_L0038')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0039')],'v111:MS14_D11_S03_L0039')
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0040')],'v111:MS14_D11_S03_L0040')
+    if r13_v111_value("carried_dry_blankets")>1:
+        call r13_v111_tosil_blanket_remaining11
+    else:
+        call r13_v111_tosil_blanket_last11
+    $ r13_v111_apply("tosil_actual_blanket",[dict(op="set",field="carried_dry_blankets",value=r13_v111_value("carried_dry_blankets")-1),dict(op="set",field="tosil_bedding_received",value=1),dict(op="set",field="tosil_blanket_given",value=True)])
+    jump r13_v111_night11
+
+label r13_v111_tosil_blanket_remaining11:
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0041')],'v111:MS14_D11_S03_L0041')
+    return
+
+label r13_v111_tosil_blanket_last11:
+    call r13_lines([r13_v111_line('MS14_D11_S03_L0057')],'v111:MS14_D11_S03_L0057')
+    return
+
+label r13_v111_night11:
+    $ r13_v111_scene('MS14_D11_S04')
+    $ r13_edit(period=2)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('school','night11',['mom', 'daram'])
+    $ r13_v111_arrive(['mom', 'daram', 'resident_teacher', 'karo', 'resident_nero'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['mom', 'daram', 'resident_teacher', 'karo', 'resident_nero'])
+    if r13_v111_value('carried_dry_blankets')>0:
+        call r13_v111_rest_blanket11
+
+label r13_v111_night_rescue_route11:
+    if r13_v111_value('lower_road_handover')==3:
+        jump r13_v111_lower_safe11
+    jump r13_v111_request_rescue11
+
+label r13_v111_rest_blanket11:
+    call r13_lines([r13_v111_line('MS14_D11_S04_L0003')],'v111:MS14_D11_S04_L0003')
+    call r13_lines([r13_v111_line('MS14_D11_S04_L0004')],'v111:MS14_D11_S04_L0004')
+    call r13_lines([r13_v111_line('MS14_D11_S04_L0006')],'v111:MS14_D11_S04_L0006')
+    call r13_lines([r13_v111_line('MS14_D11_S04_L0007')],'v111:MS14_D11_S04_L0007')
+    return
+
+label r13_v111_lower_safe11:
+    if r13_v111_actor_ready('resident_nero'):
+        call r13_lines([r13_v111_line('MS14_D11_S04_L0030')],'v111:MS14_D11_S04_L0030')
+    call r13_lines([r13_v111_line('MS14_D11_S04_L0031')],'v111:MS14_D11_S04_L0031')
+    if r13_v111_actor_ready('resident_nero'):
+        call r13_lines([r13_v111_line('MS14_D11_S04_L0032')],'v111:MS14_D11_S04_L0032')
+    $ r13_v111_set('nero_alive',True)
+    jump r13_v111_sleep11
+
+label r13_v111_request_rescue11:
+    if r13_v111_actor_ready('resident_nero'):
+        call r13_lines([r13_v111_line('MS14_D11_S04_L0009')],'v111:MS14_D11_S04_L0009')
+    call r13_lines([r13_v111_line('MS14_D11_S04_L0010')],'v111:MS14_D11_S04_L0010')
+    if r13_v111_actor_ready('karo'):
+        call r13_lines([r13_v111_line('MS14_D11_S04_L0011')],'v111:MS14_D11_S04_L0011')
+    call r13_lines([r13_v111_line('MS14_D11_S04_L0012')],'v111:MS14_D11_S04_L0012')
+    if r13_v111_actor_ready('resident_nero'):
+        call r13_lines([r13_v111_line('MS14_D11_S04_L0013')],'v111:MS14_D11_S04_L0013')
+    jump r13_v111_night_rescue_prepare11
+
+label r13_v111_night_rescue_prepare11:
+    call r13_v111_wait('night_rescue_prepare11')
+    if _return==0:
+        jump r13_v111_night_rescue_choices11
+    jump r13_v111_night_rescue_prepare11
+
+label r13_v111_night_rescue_choices11:
+    $ r13_v111_set("rescue_cart_ready",r13_v111_actor_ready("karo"))
+    $ r13_v111_set("rescue_driver_ready",r13_v111_actor_ready("karo"))
+    $ r13_v111_set("rescue_lights_ready",bool(r13_v111_value("heat_inventory_observed")))
+    $ r13_v111_set('rescue_cover_ready',True)
+    if r13_v111_value("rescue_cart_ready") and r13_v111_value("rescue_driver_ready") and r13_v111_value("rescue_lights_ready") and r13_v111_value("school_supply_handed"):
+        jump r13_v111_night_rescue11
+    menu:
+        '준비된 수레로 지금 출발한다' if r13_v111_value('rescue_cart_ready') and r13_v111_value('rescue_cover_ready') and r13_v111_value('rescue_driver_ready') and r13_v111_value('rescue_lights_ready'):
+            jump r13_v111_night_rescue11
+        '학교 물자 인계를 먼저 끝낸다' if not r13_v111_value('school_supply_handed'):
+            jump r13_v111_late_supply11
+        '없는 운반수단을 지금 구한다' if not r13_v111_value('rescue_cart_ready'):
+            jump r13_v111_late_cart11
+
+label r13_v111_night_rescue11:
+    call r13_v111_travel('forest','night_rescue11',[])
+    $ r13_v111_arrive(['karo', 'resident_nero'])
+    if r13_v111_actor_ready('resident_nero'):
+        call r13_lines([r13_v111_line('MS14_D11_S04_L0016')],'v111:MS14_D11_S04_L0016')
+    jump r13_v111_snow_door11
+
+label r13_v111_snow_door11:
+    call r13_v111_wait('snow_door11')
+    if _return==0:
+        jump r13_v111_night_rescue_done11
+    jump r13_v111_snow_door11
+
+label r13_v111_night_rescue_done11:
+    call r13_lines([r13_v111_line('MS14_D11_S04_L0018')],'v111:MS14_D11_S04_L0018')
+    call r13_lines([r13_v111_line('MS14_D11_S04_L0019')],'v111:MS14_D11_S04_L0019')
+    call r13_v111_travel('school','night_rescue_done11')
+    $ r13_v111_arrive(['mom', 'daram', 'resident_teacher', 'karo', 'resident_nero'])
+    if r13_v111_actor_ready('resident_nero'):
+        call r13_lines([r13_v111_line('MS14_D11_S04_L0021')],'v111:MS14_D11_S04_L0021')
+    call r13_lines([r13_v111_line('MS14_D11_S04_L0022')],'v111:MS14_D11_S04_L0022')
+    if r13_v111_actor_ready('resident_nero'):
+        call r13_lines([r13_v111_line('MS14_D11_S04_L0023')],'v111:MS14_D11_S04_L0023')
+    call r13_lines([r13_v111_line('MS14_D11_S04_L0024')],'v111:MS14_D11_S04_L0024')
+    $ r13_v111_set('lower_road_handover',3)
+    $ r13_v111_set('nero_alive',True)
+    jump r13_v111_sleep11
+
+label r13_v111_late_supply11:
+    call r13_lines([r13_v111_line('MS14_D11_S04_L0035')],'v111:MS14_D11_S04_L0035')
+    if r13_v111_actor_ready('resident_nero'):
+        call r13_lines([r13_v111_line('MS14_D11_S04_L0036')],'v111:MS14_D11_S04_L0036')
+    jump r13_v111_late_supply_handoff11
+
+label r13_v111_late_supply_handoff11:
+    call r13_v111_wait('late_supply_handoff11')
+    if _return==0:
+        jump r13_v111_late_supply_done11
+    jump r13_v111_late_supply_handoff11
+
+label r13_v111_late_supply_done11:
+    $ r13_v111_set('school_supply_handed',True)
+    $ r13_v111_set('school_heat_connected',False)
+    $ r13_v111_apply('actual_late_school_supply11',[dict(op="acquire",key='E14_SUPPLY',variant="observed")])
+    jump r13_v111_late_road11
+
+label r13_v111_late_cart11:
+    call r13_lines([r13_v111_line('MS14_D11_S04_L0037')],'v111:MS14_D11_S04_L0037')
+    if r13_v111_actor_ready('resident_nero'):
+        call r13_lines([r13_v111_line('MS14_D11_S04_L0038')],'v111:MS14_D11_S04_L0038')
+    jump r13_v111_late_road11
+
+label r13_v111_late_road11:
+    call r13_v111_travel('forest','late_road11',[])
+    $ r13_v111_arrive(['karo'])
+    if r13_v111_actor_ready('karo'):
+        call r13_lines([r13_v111_line('MS14_D11_S04_L0027')],'v111:MS14_D11_S04_L0027')
+    call r13_lines([r13_v111_line('MS14_D11_S04_L0028')],'v111:MS14_D11_S04_L0028')
+    $ r13_v111_set('lower_road_lost',True)
+    $ r13_v111_set('location:resident_nero','forest')
+    $ r13_v111_set('nero_alive',False)
+    jump r13_v111_sleep11
+
+label r13_v111_sleep11:
+    call r13_v111_travel('school','sleep11')
+    jump r13_v111_sleep11_input
+
+label r13_v111_sleep11_input:
+    call r13_v111_wait('sleep11_input')
+    if _return==0:
+        jump r13_v111_sleep11_done
+    jump r13_v111_sleep11_input
+
+label r13_v111_sleep11_done:
+    $ r13_v111_set("day",12)
+    jump r13_v111_day12
+
+label r13_v111_day12:
+    $ r13_v111_scene('MS14_D12_S01')
+    $ r13_edit(period=0)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('school','day12',['mom', 'daram'])
+    $ r13_v111_arrive(['mom', 'daram', 'karo', 'guard', 'resident_teacher', 'resident_nero'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['mom', 'daram', 'karo', 'guard', 'resident_teacher', 'resident_nero'])
+
+label r13_v111_loss_route12:
+    if r13_v111_value('lower_road_lost'):
+        jump r13_v111_loss_names12
+    jump r13_v111_living_names12
+
+label r13_v111_loss_names12:
+    call r13_v111_travel('forest','loss_names12',[])
+    $ r13_v111_arrive(['karo'])
+    call r13_lines([r13_v111_line('MS14_D12_S01_L0002')],'v111:MS14_D12_S01_L0002')
+    call r13_v111_travel('square','names_square12')
+    $ r13_v111_arrive(['daram', 'karo'])
+    call r13_lines([r13_v111_line('MS14_D12_S01_L0005')],'v111:MS14_D12_S01_L0005')
+    call r13_lines([r13_v111_line('MS14_D12_S01_L0006')],'v111:MS14_D12_S01_L0006')
+    call r13_lines([r13_v111_line('MS14_D12_S01_L0007')],'v111:MS14_D12_S01_L0007')
+    call r13_lines([r13_v111_line('MS14_D12_S01_L0008')],'v111:MS14_D12_S01_L0008')
+    jump r13_v111_morning_notice12
+
+label r13_v111_living_names12:
+    if r13_v111_actor_ready('resident_nero'):
+        call r13_lines([r13_v111_line('MS14_D12_S01_L0011')],'v111:MS14_D12_S01_L0011')
+    call r13_lines([r13_v111_line('MS14_D12_S01_L0012')],'v111:MS14_D12_S01_L0012')
+    if r13_v111_actor_ready('resident_nero'):
+        call r13_lines([r13_v111_line('MS14_D12_S01_L0013')],'v111:MS14_D12_S01_L0013')
+    call r13_lines([r13_v111_line('MS14_D12_S01_L0014')],'v111:MS14_D12_S01_L0014')
+    if r13_v111_actor_ready('resident_nero'):
+        call r13_lines([r13_v111_line('MS14_D12_S01_L0015')],'v111:MS14_D12_S01_L0015')
+    jump r13_v111_morning_notice12
+
+label r13_v111_morning_notice12:
+    call r13_v111_travel('school','notice12')
+    $ r13_v111_arrive(['mom', 'daram', 'guard', 'resident_teacher'])
+    call r13_lines([r13_v111_line('MS14_D12_S01_L0017')],'v111:MS14_D12_S01_L0017')
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D12_S01_L0018')],'v111:MS14_D12_S01_L0018')
+    call r13_lines([r13_v111_line('MS14_D12_S01_L0019')],'v111:MS14_D12_S01_L0019')
+    call r13_lines([r13_v111_line('MS14_D12_S01_L0020')],'v111:MS14_D12_S01_L0020')
+    call r13_lines([r13_v111_line('MS14_D12_S01_L0021')],'v111:MS14_D12_S01_L0021')
+    call r13_lines([r13_v111_line('MS14_D12_S01_L0023')],'v111:MS14_D12_S01_L0023')
+    jump r13_v111_morning_prep12_entry
+
+label r13_v111_morning_prep12_entry:
+    $ r13_v111_scene("MS14_D12_S01")
+    jump r13_v111_morning_prep12
+
+label r13_v111_morning_prep12:
+    call r13_v111_wait('morning_prep12')
+    if _return==0:
+        jump r13_v111_medicine12
+    if _return==1:
+        jump r13_v111_warm_place12
+    if _return==2:
+        jump r13_v111_carrier12
+    if _return==3:
+        jump r13_v111_meal12
+    if _return==4:
+        jump r13_v111_madam_invite12
+    jump r13_v111_morning_prep12
+
+label r13_v111_madam_invite12:
+    $ r13_v111_arrive(['resident_madam'])
+    call r13_lines([("resident_madam","내놓은 돌이 어디 쓰이는지는 보겠어요.",{"no_lead":True})],"v111:madam_observer_consent12")
+    $ r13_v111_set('madam_observer_consent',True)
+    call r13_v111_travel('school','madam_school12',[])
+    $ r13_v111_arrive(['mom', 'daram', 'resident_teacher', 'resident_madam'])
+    jump r13_v111_morning_prep12_entry
+
+label r13_v111_medicine12:
+    $ r13_v111_arrive(['resident_seori'])
+    call r13_lines([r13_v111_line('MS14_D12_S01_L0024')],'v111:MS14_D12_S01_L0024')
+    call r13_lines([r13_v111_line('MS14_D12_S01_L0025')],'v111:MS14_D12_S01_L0025')
+    $ r13_v111_set('medicine_locked',True)
+    jump r13_v111_morning_prep12_entry
+
+label r13_v111_warm_place12:
+    call r13_v111_travel('school','warm_place12')
+    $ r13_v111_arrive(['mom', 'daram', 'resident_teacher'])
+    call r13_lines([r13_v111_line('MS14_D12_S01_L0026')],'v111:MS14_D12_S01_L0026')
+    call r13_lines([r13_v111_line('MS14_D12_S01_L0027')],'v111:MS14_D12_S01_L0027')
+    $ r13_v111_set('warm_seat_ready',True)
+    jump r13_v111_morning_prep12_entry
+
+label r13_v111_carrier12:
+    $ r13_v111_arrive(['karo'])
+    if r13_v111_actor_ready('karo'):
+        call r13_lines([r13_v111_line('MS14_D12_S01_L0028')],'v111:MS14_D12_S01_L0028')
+    call r13_lines([r13_v111_line('MS14_D12_S01_L0029')],'v111:MS14_D12_S01_L0029')
+    if r13_v111_actor_ready('karo'):
+        call r13_lines([r13_v111_line('MS14_D12_S01_L0030')],'v111:MS14_D12_S01_L0030')
+    call r13_v111_travel('school','carrier_arrived12')
+    $ r13_v111_arrive(['karo', 'mom', 'daram', 'resident_teacher'])
+    $ r13_v111_set('carrier_arrived',True)
+    $ r13_v111_set('busy:karo','school_transport')
+    jump r13_v111_carrier_receipt12
+
+label r13_v111_carrier_receipt12:
+    call r13_v111_wait('carrier_receipt12')
+    if _return==0:
+        jump r13_v111_carrier_received12
+    jump r13_v111_carrier_receipt12
+
+label r13_v111_carrier_received12:
+    $ r13_v111_set('warm_support_arrived',True)
+    $ r13_v111_set('school_supply_handed',True)
+    $ r13_v111_apply('actual_school_supply12',[dict(op="acquire",key='E14_SUPPLY',variant="observed")])
+    $ r13_v111_set('busy:karo',False)
+    jump r13_v111_morning_prep12_entry
+
+label r13_v111_meal12:
+    $ r13_v111_scene('MS14_D12_S02')
+    $ r13_edit(period=1)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('school','meal12',['daram'])
+    $ r13_v111_arrive(['daram', 'nabi', 'resident_teacher', 'resident_bori', 'kid_dodam', 'kid_saemi'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['daram', 'nabi', 'resident_teacher', 'resident_bori', 'kid_dodam', 'kid_saemi'])
+    $ r13_v111_set('route12','uncommitted')
+    $ r13_v111_set('location:mom','facility')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0003')],'v111:MS14_D12_S02_L0003')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0004')],'v111:MS14_D12_S02_L0004')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0005')],'v111:MS14_D12_S02_L0005')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0007')],'v111:MS14_D12_S02_L0007')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0008')],'v111:MS14_D12_S02_L0008')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0009')],'v111:MS14_D12_S02_L0009')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0010')],'v111:MS14_D12_S02_L0010')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0012')],'v111:MS14_D12_S02_L0012')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0013')],'v111:MS14_D12_S02_L0013')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0014')],'v111:MS14_D12_S02_L0014')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0015')],'v111:MS14_D12_S02_L0015')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0017')],'v111:MS14_D12_S02_L0017')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0018')],'v111:MS14_D12_S02_L0018')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0019')],'v111:MS14_D12_S02_L0019')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0020')],'v111:MS14_D12_S02_L0020')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0021')],'v111:MS14_D12_S02_L0021')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0023')],'v111:MS14_D12_S02_L0023')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0024')],'v111:MS14_D12_S02_L0024')
+    $ r13_v111_set('bottle_original_seal_seen',True)
+    jump r13_v111_meal_choice12
+
+label r13_v111_meal_choice12:
+    menu:
+        '배식 전에 더 살핀다':
+            jump r13_v111_stay_meal12
+        '다람과 온기 조각을 받으러 간다':
+            jump r13_v111_take_daram12
+        '다람은 나비 곁에 두고 다녀온다':
+            jump r13_v111_leave_daram12
+        '예방 준비를 확인한다':
+            jump r13_v111_prevent_check12
+
+label r13_v111_prevent_check12:
+    if all(r13_v111_value(k) for k in ("medicine_locked","warm_seat_ready","carrier_arrived","warm_support_arrived")):
+        jump r13_v111_prevent_ready12
+    if not r13_v111_value("medicine_locked"):
+        jump r13_v111_medicine_missing12
+    if not r13_v111_value("warm_seat_ready"):
+        jump r13_v111_seat_missing12
+    jump r13_v111_carrier_missing12
+
+label r13_v111_medicine_missing12:
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0034')],'v111:MS14_D12_S02_L0034')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0035')],'v111:MS14_D12_S02_L0035')
+    jump r13_v111_morning_prep12_entry
+
+label r13_v111_seat_missing12:
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0036')],'v111:MS14_D12_S02_L0036')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0037')],'v111:MS14_D12_S02_L0037')
+    jump r13_v111_morning_prep12_entry
+
+label r13_v111_carrier_missing12:
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0038')],'v111:MS14_D12_S02_L0038')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0039')],'v111:MS14_D12_S02_L0039')
+    jump r13_v111_morning_prep12_entry
+
+label r13_v111_prevent_ready12:
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0041')],'v111:MS14_D12_S02_L0041')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0042')],'v111:MS14_D12_S02_L0042')
+    $ r13_v111_commit('MS14_D12_S02_L0042')
+    jump r13_v111_early12
+
+label r13_v111_stay_meal12:
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0026')],'v111:MS14_D12_S02_L0026')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0027')],'v111:MS14_D12_S02_L0027')
+    $ r13_v111_commit('MS14_D12_S02_L0027')
+    jump r13_v111_premeal12
+
+label r13_v111_take_daram12:
+    $ r13_v111_set('route12','late_exposure')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0028')],'v111:MS14_D12_S02_L0028')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0029')],'v111:MS14_D12_S02_L0029')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0030')],'v111:MS14_D12_S02_L0030')
+    $ r13_v111_set('DARAM_location','with_father')
+    jump r13_v111_pickup12
+
+label r13_v111_leave_daram12:
+    $ r13_v111_set('route12','late_exposure')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0031')],'v111:MS14_D12_S02_L0031')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0032')],'v111:MS14_D12_S02_L0032')
+    call r13_lines([r13_v111_line('MS14_D12_S02_L0033')],'v111:MS14_D12_S02_L0033')
+    $ r13_v111_set('DARAM_location','school')
+    $ r13_v111_set('busy:nabi','daram_guard')
+    jump r13_v111_pickup12
+
+label r13_v111_pickup12:
+    call r13_v111_travel('facility','pickup12')
+    $ r13_v111_arrive(['mom'])
+    if r13_v111_value("DARAM_location")=="with_father":
+        $ r13_v111_arrive(["mom","daram"])
+    jump r13_v111_pickup_box12
+
+label r13_v111_pickup_box12:
+    call r13_v111_wait('pickup_box12')
+    if _return==0:
+        jump r13_v111_pickup_done12
+    jump r13_v111_pickup_box12
+
+label r13_v111_pickup_done12:
+    $ r13_v111_set('heat_box_received',True)
+    jump r13_v111_late_meal12
+
+label r13_v111_late_meal12:
+    $ r13_v111_scene('MS14_D12_S03')
+    $ r13_edit(period=2)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('school','late_meal12',['daram'])
+    $ r13_v111_arrive(['daram', 'nabi', 'resident_bori', 'resident_teacher', 'kid_saemi'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['daram', 'nabi', 'resident_bori', 'resident_teacher', 'kid_saemi'])
+    $ r13_v111_set('busy:nabi',False)
+    call r13_lines([r13_v111_line('MS14_D12_S03_L0002')],'v111:MS14_D12_S03_L0002')
+    call r13_lines([r13_v111_line('MS14_D12_S03_L0003')],'v111:MS14_D12_S03_L0003')
+    call r13_lines([r13_v111_line('MS14_D12_S03_L0004')],'v111:MS14_D12_S03_L0004')
+    call r13_lines([r13_v111_line('MS14_D12_S03_L0005')],'v111:MS14_D12_S03_L0005')
+    call r13_lines([r13_v111_line('MS14_D12_S03_L0007')],'v111:MS14_D12_S03_L0007')
+    call r13_lines([r13_v111_line('MS14_D12_S03_L0008')],'v111:MS14_D12_S03_L0008')
+    call r13_lines([r13_v111_line('MS14_D12_S03_L0009')],'v111:MS14_D12_S03_L0009')
+    call r13_lines([r13_v111_line('MS14_D12_S03_L0010')],'v111:MS14_D12_S03_L0010')
+    call r13_lines([r13_v111_line('MS14_D12_S03_L0011')],'v111:MS14_D12_S03_L0011')
+    $ r13_v111_set('medical_called',True)
+    $ r13_v111_set('busy:resident_bori','medical_call')
+    jump r13_v111_soup_fragment12
+
+label r13_v111_soup_fragment12:
+    call r13_v111_wait('soup_fragment12')
+    if _return==0:
+        jump r13_v111_fragment_seen12
+    jump r13_v111_soup_fragment12
+
+label r13_v111_fragment_seen12:
+    call r13_lines([r13_v111_line('MS14_D12_S03_L0013')],'v111:MS14_D12_S03_L0013')
+    call r13_lines([r13_v111_line('MS14_D12_S03_L0014')],'v111:MS14_D12_S03_L0014')
+    call r13_lines([r13_v111_line('MS14_D12_S03_L0016')],'v111:MS14_D12_S03_L0016')
+    call r13_lines([r13_v111_line('MS14_D12_S03_L0017')],'v111:MS14_D12_S03_L0017')
+    call r13_lines([r13_v111_line('MS14_D12_S03_L0018')],'v111:MS14_D12_S03_L0018')
+    call r13_lines([r13_v111_line('MS14_D12_S03_L0019')],'v111:MS14_D12_S03_L0019')
+    $ r13_v111_set('soup_fragment_observed',True)
+    jump r13_v111_soup_hearing12
+
+label r13_v111_premeal12:
+    $ r13_v111_scene('MS14_D12_A')
+    $ r13_edit(period=1)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('school','premeal12',['daram'])
+    $ r13_v111_arrive(['daram', 'nabi', 'resident_teacher', 'resident_bori', 'kid_dodam', 'kid_saemi'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['daram', 'nabi', 'resident_teacher', 'resident_bori', 'kid_dodam', 'kid_saemi'])
+    $ r13_v111_set('route12','premeal_stopped')
+    call r13_lines([r13_v111_line('MS14_D12_A_L0002')],'v111:MS14_D12_A_L0002')
+    call r13_lines([r13_v111_line('MS14_D12_A_L0003')],'v111:MS14_D12_A_L0003')
+    call r13_lines([r13_v111_line('MS14_D12_A_L0004')],'v111:MS14_D12_A_L0004')
+    call r13_lines([r13_v111_line('MS14_D12_A_L0005')],'v111:MS14_D12_A_L0005')
+    call r13_lines([r13_v111_line('MS14_D12_A_L0006')],'v111:MS14_D12_A_L0006')
+    call r13_lines([r13_v111_line('MS14_D12_A_L0007')],'v111:MS14_D12_A_L0007')
+    call r13_lines([r13_v111_line('MS14_D12_A_L0008')],'v111:MS14_D12_A_L0008')
+    $ r13_v111_set('medical_called',True)
+    $ r13_v111_set('busy:resident_bori','medical_call')
+    $ r13_v111_set('soup_fragment_observed',True)
+    jump r13_v111_soup_hearing12
+
+label r13_v111_soup_hearing12:
+    $ r13_v111_scene('MS14_D12_S04')
+    $ r13_edit(period=2)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('school','soup_hearing12',['daram'])
+    $ r13_v111_arrive(['daram', 'nabi', 'resident_teacher', 'resident_madam'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['daram', 'nabi', 'resident_teacher', 'resident_madam'])
+    if r13_v111_value('route12')=='late_exposure':
+        call r13_v111_meal_observations12
+    jump r13_v111_bottle_match12
+
+label r13_v111_meal_observations12:
+    if r13_v111_actor_ready('resident_madam'):
+        call r13_lines([r13_v111_line('MS14_D12_S04_L0002')],'v111:MS14_D12_S04_L0002')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0003')],'v111:MS14_D12_S04_L0003')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0004')],'v111:MS14_D12_S04_L0004')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0005')],'v111:MS14_D12_S04_L0005')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0006')],'v111:MS14_D12_S04_L0006')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0007')],'v111:MS14_D12_S04_L0007')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0008')],'v111:MS14_D12_S04_L0008')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0010')],'v111:MS14_D12_S04_L0010')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0011')],'v111:MS14_D12_S04_L0011')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0012')],'v111:MS14_D12_S04_L0012')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0013')],'v111:MS14_D12_S04_L0013')
+    return
+
+label r13_v111_bottle_match12:
+    call r13_v111_wait('bottle_match12')
+    if _return==0:
+        jump r13_v111_bottle_matched12
+    jump r13_v111_bottle_match12
+
+label r13_v111_bottle_matched12:
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0015')],'v111:MS14_D12_S04_L0015')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0016')],'v111:MS14_D12_S04_L0016')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0017')],'v111:MS14_D12_S04_L0017')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0018')],'v111:MS14_D12_S04_L0018')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0019')],'v111:MS14_D12_S04_L0019')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0020')],'v111:MS14_D12_S04_L0020')
+    $ r13_v111_apply('fragment_comparison12',[dict(op="acquire",key='E12_FRAGMENT',variant="observed")])
+    $ r13_v111_apply('original_seal_recalled12',[dict(op="acquire",key='E12_SEAL',variant="observed")])
+    jump r13_v111_seal_proof12
+
+label r13_v111_seal_proof12:
+    call r13_v111_proof('재사용 설명과 개봉 봉인을 대조한다',['E12_FRAGMENT', 'E12_SEAL'],'r13_v111_seal_answer12','r13_v111_medicine_wrong12','r13_v111_soup_hint12')
+    jump expression _return
+
+label r13_v111_seal_answer12:
+    if r13_v111_value('route12')=='late_exposure':
+        jump r13_v111_seal_late12
+    jump r13_v111_seal_pre12
+
+label r13_v111_seal_late12:
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0022')],'v111:MS14_D12_S04_L0022')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0023')],'v111:MS14_D12_S04_L0023')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0024')],'v111:MS14_D12_S04_L0024')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0025')],'v111:MS14_D12_S04_L0025')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0026')],'v111:MS14_D12_S04_L0026')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0027')],'v111:MS14_D12_S04_L0027')
+    jump r13_v111_handling12
+
+label r13_v111_seal_pre12:
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0062')],'v111:MS14_D12_S04_L0062')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0063')],'v111:MS14_D12_S04_L0063')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0064')],'v111:MS14_D12_S04_L0064')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0065')],'v111:MS14_D12_S04_L0065')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0066')],'v111:MS14_D12_S04_L0066')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0067')],'v111:MS14_D12_S04_L0067')
+    jump r13_v111_handling12
+
+label r13_v111_handling12:
+
+label r13_v111_handling_route12:
+    if r13_v111_value('route12')=='late_exposure':
+        jump r13_v111_handling_late12
+    jump r13_v111_handling_pre12
+
+label r13_v111_handling_late12:
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0029')],'v111:MS14_D12_S04_L0029')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0030')],'v111:MS14_D12_S04_L0030')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0031')],'v111:MS14_D12_S04_L0031')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0032')],'v111:MS14_D12_S04_L0032')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0033')],'v111:MS14_D12_S04_L0033')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0034')],'v111:MS14_D12_S04_L0034')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0035')],'v111:MS14_D12_S04_L0035')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0036')],'v111:MS14_D12_S04_L0036')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0037')],'v111:MS14_D12_S04_L0037')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0038')],'v111:MS14_D12_S04_L0038')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0039')],'v111:MS14_D12_S04_L0039')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0040')],'v111:MS14_D12_S04_L0040')
+    jump r13_v111_medical_arrival12
+
+label r13_v111_handling_pre12:
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0068')],'v111:MS14_D12_S04_L0068')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0069')],'v111:MS14_D12_S04_L0069')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0070')],'v111:MS14_D12_S04_L0070')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0071')],'v111:MS14_D12_S04_L0071')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0072')],'v111:MS14_D12_S04_L0072')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0073')],'v111:MS14_D12_S04_L0073')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0074')],'v111:MS14_D12_S04_L0074')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0075')],'v111:MS14_D12_S04_L0075')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0076')],'v111:MS14_D12_S04_L0076')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0077')],'v111:MS14_D12_S04_L0077')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0078')],'v111:MS14_D12_S04_L0078')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0079')],'v111:MS14_D12_S04_L0079')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0094')],'v111:MS14_D12_S04_L0094')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0095')],'v111:MS14_D12_S04_L0095')
+    jump r13_v111_medical_arrival12
+
+label r13_v111_medical_arrival12:
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0042')],'v111:MS14_D12_S04_L0042')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0044')],'v111:MS14_D12_S04_L0044')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0045')],'v111:MS14_D12_S04_L0045')
+    if r13_v111_value('route12')=='late_exposure':
+        call r13_lines([r13_v111_line('MS14_D12_S04_L0046')],'v111:MS14_D12_S04_L0046')
+    $ r13_v111_arrive(['daram', 'nabi', 'resident_teacher', 'resident_seori', 'resident_bori', 'guard', 'neoul'])
+    $ r13_v111_set('busy:resident_bori',False)
+    $ r13_v111_set('medical_arrived',True)
+    $ r13_v111_apply('handling_observed12',[dict(op="acquire",key='E12_HANDLING',variant="observed")])
+    jump r13_v111_soup_final12
+
+label r13_v111_soup_final12:
+    call r13_v111_proof('파편·봉인·취급 구간을 함께 제시한다',['E12_FRAGMENT', 'E12_SEAL', 'E12_HANDLING'],'r13_v111_soup_conclusion12','r13_v111_fragment_wrong12','r13_v111_soup_hint_final12')
+    jump expression _return
+
+label r13_v111_soup_conclusion12:
+
+label r13_v111_soup_conclusion_route12:
+    if r13_v111_value('route12')=='late_exposure':
+        jump r13_v111_conclusion_late12
+    jump r13_v111_conclusion_pre12
+
+label r13_v111_conclusion_late12:
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0048')],'v111:MS14_D12_S04_L0048')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0049')],'v111:MS14_D12_S04_L0049')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0050')],'v111:MS14_D12_S04_L0050')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0052')],'v111:MS14_D12_S04_L0052')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0053')],'v111:MS14_D12_S04_L0053')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0054')],'v111:MS14_D12_S04_L0054')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0055')],'v111:MS14_D12_S04_L0055')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0056')],'v111:MS14_D12_S04_L0056')
+    jump r13_v111_confessed12
+
+label r13_v111_conclusion_pre12:
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0080')],'v111:MS14_D12_S04_L0080')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0081')],'v111:MS14_D12_S04_L0081')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0082')],'v111:MS14_D12_S04_L0082')
+    $ room13["v111"]["music_hold"]=room13["v111"]["scene"]
+    $ renpy.music.stop(fadeout=.15)
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0084')],'v111:MS14_D12_S04_L0084')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0085')],'v111:MS14_D12_S04_L0085')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0086')],'v111:MS14_D12_S04_L0086')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0087')],'v111:MS14_D12_S04_L0087')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0088')],'v111:MS14_D12_S04_L0088')
+    jump r13_v111_confessed12
+
+label r13_v111_confessed12:
+    $ room13["v111"]["music_hold"]=room13["v111"]["scene"]
+    $ renpy.music.stop(fadeout=.15)
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0058')],'v111:MS14_D12_S04_L0058')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0059')],'v111:MS14_D12_S04_L0059')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0060')],'v111:MS14_D12_S04_L0060')
+    $ r13_v111_set('teacher_confessed',True)
+
+label r13_v111_soup_after_route12:
+    if r13_v111_value('route12')=='late_exposure':
+        jump r13_v111_aftermath_late12
+    jump r13_v111_aftermath_pre12
+
+label r13_v111_medicine_wrong12:
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0089')],'v111:MS14_D12_S04_L0089')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0090')],'v111:MS14_D12_S04_L0090')
+    jump r13_v111_seal_proof12
+
+label r13_v111_fragment_wrong12:
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0091')],'v111:MS14_D12_S04_L0091')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0092')],'v111:MS14_D12_S04_L0092')
+    jump r13_v111_soup_final12
+
+label r13_v111_soup_hint12:
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0093')],'v111:MS14_D12_S04_L0093')
+    jump r13_v111_seal_proof12
+
+label r13_v111_soup_hint_final12:
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0093')],'v111:MS14_D12_S04_L0093')
+    jump r13_v111_soup_final12
+
+label r13_v111_aftermath_pre12:
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0096')],'v111:MS14_D12_S04_L0096')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0097')],'v111:MS14_D12_S04_L0097')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0098')],'v111:MS14_D12_S04_L0098')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0099')],'v111:MS14_D12_S04_L0099')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0100')],'v111:MS14_D12_S04_L0100')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0101')],'v111:MS14_D12_S04_L0101')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0102')],'v111:MS14_D12_S04_L0102')
+    menu:
+        '돌목에게 감독을 맡긴다':
+            jump r13_v111_teacher_guard_pre12
+        '너울에게 신병을 넘긴다':
+            jump r13_v111_teacher_neoul_pre12
+
+label r13_v111_teacher_guard_pre12:
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0103')],'v111:MS14_D12_S04_L0103')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0104')],'v111:MS14_D12_S04_L0104')
+    $ r13_v111_commit('MS14_D12_S04_L0104')
+    jump r13_v111_soup_pre_close12
+
+label r13_v111_teacher_neoul_pre12:
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0105')],'v111:MS14_D12_S04_L0105')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0106')],'v111:MS14_D12_S04_L0106')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0107')],'v111:MS14_D12_S04_L0107')
+    call r13_lines([r13_v111_line('MS14_D12_S04_L0108')],'v111:MS14_D12_S04_L0108')
+    $ r13_v111_commit('MS14_D12_S04_L0108')
+    jump r13_v111_soup_pre_close12
+
+label r13_v111_soup_pre_close12:
+    if r13_v111_value("school_heat_connected"):
+        call r13_v111_pre_lights12
+    else:
+        call r13_v111_pre_no_lights12
+    jump r13_v111_sleep12
+
+label r13_v111_pre_lights12:
+    return
+
+label r13_v111_pre_no_lights12:
+    $ r13_v111_arrive(['mom', 'daram', 'nabi', 'resident_teacher', 'guard', 'neoul'])
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0027')],'v111:MS14_D12_S05_L0027')
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0028')],'v111:MS14_D12_S05_L0028')
+    return
+
+label r13_v111_aftermath_late12:
+    $ r13_v111_scene('MS14_D12_S05')
+    $ r13_edit(period=2)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('school','aftermath_late12',['daram'])
+    $ r13_v111_arrive(['daram', 'nabi', 'resident_teacher', 'resident_seori', 'resident_bori', 'guard', 'neoul'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['daram', 'nabi', 'resident_teacher', 'resident_seori', 'resident_bori', 'guard', 'neoul'])
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0002')],'v111:MS14_D12_S05_L0002')
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0003')],'v111:MS14_D12_S05_L0003')
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0004')],'v111:MS14_D12_S05_L0004')
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0006')],'v111:MS14_D12_S05_L0006')
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0007')],'v111:MS14_D12_S05_L0007')
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0008')],'v111:MS14_D12_S05_L0008')
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0009')],'v111:MS14_D12_S05_L0009')
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0010')],'v111:MS14_D12_S05_L0010')
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0012')],'v111:MS14_D12_S05_L0012')
+    if r13_v111_value('school_heat_connected'):
+        call r13_v111_lights12
+    else:
+        call r13_v111_no_lights12
+    $ r13_v111_commit('MS14_D12_S05_L0043')
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0018')],'v111:MS14_D12_S05_L0018')
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0019')],'v111:MS14_D12_S05_L0019')
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0020')],'v111:MS14_D12_S05_L0020')
+    if r13_v111_value('school_heat_connected'):
+        call r13_v111_child_light12
+    else:
+        call r13_v111_child_dark12
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D12_S05_L0030')],'v111:MS14_D12_S05_L0030')
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0031')],'v111:MS14_D12_S05_L0031')
+    menu:
+        '돌목에게 감독을 맡긴다':
+            jump r13_v111_teacher_guard_late12
+        '너울에게 신병을 넘긴다':
+            jump r13_v111_teacher_neoul_late12
+
+label r13_v111_teacher_guard_late12:
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0032')],'v111:MS14_D12_S05_L0032')
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D12_S05_L0033')],'v111:MS14_D12_S05_L0033')
+        $ r13_v111_commit('MS14_D12_S05_L0033')
+    jump r13_v111_sleep12
+
+label r13_v111_teacher_neoul_late12:
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0034')],'v111:MS14_D12_S05_L0034')
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0035')],'v111:MS14_D12_S05_L0035')
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0036')],'v111:MS14_D12_S05_L0036')
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0037')],'v111:MS14_D12_S05_L0037')
+    $ r13_v111_commit('MS14_D12_S05_L0037')
+    jump r13_v111_sleep12
+
+label r13_v111_lights12:
+    $ r13_v111_arrive(['daram', 'mom', 'nabi', 'resident_teacher', 'resident_seori', 'resident_bori', 'guard', 'neoul'])
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0014')],'v111:MS14_D12_S05_L0014')
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0016')],'v111:MS14_D12_S05_L0016')
+    return
+
+label r13_v111_no_lights12:
+    $ r13_v111_arrive(['daram', 'mom', 'nabi', 'resident_teacher', 'resident_seori', 'resident_bori', 'guard', 'neoul'])
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0027')],'v111:MS14_D12_S05_L0027')
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0028')],'v111:MS14_D12_S05_L0028')
+    return
+
+label r13_v111_child_light12:
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0022')],'v111:MS14_D12_S05_L0022')
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0023')],'v111:MS14_D12_S05_L0023')
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0024')],'v111:MS14_D12_S05_L0024')
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0025')],'v111:MS14_D12_S05_L0025')
+    return
+
+label r13_v111_child_dark12:
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0039')],'v111:MS14_D12_S05_L0039')
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0040')],'v111:MS14_D12_S05_L0040')
+    call r13_lines([r13_v111_line('MS14_D12_S05_L0041')],'v111:MS14_D12_S05_L0041')
+    return
+
+label r13_v111_early12:
+    $ r13_v111_scene('MS14_D12_B')
+    $ r13_edit(period=2)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('school','early12',['daram', 'mom'])
+    $ r13_v111_arrive(['daram', 'mom', 'nabi', 'resident_teacher', 'karo', 'kid_dodam', 'kid_saemi'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['daram', 'mom', 'nabi', 'resident_teacher', 'karo', 'kid_dodam', 'kid_saemi'])
+    call r13_lines([r13_v111_line('MS14_D12_B_L0002')],'v111:MS14_D12_B_L0002')
+    call r13_lines([r13_v111_line('MS14_D12_B_L0003')],'v111:MS14_D12_B_L0003')
+    call r13_lines([r13_v111_line('MS14_D12_B_L0004')],'v111:MS14_D12_B_L0004')
+    call r13_lines([r13_v111_line('MS14_D12_B_L0005')],'v111:MS14_D12_B_L0005')
+    call r13_lines([r13_v111_line('MS14_D12_B_L0007')],'v111:MS14_D12_B_L0007')
+    call r13_lines([r13_v111_line('MS14_D12_B_L0008')],'v111:MS14_D12_B_L0008')
+    call r13_lines([r13_v111_line('MS14_D12_B_L0010')],'v111:MS14_D12_B_L0010')
+    call r13_lines([r13_v111_line('MS14_D12_B_L0011')],'v111:MS14_D12_B_L0011')
+    call r13_lines([r13_v111_line('MS14_D12_B_L0012')],'v111:MS14_D12_B_L0012')
+    call r13_lines([r13_v111_line('MS14_D12_B_L0013')],'v111:MS14_D12_B_L0013')
+    $ r13_v111_set('route12','early_prevented')
+    $ r13_v111_set('school_heat_connected',True)
+    $ r13_v111_set('busy:karo',False)
+    jump r13_v111_sleep12
+
+label r13_v111_sleep12:
+    call r13_v111_travel('school','sleep12')
+    jump r13_v111_sleep12_input
+
+label r13_v111_sleep12_input:
+    call r13_v111_wait('sleep12_input')
+    if _return==0:
+        jump r13_v111_sleep12_done
+    jump r13_v111_sleep12_input
+
+label r13_v111_sleep12_done:
+    $ r13_v111_set("day",13)
+    jump r13_v111_day13
+
+label r13_v111_day13:
+    $ r13_v111_scene('MS14_D13_S01')
+    $ r13_edit(period=0)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('school','day13',['mom', 'daram'])
+    $ r13_v111_arrive(['mom', 'daram', 'npc_pandol', 'karo'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['mom', 'daram', 'npc_pandol', 'karo'])
+    $ r13_v111_set('busy:karo',False)
+    call r13_lines([r13_v111_line('MS14_D13_S01_L0002')],'v111:MS14_D13_S01_L0002')
+    call r13_lines([r13_v111_line('MS14_D13_S01_L0003')],'v111:MS14_D13_S01_L0003')
+    call r13_lines([r13_v111_line('MS14_D13_S01_L0004')],'v111:MS14_D13_S01_L0004')
+    if r13_v111_actor_ready('karo'):
+        call r13_lines([r13_v111_line('MS14_D13_S01_L0005')],'v111:MS14_D13_S01_L0005')
+    call r13_lines([r13_v111_line('MS14_D13_S01_L0007')],'v111:MS14_D13_S01_L0007')
+    call r13_lines([r13_v111_line('MS14_D13_S01_L0008')],'v111:MS14_D13_S01_L0008')
+    call r13_lines([r13_v111_line('MS14_D13_S01_L0009')],'v111:MS14_D13_S01_L0009')
+    jump r13_v111_blanket_mend13
+
+label r13_v111_blanket_mend13:
+    call r13_v111_wait('blanket_mend13')
+    if _return==0:
+        jump r13_v111_blanket_mended13
+    jump r13_v111_blanket_mend13
+
+label r13_v111_blanket_mended13:
+    call r13_lines([r13_v111_line('MS14_D13_S01_L0011')],'v111:MS14_D13_S01_L0011')
+    call r13_lines([r13_v111_line('MS14_D13_S01_L0012')],'v111:MS14_D13_S01_L0012')
+    call r13_lines([r13_v111_line('MS14_D13_S01_L0013')],'v111:MS14_D13_S01_L0013')
+    call r13_lines([r13_v111_line('MS14_D13_S01_L0014')],'v111:MS14_D13_S01_L0014')
+    if r13_v111_actor_ready('karo'):
+        call r13_lines([r13_v111_line('MS14_D13_S01_L0016')],'v111:MS14_D13_S01_L0016')
+    call r13_lines([r13_v111_line('MS14_D13_S01_L0017')],'v111:MS14_D13_S01_L0017')
+    call r13_lines([r13_v111_line('MS14_D13_S01_L0018')],'v111:MS14_D13_S01_L0018')
+    call r13_lines([r13_v111_line('MS14_D13_S01_L0020')],'v111:MS14_D13_S01_L0020')
+    call r13_lines([r13_v111_line('MS14_D13_S01_L0021')],'v111:MS14_D13_S01_L0021')
+    call r13_lines([r13_v111_line('MS14_D13_S01_L0022')],'v111:MS14_D13_S01_L0022')
+    call r13_lines([r13_v111_line('MS14_D13_S01_L0023')],'v111:MS14_D13_S01_L0023')
+    $ r13_v111_set('pandol_blanket_mended',True)
+    $ r13_v111_apply('actual_blanket_mending13',[dict(op="acquire",key='E13_MENDING',variant="observed")])
+    if r13_v111_value("teacher_custody")=="guard":
+        jump r13_v111_teacher_relief13
+    jump r13_v111_gate_bench13
+
+label r13_v111_teacher_relief13:
+    $ r13_v111_arrive(['mom', 'daram', 'guard', 'resident_teacher', 'v111_patrol'])
+    jump r13_v111_teacher_relief_check13
+
+label r13_v111_teacher_relief_check13:
+    call r13_v111_wait('teacher_relief_check13')
+    if _return==0:
+        jump r13_v111_teacher_relief_done13
+    jump r13_v111_teacher_relief_check13
+
+label r13_v111_teacher_relief_done13:
+    $ r13_v111_set('busy:v111_patrol','teacher_supervision')
+    $ r13_v111_set('teacher_supervisor','v111_patrol')
+    $ r13_v111_set('busy:guard',False)
+    jump r13_v111_gate_bench13
+
+label r13_v111_gate_bench13:
+    $ r13_v111_scene('MS14_D13_S02')
+    $ r13_edit(period=0)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('gate','gate_bench13',['mom', 'daram'])
+    $ r13_v111_arrive(['mom', 'daram', 'guard'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['mom', 'daram', 'guard'])
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D13_S02_L0002')],'v111:MS14_D13_S02_L0002')
+    call r13_lines([r13_v111_line('MS14_D13_S02_L0003')],'v111:MS14_D13_S02_L0003')
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D13_S02_L0004')],'v111:MS14_D13_S02_L0004')
+    call r13_lines([r13_v111_line('MS14_D13_S02_L0005')],'v111:MS14_D13_S02_L0005')
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D13_S02_L0006')],'v111:MS14_D13_S02_L0006')
+    call r13_lines([r13_v111_line('MS14_D13_S02_L0007')],'v111:MS14_D13_S02_L0007')
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D13_S02_L0008')],'v111:MS14_D13_S02_L0008')
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D13_S02_L0010')],'v111:MS14_D13_S02_L0010')
+    call r13_lines([r13_v111_line('MS14_D13_S02_L0011')],'v111:MS14_D13_S02_L0011')
+    call r13_v111_travel('square','cart_arrival13')
+    $ r13_v111_arrive(['mom', 'daram', 'npc_pandol', 'resident_ppul', 'neoul', 'karo', 'guard'])
+    call r13_lines([r13_v111_line('MS14_D13_S02_L0013')],'v111:MS14_D13_S02_L0013')
+    call r13_lines([r13_v111_line('MS14_D13_S02_L0014')],'v111:MS14_D13_S02_L0014')
+    call r13_lines([r13_v111_line('MS14_D13_S02_L0015')],'v111:MS14_D13_S02_L0015')
+    call r13_lines([r13_v111_line('MS14_D13_S02_L0017')],'v111:MS14_D13_S02_L0017')
+    call r13_lines([r13_v111_line('MS14_D13_S02_L0018')],'v111:MS14_D13_S02_L0018')
+    call r13_lines([r13_v111_line('MS14_D13_S02_L0019')],'v111:MS14_D13_S02_L0019')
+    call r13_lines([r13_v111_line('MS14_D13_S02_L0020')],'v111:MS14_D13_S02_L0020')
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D13_S02_L0021')],'v111:MS14_D13_S02_L0021')
+    call r13_lines([r13_v111_line('MS14_D13_S02_L0022')],'v111:MS14_D13_S02_L0022')
+    call r13_lines([r13_v111_line('MS14_D13_S02_L0023')],'v111:MS14_D13_S02_L0023')
+    call r13_lines([r13_v111_line('MS14_D13_S02_L0025')],'v111:MS14_D13_S02_L0025')
+    call r13_lines([r13_v111_line('MS14_D13_S02_L0026')],'v111:MS14_D13_S02_L0026')
+    call r13_lines([r13_v111_line('MS14_D13_S02_L0027')],'v111:MS14_D13_S02_L0027')
+    jump r13_v111_offer13
+
+label r13_v111_offer13:
+    menu:
+        '조건을 더 묻는다':
+            jump r13_v111_offer_question13
+        '가족 셋이 수락하고 물러난다' if r13_v111_value('family_offer_terms_seen'):
+            jump r13_v111_offer_accept13
+        '거절하고 현장에 남는다' if r13_v111_value('family_school_place'):
+            jump r13_v111_offer_refuse13
+
+label r13_v111_offer_question13:
+    call r13_lines([r13_v111_line('MS14_D13_S02_L0029')],'v111:MS14_D13_S02_L0029')
+    call r13_lines([r13_v111_line('MS14_D13_S02_L0030')],'v111:MS14_D13_S02_L0030')
+    call r13_lines([r13_v111_line('MS14_D13_S02_L0031')],'v111:MS14_D13_S02_L0031')
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D13_S02_L0032')],'v111:MS14_D13_S02_L0032')
+    $ r13_v111_set('family_offer_terms_seen',True)
+    jump r13_v111_offer13
+
+label r13_v111_offer_accept13:
+    call r13_lines([r13_v111_line('MS14_D13_S02_L0038')],'v111:MS14_D13_S02_L0038')
+    call r13_lines([r13_v111_line('MS14_D13_S02_L0039')],'v111:MS14_D13_S02_L0039')
+    $ r13_v111_set('family_deal',True)
+    jump r13_v111_family_exit13
+
+label r13_v111_offer_refuse13:
+    call r13_lines([r13_v111_line('MS14_D13_S02_L0033')],'v111:MS14_D13_S02_L0033')
+    call r13_lines([r13_v111_line('MS14_D13_S02_L0034')],'v111:MS14_D13_S02_L0034')
+    call r13_lines([r13_v111_line('MS14_D13_S02_L0035')],'v111:MS14_D13_S02_L0035')
+    $ r13_v111_set('family_deal',False)
+    jump r13_v111_blanket_lie13
+
+label r13_v111_blanket_lie13:
+    $ r13_v111_scene('MS14_D13_S03')
+    $ r13_edit(period=0)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('square','blanket_lie13',['mom', 'daram'])
+    $ r13_v111_arrive(['mom', 'daram', 'npc_pandol', 'resident_ppul', 'guard', 'karo'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['mom', 'daram', 'npc_pandol', 'resident_ppul', 'guard', 'karo'])
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0002')],'v111:MS14_D13_S03_L0002')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0003')],'v111:MS14_D13_S03_L0003')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0004')],'v111:MS14_D13_S03_L0004')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0005')],'v111:MS14_D13_S03_L0005')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0006')],'v111:MS14_D13_S03_L0006')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0007')],'v111:MS14_D13_S03_L0007')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0009')],'v111:MS14_D13_S03_L0009')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0010')],'v111:MS14_D13_S03_L0010')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0011')],'v111:MS14_D13_S03_L0011')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0012')],'v111:MS14_D13_S03_L0012')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0013')],'v111:MS14_D13_S03_L0013')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0015')],'v111:MS14_D13_S03_L0015')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0016')],'v111:MS14_D13_S03_L0016')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0017')],'v111:MS14_D13_S03_L0017')
+    jump r13_v111_mending_proof13
+
+label r13_v111_mending_proof13:
+    call r13_v111_proof('아내가 봤다는 담요의 시점을 확인한다',['E13_MENDING'],'r13_v111_mending_answer13','r13_v111_mending_wrong13','r13_v111_mending_hint13')
+    jump expression _return
+
+label r13_v111_mending_answer13:
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0019')],'v111:MS14_D13_S03_L0019')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0020')],'v111:MS14_D13_S03_L0020')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0021')],'v111:MS14_D13_S03_L0021')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0022')],'v111:MS14_D13_S03_L0022')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0023')],'v111:MS14_D13_S03_L0023')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0024')],'v111:MS14_D13_S03_L0024')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0025')],'v111:MS14_D13_S03_L0025')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0026')],'v111:MS14_D13_S03_L0026')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0027')],'v111:MS14_D13_S03_L0027')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0028')],'v111:MS14_D13_S03_L0028')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0030')],'v111:MS14_D13_S03_L0030')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0031')],'v111:MS14_D13_S03_L0031')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0032')],'v111:MS14_D13_S03_L0032')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0034')],'v111:MS14_D13_S03_L0034')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0035')],'v111:MS14_D13_S03_L0035')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0036')],'v111:MS14_D13_S03_L0036')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0038')],'v111:MS14_D13_S03_L0038')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0039')],'v111:MS14_D13_S03_L0039')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0040')],'v111:MS14_D13_S03_L0040')
+    $ r13_v111_set('false_message_admitted',True)
+    jump r13_v111_cart_inspect13
+
+label r13_v111_mending_wrong13:
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0043')],'v111:MS14_D13_S03_L0043')
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0044')],'v111:MS14_D13_S03_L0044')
+    jump r13_v111_mending_proof13
+
+label r13_v111_mending_hint13:
+    call r13_lines([r13_v111_line('MS14_D13_S03_L0045')],'v111:MS14_D13_S03_L0045')
+    jump r13_v111_mending_proof13
+
+label r13_v111_cart_inspect13:
+    call r13_v111_wait('cart_inspect13')
+    if _return==0:
+        jump r13_v111_cart_observed13
+    jump r13_v111_cart_inspect13
+
+label r13_v111_cart_observed13:
+    $ r13_v111_set('cart_roster',['npc_pandol', 'resident_momo', 'resident_guldol'])
+    if r13_v111_value("silluk_status")=="supervised_compulsory_labor" and r13_v111_person_alive("resident_siluk"):
+        call r13_v111_silluk_board_observation13
+    if r13_v111_value("teacher_transfer")=="listed" and r13_v111_person_alive("resident_teacher"):
+        call r13_v111_teacher_board_observation13
+    jump r13_v111_stop_cart13
+
+label r13_v111_teacher_board_observation13:
+    $ r13_v111_set('location:resident_teacher','square')
+    call r13_lines([(None,"사자 선생님이 출석부를 품에 안고 앉아 있었다.",{"show":"resident_teacher","pose":"collapse_attendance"})],"v111:teacher_actual_cart_observation")
+    $ r13_v111_set("teacher_transfer","aboard")
+    $ r13_v111_set("cart_roster",r13_v111_value("cart_roster")+["resident_teacher"])
+    return
+
+label r13_v111_silluk_board_observation13:
+    $ r13_v111_set('location:resident_siluk','square')
+    call r13_lines([(None,"짐칸 끝에 실룩. 고개를 숙이고 있었다.")],"v111:silluk_actual_cart_observation")
+    $ r13_v111_set("silluk_transfer","aboard")
+    $ r13_v111_set("cart_roster",r13_v111_value("cart_roster")+["resident_siluk"])
+    return
+
+label r13_v111_stop_cart13:
+    $ r13_v111_scene('MS14_D13_S04')
+    $ r13_edit(period=2)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('square','stop_cart13',['mom', 'daram'])
+    $ r13_v111_arrive(['mom', 'daram', 'karo', 'guard', 'resident_badook', 'npc_pandol', 'resident_momo', 'resident_guldol', 'resident_ppul', 'neoul'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['mom', 'daram', 'karo', 'guard', 'resident_badook', 'npc_pandol', 'resident_momo', 'resident_guldol', 'resident_ppul', 'neoul'])
+    $ room13["v111"]["music_hold"]=room13["v111"]["scene"]
+    $ renpy.music.stop(fadeout=.15)
+    if r13_v111_actor_ready('resident_badook'):
+        call r13_lines([r13_v111_line('MS14_D13_S04_L0002')],'v111:MS14_D13_S04_L0002')
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0003')],'v111:MS14_D13_S04_L0003')
+    if r13_v111_actor_ready('resident_badook'):
+        call r13_lines([r13_v111_line('MS14_D13_S04_L0004')],'v111:MS14_D13_S04_L0004')
+    $ r13_v111_set('cart_stopped',True)
+    $ r13_v111_set('stop_actor','resident_badook')
+    $ r13_v111_set('busy:resident_badook','stop_cart')
+    $ r13_v111_set("cart_roster",r13_v111_value("cart_roster") or ["npc_pandol","resident_momo","resident_guldol"])
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0011')],'v111:MS14_D13_S04_L0011')
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D13_S04_L0012')],'v111:MS14_D13_S04_L0012')
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0013')],'v111:MS14_D13_S04_L0013')
+    if r13_v111_actor_ready('resident_badook'):
+        call r13_lines([r13_v111_line('MS14_D13_S04_L0014')],'v111:MS14_D13_S04_L0014')
+    jump r13_v111_family_position13
+
+label r13_v111_family_position13:
+    menu:
+        '곁에 남는다':
+            jump r13_v111_family_stay13
+        '까로와 학교로 간다' if not r13_v111_value('busy:karo'):
+            jump r13_v111_family_karo13
+        '네로와 학교로 간다' if r13_v111_value('nero_alive') and not r13_v111_value('busy:resident_nero') and r13_v111_actor_ready("resident_nero"):
+            jump r13_v111_family_nero13
+
+label r13_v111_family_stay13:
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0063')],'v111:MS14_D13_S04_L0063')
+    if r13_v111_actor_ready('mom') and room13['location']=='square':
+        call r13_lines([r13_v111_line('MS14_D13_S04_L0064')],'v111:MS14_D13_S04_L0064')
+    $ r13_v111_set('family_location','square')
+    $ r13_v111_set('busy:mom','daram_guard')
+    jump r13_v111_handover_plan13
+
+label r13_v111_family_karo13:
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0056')],'v111:MS14_D13_S04_L0056')
+    if r13_v111_actor_ready('karo'):
+        call r13_lines([r13_v111_line('MS14_D13_S04_L0057')],'v111:MS14_D13_S04_L0057')
+    if r13_v111_actor_ready('daram') and room13['location']=='square':
+        call r13_lines([r13_v111_line('MS14_D13_S04_L0058')],'v111:MS14_D13_S04_L0058')
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0059')],'v111:MS14_D13_S04_L0059')
+    $ r13_v111_set('family_location','moving_to_school')
+    $ r13_v111_set('location:mom','on_way_school')
+    $ r13_v111_set('location:daram','on_way_school')
+    $ r13_v111_set('location:karo','on_way_school')
+    $ r13_v111_set('busy:karo','family_walk')
+    jump r13_v111_family_walk_karo13
+
+label r13_v111_family_nero13:
+    $ r13_v111_arrive(['mom', 'daram', 'resident_nero', 'karo', 'guard', 'resident_badook'])
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0060')],'v111:MS14_D13_S04_L0060')
+    if r13_v111_actor_ready('resident_nero'):
+        call r13_lines([r13_v111_line('MS14_D13_S04_L0061')],'v111:MS14_D13_S04_L0061')
+    if r13_v111_actor_ready('mom') and room13['location']=='square':
+        call r13_lines([r13_v111_line('MS14_D13_S04_L0062')],'v111:MS14_D13_S04_L0062')
+    hide r13_visitor
+    $ renpy.pause(.35)
+    $ r13_v111_set('family_location','school')
+    $ r13_v111_set('location:mom','school')
+    $ r13_v111_set('location:daram','school')
+    $ r13_v111_set('location:resident_nero','school')
+    $ r13_v111_set('busy:mom','daram_guard')
+    $ r13_v111_set('busy:resident_nero','daram_guard')
+    $ r13_v111_arrive(['karo', 'guard', 'resident_badook'])
+    jump r13_v111_handover_plan13
+
+label r13_v111_family_walk_karo13:
+    hide r13_visitor
+    $ renpy.pause(.35)
+    $ r13_v111_set('location:mom','school')
+    $ r13_v111_set('location:daram','school')
+    $ r13_v111_set('busy:mom','daram_guard')
+    $ r13_v111_set('family_location','school')
+    $ r13_v111_set('busy:karo',False)
+    $ r13_v111_arrive(['karo', 'guard', 'resident_badook'])
+    call r13_lines([(None,"잠시 뒤, 까로가 혼자 광장으로 돌아왔다.",{"show":"karo","no_lead":True})],"v111:family_escort_return13")
+    jump r13_v111_handover_plan13
+
+label r13_v111_handover_plan13:
+    if room13["v111"].get("scene")!="MS14_D13_S04":
+        $ r13_v111_scene("MS14_D13_S04")
+        $ room13["v111"]["music_hold"]="MS14_D13_S04"
+        $ renpy.music.stop(fadeout=.15)
+        $ r13_v111_score()
+    menu:
+        '학교 침상과 인수를 먼저 확인한다':
+            jump r13_v111_school_handover_prep13
+        '하차한 사람부터 부축한다' if r13_v111_value('handover_prepared13'):
+            jump r13_v111_pandol_down13
+        '보온·감독 아래 인계를 기다린다':
+            jump r13_v111_partial13
+        '검증한 기록을 공개한다' if r13_v111_value('false_message_admitted') and not r13_v111_value('crowd_resolution_done'):
+            jump r13_v111_crowd13
+
+label r13_v111_school_handover_prep13:
+    call r13_v111_travel('school','handover_prep13')
+    $ r13_v111_arrive(['nabi', 'karo'])
+    jump r13_v111_nabi_beds13
+
+label r13_v111_nabi_beds13:
+    call r13_v111_wait('nabi_beds13')
+    if _return==0:
+        jump r13_v111_beds_ready13
+    jump r13_v111_nabi_beds13
+
+label r13_v111_beds_ready13:
+    $ r13_v111_set('handover_prepared13',True)
+    $ r13_v111_set('busy:karo',False)
+    call r13_v111_travel('square','beds_ready13')
+    $ r13_v111_arrive(['guard', 'karo', 'resident_badook'])
+    jump r13_v111_handover_plan13
+
+label r13_v111_pandol_down13:
+    $ r13_v111_arrive(['guard', 'karo', 'resident_badook', 'npc_pandol'])
+    if r13_v111_value("family_location")=="square":
+        $ r13_v111_arrive(["guard","karo","resident_badook","npc_pandol","mom","daram"])
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0016')],'v111:MS14_D13_S04_L0016')
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0017')],'v111:MS14_D13_S04_L0017')
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0018')],'v111:MS14_D13_S04_L0018')
+    call r13_v111_travel('school','pandol_school13')
+    $ r13_v111_arrive(['nabi', 'karo', 'npc_pandol'])
+    if r13_v111_actor_ready('nabi') and room13['location']=='school':
+        call r13_lines([r13_v111_line('MS14_D13_S04_L0021')],'v111:MS14_D13_S04_L0021')
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0022')],'v111:MS14_D13_S04_L0022')
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0023')],'v111:MS14_D13_S04_L0023')
+    $ r13_v111_set('handed:npc_pandol',True)
+    $ r13_v111_apply('pandol_actual_school_handover',[dict(op="acquire",key='E13_HANDOVER',variant="observed")])
+    jump r13_v111_momo_transport13
+
+label r13_v111_momo_transport13:
+    call r13_v111_travel('square','momo_transport13')
+    $ r13_v111_arrive(['karo', 'guard', 'resident_badook', 'resident_momo'])
+    jump r13_v111_momo_down13
+
+label r13_v111_momo_down13:
+    call r13_v111_wait('momo_down13')
+    if _return==0:
+        jump r13_v111_momo_school13
+    jump r13_v111_momo_down13
+
+label r13_v111_momo_school13:
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0065')],'v111:MS14_D13_S04_L0065')
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0066')],'v111:MS14_D13_S04_L0066')
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0067')],'v111:MS14_D13_S04_L0067')
+    call r13_v111_travel('school','momo_school13')
+    $ r13_v111_arrive(['nabi', 'karo', 'resident_momo'])
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0068')],'v111:MS14_D13_S04_L0068')
+    $ r13_v111_set('handed:resident_momo',True)
+    jump r13_v111_guldol_transport13
+
+label r13_v111_guldol_transport13:
+    call r13_v111_travel('square','guldol_transport13')
+    $ r13_v111_arrive(['karo', 'guard', 'resident_badook', 'resident_guldol'])
+    jump r13_v111_guldol_down13
+
+label r13_v111_guldol_down13:
+    call r13_v111_wait('guldol_down13')
+    if _return==0:
+        jump r13_v111_guldol_school13
+    jump r13_v111_guldol_down13
+
+label r13_v111_guldol_school13:
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0069')],'v111:MS14_D13_S04_L0069')
+    if r13_v111_actor_ready('resident_guldol'):
+        call r13_lines([r13_v111_line('MS14_D13_S04_L0070')],'v111:MS14_D13_S04_L0070')
+    call r13_v111_travel('school','guldol_school13')
+    $ r13_v111_arrive(['nabi', 'karo', 'resident_guldol'])
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0071')],'v111:MS14_D13_S04_L0071')
+    $ r13_v111_set('handed:resident_guldol',True)
+    jump r13_v111_last_cart13
+
+label r13_v111_last_cart13:
+    call r13_v111_travel('square','last_cart13',[])
+    $ r13_v111_arrive(['karo', 'resident_badook', 'resident_ppul'])
+    if "resident_teacher" in r13_v111_value("cart_roster") and not r13_v111_value("handed:resident_teacher"):
+        jump r13_v111_teacher_transport13
+    if "resident_siluk" in r13_v111_value("cart_roster") and not r13_v111_value("handed:resident_siluk"):
+        jump r13_v111_silluk_transport13
+    if r13_v111_value("family_location")=="square":
+        call r13_v111_family_still_here13
+    else:
+        call r13_v111_family_already_school13
+    if not all(r13_v111_value("handed:"+p) for p in r13_v111_value("cart_roster")):
+        jump r13_v111_partial13
+    $ room13["v111"]["music_hold"]=None
+    $ room13["v111"]["music_override"]={'scene': 'MS14_D13_S04', 'path': 'assets/bgm-village.mp3'}
+    $ renpy.music.play('assets/bgm-village.mp3',fadein=1.0,relative_volume=.28)
+    if r13_v111_actor_ready('resident_badook'):
+        call r13_lines([r13_v111_line('MS14_D13_S04_L0040')],'v111:MS14_D13_S04_L0040')
+    $ r13_v111_set('all_cart_handed',True)
+    $ r13_v111_set('busy:resident_badook',False)
+    $ r13_v111_set('outcome13','all_rescued')
+    jump r13_v111_transport_cleanup13
+
+label r13_v111_family_still_here13:
+    $ r13_v111_arrive(['karo', 'resident_badook', 'resident_ppul', 'mom', 'daram'])
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0034')],'v111:MS14_D13_S04_L0034')
+    if r13_v111_actor_ready('mom') and room13['location']=='square':
+        call r13_lines([r13_v111_line('MS14_D13_S04_L0035')],'v111:MS14_D13_S04_L0035')
+    return
+
+label r13_v111_family_already_school13:
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0037')],'v111:MS14_D13_S04_L0037')
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0088')],'v111:MS14_D13_S04_L0088')
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0038')],'v111:MS14_D13_S04_L0038')
+    return
+
+label r13_v111_teacher_transport13:
+    $ r13_v111_arrive(['karo', 'guard', 'resident_badook', 'resident_teacher', 'neoul'])
+    jump r13_v111_teacher_down13
+
+label r13_v111_teacher_down13:
+    call r13_v111_wait('teacher_down13')
+    if _return==0:
+        jump r13_v111_teacher_supervised13
+    jump r13_v111_teacher_down13
+
+label r13_v111_teacher_supervised13:
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0072')],'v111:MS14_D13_S04_L0072')
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0073')],'v111:MS14_D13_S04_L0073')
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D13_S04_L0074')],'v111:MS14_D13_S04_L0074')
+    call r13_v111_travel('v111_supervised','teacher_supervised13',[])
+    $ r13_v111_arrive(['karo', 'resident_teacher', 'neoul'])
+    jump r13_v111_teacher_receipt13
+
+label r13_v111_teacher_receipt13:
+    call r13_v111_wait('teacher_receipt13')
+    if _return==0:
+        jump r13_v111_teacher_received13
+    jump r13_v111_teacher_receipt13
+
+label r13_v111_teacher_received13:
+    $ r13_v111_set('handed:resident_teacher',True)
+    $ r13_v111_set('teacher_transfer','handed_over')
+    $ r13_v111_set('busy:neoul','teacher_supervision')
+    jump r13_v111_last_cart13
+
+label r13_v111_silluk_transport13:
+    $ r13_v111_arrive(['karo', 'guard', 'resident_badook', 'resident_siluk'])
+    jump r13_v111_silluk_supervision13
+
+label r13_v111_silluk_supervision13:
+    call r13_v111_wait('silluk_supervision13')
+    if _return==0:
+        jump r13_v111_silluk_down13
+    jump r13_v111_silluk_supervision13
+
+label r13_v111_silluk_down13:
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0008')],'v111:MS14_D13_S04_L0008')
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D13_S04_L0009')],'v111:MS14_D13_S04_L0009')
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0025')],'v111:MS14_D13_S04_L0025')
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D13_S04_L0026')],'v111:MS14_D13_S04_L0026')
+    if r13_v111_value("family_location")=="square":
+        call r13_v111_silluk_family13
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0030')],'v111:MS14_D13_S04_L0030')
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D13_S04_L0031')],'v111:MS14_D13_S04_L0031')
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0032')],'v111:MS14_D13_S04_L0032')
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0075')],'v111:MS14_D13_S04_L0075')
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0076')],'v111:MS14_D13_S04_L0076')
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D13_S04_L0077')],'v111:MS14_D13_S04_L0077')
+    call r13_v111_travel('v111_labor','silluk_down13',[])
+    $ r13_v111_arrive(['karo', 'guard', 'resident_siluk'])
+    jump r13_v111_silluk_receipt13
+
+label r13_v111_silluk_family13:
+    $ r13_v111_arrive(['karo', 'guard', 'resident_badook', 'resident_siluk', 'mom', 'daram'])
+    if r13_v111_actor_ready('daram') and room13['location']=='square':
+        call r13_lines([r13_v111_line('MS14_D13_S04_L0028')],'v111:MS14_D13_S04_L0028')
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0029')],'v111:MS14_D13_S04_L0029')
+    return
+
+label r13_v111_silluk_receipt13:
+    call r13_v111_wait('silluk_receipt13')
+    if _return==0:
+        jump r13_v111_silluk_received13
+    jump r13_v111_silluk_receipt13
+
+label r13_v111_silluk_received13:
+    $ r13_v111_set('handed:resident_siluk',True)
+    $ r13_v111_set('silluk_transfer','handed_over')
+    $ r13_v111_set('busy:guard','silluk_supervision')
+    jump r13_v111_last_cart13
+
+label r13_v111_transport_cleanup13:
+    call r13_v111_wait('transport_cleanup13')
+    if _return==0:
+        jump r13_v111_escort_refuse13
+    if _return==1:
+        jump r13_v111_order_stop13
+    if _return==2:
+        jump r13_v111_driver_refuse13
+    if _return==3:
+        jump r13_v111_cart_return13
+    if _return==4:
+        jump r13_v111_relay_stop13
+    if _return==5:
+        jump r13_v111_night_finish13
+    if _return==6:
+        jump r13_v111_buri_tools13
+    jump r13_v111_transport_cleanup13
+
+label r13_v111_escort_refuse13:
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0044')],'v111:MS14_D13_S04_L0044')
+    if r13_v111_actor_ready('resident_badook'):
+        call r13_lines([r13_v111_line('MS14_D13_S04_L0045')],'v111:MS14_D13_S04_L0045')
+    $ r13_v111_set('actual_stop_actor_refuses_transport',True)
+    jump r13_v111_transport_cleanup13
+
+label r13_v111_order_stop13:
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0080')],'v111:MS14_D13_S04_L0080')
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D13_S04_L0081')],'v111:MS14_D13_S04_L0081')
+        $ r13_v111_commit('MS14_D13_S04_L0081')
+    $ r13_v111_set('current_order_execution_stopped',True)
+    $ r13_v111_apply('actual_stopped_order13',[dict(op="acquire",key='E13_ORDER',variant="observed")])
+    jump r13_v111_transport_cleanup13
+
+label r13_v111_driver_refuse13:
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0082')],'v111:MS14_D13_S04_L0082')
+    if r13_v111_actor_ready('karo'):
+        call r13_lines([r13_v111_line('MS14_D13_S04_L0083')],'v111:MS14_D13_S04_L0083')
+        $ r13_v111_commit('MS14_D13_S04_L0083')
+    $ r13_v111_set('Kkaro_forced_transport_refused',True)
+    jump r13_v111_transport_cleanup13
+
+label r13_v111_cart_return13:
+    $ r13_v111_arrive(['karo', 'guard', 'resident_badook', 'resident_eunho'])
+    call r13_lines([r13_v111_line('MS14_D13_S04_L0084')],'v111:MS14_D13_S04_L0084')
+    if r13_v111_actor_ready('karo'):
+        call r13_lines([r13_v111_line('MS14_D13_S04_L0085')],'v111:MS14_D13_S04_L0085')
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D13_S04_L0086')],'v111:MS14_D13_S04_L0086')
+    $ r13_v111_set('cart_returned',True)
+    $ r13_v111_set('escort_gear_returned',True)
+    jump r13_v111_transport_cleanup13
+
+label r13_v111_relay_stop13:
+    if r13_v111_value("busy:neoul")=="teacher_supervision":
+        jump r13_v111_relay_supervised13
+    $ r13_v111_arrive(['neoul', 'guard'])
+    jump r13_v111_relay_present13
+
+label r13_v111_relay_supervised13:
+    call r13_v111_travel('v111_supervised','relay_supervised13',[])
+    $ r13_v111_arrive(['neoul', 'resident_teacher'])
+    jump r13_v111_relay_present13
+
+label r13_v111_relay_present13:
+    call screen r13_book("neoul",present=True)
+    if _return=="V111:E13_ORDER" and r13_v111_owned("E13_ORDER"):
+        jump r13_v111_relay_confirmed13
+    if _return:
+        $ renpy.notify("중지 명령 사본을 직접 보여 줘야 한다.")
+    jump r13_v111_transport_cleanup13
+
+label r13_v111_relay_confirmed13:
+    $ r13_v111_set('relay_stopped',True)
+    jump r13_v111_transport_cleanup13
+
+label r13_v111_buri_tools13:
+    $ r13_v111_arrive(['buri'])
+    call r13_lines([(None,"부리가 공구와 받침을 챙겼다. 내일 현장에 함께 가겠다고 했다.")],"v111:buri_tools_consent13")
+    $ r13_v111_set('buri_device_consent',True)
+    jump r13_v111_transport_cleanup13
+
+label r13_v111_night_finish13:
+    $ r13_v111_set("current_transport_chain_stopped",all(r13_v111_value(k) for k in ["actual_stop_actor_refuses_transport","current_order_execution_stopped","Kkaro_forced_transport_refused","cart_returned","escort_gear_returned","relay_stopped"]))
+    jump r13_v111_sleep13
+
+label r13_v111_family_exit13:
+    $ r13_v111_scene('MS14_D13_A')
+    $ r13_edit(period=2)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('square','family_exit13',['mom', 'daram'])
+    $ r13_v111_arrive(['mom', 'daram', 'guard', 'karo'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['mom', 'daram', 'guard', 'karo'])
+    call r13_lines([r13_v111_line('MS14_D13_A_L0002')],'v111:MS14_D13_A_L0002')
+    call r13_lines([r13_v111_line('MS14_D13_A_L0003')],'v111:MS14_D13_A_L0003')
+    call r13_lines([r13_v111_line('MS14_D13_A_L0005')],'v111:MS14_D13_A_L0005')
+    call r13_lines([r13_v111_line('MS14_D13_A_L0006')],'v111:MS14_D13_A_L0006')
+    call r13_lines([r13_v111_line('MS14_D13_A_L0007')],'v111:MS14_D13_A_L0007')
+    call r13_lines([r13_v111_line('MS14_D13_A_L0008')],'v111:MS14_D13_A_L0008')
+    call r13_v111_travel('gate','family_gate13')
+    $ r13_v111_arrive(['mom', 'daram', 'guard', 'karo'])
+    call r13_lines([r13_v111_line('MS14_D13_A_L0010')],'v111:MS14_D13_A_L0010')
+    call r13_lines([r13_v111_line('MS14_D13_A_L0011')],'v111:MS14_D13_A_L0011')
+    call r13_lines([r13_v111_line('MS14_D13_A_L0012')],'v111:MS14_D13_A_L0012')
+    call r13_lines([r13_v111_line('MS14_D13_A_L0014')],'v111:MS14_D13_A_L0014')
+    call r13_lines([r13_v111_line('MS14_D13_A_L0015')],'v111:MS14_D13_A_L0015')
+    call r13_lines([r13_v111_line('MS14_D13_A_L0016')],'v111:MS14_D13_A_L0016')
+    call r13_lines([r13_v111_line('MS14_D13_A_L0018')],'v111:MS14_D13_A_L0018')
+    $ r13_v111_set('family_benefits_received',True)
+    $ r13_v111_set('night14_lodging','gate')
+    $ r13_v111_set('outcome13','family_priority')
+    $ r13_v111_set('departed_unrescued',True)
+    jump r13_v111_sleep13
+
+label r13_v111_partial13:
+    $ r13_v111_scene('MS14_D13_B')
+    $ r13_edit(period=2)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('square','partial13',[])
+    $ r13_v111_arrive(['karo', 'guard', 'resident_badook'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['karo', 'guard', 'resident_badook'])
+    if r13_v111_actor_ready('karo'):
+        call r13_lines([r13_v111_line('MS14_D13_B_L0002')],'v111:MS14_D13_B_L0002')
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D13_B_L0003')],'v111:MS14_D13_B_L0003')
+    call r13_lines([r13_v111_line('MS14_D13_B_L0004')],'v111:MS14_D13_B_L0004')
+    call r13_lines([r13_v111_line('MS14_D13_B_L0005')],'v111:MS14_D13_B_L0005')
+    if r13_v111_actor_ready('resident_badook'):
+        call r13_lines([r13_v111_line('MS14_D13_B_L0006')],'v111:MS14_D13_B_L0006')
+    call r13_lines([r13_v111_line('MS14_D13_B_L0008')],'v111:MS14_D13_B_L0008')
+    call r13_lines([r13_v111_line('MS14_D13_B_L0009')],'v111:MS14_D13_B_L0009')
+    $ r13_v111_set('outcome13','partial_rescue')
+    $ r13_v111_set('cart_stopped',True)
+    $ r13_v111_set('pending_handover_supervised',True)
+    jump r13_v111_sleep13
+
+label r13_v111_crowd13:
+    $ r13_v111_scene('MS14_D13_C')
+    $ r13_edit(period=2)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('square','crowd13',[])
+    $ r13_v111_arrive(['guard', 'karo', 'resident_badook', 'neoul'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['guard', 'karo', 'resident_badook', 'neoul'])
+    call r13_lines([r13_v111_line('MS14_D13_C_L0002')],'v111:MS14_D13_C_L0002')
+    call r13_lines([r13_v111_line('MS14_D13_C_L0003')],'v111:MS14_D13_C_L0003')
+    if r13_v111_value('family_location')=='square':
+        call r13_v111_daram_crowd13
+    menu:
+        '너울 앞을 막는다':
+            jump r13_v111_crowd_block13
+        '현장 감독자에게 보호를 맡긴다' if not r13_v111_value('busy:guard'):
+            jump r13_v111_crowd_guard13
+        '막지 않는다':
+            jump r13_v111_crowd_watch13
+
+label r13_v111_daram_crowd13:
+    $ r13_v111_arrive(['mom', 'daram', 'guard', 'karo', 'neoul', 'resident_badook'])
+    if r13_v111_actor_ready('daram') and room13['location']=='square':
+        call r13_lines([r13_v111_line('MS14_D13_C_L0006')],'v111:MS14_D13_C_L0006')
+    return
+
+label r13_v111_crowd_block13:
+    call r13_lines([r13_v111_line('MS14_D13_C_L0009')],'v111:MS14_D13_C_L0009')
+    call r13_lines([r13_v111_line('MS14_D13_C_L0010')],'v111:MS14_D13_C_L0010')
+    call r13_lines([r13_v111_line('MS14_D13_C_L0011')],'v111:MS14_D13_C_L0011')
+    if r13_v111_actor_ready('daram') and room13['location']=='square':
+        call r13_lines([r13_v111_line('MS14_D13_C_L0013')],'v111:MS14_D13_C_L0013')
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D13_C_L0014')],'v111:MS14_D13_C_L0014')
+    call r13_lines([r13_v111_line('MS14_D13_C_L0015')],'v111:MS14_D13_C_L0015')
+    call r13_lines([r13_v111_line('MS14_D13_C_L0016')],'v111:MS14_D13_C_L0016')
+    $ r13_v111_set('crowd_resolution_done',True)
+    $ r13_v111_set('crowd_injury',False)
+    $ r13_v111_set('crowd_intervention','success')
+    $ r13_v111_set('outcome13','all_rescued')
+    jump r13_v111_handover_plan13
+
+label r13_v111_crowd_guard13:
+    call r13_lines([r13_v111_line('MS14_D13_C_L0017')],'v111:MS14_D13_C_L0017')
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D13_C_L0018')],'v111:MS14_D13_C_L0018')
+    $ r13_v111_set('crowd_resolution_done',True)
+    $ r13_v111_set('crowd_injury',False)
+    $ r13_v111_set('outcome13','all_rescued')
+    jump r13_v111_handover_plan13
+
+label r13_v111_crowd_watch13:
+    call r13_lines([r13_v111_line('MS14_D13_C_L0020')],'v111:MS14_D13_C_L0020')
+    $ r13_v111_set('crowd_resolution_done',True)
+    $ r13_v111_set('crowd_injury',True)
+    $ r13_v111_set('crowd_intervention','none')
+    $ r13_v111_set('outcome13','crowd_violence')
+    jump r13_v111_sleep13
+
+label r13_v111_crowd_failed13:
+    call r13_lines([r13_v111_line('MS14_D13_C_L0021')],'v111:MS14_D13_C_L0021')
+    call r13_lines([r13_v111_line('MS14_D13_C_L0022')],'v111:MS14_D13_C_L0022')
+    $ r13_v111_set('crowd_resolution_done',True)
+    $ r13_v111_set('crowd_injury',True)
+    $ r13_v111_set('crowd_intervention','failed')
+    $ r13_v111_set('outcome13','crowd_violence')
+    jump r13_v111_sleep13
+
+label r13_v111_sleep13:
+    if r13_v111_value("outcome13")=="family_priority":
+        jump r13_v111_sleep13_gate
+    if r13_v111_value("family_location")=="square":
+        call r13_v111_collect_family13
+    call r13_v111_travel('school','sleep13',['mom', 'daram'])
+    $ r13_v111_set('family_location','school')
+    $ r13_v111_set('busy:mom',False)
+    $ r13_v111_arrive(['mom', 'daram', 'nabi'])
+    jump r13_v111_sleep13_input
+
+label r13_v111_collect_family13:
+    call r13_v111_travel('square','collect_family13',[])
+    $ r13_v111_arrive(['mom', 'daram'])
+    return
+
+label r13_v111_sleep13_gate:
+    call r13_v111_travel('gate','sleep13_gate',['mom', 'daram'])
+    $ r13_v111_arrive(['mom', 'daram', 'guard'])
+    jump r13_v111_sleep13_gate_input
+
+label r13_v111_sleep13_gate_input:
+    call r13_v111_wait('sleep13_gate_input')
+    if _return==0:
+        jump r13_v111_morning14
+    jump r13_v111_sleep13_gate_input
+
+label r13_v111_sleep13_input:
+    call r13_v111_wait('sleep13_input')
+    if _return==0:
+        jump r13_v111_morning14
+    jump r13_v111_sleep13_input
+
+label r13_v111_morning14:
+    $ r13_v111_set('day',14)
+    jump r13_v111_day14
+
+label r13_v111_day14:
+    jump r13_v111_ending_dispatch14
+
+label r13_v111_ending_dispatch14:
+    if r13_v111_value('outcome13')=='family_priority':
+        jump r13_v111_family_ending14
+    if r13_v111_value('outcome13')=='partial_rescue':
+        jump r13_v111_partial_ending14
+    if r13_v111_value('crowd_injury'):
+        jump r13_v111_violence_ending14
+    jump r13_v111_morning_safe14
+
+label r13_v111_morning_safe14:
+    $ r13_v111_scene('MS14_D14_S01')
+    $ r13_edit(period=0)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('school','morning_safe14',['mom', 'daram'])
+    $ r13_v111_arrive(['mom', 'daram', 'npc_pandol', 'nabi'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['mom', 'daram', 'npc_pandol', 'nabi'])
+    call r13_lines([r13_v111_line('MS14_D14_S01_L0002')],'v111:MS14_D14_S01_L0002')
+    call r13_lines([r13_v111_line('MS14_D14_S01_L0003')],'v111:MS14_D14_S01_L0003')
+    call r13_lines([r13_v111_line('MS14_D14_S01_L0004')],'v111:MS14_D14_S01_L0004')
+    call r13_lines([r13_v111_line('MS14_D14_S01_L0006')],'v111:MS14_D14_S01_L0006')
+    call r13_lines([r13_v111_line('MS14_D14_S01_L0007')],'v111:MS14_D14_S01_L0007')
+    call r13_lines([r13_v111_line('MS14_D14_S01_L0008')],'v111:MS14_D14_S01_L0008')
+    call r13_lines([r13_v111_line('MS14_D14_S01_L0010')],'v111:MS14_D14_S01_L0010')
+    call r13_lines([r13_v111_line('MS14_D14_S01_L0011')],'v111:MS14_D14_S01_L0011')
+    call r13_lines([r13_v111_line('MS14_D14_S01_L0012')],'v111:MS14_D14_S01_L0012')
+    call r13_lines([r13_v111_line('MS14_D14_S01_L0013')],'v111:MS14_D14_S01_L0013')
+    call r13_lines([r13_v111_line('MS14_D14_S01_L0014')],'v111:MS14_D14_S01_L0014')
+    call r13_lines([r13_v111_line('MS14_D14_S01_L0015')],'v111:MS14_D14_S01_L0015')
+    call r13_lines([r13_v111_line('MS14_D14_S01_L0017')],'v111:MS14_D14_S01_L0017')
+    call r13_lines([r13_v111_line('MS14_D14_S01_L0018')],'v111:MS14_D14_S01_L0018')
+    jump r13_v111_altar_guide14
+
+label r13_v111_altar_guide14:
+    call r13_v111_wait('altar_guide14')
+    if _return==0:
+        jump r13_v111_altar_ready14
+    jump r13_v111_altar_guide14
+
+label r13_v111_altar_ready14:
+    $ r13_v111_set('altar_guide_confirmed',True)
+    $ r13_v111_set('busy:resident_badook',False)
+    jump r13_v111_altar14
+
+label r13_v111_altar14:
+    $ r13_v111_scene('MS14_D14_S02')
+    $ r13_edit(period=1)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('altar','altar14',['mom', 'daram'])
+    $ r13_v111_arrive(['mom', 'daram', 'resident_badook', 'karo'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['mom', 'daram', 'resident_badook', 'karo'])
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0003')],'v111:MS14_D14_S02_L0003')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0004')],'v111:MS14_D14_S02_L0004')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0005')],'v111:MS14_D14_S02_L0005')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0006')],'v111:MS14_D14_S02_L0006')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0008')],'v111:MS14_D14_S02_L0008')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0009')],'v111:MS14_D14_S02_L0009')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0010')],'v111:MS14_D14_S02_L0010')
+    $ r13_v111_set('altar_heat_structure_observed',True)
+    jump r13_v111_mayor_interview14
+
+label r13_v111_mayor_interview14:
+    call r13_v111_travel('gate','mayor_interview14')
+    $ r13_v111_arrive(['mom', 'resident_ppul', 'resident_badook', 'karo'])
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0012')],'v111:MS14_D14_S02_L0012')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0013')],'v111:MS14_D14_S02_L0013')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0014')],'v111:MS14_D14_S02_L0014')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0015')],'v111:MS14_D14_S02_L0015')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0016')],'v111:MS14_D14_S02_L0016')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0017')],'v111:MS14_D14_S02_L0017')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0019')],'v111:MS14_D14_S02_L0019')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0021')],'v111:MS14_D14_S02_L0021')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0022')],'v111:MS14_D14_S02_L0022')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0023')],'v111:MS14_D14_S02_L0023')
+    $ r13_v111_set('mayor_false_invitation_admitted',True)
+    if r13_v111_value('dallae_first_victim_known'):
+        call r13_v111_dallae14
+    jump r13_v111_device14
+
+label r13_v111_dallae14:
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0025')],'v111:MS14_D14_S02_L0025')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0026')],'v111:MS14_D14_S02_L0026')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0027')],'v111:MS14_D14_S02_L0027')
+    return
+
+label r13_v111_device14:
+    if r13_v111_value("buri_device_consent") and not r13_v111_value("mayor_site_decided") :
+        jump r13_v111_mayor_site_request14
+    call r13_v111_travel('altar','device14')
+    $ r13_v111_arrive(['mom', 'daram', 'karo', 'resident_badook'])
+    if r13_v111_value("mayor_site_joined") and r13_v111_person_alive("buri"):
+        call r13_v111_buri_work_start14
+    jump r13_v111_device_record14
+
+label r13_v111_mayor_site_request14:
+    call r13_v111_wait('mayor_site_request14')
+    if _return==0:
+        jump r13_v111_mayor_site_yes14
+    if _return==1:
+        jump r13_v111_mayor_site_no14
+    jump r13_v111_mayor_site_request14
+
+label r13_v111_mayor_site_yes14:
+    $ r13_v111_set('mayor_site_decided',True)
+    $ r13_v111_set('mayor_site_joined',True)
+    jump r13_v111_device14
+
+label r13_v111_mayor_site_no14:
+    $ r13_v111_set('mayor_site_decided',True)
+    $ r13_v111_set('mayor_site_joined',False)
+    jump r13_v111_device14
+
+label r13_v111_buri_work_start14:
+    $ r13_v111_arrive(['mom', 'daram', 'buri', 'resident_ppul', 'resident_badook', 'karo'])
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0031')],'v111:MS14_D14_S02_L0031')
+    if r13_v111_actor_ready('buri'):
+        call r13_lines([r13_v111_line('MS14_D14_S02_L0032')],'v111:MS14_D14_S02_L0032')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0034')],'v111:MS14_D14_S02_L0034')
+    if r13_v111_value("madam_observer_consent"):
+        call r13_v111_madam_device_question14
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0043')],'v111:MS14_D14_S02_L0043')
+    $ r13_v111_set('buri_device_present',True)
+    return
+
+label r13_v111_madam_device_question14:
+    if r13_v111_actor_ready('resident_madam'):
+        call r13_lines([r13_v111_line('MS14_D14_S02_L0036')],'v111:MS14_D14_S02_L0036')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0037')],'v111:MS14_D14_S02_L0037')
+    if r13_v111_actor_ready('resident_madam'):
+        call r13_lines([r13_v111_line('MS14_D14_S02_L0038')],'v111:MS14_D14_S02_L0038')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0039')],'v111:MS14_D14_S02_L0039')
+    if r13_v111_actor_ready('resident_madam'):
+        call r13_lines([r13_v111_line('MS14_D14_S02_L0040')],'v111:MS14_D14_S02_L0040')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0041')],'v111:MS14_D14_S02_L0041')
+    return
+
+label r13_v111_madam_device_close14:
+    if r13_v111_actor_ready('resident_madam'):
+        call r13_lines([r13_v111_line('MS14_D14_S02_L0060')],'v111:MS14_D14_S02_L0060')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0061')],'v111:MS14_D14_S02_L0061')
+    return
+
+label r13_v111_device_record14:
+    call screen r13_book("dad",present=True)
+    if _return=="V111:E13_HANDOVER" and r13_v111_owned("E13_HANDOVER"):
+        jump r13_v111_device_rescue14
+    if _return=="V111:E14_SUPPLY" and r13_v111_owned("E14_SUPPLY") and r13_v111_value("school_heat_connected"):
+        jump r13_v111_device_supply14
+    if _return:
+        $ renpy.notify("실제 인수한 구조 기록이나 연결·사용을 확인한 물자 기록이 필요하다.")
+    jump r13_v111_device_pause14
+
+label r13_v111_device_pause14:
+    call r13_v111_wait('device_pause14')
+    if _return==0:
+        jump r13_v111_device_record14
+    jump r13_v111_device_pause14
+
+label r13_v111_device_rescue14:
+    $ r13_v111_set('device_record_kind','rescue')
+    if r13_v111_actor_ready('dad'):
+        call r13_lines([r13_v111_line('MS14_D14_S02_L0082')],'v111:MS14_D14_S02_L0082')
+    if r13_v111_actor_ready('mom'):
+        call r13_lines([r13_v111_line('MS14_D14_S02_L0083')],'v111:MS14_D14_S02_L0083')
+    $ r13_v111_set('device_record_shown',True)
+    jump r13_v111_device_worker14
+
+label r13_v111_device_supply14:
+    $ r13_v111_set('device_record_kind','supply')
+    if r13_v111_actor_ready('dad'):
+        call r13_lines([r13_v111_line('MS14_D14_S02_L0079')],'v111:MS14_D14_S02_L0079')
+    if r13_v111_actor_ready('mom'):
+        call r13_lines([r13_v111_line('MS14_D14_S02_L0080')],'v111:MS14_D14_S02_L0080')
+    $ r13_v111_set('device_record_shown',True)
+    jump r13_v111_device_worker14
+
+label r13_v111_device_worker14:
+    if r13_v111_value("buri_device_present"):
+        jump r13_v111_buri_record_answer14
+    $ r13_v111_arrive(['mom', 'daram', 'karo', 'resident_badook'])
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0052')],'v111:MS14_D14_S02_L0052')
+    if r13_v111_actor_ready('karo'):
+        call r13_lines([r13_v111_line('MS14_D14_S02_L0053')],'v111:MS14_D14_S02_L0053')
+    $ r13_v111_set('busy:karo','device_support')
+    $ r13_v111_set('device_support_ready',True)
+    jump r13_v111_device_order14
+
+label r13_v111_device_order14:
+    call r13_v111_travel('gate','device_order14')
+    $ r13_v111_arrive(['mom', 'resident_ppul', 'resident_badook', 'karo'])
+    $ r13_v111_set('busy:karo',False)
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0074')],'v111:MS14_D14_S02_L0074')
+    if r13_v111_actor_ready('resident_badook'):
+        call r13_lines([r13_v111_line('MS14_D14_S02_L0075')],'v111:MS14_D14_S02_L0075')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0076')],'v111:MS14_D14_S02_L0076')
+    if r13_v111_actor_ready('karo'):
+        call r13_lines([r13_v111_line('MS14_D14_S02_L0077')],'v111:MS14_D14_S02_L0077')
+    if r13_v111_value("madam_observer_consent"):
+        call r13_v111_madam_device_close14
+    $ r13_v111_set('command_confrontation_done',True)
+    call r13_v111_travel('altar','device_work14')
+    $ r13_v111_arrive(['mom', 'daram', 'karo', 'resident_badook'])
+    $ r13_v111_set('busy:karo','device_support')
+    jump r13_v111_device_detach14
+
+label r13_v111_device_detach14:
+    call r13_v111_wait('device_detach14')
+    if _return==0:
+        jump r13_v111_device_detached14
+    jump r13_v111_device_detach14
+
+label r13_v111_device_detached14:
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0063')],'v111:MS14_D14_S02_L0063')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0064')],'v111:MS14_D14_S02_L0064')
+    $ r13_v111_set('device_detached',True)
+    $ r13_v111_set('busy:karo',False)
+    $ r13_v111_set('busy:buri',False)
+    if r13_v111_value("busy:guard")=="silluk_supervision":
+        jump r13_v111_guard_relief14
+    jump r13_v111_device_school14
+
+label r13_v111_guard_relief14:
+    call r13_v111_travel('v111_labor','guard_relief14',[])
+    $ r13_v111_set("guard_relief_person","neoul" if r13_v111_value("busy:v111_patrol")=="teacher_supervision" else "v111_patrol")
+    $ r13_v111_arrive(["guard","resident_siluk",r13_v111_value("guard_relief_person")])
+    jump r13_v111_guard_relief_check14
+
+label r13_v111_guard_relief_check14:
+    call r13_v111_wait('guard_relief_check14')
+    if _return==0:
+        jump r13_v111_guard_relieved14
+    jump r13_v111_guard_relief_check14
+
+label r13_v111_guard_relieved14:
+    $ r13_v111_set("busy:"+r13_v111_value("guard_relief_person"),"silluk_supervision")
+    $ r13_v111_set('busy:guard',False)
+    jump r13_v111_device_school14
+
+label r13_v111_device_school14:
+    call r13_v111_travel('school','device_school14')
+    $ r13_v111_arrive(['mom', 'daram', 'karo', 'nabi', 'guard'])
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0067')],'v111:MS14_D14_S02_L0067')
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D14_S02_L0068')],'v111:MS14_D14_S02_L0068')
+    jump r13_v111_device_lock14
+
+label r13_v111_device_lock14:
+    call r13_v111_wait('device_lock14')
+    if _return==0:
+        jump r13_v111_device_locked14
+    jump r13_v111_device_lock14
+
+label r13_v111_device_locked14:
+    $ r13_v111_set('device_joint_control',True)
+    jump r13_v111_granny_interview14
+
+label r13_v111_buri_record_answer14:
+    $ r13_v111_arrive(['mom', 'daram', 'buri', 'resident_ppul', 'resident_badook', 'karo'])
+    if r13_v111_value("device_record_kind")=="supply" and r13_v111_value("buri_supply_participated"):
+        call r13_v111_buri_supply_answer14
+    else:
+        call r13_v111_buri_no_transport_answer14
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0055')],'v111:MS14_D14_S02_L0055')
+    if r13_v111_actor_ready('resident_badook'):
+        call r13_lines([r13_v111_line('MS14_D14_S02_L0057')],'v111:MS14_D14_S02_L0057')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0058')],'v111:MS14_D14_S02_L0058')
+    if r13_v111_value("madam_observer_consent"):
+        call r13_v111_madam_device_close14
+    $ r13_v111_set('command_confrontation_done',True)
+    $ r13_v111_set('busy:buri','device_work')
+    $ r13_v111_set('device_support_ready',True)
+    jump r13_v111_device_detach14
+
+label r13_v111_buri_supply_answer14:
+    if r13_v111_actor_ready('buri'):
+        call r13_lines([r13_v111_line('MS14_D14_S02_L0046')],'v111:MS14_D14_S02_L0046')
+    call r13_lines([r13_v111_line('MS14_D14_S02_L0047')],'v111:MS14_D14_S02_L0047')
+    if r13_v111_actor_ready('buri'):
+        call r13_lines([r13_v111_line('MS14_D14_S02_L0048')],'v111:MS14_D14_S02_L0048')
+    if r13_v111_actor_ready('buri'):
+        call r13_lines([r13_v111_line('MS14_D14_S02_L0050')],'v111:MS14_D14_S02_L0050')
+    return
+
+label r13_v111_buri_no_transport_answer14:
+    if r13_v111_actor_ready('buri'):
+        call r13_lines([r13_v111_line('MS14_D14_S02_L0085')],'v111:MS14_D14_S02_L0085')
+    return
+
+label r13_v111_granny_interview14:
+    $ r13_v111_scene('MS14_D14_S03')
+    $ r13_edit(period=1)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('gate','granny_interview14',['mom', 'daram'])
+    $ r13_v111_arrive(['mom', 'daram', 'granny', 'guard', 'resident_tosil'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['mom', 'daram', 'granny', 'guard', 'resident_tosil'])
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0002')],'v111:MS14_D14_S03_L0002')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0003')],'v111:MS14_D14_S03_L0003')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0004')],'v111:MS14_D14_S03_L0004')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0005')],'v111:MS14_D14_S03_L0005')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0006')],'v111:MS14_D14_S03_L0006')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0008')],'v111:MS14_D14_S03_L0008')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0009')],'v111:MS14_D14_S03_L0009')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0010')],'v111:MS14_D14_S03_L0010')
+    jump r13_v111_tosil_listen14
+
+label r13_v111_tosil_listen14:
+    menu:
+        '안에서 직접 듣는다':
+            jump r13_v111_tosil_inside14
+        '보호자와 밖에서 기다린다':
+            jump r13_v111_tosil_outside14
+
+label r13_v111_tosil_inside14:
+    $ r13_v111_set('tosil_listen','inside')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0012')],'v111:MS14_D14_S03_L0012')
+    if r13_v111_value('tosil_listen')=='inside' and r13_v111_actor_ready('resident_tosil'):
+        call r13_lines([r13_v111_line('MS14_D14_S03_L0013')],'v111:MS14_D14_S03_L0013')
+    if r13_v111_value('tosil_listen')=='inside' and r13_v111_actor_ready('resident_tosil'):
+        call r13_lines([r13_v111_line('MS14_D14_S03_L0015')],'v111:MS14_D14_S03_L0015')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0016')],'v111:MS14_D14_S03_L0016')
+    if r13_v111_value('tosil_listen')=='inside' and r13_v111_actor_ready('resident_tosil'):
+        call r13_lines([r13_v111_line('MS14_D14_S03_L0017')],'v111:MS14_D14_S03_L0017')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0019')],'v111:MS14_D14_S03_L0019')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0020')],'v111:MS14_D14_S03_L0020')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0021')],'v111:MS14_D14_S03_L0021')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0022')],'v111:MS14_D14_S03_L0022')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0023')],'v111:MS14_D14_S03_L0023')
+    if r13_v111_value('tosil_listen')=='inside' and r13_v111_actor_ready('resident_tosil'):
+        call r13_lines([r13_v111_line('MS14_D14_S03_L0025')],'v111:MS14_D14_S03_L0025')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0027')],'v111:MS14_D14_S03_L0027')
+    if r13_v111_value('tosil_listen')=='inside' and r13_v111_actor_ready('resident_tosil'):
+        call r13_lines([r13_v111_line('MS14_D14_S03_L0028')],'v111:MS14_D14_S03_L0028')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0030')],'v111:MS14_D14_S03_L0030')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0031')],'v111:MS14_D14_S03_L0031')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0032')],'v111:MS14_D14_S03_L0032')
+    if r13_v111_value('tosil_listen')=='inside' and r13_v111_actor_ready('resident_tosil'):
+        call r13_lines([r13_v111_line('MS14_D14_S03_L0034')],'v111:MS14_D14_S03_L0034')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0035')],'v111:MS14_D14_S03_L0035')
+    $ r13_v111_set('bomi_death_confirmed',True)
+    $ r13_v111_set('adult_interview_done',True)
+    jump r13_v111_name_board14
+
+label r13_v111_tosil_outside14:
+    $ r13_v111_set('tosil_listen','outside')
+    $ r13_v111_set('location:resident_tosil','outside_guard')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0019')],'v111:MS14_D14_S03_L0019')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0020')],'v111:MS14_D14_S03_L0020')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0021')],'v111:MS14_D14_S03_L0021')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0022')],'v111:MS14_D14_S03_L0022')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0023')],'v111:MS14_D14_S03_L0023')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0030')],'v111:MS14_D14_S03_L0030')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0031')],'v111:MS14_D14_S03_L0031')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0032')],'v111:MS14_D14_S03_L0032')
+    $ r13_v111_set('bomi_death_confirmed',True)
+    $ r13_v111_set('adult_interview_done',True)
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0037')],'v111:MS14_D14_S03_L0037')
+    if r13_v111_value('tosil_listen')=='outside' and r13_v111_value('adult_interview_done'):
+        call r13_lines([r13_v111_line('MS14_D14_S03_L0038')],'v111:MS14_D14_S03_L0038')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0039')],'v111:MS14_D14_S03_L0039')
+    jump r13_v111_name_board14
+
+label r13_v111_name_board14:
+    $ r13_v111_scene('MS14_D14_S04')
+    $ r13_edit(period=2)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('square','name_board14',['mom', 'daram'])
+    $ r13_v111_arrive(['mom', 'daram', 'resident_tosil', 'npc_pandol'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['mom', 'daram', 'resident_tosil', 'npc_pandol'])
+    menu:
+        '토실이 이름을 쓰겠다면 기다린다':
+            jump r13_v111_tosil_name14
+        '지금 쓰지 않아도 된다고 말한다':
+            jump r13_v111_tosil_no_name14
+
+label r13_v111_tosil_name14:
+    call r13_lines([r13_v111_line('MS14_D14_S04_L0003')],'v111:MS14_D14_S04_L0003')
+    call r13_lines([r13_v111_line('MS14_D14_S04_L0004')],'v111:MS14_D14_S04_L0004')
+    call r13_lines([r13_v111_line('MS14_D14_S04_L0006')],'v111:MS14_D14_S04_L0006')
+    call r13_lines([r13_v111_line('MS14_D14_S04_L0007')],'v111:MS14_D14_S04_L0007')
+    jump r13_v111_pandol_news14
+
+label r13_v111_tosil_no_name14:
+    if r13_v111_value('tosil_listen')=='inside' and r13_v111_actor_ready('resident_tosil'):
+        call r13_lines([r13_v111_line('MS14_D14_S03_L0040')],'v111:MS14_D14_S03_L0040')
+    call r13_lines([r13_v111_line('MS14_D14_S03_L0041')],'v111:MS14_D14_S03_L0041')
+    jump r13_v111_pandol_news14
+
+label r13_v111_pandol_news14:
+    call r13_lines([r13_v111_line('MS14_D14_S04_L0009')],'v111:MS14_D14_S04_L0009')
+    call r13_lines([r13_v111_line('MS14_D14_S04_L0010')],'v111:MS14_D14_S04_L0010')
+    call r13_lines([r13_v111_line('MS14_D14_S04_L0011')],'v111:MS14_D14_S04_L0011')
+    call r13_lines([r13_v111_line('MS14_D14_S04_L0013')],'v111:MS14_D14_S04_L0013')
+    call r13_lines([r13_v111_line('MS14_D14_S04_L0014')],'v111:MS14_D14_S04_L0014')
+    call r13_lines([r13_v111_line('MS14_D14_S04_L0015')],'v111:MS14_D14_S04_L0015')
+    call r13_v111_travel('school','supply_display14')
+    $ r13_v111_arrive(['mom', 'daram', 'nabi', 'guard'])
+    jump r13_v111_supply_inventory14
+
+label r13_v111_supply_inventory14:
+    call r13_v111_wait('supply_inventory14')
+    if _return==0:
+        jump r13_v111_supply_inventory_done14
+    jump r13_v111_supply_inventory14
+
+label r13_v111_supply_inventory_done14:
+    call r13_lines([r13_v111_line('MS14_D14_S04_L0017')],'v111:MS14_D14_S04_L0017')
+    call r13_lines([r13_v111_line('MS14_D14_S04_L0018')],'v111:MS14_D14_S04_L0018')
+    call r13_lines([r13_v111_line('MS14_D14_S04_L0019')],'v111:MS14_D14_S04_L0019')
+    if r13_v111_actor_ready("resident_madam"):
+        call r13_v111_madam_inventory14
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D14_S04_L0025')],'v111:MS14_D14_S04_L0025')
+    $ r13_v111_set('school_inventory_checked',True)
+    $ r13_v111_set('school_supply_handed',True)
+    $ r13_v111_set('school_heat_connected',True)
+    $ r13_v111_set("current_sacrifice_operation_closed",bool(r13_v111_value("current_transport_chain_stopped") and r13_v111_value("device_joint_control")))
+    jump r13_v111_lamp_assignment14
+
+label r13_v111_madam_inventory14:
+    if r13_v111_actor_ready('resident_madam'):
+        call r13_lines([r13_v111_line('MS14_D14_S04_L0022')],'v111:MS14_D14_S04_L0022')
+    call r13_lines([r13_v111_line('MS14_D14_S04_L0023')],'v111:MS14_D14_S04_L0023')
+    return
+
+label r13_v111_lamp_assignment14:
+    $ r13_v111_arrive(['mom', 'daram', 'nabi', 'guard', 'resident_lamplighter'])
+    if r13_v111_actor_ready("resident_lamplighter"):
+        call r13_v111_chorong_lamps14
+    else:
+        call r13_v111_mother_lamps14
+    if r13_v111_value('OWL_ALIVE'):
+        call r13_v111_owl_alive14
+    if not (r13_v111_value("current_transport_chain_stopped") and r13_v111_value("device_joint_control")):
+        call r13_v111_unfinished_operation14
+    jump r13_v111_cookie14
+
+label r13_v111_chorong_lamps14:
+    if r13_v111_actor_ready('resident_lamplighter'):
+        call r13_lines([r13_v111_line('MS14_D14_S04_L0029')],'v111:MS14_D14_S04_L0029')
+    call r13_lines([r13_v111_line('MS14_D14_S04_L0030')],'v111:MS14_D14_S04_L0030')
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D14_S04_L0031')],'v111:MS14_D14_S04_L0031')
+    $ r13_v111_set('lamp_manager','resident_lamplighter')
+    return
+
+label r13_v111_mother_lamps14:
+    call r13_lines([r13_v111_line('MS14_D14_S04_L0032')],'v111:MS14_D14_S04_L0032')
+    $ r13_v111_set('lamp_manager','mom')
+    return
+
+label r13_v111_owl_alive14:
+    $ r13_v111_arrive(['mom', 'daram', 'nabi', 'guard', 'resident_owlgp'])
+    call r13_lines([r13_v111_line('MS14_D14_S04_L0033')],'v111:MS14_D14_S04_L0033')
+    call r13_lines([r13_v111_line('MS14_D14_S04_L0034')],'v111:MS14_D14_S04_L0034')
+    return
+
+label r13_v111_unfinished_operation14:
+    call r13_lines([r13_v111_line('MS14_D14_S04_L0035')],'v111:MS14_D14_S04_L0035')
+    call r13_lines([r13_v111_line('MS14_D14_S04_L0036')],'v111:MS14_D14_S04_L0036')
+    $ r13_v111_commit('MS14_D14_S04_L0036')
+    return
+
+label r13_v111_family_ending14:
+    $ r13_v111_scene('MS14_D14_END_FAMILY')
+    $ r13_edit(period=0)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('gate','family_ending14',['mom', 'daram'])
+    $ r13_v111_arrive(['mom', 'daram', 'guard'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['mom', 'daram', 'guard'])
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D14_END_FAMILY_L0002')],'v111:MS14_D14_END_FAMILY_L0002')
+    call r13_lines([r13_v111_line('MS14_D14_END_FAMILY_L0003')],'v111:MS14_D14_END_FAMILY_L0003')
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D14_END_FAMILY_L0004')],'v111:MS14_D14_END_FAMILY_L0004')
+    call r13_lines([r13_v111_line('MS14_D14_END_FAMILY_L0006')],'v111:MS14_D14_END_FAMILY_L0006')
+    call r13_lines([r13_v111_line('MS14_D14_END_FAMILY_L0007')],'v111:MS14_D14_END_FAMILY_L0007')
+    call r13_lines([r13_v111_line('MS14_D14_END_FAMILY_L0008')],'v111:MS14_D14_END_FAMILY_L0008')
+    call r13_lines([r13_v111_line('MS14_D14_END_FAMILY_L0010')],'v111:MS14_D14_END_FAMILY_L0010')
+    jump r13_v111_family_lodging14
+
+label r13_v111_partial_ending14:
+    $ r13_v111_scene('MS14_D14_END_PARTIAL')
+    $ r13_edit(period=0)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('square','partial_ending14',[])
+    $ r13_v111_arrive(['karo', 'guard', 'resident_badook'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['karo', 'guard', 'resident_badook'])
+    if r13_v111_actor_ready('karo'):
+        call r13_lines([r13_v111_line('MS14_D14_END_PARTIAL_L0002')],'v111:MS14_D14_END_PARTIAL_L0002')
+    call r13_lines([r13_v111_line('MS14_D14_END_PARTIAL_L0003')],'v111:MS14_D14_END_PARTIAL_L0003')
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D14_END_PARTIAL_L0004')],'v111:MS14_D14_END_PARTIAL_L0004')
+    call r13_lines([r13_v111_line('MS14_D14_END_PARTIAL_L0006')],'v111:MS14_D14_END_PARTIAL_L0006')
+    call r13_lines([r13_v111_line('MS14_D14_END_PARTIAL_L0007')],'v111:MS14_D14_END_PARTIAL_L0007')
+    jump r13_v111_partial_handoff14
+
+label r13_v111_partial_handoff14:
+    call r13_v111_wait('partial_handoff14')
+    if _return==0:
+        jump r13_v111_partial_work14
+    jump r13_v111_partial_handoff14
+
+label r13_v111_partial_work14:
+    $ v111_pending_patient=next((p for p in (r13_v111_value("cart_roster") or ["npc_pandol","resident_momo","resident_guldol"]) if not r13_v111_value("handed:"+p)),None)
+    jump r13_v111_partial_patient14
+
+label r13_v111_partial_patient14:
+    call r13_v111_travel('school','partial_patient14',[])
+    $ r13_v111_arrive(["mom","daram","nabi","karo","guard"]+([v111_pending_patient] if v111_pending_patient else []))
+    jump r13_v111_partial_receipt14
+
+label r13_v111_partial_receipt14:
+    call r13_v111_wait('partial_receipt14')
+    if _return==0:
+        jump r13_v111_partial_received14
+    jump r13_v111_partial_receipt14
+
+label r13_v111_partial_received14:
+    if v111_pending_patient:
+        $ r13_v111_set("handed:"+v111_pending_patient,True)
+    $ v111_pending_rest=[p for p in (r13_v111_value("cart_roster") or ["npc_pandol","resident_momo","resident_guldol"]) if not r13_v111_value("handed:"+p)]
+    if v111_pending_rest:
+        jump r13_v111_partial_wait14
+    if r13_v111_actor_ready('karo'):
+        call r13_lines([r13_v111_line('MS14_D14_END_PARTIAL_L0009')],'v111:MS14_D14_END_PARTIAL_L0009')
+    call r13_lines([r13_v111_line('MS14_D14_END_PARTIAL_L0010')],'v111:MS14_D14_END_PARTIAL_L0010')
+    if r13_v111_actor_ready('karo'):
+        call r13_lines([r13_v111_line('MS14_D14_END_PARTIAL_L0011')],'v111:MS14_D14_END_PARTIAL_L0011')
+    $ r13_v111_set('pending_handover_completed',True)
+    jump r13_v111_cookie14
+
+label r13_v111_partial_wait14:
+    call r13_v111_travel('square','partial_wait14',[])
+    $ r13_v111_arrive(['karo', 'guard', 'resident_badook'])
+    call r13_lines([r13_v111_line('MS14_D14_END_PARTIAL_L0012')],'v111:MS14_D14_END_PARTIAL_L0012')
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D14_END_PARTIAL_L0013')],'v111:MS14_D14_END_PARTIAL_L0013')
+    $ r13_v111_set('pending_handover_completed',False)
+    $ r13_v111_set('pending_handover_supervised',True)
+    jump r13_v111_cookie14
+
+label r13_v111_violence_ending14:
+    $ r13_v111_scene('MS14_D14_END_VIOLENCE')
+    $ r13_edit(period=0)
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('clinic','violence_ending14',['mom', 'daram'])
+    $ r13_v111_arrive(['mom', 'daram', 'guard', 'resident_seori'])
+    $ r13_v111_score()
+    $ r13_v111_arrive(['mom', 'daram', 'guard', 'resident_seori'])
+    call r13_lines([r13_v111_line('MS14_D14_END_VIOLENCE_L0002')],'v111:MS14_D14_END_VIOLENCE_L0002')
+    call r13_lines([r13_v111_line('MS14_D14_END_VIOLENCE_L0003')],'v111:MS14_D14_END_VIOLENCE_L0003')
+    call r13_lines([r13_v111_line('MS14_D14_END_VIOLENCE_L0004')],'v111:MS14_D14_END_VIOLENCE_L0004')
+    if r13_v111_value('family_location')=='square':
+        call r13_v111_crowd_child_saw14
+    else:
+        call r13_v111_crowd_child_away14
+    if r13_v111_value('crowd_intervention')=='failed':
+        call r13_v111_crowd_failed14
+    else:
+        call r13_v111_crowd_no_action14
+    jump r13_v111_cookie14
+
+label r13_v111_crowd_child_saw14:
+    call r13_lines([r13_v111_line('MS14_D14_END_VIOLENCE_L0007')],'v111:MS14_D14_END_VIOLENCE_L0007')
+    return
+
+label r13_v111_crowd_child_away14:
+    call r13_lines([r13_v111_line('MS14_D14_END_VIOLENCE_L0009')],'v111:MS14_D14_END_VIOLENCE_L0009')
+    call r13_lines([r13_v111_line('MS14_D14_END_VIOLENCE_L0010')],'v111:MS14_D14_END_VIOLENCE_L0010')
+    call r13_lines([r13_v111_line('MS14_D14_END_VIOLENCE_L0011')],'v111:MS14_D14_END_VIOLENCE_L0011')
+    call r13_lines([r13_v111_line('MS14_D14_END_VIOLENCE_L0012')],'v111:MS14_D14_END_VIOLENCE_L0012')
+    return
+
+label r13_v111_crowd_failed14:
+    call r13_lines([r13_v111_line('MS14_D14_END_VIOLENCE_L0017')],'v111:MS14_D14_END_VIOLENCE_L0017')
+    call r13_lines([r13_v111_line('MS14_D14_END_VIOLENCE_L0018')],'v111:MS14_D14_END_VIOLENCE_L0018')
+    return
+
+label r13_v111_crowd_no_action14:
+    call r13_lines([r13_v111_line('MS14_D14_END_VIOLENCE_L0014')],'v111:MS14_D14_END_VIOLENCE_L0014')
+    call r13_lines([r13_v111_line('MS14_D14_END_VIOLENCE_L0015')],'v111:MS14_D14_END_VIOLENCE_L0015')
+    return
+
+label r13_v111_family_lodging14:
+    call r13_v111_travel('gate','family_lodging14')
+    $ r13_v111_arrive(['mom', 'daram', 'guard'])
+    if r13_v111_actor_ready('guard'):
+        call r13_lines([r13_v111_line('MS14_D14_S05_L0024')],'v111:MS14_D14_S05_L0024')
+    call r13_lines([r13_v111_line('MS14_D14_S05_L0025')],'v111:MS14_D14_S05_L0025')
+    $ r13_v111_commit('MS14_D14_S05_L0025')
+    jump r13_v111_cookie_gate14
+
+label r13_v111_cookie14:
+    call r13_v111_travel('school','cookie14')
+    $ r13_v111_arrive(['mom', 'daram'])
+    $ r13_v111_set('night14_lodging','school')
+    jump r13_v111_cookie_scene14
+
+label r13_v111_cookie_gate14:
+    $ r13_v111_arrive(['mom', 'daram'])
+    $ r13_v111_set('night14_lodging','gate')
+    jump r13_v111_cookie_scene14
+
+label r13_v111_cookie_scene14:
+    $ r13_edit(period=2)
+    $ r13_v111_scene('MS14_D14_S05')
+    call r13_scene(R13_PLACES[room13["location"]][1],R13_PLACES[room13["location"]][0],"calm")
+    $ r13_v111_score()
+    call r13_lines([r13_v111_line('MS14_D14_S05_L0002')],'v111:MS14_D14_S05_L0002')
+    call r13_lines([r13_v111_line('MS14_D14_S05_L0003')],'v111:MS14_D14_S05_L0003')
+    call r13_lines([r13_v111_line('MS14_D14_S05_L0004')],'v111:MS14_D14_S05_L0004')
+    call r13_lines([r13_v111_line('MS14_D14_S05_L0006')],'v111:MS14_D14_S05_L0006')
+    call r13_lines([r13_v111_line('MS14_D14_S05_L0007')],'v111:MS14_D14_S05_L0007')
+    call r13_lines([r13_v111_line('MS14_D14_S05_L0008')],'v111:MS14_D14_S05_L0008')
+    call r13_lines([r13_v111_line('MS14_D14_S05_L0009')],'v111:MS14_D14_S05_L0009')
+    call r13_lines([r13_v111_line('MS14_D14_S05_L0010')],'v111:MS14_D14_S05_L0010')
+    call r13_lines([r13_v111_line('MS14_D14_S05_L0012')],'v111:MS14_D14_S05_L0012')
+    call r13_lines([r13_v111_line('MS14_D14_S05_L0013')],'v111:MS14_D14_S05_L0013')
+    if r13_v111_value('crowd_injury'):
+        call r13_v111_cookie_distance14
+    if not r13_v111_value('crowd_injury'):
+        call r13_lines([r13_v111_line('MS14_D14_S05_L0015')],'v111:MS14_D14_S05_L0015')
+    call r13_lines([r13_v111_line('MS14_D14_S05_L0017')],'v111:MS14_D14_S05_L0017')
+    call r13_lines([r13_v111_line('MS14_D14_S05_L0018')],'v111:MS14_D14_S05_L0018')
+    call r13_lines([r13_v111_line('MS14_D14_S05_L0019')],'v111:MS14_D14_S05_L0019')
+    call r13_lines([r13_v111_line('MS14_D14_S05_L0020')],'v111:MS14_D14_S05_L0020')
+    call r13_lines([r13_v111_line('MS14_D14_S05_L0021')],'v111:MS14_D14_S05_L0021')
+    call r13_lines([r13_v111_line('MS14_D14_S05_L0022')],'v111:MS14_D14_S05_L0022')
+    $ r13_v111_set('story14_completed',True)
+    call screen r13_confirm("이야기를 마쳤습니다. 현재 진행을 저장할 수 있습니다.",yes="메인 화면으로",no="저장하기")
+    if not _return:
+        call screen save
+    return
+
+label r13_v111_cookie_distance14:
+    call r13_lines([r13_v111_line('MS14_D14_S05_L0031')],'v111:MS14_D14_S05_L0031')
+    call r13_lines([r13_v111_line('MS14_D14_S05_L0032')],'v111:MS14_D14_S05_L0032')
+    return
+
+init 315 python:
+    R13_V111_ALLOWED={
+        'MS14_D11_S00_L0002':lambda: r13_v111_actor_ready('karo'),
+        'MS14_D11_S00_L0004':lambda: r13_v111_actor_ready('karo'),
+        'MS14_D11_S03_L0002':lambda: r13_v111_actor_ready('resident_guldol'),
+        'MS14_D11_S03_L0006':lambda: r13_v111_actor_ready('resident_guldol'),
+        'MS14_D11_S03_L0012':lambda: r13_v111_actor_ready('resident_lamplighter'),
+        'MS14_D11_S03_L0016':lambda: r13_v111_actor_ready('resident_guldol'),
+        'MS14_D11_S03_L0051':lambda: r13_v111_actor_ready('resident_nero'),
+        'MS14_D11_S04_L0009':lambda: r13_v111_actor_ready('resident_nero'),
+        'MS14_D11_S04_L0011':lambda: r13_v111_actor_ready('karo'),
+        'MS14_D11_S04_L0013':lambda: r13_v111_actor_ready('resident_nero'),
+        'MS14_D11_S04_L0016':lambda: r13_v111_actor_ready('resident_nero'),
+        'MS14_D11_S04_L0021':lambda: r13_v111_actor_ready('resident_nero'),
+        'MS14_D11_S04_L0023':lambda: r13_v111_actor_ready('resident_nero'),
+        'MS14_D11_S04_L0027':lambda: r13_v111_actor_ready('karo'),
+        'MS14_D11_S04_L0030':lambda: r13_v111_actor_ready('resident_nero'),
+        'MS14_D11_S04_L0032':lambda: r13_v111_actor_ready('resident_nero'),
+        'MS14_D11_S04_L0036':lambda: r13_v111_actor_ready('resident_nero'),
+        'MS14_D11_S04_L0038':lambda: r13_v111_actor_ready('resident_nero'),
+        'MS14_D12_S01_L0011':lambda: r13_v111_actor_ready('resident_nero'),
+        'MS14_D12_S01_L0013':lambda: r13_v111_actor_ready('resident_nero'),
+        'MS14_D12_S01_L0015':lambda: r13_v111_actor_ready('resident_nero'),
+        'MS14_D12_S01_L0018':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D12_S01_L0028':lambda: r13_v111_actor_ready('karo'),
+        'MS14_D12_S01_L0030':lambda: r13_v111_actor_ready('karo'),
+        'MS14_D12_S04_L0002':lambda: r13_v111_actor_ready('resident_madam'),
+        'MS14_D12_S04_L0046':lambda: r13_v111_value('route12')=='late_exposure',
+        'MS14_D12_S05_L0030':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D12_S05_L0033':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D13_S01_L0005':lambda: r13_v111_actor_ready('karo'),
+        'MS14_D13_S01_L0016':lambda: r13_v111_actor_ready('karo'),
+        'MS14_D13_S02_L0002':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D13_S02_L0004':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D13_S02_L0006':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D13_S02_L0008':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D13_S02_L0010':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D13_S02_L0021':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D13_S02_L0032':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D13_S04_L0002':lambda: r13_v111_actor_ready('resident_badook'),
+        'MS14_D13_S04_L0004':lambda: r13_v111_actor_ready('resident_badook'),
+        'MS14_D13_S04_L0009':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D13_S04_L0012':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D13_S04_L0014':lambda: r13_v111_actor_ready('resident_badook'),
+        'MS14_D13_S04_L0021':lambda: r13_v111_actor_ready('nabi') and room13['location']=='school',
+        'MS14_D13_S04_L0026':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D13_S04_L0028':lambda: r13_v111_actor_ready('daram') and room13['location']=='square',
+        'MS14_D13_S04_L0031':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D13_S04_L0035':lambda: r13_v111_actor_ready('mom') and room13['location']=='square',
+        'MS14_D13_S04_L0040':lambda: r13_v111_actor_ready('resident_badook'),
+        'MS14_D13_S04_L0045':lambda: r13_v111_actor_ready('resident_badook'),
+        'MS14_D13_S04_L0055':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D13_S04_L0057':lambda: r13_v111_actor_ready('karo'),
+        'MS14_D13_S04_L0058':lambda: r13_v111_actor_ready('daram') and room13['location']=='square',
+        'MS14_D13_S04_L0061':lambda: r13_v111_actor_ready('resident_nero'),
+        'MS14_D13_S04_L0062':lambda: r13_v111_actor_ready('mom') and room13['location']=='square',
+        'MS14_D13_S04_L0064':lambda: r13_v111_actor_ready('mom') and room13['location']=='square',
+        'MS14_D13_S04_L0070':lambda: r13_v111_actor_ready('resident_guldol'),
+        'MS14_D13_S04_L0074':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D13_S04_L0077':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D13_S04_L0079':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D13_S04_L0081':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D13_S04_L0083':lambda: r13_v111_actor_ready('karo'),
+        'MS14_D13_S04_L0085':lambda: r13_v111_actor_ready('karo'),
+        'MS14_D13_S04_L0086':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D13_B_L0002':lambda: r13_v111_actor_ready('karo'),
+        'MS14_D13_B_L0003':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D13_B_L0006':lambda: r13_v111_actor_ready('resident_badook'),
+        'MS14_D13_C_L0006':lambda: r13_v111_actor_ready('daram') and room13['location']=='square',
+        'MS14_D13_C_L0013':lambda: r13_v111_actor_ready('daram') and room13['location']=='square',
+        'MS14_D13_C_L0014':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D13_C_L0018':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D14_S02_L0032':lambda: r13_v111_actor_ready('buri'),
+        'MS14_D14_S02_L0036':lambda: r13_v111_actor_ready('resident_madam'),
+        'MS14_D14_S02_L0038':lambda: r13_v111_actor_ready('resident_madam'),
+        'MS14_D14_S02_L0040':lambda: r13_v111_actor_ready('resident_madam'),
+        'MS14_D14_S02_L0079':lambda: r13_v111_actor_ready('dad'),
+        'MS14_D14_S02_L0080':lambda: r13_v111_actor_ready('mom'),
+        'MS14_D14_S02_L0082':lambda: r13_v111_actor_ready('dad'),
+        'MS14_D14_S02_L0083':lambda: r13_v111_actor_ready('mom'),
+        'MS14_D14_S02_L0046':lambda: r13_v111_actor_ready('buri'),
+        'MS14_D14_S02_L0048':lambda: r13_v111_actor_ready('buri'),
+        'MS14_D14_S02_L0050':lambda: r13_v111_actor_ready('buri'),
+        'MS14_D14_S02_L0085':lambda: r13_v111_actor_ready('buri'),
+        'MS14_D14_S02_L0053':lambda: r13_v111_actor_ready('karo'),
+        'MS14_D14_S02_L0057':lambda: r13_v111_actor_ready('resident_badook'),
+        'MS14_D14_S02_L0060':lambda: r13_v111_actor_ready('resident_madam'),
+        'MS14_D14_S02_L0068':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D14_S02_L0070':lambda: r13_v111_actor_ready('buri'),
+        'MS14_D14_S02_L0075':lambda: r13_v111_actor_ready('resident_badook'),
+        'MS14_D14_S02_L0077':lambda: r13_v111_actor_ready('karo'),
+        'MS14_D14_S03_L0013':lambda: r13_v111_value('tosil_listen')=='inside' and r13_v111_actor_ready('resident_tosil'),
+        'MS14_D14_S03_L0015':lambda: r13_v111_value('tosil_listen')=='inside' and r13_v111_actor_ready('resident_tosil'),
+        'MS14_D14_S03_L0017':lambda: r13_v111_value('tosil_listen')=='inside' and r13_v111_actor_ready('resident_tosil'),
+        'MS14_D14_S03_L0025':lambda: r13_v111_value('tosil_listen')=='inside' and r13_v111_actor_ready('resident_tosil'),
+        'MS14_D14_S03_L0028':lambda: r13_v111_value('tosil_listen')=='inside' and r13_v111_actor_ready('resident_tosil'),
+        'MS14_D14_S03_L0034':lambda: r13_v111_value('tosil_listen')=='inside' and r13_v111_actor_ready('resident_tosil'),
+        'MS14_D14_S03_L0038':lambda: r13_v111_value('tosil_listen')=='outside' and r13_v111_value('adult_interview_done'),
+        'MS14_D14_S03_L0040':lambda: r13_v111_value('tosil_listen')=='inside' and r13_v111_actor_ready('resident_tosil'),
+        'MS14_D14_S04_L0022':lambda: r13_v111_actor_ready('resident_madam'),
+        'MS14_D14_S04_L0025':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D14_S04_L0029':lambda: r13_v111_actor_ready('resident_lamplighter'),
+        'MS14_D14_S04_L0031':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D14_S05_L0015':lambda: not r13_v111_value('crowd_injury'),
+        'MS14_D14_S05_L0024':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D14_S05_L0026':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D14_END_FAMILY_L0002':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D14_END_FAMILY_L0004':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D14_END_FAMILY_L0012':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D14_END_FAMILY_L0014':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D14_END_PARTIAL_L0002':lambda: r13_v111_actor_ready('karo'),
+        'MS14_D14_END_PARTIAL_L0004':lambda: r13_v111_actor_ready('guard'),
+        'MS14_D14_END_PARTIAL_L0009':lambda: r13_v111_actor_ready('karo'),
+        'MS14_D14_END_PARTIAL_L0011':lambda: r13_v111_actor_ready('karo'),
+        'MS14_D14_END_PARTIAL_L0013':lambda: r13_v111_actor_ready('guard'),
+    }
