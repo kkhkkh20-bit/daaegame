@@ -184,6 +184,10 @@ label r13_v111_wait_again:
     hide r13_visitor
     call screen r13_hub
     $ v111_pick=_return; v111_binding=r13_v111_binding()
+    # 0.19.95: same guard as the older hub (room13.rpy) — a screen that returns
+    # something other than a (kind, value) pair shows the hub again instead of crashing.
+    if not r13_screen_choice_ok(v111_pick,"r13_v111_hub"):
+        jump r13_v111_wait_again
     if v111_pick[0]=="menu" and v111_pick[1]=="map":
         call screen r13_map
         if _return and _return in r13_places():
@@ -389,3 +393,14 @@ init 307 python:
             if override.get("scene")==scene:return override["path"]
             if scene in R13_V111.get("audio",{}):return R13_V111["audio"][scene]
         return _r13_v111_scene_music(bg,title,mood)
+
+init 304 python:
+    # 0.19.95: in the new-world flow, someone who speaks or comes on screen in a
+    # conversation counts as met, so they appear on the relations chart (older flows
+    # recorded this through the topic screen, which v111 conversations skip).
+    _r13_v111_speaker_base=r13_speaker
+    def r13_speaker(who,expression="neutral",pose=None):
+        if (r13_v111_active() and who in R13_NAMES and who not in ("dad","daram")
+                and who!=r13_viewpoint() and who not in r13_met_people()):
+            r13_note_encounter(who)
+        return _r13_v111_speaker_base(who,expression,pose)

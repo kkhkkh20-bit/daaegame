@@ -27,7 +27,7 @@ class Fast(UIQA):
 async def main():
  route=os.environ.get('V111_ROUTE','shelter');stone=int(os.environ.get('V111_STONE','0'));custody=int(os.environ.get('V111_CUSTODY','0'))
  async with async_playwright() as p:
-  b=await p.chromium.launch_persistent_context(str(OUT/('profile-'+os.environ.get('V111_PROFILE',route))),executable_path='/usr/bin/chromium',viewport={'width':1280,'height':720},args=['--no-sandbox','--enable-unsafe-swiftshader','--autoplay-policy=no-user-gesture-required'])
+  b=await p.chromium.launch_persistent_context(str(OUT/('profile-'+os.environ.get('V111_PROFILE',route))),executable_path=os.environ.get('ROOM13_CHROME','/opt/pw-browsers/chromium-1194/chrome-linux/chrome'),viewport={'width':1280,'height':720},args=['--no-sandbox','--enable-unsafe-swiftshader','--autoplay-policy=no-user-gesture-required'])
 
   for previous in b.pages:await previous.close()
   pg=await b.new_page();q=Fast(pg,OUT);errors=[];pg.on('pageerror',lambda e:errors.append(str(e)));events=[];shots=set()
@@ -113,13 +113,16 @@ async def main():
     if 'r13_records' in sc:
      await q.press('닫기');continue
     if 'r13_topics' in sc:
-     options=st['binding']['options'];person=await q.py('import renpy;result=renpy.display.screen.get_screen("r13_topics").scope["person"]')
+     options=st['binding']['options'];person=await q.py('import renpy;c=renpy.display.screen.get_screen("r13_topics");result=c.scope["person"] if c else None')
+     if person is None:continue
      eligible=[o for o in options if o.get('person')==person]
      gate=st['gate']
      preferred={'gate_investigate':5,'gate_choice':1,'registered_menu':1,'post_menu':1}.get(gate)
      if not eligible:
       await q.press('돌아가기');await asyncio.sleep(.3);continue
      option=next((o for o in eligible if o.get('index')==preferred),eligible[0])
+     # A present question opens the book: remember what to show (review 2026-10-22).
+     if option.get('present'):book_target=option['present']
      await q.press(option['title']);continue
     if 'r13_map' in sc:
      target=next(o.get('move') for o in st['binding']['options'] if o.get('move'))
