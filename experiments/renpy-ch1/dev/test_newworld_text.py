@@ -50,8 +50,9 @@ class NewWorldText(Layer):
    self.assertNotIn('r13_v111_line(',text,name)
   self.assertEqual(sum(len(r) for _,r in call_sites()),sum(len(r) for _,r in call_sites()))
   self.assertGreater(len(list(call_sites())),1900)
- def test_empty_files_change_nothing(self):
-  env=self.load()
+ def test_without_revisions_nothing_changes(self):
+  tmp=tempfile.TemporaryDirectory();self.addCleanup(tmp.cleanup)
+  env=self.load(tmp.name)
   self.assertEqual(env['r13_nw_text_problems'](),[])
   for name,rids in call_sites():
    rows=env['r13_v111_lines'](rids)
@@ -120,6 +121,46 @@ class NewWorldText(Layer):
   for name in ('build_v111_days45.py','build_v111_labels.py'):
    text=(ROOT/'dev'/name).read_text()
    self.assertIn('r13_v111_lines(',text);self.assertNotIn('[r13_v111_line(',text)
+
+class Event01Gate(Layer):
+ RIDS=['MS14_D01_S04_L0002','MS14_D01_S04_L0003','MS14_D01_S04_L0004','MS14_D01_S04_L0005','MS14_D01_S04_L0006','MS14_D01_S04_L0008']
+ def test_approved_lines_are_in_place(self):
+  env=self.load()
+  carriage=[r[1] for r in env['r13_v111_lines'](['MS14_D01_S01_L0019','MS14_D01_S01_L0020','MS14_D01_S01_L0021','MS14_D01_S01_L0022'])]
+  self.assertEqual(carriage[4:],['창밖으로 길을 따라 등이 줄지어 서 있었다. 바람이 부는데 불빛이 하나도 흔들리지 않았다.','예쁘다. 꼭 별 같아. 불이 하나도 안 떨려.','기름이 아니라 돌이 들었대. 엄마가 그래서 여기 온 거야.','우리 동네는 기계 난로잖아.'])
+  greet=[(r[0],r[1]) for r in env['r13_v111_lines'](['MS14_D01_S04_L0011'])]
+  self.assertEqual(greet[2],('guard','아르카 곁에.'))
+  room=env['r13_v111_lines'](['MS14_D01_S05_L0016','MS14_D01_S05_L0017'])
+  self.assertIn('돌난로',room[0][1]);self.assertEqual(room[1][1],'엄마?')
+  self.assertIn('여관에 먼저 연락',env['ROOM13']['evidence']['V111:E02']['establishes'])
+ def test_won_gate_keeps_the_authored_registration(self):
+  env=self.load()
+  texts=[r[1] for r in env['r13_v111_lines'](self.RIDS)]
+  self.assertEqual(texts,[source_tests.DATA['records'][r]['text'] for r in self.RIDS])
+  after=[r[1] for r in env['r13_v111_lines'](['MS14_D01_S04_L0021'])]
+  self.assertIn('정정한 표',after[1]);self.assertEqual(len(after),3)
+ def test_lost_gate_leaves_daram_off_the_record(self):
+  env=self.load();self.env['r13_v111_set']('gate_daram_unlisted',True)
+  texts=[r[1] for r in env['r13_v111_lines'](self.RIDS)]
+  self.assertEqual(texts[3],'그렇소. 일꾼 다돌, 외 한 명.')
+  self.assertEqual(texts[4],source_tests.DATA['records']['MS14_D01_S04_L0006']['text'],'Daram still asks for her name')
+  self.assertEqual(texts[5],'이름 칸이 없소. 표가 그렇게 생겼소.')
+  self.assertIn('정정 없음',env['r13_v111_lines'](['MS14_D01_S04_L9101'])[0][1])
+  self.assertIn('고친 건 없소',env['r13_v111_lines'](['MS14_D01_S04_L0016'])[0][1])
+  after=[r[1] for r in env['r13_v111_lines'](['MS14_D01_S04_L0021'])]
+  self.assertNotIn('정정한 표',' '.join(after));self.assertEqual(len(after),3)
+  self.assertTrue(env['R13_V111']['evidence']['E05']['variants']['unlisted'].startswith('정정 없음.'))
+ def test_gate_flow_is_one_shot(self):
+  day=(ROOT/'game/room13_v111_days123.rpy').read_text()
+  wrong=day.split('label r13_v111_gate_wrong:\n',1)[1].split('\nlabel ',1)[0]
+  self.assertIn("r13_v111_set('gate_daram_unlisted',True)",wrong);self.assertIn('jump r13_v111_registered',wrong)
+  self.assertNotIn('gate_investigate',wrong)
+  number=day.split('label r13_v111_gate_number:\n',1)[1].split('\nlabel ',1)[0]
+  self.assertIn("r13_v111_set('gate_hardened',True)",number)
+  proof=(ROOT/'game/room13_v111.rpy').read_text()
+  self.assertIn('==["V111:E03"] and not r13_v111_value("gate_hardened")',proof)
+  rules=(ROOT/'game/room13_v111_newworld_rules.rpy').read_text()
+  self.assertIn('R13_V111_SCENE_CHECKS["MS14_D01_S04"]=r13_nw_gate_entry_decided',rules)
 
 class ContextArtByRecord(Layer):
  def test_approved_cue_survives_added_lines_and_revised_text(self):

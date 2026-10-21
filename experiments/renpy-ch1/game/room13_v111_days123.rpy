@@ -232,13 +232,17 @@ label r13_v111_gate_number:
     $ r13_v111_scene('MS14_D01_S03')
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D01_S03_L0024']), 'v111:gate_number:MS14_D01_S03_L0024')
+    # New world (event 01, plan A): a half presentation earns one more try only.
+    $ r13_v111_set('gate_hardened',True)
     jump r13_v111_gate_investigate
 
 label r13_v111_gate_wrong:
     $ r13_v111_scene('MS14_D01_S03')
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D01_S03_L0025']), 'v111:gate_wrong:MS14_D01_S03_L0025')
-    jump r13_v111_gate_investigate
+    # New world (event 01, plan A): the gate proof is one-shot. Daram enters as '외 한 명'.
+    $ r13_v111_set('gate_daram_unlisted',True)
+    jump r13_v111_registered
 
 label r13_v111_gate_hint:
     $ r13_v111_scene('MS14_D01_S03')
@@ -259,6 +263,8 @@ label r13_v111_registered:
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D01_S04_L0002', 'MS14_D01_S04_L0003', 'MS14_D01_S04_L0004', 'MS14_D01_S04_L0005', 'MS14_D01_S04_L0006', 'MS14_D01_S04_L0008']), 'v111:registered:MS14_D01_S04_L0002')
     $ r13_v111_commit('MS14_D01_S04_L0008')
+    if r13_v111_value('gate_daram_unlisted'):
+        $ r13_v111_set('E05.variant','unlisted')
     call r13_lines(r13_v111_lines(['MS14_D01_S04_L9101', 'MS14_D01_S04_L0009', 'MS14_D01_S04_L0010', 'MS14_D01_S04_L0011', 'MS14_D01_S04_L0012']), 'v111:registered:MS14_D01_S04_L9101')
     jump r13_v111_registered_menu
 

@@ -2,10 +2,10 @@
 # The authored V1.1.1 records stay exactly as imported (test_v111 checks them).
 # Owner-reviewed revisions live in game/v111/newworld/dNN.json and are applied
 # here, by record ID only:
-#   replace  {rid: {"text": ...}}                 new sentence for an authored line
+#   replace  {rid: {"text": ..., "when"?: name}}   new sentence for an authored line (only while when holds)
 #   before / after  {rid: [line, ...]}             new lines around an authored line
 #   drop     [rid, ...]                           authored line not shown
-#   evidence {key: {"name": ..., "variants": {variant: text}}}
+#   evidence {key: {"name": ..., "variants": {variant: text}, "add_variants": {new: text}}}
 # A new line: {"id": "NW_...", "speaker": name|null, "text": ..., "kind"?, "expression"?,
 #              "when"?: condition name in R13_NW_WHEN, "cut"?: existing ep art name}
 # Conditions are named Python predicates, never evaluated strings.
@@ -32,6 +32,9 @@ init 308 python:
         "kkomi_alive":lambda:r13_v111_value("KKOMI_ALIVE") is not False,
         "kkomi_dead":lambda:r13_v111_value("KKOMI_ALIVE") is False,
         "daram_free":lambda:not r13_v111_value("DARAM_DETAINED"),
+        # Event 01: lost gate proof, Daram entered as '외 한 명' (owner plan A, 2026-10-21).
+        "gate_daram_unlisted":lambda:r13_v111_value("gate_daram_unlisted") is True,
+        "gate_daram_listed":lambda:r13_v111_value("gate_daram_unlisted") is not True,
     }
     R13_NW_CUT_SPECIAL=("bell","v111_blanket_before","v111_blanket_after")
     def r13_nw_text_problems():
@@ -40,6 +43,7 @@ init 308 python:
         for rid in R13_NW_TEXT["replace"]:
             if rid not in records:out.append("replace: unknown record "+rid)
             elif not R13_NW_TEXT["replace"][rid].get("text"):out.append("replace: empty text "+rid)
+            elif R13_NW_TEXT["replace"][rid].get("when","always") not in R13_NW_WHEN:out.append("replace: unknown condition "+rid)
         for rid in R13_NW_TEXT["drop"]:
             if rid not in records:out.append("drop: unknown record "+rid)
         for where in ("before","after"):
@@ -64,7 +68,7 @@ init 308 python:
     def r13_v111_line(rid):
         packet=_r13_nw_authored_line(rid)
         revised=R13_NW_TEXT["replace"].get(rid)
-        if revised:packet=(packet[0],revised["text"])+tuple(packet[2:])
+        if revised and R13_NW_WHEN[revised.get("when","always")]():packet=(packet[0],revised["text"])+tuple(packet[2:])
         return packet
     def r13_nw_added_line(row):
         who=MS14_SPEAKERS.get(row.get("speaker")) if row.get("speaker") is not None else None
@@ -103,5 +107,8 @@ init 308 python:
             R13_RECORD_SHORT[_nw_rid]=_nw_spec["name"]
         for _nw_variant,_nw_text in _nw_spec.get("variants",{}).items():
             if _nw_variant not in R13_V111["evidence"][_nw_key]["variants"]:raise Exception("Unknown evidence variant: %s %s"%(_nw_key,_nw_variant))
+            R13_V111["evidence"][_nw_key]["variants"][_nw_variant]=_nw_text
+        for _nw_variant,_nw_text in _nw_spec.get("add_variants",{}).items():
+            if _nw_variant in R13_V111["evidence"][_nw_key]["variants"]:raise Exception("Evidence variant already exists: %s %s"%(_nw_key,_nw_variant))
             R13_V111["evidence"][_nw_key]["variants"][_nw_variant]=_nw_text
         ROOM13["evidence"][_nw_rid]["establishes"]=next(iter(R13_V111["evidence"][_nw_key]["variants"].values()))
