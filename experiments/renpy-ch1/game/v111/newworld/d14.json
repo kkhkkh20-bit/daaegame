@@ -35,6 +35,21 @@
     },
     "MS14_D14_S04_L0017": {
       "text": "여기는 남은 장작. 저쪽 표는 지금 쓰는 것. 빈 자리는 따로 표시할게요."
+    },
+    "MS14_D14_S02_L0060": {
+      "text": "학교 몫, 돌아가서 나도 주판 놓고 볼 거예요. 빈칸도 가리지 말고."
+    },
+    "MS14_D14_S04_L0018": {
+      "text": "그래서 오늘 밤 애들 자리는 어느 거예요?"
+    },
+    "MS14_D14_S04_L0029": {
+      "text": "잠깐, 이것 좀요. 학교 앞은 남기고, 여기 둘은 줄입니다."
+    },
+    "MS14_D14_S04_L0033": {
+      "text": "흠. 내가 갖고 있던 기록이오. 읽을 수 있는 것부터 가져왔소."
+    },
+    "MS14_D14_END_PARTIAL_L0011": {
+      "text": "없어. 내 눈으로 직접 보고 왔어."
     }
   },
   "before": {
@@ -46,10 +61,64 @@
         "text": "다람이 이름판 옆 산 사람 칸에 자기 이름을 쓴다. ‘다람.’ 입구 기록에는 끝내 없던 이름이다.",
         "when": "gate_daram_unlisted"
       }
+    ],
+    "MS14_D14_S01_L0002": [
+      {
+        "id": "NW_D14_S01_V01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "아이가 주걱으로 솥뚜껑을 두드리며 박자를 맞춘다."
+      }
+    ],
+    "MS14_D14_S01_L0006": [
+      {
+        "id": "NW_D14_S01_V02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "판돌이 숟가락을 쥔 채 담요의 새를 들여다본다."
+      }
+    ],
+    "MS14_D14_S02_L0060": [
+      {
+        "id": "NW_D14_S02_V03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "백 부인이 반지 낀 손가락으로 제 장부를 톡톡 친다."
+      }
+    ],
+    "MS14_D14_S03_L0019": [
+      {
+        "id": "NW_D14_S03_V04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "할머니가 목도리 끝을 손으로 꾹 누른다."
+      }
+    ],
+    "MS14_D14_S04_L0022": [
+      {
+        "id": "NW_D14_S04_V05",
+        "speaker": null,
+        "kind": "narration",
+        "text": "백 부인이 주판알을 튕기다 멈춘다."
+      }
+    ],
+    "MS14_D14_S04_L0029": [
+      {
+        "id": "NW_D14_S04_V06",
+        "speaker": null,
+        "kind": "narration",
+        "text": "초롱이 끈을 입에 문 채 등갓을 닦는다."
+      }
     ]
   },
   "after": {
     "MS14_D14_S01_L0004": [
+      {
+        "id": "NW_D14_S01_V07",
+        "speaker": null,
+        "kind": "narration",
+        "text": "나비가 주걱을 빼앗고 행주를 어깨에 척 걸친다."
+      },
       {
         "id": "NW_D14_S01_A01",
         "speaker": null,
@@ -278,6 +347,56 @@
         "kind": "narration",
         "text": "산길 끝 제단에는 쇠가 그대로 걸려 있다. 다음 겨울을 기다리고 있다.",
         "when": "altar_lose"
+      }
+    ],
+    "MS14_D14_S02_L0004": [
+      {
+        "id": "NW_D14_S02_V08",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "아무도 없었다. 다행인데도 숨이 잘 쉬어지지 않았다."
+      }
+    ],
+    "MS14_D14_S04_L0015": [
+      {
+        "id": "NW_D14_S04_V09",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "고맙다는 말을 들을 일은 아니었다."
+      }
+    ],
+    "MS14_D14_S04_L0025": [
+      {
+        "id": "NW_D14_S04_V10",
+        "speaker": null,
+        "kind": "narration",
+        "text": "돌목이 빈칸 옆에 도장을 쾅쾅 두 번 찍는다."
+      }
+    ],
+    "MS14_D14_S04_L0034": [
+      {
+        "id": "NW_D14_S04_V11",
+        "speaker": "부엉이",
+        "kind": "dialogue",
+        "text": "흠. 적어 두게.",
+        "expression": "neutral"
+      }
+    ],
+    "MS14_D14_S05_L0004": [
+      {
+        "id": "NW_D14_S05_V12",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "하나, 둘…… 셋.",
+        "expression": "joy"
+      }
+    ],
+    "MS14_D14_S05_L0013": [
+      {
+        "id": "NW_D14_S05_V13",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "다람은 그 과자를 내내 엄마 몫으로 남겨 두었다."
       }
     ]
   },

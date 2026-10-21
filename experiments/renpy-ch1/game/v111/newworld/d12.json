@@ -14,9 +14,88 @@
     },
     "MS14_D12_S05_L0027": {
       "text": "장작은 왔어. 아직 불 붙일 사람이 필요해."
+    },
+    "MS14_D12_S01_L0025": {
+      "text": "내가 열고 닫을게요. 반출한 게 있는지 확인하고 적어 둘게요."
+    },
+    "MS14_D12_S01_L0028": {
+      "text": "문 앞까지 가져왔어. 내 축이…… 안쪽 어디로 놓을까?"
+    },
+    "MS14_D12_S01_L0030": {
+      "text": "그래. 이번 운반은 여기 맡을게. 축만 버티면."
+    },
+    "MS14_D12_S02_L0007": {
+      "text": "팔 좀 걷어요. 소매 들어가겠네. 국 식어요."
+    },
+    "MS14_D12_S02_L0010": {
+      "text": "조용! 의자 옮겨 줄게. 옷 당기지 말고."
+    },
+    "MS14_D12_S02_L0020": {
+      "text": "나도 많이 먹는데. 진짜로."
+    },
+    "MS14_D12_S02_L0027": {
+      "text": "문 쪽에 쌓아 줘요. 그릇 옮길 길은 비우고요. 얼른요."
     }
   },
-  "before": {},
+  "before": {
+    "MS14_D12_S01_L0028": [
+      {
+        "id": "NW_D12_S01_V01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "까로가 수레 바퀴를 발로 툭 찬다."
+      }
+    ],
+    "MS14_D12_S02_L0010": [
+      {
+        "id": "NW_D12_S02_V02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "선생님이 손뼉을 짝 친다."
+      }
+    ],
+    "MS14_D12_S02_L0027": [
+      {
+        "id": "NW_D12_S02_V03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "나비가 행주를 어깨에 척 걸친다."
+      }
+    ],
+    "MS14_D12_S02_L0029": [
+      {
+        "id": "NW_D12_S02_V04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "다람이 내 소매를 잡아끈다."
+      }
+    ],
+    "MS14_D12_B_L0012": [
+      {
+        "id": "NW_D12_B_V05",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "하나, 둘, 셋, 넷……",
+        "expression": "neutral"
+      }
+    ],
+    "MS14_D12_S04_L0039": [
+      {
+        "id": "NW_D12_S04_V06",
+        "speaker": null,
+        "kind": "narration",
+        "text": "나비가 행주를 꽉 쥔다."
+      }
+    ],
+    "MS14_D12_S04_L0078": [
+      {
+        "id": "NW_D12_S04_V07",
+        "speaker": null,
+        "kind": "narration",
+        "text": "나비가 행주를 꽉 쥔다."
+      }
+    ]
+  },
   "after": {
     "MS14_D12_S01_L0018": [
       {
@@ -225,6 +304,39 @@
         "kind": "narration",
         "text": "너울이 명단 종이를 펴고 나비의 이름을 적는다. 선생님은 아무 말도 하지 않는다.",
         "when": "soup_lose_nabi"
+      }
+    ],
+    "MS14_D12_S02_L0020": [
+      {
+        "id": "NW_D12_S02_V08",
+        "speaker": null,
+        "kind": "narration",
+        "text": "다람이 볼을 부풀린다."
+      }
+    ],
+    "MS14_D12_S02_L0033": [
+      {
+        "id": "NW_D12_S02_V09",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "다람 탐정단은 여기서 기다릴게.",
+        "expression": "joy"
+      }
+    ],
+    "MS14_D12_S03_L0011": [
+      {
+        "id": "NW_D12_S03_V10",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "나는 밖에 나가 있었다. 그게 자꾸 걸렸다."
+      }
+    ],
+    "MS14_D12_A_L0007": [
+      {
+        "id": "NW_D12_A_V11",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "손이 떨렸다. 수첩을 꺼냈다가 그대로 다시 넣었다."
       }
     ]
   },
