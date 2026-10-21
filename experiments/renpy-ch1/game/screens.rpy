@@ -239,6 +239,8 @@ screen choice(items):
     default choice_pose = (r13_current_pose if choice_visitor else "interview_neutral") if room13_mode else "neutral"
     if room13_mode and r13_meeting_active:
         use r13_meeting_choices(items,choice_ready)
+        if r13_nw_meeting_claim(r13_meeting_claim):
+            use r13_toolbar(mode="line",ready=choice_ready)
     elif room13_mode:
         on "show" action Function(r13_choice_layout,choice_actor,choice_pose,True)
         on "hide" action Function(r13_choice_layout,choice_actor,choice_pose,False)

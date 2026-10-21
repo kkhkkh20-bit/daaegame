@@ -8,7 +8,7 @@ init 321 python:
     R13_NW_MEETINGS={
         'gate':dict(kind='field',issue='다람이 함께 들어갈 수 있는가',cast=['돌목', '다람'],
             labels=['gate_investigate', 'gate_read_original', 'gate_read_rules', 'gate_reread_list', 'gate_purpose', 'gate_lodging', 'gate_proof', 'gate_proven_dispatch', 'gate_proven', 'gate_early', 'gate_number', 'gate_wrong', 'gate_hint', 'gate_reason']),
-        'lamp':dict(kind='field',issue='3번 등의 돌을 꺼낸 사람은 누구인가',cast=['너울', '실룩', '톡', '백 부인', '초롱'],
+        'lamp':dict(kind='field',issue='3번 등의 돌을 꺼낸 사람은 누구인가',cast=['너울', '실룩', '톡', '백 부인', '초롱', '바둑이'],
             labels=['trial_open', 'trial_repair', 'trial_repair_ok', 'trial_sale', 'trial_sale_ok', 'trial_knife', 'trial_knife_records', 'knife_fit', 'knife_wrong', 'trial_latch', 'trial_latch_ok', 'trial_stone', 'trial_stone_ok', 'badugi_arrives', 'trial_piko', 'trial_alive', 'trial_dead', 'trial_choices', 'stone_choice', 'stone_return', 'stone_defer', 'custody_choice', 'silluk_report', 'silluk_transfer', 'trial_wrong', 'trial_hint', 'trial_wrong_sale', 'trial_hint_sale', 'trial_wrong_latch', 'trial_hint_latch', 'trial_wrong_stone', 'trial_hint_stone']),
         'gate_post':dict(kind='field',issue='초소에서 돌목을 문 사람은 밤이인가',cast=['너울', '밤이', '돌목', '네로', '바둑이', '다람', '콩이'],
             labels=['hearing5', 'proof5', 'wrong5', 'hint5', 'bami_clear5']),
@@ -73,7 +73,7 @@ init 321 python:
         store.r13_meeting_previous_focus=None
         renpy.hide_screen("r13_meeting_cut_in")
 
-    def r13_nw_stage_label(name):
+    def r13_nw_stage_label(name,abnormal=False):
         if name in R13_NW_MEETING_KEEP:return
         if name=="r13_lines":
             pending=getattr(store,"r13_nw_pending",None)
@@ -133,7 +133,19 @@ init 321 python:
         if getattr(store,"r13_meeting_active",False) and r13_nw_meeting_claim(claim):
             options=packet[2] if len(packet)>2 and isinstance(packet[2],dict) else {}
             beat=options.get("beat") if options.get("beat") in R13_MEETING_BEATS else "listen"
+            person=packet[0]
+            speaking=person in CAST and person!=r13_viewpoint()
+            # Someone who joins mid-meeting (e.g. Badook arriving) takes a seat when first speaking.
+            people=list(getattr(store,"r13_nw_meeting_cast",None) or [])
+            if speaking and person not in people and r13_v111_person_alive(person):
+                store.r13_nw_meeting_cast=people+[person]
             store.r13_meeting_direction=dict(beat=beat,claim=claim)
+            # The orbit camera reads the speaker's pose from here (room13_meeting_camera.rpy).
+            store.r13_meeting_line_token=(identity,index,person,packet[1])
+            store.r13_meeting_direction_poses={person:pose} if speaking else {}
+            store.r13_meeting_listener=None
+            store.r13_meeting_art_slots={}
+            store.r13_meeting_reaction=None
             if beat=="interrupt" and persistent.room13_motion and not renpy.is_skipping():
                 renpy.show_screen("r13_meeting_cut_in",caption=R13_MEETING_BEATS[beat][0])
             return expression,pose

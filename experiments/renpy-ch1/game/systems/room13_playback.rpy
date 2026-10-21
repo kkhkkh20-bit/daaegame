@@ -45,7 +45,8 @@ screen r13_playback_footer(show_record=False,ready=True):
     use r13_concept_dock(ready=ready,show_record=show_record)
 
 screen r13_more_tools():
-    if r13_meeting_active:
+    # New-world meetings keep the approved dialogue menu (backlog inside, skip outside with confirmation).
+    if r13_meeting_active and not r13_nw_meeting_claim(r13_meeting_claim):
         use r13_meeting_more_tools
     else:
         use r13_concept_more
