@@ -1,7 +1,402 @@
 {
-  "replace": {},
+  "replace": {
+    "MS14_D12_S01_L0026": {
+      "text": "여기면 아이들이 누울 수 있겠어요. 아직 장작이 안 왔네요."
+    },
+    "MS14_D12_S01_L0027": {
+      "text": "자리만요. 장작은 아직이에요. 앉혀 놓고 따뜻하다고 하면 안 돼요."
+    },
+    "MS14_D12_S02_L0023": {
+      "text": "밖에 장작 수레가 와요. 받아서 들여놓고 올게요."
+    },
+    "MS14_D12_S05_L0014": {
+      "text": "문 앞 난로에는 불이 붙었어. 안쪽으로 옮길 장작은……."
+    },
+    "MS14_D12_S05_L0027": {
+      "text": "장작은 왔어. 아직 불 붙일 사람이 필요해."
+    }
+  },
   "before": {},
-  "after": {},
+  "after": {
+    "MS14_D12_S01_L0018": [
+      {
+        "id": "NW_D12_S01_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "학교 문 옆 대피 명단 아래에 ‘보호시설로 이송 예정’ 칸이 있다. 새미의 이름이 있다."
+      },
+      {
+        "id": "NW_D12_S01_L_resident_tok",
+        "speaker": null,
+        "kind": "narration",
+        "text": "그 칸에 톡의 이름도 있다.",
+        "when": "listed:resident_tok"
+      },
+      {
+        "id": "NW_D12_S01_L_bami",
+        "speaker": null,
+        "kind": "narration",
+        "text": "그 칸에 밤이의 이름도 있다.",
+        "when": "listed:bami"
+      },
+      {
+        "id": "NW_D12_S01_L_resident_bori",
+        "speaker": null,
+        "kind": "narration",
+        "text": "그 칸에 보리의 이름도 있다.",
+        "when": "listed:resident_bori"
+      },
+      {
+        "id": "NW_D12_S01_L_nabi",
+        "speaker": null,
+        "kind": "narration",
+        "text": "그 칸에 나비의 이름도 있다.",
+        "when": "listed:nabi"
+      },
+      {
+        "id": "NW_D12_S01_L_daram",
+        "speaker": null,
+        "kind": "narration",
+        "text": "그 칸에 다람의 이름이 있다. 나는 그 글자를 오래 본다.",
+        "when": "listed:daram"
+      },
+      {
+        "id": "NW_D12_S01_L_resident_owlgp",
+        "speaker": null,
+        "kind": "narration",
+        "text": "그 칸에 부엉이의 이름도 있다.",
+        "when": "listed:resident_owlgp"
+      },
+      {
+        "id": "NW_D12_S01_L_resident_siluk",
+        "speaker": null,
+        "kind": "narration",
+        "text": "그 칸에 실룩의 이름도 있다.",
+        "when": "listed:resident_siluk"
+      },
+      {
+        "id": "NW_D12_S01_L_resident_guldol",
+        "speaker": null,
+        "kind": "narration",
+        "text": "그 칸에 굴돌의 이름도 있다.",
+        "when": "listed:resident_guldol"
+      },
+      {
+        "id": "NW_D12_S01_A02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "7일에 내가 직접 인계한 창고 아이들 이름은 없다."
+      },
+      {
+        "id": "NW_D12_S01_A03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "선생님이 명단을 한 번 쓸어 보고는, 아무 말 없이 침상 목록을 품에 접어 넣는다."
+      }
+    ],
+    "MS14_D12_S01_L0025": [
+      {
+        "id": "NW_D12_S01_A04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "서리가 약장을 열어 하나씩 센다. 빠진 것은 없다. 서리의 손이 잠깐 멈췄다가 문을 닫는다."
+      }
+    ],
+    "MS14_D12_S02_L0017": [
+      {
+        "id": "NW_D12_S02_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "나비가 식당에서 가져온 솥을 기울여 작은 냄비에 붓는다. 남은 국이다. 문간에서는 까로가 식당 국 한 그릇을 선 채로 비운다."
+      }
+    ],
+    "MS14_D12_S02_L0021": [
+      {
+        "id": "NW_D12_S02_A02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "도담이 보리 옆자리를 찾다가, 자리가 없는 새미 옆에 앉는다. 도담 앞에도 흰 그릇이 놓인다."
+      },
+      {
+        "id": "NW_D12_S02_A03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "선생님이 다람 앞에 흰 그릇을 놓는다. 나는 말없이 그 그릇을 치우고 큰 냄비에서 다시 떠 준다.",
+        "when": "room13_lose"
+      },
+      {
+        "id": "NW_D12_S02_A04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "독을 알아서가 아니다. 명단에 오른 아이라고 그릇을 따로 받는 걸 볼 수가 없었다. 다람은 왜냐고 묻지 않는다.",
+        "when": "room13_lose"
+      }
+    ],
+    "MS14_D12_S04_L0046": [
+      {
+        "id": "NW_D12_S04_A01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "아침에 약장에서는 빠진 게 없다고 하셨죠.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D12_S04_A02",
+        "speaker": "서리",
+        "kind": "dialogue",
+        "text": "약장은 다 확인했어요. 기록 보세요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D12_S04_A03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "나는 서리를 복도로 따로 부른다. 문이 닫히자 서리가 먼저 입을 연다."
+      },
+      {
+        "id": "NW_D12_S04_A04",
+        "speaker": "서리",
+        "kind": "dialogue",
+        "text": "……약장에서는요. 불 난 뒤로 애들이 밤마다 깼어요. 봉인한 병 하나를 선생님께 맡겼어요. ‘정말 못 잘 때만’이라고.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D12_S04_A05",
+        "speaker": "서리",
+        "kind": "dialogue",
+        "text": "장부엔 안 적었어요. 그 병이에요.",
+        "expression": "anxious"
+      }
+    ],
+    "MS14_D12_S04_L0090": [
+      {
+        "id": "NW_D12_S04_L01",
+        "speaker": "돌목",
+        "kind": "dialogue",
+        "text": "약병이었다는 것까지만 알겠소. 누가 그 약을 냄비에 넣었는지는 모르겠소.",
+        "expression": "neutral",
+        "when": "soup_lose_stolen"
+      },
+      {
+        "id": "NW_D12_S04_L02",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "진료소 병이 학교에 굴러다녔다는 거요. 약을 맡은 사람 책임이오. 서리는 오늘부터 약장에 손대지 마시오.",
+        "expression": "neutral",
+        "when": "soup_lose_stolen"
+      },
+      {
+        "id": "NW_D12_S04_L03",
+        "speaker": "서리",
+        "kind": "dialogue",
+        "text": "…….",
+        "expression": "neutral",
+        "when": "soup_lose_stolen"
+      }
+    ],
+    "MS14_D12_S04_L0092": [
+      {
+        "id": "NW_D12_S04_L04",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "작은 냄비를 건넨 건 나비요. 그 냄비에 손댄 사람이 나비뿐이라면 나비요.",
+        "expression": "neutral",
+        "when": "soup_lose_nabi"
+      },
+      {
+        "id": "NW_D12_S04_L05",
+        "speaker": "나비",
+        "kind": "dialogue",
+        "text": "저는 큰 냄비에서 덜기만 했어요!",
+        "expression": "angry",
+        "when": "soup_lose_nabi"
+      },
+      {
+        "id": "NW_D12_S04_L06",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "식당 국도 몰래 보탰다지. 13호 일 때도 말을 바꿨고.",
+        "expression": "neutral",
+        "when": "soup_lose_nabi"
+      },
+      {
+        "id": "NW_D12_S04_L07",
+        "speaker": null,
+        "kind": "narration",
+        "text": "너울이 명단 종이를 펴고 나비의 이름을 적는다. 선생님은 아무 말도 하지 않는다.",
+        "when": "soup_lose_nabi"
+      }
+    ]
+  },
   "drop": [],
-  "evidence": {}
+  "evidence": {},
+  "new_evidence": {
+    "NW_TRANSFER_LIST": {
+      "name": "학교 문 옆 이송 예정 칸",
+      "kind": "기록",
+      "variants": {
+        "observed": "12일 아침 학교 문 옆 대피 명단. ‘보호시설로 이송 예정’ 칸의 이름은 침상과 배급에서 빠져 있다. 새미처럼 정식으로 인계되지 않은 아이들과 앞선 회의에서 진 사람들이다. 7일에 인계한 창고 아이들은 없다."
+      }
+    },
+    "NW_WHITE_BOWLS": {
+      "name": "흰 그릇을 받은 아이들",
+      "kind": "관찰기록",
+      "variants": {
+        "observed": "12일 배식. 흰 그릇은 작은 냄비 몫이다. 흰 그릇 앞의 아이들은 이송 예정 칸의 아이들이다. 도담만 명단에 없다. 자리가 없어 새미 옆에 앉았다.",
+        "daram": "12일 배식. 흰 그릇은 작은 냄비 몫이다. 흰 그릇 앞의 아이들은 이송 예정 칸의 아이들이다. 도담만 명단에 없다. 선생님은 다람 앞에도 흰 그릇을 놓았고, 아빠가 치웠다."
+      }
+    }
+  },
+  "blocks": {
+    "soup_list_q12": [
+      {
+        "id": "NW_SL_Q_01",
+        "speaker": "선생님",
+        "kind": "dialogue",
+        "text": "작은 냄비는 아이들 모두를 위한 거였어요. 누구 하나 고른 게 아니에요.",
+        "expression": "neutral"
+      }
+    ],
+    "soup_list_won12": [
+      {
+        "id": "NW_SL_W_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "아침에 문 옆 명단을 봤습니다. ‘보호시설로 이송 예정’ 칸이요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_SL_W_02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "흰 그릇은 그 칸의 아이들 몫이었습니다. 새미도 거기 있었고요. 도담이만 명단에 없었습니다. 자리가 없어서 새미 옆에 앉았을 뿐이에요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_SL_W_03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "선생님이 다람이 앞에도 흰 그릇을 놓으셨죠. 다람이가 명단에 있으니까요.",
+        "expression": "neutral",
+        "when": "room13_lose"
+      },
+      {
+        "id": "NW_SL_W_04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "선생님이 고개를 든다. 처음으로 내 눈을 똑바로 본다."
+      },
+      {
+        "id": "NW_SL_W_05",
+        "speaker": "선생님",
+        "kind": "dialogue",
+        "text": "돌아온 아이는 없어요. 몇 해 전에 가르치던 애 하나가 그렇게 갔어요. 산길 끝에 뭐가 있는지 알아요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_SL_W_06",
+        "speaker": "선생님",
+        "kind": "dialogue",
+        "text": "추운 데서 묶여 기다리느니, 여기서 따뜻하게 잠드는 게 낫다고 생각했어요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_SL_W_07",
+        "speaker": "보리",
+        "kind": "dialogue",
+        "text": "우리 애는 명단에 없었소.",
+        "expression": "neutral",
+        "when": "soup_late"
+      },
+      {
+        "id": "NW_SL_W_08",
+        "speaker": "선생님",
+        "kind": "dialogue",
+        "text": "……알아요.",
+        "expression": "neutral",
+        "when": "soup_late"
+      },
+      {
+        "id": "NW_SL_W_09",
+        "speaker": null,
+        "kind": "narration",
+        "text": "나는 명단 원본을 문 옆에서 떼어 가방에 넣는다. 너울이 손을 뻗었다가 거둔다."
+      }
+    ],
+    "soup_list_lost12": [
+      {
+        "id": "NW_SL_L_01",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "선생님이 미친 거지 명단이 무슨 상관이오.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_SL_L_02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "너울이 문 옆 명단을 떼어 접는다. 품에 넣는다."
+      },
+      {
+        "id": "NW_SL_L_03",
+        "speaker": "선생님",
+        "kind": "dialogue",
+        "text": "……모두를 위한 거였다니까요.",
+        "expression": "neutral"
+      }
+    ],
+    "soup_lost12": [
+      {
+        "id": "NW_SO_L_01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "보리가 도담 곁에서 일어나지 않는다. 아무도 보리를 일으키지 못한다.",
+        "when": "soup_late"
+      },
+      {
+        "id": "NW_SO_L_02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "그날 밤 학교 불은 일찍 꺼진다. 선생님은 아이들 침상 사이를 지나 창가에 앉는다. 아무도 선생님을 데려가지 않는다."
+      },
+      {
+        "id": "NW_SO_L_03",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "아빠, 그럼 누가 넣은 거야?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_SO_L_04",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "……찾지 못했어.",
+        "expression": "neutral"
+      }
+    ],
+    "portrait12": [
+      {
+        "id": "NW_P12_01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "난로 곁에 세워 둔 엄마의 초상이 열에 들떠 있다. 덧칠한 물감이 군데군데 일어나 아래 그림이 비친다.",
+        "when": "piko_dead"
+      },
+      {
+        "id": "NW_P12_02",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "엄마 얼굴 밑에 누가 있어.",
+        "expression": "anxious",
+        "when": "piko_dead"
+      },
+      {
+        "id": "NW_P12_03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "수레. 묶인 손. 붉은 목도리. 피코가 그 위에 엄마를 덧그렸다.",
+        "when": "piko_dead"
+      }
+    ]
+  }
 }

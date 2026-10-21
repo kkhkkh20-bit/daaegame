@@ -89,7 +89,15 @@ init 319 python:
         "hyp_lost2":lambda:r13_v111_value("hyp_issue:2")=="lost",
         "hyp_lost3":lambda:r13_v111_value("hyp_issue:3")=="lost",
         "hyp_lost4":lambda:r13_v111_value("hyp_issue:4")=="lost",
+        # Event 09: the day-12 soup.
+        "soup_late":lambda:r13_v111_value("route12")=="late_exposure",
+        "soup_lose_stolen":lambda:r13_v111_value("meeting:soup")=="lose" and r13_v111_value("soup_lose_kind")=="stolen",
+        "soup_lose_nabi":lambda:r13_v111_value("meeting:soup")=="lose" and r13_v111_value("soup_lose_kind")=="nabi",
     }
+    # One condition per person who can be on the transfer list (same names as R13_NW_LISTABLE).
+    R13_NW_LIST_NAMES=("resident_tok","bami","resident_bori","nabi","daram","resident_owlgp","resident_piko","resident_siluk","resident_guldol","resident_teacher","mom","dad")
+    for _nw_person in R13_NW_LIST_NAMES:
+        R13_NW_WHEN["listed:"+_nw_person]=(lambda p=_nw_person:r13_v111_value("listed:"+p) is True)
     R13_NW_CUT_SPECIAL=("bell","v111_blanket_before","v111_blanket_after")
     def r13_nw_drop_item(item):
         return (item,"always") if isinstance(item,str) else (item.get("id"),item.get("when","always"))

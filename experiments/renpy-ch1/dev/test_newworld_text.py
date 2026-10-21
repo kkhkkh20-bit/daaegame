@@ -152,6 +152,12 @@ class NewWorldText(Layer):
   for name in DAYS:
    for m in re.finditer(r"call r13_v111_proof\([^\[]*(\[[^\]]*\])",(ROOT/'game'/name).read_text()):
     for key in ast.literal_eval(m.group(1)):self.assertIn(key,keys,name)
+ def test_list_conditions_cover_the_transfer_list(self):
+  env=self.load()
+  rules=(ROOT/'game/room13_v111_newworld_rules.rpy').read_text()
+  listable=ast.literal_eval(re.search(r'R13_NW_LISTABLE=(\([^)]*\))',rules).group(1))
+  self.assertEqual(tuple(env['R13_NW_LIST_NAMES']),listable)
+  for p in listable:self.assertIn('listed:'+p,env['R13_NW_WHEN'])
  def test_generators_emit_the_layer_call(self):
   for name in ('build_v111_days45.py','build_v111_labels.py'):
    text=(ROOT/'dev'/name).read_text()

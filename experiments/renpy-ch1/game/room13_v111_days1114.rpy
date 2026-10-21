@@ -919,6 +919,7 @@ label r13_v111_morning_notice12:
     call r13_lines(r13_v111_lines(['MS14_D12_S01_L0020']),'v111:MS14_D12_S01_L0020')
     call r13_lines(r13_v111_lines(['MS14_D12_S01_L0021']),'v111:MS14_D12_S01_L0021')
     call r13_lines(r13_v111_lines(['MS14_D12_S01_L0023']),'v111:MS14_D12_S01_L0023')
+    $ r13_nw_acquire("NW_TRANSFER_LIST")
     jump r13_v111_morning_prep12_entry
 
 label r13_v111_morning_prep12_entry:
@@ -1016,6 +1017,7 @@ label r13_v111_meal12:
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0021']),'v111:MS14_D12_S02_L0021')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0023']),'v111:MS14_D12_S02_L0023')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0024']),'v111:MS14_D12_S02_L0024')
+    $ r13_nw_acquire("NW_WHITE_BOWLS","daram" if r13_v111_value("meeting:room13")=="lose" else "observed")
     $ r13_v111_set('bottle_original_seal_seen',True)
     jump r13_v111_meal_choice12
 
@@ -1023,7 +1025,7 @@ label r13_v111_meal_choice12:
     menu:
         '배식 전에 더 살핀다':
             jump r13_v111_stay_meal12
-        '다람과 온기 조각을 받으러 간다':
+        '다람과 장작을 받으러 간다':
             jump r13_v111_take_daram12
         '다람은 나비 곁에 두고 다녀온다':
             jump r13_v111_leave_daram12
@@ -1323,6 +1325,27 @@ label r13_v111_confessed12:
     call r13_lines(r13_v111_lines(['MS14_D12_S04_L0059']),'v111:MS14_D12_S04_L0059')
     call r13_lines(r13_v111_lines(['MS14_D12_S04_L0060']),'v111:MS14_D12_S04_L0060')
     $ r13_v111_set('teacher_confessed',True)
+    call r13_lines(r13_nw_block('soup_list_q12'),'nw:soup_list_q12')
+    jump r13_v111_list_proof12
+
+label r13_v111_list_proof12:
+    call r13_v111_proof('명단과 흰 그릇을 대조한다',['NW_TRANSFER_LIST', 'NW_WHITE_BOWLS'],'r13_v111_list_won12','r13_v111_list_wrong12',None)
+    jump expression _return
+
+label r13_v111_list_wrong12:
+    if r13_nw_half(["NW_TRANSFER_LIST","NW_WHITE_BOWLS"]) and not r13_v111_value("half:list12"):
+        $ r13_v111_set("half:list12",True)
+        $ renpy.notify("선생님이 출석부를 끌어안는다. 명단의 칸과 흰 그릇을 함께 놓아야 한다.")
+        jump r13_v111_list_proof12
+    $ r13_nw_meeting_end("soup","partial")
+    call r13_lines(r13_nw_block('soup_list_lost12'),'nw:soup_list_lost12')
+    jump r13_v111_soup_after_route12
+
+label r13_v111_list_won12:
+    $ r13_nw_meeting_end("soup","win")
+    $ r13_v111_set('transfer_list_secured',True)
+    call r13_lines(r13_nw_block('soup_list_won12'),'nw:soup_list_won12')
+    jump r13_v111_soup_after_route12
 
 label r13_v111_soup_after_route12:
     if r13_v111_value('route12')=='late_exposure':
@@ -1330,14 +1353,34 @@ label r13_v111_soup_after_route12:
     jump r13_v111_aftermath_pre12
 
 label r13_v111_medicine_wrong12:
+    if r13_nw_half(['E12_FRAGMENT', 'E12_SEAL']) and not r13_v111_value("half:seal_proof12"):
+        $ r13_v111_set("half:seal_proof12",True)
+        call r13_lines(r13_v111_lines(['MS14_D12_S04_L0089', 'MS14_D12_S04_L0090']),'v111:medicine_wrong12:half')
+        $ renpy.notify('선생님이 병을 감싼다. 파편과 봉인을 함께 놓아야 한다.')
+        jump r13_v111_seal_proof12
+    $ r13_nw_meeting_end("soup","lose")
+    $ r13_v111_set('soup_lose_kind','stolen')
+    $ r13_v111_set('seori_disciplined',True)
     call r13_lines(r13_v111_lines(['MS14_D12_S04_L0089']),'v111:MS14_D12_S04_L0089')
     call r13_lines(r13_v111_lines(['MS14_D12_S04_L0090']),'v111:MS14_D12_S04_L0090')
-    jump r13_v111_seal_proof12
+    jump r13_v111_soup_lost12
 
 label r13_v111_fragment_wrong12:
+    if r13_nw_half(['E12_FRAGMENT', 'E12_SEAL', 'E12_HANDLING']) and not r13_v111_value("half:soup_final12"):
+        $ r13_v111_set("half:soup_final12",True)
+        call r13_lines(r13_v111_lines(['MS14_D12_S04_L0091', 'MS14_D12_S04_L0092']),'v111:fragment_wrong12:half')
+        $ renpy.notify('나비가 고개를 젓는다. 파편과 봉인, 냄비를 건넨 구간을 함께 놓아야 한다.')
+        jump r13_v111_soup_final12
+    $ r13_nw_meeting_end("soup","lose")
+    $ r13_v111_set('soup_lose_kind','nabi')
+    $ r13_nw_list("nabi","soup_lose")
     call r13_lines(r13_v111_lines(['MS14_D12_S04_L0091']),'v111:MS14_D12_S04_L0091')
     call r13_lines(r13_v111_lines(['MS14_D12_S04_L0092']),'v111:MS14_D12_S04_L0092')
-    jump r13_v111_soup_final12
+    jump r13_v111_soup_lost12
+
+label r13_v111_soup_lost12:
+    call r13_lines(r13_nw_block('soup_lost12'),'nw:soup_lost12')
+    jump r13_v111_sleep12
 
 label r13_v111_soup_hint12:
     call r13_lines(r13_v111_lines(['MS14_D12_S04_L0093']),'v111:MS14_D12_S04_L0093')
@@ -1493,16 +1536,20 @@ label r13_v111_early12:
     jump r13_v111_sleep12
 
 label r13_v111_sleep12:
-    call r13_v111_travel('school','sleep12')
-    jump r13_v111_sleep12_input
+    call r13_lines(r13_nw_block('portrait12'),'nw:portrait12')
+    jump r13_v111_sleep12_bed
 
-label r13_v111_sleep12_input:
-    call r13_v111_wait('sleep12_input')
+label r13_v111_sleep12_bed:
+    call r13_v111_travel('school','sleep12_bed')
+    jump r13_v111_sleep12_bed_input
+
+label r13_v111_sleep12_bed_input:
+    call r13_v111_wait('sleep12_bed_input')
     if _return==0:
-        jump r13_v111_sleep12_done
-    jump r13_v111_sleep12_input
+        jump r13_v111_sleep12_bed_done
+    jump r13_v111_sleep12_bed_input
 
-label r13_v111_sleep12_done:
+label r13_v111_sleep12_bed_done:
     $ r13_v111_set("day",13)
     jump r13_v111_day13
 
