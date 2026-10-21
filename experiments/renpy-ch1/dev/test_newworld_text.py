@@ -1,0 +1,138 @@
+"""New-world dialogue layer: reviewed revisions by record ID over the exact V1.1.1 source."""
+import ast,copy,json,re,tempfile,textwrap,unittest
+from pathlib import Path
+import test_v111 as source_tests
+ROOT=source_tests.ROOT
+LAYER=ROOT/'game/room13_v111_newworld_text.rpy'
+DAYS=['room13_v111_days123.rpy','room13_v111_days45.rpy','room13_v111_days610.rpy','room13_v111_days1114.rpy']
+SPEAKERS=ast.literal_eval(re.search(r'MS14_SPEAKERS = (\{.*?\})\n',(ROOT/'game/ms14_story.rpy').read_text(),re.S).group(1))
+FORBIDDEN=('돌님','겉돌','날돌','말 그릇')
+EMOJI=re.compile('[\U0001F300-\U0001FAFF☀-➿]')
+
+class Renpy:
+ def __init__(self,base):self.base=Path(base)
+ def loadable(self,path):return (self.base/path).exists()
+ def file(self,path):return open(self.base/path,'rb')
+
+def call_sites():
+ for name in DAYS:
+  for m in re.finditer(r'r13_v111_lines\((\[[^\]]*\])\)',(ROOT/'game'/name).read_text()):
+   yield name,ast.literal_eval(m.group(1))
+
+class Layer(unittest.TestCase):
+ def load(self,base=ROOT/'game',art=None):
+  source_tests.Transactions.setUp(self)
+  data=copy.deepcopy(source_tests.DATA)
+  evidence={'V111:'+k:dict(name=v['name'],establishes='') for k,v in data['evidence'].items()}
+  stub=Renpy(base)
+  if art is not None:
+   real=stub.loadable;stub.loadable=lambda p:real(p) or p in art
+  self.env.update(renpy=stub,json=json,R13_V111=data,MS14_SPEAKERS=SPEAKERS,ROOM13=dict(evidence=evidence),R13_RECORD_SHORT={},
+   R13_FULLBODY_PLAIN={'neutral','joy','anxious','angry','surprise','flustered'},
+   R13_DIALOGUE_CONTEXT_ART=json.loads((ROOT/'game/assets/room13-dialogue-context-art.json').read_text()))
+  ctx=re.search(r'^init 172 python:\n((?:[ \t].*\n|\n)*)',(ROOT/'game/systems/room13_dialogue_context_art.rpy').read_text(),re.M).group(1)
+  tree=ast.parse(textwrap.dedent(ctx))
+  exec(compile(ast.Module(body=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='r13_dialogue_context_match'],type_ignores=[]),'ctx','exec'),self.env)
+  self.env['r13_v111_line']=lambda rid:(SPEAKERS.get(data['records'][rid].get('speaker')),data['records'][rid]['text'],{})
+  block=re.search(r'^init 308 python:\n((?:[ \t].*\n|\n)*)',LAYER.read_text(),re.M).group(1)
+  exec(textwrap.dedent(block),self.env)
+  return self.env
+ def fixture(self,day,content,art=None):
+  tmp=tempfile.TemporaryDirectory();self.addCleanup(tmp.cleanup)
+  (Path(tmp.name)/'v111/newworld').mkdir(parents=True)
+  (Path(tmp.name)/('v111/newworld/%s.json'%day)).write_text(json.dumps(content,ensure_ascii=False))
+  return self.load(tmp.name,art)
+
+class NewWorldText(Layer):
+ def test_every_day_file_goes_through_the_layer(self):
+  for name in DAYS:
+   text=(ROOT/'game'/name).read_text()
+   self.assertNotIn('r13_v111_line(',text,name)
+  self.assertEqual(sum(len(r) for _,r in call_sites()),sum(len(r) for _,r in call_sites()))
+  self.assertGreater(len(list(call_sites())),1900)
+ def test_empty_files_change_nothing(self):
+  env=self.load()
+  self.assertEqual(env['r13_nw_text_problems'](),[])
+  for name,rids in call_sites():
+   rows=env['r13_v111_lines'](rids)
+   self.assertEqual([r[2]['line_id'] for r in rows],rids,name)
+   self.assertEqual([(r[0],r[1],{k:v for k,v in r[2].items() if k!='line_id'}) for r in rows],[env['_r13_nw_authored_line'](r) for r in rids],name)
+ def test_shipped_files_are_valid_and_clean(self):
+  env=self.load()
+  self.assertEqual(env['r13_nw_text_problems'](),[])
+  for path in sorted((ROOT/'game/v111/newworld').glob('d*.json')):
+   part=json.loads(path.read_text())
+   self.assertEqual(set(part),{'replace','before','after','drop','evidence'},path.name)
+   texts=[v['text'] for v in part['replace'].values()]+[r['text'] for rows in list(part['before'].values())+list(part['after'].values()) for r in rows]
+   for t in texts:
+    self.assertFalse(any(w in t for w in FORBIDDEN),t);self.assertIsNone(EMOJI.search(t),t)
+  self.assertEqual(len(list((ROOT/'game/v111/newworld').glob('d*.json'))),14)
+
+ def test_replace_before_after_and_drop(self):
+  env=self.fixture('d01',dict(replace={'MS14_D01_S05_L0004':{'text':'고맙습니다, 할머니.'}},
+   before={'MS14_D01_S05_L0004':[dict(id='NW_T_B1',speaker=None,text='앞 서술')]},
+   after={'MS14_D01_S05_L0004':[dict(id='NW_T_A1',speaker='다람',text='뒤 대사',expression='anxious'),dict(id='NW_T_A2',speaker=None,text='조건 줄',when='owl_dead')]},
+   drop=['MS14_D01_S05_L0005']))
+  rows=env['r13_v111_lines'](['MS14_D01_S05_L0003','MS14_D01_S05_L0004','MS14_D01_S05_L0005','MS14_D01_S05_L0006'])
+  texts=[r[1] for r in rows]
+  self.assertEqual(texts[1:4],['앞 서술','고맙습니다, 할머니.','뒤 대사'])
+  self.assertNotIn(source_tests.DATA['records']['MS14_D01_S05_L0005']['text'],texts)
+  self.assertNotIn('조건 줄',texts,'false condition hides the line')
+  self.assertEqual(rows[3][0],'daram');self.assertEqual(rows[3][2]['expression'],'anxious')
+  self.env['r13_v111_set']('OWL_ALIVE',False)
+  self.assertIn('조건 줄',[r[1] for r in env['r13_v111_lines'](['MS14_D01_S05_L0004'])])
+ def test_cut_uses_existing_art_only(self):
+  row=dict(id='NW_T_C1',speaker=None,text='벽을 본다',cut='O47-handprints')
+  env=self.fixture('d09',dict(after={'MS14_D09_S01_L0001':[row]}),art={'assets/room13-ep-O47-handprints.webp'})
+  self.assertEqual(env['r13_v111_lines'](['MS14_D09_S01_L0001'])[1][2]['cut'],'O47-handprints')
+  self.assertTrue((ROOT/'game/assets/room13-ep-O47-handprints.webp').exists())
+  with self.assertRaisesRegex(Exception,'missing cut art'):self.fixture('d09',dict(after={'MS14_D09_S01_L0001':[dict(row,cut='O99-none')]}),art=set())
+ def test_broken_references_stop_the_game_at_start(self):
+  bad=[dict(replace={'MS14_NOPE':{'text':'x'}}),dict(drop=['MS14_NOPE']),
+   dict(after={'MS14_D01_S05_L0004':[dict(id='X1',speaker=None,text='x')]}),
+   dict(after={'MS14_D01_S05_L0004':[dict(id='NW_T_S',speaker='새 인물',text='x')]}),
+   dict(after={'MS14_D01_S05_L0004':[dict(id='NW_T_W',speaker=None,text='x',when='no_such')]}),
+   dict(after={'MS14_D01_S05_L0004':[dict(id='NW_T_D',speaker=None,text='x'),dict(id='NW_T_D',speaker=None,text='y')]}),
+   dict(evidence={'NOPE':{'name':'x'}})]
+  for content in bad:
+   with self.assertRaisesRegex(Exception,'inconsistent'):self.fixture('d01',dict(dict(replace={},before={},after={},drop=[],evidence={}),**content))
+ def test_dead_speaker_cannot_say_an_added_line(self):
+  env=self.fixture('d03',dict(after={'MS14_D03_S01_L0001':[dict(id='NW_T_P',speaker='피코',text='x')]}))
+  self.env['r13_v111_set']('piko_alive',False)
+  with self.assertRaisesRegex(Exception,'dead new-world speaker'):env['r13_v111_lines'](['MS14_D03_S01_L0001'])
+ def test_evidence_name_and_text_revision(self):
+  key=next(iter(source_tests.DATA['evidence']));variant=next(iter(source_tests.DATA['evidence'][key]['variants']))
+  env=self.fixture('d01',dict(evidence={key:{'name':'새 이름','variants':{variant:'새 설명'}}}))
+  self.assertEqual(env['ROOM13']['evidence']['V111:'+key]['name'],'새 이름')
+  self.assertEqual(env['ROOM13']['evidence']['V111:'+key]['establishes'],'새 설명')
+  self.assertEqual(source_tests.DATA['evidence'][key]['variants'][variant],next(iter(json.loads((ROOT/'game/v111/records.json').read_text())['evidence'][key]['variants'].values())),'source data untouched')
+ def test_generators_emit_the_layer_call(self):
+  for name in ('build_v111_days45.py','build_v111_labels.py'):
+   text=(ROOT/'dev'/name).read_text()
+   self.assertIn('r13_v111_lines(',text);self.assertNotIn('[r13_v111_line(',text)
+
+class ContextArtByRecord(Layer):
+ def test_approved_cue_survives_added_lines_and_revised_text(self):
+  identity='v111:letter_read:MS14_D01_S01_L9101'
+  rids=['MS14_D01_S01_L9101','MS14_D01_S01_L0011','MS14_D01_S01_L0012','MS14_D01_S01_L0013','MS14_D01_S01_L0014']
+  env=self.load()
+  rows=env['r13_v111_lines'](rids)
+  self.assertEqual(env['r13_dialogue_context_match'](identity,3,rows[3],'neutral')['line_id'],'MS14_D01_S01_L0013')
+  env=self.fixture('d01',dict(replace={'MS14_D01_S01_L0013':{'text':'십삼 호. 다 외웠어.'}},
+   before={'MS14_D01_S01_L0011':[dict(id='NW_T_X1',speaker=None,text='끼운 줄')]}))
+  rows=env['r13_v111_lines'](rids)
+  self.assertEqual(rows[4][1],'십삼 호. 다 외웠어.')
+  self.assertEqual(env['r13_dialogue_context_match'](identity,4,rows[4],'neutral')['line_id'],'MS14_D01_S01_L0013')
+  self.assertIsNone(env['r13_dialogue_context_match'](identity,1,rows[1],'neutral'),'added line has no cue')
+
+ def test_approved_day13_cues_have_record_ids_and_match_by_record(self):
+  art=json.loads((ROOT/'game/assets/room13-dialogue-context-art.json').read_text())
+  cues=[c for c in art['bindings'] if c['identity'].startswith('v111:')]
+  self.assertEqual(len(cues),11)
+  records=source_tests.DATA['records']
+  for c in cues:
+   self.assertIn(c['line_id'],records);self.assertEqual(records[c['line_id']]['text'],c['text'])
+  layer=LAYER.read_text()
+  self.assertIn('cue.get("line_id")==rid and cue["identity"]==identity',layer)
+
+if __name__=='__main__':unittest.main()

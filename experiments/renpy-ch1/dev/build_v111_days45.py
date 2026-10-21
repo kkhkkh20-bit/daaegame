@@ -67,7 +67,7 @@ def records(sid,first,last):
    lines.append('    $ renpy.music.stop(fadeout=0.0 if renpy.is_skipping() else .15)')
    lines.append('    $ room13["v111"]["music_hold"]=room13["v111"]["scene"]')
    lines.append('    call r13_lines([(None,'+q(rest.strip())+',dict(no_lead=True))],'+q('v111:'+rid+':rest')+')')
-  elif r['kind'] in ('dialogue','narration','evidence') and r.get('player_visible',True):lines.append('    call r13_lines([r13_v111_line('+q(rid)+')],'+q('v111:'+rid)+')')
+  elif r['kind'] in ('dialogue','narration','evidence') and r.get('player_visible',True):lines.append('    call r13_lines(r13_v111_lines(['+q(rid)+']),'+q('v111:'+rid)+')')
   if r['operations']:code('r13_v111_commit('+q(rid)+')')
 def wait(key,loc,cast,options,targets):
  label(key);bindings[key]=dict(location=loc,people=cast,options=options)
