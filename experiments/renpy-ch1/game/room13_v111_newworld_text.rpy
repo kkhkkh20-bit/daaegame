@@ -40,6 +40,9 @@ init 308 python:
         "lamp_partial":lambda:r13_v111_value("meeting:lamp")=="partial",
         "lamp_lose":lambda:r13_v111_value("meeting:lamp")=="lose",
         "lamp_not_win":lambda:r13_v111_value("meeting:lamp") in ("partial","lose"),
+        # Event 04: the day-5 gate-post meeting.
+        "gate_post_lose":lambda:r13_v111_value("meeting:gate_post")=="lose",
+        "gate_post_half":lambda:r13_v111_value("gate_post_hardened") is True and r13_v111_value("meeting:gate_post") is None,
     }
     R13_NW_CUT_SPECIAL=("bell","v111_blanket_before","v111_blanket_after")
     def r13_nw_drop_item(item):

@@ -41,3 +41,15 @@ init 318 python:
         decided=r13_v111_value("lamp_theft_supported") is True or r13_v111_value("meeting:lamp") in ("partial","lose")
         return decided and (previous is None or previous())
     R13_V111_SCENE_CHECKS["MS14_D03_S06"]=r13_nw_lamp_evening_ready
+
+    # Half presentation (plan 7-2): some of the right records, none wrong.
+    def r13_nw_half(correct):
+        given=set(getattr(store,"v111_last_presented",None) or [])
+        want=set("V111:"+k for k in correct)
+        return bool(given) and given<want
+
+    # Event 04 gate-post meeting: day 5 afternoon also follows a lost meeting.
+    R13_V111_ENTRY["MS14_D05_S04"]=([],{})
+    def r13_nw_gate_post_after(previous=R13_V111_SCENE_CHECKS.get("MS14_D05_S04")):
+        return r13_v111_value("bami_status") in ("cleared","listed") and (previous is None or previous())
+    R13_V111_SCENE_CHECKS["MS14_D05_S04"]=r13_nw_gate_post_after

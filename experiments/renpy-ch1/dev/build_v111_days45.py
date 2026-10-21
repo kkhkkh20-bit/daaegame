@@ -117,8 +117,17 @@ act('compare_cloth5','ms14_somi_inside',people[s],obj('허락받은 옷과 천�
 label('cloth_match5');records(s,16,28);travel('clinic','clinic_handoff5');records(s,29,31);goto('hearing5')
 s='MS14_D05_S03';context(s,'gate','hearing5');records(s,1,9);goto('proof5')
 label('proof5');lines.append('    call r13_v111_proof("밤이 혐의의 근거를 확인한다",["E20","E22","E23","E24"],"r13_v111_bami_clear5","r13_v111_wrong5","r13_v111_hint5")');lines.append('    jump expression _return')
-for key,start,end in [('wrong5',38,39),('hint5',40,40)]:label(key);records(s,start,end);goto('proof5')
-label('bami_clear5');records(s,12,37);goto('warning5')
+# New world (event 04): one presentation. A half presentation (part of the right set)
+# gets one more try; any other wrong answer is final and Bami goes on the list.
+label('wrong5')
+lines.extend(['    if r13_nw_half(["E20","E22","E23","E24"]) and not r13_v111_value("gate_post_hardened"):',
+ '        $ r13_v111_set("gate_post_hardened",True)',
+ '        call r13_lines(r13_v111_lines(["MS14_D05_S03_L0038","MS14_D05_S03_L0039"]),"v111:MS14_D05_S03_L0038")',
+ '        jump r13_v111_proof5'])
+code('r13_nw_meeting_end("gate_post","lose")');code('r13_nw_list("bami","gate_post_lose")');code('r13_v111_set("bami_status","listed")')
+records(s,38,39);goto('warning5')
+label('hint5');records(s,40,40);goto('proof5')
+label('bami_clear5');code('r13_nw_meeting_end("gate_post","win")');records(s,12,37);goto('warning5')
 s='MS14_D05_S04';context(s,'gate','warning5');records(s,1,4);goto('envelope5')
 act('envelope5','gate',people[s],person('봉투를 받겠습니다.','gate','resident_lamplighter'),'warning_read5')
 label('warning_read5');records(s,5,13);goto('warning_compare5')
