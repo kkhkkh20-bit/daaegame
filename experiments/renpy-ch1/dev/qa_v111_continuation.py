@@ -32,7 +32,7 @@ async def main():
    b=await pw.chromium.launch_persistent_context(str(profile),executable_path='/usr/bin/chromium',viewport=dict(width=1280,height=720),headless=True,args=['--no-sandbox','--remote-debugging-port=9223','--enable-unsafe-swiftshader','--autoplay-policy=no-user-gesture-required'])
    try:
     for page in b.pages:await page.close()
-    pg=await b.new_page();q=Fast(pg,OUT);events=[];heard=[];book=None;map_target=None;shots=set();tries={};last=None;stale=0
+    pg=await b.new_page();q=Fast(pg,OUT);events=[];heard=[];book=None;wrong_recipient=0;map_target=None;shots=set();tries={};last=None;stale=0
     await pg.goto('http://localhost:8766/preview/room13-dev/',wait_until='domcontentloaded',timeout=180000)
     await pg.wait_for_function("typeof renpy_exec==='function'",timeout=180000);await asyncio.sleep(10);await q.input(1100,600);await q.wait('main_menu')
     await q.py('import renpy;renpy.store.preferences.text_cps=0;result=True')
@@ -52,6 +52,11 @@ async def main():
      assert '_exception' not in screens,('Game exception',sc if 'sc' in locals() else None)
      extra=st.pop('v111_probe')
      sc=extra['scene']
+     if os.environ.get('V111_WRONG_RECIPIENT') and wrong_recipient==2:
+      assert 'say' not in screens,('Wrong recipient advanced story',gate,st.get('say'))
+      if 'r13_hub' in screens:
+       assert gate=='portrait_show4' and 'V111:E18' not in room['evidence'],(gate,room['evidence'])
+       print('WRONG_RECIPIENT_REJECTED',flush=True);wrong_recipient=3
      if room['day']==13 and values.get('family_location')=='school' and values.get('busy:mom')=='daram_guard':
       assert values.get('location:daram')=='school' and values.get('location:mom')=='school',('Protected family followed Dad away from school',gate,loc,values)
      if 'say' in screens:
@@ -70,7 +75,7 @@ async def main():
        if gate in ('teacher_relief_check13','carrier_receipt12','device_detach14','transport_cleanup13'):await q.shot('field-'+gate)
      if sc and sc not in shots and 'say' in screens:
       await q.shot(sc);shots.add(sc);events.append(dict(step=step,scene=sc,gate=gate,day=room['day'],values=values,evidence=room['evidence']));print('SCENE',sc,gate,flush=True)
-     if os.environ.get('V111_STOP_DAY') and room['day']>=int(os.environ['V111_STOP_DAY']) and 'r13_hub' in screens:
+     if ((os.environ.get('V111_STOP_DAY') and room['day']>=int(os.environ['V111_STOP_DAY'])) or (os.environ.get('V111_STOP_GATE')==gate)) and 'r13_hub' in screens:
       (OUT/'checkpoint-report.json').write_text(json.dumps(dict(status='checkpoint_reached',day=room['day'],scope='Actual clicks from previous genuine save; later days not yet tested',events=events,final=room),ensure_ascii=False,indent=2));return
      if values.get('story14_completed'):
       checks=[]
@@ -147,6 +152,7 @@ async def main():
        if sc=='MS14_D13_S04' and values.get('current_order_execution_stopped') and not values.get('relay_stopped'):book='V111:E13_ORDER'
        elif sc=='MS14_D14_S02' and os.environ.get('V111_DEVICE_RECORD')=='supply':book='V111:E14_SUPPLY'
        else:book='V111:E13_HANDOVER'
+      if wrong_recipient==2:await asyncio.sleep(.2);continue
       entries=await q.py('import renpy;result=list(renpy.display.screen.get_screen("r13_book").scope["entries"])')
       assert book in entries,(book,entries)
       name=await q.py('import renpy;result=renpy.store.ROOM13["evidence"]['+repr(book)+']["name"]')
@@ -154,7 +160,9 @@ async def main():
       except AssertionError:
        page=await q.py('import renpy;s=renpy.store;c=renpy.display.screen.get_screen("r13_book").scope;e=c["entries"];result=[e.index('+repr(book)+')//s.r13_record_page_size(),s.r13_record_page(e,c["page"])]')
        await q.press('이전' if page[0]<page[1] else '다음');continue
-      await q.press('보여주기');book=None;continue
+      await q.press('보여주기');book=None
+      if wrong_recipient==1:wrong_recipient=2
+      continue
      if gate=='labor_sheet4' and step%5==0:
       print('LABOR_DEBUG',await q.py('import renpy;s=renpy.store;result=dict(people=s.r13_visible_people(),questions=[(x[0],str(x[1])) for x in s.r13_v111_questions("neoul")],pick=getattr(s,"v111_pick",None),binding=s.r13_v111_binding())'),flush=True)
      opts=extra['binding'].get('options',[])
@@ -164,11 +172,16 @@ async def main():
      if gate=='morning_prep12' and os.environ.get('V111_MADAM') and not values.get('madam_observer_consent'):idx=4
      if gate=='transport_cleanup13' and idx==5 and os.environ.get('V111_BURI') and not values.get('buri_device_consent'):idx=6
      opt=opts[idx] if opts else None
+     if gate=='portrait_show4' and os.environ.get('V111_WRONG_RECIPIENT') and wrong_recipient==0:opt=dict(opt,person='resident_somi')
      if 'r13_topics' in screens:
       person_id=await q.py('import renpy;result=renpy.display.screen.get_screen("r13_topics").scope["person"]')
+      if gate=='portrait_show4' and os.environ.get('V111_WRONG_RECIPIENT') and wrong_recipient==0 and person_id=='resident_somi':
+       book='V111:E09';wrong_recipient=1;await q.press('자료');continue
       choices=[o for o in opts if o.get('person')==person_id]
       if not choices:await q.press('돌아가기');continue
-      await q.press((opt if opt in choices else choices[0])['title']);continue
+      chosen=opt if opt in choices else choices[0]
+      if chosen.get('present'):book=chosen['present']
+      await q.press(chosen['title']);continue
      if 'r13_map' in screens:
       target=map_target or next(o['move'] for o in opts if o.get('move'))
       map_target=None

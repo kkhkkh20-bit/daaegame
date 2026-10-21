@@ -9,7 +9,7 @@
   },
   "checks": {
     "required": "dev/check.sh",
-    "unit_tests": 793,
+    "unit_tests": 794,
     "unit_result": "OK",
     "renpy_lint": "ok",
     "sdk": "8.5.3",
@@ -470,6 +470,12 @@
         "all_cart_handed": true,
         "current_transport_chain_stopped": true
       }
+    },
+    {
+      "case": "portrait-recipient-and-owned-material",
+      "status": "checkpoint_reached",
+      "day": 4,
+      "scope": "Wrong Somi recipient rejected without E18 or dialogue advance; selecting the owned portrait for Nero then acquired E18 and reached the next scene"
     }
   ],
   "final_build_checks": {
@@ -493,12 +499,12 @@
     "Actual browser checks are local official web builds, not public-host direct browsing"
   ],
   "official_build": {
-    "core_zip_bytes": 17671985,
-    "first_load_bytes": 37772768,
+    "core_zip_bytes": 17672352,
+    "first_load_bytes": 37773135,
     "preload_files": 48,
     "remote_files": 2398,
     "removed_from_release": [],
-    "archive_sha256": "cd1d82c9bcda9063e7d2d2f9e3c07c838e1f71c30ce309dd3138b5ecf23a6ab7"
+    "archive_sha256": "bc6813c302ab863d0b7dc9e8b365348fcb0bf90dee7ad0aa532a445030dbef67"
   },
   "publication": {
     "url": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-dev/?v=0.19.85",

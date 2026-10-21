@@ -82,11 +82,17 @@ init 301 python:
         if b.get("daram_if_free") and r13_v111_value("DARAM_DETAINED"):b["people"]=[p for p in b["people"] if p!="daram"]
         if b.get("people_by_location") is not None:b["people"]=b["people_by_location"].get(store.room13["location"],[])
         return b
+    def r13_v111_present_index(binding,person,shown):
+        if not shown or shown not in store.room13["evidence"]:return None
+        for i,option in enumerate(binding.get("options",[])):
+            if option.get("present")==shown and option.get("person")==person and option.get("location")==store.room13["location"]:
+                return option.get("index",i)
+        return None
     def r13_v111_context(key):
         n=winter_copy.deepcopy(store.room13);n["v111"]["gate"]=key;store.room13=n
     def r13_v111_questions(person):
         b=r13_v111_binding()
-        return [(o["title"],Return(o.get("index",i)),False) for i,o in enumerate(b.get("options",[])) if o.get("person")==person and o.get("location")==store.room13["location"]]
+        return [(o["title"],Return("present") if o.get("present") else Return(o.get("index",i)),False) for i,o in enumerate(b.get("options",[])) if o.get("person")==person and o.get("location")==store.room13["location"]]
     for title in R13_V111["proof_claims"]:R13_CLAIMS["v111:"+title]=dict(assertion=title)
     for key,spec in R13_V111["evidence"].items():
         rid="V111:"+key
@@ -194,9 +200,9 @@ label r13_v111_wait_again:
             if _return=="present":
                 call screen r13_book(v111_person,present=True)
                 $ v111_shown=_return
-                $ v111_match=next((i for i,o in enumerate(v111_binding.get("options",[])) if o.get("present")==v111_shown),None)
+                $ v111_match=r13_v111_present_index(v111_binding,v111_person,v111_shown)
                 if v111_match is not None:
-                    return v111_binding["options"][v111_match].get("index",v111_match)
+                    return v111_match
                 if v111_shown:
                     $ renpy.notify("지금은 이 자료로 더 확인할 내용이 없다.")
         jump r13_v111_wait_again

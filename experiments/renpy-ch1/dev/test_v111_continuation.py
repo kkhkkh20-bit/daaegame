@@ -106,6 +106,19 @@ class ContinuationGuards(unittest.TestCase):
   setv('alive:resident_madam',False);setv('location:resident_madam','store');arrive(['mom','resident_badook'])
   self.assertNotIn('resident_madam',self.state.room13['v111']['people'])
   self.assertEqual(self.env['r13_v111_value']('location:resident_madam'),'store')
+ def test_showing_the_same_portrait_to_a_bystander_cannot_advance_nero(self):
+  self.state.room13['evidence']=['V111:E09'];self.state.room13['location']='ms14_somi'
+  binding=dict(options=[dict(index=3,person='resident_nero',location='ms14_somi',present='V111:E09')])
+  choose=self.env['r13_v111_present_index']
+  binding['options'][0]['title']='이분을 보셨습니까?'
+  self.env.update(Return=lambda value:value,r13_v111_binding=lambda:binding)
+  self.assertEqual(self.env['r13_v111_questions']('resident_nero')[0][1],'present')
+  self.assertIsNone(choose(binding,'resident_somi','V111:E09'))
+  self.assertEqual(choose(binding,'resident_nero','V111:E09'),3)
+  self.state.room13['location']='gate'
+  self.assertIsNone(choose(binding,'resident_nero','V111:E09'))
+  self.state.room13['location']='ms14_somi';self.state.room13['evidence']=[]
+  self.assertIsNone(choose(binding,'resident_nero','V111:E09'))
  def test_night_testimony_unlocks_missing_e21_only_at_completion(self):
   self.assertFalse(self.env['r13_v111_owned']('E21'))
   self.env['r13_v111_commit']('MS14_D04_S04_L0018')
