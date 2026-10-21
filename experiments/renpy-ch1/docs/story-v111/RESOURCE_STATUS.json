@@ -1,5 +1,5 @@
 {
-  "policy": "기존 저장소 자산 재사용. 토리 작업과 중복 제작 없음. 새 이미지/음원 생성 0건.",
+  "policy": "기존 저장소 자산 우선. 토리의 표정·동작 중복 제작 없음. 2026-10-21 소유자 부족 리소스 보충 지시에 따라 공용 회색 담요 전후 2종 제작·연결.",
   "catalog": [
     {
       "id": "IMG001",
@@ -442,7 +442,25 @@
       "scope": "반응·손·포즈",
       "issue": "원문 행동 중 잡기·부축·바느질·하차·물건 인계의 일치 동작 자산은 모두 확보된 것으로 확인되지 않음",
       "fallback": "동일 인물 정지 표정과 기존 공간, 원문 표시 서술만. 손/입/몸 합성 없음",
-      "needed": "실제 기존 포즈를 대조해 없는 동작만 제작 요청 목록으로 확정"
+      "needed": "토리의 인물 포즈 대조 유지. 소품 중 공용 회색 담요 전후 2종은 0.19.86에서 별도 보충."
+    }
+  ],
+  "supplements_01986": [
+    {
+      "id": "PROP_BLANKET_BEFORE",
+      "runtime_file": "assets/room13-v111-blanket-before.webp",
+      "scope": "MS14_D13_S01",
+      "status": "VERIFIED_ACTUAL_SCHOOL_CLICK_REPAIR_AND_CUT_CLEANUP",
+      "sha256": "85a74c90599cafd395b539e4ce4a0f1de6a6994981a795f030308898fb4100df",
+      "note": "공용 회색 담요. 오른쪽 끝 터짐·솜 노출. 가족 침구와 별도."
+    },
+    {
+      "id": "PROP_BLANKET_AFTER",
+      "runtime_file": "assets/room13-v111-blanket-after.webp",
+      "scope": "MS14_D13_S01",
+      "status": "VERIFIED_ACTUAL_SCHOOL_CLICK_REPAIR_AND_CUT_CLEANUP",
+      "sha256": "ab2ffe99b5e80270e2f82b8fc1aedd89110e611a6e8edea7b8767cc1854013f7",
+      "note": "동일 담요·구도. 벌어진 곳을 아래 향한 새 무늬 천으로 수선. 실제 입력 뒤 표시, E13_MENDING 기록 연결."
     }
   ]
 }

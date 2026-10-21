@@ -62,6 +62,12 @@ async def main():
      if 'say' in screens:
       line=dict(scene=sc,packet=extra.get('packet'))
       if not heard or line!=heard[-1]:heard.append(line)
+     if 'say' in screens and sc=='MS14_D13_S01' and extra.get('packet',[None,None])[1]=='새가 아래를 보는데.' and 'blanket_after_art' not in shots:
+      await asyncio.sleep(.4);await q.shot('blanket-after-art');shots.add('blanket_after_art')
+     if os.environ.get('V111_STOP_AFTER_BLANKET') and 'blanket_after_art' in shots and sc!='MS14_D13_S01':
+      assert values.get('pandol_blanket_mended') and 'V111:E13_MENDING' in room['evidence']
+      assert not await q.py('import renpy;result="r13_ep_cut" in renpy.exports.get_showing_tags()')
+      (OUT/'blanket-art-report.json').write_text(json.dumps(dict(status='passed',version='0.19.86',scope='Actual school blanket click, authored repair dialogue, owned record, cut cleanup on next scene',final=room),ensure_ascii=False,indent=2));return
      state=(gate,sc,tuple(screens),st.get('say'))
      stale=stale+1 if state==last else 0;last=state
      assert stale<25,('Input did not progress',state)
@@ -72,7 +78,7 @@ async def main():
       save_key='v111-continue-'+gate
       if save_key not in shots:
        await q.py('import renpy;renpy.exports.save('+repr(save_key)+');result=True');shots.add(save_key)
-       if gate in ('teacher_relief_check13','carrier_receipt12','device_detach14','transport_cleanup13'):await q.shot('field-'+gate)
+       if gate in ('teacher_relief_check13','carrier_receipt12','device_detach14','transport_cleanup13','blanket_mend13'):await q.shot('field-'+gate)
      if sc and sc not in shots and 'say' in screens:
       await q.shot(sc);shots.add(sc);events.append(dict(step=step,scene=sc,gate=gate,day=room['day'],values=values,evidence=room['evidence']));print('SCENE',sc,gate,flush=True)
      if ((os.environ.get('V111_STOP_DAY') and room['day']>=int(os.environ['V111_STOP_DAY'])) or (os.environ.get('V111_STOP_GATE')==gate)) and 'r13_hub' in screens:

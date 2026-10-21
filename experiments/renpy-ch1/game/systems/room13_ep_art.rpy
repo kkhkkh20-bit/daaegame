@@ -104,6 +104,11 @@ init 160 python:
 
     def r13_ep_cut_art(name):
         if name=="bell":return r13_ep_bell_art()
+        if name in ("v111_blanket_before","v111_blanket_after"):
+            # Existing cut layer/clear lifecycle, preserving the actual school
+            # background and the same prop position across the repair beat.
+            state="before" if name.endswith("before") else "after"
+            return Fixed(Transform("assets/room13-v111-blanket-%s.webp"%state,xysize=(370,310),fit="contain",nearest=True,xpos=770,ypos=150),xysize=(1280,720))
         return Transform("assets/room13-ep-%s.webp"%name,size=(1280,720),nearest=True)
 
     def r13_ep_line_art(packet):

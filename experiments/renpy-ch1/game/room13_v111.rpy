@@ -59,7 +59,12 @@ init 301 python:
         if who=="resident_piko" and r13_v111_value("piko_alive") is False:raise Exception("Absent/dead Piko line: "+rid)
         if who and not r13_v111_person_alive(who):raise Exception("Absent/dead authored speaker: "+rid)
         slot=r.get("direction",{}).get("slot") or "neutral"
-        return (who,R13_V111_CARRIAGE_TEXT.get(rid,r["text"]),dict(no_lead=True,expression=slot,pose=slot,**({"carriage_jolt":True,"show":"daram"} if rid=="MS14_D01_S01_L0001" else {})))
+        art_options={}
+        if rid in ("MS14_D13_S01_L0005","MS14_D13_S01_L0007","MS14_D13_S01_L0008","MS14_D13_S01_L0009"):
+            art_options["cut"]="v111_blanket_before"
+        elif rid in ("MS14_D13_S01_L0011","MS14_D13_S01_L0012","MS14_D13_S01_L0013","MS14_D13_S01_L0014","MS14_D13_S01_L0016","MS14_D13_S01_L0017","MS14_D13_S01_L0018"):
+            art_options["cut"]="v111_blanket_after"
+        return (who,R13_V111_CARRIAGE_TEXT.get(rid,r["text"]),dict(no_lead=True,expression=slot,pose=slot,**dict(art_options,**({"carriage_jolt":True,"show":"daram"} if rid=="MS14_D01_S01_L0001" else {}))))
     def r13_v111_binding():
         v=store.room13.get("v111",{})
         if v.get("gate")=="travel":
@@ -161,6 +166,8 @@ init 301 python:
     def r13_world_props(entry=False):
         if r13_v111_active() and store.room13["location"]=="forest" and store.room13["v111"].get("scene") in ("MS14_D02_S01","MS14_D11_S00"):
             return [(Transform("assets/ms14/box.png",xysize=(220,152),fit="contain",nearest=True),1150,548)]
+        if r13_v111_active() and store.room13["location"]=="school" and store.room13["v111"].get("gate")=="blanket_mend13":
+            return [(Transform("assets/room13-v111-blanket-before.webp",xysize=(260,180),fit="contain",nearest=True),30,441)]
         return _r13_v111_props(entry)
     _r13_v111_places=r13_places
     def r13_places():
@@ -274,6 +281,8 @@ init 302 python:
     }
     _r13_v111_material_art=r13_material_art
     def r13_material_art(key):
+        if r13_v111_active() and key=="V111:E13_MENDING" and r13_v111_owned("E13_MENDING"):
+            return Transform("assets/room13-v111-blanket-after.webp",xysize=(160,100),fit="contain",nearest=True)
         if r13_v111_active() and key in ("V111:E09","V111:E30"):
             art=("portrait_"+r13_v111_value("portrait")) if key=="V111:E09" else "bundle"
             if art=="portrait_child_completed":art="portrait_child"
