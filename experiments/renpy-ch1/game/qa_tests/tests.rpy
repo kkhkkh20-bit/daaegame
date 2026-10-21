@@ -9903,6 +9903,9 @@ testcase new_places:
     click "지도" until screen "r13_map" timeout 30
     # Map pins ignore input until the .15s entrance guard finishes.
     pause until eval renpy.get_screen("r13_map").scope["ready"] timeout 30
+    # From the forest the map opens on the 숲·산길 area; the market is on 마을.
+    click "마을"
+    pause .5
     click pos r13_cart_label_point("market")
     pause until eval renpy.get_screen("r13_map").scope["selected"]=="market" timeout 30
     click "이곳으로 이동"
