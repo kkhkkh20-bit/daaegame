@@ -35,6 +35,12 @@
     },
     "MS14_D12_S02_L0027": {
       "text": "문 쪽에 쌓아 줘요. 그릇 옮길 길은 비우고요. 얼른요."
+    },
+    "MS14_D12_S04_L0054": {
+      "text": "다람이 아버님이 나가고. 그릇을 세라고 할 때."
+    },
+    "MS14_D12_S04_L0086": {
+      "text": "다람이 아버님이 운반함을 정리할 때. 그릇을 세라고 할 때."
     }
   },
   "before": {
@@ -217,7 +223,16 @@
         "speaker": "아빠",
         "kind": "dialogue",
         "text": "아침에 약장에서는 빠진 게 없다고 하셨죠.",
-        "expression": "neutral"
+        "expression": "neutral",
+        "when": "medicine_locked"
+      },
+      {
+        "id": "NW_D12_S04_R01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "아침에 약장은 아무도 확인하지 않았습니다.",
+        "expression": "neutral",
+        "when": "medicine_unchecked"
       },
       {
         "id": "NW_D12_S04_A02",
@@ -382,6 +397,12 @@
         "kind": "dialogue",
         "text": "작은 냄비는 아이들 모두를 위한 거였어요. 누구 하나 고른 게 아니에요.",
         "expression": "neutral"
+      },
+      {
+        "id": "NW_SL_Q_02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "선생님이 손뼉을 짝 친다. 아무도 고개를 들지 않는다."
       }
     ],
     "soup_list_won12": [
@@ -398,6 +419,12 @@
         "kind": "dialogue",
         "text": "흰 그릇은 그 칸의 아이들 몫이었습니다. 새미도 거기 있었고요. 도담이만 명단에 없었습니다. 자리가 없어서 새미 옆에 앉았을 뿐이에요.",
         "expression": "neutral"
+      },
+      {
+        "id": "NW_SL_W_10",
+        "speaker": null,
+        "kind": "narration",
+        "text": "선생님의 품에서 출석부가 미끄러진다. 선생님은 그것을 끌어안고 그 자리에 주저앉는다."
       },
       {
         "id": "NW_SL_W_03",

@@ -314,7 +314,15 @@
         "id": "NW_D14_EF_A01",
         "speaker": null,
         "kind": "narration",
-        "text": "다람의 이름은 명단에서 지워졌다. 다른 이름들은 남았다. 다람이 그 이름들을 하나씩 손바닥에 적는다."
+        "text": "다람의 이름은 명단에서 지워졌다. 다른 이름들은 남았다. 다람이 그 이름들을 하나씩 손바닥에 적는다.",
+        "when": "daram_deal_freed"
+      },
+      {
+        "id": "NW_D14_EF_R01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "명단의 이름들은 그대로 남았다. 다람이 그 이름들을 하나씩 손바닥에 적는다.",
+        "when": "daram_not_deal_freed"
       }
     ],
     "MS14_D14_END_PARTIAL_L0013": [
@@ -445,6 +453,19 @@
         "speaker": "촌장",
         "kind": "dialogue",
         "text": "사람을 보내지 않으면 다음 겨울에 모두 죽소. 한 사람이 열흘을 사오. 숫자로 보시오.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_A1_Q03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "촌장이 두 팔을 벌려 광장 쪽을 가리킨다."
+      },
+      {
+        "id": "NW_A1_Q04",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "불은 나눠야 따뜻하오.",
         "expression": "neutral"
       }
     ],
@@ -633,6 +654,12 @@
         "kind": "dialogue",
         "text": "달래는 열흘을 샀습니다. 그해 장작 창고에는 한 달 치가 그대로 남아 있었고요.",
         "expression": "neutral"
+      },
+      {
+        "id": "NW_A4_W04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "촌장이 펴 보이던 손바닥을 천천히 거둔다. 그 손이 큰 돌을 짚는다. 무릎이 꺾인다."
       }
     ],
     "altar4_lost14": [

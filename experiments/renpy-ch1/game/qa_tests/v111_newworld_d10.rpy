@@ -97,7 +97,7 @@ testcase v111_nw_d10_records_partial:
     pause 1.0
     click pos (900,600) until screen "r13_hub" timeout 120
     assert eval (r13_v111_value("meeting:records")=="partial" and not r13_v111_value("listed:resident_owlgp"))
-    assert eval (qa_nw_seen("관찰 대상으로 적겠소") and qa_nw_seen("돌려받은 것은 전부인가"))
+    assert eval (qa_nw_seen("관찰 대상으로 적겠소") and qa_nw_seen("돌려받은 것이 전부인가"))
 
 testcase v111_nw_d10_room13_won:
     # Every point held: the notebook line, Sling names Granny, Granny is held.
