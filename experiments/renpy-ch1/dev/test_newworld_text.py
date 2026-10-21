@@ -67,6 +67,16 @@ class NewWorldText(Layer):
    for t in texts:
     self.assertFalse(any(w in t for w in FORBIDDEN),t);self.assertIsNone(EMOJI.search(t),t)
   self.assertEqual(len(list((ROOT/'game/v111/newworld').glob('d*.json'))),14)
+ def test_revisions_attach_only_to_lines_the_game_shows(self):
+  # Action/stage records are committed for effects but never displayed; a line
+  # attached to one would silently never appear.
+  shown={r for _,rids in call_sites() for r in rids}
+  for path in sorted((ROOT/'game/v111/newworld').glob('d*.json')):
+   part=json.loads(path.read_text())
+   anchors=list(part['replace'])+list(part['before'])+list(part['after'])+list(part['drop'])
+   self.assertEqual([a for a in anchors if a not in shown],[],path.name)
+  self.assertNotIn('MS14_D01_S05_L0015',shown,'stage line: room opens (not displayed)')
+  self.assertIn('MS14_D01_S05_L0016',shown)
 
  def test_replace_before_after_and_drop(self):
   env=self.fixture('d01',dict(replace={'MS14_D01_S05_L0004':{'text':'고맙습니다, 할머니.'}},
