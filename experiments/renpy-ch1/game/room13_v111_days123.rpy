@@ -1025,9 +1025,11 @@ label r13_v111_knife_fit:
 
 label r13_v111_knife_wrong:
     $ r13_v111_scene('MS14_D03_S05')
+    # New world (event 03): naming by the knife's shape alone loses the knife issue.
+    $ r13_nw_meeting_end('lamp','partial')
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D03_S05_L0068', 'MS14_D03_S05_L0069', 'MS14_D03_S05_L0070']), 'v111:knife_wrong:MS14_D03_S05_L0068')
-    jump r13_v111_trial_knife
+    jump r13_v111_trial_choices
 
 label r13_v111_trial_latch:
     call r13_v111_proof('바깥 걸쇠 주장과 발견 위치를 대조한다',['E17', 'E32', 'E33'],'r13_v111_trial_latch_ok','r13_v111_trial_wrong_latch','r13_v111_trial_hint_latch')
@@ -1053,6 +1055,7 @@ label r13_v111_trial_stone_ok:
 
 label r13_v111_badugi_arrives:
     $ r13_v111_scene('MS14_D03_S05')
+    $ r13_nw_meeting_end('lamp','win')
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D03_S05_L0030', 'MS14_D03_S05_L0032', 'MS14_D03_S05_L0033', 'MS14_D03_S05_L0034', 'MS14_D03_S05_L0036']), 'v111:badugi_arrives:MS14_D03_S05_L0030')
     jump r13_v111_trial_piko
@@ -1107,6 +1110,10 @@ label r13_v111_stone_defer:
     jump r13_v111_custody_choice
 
 label r13_v111_custody_choice:
+    # Partial or lost meeting: Silluk is only the one who sold a found stone.
+    if r13_v111_value('meeting:lamp')!='win':
+        $ r13_v111_set('silluk_status','released')
+        jump r13_v111_restore_route
     $ v111_menu_owner='custody_choice'
     $ v111_menu=[('지금 데려가지 못하게 하고 내일 다시 나오게 한다',0) for _ in [0] if True] + [('증거를 넘기고 너울이 실룩을 데려가게 한다',1) for _ in [0] if True]
     $ v111_answer=renpy.display_menu(v111_menu)
@@ -1130,13 +1137,18 @@ label r13_v111_silluk_transfer:
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D03_S05_L0063', 'MS14_D03_S05_L0064', 'MS14_D03_S05_L0065', 'MS14_D03_S05_L0066']), 'v111:silluk_transfer:MS14_D03_S05_L0063')
     $ r13_v111_commit('MS14_D03_S05_L0067')
+    # Neoul lists Silluk the same night to keep him quiet (plan 사건 03).
+    $ r13_nw_list('resident_siluk','lamp_transfer')
     jump r13_v111_restore_route
 
 label r13_v111_trial_wrong:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
+    # New world (event 03): one presentation. Losing Tok's innocence (gate) ends the meeting.
+    $ r13_nw_meeting_end('lamp','lose')
+    $ r13_nw_list('resident_tok','lamp_lose')
     call r13_lines(r13_v111_lines(['MS14_D03_S05_L0071', 'MS14_D03_S05_L0072']), 'v111:trial_wrong:MS14_D03_S05_L0071')
-    jump r13_v111_trial_repair
+    jump r13_v111_trial_choices
 
 label r13_v111_trial_hint:
     $ r13_v111_scene('MS14_D03_S05')
@@ -1146,9 +1158,11 @@ label r13_v111_trial_hint:
 
 label r13_v111_trial_wrong_sale:
     $ r13_v111_scene('MS14_D03_S05')
+    # New world (event 03): a lost later issue ends the meeting as partial.
+    $ r13_nw_meeting_end('lamp','partial')
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D03_S05_L0071', 'MS14_D03_S05_L0072']), 'v111:trial_wrong_sale:MS14_D03_S05_L0071')
-    jump r13_v111_trial_sale
+    jump r13_v111_trial_choices
 
 label r13_v111_trial_hint_sale:
     $ r13_v111_scene('MS14_D03_S05')
@@ -1158,9 +1172,11 @@ label r13_v111_trial_hint_sale:
 
 label r13_v111_trial_wrong_latch:
     $ r13_v111_scene('MS14_D03_S05')
+    # New world (event 03): a lost later issue ends the meeting as partial.
+    $ r13_nw_meeting_end('lamp','partial')
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D03_S05_L0071', 'MS14_D03_S05_L0072']), 'v111:trial_wrong_latch:MS14_D03_S05_L0071')
-    jump r13_v111_trial_latch
+    jump r13_v111_trial_choices
 
 label r13_v111_trial_hint_latch:
     $ r13_v111_scene('MS14_D03_S05')
@@ -1170,9 +1186,11 @@ label r13_v111_trial_hint_latch:
 
 label r13_v111_trial_wrong_stone:
     $ r13_v111_scene('MS14_D03_S05')
+    # New world (event 03): a lost later issue ends the meeting as partial.
+    $ r13_nw_meeting_end('lamp','partial')
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D03_S05_L0071', 'MS14_D03_S05_L0072']), 'v111:trial_wrong_stone:MS14_D03_S05_L0071')
-    jump r13_v111_trial_stone
+    jump r13_v111_trial_choices
 
 label r13_v111_trial_hint_stone:
     $ r13_v111_scene('MS14_D03_S05')

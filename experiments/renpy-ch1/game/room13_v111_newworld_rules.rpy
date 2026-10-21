@@ -16,3 +16,28 @@ init 318 python:
         if record and r13_v111_active() and key=="V111:E05" and r13_v111_value("gate_daram_unlisted") is True:
             record=dict(record);record["establishes"]=R13_V111["evidence"]["E05"]["variants"]["unlisted"]
         return record
+
+    # Meetings and the transfer list (plan 7). A meeting is decided once.
+    R13_NW_MEETING_RESULTS=("win","partial","lose")
+    def r13_nw_meeting_end(meeting,result):
+        if result not in R13_NW_MEETING_RESULTS:raise Exception("Unknown meeting result: "+str(result))
+        if r13_v111_value("meeting:"+meeting) is None:r13_v111_set("meeting:"+meeting,result)
+        return r13_v111_value("meeting:"+meeting)
+    R13_NW_LISTABLE=("resident_tok","bami","resident_bori","nabi","daram","resident_owlgp","resident_piko","resident_siluk","resident_guldol","resident_teacher","mom","dad")
+    def r13_nw_list(person,reason):
+        """Write a name on the school transfer list (the 13th cart takes them)."""
+        if person not in R13_NW_LISTABLE:raise Exception("Person cannot be listed: "+str(person))
+        if r13_v111_value("listed:"+person):return False
+        r13_v111_set("listed:"+person,True)
+        r13_v111_set("listed_reason:"+person,reason)
+        r13_v111_set("listed_order",list(r13_v111_value("listed_order") or [])+[person])
+        return True
+    def r13_nw_listed():
+        return [p for p in (r13_v111_value("listed_order") or []) if r13_v111_value("listed:"+p)]
+
+    # Event 03 lamp meeting: evening scene opens after a partial or lost meeting too.
+    R13_V111_ENTRY["MS14_D03_S06"]=([],{"stone_choice_completed":True})
+    def r13_nw_lamp_evening_ready(previous=R13_V111_SCENE_CHECKS.get("MS14_D03_S06")):
+        decided=r13_v111_value("lamp_theft_supported") is True or r13_v111_value("meeting:lamp") in ("partial","lose")
+        return decided and (previous is None or previous())
+    R13_V111_SCENE_CHECKS["MS14_D03_S06"]=r13_nw_lamp_evening_ready

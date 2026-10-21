@@ -74,7 +74,7 @@ class NewWorldText(Layer):
   shown={r for _,rids in call_sites() for r in rids}
   for path in sorted((ROOT/'game/v111/newworld').glob('d*.json')):
    part=json.loads(path.read_text())
-   anchors=list(part['replace'])+list(part['before'])+list(part['after'])+list(part['drop'])
+   anchors=list(part['replace'])+list(part['before'])+list(part['after'])+[d if isinstance(d,str) else d['id'] for d in part['drop']]
    self.assertEqual([a for a in anchors if a not in shown],[],path.name)
   self.assertNotIn('MS14_D01_S05_L0015',shown,'stage line: room opens (not displayed)')
   self.assertIn('MS14_D01_S05_L0016',shown)

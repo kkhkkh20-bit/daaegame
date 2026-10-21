@@ -322,7 +322,7 @@ init 303 python:
         if store.room13["day"]!=R13_V111["scene_days"][scene]:raise Exception("Wrong authored day: "+scene)
         if scene=="MS14_D02_S04" and r13_v111_value("D02_afternoon") not in (None,"uncommitted"):raise Exception("Afternoon already committed")
         if scene=="MS14_D02_S05" and r13_v111_value("D02_afternoon") not in ("shelter","nero"):raise Exception("Missing afternoon decision")
-        if scene=="MS14_D03_S06" and r13_v111_value("silluk_status") not in ("reporting_obligation","detained_work_waiting_station"):raise Exception("Missing custody decision")
+        if scene=="MS14_D03_S06" and r13_v111_value("silluk_status") not in ("reporting_obligation","detained_work_waiting_station","released"):raise Exception("Missing custody decision")
         check=globals().get("R13_V111_SCENE_CHECKS",{}).get(scene)
         if check and not check():raise Exception("Unmet authored scene state: "+scene)
         items,values=R13_V111_ENTRY.get(scene,([],{}))

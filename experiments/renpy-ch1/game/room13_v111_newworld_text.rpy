@@ -4,7 +4,7 @@
 # here, by record ID only:
 #   replace  {rid: {"text": ..., "when"?: name}}   new sentence for an authored line (only while when holds)
 #   before / after  {rid: [line, ...]}             new lines around an authored line
-#   drop     [rid, ...]                           authored line not shown
+#   drop     [rid | {"id": rid, "when": name}, ...]  authored line not shown (while when holds)
 #   evidence {key: {"name": ..., "variants": {variant: text}, "add_variants": {new: text}}}
 # A new line: {"id": "NW_...", "speaker": name|null, "text": ..., "kind"?, "expression"?,
 #              "when"?: condition name in R13_NW_WHEN, "cut"?: existing ep art name}
@@ -35,8 +35,17 @@ init 308 python:
         # Event 01: lost gate proof, Daram entered as '외 한 명' (owner plan A, 2026-10-21).
         "gate_daram_unlisted":lambda:r13_v111_value("gate_daram_unlisted") is True,
         "gate_daram_listed":lambda:r13_v111_value("gate_daram_unlisted") is not True,
+        # Event 03: the day-3 lamp meeting (win / partial / lose).
+        "lamp_win":lambda:r13_v111_value("meeting:lamp")=="win",
+        "lamp_partial":lambda:r13_v111_value("meeting:lamp")=="partial",
+        "lamp_lose":lambda:r13_v111_value("meeting:lamp")=="lose",
+        "lamp_not_win":lambda:r13_v111_value("meeting:lamp") in ("partial","lose"),
     }
     R13_NW_CUT_SPECIAL=("bell","v111_blanket_before","v111_blanket_after")
+    def r13_nw_drop_item(item):
+        return (item,"always") if isinstance(item,str) else (item.get("id"),item.get("when","always"))
+    def r13_nw_dropped(rid):
+        return any(r==rid and R13_NW_WHEN[w]() for r,w in (r13_nw_drop_item(i) for i in R13_NW_TEXT["drop"]))
     def r13_nw_text_problems():
         """Every broken reference in the loaded files, as readable strings."""
         out=[];records=R13_V111["records"];seen=set()
@@ -44,8 +53,10 @@ init 308 python:
             if rid not in records:out.append("replace: unknown record "+rid)
             elif not R13_NW_TEXT["replace"][rid].get("text"):out.append("replace: empty text "+rid)
             elif R13_NW_TEXT["replace"][rid].get("when","always") not in R13_NW_WHEN:out.append("replace: unknown condition "+rid)
-        for rid in R13_NW_TEXT["drop"]:
-            if rid not in records:out.append("drop: unknown record "+rid)
+        for item in R13_NW_TEXT["drop"]:
+            rid,when=r13_nw_drop_item(item)
+            if rid not in records:out.append("drop: unknown record "+str(rid))
+            if when not in R13_NW_WHEN:out.append("drop: unknown condition "+str(rid))
         for where in ("before","after"):
             for rid,rows in R13_NW_TEXT[where].items():
                 if rid not in records:out.append(where+": unknown record "+rid)
@@ -79,11 +90,11 @@ init 308 python:
         return (who,row["text"],options)
     def r13_v111_lines(rids):
         """Authored lines with the reviewed new-world revisions around them."""
-        out=[];drop=R13_NW_TEXT["drop"]
+        out=[]
         for rid in rids:
             for row in R13_NW_TEXT["before"].get(rid,()):
                 if R13_NW_WHEN[row.get("when","always")]():out.append(r13_nw_added_line(row))
-            if rid not in drop:
+            if not r13_nw_dropped(rid):
                 packet=r13_v111_line(rid)
                 # The authored record rides with its line, so approved per-line art
                 # still finds it after lines are added before it or its text changes.
