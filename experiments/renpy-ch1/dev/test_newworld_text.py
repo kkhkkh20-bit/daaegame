@@ -31,6 +31,7 @@ class Layer(unittest.TestCase):
    real=stub.loadable;stub.loadable=lambda p:real(p) or p in art
   self.env.update(renpy=stub,json=json,R13_V111=data,MS14_SPEAKERS=SPEAKERS,ROOM13=dict(evidence=evidence),R13_RECORD_SHORT={},
    R13_RECORD_CATEGORIES={'물증':'evidence','기록':'evidence','관찰기록':'evidence','증언':'testimony'},
+   R13_MEETING_BEATS={k:None for k in re.findall(r'^        "(\w+)": \(',(ROOT/'game/systems/room13_meeting_direction.rpy').read_text(),re.M)},
    R13_FULLBODY_PLAIN={'neutral','joy','anxious','angry','surprise','flustered'},
    R13_DIALOGUE_CONTEXT_ART=json.loads((ROOT/'game/assets/room13-dialogue-context-art.json').read_text()))
   ctx=re.search(r'^init 172 python:\n((?:[ \t].*\n|\n)*)',(ROOT/'game/systems/room13_dialogue_context_art.rpy').read_text(),re.M).group(1)
