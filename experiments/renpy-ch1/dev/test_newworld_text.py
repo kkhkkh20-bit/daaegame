@@ -141,7 +141,7 @@ class NewWorldText(Layer):
  def test_blocks_are_shown_and_every_block_is_used(self):
   env=self.load()
   used=set()
-  for name in DAYS:used|=set(re.findall(r"r13_nw_block\('(\w+)'\)",(ROOT/'game'/name).read_text()))
+  for name in DAYS:used|=set(re.findall(r"r13_nw_block\(['\"](\w+)['\"]\)",(ROOT/'game'/name).read_text()))
   self.assertEqual(used,set(env['R13_NW_TEXT']['blocks']))
   env['R13_NW_TEXT']['blocks']['qa_block']=[{'id':'NW_QA_1','speaker':None,'text':'보이는 줄'},{'id':'NW_QA_2','speaker':None,'text':'숨는 줄','when':'owl_dead'}]
   env['R13_NW_WHEN']['owl_dead']=lambda:False

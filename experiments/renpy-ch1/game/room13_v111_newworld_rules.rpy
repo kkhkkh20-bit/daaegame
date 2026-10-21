@@ -58,3 +58,28 @@ init 318 python:
     def r13_nw_fire_school_ready(previous=R13_V111_SCENE_CHECKS.get("MS14_D07_S02")):
         return (previous is not None and previous()) or r13_v111_value("meeting:fire")=="lose"
     R13_V111_SCENE_CHECKS["MS14_D07_S02"]=r13_nw_fire_school_ready
+
+    # Endings (plan 11-1). Checked on the 14th morning before the kept endings.
+    # The five lives the frozen-village ending counts.
+    R13_NW_LIVES=(("resident_piko","piko_alive"),("kid_kkomi","KKOMI_ALIVE"),("resident_owlgp","OWL_ALIVE"),("resident_nero","nero_alive"),("kid_dodam","alive:kid_dodam"))
+    R13_NW_FROZEN_AT=4
+    def r13_nw_is_dead(who,key):
+        if r13_v111_value(key) is False:return True
+        return who=="kid_dodam" and r13_v111_value("route12")=="late_exposure"
+    def r13_nw_dead():
+        return [who for who,key in R13_NW_LIVES if r13_nw_is_dead(who,key)]
+    def r13_nw_loss_count():
+        return len(r13_nw_dead())
+    def r13_nw_ending14():
+        if r13_v111_value("departed:daram"):return "left_name"
+        if r13_nw_loss_count()>=R13_NW_FROZEN_AT:return "frozen"
+        outcome=r13_v111_value("outcome13")
+        if outcome=="family_priority":return "family"
+        if outcome=="partial_rescue":return "partial"
+        if r13_v111_value("crowd_injury"):return "violence"
+        return "morning"
+    def r13_nw_true_ending_ready():
+        """Plan 11-1 #6: all five alive, records/hypothesis/blanket/altar won, Neoul's ledger held."""
+        if r13_v111_value("ending14")!="morning" or r13_nw_loss_count():return False
+        if not r13_v111_owned("NW_NEOUL_LEDGER"):return False
+        return all(r13_v111_value("meeting:"+m)=="win" for m in ("records","hypothesis","blanket","altar"))

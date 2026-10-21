@@ -1,7 +1,746 @@
 {
-  "replace": {},
-  "before": {},
-  "after": {},
+  "replace": {
+    "MS14_D14_S02_L0012": {
+      "text": "모과 씨를 그제 밤, 학교 종이 울리기 전에 만난 겁니까?"
+    },
+    "MS14_D14_S02_L0031": {
+      "text": "여기까지는 말과 빛을 주던 장치예요. 이 위에 사람을 묶던 쇠는 나중에 덧붙인 거라 따로 떼어 낼 수 있어요."
+    },
+    "MS14_D14_S02_L0036": {
+      "text": "잠깐. 저 쇠를 떼고 돌 불까지 끄면 밤에 추우면요? 장작이 끝없이 나는 줄 알아요?"
+    },
+    "MS14_D14_S02_L0039": {
+      "text": "장치는 남겨요. 지금 떼는 건 사람을 못 움직이게 고정하던 쇠예요."
+    },
+    "MS14_D14_S02_L0043": {
+      "text": "다시 걸어. 장작이 다 타면 학교도 식소. 그때도 아이들을 따뜻하게 재울 수 있소? 겨울은 아직 남았는데, 사람 안 보내겠다는 말로 버틸 거요? 사람들은 내가 맡을 테니 공구 내려놔."
+    },
+    "MS14_D14_S02_L0046": {
+      "text": "이 표, 학교 문에서 같이 셌잖아요. 제가 내려놓은 장작이고요. 애들이 그 곁에서 잤어요. 사람 묶는 쇠는 안 썼습니다."
+    },
+    "MS14_D14_S02_L0047": {
+      "text": "그건 하루 얘기다. 그 장작 다 타고 나서도 네가 아이들 곁에 있을 거냐?"
+    },
+    "MS14_D14_S02_L0080": {
+      "text": "여기 쓴 만큼 뺐어요. 남은 건 이만큼입니다. 장치 쪽은 그대로 두고요."
+    },
+    "MS14_D14_S02_L0083": {
+      "text": "말을 주던 아래쪽은 건드리지 않아요. 위의 쇠만요."
+    },
+    "MS14_D14_S03_L0010": {
+      "text": "벽에 새긴 이름에서 봤습니다. 토실의 엄마지요. 그분을 데려간 일을 묻는 겁니다."
+    },
+    "MS14_D14_S04_L0009": {
+      "text": "그제 밤 학교 종이 울리기 전, 모과 씨를 만나지 않았다고 했습니다. 지금 계신 곳은 확인해 주지 못했고요."
+    },
+    "MS14_D14_S04_L0017": {
+      "text": "여기는 남은 장작. 저쪽 표는 지금 쓰는 것. 빈 자리는 따로 표시할게요."
+    }
+  },
+  "before": {
+    "MS14_D14_S04_L0009": [
+      {
+        "id": "NW_D14_S04_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "다람이 이름판 옆 산 사람 칸에 자기 이름을 쓴다. ‘다람.’ 입구 기록에는 끝내 없던 이름이다.",
+        "when": "gate_daram_unlisted"
+      }
+    ]
+  },
+  "after": {
+    "MS14_D14_S01_L0004": [
+      {
+        "id": "NW_D14_S01_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "토실이 재 묻은 종이 한 장을 들고 온다.",
+        "when": "owl_dead"
+      },
+      {
+        "id": "NW_D14_S01_A02",
+        "speaker": "토실",
+        "kind": "dialogue",
+        "text": "나비 아줌마하고 주방 아궁이 치우다 나왔어. 9일엔 재가 뜨거워서 아무도 안 만졌대.",
+        "expression": "neutral",
+        "when": "owl_dead"
+      },
+      {
+        "id": "NW_D14_S01_A03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "반쯤 탄 수첩 장이다. 남은 줄에 ‘보미’와 ‘어머니’가 보인다.",
+        "when": "owl_dead"
+      },
+      {
+        "id": "NW_D14_S01_A04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "백 부인이 창고 장부를 들고 와 한 줄을 짚는다."
+      },
+      {
+        "id": "NW_D14_S01_A05",
+        "speaker": "백 부인",
+        "kind": "dialogue",
+        "text": "7일, 여관, 안쪽 돌 하나. 할머니가 사 갔어요. 무너진 갱도 돌은 이제 우리 창고에나 있고요.",
+        "expression": "neutral"
+      }
+    ],
+    "MS14_D14_S02_L0010": [
+      {
+        "id": "NW_D14_S02_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "장치 밑돌에 글자가 새겨져 있다. 엄마가 무릎을 꿇고 눈을 털어 낸다. 11일 돌판의 깨진 아래쪽과 같은 글씨다."
+      },
+      {
+        "id": "NW_D14_S02_A02",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "‘……불을 켜지 말라. 곁의 말이 무너진다.’",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D14_S02_A03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "고리 달린 쇠 안쪽을 소매로 닦는다. 공방 표식이 나온다."
+      },
+      {
+        "id": "NW_D14_S02_A04",
+        "speaker": "바둑이",
+        "kind": "dialogue",
+        "text": "공방 장부 앞쪽에 있을 겁니다. 4년 전에 제가 이 쇠를 날랐습니다.",
+        "expression": "neutral"
+      }
+    ],
+    "MS14_D14_S03_L0010": [
+      {
+        "id": "NW_D14_S03_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "너울의 장부 뒤에 묶인 종이를 할머니 앞에 펼친다. 날짜와 집 이름, 돌 기구의 수. 한 줄도 빠지지 않았다. 마지막 날짜 옆에 ‘보미’라고 적혀 있다.",
+        "when": "has_ledger"
+      },
+      {
+        "id": "NW_D14_S03_A02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "토실이 가져온 반쯤 탄 수첩 장을 그 옆에 놓는다. ‘보미 — 어머니가 데려갔다. 날짜를 적던 아이였다.’",
+        "when": "has_burnt_page"
+      },
+      {
+        "id": "NW_D14_S03_A03",
+        "speaker": "부엉이",
+        "kind": "dialogue",
+        "text": "보미는 날짜를 적던 아이였소. 날마다 집집의 돌 기구를 적었지. 어머니가 데려갔소.",
+        "expression": "neutral",
+        "when": "owl_alive"
+      }
+    ],
+    "MS14_D14_S03_L0023": [
+      {
+        "id": "NW_D14_S03_A04",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "보미가 자꾸 물었어요. 오늘이 며칠이냐고. ……그게, 적으려고 물은 거였구나.",
+        "expression": "neutral",
+        "when": "has_ledger"
+      },
+      {
+        "id": "NW_D14_S03_A05",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "그 애는 날짜도 몰랐어. 그래서 자꾸 물었던 거야.",
+        "expression": "neutral",
+        "when": "no_ledger"
+      }
+    ],
+    "MS14_D14_S03_L0032": [
+      {
+        "id": "NW_D14_S03_A06",
+        "speaker": null,
+        "kind": "narration",
+        "text": "나는 13호 난로에서 나온 검푸른 돌과 백 부인 장부의 한 줄을 할머니 앞에 놓는다. ‘7일, 여관, 안쪽 돌 하나.’"
+      },
+      {
+        "id": "NW_D14_S03_A07",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "그 노인도 보미처럼 조용히 가면 됐어. 명단에 오르면, 그걸로…….",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D14_S03_A08",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "안쪽 돌이 사람을 무너뜨린다는 건 어떻게 아셨습니까?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D14_S03_A09",
+        "speaker": null,
+        "kind": "narration",
+        "text": "할머니가 엄마를 본다."
+      },
+      {
+        "id": "NW_D14_S03_A10",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "부인이 시설에서 그랬지. 꺼낸 아르카 곁에 오래 있으면 사람이 무너진다고.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D14_S03_A11",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "그 말을 믿었으면서, 보미 씨 일에는…….",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D14_S03_A12",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "믿으면, 보미를 무너뜨린 건 우리 집 불이 되잖아.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D14_S03_A13",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "부인을 시설에 데려간 건…… 보내는 게 옳았다고 한마디만 해 주길 바라서였어.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D14_S03_A14",
+        "speaker": null,
+        "kind": "narration",
+        "text": "할머니는 그대로 회관에 남는다. 고백은 용서가 아니다.",
+        "when": "granny_held_win"
+      },
+      {
+        "id": "NW_D14_S03_A15",
+        "speaker": null,
+        "kind": "narration",
+        "text": "할머니는 아무도 시키지 않았는데 너울의 빈 방에 들어가 앉는다.",
+        "when": "granny_room13_partial"
+      },
+      {
+        "id": "NW_D14_S03_A16",
+        "speaker": null,
+        "kind": "narration",
+        "text": "할머니를 붙잡는 사람은 없다. 할머니는 목도리를 여미고 일어선다.",
+        "when": "granny_room13_lose"
+      },
+      {
+        "id": "NW_D14_S03_A17",
+        "speaker": null,
+        "kind": "narration",
+        "text": "할머니는 위조와 13호 난로의 돌 일로 회관에 붙들린다.",
+        "when": "owl_alive"
+      }
+    ],
+    "MS14_D14_END_FAMILY_L0010": [
+      {
+        "id": "NW_D14_EF_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "다람의 이름은 명단에서 지워졌다. 다른 이름들은 남았다. 다람이 그 이름들을 하나씩 손바닥에 적는다."
+      }
+    ],
+    "MS14_D14_END_PARTIAL_L0013": [
+      {
+        "id": "NW_D14_EP_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "내리지 못한 이름이 학교 명단 종이에 그대로 남는다. 다람이 종이를 접지 못하게 손으로 누른다."
+      }
+    ],
+    "MS14_D14_END_VIOLENCE_L0004": [
+      {
+        "id": "NW_D14_EV_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "짓밟힌 장부의 낱장이 눈 위에 흩어져 있다. 숫자를 읽을 수 있는 사람은 엄마뿐이다."
+      }
+    ],
+    "MS14_D14_S05_L0022": [
+      {
+        "id": "NW_D14_S05_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "창밖 회관 쪽에 불이 하나 켜져 있다. 촌장이 남은 겨울을 지켜보고 있다.",
+        "when": "altar_partial"
+      },
+      {
+        "id": "NW_D14_S05_A02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "산길 끝 제단에는 쇠가 그대로 걸려 있다. 다음 겨울을 기다리고 있다.",
+        "when": "altar_lose"
+      }
+    ]
+  },
   "drop": [],
-  "evidence": {}
+  "evidence": {},
+  "new_evidence": {
+    "NW_TABLET_B": {
+      "name": "제단 밑돌의 글자",
+      "kind": "물증",
+      "variants": {
+        "observed": "제단 장치 밑돌에 새긴 글자. 11일 돌판의 깨진 아래쪽과 같은 글씨다. “……불을 켜지 말라. 곁의 말이 무너진다.”"
+      }
+    },
+    "NW_IRON_MARK": {
+      "name": "제단 쇠의 공방 표식",
+      "kind": "물증",
+      "variants": {
+        "observed": "제단의 고리 달린 쇠 안쪽에 공방 표식이 있다. 바둑이: 4년 전 공방 장부에 ‘촌장 댁, 고리 달린 쇠 넷’이 적혔고, 자기가 산길 끝까지 날랐다."
+      }
+    },
+    "NW_BURNT_PAGE": {
+      "name": "반쯤 탄 수첩 장",
+      "kind": "물증",
+      "variants": {
+        "observed": "13일 밤 여관 주방 아궁이 재 속에서 나비와 토실이 찾았다. 부엉이의 수첩 장이다. 남은 줄: “보미 — 어머니가 데려갔다. 날짜를 적던 아이였다.”"
+      }
+    },
+    "NW_MADAM_DAY7": {
+      "name": "백 부인 장부의 7일 줄",
+      "kind": "기록",
+      "variants": {
+        "observed": "백 부인 창고 장부: ‘7일, 여관, 안쪽 돌 하나’. 안쪽 갱도가 무너진 뒤 안쪽 돌은 이 창고에나 남아 있다."
+      }
+    }
+  },
+  "blocks": {
+    "altar1_q14": [
+      {
+        "id": "NW_A1_Q01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "촌장이 제단 쪽을 본다. 목소리는 낮고 또박또박하다."
+      },
+      {
+        "id": "NW_A1_Q02",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "사람을 보내지 않으면 다음 겨울에 모두 죽소. 한 사람이 열흘을 사오. 숫자로 보시오.",
+        "expression": "neutral"
+      }
+    ],
+    "altar1_won14": [
+      {
+        "id": "NW_A1_W01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "너울 씨 장부입니다. 11일부터 사흘, 마을이 돌 불을 끄고 학교에서 지냈습니다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_A1_W02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "그 사흘 동안 배급 창고의 돌은 하나도 줄지 않았습니다. 새로 야생화가 온 사람도 없습니다. 너울 씨가 직접 적은 숫자입니다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_A1_W03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "장작 창고도 적혀 있습니다. 해마다 다 쓰지 않고 남았어요. 돌이 필요 없으면 새 돌을 만들 일도 없습니다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_A1_W04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "장부를 넘기다 손이 멎는다. 지난 첫눈 다음 날 배급된 돌 가운데 ‘제단분’이라는 줄이 있다. 그 돌이 어느 집 난로에서 탔는지까지 적혀 있다."
+      },
+      {
+        "id": "NW_A1_W05",
+        "speaker": null,
+        "kind": "narration",
+        "text": "모과다."
+      },
+      {
+        "id": "NW_A1_W06",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "…….",
+        "expression": "neutral"
+      }
+    ],
+    "altar1_half14": [
+      {
+        "id": "NW_A1_H01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "학교에서 장작으로 지낸 사흘의 기록입니다. 그동안 새로 무너진 사람이 없었습니다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_A1_H02",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "사흘 버틴 것이오. 장작은 어디서 나오오? 다음 겨울에도 사흘씩 버틸 거요?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_A1_H03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "장작 창고의 숫자는 너울의 장부에 있다. 그 장부는 내 손에 없다."
+      }
+    ],
+    "altar1_lost14": [
+      {
+        "id": "NW_A1_L01",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "숫자를 보시오. 열흘이오. 사람 하나에 마을 하나가 열흘을 사오.",
+        "expression": "neutral"
+      }
+    ],
+    "altar2_q14": [
+      {
+        "id": "NW_A2_Q01",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "아르카가 부른 사람은 아르카 곁으로 가야 하오.",
+        "expression": "neutral"
+      }
+    ],
+    "altar2_won14": [
+      {
+        "id": "NW_A2_W01",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "11일 돌판의 앞 반쪽이에요. 그리고 이건 제단 밑돌.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_A2_W02",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "‘아르카는 장치 안에서만 쓰라. 꺼내어 불을 켜지 말라. 곁의 말이 무너진다.’",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_A2_W03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "아르카는 부르지 않습니다. 장치 밖으로 꺼내 불을 켠 돌이 사람을 무너뜨립니다. 시설을 만든 이들이 그렇게 적었어요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_A2_W04",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "제단은 말을 주던 장치였습니다. 촌장님은 그걸 거꾸로 돌렸고요.",
+        "expression": "neutral"
+      }
+    ],
+    "altar2_lost14": [
+      {
+        "id": "NW_A2_L01",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "깨진 돌 쪼가리로 아르카를 말하지 마시오.",
+        "expression": "neutral"
+      }
+    ],
+    "altar3_q14": [
+      {
+        "id": "NW_A3_Q01",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "쇠는 옛날부터 있었소. 우리 할아버지 때부터.",
+        "expression": "neutral"
+      }
+    ],
+    "altar3_won14": [
+      {
+        "id": "NW_A3_W01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "쇠 안쪽에 공방 표식이 있습니다. 4년 전 공방 장부에 ‘촌장 댁, 고리 달린 쇠 넷’이라고 적혀 있고요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_A3_W02",
+        "speaker": "바둑이",
+        "kind": "dialogue",
+        "text": "제가 날랐습니다. 산길 끝까지.",
+        "expression": "neutral"
+      }
+    ],
+    "altar3_lost14": [
+      {
+        "id": "NW_A3_L01",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "표식이야 누가 새겼든 무슨 상관이오.",
+        "expression": "neutral"
+      }
+    ],
+    "altar4_q14": [
+      {
+        "id": "NW_A4_Q01",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "처음부터 그렇게 해 왔소. 마을이 살려면.",
+        "expression": "neutral"
+      }
+    ],
+    "altar4_won14": [
+      {
+        "id": "NW_A4_W01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "처음이 언제였는지 벽에 남아 있습니다. 칼끝으로 새긴 이름 맨 위는 달래. 촌장님 손녀입니다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_A4_W02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "4년 전 장부를 보면 그해 돌을 가장 많이 받은 집은 촌장님 댁이었습니다. 달래가 먼저 무너진 건 그 집 불 곁에서 지냈기 때문입니다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_A4_W03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "달래는 열흘을 샀습니다. 그해 장작 창고에는 한 달 치가 그대로 남아 있었고요.",
+        "expression": "neutral"
+      }
+    ],
+    "altar4_lost14": [
+      {
+        "id": "NW_A4_L01",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "내 손녀 이름을 입에 올리지 마시오.",
+        "expression": "neutral"
+      }
+    ],
+    "altar_result14": [
+      {
+        "id": "NW_AR_01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "촌장이 자리에서 물러난다. 아무도 붙잡지 않는다.",
+        "when": "altar_win"
+      },
+      {
+        "id": "NW_AR_02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "명단은 오늘 저녁 이름판 앞에서 태우기로 한다. 마을 사람들이 ‘돌 불은 끄고, 불은 나무로’에 손을 든다.",
+        "when": "altar_win"
+      },
+      {
+        "id": "NW_AR_03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "쇠는 떼어 내기로 한다. 촌장은 자리를 지킨다. 명단에는 ‘봄까지 보류’라고 적힌다.",
+        "when": "altar_partial"
+      }
+    ],
+    "altar_lost14": [
+      {
+        "id": "NW_AL_01",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "다음 겨울에 다시 정하겠소.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_AL_02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "쇠는 제단에 남는다. 학교의 장작 겨울은 올해뿐이다. 다음 겨울에는 다시 돌을 태울 것이다."
+      }
+    ],
+    "end_left_name14": [
+      {
+        "id": "NW_EL_01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "수레가 산길 굽이에서 보이지 않게 되었다. 다람은 끝까지 뒤를 보지 않았다. 손목의 명단 끈만 눈에 남았다."
+      },
+      {
+        "id": "NW_EL_02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "열나흘째 아침. 학교 교실에는 아내와 나뿐이었다. 누구도 먼저 말을 꺼내지 않았다."
+      },
+      {
+        "id": "NW_EL_03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "광장 이름판 앞에서 붓을 들었다. 확인된 이름만 적는다. 다람의 이름은 확인되지 않았다. 손이 빈칸 앞에서 멈췄다."
+      },
+      {
+        "id": "NW_EL_04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "밤. 접시에 과자가 하나 남았다. 다람 몫이었다. 부스러기도 없었다."
+      },
+      {
+        "id": "NW_EL_05",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "치우지 마.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_EL_06",
+        "speaker": null,
+        "kind": "narration",
+        "text": "첫 길이 열린 날, 까로의 마차에 둘이 탔다. 다람이 앉던 자리에는 짐을 두지 않았다."
+      }
+    ],
+    "end_frozen14": [
+      {
+        "id": "NW_EF_01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "‘돌 불을 끄자’는 말을 들어 줄 사람이 남지 않았다."
+      },
+      {
+        "id": "NW_EF_02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "광산 안쪽에서 마지막으로 캔 돌까지 등과 난로에 들어갔다. 광장의 아르카등은 하루에 하나씩 꺼졌다."
+      },
+      {
+        "id": "NW_EF_03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "우리는 입구 옆 자리에서 멀리 그 모습을 바라보았다.",
+        "when": "family_priority"
+      },
+      {
+        "id": "NW_EF_04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "열나흘째 아침, 이름판 앞. 이름을 읽던 나비가 읽다 말고 멈췄다. 자기가 무엇을 읽고 있었는지 잊은 얼굴이었다.",
+        "when": "reader_nabi"
+      },
+      {
+        "id": "NW_EF_05",
+        "speaker": null,
+        "kind": "narration",
+        "text": "열나흘째 아침, 이름판 앞. 이름을 읽던 토실이 읽다 말고 멈췄다. 자기가 무엇을 읽고 있었는지 잊은 얼굴이었다.",
+        "when": "reader_tosil"
+      },
+      {
+        "id": "NW_EF_06",
+        "speaker": null,
+        "kind": "narration",
+        "text": "주민들은 더 이상 날짜를 묻지 않았다. 묻는 법을 잊은 것이다."
+      },
+      {
+        "id": "NW_EF_07",
+        "speaker": null,
+        "kind": "narration",
+        "text": "첫 길이 열린 날, 마을 입구. 돌목이 우리를 보았다. 알아보지 못했다."
+      },
+      {
+        "id": "NW_EF_08",
+        "speaker": "돌목",
+        "kind": "dialogue",
+        "text": "허가…… 몇 명이오?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_EF_09",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "다람. 제 이름은 다람이에요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_EF_10",
+        "speaker": null,
+        "kind": "narration",
+        "text": "돌목은 붓을 쥔 채 오래 서 있었다. 끝내 받아 적지 못했다. 다음 겨울에도 수레는 갈 것이다."
+      }
+    ],
+    "end_true14": [
+      {
+        "id": "NW_ET_01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "그해 겨울, 마을은 학교에 모여 장작으로 지냈다. 광장 등에는 덮개를 씌웠다. 춥고 어두운 겨울이었다. 장작이 모자란 밤도 있었다."
+      },
+      {
+        "id": "NW_ET_02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "돌 불을 끄고 몇 주가 지났을 때, 날짜를 되묻던 이웃 하나가 오늘 날짜를 맞혔다. 이름을 잊은 사람은 돌아오지 않았다."
+      },
+      {
+        "id": "NW_ET_03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "돌등이 꺼진 골목에 기름등과 장작불이 드문드문 켜졌다. 광장 큰 돌 앞에서 기도하는 사람은 줄었다. 광산 입구에는 ‘닫음’ 팻말이 걸렸다."
+      },
+      {
+        "id": "NW_ET_04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "첫 길이 열린 날, 까로의 마차. 짐 위에 피코가 완성한 초상이 실려 있었다."
+      },
+      {
+        "id": "NW_ET_05",
+        "speaker": null,
+        "kind": "narration",
+        "text": "마차 안에서 아내가 지도를 펼쳤다. 이 마을 말고도 산골 마을 몇 곳에 표시가 있었다. 그 옆에는 옛 시설과 광산이, 몇 곳에는 ‘태움’이라는 글자가 적혀 있었다."
+      },
+      {
+        "id": "NW_ET_06",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "저기도 돌로 불 켜?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_ET_07",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "여기만이 아닐지도 몰라.",
+        "expression": "neutral"
+      }
+    ],
+    "partial_departed14": [
+      {
+        "id": "NW_PD_01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "열나흘째 아침. 광장에는 수레가 서 있던 자국만 남았다."
+      },
+      {
+        "id": "NW_PD_02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "인계표에는 이름만 있고 받은 사람 칸이 비어 있다. 한 줄도 채우지 못했다."
+      },
+      {
+        "id": "NW_PD_03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "내리지 못한 이름들은 학교 명단 종이에 그대로 남는다. 나비가 그 종이를 접으려 하자 다람이 손으로 누른다."
+      },
+      {
+        "id": "NW_PD_04",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "접지 마. 아직 안 왔잖아.",
+        "expression": "neutral"
+      }
+    ]
+  }
 }

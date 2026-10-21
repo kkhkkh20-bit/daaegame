@@ -98,6 +98,21 @@ init 319 python:
         "cart_departed":lambda:r13_v111_value("cart_departed") is True,
         "daram_departed":lambda:r13_v111_value("departed:daram") is True,
         "neoul_held":lambda:r13_v111_value("neoul_held") is True,
+        # Event 11: the altar, Bomi, and the endings.
+        "has_ledger":lambda:r13_v111_owned("NW_NEOUL_LEDGER"),
+        "no_ledger":lambda:not r13_v111_owned("NW_NEOUL_LEDGER"),
+        "has_burnt_page":lambda:r13_v111_owned("NW_BURNT_PAGE"),
+        "altar_win":lambda:r13_v111_value("meeting:altar")=="win",
+        "altar_partial":lambda:r13_v111_value("meeting:altar")=="partial",
+        "altar_lose":lambda:r13_v111_value("meeting:altar")=="lose",
+        "altar_half1":lambda:r13_v111_value("altar_half1") is True,
+        "family_priority":lambda:r13_v111_value("outcome13")=="family_priority",
+        "ending_morning":lambda:r13_v111_value("ending14")=="morning",
+        "reader_nabi":lambda:not (r13_v111_value("departed:nabi") or not r13_v111_person_alive("nabi")),
+        "reader_tosil":lambda:bool(r13_v111_value("departed:nabi") or not r13_v111_person_alive("nabi")),
+        "granny_held_win":lambda:r13_v111_value("OWL_ALIVE") is False and r13_v111_value("meeting:room13")=="win",
+        "granny_room13_partial":lambda:r13_v111_value("OWL_ALIVE") is False and r13_v111_value("meeting:room13")=="partial",
+        "granny_room13_lose":lambda:r13_v111_value("OWL_ALIVE") is False and r13_v111_value("meeting:room13")=="lose",
     }
     # One condition per person who can be on the transfer list (same names as R13_NW_LISTABLE).
     R13_NW_LIST_NAMES=("resident_tok","bami","resident_bori","nabi","daram","resident_owlgp","resident_piko","resident_siluk","resident_guldol","resident_teacher","mom","dad")
