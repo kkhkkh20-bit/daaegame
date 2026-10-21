@@ -59,6 +59,10 @@ START_FILES = {"assets/room13-opening-coach-landscape.webp","assets/room13-title
 
 def startup_media(rel, startup_files):
     name = Path(rel).name
+    # Intake poses are optional scene art. Only bravado occurs in the opening;
+    # do not let the broad Daram compatibility whitelist preload every pose.
+    if rel.startswith("assets/dialogue-context-master/daram/") and "/intake21_" in rel:
+        return Path(rel).stem=="intake21_01_bravado"
     return (rel in startup_files or name in ICONS or Path(rel).suffix.lower() in (".ttf", ".otf", ".woff2")
             or any(person in name or "/"+person+"/" in rel for person in START_PEOPLE)
             or any(rel.startswith("assets/"+family+"/"+person+"/") for family in ("dialogue-source-master", "profile-source-master") for person in ("guard", "karo")))

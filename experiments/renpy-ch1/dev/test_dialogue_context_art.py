@@ -17,7 +17,7 @@ class ContextArt(unittest.TestCase):
    self.assertIsNone(match(cue['identity']+'other',*args[1:],'neutral'))
    self.assertIsNone(match(cue['identity'],cue['index'],('mom',cue['text']),'neutral'))
  def test_profiles_preserve_normal_canvas_and_have_files(self):
-  base=json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text())['people'];self.assertEqual(len(base),59);self.assertEqual(len(self.data['entries']),4)
+  base=json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text())['people'];self.assertEqual(len(base),59);self.assertTrue({'bami:small_relief','resident_lamplighter:guarded_relief','kid_kkomi:resilient_pride','resident_tosil:empathetic_confusion'}.issubset(self.data['entries']))
   for entry in self.data['entries'].values():
    for height,p in entry['profiles'].items():
     self.assertEqual(p['canvas'],base[entry['person']]['profiles'][height]['canvas'])

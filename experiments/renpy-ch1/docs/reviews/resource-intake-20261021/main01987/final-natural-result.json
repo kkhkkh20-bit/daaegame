@@ -1,0 +1,27 @@
+{
+  "kind": "official build; no asset overlay",
+  "captures": [],
+  "base_version": "0.19.87",
+  "before_state": "{'campaign_id': 'room13_v1', 'version': 3, 'story_revision': 'father-pov-fire-pooling-v3', 'day': 1, 'period': 1, 'location': 'gate', 'kitchen_switch': False, 'passage_open': False, 'secret_route_unlocked': False, 'case_state': 'pending', 'victim_state': 'alive', 'daram_state': 'with_dad', 'granny_state': 'trusted', 'trial_result': 'pending', 'evidence': [], 'records': {}, 'flags': [], 'read_topics': [], 'done': [], 'checks': {}, 'encounters': [], 'resident_knowledge': {}, 'propositions': [], 'arguments': {}, 'log': [], 'trial_ended': False, 'life_poc': True, 'learning_archive': [], 'question_cues_revision': 1}",
+  "after_state": "{'campaign_id': 'room13_v1', 'version': 3, 'story_revision': 'father-pov-fire-pooling-v3', 'day': 1, 'period': 1, 'location': 'gate', 'kitchen_switch': False, 'passage_open': False, 'secret_route_unlocked': False, 'case_state': 'pending', 'victim_state': 'alive', 'daram_state': 'with_dad', 'granny_state': 'trusted', 'trial_result': 'pending', 'evidence': [], 'records': {}, 'flags': [], 'read_topics': [], 'done': [], 'checks': {}, 'encounters': [], 'resident_knowledge': {}, 'propositions': [], 'arguments': {}, 'log': [], 'trial_ended': False, 'life_poc': True, 'learning_archive': [], 'question_cues_revision': 1}",
+  "natural_scene": {
+    "packet": [
+      "daram",
+      "십삼 호. 내가 외웠어. 아빠는 짐 들어.",
+      {
+        "no_lead": true,
+        "expression": "joy",
+        "pose": "joy"
+      }
+    ],
+    "beat": {
+      "person": "daram",
+      "talk": "intake21_01_bravado",
+      "react": null,
+      "settled": true,
+      "duration": 0.35,
+      "context_key": "daram:intake21_01_bravado"
+    }
+  },
+  "status": "passed"
+}

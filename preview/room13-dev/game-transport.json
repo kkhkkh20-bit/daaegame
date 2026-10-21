@@ -1,22 +1,22 @@
 {
  "multipart": true,
- "archive_bytes": 17678803,
- "archive_sha256": "04943973aaaf703966e47d7a11bcf2146ccec41d80f5c1463673167aeeeb2d5e",
+ "archive_bytes": 17730719,
+ "archive_sha256": "88e1d8fc995b2fb119879c0491521a087499f99865363bc11fe48e85b8b6c1d9",
  "parts": [
   {
    "file": "game.part01",
    "bytes": 8388608,
-   "sha256": "9e4543c3b70f7b4c84d1d1b29a9d00d48fa4ea1162bb662a38e1ba98933c330b"
+   "sha256": "feabb97c438f2e69634e0eb9299e82deabdf44474598d593829290adcdd4a353"
   },
   {
    "file": "game.part02",
    "bytes": 8388608,
-   "sha256": "9fc2289cae3eb89b1a16e249587825460d2f32dedac3290c2e670b34243a6d42"
+   "sha256": "1822872b4326b5ce44b3de2ab8c743a6d061d420a069215217f917daa400879a"
   },
   {
    "file": "game.part03",
-   "bytes": 901587,
-   "sha256": "3104b0d3c16bb192ada397ae486589bd26025d8bf6af0372cb8f03d0756abb7d"
+   "bytes": 953503,
+   "sha256": "1b5d4fbbe64dfa492e40500854524cf140b013a637752e367b21a9aacdb10ee0"
   }
  ],
  "preload": [
@@ -44,6 +44,21 @@
    "file": "game/assets/bgm-travel.mp3",
    "bytes": 3893288,
    "sha256": "3718affb14e42729bb96b37d48eaea8aa723cc076f16fb81c92c622a1a1846e2"
+  },
+  {
+   "file": "game/assets/dialogue-context-master/daram/560/intake21_01_bravado.webp",
+   "bytes": 107002,
+   "sha256": "6ea91855f60367eb604b4481fed29fe28580dbe229177f3601fd0317767a6808"
+  },
+  {
+   "file": "game/assets/dialogue-context-master/daram/760/intake21_01_bravado.webp",
+   "bytes": 184494,
+   "sha256": "6994cec66c8b9f6f933f72bb4c43da8ba76cc772fb5aa636be3c1425fdce9cbc"
+  },
+  {
+   "file": "game/assets/dialogue-context-master/daram/840/intake21_01_bravado.webp",
+   "bytes": 215286,
+   "sha256": "fb8b41e9b3e4b276d98339069eb1cfdc80b68c7766044c58f6abdbe898ed4de0"
   },
   {
    "file": "game/assets/dialogue-source-master/daram/760/angry.webp",
@@ -292,15 +307,60 @@
   "game/assets/dialogue-context-master/bami/560/small_relief.webp": "3f20bb3bc435",
   "game/assets/dialogue-context-master/bami/760/small_relief.webp": "a8c983c42310",
   "game/assets/dialogue-context-master/bami/840/small_relief.webp": "0994c7305bc9",
+  "game/assets/dialogue-context-master/daram/560/intake21_02_reproach_lean.webp": "cbefafdd81e5",
+  "game/assets/dialogue-context-master/daram/560/intake21_03_stubborn.webp": "a1647948341c",
+  "game/assets/dialogue-context-master/daram/560/intake21_04_flustered.webp": "276cccec6c1d",
+  "game/assets/dialogue-context-master/daram/560/intake21_05_playful_evasion.webp": "2333bd62eea8",
+  "game/assets/dialogue-context-master/daram/560/intake21_06_eureka.webp": "26af0b3ba351",
+  "game/assets/dialogue-context-master/daram/560/intake21_07_delighted.webp": "894f37f272ed",
+  "game/assets/dialogue-context-master/daram/560/intake21_08_scared_brave.webp": "a66ef2f23b2b",
+  "game/assets/dialogue-context-master/daram/560/intake21_09_wipe_tears.webp": "84f5547c9341",
+  "game/assets/dialogue-context-master/daram/560/intake21_10_resolve.webp": "a7bea08df589",
+  "game/assets/dialogue-context-master/daram/760/intake21_02_reproach_lean.webp": "3cffb483fe85",
+  "game/assets/dialogue-context-master/daram/760/intake21_03_stubborn.webp": "3e8bf76fff2d",
+  "game/assets/dialogue-context-master/daram/760/intake21_04_flustered.webp": "cda3f12ce4a5",
+  "game/assets/dialogue-context-master/daram/760/intake21_05_playful_evasion.webp": "61c7ec67194f",
+  "game/assets/dialogue-context-master/daram/760/intake21_06_eureka.webp": "052bba4de585",
+  "game/assets/dialogue-context-master/daram/760/intake21_07_delighted.webp": "cecff96243dc",
+  "game/assets/dialogue-context-master/daram/760/intake21_08_scared_brave.webp": "fa9d2ec289b6",
+  "game/assets/dialogue-context-master/daram/760/intake21_09_wipe_tears.webp": "13e5feb510b0",
+  "game/assets/dialogue-context-master/daram/760/intake21_10_resolve.webp": "801fcc6a210d",
+  "game/assets/dialogue-context-master/daram/840/intake21_02_reproach_lean.webp": "760fd577eea6",
+  "game/assets/dialogue-context-master/daram/840/intake21_03_stubborn.webp": "9707c3951c68",
+  "game/assets/dialogue-context-master/daram/840/intake21_04_flustered.webp": "bf5ee8331018",
+  "game/assets/dialogue-context-master/daram/840/intake21_05_playful_evasion.webp": "a2359b3c3e06",
+  "game/assets/dialogue-context-master/daram/840/intake21_06_eureka.webp": "483568f768ec",
+  "game/assets/dialogue-context-master/daram/840/intake21_07_delighted.webp": "dbfcbefb029b",
+  "game/assets/dialogue-context-master/daram/840/intake21_08_scared_brave.webp": "48a85804b829",
+  "game/assets/dialogue-context-master/daram/840/intake21_09_wipe_tears.webp": "1ede1eda02ce",
+  "game/assets/dialogue-context-master/daram/840/intake21_10_resolve.webp": "1a0f3f662340",
+  "game/assets/dialogue-context-master/kid_dodam/560/intake21_dodam_joy.webp": "07b4a7cd1872",
+  "game/assets/dialogue-context-master/kid_dodam/760/intake21_dodam_joy.webp": "729da05cd049",
+  "game/assets/dialogue-context-master/kid_dodam/840/intake21_dodam_joy.webp": "7899de86b52b",
+  "game/assets/dialogue-context-master/kid_kkomi/560/intake21_kkomi_anxious.webp": "8a0c04229afa",
+  "game/assets/dialogue-context-master/kid_kkomi/560/intake21_kkomi_joy.webp": "357f3368164a",
   "game/assets/dialogue-context-master/kid_kkomi/560/resilient_pride.webp": "af41a9626caf",
+  "game/assets/dialogue-context-master/kid_kkomi/760/intake21_kkomi_anxious.webp": "357844c49ecd",
+  "game/assets/dialogue-context-master/kid_kkomi/760/intake21_kkomi_joy.webp": "d401d87f025b",
   "game/assets/dialogue-context-master/kid_kkomi/760/resilient_pride.webp": "e9850290b6d6",
+  "game/assets/dialogue-context-master/kid_kkomi/840/intake21_kkomi_anxious.webp": "bb747f0a9654",
+  "game/assets/dialogue-context-master/kid_kkomi/840/intake21_kkomi_joy.webp": "92a21f934e7e",
   "game/assets/dialogue-context-master/kid_kkomi/840/resilient_pride.webp": "7dad1969616b",
+  "game/assets/dialogue-context-master/kid_saemi/560/intake21_saemi_anxious.webp": "7a2d6fbfe223",
+  "game/assets/dialogue-context-master/kid_saemi/760/intake21_saemi_anxious.webp": "652bb6eb771d",
+  "game/assets/dialogue-context-master/kid_saemi/840/intake21_saemi_anxious.webp": "6d65c3d7e880",
   "game/assets/dialogue-context-master/resident_lamplighter/560/guarded_relief.webp": "1e452ff7a4a4",
   "game/assets/dialogue-context-master/resident_lamplighter/760/guarded_relief.webp": "8cb26222c2eb",
   "game/assets/dialogue-context-master/resident_lamplighter/840/guarded_relief.webp": "dddd50c46aa3",
   "game/assets/dialogue-context-master/resident_tosil/560/empathetic_confusion.webp": "26fb6641ec65",
   "game/assets/dialogue-context-master/resident_tosil/760/empathetic_confusion.webp": "0812be764ee6",
   "game/assets/dialogue-context-master/resident_tosil/840/empathetic_confusion.webp": "41e3d953b008",
+  "game/assets/dialogue-context-master/resident_ubak/560/intake21_ubak_angry.webp": "369e41c2bea5",
+  "game/assets/dialogue-context-master/resident_ubak/560/intake21_ubak_anxious.webp": "354f3203fe66",
+  "game/assets/dialogue-context-master/resident_ubak/760/intake21_ubak_angry.webp": "ad5e0546dc25",
+  "game/assets/dialogue-context-master/resident_ubak/760/intake21_ubak_anxious.webp": "af63ef2343b3",
+  "game/assets/dialogue-context-master/resident_ubak/840/intake21_ubak_angry.webp": "17ab746d3e2a",
+  "game/assets/dialogue-context-master/resident_ubak/840/intake21_ubak_anxious.webp": "167be74c8ef1",
   "game/assets/dialogue-pose-source/chorong_mother/offer_lantern/560.webp": "262ed37f8bc5",
   "game/assets/dialogue-pose-source/chorong_mother/offer_lantern/760.webp": "12711e483990",
   "game/assets/dialogue-pose-source/chorong_mother/offer_lantern/840.webp": "506946becb21",
