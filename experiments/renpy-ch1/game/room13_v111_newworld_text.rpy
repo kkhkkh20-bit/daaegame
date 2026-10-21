@@ -12,6 +12,7 @@
 #            (new meetings); the generators show them with r13_nw_block(name)
 # A new line: {"id": "NW_...", "speaker": name|null, "text": ..., "kind"?: dialogue|narration|thought, "expression"?,
 #              (thought: the father's unspoken line; text without brackets, the engine adds them)
+#              "beat"?: a meeting-stage beat (interrupt, shaken, cornered, ...) for lines inside a meeting
 #              "when"?: condition name in R13_NW_WHEN, "cut"?: existing ep art name}
 # Conditions are named Python predicates, never evaluated strings.
 # With every file empty the game shows the same lines in the same order as before.
@@ -151,6 +152,7 @@ init 319 python:
                     if row.get("kind")=="thought" and (row.get("speaker")!="아빠" or row["text"].startswith("(")):out.append(where+": thought must be the father's, without brackets "+nid)
                     if row.get("speaker") is not None and row["speaker"] not in MS14_SPEAKERS:out.append(where+": unknown speaker %s %s"%(nid,row["speaker"]))
                     if row.get("when","always") not in R13_NW_WHEN:out.append(where+": unknown condition %s %s"%(nid,row.get("when")))
+                    if row.get("beat") and row["beat"] not in R13_MEETING_BEATS:out.append(where+": unknown meeting beat %s %s"%(nid,row["beat"]))
                     cut=row.get("cut")
                     if cut and cut not in R13_NW_CUT_SPECIAL and not renpy.loadable("assets/room13-ep-%s.webp"%cut):out.append(where+": missing cut art %s %s"%(nid,cut))
         for key in R13_NW_TEXT["evidence"]:
@@ -174,6 +176,8 @@ init 319 python:
         slot=row.get("expression") or "neutral"
         options=dict(no_lead=True,expression=slot,pose=slot)
         if row.get("cut"):options["cut"]=row["cut"]
+        # Meeting stage beat (systems/room13_meeting_direction.rpy), used only inside a meeting.
+        if row.get("beat"):options["beat"]=row["beat"]
         return (who,row["text"],options)
     def r13_v111_lines(rids):
         """Authored lines with the reviewed new-world revisions around them."""

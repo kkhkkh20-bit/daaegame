@@ -125,7 +125,7 @@ init python:
 screen say(who,what):
     if room13_mode:
         $ who = r13_speaker_label(who)
-    if room13_mode and r13_meeting_active and r13_meeting_claim in R13_DEBATE:
+    if room13_mode and r13_meeting_active and (r13_meeting_claim in R13_DEBATE or r13_nw_meeting_claim(r13_meeting_claim)):
         use r13_meeting_stage(r13_meeting_claim,r13_meeting_focus_person(r13_meeting_claim),True)
         use r13_meeting_chrome(r13_meeting_claim)
         window:
@@ -136,7 +136,10 @@ screen say(who,what):
             text who id "who" xpos 104 ypos (r13_control_y()-144) size r13_read_size(24,26) color "#f6dfac" font r13_ui_font() xmaximum 1076
         text "▸" xpos 1160 ypos (r13_control_y()-48) size 24 color "#e8d9b0"
         timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
-        use r13_meeting_tools(r13_meeting_claim,r13_meeting_live_target())
+        if r13_nw_meeting_claim(r13_meeting_claim):
+            use r13_toolbar(mode="line")
+        else:
+            use r13_meeting_tools(r13_meeting_claim,r13_meeting_live_target())
         key "K_h" action Show("r13_backlog")
     elif not room13_mode:
         if room13_mode:

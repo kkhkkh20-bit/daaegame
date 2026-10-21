@@ -277,6 +277,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 2 | 191 | `systems/room13_q1_arguments.rpy:153` | _r13_qh_required |
 | 3 | 192 | `systems/room13_q1_difficulty.rpy:194` |  |
 
+## `r13_debate_session` (3층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 98 | `systems/room13_debate.rpy:373` | _r13_e1_session |
+| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:162` | _r13_nw_debate_session |
+| 3 | 321 | `room13_v111_meeting_stage.rpy:97` |  |
+
 ## `r13_debate_statements` (3층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -300,6 +308,22 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 55 | `room13_rules.rpy:94` | _r13_rel_flag |
 | 2 | 166 | `systems/room13_relations.rpy:20` | _r13_shelf_flag |
 | 3 | 170 | `systems/room13_shelf.rpy:28` |  |
+
+## `r13_meeting_cast` (3층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 99 | `room13_meeting_seating.rpy:50` | _r13_e1_cast |
+| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:185` | _r13_nw_meeting_cast |
+| 3 | 321 | `room13_v111_meeting_stage.rpy:102` |  |
+
+## `r13_meeting_plate` (3층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 99 | `room13_meeting_seating.rpy:147` | _r13_e1_plate |
+| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:179` | _r13_nw_meeting_plate |
+| 3 | 321 | `room13_v111_meeting_stage.rpy:116` |  |
 
 ## `r13_new` (3층)
 
@@ -411,13 +435,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 98 | `systems/room13_debate.rpy:429` | _r13_qa_ready |
 | 2 | 191 | `systems/room13_q1_arguments.rpy:157` |  |
 
-## `r13_debate_session` (2층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 98 | `systems/room13_debate.rpy:373` | _r13_e1_session |
-| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:162` |  |
-
 ## `r13_debate_visible` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -444,7 +461,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 172 | `systems/room13_dialogue_context_art.rpy:5` | _r13_nw_context_match |
-| 2 | 319 | `room13_v111_newworld_text.rpy:197` |  |
+| 2 | 319 | `room13_v111_newworld_text.rpy:201` |  |
 
 ## `r13_ending_notes` (2층)
 
@@ -544,19 +561,26 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 150 | `systems/room13_material_art.rpy:8` | _r13_v111_material_art |
 | 2 | 302 | `room13_v111.rpy:284` |  |
 
-## `r13_meeting_cast` (2층)
+## `r13_meeting_direct_line` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 99 | `room13_meeting_seating.rpy:50` | _r13_e1_cast |
-| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:185` |  |
+| 1 | 174 | `systems/room13_meeting_direction.rpy:170` | _r13_nw_meeting_direct_line |
+| 2 | 321 | `room13_v111_meeting_stage.rpy:131` |  |
 
-## `r13_meeting_plate` (2층)
+## `r13_meeting_focus_person` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 99 | `room13_meeting_seating.rpy:147` | _r13_e1_plate |
-| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:179` |  |
+| 1 | 99 | `room13_meeting_seating.rpy:57` | _r13_nw_meeting_focus_person |
+| 2 | 321 | `room13_v111_meeting_stage.rpy:108` |  |
+
+## `r13_meeting_header` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 152 | `systems/room13_ep1_lamp_thief.rpy:102` | _r13_nw_meeting_header |
+| 2 | 321 | `room13_v111_meeting_stage.rpy:124` |  |
 
 ## `r13_object_name` (2층)
 
@@ -668,7 +692,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 301 | `room13_v111.rpy:54` | _r13_nw_authored_line |
-| 2 | 319 | `room13_v111_newworld_text.rpy:163` |  |
+| 2 | 319 | `room13_v111_newworld_text.rpy:165` |  |
 
 ## `r13_w2_action_done` (2층)
 
