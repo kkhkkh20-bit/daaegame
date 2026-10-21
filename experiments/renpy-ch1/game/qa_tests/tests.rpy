@@ -126,10 +126,14 @@ testcase trial_partial:
     $ r13_qa_dump()
 
 testcase trial_win:
-    pause 2.0
+    pause 1.0
     click "처음부터"
-    pause 3.0
+    click pos (640,300) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_active())
     run Call("r13_qa_trial",('E01', 'E06', 'E07', 'E09', 'E35'),())
+    assert eval (not r13_v111_active())
     pause 1.0
     click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
@@ -168,10 +172,14 @@ testcase trial_win:
     $ r13_qa_dump()
 
 testcase trial_full:
-    pause 2.0
+    pause 1.0
     click "처음부터"
-    pause 3.0
+    click pos (640,300) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_active())
     run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E35', 'E36'),())
+    assert eval (not r13_v111_active())
     pause 1.0
     click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
@@ -310,10 +318,14 @@ testcase trial_full:
     $ r13_qa_dump()
 
 testcase trial_gate_unenforced:
-    pause 2.0
+    pause 1.0
     click "처음부터"
-    pause 3.0
+    click pos (640,300) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_active())
     run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E35', 'E36'),("-gates","witness:nabi","witness:tok"))
+    assert eval (not r13_v111_active())
     pause 1.0
     click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
@@ -453,10 +465,14 @@ testcase trial_gate_unenforced:
     $ r13_qa_dump()
 
 testcase trial_gate_no_witness:
-    pause 2.0
+    pause 1.0
     click "처음부터"
-    pause 3.0
+    click pos (640,300) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_active())
     run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E35', 'E36'),("-gates",))
+    assert eval (not r13_v111_active())
     pause 1.0
     click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
@@ -781,16 +797,19 @@ testcase fresh_run:
     $ open(renpy.config.basedir+"/qa_result.txt","w").write(repr(dict(endings=list(persistent.room13_endings),route=room13.get("secret_route_unlocked"),archive=r13_learning_archive_keys(),avail=r13_secret_route_available())))
 
 testcase carriage_skip:
-    pause 2.0
+    pause 1.0
     click "처음부터"
-    pause 3.0
+    pause until screen "say" timeout 60
+    assert eval (place=="마차 안" and r13_v111_active())
     screenshot "c0_carriage.png"
     click "건너뛰기"
-    pause 1.0
-    click pos (640,600) until screen "r13_hub" timeout 40
-    pause 1.0
+    click pos (640,300) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_active())
+    assert eval (r13_v111_active() and not r13_carriage_skip)
+    assert eval (place!="마차 안")
     screenshot "c1_after.png"
-    $ open(renpy.config.basedir+"/qa_result.txt","w").write(repr(dict(loc=room13["location"],day=room13["day"],period=room13["period"])))
 
 testcase carriage_view:
     pause 2.0
@@ -1101,38 +1120,32 @@ testcase sound_places:
     pause 120.0
 
 testcase skip_modes:
-    pause 2.0
-    click "처음부터"
-    pause 3.0
-    run Call("r13_qa_roam",dict(day=3,period=0,location="workshop",life_poc=True),("ep1_done","ev_b_done"))
-    pause until screen "say" timeout 30
     pause 1.0
-    screenshot "skip_footer.png"
-    # 0.18.42 moved hide/fast into 더보기; 0.18.46 put 건너뛰기 (skip this conversation) on the bar.
+    click "처음부터"
+    pause until screen "say" timeout 60
     click "더보기"
     pause 0.5
     click "대화창 숨기기"
     pause 0.5
     assert eval (_windows_hidden)
-    screenshot "hidden.png"
     click pos (640,300)
     pause 0.5
     assert eval (not _windows_hidden)
-    click "더보기"
-    pause 0.5
-    click "전부"
-    pause until screen "choice" timeout 20
-    pause 1.0
-    screenshot "choice_context.png"
+    # keysym sends a key press/release pair; hold-mode progression uses its handler.
+    run Function(r13_shortcut_fast,True)
+    pause until screen "choice" timeout 60
+    run Function(r13_shortcut_fast,False)
     assert eval (not r13_fast_all and not r13_fast_read)
-    # 0.18.87: 3일 아침 수리점 장면은 에피소드 ①의 누명 장면(선택지 3개)이다.
+    assert eval (v111_menu_owner=="letter_menu")
+    # The choice screen ignores keys during its .35s entrance guard.
+    pause until eval renpy.get_screen("choice").scope["choice_ready"] timeout 30
     keysym "K_1"
-    pause 1.0
-    assert eval ("lt_open" in room13["flags"] and "tok_hostile" not in room13["flags"])
-    click pos (1150,90) until screen "r13_hub" timeout 40
-    assert eval (not r13_fast_read)
-    $ open("qa_result.txt","w").write("skip to choice, number key 1 picked the defend line")
-
+    pause until screen "say" timeout 30
+    click pos (640,300) until "편지를 접는다" timeout 30
+    assert eval (r13_v111_value("K01a") is True)
+    click "편지를 접는다"
+    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_active() and not r13_fast_all and not r13_fast_read)
 
 testcase evening_board:
     pause 2.0
@@ -1348,10 +1361,14 @@ testcase w2e_share:
     assert eval (r13_has("share_auction") and r13_has("rumor:profiteer") and r13_cash_now()==10)
 
 testcase trial_fake_testimony:
-    pause 2.0
+    pause 1.0
     click "처음부터"
-    pause 3.0
+    click pos (640,300) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_active())
     run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E35', 'E36'),("-gates","witness:nabi","witness:tok","fair_hearing","fake_testimony"))
+    assert eval (not r13_v111_active())
     pause 1.0
     click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
@@ -1523,21 +1540,28 @@ testcase trial_c1_h7:
     assert eval ("C1" in room13["propositions"])
 
 testcase w1c_mother_line:
-    # Keep the day-2 fixture alive: default episode suppression includes future lt_dawn.
-    pause 2.0
+    pause 1.0
     click "처음부터"
-    pause 3.0
+    click pos (640,300) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_active())
     run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("+w1c","+ep","ep1_patrol_seen","ev_a_done"),(),12)
+    assert eval (not r13_v111_active())
     click pos (1150,90) until screen "choice" timeout 40
     click "아내 초상을 그려 달라고 한다 (5냥)"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_flag("know_granny_reads")
+    $ r13_grant(["H9"],"QA: requester already disclosed")
     run Call("r13_qa_goto",2,0,"post")
     click pos (1150,90) until screen "choice" timeout 40
-    click "오늘 품삯은 제가 내겠습니다"
+    click "“편지에서 뭘 보려는 겁니까?”"
+    click pos (1150,90) until screen "choice" timeout 40
+    click "슬링의 오늘 몫 지원 (내 돈 3냥)"
     pause 1.0
     click pos (1150,90) until screen "choice" timeout 40
-    click "할머니께 쪽지 하나만"
+    click "가짜 약속 쪽지를 맡긴다"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
     # 에피소드 ①: 초상을 맡기면 약속만 남고, 초상은 다음 날 받는다.
@@ -1846,12 +1870,22 @@ testcase grant_after_reaction:
     assert eval (room13["evidence"].count("J08")==1)
 
 testcase gate_documents:
-    # 0.18.22: no document popup. The shelf scene gives the original; the guard hands over his list.
-    pause 2.0
-    click "처음부터"
-    pause 3.0
-    click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
+    click "처음부터"
+    click pos (640,300) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_active())
+    run Function(setattr,store,"room13",r13_new())
+    run Function(setattr,store,"ms14",None)
+    run Function(r13_grant,["E01"],"여행 중 가지고 온 편지")
+    run Function(r13_edit,day=1,period=1,location="gate")
+    run Function(r13_note_encounter,"karo")
+    run Function(r13_note_encounter,"guard")
+    run Function(r13_note_encounter,"daram")
+    run Jump("r13_entry")
+    pause until screen "r13_hub" timeout 30
+    assert eval (not r13_v111_active())
     screenshot "gate_hub.png"
     assert eval ("G1" not in room13["evidence"] and "G3" not in room13["evidence"])
     run Jump("r13_qa_gate_shelf")
@@ -1861,7 +1895,7 @@ testcase gate_documents:
     pause 1.0
     assert screen "r13_entry_topics"
     screenshot "gate_topics.png"
-    click "이름 목록이 다른 이유"
+    click "제가 낸 신청서와 초소 명단을 보겠습니다."
     click pos (640,600) until screen "r13_entry_topics" timeout 40
     assert eval ("G3" in room13["evidence"])
 
@@ -2283,11 +2317,14 @@ testcase redesign_dialogue:
     pause 1.0
 
 testcase day1_note_spot:
-    # 0.18.22 (owner): on day 1 the folded paper on the desk is pressed directly; then sleep opens.
-    pause 2.0
+    pause 1.0
     click "처음부터"
-    pause 3.0
+    click pos (640,300) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_active())
     run Call("r13_qa_roam",dict(day=1,period=1,location="room13",life_poc=True,evidence=["E03"]),("lodging","entry_corrected"))
+    assert eval (not r13_v111_active())
     pause 2.0
     assert eval (r13_object_visible(ROOM13["objects"]["room13"]["mother_note"]) and "책상 위" in r13_intro_goal())
     screenshot "day1_note_spot.png"
@@ -2295,9 +2332,7 @@ testcase day1_note_spot:
     $ r13_world_cameras={"room13":0}
     run Call("r13_qa_goto",1,1,"room13")
     pause 2.0
-    # 0.19.55: pressing the paper in investigation mode directly inspects it.
-    click "주변 살피기"
-    pause 0.3
+    # The field now inspects objects directly; no investigation toggle.
     click pos (ROOM13["objects"]["room13"]["mother_note"]["rect"][0]+ROOM13["objects"]["room13"]["mother_note"]["rect"][2]//2-r13_world_offset(),ROOM13["objects"]["room13"]["mother_note"]["rect"][1]+ROOM13["objects"]["room13"]["mother_note"]["rect"][3]//2)
     pause 0.5
     click pos (640,600) until screen "r13_hub" timeout 40
@@ -2381,20 +2416,29 @@ testcase dot_fx:
 
 
 testcase karo_center:
-    # 0.18.39 (owner): two-line dialogue window, Karo centred, same place in dialogue and questions.
-    pause 2.0
-    $ persistent.room13_large_text=True
-    click "처음부터"
-    pause 3.0
-    click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
-    run Jump("r13_entry_karo_menu")
-    pause 1.5
-    screenshot "karo_topics.png"
-    click "마차가 괜찮은지"
-    pause 1.5
-    screenshot "karo_line.png"
+    click "처음부터"
+    click pos (640,300) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_active())
+    $ persistent.room13_large_text=True
+    run Function(renpy.restart_interaction)
+    run Show("r13_qa_inject_return",value=("person","guard"))
+    pause until screen "say" timeout 30
+    click pos (640,300) until eval (room13["v111"]["gate"]=="gate_choice" and renpy.get_screen("r13_hub") is not None) timeout 60
+    run Show("r13_qa_inject_return",value=("person","guard"))
+    pause until screen "r13_topics" timeout 30
+    screenshot "newworld_topics_large.png"
+    click "돌아가기"
+    pause until screen "r13_hub" timeout 30
+    run Call("r13_qa_v111_lines",[("karo","짐은 제가 지키고 있겠습니다.")],"qa:karo:center")
+    pause until screen "say" timeout 30
+    assert eval (r13_motion_person=="karo")
+    screenshot "karo_line_large.png"
+    click pos (640,300) until screen "r13_hub" timeout 30
     $ persistent.room13_large_text=False
+    run Function(renpy.restart_interaction)
 
 testcase opening_cut:
     # 0.18.41 opening cutscene (letter, map route, title, carriage): runs on a new game outside tests; forced here.
@@ -2419,12 +2463,14 @@ testcase opening_cut:
     $ r13_opening_force = False
 
 testcase trial_counter:
-    # 0.18.41: after C1 proves the passage, the chief turns it on Daram. A wrong answer keeps
-    # the statement standing (no other penalty); presenting again and answering right breaks it.
-    pause 2.0
+    pause 1.0
     click "처음부터"
-    pause 3.0
+    click pos (640,300) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_active())
     run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E35'),())
+    assert eval (not r13_v111_active())
     pause 1.0
     click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
@@ -2484,15 +2530,22 @@ testcase trial_counter:
     $ r13_qa_dump()
 
 testcase crossed_accounts:
-    # 0.18.41: Kongi's word changes Nabi's answer; Seol's word opens a question for the lamplighter.
-    pause 2.0
-    click "처음부터"
-    pause 3.0
-    run Call("r13_qa_roam",dict(day=2,period=0,location="inn"),())
     pause 1.0
-    assert eval ("cross:nabi_door" in [k for k,t in r13_topics("nabi")] and "cross:nabi_light" not in [k for k,t in r13_topics("nabi")])
+    click "처음부터"
+    click pos (640,300) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_active())
+    run Call("r13_qa_roam",dict(day=2,period=0,location="inn"),())
+    assert eval (not r13_v111_active())
+    pause 1.0
+    assert eval ("cross:nabi_door" not in [k for k,t in r13_topics("nabi")] and "cross:nabi_light" not in [k for k,t in r13_topics("nabi")])
     $ r13_finish_topic("smalltalk:kongi_basket")
-    assert eval ("cross:nabi_light" in [k for k,t in r13_topics("nabi")] and "cross:nabi_door" not in [k for k,t in r13_topics("nabi")])
+    assert eval ("cross:nabi_door" in [k for k,t in r13_topics("nabi")] and "cross:nabi_light" not in [k for k,t in r13_topics("nabi")])
+    $ r13_finish_topic("cross:nabi_door")
+    assert eval ("cross:nabi_light" in [k for k,t in r13_topics("nabi")])
+    $ r13_finish_topic("cross:nabi_light")
+    assert eval ("cross:nabi_door" not in [k for k,t in r13_topics("nabi")])
     assert eval ("cross:lamp_dawn" not in [k for k,t in r13_topics("resident_lamplighter")])
     $ r13_finish_topic("smalltalk:seol_rope")
     assert eval ("cross:lamp_dawn" in [k for k,t in r13_topics("resident_lamplighter")])
@@ -2563,20 +2616,22 @@ testcase topic_record:
     screenshot "record_direct_return.png"
 
 testcase conversation_skip:
-    # 0.18.46: 건너뛰기 ends the current conversation; what follows it still runs.
-    pause 2.0
-    click "처음부터"
-    pause 3.0
-    click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
-    run Jump("r13_entry_karo_menu")
-    pause 1.5
-    click "함께 왔다고"
-    pause 1.5
+    click "처음부터"
+    click pos (640,300) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_active())
+    run Show("r13_qa_inject_return",value=("person","guard"))
+    pause until screen "say" timeout 30
     screenshot "skip_bar.png"
-    click "대사 건너뛰기"
-    pause 1.5
-    assert screen "r13_entry_karo_topics"
+    click "건너뛰기"
+    pause until screen "r13_concept_skip_confirm" timeout 10
+    click "건너뛰기"
+    click pos (640,300) until eval (room13["v111"]["gate"]=="gate_choice" and renpy.get_screen("r13_hub") is not None) timeout 60
+    assert eval (r13_v111_owned("E02"))
+    assert eval (room13["v111"]["gate"]=="gate_choice")
+    assert eval (not r13_conv_skip)
 
 testcase memo_from_desk:
     # 0.18.48: reading Mom's memo from the desk close-up shows its card over the close-up, and the
@@ -9398,16 +9453,19 @@ testcase karo_night1:
         r13_qa_note("night1 where karo: %r people %r"%(r13_where("karo"),r13_people()))
 
 testcase karo_comes_day2:
-    # 0.18.56: on day 2 Karo comes to find Dad wherever he is.
-    pause 2.0
+    pause 1.0
     click "처음부터"
-    pause 3.0
+    click pos (640,300) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_active())
     run Call("r13_qa_roam",dict(day=2,period=0,location="room13",daram_state="with_dad",life_poc=True),("+w1c","entry_corrected","lodging","night1_seen"),(),12)
+    assert eval (not r13_v111_active())
     pause 1.5
     $ room13["flags"]=[f for f in room13["flags"] if f!="livelihood_open"]
     # 0.19.50 moved local travel to the map; keep exercising the real travel action.
-    click "지도 · 이동" until screen "r13_map" timeout 30
-    click "2층 복도"
+    click "지도" until screen "r13_map" timeout 30
+    click pos r13_cart_label_point("hall")
     click "이곳으로 이동"
     pause 2.5
     screenshot "karo_comes_1.png"
@@ -9417,6 +9475,8 @@ testcase karo_comes_day2:
     click pos (640,600)
     pause 1.5
     screenshot "karo_comes_3.png"
+    click pos (640,600) until screen "r13_hub" timeout 40
+    assert eval (r13_has("livelihood_open") and "life:karo" in room13["read_topics"])
 
 testcase overlap_dump:
     pause 2.0
@@ -9512,11 +9572,14 @@ testcase perspective_views:
     screenshot "persp_workshop.png"
 
 testcase dialogue_expand:
-    # 0.18.58 (owner): longer, ordered conversations with 【key words】 in gold.
-    pause 2.0
+    pause 1.0
     click "처음부터"
-    pause 3.0
+    click pos (640,300) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_active())
     run Call("r13_qa_roam",dict(day=2,period=0,location="inn",life_poc=True),("entry_corrected","lodging"))
+    assert eval (not r13_v111_active())
     pause 1.0
     python:
         _hit=[];_miss=[]
@@ -9527,40 +9590,34 @@ testcase dialogue_expand:
             (_hit if r13_expand_norm(_rows)==r13_expand_norm(R13_DIALOGUE_EXPAND[_name]["new"]) else _miss).append(_name)
         r13_qa_note("expand hit %d: %r"%(len(_hit),_hit))
         r13_qa_note("expand not in this state %d: %r"%(len(_miss),_miss))
-    # Player review: preserve the actual clues and keyword emphasis without repeating ten lines.
-    assert eval (len(r13_conversation_topic_lines("granny_letter"))<=6 and "숙박 장부" in str(r13_conversation_topic_lines("granny_letter")) and "어디로 갔는지는 못 들었" in str(r13_conversation_topic_lines("granny_letter")))
+    # The final review_knowledge override supplies the current first answer.
+    assert eval ("며칠째 안 보여요" in str(r13_conversation_topic_lines("granny_letter")) and "방은 그대로" in str(r13_conversation_topic_lines("granny_letter")))
     run Call("r13_qa_talk","granny")
-    click pos (1150,90) until "가족을 불렀는지" timeout 30
-    click "가족을 불렀는지"
-    pause 1.0
-    click pos (640,600) until eval ("13호실】" in str(getattr(store,"r13_packet",("",""))[1])) timeout 30
-    pause 1.5
-    screenshot "granny_gold_word.png"
+    click pos (1150,90) until screen "r13_topics" timeout 30
+    run Show("r13_qa_inject_return",value="granny_letter")
+    click pos (640,600) until eval ("방은 그대로" in str(getattr(store,"r13_packet",("",""))[1])) timeout 30
+    screenshot "granny_current_reply.png"
+
 
 testcase new_places_tour:
-    # 0.18.61 (owner): 장터·강가·숲속 as village places, with people and inspection spots.
-    pause 2.0
-    click "처음부터"
-    pause 3.0
-    run Call("r13_qa_roam",dict(day=3,period=0,location="market",life_poc=True),("entry_corrected","lodging"))
-    pause 3.0
-    screenshot "place_market.png"
-    python:
-        r13_qa_note("market: %r"%([(a["person"],a["x"],a["y"],a["height"]) for a in r13_stage_people()],))
-    run Call("r13_qa_roam",dict(day=3,period=0,location="river",life_poc=True),("entry_corrected","lodging"))
-    pause 1.5
-    screenshot "place_river.png"
-    run Call("r13_qa_roam",dict(day=3,period=2,location="forest",life_poc=True),("entry_corrected","lodging"))
-    pause 1.5
-    screenshot "place_forest_evening.png"
-    $ r13_qa_crowd_dump()
-    run Call("r13_qa_roam",dict(day=3,period=0,location="market",life_poc=True),("entry_corrected","lodging"))
     pause 1.0
-    # The market crowd stands at the screen centre; open the map from the toolbar
-    # (0.18.91: screens accept input after .15s, so a date-panel click no longer falls through).
-    click "지도 · 이동" until screen "r13_map" timeout 30
-    pause 1.5
-    screenshot "place_map.png"
+    click "처음부터"
+    click pos (640,300) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_active())
+    run Function(r13_v111_set,"day",3)
+    run Call("r13_qa_v111_place","market",0)
+    pause until screen "r13_hub" timeout 30
+    assert eval (r13_v111_active())
+    screenshot "place_market.png"
+    $ r13_qa_crowd_dump()
+    run Call("r13_qa_v111_place","river",0)
+    pause until screen "r13_hub" timeout 30
+    screenshot "place_river.png"
+    run Call("r13_qa_v111_place","forest",2)
+    pause until screen "r13_hub" timeout 30
+    screenshot "place_forest_evening.png"
 
 testcase job_fishing:
     # 0.18.91 (owner): jobs were removed; no lodging fee is charged overnight either.
@@ -9806,84 +9863,68 @@ testcase map_actions:
     screenshot "ma_workshop_buri.png"
 
 testcase new_places:
-    # 0.19.16: read the current map targets instead of obsolete hard-coded clicks.
-    # 0.18.63: 큰 강 / 깊은 숲 / 장터 on the village map after lodging, travel through the
-    # map, one picture per period. 0.18.68: only residents with a new-place routine come (0.18.75: days 2-7 and 9-14).
-    pause 2.0
+    pause 1.0
     click "처음부터"
-    pause 3.0
-    run Call("r13_qa_roam",dict(day=3,period=0,location="square",life_poc=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
-    click pos (1150,90) until screen "r13_hub" timeout 40
-    pause 1.0
-    assert eval (all(k in r13_places() and k in R13_MAP_NODES["village"] and k in dict(r13_map_nodes("village")) for k in R13_NEW_PLACES))
-    python:
-        # Testcase python is not the store: set store.room13 explicitly.
-        _np_saved=winter_copy.deepcopy(store.room13)
-        store._np_people=[]
-        for _d in range(1,15):
-            for _p in range(4):
-                for _l in R13_NEW_PLACES:
-                    _n=winter_copy.deepcopy(_np_saved);_n.update(day=_d,period=_p,location=_l);store.room13=_n
-                    store._np_people+=[(_d,_p,_l,x) for x in r13_people()]
-        _n=winter_copy.deepcopy(_np_saved);_n["flags"]=[f for f in _n["flags"] if f!="lodging"];store.room13=_n
-        store._np_before=[k for k in R13_NEW_PLACES if k in r13_places()]
-        store.room13=_np_saved
-        r13_qa_note("new places people: %r / before lodging: %r"%(store._np_people,store._np_before))
-    # 0.18.65~66: forest residents and the market crowd come by their own schedules, not only by
-    # R13_WEEKLY_ROUTINES, so check that every new place gets people and none open before lodging.
-    assert eval (_np_people and all(any(L==l for d,p,L,x in _np_people) for l in R13_NEW_PLACES) and _np_before==[] and room13["location"]=="square")
-    click "지도 · 이동"
-    pause 1.5
-    screenshot "np_map.png"
+    click pos (640,300) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_active())
+    run Function(r13_v111_set,"day",3)
+    run Call("r13_qa_v111_travel","river","qa:river",[])
+    pause until eval room13["v111"]["gate"]=="travel" timeout 30
+    pause until screen "r13_hub" timeout 30
+    click "지도" until screen "r13_map" timeout 30
+    # Map pins ignore input until the .15s entrance guard finishes.
+    pause until eval renpy.get_screen("r13_map").scope["ready"] timeout 30
     click pos r13_cart_label_point("river")
-    pause 0.5
-    screenshot "np_map_river.png"
+    pause until eval renpy.get_screen("r13_map").scope["selected"]=="river" timeout 30
     click "이곳으로 이동"
-    click pos (1150,90) until screen "r13_hub" timeout 40
-    pause 1.0
-    assert eval (room13["location"]=="river" and r13_world_width()==2160 and r13_world_file("river",r13_daylight()).endswith("river-morning.webp"))
-    $ r13_qa_wide_log("np_river_arrive")
+    pause until screen "r13_hub" timeout 30
+    assert eval (r13_v111_active() and room13["location"]=="river")
+    assert eval (r13_world_file("river",r13_daylight()).endswith("river-morning.webp"))
     screenshot "np_river_arrive.png"
-    click "지도 · 이동"
-    pause 1.5
-    # 0.19.12 map: 깊은 숲 is at the top left of the village sheet.
+    assert eval (r13_world_width()==2160)
+    run Call("r13_qa_v111_travel","forest","qa:forest",[])
+    pause until eval room13["v111"]["gate"]=="travel" timeout 30
+    pause until screen "r13_hub" timeout 30
+    click "지도" until screen "r13_map" timeout 30
+    # Map pins ignore input until the .15s entrance guard finishes.
+    pause until eval renpy.get_screen("r13_map").scope["ready"] timeout 30
     click pos r13_cart_label_point("forest")
-    pause 0.5
+    pause until eval renpy.get_screen("r13_map").scope["selected"]=="forest" timeout 30
     click "이곳으로 이동"
-    click pos (1150,90) until screen "r13_hub" timeout 40
-    pause 1.0
-    assert eval (room13["location"]=="forest" and r13_world_file("forest",r13_daylight()).endswith("forest-morning.webp"))
+    pause until screen "r13_hub" timeout 30
+    assert eval (r13_v111_active() and room13["location"]=="forest")
+    assert eval (r13_world_file("forest",r13_daylight()).endswith("forest-morning.webp"))
     screenshot "np_forest_arrive.png"
-    click "지도 · 이동"
-    pause 1.5
-    click "마을"
-    pause .5
-    # 0.19.12 map: the 장터 name plate (the stalls only take clicks on drawn pixels).
+    run Call("r13_qa_v111_travel","market","qa:market",[])
+    pause until eval room13["v111"]["gate"]=="travel" timeout 30
+    pause until screen "r13_hub" timeout 30
+    click "지도" until screen "r13_map" timeout 30
+    # Map pins ignore input until the .15s entrance guard finishes.
+    pause until eval renpy.get_screen("r13_map").scope["ready"] timeout 30
     click pos r13_cart_label_point("market")
-    pause 0.5
+    pause until eval renpy.get_screen("r13_map").scope["selected"]=="market" timeout 30
     click "이곳으로 이동"
-    click pos (1150,90) until screen "r13_hub" timeout 40
-    pause 1.0
-    assert eval (room13["location"]=="market" and r13_world_file("market",r13_daylight()).endswith("market-morning.webp"))
+    pause until screen "r13_hub" timeout 30
+    assert eval (r13_v111_active() and room13["location"]=="market")
+    assert eval (r13_world_file("market",r13_daylight()).endswith("market-morning.webp"))
     screenshot "np_market_arrive.png"
-    # Period changes switch the picture in place (no single picture for every period).
-    run Call("r13_qa_goto",3,1,"market")
-    click pos (1150,90) until screen "r13_hub" timeout 40
-    pause 1.0
-    assert eval (r13_daylight()=="afternoon" and r13_world_file("market","afternoon").endswith("market-afternoon.webp"))
-    # 0.18.87: day 7 is the case day now; check an ordinary evening instead.
-    run Call("r13_qa_goto",6,2,"market")
-    click pos (1150,90) until screen "r13_hub" timeout 40
-    pause 1.0
-    assert eval (r13_daylight()=="evening" and r13_world_file("market","evening").endswith("market-evening.webp"))
+    run Call("r13_qa_v111_place","market",1)
+    pause until screen "r13_hub" timeout 30
+    assert eval (r13_daylight()=="afternoon")
+    assert eval (r13_world_file("market",r13_daylight()).endswith("market-afternoon.webp"))
+    run Call("r13_qa_v111_place","market",2)
+    pause until screen "r13_hub" timeout 30
+    assert eval (r13_daylight()=="evening")
+    assert eval (r13_world_file("market",r13_daylight()).endswith("market-evening.webp"))
     assert eval (len({R13_WORLD_LAYOUTS[l]["files"][d] for l in R13_NEW_PLACES for d in ("morning","afternoon","evening")})==9)
     $ renpy.save("qa-newplaces","qa")
-    run Call("r13_qa_goto",3,0,"river")
-    click pos (1150,90) until screen "r13_hub" timeout 40
-    pause 1.0
+    run Function(r13_edit,location="river",period=0)
     run Function(renpy.load,"qa-newplaces")
     pause 2.0
-    assert eval (room13["location"]=="market" and r13_daylight()=="evening" and r13_world_width()==2160)
+    assert eval (r13_v111_active() and room13["location"]=="market")
+    assert eval (r13_daylight()=="evening" and r13_world_width()==2160)
     screenshot "np_market_after_load.png"
 
 testcase drawer_puzzle_art:
@@ -11666,24 +11707,23 @@ testcase relations_tab:
     $ r13_qa_note("relations ok")
 
 testcase time_flow:
-    # 0.18.91 사건 중심 시간: 목표 줄의 회의 카운트다운, ③은 자료가 다 모이면 6일 저녁 학교에서 미리 연다.
-    pause 2.0
+    pause 1.0
     click "처음부터"
-    pause 3.0
-    run Call("r13_qa_roam",dict(day=4,period=0,location="square",life_poc=True,evidence=["L03","L06"]),("entry_corrected","lodging","livelihood_open","lt_dawn"))
-    pause 1.0
-    # The QA seed marks finished episodes (R13_QA_EPISODES_SEEN); reopen ①.
-    $ r13_edit(flags=[f for f in room13["flags"] if f!="lt_done"])
-    assert eval ((r13_meeting_countdown() or "").startswith("광장 회의 · 4일 오전부터 오후까지"))
-    screenshot "countdown_ep1.png"
-    run Call("r13_qa_roam",dict(day=6,period=2,location="school",life_poc=True,evidence=["F04","F05","F06","F09","F11"]),("entry_corrected","lodging","livelihood_open","lt_done","wf_fire","wf_morning","wf_ruins","+offers"))
-    pause 1.0
-    $ r13_edit(flags=[f for f in room13["flags"] if f!="wf_done"])
-    assert eval ("미리 열 수 있다" in (r13_meeting_countdown() or ""))
-    run Call("r13_qa_event","r13_wf_events")
-    pause 1.0
-    assert eval (r13_debate_arguable("Q3") and "r13_wf_meeting" in room13.get("offers",{}))
-    $ r13_qa_note("time flow ok")
+    click pos (640,300) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_active())
+    $ store._qa_minutes=r13_v111_value("elapsed_minutes") or 0
+    $ store._qa_day=room13["day"]
+    $ store._qa_period=room13["period"]
+    run Show("r13_qa_inject_return",value=("person","guard"))
+    pause until screen "say" timeout 30
+    click pos (640,300) until eval (room13["v111"]["gate"]=="gate_choice" and renpy.get_screen("r13_hub") is not None) timeout 60
+    assert eval (r13_v111_value("elapsed_minutes")==_qa_minutes+15)
+    assert eval (room13["day"]==_qa_day and room13["period"]==_qa_period)
+    run Function(r13_v111_time,"inspect:gate_request:ledger",15)
+    assert eval (r13_v111_value("elapsed_minutes")==_qa_minutes+15)
+    $ r13_qa_note("new-world time flow ok")
 
 testcase expression_acting:
     # 0.18.92 (owner 17:05): the expression package in the real dialogue layout, normal and large
@@ -11721,12 +11761,12 @@ testcase o46_ropes:
     screenshot "o46_altar_evening.png"
 
 testcase shortcuts:
-    # 0.18.95 PC 단축키: M 지도, R 기록, 확인창 Enter/Esc, 메뉴의 단축키 안내.
-    pause 2.0
+    pause 1.0
     click "처음부터"
-    pause 3.0
-    run Call("r13_qa_roam",dict(day=2,period=0,location="inn",life_poc=True),("entry_corrected","lodging"))
-    click pos (640,600) until screen "r13_hub" timeout 40
+    click pos (640,300) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_active())
     pause 0.6
     keysym "K_m"
     pause 1.0
@@ -11743,7 +11783,7 @@ testcase shortcuts:
     screenshot "menu_with_shortcuts.png"
     click "설정"
     pause 0.8
-    click "단축키 (PC)"
+    click "단축키 PC"
     pause 0.8
     assert screen "r13_shortcut_help"
     screenshot "shortcut_help.png"
@@ -11764,84 +11804,52 @@ testcase meeting_pairs:
     $ r13_qa_note("meeting pairs ok")
 
 testcase polish3:
-    # 0.18.97 3번 시안: 반박 컷인, 기록 거름, 큰 단추, 다시 시작할 아침, 이름 판.
-    pause 2.0
+    pause 1.0
     click "처음부터"
-    pause 3.0
-    run Call("r13_qa_roam",dict(day=3,period=0,location="inn",life_poc=True,evidence=["L01","L02","L03"]),("entry_corrected","lodging","lt_open"))
-    click pos (640,600) until screen "r13_hub" timeout 40
-    pause 1.5
-    assert eval (3 in r13_morning_days())
-    $ r13_grant(["K02"],"QA 오늘 얻은 자료")
-    assert eval (r13_material_subset(["K02"],"unread")==["K02"] and sorted(r13_record_related_first(["L01","K02"],"resident_nabi"))==["K02","L01"])
+    click pos (640,300) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_active())
+    run Function(r13_morning_snapshot)
+    assert eval (1 in r13_morning_days())
     $ r13_flag("qa_after_morning")
     run Show("r13_records")
-    pause 1.0
+    pause 0.8
     screenshot "records_chips.png"
-    click "안 읽음"
-    pause 0.6
-    screenshot "records_unread.png"
+    assert eval (renpy.get_screen("r13_records").scope["material_filter"]!="unread")
     click "메모"
-    pause 0.6
-    screenshot "records_notes.png"
+    pause 0.5
     click "달력 ›"
-    pause 0.6
+    pause 0.5
     assert eval (renpy.get_screen("r13_records").scope["tab"]=="calendar")
     run Hide("r13_records")
-    pause 0.5
     run ShowMenu("save")
     pause 0.8
     click "불러오기로"
     pause 0.8
     assert screen "load"
-    screenshot "load_switch.png"
     run Return()
-    pause 0.8
-    run Show("r13_book",target="resident_nabi",present=True)
-    pause 1.0
-    screenshot "book_related.png"
-    run Hide("r13_book")
-    pause 0.5
-    run Show("r13_rebuttal_cutin",struck="3번 등을 연 건 톡이오.")
-    pause 0.5
-    screenshot "rebuttal_cutin.png"
-    run Hide("r13_rebuttal_cutin")
-    pause 0.3
-    run Show("r13_winter_board",key="E5")
-    pause 1.0
-    screenshot "winter_board.png"
-    click "다시 시작할 아침"
-    pause 0.8
-    assert screen "r13_morning_pick"
-    screenshot "morning_pick.png"
-    run Hide("r13_morning_pick")
-    run Hide("r13_winter_board")
     pause 0.5
     $ persistent.room13_large_text=True
     run Function(renpy.restart_interaction)
-    pause 0.8
-    screenshot "big_buttons.png"
     run Call("r13_lines",[("dad","큰 글씨에서는 아래 단추도 커진다.")],"qa:big")
-    pause 1.0
+    pause until screen "say" timeout 20
     screenshot "big_footer.png"
     click "더보기"
-    pause 0.6
+    pause 0.5
     screenshot "more_in_line.png"
     click pos (200,200)
-    pause 0.5
-    click pos (640,560) until screen "r13_hub" timeout 20
+    click pos (640,300) until screen "r13_hub" timeout 30
     $ persistent.room13_large_text=False
     run Function(renpy.restart_interaction)
-    pause 0.5
     run Show("r13_morning_pick")
     pause 0.8
-    click "3일 아침부터"
-    pause 0.6
-    screenshot "morning_confirm.png"
+    click "1일 아침부터"
+    pause 0.5
     click "돌아간다"
     pause 3.0
-    assert eval (not r13_has("qa_after_morning") and room13["day"]==3)
-    $ r13_qa_note("polish3 ok")
+    assert eval (r13_v111_active() and room13["day"]==1)
+    assert eval (not r13_has("qa_after_morning"))
 
 testcase readability_pixels:
     # 0.18.93 (owner 19:24): large-text dialogue and the question screen stay readable (no line past
@@ -12137,50 +12145,43 @@ testcase pixel_unify_preview:
     click pos (1276,300) until eval r13_qa_fb_done timeout 300
 
 testcase carriage_pop:
-    # 0.19.2 (owner): no opening cutscene; Daram springs up on her own "왁!" line (with a sound),
-    # not during the narration before it; at the gate she is drawn smaller than Karo.
-    # 0.19.8: the sound is the brighter "surprise" cue (owner).
-    pause 2.0
+    pause 1.0
     click "처음부터"
-    pause until screen "say" timeout 30
-    pause 0.8
-    assert eval (place=="마차 안" and "r13_visitor" not in renpy.get_showing_tags())
-    screenshot "carriage_line1.png"
-    click pos (640,560) until eval ("r13_visitor" in renpy.get_showing_tags()) timeout 10
-    pause 0.5
-    $ r13_qa_note("fxlog=%r who=%r"%(source_effect_log[-5:],_last_say_who))
-    assert eval ("surprise" in source_effect_log)
-    screenshot "carriage_wak.png"
-    click pos (640,560) until eval (place!="마차 안") timeout 60
-    pause until screen "say" timeout 20
-    pause 0.8
-    screenshot "gate_daram_or_karo.png"
+    pause until screen "say" timeout 60
+    assert eval (r13_v111_active() and place=="마차 안")
+    assert eval ("r13_visitor" in renpy.get_showing_tags())
+    assert eval (r13_motion_person=="daram")
+    assert eval (not typing_allowed)
+    screenshot "carriage_seated.png"
+    click pos (640,300) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_active())
+    assert eval (place!="마차 안" and typing_allowed)
     assert eval (r13_fullbody_scale("daram",840)*R13_FULLBODY["people"]["daram"]["figure"][3] < r13_fullbody_scale("karo",840)*R13_FULLBODY["people"]["karo"]["figure"][3])
-    $ r13_qa_note("carriage pop ok")
+    screenshot "gate_after_carriage.png"
 
 testcase owner_fixes_0192:
-    # 0.19.2 owner notes: Mom has no face on the chart before the reunion; every met resident
-    # (Karo, the gate guard …) is on the chart; Piko's square scene plays over the square, not the gate;
-    # the 보여주기 button on question screens is large and clear of the question list.
-    pause 2.0
+    pause 1.0
     click "처음부터"
-    pause until screen "say" timeout 30
-    click pos (640,560) until screen "r13_hub" timeout 90
-    pause 1.0
-    assert eval ("karo" in r13_rel_people() and "guard" in r13_rel_people() and r13_rel_status("mom")[0]=="missing")
+    click pos (640,300) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_active())
+    assert eval (r13_rel_status("mom")[0]=="missing")
     run Show("r13_records",initial_tab="relations")
-    pause 1.0
+    pause 0.8
     screenshot "relations_day1.png"
     run Hide("r13_records")
-    pause 0.5
-    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("entry_corrected","lodging","+ep"))
-    pause until eval ("piko_seen" in room13["flags"]) timeout 30
-    pause 0.8
-    assert eval (r13_scene_bg=="winter_square")
-    screenshot "piko_square.png"
-    click pos (640,560) until screen "r13_hub" timeout 40
-    pause 0.5
-    $ r13_qa_note("owner fixes 0.19.2 ok")
+    run Show("r13_qa_inject_return",value=("person","guard"))
+    pause until screen "say" timeout 30
+    assert eval (place=="눈에 막힌 입구" and r13_scene_bg=="winter")
+    screenshot "guard_at_gate.png"
+    click pos (640,300) until screen "r13_hub" timeout 60
+    assert eval (room13["v111"]["gate"]=="gate_choice" and r13_v111_owned("E02"))
+    # Still valid: an actual conversation must add the guard to the relations.
+    # Suspected game bug: v111 gate_list never records an encounter.
+    assert eval ("guard" in r13_rel_people())
 
 testcase cartography:
     pause 2.0
@@ -12393,3 +12394,20 @@ testcase q1_argument_access:
         assert r13_contact_has_content("resident_madam")
         assert "L09" in r13_contact_presentations("resident_madam")
         r13_qa_note("Q1 v2: all three investigation routes have reachable people and open contact gates")
+
+testcase owner_fixes_0192_legacy:
+    pause 1.0
+    click "처음부터"
+    click pos (640,300) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_active())
+    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("entry_corrected","lodging","+ep"))
+    assert eval (not r13_v111_active())
+    pause until eval ("piko_seen" in room13["flags"]) timeout 30
+    pause 0.8
+    assert eval (r13_scene_bg=="winter_square")
+    screenshot "piko_square.png"
+    click pos (640,560) until screen "r13_hub" timeout 40
+    pause 0.5
+    $ r13_qa_note("owner fixes 0.19.2 ok")

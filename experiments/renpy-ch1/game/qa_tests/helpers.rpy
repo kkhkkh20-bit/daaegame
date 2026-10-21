@@ -934,3 +934,22 @@ init 999 python:
 screen r13_qa_inject_return(value):
     zorder 999
     timer 0.05 action [Hide("r13_qa_inject_return"), Return(value)]
+
+# UI-only v111 fixtures must finish at a new field interaction. Returning straight
+# from a scene/travel Call resumes the interrupted call screen with _return=None.
+label r13_qa_v111_field:
+    call r13_v111_wait("qa:field")
+    jump r13_qa_v111_field
+
+label r13_qa_v111_place(location,period=0):
+    $ r13_edit(location=location,period=period)
+    call r13_scene(R13_PLACES[location][1],R13_PLACES[location][0],"calm")
+    jump r13_qa_v111_field
+
+label r13_qa_v111_travel(destination,travel_id,companions=None):
+    call r13_v111_travel(destination,travel_id,companions)
+    jump r13_qa_v111_field
+
+label r13_qa_v111_lines(entries,identity):
+    call r13_lines(entries,identity)
+    jump r13_qa_v111_field

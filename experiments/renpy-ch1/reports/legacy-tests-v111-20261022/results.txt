@@ -1,0 +1,101 @@
+예전 화면 테스트 24개 재점검 (2026-10-22, fix/legacy-tests)
+
+입력: /tmp/claude-0/-home-claude/a6c0a1f6-b7da-5023-bdb2-55e6e15573c0/scratchpad/legacy_failures.txt
+Ren'Py 실행 불가: 아래 '예상'은 코드 대조 결과이며 실제 통과 판정이 아니다.
+게임 코드는 수정하지 않았다. 수정 범위는 QA 테스트, QA helper, 실행 목록 설명이다.
+기존 작업 트리의 수정은 보존했다. .rpyc 생성/갱신 작업은 하지 않았다.
+
+| 테스트 | 실패 원인 / 변경 | 통과 예상 근거 또는 처리 |
+|---|---|---|
+| carriage_skip | 직전 실행 통과, 유지 | 실제 건너뛰기 → 편지 접기 → v111 허브 경로 유지 |
+| polish3 | 직전 실행 통과, 유지 | 이번 수정 대상 아님 |
+| carriage_pop | 직전 실행 통과, 유지 | 이번 수정 대상 아님 |
+| owner_fixes_0192_legacy | 직전 실행 통과, LEGACY 유지 | 구 세계관 회귀 테스트 유지 |
+| time_flow | run Return이 허브를 끝내지 않음. 기존 r13_qa_inject_return 사용, say 진입 후 gate_choice까지 대기 | r13_v111_wait의 guard 분기가 15분을 한 번만 가산. 같은 event 재호출의 중복 방지도 유지 |
+| shortcuts | 설정 버튼은 '단축키 PC' | screens.rpy의 실제 textbutton과 일치 |
+| owner_fixes_0192 | Return 미전달로 say에 도달하지 않음. 반환 주입 helper 사용 | gate_request의 guard 선택이 gate_list 대사로 이어짐 |
+| skip_modes | Ctrl 단발 입력 뒤 첫 마차 대사에 남음. 유지 모드의 실제 handler를 Function으로 켬/끔 | r13_shortcut_fast(True) → fast_all → choice의 interact callback이 모드를 해제. 물리적 Ctrl 누름/뗌 자체는 재검증 필요 |
+| karo_center | Return 미전달, 대사 Call의 None 복귀 위험. 반환 주입·gate_choice 대기·돌아가기 버튼·QA 대사 helper 사용 | gate_choice의 guard는 r13_topics를 열고, QA 대사 helper는 대사 종료 뒤 새 필드로 이동 |
+| conversation_skip | Return 미전달. 반환 주입 후 say에서 확인창 사용 | gate_list 첫 대사를 건너뛰어도 뒤의 commit으로 E02 취득. 두 번째 대사 묶음 종료 후 gate_choice 확인 |
+| new_places_tour | r13_scene 직접 Call 복귀의 None이 중단된 허브로 전달됨 | QA 장소 helper가 장면 구성 뒤 독립 v111 필드로 jump, 호출한 허브에 None으로 복귀하지 않음 |
+| new_places | 직접 travel/scene Call의 복귀 문제와 사라진 '지도 · 이동' 문구 | QA travel helper로 실제 r13_v111_travel을 실행하고 독립 필드로 이동. 실제 '지도' 버튼 사용. 시간대 장면 전환도 QA 장소 helper 사용 |
+| trial_win | 구 C2 결론 메뉴에서 '누군가가 냈다' 없음 | LEGACY 전용 유지. 새 램프 회의로 억지 변환하지 않음. 통과 예상 대상 제외 |
+| trial_full | 구 반박 메뉴에서 '주방 레버로만' 없음 | LEGACY 전용 유지. 구 C1~C4 데이터 검증이므로 v111 회의와 별개. 통과 예상 대상 제외 |
+| trial_gate_no_witness | 구 반박 메뉴에서 '주방 레버로만' 없음 | LEGACY 전용 유지. 구 witness gate와 사건 증거 검증. 통과 예상 대상 제외 |
+| trial_gate_unenforced | 구 반박 메뉴에서 '주방 레버로만' 없음 | LEGACY 전용 유지. 구 fair_hearing gate 검증. 통과 예상 대상 제외 |
+| trial_fake_testimony | 구 반박 메뉴에서 '주방 레버로만' 없음 | LEGACY 전용 유지. 구 fake_testimony 처리 검증. 통과 예상 대상 제외 |
+| trial_counter | 구 반박 메뉴에서 '주방 레버로만' 없음 | LEGACY 전용 유지. v111은 자료 대조 및 램프 회의 흐름. 통과 예상 대상 제외 |
+| w1c_mother_line | 품삯 선택은 첫 메뉴에 없고 문구도 변경됨. 의뢰인 공개 없이는 가짜 쪽지도 불가 | LEGACY에서 공개된 의뢰인/H9 상태를 명시. 사정 질문 → 오늘 몫 지원(3냥) → 가짜 약속 쪽지의 실제 메뉴 순서 사용. 공개 자체를 검증하는 테스트는 아님 |
+| gate_documents | '이름 목록이 다른 이유' 질문 삭제. 불필요한 scene Call 제거 | LEGACY에서 실제 '제가 낸 신청서와 초소 명단을 보겠습니다.' 선택이 G3를 지급하는 분기와 일치 |
+| day1_note_spot | '주변 살피기' 버튼 삭제 | LEGACY에서 기존 메모 좌표를 직접 클릭. 현재 필드는 사물 클릭으로 조사 |
+| crossed_accounts | 초기에는 콩이의 선행 정보가 없어 문 질문도 안 보임. 빛 질문에는 나비의 선행 부정 답변도 필요 | LEGACY에서 콩이 → 문 질문 → 빛 질문 순서 검증. 빛 질문 완료 뒤 문 질문이 사라짐을 검증 |
+| karo_comes_day2 | '지도 · 이동' 삭제 | LEGACY에서 '지도'와 hall 지도 좌표 사용. 대사 종료 후 livelihood_open과 life:karo 읽음까지 추가 검증 |
+| dialogue_expand | 최종 review_knowledge override가 구 축약문 대신 현재 부재·방 안내 대사를 반환 | LEGACY에서 현재 답변 의미를 검증하고 granny_letter를 반환 주입으로 선택, '방은 그대로' 대사 도달 확인. 질문 문구/옛 금색 키워드에 의존하지 않음 |
+
+코드 근거
+- game/room13_v111.rpy: r13_v111_wait / wait_again, r13_v111_time, r13_v111_travel.
+  gate_request에서 guard 선택 시 15분 가산 후 0을 반환한다.
+- game/room13_v111_days123.rpy: gate_request → gate_list(E02 commit) → gate_choice.
+- game/room13_screens.rpy: 허브 '지도', entry_topics의 실제 질문, r13_topics의 돌아가기.
+- game/screens.rpy: 설정 하단 '단축키 PC'.
+- game/room13_controls.rpy: r13_control은 caption을 실제 텍스트로 표시한다.
+- game/systems/room13_shortcuts.rpy, game/room13_ui_flow.rpy: Ctrl handler와 선택지에서 skip 해제.
+- game/systems/room13_field_views.rpy: 필드는 사물·인물을 직접 눌러 조사.
+- game/systems/room13_week1_cases.rpy, room13_sling_confidence.rpy: 현재 품삯/가짜 쪽지 조건.
+- game/room13_conversations.rpy, game/systems/room13_question_discovery.rpy: 교차 질문의 선행 정보.
+- game/systems/room13_review_knowledge.rpy: 최종 granny_letter 답변.
+
+LEGACY 분리
+직전 작업 트리에 이미 있던 LEGACY 목록은 유지했다. 구 trial 6개가 기본 목록에 없음을
+정적으로 확인하고 실행 스크립트에 이유를 명시했다. 이 6개는 ROOM13_LEGACY=1에서 여전히
+실패할 수 있다. 구 화면/사건 검증 6개(w1c_mother_line, gate_documents, day1_note_spot,
+crossed_accounts, karo_comes_day2, dialogue_expand)와 owner_fixes_0192_legacy도 기존처럼
+LEGACY에 남겨 두었다. 이 테스트들은 QA helper로 명시적으로 v111을 해제하는 구 상태의
+회귀 검사이며, 새 세계관의 동등 기능이 통과했다는 뜻이 아니다.
+명시적 테스트 이름을 스크립트에 주면 환경 변수와 관계없이 개별 재실행할 수 있다.
+
+게임 버그 의심 (게임 코드 변경 없음)
+1. room13_v111.rpy의 r13_v111_wait_again은 v111_pick=_return 뒤에 바로 v111_pick[0]을
+   참조한다. 로그의 new_places_tour/new_places에서 NoneType 예외가 실제 발생했다.
+   이번 재현은 QA의 scene/travel Call 복귀로 만들어진 것이므로 테스트 경로를 고쳤다.
+   다만 구 허브에는 r13_screen_choice_ok 방어가 있는 반면 v111에는 같은 방어가 없어,
+   정상 UI/로드에서도 잘못된 반환이 가능하다면 게임 버그가 된다. Claude의 판단이 필요하다.
+2. skip_modes 로그는 Ctrl 입력 뒤에도 첫 마차 대사에 머물렀다. 단발 keysym 입력으로
+   유지 키를 검증하는 방식 문제로 보고 handler 검증으로 바꿨다. 실제 키를 누른 채로도
+   진행하지 않는다면 game/systems/room13_shortcuts.rpy 쪽 게임 버그를 의심해야 한다.
+   이번 환경에서는 실제 키 이벤트를 검증하지 못했다.
+
+정적 검증
+- bash -n dev/run_renpy_tests.sh: 성공.
+- git diff --check: 성공.
+- 수정한 14개 테스트의 Python 문장/표현식 131개 ast.parse: 성공.
+- 실행 목록의 모든 이름이 testcase 하나에 연결됨, 기본/LEGACY 목록 중복 없음 확인.
+- 구 trial 6개 모두 LEGACY 전용임 확인.
+- Ren'Py 실행, 컴파일, .rpyc 생성은 하지 않음. 실제 UI 통과 여부는 Claude 재실행 필요.
+
+추가 재점검 (2026-10-22, legacy_failures2.txt)
+- 사용자 Ren'Py 재실행 결과: time_flow, shortcuts, karo_center,
+  conversation_skip, new_places_tour, carriage_skip, polish3, carriage_pop 통과.
+- skip_modes: choice 화면은 screens.rpy에서 .35초 동안 choice_ready=False다.
+  첫 메뉴 직후의 K_1은 무시될 수 있고, 기존 메뉴에도 '편지를 접는다'가 있어서
+  기존 until 조건은 선택/대사 완료를 보장하지 않았다. choice_ready 대기 → K_1 →
+  say 진입 확인 → 메뉴 복귀 순으로 수정했다. K01a 단언은 유지한다.
+  room13_v111_days123.rpy의 letter_last는 L0015 대사 종료 뒤 commit하며,
+  v111/records.json의 해당 operation은 K01a=True를 설정한다.
+- new_places: room13_navigation.rpy의 지도는 .15초 동안 ready=False이며 핀도
+  비활성이다. 준비 전 좌표 클릭 뒤에는 목적지가 선택되지 않아 이동 버튼이
+  비활성으로 남는다. 각 travel gate 진입, 지도 ready, 클릭 뒤 selected 목적지를
+  명시적으로 기다리도록 수정했다. 실제 이동과 장소/배경 단언은 그대로 유지한다.
+  room13_v111.rpy의 travel 바인딩은 travel_to 목적지만 이동 대상으로 제공한다.
+- owner_fixes_0192: 게임 버그 의심. 관계도 단언은 새 세계관에서도 의미가 있다.
+  systems/room13_relations.rpy의 r13_rel_people은 r13_met_people에 있는 만난
+  인물을 표시한다. room13_notebook.rpy는 encounters/read_topics/resident_knowledge를
+  조회하지만 v111 wait의 gate_request 경비 분기와 gate_list의 r13_lines/commit은
+  이 만남 기록을 추가하지 않는다. 경비와 실제 대화해도 관계도에 나오지 않는
+  현재 실패를 숨기지 않도록 guard 단언을 유지했다. 그 앞에 gate_choice 및 E02
+  취득 확인을 추가해 정상 대화 완료와 관계도 기록 누락을 구별한다.
+  게임 코드 수정 없음. 이 테스트는 게임 수정 전까지 실패 예상이다.
+- 의미 없어진 단언으로 판단해 삭제/완화한 항목은 없다.
+- 정적 검증: git diff --check 성공. 수정한 세 testcase의 Python 표현식/문장
+  ast.parse 성공. Ren'Py 실행/컴파일은 하지 않았고 .rpyc 생성 명령도 실행하지
+  않았다. skip_modes/new_places의 실제 통과는 Ren'Py 재실행으로 확인해야 한다.
