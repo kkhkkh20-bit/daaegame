@@ -453,9 +453,11 @@ label r13_v111_nubi_proof7:
     jump expression _return
 
 label r13_v111_nubi_wrong7:
+    $ r13_nw_meeting_end("fire","lose")
+    $ r13_nw_list("resident_bori","fire_lose")
     call r13_lines(r13_v111_lines(['MS14_D07_S01_L0046']),'v111:MS14_D07_S01_L0046')
     call r13_lines(r13_v111_lines(['MS14_D07_S01_L0047']),'v111:MS14_D07_S01_L0047')
-    jump r13_v111_nubi_proof7
+    jump r13_v111_responsibility7
 
 label r13_v111_nubi_admission7:
     if not r13_v111_value("bori_nubi_door_witness_heard"):
@@ -487,6 +489,8 @@ label r13_v111_responsibility7:
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0001']),'v111:MS14_D07_S02_L0001')
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0002']),'v111:MS14_D07_S02_L0002')
+    if r13_v111_value("meeting:fire")=="lose":
+        jump r13_v111_responsibility_answers7
 
 label r13_v111_fire_basis_route7:
     if r13_v111_value('FIRE_EVACUATED'):
@@ -494,14 +498,26 @@ label r13_v111_fire_basis_route7:
     jump r13_v111_rescue_fire_basis7
 
 label r13_v111_empty_fire_basis7:
-    call r13_v111_proof('불의 원인과 빈 창고 진압을 구분한다',['E06_FIRE', 'E06_EMPTY', 'E07_NUBI'],'r13_v111_responsibility_answers7',None,None)
+    call r13_v111_proof('불의 원인과 빈 창고 진압을 구분한다',['E06_FIRE', 'E06_EMPTY', 'E07_NUBI'],'r13_v111_responsibility_answers7','r13_v111_responsibility_wrong7',None)
     jump expression _return
 
 label r13_v111_rescue_fire_basis7:
-    call r13_v111_proof('불의 원인과 아이 구조를 구분한다',['E06_FIRE', 'E06_RESCUE', 'E07_NUBI'],'r13_v111_responsibility_answers7',None,None)
+    call r13_v111_proof('불의 원인과 아이 구조를 구분한다',['E06_FIRE', 'E06_RESCUE', 'E07_NUBI'],'r13_v111_responsibility_answers7','r13_v111_responsibility_wrong7',None)
     jump expression _return
 
+label r13_v111_responsibility_wrong7:
+    if (r13_nw_half(["E06_FIRE","E06_EMPTY","E07_NUBI"]) or r13_nw_half(["E06_FIRE","E06_RESCUE","E07_NUBI"])) and not r13_v111_value("fire_hardened"):
+        $ r13_v111_set("fire_hardened",True)
+        $ renpy.notify("너울이 고개를 젓는다. 불의 원인과 그날 밤 일을 함께 묶어야 한다.")
+        jump r13_v111_fire_basis_route7
+    $ r13_nw_meeting_end("fire","partial")
+    $ r13_nw_list("resident_bori","fire_partial")
+    jump r13_v111_responsibility_answers7
+
 label r13_v111_responsibility_answers7:
+    $ r13_nw_meeting_end("fire","win")
+    if r13_v111_value("meeting:fire")=="win":
+        $ r13_v111_set("fire_neoul_promise_recorded",True)
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0004']),'v111:MS14_D07_S02_L0004')
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0005']),'v111:MS14_D07_S02_L0005')
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0006']),'v111:MS14_D07_S02_L0006')

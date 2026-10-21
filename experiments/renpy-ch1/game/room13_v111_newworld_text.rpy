@@ -10,7 +10,7 @@
 #              "when"?: condition name in R13_NW_WHEN, "cut"?: existing ep art name}
 # Conditions are named Python predicates, never evaluated strings.
 # With every file empty the game shows the same lines in the same order as before.
-init 308 python:
+init 319 python:
     R13_NW_TEXT_DAYS=["d%02d"%n for n in range(1,15)]
     R13_NW_TEXT=dict(replace={},before={},after={},drop=[],evidence={})
     for _nw_day in R13_NW_TEXT_DAYS:
@@ -43,6 +43,11 @@ init 308 python:
         # Event 04: the day-5 gate-post meeting.
         "gate_post_lose":lambda:r13_v111_value("meeting:gate_post")=="lose",
         "gate_post_half":lambda:r13_v111_value("gate_post_hardened") is True and r13_v111_value("meeting:gate_post") is None,
+        # Event 05: the day-7 fire meeting.
+        "fire_win":lambda:r13_v111_value("meeting:fire")=="win",
+        "fire_partial":lambda:r13_v111_value("meeting:fire")=="partial",
+        "fire_lose":lambda:r13_v111_value("meeting:fire")=="lose",
+        "fire_not_lose":lambda:r13_v111_value("meeting:fire")!="lose",
     }
     R13_NW_CUT_SPECIAL=("bell","v111_blanket_before","v111_blanket_after")
     def r13_nw_drop_item(item):

@@ -53,3 +53,8 @@ init 318 python:
     def r13_nw_gate_post_after(previous=R13_V111_SCENE_CHECKS.get("MS14_D05_S04")):
         return r13_v111_value("bami_status") in ("cleared","listed") and (previous is None or previous())
     R13_V111_SCENE_CHECKS["MS14_D05_S04"]=r13_nw_gate_post_after
+
+    # Event 05 fire meeting: the school scene also follows a lost meeting (Bori blamed).
+    def r13_nw_fire_school_ready(previous=R13_V111_SCENE_CHECKS.get("MS14_D07_S02")):
+        return (previous is not None and previous()) or r13_v111_value("meeting:fire")=="lose"
+    R13_V111_SCENE_CHECKS["MS14_D07_S02"]=r13_nw_fire_school_ready

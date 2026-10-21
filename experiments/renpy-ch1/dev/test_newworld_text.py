@@ -6,6 +6,8 @@ ROOT=source_tests.ROOT
 LAYER=ROOT/'game/room13_v111_newworld_text.rpy'
 DAYS=['room13_v111_days123.rpy','room13_v111_days45.rpy','room13_v111_days610.rpy','room13_v111_days1114.rpy']
 SPEAKERS=ast.literal_eval(re.search(r'MS14_SPEAKERS = (\{.*?\})\n',(ROOT/'game/ms14_story.rpy').read_text(),re.S).group(1))
+# Later layers (init 310/311) add the day 4-14 speakers before the text layer (init 319) runs.
+for _m in re.finditer(r'MS14_SPEAKERS\.update\((\{.*?\})\)',(ROOT/'game/room13_v111_later_bindings.rpy').read_text()):SPEAKERS.update(ast.literal_eval(_m.group(1)))
 FORBIDDEN=('돌님','겉돌','날돌','말 그릇')
 EMOJI=re.compile('[\U0001F300-\U0001FAFF☀-➿]')
 
@@ -34,7 +36,7 @@ class Layer(unittest.TestCase):
   tree=ast.parse(textwrap.dedent(ctx))
   exec(compile(ast.Module(body=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='r13_dialogue_context_match'],type_ignores=[]),'ctx','exec'),self.env)
   self.env['r13_v111_line']=lambda rid:(SPEAKERS.get(data['records'][rid].get('speaker')),data['records'][rid]['text'],{})
-  block=re.search(r'^init 308 python:\n((?:[ \t].*\n|\n)*)',LAYER.read_text(),re.M).group(1)
+  block=re.search(r'^init 319 python:\n((?:[ \t].*\n|\n)*)',LAYER.read_text(),re.M).group(1)
   exec(textwrap.dedent(block),self.env)
   return self.env
  def fixture(self,day,content,art=None):

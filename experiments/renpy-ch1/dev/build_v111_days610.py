@@ -140,12 +140,23 @@ label('nubi_children_received7');segment(s,24,24);travel('laundry','nubi_childre
 talk('bori_witness7','laundry',['resident_nubi','resident_bori'],'resident_bori','창고 문 앞에서 무엇을 보셨습니까?','bori_witness_heard7')
 label('bori_witness_heard7');lines.append('    call r13_lines([("resident_bori","불이 번지기 전에 누비 씨가 창고 문 앞에 서 있는 건 봤소.",{"no_lead":True})],"v111:bori_fire_door_witness")');code('r13_v111_set("bori_nubi_door_witness_heard",True)');goto('nubi_proof7')
 proof('nubi_proof7','불이 시작된 곳과 진술을 대조한다',['E06_FIRE'],'nubi_admission7','nubi_wrong7')
-label('nubi_wrong7');segment(s,46,47);goto('nubi_proof7')
+# New world (event 05): one presentation. Losing Nubi's fire (gate) makes Bori the arsonist.
+label('nubi_wrong7');code('r13_nw_meeting_end("fire","lose")');code('r13_nw_list("resident_bori","fire_lose")');segment(s,46,47);goto('responsibility7')
 label('nubi_admission7');lines.append('    if not r13_v111_value("bori_nubi_door_witness_heard"):');lines.append('        jump r13_v111_bori_witness7');segment(s,30,45);goto('responsibility7')
-s='MS14_D07_S02';begin(s,'school','responsibility7',['nabi','resident_bori','resident_nubi','neoul']);segment(s,1,2);branch('fire_basis_route7',V('FIRE_EVACUATED'),'empty_fire_basis7','rescue_fire_basis7')
-proof('empty_fire_basis7','불의 원인과 빈 창고 진압을 구분한다',['E06_FIRE','E06_EMPTY','E07_NUBI'],'responsibility_answers7')
-proof('rescue_fire_basis7','불의 원인과 아이 구조를 구분한다',['E06_FIRE','E06_RESCUE','E07_NUBI'],'responsibility_answers7')
-label('responsibility_answers7');segment(s,4,14);goto('school_names7')
+s='MS14_D07_S02';begin(s,'school','responsibility7',['nabi','resident_bori','resident_nubi','neoul']);segment(s,1,2)
+lines.extend(['    if r13_v111_value("meeting:fire")=="lose":','        jump r13_v111_responsibility_answers7'])
+branch('fire_basis_route7',V('FIRE_EVACUATED'),'empty_fire_basis7','rescue_fire_basis7')
+proof('empty_fire_basis7','불의 원인과 빈 창고 진압을 구분한다',['E06_FIRE','E06_EMPTY','E07_NUBI'],'responsibility_answers7','responsibility_wrong7')
+proof('rescue_fire_basis7','불의 원인과 아이 구조를 구분한다',['E06_FIRE','E06_RESCUE','E07_NUBI'],'responsibility_answers7','responsibility_wrong7')
+# Weighing the three faults (non-gate): a half presentation gets one more try; otherwise
+# '셋 다 책임' stands, Bori is listed for hiding, and Neoul's promise is not recorded.
+label('responsibility_wrong7')
+lines.extend(['    if (r13_nw_half(["E06_FIRE","E06_EMPTY","E07_NUBI"]) or r13_nw_half(["E06_FIRE","E06_RESCUE","E07_NUBI"])) and not r13_v111_value("fire_hardened"):',
+ '        $ r13_v111_set("fire_hardened",True)',
+ '        $ renpy.notify("너울이 고개를 젓는다. 불의 원인과 그날 밤 일을 함께 묶어야 한다.")',
+ '        jump r13_v111_fire_basis_route7'])
+code('r13_nw_meeting_end("fire","partial")');code('r13_nw_list("resident_bori","fire_partial")');goto('responsibility_answers7')
+label('responsibility_answers7');code('r13_nw_meeting_end("fire","win")');lines.extend(['    if r13_v111_value("meeting:fire")=="win":','        $ r13_v111_set("fire_neoul_promise_recorded",True)']);segment(s,4,14);goto('school_names7')
 field('school_names7','school',['nabi','resident_teacher'],'desks','명부와 실제 침구를 확인한다','school_names_done7')
 label('school_names_done7');segment(s,15,29)
 lines.append('    if '+V('KKOMI_ALIVE')+':');lines.append('        call r13_v111_living_child7');lines.append('    else:');lines.append('        call r13_v111_lost_child7');segment(s,38,46);goto('room_visit7')
