@@ -1247,7 +1247,7 @@
     ],
     "options": [
       {
-        "title": "조각과 잔열을 확인한다",
+        "title": "벽 그림과 돌판을 확인한다",
         "location": "facility",
         "object": "blankets"
       }
@@ -1326,7 +1326,7 @@
         "person": "resident_seori"
       },
       {
-        "title": "온기 자리를 부탁드립니다.",
+        "title": "불 땔 자리를 부탁드립니다.",
         "location": "school",
         "person": "resident_teacher"
       },
@@ -1371,7 +1371,7 @@
     ],
     "options": [
       {
-        "title": "준비된 온기 상자를 인수한다",
+        "title": "준비된 장작 묶음을 인수한다",
         "location": "facility",
         "object": "blankets"
       }
@@ -2124,9 +2124,37 @@
     ],
     "options": [
       {
-        "title": "도착한 온기 상자의 인수를 확인한다",
+        "title": "도착한 장작의 인수를 확인한다",
         "location": "school",
         "person": "resident_teacher"
+      }
+    ]
+  },
+  "sleep12_bed_input": {
+    "location": "school",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "잠자리를 정리한다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ],
+    "daram_if_free": true
+  },
+  "departed_bed13": {
+    "location": "school",
+    "people": [
+      "mom",
+      "nabi"
+    ],
+    "options": [
+      {
+        "title": "오늘 밤 자리를 확인한다",
+        "location": "school",
+        "object": "blankets"
       }
     ]
   }

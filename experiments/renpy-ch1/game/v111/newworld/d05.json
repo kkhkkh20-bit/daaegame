@@ -1,7 +1,220 @@
 {
-  "replace": {},
-  "before": {},
-  "after": {},
+  "replace": {
+    "MS14_D05_S03_L0039": {
+      "text": "그건……",
+      "when": "gate_post_lose"
+    }
+  },
+  "before": {
+    "MS14_D05_S05_L0028": [
+      {
+        "id": "NW_D05_S05_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "여관으로 가는 길에 너울과 마주쳤다. 너울이 다람을 내려다보았다."
+      },
+      {
+        "id": "NW_D05_S05_A02",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "밤에 돌아다니는 아이는 아르카가 부를 거요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D05_S05_A03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "여관 문 앞에 나와 있던 할머니가 다람의 어깨를 끌어당겼다."
+      },
+      {
+        "id": "NW_D05_S05_A04",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "애한테 그런 말 하는 거 아니에요.",
+        "expression": "angry"
+      }
+    ]
+  },
+  "after": {
+    "MS14_D05_S01_L0013": [
+      {
+        "id": "NW_D05_S01_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "무쇠가 손바닥을 오므렸다. 손바닥에 삐뚤삐뚤한 글씨가 있었다. ‘솜이’."
+      }
+    ],
+    "MS14_D05_S01_L0016": [
+      {
+        "id": "NW_D05_S01_A02",
+        "speaker": "솜이",
+        "kind": "dialogue",
+        "text": "네로 아저씨 옷이에요. 둘이 번갈아 입어요.",
+        "expression": "neutral"
+      }
+    ],
+    "MS14_D05_S01_L0024": [
+      {
+        "id": "NW_D05_S01_A03",
+        "speaker": "솜이",
+        "kind": "dialogue",
+        "text": "할아버지 말이 자꾸 빠져나가. 어제 한 말을 오늘 몰라.",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_D05_S01_A04",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "아파?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D05_S01_A05",
+        "speaker": "솜이",
+        "kind": "dialogue",
+        "text": "야생화래. 말하면 명단에 적어서 데려가.",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_D05_S01_A06",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "무슨 명단이니?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D05_S01_A07",
+        "speaker": "네로",
+        "kind": "dialogue",
+        "text": "보호시설로 보낼 사람들요. 간 사람은 안 돌아와요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D05_S01_A08",
+        "speaker": "솜이",
+        "kind": "dialogue",
+        "text": "할아버지는 갱도 맨 아래까지 갔대. 안쪽 돌을 제일 많이 캤대.",
+        "expression": "neutral"
+      }
+    ],
+    "MS14_D05_S02_L0017": [
+      {
+        "id": "NW_D05_S02_A01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "그 시각 네로 씨는 어디 계셨습니까?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D05_S02_A02",
+        "speaker": "네로",
+        "kind": "dialogue",
+        "text": "……그건 왜요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D05_S02_A03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "네로는 더 대답하지 않았다."
+      }
+    ],
+    "MS14_D05_S03_L0015": [
+      {
+        "id": "NW_D05_S03_A01",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "그 겉옷 입는 사람은 네로뿐이오.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D05_S03_A02",
+        "speaker": "나비",
+        "kind": "dialogue",
+        "text": "그 시각 네로 씨는 식당에서 제 물통을 날랐어요. 신발이 다 젖었고요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D05_S03_A03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "너울은 더 말하지 않았다. 네로는 나비 쪽을 보지 않았다."
+      }
+    ],
+    "MS14_D05_S03_L0039": [
+      {
+        "id": "NW_D05_S03_H01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "돌목이 팔을 감싸 쥔 채 고개를 저었다. “허리를 숙였소. 키로는 못 가리오.”",
+        "when": "gate_post_half"
+      },
+      {
+        "id": "NW_D05_S03_C01",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "본 사람도 없고, 아니라는 증거도 없소. 그럼 근처에 있던 아이요.",
+        "expression": "neutral",
+        "when": "gate_post_lose"
+      },
+      {
+        "id": "NW_D05_S03_C02",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "밤이는 보호시설 명단에 올리시오.",
+        "expression": "neutral",
+        "when": "gate_post_lose"
+      },
+      {
+        "id": "NW_D05_S03_C03",
+        "speaker": "밤이",
+        "kind": "dialogue",
+        "text": "나 아니라니까요.",
+        "expression": "angry",
+        "when": "gate_post_lose"
+      },
+      {
+        "id": "NW_D05_S03_C04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "바둑이가 밤이 곁에 섰다. 이번에는 아무 말도 하지 않았다.",
+        "when": "gate_post_lose"
+      },
+      {
+        "id": "NW_D05_S03_C05",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "밤이 없으면 우리 탐정단 둘밖에 없어.",
+        "expression": "anxious",
+        "when": "gate_post_lose"
+      }
+    ],
+    "MS14_D05_S04_L0019": [
+      {
+        "id": "NW_D05_S04_A01",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "너울 아저씨는? 입구에서 여관에 먼저 연락하라고 했잖아.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D05_S04_A02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "그 말을 한 사람이 너울이긴 하지. 기억해 두자.",
+        "expression": "neutral"
+      }
+    ]
+  },
   "drop": [],
-  "evidence": {}
+  "evidence": {},
+  "new_evidence": {
+    "NW_MUSOE_DEEP": {
+      "name": "갱도 맨 아래까지 간 무쇠",
+      "kind": "증언",
+      "variants": {
+        "observed": "솜이: “할아버지는 갱도 맨 아래까지 갔대. 안쪽 돌을 제일 많이 캤대.” 무쇠는 어제 한 말을 오늘 모른다."
+      }
+    }
+  }
 }

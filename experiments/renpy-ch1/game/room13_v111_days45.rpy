@@ -358,6 +358,7 @@ label r13_v111_somi5:
     call r13_lines(r13_v111_lines(['MS14_D05_S01_L0023']),'v111:MS14_D05_S01_L0023')
     call r13_lines(r13_v111_lines(['MS14_D05_S01_L0024']),'v111:MS14_D05_S01_L0024')
     $ r13_v111_commit('MS14_D05_S01_L0024')
+    $ r13_nw_acquire("NW_MUSOE_DEEP")
     jump r13_v111_wait_cloth5
 
 label r13_v111_wait_cloth5:
@@ -424,15 +425,23 @@ label r13_v111_proof5:
     jump expression _return
 
 label r13_v111_wrong5:
+    if r13_nw_half(["E20","E22","E23","E24"]) and not r13_v111_value("gate_post_hardened"):
+        $ r13_v111_set("gate_post_hardened",True)
+        call r13_lines(r13_v111_lines(["MS14_D05_S03_L0038","MS14_D05_S03_L0039"]),"v111:MS14_D05_S03_L0038")
+        jump r13_v111_proof5
+    $ r13_nw_meeting_end("gate_post","lose")
+    $ r13_nw_list("bami","gate_post_lose")
+    $ r13_v111_set("bami_status","listed")
     call r13_lines(r13_v111_lines(['MS14_D05_S03_L0038']),'v111:MS14_D05_S03_L0038')
     call r13_lines(r13_v111_lines(['MS14_D05_S03_L0039']),'v111:MS14_D05_S03_L0039')
-    jump r13_v111_proof5
+    jump r13_v111_warning5
 
 label r13_v111_hint5:
     call r13_lines(r13_v111_lines(['MS14_D05_S03_L0040']),'v111:MS14_D05_S03_L0040')
     jump r13_v111_proof5
 
 label r13_v111_bami_clear5:
+    $ r13_nw_meeting_end("gate_post","win")
     call r13_lines(r13_v111_lines(['MS14_D05_S03_L0013']),'v111:MS14_D05_S03_L0013')
     call r13_lines(r13_v111_lines(['MS14_D05_S03_L0014']),'v111:MS14_D05_S03_L0014')
     call r13_lines(r13_v111_lines(['MS14_D05_S03_L0015']),'v111:MS14_D05_S03_L0015')

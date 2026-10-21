@@ -133,10 +133,10 @@ lines.append('    if '+V('OWL_ALIVE')+' and '+V('owl_invitation_testimony')+':')
 label('forgery_question11');late(s,55,57);lines.append('    return')
 label('owl_question11');late(s,58,59);lines.append('    return')
 s='MS14_D11_S03';start(s,'facility','facility11',['daram','mom','resident_guldol','resident_lamplighter','guard','karo'],1);late(s,1,1);lines.append('    if r13_v111_actor_ready("resident_guldol"):');lines.append('        call r13_v111_guldol_heat11');lines.append('    else:');lines.append('        call r13_v111_mother_heat11');goto('heat_check11')
-label('guldol_heat11');late(s,2,9);lines.append('    return')
+label('guldol_heat11');setv('guldol_facility_seen',True);late(s,2,9);lines.append('    return')
 label('mother_heat11');late(s,43,45);lines.append('    return')
-field('heat_check11','facility',['daram','mom','resident_guldol','resident_lamplighter','guard','karo'],'blankets','조각과 잔열을 확인한다','heat_seen11')
-label('heat_seen11');late(s,10,19);setv('heat_inventory_observed',True)
+field('heat_check11','facility',['daram','mom','resident_guldol','resident_lamplighter','guard','karo'],'blankets','벽 그림과 돌판을 확인한다','heat_seen11')
+label('heat_seen11');late(s,10,19);code('r13_nw_acquire("NW_TABLET_A")');code('r13_nw_acquire("NW_NAMES")');setv('heat_inventory_observed',True)
 lines.append('    if '+V('carried_dry_blankets')+'>0:');lines.append('        call r13_v111_family_blankets11');lines.append('    else:');lines.append('        call r13_v111_no_blankets11')
 select([('가족 자리부터 본다','family_place11',None),('아랫길 대피 준비를 확인한다','rescue_prepare11',None),('준비된 물자를 학교로 옮긴다','supply_school11',None)])
 label('family_blankets11');late(s,20,21);lines.append('    return')
@@ -155,13 +155,57 @@ label('school_visit11');arrive(['mom','daram','nabi','resident_teacher','residen
 field('family_space_after_supply11','school',['mom','daram','nabi','resident_teacher'],'blankets','가족 세 사람의 실제 자리를 확인한다','family_space_checked11')
 label('family_space_checked11');setv('family_school_place',True);goto('family_space_ready11')
 label('family_space_ready11')
-lines.append('    if '+V('carried_dry_blankets')+'>0 and not '+V('tosil_blanket_given')+':');lines.append('        jump r13_v111_blanket_choice11');goto('night11')
+lines.append('    if '+V('carried_dry_blankets')+'>0 and not '+V('tosil_blanket_given')+':');lines.append('        jump r13_v111_blanket_choice11');goto('hypothesis11')
 label('blanket_choice11');select([('가족 짐에 보관한다','blanket_store11',None),('토실에게 한 장을 건넨다','tosil_blanket11',None)])
-label('blanket_store11');late(s,54,55);goto('night11')
-label('tosil_blanket11');late(s,37,40);lines.append('    if r13_v111_value("carried_dry_blankets")>1:');lines.append('        call r13_v111_tosil_blanket_remaining11');lines.append('    else:');lines.append('        call r13_v111_tosil_blanket_last11');code('r13_v111_apply("tosil_actual_blanket",[dict(op="set",field="carried_dry_blankets",value=r13_v111_value("carried_dry_blankets")-1),dict(op="set",field="tosil_bedding_received",value=1),dict(op="set",field="tosil_blanket_given",value=True)])');goto('night11')
+label('blanket_store11');late(s,54,55);goto('hypothesis11')
+label('tosil_blanket11');late(s,37,40);lines.append('    if r13_v111_value("carried_dry_blankets")>1:');lines.append('        call r13_v111_tosil_blanket_remaining11');lines.append('    else:');lines.append('        call r13_v111_tosil_blanket_last11');code('r13_v111_apply("tosil_actual_blanket",[dict(op="set",field="carried_dry_blankets",value=r13_v111_value("carried_dry_blankets")-1),dict(op="set",field="tosil_bedding_received",value=1),dict(op="set",field="tosil_blanket_given",value=True)])');goto('hypothesis11')
 label('tosil_blanket_remaining11');late(s,41,41);lines.append('    return')
 label('tosil_blanket_last11');late(s,57,57);lines.append('    return')
-s='MS14_D11_S04';start(s,'school','night11',['mom','daram','resident_teacher','karo','resident_nero'],2);late(s,1,1)
+
+# New world (event 08): the hypothesis meeting at the school, before the night.
+# Issue 0 and issue 5 are gates (lost = the village keeps its fires). Issues 1-4 each
+# ask "why then?": pick the reason, then lay the records; a wrong reason or wrong
+# records leaves that house's fire burning (a half presentation gets one more try).
+def nwblock(name):lines.append('    call r13_lines(r13_nw_block(%r),%r)'%(name,'nw:'+name))
+HYP=[
+ (1,'초롱과 피코의 하루를 대조한다',['E11','E08','NW_PIKO_TREMOR'],'돌목이 팔짱을 낀다. 초롱의 하루와 피코의 밤을 함께 놓아야 한다.',
+  [('만지는 것보다 곁에서 오래 지내는 게 문제다',True),('초롱은 젊어서 버틴다',False),('초롱은 장갑을 끼고 만진다',False)]),
+ (2,'창고에서 잠자는 사람을 짚는다',['NW_KEEPER_DATE'],'백 부인이 고개를 돌린다. 창고에서 자는 사람을 짚어야 한다.',
+  [('켜지 않고 쌓아 둔 돌은 아무 해가 없다',False),('백 부인은 그 돌 곁에서 잠을 자지 않는다',True),('백 부인은 돌을 팔기만 한다',False)]),
+ (3,'요즘 돌이 어디서 오는지 대조한다',['NW_INNER_PRICE','NW_MUSOE_DEEP'],'판돌이 고개를 젓는다. “무쇠는 원래 고집이 셌소.” 돌값과 갱도 이야기를 함께 놓아야 한다.',
+  [('요즘 사람들이 약해졌다',False),('외지 사람이 병을 들여왔다',False),('요즘 태우는 돌이 더 독하다',True)]),
+ (4,'아르카가 없는 아이들과 대조한다',['NW_KKOMI_NOSTONE','NW_SICK_BEDS'],'주민이 아이를 끌어안는다. 돌이 없는 아이들과 표시가 붙은 아이들을 함께 놓아야 한다.',
+  [('아이 방에도 아르카등이 밤새 켜져 있었다',True),('아이들은 어른보다 약하다',False),('아이들이 아르카를 만지고 논다',False)]),
+]
+label('hypothesis11');code('r13_v111_arrive(["daram","resident_teacher","guard","resident_madam","npc_pandol","resident_lamplighter"])')
+nwblock('hyp_open11');code('r13_nw_acquire("NW_SICK_BEDS")')
+select([('야생화는 옮는 병이다','hyp0_sick11',None),('아르카가 사람을 부른다','hyp0_call11',None),('꺼낸 아르카 곁에 오래 있던 사람부터 무너진다','hyp0_won11',None),('늙으면 누구나 그렇게 된다','hyp0_old11',None)])
+for key in ('hyp0_sick11','hyp0_call11','hyp0_old11'):label(key);nwblock(key);goto('hyp_lost_gate11')
+label('hyp0_won11');nwblock('hyp0_won11');goto('hyp1_q11')
+for n,title,correct,note,reasons in HYP:
+ nxt='hyp%d_q11'%(n+1)
+ label('hyp%d_q11'%n);nwblock('hyp%d_q11'%n)
+ select([(t,('hyp%d_reason11'%n) if ok else ('hyp%d_lost11'%n),None) for t,ok in reasons])
+ label('hyp%d_reason11'%n);nwblock('hyp%d_reason11'%n);goto('hyp%d_proof11'%n)
+ proof('hyp%d_proof11'%n,title,correct,'hyp%d_won11'%n,'hyp%d_wrong11'%n)
+ label('hyp%d_wrong11'%n)
+ lines.extend(['    if r13_nw_half(%r) and not r13_v111_value("half:hyp%d"):'%(correct,n),'        $ r13_v111_set("half:hyp%d",True)'%n,'        $ renpy.notify(%r)'%note,'        jump r13_v111_hyp%d_proof11'%n])
+ goto('hyp%d_lost11'%n)
+ label('hyp%d_lost11'%n);nwblock('hyp%d_lost11'%n);setv('hyp_issue:%d'%n,'lost');goto(nxt)
+ label('hyp%d_won11'%n);nwblock('hyp%d_won11'%n);setv('hyp_issue:%d'%n,'won');goto(nxt)
+label('hyp5_q11');nwblock('hyp5_q11')
+select([('한 방의 돌이 바뀌자 한 사람이 한 저녁 사이에 무너졌다','hyp5_reason11',V('OWL_ALIVE')+' is False'),('한 방의 돌을 치우자 무너지던 사람이 돌아왔다','hyp5_reason11',V('OWL_ALIVE')+' is not False'),('부엉이 어르신은 원래 아팠다','hyp5_lost11',None),('13호가 추워서 그렇다','hyp5_lost11',None)])
+label('hyp5_reason11');nwblock('hyp5_reason11');goto('hyp5_proof11')
+proof('hyp5_proof11','13호 난로의 돌을 내놓는다',['NW_STONE'],'hyp5_won11','hyp5_lost11')
+label('hyp5_lost11');nwblock('hyp5_lost11');goto('hyp_lost_gate11')
+label('hyp5_won11');nwblock('hyp5_won11')
+code('r13_nw_meeting_end("hypothesis","win" if all(r13_v111_value("hyp_issue:%d"%i)=="won" for i in (1,2,3,4)) else "partial")')
+nwblock('hyp_chief11');goto('hyp_end11')
+label('hyp_lost_gate11');code('r13_nw_meeting_end("hypothesis","lose")');nwblock('hyp_lose11');goto('hyp_end11')
+label('hyp_end11')
+lines.extend(['    if r13_v111_value("guldol_facility_seen"):','        $ r13_nw_list("resident_guldol","facility")'])
+nwblock('hyp_result11');goto('night11')
+s='MS14_D11_S04';start(s,'school','night11',['mom','daram','resident_teacher','karo','resident_nero'],2);nwblock('night_lights11');setv('lower_lights_cut',True);late(s,1,1)
 lines.append('    if '+V('carried_dry_blankets')+'>0:');lines.append('        call r13_v111_rest_blanket11')
 branch('night_rescue_route11',V('lower_road_handover')+'==3','lower_safe11','request_rescue11')
 label('rest_blanket11');late(s,2,7);lines.append('    return')
@@ -188,18 +232,18 @@ finish_day('sleep11',12,'day12')
 s='MS14_D12_S01';start(s,'school','day12',['mom','daram','karo','guard','resident_teacher','resident_nero']);branch('loss_route12',V('lower_road_lost'),'loss_names12','living_names12')
 label('loss_names12');travel('forest','loss_names12',[]);arrive(['karo']);late(s,1,3);travel('square','names_square12');arrive(['daram','karo']);late(s,4,9);goto('morning_notice12')
 label('living_names12');late(s,10,15);goto('morning_notice12')
-label('morning_notice12');travel('school','notice12');arrive(['mom','daram','guard','resident_teacher']);late(s,16,23);goto('morning_prep12_entry')
+label('morning_notice12');travel('school','notice12');arrive(['mom','daram','guard','resident_teacher']);late(s,16,23);code('r13_nw_acquire("NW_TRANSFER_LIST")');goto('morning_prep12_entry')
 label('morning_prep12_entry');code('r13_v111_scene("MS14_D12_S01")');goto('morning_prep12')
 wait('morning_prep12','school',['mom','daram','guard','resident_teacher'],[
- person('약장 관리를 확인합니다.','clinic','resident_seori'),person('온기 자리를 부탁드립니다.','school','resident_teacher'),person('학교 운반을 부탁한다.','square','karo'),obj('배식 준비를 살핀다','school','desks'),person('학교 물자를 함께 확인하시겠습니까?','store','resident_madam')],['medicine12','warm_place12','carrier12','meal12','madam_invite12'])
+ person('약장 관리를 확인합니다.','clinic','resident_seori'),person('불 땔 자리를 부탁드립니다.','school','resident_teacher'),person('학교 운반을 부탁한다.','square','karo'),obj('배식 준비를 살핀다','school','desks'),person('학교 물자를 함께 확인하시겠습니까?','store','resident_madam')],['medicine12','warm_place12','carrier12','meal12','madam_invite12'])
 label('madam_invite12');arrive(['resident_madam']);lines.append('    call r13_lines([("resident_madam","내놓은 돌이 어디 쓰이는지는 보겠어요.",{"no_lead":True})],"v111:madam_observer_consent12")');setv('madam_observer_consent',True);travel('school','madam_school12',[]);arrive(['mom','daram','resident_teacher','resident_madam']);goto('morning_prep12_entry')
 label('medicine12');arrive(['resident_seori']);late(s,24,25);setv('medicine_locked',True);goto('morning_prep12_entry')
 label('warm_place12');travel('school','warm_place12');arrive(['mom','daram','resident_teacher']);late(s,26,27);setv('warm_seat_ready',True);goto('morning_prep12_entry')
 label('carrier12');arrive(['karo']);late(s,28,30);travel('school','carrier_arrived12');arrive(['karo','mom','daram','resident_teacher']);setv('carrier_arrived',True);setv('busy:karo','school_transport');goto('carrier_receipt12')
-talk('carrier_receipt12','school',['karo','mom','daram','resident_teacher'],'resident_teacher','도착한 온기 상자의 인수를 확인한다','carrier_received12')
+talk('carrier_receipt12','school',['karo','mom','daram','resident_teacher'],'resident_teacher','도착한 장작의 인수를 확인한다','carrier_received12')
 label('carrier_received12');setv('warm_support_arrived',True);setv('school_supply_handed',True);grant('E14_SUPPLY','actual_school_supply12');setv('busy:karo',False);goto('morning_prep12_entry')
-s='MS14_D12_S02';start(s,'school','meal12',['daram','nabi','resident_teacher','resident_bori','kid_dodam','kid_saemi'],1);setv('route12','uncommitted');setv('location:mom','facility');late(s,1,24);setv('bottle_original_seal_seen',True);goto('meal_choice12')
-label('meal_choice12');select([('배식 전에 더 살핀다','stay_meal12',None),('다람과 온기 조각을 받으러 간다','take_daram12',None),('다람은 나비 곁에 두고 다녀온다','leave_daram12',None),('예방 준비를 확인한다','prevent_check12',None)])
+s='MS14_D12_S02';start(s,'school','meal12',['daram','nabi','resident_teacher','resident_bori','kid_dodam','kid_saemi'],1);setv('route12','uncommitted');setv('location:mom','facility');late(s,1,24);code('r13_nw_acquire("NW_WHITE_BOWLS","daram" if r13_v111_value("meeting:room13")=="lose" else "observed")');setv('bottle_original_seal_seen',True);goto('meal_choice12')
+label('meal_choice12');select([('배식 전에 더 살핀다','stay_meal12',None),('다람과 장작을 받으러 간다','take_daram12',None),('다람은 나비 곁에 두고 다녀온다','leave_daram12',None),('예방 준비를 확인한다','prevent_check12',None)])
 label('prevent_check12');lines.append('    if all(r13_v111_value(k) for k in ("medicine_locked","warm_seat_ready","carrier_arrived","warm_support_arrived")):');lines.append('        jump r13_v111_prevent_ready12');lines.append('    if not r13_v111_value("medicine_locked"):');lines.append('        jump r13_v111_medicine_missing12');lines.append('    if not r13_v111_value("warm_seat_ready"):');lines.append('        jump r13_v111_seat_missing12');goto('carrier_missing12')
 label('medicine_missing12');late(s,34,35);goto('morning_prep12_entry')
 label('seat_missing12');late(s,36,37);goto('morning_prep12_entry')
@@ -209,7 +253,7 @@ label('stay_meal12');late(s,26,27);goto('premeal12')
 label('take_daram12');setv('route12','late_exposure');late(s,28,30);setv('DARAM_location','with_father');goto('pickup12')
 label('leave_daram12');setv('route12','late_exposure');late(s,31,33);setv('DARAM_location','school');setv('busy:nabi','daram_guard');goto('pickup12')
 label('pickup12');travel('facility','pickup12');arrive(['mom']);lines.append('    if r13_v111_value("DARAM_location")=="with_father":');lines.append('        $ r13_v111_arrive(["mom","daram"])');goto('pickup_box12')
-field('pickup_box12','facility',['mom'],'blankets','준비된 온기 상자를 인수한다','pickup_done12')
+field('pickup_box12','facility',['mom'],'blankets','준비된 장작 묶음을 인수한다','pickup_done12')
 label('pickup_done12');setv('heat_box_received',True);goto('late_meal12')
 s='MS14_D12_S03';start(s,'school','late_meal12',['daram','nabi','resident_bori','resident_teacher','kid_saemi'],2);setv('busy:nabi',False);late(s,1,11);setv('medical_called',True);setv('busy:resident_bori','medical_call');goto('soup_fragment12')
 field('soup_fragment12','school',['nabi','resident_teacher'],'stove','작은 냄비의 남은 수프를 보존한다','fragment_seen12')
@@ -235,8 +279,29 @@ proof('soup_final12','파편·봉인·취급 구간을 함께 제시한다',['E1
 label('soup_conclusion12');late(s,47,47);branch('soup_conclusion_route12',V('route12')+"=='late_exposure'",'conclusion_late12','conclusion_pre12')
 label('conclusion_late12');late(s,48,56);goto('confessed12')
 label('conclusion_pre12');late(s,80,88);goto('confessed12')
-label('confessed12');late(s,57,61);setv('teacher_confessed',True);branch('soup_after_route12',V('route12')+"=='late_exposure'",'aftermath_late12','aftermath_pre12')
-for key,a,b,target in [('medicine_wrong12',89,90,'seal_proof12'),('fragment_wrong12',91,92,'soup_final12'),('soup_hint12',93,93,'seal_proof12'),('soup_hint_final12',93,93,'soup_final12')]:label(key);late(s,a,b);goto(target)
+label('confessed12');late(s,57,61);setv('teacher_confessed',True);nwblock('soup_list_q12');goto('list_proof12')
+# New world (event 09): who the white bowls were for. Losing it leaves the list with Neoul.
+proof('list_proof12','명단과 흰 그릇을 대조한다',['NW_TRANSFER_LIST','NW_WHITE_BOWLS'],'list_won12','list_wrong12')
+label('list_wrong12')
+lines.extend(['    if r13_nw_half(["NW_TRANSFER_LIST","NW_WHITE_BOWLS"]) and not r13_v111_value("half:list12"):','        $ r13_v111_set("half:list12",True)','        $ renpy.notify("선생님이 출석부를 끌어안는다. 명단의 칸과 흰 그릇을 함께 놓아야 한다.")','        jump r13_v111_list_proof12'])
+code('r13_nw_meeting_end("soup","partial")');nwblock('soup_list_lost12');goto('soup_after_route12')
+label('list_won12');code('r13_nw_meeting_end("soup","win")');setv('transfer_list_secured',True);nwblock('soup_list_won12');goto('soup_after_route12')
+branch('soup_after_route12',V('route12')+"=='late_exposure'",'aftermath_late12','aftermath_pre12')
+# New world (event 09): the soup meeting is decided once. Losing the bottle point leaves the
+# culprit unknown and Seori blamed; losing the handling point puts Nabi on the list.
+def soup_wrong(key,correct,a,b,proof_key,note,kind):
+ label(key)
+ rids=['MS14_D12_S04_L%04d'%n for n in range(a,b+1) if 'MS14_D12_S04_L%04d'%n in DATA['records']]
+ lines.extend(['    if r13_nw_half(%r) and not r13_v111_value("half:%s"):'%(correct,proof_key),'        $ r13_v111_set("half:%s",True)'%proof_key,
+  '        call r13_lines(r13_v111_lines(%r),%r)'%(rids,'v111:'+key+':half'),'        $ renpy.notify(%r)'%note,'        jump r13_v111_'+proof_key])
+ code('r13_nw_meeting_end("soup","lose")');setv('soup_lose_kind',kind)
+ if kind=='nabi':code('r13_nw_list("nabi","soup_lose")')
+ else:setv('seori_disciplined',True)
+ late(s,a,b);goto('soup_lost12')
+soup_wrong('medicine_wrong12',['E12_FRAGMENT','E12_SEAL'],89,90,'seal_proof12','선생님이 병을 감싼다. 파편과 봉인을 함께 놓아야 한다.','stolen')
+soup_wrong('fragment_wrong12',['E12_FRAGMENT','E12_SEAL','E12_HANDLING'],91,92,'soup_final12','나비가 고개를 젓는다. 파편과 봉인, 냄비를 건넨 구간을 함께 놓아야 한다.','nabi')
+label('soup_lost12');nwblock('soup_lost12');goto('sleep12')
+for key,a,b,target in [('soup_hint12',93,93,'seal_proof12'),('soup_hint_final12',93,93,'soup_final12')]:label(key);late(s,a,b);goto(target)
 label('aftermath_pre12');late(s,96,102);select([('돌목에게 감독을 맡긴다','teacher_guard_pre12',None),('너울에게 신병을 넘긴다','teacher_neoul_pre12',None)])
 label('teacher_guard_pre12');late(s,103,104);goto('soup_pre_close12')
 label('teacher_neoul_pre12');late(s,105,108);goto('soup_pre_close12')
@@ -255,9 +320,13 @@ for key,a,b in [('lights12',13,16),('no_lights12',27,28),('child_light12',21,26)
  if key in ('lights12','no_lights12'):arrive(['daram','mom','nabi','resident_teacher','resident_seori','resident_bori','guard','neoul'])
  late(s,a,b);lines.append('    return')
 s='MS14_D12_B';start(s,'school','early12',['daram','mom','nabi','resident_teacher','karo','kid_dodam','kid_saemi'],2);late(s,1,14);setv('route12','early_prevented');setv('school_heat_connected',True);setv('busy:karo',False);goto('sleep12')
-finish_day('sleep12',13,'day13')
+label('sleep12');nwblock('portrait12');code('r13_nw_acquire("NW_HALL_WINDOW")')
+lines.extend(['    if r13_v111_value("piko_alive") is False:','        $ r13_nw_acquire("NW_PIKO_PAINTING")']);goto('sleep12_bed')
+finish_day('sleep12_bed',13,'day13')
 # DAY 13 — fixed blanket identity, actual passengers, sequential handovers.
-s='MS14_D13_S01';start(s,'school','day13',['mom','daram','npc_pandol','karo']);setv('busy:karo',False);late(s,1,9);goto('blanket_mend13')
+s='MS14_D13_S01';start(s,'school','day13',['mom','daram','npc_pandol','karo']);setv('busy:karo',False)
+# New world (event 10): a living Piko is listed as 'one who sleeps in the street' and rides the cart.
+lines.extend(['    if r13_v111_value("piko_alive") is not False:','        $ r13_nw_list("resident_piko","street")']);late(s,1,9);goto('blanket_mend13')
 field('blanket_mend13','school',['mom','daram','npc_pandol','karo'],'blankets','회색 담요를 실제로 수선한다','blanket_mended13')
 label('blanket_mended13');late(s,10,23);setv('pandol_blanket_mended',True)
 observation('E13_ORDER','중지된 이송 명령 사본','돌목이 가족 한 사람만 제외하는 대신 현재 이송 명령 전체의 중지를 적었다. 입구 인수도 중지하며 기존 감독 기록은 보존한다.')
@@ -269,22 +338,50 @@ label('teacher_relief_done13');setv('busy:v111_patrol','teacher_supervision');se
 s='MS14_D13_S02';start(s,'gate','gate_bench13',['mom','daram','guard']);late(s,1,11);travel('square','cart_arrival13');arrive(['mom','daram','npc_pandol','resident_ppul','neoul','karo','guard']);late(s,12,28);goto('offer13')
 label('offer13');select([('조건을 더 묻는다','offer_question13',None),('가족 셋이 수락하고 물러난다','offer_accept13',V('family_offer_terms_seen')),('거절하고 현장에 남는다','offer_refuse13',V('family_school_place'))])
 label('offer_question13');late(s,29,32);setv('family_offer_terms_seen',True);goto('offer13')
-label('offer_accept13');late(s,38,39);setv('family_deal',True);goto('family_exit13')
+label('offer_accept13');late(s,38,39);setv('family_deal',True)
+lines.extend(['    if r13_v111_value("listed:daram"):','        $ r13_v111_set("listed:daram",False)','        $ r13_v111_set("daram_deal_freed",True)']);goto('family_exit13')
 label('offer_refuse13');late(s,33,35);setv('family_deal',False);goto('blanket_lie13')
 s='MS14_D13_S03';start(s,'square','blanket_lie13',['mom','daram','npc_pandol','resident_ppul','guard','karo']);late(s,1,17);goto('mending_proof13')
 proof('mending_proof13','아내가 봤다는 담요의 시점을 확인한다',['E13_MENDING'],'mending_answer13','mending_wrong13','mending_hint13')
-label('mending_answer13');late(s,18,40);setv('false_message_admitted',True);goto('cart_inspect13')
-label('mending_wrong13');late(s,43,44);goto('mending_proof13')
+# New world (event 10): the blanket point is a gate (lost = the cart leaves with everyone on it);
+# Badook's word about last night decides whether he holds the reins (win) or not (partial).
+label('mending_answer13');late(s,18,28);nwblock('badook_q13');goto('badook_proof13')
+proof('badook_proof13','촌장이 어젯밤 있던 곳을 확인한다',['NW_HALL_WINDOW'],'badook_won13','badook_wrong13')
+label('badook_wrong13');code('r13_nw_meeting_end("blanket","partial")');nwblock('badook_lost13');goto('mending_rest13')
+label('badook_won13');code('r13_nw_meeting_end("blanket","win")');nwblock('badook_won13');goto('mending_rest13')
+label('mending_rest13');late(s,29,40);setv('false_message_admitted',True);goto('cart_inspect13')
+label('mending_wrong13');code('r13_nw_meeting_end("blanket","lose")');late(s,43,44);nwblock('blanket_lost13')
+lines.extend(['    python:',
+ '        _aboard=list(r13_v111_value("cart_roster") or ["npc_pandol","resident_momo","resident_guldol"])',
+ '        if r13_v111_value("teacher_transfer")=="listed" and r13_v111_person_alive("resident_teacher"):_aboard.append("resident_teacher")',
+ '        if r13_v111_value("silluk_status")=="supervised_compulsory_labor" and r13_v111_person_alive("resident_siluk"):_aboard.append("resident_siluk")',
+ '        _aboard=[p for p in dict.fromkeys(_aboard+r13_nw_listed()) if not r13_v111_value("handed:"+p)]',
+ '        r13_v111_set("departed_names",_aboard)',
+ '        for _p in _aboard:r13_v111_set("departed:"+_p,True)',
+ '        if "daram" in _aboard:r13_v111_set("location:daram","cart")'])
+setv('cart_departed',True);setv('outcome13','partial_rescue');goto('departed_night13')
+label('departed_night13');travel('school','departed_night13',['mom']);arrive(['mom','nabi']);goto('departed_bed13')
+field('departed_bed13','school',['mom','nabi'],'blankets','오늘 밤 자리를 확인한다','morning14')
 label('mending_hint13');late(s,45,45);goto('mending_proof13')
 field('cart_inspect13','square',['mom','daram','karo','guard'],'cart','실제 탑승자와 하차 준비를 확인한다','cart_observed13')
-label('cart_observed13');setv('cart_roster',['npc_pandol','resident_momo','resident_guldol'])
+label('cart_observed13');setv('cart_roster',['npc_pandol','resident_momo','resident_guldol']);nwblock('cart_names13')
+lines.extend(['    if r13_v111_value("listed:resident_piko"):','        $ r13_nw_acquire("NW_PIKO_PAINTING","told")'])
 lines.append('    if r13_v111_value("silluk_status")=="supervised_compulsory_labor" and r13_v111_person_alive("resident_siluk"):');lines.append('        call r13_v111_silluk_board_observation13')
 lines.append('    if r13_v111_value("teacher_transfer")=="listed" and r13_v111_person_alive("resident_teacher"):');lines.append('        call r13_v111_teacher_board_observation13');goto('stop_cart13')
 # Reuse the existing approved cart observations (room13_ep6_cart.rpy:254–255),
 # not an inference that a listed person is already aboard on day12.
 label('teacher_board_observation13');setv('location:resident_teacher','square');lines.append('    call r13_lines([(None,"사자 선생님이 출석부를 품에 안고 앉아 있었다.",{"show":"resident_teacher","pose":"collapse_attendance"})],"v111:teacher_actual_cart_observation")');code('r13_v111_set("teacher_transfer","aboard")');code('r13_v111_set("cart_roster",r13_v111_value("cart_roster")+["resident_teacher"])');lines.append('    return')
 label('silluk_board_observation13');setv('location:resident_siluk','square');lines.append('    call r13_lines([(None,"짐칸 끝에 실룩. 고개를 숙이고 있었다.")],"v111:silluk_actual_cart_observation")');code('r13_v111_set("silluk_transfer","aboard")');code('r13_v111_set("cart_roster",r13_v111_value("cart_roster")+["resident_siluk"])');lines.append('    return')
-s='MS14_D13_S04';start(s,'square','stop_cart13',['mom','daram','karo','guard','resident_badook','npc_pandol','resident_momo','resident_guldol','resident_ppul','neoul'],2);late(s,1,6);setv('cart_stopped',True);setv('stop_actor','resident_badook');setv('busy:resident_badook','stop_cart');code('r13_v111_set("cart_roster",r13_v111_value("cart_roster") or ["npc_pandol","resident_momo","resident_guldol"])');late(s,10,14);goto('family_position13')
+s='MS14_D13_S04';start(s,'square','stop_cart13',['mom','daram','karo','guard','resident_badook','npc_pandol','resident_momo','resident_guldol','resident_ppul','neoul'],2);late(s,1,6);setv('cart_stopped',True);setv('stop_actor','resident_badook');setv('busy:resident_badook','stop_cart');code('r13_v111_set("cart_roster",r13_v111_value("cart_roster") or ["npc_pandol","resident_momo","resident_guldol"])');goto('rein13')
+# New world (event 03, closed on day 13): why Piko died under lamp 3. One gate, fixed order.
+label('rein13');nwblock('rein_open13');goto('rein_ledger13p')
+proof('rein_ledger13p','장부의 두 배를 실룩에게 보인다',['E16'],'rein_ledger13','rein_wrong13')
+label('rein_ledger13');nwblock('rein_ledger13');goto('rein_painting13p')
+proof('rein_painting13p','피코가 막혀야 했던 까닭을 보인다',['NW_PIKO_PAINTING'],'rein_won13','rein_wrong13')
+label('rein_won13');code('r13_nw_meeting_end("piko","win")');nwblock('rein_won13');setv('neoul_held',True)
+code('r13_nw_acquire("NW_NEOUL_LEDGER","full" if r13_v111_value("meeting:hypothesis")=="win" else "some" if r13_v111_value("meeting:hypothesis")=="partial" else "observed")');goto('after_rein13')
+label('rein_wrong13');code('r13_nw_meeting_end("piko","lose")');nwblock('rein_lost13');goto('after_rein13')
+label('after_rein13');lines.extend(['    if r13_v111_value("meeting:blanket")=="partial":','        jump r13_v111_partial13']);late(s,10,14);goto('family_position13')
 label('family_position13');select([('곁에 남는다','family_stay13',None),('까로와 학교로 간다','family_karo13','not '+V('busy:karo')),('네로와 학교로 간다','family_nero13',V('nero_alive')+' and not '+V('busy:resident_nero')+' and r13_v111_actor_ready("resident_nero")')])
 label('family_stay13');late(s,63,64);setv('family_location','square');setv('busy:mom','daram_guard');goto('handover_plan13')
 label('family_karo13');late(s,56,59);setv('family_location','moving_to_school');setv('location:mom','on_way_school');setv('location:daram','on_way_school');setv('location:karo','on_way_school');setv('busy:karo','family_walk');goto('family_walk_karo13')
@@ -303,7 +400,9 @@ label('momo_school13');late(s,65,67);travel('school','momo_school13');arrive(['n
 label('guldol_transport13');travel('square','guldol_transport13');arrive(['karo','guard','resident_badook','resident_guldol']);goto('guldol_down13')
 field('guldol_down13','square',['karo','guard','resident_badook','resident_guldol'],'cart','굴돌을 발판으로 부축한다','guldol_school13')
 label('guldol_school13');late(s,69,70);travel('school','guldol_school13');arrive(['nabi','karo','resident_guldol']);late(s,71,71);setv('handed:resident_guldol',True);goto('last_cart13')
-label('last_cart13');travel('square','last_cart13',[]);arrive(['karo','resident_badook','resident_ppul']);lines.append('    if "resident_teacher" in r13_v111_value("cart_roster") and not r13_v111_value("handed:resident_teacher"):');lines.append('        jump r13_v111_teacher_transport13');lines.append('    if "resident_siluk" in r13_v111_value("cart_roster") and not r13_v111_value("handed:resident_siluk"):');lines.append('        jump r13_v111_silluk_transport13');lines.append('    if r13_v111_value("family_location")=="square":');lines.append('        call r13_v111_family_still_here13');lines.append('    else:');lines.append('        call r13_v111_family_already_school13');lines.append('    if not all(r13_v111_value("handed:"+p) for p in r13_v111_value("cart_roster")):');lines.append('        jump r13_v111_partial13');late(s,39,42);setv('all_cart_handed',True);setv('busy:resident_badook',False);setv('outcome13','all_rescued');goto('transport_cleanup13')
+label('last_cart13');travel('square','last_cart13',[]);arrive(['karo','resident_badook','resident_ppul']);lines.append('    if "resident_teacher" in r13_v111_value("cart_roster") and not r13_v111_value("handed:resident_teacher"):');lines.append('        jump r13_v111_teacher_transport13');lines.append('    if "resident_siluk" in r13_v111_value("cart_roster") and not r13_v111_value("handed:resident_siluk"):');lines.append('        jump r13_v111_silluk_transport13');lines.append('    if r13_v111_value("family_location")=="square":');lines.append('        call r13_v111_family_still_here13');lines.append('    else:');lines.append('        call r13_v111_family_already_school13');lines.append('    if not all(r13_v111_value("handed:"+p) for p in r13_v111_value("cart_roster")):');lines.append('        jump r13_v111_partial13');nwblock('listed_down13')
+lines.extend(['    python:','        for _p in r13_nw_listed():r13_v111_set("handed:"+_p,True)'])
+late(s,39,42);setv('all_cart_handed',True);setv('busy:resident_badook',False);setv('outcome13','all_rescued');goto('transport_cleanup13')
 label('family_still_here13');arrive(['karo','resident_badook','resident_ppul','mom','daram']);late(s,33,35);lines.append('    return')
 label('family_already_school13');late(s,37,37);late(s,88,88);late(s,38,38);lines.append('    return')
 # The original supervisory destinations are retained for any real extra
@@ -352,13 +451,49 @@ label('morning14');setv('day',14);goto('day14')
 label('day14')
 select([('가족이 머무는 자리를 확인한다','ending_dispatch14',None)])
 label('ending_dispatch14')
-lines.extend(['    if '+V('outcome13')+"=='family_priority':",'        jump r13_v111_family_ending14','    if '+V('outcome13')+"=='partial_rescue':",'        jump r13_v111_partial_ending14','    if '+V('crowd_injury')+':','        jump r13_v111_violence_ending14']);goto('morning_safe14')
-s='MS14_D14_S01';start(s,'school','morning_safe14',['mom','daram','npc_pandol','nabi']);late(s,1,18);goto('altar_guide14')
+# New-world ending order (plan 11-1): the left name and the frozen village first, then the kept endings.
+lines.extend(["    $ r13_v111_set('ending14',r13_nw_ending14())",
+ "    if "+V('ending14')+"=='left_name':",'        jump r13_v111_left_name_ending14',
+ "    if "+V('ending14')+"=='frozen':",'        jump r13_v111_frozen_ending14',
+ "    if "+V('ending14')+"=='family':",'        jump r13_v111_family_ending14',
+ "    if "+V('ending14')+"=='partial':",'        jump r13_v111_partial_ending14',
+ "    if "+V('ending14')+"=='violence':",'        jump r13_v111_violence_ending14']);goto('morning_safe14')
+def nw_ending(key,place,title,block):
+ label(key);code('r13_edit(period=0,location=%r)'%place);code('room13["v111"]["people"]=[]')
+ lines.append('    call r13_scene(R13_PLACES[%r][1],%r,"quiet")'%(place,title));nwblock(block);goto('story_end14')
+nw_ending('left_name_ending14','school','남겨진 이름','end_left_name14')
+nw_ending('frozen_ending14','gate','얼어붙은 마을','end_frozen14')
+label('story_end14');setv('story14_completed',True);lines.append('    call screen r13_confirm("이야기를 마쳤습니다. 현재 진행을 저장할 수 있습니다.",yes="메인 화면으로",no="저장하기")');lines.append('    if not _return:');lines.append('        call screen save');lines.append('    return')
+s='MS14_D14_S01';start(s,'school','morning_safe14',['mom','daram','npc_pandol','nabi']);late(s,1,18)
+lines.extend(['    if r13_v111_value("OWL_ALIVE") is False:','        $ r13_nw_acquire("NW_BURNT_PAGE")']);code('r13_nw_acquire("NW_MADAM_DAY7")');goto('altar_guide14')
 talk('altar_guide14','school',['mom','daram','resident_badook'],'resident_badook','제단 접근로를 확인해 주십시오.','altar_ready14')
 label('altar_ready14');setv('altar_guide_confirmed',True);setv('busy:resident_badook',False);goto('altar14')
-s='MS14_D14_S02';start(s,'altar','altar14',['mom','daram','resident_badook','karo'],1);late(s,1,10);setv('altar_heat_structure_observed',True);goto('mayor_interview14')
-label('mayor_interview14');travel('gate','mayor_interview14');arrive(['mom','resident_ppul','resident_badook','karo']);late(s,11,23);setv('mayor_false_invitation_admitted',True)
+s='MS14_D14_S02';start(s,'altar','altar14',['mom','daram','resident_badook','karo'],1);late(s,1,10);code('r13_nw_acquire("NW_TABLET_B")');code('r13_nw_acquire("NW_IRON_MARK")');setv('altar_heat_structure_observed',True);goto('mayor_interview14')
+label('mayor_interview14');travel('gate','mayor_interview14');arrive(['mom','resident_ppul','resident_badook','karo']);late(s,11,23);setv('mayor_false_invitation_admitted',True);goto('altar1_q14')
+# New world (event 11): the altar meeting. Point 1 is the gate (lost = the irons stay);
+# a lost later point keeps the chief in his seat (partial). Without Neoul's ledger point 1
+# can only be half-made with the school's three days.
+label('altar1_q14');nwblock('altar1_q14');goto('altar1_proof14')
+proof('altar1_proof14','희생의 숫자와 장부를 대조한다',['NW_NEOUL_LEDGER'],'altar1_won14','altar1_wrong14')
+label('altar1_wrong14')
+lines.extend(['    if "V111:E14_SUPPLY" in (v111_last_presented or []) and not r13_v111_owned("NW_NEOUL_LEDGER"):','        $ r13_v111_set("altar_half1",True)','        $ r13_v111_set("altar_issue:1","half")','        call r13_lines(r13_nw_block("altar1_half14"),"nw:altar1_half14")','        jump r13_v111_altar2_q14'])
+nwblock('altar1_lost14');goto('altar_lost14')
+label('altar1_won14');nwblock('altar1_won14');setv('altar_issue:1','won');goto('altar2_q14')
+for n,title,correct,note in [(2,'아르카가 부른다는 말과 옛 기록을 대조한다',['NW_TABLET_A','NW_TABLET_B'],'촌장이 고개를 젓는다. 돌판의 앞 반쪽과 밑돌의 글자를 함께 놓아야 한다.'),
+ (3,'쇠가 언제 붙었는지 보인다',['NW_IRON_MARK'],None),
+ (4,'맨 처음 이름을 짚는다',['NW_NAMES','NW_NEOUL_LEDGER'],'촌장의 손이 떨린다. 벽의 이름과 그해 장부를 함께 놓아야 한다.')]:
+ nxt='altar%d_q14'%(n+1) if n<4 else 'altar_close14'
+ label('altar%d_q14'%n);nwblock('altar%d_q14'%n);goto('altar%d_proof14'%n)
+ proof('altar%d_proof14'%n,title,correct,'altar%d_won14'%n,'altar%d_wrong14'%n)
+ label('altar%d_wrong14'%n)
+ if note:lines.extend(['    if r13_nw_half(%r) and not r13_v111_value("half:altar%d"):'%(correct,n),'        $ r13_v111_set("half:altar%d",True)'%n,'        $ renpy.notify(%r)'%note,'        jump r13_v111_altar%d_proof14'%n])
+ nwblock('altar%d_lost14'%n);setv('altar_issue:%d'%n,'lost');goto(nxt)
+ label('altar%d_won14'%n);nwblock('altar%d_won14'%n);setv('altar_issue:%d'%n,'won')
+ if n==4:setv('dallae_first_victim_known',True)
+ goto(nxt)
+label('altar_close14');code('r13_nw_meeting_end("altar","win" if all(r13_v111_value("altar_issue:%d"%i)=="won" for i in (1,2,3,4)) else "partial")');nwblock('altar_result14')
 lines.append('    if '+V('dallae_first_victim_known')+':');lines.append('        call r13_v111_dallae14');goto('device14')
+label('altar_lost14');code('r13_nw_meeting_end("altar","lose")');nwblock('altar_lost14');goto('granny_interview14')
 label('dallae14');late(s,24,28);lines.append('    return')
 label('device14');lines.append('    if r13_v111_value("buri_device_consent") and not r13_v111_value("mayor_site_decided") :');lines.append('        jump r13_v111_mayor_site_request14');travel('altar','device14');arrive(['mom','daram','karo','resident_badook']);late(s,29,30);lines.append('    if r13_v111_value("mayor_site_joined") and r13_v111_person_alive("buri"):');lines.append('        call r13_v111_buri_work_start14');goto('device_record14')
 wait('mayor_site_request14','gate',['mom','daram','resident_ppul','resident_badook','karo'],[person('감독 아래 현장 확인에 동행해 주십시오.','gate','resident_ppul'),person('이 자리에서만 확인하겠습니다.','gate','resident_ppul')],['mayor_site_yes14','mayor_site_no14'])
@@ -407,7 +542,9 @@ label('mother_lamps14');late(s,32,32);setv('lamp_manager','mom');lines.append(' 
 label('owl_alive14');arrive(['mom','daram','nabi','guard','resident_owlgp']);late(s,33,34);lines.append('    return')
 label('unfinished_operation14');late(s,35,36);lines.append('    return')
 s='MS14_D14_END_FAMILY';start(s,'gate','family_ending14',['mom','daram','guard']);late(s,1,11);goto('family_lodging14')
-s='MS14_D14_END_PARTIAL';start(s,'square','partial_ending14',['karo','guard','resident_badook']);late(s,1,8);goto('partial_handoff14')
+s='MS14_D14_END_PARTIAL';start(s,'square','partial_ending14',['karo','guard','resident_badook'])
+lines.extend(['    if r13_v111_value("cart_departed"):','        jump r13_v111_partial_departed14']);late(s,1,8);goto('partial_handoff14')
+label('partial_departed14');nwblock('partial_departed14');goto('cookie14')
 field('partial_handoff14','square',['karo','guard','resident_badook'],'cart','남은 인계에 직접 참여한다','partial_work14')
 label('partial_work14');code('v111_pending_patient=next((p for p in (r13_v111_value("cart_roster") or ["npc_pandol","resident_momo","resident_guldol"]) if not r13_v111_value("handed:"+p)),None)');goto('partial_patient14')
 label('partial_patient14');travel('school','partial_patient14',[]);code('r13_v111_arrive(["mom","daram","nabi","karo","guard"]+([v111_pending_patient] if v111_pending_patient else []))');goto('partial_receipt14')
@@ -424,8 +561,10 @@ label('cookie14');travel('school','cookie14');arrive(['mom','daram']);setv('nigh
 label('cookie_gate14');arrive(['mom','daram']);setv('night14_lodging','gate');goto('cookie_scene14')
 label('cookie_scene14');code('r13_edit(period=2)');code('r13_v111_scene('+q(s)+')');lines.append('    call r13_scene(R13_PLACES[room13["location"]][1],R13_PLACES[room13["location"]][0],"calm")');code('r13_v111_score()');late(s,1,14)
 lines.append('    if '+V('crowd_injury')+':');lines.append('        call r13_v111_cookie_distance14')
-late(s,15,23);setv('story14_completed',True);lines.append('    call screen r13_confirm("이야기를 마쳤습니다. 현재 진행을 저장할 수 있습니다.",yes="메인 화면으로",no="저장하기")');lines.append('    if not _return:');lines.append('        call screen save');lines.append('    return')
+late(s,15,23)
+lines.extend(['    if r13_nw_true_ending_ready():','        call r13_v111_true_epilogue14']);setv('story14_completed',True);lines.append('    call screen r13_confirm("이야기를 마쳤습니다. 현재 진행을 저장할 수 있습니다.",yes="메인 화면으로",no="저장하기")');lines.append('    if not _return:');lines.append('        call screen save');lines.append('    return')
 label('cookie_distance14');late(s,30,32);lines.append('    return')
+label('true_epilogue14');setv('ending14','true');code('r13_edit(location="gate")');code('room13["v111"]["people"]=[]');lines.append('    call r13_scene(R13_PLACES["gate"][1],"말을 위한 돌","quiet")');nwblock('end_true14');lines.append('    return')
 bindings['morning_prep12']['people_by_location']={
  'school':['mom','daram','guard','resident_teacher'],
  'clinic':['resident_seori'],

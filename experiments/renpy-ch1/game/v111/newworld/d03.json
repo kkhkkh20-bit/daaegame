@@ -1,7 +1,301 @@
 {
-  "replace": {},
-  "before": {},
-  "after": {},
-  "drop": [],
-  "evidence": {}
+  "replace": {
+    "MS14_D03_S05_L0072": {
+      "text": "그게……",
+      "when": "lamp_not_win"
+    },
+    "MS14_D03_S05_L0070": {
+      "text": "……그것만으로는 부족하네요.",
+      "when": "lamp_partial"
+    },
+    "MS14_D03_S05_L0041": {
+      "text": "누가 꺼냈는지도 못 밝혔으면서 내 거래까지 늘어놓지는 맙시다.",
+      "when": "lamp_partial"
+    }
+  },
+  "before": {
+    "MS14_D03_S02_L0002": [
+      {
+        "id": "NW_D03_S02_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "광장으로 가는 길에 짐수레를 끌던 짐꾼이 먼저 다가왔다. 수레 손잡이 옆에 칼자루가 꽂혀 있었다."
+      },
+      {
+        "id": "NW_D03_S02_A02",
+        "speaker": "실룩",
+        "kind": "dialogue",
+        "text": "3번 등 일 때문이죠? 새벽에 톡이 3번 등을 쑤시는 거 봤어요. 칼 같은 걸로 안쪽을 긁더라고요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D03_S02_A03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "적어 두겠습니다. 성함이……",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D03_S02_A04",
+        "speaker": "실룩",
+        "kind": "dialogue",
+        "text": "짐 늦어요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D03_S02_A05",
+        "speaker": null,
+        "kind": "narration",
+        "text": "짐꾼은 꺼진 3번 등을 한참 보다가 수레를 끌고 골목으로 들어갔다."
+      }
+    ],
+    "MS14_D03_S04_L0002": [
+      {
+        "id": "NW_D03_S04_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "아침에 톡을 봤다던 그 짐꾼이었다."
+      }
+    ],
+    "MS14_D03_S06_L0003": [
+      {
+        "id": "NW_D03_S06_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "초롱이 혼자 받침에 돌을 끼웠다. 공구를 쥔 손이 서툴렀다.",
+        "when": "lamp_lose"
+      }
+    ]
+  },
+  "after": {
+    "MS14_D03_S01_L0016": [
+      {
+        "id": "NW_D03_S01_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "지나가던 사람들이 꺼진 3번 등 앞에서 손바닥을 펴 보였다. “아르카 곁에서 쉬시오.” 누군가는 등이 꺼진 게 불길하다고 수군거렸다."
+      }
+    ],
+    "MS14_D03_S02_L0005": [
+      {
+        "id": "NW_D03_S02_A06",
+        "speaker": "톡",
+        "kind": "dialogue",
+        "text": "걸쇠는 다 고쳤어요.",
+        "expression": "angry"
+      }
+    ],
+    "MS14_D03_S02_L9101": [
+      {
+        "id": "NW_D03_S02_A07",
+        "speaker": null,
+        "kind": "narration",
+        "text": "받침을 들어내고서야 안벽의 곧은 긁힘이 보였다. 덮개만 열어서는 보이지 않는 자리였다."
+      }
+    ],
+    "MS14_D03_S03_L0037": [
+      {
+        "id": "NW_D03_S03_A01",
+        "speaker": "우박",
+        "kind": "dialogue",
+        "text": "돌 하나 문제가 아니에요. 다 식고 있어요.",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_D03_S03_A02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "너울 씨도 압니까?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D03_S03_A03",
+        "speaker": "우박",
+        "kind": "dialogue",
+        "text": "말 안 했어요. 말하면 명단이 길어지니까.",
+        "expression": "anxious"
+      }
+    ],
+    "MS14_D03_S04_L0033": [
+      {
+        "id": "NW_D03_S04_A02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "장부의 3번 줄에만 값이 두 배로 적혀 있었다. 다른 돌은 모두 제값이었다."
+      },
+      {
+        "id": "NW_D03_S04_A03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "3번만 두 배를 주셨네요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D03_S04_A04",
+        "speaker": "백 부인",
+        "kind": "dialogue",
+        "text": "좋은 돌이라서요. 요즘 센 돌 찾는 집이 많아요. 안쪽 돌은 값이 세 배고요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D03_S04_A05",
+        "speaker": null,
+        "kind": "narration",
+        "text": "창고 구석 침상에서 노인 하나가 몸을 일으켰다. “오늘이 며칠이오?” 대답하자 고개를 끄덕이더니, 조금 뒤 같은 것을 또 물었다."
+      },
+      {
+        "id": "NW_D03_S04_A06",
+        "speaker": "백 부인",
+        "kind": "dialogue",
+        "text": "창고지기예요. 신경 쓰지 말아요. 나는 식당 위층에서 살고, 저 양반은 여기서 자요.",
+        "expression": "neutral"
+      }
+    ],
+    "MS14_D03_S05_L0023": [
+      {
+        "id": "NW_D03_S05_A01",
+        "speaker": "톡",
+        "kind": "dialogue",
+        "text": "……걸쇠, 끝까지 못 조였어요. 품삯이 하나 몫이라 서둘렀어요. 그 틈으로 칼이 들어간 거예요.",
+        "expression": "anxious"
+      }
+    ],
+    "MS14_D03_S05_L0024": [
+      {
+        "id": "NW_D03_S05_A02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "아침에 저한테 그러셨죠. 톡이 칼로 ‘안쪽’을 긁더라고. 그 긁힘은 받침을 들어내고서야 보였습니다. 그걸 어떻게 아셨습니까?",
+        "expression": "neutral"
+      }
+    ],
+    "MS14_D03_S05_L0072": [
+      {
+        "id": "NW_D03_S05_C01",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "등을 연 사람은 톡이오. 돌이 없어진 등도 그 등이고. 그것으로 됐소.",
+        "expression": "neutral",
+        "when": "lamp_lose"
+      },
+      {
+        "id": "NW_D03_S05_C02",
+        "speaker": "톡",
+        "kind": "dialogue",
+        "text": "난 돌 안 가져갔어요!",
+        "expression": "angry",
+        "when": "lamp_lose"
+      },
+      {
+        "id": "NW_D03_S05_C03",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "작업 대기소로 데려가시오. 보호시설 명단에도 올리고.",
+        "expression": "neutral",
+        "when": "lamp_lose"
+      },
+      {
+        "id": "NW_D03_S05_C04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "실룩이 수레 손잡이를 잡고 공방을 나갔다. 아무도 그를 붙잡지 않았다.",
+        "when": "lamp_lose"
+      },
+      {
+        "id": "NW_D03_S05_C05",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "돌을 팔았다, 칼이 닮았다. 그것뿐이오. 주운 돌을 판 걸로 사람을 묶을 수는 없소.",
+        "expression": "neutral",
+        "when": "lamp_partial"
+      },
+      {
+        "id": "NW_D03_S05_C06",
+        "speaker": "실룩",
+        "kind": "dialogue",
+        "text": "거봐요. 주웠다니까.",
+        "expression": "neutral",
+        "when": "lamp_partial"
+      },
+      {
+        "id": "NW_D03_S05_C07",
+        "speaker": null,
+        "kind": "narration",
+        "text": "톡의 손은 풀렸다. 하지만 돌을 꺼낸 손은 끝내 가리지 못했다.",
+        "when": "lamp_partial"
+      }
+    ],
+    "MS14_D03_S05_L0070": [
+      {
+        "id": "NW_D03_S05_C08",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "칼이 닮았다, 돌을 팔았다. 그것뿐이오. 주운 돌을 판 걸로 사람을 묶을 수는 없소.",
+        "expression": "neutral",
+        "when": "lamp_partial"
+      },
+      {
+        "id": "NW_D03_S05_C09",
+        "speaker": "실룩",
+        "kind": "dialogue",
+        "text": "거봐요. 주웠다니까.",
+        "expression": "neutral",
+        "when": "lamp_partial"
+      },
+      {
+        "id": "NW_D03_S05_C10",
+        "speaker": null,
+        "kind": "narration",
+        "text": "톡의 손은 풀렸다. 하지만 돌을 꺼낸 손은 끝내 가리지 못했다.",
+        "when": "lamp_partial"
+      }
+    ],
+    "MS14_D03_S05_L0043": [
+      {
+        "id": "NW_D03_S05_C11",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "톡에게서 받아 내시오.",
+        "expression": "neutral",
+        "when": "lamp_lose"
+      }
+    ]
+  },
+  "drop": [
+    {
+      "id": "MS14_D03_S05_L0040",
+      "when": "lamp_lose"
+    },
+    {
+      "id": "MS14_D03_S05_L0044",
+      "when": "lamp_lose"
+    },
+    {
+      "id": "MS14_D03_S06_L0002",
+      "when": "lamp_lose"
+    }
+  ],
+  "evidence": {
+    "E16": {
+      "variants": {
+        "observed": "백 부인 매입 장부: 판매자 실룩의 이름과 서명 / 돌 3개 / 지급 내역. 장부는 백 부인이 보관한다. 3번 줄만 값이 두 배로 적혀 있다. 다른 돌은 제값이다."
+      }
+    }
+  },
+  "new_evidence": {
+    "NW_INNER_PRICE": {
+      "name": "안쪽 돌의 값",
+      "kind": "증언",
+      "variants": {
+        "observed": "백 부인: “요즘 센 돌 찾는 집이 많아요. 안쪽 돌은 값이 세 배고요.”"
+      }
+    },
+    "NW_KEEPER_DATE": {
+      "name": "날짜를 두 번 물은 창고지기",
+      "kind": "관찰기록",
+      "variants": {
+        "observed": "3일 백 부인 창고. 구석 침상의 노인이 “오늘이 며칠이오?”를 두 번 물었다. 백 부인: “나는 식당 위층에서 살고, 저 양반은 여기서 자요.”"
+      }
+    }
+  }
 }

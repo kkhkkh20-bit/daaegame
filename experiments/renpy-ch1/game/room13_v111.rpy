@@ -245,6 +245,7 @@ label r13_v111_proof_again:
     if _return=="argue":
         if set("V111:"+x for x in correct)==set(room13["arguments"][v111_claim]):
             return success
+        $ v111_last_presented=list(room13["arguments"][v111_claim])
         $ v111_wrong_target="r13_v111_gate_number" if v111_claim=="v111:함께 들어갈 근거를 고른다" and room13["arguments"][v111_claim]==["V111:E03"] and not r13_v111_value("gate_hardened") else wrong
         $ v111_copy=winter_copy.deepcopy(room13); v111_copy["arguments"][v111_claim]=[]; room13=v111_copy
         if v111_wrong_target:
@@ -322,7 +323,7 @@ init 303 python:
         if store.room13["day"]!=R13_V111["scene_days"][scene]:raise Exception("Wrong authored day: "+scene)
         if scene=="MS14_D02_S04" and r13_v111_value("D02_afternoon") not in (None,"uncommitted"):raise Exception("Afternoon already committed")
         if scene=="MS14_D02_S05" and r13_v111_value("D02_afternoon") not in ("shelter","nero"):raise Exception("Missing afternoon decision")
-        if scene=="MS14_D03_S06" and r13_v111_value("silluk_status") not in ("reporting_obligation","detained_work_waiting_station"):raise Exception("Missing custody decision")
+        if scene=="MS14_D03_S06" and r13_v111_value("silluk_status") not in ("reporting_obligation","detained_work_waiting_station","released"):raise Exception("Missing custody decision")
         check=globals().get("R13_V111_SCENE_CHECKS",{}).get(scene)
         if check and not check():raise Exception("Unmet authored scene state: "+scene)
         items,values=R13_V111_ENTRY.get(scene,([],{}))

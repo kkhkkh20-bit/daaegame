@@ -1,7 +1,119 @@
 {
   "replace": {},
-  "before": {},
-  "after": {},
+  "before": {
+    "MS14_D02_S01_L0010": [
+      {
+        "id": "NW_D02_S01_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "광장 한가운데 커다란 돌 앞에 사람들이 모여 있었다. 촌장이 손바닥을 돌에 대자 모두 따라 고개를 숙였다. 돌은 희미하게만 빛났다."
+      },
+      {
+        "id": "NW_D02_S01_A02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "“아르카여, 고맙습니다.” 사람들이 한목소리로 말했다."
+      },
+      {
+        "id": "NW_D02_S01_A03",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "나도 해도 돼?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D02_S01_A04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "다람이 작은 손바닥을 돌에 댔다가 얼른 뗐다. 너울은 기도하지 않고, 사람들 뒤에서 장부만 넘기고 있었다."
+      }
+    ],
+    "MS14_D02_S03_L0002": [
+      {
+        "id": "NW_D02_S03_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "광장에 들어서자 피코가 늙은 짐꾼에게 몸을 기울이고 속삭이는 것이 보였다. “보여 줄 그림이 있어요.” 장부를 든 너울이 두 사람 옆을 천천히 지나갔다."
+      }
+    ]
+  },
+  "after": {
+    "MS14_D02_S02_L0004": [
+      {
+        "id": "NW_D02_S02_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "세련이 책상 아래 서랍 하나를 열려다 도로 닫았다. 그사이 어젯밤 침구를 가져다준 여관 종업원이 우편 묶음을 창구에 내려놓고 말없이 나갔다."
+      }
+    ],
+    "MS14_D02_S03_L0014": [
+      {
+        "id": "NW_D02_S03_A02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "판자 위에는 이미 물감이 두껍게 앉아 있었다. 피코가 판자를 한 번 뒤집어 보더니 다시 돌려놓았다."
+      },
+      {
+        "id": "NW_D02_S03_A03",
+        "speaker": "피코",
+        "kind": "dialogue",
+        "text": "이 위에 그릴게요. 밑그림은 버린 거예요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D02_S03_A04",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "뭐 그렸던 건데요?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D02_S03_A05",
+        "speaker": "피코",
+        "kind": "dialogue",
+        "text": "잊어버렸어.",
+        "expression": "neutral"
+      }
+    ],
+    "MS14_D02_S03_L0024": [
+      {
+        "id": "NW_D02_S03_A06",
+        "speaker": null,
+        "kind": "narration",
+        "text": "판자를 받친 피코의 손끝이 가늘게 떨렸다."
+      },
+      {
+        "id": "NW_D02_S03_A07",
+        "speaker": "피코",
+        "kind": "dialogue",
+        "text": "이 불 아래서 그리면 손이 덜 떨려요.",
+        "expression": "neutral"
+      }
+    ],
+    "MS14_D02_S05_L0005": [
+      {
+        "id": "NW_D02_S05_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "저녁 무렵 광장을 지날 때, 톡이 3번 등 걸쇠를 조이다 말고 손을 털던 것이 떠올랐다."
+      },
+      {
+        "id": "NW_D02_S05_A02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "“품삯은 하나 몫인데 걸쇠는 셋이야.” 걸쇠는 끝까지 돌아가 있지 않았다."
+      }
+    ]
+  },
   "drop": [],
-  "evidence": {}
+  "evidence": {},
+  "new_evidence": {
+    "NW_PIKO_TREMOR": {
+      "name": "피코의 손 떨림",
+      "kind": "관찰기록",
+      "variants": {
+        "observed": "2일 광장. 판자를 받친 피코의 손끝이 가늘게 떨렸다. 피코: “이 불 아래서 그리면 손이 덜 떨려요.” 피코는 3번 등 바로 아래에서 지낸다."
+      }
+    }
+  }
 }
