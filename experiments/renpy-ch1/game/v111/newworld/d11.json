@@ -1,7 +1,938 @@
 {
-  "replace": {},
+  "replace": {
+    "MS14_D11_S01_L0028": {
+      "text": "……말하면 안 된대."
+    },
+    "MS14_D11_S02B_L0043": {
+      "text": "산길은 먼저 막혔고, 마을 쪽으로 내려가면 날 찾고 있었어. 내가 읽은 기록을 고치겠다고 하니까 할머니가 방에 두고 얘기하자며 문을 잠갔어. 그날 빠져나왔어."
+    },
+    "MS14_D11_S02B_L0045": {
+      "text": "사람을 보내지 않아도 된다는 기록?"
+    },
+    "MS14_D11_S02B_L0046": {
+      "text": "돌은 장치 안에서만 쓰라는 기록. 나머지는 깨져 나갔어."
+    },
+    "MS14_D11_S03_L0003": {
+      "text": "이 그림 봐요. 돌은 장치 안에 넣고, 불은 따로 피우고 있어요."
+    },
+    "MS14_D11_S03_L0004": {
+      "text": "오늘 밤 학교는 뭘로 데워?"
+    },
+    "MS14_D11_S03_L0005": {
+      "text": "장작이요. 아르카는 켜지 말고. 마른 장작을 모아야 해요. 옮길 사람도 필요하고."
+    },
+    "MS14_D11_S03_L0006": {
+      "text": "여기 돌판 하나가 떨어져 있소."
+    },
+    "MS14_D11_S03_L0043": {
+      "text": "갈라지는 표시야. 돌은 장치 안에만 넣는 그림이야. 불은 따로 피웠고."
+    },
+    "MS14_D11_S03_L0044": {
+      "text": "그럼 오늘 밤 학교는?"
+    },
+    "MS14_D11_S03_L0045": {
+      "text": "장작이야. 아르카는 켜지 말고."
+    },
+    "MS14_D11_S03_L0011": {
+      "text": "마을 등부터 끄자고?"
+    },
+    "MS14_D11_S03_L0013": {
+      "text": "길등은 남겨요. 나머지는 학교에 모여서 마을 사람들이 정해야 해요."
+    },
+    "MS14_D11_S03_L0014": {
+      "text": "장작으로 얼마나 버텨?"
+    },
+    "MS14_D11_S03_L0015": {
+      "text": "이만큼 모으면 오늘 밤 학교 한 칸은 데울 수 있어. 멀리까지 나누면 아무 데도 못 데워. 학교부터."
+    },
+    "MS14_D11_S03_L0016": {
+      "text": "겨울 끝까지라곤 못 하오. 장작은 금방 줄어드오."
+    },
+    "MS14_D11_S03_L0026": {
+      "text": "장작은 이게 전부예요. 오늘 밤 전부를 데울 양은 아닙니다."
+    }
+  },
   "before": {},
-  "after": {},
+  "after": {
+    "MS14_D11_S00_L0005": [
+      {
+        "id": "NW_D11_S00_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "학교 뒷문으로 나간다. 순찰대원은 앞문 쪽을 보고 있다. 다람이 흰 끈을 소매 속에 밀어 넣고 내 손을 꼭 잡는다.",
+        "when": "room13_lose"
+      }
+    ],
+    "MS14_D11_S01_L0030": [
+      {
+        "id": "NW_D11_S01_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "회관에서 할머니가 끊었던 말이 떠오른다. ‘내 딸은……’ 토실의 엄마일지도 모른다. 토실은 이름을 말하지 않는다.",
+        "when": "room13_win"
+      }
+    ],
+    "MS14_D11_S02_L0016": [
+      {
+        "id": "NW_D11_S02_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "엄마가 다람의 손목에 맨 흰 끈을 본다. 한참 동안 아무 말도 하지 못한다.",
+        "when": "room13_lose"
+      },
+      {
+        "id": "NW_D11_S02_A02",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "아빠가 풀게 한댔어.",
+        "expression": "neutral",
+        "when": "room13_lose"
+      }
+    ],
+    "MS14_D11_S02B_L0035": [
+      {
+        "id": "NW_D11_S02B_A01",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "나 갇혔을 때 알았어?",
+        "expression": "neutral",
+        "when": "owl_dead"
+      },
+      {
+        "id": "NW_D11_S02B_A02",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "알았어. 초롱 씨가 말해 줬어. 그게 날 부르는 거라는 것도 알았어.",
+        "expression": "neutral",
+        "when": "owl_dead"
+      },
+      {
+        "id": "NW_D11_S02B_A03",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "내가 나가면 둘 다 붙잡혀. 그래서 못 갔어. 미안해.",
+        "expression": "neutral",
+        "when": "owl_dead"
+      }
+    ],
+    "MS14_D11_S03_L0019": [
+      {
+        "id": "NW_D11_S03_A01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "엄마가 등을 들어 벽을 비춘다. 벽 가득 그림이 새겨져 있다."
+      },
+      {
+        "id": "NW_D11_S03_A02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "털이 없고 키가 큰 이들과 동물들이 마주 앉아 있다. 그들은 돌을 장치 안에 넣고 있다. 불은 따로, 장작으로 피운다. 뒤로 산의 갱도와 산길 끝의 장치가 보인다."
+      },
+      {
+        "id": "NW_D11_S03_A03",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "이 사람들이 시설을 만들었어. 우리한테 말을 준 것도.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D11_S03_A04",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "저 사람들 어디 갔어?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D11_S03_A05",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "몰라.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D11_S03_A06",
+        "speaker": null,
+        "kind": "narration",
+        "text": "그림 위에 글자가 있다. 엄마가 한 글자씩 짚는다."
+      },
+      {
+        "id": "NW_D11_S03_A07",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "아르카. 마을이 부르는 이름이 원래 이 사람들 말이었어.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D11_S03_A08",
+        "speaker": null,
+        "kind": "narration",
+        "text": "벽 아래 떨어진 돌판은 반이 깨져 나갔다. 엄마가 남은 줄을 읽는다."
+      },
+      {
+        "id": "NW_D11_S03_A09",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "‘아르카는 장치 안에서만 쓰라. 꺼내어……’ 그 뒤가 없어. 왜 꺼내면 안 되는지가 깨져 나갔어.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D11_S03_A10",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "이건 산길 끝의 장치야. 마을에서는 제단이라고 부르더라. 말과 빛을 주던 거야. 사람을 묶는 쇠는 그림 어디에도 없어. 누군가 나중에 덧붙였어.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D11_S03_A11",
+        "speaker": null,
+        "kind": "narration",
+        "text": "그림 옆 벽에는 다른 것이 있다. 칼끝으로 새긴 이름들이다. 그림과 달리 글씨가 거칠다."
+      },
+      {
+        "id": "NW_D11_S03_A12",
+        "speaker": "굴돌",
+        "kind": "dialogue",
+        "text": "맨 위는 달래요. 촌장 손녀요.",
+        "expression": "neutral",
+        "when": "guldol_ready"
+      },
+      {
+        "id": "NW_D11_S03_A13",
+        "speaker": "초롱",
+        "kind": "dialogue",
+        "text": "달래…… 촌장님 손녀 이름이에요.",
+        "expression": "neutral",
+        "when": "guldol_absent"
+      },
+      {
+        "id": "NW_D11_S03_A14",
+        "speaker": null,
+        "kind": "narration",
+        "text": "이름을 하나씩 수첩에 옮긴다. 중간쯤에 ‘보미’가 있다. 맨 끝은 ‘모과’다."
+      },
+      {
+        "id": "NW_D11_S03_A15",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "나는 측정밖에 없어. 마을 사람들은 숨어 지낸 외지 여자 말은 안 들어.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D11_S03_A16",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "당신이 이 마을에서 본 것으로 말해 줘. 왜 꺼내면 안 되는지.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D11_S03_A17",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "넌 알고 있잖아.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D11_S03_A18",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "짐작뿐이야. 당신이 먼저 말해 봐.",
+        "expression": "neutral"
+      }
+    ]
+  },
   "drop": [],
-  "evidence": {}
+  "evidence": {
+    "E14_SUPPLY": {
+      "name": "학교 장작 인수 기록",
+      "variants": {
+        "observed": "아빠와 까로가 실제로 운반한 장작 묶음을 선생님이 인수했다. 오늘 밤 쓸 양은 따로 확인한다."
+      }
+    }
+  },
+  "new_evidence": {
+    "NW_SICK_BEDS": {
+      "name": "학교 침상 목록의 꽃 표시",
+      "kind": "기록",
+      "variants": {
+        "observed": "11일 학교 입구. 선생님의 침상 목록에서 ‘야생화 아이’ 표시가 붙은 아이는 모두 큰 집 아이들이다. 창고에서 온 아이들 이름에는 표시가 없다."
+      }
+    },
+    "NW_TABLET_A": {
+      "name": "깨진 돌판",
+      "kind": "물증",
+      "variants": {
+        "observed": "옛 시설 벽에서 떨어진 돌판. 반이 깨져 나갔다. 엄마가 읽었다. “아르카는 장치 안에서만 쓰라. 꺼내어……” 그 뒤는 없다."
+      }
+    },
+    "NW_NAMES": {
+      "name": "벽에 새긴 이름들",
+      "kind": "기록",
+      "variants": {
+        "observed": "옛 시설 벽에 칼끝으로 새긴 이름들. 맨 위는 ‘달래’, 중간에 ‘보미’, 맨 끝은 ‘모과’. 그림과 달리 글씨가 거칠다. 아빠가 수첩에 옮겨 적었다."
+      }
+    }
+  },
+  "blocks": {
+    "hyp_open11": [
+      {
+        "id": "NW_H_OPEN_01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "해가 지자 학교에 장작과 사람이 모인다. 젖은 외투에서 김이 오른다."
+      },
+      {
+        "id": "NW_H_OPEN_02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "입구에서 선생님이 침상 목록을 정리하고 있다. 몇몇 이름 옆에 작은 꽃 표시가 붙어 있다."
+      },
+      {
+        "id": "NW_H_OPEN_03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "그 표시는 뭡니까?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H_OPEN_04",
+        "speaker": "선생님",
+        "kind": "dialogue",
+        "text": "야생화가 온 애들이에요. 날짜를 자꾸 잊고, 이름을 불러도 늦게 돌아봐요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H_OPEN_05",
+        "speaker": null,
+        "kind": "narration",
+        "text": "표시가 붙은 이름은 모두 큰 집 아이들이다. 창고에서 온 아이들 이름에는 표시가 없다."
+      },
+      {
+        "id": "NW_H_OPEN_06",
+        "speaker": null,
+        "kind": "narration",
+        "text": "엄마는 학교 뒷방에 남는다. 숨어 지내던 외지 여자의 말은 아무도 듣지 않을 것이다."
+      },
+      {
+        "id": "NW_H_OPEN_07",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "오늘 밤부터 집집의 아르카 불을 끄고, 여기서 장작으로 지냅시다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H_OPEN_08",
+        "speaker": null,
+        "kind": "narration",
+        "text": "웅성거리던 소리가 멎는다."
+      },
+      {
+        "id": "NW_H_OPEN_09",
+        "speaker": "백 부인",
+        "kind": "dialogue",
+        "text": "손님이 우리 불에 손을 대겠다는 거예요? 이 추위에?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H_OPEN_10",
+        "speaker": "판돌",
+        "kind": "dialogue",
+        "text": "까닭이나 들어 봅시다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H_OPEN_11",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "제가 이 마을에서 본 것으로 말씀드리겠습니다.",
+        "expression": "neutral"
+      }
+    ],
+    "hyp0_sick11": [
+      {
+        "id": "NW_H0_A_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "야생화는 옮는 병입니다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H0_A_02",
+        "speaker": "주민",
+        "kind": "dialogue",
+        "text": "그럼 앓는 사람을 다 내보내야겠네.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H0_A_03",
+        "speaker": "선생님",
+        "kind": "dialogue",
+        "text": "……그건 너울 씨가 늘 하던 말이에요.",
+        "expression": "neutral"
+      }
+    ],
+    "hyp0_call11": [
+      {
+        "id": "NW_H0_B_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "아르카가 사람을 부르는 겁니다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H0_B_02",
+        "speaker": "판돌",
+        "kind": "dialogue",
+        "text": "그래, 아르카가 부르는 거요. 불려 간 사람은 복을 받은 거고.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H0_B_03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "여기저기서 고개를 끄덕인다. 마을이 늘 하던 말이다."
+      }
+    ],
+    "hyp0_old11": [
+      {
+        "id": "NW_H0_C_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "늙으면 누구나 그렇게 됩니다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H0_C_02",
+        "speaker": "백 부인",
+        "kind": "dialogue",
+        "text": "그럼 불을 끌 까닭이 없네요.",
+        "expression": "neutral"
+      }
+    ],
+    "hyp0_won11": [
+      {
+        "id": "NW_H0_W_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "아르카를 꺼내 곁에 두고 오래 지낸 사람부터 무너집니다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H0_W_02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "학교 안이 조용해진다. 누군가 자기 손바닥을 내려다본다."
+      },
+      {
+        "id": "NW_H0_W_03",
+        "speaker": "판돌",
+        "kind": "dialogue",
+        "text": "아르카가 사람을 무너뜨린다니. 처음 듣는 소리요.",
+        "expression": "neutral"
+      }
+    ],
+    "hyp1_q11": [
+      {
+        "id": "NW_H1_Q_01",
+        "speaker": "돌목",
+        "kind": "dialogue",
+        "text": "그럼 왜 아르카를 날마다 만지는 초롱은 멀쩡하오?",
+        "expression": "neutral"
+      }
+    ],
+    "hyp1_reason11": [
+      {
+        "id": "NW_H1_R_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "만지는 것보다 곁에서 오래 지내는 게 문제입니다.",
+        "expression": "neutral"
+      }
+    ],
+    "hyp1_won11": [
+      {
+        "id": "NW_H1_W_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "초롱 씨는 등마다 잠깐 서서 덮개만 보고 지나갑니다. 점검장에 그렇게 적혀 있어요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H1_W_02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "피코는 3번 등 바로 아래에서 지냈습니다. 그 불 아래서 그리면 손이 덜 떨린다고 했죠. 떨림은 그 전부터 와 있었던 겁니다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H1_W_03",
+        "speaker": "초롱",
+        "kind": "dialogue",
+        "text": "……저는 등 아래서 자 본 적이 없어요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H1_W_04",
+        "speaker": "돌목",
+        "kind": "dialogue",
+        "text": "……초소 불은 오늘 끄겠소.",
+        "expression": "neutral"
+      }
+    ],
+    "hyp1_lost11": [
+      {
+        "id": "NW_H1_L_01",
+        "speaker": "돌목",
+        "kind": "dialogue",
+        "text": "그 말로는 모르겠소. 초소 불은 그대로 두겠소.",
+        "expression": "neutral"
+      }
+    ],
+    "hyp2_q11": [
+      {
+        "id": "NW_H2_Q_01",
+        "speaker": "백 부인",
+        "kind": "dialogue",
+        "text": "우리 창고엔 아르카가 산더미요. 나는 왜 멀쩡하죠?",
+        "expression": "neutral"
+      }
+    ],
+    "hyp2_reason11": [
+      {
+        "id": "NW_H2_R_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "부인은 그 돌 곁에서 잠을 자지 않으니까요.",
+        "expression": "neutral"
+      }
+    ],
+    "hyp2_won11": [
+      {
+        "id": "NW_H2_W_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "부인은 식당 위층에서 주무시죠. 창고에서 자는 분은 따로 있습니다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H2_W_02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "3일에 창고지기 어르신이 제게 날짜를 두 번 물었습니다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H2_W_03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "백 부인의 얼굴이 굳는다."
+      },
+      {
+        "id": "NW_H2_W_04",
+        "speaker": "백 부인",
+        "kind": "dialogue",
+        "text": "……그 양반은 창고에서 자요. 켜지도 않은 돌인데.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H2_W_05",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "켜지 않으면 덜 세고 덜 빠를 뿐입니다. 괜찮은 건 아닙니다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H2_W_06",
+        "speaker": "백 부인",
+        "kind": "dialogue",
+        "text": "창고지기는 오늘 밤 학교로 보낼게요. 창고 문도 열겠어요.",
+        "expression": "neutral"
+      }
+    ],
+    "hyp2_lost11": [
+      {
+        "id": "NW_H2_L_01",
+        "speaker": "백 부인",
+        "kind": "dialogue",
+        "text": "그럼 내 창고하고는 상관없는 얘기네요. 문은 안 열어요.",
+        "expression": "neutral"
+      }
+    ],
+    "hyp3_q11": [
+      {
+        "id": "NW_H3_Q_01",
+        "speaker": "판돌",
+        "kind": "dialogue",
+        "text": "옛날부터 아르카를 써 왔소. 그런데 왜 요 몇 해 사이에 이리 늘었소? 옛날엔 늙어서야 아르카 곁으로 갔소. 그건 복이었지.",
+        "expression": "neutral"
+      }
+    ],
+    "hyp3_reason11": [
+      {
+        "id": "NW_H3_R_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "요즘 태우는 돌이 더 독합니다.",
+        "expression": "neutral"
+      }
+    ],
+    "hyp3_won11": [
+      {
+        "id": "NW_H3_W_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "백 부인 창고에서 들었습니다. 안쪽 돌은 값이 세 배라고요. 센 돌을 찾는 집이 많다고.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H3_W_02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "무쇠 씨는 갱도 맨 아래까지 가서 안쪽 돌을 제일 많이 캤습니다. 지금은 어제 한 말을 오늘 모릅니다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H3_W_03",
+        "speaker": "굴돌",
+        "kind": "dialogue",
+        "text": "……깊이 팔수록 동무들이 빨리 말을 잃었소. 나는 갱도가 무서워서 그런 줄만 알았소.",
+        "expression": "neutral",
+        "when": "guldol_ready"
+      },
+      {
+        "id": "NW_H3_W_04",
+        "speaker": "판돌",
+        "kind": "dialogue",
+        "text": "옛날 돌은 바깥 돌이었지. 늙어서야 왔고…… 우린 그걸 복이라 불렀소.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H3_W_05",
+        "speaker": "판돌",
+        "kind": "dialogue",
+        "text": "……안쪽 돌은 오늘 끄겠소.",
+        "expression": "neutral"
+      }
+    ],
+    "hyp3_lost11": [
+      {
+        "id": "NW_H3_L_01",
+        "speaker": "판돌",
+        "kind": "dialogue",
+        "text": "젊은 것들이 약해진 거요. 돌 탓을 하지 마시오.",
+        "expression": "neutral"
+      }
+    ],
+    "hyp4_q11": [
+      {
+        "id": "NW_H4_Q_01",
+        "speaker": "주민",
+        "kind": "dialogue",
+        "text": "그럼 우리 애는 왜요? 애가 무슨 죄로요?",
+        "expression": "anxious"
+      }
+    ],
+    "hyp4_reason11": [
+      {
+        "id": "NW_H4_R_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "아이 방에도 아르카등이 밤새 켜져 있었으니까요.",
+        "expression": "neutral"
+      }
+    ],
+    "hyp4_won11": [
+      {
+        "id": "NW_H4_W_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "창고 아이들은 표도 없고 돌도 없습니다. 기름 등잔을 썼죠.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H4_W_02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "선생님 목록에서 야생화 표시가 붙은 아이는 모두 큰 집 아이들입니다. 밤새 아르카등을 켜 두는 집이요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H4_W_03",
+        "speaker": "주민",
+        "kind": "dialogue",
+        "text": "우리 애가 어두운 걸 무서워해서…… 밤새 켜 뒀어요.",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_H4_W_04",
+        "speaker": "주민",
+        "kind": "dialogue",
+        "text": "오늘은 끌게요.",
+        "expression": "neutral"
+      }
+    ],
+    "hyp4_lost11": [
+      {
+        "id": "NW_H4_L_01",
+        "speaker": "주민",
+        "kind": "dialogue",
+        "text": "애들은 원래 약해요. 불까지 끄면 얼어 죽어요.",
+        "expression": "angry"
+      }
+    ],
+    "hyp5_q11": [
+      {
+        "id": "NW_H5_Q_01",
+        "speaker": "선생님",
+        "kind": "dialogue",
+        "text": "말은 그럴듯해요. 그런데 아르카가 사람을 무너뜨리는 걸 직접 본 사람이 있나요?",
+        "expression": "neutral"
+      }
+    ],
+    "hyp5_reason11": [
+      {
+        "id": "NW_H5_R_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "한 방의 돌이 바뀌자, 한 사람이 한 저녁 사이에 무너졌습니다.",
+        "expression": "neutral",
+        "when": "owl_dead"
+      },
+      {
+        "id": "NW_H5_R_02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "한 방의 돌을 치우자, 무너지던 사람이 돌아왔습니다.",
+        "expression": "neutral",
+        "when": "owl_alive"
+      }
+    ],
+    "hyp5_won11": [
+      {
+        "id": "NW_H5_W_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "7일 밤 13호 난로에 이 돌이 들어 있었습니다. 각인 없는 검푸른 돌입니다.",
+        "expression": "neutral",
+        "when": "owl_dead"
+      },
+      {
+        "id": "NW_H5_W_02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "그날 다람이는 머리가 띵하다고 했습니다. 부엉이 어르신은 한 저녁 사이에 말을 놓쳤고요. 서리 씨도 그렇게 무너진 건 처음 본다고 했습니다.",
+        "expression": "neutral",
+        "when": "owl_dead"
+      },
+      {
+        "id": "NW_H5_W_03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "7일 밤 13호 난로에서 이 돌을 꺼내 눈에 묻었습니다. 한참 뒤 어르신이 부리 이름을 또렷하게 불렀습니다.",
+        "expression": "neutral",
+        "when": "prevention_a"
+      },
+      {
+        "id": "NW_H5_W_04",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "8일 서리 씨가 13호 난로에서 이 돌을 꺼냈습니다. 그 뒤로 어르신이 조금씩 돌아왔습니다.",
+        "expression": "neutral",
+        "when": "prevention_b"
+      },
+      {
+        "id": "NW_H5_W_05",
+        "speaker": "부엉이",
+        "kind": "dialogue",
+        "text": "나는 그날 밤을 반밖에 기억 못 하네. 돌을 치운 뒤부터는 기억이 나.",
+        "expression": "neutral",
+        "when": "owl_alive"
+      },
+      {
+        "id": "NW_H5_W_06",
+        "speaker": "굴돌",
+        "kind": "dialogue",
+        "text": "……광산 안쪽 돌이오. 무너진 갱도에서나 나오던 거요. 요즘은 백 부인 창고에나 있소.",
+        "expression": "neutral",
+        "when": "guldol_ready"
+      },
+      {
+        "id": "NW_H5_W_07",
+        "speaker": null,
+        "kind": "narration",
+        "text": "선생님이 침상 목록을 가슴에 끌어안는다. 한동안 아무도 말하지 않는다."
+      }
+    ],
+    "hyp5_lost11": [
+      {
+        "id": "NW_H5_L_01",
+        "speaker": "선생님",
+        "kind": "dialogue",
+        "text": "한 사람 일로 마을을 판단할 순 없어요.",
+        "expression": "neutral"
+      }
+    ],
+    "hyp_chief11": [
+      {
+        "id": "NW_H_CH_01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "학교 문이 열린다. 촌장이 문간에 선다."
+      },
+      {
+        "id": "NW_H_CH_02",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "아르카를 끄라는 것은 아르카를 버리라는 말이오. 손님이 우리 불을 꺼서 무엇을 얻겠소.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H_CH_03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "얻을 건 없습니다. 오늘 밤 아이들이 날짜를 덜 잊으면 그걸로 됩니다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H_CH_04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "사람들이 하나둘 일어선다. 촌장 앞을 지나 자기 집 불을 끄러 간다.",
+        "when": "hyp_win"
+      },
+      {
+        "id": "NW_H_CH_05",
+        "speaker": null,
+        "kind": "narration",
+        "text": "몇 사람이 일어선다. 나머지는 촌장 곁에 남는다.",
+        "when": "hyp_partial"
+      }
+    ],
+    "hyp_lose11": [
+      {
+        "id": "NW_H_LO_01",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "아르카를 모독한 손님이오. 마을 불에 손대지 마시오.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_H_LO_02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "아무도 불을 끄지 않는다. 학교에 장작으로 모인 사람은 처음부터 대피해 온 사람들뿐이다."
+      },
+      {
+        "id": "NW_H_LO_03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "나는 마을이 늘 하던 말을 되풀이했을 뿐이다."
+      }
+    ],
+    "hyp_result11": [
+      {
+        "id": "NW_H_RE_01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "그날 밤 마을 대부분이 아르카 불을 끄고 학교로 온다.",
+        "when": "hyp_win"
+      },
+      {
+        "id": "NW_H_RE_02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "너울이 장부를 펼쳐 ‘11일부터 집집의 돌 회수’라고 적는다. 고개도 들지 않는다.",
+        "when": "hyp_win"
+      },
+      {
+        "id": "NW_H_RE_03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "학교에 온 사람들의 집만 불을 끈다.",
+        "when": "hyp_partial"
+      },
+      {
+        "id": "NW_H_RE_04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "초소 불은 그대로 켜져 있다.",
+        "when": "hyp_lost1"
+      },
+      {
+        "id": "NW_H_RE_05",
+        "speaker": null,
+        "kind": "narration",
+        "text": "백 부인의 창고 문은 잠긴 채다. 창고지기는 그 안에서 잔다.",
+        "when": "hyp_lost2"
+      },
+      {
+        "id": "NW_H_RE_06",
+        "speaker": null,
+        "kind": "narration",
+        "text": "판돌의 집에서는 안쪽 돌이 그대로 탄다.",
+        "when": "hyp_lost3"
+      },
+      {
+        "id": "NW_H_RE_07",
+        "speaker": null,
+        "kind": "narration",
+        "text": "큰 집 아이들 방의 불은 꺼지지 않는다.",
+        "when": "hyp_lost4"
+      },
+      {
+        "id": "NW_H_RE_08",
+        "speaker": null,
+        "kind": "narration",
+        "text": "너울이 장부에 ‘11일부터 일부 집의 돌 회수’라고 적는다.",
+        "when": "hyp_partial"
+      },
+      {
+        "id": "NW_H_RE_09",
+        "speaker": null,
+        "kind": "narration",
+        "text": "다람이 아이들 방을 돌며 아르카등을 끈다. 아이 하나가 춥다고 운다.",
+        "when": "hyp_not_lose"
+      },
+      {
+        "id": "NW_H_RE_10",
+        "speaker": null,
+        "kind": "narration",
+        "text": "한 노인이 꺼진 등 앞에서 손바닥을 비춘다. 아르카에게 미안하다고 중얼거린다.",
+        "when": "hyp_not_lose"
+      },
+      {
+        "id": "NW_H_RE_11",
+        "speaker": null,
+        "kind": "narration",
+        "text": "밤늦게 엄마가 쪽지를 보낸다. ‘당신 말이 맞아. 내 측정도 같아.’",
+        "when": "hyp_win"
+      },
+      {
+        "id": "NW_H_RE_12",
+        "speaker": null,
+        "kind": "narration",
+        "text": "너울의 명단 종이에 이름이 하나 는다. 굴돌. 이유 칸에는 ‘시설 출입’.",
+        "when": "guldol_listed"
+      }
+    ],
+    "night_lights11": [
+      {
+        "id": "NW_N11_01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "창밖 아랫길 쪽 등이 하나씩 꺼진다. 너울의 사람들이 등 덮개를 닫으며 지나간다."
+      },
+      {
+        "id": "NW_N11_02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "아빠가 학교에서 꺼낸 말을 너울은 자기 방식으로 했다. 큰 집 불이 아니라, 가장 약한 곳의 불부터."
+      },
+      {
+        "id": "NW_N11_03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "너울의 장부에 ‘11일, 아랫길 등 끊음’이 적힌다."
+      }
+    ]
+  }
 }

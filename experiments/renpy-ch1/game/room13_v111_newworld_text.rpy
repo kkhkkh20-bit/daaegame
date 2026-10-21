@@ -8,18 +8,20 @@
 #   evidence {key: {"name": ..., "variants": {variant: text}, "add_variants": {new: text}}}
 #   new_evidence {"NW_...": {"name": ..., "kind": "물증|기록|관찰기록|증언", "variants": {variant: text}}}
 #            a record that only the new world has; the generators acquire it with r13_nw_acquire
+#   blocks   {name: [line, ...]}                     new-world lines with no authored record
+#            (new meetings); the generators show them with r13_nw_block(name)
 # A new line: {"id": "NW_...", "speaker": name|null, "text": ..., "kind"?, "expression"?,
 #              "when"?: condition name in R13_NW_WHEN, "cut"?: existing ep art name}
 # Conditions are named Python predicates, never evaluated strings.
 # With every file empty the game shows the same lines in the same order as before.
 init 319 python:
     R13_NW_TEXT_DAYS=["d%02d"%n for n in range(1,15)]
-    R13_NW_TEXT=dict(replace={},before={},after={},drop=[],evidence={},new_evidence={})
+    R13_NW_TEXT=dict(replace={},before={},after={},drop=[],evidence={},new_evidence={},blocks={})
     for _nw_day in R13_NW_TEXT_DAYS:
         _nw_path="v111/newworld/%s.json"%_nw_day
         if not renpy.loadable(_nw_path):continue
         with renpy.file(_nw_path) as _nw_file:_nw_part=json.load(_nw_file)
-        for _nw_key in ("replace","before","after","evidence","new_evidence"):
+        for _nw_key in ("replace","before","after","evidence","new_evidence","blocks"):
             for _nw_rid,_nw_value in _nw_part.get(_nw_key,{}).items():
                 if _nw_rid in R13_NW_TEXT[_nw_key]:raise Exception("Duplicate new-world entry: %s %s"%(_nw_key,_nw_rid))
                 R13_NW_TEXT[_nw_key][_nw_rid]=_nw_value
@@ -75,6 +77,18 @@ init 319 python:
         "records_partial":lambda:r13_v111_value("meeting:records")=="partial",
         "records_lose":lambda:r13_v111_value("meeting:records")=="lose",
         "records_not_lose":lambda:r13_v111_value("meeting:records")!="lose",
+        # Event 08: the day-11 facility and the hypothesis meeting.
+        "guldol_ready":lambda:r13_v111_actor_ready("resident_guldol"),
+        "guldol_absent":lambda:not r13_v111_actor_ready("resident_guldol"),
+        "guldol_listed":lambda:r13_v111_value("listed:resident_guldol") is True,
+        "hyp_win":lambda:r13_v111_value("meeting:hypothesis")=="win",
+        "hyp_partial":lambda:r13_v111_value("meeting:hypothesis")=="partial",
+        "hyp_lose":lambda:r13_v111_value("meeting:hypothesis")=="lose",
+        "hyp_not_lose":lambda:r13_v111_value("meeting:hypothesis") in ("win","partial"),
+        "hyp_lost1":lambda:r13_v111_value("hyp_issue:1")=="lost",
+        "hyp_lost2":lambda:r13_v111_value("hyp_issue:2")=="lost",
+        "hyp_lost3":lambda:r13_v111_value("hyp_issue:3")=="lost",
+        "hyp_lost4":lambda:r13_v111_value("hyp_issue:4")=="lost",
     }
     R13_NW_CUT_SPECIAL=("bell","v111_blanket_before","v111_blanket_after")
     def r13_nw_drop_item(item):
@@ -92,9 +106,10 @@ init 319 python:
             rid,when=r13_nw_drop_item(item)
             if rid not in records:out.append("drop: unknown record "+str(rid))
             if when not in R13_NW_WHEN:out.append("drop: unknown condition "+str(rid))
-        for where in ("before","after"):
+        for where in ("before","after","blocks"):
             for rid,rows in R13_NW_TEXT[where].items():
-                if rid not in records:out.append(where+": unknown record "+rid)
+                if where!="blocks" and rid not in records:out.append(where+": unknown record "+rid)
+                if where=="blocks" and not rows:out.append("blocks: empty block "+rid)
                 for row in rows:
                     nid=row.get("id","")
                     if not nid.startswith("NW_") or nid in seen or nid in records:out.append(where+": bad or repeated id "+repr(nid))
@@ -137,6 +152,10 @@ init 319 python:
             for row in R13_NW_TEXT["after"].get(rid,()):
                 if R13_NW_WHEN[row.get("when","always")]():out.append(r13_nw_added_line(row))
         return out
+    def r13_nw_block(name):
+        """Lines of a new-world block (a new meeting) whose conditions hold."""
+        if name not in R13_NW_TEXT["blocks"]:raise Exception("Unknown new-world block: "+str(name))
+        return [r13_nw_added_line(row) for row in R13_NW_TEXT["blocks"][name] if R13_NW_WHEN[row.get("when","always")]()]
     _r13_nw_context_match=r13_dialogue_context_match
     def r13_dialogue_context_match(identity,index,packet,pose):
         rid=packet[2].get("line_id") if len(packet)>2 and isinstance(packet[2],dict) else None

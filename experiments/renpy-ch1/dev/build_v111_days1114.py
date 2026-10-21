@@ -133,10 +133,10 @@ lines.append('    if '+V('OWL_ALIVE')+' and '+V('owl_invitation_testimony')+':')
 label('forgery_question11');late(s,55,57);lines.append('    return')
 label('owl_question11');late(s,58,59);lines.append('    return')
 s='MS14_D11_S03';start(s,'facility','facility11',['daram','mom','resident_guldol','resident_lamplighter','guard','karo'],1);late(s,1,1);lines.append('    if r13_v111_actor_ready("resident_guldol"):');lines.append('        call r13_v111_guldol_heat11');lines.append('    else:');lines.append('        call r13_v111_mother_heat11');goto('heat_check11')
-label('guldol_heat11');late(s,2,9);lines.append('    return')
+label('guldol_heat11');setv('guldol_facility_seen',True);late(s,2,9);lines.append('    return')
 label('mother_heat11');late(s,43,45);lines.append('    return')
-field('heat_check11','facility',['daram','mom','resident_guldol','resident_lamplighter','guard','karo'],'blankets','조각과 잔열을 확인한다','heat_seen11')
-label('heat_seen11');late(s,10,19);setv('heat_inventory_observed',True)
+field('heat_check11','facility',['daram','mom','resident_guldol','resident_lamplighter','guard','karo'],'blankets','벽 그림과 돌판을 확인한다','heat_seen11')
+label('heat_seen11');late(s,10,19);code('r13_nw_acquire("NW_TABLET_A")');code('r13_nw_acquire("NW_NAMES")');setv('heat_inventory_observed',True)
 lines.append('    if '+V('carried_dry_blankets')+'>0:');lines.append('        call r13_v111_family_blankets11');lines.append('    else:');lines.append('        call r13_v111_no_blankets11')
 select([('가족 자리부터 본다','family_place11',None),('아랫길 대피 준비를 확인한다','rescue_prepare11',None),('준비된 물자를 학교로 옮긴다','supply_school11',None)])
 label('family_blankets11');late(s,20,21);lines.append('    return')
@@ -155,13 +155,57 @@ label('school_visit11');arrive(['mom','daram','nabi','resident_teacher','residen
 field('family_space_after_supply11','school',['mom','daram','nabi','resident_teacher'],'blankets','가족 세 사람의 실제 자리를 확인한다','family_space_checked11')
 label('family_space_checked11');setv('family_school_place',True);goto('family_space_ready11')
 label('family_space_ready11')
-lines.append('    if '+V('carried_dry_blankets')+'>0 and not '+V('tosil_blanket_given')+':');lines.append('        jump r13_v111_blanket_choice11');goto('night11')
+lines.append('    if '+V('carried_dry_blankets')+'>0 and not '+V('tosil_blanket_given')+':');lines.append('        jump r13_v111_blanket_choice11');goto('hypothesis11')
 label('blanket_choice11');select([('가족 짐에 보관한다','blanket_store11',None),('토실에게 한 장을 건넨다','tosil_blanket11',None)])
-label('blanket_store11');late(s,54,55);goto('night11')
-label('tosil_blanket11');late(s,37,40);lines.append('    if r13_v111_value("carried_dry_blankets")>1:');lines.append('        call r13_v111_tosil_blanket_remaining11');lines.append('    else:');lines.append('        call r13_v111_tosil_blanket_last11');code('r13_v111_apply("tosil_actual_blanket",[dict(op="set",field="carried_dry_blankets",value=r13_v111_value("carried_dry_blankets")-1),dict(op="set",field="tosil_bedding_received",value=1),dict(op="set",field="tosil_blanket_given",value=True)])');goto('night11')
+label('blanket_store11');late(s,54,55);goto('hypothesis11')
+label('tosil_blanket11');late(s,37,40);lines.append('    if r13_v111_value("carried_dry_blankets")>1:');lines.append('        call r13_v111_tosil_blanket_remaining11');lines.append('    else:');lines.append('        call r13_v111_tosil_blanket_last11');code('r13_v111_apply("tosil_actual_blanket",[dict(op="set",field="carried_dry_blankets",value=r13_v111_value("carried_dry_blankets")-1),dict(op="set",field="tosil_bedding_received",value=1),dict(op="set",field="tosil_blanket_given",value=True)])');goto('hypothesis11')
 label('tosil_blanket_remaining11');late(s,41,41);lines.append('    return')
 label('tosil_blanket_last11');late(s,57,57);lines.append('    return')
-s='MS14_D11_S04';start(s,'school','night11',['mom','daram','resident_teacher','karo','resident_nero'],2);late(s,1,1)
+
+# New world (event 08): the hypothesis meeting at the school, before the night.
+# Issue 0 and issue 5 are gates (lost = the village keeps its fires). Issues 1-4 each
+# ask "why then?": pick the reason, then lay the records; a wrong reason or wrong
+# records leaves that house's fire burning (a half presentation gets one more try).
+def nwblock(name):lines.append('    call r13_lines(r13_nw_block(%r),%r)'%(name,'nw:'+name))
+HYP=[
+ (1,'초롱과 피코의 하루를 대조한다',['E11','E08','NW_PIKO_TREMOR'],'돌목이 팔짱을 낀다. 초롱의 하루와 피코의 밤을 함께 놓아야 한다.',
+  [('만지는 것보다 곁에서 오래 지내는 게 문제다',True),('초롱은 젊어서 버틴다',False),('초롱은 장갑을 끼고 만진다',False)]),
+ (2,'창고에서 잠자는 사람을 짚는다',['NW_KEEPER_DATE'],'백 부인이 고개를 돌린다. 창고에서 자는 사람을 짚어야 한다.',
+  [('켜지 않고 쌓아 둔 돌은 아무 해가 없다',False),('백 부인은 그 돌 곁에서 잠을 자지 않는다',True),('백 부인은 돌을 팔기만 한다',False)]),
+ (3,'요즘 돌이 어디서 오는지 대조한다',['NW_INNER_PRICE','NW_MUSOE_DEEP'],'판돌이 고개를 젓는다. “무쇠는 원래 고집이 셌소.” 돌값과 갱도 이야기를 함께 놓아야 한다.',
+  [('요즘 사람들이 약해졌다',False),('외지 사람이 병을 들여왔다',False),('요즘 태우는 돌이 더 독하다',True)]),
+ (4,'아르카가 없는 아이들과 대조한다',['NW_KKOMI_NOSTONE','NW_SICK_BEDS'],'주민이 아이를 끌어안는다. 돌이 없는 아이들과 표시가 붙은 아이들을 함께 놓아야 한다.',
+  [('아이 방에도 아르카등이 밤새 켜져 있었다',True),('아이들은 어른보다 약하다',False),('아이들이 아르카를 만지고 논다',False)]),
+]
+label('hypothesis11');code('r13_v111_arrive(["daram","resident_teacher","guard","resident_madam","npc_pandol","resident_lamplighter"])')
+nwblock('hyp_open11');code('r13_nw_acquire("NW_SICK_BEDS")')
+select([('야생화는 옮는 병이다','hyp0_sick11',None),('아르카가 사람을 부른다','hyp0_call11',None),('꺼낸 아르카 곁에 오래 있던 사람부터 무너진다','hyp0_won11',None),('늙으면 누구나 그렇게 된다','hyp0_old11',None)])
+for key in ('hyp0_sick11','hyp0_call11','hyp0_old11'):label(key);nwblock(key);goto('hyp_lost_gate11')
+label('hyp0_won11');nwblock('hyp0_won11');goto('hyp1_q11')
+for n,title,correct,note,reasons in HYP:
+ nxt='hyp%d_q11'%(n+1)
+ label('hyp%d_q11'%n);nwblock('hyp%d_q11'%n)
+ select([(t,('hyp%d_reason11'%n) if ok else ('hyp%d_lost11'%n),None) for t,ok in reasons])
+ label('hyp%d_reason11'%n);nwblock('hyp%d_reason11'%n);goto('hyp%d_proof11'%n)
+ proof('hyp%d_proof11'%n,title,correct,'hyp%d_won11'%n,'hyp%d_wrong11'%n)
+ label('hyp%d_wrong11'%n)
+ lines.extend(['    if r13_nw_half(%r) and not r13_v111_value("half:hyp%d"):'%(correct,n),'        $ r13_v111_set("half:hyp%d",True)'%n,'        $ renpy.notify(%r)'%note,'        jump r13_v111_hyp%d_proof11'%n])
+ goto('hyp%d_lost11'%n)
+ label('hyp%d_lost11'%n);nwblock('hyp%d_lost11'%n);setv('hyp_issue:%d'%n,'lost');goto(nxt)
+ label('hyp%d_won11'%n);nwblock('hyp%d_won11'%n);setv('hyp_issue:%d'%n,'won');goto(nxt)
+label('hyp5_q11');nwblock('hyp5_q11')
+select([('한 방의 돌이 바뀌자 한 사람이 한 저녁 사이에 무너졌다','hyp5_reason11',V('OWL_ALIVE')+' is False'),('한 방의 돌을 치우자 무너지던 사람이 돌아왔다','hyp5_reason11',V('OWL_ALIVE')+' is not False'),('부엉이 어르신은 원래 아팠다','hyp5_lost11',None),('13호가 추워서 그렇다','hyp5_lost11',None)])
+label('hyp5_reason11');nwblock('hyp5_reason11');goto('hyp5_proof11')
+proof('hyp5_proof11','13호 난로의 돌을 내놓는다',['NW_STONE'],'hyp5_won11','hyp5_lost11')
+label('hyp5_lost11');nwblock('hyp5_lost11');goto('hyp_lost_gate11')
+label('hyp5_won11');nwblock('hyp5_won11')
+code('r13_nw_meeting_end("hypothesis","win" if all(r13_v111_value("hyp_issue:%d"%i)=="won" for i in (1,2,3,4)) else "partial")')
+nwblock('hyp_chief11');goto('hyp_end11')
+label('hyp_lost_gate11');code('r13_nw_meeting_end("hypothesis","lose")');nwblock('hyp_lose11');goto('hyp_end11')
+label('hyp_end11')
+lines.extend(['    if r13_v111_value("guldol_facility_seen"):','        $ r13_nw_list("resident_guldol","facility")'])
+nwblock('hyp_result11');goto('night11')
+s='MS14_D11_S04';start(s,'school','night11',['mom','daram','resident_teacher','karo','resident_nero'],2);nwblock('night_lights11');setv('lower_lights_cut',True);late(s,1,1)
 lines.append('    if '+V('carried_dry_blankets')+'>0:');lines.append('        call r13_v111_rest_blanket11')
 branch('night_rescue_route11',V('lower_road_handover')+'==3','lower_safe11','request_rescue11')
 label('rest_blanket11');late(s,2,7);lines.append('    return')

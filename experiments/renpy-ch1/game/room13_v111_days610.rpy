@@ -92,6 +92,7 @@ label r13_v111_woodshed6:
     $ r13_v111_arrive(['daram', 'kid_kkomi', 'resident_bori'])
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D06_S02_L0002']),'v111:MS14_D06_S02_L0002')
+    $ r13_nw_acquire("NW_KKOMI_NOSTONE")
     call r13_lines(r13_v111_lines(['MS14_D06_S02_L0003']),'v111:MS14_D06_S02_L0003')
     call r13_lines(r13_v111_lines(['MS14_D06_S02_L0004']),'v111:MS14_D06_S02_L0004')
     jump r13_v111_woodshed_check6

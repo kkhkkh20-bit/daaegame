@@ -524,6 +524,7 @@ label r13_v111_portrait_commission:
     call r13_lines(r13_v111_lines(['MS14_D02_S03_L0010', 'MS14_D02_S03_L0011', 'MS14_D02_S03_L0012', 'MS14_D02_S03_L0013', 'MS14_D02_S03_L0014', 'MS14_D02_S03_L0015', 'MS14_D02_S03_L0016', 'MS14_D02_S03_L0017', 'MS14_D02_S03_L0018', 'MS14_D02_S03_L0019']), 'v111:portrait_commission:MS14_D02_S03_L0010')
     $ r13_v111_commit('MS14_D02_S03_L0020')
     call r13_lines(r13_v111_lines(['MS14_D02_S03_L0021', 'MS14_D02_S03_L0022', 'MS14_D02_S03_L0023', 'MS14_D02_S03_L0024']), 'v111:portrait_commission:MS14_D02_S03_L0021')
+    $ r13_nw_acquire("NW_PIKO_TREMOR")
     jump r13_v111_lamp_observe
 
 label r13_v111_lamp_observe:
@@ -965,6 +966,8 @@ label r13_v111_sale3:
     $ r13_v111_score()
     $ r13_v111_commit('MS14_D03_S04_L0032')
     call r13_lines(r13_v111_lines(['MS14_D03_S04_L9103', 'MS14_D03_S04_L0033']), 'v111:sale3:MS14_D03_S04_L9103')
+    $ r13_nw_acquire("NW_INNER_PRICE")
+    $ r13_nw_acquire("NW_KEEPER_DATE")
     call r13_v111_travel('workshop','MS14_D03_S04_L0034')
     call r13_lines(r13_v111_lines(['MS14_D03_S04_L0035', 'MS14_D03_S04_L0036', 'MS14_D03_S04_L0037']), 'v111:sale3:MS14_D03_S04_L0035')
     $ r13_v111_commit('MS14_D03_S04_L0037')

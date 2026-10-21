@@ -66,9 +66,9 @@ class NewWorldText(Layer):
   self.assertEqual(env['r13_nw_text_problems'](),[])
   for path in sorted((ROOT/'game/v111/newworld').glob('d*.json')):
    part=json.loads(path.read_text())
-   self.assertLessEqual(set(part)-{'new_evidence'},{'replace','before','after','drop','evidence'},path.name)
+   self.assertLessEqual(set(part)-{'new_evidence','blocks'},{'replace','before','after','drop','evidence'},path.name)
    self.assertLessEqual({'replace','before','after','drop','evidence'},set(part),path.name)
-   texts=[v['text'] for v in part['replace'].values()]+[r['text'] for rows in list(part['before'].values())+list(part['after'].values()) for r in rows]
+   texts=[v['text'] for v in part['replace'].values()]+[r['text'] for rows in list(part['before'].values())+list(part['after'].values())+list(part.get('blocks',{}).values()) for r in rows]+[t for e in part.get('new_evidence',{}).values() for t in [e['name']]+list(e['variants'].values())]
    for t in texts:
     self.assertFalse(any(w in t for w in FORBIDDEN),t);self.assertIsNone(EMOJI.search(t),t)
   self.assertEqual(len(list((ROOT/'game/v111/newworld').glob('d*.json'))),14)
@@ -138,6 +138,20 @@ class NewWorldText(Layer):
     for variant in variants:self.assertIn(variant,env['R13_V111']['evidence'][key]['variants'],key)
     seen.add(key)
   self.assertIn('NW_STONE',seen)
+ def test_blocks_are_shown_and_every_block_is_used(self):
+  env=self.load()
+  used=set()
+  for name in DAYS:used|=set(re.findall(r"r13_nw_block\('(\w+)'\)",(ROOT/'game'/name).read_text()))
+  self.assertEqual(used,set(env['R13_NW_TEXT']['blocks']))
+  env['R13_NW_TEXT']['blocks']['qa_block']=[{'id':'NW_QA_1','speaker':None,'text':'보이는 줄'},{'id':'NW_QA_2','speaker':None,'text':'숨는 줄','when':'owl_dead'}]
+  env['R13_NW_WHEN']['owl_dead']=lambda:False
+  self.assertEqual([r[1] for r in env['r13_nw_block']('qa_block')],['보이는 줄'])
+  with self.assertRaises(Exception):env['r13_nw_block']('no_such_block')
+ def test_every_proof_asks_for_known_records(self):
+  env=self.load();keys=set(env['R13_V111']['evidence'])
+  for name in DAYS:
+   for m in re.finditer(r"call r13_v111_proof\([^\[]*(\[[^\]]*\])",(ROOT/'game'/name).read_text()):
+    for key in ast.literal_eval(m.group(1)):self.assertIn(key,keys,name)
  def test_generators_emit_the_layer_call(self):
   for name in ('build_v111_days45.py','build_v111_labels.py'):
    text=(ROOT/'dev'/name).read_text()

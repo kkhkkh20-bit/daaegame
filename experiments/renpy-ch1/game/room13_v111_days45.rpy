@@ -358,6 +358,7 @@ label r13_v111_somi5:
     call r13_lines(r13_v111_lines(['MS14_D05_S01_L0023']),'v111:MS14_D05_S01_L0023')
     call r13_lines(r13_v111_lines(['MS14_D05_S01_L0024']),'v111:MS14_D05_S01_L0024')
     $ r13_v111_commit('MS14_D05_S01_L0024')
+    $ r13_nw_acquire("NW_MUSOE_DEEP")
     jump r13_v111_wait_cloth5
 
 label r13_v111_wait_cloth5:

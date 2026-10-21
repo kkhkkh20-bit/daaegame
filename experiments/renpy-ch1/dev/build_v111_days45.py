@@ -111,7 +111,7 @@ act('collect4','gate',['daram','resident_badook','bami'],person('같이 천을 �
 label('cloth4');records(s,41,50);travel('dining','night_diner4');records(s,51,59);travel('square','night_lamp4');records(s,60,64);travel('room13','bed4');records(s,65,65);goto('sleep4')
 act('sleep4','room13',['daram'],obj('관찰과 추측을 나눠 적고 잔다','room13','bed'),'morning5')
 s='MS14_D05_S01';label('morning5');code('r13_v111_set("day",5)');goto('somi5')
-context(s,'ms14_somi','somi5');records(s,1,7);travel('ms14_somi_inside','inside5');records(s,8,24);goto('wait_cloth5')
+context(s,'ms14_somi','somi5');records(s,1,7);travel('ms14_somi_inside','inside5');records(s,8,24);code('r13_nw_acquire("NW_MUSOE_DEEP")');goto('wait_cloth5')
 s='MS14_D05_S02';context(s,'ms14_somi_inside','wait_cloth5');records(s,1,15);goto('compare_cloth5')
 act('compare_cloth5','ms14_somi_inside',people[s],obj('허락받은 옷과 천을 대조한다','ms14_somi_inside','v111_coat'),'cloth_match5')
 label('cloth_match5');records(s,16,28);travel('clinic','clinic_handoff5');records(s,29,31);goto('hearing5')

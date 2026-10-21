@@ -105,7 +105,7 @@ for key,a,b in [('bowl_together6',26,29),('bowl_eat6',30,33)]:label(key);segment
 label('nabi_supply6');segment(s,34,42);travel('dining','supply6');goto('board6')
 field('board6','dining',['daram','nabi'],'table','공개 보급판을 확인한다','board_done6')
 label('board_done6');segment(s,43,48);goto('woodshed6')
-s='MS14_D06_S02';cast=['daram','kid_kkomi','resident_bori'];begin(s,'v111_woodshed','woodshed6',cast,1);segment(s,1,4);goto('woodshed_check6')
+s='MS14_D06_S02';cast=['daram','kid_kkomi','resident_bori'];begin(s,'v111_woodshed','woodshed6',cast,1);segment(s,1,2);code('r13_nw_acquire("NW_KKOMI_NOSTONE")');segment(s,3,4);goto('woodshed_check6')
 field('woodshed_check6','v111_woodshed',cast,'v111_wood','문 앞과 뒤창을 살핀다','woodshed_seen6')
 label('woodshed_seen6');segment(s,5,24);choice(s,25,['today6','permission6'])
 label('today6');segment(s,27,29);goto('permission_today6')
