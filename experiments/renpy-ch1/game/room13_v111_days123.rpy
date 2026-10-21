@@ -219,6 +219,7 @@ label r13_v111_gate_proven:
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D01_S03_L0014', 'MS14_D01_S03_L0015', 'MS14_D01_S03_L0016', 'MS14_D01_S03_L0017', 'MS14_D01_S03_L0018', 'MS14_D01_S03_L0019']), 'v111:gate_proven:MS14_D01_S03_L0014')
     $ r13_v111_commit('MS14_D01_S03_L0019')
+    $ r13_nw_meeting_end('gate','win')
     jump r13_v111_registered
 
 label r13_v111_gate_early:
@@ -226,15 +227,21 @@ label r13_v111_gate_early:
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D01_S03_L0020', 'MS14_D01_S03_L0021', 'MS14_D01_S03_L0022', 'MS14_D01_S03_L0023']), 'v111:gate_early:MS14_D01_S03_L0020')
     $ r13_v111_commit('MS14_D01_S03_L0023')
+    $ r13_nw_meeting_end('gate','win')
     jump r13_v111_registered
 
 label r13_v111_gate_number:
     $ r13_v111_scene('MS14_D01_S03')
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D01_S03_L0024']), 'v111:gate_number:MS14_D01_S03_L0024')
-    # New world (event 01, plan A): a half presentation earns one more try only.
+    # New world (event 01, plan A): a half presentation gets its own hint once, but it uses
+    # one of the meeting's three chances like any wrong answer (review 2026-10-22).
     $ r13_v111_set('gate_hardened',True)
-    jump r13_v111_gate_investigate
+    if r13_nw_retry('gate'):
+        jump r13_v111_gate_investigate
+    $ r13_v111_set('gate_daram_unlisted',True)
+    $ r13_nw_meeting_end('gate','lose')
+    jump r13_v111_registered
 
 label r13_v111_gate_wrong:
     $ r13_v111_scene('MS14_D01_S03')
@@ -245,6 +252,7 @@ label r13_v111_gate_wrong:
     if r13_nw_retry('gate'):
         jump r13_v111_gate_investigate
     $ r13_v111_set('gate_daram_unlisted',True)
+    $ r13_nw_meeting_end('gate','lose')
     jump r13_v111_registered
 
 label r13_v111_gate_hint:

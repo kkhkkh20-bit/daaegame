@@ -111,6 +111,8 @@ init 319 python:
         "medicine_locked":lambda:r13_v111_value("medicine_locked") is True,
         "medicine_unchecked":lambda:not r13_v111_value("medicine_locked"),
         "daram_not_deal_freed":lambda:r13_v111_value("daram_deal_freed") is not True,
+        "warm_support_pending":lambda:not r13_v111_value("warm_support_arrived"),
+        "warm_support_ready":lambda:r13_v111_value("warm_support_arrived") is True,
         "family_priority":lambda:r13_v111_value("outcome13")=="family_priority",
         "ending_morning":lambda:r13_v111_value("ending14")=="morning",
         "reader_nabi":lambda:not (r13_v111_value("departed:nabi") or not r13_v111_person_alive("nabi")),

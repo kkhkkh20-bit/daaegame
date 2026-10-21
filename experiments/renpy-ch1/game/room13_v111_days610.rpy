@@ -1419,7 +1419,7 @@ label r13_v111_hearing_wrong10:
     $ r13_nw_list("daram","room13_lose")
     call r13_lines(r13_v111_lines(['MS14_D10_S02_L0047']),'v111:MS14_D10_S02_L0047')
     call r13_lines(r13_v111_lines(['MS14_D10_S02_L0048']),'v111:MS14_D10_S02_L0048')
-    $ r13_v111_commit('MS14_D10_S03_L0088')
+    $ r13_v111_apply('MS14_D10_S03_L0088',[o for o in R13_V111['records']['MS14_D10_S03_L0088']['operations'] if o['field'] in ('DARAM_DETAINED','DARAM_location','D10_confrontation_release_completed')])
     jump r13_v111_bench10
 
 label r13_v111_passage_wrong10:
@@ -1429,7 +1429,7 @@ label r13_v111_passage_wrong10:
     $ r13_nw_meeting_end("room13",'lose')
     $ r13_nw_list("daram","room13_lose")
     call r13_lines(r13_v111_lines(['MS14_D10_S02_L0050']),'v111:MS14_D10_S02_L0050')
-    $ r13_v111_commit('MS14_D10_S03_L0088')
+    $ r13_v111_apply('MS14_D10_S03_L0088',[o for o in R13_V111['records']['MS14_D10_S03_L0088']['operations'] if o['field'] in ('DARAM_DETAINED','DARAM_location','D10_confrontation_release_completed')])
     jump r13_v111_bench10
 
 label r13_v111_hearing_hint10:
@@ -1563,7 +1563,7 @@ label r13_v111_owner_wrong10:
     $ r13_nw_meeting_end("room13",'partial')
     $ r13_v111_set("room13_partial_kind",'unknown')
     call r13_lines(r13_v111_lines(['MS14_D10_S03_L0089']),'v111:MS14_D10_S03_L0089')
-    $ r13_v111_commit('MS14_D10_S03_L0088')
+    $ r13_v111_apply('MS14_D10_S03_L0088',[o for o in R13_V111['records']['MS14_D10_S03_L0088']['operations'] if o['field'] in ('DARAM_DETAINED','DARAM_location','D10_confrontation_release_completed')])
     jump r13_v111_bench10
 
 label r13_v111_time_wrong10:
@@ -1573,7 +1573,7 @@ label r13_v111_time_wrong10:
     $ r13_nw_meeting_end("room13",'partial')
     $ r13_v111_set("room13_partial_kind",'unknown')
     call r13_lines(r13_v111_lines(['MS14_D10_S03_L0090']),'v111:MS14_D10_S03_L0090')
-    $ r13_v111_commit('MS14_D10_S03_L0088')
+    $ r13_v111_apply('MS14_D10_S03_L0088',[o for o in R13_V111['records']['MS14_D10_S03_L0088']['operations'] if o['field'] in ('DARAM_DETAINED','DARAM_location','D10_confrontation_release_completed')])
     jump r13_v111_bench10
 
 label r13_v111_contact_wrong10:
@@ -1584,7 +1584,7 @@ label r13_v111_contact_wrong10:
     $ r13_v111_set("room13_partial_kind",'accident')
     call r13_lines(r13_v111_lines(['MS14_D10_S03_L0091']),'v111:MS14_D10_S03_L0091')
     call r13_lines(r13_v111_lines(['MS14_D10_S03_L0092']),'v111:MS14_D10_S03_L0092')
-    $ r13_v111_commit('MS14_D10_S03_L0088')
+    $ r13_v111_apply('MS14_D10_S03_L0088',[o for o in R13_V111['records']['MS14_D10_S03_L0088']['operations'] if o['field'] in ('DARAM_DETAINED','DARAM_location','D10_confrontation_release_completed')])
     jump r13_v111_bench10
 
 label r13_v111_bench10:

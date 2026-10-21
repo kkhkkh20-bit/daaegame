@@ -1923,7 +1923,7 @@ label r13_v111_rein_wrong13:
 
 label r13_v111_after_rein13:
     if r13_v111_value("meeting:blanket")=="partial":
-        jump r13_v111_partial13
+        jump r13_v111_partial_listed13
     call r13_lines(r13_v111_lines(['MS14_D13_S04_L0011']),'v111:MS14_D13_S04_L0011')
     if r13_v111_actor_ready('guard'):
         call r13_lines(r13_v111_lines(['MS14_D13_S04_L0012']),'v111:MS14_D13_S04_L0012')
@@ -1931,6 +1931,15 @@ label r13_v111_after_rein13:
     if r13_v111_actor_ready('resident_badook'):
         call r13_lines(r13_v111_lines(['MS14_D13_S04_L0014']),'v111:MS14_D13_S04_L0014')
     jump r13_v111_family_position13
+
+label r13_v111_partial_listed13:
+    python:
+        _left=[p for p in r13_nw_listed() if p!="daram" and r13_v111_person_alive(p) and not r13_v111_value("handed:"+p)]
+        r13_v111_set("cart_roster",list(dict.fromkeys(list(r13_v111_value("cart_roster") or ["npc_pandol","resident_momo","resident_guldol"])+_left)))
+    if r13_v111_value("listed:daram") and not r13_v111_value("handed:daram"):
+        call r13_lines(r13_nw_block('listed_down_daram13'),'nw:listed_down_daram13')
+        $ r13_v111_set("handed:daram",True)
+    jump r13_v111_partial13
 
 label r13_v111_family_position13:
     menu:
@@ -2098,7 +2107,7 @@ label r13_v111_last_cart13:
     else:
         call r13_v111_family_already_school13
     if not all(r13_v111_value("handed:"+p) for p in r13_v111_value("cart_roster")):
-        jump r13_v111_partial13
+        jump r13_v111_partial_listed13
     call r13_lines(r13_nw_block('listed_down13'),'nw:listed_down13')
     python:
         for _p in r13_nw_listed():r13_v111_set("handed:"+_p,True)

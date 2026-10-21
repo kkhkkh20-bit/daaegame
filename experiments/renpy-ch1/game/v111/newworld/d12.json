@@ -1,10 +1,12 @@
 {
   "replace": {
     "MS14_D12_S01_L0026": {
-      "text": "여기면 아이들이 누울 수 있겠어요. 아직 장작이 안 왔네요."
+      "text": "여기면 아이들이 누울 수 있겠어요. 아직 장작이 안 왔네요.",
+      "when": "warm_support_pending"
     },
     "MS14_D12_S01_L0027": {
-      "text": "자리만요. 장작은 아직이에요. 앉혀 놓고 따뜻하다고 하면 안 돼요."
+      "text": "자리만요. 장작은 아직이에요. 앉혀 놓고 따뜻하다고 하면 안 돼요.",
+      "when": "warm_support_pending"
     },
     "MS14_D12_S02_L0023": {
       "text": "밖에 장작 수레가 와요. 받아서 들여놓고 올게요."
@@ -362,9 +364,38 @@
         "kind": "thought",
         "text": "손이 떨렸다. 수첩을 꺼냈다가 그대로 다시 넣었다."
       }
+    ],
+    "MS14_D12_S01_L0026": [
+      {
+        "id": "NW_D12_S01_R26",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "여기면 아이들이 누울 수 있겠어요. 장작은 들여놨으니 불만 붙이면 돼요.",
+        "expression": "neutral",
+        "when": "warm_support_ready"
+      }
+    ],
+    "MS14_D12_S01_L0027": [
+      {
+        "id": "NW_D12_S01_R27",
+        "speaker": "나비",
+        "kind": "dialogue",
+        "text": "자리만 잡으면 돼요. 장작이 왔으니 앉혀 놓고 불부터 봐요.",
+        "expression": "neutral",
+        "when": "warm_support_ready"
+      }
     ]
   },
-  "drop": [],
+  "drop": [
+    {
+      "id": "MS14_D12_S01_L0026",
+      "when": "warm_support_ready"
+    },
+    {
+      "id": "MS14_D12_S01_L0027",
+      "when": "warm_support_ready"
+    }
+  ],
   "evidence": {},
   "new_evidence": {
     "NW_TRANSFER_LIST": {

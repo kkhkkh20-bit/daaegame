@@ -107,3 +107,21 @@ testcase v111_nw_d13_rein_painting_first:
     click "논리를 연결한다"
     click pos (900,600) until "곁에 남는다" timeout 60
     assert eval (r13_v111_value("meeting:piko")=="lose" and not r13_v111_value("neoul_held") and not r13_v111_owned("NW_NEOUL_LEDGER") and qa_nw_seen("화가의 낙서요"))
+
+testcase v111_nw_d13_partial_listed:
+    # Badook partial: listed passengers stay aboard with the others; Daram comes down at once.
+    pause 1.0
+    click "처음부터"
+    click pos (900,600) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (900,600) until screen "r13_hub" timeout 90
+    run Function(qa_nw_day13)
+    run Function(r13_nw_list,"daram","room13_lose")
+    run Function(r13_nw_list,"resident_tok","lamp_lose")
+    run Function(r13_v111_set,"cart_roster",["npc_pandol","resident_momo","resident_guldol"])
+    run Function(r13_v111_set,"meeting:blanket","partial")
+    run Function(r13_v111_set,"cart_stopped",True)
+    run Jump("r13_v111_after_rein13")
+    click pos (640,300) until screen "r13_hub" timeout 120
+    assert eval (r13_v111_value("handed:daram") is True and "resident_tok" in r13_v111_value("cart_roster") and "daram" not in r13_v111_value("cart_roster"))
+    assert eval (qa_nw_seen("까로가 다람의 손목 끈을 푼다"))

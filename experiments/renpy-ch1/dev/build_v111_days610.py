@@ -236,7 +236,9 @@ def room13_end(key,a,b,result,kind=None):
  if result=='lose':code('r13_nw_list("daram","room13_lose")')
  if kind:code('r13_v111_set("room13_partial_kind",%r)'%kind)
  segment('MS14_D10_S03' if key in R13_S03_WRONG else 'MS14_D10_S02',a,b)
- code("r13_v111_commit('MS14_D10_S03_L0088')");goto('bench10')
+ # Not won: Daram still leaves the protection room for school (the next scene needs it),
+ # but nothing here records Granny's admission or a proven release basis (review 2026-10-22).
+ code("r13_v111_apply('MS14_D10_S03_L0088',[o for o in R13_V111['records']['MS14_D10_S03_L0088']['operations'] if o['field'] in ('DARAM_DETAINED','DARAM_location','D10_confrontation_release_completed')])");goto('bench10')
 nw_half_retry('hearing_wrong10',['E08_CHILD_ACCOUNT','E08_TOOL'],47,48,'wound_proof10','너울이 고개를 젓는다. 아이의 말과 촛대 조각을 함께 놓아야 한다.');room13_end('hearing_wrong10',47,48,'lose')
 nw_half_retry('passage_wrong10',['E09_PASSAGE','E08_ROOM'],50,50,'passage_proof10','따닥이 고개를 젓는다. 직접 걸어 본 길과 현장 배치를 함께 놓아야 한다.');room13_end('passage_wrong10',50,50,'lose')
 label('hearing_hint10');segment(s,51,52);goto('wound_proof10')

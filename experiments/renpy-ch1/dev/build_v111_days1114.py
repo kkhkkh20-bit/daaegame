@@ -388,7 +388,16 @@ code('r13_nw_acquire("NW_NEOUL_LEDGER","full" if r13_v111_value("meeting:hypothe
 for key,back in (('rein_wrong13a','rein_ledger13p'),('rein_wrong13b','rein_painting13p')):
  label(key);lines.extend(['    if r13_nw_retry("piko"):','        call r13_lines(r13_nw_block("rein_retry13"),"nw:rein_retry13")','        jump r13_v111_'+back]);goto('rein_wrong13')
 label('rein_wrong13');code('r13_nw_meeting_end("piko","lose")');nwblock('rein_lost13');goto('after_rein13')
-label('after_rein13');lines.extend(['    if r13_v111_value("meeting:blanket")=="partial":','        jump r13_v111_partial13']);late(s,10,14);goto('family_position13')
+label('after_rein13');lines.extend(['    if r13_v111_value("meeting:blanket")=="partial":','        jump r13_v111_partial_listed13']);late(s,10,14);goto('family_position13')
+# Review 2026-10-22: every way into the partial structure passes here. The listed passengers stay
+# aboard with the others and are handed over with them on day 14; Daram comes down to her family.
+label('partial_listed13');lines.extend(['    python:',
+ '        _left=[p for p in r13_nw_listed() if p!="daram" and r13_v111_person_alive(p) and not r13_v111_value("handed:"+p)]',
+ '        r13_v111_set("cart_roster",list(dict.fromkeys(list(r13_v111_value("cart_roster") or ["npc_pandol","resident_momo","resident_guldol"])+_left)))',
+ '    if r13_v111_value("listed:daram") and not r13_v111_value("handed:daram"):',
+ "        call r13_lines(r13_nw_block('listed_down_daram13'),'nw:listed_down_daram13')",
+ '        $ r13_v111_set("handed:daram",True)',
+ '    jump r13_v111_partial13'])
 label('family_position13');select([('곁에 남는다','family_stay13',None),('까로와 학교로 간다','family_karo13','not '+V('busy:karo')),('네로와 학교로 간다','family_nero13',V('nero_alive')+' and not '+V('busy:resident_nero')+' and r13_v111_actor_ready("resident_nero")')])
 label('family_stay13');late(s,63,64);setv('family_location','square');setv('busy:mom','daram_guard');goto('handover_plan13')
 label('family_karo13');late(s,56,59);setv('family_location','moving_to_school');setv('location:mom','on_way_school');setv('location:daram','on_way_school');setv('location:karo','on_way_school');setv('busy:karo','family_walk');goto('family_walk_karo13')
@@ -407,7 +416,10 @@ label('momo_school13');late(s,65,67);travel('school','momo_school13');arrive(['n
 label('guldol_transport13');travel('square','guldol_transport13');arrive(['karo','guard','resident_badook','resident_guldol']);goto('guldol_down13')
 field('guldol_down13','square',['karo','guard','resident_badook','resident_guldol'],'cart','굴돌을 발판으로 부축한다','guldol_school13')
 label('guldol_school13');late(s,69,70);travel('school','guldol_school13');arrive(['nabi','karo','resident_guldol']);late(s,71,71);setv('handed:resident_guldol',True);goto('last_cart13')
-label('last_cart13');travel('square','last_cart13',[]);arrive(['karo','resident_badook','resident_ppul']);lines.append('    if "resident_teacher" in r13_v111_value("cart_roster") and not r13_v111_value("handed:resident_teacher"):');lines.append('        jump r13_v111_teacher_transport13');lines.append('    if "resident_siluk" in r13_v111_value("cart_roster") and not r13_v111_value("handed:resident_siluk"):');lines.append('        jump r13_v111_silluk_transport13');lines.append('    if r13_v111_value("family_location")=="square":');lines.append('        call r13_v111_family_still_here13');lines.append('    else:');lines.append('        call r13_v111_family_already_school13');lines.append('    if not all(r13_v111_value("handed:"+p) for p in r13_v111_value("cart_roster")):');lines.append('        jump r13_v111_partial13');nwblock('listed_down13')
+label('last_cart13');travel('square','last_cart13',[]);arrive(['karo','resident_badook','resident_ppul']);lines.append('    if "resident_teacher" in r13_v111_value("cart_roster") and not r13_v111_value("handed:resident_teacher"):');lines.append('        jump r13_v111_teacher_transport13');lines.append('    if "resident_siluk" in r13_v111_value("cart_roster") and not r13_v111_value("handed:resident_siluk"):');lines.append('        jump r13_v111_silluk_transport13');lines.append('    if r13_v111_value("family_location")=="square":');lines.append('        call r13_v111_family_still_here13');lines.append('    else:');lines.append('        call r13_v111_family_already_school13');lines.append('    if not all(r13_v111_value("handed:"+p) for p in r13_v111_value("cart_roster")):')
+# Review 2026-10-22: on the partial path the listed passengers stay aboard with the others and are
+# handed over with them on day 14; Daram is taken down by her family at once.
+lines.append('        jump r13_v111_partial_listed13');nwblock('listed_down13')
 lines.extend(['    python:','        for _p in r13_nw_listed():r13_v111_set("handed:"+_p,True)'])
 late(s,39,42);setv('all_cart_handed',True);setv('busy:resident_badook',False);setv('outcome13','all_rescued');goto('transport_cleanup13')
 label('family_still_here13');arrive(['karo','resident_badook','resident_ppul','mom','daram']);late(s,33,35);lines.append('    return')

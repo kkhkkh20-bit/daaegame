@@ -99,3 +99,13 @@ init 318 python:
         hint=note if (note and correct and r13_nw_half(correct)) else "맞지 않는다."
         renpy.notify("%s 남은 기회 %d번."%(hint,left))
         return True
+
+    # Review 2026-10-22: a person who left on the cart (departed:<p>) is never placed again.
+    _r13_nw_arrive=r13_v111_arrive
+    def r13_v111_arrive(people):
+        return _r13_nw_arrive([p for p in people if not r13_v111_value("departed:"+p)])
+    _r13_nw_binding=r13_v111_binding
+    def r13_v111_binding():
+        b=_r13_nw_binding()
+        if b.get("people"):b=dict(b,people=[p for p in b["people"] if not r13_v111_value("departed:"+p)])
+        return b
