@@ -170,7 +170,7 @@
         "id": "NW_D12_S01_A02",
         "speaker": null,
         "kind": "narration",
-        "text": "7일에 내가 직접 인계한 창고 아이들 이름은 없다."
+        "text": "6일에 내가 직접 인계한 창고 아이들 이름은 없다."
       },
       {
         "id": "NW_D12_S01_A03",
@@ -213,7 +213,7 @@
         "id": "NW_D12_S02_A04",
         "speaker": null,
         "kind": "narration",
-        "text": "독을 알아서가 아니다. 명단에 오른 아이라고 그릇을 따로 받는 걸 볼 수가 없었다. 다람은 왜냐고 묻지 않는다.",
+        "text": "무엇을 알아서가 아니다. 명단에 오른 아이라고 그릇을 따로 받는 걸 볼 수가 없었다. 다람은 왜냐고 묻지 않는다.",
         "when": "room13_lose"
       }
     ],
@@ -239,7 +239,16 @@
         "speaker": "서리",
         "kind": "dialogue",
         "text": "약장은 다 확인했어요. 기록 보세요.",
-        "expression": "neutral"
+        "expression": "neutral",
+        "when": "medicine_locked"
+      },
+      {
+        "id": "NW_D12_S04_R02",
+        "speaker": "서리",
+        "kind": "dialogue",
+        "text": "방금 다 세 봤어요. 장부로는 빠진 게 없어요.",
+        "expression": "neutral",
+        "when": "medicine_unchecked"
       },
       {
         "id": "NW_D12_S04_A03",

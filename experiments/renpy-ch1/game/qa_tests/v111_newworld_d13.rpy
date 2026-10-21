@@ -106,4 +106,4 @@ testcase v111_nw_d13_rein_painting_first:
     pause 0.8
     click "논리를 연결한다"
     click pos (900,600) until "곁에 남는다" timeout 60
-    assert eval (r13_v111_value("meeting:piko")=="lose" and not r13_v111_value("neoul_held") and not r13_v111_owned("NW_NEOUL_LEDGER") and qa_nw_seen("죽은 화가의 낙서요"))
+    assert eval (r13_v111_value("meeting:piko")=="lose" and not r13_v111_value("neoul_held") and not r13_v111_owned("NW_NEOUL_LEDGER") and qa_nw_seen("화가의 낙서요"))

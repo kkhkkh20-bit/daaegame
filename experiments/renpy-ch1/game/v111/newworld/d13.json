@@ -29,6 +29,9 @@
     },
     "MS14_D13_S04_L0076": {
       "text": "늦었어요."
+    },
+    "MS14_D13_S03_L0039": {
+      "text": "이미 정해진 이송이오. 앉으시오."
     }
   },
   "before": {
@@ -399,7 +402,7 @@
         "id": "NW_RL_02",
         "speaker": "실룩",
         "kind": "dialogue",
-        "text": "……너울 씨가 시켰어요. 오늘 밤 3번 돌을 빼라고. 백 부인이 두 배로 산다고.",
+        "text": "……너울 씨가 시켰어요. 그날 밤 3번 돌을 빼라고. 백 부인이 두 배로 산다고.",
         "expression": "neutral"
       },
       {
@@ -457,7 +460,16 @@
         "speaker": "너울",
         "kind": "dialogue",
         "text": "죽은 화가의 낙서요. 도둑의 말이고.",
-        "expression": "neutral"
+        "expression": "neutral",
+        "when": "piko_dead"
+      },
+      {
+        "id": "NW_RX_01B",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "길바닥 화가의 낙서요. 도둑의 말이고.",
+        "expression": "neutral",
+        "when": "piko_alive"
       },
       {
         "id": "NW_RX_02",
