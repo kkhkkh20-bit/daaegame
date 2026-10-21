@@ -209,7 +209,7 @@ class Event01Gate(Layer):
   after=[r[1] for r in env['r13_v111_lines'](['MS14_D01_S04_L0021'])]
   self.assertNotIn('정정한 표',' '.join(after));self.assertEqual(len(after),3)
   self.assertTrue(env['R13_V111']['evidence']['E05']['variants']['unlisted'].startswith('정정 없음.'))
- def test_gate_flow_has_three_chances(self):
+ def test_gate_flow_retries_until_chances_run_out(self):
   day=(ROOT/'game/room13_v111_days123.rpy').read_text()
   wrong=day.split('label r13_v111_gate_wrong:\n',1)[1].split('\nlabel ',1)[0]
   self.assertIn("r13_v111_set('gate_daram_unlisted',True)",wrong);self.assertIn('jump r13_v111_registered',wrong)

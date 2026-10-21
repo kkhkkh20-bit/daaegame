@@ -13,7 +13,7 @@ testcase v111_nw_d07_fire_lost:
     click "편지를 접는다"
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day7)
-    run Function(r13_v111_set,"tries:fire",2)
+    run Function(r13_v111_set,"tries:fire",R13_NW_TRIES-1)
     run Jump("r13_v111_nubi_wrong7")
     pause 1.0
     click pos (900,600) until screen "r13_hub" timeout 120
@@ -32,7 +32,7 @@ testcase v111_nw_d07_fire_partial:
     run Function(r13_v111_set,"NUBI_admitted_setting_fire",True)
     run Function(r13_v111_scene,"MS14_D07_S02")
     run SetVariable("v111_last_presented",["V111:E01"])
-    run Function(r13_v111_set,"tries:fire",2)
+    run Function(r13_v111_set,"tries:fire",R13_NW_TRIES-1)
     run Jump("r13_v111_responsibility_wrong7")
     pause 1.0
     click pos (900,600) until screen "r13_hub" timeout 120

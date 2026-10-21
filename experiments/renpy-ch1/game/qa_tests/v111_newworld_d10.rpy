@@ -35,11 +35,11 @@ testcase v111_nw_d10_room13_half_then_lost:
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day,10,"murder")
     run SetVariable("v111_last_presented",["V111:E08_TOOL"])
-    run Function(r13_v111_set,"tries:room13",1)
+    run Function(r13_v111_set,"tries:room13",R13_NW_TRIES-2)
     run Jump("r13_v111_hearing_wrong10")
     pause 1.0
     click pos (900,600) until screen "r13_crisis_proof" timeout 60
-    assert eval (r13_v111_value("meeting:room13") is None and r13_v111_value("tries:room13")==2)
+    assert eval (r13_v111_value("meeting:room13") is None and r13_v111_value("tries:room13")==R13_NW_TRIES-1)
     run SetVariable("v111_last_presented",["V111:E08_TOOL"])
     run Jump("r13_v111_hearing_wrong10")
     pause 1.0
@@ -60,7 +60,7 @@ testcase v111_nw_d10_room13_partial:
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day,10,"murder")
     run SetVariable("v111_last_presented",["V111:E01"])
-    run Function(r13_v111_set,"tries:room13",2)
+    run Function(r13_v111_set,"tries:room13",R13_NW_TRIES-1)
     run Jump("r13_v111_owner_wrong10")
     pause 1.0
     click pos (900,600) until screen "r13_hub" timeout 120
@@ -76,7 +76,7 @@ testcase v111_nw_d10_records_lost:
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day,10,"prevented")
     run SetVariable("v111_last_presented",["V111:E01"])
-    run Function(r13_v111_set,"tries:records",2)
+    run Function(r13_v111_set,"tries:records",R13_NW_TRIES-1)
     run Jump("r13_v111_authority_wrong10")
     pause 1.0
     click pos (900,600) until screen "r13_hub" timeout 120
@@ -92,7 +92,7 @@ testcase v111_nw_d10_records_partial:
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day,10,"prevented")
     run SetVariable("v111_last_presented",["V111:E02"])
-    run Function(r13_v111_set,"tries:records",2)
+    run Function(r13_v111_set,"tries:records",R13_NW_TRIES-1)
     run Jump("r13_v111_writing_wrong10")
     pause 1.0
     click pos (900,600) until screen "r13_hub" timeout 120
@@ -129,8 +129,8 @@ testcase v111_nw_d07_stone_out:
     click pos (900,600) until screen "r13_hub" timeout 120
     assert eval (qa_nw_seen("검푸르게 타는 돌이다") and qa_nw_seen("부리는 어디 있나"))
 
-testcase v111_nw_d10_three_chances:
-    # Three chances: two wrong answers go back to the proof with a notice; the third stands.
+testcase v111_nw_d10_five_chances:
+    # Five chances per meeting (owner, 2026-10-22): four wrong answers go back to the proof with a notice; the fifth stands.
     pause 1.0
     click "처음부터"
     click pos (900,600) until "편지를 접는다" timeout 60
@@ -140,12 +140,20 @@ testcase v111_nw_d10_three_chances:
     run SetVariable("v111_last_presented",["V111:E01"])
     run Jump("r13_v111_owner_wrong10")
     click pos (900,600) until screen "r13_crisis_proof" timeout 60
-    assert eval (r13_v111_value("tries:room13")==1 and r13_v111_value("meeting:room13") is None and r13_nw_tries_left("room13")==2)
+    assert eval (r13_v111_value("tries:room13")==1 and r13_v111_value("meeting:room13") is None and r13_nw_tries_left("room13")==4)
     run SetVariable("v111_last_presented",["V111:E01"])
     run Jump("r13_v111_owner_wrong10")
     click pos (900,600) until screen "r13_crisis_proof" timeout 60
-    assert eval (r13_v111_value("tries:room13")==2 and r13_v111_value("meeting:room13") is None)
+    assert eval (r13_v111_value("tries:room13")==2 and r13_v111_value("meeting:room13") is None and r13_nw_tries_left("room13")==3)
+    run SetVariable("v111_last_presented",["V111:E01"])
+    run Jump("r13_v111_owner_wrong10")
+    click pos (900,600) until screen "r13_crisis_proof" timeout 60
+    assert eval (r13_v111_value("tries:room13")==3 and r13_v111_value("meeting:room13") is None and r13_nw_tries_left("room13")==2)
+    run SetVariable("v111_last_presented",["V111:E01"])
+    run Jump("r13_v111_owner_wrong10")
+    click pos (900,600) until screen "r13_crisis_proof" timeout 60
+    assert eval (r13_v111_value("tries:room13")==4 and r13_v111_value("meeting:room13") is None and r13_nw_tries_left("room13")==1)
     run SetVariable("v111_last_presented",["V111:E01"])
     run Jump("r13_v111_owner_wrong10")
     click pos (900,600) until screen "r13_hub" timeout 120
-    assert eval (r13_v111_value("meeting:room13")=="partial")
+    assert eval (r13_v111_value("meeting:room13")=="partial" and R13_NW_TRIES==5)

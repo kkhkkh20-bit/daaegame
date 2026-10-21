@@ -235,7 +235,7 @@ label r13_v111_gate_number:
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D01_S03_L0024']), 'v111:gate_number:MS14_D01_S03_L0024')
     # New world (event 01, plan A): a half presentation gets its own hint once, but it uses
-    # one of the meeting's three chances like any wrong answer (review 2026-10-22).
+    # one of the meeting's chances (R13_NW_TRIES) like any wrong answer (review 2026-10-22).
     $ r13_v111_set('gate_hardened',True)
     if r13_nw_retry('gate'):
         jump r13_v111_gate_investigate
@@ -247,7 +247,7 @@ label r13_v111_gate_wrong:
     $ r13_v111_scene('MS14_D01_S03')
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D01_S03_L0025']), 'v111:gate_wrong:MS14_D01_S03_L0025')
-    # New world: three chances per meeting (2026-10-22); the third wrong answer stands
+    # New world: five chances per meeting (2026-10-22); the last wrong answer stands
     # and Daram enters as '외 한 명' (plan A).
     if r13_nw_retry('gate'):
         jump r13_v111_gate_investigate

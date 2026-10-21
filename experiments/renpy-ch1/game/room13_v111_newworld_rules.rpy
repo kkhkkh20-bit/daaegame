@@ -84,9 +84,9 @@ init 318 python:
         if not r13_v111_owned("NW_NEOUL_LEDGER"):return False
         return all(r13_v111_value("meeting:"+m)=="win" for m in ("records","hypothesis","blanket","altar"))
 
-    # Three chances per meeting (owner decision 2026-10-22, replaces "one presentation").
+    # Chances per meeting (owner 2026-10-22: three, then five "so the player can keep deducing").
     # A wrong answer shows the rebuttal and costs a chance; the third wrong answer stands.
-    R13_NW_TRIES=3
+    R13_NW_TRIES=5  # owner 2026-10-22: five per meeting (was three)
     def r13_nw_tries_left(meeting):
         return max(0,R13_NW_TRIES-(r13_v111_value("tries:"+meeting) or 0))
     def r13_nw_retry(meeting,correct=None,note=None):

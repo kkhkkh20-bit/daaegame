@@ -15,7 +15,7 @@ testcase v111_nw_d03_lamp_lost:
     click "편지를 접는다"
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day3_meeting_ready)
-    run Function(r13_v111_set,"tries:lamp",2)
+    run Function(r13_v111_set,"tries:lamp",R13_NW_TRIES-1)
     run Jump("r13_v111_trial_wrong")
     pause 1.0
     click pos (900,600) until "확인된 3번 돌을 돌려 달라고 한다" timeout 90
@@ -39,7 +39,7 @@ testcase v111_nw_d03_lamp_partial:
     click "편지를 접는다"
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day3_meeting_ready)
-    run Function(r13_v111_set,"tries:lamp",2)
+    run Function(r13_v111_set,"tries:lamp",R13_NW_TRIES-1)
     run Jump("r13_v111_trial_wrong_latch")
     pause 1.0
     click pos (900,600) until "오늘은 반환 요구를 보류한다" timeout 90
