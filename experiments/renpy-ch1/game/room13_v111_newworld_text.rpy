@@ -6,22 +6,36 @@
 #   before / after  {rid: [line, ...]}             new lines around an authored line
 #   drop     [rid | {"id": rid, "when": name}, ...]  authored line not shown (while when holds)
 #   evidence {key: {"name": ..., "variants": {variant: text}, "add_variants": {new: text}}}
+#   new_evidence {"NW_...": {"name": ..., "kind": "물증|기록|관찰기록|증언", "variants": {variant: text}}}
+#            a record that only the new world has; the generators acquire it with r13_nw_acquire
 # A new line: {"id": "NW_...", "speaker": name|null, "text": ..., "kind"?, "expression"?,
 #              "when"?: condition name in R13_NW_WHEN, "cut"?: existing ep art name}
 # Conditions are named Python predicates, never evaluated strings.
 # With every file empty the game shows the same lines in the same order as before.
 init 319 python:
     R13_NW_TEXT_DAYS=["d%02d"%n for n in range(1,15)]
-    R13_NW_TEXT=dict(replace={},before={},after={},drop=[],evidence={})
+    R13_NW_TEXT=dict(replace={},before={},after={},drop=[],evidence={},new_evidence={})
     for _nw_day in R13_NW_TEXT_DAYS:
         _nw_path="v111/newworld/%s.json"%_nw_day
         if not renpy.loadable(_nw_path):continue
         with renpy.file(_nw_path) as _nw_file:_nw_part=json.load(_nw_file)
-        for _nw_key in ("replace","before","after","evidence"):
+        for _nw_key in ("replace","before","after","evidence","new_evidence"):
             for _nw_rid,_nw_value in _nw_part.get(_nw_key,{}).items():
                 if _nw_rid in R13_NW_TEXT[_nw_key]:raise Exception("Duplicate new-world entry: %s %s"%(_nw_key,_nw_rid))
                 R13_NW_TEXT[_nw_key][_nw_rid]=_nw_value
         R13_NW_TEXT["drop"]+=list(_nw_part.get("drop",[]))
+    # New-world records join the V1.1.1 catalog before anything checks references.
+    for _nw_key,_nw_spec in R13_NW_TEXT["new_evidence"].items():
+        if not _nw_key.startswith("NW_") or _nw_key in R13_V111["evidence"]:raise Exception("Bad new-world evidence key: "+_nw_key)
+        if _nw_spec.get("kind") not in R13_RECORD_CATEGORIES or not _nw_spec.get("name") or not _nw_spec.get("variants"):raise Exception("Incomplete new-world evidence: "+_nw_key)
+        R13_V111["evidence"][_nw_key]=dict(name=_nw_spec["name"],kind=_nw_spec["kind"],variants=dict(_nw_spec["variants"]))
+        ROOM13["evidence"]["V111:"+_nw_key]=dict(id="V111:"+_nw_key,name=_nw_spec["name"],kind=_nw_spec["kind"],establishes=next(iter(_nw_spec["variants"].values())),does_not_establish="",current_run_only=True,retained_on_show=True,scenes=[])
+        R13_RECORD_SHORT["V111:"+_nw_key]=_nw_spec["name"]
+    def r13_nw_acquire(key,variant="observed"):
+        """Give a new-world record once (same path as an authored 'acquire')."""
+        if key not in R13_NW_TEXT["new_evidence"]:raise Exception("Unknown new-world evidence: "+str(key))
+        if variant not in R13_V111["evidence"][key]["variants"]:raise Exception("Unknown new-world evidence variant: %s %s"%(key,variant))
+        r13_v111_apply("nw:acquire:"+key,[dict(op="acquire",key=key,variant=variant)])
     # Named conditions for added lines. Add one line here when an event needs it.
     R13_NW_WHEN={
         "always":lambda:True,
@@ -48,6 +62,19 @@ init 319 python:
         "fire_partial":lambda:r13_v111_value("meeting:fire")=="partial",
         "fire_lose":lambda:r13_v111_value("meeting:fire")=="lose",
         "fire_not_lose":lambda:r13_v111_value("meeting:fire")!="lose",
+        # Events 06-07: the day-7 room 13 night and the day-10 meetings.
+        "prevention_a":lambda:r13_v111_value("prevention")=="A",
+        "prevention_b":lambda:r13_v111_value("prevention")=="B",
+        "room13_win":lambda:r13_v111_value("meeting:room13")=="win",
+        "room13_partial":lambda:r13_v111_value("meeting:room13")=="partial",
+        "room13_lose":lambda:r13_v111_value("meeting:room13")=="lose",
+        "room13_not_win":lambda:r13_v111_value("meeting:room13") in ("partial","lose"),
+        "room13_partial_unknown":lambda:r13_v111_value("meeting:room13")=="partial" and r13_v111_value("room13_partial_kind")=="unknown",
+        "room13_partial_accident":lambda:r13_v111_value("meeting:room13")=="partial" and r13_v111_value("room13_partial_kind")=="accident",
+        "records_win":lambda:r13_v111_value("meeting:records")=="win",
+        "records_partial":lambda:r13_v111_value("meeting:records")=="partial",
+        "records_lose":lambda:r13_v111_value("meeting:records")=="lose",
+        "records_not_lose":lambda:r13_v111_value("meeting:records")!="lose",
     }
     R13_NW_CUT_SPECIAL=("bell","v111_blanket_before","v111_blanket_after")
     def r13_nw_drop_item(item):

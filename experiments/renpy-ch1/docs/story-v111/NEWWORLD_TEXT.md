@@ -8,6 +8,7 @@ V1.1.1 원본(`game/v111/records.json`)은 원본 대본과 글자까지 같아�
 | `before`, `after` | `{레코드ID: [새 줄, ...]}` 원본 줄 앞뒤에 줄을 넣는다 |
 | `drop` | `[레코드ID, ...]` 화면에 내지 않는다(효과·조건 처리는 장면 코드 그대로) |
 | `evidence` | `{증거키: {"name": ..., "variants": {상태: 설명}}}` |
+| `new_evidence` | `{"NW_키": {"name": ..., "kind": "물증·기록·관찰기록·증언", "variants": {상태: 설명}}}` 새 세계관에만 있는 자료. 생성기에서 `r13_nw_acquire("NW_키", 상태)`로 얻는다. |
 
 새 줄: `{"id": "NW_D01_S05_A01", "speaker": "다람" 또는 null, "text": ..., "kind": "dialogue|narration", "expression": "anxious", "when": "owl_alive", "cut": "O47-handprints"}`
 

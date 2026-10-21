@@ -30,6 +30,7 @@ class Layer(unittest.TestCase):
   if art is not None:
    real=stub.loadable;stub.loadable=lambda p:real(p) or p in art
   self.env.update(renpy=stub,json=json,R13_V111=data,MS14_SPEAKERS=SPEAKERS,ROOM13=dict(evidence=evidence),R13_RECORD_SHORT={},
+   R13_RECORD_CATEGORIES={'물증':'evidence','기록':'evidence','관찰기록':'evidence','증언':'testimony'},
    R13_FULLBODY_PLAIN={'neutral','joy','anxious','angry','surprise','flustered'},
    R13_DIALOGUE_CONTEXT_ART=json.loads((ROOT/'game/assets/room13-dialogue-context-art.json').read_text()))
   ctx=re.search(r'^init 172 python:\n((?:[ \t].*\n|\n)*)',(ROOT/'game/systems/room13_dialogue_context_art.rpy').read_text(),re.M).group(1)
@@ -65,7 +66,8 @@ class NewWorldText(Layer):
   self.assertEqual(env['r13_nw_text_problems'](),[])
   for path in sorted((ROOT/'game/v111/newworld').glob('d*.json')):
    part=json.loads(path.read_text())
-   self.assertEqual(set(part),{'replace','before','after','drop','evidence'},path.name)
+   self.assertLessEqual(set(part)-{'new_evidence'},{'replace','before','after','drop','evidence'},path.name)
+   self.assertLessEqual({'replace','before','after','drop','evidence'},set(part),path.name)
    texts=[v['text'] for v in part['replace'].values()]+[r['text'] for rows in list(part['before'].values())+list(part['after'].values()) for r in rows]
    for t in texts:
     self.assertFalse(any(w in t for w in FORBIDDEN),t);self.assertIsNone(EMOJI.search(t),t)
@@ -119,6 +121,23 @@ class NewWorldText(Layer):
   self.assertEqual(env['ROOM13']['evidence']['V111:'+key]['name'],'새 이름')
   self.assertEqual(env['ROOM13']['evidence']['V111:'+key]['establishes'],'새 설명')
   self.assertEqual(source_tests.DATA['evidence'][key]['variants'][variant],next(iter(json.loads((ROOT/'game/v111/records.json').read_text())['evidence'][key]['variants'].values())),'source data untouched')
+ def test_new_world_record_joins_the_catalog(self):
+  env=self.fixture('d01',dict(new_evidence={'NW_TEST':{'name':'새 자료','kind':'물증','variants':{'observed':'처음 보는 돌'}}}))
+  self.assertEqual(env['ROOM13']['evidence']['V111:NW_TEST']['establishes'],'처음 보는 돌')
+  self.assertEqual(env['R13_RECORD_SHORT']['V111:NW_TEST'],'새 자료')
+  self.assertNotIn('NW_TEST',json.loads((ROOT/'game/v111/records.json').read_text())['evidence'],'source data untouched')
+  for bad in ({'E01':{'name':'x','kind':'물증','variants':{'a':'b'}}},{'NW_X':{'name':'x','kind':'소문','variants':{'a':'b'}}},{'NW_Y':{'name':'x','kind':'물증','variants':{}}}):
+   with self.assertRaises(Exception):self.fixture('d01',dict(new_evidence=bad))
+ def test_acquired_new_world_records_exist(self):
+  env=self.load();seen=set()
+  for name in DAYS:
+   for line in (ROOT/'game'/name).read_text().split('\n'):
+    if 'r13_nw_acquire(' not in line:continue
+    key=re.search(r'r13_nw_acquire\("(\w+)"',line).group(1);self.assertIn(key,env['R13_NW_TEXT']['new_evidence'],name)
+    variants=re.findall(r'(?:,|else )"(\w+)"',line) or ['observed']
+    for variant in variants:self.assertIn(variant,env['R13_V111']['evidence'][key]['variants'],key)
+    seen.add(key)
+  self.assertIn('NW_STONE',seen)
  def test_generators_emit_the_layer_call(self):
   for name in ('build_v111_days45.py','build_v111_labels.py'):
    text=(ROOT/'dev'/name).read_text()
