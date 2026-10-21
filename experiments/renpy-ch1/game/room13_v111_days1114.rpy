@@ -2054,11 +2054,16 @@ label r13_v111_day14:
     jump r13_v111_ending_dispatch14
 
 label r13_v111_ending_dispatch14:
-    if r13_v111_value('outcome13')=='family_priority':
+    $ r13_v111_set('ending14',r13_nw_ending14())
+    if r13_v111_value('ending14') in ('left_name','left_name_dad'):
+        jump r13_nw_left_name_ending14
+    if r13_v111_value('ending14')=='frozen':
+        jump r13_nw_frozen_ending14
+    if r13_v111_value('ending14')=='family':
         jump r13_v111_family_ending14
-    if r13_v111_value('outcome13')=='partial_rescue':
+    if r13_v111_value('ending14')=='partial':
         jump r13_v111_partial_ending14
-    if r13_v111_value('crowd_injury'):
+    if r13_v111_value('ending14')=='violence':
         jump r13_v111_violence_ending14
     jump r13_v111_morning_safe14
 
@@ -2686,6 +2691,8 @@ label r13_v111_cookie_scene14:
     call r13_lines([r13_v111_line('MS14_D14_S05_L0020')],'v111:MS14_D14_S05_L0020')
     call r13_lines([r13_v111_line('MS14_D14_S05_L0021')],'v111:MS14_D14_S05_L0021')
     call r13_lines([r13_v111_line('MS14_D14_S05_L0022')],'v111:MS14_D14_S05_L0022')
+    if r13_nw_true_ending_ready():
+        call r13_nw_true_epilogue14
     $ r13_v111_set('story14_completed',True)
     call screen r13_confirm("이야기를 마쳤습니다. 현재 진행을 저장할 수 있습니다.",yes="메인 화면으로",no="저장하기")
     if not _return:

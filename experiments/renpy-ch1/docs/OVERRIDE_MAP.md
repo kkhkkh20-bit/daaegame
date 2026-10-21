@@ -323,7 +323,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 150 | `systems/room13_sound.rpy:123` | _r13_contrast_scene_music |
 | 2 | 163 | `systems/room13_scene_contrast.rpy:25` | _r13_v111_scene_music |
-| 3 | 307 | `room13_v111.rpy:382` |  |
+| 3 | 307 | `room13_v111.rpy:398` |  |
 
 ## `r13_visible_people` (3층)
 
@@ -359,7 +359,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 148 | `systems/room13_materials.rpy:40` | _r13_v111_catalog_record |
-| 2 | 306 | `room13_v111.rpy:354` |  |
+| 2 | 306 | `room13_v111.rpy:370` |  |
 
 ## `r13_click_feedback` (2층)
 
@@ -534,7 +534,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 150 | `systems/room13_material_art.rpy:8` | _r13_v111_material_art |
-| 2 | 302 | `room13_v111.rpy:283` |  |
+| 2 | 302 | `room13_v111.rpy:299` |  |
 
 ## `r13_meeting_cast` (2층)
 

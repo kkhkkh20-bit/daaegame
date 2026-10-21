@@ -352,7 +352,8 @@ label('morning14');setv('day',14);goto('day14')
 label('day14')
 select([('가족이 머무는 자리를 확인한다','ending_dispatch14',None)])
 label('ending_dispatch14')
-lines.extend(['    if '+V('outcome13')+"=='family_priority':",'        jump r13_v111_family_ending14','    if '+V('outcome13')+"=='partial_rescue':",'        jump r13_v111_partial_ending14','    if '+V('crowd_injury')+':','        jump r13_v111_violence_ending14']);goto('morning_safe14')
+# New-world ending order (plan 11-1): left name and frozen village first, then the kept endings.
+lines.extend(["    $ r13_v111_set('ending14',r13_nw_ending14())","    if "+V('ending14')+" in ('left_name','left_name_dad'):",'        jump r13_nw_left_name_ending14','    if '+V('ending14')+"=='frozen':",'        jump r13_nw_frozen_ending14','    if '+V('ending14')+"=='family':",'        jump r13_v111_family_ending14','    if '+V('ending14')+"=='partial':",'        jump r13_v111_partial_ending14','    if '+V('ending14')+"=='violence':",'        jump r13_v111_violence_ending14']);goto('morning_safe14')
 s='MS14_D14_S01';start(s,'school','morning_safe14',['mom','daram','npc_pandol','nabi']);late(s,1,18);goto('altar_guide14')
 talk('altar_guide14','school',['mom','daram','resident_badook'],'resident_badook','제단 접근로를 확인해 주십시오.','altar_ready14')
 label('altar_ready14');setv('altar_guide_confirmed',True);setv('busy:resident_badook',False);goto('altar14')
@@ -424,7 +425,7 @@ label('cookie14');travel('school','cookie14');arrive(['mom','daram']);setv('nigh
 label('cookie_gate14');arrive(['mom','daram']);setv('night14_lodging','gate');goto('cookie_scene14')
 label('cookie_scene14');code('r13_edit(period=2)');code('r13_v111_scene('+q(s)+')');lines.append('    call r13_scene(R13_PLACES[room13["location"]][1],R13_PLACES[room13["location"]][0],"calm")');code('r13_v111_score()');late(s,1,14)
 lines.append('    if '+V('crowd_injury')+':');lines.append('        call r13_v111_cookie_distance14')
-late(s,15,23);setv('story14_completed',True);lines.append('    call screen r13_confirm("이야기를 마쳤습니다. 현재 진행을 저장할 수 있습니다.",yes="메인 화면으로",no="저장하기")');lines.append('    if not _return:');lines.append('        call screen save');lines.append('    return')
+late(s,15,23);lines.append('    if r13_nw_true_ending_ready():');lines.append('        call r13_nw_true_epilogue14');setv('story14_completed',True);lines.append('    call screen r13_confirm("이야기를 마쳤습니다. 현재 진행을 저장할 수 있습니다.",yes="메인 화면으로",no="저장하기")');lines.append('    if not _return:');lines.append('        call screen save');lines.append('    return')
 label('cookie_distance14');late(s,30,32);lines.append('    return')
 bindings['morning_prep12']['people_by_location']={
  'school':['mom','daram','guard','resident_teacher'],

@@ -231,16 +231,32 @@ label r13_v111_wait_again:
             $ r13_field_reading=False
     jump r13_v111_wait_again
 
-label r13_v111_proof(key,correct,success,wrong=None,hint=None):
+label r13_v111_proof(key,correct,success,wrong=None,hint=None,issue=None,partial=None,hardened=None):
     $ v111_claim="v111:"+key
     $ R13_CLAIMS[v111_claim]=dict(assertion=key)
     $ room13["arguments"].setdefault(v111_claim,[])
+    # New-world meetings pass an issue ID: one presentation settles it (room13_v111_newworld.rpy).
+    $ v111_issue=issue; v111_partial=partial; v111_hardened=hardened
+    if issue and not wrong:
+        $ raise Exception("Issue proof needs a confirmed-claim label: "+issue)
 label r13_v111_proof_again:
     call screen r13_crisis_proof(v111_claim,heading="기록 · 자료 대조")
     if _return=="present":
         call screen r13_book("dad",present=True)
         if _return and _return in room13["evidence"] and _return not in room13["arguments"][v111_claim]:
             $ v111_copy=winter_copy.deepcopy(room13); v111_copy["arguments"][v111_claim].append(_return); room13=v111_copy
+        jump r13_v111_proof_again
+    if _return=="argue" and v111_issue:
+        $ v111_verdict=r13_nw_judge(v111_issue,correct,room13["arguments"][v111_claim],v111_partial)
+        $ v111_copy=winter_copy.deepcopy(room13); v111_copy["arguments"][v111_claim]=[]; room13=v111_copy
+        if v111_verdict=="won":
+            return success
+        if v111_verdict=="lost":
+            return wrong
+        if v111_verdict=="hardened" and v111_hardened:
+            return v111_hardened
+        if v111_verdict=="empty":
+            $ renpy.notify("먼저 보여 줄 자료를 고르세요.")
         jump r13_v111_proof_again
     if _return=="argue":
         if set("V111:"+x for x in correct)==set(room13["arguments"][v111_claim]):
