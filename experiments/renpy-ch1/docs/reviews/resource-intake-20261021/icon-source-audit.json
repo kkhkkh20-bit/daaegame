@@ -1,0 +1,386 @@
+{
+  "conclusion": "IDs have not been renamed. D06/D11/D12 original records exist in the 82-scene plan; the current native runtime is only D01-D03 and the older compiled MS14 route is D01-D05. No equivalent active scene is implemented.",
+  "native_limit": "dev/build_v111_labels.py:124; game/room13_v111_days123.rpy label r13_v111_day4",
+  "older_limit": "dev/import_ms14.py:315 and :342",
+  "runtime_days": {
+    "game/v111/records.json": [
+      "D01",
+      "D02",
+      "D03"
+    ],
+    "game/ms14/route.json": [
+      "D01",
+      "D02",
+      "D03",
+      "D04",
+      "D05"
+    ]
+  },
+  "assets": [
+    {
+      "asset_id": "D06_cloth_empty_borrowed_bowl",
+      "status": "HELD_NOT_RUNTIME_REGISTERED",
+      "archive": "design/resource-intake-20261021/dialogue-icons-8.zip",
+      "archive_commit": "ae62bf081fce0e08eebbbf2dcd8896292175bd56",
+      "members": {
+        "masters": {
+          "member": "masters/D06_cloth_empty_borrowed_bowl.png",
+          "sha256": "5ab3922fdcf1eb6667500641a5c5b469d1d02a79a88e5efcbdda8b9bd4a7c1fd"
+        },
+        "pixel2x_candidates": {
+          "member": "pixel2x_candidates/D06_cloth_empty_borrowed_bowl.png",
+          "sha256": "01164795a20b27591d381a10de9940379fd0ced3ffeae5c706cf1d65353550eb"
+        }
+      },
+      "evidence": [
+        {
+          "line_id": "MS14_D06_S01_L0018",
+          "planning_source": "docs/story-v111/source/다람탐정_82씬_실행매핑_V1.1.1.json",
+          "json_pointer": "/scenes/25/blocks/2/cues/1/source_record",
+          "source_text_matches": true,
+          "source_requires_matches": true,
+          "block_condition_matches": true,
+          "present_in_old_source": true,
+          "runtime_presence": {
+            "game/v111/records.json": false,
+            "game/ms14/route.json": false
+          }
+        },
+        {
+          "line_id": "MS14_D06_S01_L0020",
+          "planning_source": "docs/story-v111/source/다람탐정_82씬_실행매핑_V1.1.1.json",
+          "json_pointer": "/scenes/25/blocks/2/cues/3/source_record",
+          "source_text_matches": true,
+          "source_requires_matches": true,
+          "block_condition_matches": true,
+          "present_in_old_source": true,
+          "runtime_presence": {
+            "game/v111/records.json": false,
+            "game/ms14/route.json": false
+          }
+        }
+      ]
+    },
+    {
+      "asset_id": "D06_two_towels_salt_parcel",
+      "status": "HELD_NOT_RUNTIME_REGISTERED",
+      "archive": "design/resource-intake-20261021/dialogue-icons-8.zip",
+      "archive_commit": "ae62bf081fce0e08eebbbf2dcd8896292175bd56",
+      "members": {
+        "masters": {
+          "member": "masters/D06_two_towels_salt_parcel.png",
+          "sha256": "3acae0812e37ad216c54ddbb17d7730cb5183c205a1940ac40a2b3050bdaa5ff"
+        },
+        "pixel2x_candidates": {
+          "member": "pixel2x_candidates/D06_two_towels_salt_parcel.png",
+          "sha256": "090bf7d6bcb1d8c903801d383d2742c9da9bfd9e5af5ee192c2331e08de0d594"
+        }
+      },
+      "evidence": [
+        {
+          "line_id": "MS14_D06_S01_L0042",
+          "planning_source": "docs/story-v111/source/다람탐정_82씬_실행매핑_V1.1.1.json",
+          "json_pointer": "/scenes/25/blocks/6/cues/8/source_record",
+          "source_text_matches": true,
+          "source_requires_matches": true,
+          "block_condition_matches": true,
+          "present_in_old_source": true,
+          "runtime_presence": {
+            "game/v111/records.json": false,
+            "game/ms14/route.json": false
+          }
+        },
+        {
+          "line_id": "MS14_D06_S01_L0043",
+          "planning_source": "docs/story-v111/source/다람탐정_82씬_실행매핑_V1.1.1.json",
+          "json_pointer": "/scenes/25/blocks/6/cues/9/source_record",
+          "source_text_matches": true,
+          "source_requires_matches": true,
+          "block_condition_matches": true,
+          "present_in_old_source": true,
+          "runtime_presence": {
+            "game/v111/records.json": false,
+            "game/ms14/route.json": false
+          }
+        }
+      ]
+    },
+    {
+      "asset_id": "D11_child_wet_socks",
+      "status": "HELD_NOT_RUNTIME_REGISTERED",
+      "archive": "design/resource-intake-20261021/dialogue-icons-8.zip",
+      "archive_commit": "ae62bf081fce0e08eebbbf2dcd8896292175bd56",
+      "members": {
+        "masters": {
+          "member": "masters/D11_child_wet_socks.png",
+          "sha256": "c409506abe79db5a22d09e18fa9a4d16b857cbd87d39fcd43e98f4e0caf4c872"
+        },
+        "pixel2x_candidates": {
+          "member": "pixel2x_candidates/D11_child_wet_socks.png",
+          "sha256": "e12e82ad0cd5e1ed4201302c2a7a8c4c7f639d1861c4dcd1e601f942be86b76b"
+        }
+      },
+      "evidence": [
+        {
+          "line_id": "MS14_D11_S02A_L0015",
+          "planning_source": "docs/story-v111/source/다람탐정_82씬_실행매핑_V1.1.1.json",
+          "json_pointer": "/scenes/56/blocks/4/cues/0/source_record",
+          "source_text_matches": true,
+          "source_requires_matches": true,
+          "block_condition_matches": true,
+          "present_in_old_source": true,
+          "runtime_presence": {
+            "game/v111/records.json": false,
+            "game/ms14/route.json": false
+          }
+        },
+        {
+          "line_id": "MS14_D11_S02A_L0019",
+          "planning_source": "docs/story-v111/source/다람탐정_82씬_실행매핑_V1.1.1.json",
+          "json_pointer": "/scenes/56/blocks/5/cues/0/source_record",
+          "source_text_matches": true,
+          "source_requires_matches": true,
+          "block_condition_matches": true,
+          "present_in_old_source": true,
+          "runtime_presence": {
+            "game/v111/records.json": false,
+            "game/ms14/route.json": false
+          }
+        }
+      ]
+    },
+    {
+      "asset_id": "D11_blank_name_tag_bundle",
+      "status": "HELD_NOT_RUNTIME_REGISTERED",
+      "archive": "design/resource-intake-20261021/dialogue-icons-8.zip",
+      "archive_commit": "ae62bf081fce0e08eebbbf2dcd8896292175bd56",
+      "members": {
+        "masters": {
+          "member": "masters/D11_blank_name_tag_bundle.png",
+          "sha256": "fe556e11810e15990a95920ae68de7d00dde53c66a1f70b10c1bf1f23f183026"
+        },
+        "pixel2x_candidates": {
+          "member": "pixel2x_candidates/D11_blank_name_tag_bundle.png",
+          "sha256": "c1d8e2f1fb30dc211237031a14c368a2d0ba0e2d4b8c8772f58629ed55c2ee6a"
+        }
+      },
+      "evidence": [
+        {
+          "line_id": "MS14_D11_S04_L0008",
+          "planning_source": "docs/story-v111/source/다람탐정_82씬_실행매핑_V1.1.1.json",
+          "json_pointer": "/scenes/59/blocks/3/cues/0/source_record",
+          "source_text_matches": true,
+          "source_requires_matches": true,
+          "block_condition_matches": true,
+          "present_in_old_source": true,
+          "runtime_presence": {
+            "game/v111/records.json": false,
+            "game/ms14/route.json": false
+          }
+        },
+        {
+          "line_id": "MS14_D11_S04_L0021",
+          "planning_source": "docs/story-v111/source/다람탐정_82씬_실행매핑_V1.1.1.json",
+          "json_pointer": "/scenes/59/blocks/9/cues/1/source_record",
+          "source_text_matches": true,
+          "source_requires_matches": true,
+          "block_condition_matches": true,
+          "present_in_old_source": true,
+          "runtime_presence": {
+            "game/v111/records.json": false,
+            "game/ms14/route.json": false
+          }
+        },
+        {
+          "line_id": "MS14_D11_S04_L0025",
+          "planning_source": "docs/story-v111/source/다람탐정_82씬_실행매핑_V1.1.1.json",
+          "json_pointer": "/scenes/59/blocks/10/cues/0/source_record",
+          "source_text_matches": true,
+          "source_requires_matches": true,
+          "block_condition_matches": true,
+          "present_in_old_source": true,
+          "runtime_presence": {
+            "game/v111/records.json": false,
+            "game/ms14/route.json": false
+          }
+        }
+      ]
+    },
+    {
+      "asset_id": "D12_white_bowl_crosswise_spoon",
+      "status": "HELD_NOT_RUNTIME_REGISTERED",
+      "archive": "design/resource-intake-20261021/dialogue-icons-8.zip",
+      "archive_commit": "ae62bf081fce0e08eebbbf2dcd8896292175bd56",
+      "members": {
+        "masters": {
+          "member": "masters/D12_white_bowl_crosswise_spoon.png",
+          "sha256": "72c961a74490f25c8a1c1e934a076fad74a1ca7d3f6b3eb3d4ff83ba8321fbf8"
+        },
+        "pixel2x_candidates": {
+          "member": "pixel2x_candidates/D12_white_bowl_crosswise_spoon.png",
+          "sha256": "1f0e4501430174cbc93893c77eee233c2c35925ee954192af6bc6279f75b243b"
+        }
+      },
+      "evidence": [
+        {
+          "line_id": "MS14_D12_S03_L0001",
+          "planning_source": "docs/story-v111/source/다람탐정_82씬_실행매핑_V1.1.1.json",
+          "json_pointer": "/scenes/62/blocks/0/cues/0/source_record",
+          "source_text_matches": true,
+          "source_requires_matches": true,
+          "block_condition_matches": true,
+          "present_in_old_source": true,
+          "runtime_presence": {
+            "game/v111/records.json": false,
+            "game/ms14/route.json": false
+          }
+        },
+        {
+          "line_id": "MS14_D12_S03_L0007",
+          "planning_source": "docs/story-v111/source/다람탐정_82씬_실행매핑_V1.1.1.json",
+          "json_pointer": "/scenes/62/blocks/3/cues/0/source_record",
+          "source_text_matches": true,
+          "source_requires_matches": true,
+          "block_condition_matches": true,
+          "present_in_old_source": true,
+          "runtime_presence": {
+            "game/v111/records.json": false,
+            "game/ms14/route.json": false
+          }
+        }
+      ]
+    },
+    {
+      "asset_id": "D12_teacher_large_red_bowl",
+      "status": "HELD_NOT_RUNTIME_REGISTERED",
+      "archive": "design/resource-intake-20261021/dialogue-icons-8.zip",
+      "archive_commit": "ae62bf081fce0e08eebbbf2dcd8896292175bd56",
+      "members": {
+        "masters": {
+          "member": "masters/D12_teacher_large_red_bowl.png",
+          "sha256": "a3f65d4090f80293e2eab9d096569865fc431721a66ac268cc7fabc21d8404ee"
+        },
+        "pixel2x_candidates": {
+          "member": "pixel2x_candidates/D12_teacher_large_red_bowl.png",
+          "sha256": "6cecf7074b3da56a562cbcae5b6f95c77a6ec507c4e6454b8ebbe0b0c45b0866"
+        }
+      },
+      "evidence": [
+        {
+          "line_id": "MS14_D12_S02_L0018",
+          "planning_source": "docs/story-v111/source/다람탐정_82씬_실행매핑_V1.1.1.json",
+          "json_pointer": "/scenes/61/blocks/5/cues/2/source_record",
+          "source_text_matches": true,
+          "source_requires_matches": true,
+          "block_condition_matches": true,
+          "present_in_old_source": true,
+          "runtime_presence": {
+            "game/v111/records.json": false,
+            "game/ms14/route.json": false
+          }
+        },
+        {
+          "line_id": "MS14_D12_S02_L0019",
+          "planning_source": "docs/story-v111/source/다람탐정_82씬_실행매핑_V1.1.1.json",
+          "json_pointer": "/scenes/61/blocks/5/cues/3/source_record",
+          "source_text_matches": true,
+          "source_requires_matches": true,
+          "block_condition_matches": true,
+          "present_in_old_source": true,
+          "runtime_presence": {
+            "game/v111/records.json": false,
+            "game/ms14/route.json": false
+          }
+        }
+      ]
+    },
+    {
+      "asset_id": "D12_large_small_ladles",
+      "status": "HELD_NOT_RUNTIME_REGISTERED",
+      "archive": "design/resource-intake-20261021/dialogue-icons-8.zip",
+      "archive_commit": "ae62bf081fce0e08eebbbf2dcd8896292175bd56",
+      "members": {
+        "masters": {
+          "member": "masters/D12_large_small_ladles.png",
+          "sha256": "abc226cccaba3c02f01b0f3b5470fc22301e7fa462cefcf9712f06a38425ffc9"
+        },
+        "pixel2x_candidates": {
+          "member": "pixel2x_candidates/D12_large_small_ladles.png",
+          "sha256": "eb8ba04bd2a38f8eaa8499cbc02b61d4a2e3d107de942944ecf07d189b7d8a6c"
+        }
+      },
+      "evidence": [
+        {
+          "line_id": "MS14_D12_S02_L0001",
+          "planning_source": "docs/story-v111/source/다람탐정_82씬_실행매핑_V1.1.1.json",
+          "json_pointer": "/scenes/61/blocks/0/cues/0/source_record",
+          "source_text_matches": true,
+          "source_requires_matches": true,
+          "block_condition_matches": true,
+          "present_in_old_source": true,
+          "runtime_presence": {
+            "game/v111/records.json": false,
+            "game/ms14/route.json": false
+          }
+        },
+        {
+          "line_id": "MS14_D12_S02_L0017",
+          "planning_source": "docs/story-v111/source/다람탐정_82씬_실행매핑_V1.1.1.json",
+          "json_pointer": "/scenes/61/blocks/5/cues/1/source_record",
+          "source_text_matches": true,
+          "source_requires_matches": true,
+          "block_condition_matches": true,
+          "present_in_old_source": true,
+          "runtime_presence": {
+            "game/v111/records.json": false,
+            "game/ms14/route.json": false
+          }
+        }
+      ]
+    },
+    {
+      "asset_id": "D11_sewing_needle_thread",
+      "status": "HELD_NOT_RUNTIME_REGISTERED",
+      "archive": "design/resource-intake-20261021/dialogue-icons-8.zip",
+      "archive_commit": "ae62bf081fce0e08eebbbf2dcd8896292175bd56",
+      "members": {
+        "masters": {
+          "member": "masters/D11_sewing_needle_thread.png",
+          "sha256": "a6eafe5bcaa23382b940965bfccddb3e54290394d429dbc1dfb101cba4fa3162"
+        },
+        "pixel2x_candidates": {
+          "member": "pixel2x_candidates/D11_sewing_needle_thread.png",
+          "sha256": "34b6719a8964d50a97fe9e32de3e3cf30a8fef97c69a6d5669209c83448ef169"
+        }
+      },
+      "evidence": [
+        {
+          "line_id": "MS14_D11_S02B_L0006",
+          "planning_source": "docs/story-v111/source/다람탐정_82씬_실행매핑_V1.1.1.json",
+          "json_pointer": "/scenes/57/blocks/1/cues/0/source_record",
+          "source_text_matches": true,
+          "source_requires_matches": true,
+          "block_condition_matches": true,
+          "present_in_old_source": true,
+          "runtime_presence": {
+            "game/v111/records.json": false,
+            "game/ms14/route.json": false
+          }
+        },
+        {
+          "line_id": "MS14_D11_S02B_L0013",
+          "planning_source": "docs/story-v111/source/다람탐정_82씬_실행매핑_V1.1.1.json",
+          "json_pointer": "/scenes/57/blocks/3/cues/0/source_record",
+          "source_text_matches": true,
+          "source_requires_matches": true,
+          "block_condition_matches": true,
+          "present_in_old_source": true,
+          "runtime_presence": {
+            "game/v111/records.json": false,
+            "game/ms14/route.json": false
+          }
+        }
+      ]
+    }
+  ]
+}
