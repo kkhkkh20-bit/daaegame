@@ -43,9 +43,9 @@ class RecordCleanup(unittest.TestCase):
   self.assertIn('xpos 66 ypos r13_record_footer_y() xsize 176 ysize r13_record_footer_height()',NOTE)
  def test_source_expand_is_one_way_and_scroll_is_retained(self):
   # 0.20.x: the fold lives in systems/room13_evidence_view.rpy (right column of the 자료 view).
-  self.assertNotIn('출처 접기',VIEW)
-  self.assertIn('if detail and not origin_open:',VIEW)
-  self.assertIn('SetLocalVariable("origin_open",True)',VIEW)
+  # 0.20.7: one toggle button (출처 펼치기 / 출처 접기) in the same place.
+  self.assertIn('("출처 접기" if origin_open else "출처 펼치기")',VIEW)
+  self.assertIn('SetLocalVariable("origin_open",not origin_open)',VIEW)
   self.assertIn('yadjustment detail_scroll',VIEW)
   self.assertIn('area (916,116,304,max(60,reading_bottom-116)) mousewheel True draggable True scrollbars ("vertical" if (detail or present) else None)',VIEW)  # 0.20.6: no empty scrollbar
   self.assertIn('$ reading_bottom=R13_EV_BOTTOM-buttons*bh-max(0,buttons-1)*12-16',VIEW)

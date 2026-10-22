@@ -141,10 +141,12 @@ label r13_v111_reunion11:
     $ r13_v111_score()
     $ r13_v111_arrive(['daram', 'mom'])
     call r13_lines(r13_v111_lines(['MS14_D11_S02_L0002']),'v111:MS14_D11_S02_L0002')
+    call r13_lines(r13_v111_lines(['MS14_D11_S02_L0003']),'v111:MS14_D11_S02_L0003')  # 0.20.7: the distance at the doorway
     call r13_lines(r13_v111_lines(['MS14_D11_S02_L0004']),'v111:MS14_D11_S02_L0004')
     call r13_lines(r13_v111_lines(['MS14_D11_S02_L0005']),'v111:MS14_D11_S02_L0005')
     call r13_lines(r13_v111_lines(['MS14_D11_S02_L0006']),'v111:MS14_D11_S02_L0006')
     call r13_lines(r13_v111_lines(['MS14_D11_S02_L0007']),'v111:MS14_D11_S02_L0007')
+    call r13_lines(r13_v111_lines(['MS14_D11_S02_L0008']),'v111:MS14_D11_S02_L0008')  # 0.20.7: Daram takes the coat
     call r13_lines(r13_v111_lines(['MS14_D11_S02_L0009']),'v111:MS14_D11_S02_L0009')
     call r13_lines(r13_v111_lines(['MS14_D11_S02_L0010']),'v111:MS14_D11_S02_L0010')
     call r13_lines(r13_v111_lines(['MS14_D11_S02_L0011']),'v111:MS14_D11_S02_L0011')
@@ -331,6 +333,9 @@ label r13_v111_facility11:
         call r13_v111_guldol_heat11
     else:
         call r13_v111_mother_heat11
+    # 검토 0.20.4 추가 4: 3일 광장에서 따뜻한 받침을 직접 만져 본 경로만 회상한다.
+    if r13_v111_value('stone_warm_felt3') and r13_v111_actor_ready('daram') and r13_v111_actor_ready('mom'):
+        call r13_lines(r13_nw_block('warm_recall11'),'nw:warm_recall11')
     jump r13_v111_heat_check11
 
 label r13_v111_guldol_heat11:
@@ -1035,6 +1040,11 @@ label r13_v111_meal12:
     $ r13_v111_arrive(['daram', 'nabi', 'resident_teacher', 'resident_bori', 'kid_dodam', 'kid_saemi'])
     $ r13_v111_set('route12','uncommitted')
     $ r13_v111_set('location:mom','facility')
+    # 검토 0.20.4 연결 3: 준비를 보완하고 돌아오면 도입을 되풀이하지 않고 이어 받는다.
+    if r13_v111_value('meal12_intro_seen'):
+        call r13_lines(r13_nw_block('meal12_return'),'nw:meal12_return')
+        jump r13_v111_meal_choice12
+    $ r13_v111_set('meal12_intro_seen',True)
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0003']),'v111:MS14_D12_S02_L0003')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0004']),'v111:MS14_D12_S02_L0004')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0005']),'v111:MS14_D12_S02_L0005')
@@ -1048,6 +1058,10 @@ label r13_v111_meal12:
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0014']),'v111:MS14_D12_S02_L0014')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0015']),'v111:MS14_D12_S02_L0015')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0017']),'v111:MS14_D12_S02_L0017')
+    # 0.20.7 (owner days 2-14 #6): Dad sets the white bowls out himself, an ordinary chore now.
+    $ renpy.display_menu([("흰 그릇을 작은 배식대로 나른다",0)])
+    $ r13_v111_set("bowls_carried12",True)
+    call r13_lines(r13_nw_block('bowls_carried12'),'nw:bowls_carried12')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0018']),'v111:MS14_D12_S02_L0018')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0019']),'v111:MS14_D12_S02_L0019')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0020']),'v111:MS14_D12_S02_L0020')
@@ -1066,7 +1080,7 @@ label r13_v111_meal_choice12:
             jump r13_v111_take_daram12
         '다람은 나비 곁에 두고 다녀온다':
             jump r13_v111_leave_daram12
-        '예방 준비를 확인한다':
+        '아침에 부탁한 일들을 확인한다':
             jump r13_v111_prevent_check12
 
 label r13_v111_prevent_check12:
@@ -1220,6 +1234,8 @@ label r13_v111_meal_observations12:
     call r13_lines(r13_v111_lines(['MS14_D12_S04_L0007']),'v111:MS14_D12_S04_L0007')
     call r13_lines(r13_v111_lines(['MS14_D12_S04_L0008']),'v111:MS14_D12_S04_L0008')
     call r13_lines(r13_v111_lines(['MS14_D12_S04_L0010']),'v111:MS14_D12_S04_L0010')
+    if r13_v111_value("bowls_carried12"):
+        call r13_lines(r13_nw_block('bowls_recall12'),'nw:bowls_recall12')
     call r13_lines(r13_v111_lines(['MS14_D12_S04_L0011']),'v111:MS14_D12_S04_L0011')
     call r13_lines(r13_v111_lines(['MS14_D12_S04_L0012']),'v111:MS14_D12_S04_L0012')
     call r13_lines(r13_v111_lines(['MS14_D12_S04_L0013']),'v111:MS14_D12_S04_L0013')
@@ -1314,6 +1330,13 @@ label r13_v111_medical_arrival12:
     call r13_lines(r13_v111_lines(['MS14_D12_S04_L0045']),'v111:MS14_D12_S04_L0045')
     if r13_v111_value('route12')=='late_exposure':
         call r13_lines(r13_v111_lines(['MS14_D12_S04_L0046']),'v111:MS14_D12_S04_L0046')
+        # 검토 0.20.4 추가 2: 서리가 좁혀 말한 범위를 아빠가 한 번 짚는다. 어느 쪽이든 고백은 바로 이어진다.
+        menu:
+            '약장 밖에 맡긴 약도 있는지 묻는다':
+                call r13_lines(r13_nw_block('seori_ask12'),'nw:seori_ask12')
+            '장부를 다시 보여 달라고 한다':
+                call r13_lines(r13_nw_block('seori_ledger12'),'nw:seori_ledger12')
+        call r13_lines(r13_nw_block('seori_confess12'),'nw:seori_confess12')
     $ r13_v111_arrive(['daram', 'nabi', 'resident_teacher', 'resident_seori', 'resident_bori', 'guard', 'neoul'])
     $ r13_v111_set('busy:resident_bori',False)
     $ r13_v111_set('medical_arrived',True)
@@ -1427,6 +1450,7 @@ label r13_v111_aftermath_pre12:
     call r13_lines(r13_v111_lines(['MS14_D12_S04_L0098']),'v111:MS14_D12_S04_L0098')
     call r13_lines(r13_v111_lines(['MS14_D12_S04_L0099']),'v111:MS14_D12_S04_L0099')
     call r13_lines(r13_v111_lines(['MS14_D12_S04_L0100']),'v111:MS14_D12_S04_L0100')
+    $ r13_v111_set('book_promise12',True)
     call r13_lines(r13_v111_lines(['MS14_D12_S04_L0101']),'v111:MS14_D12_S04_L0101')
     call r13_lines(r13_v111_lines(['MS14_D12_S04_L0102']),'v111:MS14_D12_S04_L0102')
     menu:
@@ -1564,6 +1588,8 @@ label r13_v111_early12:
     $ r13_v111_set('route12','early_prevented')
     $ r13_v111_set('school_heat_connected',True)
     $ r13_v111_set('busy:karo',False)
+    # 0.20.7 (ending review 8): the prevented path gets its own ordinary evening.
+    call r13_lines(r13_nw_block('early_ordinary12'),'nw:early_ordinary12')
     jump r13_v111_sleep12
 
 label r13_v111_sleep12:
@@ -1606,6 +1632,9 @@ label r13_v111_day13:
     call r13_lines(r13_v111_lines(['MS14_D13_S01_L0007']),'v111:MS14_D13_S01_L0007')
     call r13_lines(r13_v111_lines(['MS14_D13_S01_L0008']),'v111:MS14_D13_S01_L0008')
     call r13_lines(r13_v111_lines(['MS14_D13_S01_L0009']),'v111:MS14_D13_S01_L0009')
+    # 검토 0.20.4 추가 7: 어제 나비가 한 책 약속을 지킨다(약속을 들은 경로, 나비가 학교에 남은 경우만).
+    if r13_v111_value('book_promise12') and r13_v111_value('alive:nabi') is not False and not r13_v111_value('listed:nabi'):
+        call r13_lines(r13_nw_block('book_promise13'),'nw:book_promise13')
     jump r13_v111_blanket_mend13
 
 label r13_v111_blanket_mend13:
@@ -1893,6 +1922,9 @@ label r13_v111_rein13:
     jump r13_v111_rein_ledger13p
 
 label r13_v111_rein_ledger13p:
+    if not r13_v111_value("roster_shown13"):
+        $ r13_v111_set("roster_shown13",True)
+        call r13_lines(r13_nw_roster_lines(),'nw:roster13')
     call r13_v111_proof('장부의 두 배를 실룩에게 보인다',['E16'],'r13_v111_rein_ledger13','r13_v111_rein_wrong13a',None)
     jump expression _return
 
@@ -1962,6 +1994,8 @@ label r13_v111_family_stay13:
     if r13_v111_actor_ready('mom') and room13['location']=='square':
         call r13_lines(r13_v111_lines(['MS14_D13_S04_L0064']),'v111:MS14_D13_S04_L0064')
     $ r13_v111_set('family_location','square')
+    # 검토 0.20.4 기록 3: 관계도가 12일 값(DARAM_location)이 아니라 지금 있는 곳을 읽게 한다.
+    $ r13_v111_set('location:daram','square')
     $ r13_v111_set('busy:mom','daram_guard')
     jump r13_v111_handover_plan13
 
@@ -2425,6 +2459,7 @@ label r13_v111_crowd_watch13:
     $ r13_v111_set('outcome13','crowd_violence')
     jump r13_v111_sleep13
 
+# 미연결 분기(검토 0.20.4 연결 2): 정상 선택에서 들어오는 길이 없다. 연결 조건은 소유자 결정 뒤 정한다.
 label r13_v111_crowd_failed13:
     call r13_lines(r13_v111_lines(['MS14_D13_C_L0021']),'v111:MS14_D13_C_L0021')
     call r13_lines(r13_v111_lines(['MS14_D13_C_L0022']),'v111:MS14_D13_C_L0022')
@@ -2441,6 +2476,7 @@ label r13_v111_sleep13:
         call r13_v111_collect_family13
     call r13_v111_travel('school','sleep13',['mom', 'daram'])
     $ r13_v111_set('family_location','school')
+    $ r13_v111_set('location:daram','school')
     $ r13_v111_set('busy:mom',False)
     $ r13_v111_arrive(['mom', 'daram', 'nabi'])
     jump r13_v111_sleep13_input
@@ -2714,6 +2750,9 @@ label r13_v111_dallae14:
 label r13_v111_device14:
     if r13_v111_value("buri_device_consent") and not r13_v111_value("mayor_site_decided") :
         jump r13_v111_mayor_site_request14
+    # 검토 0.20.4 연결 1: 촌장이 동행하지 않으면 부리를 붙잡아 두는 이유와 부리의 조언을 문간에서 보인다.
+    if r13_v111_value("buri_device_consent") and not r13_v111_value("mayor_site_joined") and r13_v111_person_alive("buri"):
+        call r13_lines(r13_nw_block('buri_held14'),'nw:buri_held14')
     call r13_v111_travel('altar','device14')
     $ r13_v111_arrive(['mom', 'daram', 'karo', 'resident_badook'])
     if r13_v111_value("mayor_site_joined") and r13_v111_person_alive("buri"):
@@ -3265,6 +3304,8 @@ label r13_v111_cookie_scene14:
     call r13_lines(r13_v111_lines(['MS14_D14_S05_L0020']),'v111:MS14_D14_S05_L0020')
     call r13_lines(r13_v111_lines(['MS14_D14_S05_L0021']),'v111:MS14_D14_S05_L0021')
     call r13_lines(r13_v111_lines(['MS14_D14_S05_L0022']),'v111:MS14_D14_S05_L0022')
+    # 0.20.7 (ending review): the path's last act (what was saved, lost or still waiting).
+    call r13_lines(r13_nw_block('ending_last14'),'nw:ending_last14')
     if r13_nw_true_ending_ready():
         call r13_v111_true_epilogue14
     $ r13_v111_set('story14_completed',True)

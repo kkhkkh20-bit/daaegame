@@ -49,6 +49,16 @@ init 319 python:
         "owl_alive":lambda:r13_v111_value("OWL_ALIVE") is not False,
         "owl_dead":lambda:r13_v111_value("OWL_ALIVE") is False,
         "piko_alive":lambda:r13_v111_value("piko_alive") is not False,
+        # 0.20.7 (ending review 4·5·6·13·15): one last act per path, after the shared snack scene.
+        "end_portrait_child":lambda:r13_v111_value("piko_alive") is False and r13_v111_value("portrait")=="child_completed" and not r13_nw_true_ending_ready(),
+        "end_family":lambda:r13_v111_value("ending14")=="family",
+        "end_partial_departed":lambda:r13_v111_value("ending14")=="partial" and bool(r13_v111_value("cart_departed")),
+        "end_partial_waiting":lambda:r13_v111_value("ending14")=="partial" and not r13_v111_value("cart_departed") and not r13_v111_value("pending_handover_completed"),
+        "end_partial_done":lambda:r13_v111_value("ending14")=="partial" and not r13_v111_value("cart_departed") and bool(r13_v111_value("pending_handover_completed")),
+        "end_injury":lambda:bool(r13_v111_value("crowd_injury")),
+        "end_morning_won":lambda:r13_v111_value("ending14")=="morning" and r13_v111_value("meeting:altar")=="win" and not r13_nw_true_ending_ready(),
+        "end_morning_partial":lambda:r13_v111_value("ending14")=="morning" and r13_v111_value("meeting:altar")=="partial",
+        "end_morning_lost":lambda:r13_v111_value("ending14")=="morning" and r13_v111_value("meeting:altar")=="lose",
         "piko_dead":lambda:r13_v111_value("piko_alive") is False,
         "kkomi_alive":lambda:r13_v111_value("KKOMI_ALIVE") is not False,
         "kkomi_dead":lambda:r13_v111_value("KKOMI_ALIVE") is False,
@@ -60,6 +70,7 @@ init 319 python:
         # 0.20.6 (play review P02): after the room is looked over, Granny stops sending us back up.
         "room13_checked_d1":lambda:r13_v111_owned("E06"),
         "room13_unchecked_d1":lambda:not r13_v111_owned("E06"),
+        "d06_bowl_together":lambda:r13_v111_value("choice:MS14_D06_S01")=="together",  # 0.20.7
         "gate_last_try":lambda:(r13_v111_value("tries:gate") or 0)+1>=R13_NW_TRIES,
         "gate_retry":lambda:(r13_v111_value("tries:gate") or 0)+1<R13_NW_TRIES,
         # 0.20.5 (Codex C03): a wrong answer that held only some of the gate records says so,
@@ -118,6 +129,9 @@ init 319 python:
         "records_partial_prev_b":lambda:r13_v111_value("meeting:records")=="partial" and r13_v111_value("prevention")!="A",
         # Event 08: the day-11 facility and the hypothesis meeting.
         "guldol_ready":lambda:r13_v111_actor_ready("resident_guldol"),
+        "karo_ready":lambda:r13_v111_actor_ready("karo"),  # 0.20.9
+        "tok_round_asked":lambda:bool(r13_v111_value("followup_read:NW_RX_F007")),  # 0.20.9 D23-04 먼저 물어본 경우
+        "heard_inn_order1":lambda:r13_v111_value("heard_inn_order1") is True,  # 0.20.9 1일 문간 지시를 들은 경로
         "guldol_absent":lambda:not r13_v111_actor_ready("resident_guldol"),
         "guldol_listed":lambda:r13_v111_value("listed:resident_guldol") is True,
         "hyp_win":lambda:r13_v111_value("meeting:hypothesis")=="win",
@@ -181,7 +195,7 @@ init 319 python:
         R13_NW_WHEN["listed:"+_nw_person]=(lambda p=_nw_person:r13_v111_value("listed:"+p) is True)
     # Impact direction names (systems/room13_impact_fx.rpy; that file loads later, so the names live here).
     R13_NW_FX=("jolt","shake","slam","flash")
-    R13_NW_CUT_SPECIAL=("bell","v111_blanket_before","v111_blanket_after")
+    R13_NW_CUT_SPECIAL=("bell","v111_blanket_before","v111_blanket_after","v111_reunion_far","v111_reunion_close")
     def r13_nw_replace_variants(rid):
         """A replace entry is one variant or a list of variants (first whose condition holds wins)."""
         entry=R13_NW_TEXT["replace"].get(rid)
@@ -225,7 +239,7 @@ init 319 python:
                     if row.get("beat") and row["beat"] not in R13_MEETING_BEATS:out.append(where+": unknown meeting beat %s %s"%(nid,row["beat"]))
                     if row.get("fx") and row["fx"] not in R13_NW_FX:out.append(where+": unknown fx %s %s"%(nid,row["fx"]))
                     cut=row.get("cut")
-                    if cut and cut not in R13_NW_CUT_SPECIAL and not renpy.loadable("assets/room13-ep-%s.webp"%cut):out.append(where+": missing cut art %s %s"%(nid,cut))
+                    if cut and cut not in R13_NW_CUT_SPECIAL and not (cut.startswith("ev:") and renpy.loadable("assets/evidence/%s.webp"%cut[3:])) and not renpy.loadable("assets/room13-ep-%s.webp"%cut):out.append(where+": missing cut art %s %s"%(nid,cut))
         for key in R13_NW_TEXT["evidence"]:
             if key not in R13_V111["evidence"]:out.append("evidence: unknown key "+key)
         return out
@@ -244,6 +258,10 @@ init 319 python:
             # 0.19.98: a revised line may carry its own expression (owner: "대사에 맞는 표정").
             if revised.get("expression") and len(packet)>2 and isinstance(packet[2],dict):
                 packet=(packet[0],packet[1],dict(packet[2],expression=revised["expression"],pose=revised["expression"]))+tuple(packet[3:])
+            # 0.20.7: a revised authored line may also raise or clear a picture cut ("ev:<record>" = the
+            # record's picture held up in the scene, owner "편지·그림·과자 봉지를 직접 들여다보게").
+            if "cut" in revised and len(packet)>2 and isinstance(packet[2],dict):
+                packet=(packet[0],packet[1],dict(packet[2],cut=revised["cut"]))+tuple(packet[3:])
             # 0.19.99: impact direction for the line (systems/room13_impact_fx.rpy).
             if revised.get("fx") and len(packet)>2 and isinstance(packet[2],dict):
                 packet=(packet[0],packet[1],dict(packet[2],fx=revised["fx"]))+tuple(packet[3:])

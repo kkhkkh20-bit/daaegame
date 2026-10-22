@@ -33,7 +33,7 @@ label r13_v111_day6:
             $ r13_v111_set('choice:MS14_D06_S01','together')
             $ r13_v111_commit('MS14_D06_S01_L0025')
             jump r13_v111_bowl_together6
-        '먼저 먹어. 그릇은 가져다줄게.':
+        '오늘은 먹었니? 먹을 것부터 알아보자.':  # 0.20.7 (review 6-12 #2): care, not a promise
             $ r13_v111_set('choice:MS14_D06_S01','eat_first')
             $ r13_v111_commit('MS14_D06_S01_L0025')
             jump r13_v111_bowl_eat6
@@ -126,7 +126,7 @@ label r13_v111_woodshed_seen6:
             $ r13_v111_set('choice:MS14_D06_S02','today')
             $ r13_v111_commit('MS14_D06_S02_L0026')
             jump r13_v111_today6
-        '허락을 먼저 받으러 간다.':
+        '허락을 받아 두고, 아이들은 내일 아침 데리러 온다.':  # 0.20.7 (review 6-12 #1): the time span is said before
             $ r13_v111_set('choice:MS14_D06_S02','permission')
             $ r13_v111_commit('MS14_D06_S02_L0026')
             jump r13_v111_permission6
@@ -942,6 +942,12 @@ label r13_v111_fear8:
     call r13_lines(r13_v111_lines(['MS14_D08_P01_L0003']),'v111:MS14_D08_P01_L0003')
     call r13_lines(r13_v111_lines(['MS14_D08_P01_L0004']),'v111:MS14_D08_P01_L0004')
     call r13_lines(r13_v111_lines(['MS14_D08_P01_L0005']),'v111:MS14_D08_P01_L0005')
+    # 0.20.7 (review 6-12 #4): the promise "복도에 있어도 돼" is kept as a real place to stand.
+    $ v111_answer=renpy.display_menu([("방에 같이 들어간다",0),("복도에서 문을 열어 두고 듣는다",1)])
+    if v111_answer==0:
+        call r13_lines(r13_nw_block('owl_room8'),'nw:owl_room8')
+    else:
+        call r13_lines(r13_nw_block('owl_hall8'),'nw:owl_hall8')
     call r13_lines(r13_v111_lines(['MS14_D08_P01_L0007']),'v111:MS14_D08_P01_L0007')
     call r13_lines(r13_v111_lines(['MS14_D08_P01_L0008']),'v111:MS14_D08_P01_L0008')
     call r13_lines(r13_v111_lines(['MS14_D08_P01_L0009']),'v111:MS14_D08_P01_L0009')
@@ -1716,9 +1722,9 @@ label r13_v111_pocket_answer10:
     call r13_lines(r13_v111_lines(['MS14_D10_P01_L0054']),'v111:MS14_D10_P01_L0054')
     $ r13_v111_commit('MS14_D10_P01_L0055')
     menu:
-        "가족에게만 날짜와 수량을 본다":
+        "가족끼리 확인하고, 왜 숨겼는지 묻는다":  # 0.20.7 (review 6-12 #3)
             jump r13_v111_family_paper10
-        "공개 수치만 대조하고 인계한다":
+        "공개된 수량만 대조하고 기록을 받는다":
             jump r13_v111_public_paper10
 
 label r13_v111_family_paper10:

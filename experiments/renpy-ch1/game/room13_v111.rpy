@@ -225,6 +225,7 @@ label r13_v111_wait_again:
             call screen r13_topics(v111_person)
             if _return!="back":
                 $ r13_v111_talk_person=v111_person
+                $ r13_v111_set("talked:%s:%s"%(room13["v111"].get("scene"),v111_person),True)
             if isinstance(_return,int):
                 $ r13_v111_time("topic:"+key+":"+str(_return),0 if (key=="gate_investigate" and _return in (5,6)) or (key=="post_menu" and _return==1) or key in ("safe_passage9","passage_after9") else 10)
                 return _return
@@ -270,9 +271,10 @@ label r13_v111_proof(key,correct,success,wrong=None,hint=None):
 label r13_v111_proof_again:
     call screen r13_crisis_proof(v111_claim,heading="기록 · 자료 대조",can_press=bool(hint),need_evidence=True,leave_label="자료 다시 보기",chances=r13_v111_proof_chances(key))
     if _return=="present":
-        call screen r13_book("dad",present=True,purpose="proof")
-        if _return and _return in room13["evidence"] and _return not in room13["arguments"][v111_claim]:
-            $ v111_copy=winter_copy.deepcopy(room13); v111_copy["arguments"][v111_claim].append(_return); room13=v111_copy
+        jump r13_v111_proof_pick
+    if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="remove":
+        # 0.20.7 (Codex A02): a record taken back before it is argued; no chance is spent.
+        $ v111_copy=winter_copy.deepcopy(room13); v111_copy["arguments"][v111_claim]=[k for k in v111_copy["arguments"][v111_claim] if k!=_return[1]]; room13=v111_copy
         jump r13_v111_proof_again
     if _return=="argue" and not room13["arguments"][v111_claim]:
         jump r13_v111_proof_again  # 0.20.5 (Codex A01): an empty submission costs nothing
@@ -289,6 +291,20 @@ label r13_v111_proof_again:
         return hint
     if _return=="leave":
         call screen r13_book(called=True)  # 0.20.6: X returns here instead of hiding the called screen
+    jump r13_v111_proof_again
+
+label r13_v111_proof_pick:
+    # 0.20.7 (Codex A05, owner "다 해줘"): the book stays open while records are added; picking a
+    # record already on the table takes it back; 「그만두기」 returns to the proof.
+    call screen r13_book("dad",present=True,purpose="proof",chosen=list(room13["arguments"][v111_claim]))
+    if _return and _return in room13["evidence"]:
+        $ v111_copy=winter_copy.deepcopy(room13)
+        if _return in v111_copy["arguments"][v111_claim]:
+            $ v111_copy["arguments"][v111_claim]=[k for k in v111_copy["arguments"][v111_claim] if k!=_return]
+        else:
+            $ v111_copy["arguments"][v111_claim].append(_return)
+        $ room13=v111_copy
+        jump r13_v111_proof_pick
     jump r13_v111_proof_again
 
 label r13_v111_travel(destination,travel_id,companions=None,direct=False):

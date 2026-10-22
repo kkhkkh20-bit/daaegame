@@ -198,7 +198,7 @@ class EvidenceView(unittest.TestCase):
         self.assertIn('use r13_evidence_browser(entries,selected_record,page,_scope,pair,pair_slot,archive,("records",),header)', NOTE)
         self.assertIn('use r13_evidence_browser(entries,selected_record,page,"r13_book"', BOOK)
         self.assertIn('present,present_label,present_ok,Return(selected_record)', BOOK)
-        self.assertIn('"이 주장에 근거로 낸다" if hearing else (purpose_text[0] if purpose_text else R13_NAMES.get(target,"상대")+"에게 보여주기")', BOOK)  # 0.20.6: proof picks say 「근거에 추가」
+        self.assertIn('"이 주장에 근거로 낸다" if hearing else (("근거에서 빼기" if purpose=="proof" and detail in chosen else purpose_text[0]) if purpose_text else R13_NAMES.get(target,"상대")+"에게 보여주기")', BOOK)  # 0.20.7: 「근거에 추가」/「근거에서 빼기」
         self.assertIn('(Return(False) if present or called else Hide("r13_book"))', BOOK)  # 0.20.6: a called book always returns
         self.assertIn("$ live_pair=None if present else r13_compare_live(pair)", VIEW)
         for screen in ("default pair=None", "default pair_slot=1"):
@@ -214,8 +214,9 @@ class EvidenceView(unittest.TestCase):
 
     def test_source_fold_is_one_way_and_scroll_is_retained(self):
         single = VIEW.split("screen r13_evidence_single(", 1)[1].split("\nscreen ", 1)[0]
-        self.assertNotIn("출처 접기", VIEW)
-        self.assertIn('SetLocalVariable("origin_open",True)', single)
+        # 0.20.7 (owner "다 해줘", Codex design 08): the same button folds the source again.
+        self.assertIn('("출처 접기" if origin_open else "출처 펼치기")', single)
+        self.assertIn('SetLocalVariable("origin_open",not origin_open)', single)
         self.assertIn("yadjustment detail_scroll", single)
         self.assertIn("r13_record_scroll_adjustment(view_context,detail,archive)", single)
         self.assertIn("r13_material_body(ev)", single)   # the long original text lives in the fold

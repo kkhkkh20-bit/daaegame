@@ -1,7 +1,7 @@
 # Helpers for game/qa_tests/tests.rpy (state setup and result dumps). Not shipped.
 
 init 999:
-    screen r13_book(target=None,present=False,hearing=False,called=False,purpose=None):
+    screen r13_book(target=None,present=False,hearing=False,called=False,purpose=None,chosen=()):
         modal True
         zorder 60
         add Solid("#000c")

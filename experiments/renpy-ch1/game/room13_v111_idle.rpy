@@ -83,6 +83,11 @@ init 346 python:
         return _r13_met_line_art(packet)
     _r13_met_idle_lines=r13_v111_idle_lines
     def r13_v111_idle_lines(person):
+        # 0.20.7 (play review D23-03): right after a scene's conversation with this person, a
+        # second tap keeps the moment instead of a stock greeting or "don't keep busy people".
+        scene=(store.room13.get("v111") or {}).get("scene")
+        if scene and r13_v111_value("talked:%s:%s"%(scene,person)):
+            return [("dad","(방금 하던 이야기가 있다. 그 일부터 하자.)",dict(no_lead=True,thought=True,expression="thinking",pose="thinking"))]
         day=(store.room13 or {}).get("day",1)
         if person not in r13_met_people() and person in R13_GREETINGS and not r13_v111_value("greeted:%s:%s"%(day,person)):
             name=next((n for n,p in MS14_SPEAKERS.items() if p==person),None)
@@ -104,7 +109,8 @@ init 347 python:
         "E01":("엄마 편지잖아. 나 벌써 다 외웠어!","anxious"),
     }
     R13_DARAM_GENERIC=(
-        ("그거 왜 나한테 보여 줘? 난 다 봤는데.","flustered"),
+        # 0.20.9 (검토 기록 4): 다람이 따로 있던 동안의 조사를 다 본 것처럼 말하지 않는다.
+        ("그거? 어느 부분을 보면 돼?","flustered"),
         ("음…… 그건 아빠가 더 잘 알잖아.","neutral"),
         ("그거 아빠 수첩에 적어 둬. 나중에 같이 보자.","neutral"),
     )
@@ -115,7 +121,37 @@ init 347 python:
         if lines:return lines
         key=shown[5:] if isinstance(shown,str) and shown.startswith("V111:") else shown
         if person=="daram":
+            # 편지의 출처가 밝혀진 뒤에는 '엄마 편지'라고 부르지 않는다(위조 확인·엄마의 설명).
+            if key=="E01" and (r13_v111_value("forgery_confirmed") or r13_v111_value("mother_q_return")):
+                return [r13_nw_added_line(dict(speaker="다람",text="우리가 받고 온 편지잖아. ……엄마가 쓴 게 아니었지.",expression="anxious",kind="dialogue"))]
             text,exp=R13_DARAM_PRESENT.get(key) or R13_DARAM_GENERIC[sum(ord(c) for c in str(key))%len(R13_DARAM_GENERIC)]
             return [r13_nw_added_line(dict(speaker="다람",text=text,expression=exp,kind="dialogue"))]
         text=R13_PRESENT_NOTHING[sum(ord(c) for c in str(key))%len(R13_PRESENT_NOTHING)]
         return [r13_nw_added_line(dict(speaker="아빠",text=text,kind="thought"))]
+
+# 0.20.9 (검토 기록 5): 그날 첫 인사는 인물의 기본 생활 대사(greetings.json)를 쓴다. 본편에서 그 인물이
+# 감독·진료 호출·운반처럼 다른 일을 맡고 있으면 예전 일과 대사 대신 지금 처지를 짧은 지문으로 보인다.
+# 새 말투를 지어내지 않도록 대사가 아닌 지문으로 둔다. 첫 만남·방금 대화 처리는 그대로다.
+init 348 python:
+    R13_IDLE_BUSY_TEXT={
+        "silluk_supervision":"%s 감독 아래 제자리를 지키고 있다. 지금은 말을 아낀다.",
+        "teacher_supervision":"%s 감독 아래 제자리를 지키고 있다. 지금은 말을 아낀다.",
+        "medical_call":"%s 환자 곁으로 가는 길이다. 고개만 짧게 끄덕인다.",
+    }
+    R13_IDLE_BUSY_DEFAULT="%s 맡은 일에서 손을 떼지 못한다. 눈인사만 건넨다."
+    _r13_state_idle_lines=r13_v111_idle_lines
+    def r13_v111_idle_lines(person):
+        busy=r13_v111_value("busy:"+person)
+        scene=(store.room13.get("v111") or {}).get("scene")
+        talked=scene and r13_v111_value("talked:%s:%s"%(scene,person))
+        name=next((n for n,p in MS14_SPEAKERS.items() if p==person),None)
+        if busy and name and not talked and person in r13_met_people():
+            day=(store.room13 or {}).get("day",1)
+            key="greeted_busy:%s:%s:%s"%(day,person,busy)
+            if not r13_v111_value(key):
+                r13_v111_set(key,True)
+                r13_v111_set("greeted:%s:%s"%(day,person),True)
+                josa="은" if (0xAC00<=ord(name[-1])<=0xD7A3 and (ord(name[-1])-0xAC00)%28) else ("는" if 0xAC00<=ord(name[-1])<=0xD7A3 else "은")
+                text=R13_IDLE_BUSY_TEXT.get(busy,R13_IDLE_BUSY_DEFAULT)%(name+josa)
+                return [r13_nw_added_line(dict(speaker=None,text=text,kind="narration"))]
+        return _r13_state_idle_lines(person)

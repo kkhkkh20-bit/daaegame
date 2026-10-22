@@ -104,6 +104,20 @@ init 160 python:
 
     def r13_ep_cut_art(name):
         if name=="bell":return r13_ep_bell_art()
+        if name in ("v111_reunion_far","v111_reunion_close"):
+            # 0.20.7 (owner days 2-14 #4): the reunion is the distance between the two, so both stand
+            # in one frame: apart at the doorway, then together when Daram takes the coat.
+            far=name.endswith("far")
+            mom=r13_fullbody_close_art("mom","anxious",620) or Null()
+            daram=r13_fullbody_close_art("daram","distressed",470) or Null()
+            # Mom first, Daram in front of her coat when they are together.
+            return Fixed(Transform(mom,xanchor=.5,xpos=(1010 if far else 760),yanchor=1.0,ypos=730),
+                Transform(daram,xanchor=.5,xpos=(250 if far else 590),yanchor=1.0,ypos=730),xysize=(1280,720))
+        if name.startswith("ev:"):
+            # 0.20.7: a record's own picture held up above the dialogue (same art as the 자료 view).
+            # To the right of the speaker's face, above the dialogue.
+            return Fixed(Transform(Frame(R13_NIGHT_UI+"preview_box.png",8,8),xysize=(380,380),xpos=850,ypos=60),
+                Transform("assets/evidence/%s.webp"%name[3:],xysize=(356,356),fit="contain",xpos=862,ypos=72),xysize=(1280,720))
         if name in ("v111_blanket_before","v111_blanket_after"):
             # Existing cut layer/clear lifecycle, preserving the actual school
             # background and the same prop position across the repair beat.

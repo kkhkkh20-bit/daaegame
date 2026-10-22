@@ -579,7 +579,8 @@ init python:
 # The same folio and left index as the records. Settings apply immediately.
 init python:
     def r13_opt_size():
-        return r13_read_size(22,26)
+        # 0.20.7 (UI review: phone text about 11px): +4 on a touch screen.
+        return r13_read_size(22,26)+(4 if globals().get("r13_touch_ui",lambda:False)() else 0)
 
     def r13_opt_title_size():
         return r13_read_size(30,34)
@@ -598,7 +599,7 @@ style r13opt_button is button:
     selected_foreground r13_opt_marks()
     padding (10,4) ysize 52
 style r13opt_button variant "touch":
-    ysize 60
+    ysize 72
 style r13opt_button_text is text:
     font r13_ui_font() color "#efe3cc" hover_color "#fff6e2" selected_color "#fff6e2" insensitive_color "#8f8778"
     xalign .5 yalign .5 text_align .5 line_spacing 2
@@ -754,7 +755,7 @@ screen pause_menu():
     # 0.20.3 (owner 2026-10-22: "저장버튼이 어차피 빈번한 게임이 아니니 옵션에 넣어줘도 되고").
     if not main_menu:
         textbutton "저장 · 불러오기":
-            xpos 672 ypos 626 xsize 220 text_size r13_opt_size() action ShowMenu("save")
+            xpos 672 ypos 626 xsize 260 text_size r13_opt_size() action ShowMenu("save")  # 0.20.7: wider so it stays on one line on a phone
     textbutton "닫기":
         xpos 1040 ypos 626 xsize 190 text_size r13_opt_size() action Return()
     key "game_menu" action Return()

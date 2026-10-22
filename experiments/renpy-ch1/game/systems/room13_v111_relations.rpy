@@ -73,8 +73,11 @@ init 330 python:
         ("resident_piko","mom","work","엄마의 초상을 그림",_r13_nw_owned_any("E09","NW_PIKO_PAINTING")),
         ("resident_lamplighter","resident_siluk","suspect","3번 등의 돌",_r13_nw_owned_any("E14","E17","E34")),
         ("resident_siluk","resident_madam","suspect","등 조각을 팔고 삼",_r13_nw_owned_any("E16","NW_MADAM_DAY7")),
-        ("guard","bami","suspect","밤이를 지목",_r13_nw_owned_any("E20")),
-        ("doto","resident_owlgp","suspect","도둑으로 몰림",_r13_nw_owned_any("E08_CHILD_ACCOUNT","E08_ROOM")),
+        # 0.20.9 (검토 기록 2): 4일 밤이를 지목한 사람은 너울이다. 돌목의 진술(E20)은 얼굴을 못 봤다는 것.
+        ("neoul","bami","suspect","밤이를 지목",_r13_nw_owned_any("E20")),
+        ("guard","bami","suspect","물렸으나 얼굴은 못 봄",_r13_nw_owned_any("E20")),
+        # E08_CHILD_ACCOUNT는 부엉이 할아버지가 다람의 손목을 붙잡았다는 다람의 진술이다.
+        ("daram","resident_owlgp","suspect","손목을 붙잡힘",_r13_nw_owned_any("E08_CHILD_ACCOUNT")),
         ("granny","resident_owlgp","suspect","핀과 목도리",_r13_nw_owned_any("E09_SCARF","E09_PIN_OWNER")),
         ("resident_bori","kid_dodam","family","아빠와 아들",_r13_nw_owned_any("E06_RESCUE","E06_EMPTY")),
         ("npc_pandol","resident_teacher","work","학교 물자 인수",_r13_nw_owned_any("E13_HANDOVER","E14_SUPPLY")),

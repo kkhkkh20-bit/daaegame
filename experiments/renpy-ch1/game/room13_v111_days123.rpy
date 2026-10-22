@@ -303,6 +303,7 @@ label r13_v111_registered_depart:
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D01_S04_L0018', 'MS14_D01_S04_L0019', 'MS14_D01_S04_L0020']), 'v111:registered_depart:MS14_D01_S04_L0018')
     $ r13_v111_commit('MS14_D01_S04_L0020')
+    $ r13_v111_set('heard_inn_order1',True)
     call r13_lines(r13_v111_lines(['MS14_D01_S04_L0021']), 'v111:registered_depart:MS14_D01_S04_L0021')
     jump r13_v111_inn
 
@@ -310,7 +311,11 @@ label r13_v111_inn:
     $ r13_v111_scene('MS14_D01_S05')
     call r13_v111_travel('inn','inn')
     $ r13_v111_score()
-    call r13_lines(r13_v111_lines(['MS14_D01_S05_L0001', 'MS14_D01_S05_L0003', 'MS14_D01_S05_L0004', 'MS14_D01_S05_L0006', 'MS14_D01_S05_L0007', 'MS14_D01_S05_L0008', 'MS14_D01_S05_L0009', 'MS14_D01_S05_L0010', 'MS14_D01_S05_L0011', 'MS14_D01_S05_L0012', 'MS14_D01_S05_L0013']), 'v111:inn:MS14_D01_S05_L0001')
+    call r13_lines(r13_v111_lines(['MS14_D01_S05_L0001', 'MS14_D01_S05_L0003']), 'v111:inn:MS14_D01_S05_L0001')
+    # 0.20.7 (owner suggestion 2): Dad's own small act of care.
+    $ renpy.display_menu([("다람의 손을 천으로 감싸 준다",0)])
+    call r13_lines(r13_nw_block('hands_wrapped1'),'nw:hands_wrapped1')
+    call r13_lines(r13_v111_lines(['MS14_D01_S05_L0004', 'MS14_D01_S05_L0005', 'MS14_D01_S05_L0006', 'MS14_D01_S05_L0007', 'MS14_D01_S05_L0008', 'MS14_D01_S05_L0009', 'MS14_D01_S05_L0010', 'MS14_D01_S05_L0011', 'MS14_D01_S05_L0012', 'MS14_D01_S05_L0013']), 'v111:inn:MS14_D01_S05_L0001:rest')
     jump r13_v111_room_observe
 
 label r13_v111_room_observe:
@@ -873,7 +878,13 @@ label r13_v111_clinic3:
     $ r13_v111_scene('MS14_D03_S03')
     call r13_v111_travel('clinic','clinic3')
     $ r13_v111_score()
-    call r13_lines(r13_v111_lines(['MS14_D03_S03_L0013', 'MS14_D03_S03_L0014', 'MS14_D03_S03_L0015', 'MS14_D03_S03_L0016', 'MS14_D03_S03_L0017', 'MS14_D03_S03_L0018', 'MS14_D03_S03_L0019', 'MS14_D03_S03_L0020', 'MS14_D03_S03_L0021', 'MS14_D03_S03_L0022', 'MS14_D03_S03_L0023', 'MS14_D03_S03_L0024', 'MS14_D03_S03_L0025', 'MS14_D03_S03_L0026']), 'v111:clinic3:MS14_D03_S03_L0013')
+    call r13_lines(r13_v111_lines(['MS14_D03_S03_L0013', 'MS14_D03_S03_L0014', 'MS14_D03_S03_L0015', 'MS14_D03_S03_L0016', 'MS14_D03_S03_L0017', 'MS14_D03_S03_L0018', 'MS14_D03_S03_L0019', 'MS14_D03_S03_L0020', 'MS14_D03_S03_L0021', 'MS14_D03_S03_L0022', 'MS14_D03_S03_L0023', 'MS14_D03_S03_L0024']), 'v111:clinic3:MS14_D03_S03_L0013')
+    # 0.20.7 (owner days 2-14 #2): how Dad asks after his apology; both reach the same time and record.
+    $ v111_answer=renpy.display_menu([("꺼낸 시각부터 묻는다",0),("다시 넣은 게 확실한지 묻는다",1)])
+    if v111_answer==0:
+        call r13_lines(r13_v111_lines(['MS14_D03_S03_L0025', 'MS14_D03_S03_L0026']), 'v111:clinic3:MS14_D03_S03_L0025')
+    else:
+        call r13_lines(r13_nw_block('clinic_returned3'),'nw:clinic_returned3')
     jump r13_v111_measurement_read
 
 label r13_v111_measurement_read:
@@ -1280,6 +1291,7 @@ label r13_v111_restore3:
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D03_S06_L0002', 'MS14_D03_S06_L0003', 'MS14_D03_S06_L0004']), 'v111:restore3:MS14_D03_S06_L0002')
     $ r13_v111_commit('MS14_D03_S06_L0004')
+    $ r13_v111_set('stone_warm_felt3',True)
     jump r13_v111_box_news3
 
 label r13_v111_restore_defer:

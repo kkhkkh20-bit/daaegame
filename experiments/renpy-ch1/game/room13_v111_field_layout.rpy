@@ -70,6 +70,14 @@ init 336 python:
             pose_positions={"karo:living_axlewrap":[630,628]},
             pinned=["karo","guard","daram","resident_siluk","resident_bori"],
         ),
+        # 0.20.9 (play review D23-01): the north exchange box (1150-1370) stays clear. Chorong stands
+        # at its left edge with her lamp, Silluk a step behind her.
+        "forest":dict(
+            positions={"resident_lamplighter":[1060,700,226],"resident_siluk":[880,700,240]},
+            poses={},
+            pose_positions={},
+            pinned=["resident_lamplighter","resident_siluk"],
+        ),
     }
     for _spot_place,_spot in R13_STAND_SPOTS.items():
         _spot_layout=R13_WORLD_LAYOUTS.get(_spot_place)
@@ -98,3 +106,36 @@ init 336 python:
         target=R13_RELOCATE.get((place,person))
         if target and not r13_v111_needed_at(person,place):return target
         return place
+
+init 337 python:
+    # 0.20.9 (play review D23-01): fixed daily-work spots (map27, e.g. Kalbaram in the forest) are
+    # placed after the slot scoring and can still stand on the object the current story step needs.
+    # Such a figure steps sideways off it: same pose and height, only the feet move along the floor.
+    def r13_clear_critical_x(actor,rects,others,width):
+        ax,ay,aw,ah=actor["rect"]
+        for ox,oy,ow,oh in rects:
+            cover=min(ax+aw,ox+ow)-max(ax,ox)
+            if cover<=aw*0.3 or ay+ah<=oy:continue
+            foot_y=actor["y"]+actor["height"]
+            sides=[ox-aw/2.0-24-k*80 for k in range(8)]+[ox+ow+aw/2.0+24+k*80 for k in range(8)]
+            sides=[f for f in sides if aw/2.0<=f<=width-aw/2.0]
+            def crowd(f):
+                return sum(1 for b in others if b is not actor and abs((b["rect"][0]+b["rect"][2]/2.0)-f)<(aw+b["rect"][2])/2.0)
+            if not sides:continue
+            cx=ax+aw/2.0
+            best=min(sides,key=lambda f:(crowd(f),abs(f-cx)))
+            return r13_ma_place(actor,actor["pose"],int(best),foot_y,actor["height"])
+        return actor
+
+    _r13_clear_stage_people=r13_stage_people
+    def r13_stage_people(entry=False):
+        rows=_r13_clear_stage_people(entry)
+        if not r13_v111_active():return rows
+        location=(store.room13 or {}).get("location")
+        rects=[tuple(r) for r in r13_stage_critical(location,R13_WORLD_LAYOUTS.get(location))]
+        if not rects:return rows
+        width=r13_world_width()
+        out=[]
+        for actor in rows:
+            out.append(r13_clear_critical_x(actor,rects,rows,width) if actor.get("rect") else actor)
+        return sorted(out,key=lambda a:a.get("depth",0))

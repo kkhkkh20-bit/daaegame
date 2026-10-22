@@ -74,6 +74,8 @@ testcase v111_nw_d13_rein_won:
     pause 0.5
     click "QA V111:E16"
     pause 0.8
+    click "QA 닫기"  # 0.20.7: the proof book stays open between picks
+    pause 0.5
     click "논리를 연결한다"
     click pos (900,600) until screen "r13_crisis_proof" timeout 60
     pause 1.0
@@ -81,6 +83,8 @@ testcase v111_nw_d13_rein_won:
     pause 0.5
     click "QA V111:NW_PIKO_PAINTING"
     pause 0.8
+    click "QA 닫기"  # 0.20.7: the proof book stays open between picks
+    pause 0.5
     click "논리를 연결한다"
     click pos (900,600) until "곁에 남는다" timeout 60
     assert eval (r13_v111_value("meeting:piko")=="win" and r13_v111_value("neoul_held") is True and r13_v111_owned("NW_NEOUL_LEDGER") and r13_v111_value("NW_NEOUL_LEDGER.variant")=="full")
@@ -104,6 +108,8 @@ testcase v111_nw_d13_rein_painting_first:
     pause 0.5
     click "QA V111:NW_PIKO_PAINTING"
     pause 0.8
+    click "QA 닫기"  # 0.20.7: the proof book stays open between picks
+    pause 0.5
     click "논리를 연결한다"
     click pos (900,600) until "곁에 남는다" timeout 60
     assert eval (r13_v111_value("meeting:piko")=="lose" and not r13_v111_value("neoul_held") and not r13_v111_owned("NW_NEOUL_LEDGER") and qa_nw_seen("화가의 낙서요"))

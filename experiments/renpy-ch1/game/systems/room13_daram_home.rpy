@@ -18,6 +18,10 @@ init 101 python:
         period=min(s.get("period",0),2)
         if s.get("case_state")=="occurred" and s.get("trial_result")=="pending":
             return "neutral",(873,651,235),"침대 곁에서 쉬는 중"
+        story=r13_daram_story_activity(s) if "r13_daram_story_activity" in globals() else None
+        if story:
+            # 0.20.7: the first day's story step (systems/room13_story_pose.rpy).
+            return story[0],R13_DARAM_STORY_SPOTS[story[0]],story[1]
         return (
             # 0.18.50 (owner): seat on the mattress, not on the bed frame in front of it.
             # 0.18.56 (owner): higher, on top of the blanket rather than sunk into its front edge.
@@ -40,7 +44,10 @@ init 101 python:
             if store.room13["location"]=="guestroom":cx,anchor_y,height=835,650,210
             # 0.18.59 wide 13호: the same activities on the wide picture's own bed/rug.
             # Child-sized standing height; seated/crouched poses keep the standing head size.
-            elif r13_layout("room13") and store.room13["location"]=="room13":cx,anchor_y,height=r13_layout("room13")["home_positions"][pose]
+            elif r13_layout("room13") and store.room13["location"]=="room13":
+                story=r13_daram_story_activity(store.room13) if "r13_daram_story_activity" in globals() else None
+                # 0.20.7: the first day's spots sit in front of the bed, inside the opening view.
+                cx,anchor_y,height=R13_DARAM_STORY_SPOTS[pose] if story else r13_layout("room13")["home_positions"][pose]
             spec=r13_acting_spec("daram",pose) or {};width,native_height=r13_actor_geometry("daram",pose)
             scale=float(height)/native_height
             anchor=spec.get("seat") if pose=="action_1" and store.room13["location"]=="room13" else spec.get("foot",[width/2.0,native_height])

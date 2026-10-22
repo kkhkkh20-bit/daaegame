@@ -70,7 +70,12 @@ screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_p
                 vbox:
                     spacing 8
                     for key in room13["arguments"].get(claim,[]):
-                        text ("· "+ROOM13["evidence"][key]["name"]) size 23
+                        hbox:
+                            spacing 16
+                            text ("· "+ROOM13["evidence"][key]["name"]) size 23 yalign .5
+                            if need_evidence:
+                                # 0.20.7 (Codex A02): take a record back before arguing.
+                                textbutton "빼기" action Return(("remove",key)) sensitive ready text_size 20 ysize (56 if r13_touch_ui() else 40) yalign .5
                     if not room13["arguments"].get(claim):
                         text "아직 내놓은 자료가 없다." size 22 color "#717367"
             hbox:

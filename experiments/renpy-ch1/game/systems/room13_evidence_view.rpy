@@ -389,7 +389,7 @@ screen r13_evidence_single(detail,owner,archive=False,view_context=("records",),
     $ bh=r13_ev_button_height()
     $ touch=r13_touch_ui()
     $ small=r13_ev_small_size()
-    $ buttons=(0 if origin_open or not detail else 1)+(2 if present else (1 if can_compare else 0))
+    $ buttons=(1 if detail else 0)+(2 if present else (1 if can_compare else 0))  # 0.20.7: the source button stays (펼치기/접기)
     $ reading_bottom=R13_EV_BOTTOM-buttons*bh-max(0,buttons-1)*12-16
     if detail:
         if not archive and r13_record_unread(detail):
@@ -453,10 +453,11 @@ screen r13_evidence_single(detail,owner,archive=False,view_context=("records",),
             xpos 920 ypos by xysize (296,bh)
             use r13_control("⇆ 나란히 놓기",None,[Function(r13_record_select,owner,"pair",r13_compare_begin(detail),False),Function(r13_record_select,owner,"pair_slot",1,False)],enabled=bool(detail),primary=True,width=296,height=bh,control_id="r13_ev_pair")
         $ by=by-bh-12
-    if detail and not origin_open:
+    if detail:
+        # 0.20.7 (Codex design 08, owner "다 해줘"): the same button folds the source again.
         fixed:
             xpos 920 ypos by xysize (296,bh)
-            use r13_control("출처 펼치기",None,SetLocalVariable("origin_open",True),width=296,height=bh,control_id="r13_ev_origin")
+            use r13_control(("출처 접기" if origin_open else "출처 펼치기"),None,SetLocalVariable("origin_open",not origin_open),width=296,height=bh,control_id="r13_ev_origin")
 
 # Two records side by side, equal columns. No marks, no highlighting.
 screen r13_evidence_pair(entries,pair,pair_slot,owner,archive=False):

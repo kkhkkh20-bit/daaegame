@@ -36,6 +36,18 @@ init 318 python:
         return True
     def r13_nw_listed():
         return [p for p in (r13_v111_value("listed_order") or []) if r13_v111_value("listed:"+p)]
+    def r13_nw_roster_lines():
+        """0.20.7 (ending review 10): before the 13th's last argument, the list as already known.
+        Facts only (no outcome, no hint): each name ever written and where it stands now."""
+        rows=[]
+        for p in (r13_v111_value("listed_order") or []):
+            if r13_v111_value("handed:"+p):state="데려옴"
+            elif r13_v111_value("departed:"+p):state="수레로 떠남"
+            elif r13_v111_value("listed:"+p):state="아직 명단에 있음"
+            else:state="명단에서 빠짐"
+            rows.append(R13_NAMES.get(p,p)+": "+state)
+        if not rows:return []
+        return [(None,"명단을 다시 펼쳤다. "+" · ".join(rows)+".")]
 
     # Event 03 lamp meeting: evening scene opens after a partial or lost meeting too.
     R13_V111_ENTRY["MS14_D03_S06"]=([],{"stone_choice_completed":True})
@@ -82,7 +94,9 @@ init 318 python:
     def r13_v111_proof_chances(key):
         meeting=R13_PROOF_MEETING.get(key)
         if not meeting or r13_v111_value("meeting:"+meeting) is not None:return None
-        return "남은 기회 %d / %d"%(max(0,R13_NW_TRIES-(r13_v111_value("tries:"+meeting) or 0)),R13_NW_TRIES)
+        left=max(0,R13_NW_TRIES-(r13_v111_value("tries:"+meeting) or 0))
+        # 0.20.7 (play review days 2-3): a wrong answer now settles the meeting; say so.
+        return "남은 기회 %d / %d"%(left,R13_NW_TRIES)+(" · 이번이 마지막" if left==1 else "")
     def r13_v111_proof_accepts(key,correct,given):
         given=set(given or ())
         extra=set("V111:"+k for k in R13_PROOF_EXTRAS.get(key,()))
