@@ -411,10 +411,10 @@ label('pandol_down13');arrive(['guard','karo','resident_badook','npc_pandol']);l
 observation('E13_HANDOVER','판돌의 학교 인수 기록','실제 발판으로 내려 부축한 판돌을 학교 침상에서 나비가 인수했다. 수레 정지만으로 인수 완료를 기록하지 않았다.')
 grant('E13_HANDOVER','pandol_actual_school_handover');goto('momo_transport13')
 label('momo_transport13');travel('square','momo_transport13');arrive(['karo','guard','resident_badook','resident_momo']);goto('momo_down13')
-field('momo_down13','square',['karo','guard','resident_badook','resident_momo'],'cart','모모를 발판으로 부축한다','momo_school13')
+field('momo_down13','square',['karo','guard','resident_badook','resident_momo'],'cart','모모를 부축해 학교로 모신다','momo_school13')
 label('momo_school13');late(s,65,67);travel('school','momo_school13');arrive(['nabi','karo','resident_momo']);late(s,68,68);setv('handed:resident_momo',True);goto('guldol_transport13')
 label('guldol_transport13');travel('square','guldol_transport13');arrive(['karo','guard','resident_badook','resident_guldol']);goto('guldol_down13')
-field('guldol_down13','square',['karo','guard','resident_badook','resident_guldol'],'cart','굴돌을 발판으로 부축한다','guldol_school13')
+field('guldol_down13','square',['karo','guard','resident_badook','resident_guldol'],'cart','굴돌을 부축해 학교로 모신다','guldol_school13')
 label('guldol_school13');late(s,69,70);travel('school','guldol_school13');arrive(['nabi','karo','resident_guldol']);late(s,71,71);setv('handed:resident_guldol',True);goto('last_cart13')
 label('last_cart13');travel('square','last_cart13',[]);arrive(['karo','resident_badook','resident_ppul']);lines.append('    if "resident_teacher" in r13_v111_value("cart_roster") and not r13_v111_value("handed:resident_teacher"):');lines.append('        jump r13_v111_teacher_transport13');lines.append('    if "resident_siluk" in r13_v111_value("cart_roster") and not r13_v111_value("handed:resident_siluk"):');lines.append('        jump r13_v111_silluk_transport13');lines.append('    if r13_v111_value("family_location")=="square":');lines.append('        call r13_v111_family_still_here13');lines.append('    else:');lines.append('        call r13_v111_family_already_school13');lines.append('    if not all(r13_v111_value("handed:"+p) for p in r13_v111_value("cart_roster")):')
 # Review 2026-10-22: on the partial path the listed passengers stay aboard with the others and are

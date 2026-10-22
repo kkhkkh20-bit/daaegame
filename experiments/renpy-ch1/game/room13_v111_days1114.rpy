@@ -1043,13 +1043,14 @@ label r13_v111_meal12:
     $ r13_v111_arrive(['daram', 'nabi', 'resident_teacher', 'resident_bori', 'kid_dodam', 'kid_saemi'])
     $ r13_v111_score()
     $ r13_v111_arrive(['daram', 'nabi', 'resident_teacher', 'resident_bori', 'kid_dodam', 'kid_saemi'])
-    $ r13_v111_set('route12','uncommitted')
-    $ r13_v111_set('location:mom','facility')
-    # 검토 0.20.4 연결 3: 준비를 보완하고 돌아오면 도입을 되풀이하지 않고 이어 받는다.
+    # 검토 0.20.4 연결 3 / 후반 기획서 A: 준비를 보완하고 돌아오면 도입을 되풀이하지 않는다.
+    # 이미 정한 배식 분기를 되돌리지 않도록 route12 초기화보다 먼저 판정한다.
     if r13_v111_value('meal12_intro_seen'):
+        $ r13_v111_set('location:mom','facility')
         call r13_lines(r13_nw_block('meal12_return'),'nw:meal12_return')
         jump r13_v111_meal_choice12
-    $ r13_v111_set('meal12_intro_seen',True)
+    $ r13_v111_set('route12','uncommitted')
+    $ r13_v111_set('location:mom','facility')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0003']),'v111:MS14_D12_S02_L0003')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0004']),'v111:MS14_D12_S02_L0004')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0005']),'v111:MS14_D12_S02_L0005')
@@ -1075,6 +1076,8 @@ label r13_v111_meal12:
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0024']),'v111:MS14_D12_S02_L0024')
     $ r13_nw_acquire("NW_WHITE_BOWLS","daram" if r13_v111_value("meeting:room13")=="lose" else "observed")
     $ r13_v111_set('bottle_original_seal_seen',True)
+    # 도입·관찰·획득이 모두 끝난 뒤에만 기록한다(구형 저장은 기본값 미완료로 한 번 보여 준다).
+    $ r13_v111_set('meal12_intro_seen',True)
     jump r13_v111_meal_choice12
 
 label r13_v111_meal_choice12:
@@ -2122,14 +2125,19 @@ label r13_v111_momo_school13:
     call r13_lines(r13_v111_lines(['MS14_D13_S04_L0065']),'v111:MS14_D13_S04_L0065')
     call r13_lines(r13_v111_lines(['MS14_D13_S04_L0066']),'v111:MS14_D13_S04_L0066')
     call r13_lines(r13_v111_lines(['MS14_D13_S04_L0067']),'v111:MS14_D13_S04_L0067')
-    call r13_v111_travel('school','momo_school13')
+    # 후반 기획서 B: 첫 왕복(침상·판돌)은 지도 이동 그대로, 같은 길을 되풀이하는 모모·굴돌은 이어서 간다.
+    call r13_lines(r13_nw_block('momo_walk13'),'nw:momo_walk13')
+    $ r13_v111_time("move:travel:school",5)
+    call r13_v111_travel('school','momo_school13',direct=True)
     $ r13_v111_arrive(['nabi', 'karo', 'resident_momo'])
     call r13_lines(r13_v111_lines(['MS14_D13_S04_L0068']),'v111:MS14_D13_S04_L0068')
     $ r13_v111_set('handed:resident_momo',True)
     jump r13_v111_guldol_transport13
 
 label r13_v111_guldol_transport13:
-    call r13_v111_travel('square','guldol_transport13')
+    call r13_lines(r13_nw_block('back_square13'),'nw:back_square13')
+    $ r13_v111_time("move:travel:square",5)
+    call r13_v111_travel('square','guldol_transport13',direct=True)
     $ r13_v111_arrive(['karo', 'guard', 'resident_badook', 'resident_guldol'])
     jump r13_v111_guldol_down13
 
@@ -2143,14 +2151,18 @@ label r13_v111_guldol_school13:
     call r13_lines(r13_v111_lines(['MS14_D13_S04_L0069']),'v111:MS14_D13_S04_L0069')
     if r13_v111_actor_ready('resident_guldol'):
         call r13_lines(r13_v111_lines(['MS14_D13_S04_L0070']),'v111:MS14_D13_S04_L0070')
-    call r13_v111_travel('school','guldol_school13')
+    call r13_lines(r13_nw_block('guldol_walk13'),'nw:guldol_walk13')
+    $ r13_v111_time("move:travel:school",5)
+    call r13_v111_travel('school','guldol_school13',direct=True)
     $ r13_v111_arrive(['nabi', 'karo', 'resident_guldol'])
     call r13_lines(r13_v111_lines(['MS14_D13_S04_L0071']),'v111:MS14_D13_S04_L0071')
     $ r13_v111_set('handed:resident_guldol',True)
     jump r13_v111_last_cart13
 
 label r13_v111_last_cart13:
-    call r13_v111_travel('square','last_cart13',[])
+    call r13_lines(r13_nw_block('back_square13'),'nw:back_square13')
+    $ r13_v111_time("move:travel:square",5)
+    call r13_v111_travel('square','last_cart13',[],direct=True)
     $ r13_v111_arrive(['karo', 'resident_badook', 'resident_ppul'])
     if "resident_teacher" in r13_v111_value("cart_roster") and not r13_v111_value("handed:resident_teacher"):
         jump r13_v111_teacher_transport13
