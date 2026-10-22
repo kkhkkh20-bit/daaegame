@@ -323,7 +323,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 99 | `room13_meeting_seating.rpy:147` | _r13_e1_plate |
 | 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:179` | _r13_nw_meeting_plate |
-| 3 | 321 | `room13_v111_meeting_stage.rpy:116` |  |
+| 3 | 321 | `room13_v111_meeting_stage.rpy:135` |  |
 
 ## `r13_new` (3층)
 
@@ -566,7 +566,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 174 | `systems/room13_meeting_direction.rpy:170` | _r13_nw_meeting_direct_line |
-| 2 | 321 | `room13_v111_meeting_stage.rpy:131` |  |
+| 2 | 321 | `room13_v111_meeting_stage.rpy:150` |  |
 
 ## `r13_meeting_focus_person` (2층)
 
@@ -580,7 +580,21 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 152 | `systems/room13_ep1_lamp_thief.rpy:102` | _r13_nw_meeting_header |
-| 2 | 321 | `room13_v111_meeting_stage.rpy:124` |  |
+| 2 | 321 | `room13_v111_meeting_stage.rpy:143` |  |
+
+## `r13_meeting_orbit_height` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 175 | `room13_meeting_camera.rpy:39` | _r13_nw_meeting_orbit_height |
+| 2 | 321 | `room13_v111_meeting_stage.rpy:119` |  |
+
+## `r13_meeting_portrait_x` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 175 | `room13_meeting_camera.rpy:42` | _r13_nw_meeting_portrait_x |
+| 2 | 321 | `room13_v111_meeting_stage.rpy:126` |  |
 
 ## `r13_object_name` (2층)
 
