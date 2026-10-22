@@ -25,7 +25,7 @@ init 150 python:
         low like the mockup and two lines never reach the controls row."""
         size=r13_night_say_size()
         bottom=R13_NIGHT_TEXT_BOTTOM+(30 if getattr(store,"r13_field_reading",False) else 0)
-        return bottom-r13_night_say_lines(what)*(size+10)
+        return bottom-max(2,r13_night_say_lines(what))*(size+10)  # 0.20.4 owner: one and two lines share one top
 
     def r13_night_text_color():
         # Always the dark-surface roles: the night dialogue has no paper behind it, even in meetings.

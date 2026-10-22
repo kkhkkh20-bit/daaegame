@@ -215,6 +215,8 @@ screen say(who,what):
                     background r13_night_ribbon() padding (40,8,58,10) yalign .5
                     text who id "who" color "#fff3df" font r13_ui_font() size r13_read_size(27,30) xmaximum 640 outlines [(2,"#4a0f16",0,0)]
                 add Crop((0,0,96,9),R13_NIGHT_UI+"gold_rule.png") yalign .5
+                if r13_offscreen_voice(who):
+                    text r13_offscreen_voice(who) yalign .5 size r13_read_size(20,22) color "#d9c7a4" font r13_ui_font() xoffset 22
         # Next-line mark at the end of the controls row (mockup: "더보기 ▸").
         if r13_fx_active():
             text "▸" xanchor 1.0 xpos R13_CONCEPT_RIGHT yanchor .5 ypos R13_NIGHT_CONTROL_Y size 22 color "#eadfc8" at r13_next_glow

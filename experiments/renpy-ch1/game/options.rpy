@@ -57,7 +57,7 @@ init python:
     config.main_menu_music_fadein = 1.2
     config.default_music_volume = 0.75
     config.default_sfx_volume = 0.7
-    config.default_text_cps = 34
+    config.default_text_cps = 55  # 0.20.4 소유자: "대사 타이핑속도 디폴트를 빠르게"
     config.window = "auto"
     config.window_show_transition = Dissolve(0.12)
     config.window_hide_transition = Dissolve(0.12)

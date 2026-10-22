@@ -368,6 +368,14 @@ def seed_previous_rpyc(release, game):
     return n
 
 
+def has_transparency(path):
+    from PIL import Image
+    im = Image.open(path)
+    if im.mode not in ("RGBA", "LA", "P") and "transparency" not in im.info:
+        return False
+    return im.convert("RGBA").getchannel("A").getextrema()[0] < 255
+
+
 def placeholder(data, transparent=False):
     from PIL import Image
     im = Image.open(io.BytesIO(data))
@@ -453,7 +461,9 @@ def main():
         elif suffix in (".mp3", ".ogg", ".opus", ".wav"):
             remote.append(rel); remote_lines += [rel, "music -"]
         elif suffix in (".webp", ".png", ".jpg"):
-            (w, h), thumb = placeholder(path.read_bytes(), rel in characters)
+            # 0.20.4 (owner: "캐릭터가 자꾸 모자이크 처리됨이 뜨네 ... 이런게 뜨면 안됨"): any picture
+            # with transparent pixels (characters, action poses, props) waits invisibly instead of a mosaic.
+            (w, h), thumb = placeholder(path.read_bytes(), rel in characters or has_transparency(path))
             ph = stage / "_placeholders" / rel
             ph.parent.mkdir(parents=True, exist_ok=True); ph.write_bytes(thumb)
             remote.append(rel); remote_lines += [rel, "image %d,%d" % (w, h)]

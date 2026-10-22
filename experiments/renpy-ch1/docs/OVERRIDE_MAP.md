@@ -304,6 +304,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 2 | 191 | `systems/room13_q1_arguments.rpy:145` | _r13_qh_statements |
 | 3 | 192 | `systems/room13_q1_difficulty.rpy:173` |  |
 
+## `r13_ep_line_art` (3층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 160 | `systems/room13_ep_art.rpy:114` | _r13_impact_line_art |
+| 2 | 345 | `systems/room13_impact_fx.rpy:65` | _r13_met_line_art |
+| 3 | 346 | `room13_v111_idle.rpy:55` |  |
+
 ## `r13_finish_action` (3층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -383,6 +391,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 55 | `room13_rules.rpy:299` | _r13_v111_speaker_base |
 | 2 | 304 | `room13_v111.rpy:414` | _r13_carriage_speaker |
 | 3 | 306 | `room13_carriage_direction.rpy:94` |  |
+
+## `r13_v111_present_reaction` (3층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 335 | `room13_v111_reactions.rpy:59` | _r13_idle_present_reaction |
+| 2 | 336 | `room13_v111_idle.rpy:29` | _r13_present_fallback |
+| 3 | 347 | `room13_v111_idle.rpy:90` |  |
 
 ## `r13_background` (2층)
 
@@ -495,13 +511,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 160 | `systems/room13_ep_art.rpy:105` | _r13_regular_ep_cut_art |
 | 2 | 162 | `systems/room13_special_scenes.rpy:33` |  |
-
-## `r13_ep_line_art` (2층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 160 | `systems/room13_ep_art.rpy:114` | _r13_impact_line_art |
-| 2 | 345 | `systems/room13_impact_fx.rpy:65` |  |
 
 ## `r13_evidence_acquired` (2층)
 
@@ -748,19 +757,19 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 301 | `room13_v111.rpy:69` | _r13_nw_binding |
 | 2 | 318 | `room13_v111_newworld_rules.rpy:138` |  |
 
+## `r13_v111_idle_lines` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 336 | `room13_v111_idle.rpy:35` | _r13_met_idle_lines |
+| 2 | 346 | `room13_v111_idle.rpy:63` |  |
+
 ## `r13_v111_line` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 301 | `room13_v111.rpy:55` | _r13_nw_authored_line |
 | 2 | 319 | `room13_v111_newworld_text.rpy:229` |  |
-
-## `r13_v111_present_reaction` (2층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 335 | `room13_v111_reactions.rpy:59` | _r13_idle_present_reaction |
-| 2 | 336 | `room13_v111_idle.rpy:29` |  |
 
 ## `r13_v111_questions` (2층)
 

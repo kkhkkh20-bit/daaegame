@@ -40,8 +40,59 @@ init 336 python:
             r13_v111_set("greeted:%s:%s"%(day,person),True)
             seen=r13_v111_value("greeted_count:"+person) or 0
             r13_v111_set("greeted_count:"+person,seen+1)
-            row=rows[min(seen,len(rows)-1)]
+            row=rows[-1]  # the working line; greetings (row 0) read as if meeting anew
             return [r13_nw_added_line(dict(speaker=name,text=row["text"],expression=row.get("expression","neutral"),kind="dialogue"))]
         count=(r13_v111_value("idle_count") or 0)
         r13_v111_set("idle_count",count+1)
         return [r13_nw_added_line(dict(speaker="아빠",text=R13_IDLE_THOUGHTS[count%len(R13_IDLE_THOUGHTS)],kind="thought"))]
+
+# First meeting (owner 2026-10-22: "다들 나를 본것처럼 이야기하는데?"): a resident who has not yet
+# spoken with Dad in this run greets him as a stranger; their own greeting starts after that.
+# Everyone who speaks a line is remembered in r13_met_people (saved with the game).
+default r13_met_people = set()
+init 346 python:
+    _r13_met_line_art=r13_ep_line_art
+    def r13_ep_line_art(packet):
+        who=packet[0] if packet else None
+        if isinstance(who,str) and who not in ("dad",):
+            met=set(store.r13_met_people or ())
+            if who not in met:
+                met.add(who);store.r13_met_people=met
+        return _r13_met_line_art(packet)
+    _r13_met_idle_lines=r13_v111_idle_lines
+    def r13_v111_idle_lines(person):
+        if person not in (store.r13_met_people or ()) and person in R13_GREETINGS:
+            name=next((n for n,p in MS14_SPEAKERS.items() if p==person),None)
+            if name:
+                # Owner 2026-10-22: "처음에 다 인사하는것도 웃기고". A stranger does not greet; they
+                # glance over and keep working. Their own lines start once they have spoken with Dad.
+                day=(store.room13 or {}).get("day",1)
+                r13_v111_set("greeted:%s:%s"%(day,person),True)
+                josa="은" if (ord(name[-1])-0xAC00)%28 else "는"
+                if not (0xAC00<=ord(name[-1])<=0xD7A3):josa="은"
+                return [r13_nw_added_line(dict(speaker=None,text="%s%s 이쪽을 힐끗 보고는 하던 일을 계속한다."%(name,josa),kind="narration"))]
+        return _r13_met_idle_lines(person)
+
+# Evidence with no fitting reaction (owner 2026-10-22: "다람이에게 편지 보내주기했는데 아무반응 없이
+# 조사하기 화면으로 이동함"): Daram answers in her own voice; anyone else without a reply gets a short
+# thought from Dad instead of a passing notification.
+init 347 python:
+    R13_DARAM_PRESENT={
+        "E01":("엄마 편지잖아. 나 벌써 다 외웠어!","anxious"),
+    }
+    R13_DARAM_GENERIC=(
+        ("그거 왜 나한테 보여 줘? 난 다 봤는데.","flustered"),
+        ("음…… 그건 아빠가 더 잘 알잖아.","neutral"),
+        ("그거 가지고 탐정 놀이 하는 거야? 나도 끼워 줘.","joy"),
+    )
+    R13_PRESENT_NOTHING=("지금 이걸 보여 줘도 더 들을 말은 없겠다.","이건 다른 사람에게 물어봐야겠다.")
+    _r13_present_fallback=r13_v111_present_reaction
+    def r13_v111_present_reaction(person,shown):
+        lines=_r13_present_fallback(person,shown)
+        if lines:return lines
+        key=shown[5:] if isinstance(shown,str) and shown.startswith("V111:") else shown
+        if person=="daram":
+            text,exp=R13_DARAM_PRESENT.get(key) or R13_DARAM_GENERIC[sum(ord(c) for c in str(key))%len(R13_DARAM_GENERIC)]
+            return [r13_nw_added_line(dict(speaker="다람",text=text,expression=exp,kind="dialogue"))]
+        text=R13_PRESENT_NOTHING[sum(ord(c) for c in str(key))%len(R13_PRESENT_NOTHING)]
+        return [r13_nw_added_line(dict(speaker="아빠",text=text,kind="thought"))]

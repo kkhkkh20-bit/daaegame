@@ -33,7 +33,7 @@ init python:
         renpy.show_layer_at([], reset=True)
         renpy.music.stop(channel="carriage_ride", fadeout=.35)
         renpy.music.stop(channel="carriage_hooves", fadeout=.35)
-        renpy.music.play("assets/ms14-audio/SFX_cart_stop.wav", channel="sound", relative_volume=.14)
+        # 0.20.4 (owner 2026-10-22: "마차 내릴때 나는 효과음 이상하니 나중에 교체하던가 빼자 지금은"): no stop sound for now.
 
 # Retain the old transform name for saves; new scenes never apply it.
 transform r13_carriage_ride:
