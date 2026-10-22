@@ -28,6 +28,16 @@ init 330 python:
         if not when:return ""
         return "%d일 %s "%(when[0],("아침","낮","저녁","밤")[min(3,when[1])])
 
+    def r13_v111_daram_where():
+        """0.20.5 (Codex S03): one reading of where Daram is. The newer location:daram (13th-day
+        escort, the cart) wins over the older DARAM_location (12th-day choice); "with" when she is
+        at Dad's place or no key says otherwise."""
+        where=r13_v111_value("location:daram")
+        if where is None:
+            where=r13_v111_value("DARAM_location")
+            if where in (None,"with_father"):return "with"
+        if where==(store.room13 or {}).get("location"):return "with"
+        return where
     _r13_nw_rel_status=r13_rel_status
     def r13_rel_status(person):
         if not r13_v111_active():return _r13_nw_rel_status(person)
@@ -46,8 +56,9 @@ init 330 python:
             return (None,"") if r13_v111_value("family_reunited") else ("missing","아직 못 만남")
         if person=="daram":
             if r13_v111_value("DARAM_DETAINED"):return "missing",r13_nw_rel_when("DARAM_DETAINED")+"붙잡혀 있음"
-            if r13_v111_value("DARAM_location")=="school":return "missing","학교에 있음"
-            return "with","함께 있음"
+            where=r13_v111_daram_where()
+            if where=="with":return "with","함께 있음"
+            return "missing",{"school":"학교에 있음","on_way_school":"학교로 가는 중","cart":"수레에 있음"}.get(where,"따로 있음")
         return None,""
 
     def _r13_nw_owned_any(*keys):

@@ -7,7 +7,7 @@ init python:
             r13_v111_set('meeting:'+meeting,None)
         r13_nw_meeting_end('gate','win')
         r13_nw_meeting_end('lamp','win')
-        r13_nw_meeting_end('gate_post','partial')
+        r13_nw_meeting_end('gate_post','win')  # 0.20.5: the post meeting has only win and lose
         r13_nw_meeting_end('fire','win')
         r13_fork_record('lamp','lose')
         r13_fork_record('fire','partial')
@@ -32,7 +32,7 @@ testcase v111_fork_screen:
     click '갈림길'
     pause 0.5
     assert screen 'r13_fork_screen'
-    assert eval (qa_fork_locked_count()==6)
+    assert eval (qa_fork_locked_count()==4)  # 0.20.5: gate 1, lamp 1, gate_post 1, fire 1
     assert eval ([col['key'] for col in r13_fork_columns() if col.get('fate')]==['lamp','gate_post','fire'])
     assert eval (sum(col['key'] is None for col in r13_fork_columns())==1)
     assert eval (len(r13_fork_columns())==6 and r13_fork_current()==4)

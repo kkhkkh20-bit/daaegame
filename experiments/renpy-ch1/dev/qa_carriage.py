@@ -14,7 +14,8 @@ class IntroQA(UIQA):
   for _ in range(150):
    st=await self.state()
    if name in st['screens']:await asyncio.sleep(.4);return st
-   if 'say' in st['screens']:await self.input(810,610)
+   if 'choice' in st['screens']:await self.press('편지를 접는다')  # 0.20.5: the letter choice after the carriage
+   elif 'say' in st['screens']:await self.input(810,610)
    elif 'r13_cinematic_view' in st['screens']:await self.press('계속')
    else:await asyncio.sleep(.2)
   raise AssertionError((name,st))

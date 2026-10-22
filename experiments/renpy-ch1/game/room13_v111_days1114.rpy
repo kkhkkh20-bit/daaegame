@@ -2613,6 +2613,13 @@ label r13_v111_altar2_q14:
     jump r13_v111_altar2_proof14
 
 label r13_v111_altar2_proof14:
+    # 0.20.5 (Codex T01): without the records this question needs (an earlier meeting was lost),
+    # say so and let the question stand unanswered; no chance is spent on an impossible answer.
+    if not all(r13_v111_owned(k) for k in ['NW_TABLET_A', 'NW_TABLET_B']):
+        call r13_lines(r13_nw_block('altar2_cannot14'),'nw:altar2_cannot14')
+        call r13_lines(r13_nw_block('altar2_lost14'),'nw:altar2_lost14:cannot')
+        $ r13_v111_set('altar_issue:2','lost')
+        jump r13_v111_altar3_q14
     call r13_v111_proof('아르카가 부른다는 말과 옛 기록을 대조한다',['NW_TABLET_A', 'NW_TABLET_B'],'r13_v111_altar2_won14','r13_v111_altar2_wrong14',None)
     jump expression _return
 
@@ -2634,6 +2641,13 @@ label r13_v111_altar3_q14:
     jump r13_v111_altar3_proof14
 
 label r13_v111_altar3_proof14:
+    # 0.20.5 (Codex T01): without the records this question needs (an earlier meeting was lost),
+    # say so and let the question stand unanswered; no chance is spent on an impossible answer.
+    if not all(r13_v111_owned(k) for k in ['NW_IRON_MARK']):
+        call r13_lines(r13_nw_block('altar3_cannot14'),'nw:altar3_cannot14')
+        call r13_lines(r13_nw_block('altar3_lost14'),'nw:altar3_lost14:cannot')
+        $ r13_v111_set('altar_issue:3','lost')
+        jump r13_v111_altar4_q14
     call r13_v111_proof('쇠가 언제 붙었는지 보인다',['NW_IRON_MARK'],'r13_v111_altar3_won14','r13_v111_altar3_wrong14',None)
     jump expression _return
 
@@ -2655,6 +2669,13 @@ label r13_v111_altar4_q14:
     jump r13_v111_altar4_proof14
 
 label r13_v111_altar4_proof14:
+    # 0.20.5 (Codex T01): without the records this question needs (an earlier meeting was lost),
+    # say so and let the question stand unanswered; no chance is spent on an impossible answer.
+    if not all(r13_v111_owned(k) for k in ['NW_NAMES', 'NW_NEOUL_LEDGER']):
+        call r13_lines(r13_nw_block('altar4_cannot14'),'nw:altar4_cannot14')
+        call r13_lines(r13_nw_block('altar4_lost14'),'nw:altar4_lost14:cannot')
+        $ r13_v111_set('altar_issue:4','lost')
+        jump r13_v111_altar_close14
     call r13_v111_proof('맨 처음 이름을 짚는다',['NW_NAMES', 'NW_NEOUL_LEDGER'],'r13_v111_altar4_won14','r13_v111_altar4_wrong14',None)
     jump expression _return
 
@@ -3258,6 +3279,8 @@ label r13_v111_cookie_distance14:
     return
 
 label r13_v111_true_epilogue14:
+    # 0.20.5 (Codex T02): the ending just read is recorded before the true epilogue replaces it.
+    $ r13_fork_ending(r13_v111_value('ending14'))
     $ r13_v111_set('ending14','true')
     $ r13_edit(location="gate")
     $ room13["v111"]["people"]=[]

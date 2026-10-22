@@ -35,16 +35,28 @@ class ForkScreen(unittest.TestCase):
         self.values['meeting:gate']='win'
         rows=self.call('columns')[0]['rows']
         self.assertEqual([r['kind'] for r in rows],['current','locked'])
-        self.assertEqual(rows[1]['count'],2)
+        # 0.20.5 (Codex S01): the gate has only win and lose, so one other result is left.
+        self.assertEqual(rows[1]['count'],1)
         self.assertIsNone(rows[1]['title'])
         self.assertIsNone(rows[1]['result'])
         self.assertIsNone(rows[1]['record'])
         self.persistent.r13_fork_seen[('gate','lose')]={'png':b'png','run':1}
-        rows=self.call('columns')[0]['rows']
-        self.assertEqual([r['kind'] for r in rows],['current','old','locked'])
-        self.assertEqual(rows[2]['count'],1)
-        self.persistent.r13_fork_seen[('gate','partial')]={'png':b'png','run':2}
-        self.assertEqual([r['kind'] for r in self.call('columns')[0]['rows']],['current','old','old'])
+        self.assertEqual([r['kind'] for r in self.call('columns')[0]['rows']],['current','old'])
+        # A meeting with three real results still counts two.
+        self.values.update({'meeting:lamp':'win','meeting:gate_post':'win'})
+        lamp=[c for c in self.call('columns') if c['key']=='lamp'][0]['rows']
+        self.assertEqual([r['kind'] for r in lamp],['current','locked']);self.assertEqual(lamp[1]['count'],2)
+        self.persistent.r13_fork_seen[('lamp','lose')]={'png':b'png','run':1}
+        lamp=[c for c in self.call('columns') if c['key']=='lamp'][0]['rows']
+        self.assertEqual([r['kind'] for r in lamp],['current','old','locked']);self.assertEqual(lamp[2]['count'],1)
+    def test_outcomes_match_the_meeting_end_calls(self):
+        import re
+        found={}
+        for path in sorted((ROOT/'game').glob('room13_v111_days*.rpy')):
+            for meeting,rest in re.findall(r'r13_nw_meeting_end\(\s*["\'](\w+)["\']\s*,(.*)',path.read_text()):
+                found.setdefault(meeting,set()).update(re.findall(r'["\'](win|partial|lose)["\']',rest.split('\n')[0]))
+        for key,*_ in self.env['R13_FORK_MEETINGS']:
+            self.assertEqual(set(self.call('outcomes',key)),found.get(key),key)
     def test_row_tops_fit_above_the_footer(self):
         tops=self.call('row_tops',[{'kind':'current'},{'kind':'old'},{'kind':'old'}])
         self.assertEqual(tops,[200,332,464])
@@ -84,7 +96,7 @@ class ForkScreen(unittest.TestCase):
         self.assertEqual(fate,set(self.env['R13_FORK_FATE']))
         self.assertTrue(set(self.env['R13_FORK_FATE'])<={m[0] for m in self.env['R13_FORK_MEETINGS']})
     def test_saved_path_changes_independently_of_persistent(self):
-        self.call('record','gate','partial')
+        self.call('record','gate','lose')
         self.values['meeting:gate']='win'
         rows=self.call('columns')[0]['rows']
         self.assertEqual(rows[0]['result'],'win')
@@ -92,7 +104,16 @@ class ForkScreen(unittest.TestCase):
         self.values.clear()  # load an earlier save
         self.assertEqual(self.call('current'),0)
         self.assertEqual(len(self.call('columns')[0]['rows']),1)
-        self.assertIn(('gate','partial'),self.persistent.r13_fork_seen)
+        self.assertIn(('gate','lose'),self.persistent.r13_fork_seen)
+    def test_current_row_never_shows_another_runs_picture(self):
+        # 0.20.5 (Codex S02): run 1 saved, run 2 records the same result, run 1 is loaded again.
+        self.call('start');saved=copy.deepcopy(self.store.room13)
+        self.call('start');self.call('record','gate','win')
+        self.store.room13=saved;self.values['meeting:gate']='win'
+        rows=self.call('columns')[0]['rows']
+        self.assertEqual(rows[0]['kind'],'current');self.assertIsNone(rows[0]['record'])
+        self.store.room13['v111']['fork_run']=2
+        self.assertEqual(self.call('columns')[0]['rows'][0]['record']['run'],2)
     def test_active_stage_wins_and_initial_page_contains_it(self):
         self.store.r13_meeting_active=True
         self.store.r13_meeting_claim='NW:soup'

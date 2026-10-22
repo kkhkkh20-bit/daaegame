@@ -17,6 +17,11 @@ init 322 python:
         ('piko','피코 회의','13일','square'),
         ('altar','제단 회의','14일','altar'))
     R13_FORK_RESULTS = dict(win='이김',partial='부분',lose='짐')
+    # 0.20.5 (Codex S01): the final results each meeting really has (r13_nw_meeting_end calls in
+    # room13_v111_days*.rpy; dev/test_fork_screen.py re-derives this). A retry is not a result.
+    R13_FORK_OUTCOMES = dict(gate=('win','lose'),gate_post=('win','lose'),piko=('win','lose'))
+    def r13_fork_outcomes(meeting):
+        return R13_FORK_OUTCOMES.get(meeting,('win','partial','lose'))
     R13_FORK_ENDINGS = dict(left_name='남겨진 이름',frozen='얼어붙은 마을',family='함께 떠난 가족',partial='남은 사람들',violence='상처 입은 귀환',morning='마을의 아침',true='새로운 아침')
 
     def r13_fork_start():
@@ -77,10 +82,14 @@ init 322 python:
             if i>current:break
             result = r13_v111_value('meeting:'+key)
             here = i==current
-            rows = [dict(kind='current',result=result,title=title,record=seen.get((key,result)))]
+            # 0.20.5 (Codex S02): the shared record keeps the latest run's picture; an earlier
+            # run's save shows the place background instead of another run's picture.
+            mine = seen.get((key,result))
+            if mine and mine.get('run',1)!=store.room13['v111'].get('fork_run',1):mine = None
+            rows = [dict(kind='current',result=result,title=title,record=mine)]
             if not here:
                 hidden = 0
-                for other in ('win','partial','lose'):
+                for other in r13_fork_outcomes(key):
                     if other==result:continue
                     record=seen.get((key,other))
                     if record:rows.append(dict(kind='old',result=other,title=title,record=record))

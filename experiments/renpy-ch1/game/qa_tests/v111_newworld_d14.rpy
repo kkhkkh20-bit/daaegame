@@ -78,6 +78,7 @@ testcase v111_nw_d14_altar_half_then_partial:
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day14)
     run Function(r13_edit,location="gate")
+    run Function(r13_grant,["V111:NW_TABLET_A","V111:NW_TABLET_B"],"qa")  # 0.20.5: the next question needs them in hand
     run SetVariable("v111_last_presented",["V111:E14_SUPPLY"])
     run Jump("r13_v111_altar1_wrong14")
     click pos (900,600) until screen "r13_crisis_proof" timeout 60
@@ -123,3 +124,18 @@ testcase v111_nw_d14_true_ending:
     run Jump("r13_v111_cookie14")
     click pos (900,600) until screen "r13_confirm" timeout 150
     assert eval (r13_v111_value("ending14")=="true" and qa_nw_seen("여기만이 아닐지도 몰라") and qa_nw_seen("닫음"))
+
+testcase v111_nw_d14_altar_without_records:
+    # 0.20.5 (Codex T01): no ledger and none of the later records: each question is named as
+    # unanswerable, no chance is spent, and the meeting ends partial without a dead-end proof.
+    pause 1.0
+    click "처음부터"
+    click pos (900,600) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (900,600) until screen "r13_hub" timeout 90
+    run Function(qa_nw_day14)
+    run Function(r13_edit,location="gate")
+    run SetVariable("v111_last_presented",["V111:E14_SUPPLY"])
+    run Jump("r13_v111_altar1_wrong14")
+    click pos (900,600) until eval (r13_v111_value("meeting:altar") is not None) timeout 120
+    assert eval (r13_v111_value("meeting:altar")=="partial" and not r13_v111_value("tries:altar") and qa_nw_seen("지금 내 손에는 다 없다"))
