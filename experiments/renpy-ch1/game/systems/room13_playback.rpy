@@ -42,7 +42,8 @@ screen r13_strip_button(caption,icon,command,enabled=True,chosen=False,last=Fals
 
 # Playback helpers live behind the rightmost More control.
 screen r13_playback_footer(show_record=False,ready=True):
-    use r13_concept_dock(ready=ready,show_record=show_record)
+    # 0.19.98 (owner mockup): plain lines use the small text controls; 기록 lives in 더보기.
+    use r13_night_controls(ready=ready)
 
 screen r13_more_tools():
     # New-world meetings keep the approved dialogue menu (backlog inside, skip outside with confirmation).

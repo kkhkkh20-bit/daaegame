@@ -37,9 +37,11 @@ class CompactDialogue(unittest.TestCase):
         self.assertEqual(env['_r13_say_top']('첫 줄.\n둘째 줄.\n셋째 줄.'),env['_r13_say_top']('첫 줄.')-35)
 
     def test_same_font_and_name_anchor(self):
-        self.assertIn('size _r13_say_size() line_spacing 7 xsize 1028 font r13_ui_font()',SOURCE)
-        self.assertIn('ypos (_r13_say_top(what)-32 if room13_mode else 522)',SOURCE)
-        self.assertIn('padding (22,12)',SOURCE)
+        # 0.19.98 night dialogue (owner mockup): same font and size token, name on the ribbon
+        # directly above the text, which stacks up from a fixed bottom.
+        self.assertIn('size r13_night_say_size() line_spacing 8 xsize 1090 font r13_ui_font()',SOURCE)
+        self.assertIn('ypos (r13_night_say_top(what)-62)',SOURCE)
+        self.assertIn('background None padding (0,0)',SOURCE)
 
 if __name__=='__main__':
     unittest.main()

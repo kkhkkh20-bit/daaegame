@@ -132,7 +132,8 @@ init 319 python:
         """A replace entry is one variant or a list of variants (first whose condition holds wins)."""
         entry=R13_NW_TEXT["replace"].get(rid)
         if entry is None:return []
-        return entry if isinstance(entry,list) else [entry]
+        # Ren'Py rebinds list/dict in the store; JSON gives the plain types, so test by shape.
+        return [entry] if hasattr(entry,"get") else entry
     def r13_nw_replacement(rid):
         for variant in r13_nw_replace_variants(rid):
             if R13_NW_WHEN[variant.get("when","always")]():return variant

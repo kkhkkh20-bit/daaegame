@@ -36,6 +36,7 @@ screen r13_concept_more():
     on "show" action Function(r13_end_skip_modes)
     $ active=renpy.get_screen("say") is not None and renpy.get_screen("choice") is None
     $ items=[("대화 기록","backlog",[Hide("r13_more_tools"),Show("r13_backlog")],True),
+        ("자료 기록","record",[Hide("r13_more_tools"),Show("r13_records")],True),
         ("자동 읽기","auto",[Hide("r13_more_tools"),Preference("auto-forward","toggle")],active),
         ("읽은 대사 빠르게","skip",[Hide("r13_more_tools"),Function(r13_toggle_read_skip)],active),
         ("저장 · 불러오기","record",[Hide("r13_more_tools"),ShowMenu("save")],True),
@@ -48,15 +49,22 @@ screen r13_concept_more():
     $ row_height=80 if r13_touch_ui() else 64
     $ menu_rows=(len(items)+1)//2
     $ panel_height=menu_rows*(row_height+16)+74
+    # 0.19.98 (owner settings mockup): the same night panel and gold-edged buttons as 설정.
     frame:
-        xpos 600 ypos (r13_control_y()-panel_height-16) xysize (632,panel_height) padding (20,18) background R13InkPanel(alpha="f5",slim=True)
+        xpos 584 ypos (min(r13_control_y(),R13_NIGHT_CONTROL_Y-28)-panel_height-16) xysize (648,panel_height) padding (28,22) background Frame("assets/ui-night/opt_panel.png",40,40)
         vbox:
             spacing 16
-            text "대화 도구" size 24 color "#fff4df" font r13_ui_font()
+            text "대화 도구" size 24 color "#f6ecd8" font r13_ui_font()
             grid 2 menu_rows:
                 spacing 16
                 for title,icon,command,enabled in items:
-                    use r13_control(title,icon,command,enabled=enabled,width=288,height=row_height,label_size=20,icon_size=20)
+                    button:
+                        style "r13opt_button" xsize 288 ysize row_height
+                        action command sensitive enabled alt title
+                        hbox:
+                            align (.5,.5) spacing 10
+                            add R13AntiqueIcon(icon,size=20) yalign .5 alpha (1.0 if enabled else .5)
+                            text title size 20 font r13_ui_font() yalign .5 color ("#efe3cc" if enabled else "#8f8778")
                 if len(items)%2:
                     null width 288 height row_height
     key "game_menu" action Hide("r13_more_tools")

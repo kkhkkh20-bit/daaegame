@@ -82,3 +82,13 @@ A안: 갈무리 일반체와 `r13_ui_font()`를 공통 사용한다. 인물 이�
 `r13_confirm`은 `r13_confirmation_card`를 사용한다. 기존 `R13PaperFrame`을 본체와 버튼에 재사용하며, `R13ConfirmPaper`는 얕은 그림자만 더한다. `R13ConfirmSeal`은 날짜창의 `R13TimeDial` 둘레를 감싸는 작은 돌출 장식이다. 모서리 밖에 걸치되 본문·버튼을 가리지 않는다.
 
 본문에 맞춰 높이가 정해지고 화면 중앙에 놓인다. 큰 글씨·터치에서 공통 조작 높이를 적용한다. 장식은 입력·진행 상태를 만들지 않는다. 잠자기·일·회의 등 같은 확인창을 쓰는 곳에 공통 적용하며 별도의 화면별 장식을 추가하지 않는다. [승인 시안과 실제 검수](../reviews/confirmation-card-20261018/README.md).
+
+## 밤 잉크 대화창·설정창 (0.19.98, 소유자 지시 2026-10-22)
+
+- 일반 대사: `screens.rpy` say의 마지막 갈래와 `systems/room13_night_ui.rpy`.
+  - 그늘 `ui-night/say_shade.png`(아래에서 위로 옅어짐), 대사 글자 `r13_night_say_size()`(= 대사 크기 + 3), 줄은 아래 670px에서 위로 쌓는다.
+  - 이름: `r13_night_ribbon()`(버건디 붓 리본 Frame) + `gold_rule.png` 96px.
+  - 조작: `r13_night_controls` — `r13_night_link`(보이는 글자 20px, 누르는 높이 56/터치 80), 중심선 y694, 오른쪽 끝 `R13_CONCEPT_RIGHT`.
+- 설정: `pause_menu`, 스타일 `r13opt_*` — 버튼 `ui-night/opt_btn_{idle,hover,selected,insensitive}.png`, 높이 52(터치 60), 선택 시 `r13_opt_marks()` 마름모 두 개.
+- 더보기 판: `r13_concept_more` — `opt_panel.png` Frame + `r13opt_button`.
+- 자산 다시 만들기: `python3 dev/make_night_ui_assets.py`.
