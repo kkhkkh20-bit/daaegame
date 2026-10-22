@@ -58,7 +58,8 @@ label r13_carriage_departure:
     call r13_scene("winter_carriage","마차 안","travel")
     scene expression r13_carriage_seat_art() as r13_carriage_background zorder -10
     $ renpy.show_layer_at([], reset=True)
-    $ typing_allowed=False; renpy.music.stop(channel="typing")
+    # 0.19.97 (owner): the carriage dialogue has the same typing sound as every other line.
+    $ typing_allowed=True
     if renpy.music.get_playing(channel="carriage_ride") is None:
         $ renpy.music.play("assets/ms14-audio/cart-roll-light.mp3", channel="carriage_ride", loop=True, fadein=.6, relative_volume=.2)
     if renpy.music.get_playing(channel="carriage_hooves") is None:

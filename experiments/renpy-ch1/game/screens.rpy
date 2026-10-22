@@ -125,7 +125,13 @@ init python:
 screen say(who,what):
     if room13_mode:
         $ who = r13_speaker_label(who)
-    if room13_mode and r13_meeting_active and (r13_meeting_claim in R13_DEBATE or r13_nw_meeting_claim(r13_meeting_claim)):
+    # 0.19.97: the opening narration on black (room13_coach_cut.rpy) — white text, no panel.
+    if room13_mode and r13_black_card:
+        add Solid("#000")
+        r13_dialogue_text what id "what" style "say_dialogue" xalign .5 yalign .46 xmaximum 980 text_align .5 layout "subtitle" size r13_read_size(26,30) line_spacing 8 font r13_ui_font() color "#e9e1d2"
+        timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
+        use r13_toolbar(mode="line")
+    elif room13_mode and r13_meeting_active and (r13_meeting_claim in R13_DEBATE or r13_nw_meeting_claim(r13_meeting_claim)):
         use r13_meeting_stage(r13_meeting_claim,r13_meeting_focus_person(r13_meeting_claim),True)
         use r13_meeting_chrome(r13_meeting_claim)
         window:

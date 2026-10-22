@@ -590,7 +590,10 @@ init 59 python:
             # 0.18.59: a large object raised above a resident must not cover a smaller
             # object drawn after it (hall rail over the towels); keep their own holes too.
             later=[tuple(other["rect"]) for _,other in visible[index+1:]]
-            if covered:result.append((key,tuple(spec["rect"]),r13_object_mask(spec["rect"],[r13_actor_face(a) for a in actors]+later)))
+            # 0.19.97 (owner 2026-10-22: "캐릭터 클릭해도 대사가 안뜨고"): pressing a resident's
+            # body talks to them. The object keeps only the area outside every resident's box;
+            # transparent padding inside the box still reaches the object drawn underneath.
+            if covered:result.append((key,tuple(spec["rect"]),r13_object_mask(spec["rect"],[tuple(a["rect"]) for a in actors]+later)))
         return result
 
     def r13_conversation_pose(person,pose="neutral"):

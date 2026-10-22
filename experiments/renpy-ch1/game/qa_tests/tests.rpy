@@ -2625,9 +2625,9 @@ testcase conversation_skip:
     run Show("r13_qa_inject_return",value=("person","guard"))
     pause until screen "say" timeout 30
     screenshot "skip_bar.png"
+    # 0.19.97 (owner): skip acts at once, no confirmation.
     click "건너뛰기"
-    pause until screen "r13_concept_skip_confirm" timeout 10
-    click "건너뛰기"
+    assert not screen "r13_concept_skip_confirm"
     click pos (640,300) until eval (room13["v111"]["gate"]=="gate_choice" and renpy.get_screen("r13_hub") is not None) timeout 60
     assert eval (r13_v111_owned("E02"))
     assert eval (room13["v111"]["gate"]=="gate_choice")

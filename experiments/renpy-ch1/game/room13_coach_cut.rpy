@@ -25,5 +25,18 @@ label r13_coach_travel_cut:
         $ renpy.music.play("assets/bgm-travel.mp3", fadein=.6, if_changed=True)
         $ renpy.music.play("assets/ms14-audio/cart-roll-light.mp3",channel="carriage_ride",loop=True,fadein=.2,relative_volume=.2)
         $ renpy.music.play("assets/sfx-carriage-hooves.wav",channel="carriage_hooves",loop=True,fadein=.4,relative_volume=.18)
-        call screen r13_coach_exterior
+        # 0.19.97 (owner 2026-10-22): "처음 마차 컷씬 빼주고 검정색에 글씨 넣어주고 대사 한 3개정도".
+        # The outdoor coach cut is replaced by narration on black; the ride sounds keep playing.
+        scene black with Dissolve(.8)
+        $ r13_black_card=True; typing_allowed=True
+        call r13_lines([(None,line) for line in R13_BLACK_CARD_LINES],"v111:opening:black")
+        $ r13_black_card=False
+        scene black with Dissolve(.5)
     return
+
+default r13_black_card = False
+define R13_BLACK_CARD_LINES = (
+    "아내의 편지는 짧았다.",
+    "아이를 데리고 와 달라는 말, 그리고 방 번호 하나.",
+    "그 마을이 무엇을 태워 겨울을 나는지, 그때는 몰랐다.",
+)

@@ -18,7 +18,7 @@ Release layout (preview/room13-dev):
 Art in game/assets is already web-ready (lossy WebP q95, alpha lossless). Add
 new art with dev/import_art.py; the build never re-encodes.
 """
-import argparse, fnmatch, hashlib, io, json, os, re, shutil, subprocess, sys, time, zipfile
+import ast, argparse, fnmatch, hashlib, io, json, os, re, shutil, subprocess, sys, time, zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -83,6 +83,74 @@ def startup_files(game):
     files(fx.get("lights", {}).get("gate", {}))
     return result
 
+
+
+def asset_files(value, profile=None):
+    """Paths from character manifests; optionally select the runtime size only."""
+    if isinstance(value, str):
+        if value.startswith("assets/") and Path(value).suffix in (".png", ".webp", ".jpg"):
+            yield value
+    elif isinstance(value, dict):
+        for key, child in value.items():
+            if key == "profiles" and profile is not None:
+                yield from asset_files(child.get(str(profile), {}), profile)
+            else:
+                yield from asset_files(child, profile)
+    elif isinstance(value, list):
+        for child in value:
+            yield from asset_files(child, profile)
+
+
+def character_manifests(game):
+    names = ("cast", "resident-art", "room13-avatars", "room13-portraits",
+             "room13-fullbody-dialogue", "room13-dialogue-talk-art",
+             "room13-dialogue-context-art", "room13-dialogue-pose-source-art",
+             "room13-meeting-seated", "room13-meeting-source-art", "room13-profile-source-art",
+             "room13-pixel-acting", "room13-pixel-motion")
+    return [json.loads((game / "assets" / (name + ".json")).read_text())
+            for name in names if (game / "assets" / (name + ".json")).exists()]
+
+
+def character_files(game):
+    result = {f for manifest in character_manifests(game) for f in asset_files(manifest)}
+    patterns = ("dialogue-source-master/*", "dialogue-context-master/*", "dialogue-pose-source/*",
+                "profile-source-master/*", "room13-fullbody-*", "room13-redesign-*",
+                "room13-role-*", "room13-canonical-*", "room13-meeting-*",
+                "room13-pixel-acting-*", "room13-pixel-dialogue-*")
+    for path in (game / "assets").rglob("*"):
+        if path.is_file() and any(fnmatch.fnmatch(path.relative_to(game / "assets").as_posix(), pat) for pat in patterns):
+            result.add(path.relative_to(game).as_posix())
+    return result
+
+
+def character_prefetch(game):
+    # r13_speaker / r13_question_list call r13_close_art(..., 840).
+    # Never warm the alternate 560/760 profiles or the old fullbody atlases.
+    people = ["daram", "dad", "karo"]
+    speakers = ast.literal_eval(re.search(r"MS14_SPEAKERS\s*=\s*({.*?})", (game / "ms14_story.rpy").read_text(), re.S).group(1))
+    records = json.loads((game / "v111/records.json").read_text())["records"]
+    for key, record in records.items():
+        if key.startswith("MS14_D01_"):
+            actor = speakers.get(record.get("direction", {}).get("actor"))
+            if actor and actor not in people:
+                people.append(actor)
+    # Nabi is available in the first-day free exploration, outside the directed records.
+    if "nabi" not in people:
+        people.append("nabi")
+    manifests = character_manifests(game)
+    result = []
+    for person in people:
+        for manifest in manifests:
+            # Source art, profile and field art only; old fullbody assets stay on demand.
+            if "people" in manifest:
+                entry = manifest["people"].get(person, {})
+                if "images" in entry: continue
+            elif "entries" in manifest:
+                entry = {k: v for k, v in manifest["entries"].items() if v.get("person") == person}
+            else:
+                entry = manifest.get(person, {})
+            result.extend(asset_files(entry, 840))
+    return list(dict.fromkeys(result))
 
 def superseded_art():
     """Files only the backed-up original entries used (empty if no redesign)."""
@@ -217,12 +285,18 @@ LOADER = LOADER_BEGIN + r"""    // Core zip (runtime + scripts) is unpacked by R
         }
     }
 
-    // Warm the browser cache for progressive files (music) once the game runs,
+    // Warm first-day character art and nearby music once the game runs,
     // so Ren'Py's own download finds them immediately.
     async function r13PrefetchLater() {
-        for (const file of r13Prefetch) {
-            try { await (await fetch(r13Url(file, r13AssetVersions[file]), { priority: "low" })).blob(); } catch (e) { /* retried by Ren'Py */ }
+        let next = 0;
+        async function worker() {
+            while (next < r13Prefetch.length) {
+                const file = r13Prefetch[next++];
+                try { await (await fetch(r13Url(file, r13AssetVersions[file]), { priority: "low" })).blob(); } catch (e) { /* retried by Ren'Py */ }
+                await new Promise(resolve => setTimeout(resolve, 50));
+            }
         }
+        await Promise.all([worker(), worker()]);
     }
 
     function runLoadGameZip() {
@@ -230,7 +304,7 @@ LOADER = LOADER_BEGIN + r"""    // Core zip (runtime + scripts) is unpacked by R
 
         loadGameZip().then(() => {
             Module.removeRunDependency('loadGameZip');
-            setTimeout(r13PrefetchLater, 8000);
+            setTimeout(r13PrefetchLater, 1000);
         }).catch(() => {
             // Do not start a partially populated filesystem and silently show legacy art.
             const retry = document.createElement("button");
@@ -294,13 +368,17 @@ def seed_previous_rpyc(release, game):
     return n
 
 
-def placeholder(data):
+def placeholder(data, transparent=False):
     from PIL import Image
-    im = Image.open(io.BytesIO(data)); im.load()
+    im = Image.open(io.BytesIO(data))
     w, h = im.size
-    if w > 32 and h > 32:
+    if transparent:
+        im = Image.new("P", (w, h), 0)
+        im.putpalette([0, 0, 0, 0, 0, 0])
+        im.info["transparency"] = 0
+    elif w > 32 and h > 32:
         im = im.convert("RGBA").resize((max(1, w // 32), max(1, h // 32)), Image.BOX)
-    buf = io.BytesIO(); im.save(buf, "PNG", optimize=True)
+    buf = io.BytesIO(); im.save(buf, "PNG", optimize=True, **({"bits": 1} if transparent else {}))
     return (w, h), buf.getvalue()
 
 
@@ -360,6 +438,7 @@ def main():
     menu_music = menu_music.group(1) if menu_music else None
     preload, remote, remote_lines = [], [], []
     startup = startup_files(game)
+    characters = character_files(game)
     for path in sorted((game / "assets").rglob("*")):
         rel = path.relative_to(game).as_posix()
         suffix = path.suffix.lower()
@@ -374,7 +453,7 @@ def main():
         elif suffix in (".mp3", ".ogg", ".opus", ".wav"):
             remote.append(rel); remote_lines += [rel, "music -"]
         elif suffix in (".webp", ".png", ".jpg"):
-            (w, h), thumb = placeholder(path.read_bytes())
+            (w, h), thumb = placeholder(path.read_bytes(), rel in characters)
             ph = stage / "_placeholders" / rel
             ph.parent.mkdir(parents=True, exist_ok=True); ph.write_bytes(thumb)
             remote.append(rel); remote_lines += [rel, "image %d,%d" % (w, h)]
@@ -425,9 +504,11 @@ def main():
     for old in sorted((release / "game").rglob("*")):
         if old.is_file() and old not in shipped:
             removed.append(old.relative_to(release).as_posix()); old.unlink()
+    preload_entries.sort(key=lambda item: item["file"] != "game/" + menu_music)
+    warm = character_prefetch(game) + ["assets/bgm-snow.mp3", "assets/amb-wind.mp3", "assets/bgm-inn.mp3", "assets/amb-fire.mp3"]
     transport = {"multipart": True, "archive_bytes": size, "archive_sha256": digest, "parts": parts,
                  "preload": preload_entries, "asset_versions": {"game/"+r: sha((game/r).read_bytes())[:12] for r in remote},
-                 "prefetch": ["game/"+r for r in remote if r in ("assets/bgm-snow.mp3", "assets/amb-wind.mp3", "assets/bgm-inn.mp3", "assets/amb-fire.mp3")]}
+                 "prefetch": ["game/"+r for r in dict.fromkeys(warm) if r in remote]}
     (release / "game-transport.json").write_text(json.dumps(transport, indent=1))
 
     install_loader(release / "renpy-pre.js")
@@ -453,7 +534,7 @@ def main():
 
     first_load = size + sum(e["bytes"] for e in preload_entries)
     summary = dict(core_zip_bytes=size, archive_sha256=digest, parts=len(parts), preload_files=len(preload_entries),
-                   first_load_bytes=first_load, remote_files=len(remote), removed_from_release=removed)
+                   first_load_bytes=first_load, prefetch_files=len(transport["prefetch"]), transparent_placeholders=len(characters.intersection(remote)), remote_files=len(remote), removed_from_release=removed)
     (work / "build-report.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False))
     print(json.dumps(summary, indent=2, ensure_ascii=False))
 
