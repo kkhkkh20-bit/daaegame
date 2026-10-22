@@ -799,7 +799,8 @@ testcase fresh_run:
 testcase carriage_skip:
     pause 1.0
     click "처음부터"
-    pause until screen "say" timeout 60
+    # 0.19.97: narration on black comes first; click through it to the carriage.
+    click pos (640,300) until eval (place=="마차 안" and not r13_black_card and renpy.get_screen("say") is not None) timeout 60
     assert eval (place=="마차 안" and r13_v111_active())
     screenshot "c0_carriage.png"
     click "건너뛰기"
@@ -12150,11 +12151,12 @@ testcase pixel_unify_preview:
 testcase carriage_pop:
     pause 1.0
     click "처음부터"
-    pause until screen "say" timeout 60
+    click pos (640,300) until eval (place=="마차 안" and not r13_black_card and renpy.get_screen("say") is not None) timeout 60
     assert eval (r13_v111_active() and place=="마차 안")
     assert eval ("r13_visitor" in renpy.get_showing_tags())
     assert eval (r13_motion_person=="daram")
-    assert eval (not typing_allowed)
+    # 0.19.97 (owner): the carriage dialogue plays the typing sound.
+    assert eval (typing_allowed)
     screenshot "carriage_seated.png"
     click pos (640,300) until "편지를 접는다" timeout 60
     click "편지를 접는다"

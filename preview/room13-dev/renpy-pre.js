@@ -464,12 +464,18 @@ Module.preRun = Module.preRun || [ ];
         }
     }
 
-    // Warm the browser cache for progressive files (music) once the game runs,
+    // Warm first-day character art and nearby music once the game runs,
     // so Ren'Py's own download finds them immediately.
     async function r13PrefetchLater() {
-        for (const file of r13Prefetch) {
-            try { await (await fetch(r13Url(file, r13AssetVersions[file]), { priority: "low" })).blob(); } catch (e) { /* retried by Ren'Py */ }
+        let next = 0;
+        async function worker() {
+            while (next < r13Prefetch.length) {
+                const file = r13Prefetch[next++];
+                try { await (await fetch(r13Url(file, r13AssetVersions[file]), { priority: "low" })).blob(); } catch (e) { /* retried by Ren'Py */ }
+                await new Promise(resolve => setTimeout(resolve, 50));
+            }
         }
+        await Promise.all([worker(), worker()]);
     }
 
     function runLoadGameZip() {
@@ -477,7 +483,7 @@ Module.preRun = Module.preRun || [ ];
 
         loadGameZip().then(() => {
             Module.removeRunDependency('loadGameZip');
-            setTimeout(r13PrefetchLater, 8000);
+            setTimeout(r13PrefetchLater, 1000);
         }).catch(() => {
             // Do not start a partially populated filesystem and silently show legacy art.
             const retry = document.createElement("button");
