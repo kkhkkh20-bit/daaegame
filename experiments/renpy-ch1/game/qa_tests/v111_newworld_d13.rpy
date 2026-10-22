@@ -86,7 +86,7 @@ testcase v111_nw_d13_rein_won:
     click "QA 닫기"  # 0.20.7: the proof book stays open between picks
     pause 0.5
     click "논리를 연결한다"
-    click pos (900,600) until "곁에 남는다" timeout 60
+    click pos (900,600) until "엄마와 다람이 곁에 남게 한다" timeout 60
     assert eval (r13_v111_value("meeting:piko")=="win" and r13_v111_value("neoul_held") is True and r13_v111_owned("NW_NEOUL_LEDGER") and r13_v111_value("NW_NEOUL_LEDGER.variant")=="full")
     assert eval (qa_nw_seen("너울 씨가 시켰어요") and qa_nw_seen("그럼 다 죽소"))
 
@@ -111,7 +111,7 @@ testcase v111_nw_d13_rein_painting_first:
     click "QA 닫기"  # 0.20.7: the proof book stays open between picks
     pause 0.5
     click "논리를 연결한다"
-    click pos (900,600) until "곁에 남는다" timeout 60
+    click pos (900,600) until "엄마와 다람이 곁에 남게 한다" timeout 60
     assert eval (r13_v111_value("meeting:piko")=="lose" and not r13_v111_value("neoul_held") and not r13_v111_owned("NW_NEOUL_LEDGER") and qa_nw_seen("화가의 낙서요"))
 
 testcase v111_nw_d13_partial_listed:
