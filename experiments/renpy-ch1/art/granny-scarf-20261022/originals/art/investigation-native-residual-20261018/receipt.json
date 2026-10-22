@@ -1,0 +1,4756 @@
+{
+  "base_commit": "cda35116e5e10eb8f9b62b819b23ab96890ac586",
+  "purpose": "34 preserved operations + 11 source-inspected selected poses / 13 exact active pointers. Native diagnosis pending. No new art.",
+  "operations": [
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_momo/living_lampnumber",
+      "expected": {
+        "file": "assets/room13-action-resident_momo-living_lampnumber.webp",
+        "crop": [
+          93,
+          1,
+          354,
+          765
+        ],
+        "nearest": true,
+        "foot": [
+          192,
+          761
+        ],
+        "head": [
+          57,
+          5,
+          210,
+          150
+        ],
+        "contact": "standing",
+        "reviewed": true,
+        "map_action": true,
+        "stature_ratio": 1.0,
+        "source_sha256": "5319857cfa25aee94795afd3027f4dadbb3796623c0a47360b3d545b4c94d61b"
+      },
+      "value": {
+        "file": "assets/room13-action-resident_momo-living_lampnumber.webp",
+        "crop": [
+          93,
+          1,
+          354,
+          765
+        ],
+        "nearest": true,
+        "foot": [
+          192,
+          761
+        ],
+        "head": [
+          57,
+          5,
+          210,
+          150
+        ],
+        "contact": "standing",
+        "reviewed": true,
+        "map_action": true,
+        "stature_ratio": 1.0,
+        "source_sha256": "5319857cfa25aee94795afd3027f4dadbb3796623c0a47360b3d545b4c94d61b",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/granny/living_keyledger",
+      "expected": {
+        "file": "assets/room13-action-granny-living_keyledger.webp",
+        "crop": [
+          68,
+          16,
+          369,
+          751
+        ],
+        "nearest": true,
+        "foot": [
+          211,
+          747
+        ],
+        "head": [
+          50,
+          4,
+          264,
+          232
+        ],
+        "contact": "standing",
+        "reviewed": true,
+        "map_action": true,
+        "stature_ratio": 1.0,
+        "source_sha256": "4aab5040bc774feac8db7b459176e21bdd411ff4f42de862cf34304332006280"
+      },
+      "value": {
+        "file": "assets/room13-action-granny-living_keyledger.webp",
+        "crop": [
+          68,
+          16,
+          369,
+          751
+        ],
+        "nearest": true,
+        "foot": [
+          211,
+          747
+        ],
+        "head": [
+          50,
+          4,
+          264,
+          232
+        ],
+        "contact": "standing",
+        "reviewed": true,
+        "map_action": true,
+        "stature_ratio": 1.0,
+        "source_sha256": "4aab5040bc774feac8db7b459176e21bdd411ff4f42de862cf34304332006280",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-life-groups.json",
+      "pointer": "/groups/0/members/0/spec",
+      "expected": {
+        "file": "assets/room13-group-buri-cooperative.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          125.0,
+          8.0,
+          275.0,
+          225.0
+        ],
+        "anchors": {
+          "support_hand_left": [
+            304.0,
+            381.0
+          ],
+          "support_hand_right": [
+            416.5,
+            376.5
+          ],
+          "shared_component_contact": [
+            455.0,
+            345.0
+          ],
+          "foot_left": [
+            151.5,
+            737.5
+          ],
+          "foot_right": [
+            327.5,
+            715.5
+          ],
+          "foot": [
+            239.5,
+            737.5
+          ]
+        },
+        "foot": [
+          239.5,
+          737.5
+        ],
+        "contact": "shared_work",
+        "facing": "right-threequarter",
+        "stature_ratio": 1,
+        "source_sha256": "50b893f23339aa69e0e58644c1975ae7a61ac6aada36c6aee540740a7aed5805",
+        "source_commit": "8b553e7ce1e81543c3415f5ba9c3f329907ee78e",
+        "foreground_parts": [
+          [
+            [
+              200.0,
+              315.0
+            ],
+            [
+              467.0,
+              315.0
+            ],
+            [
+              467.0,
+              415.0
+            ],
+            [
+              200.0,
+              415.0
+            ]
+          ]
+        ]
+      },
+      "value": {
+        "file": "assets/room13-group-buri-cooperative.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          125.0,
+          8.0,
+          275.0,
+          225.0
+        ],
+        "anchors": {
+          "support_hand_left": [
+            304.0,
+            381.0
+          ],
+          "support_hand_right": [
+            416.5,
+            376.5
+          ],
+          "shared_component_contact": [
+            455.0,
+            345.0
+          ],
+          "foot_left": [
+            151.5,
+            737.5
+          ],
+          "foot_right": [
+            327.5,
+            715.5
+          ],
+          "foot": [
+            239.5,
+            737.5
+          ]
+        },
+        "foot": [
+          239.5,
+          737.5
+        ],
+        "contact": "shared_work",
+        "facing": "right-threequarter",
+        "stature_ratio": 1,
+        "source_sha256": "50b893f23339aa69e0e58644c1975ae7a61ac6aada36c6aee540740a7aed5805",
+        "source_commit": "8b553e7ce1e81543c3415f5ba9c3f329907ee78e",
+        "foreground_parts": [
+          [
+            [
+              200.0,
+              315.0
+            ],
+            [
+              467.0,
+              315.0
+            ],
+            [
+              467.0,
+              415.0
+            ],
+            [
+              200.0,
+              415.0
+            ]
+          ]
+        ],
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-life-groups.json",
+      "pointer": "/groups/0/members/1/spec",
+      "expected": {
+        "file": "assets/room13-group-resident_tok-cooperative.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          145.0,
+          30.0,
+          260.0,
+          235.0
+        ],
+        "anchors": {
+          "screwdriver_tip": [
+            127.0,
+            389.5
+          ],
+          "guiding_fingertips": [
+            147.0,
+            389.0
+          ],
+          "foot_left": [
+            177.0,
+            726.5
+          ],
+          "foot_right": [
+            447.0,
+            737.5
+          ],
+          "foot": [
+            312.0,
+            737.5
+          ]
+        },
+        "foot": [
+          312.0,
+          737.5
+        ],
+        "contact": "shared_work",
+        "facing": "left-threequarter",
+        "stature_ratio": 1,
+        "source_sha256": "bc68b8c9d499392ee6c1cdc9988d3ff64986cb044d21300d7f3964758b4f3823",
+        "source_commit": "8b553e7ce1e81543c3415f5ba9c3f329907ee78e",
+        "foreground_parts": [
+          [
+            [
+              60.0,
+              325.0
+            ],
+            [
+              165.0,
+              325.0
+            ],
+            [
+              290.0,
+              425.0
+            ],
+            [
+              165.0,
+              455.0
+            ],
+            [
+              60.0,
+              395.0
+            ]
+          ]
+        ]
+      },
+      "value": {
+        "file": "assets/room13-group-resident_tok-cooperative.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          145.0,
+          30.0,
+          260.0,
+          235.0
+        ],
+        "anchors": {
+          "screwdriver_tip": [
+            127.0,
+            389.5
+          ],
+          "guiding_fingertips": [
+            147.0,
+            389.0
+          ],
+          "foot_left": [
+            177.0,
+            726.5
+          ],
+          "foot_right": [
+            447.0,
+            737.5
+          ],
+          "foot": [
+            312.0,
+            737.5
+          ]
+        },
+        "foot": [
+          312.0,
+          737.5
+        ],
+        "contact": "shared_work",
+        "facing": "left-threequarter",
+        "stature_ratio": 1,
+        "source_sha256": "bc68b8c9d499392ee6c1cdc9988d3ff64986cb044d21300d7f3964758b4f3823",
+        "source_commit": "8b553e7ce1e81543c3415f5ba9c3f329907ee78e",
+        "foreground_parts": [
+          [
+            [
+              60.0,
+              325.0
+            ],
+            [
+              165.0,
+              325.0
+            ],
+            [
+              290.0,
+              425.0
+            ],
+            [
+              165.0,
+              455.0
+            ],
+            [
+              60.0,
+              395.0
+            ]
+          ]
+        ],
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/12/spec",
+      "expected": {
+        "file": "assets/map-action27/VA-5--resident_guldol.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          100.0,
+          5.0,
+          265.0,
+          240.0
+        ],
+        "foot": [
+          279.0,
+          752.5
+        ],
+        "anchors": {
+          "foot_left": [
+            169.0,
+            752.5
+          ],
+          "foot_right": [
+            389.0,
+            737.5
+          ],
+          "hand_left_image": [
+            240.5,
+            307.0
+          ],
+          "hand_right_image": [
+            425.0,
+            407.0
+          ],
+          "foot": [
+            279.0,
+            752.5
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "cfe69eba2d50787104a5e977707d7bc5c0694511743776bb52da4b5d7221cb1f",
+        "source_commit": "d301395b62ba3bb93b3ab050cbd1cf8d0c741937"
+      },
+      "value": {
+        "file": "assets/map-action27/VA-5--resident_guldol.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          100.0,
+          5.0,
+          265.0,
+          240.0
+        ],
+        "foot": [
+          279.0,
+          752.5
+        ],
+        "anchors": {
+          "foot_left": [
+            169.0,
+            752.5
+          ],
+          "foot_right": [
+            389.0,
+            737.5
+          ],
+          "hand_left_image": [
+            240.5,
+            307.0
+          ],
+          "hand_right_image": [
+            425.0,
+            407.0
+          ],
+          "foot": [
+            279.0,
+            752.5
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "cfe69eba2d50787104a5e977707d7bc5c0694511743776bb52da4b5d7221cb1f",
+        "source_commit": "d301395b62ba3bb93b3ab050cbd1cf8d0c741937",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/22/spec",
+      "expected": {
+        "file": "assets/map-action27/PO-2--resident_librarian.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          134.656,
+          27.647999999999996,
+          173.05599999999998,
+          158.976
+        ],
+        "foot": [
+          296.96,
+          748.8
+        ],
+        "anchors": {
+          "foot": [
+            296.96,
+            748.8
+          ],
+          "foot_left": [
+            222.72,
+            748.8
+          ],
+          "foot_right": [
+            363.52,
+            744.96
+          ],
+          "hand_left": [
+            320.0,
+            268.79999999999995
+          ],
+          "hand_right": [
+            455.68,
+            188.16
+          ],
+          "prop_support": [
+            410.624,
+            280.32
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "5fdf72dbf96f1dedff609e7a293f961e72245896dd0890013dd3956859752c94",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "value": {
+        "file": "assets/map-action27/PO-2--resident_librarian.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          134.656,
+          27.647999999999996,
+          173.05599999999998,
+          158.976
+        ],
+        "foot": [
+          296.96,
+          748.8
+        ],
+        "anchors": {
+          "foot": [
+            296.96,
+            748.8
+          ],
+          "foot_left": [
+            222.72,
+            748.8
+          ],
+          "foot_right": [
+            363.52,
+            744.96
+          ],
+          "hand_left": [
+            320.0,
+            268.79999999999995
+          ],
+          "hand_right": [
+            455.68,
+            188.16
+          ],
+          "prop_support": [
+            410.624,
+            280.32
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "5fdf72dbf96f1dedff609e7a293f961e72245896dd0890013dd3956859752c94",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/18/spec",
+      "expected": {
+        "file": "assets/map-action27/PO-1--resident_sling.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          164.0,
+          13.5,
+          246.5,
+          225.0
+        ],
+        "foot": [
+          308.5,
+          754.5
+        ],
+        "anchors": {
+          "foot_left": [
+            191.5,
+            754.5
+          ],
+          "foot_right": [
+            425.0,
+            749.0
+          ],
+          "foot": [
+            308.5,
+            754.5
+          ],
+          "hand_parcel_left": [
+            349.0,
+            429.5
+          ],
+          "hand_parcel_right": [
+            481.5,
+            420.0
+          ],
+          "parcel_bottom_left": [
+            358.0,
+            455.5
+          ],
+          "parcel_bottom_right": [
+            476.5,
+            449.0
+          ],
+          "parcel_bottom": [
+            417.0,
+            452.5
+          ],
+          "work": [
+            417.0,
+            452.5
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              295.0,
+              350.0
+            ],
+            [
+              505.0,
+              350.0
+            ],
+            [
+              505.0,
+              467.5
+            ],
+            [
+              295.0,
+              467.5
+            ]
+          ],
+          [
+            [
+              202.5,
+              270.0
+            ],
+            [
+              240.0,
+              270.0
+            ],
+            [
+              275.0,
+              325.0
+            ],
+            [
+              295.0,
+              360.0
+            ],
+            [
+              315.0,
+              385.0
+            ],
+            [
+              380.0,
+              400.0
+            ],
+            [
+              380.0,
+              465.0
+            ],
+            [
+              300.0,
+              475.0
+            ],
+            [
+              250.0,
+              435.0
+            ],
+            [
+              220.0,
+              390.0
+            ]
+          ],
+          [
+            [
+              390.0,
+              285.0
+            ],
+            [
+              425.0,
+              285.0
+            ],
+            [
+              445.0,
+              330.0
+            ],
+            [
+              475.0,
+              352.5
+            ],
+            [
+              490.0,
+              390.0
+            ],
+            [
+              450.0,
+              397.5
+            ],
+            [
+              400.0,
+              365.0
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_sha256": "ddd164dae71ffde0a52e21342c2af26d90b0c2df36cf2a9355da90bcc78310a2",
+        "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376"
+      },
+      "value": {
+        "file": "assets/map-action27/PO-1--resident_sling.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          164.0,
+          13.5,
+          246.5,
+          225.0
+        ],
+        "foot": [
+          308.5,
+          754.5
+        ],
+        "anchors": {
+          "foot_left": [
+            191.5,
+            754.5
+          ],
+          "foot_right": [
+            425.0,
+            749.0
+          ],
+          "foot": [
+            308.5,
+            754.5
+          ],
+          "hand_parcel_left": [
+            349.0,
+            429.5
+          ],
+          "hand_parcel_right": [
+            481.5,
+            420.0
+          ],
+          "parcel_bottom_left": [
+            358.0,
+            455.5
+          ],
+          "parcel_bottom_right": [
+            476.5,
+            449.0
+          ],
+          "parcel_bottom": [
+            417.0,
+            452.5
+          ],
+          "work": [
+            417.0,
+            452.5
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              295.0,
+              350.0
+            ],
+            [
+              505.0,
+              350.0
+            ],
+            [
+              505.0,
+              467.5
+            ],
+            [
+              295.0,
+              467.5
+            ]
+          ],
+          [
+            [
+              202.5,
+              270.0
+            ],
+            [
+              240.0,
+              270.0
+            ],
+            [
+              275.0,
+              325.0
+            ],
+            [
+              295.0,
+              360.0
+            ],
+            [
+              315.0,
+              385.0
+            ],
+            [
+              380.0,
+              400.0
+            ],
+            [
+              380.0,
+              465.0
+            ],
+            [
+              300.0,
+              475.0
+            ],
+            [
+              250.0,
+              435.0
+            ],
+            [
+              220.0,
+              390.0
+            ]
+          ],
+          [
+            [
+              390.0,
+              285.0
+            ],
+            [
+              425.0,
+              285.0
+            ],
+            [
+              445.0,
+              330.0
+            ],
+            [
+              475.0,
+              352.5
+            ],
+            [
+              490.0,
+              390.0
+            ],
+            [
+              450.0,
+              397.5
+            ],
+            [
+              400.0,
+              365.0
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_sha256": "ddd164dae71ffde0a52e21342c2af26d90b0c2df36cf2a9355da90bcc78310a2",
+        "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_ubak/living_measure",
+      "expected": {
+        "file": "assets/room13-pixel-acting-ubak.webp",
+        "crop": [
+          539,
+          558,
+          441,
+          416
+        ],
+        "nearest": true,
+        "anchor": {
+          "foot": [
+            220,
+            412
+          ]
+        },
+        "action_ko": "계측기 바늘과 종이 눈금을 맞춘다.",
+        "contact": "self-contained",
+        "head": [
+          40,
+          0,
+          401,
+          216
+        ],
+        "facing": "right-profile"
+      },
+      "value": {
+        "file": "assets/room13-pixel-acting-ubak.webp",
+        "crop": [
+          539,
+          558,
+          441,
+          416
+        ],
+        "nearest": true,
+        "anchor": {
+          "foot": [
+            220,
+            412
+          ]
+        },
+        "action_ko": "계측기 바늘과 종이 눈금을 맞춘다.",
+        "contact": "self-contained",
+        "head": [
+          40,
+          0,
+          401,
+          216
+        ],
+        "facing": "right-profile",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/buri/action_1",
+      "expected": {
+        "file": "assets/room13-action-buri-action_1.webp",
+        "crop": [
+          109,
+          59,
+          319,
+          675
+        ],
+        "nearest": true,
+        "foot": [
+          144,
+          671
+        ],
+        "head": [
+          56,
+          4,
+          235,
+          200
+        ],
+        "contact": "tool",
+        "reviewed": true,
+        "map_action": true,
+        "stature_ratio": 0.83,
+        "source_sha256": "ec64de6dfcb7d17933538f56ff97adb3190bcb7089e7f3fd3720ab4885cc323f",
+        "hand": [
+          161,
+          381
+        ]
+      },
+      "value": {
+        "file": "assets/room13-action-buri-action_1.webp",
+        "crop": [
+          109,
+          59,
+          319,
+          675
+        ],
+        "nearest": true,
+        "foot": [
+          144,
+          671
+        ],
+        "head": [
+          56,
+          4,
+          235,
+          200
+        ],
+        "contact": "tool",
+        "reviewed": true,
+        "map_action": true,
+        "stature_ratio": 0.83,
+        "source_sha256": "ec64de6dfcb7d17933538f56ff97adb3190bcb7089e7f3fd3720ab4885cc323f",
+        "hand": [
+          161,
+          381
+        ],
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/buri/action_2",
+      "expected": {
+        "file": "assets/room13-action-buri-action_2.webp",
+        "crop": [
+          24,
+          68,
+          464,
+          640
+        ],
+        "nearest": true,
+        "foot": [
+          233,
+          636
+        ],
+        "head": [
+          166,
+          4,
+          235,
+          210
+        ],
+        "contact": "kneeling",
+        "reviewed": true,
+        "map_action": true,
+        "stature_ratio": 0.81,
+        "source_sha256": "0d0e16023cba7bfb8a59b533cf4413e1dc5c93d1fbcb8120754cb5abe4c1957d"
+      },
+      "value": {
+        "file": "assets/room13-action-buri-action_2.webp",
+        "crop": [
+          24,
+          68,
+          464,
+          640
+        ],
+        "nearest": true,
+        "foot": [
+          233,
+          636
+        ],
+        "head": [
+          166,
+          4,
+          235,
+          210
+        ],
+        "contact": "kneeling",
+        "reviewed": true,
+        "map_action": true,
+        "stature_ratio": 0.81,
+        "source_sha256": "0d0e16023cba7bfb8a59b533cf4413e1dc5c93d1fbcb8120754cb5abe4c1957d",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/nabi/action_2",
+      "expected": {
+        "file": "assets/room13-pixel-acting-nabi.webp",
+        "crop": [
+          1084,
+          533,
+          416,
+          454
+        ],
+        "nearest": true,
+        "facing": "left",
+        "contact": "carrying_tray",
+        "foot": [
+          208,
+          453
+        ],
+        "head": [
+          50,
+          0,
+          201,
+          202
+        ],
+        "hand": [
+          109,
+          257
+        ]
+      },
+      "value": {
+        "file": "assets/room13-pixel-acting-nabi.webp",
+        "crop": [
+          1084,
+          533,
+          416,
+          454
+        ],
+        "nearest": true,
+        "facing": "left",
+        "contact": "carrying_tray",
+        "foot": [
+          208,
+          453
+        ],
+        "head": [
+          50,
+          0,
+          201,
+          202
+        ],
+        "hand": [
+          109,
+          257
+        ],
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/43/spec",
+      "expected": {
+        "file": "assets/map-action27/KI-1--nabi.webp",
+        "crop": [
+          0,
+          0,
+          516,
+          768
+        ],
+        "head": [
+          61.92,
+          0.0,
+          268.32000000000005,
+          253.44000000000003
+        ],
+        "foot": [
+          201.24,
+          760.32
+        ],
+        "anchors": {
+          "foot": [
+            201.24,
+            760.32
+          ],
+          "hand_left": [
+            211.55999999999997,
+            384.0
+          ],
+          "hand_right": [
+            82.55999999999999,
+            345.6
+          ],
+          "knife_carrot": [
+            149.64,
+            399.36
+          ],
+          "board_bottom": [
+            149.64,
+            430.08000000000004
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              25.09727626459144,
+              271.05882352941177
+            ],
+            [
+              316.2256809338521,
+              271.05882352941177
+            ],
+            [
+              316.2256809338521,
+              439.2156862745098
+            ],
+            [
+              25.09727626459144,
+              439.2156862745098
+            ]
+          ]
+        ],
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "963372be4bccf8c78c392809ab9fdd73243f09d66e890edac7c44fcb8576543f",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "value": {
+        "file": "assets/map-action27/KI-1--nabi.webp",
+        "crop": [
+          0,
+          0,
+          516,
+          768
+        ],
+        "head": [
+          61.92,
+          0.0,
+          268.32000000000005,
+          253.44000000000003
+        ],
+        "foot": [
+          201.24,
+          760.32
+        ],
+        "anchors": {
+          "foot": [
+            201.24,
+            760.32
+          ],
+          "hand_left": [
+            211.55999999999997,
+            384.0
+          ],
+          "hand_right": [
+            82.55999999999999,
+            345.6
+          ],
+          "knife_carrot": [
+            149.64,
+            399.36
+          ],
+          "board_bottom": [
+            149.64,
+            430.08000000000004
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              25.09727626459144,
+              271.05882352941177
+            ],
+            [
+              316.2256809338521,
+              271.05882352941177
+            ],
+            [
+              316.2256809338521,
+              439.2156862745098
+            ],
+            [
+              25.09727626459144,
+              439.2156862745098
+            ]
+          ]
+        ],
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "963372be4bccf8c78c392809ab9fdd73243f09d66e890edac7c44fcb8576543f",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/47/spec",
+      "expected": {
+        "file": "assets/map-action27/KI-5--nabi.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          81.92,
+          7.68,
+          245.76,
+          230.39999999999998
+        ],
+        "foot": [
+          209.92,
+          760.3199999999999
+        ],
+        "anchors": {
+          "foot": [
+            209.92,
+            760.3199999999999
+          ],
+          "hand_right": [
+            81.92,
+            314.88
+          ],
+          "hand_left": [
+            220.16,
+            407.04
+          ],
+          "bread_contact": [
+            102.4,
+            337.92
+          ],
+          "prop_support": [
+            153.6,
+            407.04
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              25.0,
+              275.0
+            ],
+            [
+              310.0,
+              275.0
+            ],
+            [
+              310.0,
+              425.0
+            ],
+            [
+              25.0,
+              425.0
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_commit": "64264145c81635843cfde00fdf987dd4c6283f5a",
+        "source_sha256": "0a9366c80dce51c74e23bf14ef21142de6f1ecbf77d7e4a9eccbef92f943d6d9"
+      },
+      "value": {
+        "file": "assets/map-action27/KI-5--nabi.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          81.92,
+          7.68,
+          245.76,
+          230.39999999999998
+        ],
+        "foot": [
+          209.92,
+          760.3199999999999
+        ],
+        "anchors": {
+          "foot": [
+            209.92,
+            760.3199999999999
+          ],
+          "hand_right": [
+            81.92,
+            314.88
+          ],
+          "hand_left": [
+            220.16,
+            407.04
+          ],
+          "bread_contact": [
+            102.4,
+            337.92
+          ],
+          "prop_support": [
+            153.6,
+            407.04
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              25.0,
+              275.0
+            ],
+            [
+              310.0,
+              275.0
+            ],
+            [
+              310.0,
+              425.0
+            ],
+            [
+              25.0,
+              425.0
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_commit": "64264145c81635843cfde00fdf987dd4c6283f5a",
+        "source_sha256": "0a9366c80dce51c74e23bf14ef21142de6f1ecbf77d7e4a9eccbef92f943d6d9",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/45/spec",
+      "expected": {
+        "file": "assets/map-action27/KI-3--nabi.webp",
+        "crop": [
+          0,
+          0,
+          516,
+          768
+        ],
+        "head": [
+          82.56,
+          0.0,
+          268.32,
+          253.44
+        ],
+        "foot": [
+          211.55999999999997,
+          756.48
+        ],
+        "anchors": {
+          "foot": [
+            211.55999999999997,
+            756.48
+          ],
+          "hand_right": [
+            46.44,
+            230.4
+          ],
+          "hand_left": [
+            185.76,
+            391.68
+          ],
+          "ladle_tip": [
+            129.0,
+            314.88
+          ],
+          "soup_bowl": [
+            144.48000000000002,
+            360.9599999999999
+          ],
+          "prop_support": [
+            144.48000000000002,
+            407.04
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              20.07782101167315,
+              200.7843137254902
+            ],
+            [
+              250.9727626459144,
+              200.7843137254902
+            ],
+            [
+              250.9727626459144,
+              419.1372549019608
+            ],
+            [
+              20.07782101167315,
+              419.1372549019608
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_commit": "64264145c81635843cfde00fdf987dd4c6283f5a",
+        "source_sha256": "1bb0a4636b5f9198551264534b4848a8fc742b90d3e88c9dd264aea9819db4ef"
+      },
+      "value": {
+        "file": "assets/map-action27/KI-3--nabi.webp",
+        "crop": [
+          0,
+          0,
+          516,
+          768
+        ],
+        "head": [
+          82.56,
+          0.0,
+          268.32,
+          253.44
+        ],
+        "foot": [
+          211.55999999999997,
+          756.48
+        ],
+        "anchors": {
+          "foot": [
+            211.55999999999997,
+            756.48
+          ],
+          "hand_right": [
+            46.44,
+            230.4
+          ],
+          "hand_left": [
+            185.76,
+            391.68
+          ],
+          "ladle_tip": [
+            129.0,
+            314.88
+          ],
+          "soup_bowl": [
+            144.48000000000002,
+            360.9599999999999
+          ],
+          "prop_support": [
+            144.48000000000002,
+            407.04
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              20.07782101167315,
+              200.7843137254902
+            ],
+            [
+              250.9727626459144,
+              200.7843137254902
+            ],
+            [
+              250.9727626459144,
+              419.1372549019608
+            ],
+            [
+              20.07782101167315,
+              419.1372549019608
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_commit": "64264145c81635843cfde00fdf987dd4c6283f5a",
+        "source_sha256": "1bb0a4636b5f9198551264534b4848a8fc742b90d3e88c9dd264aea9819db4ef",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/44/spec",
+      "expected": {
+        "file": "assets/map-action27/KI-2--nabi.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          168.96,
+          7.68,
+          250.88,
+          238.07999999999998
+        ],
+        "foot": [
+          286.72,
+          756.48
+        ],
+        "anchors": {
+          "foot": [
+            286.72,
+            756.48
+          ],
+          "hand_left": [
+            435.2,
+            245.76
+          ],
+          "hand_right": [
+            302.08,
+            368.64
+          ],
+          "spoon_pot": [
+            414.72,
+            349.44
+          ],
+          "prop_support": [
+            409.6,
+            430.08000000000004
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              280.0,
+              220.0
+            ],
+            [
+              512.0,
+              220.0
+            ],
+            [
+              512.0,
+              442.5
+            ],
+            [
+              280.0,
+              442.5
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_commit": "64264145c81635843cfde00fdf987dd4c6283f5a",
+        "source_sha256": "06b7b1b986348332611e0c58a05efce4d376daeb747ab7bccb67ce333c959845"
+      },
+      "value": {
+        "file": "assets/map-action27/KI-2--nabi.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          168.96,
+          7.68,
+          250.88,
+          238.07999999999998
+        ],
+        "foot": [
+          286.72,
+          756.48
+        ],
+        "anchors": {
+          "foot": [
+            286.72,
+            756.48
+          ],
+          "hand_left": [
+            435.2,
+            245.76
+          ],
+          "hand_right": [
+            302.08,
+            368.64
+          ],
+          "spoon_pot": [
+            414.72,
+            349.44
+          ],
+          "prop_support": [
+            409.6,
+            430.08000000000004
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              280.0,
+              220.0
+            ],
+            [
+              512.0,
+              220.0
+            ],
+            [
+              512.0,
+              442.5
+            ],
+            [
+              280.0,
+              442.5
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_commit": "64264145c81635843cfde00fdf987dd4c6283f5a",
+        "source_sha256": "06b7b1b986348332611e0c58a05efce4d376daeb747ab7bccb67ce333c959845",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/46/spec",
+      "expected": {
+        "file": "assets/map-action27/KI-4--nabi.webp",
+        "crop": [
+          0,
+          0,
+          516,
+          768
+        ],
+        "head": [
+          67.08,
+          0.0,
+          268.32,
+          253.44
+        ],
+        "foot": [
+          237.35999999999999,
+          752.6399999999999
+        ],
+        "anchors": {
+          "foot": [
+            237.35999999999999,
+            752.6399999999999
+          ],
+          "hand_right": [
+            92.88,
+            360.9599999999999
+          ],
+          "hand_left": [
+            72.24000000000001,
+            422.40000000000003
+          ],
+          "sponge_plate": [
+            77.39999999999999,
+            360.9599999999999
+          ],
+          "prop_support": [
+            67.08000000000001,
+            430.08000000000004
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              0.0,
+              271.05882352941177
+            ],
+            [
+              210.8171206225681,
+              271.05882352941177
+            ],
+            [
+              210.8171206225681,
+              451.7647058823529
+            ],
+            [
+              0.0,
+              451.7647058823529
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_commit": "64264145c81635843cfde00fdf987dd4c6283f5a",
+        "source_sha256": "e4b7e99bc04f3a0d7d2c55d25396ffc4e71ab2617aa21a8eb468888cd3ec393d"
+      },
+      "value": {
+        "file": "assets/map-action27/KI-4--nabi.webp",
+        "crop": [
+          0,
+          0,
+          516,
+          768
+        ],
+        "head": [
+          67.08,
+          0.0,
+          268.32,
+          253.44
+        ],
+        "foot": [
+          237.35999999999999,
+          752.6399999999999
+        ],
+        "anchors": {
+          "foot": [
+            237.35999999999999,
+            752.6399999999999
+          ],
+          "hand_right": [
+            92.88,
+            360.9599999999999
+          ],
+          "hand_left": [
+            72.24000000000001,
+            422.40000000000003
+          ],
+          "sponge_plate": [
+            77.39999999999999,
+            360.9599999999999
+          ],
+          "prop_support": [
+            67.08000000000001,
+            430.08000000000004
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              0.0,
+              271.05882352941177
+            ],
+            [
+              210.8171206225681,
+              271.05882352941177
+            ],
+            [
+              210.8171206225681,
+              451.7647058823529
+            ],
+            [
+              0.0,
+              451.7647058823529
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_commit": "64264145c81635843cfde00fdf987dd4c6283f5a",
+        "source_sha256": "e4b7e99bc04f3a0d7d2c55d25396ffc4e71ab2617aa21a8eb468888cd3ec393d",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/0/spec",
+      "expected": {
+        "file": "assets/map-action27/VA-6--resident_badook.webp",
+        "crop": [
+          0,
+          0,
+          516,
+          768
+        ],
+        "head": [
+          120.46692607003891,
+          0.0,
+          271.05058365758754,
+          215.84313725490196
+        ],
+        "foot": [
+          286.3599221789883,
+          752.4392156862745
+        ],
+        "anchors": {
+          "foot_left": [
+            196.26070038910507,
+            752.4392156862745
+          ],
+          "foot_right": [
+            376.4591439688716,
+            752.4392156862745
+          ],
+          "hand_left_image": [
+            216.84046692607004,
+            276.58039215686273
+          ],
+          "hand_right_image": [
+            418.1206225680934,
+            291.6392156862745
+          ],
+          "foot": [
+            286.3599221789883,
+            752.4392156862745
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "8e6c62f72314ad87814bce487721abffd7339110fa55f33bfc2dd689c02be5a3",
+        "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+      },
+      "value": {
+        "file": "assets/map-action27/VA-6--resident_badook.webp",
+        "crop": [
+          0,
+          0,
+          516,
+          768
+        ],
+        "head": [
+          120.46692607003891,
+          0.0,
+          271.05058365758754,
+          215.84313725490196
+        ],
+        "foot": [
+          286.3599221789883,
+          752.4392156862745
+        ],
+        "anchors": {
+          "foot_left": [
+            196.26070038910507,
+            752.4392156862745
+          ],
+          "foot_right": [
+            376.4591439688716,
+            752.4392156862745
+          ],
+          "hand_left_image": [
+            216.84046692607004,
+            276.58039215686273
+          ],
+          "hand_right_image": [
+            418.1206225680934,
+            291.6392156862745
+          ],
+          "foot": [
+            286.3599221789883,
+            752.4392156862745
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "8e6c62f72314ad87814bce487721abffd7339110fa55f33bfc2dd689c02be5a3",
+        "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/48/spec",
+      "expected": {
+        "file": "assets/map-action27/VA-1--resident_badook.webp",
+        "crop": [
+          0,
+          0,
+          516,
+          768
+        ],
+        "head": [
+          120.46692607003891,
+          10.03921568627451,
+          271.05058365758754,
+          210.8235294117647
+        ],
+        "foot": [
+          291.63035019455253,
+          744.9098039215686
+        ],
+        "anchors": {
+          "foot_left": [
+            201.28015564202335,
+            629.9607843137255
+          ],
+          "foot_right": [
+            381.9805447470817,
+            744.9098039215686
+          ],
+          "hand_left_image": [
+            170.15953307392996,
+            99.89019607843137
+          ],
+          "hand_right_image": [
+            423.1400778210117,
+            337.81960784313725
+          ],
+          "foot": [
+            291.63035019455253,
+            744.9098039215686
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "da6139101310671715ccabcf35aa8eb8ab5e80ea4aa3d6f304f0f17f3e472e3e",
+        "source_commit": "b9ba25ebc0d0ca2baf114f9fc39d3f5d6f9180c2"
+      },
+      "value": {
+        "file": "assets/map-action27/VA-1--resident_badook.webp",
+        "crop": [
+          0,
+          0,
+          516,
+          768
+        ],
+        "head": [
+          120.46692607003891,
+          10.03921568627451,
+          271.05058365758754,
+          210.8235294117647
+        ],
+        "foot": [
+          291.63035019455253,
+          744.9098039215686
+        ],
+        "anchors": {
+          "foot_left": [
+            201.28015564202335,
+            629.9607843137255
+          ],
+          "foot_right": [
+            381.9805447470817,
+            744.9098039215686
+          ],
+          "hand_left_image": [
+            170.15953307392996,
+            99.89019607843137
+          ],
+          "hand_right_image": [
+            423.1400778210117,
+            337.81960784313725
+          ],
+          "foot": [
+            291.63035019455253,
+            744.9098039215686
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "da6139101310671715ccabcf35aa8eb8ab5e80ea4aa3d6f304f0f17f3e472e3e",
+        "source_commit": "b9ba25ebc0d0ca2baf114f9fc39d3f5d6f9180c2",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/1/spec",
+      "expected": {
+        "file": "assets/map-action27/VA-7--resident_bori.webp",
+        "crop": [
+          0,
+          0,
+          578,
+          768
+        ],
+        "head": [
+          180.625,
+          0.0,
+          276.25,
+          228.53979238754326
+        ],
+        "foot": [
+          280.234375,
+          752.5868512110727
+        ],
+        "anchors": {
+          "foot_left": [
+            173.1875,
+            698.9065743944637
+          ],
+          "foot_right": [
+            387.28125,
+            752.5868512110727
+          ],
+          "hand_left_image": [
+            231.09375,
+            437.94602076124573
+          ],
+          "hand_right_image": [
+            479.71875,
+            460.8
+          ],
+          "foot": [
+            280.234375,
+            752.5868512110727
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "731a173e63f0415f7b86f81d7bcd1d09b26bbc68e15ba2adfa3100a39597b3fd",
+        "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+      },
+      "value": {
+        "file": "assets/map-action27/VA-7--resident_bori.webp",
+        "crop": [
+          0,
+          0,
+          578,
+          768
+        ],
+        "head": [
+          180.625,
+          0.0,
+          276.25,
+          228.53979238754326
+        ],
+        "foot": [
+          280.234375,
+          752.5868512110727
+        ],
+        "anchors": {
+          "foot_left": [
+            173.1875,
+            698.9065743944637
+          ],
+          "foot_right": [
+            387.28125,
+            752.5868512110727
+          ],
+          "hand_left_image": [
+            231.09375,
+            437.94602076124573
+          ],
+          "hand_right_image": [
+            479.71875,
+            460.8
+          ],
+          "foot": [
+            280.234375,
+            752.5868512110727
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "731a173e63f0415f7b86f81d7bcd1d09b26bbc68e15ba2adfa3100a39597b3fd",
+        "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/2/spec",
+      "expected": {
+        "file": "assets/map-action27/VA-8--resident_bori.webp",
+        "crop": [
+          0,
+          0,
+          578,
+          768
+        ],
+        "head": [
+          180.625,
+          0.0,
+          276.25,
+          228.53979238754326
+        ],
+        "foot": [
+          317.953125,
+          752.5868512110727
+        ],
+        "anchors": {
+          "foot_left": [
+            208.25,
+            752.5868512110727
+          ],
+          "foot_right": [
+            427.65625,
+            752.5868512110727
+          ],
+          "hand_left_image": [
+            162.03125,
+            468.240830449827
+          ],
+          "hand_right_image": [
+            479.71875,
+            268.93287197231837
+          ],
+          "foot": [
+            317.953125,
+            752.5868512110727
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "5ea8b02dbf44e30b69d86d19cc29bdc794be7d40d06471f6168ef99653553e7d",
+        "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1"
+      },
+      "value": {
+        "file": "assets/map-action27/VA-8--resident_bori.webp",
+        "crop": [
+          0,
+          0,
+          578,
+          768
+        ],
+        "head": [
+          180.625,
+          0.0,
+          276.25,
+          228.53979238754326
+        ],
+        "foot": [
+          317.953125,
+          752.5868512110727
+        ],
+        "anchors": {
+          "foot_left": [
+            208.25,
+            752.5868512110727
+          ],
+          "foot_right": [
+            427.65625,
+            752.5868512110727
+          ],
+          "hand_left_image": [
+            162.03125,
+            468.240830449827
+          ],
+          "hand_right_image": [
+            479.71875,
+            268.93287197231837
+          ],
+          "foot": [
+            317.953125,
+            752.5868512110727
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "5ea8b02dbf44e30b69d86d19cc29bdc794be7d40d06471f6168ef99653553e7d",
+        "source_commit": "69e8e718959253743e4440e71d47c6676ec581b1",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/11/spec",
+      "expected": {
+        "file": "assets/map-action27/VA-4--resident_guldol.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          100.0,
+          5.0,
+          265.0,
+          240.0
+        ],
+        "foot": [
+          261.0,
+          745.0
+        ],
+        "anchors": {
+          "foot_left": [
+            153.5,
+            745.0
+          ],
+          "foot_right": [
+            368.5,
+            737.5
+          ],
+          "hand_left_image": [
+            266.0,
+            246.0
+          ],
+          "hand_right_image": [
+            420.0,
+            238.0
+          ],
+          "foot": [
+            261.0,
+            745.0
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "1ae9a3901cacbb36e5ad71273459d0e654d98ba658785a6999bedcd3bb77cc13",
+        "source_commit": "d301395b62ba3bb93b3ab050cbd1cf8d0c741937"
+      },
+      "value": {
+        "file": "assets/map-action27/VA-4--resident_guldol.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          100.0,
+          5.0,
+          265.0,
+          240.0
+        ],
+        "foot": [
+          261.0,
+          745.0
+        ],
+        "anchors": {
+          "foot_left": [
+            153.5,
+            745.0
+          ],
+          "foot_right": [
+            368.5,
+            737.5
+          ],
+          "hand_left_image": [
+            266.0,
+            246.0
+          ],
+          "hand_right_image": [
+            420.0,
+            238.0
+          ],
+          "foot": [
+            261.0,
+            745.0
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "1ae9a3901cacbb36e5ad71273459d0e654d98ba658785a6999bedcd3bb77cc13",
+        "source_commit": "d301395b62ba3bb93b3ab050cbd1cf8d0c741937",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/39/spec",
+      "expected": {
+        "file": "assets/map-action27/RI-1--resident_kkwak.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          88.5,
+          22.0,
+          272.0,
+          252.5
+        ],
+        "foot": [
+          324.5,
+          749.0
+        ],
+        "anchors": {
+          "head_center": [
+            256.5,
+            184.0
+          ],
+          "foot_left": [
+            267.5,
+            749.0
+          ],
+          "foot_right": [
+            381.5,
+            748.5
+          ],
+          "foot": [
+            324.5,
+            749.0
+          ],
+          "buttock": [
+            187.5,
+            564.0
+          ],
+          "seat": [
+            187.5,
+            564.0
+          ],
+          "bucket_bottom": [
+            171.0,
+            732.5
+          ],
+          "hand_rod_left": [
+            319.0,
+            424.0
+          ],
+          "hand_rod_right": [
+            372.0,
+            416.5
+          ],
+          "rod_tip": [
+            481.5,
+            347.5
+          ],
+          "line_bottom": [
+            481.0,
+            745.0
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "bucket_ground",
+        "stature_ratio": 0.78,
+        "source_sha256": "48c5e1d5be63ccad4d746d99e462e1011d447f3851ebfa2d0266866180235bdd",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "value": {
+        "file": "assets/map-action27/RI-1--resident_kkwak.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          88.5,
+          22.0,
+          272.0,
+          252.5
+        ],
+        "foot": [
+          324.5,
+          749.0
+        ],
+        "anchors": {
+          "head_center": [
+            256.5,
+            184.0
+          ],
+          "foot_left": [
+            267.5,
+            749.0
+          ],
+          "foot_right": [
+            381.5,
+            748.5
+          ],
+          "foot": [
+            324.5,
+            749.0
+          ],
+          "buttock": [
+            187.5,
+            564.0
+          ],
+          "seat": [
+            187.5,
+            564.0
+          ],
+          "bucket_bottom": [
+            171.0,
+            732.5
+          ],
+          "hand_rod_left": [
+            319.0,
+            424.0
+          ],
+          "hand_rod_right": [
+            372.0,
+            416.5
+          ],
+          "rod_tip": [
+            481.5,
+            347.5
+          ],
+          "line_bottom": [
+            481.0,
+            745.0
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "bucket_ground",
+        "stature_ratio": 0.78,
+        "source_sha256": "48c5e1d5be63ccad4d746d99e462e1011d447f3851ebfa2d0266866180235bdd",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/35/spec",
+      "expected": {
+        "file": "assets/map-action27/ST-2--resident_siluk.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          197.499776,
+          31.000256000000007,
+          180.0,
+          170.0
+        ],
+        "foot": [
+          268.0,
+          757.499904
+        ],
+        "anchors": {
+          "foot_left": [
+            180.499968,
+            757.499904
+          ],
+          "foot_right": [
+            355.500032,
+            757.499904
+          ],
+          "head_center": [
+            287.499776,
+            116.00025600000001
+          ],
+          "hand_left_box": [
+            273.50016,
+            374.49984
+          ],
+          "hand_right_box": [
+            401.50016,
+            372.99993600000005
+          ],
+          "prop_center": [
+            317.000192,
+            332.500224
+          ],
+          "foot": [
+            268.0,
+            757.499904
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "00377789e4ba7b88868b1293e63170dcac93ded939e4248a268bda23ad48a081",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "value": {
+        "file": "assets/map-action27/ST-2--resident_siluk.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          197.499776,
+          31.000256000000007,
+          180.0,
+          170.0
+        ],
+        "foot": [
+          268.0,
+          757.499904
+        ],
+        "anchors": {
+          "foot_left": [
+            180.499968,
+            757.499904
+          ],
+          "foot_right": [
+            355.500032,
+            757.499904
+          ],
+          "head_center": [
+            287.499776,
+            116.00025600000001
+          ],
+          "hand_left_box": [
+            273.50016,
+            374.49984
+          ],
+          "hand_right_box": [
+            401.50016,
+            372.99993600000005
+          ],
+          "prop_center": [
+            317.000192,
+            332.500224
+          ],
+          "foot": [
+            268.0,
+            757.499904
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "00377789e4ba7b88868b1293e63170dcac93ded939e4248a268bda23ad48a081",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_siluk/neutral",
+      "expected": {
+        "file": "assets/room13-redesign-resident_siluk.webp",
+        "crop": [
+          108,
+          28,
+          315,
+          716
+        ],
+        "nearest": true,
+        "foot": [
+          163,
+          712
+        ],
+        "facing": "front",
+        "contact": "standing",
+        "head": [
+          87,
+          4,
+          185,
+          138
+        ],
+        "reviewed": true,
+        "posture": "standing",
+        "redesign": "five_town_hyena_v2"
+      },
+      "value": {
+        "file": "assets/room13-redesign-resident_siluk.webp",
+        "crop": [
+          108,
+          28,
+          315,
+          716
+        ],
+        "nearest": true,
+        "foot": [
+          163,
+          712
+        ],
+        "facing": "front",
+        "contact": "standing",
+        "head": [
+          87,
+          4,
+          185,
+          138
+        ],
+        "reviewed": true,
+        "posture": "standing",
+        "redesign": "five_town_hyena_v2",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/21/spec",
+      "expected": {
+        "file": "assets/map-action27/MK-1--resident_solbang.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          99.84,
+          12.288,
+          275.456,
+          195.072
+        ],
+        "foot": [
+          273.92,
+          754.944
+        ],
+        "anchors": {
+          "foot": [
+            273.92,
+            754.944
+          ],
+          "foot_left": [
+            161.792,
+            758.016
+          ],
+          "foot_right": [
+            380.928,
+            752.64
+          ],
+          "hand_left": [
+            273.92,
+            344.064
+          ],
+          "hand_right": [
+            343.04,
+            342.528
+          ],
+          "prop_support": [
+            309.76,
+            318.71999999999997
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              215.0,
+              250.0
+            ],
+            [
+              400.0,
+              250.0
+            ],
+            [
+              400.0,
+              367.5
+            ],
+            [
+              215.0,
+              367.5
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1.0,
+        "source_sha256": "9d53aa4ae52277a913ab8d03d6d7276e6b6e5282621595e1b7ed754da7537a53",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "value": {
+        "file": "assets/map-action27/MK-1--resident_solbang.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          99.84,
+          12.288,
+          275.456,
+          195.072
+        ],
+        "foot": [
+          273.92,
+          754.944
+        ],
+        "anchors": {
+          "foot": [
+            273.92,
+            754.944
+          ],
+          "foot_left": [
+            161.792,
+            758.016
+          ],
+          "foot_right": [
+            380.928,
+            752.64
+          ],
+          "hand_left": [
+            273.92,
+            344.064
+          ],
+          "hand_right": [
+            343.04,
+            342.528
+          ],
+          "prop_support": [
+            309.76,
+            318.71999999999997
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              215.0,
+              250.0
+            ],
+            [
+              400.0,
+              250.0
+            ],
+            [
+              400.0,
+              367.5
+            ],
+            [
+              215.0,
+              367.5
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1.0,
+        "source_sha256": "9d53aa4ae52277a913ab8d03d6d7276e6b6e5282621595e1b7ed754da7537a53",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_solbang/neutral",
+      "expected": {
+        "file": "assets/solbang-chinchilla-map/neutral.webp",
+        "crop": [
+          0,
+          0,
+          280,
+          420
+        ],
+        "foot": [
+          140.0,
+          418
+        ],
+        "head": [
+          47,
+          0,
+          161,
+          148
+        ],
+        "nearest": true,
+        "contact": "standing",
+        "reviewed": true,
+        "source_sha256": "5eaacbe578e3d52bd92485b9901a91d1572120672ad247caae92151835070bfd",
+        "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+      },
+      "value": {
+        "file": "assets/solbang-chinchilla-map/neutral.webp",
+        "crop": [
+          0,
+          0,
+          280,
+          420
+        ],
+        "foot": [
+          140.0,
+          418
+        ],
+        "head": [
+          47,
+          0,
+          161,
+          148
+        ],
+        "nearest": true,
+        "contact": "standing",
+        "reviewed": true,
+        "source_sha256": "5eaacbe578e3d52bd92485b9901a91d1572120672ad247caae92151835070bfd",
+        "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_solbang/work_herb_bundle",
+      "expected": {
+        "file": "assets/solbang-chinchilla-map/work_herb_bundle.webp",
+        "crop": [
+          0,
+          0,
+          284,
+          420
+        ],
+        "foot": [
+          142.0,
+          418
+        ],
+        "head": [
+          54,
+          0,
+          157,
+          161
+        ],
+        "nearest": true,
+        "contact": "standing",
+        "reviewed": true,
+        "source_sha256": "af49950e13b86e9bd70c67bd325055f3aa6d6ee646b7b4a9b774d23ae06461eb",
+        "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+      },
+      "value": {
+        "file": "assets/solbang-chinchilla-map/work_herb_bundle.webp",
+        "crop": [
+          0,
+          0,
+          284,
+          420
+        ],
+        "foot": [
+          142.0,
+          418
+        ],
+        "head": [
+          54,
+          0,
+          157,
+          161
+        ],
+        "nearest": true,
+        "contact": "standing",
+        "reviewed": true,
+        "source_sha256": "af49950e13b86e9bd70c67bd325055f3aa6d6ee646b7b4a9b774d23ae06461eb",
+        "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/31/spec",
+      "expected": {
+        "file": "assets/map-action27/SC-1--resident_teacher.webp",
+        "crop": [
+          0,
+          0,
+          482,
+          768
+        ],
+        "head": [
+          144.29999999999998,
+          15.36,
+          298.21999999999997,
+          222.72
+        ],
+        "foot": [
+          283.79,
+          760.32
+        ],
+        "anchors": {
+          "foot": [
+            283.79,
+            760.32
+          ],
+          "hand_left": [
+            365.56000000000006,
+            314.88
+          ],
+          "hand_right": [
+            57.72,
+            199.68
+          ],
+          "book_grip": [
+            379.99,
+            314.88
+          ],
+          "point_tip": [
+            19.24,
+            161.28
+          ],
+          "cane_ground": [
+            452.14,
+            752.64
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              319.6978851963746,
+              232.72727272727275
+            ],
+            [
+              431.1077542799597,
+              232.72727272727275
+            ],
+            [
+              431.1077542799597,
+              412.1212121212121
+            ],
+            [
+              319.6978851963746,
+              412.1212121212121
+            ]
+          ]
+        ],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "952bd774cab26ac1b3717129856d8ad93a93d83de3db3e3449622c3dd928737d",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "value": {
+        "file": "assets/map-action27/SC-1--resident_teacher.webp",
+        "crop": [
+          0,
+          0,
+          482,
+          768
+        ],
+        "head": [
+          144.29999999999998,
+          15.36,
+          298.21999999999997,
+          222.72
+        ],
+        "foot": [
+          283.79,
+          760.32
+        ],
+        "anchors": {
+          "foot": [
+            283.79,
+            760.32
+          ],
+          "hand_left": [
+            365.56000000000006,
+            314.88
+          ],
+          "hand_right": [
+            57.72,
+            199.68
+          ],
+          "book_grip": [
+            379.99,
+            314.88
+          ],
+          "point_tip": [
+            19.24,
+            161.28
+          ],
+          "cane_ground": [
+            452.14,
+            752.64
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              319.6978851963746,
+              232.72727272727275
+            ],
+            [
+              431.1077542799597,
+              232.72727272727275
+            ],
+            [
+              431.1077542799597,
+              412.1212121212121
+            ],
+            [
+              319.6978851963746,
+              412.1212121212121
+            ]
+          ]
+        ],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "952bd774cab26ac1b3717129856d8ad93a93d83de3db3e3449622c3dd928737d",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/41/spec",
+      "expected": {
+        "file": "assets/map-action27/DI-1a--resident_tok.webp",
+        "crop": [
+          0,
+          0,
+          742,
+          768
+        ],
+        "head": [
+          237.44,
+          7.680000000000001,
+          289.38,
+          253.44000000000003
+        ],
+        "foot": [
+          430.35999999999996,
+          752.6400000000001
+        ],
+        "anchors": {
+          "foot": [
+            430.35999999999996,
+            752.6400000000001
+          ],
+          "seat": [
+            274.53999999999996,
+            576.0
+          ],
+          "chair_ground": [
+            230.02,
+            752.6400000000001
+          ],
+          "bowl_bottom": [
+            489.72,
+            391.68
+          ],
+          "hand_left": [
+            422.93999999999994,
+            368.64000000000004
+          ],
+          "hand_right": [
+            586.18,
+            291.84000000000003
+          ],
+          "spoon_tip": [
+            511.97999999999996,
+            276.47999999999996
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              336.99918896999185,
+              252.78996865203763
+            ],
+            [
+              607.802108678021,
+              252.78996865203763
+            ],
+            [
+              607.802108678021,
+              409.2789968652038
+            ],
+            [
+              336.99918896999185,
+              409.2789968652038
+            ]
+          ]
+        ],
+        "contact": "seated",
+        "stature_ratio": 0.72,
+        "source_sha256": "6ba35b9434286ee2136854e6590e70149b149fbb0e7cc53923f9b30de1696ce1",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "value": {
+        "file": "assets/map-action27/DI-1a--resident_tok.webp",
+        "crop": [
+          0,
+          0,
+          742,
+          768
+        ],
+        "head": [
+          237.44,
+          7.680000000000001,
+          289.38,
+          253.44000000000003
+        ],
+        "foot": [
+          430.35999999999996,
+          752.6400000000001
+        ],
+        "anchors": {
+          "foot": [
+            430.35999999999996,
+            752.6400000000001
+          ],
+          "seat": [
+            274.53999999999996,
+            576.0
+          ],
+          "chair_ground": [
+            230.02,
+            752.6400000000001
+          ],
+          "bowl_bottom": [
+            489.72,
+            391.68
+          ],
+          "hand_left": [
+            422.93999999999994,
+            368.64000000000004
+          ],
+          "hand_right": [
+            586.18,
+            291.84000000000003
+          ],
+          "spoon_tip": [
+            511.97999999999996,
+            276.47999999999996
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              336.99918896999185,
+              252.78996865203763
+            ],
+            [
+              607.802108678021,
+              252.78996865203763
+            ],
+            [
+              607.802108678021,
+              409.2789968652038
+            ],
+            [
+              336.99918896999185,
+              409.2789968652038
+            ]
+          ]
+        ],
+        "contact": "seated",
+        "stature_ratio": 0.72,
+        "source_sha256": "6ba35b9434286ee2136854e6590e70149b149fbb0e7cc53923f9b30de1696ce1",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/15/spec",
+      "expected": {
+        "file": "assets/map-action27/WS-1--resident_tok.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          138.24,
+          15.36,
+          261.12,
+          238.07999999999998
+        ],
+        "foot": [
+          266.24,
+          754.1759999999999
+        ],
+        "anchors": {
+          "foot": [
+            266.24,
+            754.1759999999999
+          ],
+          "hand_right": [
+            102.4,
+            276.48
+          ],
+          "hand_left": [
+            281.6,
+            391.68
+          ],
+          "driver_screw": [
+            199.68,
+            330.24
+          ],
+          "work_support": [
+            220.16,
+            437.76
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              75.0,
+              245.0
+            ],
+            [
+              325.0,
+              245.0
+            ],
+            [
+              325.0,
+              457.5
+            ],
+            [
+              175.0,
+              457.5
+            ],
+            [
+              175.0,
+              340.0
+            ],
+            [
+              75.0,
+              340.0
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_sha256": "a7643c1f56f32a599e7e77da2d64d8cf0520ff5d9779766ec33d384aa866edb0",
+        "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376"
+      },
+      "value": {
+        "file": "assets/map-action27/WS-1--resident_tok.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          138.24,
+          15.36,
+          261.12,
+          238.07999999999998
+        ],
+        "foot": [
+          266.24,
+          754.1759999999999
+        ],
+        "anchors": {
+          "foot": [
+            266.24,
+            754.1759999999999
+          ],
+          "hand_right": [
+            102.4,
+            276.48
+          ],
+          "hand_left": [
+            281.6,
+            391.68
+          ],
+          "driver_screw": [
+            199.68,
+            330.24
+          ],
+          "work_support": [
+            220.16,
+            437.76
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              75.0,
+              245.0
+            ],
+            [
+              325.0,
+              245.0
+            ],
+            [
+              325.0,
+              457.5
+            ],
+            [
+              175.0,
+              457.5
+            ],
+            [
+              175.0,
+              340.0
+            ],
+            [
+              75.0,
+              340.0
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_sha256": "a7643c1f56f32a599e7e77da2d64d8cf0520ff5d9779766ec33d384aa866edb0",
+        "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_tok/neutral",
+      "expected": {
+        "file": "assets/room13-pixel-acting-resident_tok.webp",
+        "crop": [
+          105,
+          21,
+          344,
+          474
+        ],
+        "nearest": true,
+        "foot": [
+          172,
+          470
+        ],
+        "facing": "left",
+        "contact": "standing",
+        "head": [
+          1,
+          0,
+          343,
+          204
+        ],
+        "reviewed": true,
+        "posture": "standing"
+      },
+      "value": {
+        "file": "assets/room13-pixel-acting-resident_tok.webp",
+        "crop": [
+          105,
+          21,
+          344,
+          474
+        ],
+        "nearest": true,
+        "foot": [
+          172,
+          470
+        ],
+        "facing": "left",
+        "contact": "standing",
+        "head": [
+          1,
+          0,
+          343,
+          204
+        ],
+        "reviewed": true,
+        "posture": "standing",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_ttadak/living_repair",
+      "expected": {
+        "file": "assets/room13-pixel-acting-ttadak.webp",
+        "crop": [
+          550,
+          535,
+          417,
+          441
+        ],
+        "nearest": true,
+        "anchor": {
+          "foot": [
+            208,
+            437
+          ]
+        },
+        "action_ko": "나무 조각을 대고 보수할 곳을 살핀다.",
+        "contact": "self-contained",
+        "head": [
+          100,
+          0,
+          317,
+          190
+        ],
+        "facing": "right-profile"
+      },
+      "value": {
+        "file": "assets/room13-pixel-acting-ttadak.webp",
+        "crop": [
+          550,
+          535,
+          417,
+          441
+        ],
+        "nearest": true,
+        "anchor": {
+          "foot": [
+            208,
+            437
+          ]
+        },
+        "action_ko": "나무 조각을 대고 보수할 곳을 살핀다.",
+        "contact": "self-contained",
+        "head": [
+          100,
+          0,
+          317,
+          190
+        ],
+        "facing": "right-profile",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/17/spec",
+      "expected": {
+        "file": "assets/map-action27/MK-5--resident_yeoni.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          211.5,
+          6.0,
+          191.5,
+          200.5
+        ],
+        "foot": [
+          280.5,
+          752.5
+        ],
+        "anchors": {
+          "foot_left": [
+            201.0,
+            752.5
+          ],
+          "foot_right": [
+            359.5,
+            751.5
+          ],
+          "foot": [
+            280.5,
+            752.5
+          ],
+          "hand_needle": [
+            335.5,
+            240.5
+          ],
+          "hand_glove": [
+            405.5,
+            266.0
+          ],
+          "needle_tip": [
+            370.5,
+            257.0
+          ],
+          "thread_glove": [
+            374.5,
+            258.0
+          ],
+          "glove_bottom": [
+            390.0,
+            337.5
+          ],
+          "work": [
+            374.5,
+            258.0
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              330.0,
+              215.0
+            ],
+            [
+              452.5,
+              215.0
+            ],
+            [
+              452.5,
+              355.0
+            ],
+            [
+              330.0,
+              355.0
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_sha256": "4327c21304aa6bc97b69d9d8d0c17fcb94b0fba54436adf7e51f89e2ef8dcfd9",
+        "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376"
+      },
+      "value": {
+        "file": "assets/map-action27/MK-5--resident_yeoni.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          211.5,
+          6.0,
+          191.5,
+          200.5
+        ],
+        "foot": [
+          280.5,
+          752.5
+        ],
+        "anchors": {
+          "foot_left": [
+            201.0,
+            752.5
+          ],
+          "foot_right": [
+            359.5,
+            751.5
+          ],
+          "foot": [
+            280.5,
+            752.5
+          ],
+          "hand_needle": [
+            335.5,
+            240.5
+          ],
+          "hand_glove": [
+            405.5,
+            266.0
+          ],
+          "needle_tip": [
+            370.5,
+            257.0
+          ],
+          "thread_glove": [
+            374.5,
+            258.0
+          ],
+          "glove_bottom": [
+            390.0,
+            337.5
+          ],
+          "work": [
+            374.5,
+            258.0
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              330.0,
+              215.0
+            ],
+            [
+              452.5,
+              215.0
+            ],
+            [
+              452.5,
+              355.0
+            ],
+            [
+              330.0,
+              355.0
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_sha256": "4327c21304aa6bc97b69d9d8d0c17fcb94b0fba54436adf7e51f89e2ef8dcfd9",
+        "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_yeoni/neutral",
+      "expected": {
+        "file": "assets/room13-redesign-resident_yeoni.webp",
+        "crop": [
+          18,
+          1,
+          449,
+          756
+        ],
+        "nearest": true,
+        "foot": [
+          259,
+          752
+        ],
+        "facing": "front",
+        "contact": "standing",
+        "head": [
+          217,
+          5,
+          220,
+          175
+        ],
+        "reviewed": true,
+        "posture": "standing",
+        "redesign": "candidate_fox_town"
+      },
+      "value": {
+        "file": "assets/room13-redesign-resident_yeoni.webp",
+        "crop": [
+          18,
+          1,
+          449,
+          756
+        ],
+        "nearest": true,
+        "foot": [
+          259,
+          752
+        ],
+        "facing": "front",
+        "contact": "standing",
+        "head": [
+          217,
+          5,
+          220,
+          175
+        ],
+        "reviewed": true,
+        "posture": "standing",
+        "redesign": "candidate_fox_town",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/14/spec",
+      "expected": {
+        "file": "assets/map-action27/MK-3--resident_guseul.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          189.44,
+          7.68,
+          225.28,
+          253.44
+        ],
+        "foot": [
+          291.84,
+          761.856
+        ],
+        "anchors": {
+          "foot": [
+            291.84,
+            761.856
+          ],
+          "hand_right": [
+            158.72,
+            284.15999999999997
+          ],
+          "hand_left": [
+            286.72,
+            414.72
+          ],
+          "cheese_pan": [
+            194.56,
+            307.20000000000005
+          ],
+          "work_support": [
+            220.16,
+            414.72
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              115.0,
+              240.0
+            ],
+            [
+              315.0,
+              240.0
+            ],
+            [
+              315.0,
+              430.0
+            ],
+            [
+              115.0,
+              430.0
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_sha256": "0f6d8005e5b3770ed7cf9fab7ad82f3cbb57187572f305ab6e2a3a5a72b405d0",
+        "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376"
+      },
+      "value": {
+        "file": "assets/map-action27/MK-3--resident_guseul.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          189.44,
+          7.68,
+          225.28,
+          253.44
+        ],
+        "foot": [
+          291.84,
+          761.856
+        ],
+        "anchors": {
+          "foot": [
+            291.84,
+            761.856
+          ],
+          "hand_right": [
+            158.72,
+            284.15999999999997
+          ],
+          "hand_left": [
+            286.72,
+            414.72
+          ],
+          "cheese_pan": [
+            194.56,
+            307.20000000000005
+          ],
+          "work_support": [
+            220.16,
+            414.72
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              115.0,
+              240.0
+            ],
+            [
+              315.0,
+              240.0
+            ],
+            [
+              315.0,
+              430.0
+            ],
+            [
+              115.0,
+              430.0
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_sha256": "0f6d8005e5b3770ed7cf9fab7ad82f3cbb57187572f305ab6e2a3a5a72b405d0",
+        "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/28/spec",
+      "expected": {
+        "file": "assets/map-action27/MK-8--resident_hyeoni.webp",
+        "crop": [
+          0,
+          0,
+          496,
+          768
+        ],
+        "head": [
+          128.95999999999998,
+          0.0,
+          297.59999999999997,
+          215.04000000000005
+        ],
+        "foot": [
+          252.96,
+          760.32
+        ],
+        "anchors": {
+          "foot": [
+            252.96,
+            760.32
+          ],
+          "hand_left": [
+            426.56,
+            307.20000000000005
+          ],
+          "hand_right": [
+            243.04,
+            376.32
+          ],
+          "lute_strings": [
+            282.71999999999997,
+            368.64
+          ],
+          "raised_foot": [
+            416.63999999999993,
+            744.96
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "dd72dfe60cd9d5993c0aadc64dab2743a97f044e0725d481a8c43dbd685af6e0",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "value": {
+        "file": "assets/map-action27/MK-8--resident_hyeoni.webp",
+        "crop": [
+          0,
+          0,
+          496,
+          768
+        ],
+        "head": [
+          128.95999999999998,
+          0.0,
+          297.59999999999997,
+          215.04000000000005
+        ],
+        "foot": [
+          252.96,
+          760.32
+        ],
+        "anchors": {
+          "foot": [
+            252.96,
+            760.32
+          ],
+          "hand_left": [
+            426.56,
+            307.20000000000005
+          ],
+          "hand_right": [
+            243.04,
+            376.32
+          ],
+          "lute_strings": [
+            282.71999999999997,
+            368.64
+          ],
+          "raised_foot": [
+            416.63999999999993,
+            744.96
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "dd72dfe60cd9d5993c0aadc64dab2743a97f044e0725d481a8c43dbd685af6e0",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/29/spec",
+      "expected": {
+        "file": "assets/map-action27/MK-8--resident_hyeoni.webp",
+        "crop": [
+          0,
+          0,
+          496,
+          768
+        ],
+        "head": [
+          128.95999999999998,
+          0.0,
+          297.59999999999997,
+          215.04000000000005
+        ],
+        "foot": [
+          252.96,
+          760.32
+        ],
+        "anchors": {
+          "foot": [
+            252.96,
+            760.32
+          ],
+          "hand_left": [
+            426.56,
+            307.20000000000005
+          ],
+          "hand_right": [
+            243.04,
+            376.32
+          ],
+          "lute_strings": [
+            282.71999999999997,
+            368.64
+          ],
+          "raised_foot": [
+            416.63999999999993,
+            744.96
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "dd72dfe60cd9d5993c0aadc64dab2743a97f044e0725d481a8c43dbd685af6e0",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "value": {
+        "file": "assets/map-action27/MK-8--resident_hyeoni.webp",
+        "crop": [
+          0,
+          0,
+          496,
+          768
+        ],
+        "head": [
+          128.95999999999998,
+          0.0,
+          297.59999999999997,
+          215.04000000000005
+        ],
+        "foot": [
+          252.96,
+          760.32
+        ],
+        "anchors": {
+          "foot": [
+            252.96,
+            760.32
+          ],
+          "hand_left": [
+            426.56,
+            307.20000000000005
+          ],
+          "hand_right": [
+            243.04,
+            376.32
+          ],
+          "lute_strings": [
+            282.71999999999997,
+            368.64
+          ],
+          "raised_foot": [
+            416.63999999999993,
+            744.96
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "dd72dfe60cd9d5993c0aadc64dab2743a97f044e0725d481a8c43dbd685af6e0",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/30/spec",
+      "expected": {
+        "file": "assets/map-action27/MK-8--resident_hyeoni.webp",
+        "crop": [
+          0,
+          0,
+          496,
+          768
+        ],
+        "head": [
+          128.95999999999998,
+          0.0,
+          297.59999999999997,
+          215.04000000000005
+        ],
+        "foot": [
+          252.96,
+          760.32
+        ],
+        "anchors": {
+          "foot": [
+            252.96,
+            760.32
+          ],
+          "hand_left": [
+            426.56,
+            307.20000000000005
+          ],
+          "hand_right": [
+            243.04,
+            376.32
+          ],
+          "lute_strings": [
+            282.71999999999997,
+            368.64
+          ],
+          "raised_foot": [
+            416.63999999999993,
+            744.96
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "dd72dfe60cd9d5993c0aadc64dab2743a97f044e0725d481a8c43dbd685af6e0",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "value": {
+        "file": "assets/map-action27/MK-8--resident_hyeoni.webp",
+        "crop": [
+          0,
+          0,
+          496,
+          768
+        ],
+        "head": [
+          128.95999999999998,
+          0.0,
+          297.59999999999997,
+          215.04000000000005
+        ],
+        "foot": [
+          252.96,
+          760.32
+        ],
+        "anchors": {
+          "foot": [
+            252.96,
+            760.32
+          ],
+          "hand_left": [
+            426.56,
+            307.20000000000005
+          ],
+          "hand_right": [
+            243.04,
+            376.32
+          ],
+          "lute_strings": [
+            282.71999999999997,
+            368.64
+          ],
+          "raised_foot": [
+            416.63999999999993,
+            744.96
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "standing",
+        "stature_ratio": 1.0,
+        "source_sha256": "dd72dfe60cd9d5993c0aadc64dab2743a97f044e0725d481a8c43dbd685af6e0",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_kongi/activity",
+      "expected": {
+        "file": "assets/room13-pixel-acting-resident_kongi.webp",
+        "crop": [
+          570,
+          594,
+          407,
+          377
+        ],
+        "nearest": true,
+        "foot": [
+          203,
+          373
+        ],
+        "facing": "right",
+        "contact": "standing",
+        "head": [
+          13,
+          0,
+          369,
+          226
+        ],
+        "reviewed": true,
+        "posture": "crouching"
+      },
+      "value": {
+        "file": "assets/room13-pixel-acting-resident_kongi.webp",
+        "crop": [
+          570,
+          594,
+          407,
+          377
+        ],
+        "nearest": true,
+        "foot": [
+          203,
+          373
+        ],
+        "facing": "right",
+        "contact": "standing",
+        "head": [
+          13,
+          0,
+          369,
+          226
+        ],
+        "reviewed": true,
+        "posture": "crouching",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_kongi/neutral",
+      "expected": {
+        "file": "assets/room13-pixel-acting-resident_kongi.webp",
+        "crop": [
+          84,
+          38,
+          327,
+          475
+        ],
+        "nearest": true,
+        "foot": [
+          163,
+          471
+        ],
+        "facing": "left",
+        "contact": "standing",
+        "head": [
+          57,
+          0,
+          261,
+          204
+        ],
+        "reviewed": true,
+        "posture": "standing"
+      },
+      "value": {
+        "file": "assets/room13-pixel-acting-resident_kongi.webp",
+        "crop": [
+          84,
+          38,
+          327,
+          475
+        ],
+        "nearest": true,
+        "foot": [
+          163,
+          471
+        ],
+        "facing": "left",
+        "contact": "standing",
+        "head": [
+          57,
+          0,
+          261,
+          204
+        ],
+        "reviewed": true,
+        "posture": "standing",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-map-action27.json",
+      "pointer": "/rows/40/spec",
+      "expected": {
+        "file": "assets/map-action27/RI-2--resident_mulgyeol.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          160.5,
+          54.0,
+          185.5,
+          151.0
+        ],
+        "foot": [
+          256.0,
+          755.0
+        ],
+        "anchors": {
+          "head_center": [
+            255.5,
+            133.0
+          ],
+          "foot_left": [
+            181.0,
+            755.0
+          ],
+          "foot_right": [
+            331.0,
+            748.5
+          ],
+          "foot": [
+            256.0,
+            755.0
+          ],
+          "hand_pole_upper": [
+            372.5,
+            274.0
+          ],
+          "hand_pole_lower": [
+            370.5,
+            380.5
+          ],
+          "pole_top": [
+            358.5,
+            7.0
+          ],
+          "pole_bottom": [
+            399.0,
+            752.5
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "pole_ground",
+        "stature_ratio": 1.0,
+        "source_sha256": "54fea88c5c31d6ee97ddfc24544241b6e426a0a0fb3b3ed87cb5caaea1980eba",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+      },
+      "value": {
+        "file": "assets/map-action27/RI-2--resident_mulgyeol.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          160.5,
+          54.0,
+          185.5,
+          151.0
+        ],
+        "foot": [
+          256.0,
+          755.0
+        ],
+        "anchors": {
+          "head_center": [
+            255.5,
+            133.0
+          ],
+          "foot_left": [
+            181.0,
+            755.0
+          ],
+          "foot_right": [
+            331.0,
+            748.5
+          ],
+          "foot": [
+            256.0,
+            755.0
+          ],
+          "hand_pole_upper": [
+            372.5,
+            274.0
+          ],
+          "hand_pole_lower": [
+            370.5,
+            380.5
+          ],
+          "pole_top": [
+            358.5,
+            7.0
+          ],
+          "pole_bottom": [
+            399.0,
+            752.5
+          ]
+        },
+        "foreground_parts": [],
+        "contact": "pole_ground",
+        "stature_ratio": 1.0,
+        "source_sha256": "54fea88c5c31d6ee97ddfc24544241b6e426a0a0fb3b3ed87cb5caaea1980eba",
+        "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_mulgyeol/neutral",
+      "expected": {
+        "file": "assets/room13-role-resident_mulgyeol.webp",
+        "crop": [
+          88,
+          0,
+          424,
+          761
+        ],
+        "nearest": true,
+        "foot": [
+          173,
+          759
+        ],
+        "facing": "front",
+        "contact": "standing",
+        "head": [
+          40,
+          1,
+          240,
+          212
+        ],
+        "reviewed": true,
+        "posture": "standing",
+        "role_connect": "lizard-base"
+      },
+      "value": {
+        "file": "assets/room13-role-resident_mulgyeol.webp",
+        "crop": [
+          88,
+          0,
+          424,
+          761
+        ],
+        "nearest": true,
+        "foot": [
+          173,
+          759
+        ],
+        "facing": "front",
+        "contact": "standing",
+        "head": [
+          40,
+          1,
+          240,
+          212
+        ],
+        "reviewed": true,
+        "posture": "standing",
+        "role_connect": "lizard-base",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_nero/activity",
+      "expected": {
+        "file": "assets/room13-pixel-acting-resident_nero.webp",
+        "crop": [
+          564,
+          526,
+          449,
+          463
+        ],
+        "nearest": true,
+        "foot": [
+          224,
+          459
+        ],
+        "facing": "right",
+        "contact": "standing",
+        "head": [
+          93,
+          0,
+          284,
+          278
+        ],
+        "reviewed": true,
+        "posture": "crouching"
+      },
+      "value": {
+        "file": "assets/room13-pixel-acting-resident_nero.webp",
+        "crop": [
+          564,
+          526,
+          449,
+          463
+        ],
+        "nearest": true,
+        "foot": [
+          224,
+          459
+        ],
+        "facing": "right",
+        "contact": "standing",
+        "head": [
+          93,
+          0,
+          284,
+          278
+        ],
+        "reviewed": true,
+        "posture": "crouching",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_ppul/activity",
+      "expected": {
+        "file": "assets/room13-pixel-acting-resident_ppul.webp",
+        "crop": [
+          574,
+          534,
+          503,
+          446
+        ],
+        "nearest": true,
+        "foot": [
+          251,
+          442
+        ],
+        "facing": "right",
+        "contact": "standing",
+        "head": [
+          5,
+          0,
+          498,
+          268
+        ],
+        "reviewed": true,
+        "posture": "standing"
+      },
+      "value": {
+        "file": "assets/room13-pixel-acting-resident_ppul.webp",
+        "crop": [
+          574,
+          534,
+          503,
+          446
+        ],
+        "nearest": true,
+        "foot": [
+          251,
+          442
+        ],
+        "facing": "right",
+        "contact": "standing",
+        "head": [
+          5,
+          0,
+          498,
+          268
+        ],
+        "reviewed": true,
+        "posture": "standing",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_ppul/neutral",
+      "expected": {
+        "file": "assets/room13-pixel-acting-resident_ppul.webp",
+        "crop": [
+          89,
+          10,
+          333,
+          489
+        ],
+        "nearest": true,
+        "foot": [
+          166,
+          485
+        ],
+        "facing": "right",
+        "contact": "standing",
+        "head": [
+          52,
+          0,
+          273,
+          210
+        ],
+        "reviewed": true,
+        "posture": "standing"
+      },
+      "value": {
+        "file": "assets/room13-pixel-acting-resident_ppul.webp",
+        "crop": [
+          89,
+          10,
+          333,
+          489
+        ],
+        "nearest": true,
+        "foot": [
+          166,
+          485
+        ],
+        "facing": "right",
+        "contact": "standing",
+        "head": [
+          52,
+          0,
+          273,
+          210
+        ],
+        "reviewed": true,
+        "posture": "standing",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-seori-review-art.json",
+      "pointer": "/spec",
+      "expected": {
+        "file": "assets/map-action27/seori-threequarter-review.webp",
+        "crop": [
+          0,
+          0,
+          526,
+          768
+        ],
+        "foot": [
+          319.45515911282547,
+          754.3218997361478
+        ],
+        "anchors": {
+          "eyes_left": [
+            215.16393442622953,
+            170.72295514511876
+          ],
+          "eyes_right": [
+            265.79074252651884,
+            170.72295514511876
+          ],
+          "gaze_target": [
+            170.61234329797495,
+            312.5699208443272
+          ],
+          "hand_paper_side": [
+            143.27386692381873,
+            335.87335092348286
+          ],
+          "hand_paper_bottom": [
+            239.4648023143684,
+            347.5250659630607
+          ],
+          "paper_top": [
+            160.48698167791707,
+            275.08179419525067
+          ],
+          "paper_bottom": [
+            188.3317261330762,
+            355.12401055408975
+          ],
+          "foot_left": [
+            228.83317261330762,
+            735.5778364116095
+          ],
+          "foot_right": [
+            410.0771456123433,
+            754.3218997361478
+          ],
+          "foot": [
+            319.45515911282547,
+            754.3218997361478
+          ]
+        },
+        "head": [
+          141.24879459980716,
+          12.158311345646439,
+          272.87849566055934,
+          253.80474934036943
+        ],
+        "contact": "self-contained",
+        "facing": "front-left-threequarter",
+        "nearest": true,
+        "source_sha256": "761b7930193aecdce0ab86fb8788ebf6e900171d229678b7d5fee8d1fcc11155",
+        "source_commit": "12479638c1964c20325192a4514254329c9bd4fb"
+      },
+      "value": {
+        "file": "assets/map-action27/seori-threequarter-review.webp",
+        "crop": [
+          0,
+          0,
+          526,
+          768
+        ],
+        "foot": [
+          319.45515911282547,
+          754.3218997361478
+        ],
+        "anchors": {
+          "eyes_left": [
+            215.16393442622953,
+            170.72295514511876
+          ],
+          "eyes_right": [
+            265.79074252651884,
+            170.72295514511876
+          ],
+          "gaze_target": [
+            170.61234329797495,
+            312.5699208443272
+          ],
+          "hand_paper_side": [
+            143.27386692381873,
+            335.87335092348286
+          ],
+          "hand_paper_bottom": [
+            239.4648023143684,
+            347.5250659630607
+          ],
+          "paper_top": [
+            160.48698167791707,
+            275.08179419525067
+          ],
+          "paper_bottom": [
+            188.3317261330762,
+            355.12401055408975
+          ],
+          "foot_left": [
+            228.83317261330762,
+            735.5778364116095
+          ],
+          "foot_right": [
+            410.0771456123433,
+            754.3218997361478
+          ],
+          "foot": [
+            319.45515911282547,
+            754.3218997361478
+          ]
+        },
+        "head": [
+          141.24879459980716,
+          12.158311345646439,
+          272.87849566055934,
+          253.80474934036943
+        ],
+        "contact": "self-contained",
+        "facing": "front-left-threequarter",
+        "nearest": true,
+        "source_sha256": "761b7930193aecdce0ab86fb8788ebf6e900171d229678b7d5fee8d1fcc11155",
+        "source_commit": "12479638c1964c20325192a4514254329c9bd4fb",
+        "native_detail": true
+      }
+    },
+    {
+      "file": "assets/room13-pixel-acting.json",
+      "pointer": "/resident_seori/living_notes",
+      "expected": {
+        "file": "assets/room13-pixel-acting-seori.webp",
+        "crop": [
+          637,
+          523,
+          328,
+          478
+        ],
+        "nearest": true,
+        "anchor": {
+          "foot": [
+            164,
+            474
+          ]
+        },
+        "action_ko": "메모 옆에 확인한 사람 이름을 적는다.",
+        "contact": "self-contained",
+        "head": [
+          0,
+          0,
+          328,
+          196
+        ],
+        "facing": "right-profile"
+      },
+      "value": {
+        "file": "assets/room13-pixel-acting-seori.webp",
+        "crop": [
+          637,
+          523,
+          328,
+          478
+        ],
+        "nearest": true,
+        "anchor": {
+          "foot": [
+            164,
+            474
+          ]
+        },
+        "action_ko": "메모 옆에 확인한 사람 이름을 적는다.",
+        "contact": "self-contained",
+        "head": [
+          0,
+          0,
+          328,
+          196
+        ],
+        "facing": "right-profile",
+        "native_detail": true
+      }
+    }
+  ],
+  "baseline_semantic_sha256": {
+    "assets/room13-pixel-acting.json": "cb5427fee77c43338c958b9f9852da77c81fb7f5f25a085db96595a7cc458b3e",
+    "assets/room13-map-action27.json": "b79080398b0e3698e9fe00073f717d3a1f3aca073d4239b1eae2626907270bbc",
+    "assets/room13-life-groups.json": "a061108ffb6330195f497344bac1d6690e28025b55791baa1f26abc6c4a75a71",
+    "assets/room13-seori-review-art.json": "4eab0bc34b42788730ce8020068eaddeb94360aeaa01899f0f453d969e051fd6"
+  },
+  "expanded_on_commit": "e304590f482fd8fdf206063a656e90016cd35234",
+  "original_six_operations_sha256": "76a2c035cf8c4adc4b7551313ca73c334772b24494902feceb6f29a29a2724cd",
+  "source_export_hashes": {
+    "assets/room13-action-resident_momo-living_lampnumber.webp": "994aeb84f7938d13775ade9b09272442a98fe33582fb94d9393541c16281c77c",
+    "assets/room13-action-granny-living_keyledger.webp": "ef9e7e4c7237e904a3204db0b59b9e9a653c0b2015d15da8da6a1ec15d22eaba",
+    "assets/room13-group-buri-cooperative.webp": "c4137e0ed4310f30fe4c1a91c316a5b6d4587e3a68fd67ab6db938d07df90ff5",
+    "assets/room13-group-resident_tok-cooperative.webp": "19d4c4296103ca07aa20766beb1266c30e73ddf00411489678099b697d7054b5",
+    "assets/map-action27/VA-5--resident_guldol.webp": "db8c192d2517eab146712df24aee4bdcd64102097bb1d7b2e113a5c210f90828",
+    "assets/map-action27/PO-2--resident_librarian.webp": "0ae895da144fab04b84d32f31abde99ee63e263fa0edbf475ca7e7967d015ed0",
+    "assets/map-action27/PO-1--resident_sling.webp": "7e89e07a426849f99ebd643911043322b68905e2b26dc7ef6b6cdc53e93ce22f",
+    "assets/room13-pixel-acting-ubak.webp": "ed094e6436663e3e0ff653a5a1037f6f4595dca2acb6f9b5455a1f74782b2118",
+    "assets/room13-action-buri-action_1.webp": "3e24727a8389511f90138a355f09a30057451d4672112647f1a457690432d457",
+    "assets/room13-action-buri-action_2.webp": "0059775a0b83e812c69f47494e3c63369a4cf08eb409eef0e2255e677709e1bb",
+    "assets/room13-pixel-acting-nabi.webp": "450d5c7c952a0d8563f876571491648c3d60d002d84be1e6189d7370d37bf446",
+    "assets/map-action27/KI-1--nabi.webp": "48adfef70e98d2b41d98b80444b3fa6cd856c1df183714ecac59adfb1e99ffd2",
+    "assets/map-action27/KI-5--nabi.webp": "508e140978d8fe8d2c5efb1a25185b2f625061f382896e7f745f29d7d10b8e84",
+    "assets/map-action27/KI-3--nabi.webp": "c1de147b3819a0f40d5f07df5307a5f154cb7f9640f72af4073e454ddcba134b",
+    "assets/map-action27/KI-2--nabi.webp": "4b7cdeb7996b3426bdd3d6906a886b3020c6c9b15a0d6f3af72fbed516b16977",
+    "assets/map-action27/KI-4--nabi.webp": "c8cd9918cc35d3ede9bc52e85e933248ec29ff54efbd9d2ab49fc8bd00c39c3a",
+    "assets/map-action27/VA-6--resident_badook.webp": "8f52c2ef68d01e1dc91e36811fa7378d2368d531123281a655c0b526e872675d",
+    "assets/map-action27/VA-1--resident_badook.webp": "2f5fdb1b53d9342b5b047ee5712f7cac44c36aad111e5a7949c447b4065d3c95",
+    "assets/map-action27/VA-7--resident_bori.webp": "286f53ae42ae39b8a45205332cf9da81215a1ee1aea2dac909b1ca4be10d7e82",
+    "assets/map-action27/VA-8--resident_bori.webp": "6a710c67ea5ccb799367615c8871736b536c2371448d90c2b3dd4eedb13f6bbf",
+    "assets/map-action27/VA-4--resident_guldol.webp": "4e1460c1bf8f97a8db5fe0a01ba97bc64e55847327a7bb88ecb8646ddfcb9504",
+    "assets/map-action27/RI-1--resident_kkwak.webp": "aa4f38ee1275fbb11e2c80ab1a5239363363f953108629483afeabf8d692f06c",
+    "assets/map-action27/ST-2--resident_siluk.webp": "9784d22437bc408090dcbf5813cf307f2b2387cdbe694d1edcc55149bbc5a45e",
+    "assets/room13-redesign-resident_siluk.webp": "ee38ec8993c6529fe87b5edfa2c0bd39550e9a89c906e502e61345d38b0766a1",
+    "assets/map-action27/MK-1--resident_solbang.webp": "89affa05698ed6270a34a4d0d8584c1bb2d4449a409647dda29de3b7e31fe078",
+    "assets/solbang-chinchilla-map/neutral.webp": "58bb25b9040ac92cc1f0c61752fd8f7a278b92aa67fc0bba2f7e7d81896166ec",
+    "assets/solbang-chinchilla-map/work_herb_bundle.webp": "9274c1fcac2797a5186e4ef03b23c7bbfe4071dc39342ef7f5bced84e0b0bd2f",
+    "assets/map-action27/SC-1--resident_teacher.webp": "98caa05e6ee42bad3497a29b529031ecb493d671599e83620845797830a758ee",
+    "assets/map-action27/DI-1a--resident_tok.webp": "d480e3cee51006110b915b138521f0a233082d9e6de192a3defce61bf5dcae25",
+    "assets/map-action27/WS-1--resident_tok.webp": "c16c27bc7a46337ded14a01aef87d2b6d63ae3361babd9c5beda05ad10ab1ef3",
+    "assets/room13-pixel-acting-resident_tok.webp": "ff1a8309aaa76fd03350a4c28114a08554d91672bee229fa6e4efce7610a1837",
+    "assets/room13-pixel-acting-ttadak.webp": "2fe4dc67296f32f9c818d0b5f7b8bebe169d8a10dab7ef617abf0dc26e45eb55",
+    "assets/map-action27/MK-5--resident_yeoni.webp": "afc738c3f017da64b2cd37bffed4c4340a4d38cc3ef6b37f4045cf16aa3b4444",
+    "assets/room13-redesign-resident_yeoni.webp": "a1f6054d272c14d38622dfcb0ca5ed755670ec00cd0d3d45f2abff936585a6df",
+    "assets/map-action27/MK-3--resident_guseul.webp": "13047583cb4660c21bc716d65edd8470682cc5ef4b90b24785762d6e407ea0e2",
+    "assets/map-action27/MK-8--resident_hyeoni.webp": "a384e00602098577d7b6bb29d4eddde2f3568905084773fbb5800e8c1c927624",
+    "assets/room13-pixel-acting-resident_kongi.webp": "5ddde1c6da28b3973760b62bee484e39652ebe802ad592a5f80211ec7291f7f0",
+    "assets/map-action27/RI-2--resident_mulgyeol.webp": "aa113a9599ab1e146235c08fcaaf0ffdbac86ae937af5ee24a1f2641b586de9a",
+    "assets/room13-role-resident_mulgyeol.webp": "81ce223b96128b6bca09ef04261c1b0c7bc91d781cfaf382753c72a6bd57bd3c",
+    "assets/room13-pixel-acting-resident_nero.webp": "432a03f461129d06a31c31a81fd408039b195604daa250e1e059c7821c56d8c8",
+    "assets/room13-pixel-acting-resident_ppul.webp": "01f85c6bf6f8fd8ce61e1bd42ecc9e61cf70d6c413c077c463ff3bf4e32a40c0",
+    "assets/map-action27/seori-threequarter-review.webp": "8d30a2a5c08b234f9ef729edeed28322fa636e315c15229c67267c7fcd3d50e3",
+    "assets/room13-pixel-acting-seori.webp": "3c1e10cebeb7ff3f1a0dfd8c6a9821b58ddf10f98d43dc892ec89f8a333f0c72"
+  },
+  "previous_eight_operations_sha256": "1edd9f68910a9815b874ef59c25f153e78ed88d2ea2a5397dfd0b4966119fc22",
+  "previous34_operations_sha256": "e62d3a3b12556dfc1f7983db10555aae0a13c416d9462f48776b8bcb8af2664e"
+}

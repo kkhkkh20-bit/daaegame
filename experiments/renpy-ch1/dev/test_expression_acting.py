@@ -47,6 +47,10 @@ class ExpressionActing(unittest.TestCase):
             if REG["apply"][person]["kind"] == "hires":
                 src = src[0::2, 0::2]                       # one sample per 2x2 cell
             self.assertEqual(shown.shape, src.shape)
+            if person == "granny":
+                # Owner-approved 2026-10-22 scarf replaces costume pixels; package source stays archived.
+                from test_granny_scarf import approved_path
+                src = rgba(approved_path(GAME / image["file"]))
             visible = src[..., 3] > 0
             self.assertTrue((shown[..., 3] == src[..., 3]).all(), (person, emotion))
             self.assertTrue((shown[visible][:, :3] == src[visible][:, :3]).all(), (person, emotion))
@@ -67,7 +71,11 @@ class ExpressionActing(unittest.TestCase):
                 if spec.get("package_only"):
                     self.assertEqual(image["file"], entry["images"]["neutral"]["file"], (person, e))
                 else:
-                    self.assertEqual(image["file"], BEFORE[person]["images"][e]["file"], (person, e))
+                    expected_file = BEFORE[person]["images"][e]["file"]
+                    if person == "granny" and e in ("joy", "surprise"):
+                        # Owner filled the formerly shared neutral slots with approved scarf expressions.
+                        expected_file = "assets/room13-fullbody-granny-%s-scarf-acting.webp" % e
+                    self.assertEqual(image["file"], expected_file, (person, e))
             maps = {tuple(i["map"]) for i in entry["images"].values() if "map" in i and i.get("cell")}
             if spec["kind"] == "pixel":
                 self.assertEqual(entry["pixel"]["cell"], 2)

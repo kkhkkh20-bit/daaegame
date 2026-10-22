@@ -1,0 +1,6200 @@
+{
+ "version": 1,
+ "source_package": "daram-fullbody-expressions-43-v3",
+ "source_status": "background_alpha_rechecked_runtime_qa_pending",
+ "emotions": [
+  "neutral",
+  "joy",
+  "flustered",
+  "angry",
+  "anxious",
+  "surprise"
+ ],
+ "alpha_visible": 32,
+ "scale_from_source": 0.5,
+ "margin": 4,
+ "repairs": {
+  "guard/joy": {
+   "method": "copy guard/neutral opaque pixels into tail-coat junction hole",
+   "box": [
+    690,
+    925,
+    800,
+    1160
+   ],
+   "pixels": 1488
+  },
+  "guard/anxious": {
+   "method": "copy guard/neutral opaque pixels into tail-coat junction hole",
+   "box": [
+    690,
+    925,
+    800,
+    1160
+   ],
+   "pixels": 10020
+  }
+ },
+ "people": {
+  "bami": {
+   "crop": [
+    31,
+    13,
+    469,
+    732
+   ],
+   "figure": [
+    35,
+    17,
+    461,
+    724
+   ],
+   "images": {
+    "angry": {
+     "file": "assets/room13-fullbody-bami-angry-acting.webp",
+     "size": [
+      226,
+      340
+     ],
+     "crop": [
+      10,
+      8,
+      210,
+      324
+     ],
+     "map": [
+      2.18976,
+      9.0,
+      9.0
+     ],
+     "cell": 2,
+     "source_sha256": "f13692994fda6f4217fc52c001572d02ddc6493fae23b58888c0248ec1b0cbfc",
+     "stage": "acting-v2-approved-direction"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-bami-anxious-acting.webp",
+     "size": [
+      226,
+      340
+     ],
+     "crop": [
+      28,
+      2,
+      170,
+      330
+     ],
+     "map": [
+      2.18976,
+      9.0,
+      9.0
+     ],
+     "cell": 2,
+     "source_sha256": "1ca08d09694247c725d5ee0dc3d943542b36d2a5a9918cb54a41e7cb011a8a1a",
+     "stage": "acting-v4"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-bami-flustered-acting.webp",
+     "size": [
+      226,
+      340
+     ],
+     "crop": [
+      40,
+      4,
+      166,
+      332
+     ],
+     "map": [
+      2.18976,
+      9.0,
+      9.0
+     ],
+     "cell": 2,
+     "source_sha256": "7cdffd304544d84fcbac4b118c2ae805801144f8dd1bc62894eb91937015fb1b",
+     "stage": "acting-v2-approved-direction"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-bami-joy-acting.webp",
+     "size": [
+      226,
+      340
+     ],
+     "crop": [
+      30,
+      8,
+      170,
+      326
+     ],
+     "map": [
+      2.18976,
+      9.0,
+      9.0
+     ],
+     "cell": 2,
+     "source_sha256": "debeb93fc55d229fd5247994d0efff5e5905a4052d98fb63cfd345d81f33b9e2",
+     "stage": "acting-v4"
+    },
+    "neutral": {
+     "file": "assets/room13-fullbody-bami-neutral-acting.webp",
+     "size": [
+      226,
+      340
+     ],
+     "crop": [
+      30,
+      8,
+      166,
+      326
+     ],
+     "map": [
+      2.18976,
+      9.0,
+      9.0
+     ],
+     "cell": 2,
+     "source_sha256": "e46e1ffae9122f8834894daca4561f6ec54ffaf083a21924b043bcb40c3b6724",
+     "stage": "base59"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-bami-surprise-acting.webp",
+     "size": [
+      226,
+      340
+     ],
+     "crop": [
+      22,
+      6,
+      202,
+      326
+     ],
+     "map": [
+      2.18976,
+      9.0,
+      9.0
+     ],
+     "cell": 2,
+     "source_sha256": "2107740d911a5630428137a4691f79568b2805fb7825c9fb8c9ce3625c6801c7",
+     "stage": "acting-v2-approved-direction"
+    },
+    "thinking": {
+     "file": "assets/room13-fullbody-bami-thinking-acting.webp",
+     "size": [
+      226,
+      340
+     ],
+     "crop": [
+      28,
+      4,
+      170,
+      326
+     ],
+     "map": [
+      2.18976,
+      9.0,
+      9.0
+     ],
+     "cell": 2,
+     "source_sha256": "ede821e017ea6249a1767b1b30329ef6b2ef7068aee30bebd66db10850f29586",
+     "stage": "acting-v4"
+    }
+   },
+   "pixel": {
+    "u": 2.18976,
+    "cell": 2
+   },
+   "name_ko": "밤이",
+   "acting_package": "expression-acting-20261016"
+  },
+  "bodum": {
+   "name_ko": "보둠",
+   "crop": [
+    66,
+    14,
+    355,
+    742
+   ],
+   "figure": [
+    71,
+    19,
+    346,
+    732
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-bodum-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "014fccd2657cbc9adb87eab13b33ff4148348b543342473bc50668d9fd0b815d"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-bodum-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "be06433eeaad823e7e98b4f3e9052e4f9086deb984d1a69b7ed49e3d563a7083"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-bodum-flustered.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "f28ba16aaf5c28c76746814be5e7201e4c6be80114bfbfdc50364b0ec330b3f8"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-bodum-angry.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "cc182294904994abf9d9987cb24cfdd1523870ed7180a2306967820cc45d6b44"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-bodum-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "150c0792fe5425ae2dde95ac514da91cb3bd98d2cc5cac110b635ec7da2249a0"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-bodum-surprise.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "ed0a208a0bf31494af688ef0f8a822ed4ef7a661c192bcb76c2fb2aea68fe1ef"
+    }
+   }
+  },
+  "buri": {
+   "name_ko": "부리",
+   "crop": [
+    32,
+    60,
+    230,
+    376
+   ],
+   "figure": [
+    36,
+    64,
+    222,
+    368
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-role-buri-neutral.webp",
+     "size": [
+      294,
+      468
+     ],
+     "crop": [
+      58,
+      62,
+      172,
+      372
+     ],
+     "map": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "cell": 2,
+     "source_sha256": "058f6cd02eb3bcfa575d189b38107db8ab366c6223debdd0e6b7b4f542814fb6"
+    },
+    "joy": {
+     "file": "assets/room13-role-buri-joy.webp",
+     "size": [
+      294,
+      468
+     ],
+     "crop": [
+      50,
+      66,
+      192,
+      368
+     ],
+     "map": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "cell": 2,
+     "source_sha256": "cc3f664a9215f70894fc3e25e88b88bcf32712cb770de210e6524f0c2159d14d"
+    },
+    "flustered": {
+     "file": "assets/room13-role-buri-flustered.webp",
+     "size": [
+      294,
+      468
+     ],
+     "crop": [
+      60,
+      64,
+      174,
+      370
+     ],
+     "map": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "cell": 2,
+     "source_sha256": "0b681cb94bcc04519498168bf484db9e2cd46bab95629a9dd184d5e1ef37ad08"
+    },
+    "angry": {
+     "file": "assets/room13-role-buri-angry.webp",
+     "size": [
+      294,
+      468
+     ],
+     "crop": [
+      34,
+      62,
+      226,
+      372
+     ],
+     "map": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "cell": 2,
+     "source_sha256": "dc80cdb077b41a06050d1f90f221caa0bd6960b88b178661457bc64c6c2e328c"
+    },
+    "anxious": {
+     "file": "assets/room13-role-buri-anxious.webp",
+     "size": [
+      294,
+      468
+     ],
+     "crop": [
+      68,
+      76,
+      156,
+      358
+     ],
+     "map": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "cell": 2,
+     "source_sha256": "701d27e4ec03d2261754a0c4c34f0aaaff28ed4c0da0f29bfb0df02e1394389c"
+    },
+    "surprise": {
+     "file": "assets/room13-role-buri-surprise.webp",
+     "size": [
+      294,
+      468
+     ],
+     "crop": [
+      56,
+      64,
+      182,
+      370
+     ],
+     "map": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "cell": 2,
+     "source_sha256": "3b797428889397cf1a6e488c26bdff22ee8096f5e2c817589f1aad8be0ae6042"
+    }
+   },
+   "pixel": {
+    "u": 1.0,
+    "cell": 2
+   },
+   "role_connect": "buri-v7-boy-approved"
+  },
+  "dad": {
+   "crop": [
+    34,
+    26,
+    416,
+    720
+   ],
+   "figure": [
+    38,
+    30,
+    408,
+    712
+   ],
+   "images": {
+    "angry": {
+     "file": "assets/room13-fullbody-dad-angry-acting.webp",
+     "size": [
+      302,
+      448
+     ],
+     "crop": [
+      12,
+      0,
+      258,
+      448
+     ],
+     "map": [
+      1.60135,
+      16.0,
+      27.0
+     ],
+     "cell": 2,
+     "source_sha256": "046fd971f3679dcab5aaaf82eab7dae19e750db7c032a822bad0855a480c769d",
+     "stage": "base59"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-dad-anxious-acting.webp",
+     "size": [
+      302,
+      448
+     ],
+     "crop": [
+      12,
+      0,
+      258,
+      448
+     ],
+     "map": [
+      1.60135,
+      16.0,
+      27.0
+     ],
+     "cell": 2,
+     "source_sha256": "f0095d7d923c9b5623a20a0130a2202de46658a3b49cbca2d11a8979c7c705b2",
+     "stage": "base59"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-dad-flustered-acting.webp",
+     "size": [
+      302,
+      448
+     ],
+     "crop": [
+      12,
+      0,
+      256,
+      448
+     ],
+     "map": [
+      1.60135,
+      16.0,
+      27.0
+     ],
+     "cell": 2,
+     "source_sha256": "4ca6437f6e890f445736085f500e667c755a9d9422d645a22f523229709ae916",
+     "stage": "base59"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-dad-joy-acting.webp",
+     "size": [
+      302,
+      448
+     ],
+     "crop": [
+      12,
+      0,
+      258,
+      448
+     ],
+     "map": [
+      1.60135,
+      16.0,
+      27.0
+     ],
+     "cell": 2,
+     "source_sha256": "ecbdb16cdbc3b403f693f0557aeb571428f8ab4ea06bdf996d9f76cdb9cb0a79",
+     "stage": "base59"
+    },
+    "neutral": {
+     "file": "assets/room13-fullbody-dad-neutral-acting.webp",
+     "size": [
+      302,
+      448
+     ],
+     "crop": [
+      12,
+      0,
+      258,
+      448
+     ],
+     "map": [
+      1.60135,
+      16.0,
+      27.0
+     ],
+     "cell": 2,
+     "source_sha256": "090fe70afbaa18e4a905d063d1de4af12cb31e375689b2f14531aa95de099426",
+     "stage": "base59"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-dad-surprise-acting.webp",
+     "size": [
+      302,
+      448
+     ],
+     "crop": [
+      12,
+      0,
+      258,
+      448
+     ],
+     "map": [
+      1.60135,
+      16.0,
+      27.0
+     ],
+     "cell": 2,
+     "source_sha256": "09b508263f5d9e90cf1b1b35135b3f0a0b0a8917c2c233eaedbc7928dc14d235",
+     "stage": "base59"
+    }
+   },
+   "pixel": {
+    "u": 1.60135,
+    "cell": 2
+   },
+   "name_ko": "아빠",
+   "acting_package": "expression-acting-20261016"
+  },
+  "daram": {
+   "crop": [
+    8,
+    12,
+    496,
+    748
+   ],
+   "figure": [
+    12,
+    16,
+    488,
+    740
+   ],
+   "images": {
+    "angry": {
+     "file": "assets/room13-fullbody-daram-angry-acting.webp",
+     "size": [
+      288,
+      416
+     ],
+     "crop": [
+      18,
+      40,
+      250,
+      344
+     ],
+     "map": [
+      1.94474,
+      -22.12,
+      13.0
+     ],
+     "cell": 2,
+     "source_sha256": "e78cd592c2afdfe9f0e2ec1c79e0ff9e881b09418cb0a10d6c0f91f398ca1779",
+     "stage": "acting-v2-approved-direction"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-daram-anxious-acting.webp",
+     "size": [
+      254,
+      384
+     ],
+     "crop": [
+      0,
+      0,
+      216,
+      384
+     ],
+     "map": [
+      1.94474,
+      9.0,
+      13.0
+     ],
+     "cell": 2,
+     "source_sha256": "d23c8cbcf174d90eec6cc9395643470c0daf489b59a57d936e62a995063bf771",
+     "stage": "base59"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-daram-flustered-acting.webp",
+     "size": [
+      288,
+      416
+     ],
+     "crop": [
+      20,
+      26,
+      234,
+      370
+     ],
+     "map": [
+      1.94474,
+      -22.12,
+      -10.34
+     ],
+     "cell": 2,
+     "source_sha256": "57fc5682514ae51641beec6ff93a603c37d74e730998502827faad2366a949f7",
+     "stage": "acting-v2-approved-direction"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-daram-joy-acting.webp",
+     "size": [
+      254,
+      384
+     ],
+     "crop": [
+      0,
+      0,
+      216,
+      384
+     ],
+     "map": [
+      1.94474,
+      9.0,
+      13.0
+     ],
+     "cell": 2,
+     "source_sha256": "cc5235e316e5bcb878f5a92490b0722682bd0685fe5c3af67ecddcb1c5ec085f",
+     "stage": "base59"
+    },
+    "neutral": {
+     "file": "assets/room13-fullbody-daram-neutral-acting.webp",
+     "size": [
+      254,
+      384
+     ],
+     "crop": [
+      0,
+      0,
+      216,
+      384
+     ],
+     "map": [
+      1.94474,
+      9.0,
+      13.0
+     ],
+     "cell": 2,
+     "source_sha256": "ee5edf06ba67f43ecd75d3d791fea9049692b641717170393277c16268ba0b33",
+     "stage": "base59"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-daram-surprise-acting.webp",
+     "size": [
+      288,
+      416
+     ],
+     "crop": [
+      18,
+      28,
+      252,
+      366
+     ],
+     "map": [
+      1.94474,
+      -22.12,
+      -6.45
+     ],
+     "cell": 2,
+     "source_sha256": "d94bc929469d1797ef6ed4d3d3ea4de097081856832963881477add774b90846",
+     "stage": "acting-v2-approved-direction"
+    }
+   },
+   "pixel": {
+    "u": 1.94474,
+    "cell": 2
+   },
+   "name_ko": "다람",
+   "acting_package": "expression-acting-20261016"
+  },
+  "doto": {
+   "name_ko": "도토",
+   "crop": [
+    83,
+    26,
+    317,
+    720
+   ],
+   "figure": [
+    87,
+    30,
+    309,
+    713
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-role-doto.webp",
+     "size": [
+      490,
+      746
+     ],
+     "source_sha256": "0dc0ed1c2ece1750777448f36f1f3d81585468d72da9cff757a70b668b637888"
+    },
+    "joy": {
+     "file": "assets/room13-role-doto-batch-joy-v1.webp",
+     "size": [
+      1017,
+      1547
+     ],
+     "crop": [
+      0,
+      0,
+      1017,
+      1547
+     ],
+     "map": [
+      0.5,
+      -12.75,
+      -12.5
+     ],
+     "native_detail": true,
+     "source_sha256": "3d2d575f2377da96bb47f9611a5e0590189ffcbb69ef76994c56475deb2f89c4",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "flustered": {
+     "file": "assets/room13-role-doto.webp",
+     "size": [
+      490,
+      746
+     ],
+     "source_sha256": "0dc0ed1c2ece1750777448f36f1f3d81585468d72da9cff757a70b668b637888",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "angry": {
+     "file": "assets/room13-role-doto-batch-angry-v1.webp",
+     "size": [
+      1017,
+      1547
+     ],
+     "crop": [
+      0,
+      0,
+      1017,
+      1547
+     ],
+     "map": [
+      0.5,
+      -12.75,
+      -19.5
+     ],
+     "native_detail": true,
+     "source_sha256": "00c3523273dabc458df2343f3742592907393bf1a1db310caa4acd519abb783d",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "anxious": {
+     "file": "assets/room13-role-doto-batch-anxious-v1.webp",
+     "size": [
+      1017,
+      1547
+     ],
+     "crop": [
+      0,
+      0,
+      1017,
+      1547
+     ],
+     "map": [
+      0.5,
+      -12.75,
+      -15.0
+     ],
+     "native_detail": true,
+     "source_sha256": "63e98b835d06e05dbada65a3460e26a008c2b4bc802780079bc7a497f45e7c92",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "surprise": {
+     "file": "assets/room13-role-doto-batch-surprise-v1.webp",
+     "size": [
+      1018,
+      1545
+     ],
+     "crop": [
+      0,
+      0,
+      1018,
+      1545
+     ],
+     "map": [
+      0.5,
+      -13.0,
+      -15.0
+     ],
+     "native_detail": true,
+     "source_sha256": "6d09797077117ac422718a7d1abc58b0fa86bb1da3332fc62ba2f56994b64dcb",
+     "review_batch": "reviewed-batches-20261017"
+    }
+   },
+   "role_connect": "child_deer-base"
+  },
+  "elder": {
+   "name_ko": "별지기 장로",
+   "crop": [
+    80,
+    16,
+    356,
+    740
+   ],
+   "figure": [
+    85,
+    22,
+    347,
+    729
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-elder-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "b8966ffcd2a78c4fa45f0926c60aa0fa1f8a0fb2d1d0a4d3677dba6948bf3caa"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-elder-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "f98ae1ba650d8a87f39870f0e50849df660730e62cf18a9b5128efe72217c775"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-elder-flustered.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "0067ee24df9e2577e8468e75e1f9379d567cce2ac2e7da7a2f7228ea349f084b"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-elder-angry.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "b413a525b12c47290b297d535b02d606a391520ab4da81d0abc8bcc4812f293d"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-elder-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "6a4ebff816f5799f417e2e8b8119ec61b711318f8fa9e8bbd42c621641555754"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-elder-surprise.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "26ee13c9f02869ae5cf7a87b56c58b02cba7867780eef4c6fb22a1374918c7bd"
+    }
+   }
+  },
+  "granny": {
+   "crop": [
+    56,
+    0,
+    418,
+    766
+   ],
+   "figure": [
+    60,
+    2,
+    410,
+    760
+   ],
+   "images": {
+    "angry": {
+     "file": "assets/room13-fullbody-granny-angry-acting.webp",
+     "size": [
+      300,
+      440
+     ],
+     "crop": [
+      38,
+      10,
+      228,
+      420
+     ],
+     "map": [
+      1.82609,
+      -12.52,
+      -19.91
+     ],
+     "cell": 2,
+     "source_sha256": "34c505ac19509975e90c5a47469c8edd84427e8754414c81ca2c2045ef633ef7",
+     "stage": "acting-v3"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-granny-anxious-acting.webp",
+     "size": [
+      300,
+      440
+     ],
+     "crop": [
+      58,
+      12,
+      174,
+      414
+     ],
+     "map": [
+      1.82609,
+      -12.52,
+      -12.61
+     ],
+     "cell": 2,
+     "source_sha256": "1a4fa520924a7f463ab9814bf4fd03c13dfb2dca2b82721b5293fb7f1904fe99",
+     "stage": "acting-v3"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-granny-flustered-acting.webp",
+     "size": [
+      300,
+      440
+     ],
+     "crop": [
+      60,
+      12,
+      204,
+      416
+     ],
+     "map": [
+      1.82609,
+      -12.52,
+      -16.26
+     ],
+     "cell": 2,
+     "source_sha256": "b400813f76d8956951971c27700ab48dda09add70a974f67ee73677a1476eed7",
+     "stage": "acting-v3"
+    },
+    "neutral": {
+     "file": "assets/room13-fullbody-granny-neutral-acting.webp",
+     "size": [
+      262,
+      420
+     ],
+     "crop": [
+      38,
+      0,
+      180,
+      418
+     ],
+     "map": [
+      1.82609,
+      24.0,
+      2.0
+     ],
+     "cell": 2,
+     "source_sha256": "af8805899425b8f98185a3f7b4e2f56fcf9e73c8f10b6e9c72acd06cfcc6f62d",
+     "stage": "base59"
+    },
+    "joy": {
+     "file": "assets/room13-redesign-granny.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "91a35c0e5ee83260fdf9fbfa98ca92ff0bc0333ec7ffe670a18cb25560c750d6",
+     "kept": "current"
+    },
+    "surprise": {
+     "file": "assets/room13-redesign-granny.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "91a35c0e5ee83260fdf9fbfa98ca92ff0bc0333ec7ffe670a18cb25560c750d6",
+     "kept": "current"
+    }
+   },
+   "pixel": {
+    "u": 1.82609,
+    "cell": 2
+   },
+   "name_ko": "할머니",
+   "redesign": "granny_elders_reference_v2",
+   "poses": {
+    "withdraw_hand": {
+     "file": "assets/room13-fullbody-granny-pose-withdraw_hand.webp",
+     "size": [
+      512,
+      768
+     ],
+     "crop": [
+      83,
+      0,
+      346,
+      750
+     ],
+     "figure": [
+      87,
+      4,
+      338,
+      742
+     ]
+    }
+   },
+   "acting_package": "expression-acting-20261016"
+  },
+  "guard": {
+   "name_ko": "돌목",
+   "crop": [
+    73,
+    25,
+    408,
+    717
+   ],
+   "figure": [
+    77,
+    29,
+    400,
+    709
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-role-guard-neutral.webp",
+     "size": [
+      272,
+      448
+     ],
+     "crop": [
+      12,
+      2,
+      244,
+      440
+     ],
+     "map": [
+      1.62452,
+      64.0,
+      23.0
+     ],
+     "cell": 2,
+     "source_sha256": "7833f3c360292f55acdc42ef5f413c460eec191fb48780e741845045c5a179b7",
+     "role_connect": "dolmok-mouth-v1-approved"
+    },
+    "joy": {
+     "file": "assets/room13-role-guard-batch-joy-v1.webp",
+     "size": [
+      977,
+      1610
+     ],
+     "crop": [
+      0,
+      0,
+      977,
+      1610
+     ],
+     "map": [
+      0.45,
+      57.175,
+      21.15
+     ],
+     "native_detail": true,
+     "source_sha256": "c2ea7b6abc8380ea8455ff75e85c8cd12f91be7b76f20a5228a4345334af1380",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "flustered": {
+     "file": "assets/room13-role-guard-batch-flustered-v1.webp",
+     "size": [
+      977,
+      1609
+     ],
+     "crop": [
+      0,
+      0,
+      977,
+      1609
+     ],
+     "map": [
+      0.45,
+      57.175,
+      22.05
+     ],
+     "native_detail": true,
+     "source_sha256": "1a5794e4c307dff3fe8469b0b952ba59e91e7df70839bcf1866bffdf816ee797",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "angry": {
+     "file": "assets/room13-role-guard-batch-angry-v1.webp",
+     "size": [
+      977,
+      1609
+     ],
+     "crop": [
+      0,
+      0,
+      977,
+      1609
+     ],
+     "map": [
+      0.45,
+      57.175,
+      22.05
+     ],
+     "native_detail": true,
+     "source_sha256": "486eb652db69e142c69021ee83e2f998d2f10995d58307168d07d0255a0a30da",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "anxious": {
+     "file": "assets/room13-role-guard-batch-anxious-v1.webp",
+     "size": [
+      977,
+      1610
+     ],
+     "crop": [
+      0,
+      0,
+      977,
+      1610
+     ],
+     "map": [
+      0.45,
+      57.175,
+      29.25
+     ],
+     "native_detail": true,
+     "source_sha256": "a3357e8bb8900516147d1052a51ceaf5e8a769d910e8f66d1a9e1f6f10ca3fbe",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "surprise": {
+     "file": "assets/room13-role-guard-batch-surprise-v1.webp",
+     "size": [
+      977,
+      1610
+     ],
+     "crop": [
+      0,
+      0,
+      977,
+      1610
+     ],
+     "map": [
+      0.45,
+      57.175,
+      36.9
+     ],
+     "native_detail": true,
+     "source_sha256": "01b0f9e476489fb740f53d19244d1328ac2453645adff7eeb4999d5dc7a4d347",
+     "review_batch": "reviewed-batches-20261017"
+    }
+   },
+   "pixel": {
+    "u": 1.62452,
+    "cell": 2
+   },
+   "role_connect": "dolmok-mouth-v1-approved"
+  },
+  "karo": {
+   "crop": [
+    49,
+    7,
+    455,
+    757
+   ],
+   "figure": [
+    53,
+    11,
+    447,
+    749
+   ],
+   "images": {
+    "anxious": {
+     "file": "assets/room13-fullbody-karo-anxious-acting.webp",
+     "size": [
+      298,
+      442
+     ],
+     "crop": [
+      56,
+      10,
+      224,
+      422
+     ],
+     "map": [
+      1.78042,
+      -14.0,
+      -6.0
+     ],
+     "cell": 2,
+     "source_sha256": "4232fb8f4ae9542a75c4a794b71ce72dac12b088c171cbdca3df414825e7c3d1",
+     "stage": "acting-v4"
+    },
+    "neutral": {
+     "file": "assets/room13-fullbody-karo-neutral-acting.webp",
+     "size": [
+      298,
+      442
+     ],
+     "crop": [
+      38,
+      8,
+      246,
+      424
+     ],
+     "map": [
+      1.78042,
+      -14.0,
+      -6.0
+     ],
+     "cell": 2,
+     "source_sha256": "a5115e9bf94063799f54e2c1b6c9076d5b18176c7ac2a71526237ea792212e6a",
+     "stage": "acting-v4-neutral-anchor"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-karo-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "7ba58951f43789431ff64c56f8a5b1e3dd5e1b094321b2982e73dc3e2f503ddc",
+     "kept": "current"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-karo-flustered.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "9e5b1ea77971aa3cbcbd7ee3afc9a8d23e67c69de13ca411de95b6ddd2d61085",
+     "kept": "current"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-karo-angry.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "8168a0d680f3867882fe7e3f421fd6686259e7387ee3d1dc05f1e32f44c9e0e4",
+     "kept": "current"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-karo-surprise.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "a451ad367e61f7738b150660909a898208afbe3b8f506f13b50e78e4e88075eb",
+     "kept": "current"
+    }
+   },
+   "pixel": {
+    "u": 1.78042,
+    "cell": 2
+   },
+   "name_ko": "까로",
+   "acting_package": "expression-acting-20261016"
+  },
+  "mom": {
+   "crop": [
+    0,
+    0,
+    491,
+    754
+   ],
+   "figure": [
+    -4,
+    -10,
+    491,
+    760
+   ],
+   "images": {
+    "anxious": {
+     "file": "assets/room13-fullbody-mom-anxious-acting.webp",
+     "size": [
+      312,
+      454
+     ],
+     "crop": [
+      22,
+      20,
+      268,
+      410
+     ],
+     "map": [
+      1.85549,
+      -48.0,
+      -50.0
+     ],
+     "cell": 2,
+     "source_sha256": "91740f0fef4c2be255909ab726b4b3c8039cb547238114b2f7c2ec7db8c86be3",
+     "stage": "acting-v4"
+    },
+    "neutral": {
+     "file": "assets/room13-fullbody-mom-neutral-acting.webp",
+     "size": [
+      312,
+      454
+     ],
+     "crop": [
+      28,
+      32,
+      260,
+      398
+     ],
+     "map": [
+      1.85549,
+      -48.0,
+      -50.0
+     ],
+     "cell": 2,
+     "source_sha256": "e26e449e1ab8226e0d5e03d89ea235e06474bc591a9695b930643c7a93e3bc93",
+     "stage": "acting-v4-neutral-anchor"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-mom-joy.webp",
+     "size": [
+      519,
+      758
+     ],
+     "source_sha256": "f194a5601cb3f85bf7537a4d00b2d56e965e4bbae4050cc85b1e15e62fe1606f",
+     "kept": "current"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-mom-flustered.webp",
+     "size": [
+      519,
+      758
+     ],
+     "source_sha256": "a454231880f7f6b2ee665075bb3de588d9ca1d75dfe72ae40f33810e02e8474e",
+     "kept": "current"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-mom-angry.webp",
+     "size": [
+      519,
+      758
+     ],
+     "source_sha256": "0df077ca991fee5c8b8e24343badd0df032699c5b8635e596e114391b02203aa",
+     "kept": "current"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-mom-surprise.webp",
+     "size": [
+      519,
+      758
+     ],
+     "source_sha256": "e46fb78c0bf00a255534fbd8f3a91e8f1bffbc0adff3b7fcf6cc35d06b68131a",
+     "kept": "current"
+    }
+   },
+   "pixel": {
+    "u": 1.85549,
+    "cell": 2
+   },
+   "name_ko": "엄마",
+   "poses": {
+    "show_fragments": {
+     "file": "assets/room13-fullbody-mom-pose-show_fragments.webp",
+     "size": [
+      512,
+      768
+     ],
+     "crop": [
+      9,
+      2,
+      493,
+      752
+     ],
+     "figure": [
+      13,
+      6,
+      485,
+      744
+     ],
+     "fit": 0.62
+    }
+   },
+   "acting_package": "expression-acting-20261016"
+  },
+  "nabi": {
+   "crop": [
+    104,
+    25,
+    392,
+    725
+   ],
+   "figure": [
+    108,
+    29,
+    384,
+    717
+   ],
+   "images": {
+    "angry": {
+     "file": "assets/room13-fullbody-nabi-angry-acting.webp",
+     "size": [
+      264,
+      384
+     ],
+     "crop": [
+      56,
+      2,
+      206,
+      382
+     ],
+     "map": [
+      1.89379,
+      -1.0,
+      22.0
+     ],
+     "cell": 2,
+     "source_sha256": "81d12ab48dca97314f3f140805ef867a58211be32cd8403ae148e29e749a4f0e",
+     "stage": "base59"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-nabi-anxious-acting.webp",
+     "size": [
+      264,
+      384
+     ],
+     "crop": [
+      56,
+      2,
+      206,
+      382
+     ],
+     "map": [
+      1.89379,
+      -1.0,
+      22.0
+     ],
+     "cell": 2,
+     "source_sha256": "1f3bb03ed91dec9a9f4d51619b8f1bb97470f95a6c9d7041030f27d2fbb87867",
+     "stage": "base59"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-nabi-flustered-acting.webp",
+     "size": [
+      264,
+      384
+     ],
+     "crop": [
+      56,
+      2,
+      206,
+      382
+     ],
+     "map": [
+      1.89379,
+      -1.0,
+      22.0
+     ],
+     "cell": 2,
+     "source_sha256": "59eee3704f2fa8f6468a6b3dbe9fcc269e66dced68a714e660ebee639231c089",
+     "stage": "base59"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-nabi-joy-acting.webp",
+     "size": [
+      264,
+      384
+     ],
+     "crop": [
+      56,
+      2,
+      206,
+      382
+     ],
+     "map": [
+      1.89379,
+      -1.0,
+      22.0
+     ],
+     "cell": 2,
+     "source_sha256": "27482e877005dbdea7fb0edb88e81408a8d3493bc9994bfa711700480ba548d1",
+     "stage": "base59"
+    },
+    "neutral": {
+     "file": "assets/room13-fullbody-nabi-neutral-acting.webp",
+     "size": [
+      264,
+      384
+     ],
+     "crop": [
+      56,
+      2,
+      206,
+      382
+     ],
+     "map": [
+      1.89379,
+      -1.0,
+      22.0
+     ],
+     "cell": 2,
+     "source_sha256": "320aa7a20e39c7ea5a1b80a86c33eabebc794461289db5cdb32f7bc70ee212b9",
+     "stage": "base59"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-nabi-surprise-acting.webp",
+     "size": [
+      264,
+      384
+     ],
+     "crop": [
+      56,
+      2,
+      206,
+      382
+     ],
+     "map": [
+      1.89379,
+      -1.0,
+      22.0
+     ],
+     "cell": 2,
+     "source_sha256": "9a960353fbda5a613836e1fcd7e9c1092df701ab4b3c95730cacfde36643ff9a",
+     "stage": "base59"
+    }
+   },
+   "pixel": {
+    "u": 1.89379,
+    "cell": 2
+   },
+   "name_ko": "나비",
+   "acting_package": "expression-acting-20261016"
+  },
+  "neoul": {
+   "name_ko": "너울",
+   "crop": [
+    14,
+    4,
+    490,
+    732
+   ],
+   "figure": [
+    18,
+    8,
+    482,
+    724
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-canonical-default-neoul.webp",
+     "size": [
+      512,
+      750
+     ],
+     "source_sha256": "31172d4a4f9aec679442105059098fe8679f869df90ece81ca2a0cd3b34300f9"
+    },
+    "joy": {
+     "file": "assets/room13-role-neoul-batch-joy-v1.webp",
+     "size": [
+      1036,
+      1518
+     ],
+     "crop": [
+      0,
+      0,
+      1036,
+      1518
+     ],
+     "map": [
+      0.5,
+      0.0,
+      -17.0
+     ],
+     "native_detail": true,
+     "source_sha256": "55694f11a824b68dc2e6350e6af93667561cf30b68958965652642b90a39a1eb",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "flustered": {
+     "file": "assets/room13-role-neoul-batch-flustered-v1.webp",
+     "size": [
+      1036,
+      1518
+     ],
+     "crop": [
+      0,
+      0,
+      1036,
+      1518
+     ],
+     "map": [
+      0.5,
+      0.0,
+      -12.5
+     ],
+     "native_detail": true,
+     "source_sha256": "1c02ff0ed46c827b99abea4f3b7a023af64518fd6ff826d9ca7dd97d44073226",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "angry": {
+     "file": "assets/room13-role-neoul-batch-angry-v1.webp",
+     "size": [
+      1036,
+      1518
+     ],
+     "crop": [
+      0,
+      0,
+      1036,
+      1518
+     ],
+     "map": [
+      0.5,
+      0.0,
+      -21.5
+     ],
+     "native_detail": true,
+     "source_sha256": "ea0c55577353a87d6c5ca9e4f66fc1fa4544c2f4a0926785cbbb41b0b7eaf0ac",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "anxious": {
+     "file": "assets/room13-role-neoul-batch-anxious-v1.webp",
+     "size": [
+      1036,
+      1518
+     ],
+     "crop": [
+      0,
+      0,
+      1036,
+      1518
+     ],
+     "map": [
+      0.5,
+      0.0,
+      -12.0
+     ],
+     "native_detail": true,
+     "source_sha256": "4d1dba67dc5d85a7d6bef8471362201490417ce1f839cd39aa424d2cc49ad064",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "surprise": {
+     "file": "assets/room13-role-neoul-batch-surprise-v1.webp",
+     "size": [
+      1036,
+      1518
+     ],
+     "crop": [
+      0,
+      0,
+      1036,
+      1518
+     ],
+     "map": [
+      0.5,
+      0.0,
+      -12.0
+     ],
+     "native_detail": true,
+     "source_sha256": "84f364617a77b1c0207dd04e3188366c8ce09ff699dd6b33a833466f6211dfb6",
+     "review_batch": "reviewed-batches-20261017"
+    }
+   },
+   "role_connect": "canonical48-rev47-aligned"
+  },
+  "resident_badook": {
+   "name_ko": "바둑이",
+   "crop": [
+    38,
+    36,
+    427,
+    693
+   ],
+   "figure": [
+    42,
+    42,
+    418,
+    683
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-resident_badook-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "9aa165cb3356a3ab6c716fe4af929d2d5710214a8758acd4c88caf059abf608c"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-resident_badook-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "55843cd33ab9efa8d9c93f7b8af76e5b0a4c7177e580baffaa0c92008c0b6429"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-resident_badook-flustered.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "68ca8b9ffa47f6447a1078e801f75289155740b5ec325deed3af118e17ac76ae"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-resident_badook-angry.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "a88f46ff511ed1861f66e806debc3aee9a255fc9ff143f2f2cd649ff63173e1b"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-resident_badook-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "7a432f17601ef21a92ad3ba25b70a95ce30f65a07d6895ad1ffc73b37c386190"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-resident_badook-surprise.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "298ac4a86893ade28af3ed004e383061e2708f5f547ec384b834a0788e63806f"
+    }
+   },
+   "poses": {
+    "block_cart": {
+     "file": "assets/room13-fullbody-resident_badook-pose-block_cart.webp",
+     "size": [
+      512,
+      768
+     ],
+     "crop": [
+      0,
+      45,
+      512,
+      671
+     ],
+     "figure": [
+      2,
+      49,
+      507,
+      663
+     ]
+    }
+   }
+  },
+  "resident_bori": {
+   "name_ko": "보리",
+   "crop": [
+    44,
+    39,
+    544,
+    602
+   ],
+   "figure": [
+    48,
+    43,
+    536,
+    594
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-canonical-default-resident_bori.webp",
+     "size": [
+      605,
+      650
+     ],
+     "source_sha256": "1294543146bd66c747901d8b1cb83460650bb049384727254d0012789f17f2e7"
+    },
+    "joy": {
+     "file": "assets/room13-role-resident_bori-batch-joy-v1.webp",
+     "size": [
+      1210,
+      1300
+     ],
+     "crop": [
+      0,
+      0,
+      1210,
+      1300
+     ],
+     "map": [
+      0.5,
+      13.5,
+      13.0
+     ],
+     "native_detail": true,
+     "source_sha256": "ecd54b83a2837ef82ea2254cb181e09a68742cb573b7aeafc094f601a6d5ee88",
+     "review_batch": "reviewed-batches-20261017",
+     "anchor_note": "Top aligned for standing/crouching dialogue variants; fixed source scale, never stretch crouches."
+    },
+    "flustered": {
+     "file": "assets/room13-role-resident_bori-batch-flustered-v1.webp",
+     "size": [
+      1024,
+      1536
+     ],
+     "crop": [
+      0,
+      0,
+      1024,
+      1536
+     ],
+     "map": [
+      0.5,
+      60.0,
+      -2.0
+     ],
+     "native_detail": true,
+     "source_sha256": "96750b705523ceb8113e27adafb9ac1e9dbf7440474fd90856764ba8b8a4e2e9",
+     "review_batch": "reviewed-batches-20261017",
+     "anchor_note": "Top aligned for standing/crouching dialogue variants; fixed source scale, never stretch crouches."
+    },
+    "angry": {
+     "file": "assets/room13-role-resident_bori-batch-angry-v1.webp",
+     "size": [
+      1210,
+      1300
+     ],
+     "crop": [
+      0,
+      0,
+      1210,
+      1300
+     ],
+     "map": [
+      0.5,
+      13.5,
+      -7.0
+     ],
+     "native_detail": true,
+     "source_sha256": "b372057ccc4ba2f837c82b8be9b7e7da0faa7ad771a588902cea0cb3d82c4288",
+     "review_batch": "reviewed-batches-20261017",
+     "anchor_note": "Top aligned for standing/crouching dialogue variants; fixed source scale, never stretch crouches."
+    },
+    "anxious": {
+     "file": "assets/room13-role-resident_bori-batch-anxious-v1.webp",
+     "size": [
+      1024,
+      1536
+     ],
+     "crop": [
+      0,
+      0,
+      1024,
+      1536
+     ],
+     "map": [
+      0.5,
+      60.0,
+      -4.0
+     ],
+     "native_detail": true,
+     "source_sha256": "be648aea7f04c6007c19fc0152d92e479efb3d5b9f01ea1bc623de86263eface",
+     "review_batch": "reviewed-batches-20261017",
+     "anchor_note": "Top aligned for standing/crouching dialogue variants; fixed source scale, never stretch crouches."
+    },
+    "surprise": {
+     "file": "assets/room13-role-resident_bori-batch-surprise-v1.webp",
+     "size": [
+      1024,
+      1536
+     ],
+     "crop": [
+      0,
+      0,
+      1024,
+      1536
+     ],
+     "map": [
+      0.5,
+      60.0,
+      -21.5
+     ],
+     "native_detail": true,
+     "source_sha256": "7221dffb3514b650688fe16182469eba7cb1ed54e15915dd71a322b72ce676c6",
+     "review_batch": "reviewed-batches-20261017",
+     "anchor_note": "Top aligned for standing/crouching dialogue variants; fixed source scale, never stretch crouches."
+    }
+   },
+   "role_connect": "canonical48-rev47-aligned"
+  },
+  "resident_eunho": {
+   "name_ko": "은호 사장",
+   "crop": [
+    26,
+    33,
+    410,
+    682
+   ],
+   "figure": [
+    32,
+    40,
+    399,
+    670
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-resident_eunho-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "4cc44a1001073e757192432902f436c74902e692c1d858140744daba3ed3632a"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-resident_eunho-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "210cd38bffd049fab2ec12626bae17a514bf1136090ef673f09ce5e7f5e73cec"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-resident_eunho-flustered.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "6304dc23ef5646418d780d5966bc7a90c1d69c655940f67978beedbb8e6c4305"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-resident_eunho-angry.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "6a57c3a2377c436fe5f497fa365195b74599738c3e1a4119c5b392a2efa4b465"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-resident_eunho-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "b20772f043c7982c9ebef21d1648901693e30feb5d28c9879037444a62cbb4a7"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-resident_eunho-surprise.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "1f5b315b50dcc3d00b084ec813414f0955ca7838c2c38f439cf458667737ac08"
+    }
+   }
+  },
+  "resident_guseul": {
+   "name_ko": "구슬",
+   "crop": [
+    92,
+    0,
+    303,
+    762
+   ],
+   "figure": [
+    96,
+    1,
+    295,
+    757
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-role-resident_guseul.webp",
+     "size": [
+      490,
+      764
+     ],
+     "source_sha256": "4224792cef655759a92603bbe128a83978eb22548b3d1f52cbb424fccd9d5ede"
+    },
+    "joy": {
+     "file": "assets/room13-role-resident_guseul-batch-joy-v1.webp",
+     "size": [
+      1004,
+      1567
+     ],
+     "crop": [
+      0,
+      0,
+      1004,
+      1567
+     ],
+     "map": [
+      0.5,
+      -7.5,
+      -20.0
+     ],
+     "native_detail": true,
+     "source_sha256": "141b910bd8b2f1acc42083d09938f4443f5ed0eea66a23c82eea3059e784f27f",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "flustered": {
+     "file": "assets/room13-role-resident_guseul.webp",
+     "size": [
+      490,
+      764
+     ],
+     "source_sha256": "4224792cef655759a92603bbe128a83978eb22548b3d1f52cbb424fccd9d5ede",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "angry": {
+     "file": "assets/room13-role-resident_guseul-batch-angry-v1.webp",
+     "size": [
+      1005,
+      1566
+     ],
+     "crop": [
+      0,
+      0,
+      1005,
+      1566
+     ],
+     "map": [
+      0.5,
+      -7.75,
+      -18.0
+     ],
+     "native_detail": true,
+     "source_sha256": "27d8d947cc1b9a046d08f5f43480dced136741559cfe0555ed00a7740e9e8530",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "anxious": {
+     "file": "assets/room13-role-resident_guseul-batch-anxious-v1.webp",
+     "size": [
+      1004,
+      1566
+     ],
+     "crop": [
+      0,
+      0,
+      1004,
+      1566
+     ],
+     "map": [
+      0.5,
+      -7.5,
+      -17.5
+     ],
+     "native_detail": true,
+     "source_sha256": "c994212cb827bfdffcb4d221a6b415f6f5e3e57fd635d4dab1f6dd55abf4f7e2",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "surprise": {
+     "file": "assets/room13-role-resident_guseul-batch-surprise-v1.webp",
+     "size": [
+      1004,
+      1566
+     ],
+     "crop": [
+      0,
+      0,
+      1004,
+      1566
+     ],
+     "map": [
+      0.5,
+      -7.5,
+      -17.0
+     ],
+     "native_detail": true,
+     "source_sha256": "c368e27376810ad232aaf53c383c8fe8446bddfd51f655d8671324af43fb9bde",
+     "review_batch": "reviewed-batches-20261017"
+    }
+   },
+   "role_connect": "long_ears-base"
+  },
+  "resident_kkwak": {
+   "name_ko": "꽥순",
+   "crop": [
+    123,
+    13,
+    802,
+    1519
+   ],
+   "figure": [
+    127,
+    17,
+    794,
+    1511
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-role-resident_kkwak-refined-v1.webp",
+     "size": [
+      1019,
+      1544
+     ],
+     "source_sha256": "dced0d974c10cc81fe0f72fdcbb884067ee54e3511e2cbf4f43d3f0b1674f2a9",
+     "native_detail": true
+    },
+    "joy": {
+     "file": "assets/room13-role-resident_kkwak-expression-joy-v1.webp",
+     "size": [
+      1018,
+      1544
+     ],
+     "crop": [
+      0,
+      0,
+      1018,
+      1544
+     ],
+     "map": [
+      1.0,
+      0.0,
+      14.0
+     ],
+     "native_detail": true,
+     "source_sha256": "3ae38eb002b4f7355f6baf022c736dd5bdd2d44c45d00ac382c9685a89ebefe2",
+     "production_status": "reviewed-and-connected",
+     "review_basis": "Owner authorized completed batches after identity/alpha/crop/runtime checks; 2026-10-17"
+    },
+    "flustered": {
+     "file": "assets/room13-role-resident_kkwak-expression-flustered-v1.webp",
+     "size": [
+      1018,
+      1545
+     ],
+     "crop": [
+      0,
+      0,
+      1018,
+      1545
+     ],
+     "map": [
+      1.0,
+      0.0,
+      3.0
+     ],
+     "native_detail": true,
+     "source_sha256": "d4c397b06cd8b8c00a8855a155cc885e2fe6eaca027b4f9ff2d9bf20bd82b7f9",
+     "production_status": "reviewed-and-connected",
+     "review_basis": "Owner authorized completed batches after identity/alpha/crop/runtime checks; 2026-10-17"
+    },
+    "angry": {
+     "file": "assets/room13-role-resident_kkwak-expression-angry-v1.webp",
+     "size": [
+      1018,
+      1544
+     ],
+     "crop": [
+      0,
+      0,
+      1018,
+      1544
+     ],
+     "map": [
+      1.0,
+      0.0,
+      7.0
+     ],
+     "native_detail": true,
+     "source_sha256": "803634c266402231d0e2d4e97a9ae78a4067d16731b4563ce9b3af2a245b5e97",
+     "production_status": "reviewed-and-connected",
+     "review_basis": "Owner authorized completed batches after identity/alpha/crop/runtime checks; 2026-10-17"
+    },
+    "anxious": {
+     "file": "assets/room13-role-resident_kkwak-expression-anxious-v1.webp",
+     "size": [
+      1018,
+      1544
+     ],
+     "crop": [
+      0,
+      0,
+      1018,
+      1544
+     ],
+     "map": [
+      1.0,
+      0.0,
+      21.0
+     ],
+     "native_detail": true,
+     "source_sha256": "00f52d775c917c4622c5f1b513441d5f9342fc77f2d04887df9e5439e325f064",
+     "production_status": "reviewed-and-connected",
+     "review_basis": "Owner authorized completed batches after identity/alpha/crop/runtime checks; 2026-10-17"
+    },
+    "surprise": {
+     "file": "assets/room13-role-resident_kkwak-expression-surprise-v1.webp",
+     "size": [
+      1018,
+      1544
+     ],
+     "crop": [
+      0,
+      0,
+      1018,
+      1544
+     ],
+     "map": [
+      1.0,
+      0.0,
+      1.0
+     ],
+     "native_detail": true,
+     "source_sha256": "79acd8d9c7df57e5c1132aa62f6e4de83c039ed7838e0233600e511b9e211bc6",
+     "production_status": "reviewed-and-connected",
+     "review_basis": "Owner authorized completed batches after identity/alpha/crop/runtime checks; 2026-10-17"
+    }
+   },
+   "role_connect": "kkwak-refined-approved-v1"
+  },
+  "resident_kongi": {
+   "name_ko": "콩이",
+   "crop": [
+    40,
+    6,
+    389,
+    745
+   ],
+   "figure": [
+    44,
+    10,
+    381,
+    737
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-resident_kongi-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "8062a69d8a4d8c6288e8f7eddd5dd1f391367342fc45303e4cf0a3451c234edb"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-resident_kongi-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "a0698dcc6a3b30dbb0481db8d9194b1a2e1fa9d677500158cace73b712dd5105"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-resident_kongi-flustered.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "f2fcb8d7e82c4b5c51137be785abed2a33b6ce14bf938c925c473e6a7ef20db4"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-resident_kongi-angry.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "3dce08190870d0ddfd24b0091c69243a479790beeba32e6ffc3844d725df6407"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-resident_kongi-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "209d1cbd3ff139291e3e4e1920508d86f617f380a365885226915f9fe32fe469"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-resident_kongi-surprise.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "a1d4c42f1bd499e253818227f9d60741c11ef524faeb3630f21301e6ca32ea36"
+    }
+   }
+  },
+  "resident_lamplighter": {
+   "crop": [
+    70,
+    55,
+    366,
+    618
+   ],
+   "figure": [
+    74,
+    59,
+    358,
+    610
+   ],
+   "images": {
+    "anxious": {
+     "file": "assets/room13-fullbody-resident_lamplighter-anxious-acting.webp",
+     "size": [
+      284,
+      422
+     ],
+     "crop": [
+      46,
+      52,
+      190,
+      336
+     ],
+     "map": [
+      1.82221,
+      -13.0,
+      -35.0
+     ],
+     "cell": 2,
+     "source_sha256": "4e711bc268ceac77b028910af898a19bf36453f60f2d3e46f4c3da4e80be0f5e",
+     "stage": "acting-v3"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-resident_lamplighter-flustered-acting.webp",
+     "size": [
+      284,
+      422
+     ],
+     "crop": [
+      52,
+      50,
+      194,
+      336
+     ],
+     "map": [
+      1.82221,
+      -13.0,
+      -35.0
+     ],
+     "cell": 2,
+     "source_sha256": "3cd2f18daf41ffa783dd98fd53ff52b9f98fb88e133417f07472521d215e707a",
+     "stage": "acting-v3"
+    },
+    "neutral": {
+     "file": "assets/room13-fullbody-resident_lamplighter-neutral-acting.webp",
+     "size": [
+      284,
+      422
+     ],
+     "crop": [
+      64,
+      60,
+      174,
+      326
+     ],
+     "map": [
+      1.82221,
+      -13.0,
+      -35.0
+     ],
+     "cell": 2,
+     "source_sha256": "29d7cef3d8e6daad4c93fd05c3d705b67f1db727937f8f962c52f5e9f267a10b",
+     "stage": "base59"
+    },
+    "joy": {
+     "file": "assets/room13-role-resident_lamplighter-batch-joy-v1.webp",
+     "size": [
+      1024,
+      1536
+     ],
+     "crop": [
+      0,
+      0,
+      1024,
+      1536
+     ],
+     "map": [
+      0.425,
+      35.4,
+      51.05
+     ],
+     "native_detail": true,
+     "source_sha256": "dc38e36665cdaf8c6fa0a1c2886f93047dc520958d03043ed391dba9f96aebd2",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "angry": {
+     "file": "assets/room13-role-resident_lamplighter-batch-angry-v1.webp",
+     "size": [
+      1024,
+      1536
+     ],
+     "crop": [
+      0,
+      0,
+      1024,
+      1536
+     ],
+     "map": [
+      0.425,
+      35.4,
+      37.025
+     ],
+     "native_detail": true,
+     "source_sha256": "40a30183dc346517084b0887cdba31d2ff81b8de70782a1985c0555abb16eb09",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "surprise": {
+     "file": "assets/room13-role-resident_lamplighter-batch-surprise-v1.webp",
+     "size": [
+      1014,
+      1551
+     ],
+     "crop": [
+      0,
+      0,
+      1014,
+      1551
+     ],
+     "map": [
+      0.425,
+      37.525,
+      43.825
+     ],
+     "native_detail": true,
+     "source_sha256": "d2737a20f1b874d6b43b681f70ad519da60d26698a030be08cb323d3dcd713de",
+     "review_batch": "reviewed-batches-20261017"
+    }
+   },
+   "pixel": {
+    "u": 1.82221,
+    "cell": 2
+   },
+   "name_ko": "초롱",
+   "acting_package": "expression-acting-20261016"
+  },
+  "resident_librarian": {
+   "name_ko": "사서 선생님",
+   "crop": [
+    67,
+    27,
+    441,
+    717
+   ],
+   "figure": [
+    71,
+    31,
+    433,
+    709
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-redesign-resident_librarian.webp",
+     "size": [
+      519,
+      758
+     ],
+     "source_sha256": "9fdf0f376a5afee085ae180dd35a44e831599540662581689a7a05465e07883e"
+    },
+    "joy": {
+     "file": "assets/room13-redesign-resident_librarian.webp",
+     "size": [
+      519,
+      758
+     ],
+     "source_sha256": "9fdf0f376a5afee085ae180dd35a44e831599540662581689a7a05465e07883e",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "flustered": {
+     "file": "assets/room13-redesign-resident_librarian.webp",
+     "size": [
+      519,
+      758
+     ],
+     "source_sha256": "9fdf0f376a5afee085ae180dd35a44e831599540662581689a7a05465e07883e",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "angry": {
+     "file": "assets/room13-redesign-resident_librarian.webp",
+     "size": [
+      519,
+      758
+     ],
+     "source_sha256": "9fdf0f376a5afee085ae180dd35a44e831599540662581689a7a05465e07883e",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "anxious": {
+     "file": "assets/room13-redesign-resident_librarian.webp",
+     "size": [
+      519,
+      758
+     ],
+     "source_sha256": "9fdf0f376a5afee085ae180dd35a44e831599540662581689a7a05465e07883e",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "surprise": {
+     "file": "assets/room13-redesign-resident_librarian.webp",
+     "size": [
+      519,
+      758
+     ],
+     "source_sha256": "9fdf0f376a5afee085ae180dd35a44e831599540662581689a7a05465e07883e",
+     "fallback": "neutral",
+     "production_status": "pending"
+    }
+   },
+   "redesign": "candidate_snow_tea"
+  },
+  "resident_madam": {
+   "name_ko": "백 부인",
+   "crop": [
+    68,
+    0,
+    375,
+    759
+   ],
+   "figure": [
+    72,
+    1,
+    367,
+    754
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-role-resident_madam.webp",
+     "size": [
+      466,
+      762
+     ],
+     "source_sha256": "ac7e17c8515b80204e4f0d3697f3bfbb731b644482266fbe3125b25cde188a7b"
+    },
+    "joy": {
+     "file": "assets/room13-role-resident_madam-batch-joy-v1.webp",
+     "size": [
+      981,
+      1603
+     ],
+     "crop": [
+      0,
+      0,
+      981,
+      1603
+     ],
+     "map": [
+      0.5,
+      10.25,
+      -37.5
+     ],
+     "native_detail": true,
+     "source_sha256": "164e790d56b536ee476a9c43c13c413aefd14148237ebb6c1d6f15c66831e106",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "flustered": {
+     "file": "assets/room13-role-resident_madam.webp",
+     "size": [
+      466,
+      762
+     ],
+     "source_sha256": "ac7e17c8515b80204e4f0d3697f3bfbb731b644482266fbe3125b25cde188a7b",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "angry": {
+     "file": "assets/room13-role-resident_madam-batch-angry-v1.webp",
+     "size": [
+      981,
+      1603
+     ],
+     "crop": [
+      0,
+      0,
+      981,
+      1603
+     ],
+     "map": [
+      0.5,
+      10.25,
+      -39.0
+     ],
+     "native_detail": true,
+     "source_sha256": "f707db318000d279339ebd98d7b09a9a932e196321a0b2d3879e3b082f177958",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "anxious": {
+     "file": "assets/room13-role-resident_madam-batch-anxious-v1.webp",
+     "size": [
+      981,
+      1603
+     ],
+     "crop": [
+      0,
+      0,
+      981,
+      1603
+     ],
+     "map": [
+      0.5,
+      10.25,
+      -38.0
+     ],
+     "native_detail": true,
+     "source_sha256": "b5081afe8b44d6a495f6ed48551b8abec926f0bf52ba27a13f98f7b458458b86",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "surprise": {
+     "file": "assets/room13-role-resident_madam-batch-surprise-v1.webp",
+     "size": [
+      981,
+      1603
+     ],
+     "crop": [
+      0,
+      0,
+      981,
+      1603
+     ],
+     "map": [
+      0.5,
+      10.25,
+      -33.0
+     ],
+     "native_detail": true,
+     "source_sha256": "3d78d4bc0e78b1becba11db9d8de8a3cd1355174f616bd00f16c20cdfd931c59",
+     "review_batch": "reviewed-batches-20261017"
+    }
+   },
+   "role_connect": "spotted_dog-originalized-pixel-v2"
+  },
+  "resident_momo": {
+   "name_ko": "모모 관장",
+   "crop": [
+    85,
+    0,
+    378,
+    768
+   ],
+   "figure": [
+    89,
+    1,
+    370,
+    765
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-canonical-default-resident_momo.webp",
+     "size": [
+      502,
+      768
+     ],
+     "source_sha256": "5c2dc1e4f84048c52e993f6f3a2b23afbb3c2fbde3f223f419f94b12bfae9b82"
+    },
+    "joy": {
+     "file": "assets/room13-canonical-default-resident_momo.webp",
+     "size": [
+      502,
+      768
+     ],
+     "source_sha256": "5c2dc1e4f84048c52e993f6f3a2b23afbb3c2fbde3f223f419f94b12bfae9b82",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "flustered": {
+     "file": "assets/room13-canonical-default-resident_momo.webp",
+     "size": [
+      502,
+      768
+     ],
+     "source_sha256": "5c2dc1e4f84048c52e993f6f3a2b23afbb3c2fbde3f223f419f94b12bfae9b82",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "angry": {
+     "file": "assets/room13-canonical-default-resident_momo.webp",
+     "size": [
+      502,
+      768
+     ],
+     "source_sha256": "5c2dc1e4f84048c52e993f6f3a2b23afbb3c2fbde3f223f419f94b12bfae9b82",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "anxious": {
+     "file": "assets/room13-canonical-default-resident_momo.webp",
+     "size": [
+      502,
+      768
+     ],
+     "source_sha256": "5c2dc1e4f84048c52e993f6f3a2b23afbb3c2fbde3f223f419f94b12bfae9b82",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "surprise": {
+     "file": "assets/room13-canonical-default-resident_momo.webp",
+     "size": [
+      502,
+      768
+     ],
+     "source_sha256": "5c2dc1e4f84048c52e993f6f3a2b23afbb3c2fbde3f223f419f94b12bfae9b82",
+     "fallback": "neutral",
+     "production_status": "pending"
+    }
+   },
+   "role_connect": "canonical48-rev47-aligned"
+  },
+  "resident_mungchi": {
+   "name_ko": "뭉치",
+   "crop": [
+    57,
+    0,
+    420,
+    749
+   ],
+   "figure": [
+    61,
+    1,
+    412,
+    746
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-role-resident_mungchi.webp",
+     "size": [
+      512,
+      749
+     ],
+     "source_sha256": "265aeb5a56cf7d5dfa51178a360b01d0f91b2b3fc50988dcd19736ca908c376f"
+    },
+    "joy": {
+     "file": "assets/room13-role-resident_mungchi.webp",
+     "size": [
+      512,
+      749
+     ],
+     "source_sha256": "265aeb5a56cf7d5dfa51178a360b01d0f91b2b3fc50988dcd19736ca908c376f",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "flustered": {
+     "file": "assets/room13-role-resident_mungchi.webp",
+     "size": [
+      512,
+      749
+     ],
+     "source_sha256": "265aeb5a56cf7d5dfa51178a360b01d0f91b2b3fc50988dcd19736ca908c376f",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "angry": {
+     "file": "assets/room13-role-resident_mungchi.webp",
+     "size": [
+      512,
+      749
+     ],
+     "source_sha256": "265aeb5a56cf7d5dfa51178a360b01d0f91b2b3fc50988dcd19736ca908c376f",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "anxious": {
+     "file": "assets/room13-role-resident_mungchi.webp",
+     "size": [
+      512,
+      749
+     ],
+     "source_sha256": "265aeb5a56cf7d5dfa51178a360b01d0f91b2b3fc50988dcd19736ca908c376f",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "surprise": {
+     "file": "assets/room13-role-resident_mungchi.webp",
+     "size": [
+      512,
+      749
+     ],
+     "source_sha256": "265aeb5a56cf7d5dfa51178a360b01d0f91b2b3fc50988dcd19736ca908c376f",
+     "fallback": "neutral",
+     "production_status": "pending"
+    }
+   },
+   "role_connect": "moose-base"
+  },
+  "resident_musoe": {
+   "name_ko": "무쇠 할아버지",
+   "crop": [
+    53,
+    11,
+    404,
+    749
+   ],
+   "figure": [
+    57,
+    15,
+    395,
+    740
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-resident_musoe-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "594c5029becacfb6d106957a84f3f1d60d721d0dede80c3512bb6f46920b03f4"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-resident_musoe-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "c7ac4cc0e602fda999914cb6dc70a5073a223803a132ec959ac1a1b008452389"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-resident_musoe-flustered.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "49f897fbcea0d8d1260d6991c6802b1be004e48dd5ae67d0ecfec6bba2292853"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-resident_musoe-angry.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "50c21cba4be8bdf3dc43f5e66e9a036bfa850122ec3e48a5d6b5f49ed8d10394"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-resident_musoe-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "0b5cdad1a0f2ba1635aa4820ac5ffd50c2a97f341d20926d8c394173a6c3e609"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-resident_musoe-surprise.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "819870d8d450feeb8b7ae1fc9e61f45f94e23ee822c4ff0fd288738bc72f0855"
+    }
+   }
+  },
+  "resident_nero": {
+   "name_ko": "네로",
+   "crop": [
+    17,
+    1,
+    468,
+    759
+   ],
+   "figure": [
+    21,
+    5,
+    459,
+    750
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-resident_nero-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "aa5bff898b88b1ccb0f909e32da3510774face21b2d34645f5ce8c908838c3d8"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-resident_nero-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "f20744bcc161d1cfe90d0196a6db0ca6dfa2da7414fc4e1eabe020d798024a6a"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-resident_nero-flustered.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "87f7c8697b56f421439db940f9a0ccbea04e42df6447f685ec3af78b784ff89f"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-resident_nero-angry.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "ffd9066a1ca88975d9c4895d67b5ffa251523db757428000e355cf80dc33b5e8"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-resident_nero-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "a79a84bb65ef8c53692efdae59ceac0780f6563eae58ab093afadd189f8d0f89"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-resident_nero-surprise.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "87847242803b71d4f2306d39105b06879afe7993793b926db19798340ca408e4"
+    }
+   }
+  },
+  "resident_nubi": {
+   "name_ko": "누비 아주머니",
+   "crop": [
+    29,
+    0,
+    426,
+    758
+   ],
+   "figure": [
+    33,
+    1,
+    418,
+    756
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-role-resident_nubi.webp",
+     "size": [
+      478,
+      758
+     ],
+     "source_sha256": "af0df1c2e0f8af56132d027ce8a60eed7f2c4e4599d93d887c2d96740ddfd31b"
+    },
+    "joy": {
+     "file": "assets/room13-role-resident_nubi-batch-joy-v1.webp",
+     "size": [
+      996,
+      1578
+     ],
+     "crop": [
+      0,
+      0,
+      996,
+      1578
+     ],
+     "map": [
+      0.5,
+      -7.0,
+      -27.5
+     ],
+     "native_detail": true,
+     "source_sha256": "b5f2d7fd34adf659ea7fd71f50fabe4d996898cb3b9fd3afac528828a10c4786",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "flustered": {
+     "file": "assets/room13-role-resident_nubi-batch-flustered-v1.webp",
+     "size": [
+      996,
+      1578
+     ],
+     "crop": [
+      0,
+      0,
+      996,
+      1578
+     ],
+     "map": [
+      0.5,
+      -7.0,
+      -23.0
+     ],
+     "native_detail": true,
+     "source_sha256": "a38fe0c725a083c2c33185003bcf70d34d024dba0b07942726cb707fa48d0d35",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "angry": {
+     "file": "assets/room13-role-resident_nubi-batch-angry-v1.webp",
+     "size": [
+      996,
+      1579
+     ],
+     "crop": [
+      0,
+      0,
+      996,
+      1579
+     ],
+     "map": [
+      0.5,
+      -7.0,
+      -20.5
+     ],
+     "native_detail": true,
+     "source_sha256": "aa8eb5808e24e00724b07c5022a8b22d92d7a7dc08b7d78bfdb34c6969ed8dfe",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "anxious": {
+     "file": "assets/room13-role-resident_nubi-batch-anxious-v1.webp",
+     "size": [
+      996,
+      1579
+     ],
+     "crop": [
+      0,
+      0,
+      996,
+      1579
+     ],
+     "map": [
+      0.5,
+      -7.0,
+      -25.5
+     ],
+     "native_detail": true,
+     "source_sha256": "02d8c1a82254f7779fd64b02610e1c5523452d800f919303e1c05fb5229bfc4e",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "surprise": {
+     "file": "assets/room13-role-resident_nubi-batch-surprise-v1.webp",
+     "size": [
+      996,
+      1578
+     ],
+     "crop": [
+      0,
+      0,
+      996,
+      1578
+     ],
+     "map": [
+      0.5,
+      -7.0,
+      -27.0
+     ],
+     "native_detail": true,
+     "source_sha256": "a966214ba30856f1c2fdbb2554db0dc5c73dd31700373079b47e3f0aabc15fce",
+     "review_batch": "reviewed-batches-20261017"
+    }
+   },
+   "role_connect": "curly-base"
+  },
+  "resident_owlgp": {
+   "crop": [
+    73,
+    7,
+    373,
+    759
+   ],
+   "figure": [
+    77,
+    11,
+    365,
+    751
+   ],
+   "images": {
+    "anxious": {
+     "file": "assets/room13-fullbody-resident_owlgp-anxious-acting.webp",
+     "size": [
+      306,
+      460
+     ],
+     "crop": [
+      52,
+      20,
+      210,
+      424
+     ],
+     "map": [
+      1.76887,
+      -18.0,
+      -20.0
+     ],
+     "cell": 2,
+     "source_sha256": "95313a836531eb6b76192a4c3d018dbac1f38ad09e0b8154a43b3889ce066753",
+     "stage": "acting-v4"
+    },
+    "neutral": {
+     "file": "assets/room13-fullbody-resident_owlgp-neutral-acting.webp",
+     "size": [
+      306,
+      460
+     ],
+     "crop": [
+      54,
+      16,
+      202,
+      428
+     ],
+     "map": [
+      1.76887,
+      -18.0,
+      -20.0
+     ],
+     "cell": 2,
+     "source_sha256": "7fa60d0fbf51e5035ed947a72b71cba909b49679cab95895c1d944e5e19bcd82",
+     "stage": "acting-v4-neutral-anchor"
+    },
+    "joy": {
+     "file": "assets/room13-redesign-resident_owlgp.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "8ad9353427e3b32e74b886436d4fe8cde897a88e925a2f16c82370d9d2b56941",
+     "kept": "current"
+    },
+    "flustered": {
+     "file": "assets/room13-redesign-resident_owlgp.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "8ad9353427e3b32e74b886436d4fe8cde897a88e925a2f16c82370d9d2b56941",
+     "kept": "current"
+    },
+    "angry": {
+     "file": "assets/room13-redesign-resident_owlgp.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "8ad9353427e3b32e74b886436d4fe8cde897a88e925a2f16c82370d9d2b56941",
+     "kept": "current"
+    },
+    "surprise": {
+     "file": "assets/room13-redesign-resident_owlgp.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "8ad9353427e3b32e74b886436d4fe8cde897a88e925a2f16c82370d9d2b56941",
+     "kept": "current"
+    }
+   },
+   "pixel": {
+    "u": 1.76887,
+    "cell": 2
+   },
+   "name_ko": "부엉이 할아버지",
+   "redesign": "owlgp_simple_elder",
+   "acting_package": "expression-acting-20261016"
+  },
+  "resident_piko": {
+   "name_ko": "피코",
+   "crop": [
+    81,
+    0,
+    414,
+    761
+   ],
+   "figure": [
+    85,
+    3,
+    406,
+    754
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-role-resident_piko.webp",
+     "size": [
+      497,
+      768
+     ],
+     "source_sha256": "39dc86f6cc937053c8badf9bd7a80f24727b6cc713b0e9d91848caa370d8ded5"
+    },
+    "joy": {
+     "file": "assets/room13-role-resident_piko.webp",
+     "size": [
+      497,
+      768
+     ],
+     "source_sha256": "39dc86f6cc937053c8badf9bd7a80f24727b6cc713b0e9d91848caa370d8ded5",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "flustered": {
+     "file": "assets/room13-role-resident_piko.webp",
+     "size": [
+      497,
+      768
+     ],
+     "source_sha256": "39dc86f6cc937053c8badf9bd7a80f24727b6cc713b0e9d91848caa370d8ded5",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "angry": {
+     "file": "assets/room13-role-resident_piko.webp",
+     "size": [
+      497,
+      768
+     ],
+     "source_sha256": "39dc86f6cc937053c8badf9bd7a80f24727b6cc713b0e9d91848caa370d8ded5",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "anxious": {
+     "file": "assets/room13-role-resident_piko.webp",
+     "size": [
+      497,
+      768
+     ],
+     "source_sha256": "39dc86f6cc937053c8badf9bd7a80f24727b6cc713b0e9d91848caa370d8ded5",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "surprise": {
+     "file": "assets/room13-role-resident_piko.webp",
+     "size": [
+      497,
+      768
+     ],
+     "source_sha256": "39dc86f6cc937053c8badf9bd7a80f24727b6cc713b0e9d91848caa370d8ded5",
+     "fallback": "neutral",
+     "production_status": "pending"
+    }
+   },
+   "role_connect": "copper_dog-originalized-pixel-v2"
+  },
+  "resident_ppul": {
+   "crop": [
+    24,
+    0,
+    467,
+    759
+   ],
+   "figure": [
+    28,
+    0,
+    459,
+    755
+   ],
+   "images": {
+    "angry": {
+     "file": "assets/room13-fullbody-resident_ppul-angry-acting.webp",
+     "size": [
+      304,
+      452
+     ],
+     "crop": [
+      26,
+      16,
+      256,
+      426
+     ],
+     "map": [
+      1.76362,
+      -21.0,
+      -21.0
+     ],
+     "cell": 2,
+     "source_sha256": "643618a8e21fca70aaff025dc2e534dbe352cfbb8a958f03798e0ede8c2f11d7",
+     "stage": "acting-v3"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-resident_ppul-anxious-acting.webp",
+     "size": [
+      304,
+      452
+     ],
+     "crop": [
+      62,
+      16,
+      192,
+      422
+     ],
+     "map": [
+      1.76362,
+      -21.0,
+      -21.0
+     ],
+     "cell": 2,
+     "source_sha256": "0de8234e0078a357f0c61c1eaf6f23e943fd36d423f9481a42a2ad8af8c55fbb",
+     "stage": "acting-v3"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-resident_ppul-flustered-acting.webp",
+     "size": [
+      304,
+      452
+     ],
+     "crop": [
+      46,
+      10,
+      234,
+      432
+     ],
+     "map": [
+      1.76362,
+      -21.0,
+      -21.0
+     ],
+     "cell": 2,
+     "source_sha256": "19f77e1da847e3dea94755ae85057605e84aad94f30453d73d52e8c98ba65949",
+     "stage": "acting-v3"
+    },
+    "neutral": {
+     "file": "assets/room13-fullbody-resident_ppul-neutral-acting.webp",
+     "size": [
+      304,
+      452
+     ],
+     "crop": [
+      56,
+      14,
+      200,
+      428
+     ],
+     "map": [
+      1.76362,
+      -21.0,
+      -21.0
+     ],
+     "cell": 2,
+     "source_sha256": "5d98132e168e159ed136c6da64452ed16e0c3bc07a93e8854e7326ea1625c417",
+     "stage": "base59"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-resident_ppul-surprise-acting.webp",
+     "size": [
+      304,
+      452
+     ],
+     "crop": [
+      52,
+      14,
+      238,
+      422
+     ],
+     "map": [
+      1.76362,
+      -21.0,
+      -21.0
+     ],
+     "cell": 2,
+     "source_sha256": "b5ce0bfd47bed7bec7c8db2b2229ae8e0d2851104e0bcb8a123181ae3aa791d1",
+     "stage": "acting-v3"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-resident_ppul-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "4f43e0eca92791742cbf80311e2b4483e27b20898ac71ee65487e56d1e154ef8",
+     "kept": "current"
+    }
+   },
+   "pixel": {
+    "u": 1.76362,
+    "cell": 2
+   },
+   "name_ko": "뿔이 촌장",
+   "poses": {
+    "kneel_stone": {
+     "file": "assets/room13-fullbody-resident_ppul-pose-kneel_stone.webp",
+     "size": [
+      512,
+      768
+     ],
+     "crop": [
+      18,
+      24,
+      483,
+      713
+     ],
+     "figure": [
+      22,
+      28,
+      475,
+      705
+     ],
+     "mapped_image": {
+      "native_detail": true,
+      "smooth_source": true
+     }
+    }
+   },
+   "acting_package": "expression-acting-20261016"
+  },
+  "resident_seol": {
+   "name_ko": "설이",
+   "crop": [
+    40,
+    0,
+    423,
+    768
+   ],
+   "figure": [
+    44,
+    4,
+    415,
+    760
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-canonical-default-resident_seol.webp",
+     "size": [
+      488,
+      768
+     ],
+     "source_sha256": "c2f81e3add32b779f8fa6063aa55c1d31f6e566d9944967506c614c67e83efa0"
+    },
+    "joy": {
+     "file": "assets/room13-canonical-default-resident_seol.webp",
+     "size": [
+      488,
+      768
+     ],
+     "source_sha256": "c2f81e3add32b779f8fa6063aa55c1d31f6e566d9944967506c614c67e83efa0",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "flustered": {
+     "file": "assets/room13-canonical-default-resident_seol.webp",
+     "size": [
+      488,
+      768
+     ],
+     "source_sha256": "c2f81e3add32b779f8fa6063aa55c1d31f6e566d9944967506c614c67e83efa0",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "angry": {
+     "file": "assets/room13-canonical-default-resident_seol.webp",
+     "size": [
+      488,
+      768
+     ],
+     "source_sha256": "c2f81e3add32b779f8fa6063aa55c1d31f6e566d9944967506c614c67e83efa0",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "anxious": {
+     "file": "assets/room13-canonical-default-resident_seol.webp",
+     "size": [
+      488,
+      768
+     ],
+     "source_sha256": "c2f81e3add32b779f8fa6063aa55c1d31f6e566d9944967506c614c67e83efa0",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "surprise": {
+     "file": "assets/room13-canonical-default-resident_seol.webp",
+     "size": [
+      488,
+      768
+     ],
+     "source_sha256": "c2f81e3add32b779f8fa6063aa55c1d31f6e566d9944967506c614c67e83efa0",
+     "fallback": "neutral",
+     "production_status": "pending"
+    }
+   },
+   "role_connect": "canonical48-rev47-aligned"
+  },
+  "resident_seori": {
+   "crop": [
+    97,
+    0,
+    345,
+    764
+   ],
+   "figure": [
+    101,
+    -10,
+    337,
+    770
+   ],
+   "images": {
+    "angry": {
+     "file": "assets/room13-fullbody-resident_seori-angry-acting.webp",
+     "size": [
+      324,
+      476
+     ],
+     "crop": [
+      62,
+      20,
+      186,
+      440
+     ],
+     "map": [
+      1.75123,
+      -11.0,
+      -48.0
+     ],
+     "cell": 2,
+     "source_sha256": "33103f8a1e591ec1c5ed8dcc04e13a095eca2d83c25e94bcc500ddc4957f273b",
+     "stage": "acting-v4"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-resident_seori-anxious-acting.webp",
+     "size": [
+      324,
+      476
+     ],
+     "crop": [
+      86,
+      60,
+      172,
+      400
+     ],
+     "map": [
+      1.75123,
+      -11.0,
+      -48.0
+     ],
+     "cell": 2,
+     "source_sha256": "3ca5666643645e5ed106ed5b21dfc89df7d8f472a4917d442cd512c535b3580b",
+     "stage": "acting-v4"
+    },
+    "neutral": {
+     "file": "assets/room13-fullbody-resident_seori-neutral-acting.webp",
+     "size": [
+      324,
+      476
+     ],
+     "crop": [
+      62,
+      22,
+      184,
+      438
+     ],
+     "map": [
+      1.75123,
+      -11.0,
+      -48.0
+     ],
+     "cell": 2,
+     "source_sha256": "a86dd1fae9dd3d3d2c9461fb1a702296d8060ba3da133ea94e4bdbbe156f275f",
+     "stage": "acting-v4-neutral-anchor"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-resident_seori-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "56c55fd1301e92426878e84b6be573bd96f557fa7b55291c113be722a96fc72f",
+     "kept": "current"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-resident_seori-flustered.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "c22228ed62987f44ff718d3f673d1cca01245f3ecf1c24d6f64b113c11ea3cbf",
+     "kept": "current"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-resident_seori-surprise.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "6bc064297f0be4af7c9dfa3561a4685aa6a6621493eb34be0c8d0dacb4b22cc3",
+     "kept": "current"
+    }
+   },
+   "pixel": {
+    "u": 1.75123,
+    "cell": 2
+   },
+   "name_ko": "서리 검사원",
+   "acting_package": "expression-acting-20261016"
+  },
+  "resident_siluk": {
+   "name_ko": "실룩",
+   "crop": [
+    108,
+    28,
+    315,
+    716
+   ],
+   "figure": [
+    112,
+    32,
+    307,
+    708
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-redesign-resident_siluk.webp",
+     "size": [
+      519,
+      758
+     ],
+     "source_sha256": "ba1215e02555a690f88d18641f29cf34d73ad3d257c00ef4d945f831abed13f3"
+    },
+    "joy": {
+     "file": "assets/room13-redesign-resident_siluk.webp",
+     "size": [
+      519,
+      758
+     ],
+     "source_sha256": "ba1215e02555a690f88d18641f29cf34d73ad3d257c00ef4d945f831abed13f3",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "flustered": {
+     "file": "assets/room13-redesign-resident_siluk.webp",
+     "size": [
+      519,
+      758
+     ],
+     "source_sha256": "ba1215e02555a690f88d18641f29cf34d73ad3d257c00ef4d945f831abed13f3",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "angry": {
+     "file": "assets/room13-redesign-resident_siluk.webp",
+     "size": [
+      519,
+      758
+     ],
+     "source_sha256": "ba1215e02555a690f88d18641f29cf34d73ad3d257c00ef4d945f831abed13f3",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "anxious": {
+     "file": "assets/room13-redesign-resident_siluk.webp",
+     "size": [
+      519,
+      758
+     ],
+     "source_sha256": "ba1215e02555a690f88d18641f29cf34d73ad3d257c00ef4d945f831abed13f3",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "surprise": {
+     "file": "assets/room13-redesign-resident_siluk.webp",
+     "size": [
+      519,
+      758
+     ],
+     "source_sha256": "ba1215e02555a690f88d18641f29cf34d73ad3d257c00ef4d945f831abed13f3",
+     "fallback": "neutral",
+     "production_status": "pending"
+    }
+   },
+   "redesign": "five_town_hyena_v2"
+  },
+  "resident_sling": {
+   "name_ko": "슬링",
+   "crop": [
+    15,
+    27,
+    464,
+    728
+   ],
+   "figure": [
+    19,
+    31,
+    455,
+    720
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-resident_sling-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "2ef453a754502880392037bba2e3646de36930280fbbd19b2aa4f4405f076b4a"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-resident_sling-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "95c9a6532781d2f00e44771faddb6f7f6f146bd7bf40e2c01408508777279720"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-resident_sling-flustered.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "ca9b6ac79081641c4caf91cdb341b3c2ce40bc599a2ffde854c2e8d88b6c2132"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-resident_sling-angry.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "c28cb20239db0076a2eee6bf7f7666d18c601e8b7465d5300e5845aea51104b7"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-resident_sling-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "3d75390c0800a60acc634f5dd3e7ee74bace17801b7fa05fa613fac40d800b1a"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-resident_sling-surprise.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "175d8446bd3c7c76adb756855e3dfcbf3efb01b54923bb27d0fe4129b6c24754"
+    }
+   }
+  },
+  "resident_somi": {
+   "name_ko": "솜이",
+   "crop": [
+    36,
+    6,
+    415,
+    749
+   ],
+   "figure": [
+    40,
+    10,
+    407,
+    741
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-resident_somi-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "d8e8840a2ed500268035dfe575ddd47b12f94e9bd333e87b113d67ca334d107e"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-resident_somi-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "841744b057ef62be7c5c4b308d91404beb1a984bee6f65fab7936de1d678fa99"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-resident_somi-flustered.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "672fcfee27bf9dd9498bad70bac780e54b6b9418bda1e0f726a21fac086211dd"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-resident_somi-angry.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "f85f70f32e74d609830716d1f13ba856928cf39327366cff4f2abd9204425214"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-resident_somi-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "eb20060101db74c4343b446d9199092dac358e0f7518c6713277f0796005c947"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-resident_somi-surprise.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "f9e360bf58b65efb6c3efbed976283d797c5e801ddfd58c1541a2a9df4e592c8"
+    }
+   }
+  },
+  "resident_teacher": {
+   "name_ko": "사자 선생님",
+   "crop": [
+    0,
+    0,
+    482,
+    768
+   ],
+   "figure": [
+    1,
+    0,
+    477,
+    766
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-canonical-default-resident_teacher.webp",
+     "size": [
+      492,
+      768
+     ],
+     "source_sha256": "bdb8367f2d3f28192a3df548ddc992b0ee0c9ca2b9e84ea50c1f7917ee4338eb"
+    },
+    "joy": {
+     "file": "assets/room13-canonical-default-resident_teacher.webp",
+     "size": [
+      492,
+      768
+     ],
+     "source_sha256": "bdb8367f2d3f28192a3df548ddc992b0ee0c9ca2b9e84ea50c1f7917ee4338eb",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "flustered": {
+     "file": "assets/room13-role-resident_teacher-batch-flustered-v1.webp",
+     "size": [
+      1004,
+      1566
+     ],
+     "crop": [
+      0,
+      0,
+      1004,
+      1566
+     ],
+     "map": [
+      0.5,
+      -11.5,
+      -10.0
+     ],
+     "native_detail": true,
+     "source_sha256": "f72a5ab1ac3c7d273fd6015b859b51bc0f0bacf838772e2cfc669c255705dfb3",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "angry": {
+     "file": "assets/room13-role-resident_teacher-batch-angry-v1.webp",
+     "size": [
+      1004,
+      1566
+     ],
+     "crop": [
+      0,
+      0,
+      1004,
+      1566
+     ],
+     "map": [
+      0.5,
+      -11.5,
+      -14.5
+     ],
+     "native_detail": true,
+     "source_sha256": "1d2c814176488a3ac1e19185f4476b47a7139a89beca377c08db9197c25384cf",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "anxious": {
+     "file": "assets/room13-role-resident_teacher-batch-anxious-v1.webp",
+     "size": [
+      1005,
+      1566
+     ],
+     "crop": [
+      0,
+      0,
+      1005,
+      1566
+     ],
+     "map": [
+      0.5,
+      -11.75,
+      -9.5
+     ],
+     "native_detail": true,
+     "source_sha256": "a9b2e7c0b94563e9bb753976746401798ffd045be3f3907232b56b0da402bc4a",
+     "review_batch": "reviewed-batches-20261017"
+    },
+    "surprise": {
+     "file": "assets/room13-role-resident_teacher-batch-surprise-v1.webp",
+     "size": [
+      1004,
+      1566
+     ],
+     "crop": [
+      0,
+      0,
+      1004,
+      1566
+     ],
+     "map": [
+      0.5,
+      -11.5,
+      -10.5
+     ],
+     "native_detail": true,
+     "source_sha256": "184b112b739b4037a8681e578a2a7d66c1418844dcfb0741a39212c0c08be06b",
+     "review_batch": "reviewed-batches-20261017"
+    }
+   },
+   "role_connect": "canonical48-rev47-aligned",
+   "poses": {
+    "write_attendance": {
+     "file": "assets/room13-role-resident_teacher-batch-write_attendance-v1.webp",
+     "crop": [
+      0,
+      0,
+      482,
+      768
+     ],
+     "figure": [
+      1,
+      0,
+      477,
+      766
+     ],
+     "mapped_image": {
+      "file": "assets/room13-role-resident_teacher-batch-write_attendance-v1.webp",
+      "size": [
+       1005,
+       1566
+      ],
+      "crop": [
+       0,
+       0,
+       1005,
+       1566
+      ],
+      "map": [
+       0.5,
+       -11.75,
+       -15.0
+      ],
+      "native_detail": true,
+      "source_sha256": "26186a2d0022c9cd73c8c164cb6f5b82ad54052cfc2ac8f1178324f1b36d5e10",
+      "review_batch": "reviewed-batches-20261017"
+     },
+     "fit": 1.0,
+     "size": [
+      1005,
+      1566
+     ]
+    },
+    "collapse_attendance": {
+     "file": "assets/room13-role-resident_teacher-batch-collapse_attendance-v1.webp",
+     "crop": [
+      0,
+      0,
+      482,
+      768
+     ],
+     "figure": [
+      1,
+      0,
+      477,
+      766
+     ],
+     "mapped_image": {
+      "file": "assets/room13-role-resident_teacher-batch-collapse_attendance-v1.webp",
+      "size": [
+       1004,
+       1566
+      ],
+      "crop": [
+       0,
+       0,
+       1004,
+       1566
+      ],
+      "map": [
+       0.5,
+       -11.5,
+       10.5
+      ],
+      "native_detail": true,
+      "source_sha256": "d3c6381336bed0bea8da34c940ccde23304bceee20674fc1815d6d5cb2296872",
+      "review_batch": "reviewed-batches-20261017"
+     },
+     "fit": 1.0,
+     "size": [
+      1004,
+      1566
+     ]
+    }
+   }
+  },
+  "resident_tok": {
+   "crop": [
+    28,
+    0,
+    423,
+    753
+   ],
+   "figure": [
+    32,
+    0,
+    415,
+    749
+   ],
+   "images": {
+    "flustered": {
+     "file": "assets/room13-fullbody-resident_tok-flustered-acting.webp",
+     "size": [
+      274,
+      412
+     ],
+     "crop": [
+      14,
+      0,
+      230,
+      412
+     ],
+     "map": [
+      1.83188,
+      3.0,
+      -3.0
+     ],
+     "cell": 2,
+     "source_sha256": "3a073d15c716390bfc537feb4ad2f4dbad27fdf17b37eb1fd1f95146e66bfb8b",
+     "stage": "acting-v4"
+    },
+    "neutral": {
+     "file": "assets/room13-fullbody-resident_tok-neutral-acting.webp",
+     "size": [
+      274,
+      412
+     ],
+     "crop": [
+      34,
+      12,
+      208,
+      400
+     ],
+     "map": [
+      1.83188,
+      3.0,
+      -3.0
+     ],
+     "cell": 2,
+     "source_sha256": "2c018398b9f557f8f38b934fa6c0313d6062ea076d3e6b9ff04b6d3a9ab0dc32",
+     "stage": "acting-v4-neutral-anchor"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-resident_tok-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "2f925d6a4d0fac82b8a51b6c70e4fed7a0f34c297d19432b880a9d75c9eb026f",
+     "kept": "current"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-resident_tok-angry.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "c424f03557c32cf77744248fc8cc56fb25b6dd561dd8d1751f2d56c035391545",
+     "kept": "current"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-resident_tok-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "8b966d0fee1fb0899318b36a24b93e2ffaddc514698ea731992171581bc6fa8b",
+     "kept": "current"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-resident_tok-surprise.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "ad9f9ccfb6d757f0c3b4b5f9cd21cf73c49a6a6e2c476ff6c0ef45f603e77df2",
+     "kept": "current"
+    }
+   },
+   "pixel": {
+    "u": 1.83188,
+    "cell": 2
+   },
+   "name_ko": "톡",
+   "acting_package": "expression-acting-20261016"
+  },
+  "resident_tori": {
+   "name_ko": "토리",
+   "crop": [
+    82,
+    1,
+    319,
+    806
+   ],
+   "figure": [
+    86,
+    6,
+    309,
+    797
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-resident_tori-neutral.webp",
+     "size": [
+      483,
+      814
+     ],
+     "source_sha256": "899d45ce1df2cc74e37b8df5770b6a2bb8abebe81a3ad7886e68568474d51dfd"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-resident_tori-joy.webp",
+     "size": [
+      484,
+      814
+     ],
+     "source_sha256": "9e88de8936b8a111ac030066635c9b28a9be95c771b4137d0f5df3e679a4eacf"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-resident_tori-flustered.webp",
+     "size": [
+      484,
+      814
+     ],
+     "source_sha256": "f75f6877061da4c61f79d92cb6e392e8f18c6d3148cfcb1487331c9a8324d137"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-resident_tori-angry.webp",
+     "size": [
+      483,
+      814
+     ],
+     "source_sha256": "3fe2b1f20ba4e698a2b9d0b80b8fc0c24573e76523ac40a963539ce7feadd196"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-resident_tori-anxious.webp",
+     "size": [
+      483,
+      814
+     ],
+     "source_sha256": "ed1e523380ee0502390e133672a64925ab2492c1be97e3f7355657c8216f9e9c"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-resident_tori-surprise.webp",
+     "size": [
+      484,
+      814
+     ],
+     "source_sha256": "1019202b253d40fcd26e18b76eb469c109d1907fcbfa780cb81ca4b932fd7dbf"
+    }
+   }
+  },
+  "resident_ttadak": {
+   "name_ko": "따닥",
+   "crop": [
+    55,
+    2,
+    412,
+    764
+   ],
+   "figure": [
+    59,
+    6,
+    404,
+    756
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-resident_ttadak-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "efc1691f92868917473172e3faec286191572f2d336bdebafabe869105f20be5"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-resident_ttadak-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "763ea9ec16284cbf7cd34b41ce7303addcc62b36debe66ed9fc337aa1c29abe9"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-resident_ttadak-flustered.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "c1f695c11b5eb28607c1ad9307bc69dff2b32b67697df7800c1c062790217f91"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-resident_ttadak-angry.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "b4cb12d0c991afb0d93ef2d6cf937e764b42115bd656573db234c38896f88ee9"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-resident_ttadak-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "5e96c92bf6306b119325bd3ef379111598e3de516dcc9de9844c6987545ef4d6"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-resident_ttadak-surprise.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "0f685a0e127a5a1d074300a73304f91fca4d83172871702a2afc916a8156a48d"
+    }
+   }
+  },
+  "resident_ubak": {
+   "name_ko": "우박",
+   "crop": [
+    61,
+    10,
+    400,
+    746
+   ],
+   "figure": [
+    66,
+    14,
+    391,
+    737
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-resident_ubak-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "5496296fd45e9d77cb8c497cedf5ba45d0beae6766d576ea87bbcddc0f195a50"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-resident_ubak-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "ce5f1ed7d573f7ffb5eb26d6f46b30636ab182ac190c2d28ff9179e6f04737ab"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-resident_ubak-flustered.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "166cd3986b58f224c8713bdb7780d50d3e4fc9e7c7bea4fc9b10e4666f188427"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-resident_ubak-angry.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "f2541491d985de816ca4f0875ddc5ab769031f5a4b0ba477573a8e50c5169fdf"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-resident_ubak-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "86267481d1f521611114538c14094a6d6462756153f1e6d034d10853a2865fc9"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-resident_ubak-surprise.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "7bf4324457a1175e1631482ac367be7c823cc1bb0def70e4797a71bb1f359464"
+    }
+   }
+  },
+  "resident_yeoni": {
+   "name_ko": "여니",
+   "crop": [
+    18,
+    1,
+    449,
+    756
+   ],
+   "figure": [
+    22,
+    5,
+    441,
+    748
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-redesign-resident_yeoni.webp",
+     "size": [
+      519,
+      758
+     ],
+     "source_sha256": "ed05944875c37ad302ca9ed92e9a0930c2b240ae32628f0558e4d94d8a0cbb18"
+    },
+    "joy": {
+     "file": "assets/room13-redesign-resident_yeoni.webp",
+     "size": [
+      519,
+      758
+     ],
+     "source_sha256": "ed05944875c37ad302ca9ed92e9a0930c2b240ae32628f0558e4d94d8a0cbb18",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "flustered": {
+     "file": "assets/room13-redesign-resident_yeoni.webp",
+     "size": [
+      519,
+      758
+     ],
+     "source_sha256": "ed05944875c37ad302ca9ed92e9a0930c2b240ae32628f0558e4d94d8a0cbb18",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "angry": {
+     "file": "assets/room13-redesign-resident_yeoni.webp",
+     "size": [
+      519,
+      758
+     ],
+     "source_sha256": "ed05944875c37ad302ca9ed92e9a0930c2b240ae32628f0558e4d94d8a0cbb18",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "anxious": {
+     "file": "assets/room13-redesign-resident_yeoni.webp",
+     "size": [
+      519,
+      758
+     ],
+     "source_sha256": "ed05944875c37ad302ca9ed92e9a0930c2b240ae32628f0558e4d94d8a0cbb18",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "surprise": {
+     "file": "assets/room13-redesign-resident_yeoni.webp",
+     "size": [
+      519,
+      758
+     ],
+     "source_sha256": "ed05944875c37ad302ca9ed92e9a0930c2b240ae32628f0558e4d94d8a0cbb18",
+     "fallback": "neutral",
+     "production_status": "pending"
+    }
+   },
+   "redesign": "candidate_fox_town"
+  },
+  "seryeon": {
+   "crop": [
+    28,
+    9,
+    394,
+    748
+   ],
+   "figure": [
+    32,
+    13,
+    386,
+    740
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-seryeon-neutral-acting.webp",
+     "size": [
+      288,
+      432
+     ],
+     "crop": [
+      26,
+      18,
+      216,
+      408
+     ],
+     "map": [
+      1.76272,
+      -13.0,
+      3.0
+     ],
+     "cell": 2,
+     "source_sha256": "5b4deadd5d80061542b0b1f7eaad79c1614e20733bebbd993ffea83fac9c7b4c",
+     "stage": "acting-v4-neutral-anchor"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-seryeon-surprise-acting.webp",
+     "size": [
+      288,
+      432
+     ],
+     "crop": [
+      24,
+      4,
+      222,
+      422
+     ],
+     "map": [
+      1.76272,
+      -13.0,
+      3.0
+     ],
+     "cell": 2,
+     "source_sha256": "cf2aa7bd9b224c6df36a96fe34d97b570ffa51b8f8b459f13009789027e9cd98",
+     "stage": "acting-v4"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-seryeon-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "8c43356e46c6dfa49cb8ac0672851d4988999d361f67c5d06329f9de946a0c52",
+     "kept": "current"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-seryeon-flustered.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "443828832b467caf78f20d92d77efea8de4b777428b370d604f486ac857d893e",
+     "kept": "current"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-seryeon-angry.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "7802ba0a19b712fcf170e927275ee5b4e57ad7f8b28687d26fb7f8dbffd8b755",
+     "kept": "current"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-seryeon-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "0d29eea3cd77dc1c5569c9874d1d20db7a357e6e917407ec18bc0c27afae2afa",
+     "kept": "current"
+    }
+   },
+   "pixel": {
+    "u": 1.76272,
+    "cell": 2
+   },
+   "name_ko": "세련",
+   "acting_package": "expression-acting-20261016"
+  },
+  "workshop": {
+   "name_ko": "공방 주인",
+   "crop": [
+    60,
+    0,
+    423,
+    765
+   ],
+   "figure": [
+    66,
+    5,
+    412,
+    755
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-workshop-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "ea3e70270e77bee27d27020de9eea6ea8f14e621d95c732722d09348fc311f19"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-workshop-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "aa9a46511e294a5cbfba9efea972fac2507838084a5833d4b7723c980fc03bcf"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-workshop-flustered.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "75587df795fb807c79ece6c510c61fb4fadb09c335142e31965f3d99f570b22f"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-workshop-angry.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "248aa67d7f550ab49cfbaaf2f72446a7f215fae8295489337ce3d907fa25f9f0"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-workshop-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "9070e7bfe8afe481791def2ba8fdce48575f4d98396fd65ac1ccae7eede1402a"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-workshop-surprise.webp",
+     "size": [
+      512,
+      768
+     ],
+     "source_sha256": "b7023694fcb8c9548b5f828a6c6d32a5d1c6de3bfe801b277260367b4dfc762e"
+    }
+   }
+  },
+  "kid_kkomi": {
+   "name_ko": "꼬미",
+   "crop": [
+    58,
+    32,
+    394,
+    727
+   ],
+   "figure": [
+    62,
+    36,
+    386,
+    719
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-kid_kkomi-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-kid_kkomi-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-kid_kkomi-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-kid_kkomi-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-kid_kkomi-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-kid_kkomi-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    }
+   },
+   "art": "ep-art-20261016",
+   "poses": {
+    "door_peek": {
+     "file": "assets/room13-fullbody-kid_kkomi-pose-door_peek.webp",
+     "size": [
+      512,
+      768
+     ],
+     "crop": [
+      48,
+      1,
+      444,
+      756
+     ],
+     "figure": [
+      52,
+      5,
+      436,
+      748
+     ]
+    },
+    "hideout_proud": {
+     "file": "assets/room13-fullbody-kid_kkomi-pose-hideout_proud.webp",
+     "size": [
+      512,
+      768
+     ],
+     "crop": [
+      9,
+      27,
+      499,
+      719
+     ],
+     "figure": [
+      13,
+      31,
+      491,
+      711
+     ]
+    }
+   }
+  },
+  "kid_kkam": {
+   "name_ko": "깜이",
+   "crop": [
+    68,
+    47,
+    379,
+    709
+   ],
+   "figure": [
+    72,
+    51,
+    371,
+    701
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-kid_kkam-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-kid_kkam-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-kid_kkam-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-kid_kkam-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-kid_kkam-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-kid_kkam-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    }
+   },
+   "art": "ep-art-20261016"
+  },
+  "kid_mong": {
+   "name_ko": "몽이",
+   "crop": [
+    22,
+    7,
+    438,
+    757
+   ],
+   "figure": [
+    26,
+    11,
+    430,
+    749
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-kid_mong-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-kid_mong-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-kid_mong-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-kid_mong-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-kid_mong-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-kid_mong-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    }
+   },
+   "art": "ep-art-20261016"
+  },
+  "kid_bang": {
+   "name_ko": "방울",
+   "crop": [
+    52,
+    23,
+    420,
+    734
+   ],
+   "figure": [
+    56,
+    27,
+    412,
+    726
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-kid_bang-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-kid_bang-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-kid_bang-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-kid_bang-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-kid_bang-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-kid_bang-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    }
+   },
+   "art": "ep-art-20261016",
+   "poses": {
+    "cling_leg": {
+     "file": "assets/room13-fullbody-kid_bang-pose-cling_leg.webp",
+     "size": [
+      512,
+      768
+     ],
+     "crop": [
+      64,
+      10,
+      404,
+      755
+     ],
+     "figure": [
+      68,
+      14,
+      396,
+      747
+     ]
+    }
+   }
+  },
+  "kid_nubi1": {
+   "name_ko": "누비의 큰아이",
+   "crop": [
+    62,
+    4,
+    394,
+    760
+   ],
+   "figure": [
+    66,
+    8,
+    386,
+    752
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-kid_nubi1-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-kid_nubi1-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-kid_nubi1-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-kid_nubi1-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-kid_nubi1-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-kid_nubi1-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    }
+   },
+   "art": "ep-art-20261016",
+   "poses": {
+    "hold_skirt": {
+     "file": "assets/room13-fullbody-kid_nubi1-pose-hold_skirt.webp",
+     "size": [
+      512,
+      768
+     ],
+     "crop": [
+      38,
+      0,
+      474,
+      763
+     ],
+     "figure": [
+      42,
+      0,
+      470,
+      759
+     ],
+     "fit": 0.78
+    }
+   }
+  },
+  "kid_nubi2": {
+   "name_ko": "누비의 둘째",
+   "crop": [
+    33,
+    27,
+    447,
+    726
+   ],
+   "figure": [
+    37,
+    31,
+    439,
+    718
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-kid_nubi2-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-kid_nubi2-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-kid_nubi2-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-kid_nubi2-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-kid_nubi2-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-kid_nubi2-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    }
+   },
+   "art": "ep-art-20261016"
+  },
+  "kid_siluk1": {
+   "name_ko": "실룩의 큰아이",
+   "crop": [
+    55,
+    30,
+    399,
+    721
+   ],
+   "figure": [
+    59,
+    34,
+    391,
+    713
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-kid_siluk1-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-kid_siluk1-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-kid_siluk1-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-kid_siluk1-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-kid_siluk1-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-kid_siluk1-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    }
+   },
+   "art": "ep-art-20261016"
+  },
+  "kid_siluk2": {
+   "name_ko": "실룩의 작은아이",
+   "crop": [
+    44,
+    25,
+    409,
+    727
+   ],
+   "figure": [
+    48,
+    29,
+    401,
+    719
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-kid_siluk2-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-kid_siluk2-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-kid_siluk2-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-kid_siluk2-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-kid_siluk2-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-kid_siluk2-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    }
+   },
+   "art": "ep-art-20261016"
+  },
+  "kid_saemi": {
+   "name_ko": "새미",
+   "crop": [
+    30,
+    49,
+    441,
+    701
+   ],
+   "figure": [
+    34,
+    53,
+    433,
+    693
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-kid_saemi-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-kid_saemi-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-kid_saemi-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-kid_saemi-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-kid_saemi-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-kid_saemi-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    }
+   },
+   "art": "ep-art-20261016",
+   "poses": {
+    "hide_bowl": {
+     "file": "assets/room13-fullbody-kid_saemi-pose-hide_bowl.webp",
+     "size": [
+      512,
+      768
+     ],
+     "crop": [
+      3,
+      65,
+      491,
+      662
+     ],
+     "figure": [
+      7,
+      69,
+      483,
+      654
+     ],
+     "fit": 0.6
+    }
+   }
+  },
+  "kid_dodam": {
+   "name_ko": "도담",
+   "crop": [
+    93,
+    55,
+    368,
+    679
+   ],
+   "figure": [
+    97,
+    59,
+    360,
+    671
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-kid_dodam-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-kid_dodam-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-kid_dodam-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-kid_dodam-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-kid_dodam-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-kid_dodam-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    }
+   },
+   "art": "ep-art-20261016",
+   "poses": {
+    "lick_ladle": {
+     "file": "assets/room13-fullbody-kid_dodam-pose-lick_ladle.webp",
+     "size": [
+      512,
+      768
+     ],
+     "crop": [
+      56,
+      18,
+      426,
+      733
+     ],
+     "figure": [
+      60,
+      22,
+      418,
+      725
+     ]
+    }
+   }
+  },
+  "npc_pandol": {
+   "name_ko": "판돌 영감",
+   "crop": [
+    7,
+    6,
+    502,
+    760
+   ],
+   "figure": [
+    11,
+    10,
+    494,
+    752
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-npc_pandol-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-npc_pandol-joy.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-npc_pandol-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-npc_pandol-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-npc_pandol-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-npc_pandol-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    }
+   },
+   "art": "ep-art-20261016",
+   "poses": {
+    "point_name": {
+     "file": "assets/room13-fullbody-npc_pandol-pose-point_name.webp",
+     "size": [
+      512,
+      768
+     ],
+     "crop": [
+      7,
+      7,
+      504,
+      752
+     ],
+     "figure": [
+      11,
+      11,
+      496,
+      744
+     ]
+    }
+   }
+  },
+  "chorong_mother": {
+   "name_ko": "초롱 어머니",
+   "crop": [
+    91,
+    14,
+    349,
+    748
+   ],
+   "figure": [
+    95,
+    18,
+    341,
+    740
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-fullbody-chorong_mother-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "joy": {
+     "file": "assets/room13-fullbody-chorong_mother-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "flustered": {
+     "file": "assets/room13-fullbody-chorong_mother-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "angry": {
+     "file": "assets/room13-fullbody-chorong_mother-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "anxious": {
+     "file": "assets/room13-fullbody-chorong_mother-anxious.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    },
+    "surprise": {
+     "file": "assets/room13-fullbody-chorong_mother-neutral.webp",
+     "size": [
+      512,
+      768
+     ],
+     "art": "ep-art-20261016"
+    }
+   },
+   "art": "ep-art-20261016",
+   "poses": {
+    "offer_lantern": {
+     "file": "assets/room13-fullbody-chorong_mother-pose-offer_lantern.webp",
+     "size": [
+      512,
+      768
+     ],
+     "crop": [
+      88,
+      12,
+      349,
+      746
+     ],
+     "figure": [
+      92,
+      16,
+      341,
+      738
+     ],
+     "fit": 0.72
+    }
+   }
+  },
+  "resident_tosil": {
+   "name_ko": "토실",
+   "crop": [
+    67,
+    0,
+    384,
+    755
+   ],
+   "figure": [
+    71,
+    1,
+    376,
+    750
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-canonical-default-resident_tosil.webp",
+     "size": [
+      470,
+      756
+     ],
+     "source_sha256": "4b7ac82763f0458e9bd5f4522961b6df8f03b5d018e122cd147e10162739af08"
+    },
+    "joy": {
+     "file": "assets/room13-canonical-default-resident_tosil.webp",
+     "size": [
+      470,
+      756
+     ],
+     "source_sha256": "4b7ac82763f0458e9bd5f4522961b6df8f03b5d018e122cd147e10162739af08",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "flustered": {
+     "file": "assets/room13-canonical-default-resident_tosil.webp",
+     "size": [
+      470,
+      756
+     ],
+     "source_sha256": "4b7ac82763f0458e9bd5f4522961b6df8f03b5d018e122cd147e10162739af08",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "angry": {
+     "file": "assets/room13-canonical-default-resident_tosil.webp",
+     "size": [
+      470,
+      756
+     ],
+     "source_sha256": "4b7ac82763f0458e9bd5f4522961b6df8f03b5d018e122cd147e10162739af08",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "anxious": {
+     "file": "assets/room13-canonical-default-resident_tosil.webp",
+     "size": [
+      470,
+      756
+     ],
+     "source_sha256": "4b7ac82763f0458e9bd5f4522961b6df8f03b5d018e122cd147e10162739af08",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "surprise": {
+     "file": "assets/room13-canonical-default-resident_tosil.webp",
+     "size": [
+      470,
+      756
+     ],
+     "source_sha256": "4b7ac82763f0458e9bd5f4522961b6df8f03b5d018e122cd147e10162739af08",
+     "fallback": "neutral",
+     "production_status": "pending"
+    }
+   },
+   "role_connect": "canonical48-rev47-aligned",
+   "poses": {
+    "hold_storybook": {
+     "file": "assets/room13-fullbody-resident_tosil-pose-hold_storybook.webp",
+     "size": [
+      512,
+      768
+     ],
+     "crop": [
+      89,
+      0,
+      359,
+      762
+     ],
+     "figure": [
+      93,
+      3,
+      351,
+      755
+     ],
+     "fit": 0.62
+    }
+   }
+  },
+  "resident_solbang": {
+   "name_ko": "솔방울",
+   "crop": [
+    0,
+    0,
+    1024,
+    1536
+   ],
+   "figure": [
+    64,
+    103,
+    940,
+    1406
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/solbang-chinchilla-source/neutral.webp",
+     "size": [
+      1024,
+      1536
+     ],
+     "native_detail": true,
+     "smooth_source": true,
+     "source_sha256": "5eaacbe578e3d52bd92485b9901a91d1572120672ad247caae92151835070bfd"
+    },
+    "joy": {
+     "file": "assets/solbang-chinchilla-source/joy.webp",
+     "size": [
+      1024,
+      1536
+     ],
+     "native_detail": true,
+     "smooth_source": true,
+     "source_sha256": "7357c859255ee249d1be16edad0245724758eef9d0a2cbfca09ac24d6fc6b0ee"
+    },
+    "angry": {
+     "file": "assets/solbang-chinchilla-source/angry.webp",
+     "size": [
+      1024,
+      1536
+     ],
+     "native_detail": true,
+     "smooth_source": true,
+     "source_sha256": "4af5bd2e03e37aa1dcad47ade95972d56898fe8efb42205eb0d3c7edc130a07b"
+    },
+    "anxious": {
+     "file": "assets/solbang-chinchilla-source/anxious.webp",
+     "size": [
+      1024,
+      1536
+     ],
+     "native_detail": true,
+     "smooth_source": true,
+     "source_sha256": "65784a00b256cea1a15c6f29ba68f43380bca9669f1f99b3e79fc390af61c87c"
+    },
+    "surprise": {
+     "file": "assets/solbang-chinchilla-source/surprise_talk.webp",
+     "size": [
+      1024,
+      1536
+     ],
+     "native_detail": true,
+     "smooth_source": true,
+     "source_sha256": "db4c0e95d4bf88974cea81dcb1626556cc4600b1437c4746abbfab17bc2edd46"
+    },
+    "flustered": {
+     "file": "assets/solbang-chinchilla-source/anxious.webp",
+     "size": [
+      1024,
+      1536
+     ],
+     "native_detail": true,
+     "smooth_source": true,
+     "source_sha256": "65784a00b256cea1a15c6f29ba68f43380bca9669f1f99b3e79fc390af61c87c"
+    }
+   },
+   "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a",
+   "role_connect": "approved-chinchilla-20261017"
+  },
+  "resident_guldol": {
+   "name_ko": "굴돌 할아버지",
+   "crop": [
+    38,
+    8,
+    226,
+    402
+   ],
+   "figure": [
+    42,
+    12,
+    218,
+    394
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-role-resident_guldol-neutral.webp",
+     "size": [
+      282,
+      420
+     ],
+     "crop": [
+      40,
+      10,
+      222,
+      398
+     ],
+     "map": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "cell": 2,
+     "source_sha256": "77ac4c31f3468d23fe717549f43b7f9a87c201b59124bd194f473a2e79c07411"
+    },
+    "joy": {
+     "file": "assets/room13-role-resident_guldol-neutral.webp",
+     "size": [
+      282,
+      420
+     ],
+     "crop": [
+      40,
+      10,
+      222,
+      398
+     ],
+     "map": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "cell": 2,
+     "source_sha256": "77ac4c31f3468d23fe717549f43b7f9a87c201b59124bd194f473a2e79c07411",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "flustered": {
+     "file": "assets/room13-role-resident_guldol-neutral.webp",
+     "size": [
+      282,
+      420
+     ],
+     "crop": [
+      40,
+      10,
+      222,
+      398
+     ],
+     "map": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "cell": 2,
+     "source_sha256": "77ac4c31f3468d23fe717549f43b7f9a87c201b59124bd194f473a2e79c07411",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "angry": {
+     "file": "assets/room13-role-resident_guldol-neutral.webp",
+     "size": [
+      282,
+      420
+     ],
+     "crop": [
+      40,
+      10,
+      222,
+      398
+     ],
+     "map": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "cell": 2,
+     "source_sha256": "77ac4c31f3468d23fe717549f43b7f9a87c201b59124bd194f473a2e79c07411",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "anxious": {
+     "file": "assets/room13-role-resident_guldol-neutral.webp",
+     "size": [
+      282,
+      420
+     ],
+     "crop": [
+      40,
+      10,
+      222,
+      398
+     ],
+     "map": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "cell": 2,
+     "source_sha256": "77ac4c31f3468d23fe717549f43b7f9a87c201b59124bd194f473a2e79c07411",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "surprise": {
+     "file": "assets/room13-role-resident_guldol-neutral.webp",
+     "size": [
+      282,
+      420
+     ],
+     "crop": [
+      40,
+      10,
+      222,
+      398
+     ],
+     "map": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "cell": 2,
+     "source_sha256": "77ac4c31f3468d23fe717549f43b7f9a87c201b59124bd194f473a2e79c07411",
+     "fallback": "neutral",
+     "production_status": "pending"
+    }
+   },
+   "pixel": {
+    "u": 1.0,
+    "cell": 2
+   },
+   "role_connect": "guldol-distinct-v1-approved"
+  },
+  "resident_mulgyeol": {
+   "name_ko": "물결",
+   "crop": [
+    88,
+    0,
+    424,
+    761
+   ],
+   "figure": [
+    92,
+    1,
+    416,
+    758
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-role-resident_mulgyeol.webp",
+     "size": [
+      512,
+      761
+     ],
+     "source_sha256": "ef4a893cf7258d562eea073783affe6148fa629fe69027f426f62c8ac9f1208a"
+    },
+    "joy": {
+     "file": "assets/room13-role-resident_mulgyeol.webp",
+     "size": [
+      512,
+      761
+     ],
+     "source_sha256": "ef4a893cf7258d562eea073783affe6148fa629fe69027f426f62c8ac9f1208a",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "flustered": {
+     "file": "assets/room13-role-resident_mulgyeol.webp",
+     "size": [
+      512,
+      761
+     ],
+     "source_sha256": "ef4a893cf7258d562eea073783affe6148fa629fe69027f426f62c8ac9f1208a",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "angry": {
+     "file": "assets/room13-role-resident_mulgyeol.webp",
+     "size": [
+      512,
+      761
+     ],
+     "source_sha256": "ef4a893cf7258d562eea073783affe6148fa629fe69027f426f62c8ac9f1208a",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "anxious": {
+     "file": "assets/room13-role-resident_mulgyeol.webp",
+     "size": [
+      512,
+      761
+     ],
+     "source_sha256": "ef4a893cf7258d562eea073783affe6148fa629fe69027f426f62c8ac9f1208a",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "surprise": {
+     "file": "assets/room13-role-resident_mulgyeol.webp",
+     "size": [
+      512,
+      761
+     ],
+     "source_sha256": "ef4a893cf7258d562eea073783affe6148fa629fe69027f426f62c8ac9f1208a",
+     "fallback": "neutral",
+     "production_status": "pending"
+    }
+   },
+   "role_connect": "lizard-base"
+  },
+  "resident_dalgeurak": {
+   "name_ko": "달그락",
+   "crop": [
+    54,
+    0,
+    418,
+    762
+   ],
+   "figure": [
+    58,
+    1,
+    410,
+    759
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-role-resident_dalgeurak.webp",
+     "size": [
+      505,
+      762
+     ],
+     "source_sha256": "db1213be16a3f89e3998f73739e21cb25b1e6102fa691bfed161006e548dd75a"
+    },
+    "joy": {
+     "file": "assets/room13-role-resident_dalgeurak.webp",
+     "size": [
+      505,
+      762
+     ],
+     "source_sha256": "db1213be16a3f89e3998f73739e21cb25b1e6102fa691bfed161006e548dd75a",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "flustered": {
+     "file": "assets/room13-role-resident_dalgeurak.webp",
+     "size": [
+      505,
+      762
+     ],
+     "source_sha256": "db1213be16a3f89e3998f73739e21cb25b1e6102fa691bfed161006e548dd75a",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "angry": {
+     "file": "assets/room13-role-resident_dalgeurak.webp",
+     "size": [
+      505,
+      762
+     ],
+     "source_sha256": "db1213be16a3f89e3998f73739e21cb25b1e6102fa691bfed161006e548dd75a",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "anxious": {
+     "file": "assets/room13-role-resident_dalgeurak.webp",
+     "size": [
+      505,
+      762
+     ],
+     "source_sha256": "db1213be16a3f89e3998f73739e21cb25b1e6102fa691bfed161006e548dd75a",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "surprise": {
+     "file": "assets/room13-role-resident_dalgeurak.webp",
+     "size": [
+      505,
+      762
+     ],
+     "source_sha256": "db1213be16a3f89e3998f73739e21cb25b1e6102fa691bfed161006e548dd75a",
+     "fallback": "neutral",
+     "production_status": "pending"
+    }
+   },
+   "role_connect": "white_eagle-roguish_chuckle"
+  },
+  "resident_jongjong": {
+   "name_ko": "종종이",
+   "crop": [
+    54,
+    0,
+    383,
+    765
+   ],
+   "figure": [
+    58,
+    3,
+    375,
+    758
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-role-resident_jongjong.webp",
+     "size": [
+      492,
+      768
+     ],
+     "source_sha256": "d93f92663bcbc6c470031f30365f78101503a375ae717d83a97879a150ffbf54"
+    },
+    "joy": {
+     "file": "assets/room13-role-resident_jongjong.webp",
+     "size": [
+      492,
+      768
+     ],
+     "source_sha256": "d93f92663bcbc6c470031f30365f78101503a375ae717d83a97879a150ffbf54",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "flustered": {
+     "file": "assets/room13-role-resident_jongjong.webp",
+     "size": [
+      492,
+      768
+     ],
+     "source_sha256": "d93f92663bcbc6c470031f30365f78101503a375ae717d83a97879a150ffbf54",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "angry": {
+     "file": "assets/room13-role-resident_jongjong.webp",
+     "size": [
+      492,
+      768
+     ],
+     "source_sha256": "d93f92663bcbc6c470031f30365f78101503a375ae717d83a97879a150ffbf54",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "anxious": {
+     "file": "assets/room13-role-resident_jongjong.webp",
+     "size": [
+      492,
+      768
+     ],
+     "source_sha256": "d93f92663bcbc6c470031f30365f78101503a375ae717d83a97879a150ffbf54",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "surprise": {
+     "file": "assets/room13-role-resident_jongjong.webp",
+     "size": [
+      492,
+      768
+     ],
+     "source_sha256": "d93f92663bcbc6c470031f30365f78101503a375ae717d83a97879a150ffbf54",
+     "fallback": "neutral",
+     "production_status": "pending"
+    }
+   },
+   "role_connect": "white_duck-base"
+  },
+  "resident_hyeoni": {
+   "name_ko": "현이",
+   "crop": [
+    14,
+    0,
+    494,
+    764
+   ],
+   "figure": [
+    18,
+    1,
+    486,
+    763
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-role-resident_hyeoni.webp",
+     "size": [
+      508,
+      764
+     ],
+     "source_sha256": "2460a246a4a111732d7ea8c2f41ee09eba69cc4d3545ed955d78e278dce00ee2"
+    },
+    "joy": {
+     "file": "assets/room13-role-resident_hyeoni.webp",
+     "size": [
+      508,
+      764
+     ],
+     "source_sha256": "2460a246a4a111732d7ea8c2f41ee09eba69cc4d3545ed955d78e278dce00ee2",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "flustered": {
+     "file": "assets/room13-role-resident_hyeoni.webp",
+     "size": [
+      508,
+      764
+     ],
+     "source_sha256": "2460a246a4a111732d7ea8c2f41ee09eba69cc4d3545ed955d78e278dce00ee2",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "angry": {
+     "file": "assets/room13-role-resident_hyeoni.webp",
+     "size": [
+      508,
+      764
+     ],
+     "source_sha256": "2460a246a4a111732d7ea8c2f41ee09eba69cc4d3545ed955d78e278dce00ee2",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "anxious": {
+     "file": "assets/room13-role-resident_hyeoni.webp",
+     "size": [
+      508,
+      764
+     ],
+     "source_sha256": "2460a246a4a111732d7ea8c2f41ee09eba69cc4d3545ed955d78e278dce00ee2",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "surprise": {
+     "file": "assets/room13-role-resident_hyeoni.webp",
+     "size": [
+      508,
+      764
+     ],
+     "source_sha256": "2460a246a4a111732d7ea8c2f41ee09eba69cc4d3545ed955d78e278dce00ee2",
+     "fallback": "neutral",
+     "production_status": "pending"
+    }
+   },
+   "role_connect": "fennec-large-eyes-v3"
+  },
+  "resident_kalbaram": {
+   "name_ko": "칼바람",
+   "crop": [
+    79,
+    0,
+    411,
+    704
+   ],
+   "figure": [
+    83,
+    1,
+    405,
+    699
+   ],
+   "images": {
+    "neutral": {
+     "file": "assets/room13-role-resident_kalbaram.webp",
+     "size": [
+      490,
+      718
+     ],
+     "source_sha256": "a0380f9a39154f2d4e8c52bddc207c553dc42e0990d57bfa8d438772d85684d9"
+    },
+    "joy": {
+     "file": "assets/room13-role-resident_kalbaram.webp",
+     "size": [
+      490,
+      718
+     ],
+     "source_sha256": "a0380f9a39154f2d4e8c52bddc207c553dc42e0990d57bfa8d438772d85684d9",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "flustered": {
+     "file": "assets/room13-role-resident_kalbaram.webp",
+     "size": [
+      490,
+      718
+     ],
+     "source_sha256": "a0380f9a39154f2d4e8c52bddc207c553dc42e0990d57bfa8d438772d85684d9",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "angry": {
+     "file": "assets/room13-role-resident_kalbaram.webp",
+     "size": [
+      490,
+      718
+     ],
+     "source_sha256": "a0380f9a39154f2d4e8c52bddc207c553dc42e0990d57bfa8d438772d85684d9",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "anxious": {
+     "file": "assets/room13-role-resident_kalbaram.webp",
+     "size": [
+      490,
+      718
+     ],
+     "source_sha256": "a0380f9a39154f2d4e8c52bddc207c553dc42e0990d57bfa8d438772d85684d9",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "surprise": {
+     "file": "assets/room13-role-resident_kalbaram.webp",
+     "size": [
+      490,
+      718
+     ],
+     "source_sha256": "a0380f9a39154f2d4e8c52bddc207c553dc42e0990d57bfa8d438772d85684d9",
+     "fallback": "neutral",
+     "production_status": "pending"
+    }
+   },
+   "role_connect": "kalbaram-shortmuzzle-pixel-v2"
+  }
+ }
+}
