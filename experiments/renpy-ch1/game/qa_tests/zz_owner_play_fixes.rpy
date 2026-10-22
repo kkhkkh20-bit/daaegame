@@ -21,7 +21,10 @@ testcase owner_play_fixes:
     click "QA V111:E01"
     pause 1.0
     screenshot "fix-03-daram-letter.png"
-    click pos (900,600) until screen "r13_hub" timeout 30
+    # 0.20.6: the conversation stays open after the answer; 「돌아가기」 leaves it.
+    click pos (200,400) until screen "r13_topics" timeout 30
+    click "돌아가기"
+    pause 1.0
     pause 0.6
     # 돌목: open the evidence, then cancel.
     click "돌목"

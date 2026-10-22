@@ -21,6 +21,15 @@ label r13_return_lost:
         r13_cutin_music_pause(False)
     if not (room13_mode and isinstance(room13, dict) and room13.get("day") and room13.get("location") in R13_PLACES) or room13.get("ending"):
         $ renpy.full_restart()
+    # 0.20.6 (Codex R05): the new-world story (room13["v111"]) keeps its records as "V111:..." and
+    # has no day router of the old story. Never send it to a new game: take this run's own morning
+    # save when it matches, else keep the save file untouched and return to the main menu.
+    if r13_v111_active():
+        if room13.get("day",1) in r13_morning_days():
+            $ renpy.notify("하던 장면을 이어 갈 수 없어 오늘 아침부터 다시 시작했어요.")
+            $ r13_morning_restore(room13.get("day",1))
+        call screen r13_confirm("이전 판의 저장이라 하던 장면을 이어 갈 수 없어요.\n저장 파일은 지우지 않았어요. 메인 화면으로 돌아갑니다.","메인 화면으로","메인 화면으로")
+        $ renpy.full_restart()
     if "E01" not in room13.get("evidence",[]):
         jump room13_start
     $ renpy.notify("이전 판의 저장이라 하던 장면을 이어 갈 수 없어 가까운 곳에서 다시 시작했어요.")

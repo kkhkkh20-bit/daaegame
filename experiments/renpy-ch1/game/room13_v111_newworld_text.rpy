@@ -65,6 +65,10 @@ init 319 python:
         # Review 0.20.1 4-5: the day-12 prep line names only what is really ready.
         "prep12_others_ready":lambda:all(r13_v111_value(k) for k in ("warm_seat_ready","carrier_arrived","warm_support_arrived")),
         "prep12_others_missing":lambda:not all(r13_v111_value(k) for k in ("warm_seat_ready","carrier_arrived","warm_support_arrived")),
+        # 0.20.6 (owner review): one of the two ready -> name only what is still missing.
+        "prep12_seat_only":lambda:bool(r13_v111_value("warm_seat_ready")) and not r13_v111_value("carrier_arrived"),
+        "prep12_carrier_only":lambda:bool(r13_v111_value("carrier_arrived")) and not r13_v111_value("warm_seat_ready"),
+        "prep12_seat_and_carrier":lambda:bool(r13_v111_value("warm_seat_ready")) and bool(r13_v111_value("carrier_arrived")),
         # Event 03: the day-3 lamp meeting (win / partial / lose).
         "lamp_win":lambda:r13_v111_value("meeting:lamp")=="win",
         "lamp_partial":lambda:r13_v111_value("meeting:lamp")=="partial",

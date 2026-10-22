@@ -46,9 +46,11 @@ init 330 python:
         base=_r13_nw_rel_status(person)
         if base[0]=="dead":return base
         lives=R13_NW_REL_LIFE
-        if person in lives and r13_nw_is_dead(person,lives[person]):
-            key=lives[person] if r13_v111_value(lives[person]) is False else "route12"
-            return "dead",r13_nw_rel_when(key)+"숨짐"
+        # 0.20.6 (Codex R02): the chart shows a death only once it is recorded in the story (the
+        # clinician's confirmation sets alive:kid_dodam False); the ending count may still infer
+        # it from route12 (r13_nw_is_dead), but the chart never tells the result ahead of the scene.
+        if person in lives and r13_v111_value(lives[person]) is False:
+            return "dead",r13_nw_rel_when(lives[person])+"숨짐"
         if r13_v111_value("handed:"+person):return "saved",r13_nw_rel_when("handed:"+person)+"수레에서 데려옴"
         if r13_v111_value("departed:"+person):return "gone",r13_nw_rel_when("departed:"+person)+"수레로 떠남"
         if r13_v111_value("listed:"+person):return "missing",r13_nw_rel_when("listed:"+person)+"이송 명단"

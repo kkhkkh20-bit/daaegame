@@ -60,7 +60,29 @@ init 318 python:
         "초롱과 피코의 하루를 대조한다":(("E11","NW_PIKO_TREMOR"),),
     }
     # Shown title only; the proof key (and the saved argument slot) keeps the old name.
-    R13_PROOF_TITLES={"첫 비명 뒤 핀을 다시 채운 때":"핀이 언제 떨어졌는가"}
+    R13_PROOF_TITLES={"첫 비명 뒤 핀을 다시 채운 때":"핀이 언제 떨어졌는가",
+        # 0.20.6 (full play check: the old title pointed at 실룩's records): the claim is "only Tok opened it".
+        "수리와 반출을 가릴 자료를 낸다":"톡이 고친 뒤에 등을 본 기록을 낸다"}
+    # 0.20.6: which meeting's chances a proof uses (dev/test_proof_meetings.py re-derives this from the
+    # wrong-answer labels). The proof screen shows them; a proof without a meeting shows none.
+    R13_PROOF_MEETING={
+        "함께 들어갈 근거를 고른다":"gate",
+        "수리와 반출을 가릴 자료를 낸다":"lamp","돌과 매입 기록을 낸다":"lamp","바깥 걸쇠 주장과 발견 위치를 대조한다":"lamp","마지막 점검과 인수한 돌을 연결한다":"lamp",
+        "밤이 혐의의 근거를 확인한다":"gate_post",
+        "불이 시작된 곳과 진술을 대조한다":"fire","불의 원인과 빈 창고 진압을 구분한다":"fire","불의 원인과 아이 구조를 구분한다":"fire",
+        "두 상처와 촛대 파손을 대조한다":"room13","두 번째 길을 실제 기록으로 보인다":"room13","구리선과 수선 출처를 대조한다":"room13",
+        "첫 비명 뒤 핀을 다시 채운 때":"room13","접촉면과 아이의 위치를 대조한다":"room13",
+        "수신인과 가족 전달 권한을 구분한다":"records","반송·필사본·초대 발송을 대조한다":"records",
+        "초롱과 피코의 하루를 대조한다":"hypothesis","창고에서 잠자는 사람을 짚는다":"hypothesis","요즘 돌이 어디서 오는지 대조한다":"hypothesis",
+        "아르카가 없는 아이들과 대조한다":"hypothesis","13호 난로의 돌을 내놓는다":"hypothesis",
+        "재사용 설명과 개봉 봉인을 대조한다":"soup","파편·봉인·취급 구간을 함께 제시한다":"soup","명단과 흰 그릇을 대조한다":"soup",
+        "아내가 봤다는 담요의 시점을 확인한다":"blanket","촌장이 어젯밤 있던 곳을 확인한다":"blanket",
+        "장부의 두 배를 실룩에게 보인다":"piko","피코가 막혀야 했던 까닭을 보인다":"piko",
+        "희생의 숫자와 장부를 대조한다":"altar","아르카가 부른다는 말과 옛 기록을 대조한다":"altar","쇠가 언제 붙었는지 보인다":"altar","맨 처음 이름을 짚는다":"altar"}
+    def r13_v111_proof_chances(key):
+        meeting=R13_PROOF_MEETING.get(key)
+        if not meeting or r13_v111_value("meeting:"+meeting) is not None:return None
+        return "남은 기회 %d / %d"%(max(0,R13_NW_TRIES-(r13_v111_value("tries:"+meeting) or 0)),R13_NW_TRIES)
     def r13_v111_proof_accepts(key,correct,given):
         given=set(given or ())
         extra=set("V111:"+k for k in R13_PROOF_EXTRAS.get(key,()))
@@ -68,6 +90,14 @@ init 318 python:
             need=set("V111:"+k for k in need)
             if need<=given<=need|extra:return True
         return False
+
+    # 0.20.6 (owner day-1 play: "인정받은 부분을 남겨 두기"): after a wrong answer the records that
+    # belong to an accepted set stay on the table; only the others are taken back. Chances and the
+    # accepted sets do not change.
+    def r13_v111_proof_kept(key,correct,given):
+        sets=[set(correct)]+[set(a) for a in R13_PROOF_ALTERNATES.get(key,())]
+        keep=set().union(*sets)
+        return [k for k in (given or ()) if isinstance(k,str) and k.startswith("V111:") and k[5:] in keep]
 
     # Half presentation (plan 7-2): some of the right records, none wrong.
     def r13_nw_half(correct):
@@ -123,7 +153,8 @@ init 318 python:
         r13_v111_set("tries:"+meeting,used)
         left=R13_NW_TRIES-used
         if left<=0:return False
-        hint=note if (note and correct and r13_nw_half(correct)) else "맞지 않는다."
+        kept=bool((store.room13.get("arguments") or {}).get(getattr(store,"v111_claim",None) or ""))
+        hint=note if (note and correct and r13_nw_half(correct)) else ("맞는 근거는 남겨 두었다." if kept else "맞지 않는다.")
         renpy.notify("%s 남은 기회 %d번."%(hint,left))
         return True
 

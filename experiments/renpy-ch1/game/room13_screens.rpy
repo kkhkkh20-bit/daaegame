@@ -100,7 +100,7 @@ screen r13_hub(entry=False):
         fixed:
             area (1020,264,232,64)
             use r13_control("자기","auto",Return(("sleep","bed")),enabled=input_ready,height=64)
-    if not entry and r13_evening_missions():
+    if not entry and r13_evening_missions() and not r13_v111_active():  # 0.20.6: the new-world wait has no evening menu (button did nothing)
         fixed:
             area (772,104,232,64)
             use r13_control("저녁 할 일","auto",Return(("menu","evening")),enabled=input_ready,height=64)
@@ -416,7 +416,10 @@ screen r13_activities():
                         text "주변을 살피거나 주민과 이야기하며 확인할 일을 찾아보자." size 24 xsize 780
             textbutton "돌아가기" action Return(False) sensitive ready
 
-screen r13_book(target=None,present=False,hearing=False):
+screen r13_book(target=None,present=False,hearing=False,called=False,purpose=None):
+    # 0.20.6 (owner review): `called` - opened with `call screen`, so closing must return (a bare Hide
+    # left the caller waiting: background only, no buttons). `purpose` names what the pick is for:
+    # "proof" = a record added to Dad's own argument, "use" = a record Dad takes out himself.
     style_prefix "r13"
     on "show" action Function(r13_unread_hold.clear)
     modal True
@@ -451,15 +454,16 @@ screen r13_book(target=None,present=False,hearing=False):
     $ selected_record=r13_present_selection(entries,detail,page) if present else r13_record_selected(entries,detail,page)
     $ statement=r13_book_statement() if present and hearing else None
     $ day_span=r13_evidence_day_span(entries)
-    $ present_label=("이 주장에 근거로 낸다" if hearing else R13_NAMES.get(target,"상대")+"에게 보여주기")
+    $ purpose_text=R13_BOOK_PURPOSE.get(purpose)
+    $ present_label=("이 주장에 근거로 낸다" if hearing else (purpose_text[0] if purpose_text else R13_NAMES.get(target,"상대")+"에게 보여주기"))
     $ present_ok=bool(present and ready and detail==selected_record and selected_record and r13_catalog_can_present(selected_record,hearing) and not archive)
     use r13_ink_record_shell(("보여주기" if present else "자료 기록"),r13_ev_record_tabs("r13_book",present),"all",
-        (Return(False) if present else Hide("r13_book")),
-        note=((statement[0]+"의 발언에 낼 자료" if statement else R13_NAMES.get(target,"상대")+"에게 보여줄 자료") if present else None))
+        (Return(False) if present or called else Hide("r13_book")),
+        note=((statement[0]+"의 발언에 낼 자료" if statement else (purpose_text[1] if purpose_text else R13_NAMES.get(target,"상대")+"에게 보여줄 자료")) if present else None))
     use r13_ink_chips(r13_ev_filter_chips("r13_book",material_filter,not hearing and not archive,None,0,(archive if not present and (archive or r13_learning_archive_keys()) else None)))
     use r13_evidence_browser(entries,selected_record,page,"r13_book",pair,pair_slot,archive and not present,view_context,("자료 %d개"%len(entries))+((" · "+day_span) if day_span else ""),
-        present,present_label,present_ok,Return(selected_record),(Return(False) if present else Hide("r13_book")),ready,statement,
-        (R13_NAMES.get(target,"상대")+"에게" if present and not statement else None))
+        present,present_label,present_ok,Return(selected_record),(Return(False) if present or called else Hide("r13_book")),ready,statement,
+        (R13_NAMES.get(target,"상대")+"에게" if present and not statement and not purpose_text else None))
 
 screen r13_calendar_content():
     default week=min(1,(room13["day"]-1)//7)

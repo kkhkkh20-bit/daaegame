@@ -2769,7 +2769,7 @@ label r13_v111_madam_device_close14:
     return
 
 label r13_v111_device_record14:
-    call screen r13_book("dad",present=True)
+    call screen r13_book("dad",present=True,purpose="use")
     if _return=="V111:E13_HANDOVER" and r13_v111_owned("E13_HANDOVER"):
         jump r13_v111_device_rescue14
     if _return=="V111:E14_SUPPLY" and r13_v111_owned("E14_SUPPLY") and r13_v111_value("school_heat_connected"):

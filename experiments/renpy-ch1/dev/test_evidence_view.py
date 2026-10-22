@@ -198,7 +198,8 @@ class EvidenceView(unittest.TestCase):
         self.assertIn('use r13_evidence_browser(entries,selected_record,page,_scope,pair,pair_slot,archive,("records",),header)', NOTE)
         self.assertIn('use r13_evidence_browser(entries,selected_record,page,"r13_book"', BOOK)
         self.assertIn('present,present_label,present_ok,Return(selected_record)', BOOK)
-        self.assertIn('"이 주장에 근거로 낸다" if hearing else R13_NAMES.get(target,"상대")+"에게 보여주기"', BOOK)
+        self.assertIn('"이 주장에 근거로 낸다" if hearing else (purpose_text[0] if purpose_text else R13_NAMES.get(target,"상대")+"에게 보여주기")', BOOK)  # 0.20.6: proof picks say 「근거에 추가」
+        self.assertIn('(Return(False) if present or called else Hide("r13_book"))', BOOK)  # 0.20.6: a called book always returns
         self.assertIn("$ live_pair=None if present else r13_compare_live(pair)", VIEW)
         for screen in ("default pair=None", "default pair_slot=1"):
             self.assertIn(screen, NOTE)

@@ -1,4 +1,5 @@
 default r13_field_reading = False
+default r13_v111_talk_person = None
 # V1.1.1 story data in the existing Room13 state and native Ren'Py labels.
 # No alternate controller, natural-language evaluator, or separate save state.
 init 301 python:
@@ -184,8 +185,15 @@ label r13_v111_wait(key):
 label r13_v111_wait_again:
     window hide
     hide r13_visitor
-    call screen r13_hub
-    $ v111_pick=_return; v111_binding=r13_v111_binding()
+    # 0.20.6 (owner day-1 play: "추가 질문마다 대화를 다시 시작하는 느낌"): after a question, a shown
+    # record or a follow-up, the same person's questions open again while they still have
+    # something to say and stand here; 「돌아가기」 leaves the conversation.
+    if r13_v111_talk_person and r13_v111_talk_person in r13_visible_people() and not r13_v111_idle_ok(r13_v111_talk_person):
+        $ v111_pick=("person",r13_v111_talk_person); v111_binding=r13_v111_binding()
+    else:
+        call screen r13_hub
+        $ v111_pick=_return; v111_binding=r13_v111_binding()
+    $ r13_v111_talk_person=None
     # 0.19.95: same guard as the older hub (room13.rpy) — a screen that returns
     # something other than a (kind, value) pair shows the hub again instead of crashing.
     if not r13_screen_choice_ok(v111_pick,"r13_v111_hub"):
@@ -209,6 +217,8 @@ label r13_v111_wait_again:
             call r13_lines(r13_v111_idle_lines(v111_person),"v111:idle:"+v111_person)
         elif v111_person in r13_visible_people():
             call screen r13_topics(v111_person)
+            if _return!="back":
+                $ r13_v111_talk_person=v111_person
             if isinstance(_return,int):
                 $ r13_v111_time("topic:"+key+":"+str(_return),0 if (key=="gate_investigate" and _return in (5,6)) or (key=="post_menu" and _return==1) or key in ("safe_passage9","passage_after9") else 10)
                 return _return
@@ -252,9 +262,9 @@ label r13_v111_proof(key,correct,success,wrong=None,hint=None):
     $ R13_CLAIMS[v111_claim]=dict(assertion=R13_PROOF_TITLES.get(key,key))
     $ room13["arguments"].setdefault(v111_claim,[])
 label r13_v111_proof_again:
-    call screen r13_crisis_proof(v111_claim,heading="기록 · 자료 대조",can_press=bool(hint),need_evidence=True,leave_label="자료 다시 보기")
+    call screen r13_crisis_proof(v111_claim,heading="기록 · 자료 대조",can_press=bool(hint),need_evidence=True,leave_label="자료 다시 보기",chances=r13_v111_proof_chances(key))
     if _return=="present":
-        call screen r13_book("dad",present=True)
+        call screen r13_book("dad",present=True,purpose="proof")
         if _return and _return in room13["evidence"] and _return not in room13["arguments"][v111_claim]:
             $ v111_copy=winter_copy.deepcopy(room13); v111_copy["arguments"][v111_claim].append(_return); room13=v111_copy
         jump r13_v111_proof_again
@@ -266,16 +276,16 @@ label r13_v111_proof_again:
             return success
         $ v111_last_presented=list(room13["arguments"][v111_claim])
         $ v111_wrong_target="r13_v111_gate_number" if v111_claim=="v111:함께 들어갈 근거를 고른다" and room13["arguments"][v111_claim]==["V111:E03"] and not r13_v111_value("gate_hardened") else wrong
-        $ v111_copy=winter_copy.deepcopy(room13); v111_copy["arguments"][v111_claim]=[]; room13=v111_copy
+        $ v111_copy=winter_copy.deepcopy(room13); v111_copy["arguments"][v111_claim]=r13_v111_proof_kept(key,correct,v111_last_presented); room13=v111_copy
         if v111_wrong_target:
             return v111_wrong_target
     if _return=="press" and hint:
         return hint
     if _return=="leave":
-        call screen r13_book
+        call screen r13_book(called=True)  # 0.20.6: X returns here instead of hiding the called screen
     jump r13_v111_proof_again
 
-label r13_v111_travel(destination,travel_id,companions=None):
+label r13_v111_travel(destination,travel_id,companions=None,direct=False):
     if room13["location"]==destination:
         return
     $ v111_travel_origin=room13["location"]
@@ -286,7 +296,12 @@ label r13_v111_travel(destination,travel_id,companions=None):
         if r13_v111_value("family_reunited") and r13_v111_value("location:mom")==v111_travel_origin and not r13_v111_value("busy:mom"):
             $ companions.append("mom")
     $ room13["v111"]["travel_to"]=destination
-    call r13_v111_wait("travel")
+    if direct:
+        # 0.20.6 (owner day-1 play): a chosen purpose ("할머니에게 묻는다") goes straight there.
+        $ r13_edit(location=destination)
+        call r13_scene(R13_PLACES[destination][1],R13_PLACES[destination][0],"calm")
+    else:
+        call r13_v111_wait("travel")
     $ r13_v111_arrive(companions)
     return
 
@@ -398,6 +413,7 @@ init 306 python:
         return record
 
 init 307 python:
+    R13_BOOK_PURPOSE=dict(proof=("근거에 추가","근거로 낼 자료"),use=("이 기록을 꺼낸다","꺼낼 기록"))
     _r13_v111_scene_music=r13_sound_scene_music
     def r13_sound_scene_music(bg,title,mood="calm"):
         if r13_v111_active():

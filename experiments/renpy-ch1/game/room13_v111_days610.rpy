@@ -434,6 +434,7 @@ label r13_v111_nubi_children_receipt7:
 
 label r13_v111_nubi_children_received7:
     $ r13_v111_commit('MS14_D07_S01_L0024')
+    call r13_lines(r13_nw_block('nubi_children_received7'),'nw:nubi_children_received7')  # 0.20.6: the hand-over is seen
     call r13_v111_travel('laundry','nubi_children_received7',[])
     $ r13_v111_arrive(["resident_nubi","resident_bori"])
     jump r13_v111_bori_witness7

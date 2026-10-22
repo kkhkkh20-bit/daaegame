@@ -15,6 +15,11 @@
 # Presentation only: nothing here grants, reveals or changes a record.
 init 330 python:
     import json as _r13_ev_json
+    # 0.20.6 (Codex R03): in the Ren'Py store `dict`/`list` name the revertable types, so a plain
+    # JSON dict failed isinstance(data,dict) and every authored summary was dropped. Check shape.
+    from collections.abc import Mapping as _R13EvMapping, Sequence as _R13EvSequence
+    def _r13_ev_is_lines(value):
+        return isinstance(value,_R13EvSequence) and not isinstance(value,str)
     R13_EVIDENCE_FACTS_PATH="v111/evidence-facts.json"
     R13_EVIDENCE_ART_DIR="assets/evidence/"
     R13_EVIDENCE_FACT_LIMIT=3
@@ -30,7 +35,7 @@ init 330 python:
             with renpy.file(path) as source:data=_r13_ev_json.load(source)
         except Exception:
             return {}
-        return data if isinstance(data,dict) else {}
+        return data if isinstance(data,_R13EvMapping) else {}
     R13_EVIDENCE_FACTS=r13_evidence_facts_load()
 
     def r13_evidence_base_key(key):
@@ -77,7 +82,7 @@ init 330 python:
     def r13_evidence_facts(key):
         base=r13_evidence_base_key(key)
         spec=R13_EVIDENCE_FACTS.get(base) if base else None
-        if isinstance(spec,dict):
+        if isinstance(spec,_R13EvMapping):
             # 0.20.5 (Codex B03): a later status (E35.status=received) outranks the acquired variant.
             status=None
             try:
@@ -87,7 +92,7 @@ init 330 python:
             except Exception:
                 status=None
             lines=spec.get(status) if status in spec else spec.get(r13_evidence_variant(key))
-            if isinstance(lines,(list,tuple)):
+            if _r13_ev_is_lines(lines):
                 lines=[str(line).strip() for line in lines if str(line).strip()]
                 if lines:return lines[:R13_EVIDENCE_FACT_LIMIT]
         record=r13_catalog_record(key)
@@ -184,6 +189,21 @@ init 330 python:
     def r13_compare_page(entries,key):
         return entries.index(key)//r13_record_page_size() if key in entries else 0
 
+    def r13_ev_text_lines(text,width,size):
+        """Rough rendered line count of one wrapped line of text (Korean glyphs about `size` wide)."""
+        import math
+        units=sum(.3 if ch==" " else 1 for ch in str(text))
+        return max(1,int(math.ceil(units*size/max(1,width))))
+    def r13_ev_pair_picture(pair,bottom,title_size,top=142):
+        """0.20.6 (Codex R04): the side-by-side picture shrinks so both titles and all fact lines
+        end above the buttons (never under 180px, never over the approved 312px)."""
+        fact=r13_ev_fact_size();need=0
+        for key in r13_compare_slots(pair):
+            if key is None:continue
+            head=r13_ev_text_lines(r13_catalog_title(key),330,title_size)*(title_size+8)
+            facts=sum(r13_ev_text_lines(line,402,fact)*(fact+6)+6 for line in r13_evidence_facts(key))
+            need=max(need,head+facts+30)
+        return max(180,min(312,bottom-12-top-need))
     def r13_ev_button_height():
         return 56 if r13_touch_ui() or persistent.room13_large_text else 48
 
@@ -446,21 +466,23 @@ screen r13_evidence_pair(entries,pair,pair_slot,owner,archive=False):
     text "나란히 놓기 · 두 자료를 함께 봅니다. 맞는지 아닌지는 표시하지 않습니다." xpos 350 ypos 112 size r13_ev_small_size() color "#d9c9a8" font r13_ui_font()
     add Solid("#c9a86a66") xpos 782 ypos 150 xsize 1 ysize (by-162)
     add R13_NIGHT_UI+"diamond.png" xpos 778 ypos ((150+by-12)//2)
+    $ pair_title=(r13_read_size(24,28) if touch else r13_read_size(24,27))
+    $ pic=r13_ev_pair_picture(pair,by,pair_title)
     for column,key in enumerate(r13_compare_slots(pair)):
         vbox:
             xpos (350 if column==0 else 798) ypos 142 xsize 420 spacing 10
             if key is not None:
-                use r13_evidence_heading(key,420,(r13_read_size(24,28) if touch else r13_read_size(24,27)))
+                use r13_evidence_heading(key,420,pair_title)
                 fixed:
-                    xsize 420 ysize 312
+                    xsize 420 ysize pic
                     fixed:
-                        xpos 54 xysize (312,312)
-                        use r13_evidence_picture_box(key,312)
+                        xpos ((420-pic)//2) xysize (pic,pic)
+                        use r13_evidence_picture_box(key,pic)
                 use r13_evidence_fact_list(key,420)
             else:
                 text ("%d번 자리"%(column+1)) size (24 if touch else r13_read_size(24,27)) color "#b8b0a2" font r13_ui_font()
                 frame:
-                    xsize 312 ysize 312 xoffset 54 padding (24,24) background Frame(R13_NIGHT_UI+"preview_box.png",8,8)
+                    xsize pic ysize pic xoffset ((420-pic)//2) padding (24,24) background Frame(R13_NIGHT_UI+"preview_box.png",8,8)
                     text "왼쪽에서 함께 볼 자료를 고르세요." align (.5,.5) text_align .5 size r13_ev_fact_size() color "#b8b0a2" font r13_ui_font()
     $ single=r13_compare_single(pair)
     fixed:

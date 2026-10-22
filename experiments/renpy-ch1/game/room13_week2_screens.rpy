@@ -47,7 +47,7 @@ screen r13_crisis():
                 if r13_has("E29"):
                     textbutton "가족과 빠져나갈 길" style "r13_action_button" xsize 370 ysize 54 text_size 19 action Return("escape") sensitive ready
 
-screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_press=True,need_evidence=False,leave_label="다른 주장부터"):
+screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_press=True,need_evidence=False,leave_label="다른 주장부터",chances=None):
     # 0.20.5 (Codex A01/A03): new-world proofs pass can_press=bool(hint), need_evidence=True and
     # leave_label="자료 다시 보기"; the older meetings keep the defaults.
     style_prefix "r13"
@@ -58,7 +58,11 @@ screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_p
         area (50,160,1180,450) padding (28,25) background R13PaperPanel()
         vbox:
             spacing 18
-            text heading size 22 color "#717367"
+            hbox:
+                xfill True
+                text heading size 22 color "#717367"
+                if chances:
+                    text chances size 22 color "#795d40" xalign 1.0
             text R13_CLAIMS[claim]["assertion"] size 31 color "#765426"
             text "직접 내놓은 자료" size 22
             viewport:

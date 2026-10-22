@@ -58,7 +58,15 @@ init 172 python:
         if not s or not getattr(store,"room13_mode",False) or getattr(store,"r13_meeting_active",False):return False
         if not r13_shortcut_field():return False
         rec=r13_morning_record();tok=s.get("run_token")
-        return not (tok and rec.get("token")==tok and s.get("day",1) in rec.get("days",[]))
+        return not (tok and rec.get("token")==tok and s.get("day",1) in rec.get("days",[]) and r13_morning_same_path(rec,s.get("day",1)))
+
+    # 0.20.6 (Codex R06): each morning save carries an id kept both in the run (saved with every
+    # manual save) and in persistent. After loading an earlier manual save and choosing differently,
+    # the ids differ, so the old morning is neither offered nor kept; reaching the day saves anew.
+    # Records from before 0.20.6 have no ids on either side and keep their old behaviour.
+    def r13_morning_same_path(rec,day):
+        s=store.room13 or {}
+        return (rec.get("ids") or {}).get(str(day))==(s.get("morning_ids") or {}).get(str(day))
 
     def r13_morning_snapshot():
         if not r13_morning_due():return
@@ -68,11 +76,15 @@ init 172 python:
         tok=store.room13["run_token"];day=store.room13.get("day",1)
         rec=dict(r13_morning_record())
         if rec.get("token")!=tok:rec=dict(token=tok,days=[])
+        mid="%08x"%_r13_random.getrandbits(32)
+        ids=dict(store.room13.get("morning_ids") or {});ids[str(day)]=mid
+        r13_edit(morning_ids=ids)
         try:
             renpy.save(r13_morning_slot(day),extra_info="%d일 아침"%day)
         except Exception:
             return
         rec["days"]=sorted(set(rec.get("days",[]))|{day})
+        rec_ids=dict(rec.get("ids") or {});rec_ids[str(day)]=mid;rec["ids"]=rec_ids
         persistent.r13_mornings=rec
         renpy.save_persistent()
 
@@ -80,7 +92,7 @@ init 172 python:
         s=store.room13 or {}
         rec=r13_morning_record()
         if not s.get("run_token") or rec.get("token")!=s.get("run_token"):return []
-        return [d for d in rec.get("days",[]) if renpy.can_load(r13_morning_slot(d))]
+        return [d for d in rec.get("days",[]) if r13_morning_same_path(rec,d) and renpy.can_load(r13_morning_slot(d))]
 
     def r13_morning_restore(day):
         # Later mornings belong to the timeline being left; take them again when reached.

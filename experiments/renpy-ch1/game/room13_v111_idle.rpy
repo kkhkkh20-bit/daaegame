@@ -18,8 +18,21 @@ init 336 python:
         if any(o.get("person")==person and o.get("location")==here for o in r13_v111_binding().get("options",[])):return True
         if any(not r13_followup_read(s["id"]) for s in r13_v111_followups(person)):return True
         for spec in R13_REACTIONS.get("present",[]):
-            if spec["person"]==person and r13_v111_owned(spec["evidence"]) and r13_reaction_day_ok(spec) and not r13_v111_value("reacted:%s:%s"%(person,spec["evidence"])):
+            if spec["person"]==person and r13_v111_owned(spec["evidence"]) and r13_reaction_day_ok(spec) and not r13_reaction_seen(spec):
                 return True
+        return False
+
+    # 0.20.6 (Codex R01): a reaction set is read by its own id, so the 6th-day lines do not mark
+    # the different 7th-day lines for the same person and record as read, and a generic answer
+    # before a meeting does not mark the meeting-dependent set. The old per person/record flag
+    # (saves before 0.20.6) stands for the earliest set of that pair only.
+    def r13_reaction_spec_id(spec):
+        return "%s:%s:%s:%s"%(spec["person"],spec["evidence"],(spec.get("days") or [1])[0],spec.get("after_meeting") or "")
+    def r13_reaction_seen(spec):
+        if r13_v111_value("reacted:"+r13_reaction_spec_id(spec)):return True
+        if r13_v111_value("reacted:%s:%s"%(spec["person"],spec["evidence"])):
+            pair=[s for s in R13_REACTIONS.get("present",[]) if s["person"]==spec["person"] and s["evidence"]==spec["evidence"]]
+            return spec is min(pair,key=lambda s:((s.get("days") or [1])[0],bool(s.get("after_meeting"))))
         return False
 
     def r13_v111_idle_ok(person):
@@ -28,8 +41,11 @@ init 336 python:
     _r13_idle_present_reaction=r13_v111_present_reaction
     def r13_v111_present_reaction(person,shown):
         key=shown[5:] if isinstance(shown,str) and shown.startswith("V111:") else shown
-        if any(s["person"]==person and s["evidence"]==key for s in R13_REACTIONS.get("present",[])):
-            r13_v111_set("reacted:%s:%s"%(person,key),True)
+        for spec in R13_REACTIONS.get("present",[]):
+            # Same choice as r13_v111_present_reaction: the first set for today whose lines play.
+            if spec["person"]==person and spec["evidence"]==key and r13_reaction_day_ok(spec) and r13_reaction_packets(spec["lines"]):
+                r13_v111_set("reacted:"+r13_reaction_spec_id(spec),True)
+                break
         return _r13_idle_present_reaction(person,shown)
 
     def r13_v111_idle_lines(person):

@@ -18,5 +18,9 @@ testcase reaction_followup:
     click "왜 제 신청이 일꾼으로 됐습니까?"
     pause 1.5
     screenshot "followup-02-line.png"
-    click pos (900,600) until screen "r13_hub" timeout 60
+    # 0.20.6: after the answer the same person's questions open again; 「돌아가기」 leaves.
+    click pos (200,400) until screen "r13_topics" timeout 60
     assert eval (r13_followup_read("NW_RX_F002"))
+    click "돌아가기"
+    pause 1.0
+    assert screen "r13_hub"

@@ -377,12 +377,18 @@ label r13_v111_room_compare:
     $ r13_v111_score()
     $ r13_v111_commit('MS14_D01_S05_L0031')
     call r13_lines(r13_v111_lines(['MS14_D01_S05_L0032', 'MS14_D01_S05_L0033', 'MS14_D01_S05_L0034', 'MS14_D01_S05_L0035']), 'v111:room_compare:MS14_D01_S05_L0032')
-    call r13_v111_travel('inn','MS14_D01_S05_L0036')
+    # 0.20.6 (owner day-1 play: "할머니에게 초롱의 행방을 묻는다" 같은 바로가기): the purpose goes
+    # straight down and back; looking around first keeps the free move.
+    $ v111_answer=renpy.display_menu([("할머니에게 초롱의 행방을 묻는다",0),("방을 더 둘러본다",1)])
+    call r13_v111_travel('inn','MS14_D01_S05_L0036',direct=(v111_answer==0))
     call r13_lines(r13_v111_lines(['MS14_D01_S05_L0037', 'MS14_D01_S05_L0038']), 'v111:room_compare:MS14_D01_S05_L0037')
-    call r13_v111_travel('room13','MS14_D01_S05_L0039')
+    call r13_v111_travel('room13','MS14_D01_S05_L0039',direct=(v111_answer==0))
     call r13_lines(r13_v111_lines(['MS14_D01_S05_L0040', 'MS14_D01_S05_L0041', 'MS14_D01_S05_L0042', 'MS14_D01_S05_L0043', 'MS14_D01_S05_L0044', 'MS14_D01_S05_L0045', 'MS14_D01_S05_L0046', 'MS14_D01_S05_L0047', 'MS14_D01_S05_L0048']), 'v111:room_compare:MS14_D01_S05_L0040')
     $ r13_v111_commit('MS14_D01_S05_L0048')
-    call r13_lines(r13_v111_lines(['MS14_D01_S05_L0049', 'MS14_D01_S05_L0050', 'MS14_D01_S05_L0051', 'MS14_D01_S05_L0052']), 'v111:room_compare:MS14_D01_S05_L0049')
+    call r13_lines(r13_v111_lines(['MS14_D01_S05_L0049']), 'v111:room_compare:MS14_D01_S05_L0049')
+    # 0.20.6 (owner suggestion 8: "첫날의 마지막 조작을 돌봄으로"): Dad's last act of the day.
+    $ renpy.display_menu([("다람의 이불을 여민다",0)])
+    call r13_lines(r13_v111_lines(['MS14_D01_S05_L0050', 'MS14_D01_S05_L0051', 'MS14_D01_S05_L0052']), 'v111:room_compare:MS14_D01_S05_L0050')
     jump r13_v111_sleep1
 
 label r13_v111_sleep1:
@@ -636,8 +642,11 @@ label r13_v111_shelter_work:
     call r13_v111_travel('dining','shelter_work')
     call r13_v111_wait('shelter_work')
     $ v111_answer=_return
+    # 0.20.6 (full play check: no line after the action): say what was done.
+    call r13_lines(r13_nw_block('shelter_work_done2'),'nw:shelter_work_done2')
     call r13_v111_travel("inn","shelter_cloth")
     call r13_v111_wait("shelter_cloth")
+    call r13_lines(r13_nw_block('shelter_cloth_done2'),'nw:shelter_cloth_done2')
     call r13_v111_travel("square","shelter_invite")
     call r13_v111_wait("shelter_invite")
     if v111_answer==0:
@@ -978,9 +987,8 @@ label r13_v111_stone3:
     $ r13_v111_scene('MS14_D03_S04')
     call r13_v111_travel('store','stone3')
     $ r13_v111_score()
-    call r13_v111_travel('workshop','MS14_D03_S04_L0026')
-    call r13_lines(r13_v111_lines(['MS14_D03_S04_L0026', 'MS14_D03_S04_L0027']), 'v111:stone3:MS14_D03_S04_L0026')
-    call r13_v111_travel('store','MS14_D03_S04_L0028')
+    # 0.20.6 (full play check): Tok already stands in the store; asked here, no trip to the workshop.
+    call r13_lines(r13_v111_lines(['MS14_D03_S04_L0026', 'MS14_D03_S04_L0027', 'MS14_D03_S04_L0028']), 'v111:stone3:MS14_D03_S04_L0026')
     $ r13_v111_commit('MS14_D03_S04_L0028')
     call r13_lines(r13_v111_lines(['MS14_D03_S04_L9102', 'MS14_D03_S04_L0029', 'MS14_D03_S04_L0030', 'MS14_D03_S04_L0031']), 'v111:stone3:MS14_D03_S04_L9102')
     jump r13_v111_sale_check
@@ -1048,7 +1056,7 @@ label r13_v111_trial_knife:
     jump r13_v111_trial_knife
 
 label r13_v111_trial_knife_records:
-    call screen r13_book
+    call screen r13_book(called=True)
     jump r13_v111_trial_knife
 
 label r13_v111_knife_fit:
