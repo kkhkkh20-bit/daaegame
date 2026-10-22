@@ -54,7 +54,7 @@ screen r13_concept_more():
         xpos 584 ypos (min(r13_control_y(),R13_NIGHT_CONTROL_Y-28)-panel_height-16) xysize (648,panel_height) padding (28,22) background Frame("assets/ui-night/panel.png",48,48)
         vbox:
             spacing 16
-            text "대화 도구" size 24 color "#f6ecd8" font r13_ui_font()
+            text "대화 도구" size (28 if r13_touch_ui() else 24) color "#f6ecd8" font r13_ui_font()
             grid 2 menu_rows:
                 spacing 16
                 for title,icon,command,enabled in items:
@@ -63,8 +63,8 @@ screen r13_concept_more():
                         action command sensitive enabled alt title
                         hbox:
                             align (.5,.5) spacing 10
-                            add R13AntiqueIcon(icon,size=20) yalign .5 alpha (1.0 if enabled else .5)
-                            text title size 20 font r13_ui_font() yalign .5 color ("#efe3cc" if enabled else "#8f8778")
+                            add R13AntiqueIcon(icon,size=(26 if r13_touch_ui() else 20)) yalign .5 alpha (1.0 if enabled else .5)
+                            text title size (26 if r13_touch_ui() else 20) font r13_ui_font() yalign .5 color ("#efe3cc" if enabled else "#8f8778")
                 if len(items)%2:
                     null width 288 height row_height
     key "game_menu" action Hide("r13_more_tools")
