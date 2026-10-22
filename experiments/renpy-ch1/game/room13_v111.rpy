@@ -140,6 +140,10 @@ init 301 python:
         ("room13","mother_note"):"E06",("room13","family_bundle"):"E30",
         ("clinic","notes"):"E13",("store","ledger"):"E16",
     }
+    R13_V111_RECORD_LATER={
+        ("room13","mother_note"):"책상 위에 접힌 종이가 있다. 우선 다람이 짐부터 침대에 내려놓고 방을 둘러보자.",
+        ("room13","family_bundle"):"책상 아래에 보따리가 보인다. 책상 위 종이부터 보고 열어 보자.",
+    }
     def r13_v111_object_key(key):
         if store.room13["location"]=="kitchen" and key in ("rear_after","rear_after_known"):return "rear"
         return key
@@ -149,7 +153,9 @@ init 301 python:
         spec=ROOM13["objects"].get(location,{}).get(key,spec)
         record=R13_V111_RECORD_OBJECTS.get((location,key))
         if record:
-            return ROOM13["evidence"]["V111:"+record]["establishes"] if r13_v111_owned(record) else ROOM13["evidence"]["V111:"+record]["name"]
+            if r13_v111_owned(record):return ROOM13["evidence"]["V111:"+record]["establishes"]
+            # 0.20.6 (play review P01): a record not yet taken says why, not only its name.
+            return R13_V111_RECORD_LATER.get((location,key)) or (ROOM13["evidence"]["V111:"+record]["name"]+". 지금은 먼저 할 일이 있다.")
         # Keep the existing scenery observations, but never run an old case's
         # grants, latch events, deductions or secret-room handlers in this story.
         if (location,key)==("square","lamp"):return "등 받침에 작은 점검함이 있다."

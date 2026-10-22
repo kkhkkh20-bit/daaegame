@@ -718,8 +718,6 @@ label r13_v111_incident7:
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0007']),'v111:MS14_D07_S04_L0007')
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0008']),'v111:MS14_D07_S04_L0008')
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0009']),'v111:MS14_D07_S04_L0009')
-    call r13_lines(r13_v111_lines(['MS14_D07_S04_L0010']),'v111:MS14_D07_S04_L0010')
-    call r13_lines(r13_v111_lines(['MS14_D07_S04_L0011']),'v111:MS14_D07_S04_L0011')
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0012']),'v111:MS14_D07_S04_L0012')
     call r13_v111_travel('room13','incident_room7')
     $ r13_v111_arrive(['karo', 'resident_seori', 'doto', 'nabi'])
@@ -734,6 +732,10 @@ label r13_v111_incident7:
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0020']),'v111:MS14_D07_S04_L0020')
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0021']),'v111:MS14_D07_S04_L0021')
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0022']),'v111:MS14_D07_S04_L0022')
+    # 0.20.6 (owner suggestion, days 2-14 #3): rescue -> the child in Dad's arms -> only then the
+    # investigator's question about the scream (was asked at the door, mid-rescue).
+    call r13_lines(r13_v111_lines(['MS14_D07_S04_L0010']),'v111:MS14_D07_S04_L0010')
+    call r13_lines(r13_v111_lines(['MS14_D07_S04_L0011']),'v111:MS14_D07_S04_L0011')
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0023']),'v111:MS14_D07_S04_L0023')
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0024']),'v111:MS14_D07_S04_L0024')
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0025']),'v111:MS14_D07_S04_L0025')

@@ -57,6 +57,9 @@ init 319 python:
         "gate_daram_unlisted":lambda:r13_v111_value("gate_daram_unlisted") is True,
         "gate_daram_listed":lambda:r13_v111_value("gate_daram_unlisted") is not True,
         # Review 0.20.1 #1: the gate's "entry allowed" lines only on the last wrong answer.
+        # 0.20.6 (play review P02): after the room is looked over, Granny stops sending us back up.
+        "room13_checked_d1":lambda:r13_v111_owned("E06"),
+        "room13_unchecked_d1":lambda:not r13_v111_owned("E06"),
         "gate_last_try":lambda:(r13_v111_value("tries:gate") or 0)+1>=R13_NW_TRIES,
         "gate_retry":lambda:(r13_v111_value("tries:gate") or 0)+1<R13_NW_TRIES,
         # 0.20.5 (Codex C03): a wrong answer that held only some of the gate records says so,
