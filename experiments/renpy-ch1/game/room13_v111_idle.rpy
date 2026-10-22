@@ -83,7 +83,7 @@ init 347 python:
     R13_DARAM_GENERIC=(
         ("그거 왜 나한테 보여 줘? 난 다 봤는데.","flustered"),
         ("음…… 그건 아빠가 더 잘 알잖아.","neutral"),
-        ("그거 가지고 탐정 놀이 하는 거야? 나도 끼워 줘.","joy"),
+        ("그거 아빠 수첩에 적어 둬. 나중에 같이 보자.","neutral"),
     )
     R13_PRESENT_NOTHING=("지금 이걸 보여 줘도 더 들을 말은 없겠다.","이건 다른 사람에게 물어봐야겠다.")
     _r13_present_fallback=r13_v111_present_reaction
