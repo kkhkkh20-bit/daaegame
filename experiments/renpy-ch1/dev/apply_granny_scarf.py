@@ -11,6 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 ART = ROOT / 'art/granny-scarf-20261022'
+SHARED_REGISTRIES = ('game/assets/room13-fullbody-dialogue.json',)
 
 
 def digest(path):
@@ -27,7 +28,15 @@ def run(check=False, revert=False, root=ROOT, art=ART):
                 raise ValueError('Archive hash mismatch: ' + folder + '/' + row['path'])
         actual = digest(root / row['path'])
         expected = row['before_sha256'] if revert else row['after_sha256']
-        if check:
+        if check and row['path'] in SHARED_REGISTRIES:
+            # Later intakes (e.g. expr-intake-20261022) also edit this registry: check only the
+            # granny entries this transaction owns.
+            folder = 'originals' if revert else 'edited'
+            want = json.loads((art / folder / row['path']).read_text())['people']['granny']['images']
+            have = json.loads((root / row['path']).read_text())['people']['granny']['images']
+            if any(want.get(e) != have.get(e) for e in ('joy', 'surprise')):
+                raise ValueError('Installed granny entries differ: ' + row['path'])
+        elif check:
             if actual != expected:
                 raise ValueError('Installed hash mismatch: ' + row['path'])
         elif actual not in (row['before_sha256'], row['after_sha256']):
