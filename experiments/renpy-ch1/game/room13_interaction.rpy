@@ -127,7 +127,7 @@ init 61 python:
             person=actor["person"];face=faces[person]
             cx,top=r13_actor_nameplate(actor)
             top=max(101,top-14)
-            tag_h=56 if r13_touch_ui() else 48;width=max(88,sum((11 if r13_touch_ui() else 9) if ch==" " else (22 if r13_touch_ui() else 18) for ch in R13_NAMES[person])+32)
+            tag_h=56 if r13_touch_ui() else 40;width=max(72,sum((11 if r13_touch_ui() else 8) if ch==" " else (22 if r13_touch_ui() else 17) for ch in R13_NAMES[person])+28)  # 0.20.2 tidy tags
             # A head can straddle the panorama edge while its name used to
             # remain outside the visible window. Keep that label in view.
             left=0;right=r13_world_width()
@@ -136,8 +136,8 @@ init 61 python:
                 left=offset;right=min(right,offset+1280)
             preferred=(max(left+8,min(right-8-width,int(cx-width/2))),top,width,tag_h)
             candidates=[]
-            for dy in (0,-52,-104,52):
-                for dx in (0,-32,32,-64,64):
+            for dy in (0,-(tag_h+4),-2*(tag_h+4),tag_h+4):  # 0.20.2: move up/down first, little sideways
+                for dx in (0,-20,20,-40,40):
                     candidates.append((max(left+8,min(right-8-width,preferred[0]+dx)),max(101,min(676,top+dy)),width,tag_h))
             candidates.append((max(left+8,min(right-8-width,preferred[0])),min(676,face[1]+face[3]+6),width,tag_h))
             def score(rect):
@@ -149,7 +149,7 @@ init 61 python:
                 return blocked*10000+abs(rect[0]-preferred[0])+abs(rect[1]-preferred[1])*1.1
             rect=min(candidates,key=score)
             leader=None
-            if rect[:2]!=preferred[:2]:
+            if False and rect[:2]!=preferred[:2]:  # 0.20.2 (owner plan item 1): no leader lines
                 above=rect[1]+rect[3]<=face[1]
                 below=rect[1]>=face[1]+face[3]
                 if above:

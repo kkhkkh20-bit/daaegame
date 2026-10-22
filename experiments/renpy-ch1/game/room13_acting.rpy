@@ -482,7 +482,7 @@ init 59 python:
                     # A foreground body must not swallow a background face.
                     if body[1]+body[3]>ob[1]+ob[3]:score+=visible_body_over_face(body,c["occlusion"],of)*4500
                     else:score+=visible_body_over_face(ob,old["occlusion"],face)*4500
-                for target in layout.get("critical",R13_STAGE_CRITICAL.get(location,[])):
+                for target in (r13_stage_critical(location,layout) if "r13_stage_critical" in globals() else layout.get("critical",R13_STAGE_CRITICAL.get(location,[]))):
                     # Bodies behind a counter do not cover objects in front.
                     score+=visible_body_over_face(body,c["occlusion"],target)*1200
                 return score

@@ -173,7 +173,7 @@ screen r13_world_contents(entry=False,ready=False):
             add leader xpos leader.left ypos leader.top
         textbutton (R13_NAMES[nameplate["person"]]+(" !" if not entry and nameplate["person"]=="resident_piko" and r13_offer_for_person("resident_piko")=="r13_w1c_portrait" else "")):
             area nameplate["rect"]
-            padding (12,7) background R13ActionPanel() hover_background R13ActionPanel(True) text_size (24 if r13_touch_ui() else 20) text_color "#fff2cf" text_xalign .5 text_yalign .5
+            padding (10,4) background R13ActionPanel() hover_background R13ActionPanel(True) text_size (24 if r13_touch_ui() else 18) text_color "#fff2cf" text_xalign .5 text_yalign .5
             action r13_person_action(nameplate["person"],entry) sensitive ready
         if not entry and r13_offer_for_person(nameplate["person"]) and not (nameplate["person"]=="resident_piko" and r13_offer_for_person("resident_piko")=="r13_w1c_portrait"):
             # 0.18.53: something is happening with this person; press them to see it.
