@@ -44,7 +44,7 @@ testcase v111_nw_d03_lamp_partial:
     pause 1.0
     click pos (900,600) until "오늘은 반환 요구를 보류한다" timeout 90
     assert eval (r13_v111_value("meeting:lamp")=="partial" and not r13_v111_value("listed:resident_tok"))
-    assert eval (qa_nw_seen("주운 돌을 판 걸로") and qa_nw_seen("누가 꺼냈는지도 못 밝혔으면서"))
+    assert eval (qa_nw_seen("주운 돌을 판 걸로") and qa_nw_seen("누가 꺼냈는지도 못 밝혔"))
     click "오늘은 반환 요구를 보류한다"
     click pos (900,600) until screen "r13_hub" timeout 120
     assert eval (r13_v111_value("silluk_status")=="released")

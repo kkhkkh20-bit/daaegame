@@ -14,6 +14,7 @@
 #            (new meetings); the generators show them with r13_nw_block(name)
 # A new line: {"id": "NW_...", "speaker": name|null, "text": ..., "kind"?: dialogue|narration|thought, "expression"?,
 #              (thought: the father's unspoken line; text without brackets, the engine adds them)
+#              "fx"?: jolt|shake|slam|flash, a one-off hit, shake or flash as the line appears
 #              "beat"?: a meeting-stage beat (interrupt, shaken, cornered, ...) for lines inside a meeting
 #              "when"?: condition name in R13_NW_WHEN, "cut"?: existing ep art name}
 # Conditions are named Python predicates, never evaluated strings.
@@ -127,6 +128,8 @@ init 319 python:
     R13_NW_LIST_NAMES=("resident_tok","bami","resident_bori","nabi","daram","resident_owlgp","resident_piko","resident_siluk","resident_guldol","resident_teacher","mom","dad")
     for _nw_person in R13_NW_LIST_NAMES:
         R13_NW_WHEN["listed:"+_nw_person]=(lambda p=_nw_person:r13_v111_value("listed:"+p) is True)
+    # Impact direction names (systems/room13_impact_fx.rpy; that file loads later, so the names live here).
+    R13_NW_FX=("jolt","shake","slam","flash")
     R13_NW_CUT_SPECIAL=("bell","v111_blanket_before","v111_blanket_after")
     def r13_nw_replace_variants(rid):
         """A replace entry is one variant or a list of variants (first whose condition holds wins)."""
@@ -150,6 +153,7 @@ init 319 python:
             for variant in r13_nw_replace_variants(rid):
                 if not variant.get("text"):out.append("replace: empty text "+rid)
                 elif variant.get("when","always") not in R13_NW_WHEN:out.append("replace: unknown condition "+rid)
+                elif variant.get("fx") and variant["fx"] not in R13_NW_FX:out.append("replace: unknown fx "+rid)
         for item in R13_NW_TEXT["drop"]:
             rid,when=r13_nw_drop_item(item)
             if rid not in records:out.append("drop: unknown record "+str(rid))
@@ -168,6 +172,7 @@ init 319 python:
                     if row.get("speaker") is not None and row["speaker"] not in MS14_SPEAKERS:out.append(where+": unknown speaker %s %s"%(nid,row["speaker"]))
                     if row.get("when","always") not in R13_NW_WHEN:out.append(where+": unknown condition %s %s"%(nid,row.get("when")))
                     if row.get("beat") and row["beat"] not in R13_MEETING_BEATS:out.append(where+": unknown meeting beat %s %s"%(nid,row["beat"]))
+                    if row.get("fx") and row["fx"] not in R13_NW_FX:out.append(where+": unknown fx %s %s"%(nid,row["fx"]))
                     cut=row.get("cut")
                     if cut and cut not in R13_NW_CUT_SPECIAL and not renpy.loadable("assets/room13-ep-%s.webp"%cut):out.append(where+": missing cut art %s %s"%(nid,cut))
         for key in R13_NW_TEXT["evidence"]:
@@ -188,6 +193,9 @@ init 319 python:
             # 0.19.98: a revised line may carry its own expression (owner: "대사에 맞는 표정").
             if revised.get("expression") and len(packet)>2 and isinstance(packet[2],dict):
                 packet=(packet[0],packet[1],dict(packet[2],expression=revised["expression"],pose=revised["expression"]))+tuple(packet[3:])
+            # 0.19.99: impact direction for the line (systems/room13_impact_fx.rpy).
+            if revised.get("fx") and len(packet)>2 and isinstance(packet[2],dict):
+                packet=(packet[0],packet[1],dict(packet[2],fx=revised["fx"]))+tuple(packet[3:])
         return packet
     def r13_nw_added_line(row):
         if row.get("kind")=="thought":
@@ -200,6 +208,7 @@ init 319 python:
         if row.get("cut"):options["cut"]=row["cut"]
         # Meeting stage beat (systems/room13_meeting_direction.rpy), used only inside a meeting.
         if row.get("beat"):options["beat"]=row["beat"]
+        if row.get("fx"):options["fx"]=row["fx"]
         return (who,row["text"],options)
     def r13_v111_lines(rids):
         """Authored lines with the reviewed new-world revisions around them."""

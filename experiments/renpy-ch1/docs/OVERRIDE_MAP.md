@@ -477,7 +477,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 172 | `systems/room13_dialogue_context_art.rpy:5` | _r13_nw_context_match |
-| 2 | 319 | `room13_v111_newworld_text.rpy:223` |  |
+| 2 | 319 | `room13_v111_newworld_text.rpy:232` |  |
 
 ## `r13_ending_notes` (2층)
 
@@ -492,6 +492,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 160 | `systems/room13_ep_art.rpy:105` | _r13_regular_ep_cut_art |
 | 2 | 162 | `systems/room13_special_scenes.rpy:33` |  |
+
+## `r13_ep_line_art` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 160 | `systems/room13_ep_art.rpy:114` | _r13_impact_line_art |
+| 2 | 345 | `systems/room13_impact_fx.rpy:57` |  |
 
 ## `r13_evidence_acquired` (2층)
 
@@ -743,7 +750,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 301 | `room13_v111.rpy:55` | _r13_nw_authored_line |
-| 2 | 319 | `room13_v111_newworld_text.rpy:183` |  |
+| 2 | 319 | `room13_v111_newworld_text.rpy:188` |  |
 
 ## `r13_v111_set` (2층)
 

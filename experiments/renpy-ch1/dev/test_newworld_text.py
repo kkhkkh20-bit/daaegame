@@ -105,6 +105,14 @@ class NewWorldText(Layer):
   self.assertEqual(env['r13_v111_lines'](['MS14_D01_S04_L0005'])[0][2]['expression'],'joy')
   self.env['r13_v111_set']('gate_daram_unlisted',True)
   self.assertEqual(env['r13_v111_lines'](['MS14_D01_S04_L0005'])[0][1],'잃은 쪽')
+ def test_impact_fx_rides_with_the_line(self):
+  # Owner 2026-10-22: "퍽 하는 효과음 ... 화면 흔들리는 연출".
+  env=self.fixture('d01',dict(replace={'MS14_D01_S05_L0004':{'text':'고맙습니다!','fx':'jolt'}},
+   after={'MS14_D01_S05_L0004':[dict(id='NW_T_FX',speaker='다람',text='여기요!',fx='shake')]}))
+  rows=env['r13_v111_lines'](['MS14_D01_S05_L0004'])
+  self.assertEqual([r[2].get('fx') for r in rows],['jolt','shake'])
+  with self.assertRaisesRegex(Exception,'unknown fx'):
+   self.fixture('d01',dict(replace={'MS14_D01_S05_L0004':{'text':'x','fx':'boom'}}))
  def test_gate_rule_has_no_family_visit_category(self):
   # Owner 2026-10-22: "가족을 만나러 오는 별도의 입장규칙" makes no sense; the rule speaks of visitors.
   env=self.load()
