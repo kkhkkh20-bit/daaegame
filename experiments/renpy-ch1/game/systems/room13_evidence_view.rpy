@@ -123,6 +123,30 @@ init 330 python:
         record=r13_catalog_record(key) or {}
         return record.get("kind") or "자료"
 
+    def r13_ev_title_width(title,size=34):
+        return sum(int(size*.3) if ch==" " else size for ch in str(title))
+    def r13_ev_tab_x(title):
+        """0.20.5 (UI review): the first tab starts after the sheet title, never under it."""
+        return max(R13_EV_TAB_X,60+r13_ev_title_width(title)+24)
+    def r13_ev_two_lines(text,width,size):
+        """0.20.5 (UI review): a grid name in at most two lines at this width, then "…".
+        Words stay whole when they fit; a word longer than a line is cut."""
+        cap=max(2,int(width//max(1,size)))
+        lines=[""]
+        for word in str(text).split(" "):
+            while word:
+                room=cap-len(lines[-1])-(1 if lines[-1] else 0)
+                if len(word)<=room:
+                    lines[-1]=(lines[-1]+" "+word) if lines[-1] else word;word=""
+                elif lines[-1] and len(word)<=cap:
+                    lines.append("")
+                else:
+                    cut=max(1,room);lines[-1]=(lines[-1]+(" " if lines[-1] else "")+word[:cut]);word=word[cut:]
+                    if word:lines.append("")
+        if len(lines)>2:
+            lines=lines[:2];lines[1]=lines[1][:max(1,cap-1)].rstrip()+"…"
+        return "\n".join(lines)
+
     def r13_evidence_short(key,limit):
         name=R13_RECORD_SHORT.get(key) or r13_catalog_title(key)
         return name if len(name)<=limit else name[:max(1,limit-1)]+"…"
@@ -238,17 +262,18 @@ screen r13_ink_record_shell(title,tabs,current="all",close_action=None,note=None
     $ tab_h=56 if touch else 48
     add Solid("#05070fa6")
     add Frame(R13_NIGHT_UI+"panel.png",48,48) xpos 12 ypos 12 xysize (1256,696)
+    $ tab_x=r13_ev_tab_x(title)
     text title xpos 60 ypos 40 size 34 color "#f6ecd8" font r13_ui_font()
     for index,(tab_key,tab_title,tab_action) in enumerate(tabs):
         fixed:
-            xpos (R13_EV_TAB_X+index*R13_EV_TAB_PITCH) ypos (66-tab_h//2) xysize (86,tab_h)
+            xpos (tab_x+index*R13_EV_TAB_PITCH) ypos (66-tab_h//2) xysize (86,tab_h)
             if tab_key==current:
                 add Transform(R13_NIGHT_UI+"opt_tab.png",xysize=(86,44)) align (.5,.5)
             textbutton tab_title:
                 style "r13ev_tab_button" text_style "r13ev_tab_button_text" xysize (86,tab_h)
                 selected tab_key==current action tab_action alt tab_title
     if note:
-        text note xpos (R13_EV_TAB_X+len(tabs)*R13_EV_TAB_PITCH+12) ypos 52 size r13_ev_small_size() color "#d9b46c" font r13_ui_font()
+        text note xpos (tab_x+len(tabs)*R13_EV_TAB_PITCH+12) ypos 52 size r13_ev_small_size() color "#d9b46c" font r13_ui_font()
     button:
         id "r13_ev_close"
         xpos (1170 if touch else 1176) ypos (30 if touch else 34) xysize ((64,64) if touch else (52,52))
@@ -301,7 +326,7 @@ screen r13_evidence_grid(entries,detail,page,owner,pair=None,pair_slot=1,archive
                     add R13_NIGHT_UI+"diamond.png" xpos ((cell_w-thumb)//2+7) ypos 7
                 if pair and key in (first,second):
                     text ("①" if key==first else "②") xpos ((cell_w+thumb)//2+4) xanchor 1.0 ypos -8 size 22 color "#fff0ce" outlines [(3,"#8b1f2a",0,0)] font r13_ui_font()
-                text (("● " if not archive and r13_record_unread(key) else "")+r13_evidence_short(key,label_chars)):
+                text r13_ev_two_lines(("● " if not archive and r13_record_unread(key) else "")+r13_evidence_short(key,label_chars*2),cell_w-4,label_size):
                     xpos 0 ypos (thumb+4) xsize cell_w text_align .5 size label_size color "#e3d6bd" font r13_ui_font() line_spacing 0
     if r13_record_pages(entries)>1:
         $ ph=r13_ev_button_height()
@@ -313,7 +338,7 @@ screen r13_evidence_grid(entries,detail,page,owner,pair=None,pair_slot=1,archive
             xpos 244 ypos (R13_EV_BOTTOM-ph) xysize (72,ph)
             use r13_control("›",None,Function(r13_record_select,owner,"page",actual_page+1,False),enabled=actual_page+1<r13_record_pages(entries),width=72,height=ph,control_id="r13_ev_next")
     if not entries:
-        text "이 분류에 해당하는 자료가 없습니다." xpos 64 ypos 160 xsize 252 size label_size color "#b8b0a2" font r13_ui_font()
+        text ("아직 모은 자료가 없습니다." if not r13_catalog_entries(archive) else "이 분류에 해당하는 자료가 없습니다.") xpos 64 ypos 160 xsize 252 size label_size color "#b8b0a2" font r13_ui_font()
     add Solid("#c9a86a66") xpos 330 ypos 116 xsize 1 ysize 564
 
 screen r13_evidence_heading(key,width,title_size):
@@ -339,7 +364,7 @@ screen r13_evidence_fact_list(key,width):
                 text line size r13_ev_fact_size() color "#efe3cc" font r13_ui_font() xsize (width-18)
 
 # One record: big picture, facts, and on the right the hint or the folded original text.
-screen r13_evidence_single(detail,owner,archive=False,view_context=("records",),can_compare=False,present=False,present_label="",present_ok=False,present_action=None,stop_action=None,ready=True,statement=None,present_note=None):
+screen r13_evidence_single(detail,owner,archive=False,view_context=("records",),can_compare=False,present=False,present_label="",present_ok=False,present_action=None,stop_action=None,ready=True,statement=None,present_note=None,empty=False):
     default origin_open=False
     $ bh=r13_ev_button_height()
     $ touch=r13_touch_ui()
@@ -358,14 +383,14 @@ screen r13_evidence_single(detail,owner,archive=False,view_context=("records",),
                     xpos 80 xysize (360,360)
                     use r13_evidence_picture_box(detail,360)
             use r13_evidence_fact_list(detail,500)
-    else:
+    elif not empty:  # 0.20.5 (UI review): nothing to pick -> no "pick one" line; the grid says why
         text ("보여줄 자료를 왼쪽에서 직접 고르세요." if present else "자료를 선택하세요.") xpos 372 ypos 300 xsize 520 text_align .5 size r13_ev_fact_size() color "#b8b0a2" font r13_ui_font()
     for scroll_key index scroll_key in [r13_record_scroll_key(view_context,detail,archive)]:
         $ detail_scroll=r13_record_scroll_adjustment(view_context,detail,archive)
         viewport:
             id "r13_material_scroll"
             yadjustment detail_scroll
-            area (916,116,304,max(60,reading_bottom-116)) mousewheel True draggable True scrollbars "vertical"
+            area (916,116,304,max(60,reading_bottom-116)) mousewheel True draggable True scrollbars ("vertical" if (detail or present) else None)
             vbox:
                 spacing 12
                 if present:
@@ -455,4 +480,4 @@ screen r13_evidence_browser(entries,detail,page,owner,pair=None,pair_slot=1,arch
     if live_pair:
         use r13_evidence_pair(entries,live_pair,pair_slot,owner,archive)
     else:
-        use r13_evidence_single(detail,owner,archive,view_context,(not present and len(entries)>1),present,present_label,present_ok,present_action,stop_action,ready,statement,present_note) id (view_context,detail,archive,persistent.room13_large_text)
+        use r13_evidence_single(detail,owner,archive,view_context,(not present and len(entries)>1),present,present_label,present_ok,present_action,stop_action,ready,statement,present_note,empty=not entries) id (view_context,detail,archive,persistent.room13_large_text)

@@ -160,6 +160,18 @@ class EvidenceView(unittest.TestCase):
             for (x, w), (nx, nw) in zip(boxes, boxes[1:]):
                 self.assertLessEqual(x + w, nx)
 
+    def test_first_tab_starts_after_the_title(self):
+        # 0.20.5 (UI review): "자료 기록" and "보여주기" no longer run under the first tab.
+        env = self.build()
+        for title in ("기록", "자료 기록", "보여주기"):
+            self.assertGreaterEqual(env["r13_ev_tab_x"](title), 60 + env["r13_ev_title_width"](title) + 20)
+            self.assertGreaterEqual(env["r13_ev_tab_x"](title), env["R13_EV_TAB_X"])
+        self.assertEqual(env["r13_ev_tab_x"]("기록"), env["R13_EV_TAB_X"])
+    def test_grid_names_keep_two_lines(self):
+        env = self.build()
+        for name in ("● 학교 장작 인수 기록", "흰 그릇을 받은 아이들의 아주 긴 이름", "공백없는아주긴자료이름입니다정말로"):
+            self.assertLessEqual(len(env["r13_ev_two_lines"](name, 120, 18).split("\n")), 2)
+        self.assertEqual(env["r13_ev_two_lines"]("방의 메모", 120, 18), "방의 메모")
     def test_book_tabs_have_no_dead_categories(self):
         env = self.build()
         self.assertEqual([k for k, t, a in env["r13_ev_record_tabs"]("r13_book")], ["all", "notes", "fork"])

@@ -47,7 +47,7 @@ class RecordCleanup(unittest.TestCase):
   self.assertIn('if detail and not origin_open:',VIEW)
   self.assertIn('SetLocalVariable("origin_open",True)',VIEW)
   self.assertIn('yadjustment detail_scroll',VIEW)
-  self.assertIn('area (916,116,304,max(60,reading_bottom-116)) mousewheel True draggable True scrollbars "vertical"',VIEW)
+  self.assertIn('area (916,116,304,max(60,reading_bottom-116)) mousewheel True draggable True scrollbars ("vertical" if (detail or present) else None)',VIEW)  # 0.20.6: no empty scrollbar
   self.assertIn('$ reading_bottom=R13_EV_BOTTOM-buttons*bh-max(0,buttons-1)*12-16',VIEW)
  def test_old_relationship_filters_are_neutralized(self):
   self.assertIn('$ rel_filter="all"',NOTE)

@@ -20,4 +20,24 @@ testcase evidence_large_touch:
     pause 1.2
     screenshot "ev-03-pair-large-touch.png"
     run Hide("r13_records")
+    # 0.20.5 (UI review): long names keep two lines, phone and PC; an empty record shows one line.
+    $ room13["evidence"]=list(room13["evidence"])+[k for k in ("V111:E09_PIN_TIME","V111:E06_EMPTY","V111:E12_SEAL","V111:E08_CHILD_POSITION","V111:NW_SICK_BEDS","V111:NW_WHITE_BOWLS","V111:NW_HALL_WINDOW") if k not in room13["evidence"]]
+    $ r13_records_view={"tab":"all","detail":"V111:E06","page":0}
+    run Show("r13_records")
+    pause 1.2
+    screenshot "ev-04-long-names-touch.png"
+    run Hide("r13_records")
+    $ r13_touch_ui=lambda: False
+    run Show("r13_records")
+    pause 1.2
+    screenshot "ev-05-long-names-pc-large.png"
+    run Hide("r13_records")
+    $ qa_saved_evidence=list(room13["evidence"])
+    $ room13["evidence"]=[]
+    $ r13_records_view={"tab":"all","detail":None,"page":0}
+    run Show("r13_records")
+    pause 1.2
+    screenshot "ev-06-empty.png"
+    run Hide("r13_records")
+    $ room13["evidence"]=qa_saved_evidence
     $ persistent.room13_large_text=False
