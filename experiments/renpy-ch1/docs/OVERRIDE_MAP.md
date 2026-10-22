@@ -120,7 +120,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 7 | 153 | `systems/room13_ep2_kids.rpy:92` | _r13_nt_where |
 | 8 | 155 | `systems/room13_ep4_night13.rpy:34` | _r13_continuity_where |
 | 9 | 162 | `systems/room13_story_continuity.rpy:19` | _r13_relocate_where |
-| 10 | 336 | `room13_v111_field_layout.rpy:92` |  |
+| 10 | 336 | `room13_v111_field_layout.rpy:96` |  |
 
 ## `r13_first_mystery_notes` (9층)
 
@@ -794,14 +794,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 58 | `room13_world_camera.rpy:63` | _r13_ep_art_world_background |
+| 1 | 58 | `room13_world_camera.rpy:68` | _r13_ep_art_world_background |
 | 2 | 160 | `systems/room13_ep_art.rpy:86` |  |
 
 ## `r13_world_edge_label` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 58 | `room13_world_camera.rpy:180` | _r13_offer_edge_label |
+| 1 | 58 | `room13_world_camera.rpy:187` | _r13_offer_edge_label |
 | 2 | 124 | `systems/room13_event_offers.rpy:94` |  |
 
 ## `r13_world_props` (2층)

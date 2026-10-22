@@ -63,17 +63,21 @@ init 336 python:
     # cart, crates, fence) have people beside them so the empty space is not a pointer.
     R13_STAND_SPOTS={
         "gate":dict(
-            positions={"guard":[1234,592,222],"resident_siluk":[1290,545,212],"karo":[580,628,230],
-                       "daram":[690,704,205],"resident_bori":[1770,666,238]},
+            positions={"guard":[1234,592,222],"resident_siluk":[1290,545,212],"karo":[630,628,230],
+                       "daram":[730,704,205],"resident_bori":[1770,666,238]},
             poses={"guard":"neutral","daram":"thinking","resident_siluk":"event_whisper","karo":"living_axlewrap",
                    "resident_bori":"map27_carry_firewood_v2"},
-            pose_positions={"karo:living_axlewrap":[580,628]},
+            pose_positions={"karo:living_axlewrap":[630,628]},
             pinned=["karo","guard","daram","resident_siluk","resident_bori"],
         ),
     }
     for _spot_place,_spot in R13_STAND_SPOTS.items():
         _spot_layout=R13_WORLD_LAYOUTS.get(_spot_place)
         if not _spot_layout:continue
+        # Spots are written against the old 1920x720 picture; a wider picture moves them with it.
+        _sdx,_sdy=_spot_layout.get("wide_shift",[0,0])
+        _spot=dict(_spot,positions={k:[v[0]+_sdx,v[1]+_sdy]+v[2:] for k,v in _spot["positions"].items()},
+            pose_positions={k:[v[0]+_sdx,v[1]+_sdy] for k,v in _spot["pose_positions"].items()})
         _spot_layout["positions"]=dict(_spot_layout.get("positions",{}),**_spot["positions"])
         _spot_layout["poses"]=dict(_spot_layout.get("poses",{}),**_spot["poses"])
         _spot_layout["pose_positions"]=dict(_spot_layout.get("pose_positions",{}),**_spot["pose_positions"])

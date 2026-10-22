@@ -71,19 +71,19 @@ screen r13_hub(entry=False):
 
     if r13_world_width()>1280:
         # 0.20.3 (owner mockup D): a zoomed place draws its world smaller and leaves a strip below.
-        if r13_field_zoom()<1.0:
-            add Solid("#1d1611") ypos int(720*r13_field_zoom()) xsize 1280 ysize 720-int(720*r13_field_zoom())
-            add Solid("#c9a86a88") ypos int(720*r13_field_zoom()) xsize 1280 ysize 1
+        if r13_world_height()*r13_field_zoom()<719:
+            add Solid("#1d1611") ypos int(r13_world_height()*r13_field_zoom()) xsize 1280 ysize 720-int(r13_world_height()*r13_field_zoom())
+            add Solid("#c9a86a88") ypos int(r13_world_height()*r13_field_zoom()) xsize 1280 ysize 1
         fixed:
             at r13_field_zoomed(r13_field_zoom())
-            xsize r13_view_width() ysize 720
+            xsize r13_view_width() ysize r13_world_height()
             viewport:
                 id "r13_world_viewport"
-                area (0,0,r13_view_width(),720)
+                area (0,0,r13_view_width(),r13_world_height())
                 xadjustment world_adjustment
                 draggable False mousewheel False arrowkeys False
                 fixed:
-                    xsize r13_world_width() ysize 720
+                    xsize r13_world_width() ysize r13_world_height()
                     add r13_world_background()
                     use r13_world_contents(entry,input_ready)
         if not world_moving:
@@ -142,7 +142,7 @@ screen r13_hub(entry=False):
 screen r13_world_contents(entry=False,ready=False):
     style_prefix "r13"
     button:
-        area (0,0,r13_world_width(),720) padding (0,0) background None hover_background None
+        area (0,0,r13_world_width(),r13_world_height()) padding (0,0) background None hover_background None
         action Function(r13_empty_tap_feedback) sensitive ready alt "배경"
     # Background targets stay behind the visible residents.
     for key,spec in ROOM13["objects"].get(room13["location"],{}).items():

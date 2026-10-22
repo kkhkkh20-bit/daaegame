@@ -19,13 +19,18 @@ init 58 python:
         return int(r13_layout(location).get("width",1280))
 
     def r13_world_height(location=None):
-        return 720
+        location=location or (store.room13 or {}).get("location")
+        return int(r13_layout(location).get("height",720))
 
     # Field zoom (owner 2026-10-22, mockup D: "맵 전체가 쪼그라드는 거지 ... 같은 비율에서 넓게").
     # A wide place listed here is drawn smaller: the viewport shows 1280/zoom world pixels and
     # is scaled by zoom; the strip below holds the field controls or the dialogue. World
     # coordinates (objects, stand spots, saves) do not change. Other places stay at 1.0.
-    R13_FIELD_ZOOM={}  # 0.20.3: gate 0.75 waits for the taller 2560x960 art (owner 2026-10-22: "맵을 새로 넓게 그려서")
+    # 0.20.3: the gate uses its taller 2560x960 art at 0.75, filling the screen (owner 2026-10-22:
+    # "맵을 새로 넓게 그려서"); without that art it stays at 1.0.
+    R13_FIELD_ZOOM={}
+    def r13_field_zoom_init():
+        if R13_WORLD_LAYOUTS.get("gate",{}).get("height")==960:R13_FIELD_ZOOM["gate"]=0.75
     def r13_field_zoom(location=None):
         location=location or (store.room13 or {}).get("location")
         if r13_world_width(location)<=1280:return 1.0
@@ -71,7 +76,7 @@ init 58 python:
         source=r13_scene_treatment(location,period,source)
         # Dot effects (room13_dot_fx.rpy) sit in the picture's own pixels, before scaling.
         source=r13_dot_fx_scene(location,period,source,path,crop)
-        return Transform(source,size=(int(spec["width"]),720),nearest=True,subpixel=False)
+        return Transform(source,size=(int(spec["width"]),int(spec.get("height",720))),nearest=True,subpixel=False)
 
     def r13_camera_background(st,at,location,daylight):
         # A period can change during a native dialogue, without calling scene.
@@ -81,8 +86,10 @@ init 58 python:
         z=r13_field_zoom(location)
         if z<1.0:
             # 0.20.3: dialogue over a zoomed place keeps the same framing; the say window sits in the strip.
-            view=Transform(Crop((r13_world_offset(location),0,r13_view_width(location),720),r13_world_background(location,period)),zoom=z)
-            return Fixed(Solid("#1d1611"),view,Transform(Solid("#c9a86a88"),xsize=1280,ysize=1,ypos=int(720*z)),xysize=(1280,720)),None
+            h=r13_world_height(location)
+            view=Transform(Crop((r13_world_offset(location),0,r13_view_width(location),h),r13_world_background(location,period)),zoom=z)
+            if h*z>=719:return Fixed(view,xysize=(1280,720)),None
+            return Fixed(Solid("#1d1611"),view,Transform(Solid("#c9a86a88"),xsize=1280,ysize=1,ypos=int(h*z)),xysize=(1280,720)),None
         return Crop((r13_world_offset(location),0,1280,720),r13_world_background(location,period)),None
 
     class R13WorldCameraChanged:
