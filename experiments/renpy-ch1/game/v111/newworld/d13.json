@@ -784,8 +784,8 @@
       },
       {
         "id": "NW_BQ_05",
-        "speaker": "아빠",
-        "kind": "thought",
+        "speaker": null,
+        "kind": "narration",
         "text": "바둑이의 손은 고삐를 놓지 못하고 있다."
       }
     ],
@@ -819,6 +819,12 @@
         "text": "직접 확인했다고 하셔서 제가 맡았습니다. 확인하신 적이 없잖습니까.",
         "expression": "neutral",
         "beat": "shaken"
+      },
+      {
+        "id": "NW_BW_05",
+        "speaker": null,
+        "kind": "narration",
+        "text": "바둑이의 눈이 촌장에게서 떨어져 수레 쪽으로 간다."
       }
     ],
     "badook_lost13": [
@@ -1151,6 +1157,22 @@
         "kind": "dialogue",
         "text": "여기부터 읽을래.",
         "expression": "default"
+      }
+    ],
+    "karo_report13": [
+      {
+        "id": "NW_D13_KR01",
+        "speaker": "까로",
+        "kind": "dialogue",
+        "text": "둘 다 학교 안에 들어갔어요. 함께 기다리고 있어요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D13_KR02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "고맙습니다.",
+        "expression": "neutral"
       }
     ]
   }

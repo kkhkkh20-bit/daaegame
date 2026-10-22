@@ -155,3 +155,17 @@ init 348 python:
                 text=R13_IDLE_BUSY_TEXT.get(busy,R13_IDLE_BUSY_DEFAULT)%(name+josa)
                 return [r13_nw_added_line(dict(speaker=None,text=text,kind="narration"))]
         return _r13_state_idle_lines(person)
+
+# 0.20.9 (조연 검토 4): 5일 회의에서 "사람이 보이면 부르겠소. 손부터 대진 않겠소."라고 약속한 경로.
+# 6~10일 그날 첫 인사에서 돌목은 다친 팔을 몸에 붙인 채, 손 대신 먼저 부른다.
+init 349 python:
+    _r13_guard_idle_lines=r13_v111_idle_lines
+    def r13_v111_idle_lines(person):
+        day=(store.room13 or {}).get("day",1)
+        if (person=="guard" and 6<=day<=10 and r13_v111_value("meeting:gate_post")=="win"
+                and not r13_v111_value("busy:guard") and person in r13_met_people()
+                and not r13_v111_value("greeted:%s:%s"%(day,person))):
+            r13_v111_set("greeted:%s:%s"%(day,person),True)
+            return [r13_nw_added_line(dict(speaker=None,text="돌목은 다친 팔을 몸 쪽에 붙인 채 서 있다. 발소리에 손을 뻗으려다 멈추고, 먼저 부른다.",kind="narration")),
+                    r13_nw_added_line(dict(speaker="돌목",text="거기 누구요. ……아, 당신이군.",expression="neutral",kind="dialogue"))]
+        return _r13_guard_idle_lines(person)

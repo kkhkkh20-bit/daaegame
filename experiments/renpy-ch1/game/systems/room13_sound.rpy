@@ -166,6 +166,11 @@ init 150 python:
     # 증거를 내밀 때(확인 뒤에만 불린다): 오케스트라 히트
     _r13_sound_present = r13_present
     def r13_present(person, key, identity=False):
+        # 0.20.9 (30선 01): 새 이야기에서 한 사람에게 자료를 보이는 것은 사적인 확인이다.
+        # 종이 펴는 소리만 쓰고, 회의의 히트·흔들림은 회의 화면 쪽에만 남긴다.
+        if globals().get("r13_v111_active", lambda: False)():
+            source_fx("page")
+            return _r13_sound_present(person, key, identity)
         source_fx("present")
         r13_fx_cue("present")      # 집중선·2px 흔들림 (systems/room13_dot_fx.rpy)
         return _r13_sound_present(person, key, identity)

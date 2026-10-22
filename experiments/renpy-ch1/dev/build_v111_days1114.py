@@ -398,7 +398,7 @@ label('partial_listed13');lines.extend(['    python:',
  "        call r13_lines(r13_nw_block('listed_down_daram13'),'nw:listed_down_daram13')",
  '        $ r13_v111_set("handed:daram",True)',
  '    jump r13_v111_partial13'])
-label('family_position13');select([('곁에 남는다','family_stay13',None),('까로와 학교로 간다','family_karo13','not '+V('busy:karo')),('네로와 학교로 간다','family_nero13',V('nero_alive')+' and not '+V('busy:resident_nero')+' and r13_v111_actor_ready("resident_nero")')])
+label('family_position13');select([('엄마와 다람이 곁에 남게 한다','family_stay13',None),('엄마와 다람을 까로와 학교로 보낸다','family_karo13','not '+V('busy:karo')),('엄마와 다람을 네로와 학교로 보낸다','family_nero13',V('nero_alive')+' and not '+V('busy:resident_nero')+' and r13_v111_actor_ready("resident_nero")')])
 label('family_stay13');late(s,63,64);setv('family_location','square');setv('busy:mom','daram_guard');goto('handover_plan13')
 label('family_karo13');late(s,56,59);setv('family_location','moving_to_school');setv('location:mom','on_way_school');setv('location:daram','on_way_school');setv('location:karo','on_way_school');setv('busy:karo','family_walk');goto('family_walk_karo13')
 label('family_nero13');arrive(['mom','daram','resident_nero','karo','guard','resident_badook']);late(s,60,62);lines.append('    hide r13_visitor');code('renpy.pause(.35)');setv('family_location','school');setv('location:mom','school');setv('location:daram','school');setv('location:resident_nero','school');setv('busy:mom','daram_guard');setv('busy:resident_nero','daram_guard');arrive(['karo','guard','resident_badook']);goto('handover_plan13')

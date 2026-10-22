@@ -374,6 +374,11 @@ label r13_v111_heat_seen11:
         call r13_lines(r13_v111_lines(['MS14_D11_S03_L0016']),'v111:MS14_D11_S03_L0016')
     call r13_lines(r13_v111_lines(['MS14_D11_S03_L0018']),'v111:MS14_D11_S03_L0018')
     call r13_lines(r13_v111_lines(['MS14_D11_S03_L0019']),'v111:MS14_D11_S03_L0019')
+    # 0.20.9 (6~12일 검토 10): 벽화 → 깨진 돌판 → 새긴 이름. 한 번에 몰아 설명하지 않고 하나씩 본다.
+    $ renpy.display_menu([("벽 아래 깨진 돌판을 들여다본다",0)])
+    call r13_lines(r13_nw_block('mural_tablet11'),'nw:mural_tablet11')
+    $ renpy.display_menu([("그림 옆 벽에 새긴 글씨를 본다",0)])
+    call r13_lines(r13_nw_block('mural_names11'),'nw:mural_names11')
     $ r13_nw_acquire("NW_TABLET_A")
     $ r13_nw_acquire("NW_NAMES")
     $ r13_v111_set('heat_inventory_observed',True)
@@ -1982,11 +1987,11 @@ label r13_v111_partial_listed13:
 
 label r13_v111_family_position13:
     menu:
-        '곁에 남는다':
+        '엄마와 다람이 곁에 남게 한다':
             jump r13_v111_family_stay13
-        '까로와 학교로 간다' if not r13_v111_value('busy:karo'):
+        '엄마와 다람을 까로와 학교로 보낸다' if not r13_v111_value('busy:karo'):
             jump r13_v111_family_karo13
-        '네로와 학교로 간다' if r13_v111_value('nero_alive') and not r13_v111_value('busy:resident_nero') and r13_v111_actor_ready("resident_nero"):
+        '엄마와 다람을 네로와 학교로 보낸다' if r13_v111_value('nero_alive') and not r13_v111_value('busy:resident_nero') and r13_v111_actor_ready("resident_nero"):
             jump r13_v111_family_nero13
 
 label r13_v111_family_stay13:
@@ -2041,6 +2046,9 @@ label r13_v111_family_walk_karo13:
     $ r13_v111_set('busy:karo',False)
     $ r13_v111_arrive(['karo', 'guard', 'resident_badook'])
     call r13_lines([(None,"잠시 뒤, 까로가 혼자 광장으로 돌아왔다.",{"show":"karo","no_lead":True})],"v111:family_escort_return13")
+    # 0.20.9 (구체 수정안 6): 내부의 도착 반영을 아빠가 들은 정보로 만든다.
+    if r13_v111_actor_ready('karo'):
+        call r13_lines(r13_nw_block('karo_report13'),'nw:karo_report13')
     jump r13_v111_handover_plan13
 
 label r13_v111_handover_plan13:

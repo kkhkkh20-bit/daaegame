@@ -89,9 +89,9 @@ def choice(sid,rid,after):
   if tail.get('kind')=='system' and tail.get('operations'):lines.append('            $ r13_v111_commit('+q(tail['id'])+')')
   lines.append('            jump r13_v111_'+after[i])
 SHORT={
- 'MS14_D07_S03_B002_O01':'다람과 남고 까로에게 부탁한다',
- 'MS14_D07_S03_B002_O02':'다람과 의료진을 데려온다',
- 'MS14_D07_S03_B002_O03':'도토에게 인계하고 의료진을 부른다',
+ 'MS14_D07_S03_B002_O01':'다람과 남고 까로를 의료진에게 보낸다',
+ 'MS14_D07_S03_B002_O02':'다람과 함께 의료진을 데리러 간다',
+ 'MS14_D07_S03_B002_O03':'다람을 도토에게 맡기고 의료진을 데리러 간다',
  'MS14_D06_S01_B004_O02':'먼저 먹어. 그릇은 가져다줄게.',
 }
 C=lambda sid:V('choice:'+sid)

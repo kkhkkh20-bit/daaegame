@@ -624,7 +624,7 @@ label r13_v111_diner_offer:
 
 label r13_v111_afternoon:
     $ v111_menu_owner='afternoon'
-    $ v111_menu=[('피코가 오늘 안에서 잘 자리를 마련한다',0) for _ in [0] if True] + [('아내를 봤다는 네로를 만나러 간다',1) for _ in [0] if True]
+    $ v111_menu=[('피코가 오늘 안에서 잘 자리를 마련한다',0) for _ in [0] if True] + [('네로를 만나 물자 일을 돕는다',1) for _ in [0] if True]
     $ v111_answer=renpy.display_menu(v111_menu)
     if v111_answer==0:
         $ r13_v111_option('MS14_D02_S04_L0020_O1')

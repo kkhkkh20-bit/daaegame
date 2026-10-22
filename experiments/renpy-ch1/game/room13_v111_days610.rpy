@@ -26,6 +26,11 @@ label r13_v111_day6:
     call r13_lines(r13_v111_lines(['MS14_D06_S01_L0019']),'v111:MS14_D06_S01_L0019')
     call r13_lines(r13_v111_lines(['MS14_D06_S01_L0020']),'v111:MS14_D06_S01_L0020')
     call r13_lines(r13_v111_lines(['MS14_D06_S01_L0021']),'v111:MS14_D06_S01_L0021')
+    # 0.20.9 (조연 검토 1·2): 혐의를 벗은 밤이의 평범한 자리, 들은 말을 스스로 고치는 콩이.
+    if r13_v111_value('bami_status')=='cleared' and not r13_v111_value('listed:bami') and r13_v111_actor_ready('resident_teacher'):
+        call r13_lines(r13_nw_block('bami_after5_6'),'nw:bami_after5_6')
+    if r13_v111_value('alive:resident_kongi') is not False and not r13_v111_value('listed:resident_kongi') and r13_v111_actor_ready('daram'):
+        call r13_lines(r13_nw_block('kongi_after4_6'),'nw:kongi_after4_6')
     call r13_lines(r13_v111_lines(['MS14_D06_S01_L0022']),'v111:MS14_D06_S01_L0022')
     $ r13_v111_commit('MS14_D06_S01_L0023')
     menu:
@@ -610,19 +615,19 @@ label r13_v111_room_visit7:
     call r13_lines(r13_v111_lines(['MS14_D07_S03_L0013']),'v111:MS14_D07_S03_L0013')
     $ r13_v111_commit('MS14_D07_S03_L0014')
     menu:
-        '다람과 남고 까로에게 부탁한다':
+        '다람과 남고 까로를 의료진에게 보낸다':
             $ r13_v111_set('route7','prevented')
             $ r13_v111_set('prevention','A')
             $ r13_v111_set('choice:MS14_D07_S03','A')
             $ r13_v111_commit('MS14_D07_S03_L0016')
             jump r13_v111_stay7
-        '다람과 의료진을 데려온다':
+        '다람과 함께 의료진을 데리러 간다':
             $ r13_v111_set('route7','prevented')
             $ r13_v111_set('prevention','B')
             $ r13_v111_set('choice:MS14_D07_S03','B')
             $ r13_v111_commit('MS14_D07_S03_L0016')
             jump r13_v111_take7
-        '도토에게 인계하고 의료진을 부른다':
+        '다람을 도토에게 맡기고 의료진을 데리러 간다':
             $ r13_v111_set('route7','murder')
             $ r13_v111_set('choice:MS14_D07_S03','C')
             $ r13_v111_commit('MS14_D07_S03_L0016')
@@ -1057,6 +1062,10 @@ label r13_v111_day9:
 label r13_v111_passage9:
     $ r13_v111_scene('MS14_D09_S01')
     $ r13_edit(period=0)
+    # 0.20.9 (30선 21): 7일 구조를 겪은 다람의 작은 확인. 다람이 곁에 있을 때 한 번만.
+    if not r13_v111_value('DARAM_DETAINED') and r13_v111_actor_ready('daram') and not r13_v111_value('daram_door_asked9'):
+        $ r13_v111_set('daram_door_asked9',True)
+        call r13_lines(r13_nw_block('daram_door9'),'nw:daram_door9')
     $ room13["v111"]["people"]=[]
     call r13_v111_travel('kitchen','passage9',[])
     $ r13_v111_arrive(['doto', 'resident_ttadak', 'granny'])

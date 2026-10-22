@@ -163,7 +163,7 @@ async def main():
       if branch_slot not in shots:
        await q.py('import renpy;renpy.exports.save('+repr(branch_slot)+');result=True');shots.add(branch_slot)
       items=await q.py('import renpy;result=[i.caption for i in renpy.display.screen.get_screen("choice").scope["items"] if i.action is not None]')
-      preferred=next((t for t in ['하차한 사람부터 부축한다','그릇을 돌려주러 같이 가자.','오늘 안에 학교 자리를 확인하고 옮긴다.','아이들은 학교에서 기다리게 하자.','다람과 남고 까로에게 부탁한다','짐 안에 둔다','준비된 물자를 학교로 옮긴다','없는 운반수단을 지금 구한다','배식 전에 더 살핀다','돌목에게 감독을 맡긴다','조건을 더 묻는다','거절하고 현장에 남는다','곁에 남는다','안에서 직접 듣는다','토실이 이름을 쓰겠다면 기다린다'] if t in items),items[0])
+      preferred=next((t for t in ['하차한 사람부터 부축한다','그릇을 돌려주러 같이 가자.','오늘 안에 학교 자리를 확인하고 옮긴다.','아이들은 학교에서 기다리게 하자.','다람과 남고 까로를 의료진에게 보낸다','짐 안에 둔다','준비된 물자를 학교로 옮긴다','없는 운반수단을 지금 구한다','배식 전에 더 살핀다','돌목에게 감독을 맡긴다','조건을 더 묻는다','거절하고 현장에 남는다','엄마와 다람이 곁에 남게 한다','안에서 직접 듣는다','토실이 이름을 쓰겠다면 기다린다'] if t in items),items[0])
       # Once the family offer has been clarified, refuse it rather than looping.
       if '거절하고 현장에 남는다' in items and values.get('family_offer_terms_seen'):preferred='거절하고 현장에 남는다'
       overrides=json.loads(os.environ.get('V111_BRANCHES','{}'))

@@ -130,6 +130,9 @@ init 319 python:
         # Event 08: the day-11 facility and the hypothesis meeting.
         "guldol_ready":lambda:r13_v111_actor_ready("resident_guldol"),
         "karo_ready":lambda:r13_v111_actor_ready("karo"),  # 0.20.9
+        "tosil_inside":lambda:r13_v111_value("tosil_listen")=="inside",  # 0.20.9 엔딩 검토 9
+        "tosil_outside":lambda:r13_v111_value("tosil_listen")=="outside",
+        "crowd_blocked13":lambda:r13_v111_value("crowd_intervention")=="success",  # 0.20.9 엔딩 검토 14
         "tok_round_asked":lambda:bool(r13_v111_value("followup_read:NW_RX_F007")),  # 0.20.9 D23-04 먼저 물어본 경우
         "heard_inn_order1":lambda:r13_v111_value("heard_inn_order1") is True,  # 0.20.9 1일 문간 지시를 들은 경로
         "guldol_absent":lambda:not r13_v111_actor_ready("resident_guldol"),
