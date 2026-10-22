@@ -3,11 +3,13 @@
 # Owner-reviewed revisions live in game/v111/newworld/dNN.json and are applied
 # here, by record ID only:
 #   replace  {rid: {"text": ..., "when"?: name, "expression"?: slot}}   new sentence for an authored line (only while when holds)
+#            or {rid: [variant, ...]}: one sentence per branch, the first variant whose when holds is shown
 #   before / after  {rid: [line, ...]}             new lines around an authored line
 #   drop     [rid | {"id": rid, "when": name}, ...]  authored line not shown (while when holds)
 #   evidence {key: {"name": ..., "variants": {variant: text}, "add_variants": {new: text}}}
 #   new_evidence {"NW_...": {"name": ..., "kind": "물증|기록|관찰기록|증언", "variants": {variant: text}}}
 #            a record that only the new world has; the generators acquire it with r13_nw_acquire
+#   titles   {binding: {option index: title}}        new wording for a field choice (v111/field-bindings.json)
 #   blocks   {name: [line, ...]}                     new-world lines with no authored record
 #            (new meetings); the generators show them with r13_nw_block(name)
 # A new line: {"id": "NW_...", "speaker": name|null, "text": ..., "kind"?: dialogue|narration|thought, "expression"?,
@@ -18,12 +20,12 @@
 # With every file empty the game shows the same lines in the same order as before.
 init 319 python:
     R13_NW_TEXT_DAYS=["d%02d"%n for n in range(1,15)]
-    R13_NW_TEXT=dict(replace={},before={},after={},drop=[],evidence={},new_evidence={},blocks={})
+    R13_NW_TEXT=dict(replace={},before={},after={},drop=[],evidence={},new_evidence={},blocks={},titles={})
     for _nw_day in R13_NW_TEXT_DAYS:
         _nw_path="v111/newworld/%s.json"%_nw_day
         if not renpy.loadable(_nw_path):continue
         with renpy.file(_nw_path) as _nw_file:_nw_part=json.load(_nw_file)
-        for _nw_key in ("replace","before","after","evidence","new_evidence","blocks"):
+        for _nw_key in ("replace","before","after","evidence","new_evidence","blocks","titles"):
             for _nw_rid,_nw_value in _nw_part.get(_nw_key,{}).items():
                 if _nw_rid in R13_NW_TEXT[_nw_key]:raise Exception("Duplicate new-world entry: %s %s"%(_nw_key,_nw_rid))
                 R13_NW_TEXT[_nw_key][_nw_rid]=_nw_value
@@ -126,6 +128,15 @@ init 319 python:
     for _nw_person in R13_NW_LIST_NAMES:
         R13_NW_WHEN["listed:"+_nw_person]=(lambda p=_nw_person:r13_v111_value("listed:"+p) is True)
     R13_NW_CUT_SPECIAL=("bell","v111_blanket_before","v111_blanket_after")
+    def r13_nw_replace_variants(rid):
+        """A replace entry is one variant or a list of variants (first whose condition holds wins)."""
+        entry=R13_NW_TEXT["replace"].get(rid)
+        if entry is None:return []
+        return entry if isinstance(entry,list) else [entry]
+    def r13_nw_replacement(rid):
+        for variant in r13_nw_replace_variants(rid):
+            if R13_NW_WHEN[variant.get("when","always")]():return variant
+        return None
     def r13_nw_drop_item(item):
         return (item,"always") if isinstance(item,str) else (item.get("id"),item.get("when","always"))
     def r13_nw_dropped(rid):
@@ -134,9 +145,10 @@ init 319 python:
         """Every broken reference in the loaded files, as readable strings."""
         out=[];records=R13_V111["records"];seen=set()
         for rid in R13_NW_TEXT["replace"]:
-            if rid not in records:out.append("replace: unknown record "+rid)
-            elif not R13_NW_TEXT["replace"][rid].get("text"):out.append("replace: empty text "+rid)
-            elif R13_NW_TEXT["replace"][rid].get("when","always") not in R13_NW_WHEN:out.append("replace: unknown condition "+rid)
+            if rid not in records:out.append("replace: unknown record "+rid);continue
+            for variant in r13_nw_replace_variants(rid):
+                if not variant.get("text"):out.append("replace: empty text "+rid)
+                elif variant.get("when","always") not in R13_NW_WHEN:out.append("replace: unknown condition "+rid)
         for item in R13_NW_TEXT["drop"]:
             rid,when=r13_nw_drop_item(item)
             if rid not in records:out.append("drop: unknown record "+str(rid))
@@ -160,14 +172,17 @@ init 319 python:
         for key in R13_NW_TEXT["evidence"]:
             if key not in R13_V111["evidence"]:out.append("evidence: unknown key "+key)
         return out
+    for _nw_binding,_nw_titles in R13_NW_TEXT["titles"].items():
+        for _nw_index,_nw_title in _nw_titles.items():
+            R13_V111_BINDINGS[_nw_binding]["options"][int(_nw_index)]["title"]=_nw_title
     _nw_problems=r13_nw_text_problems()
     if _nw_problems:raise Exception("New-world text files are inconsistent: "+"; ".join(_nw_problems[:8]))
 
     _r13_nw_authored_line=r13_v111_line
     def r13_v111_line(rid):
         packet=_r13_nw_authored_line(rid)
-        revised=R13_NW_TEXT["replace"].get(rid)
-        if revised and R13_NW_WHEN[revised.get("when","always")]():
+        revised=r13_nw_replacement(rid)
+        if revised:
             packet=(packet[0],revised["text"])+tuple(packet[2:])
             # 0.19.98: a revised line may carry its own expression (owner: "대사에 맞는 표정").
             if revised.get("expression") and len(packet)>2 and isinstance(packet[2],dict):

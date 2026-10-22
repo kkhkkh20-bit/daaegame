@@ -33,7 +33,8 @@ class Layer(unittest.TestCase):
    R13_RECORD_CATEGORIES={'물증':'evidence','기록':'evidence','관찰기록':'evidence','증언':'testimony'},
    R13_MEETING_BEATS={k:None for k in re.findall(r'^        "(\w+)": \(',(ROOT/'game/systems/room13_meeting_direction.rpy').read_text(),re.M)},
    R13_FULLBODY_PLAIN={'neutral','joy','anxious','angry','surprise','flustered'},
-   R13_DIALOGUE_CONTEXT_ART=json.loads((ROOT/'game/assets/room13-dialogue-context-art.json').read_text()))
+   R13_DIALOGUE_CONTEXT_ART=json.loads((ROOT/'game/assets/room13-dialogue-context-art.json').read_text()),
+   R13_V111_BINDINGS=json.loads((ROOT/'game/v111/field-bindings.json').read_text()))
   ctx=re.search(r'^init 172 python:\n((?:[ \t].*\n|\n)*)',(ROOT/'game/systems/room13_dialogue_context_art.rpy').read_text(),re.M).group(1)
   tree=ast.parse(textwrap.dedent(ctx))
   exec(compile(ast.Module(body=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='r13_dialogue_context_match'],type_ignores=[]),'ctx','exec'),self.env)
@@ -67,9 +68,9 @@ class NewWorldText(Layer):
   self.assertEqual(env['r13_nw_text_problems'](),[])
   for path in sorted((ROOT/'game/v111/newworld').glob('d*.json')):
    part=json.loads(path.read_text())
-   self.assertLessEqual(set(part)-{'new_evidence','blocks'},{'replace','before','after','drop','evidence'},path.name)
+   self.assertLessEqual(set(part)-{'new_evidence','blocks','titles'},{'replace','before','after','drop','evidence'},path.name)
    self.assertLessEqual({'replace','before','after','drop','evidence'},set(part),path.name)
-   texts=[v['text'] for v in part['replace'].values()]+[r['text'] for rows in list(part['before'].values())+list(part['after'].values())+list(part.get('blocks',{}).values()) for r in rows]+[t for e in part.get('new_evidence',{}).values() for t in [e['name']]+list(e['variants'].values())]
+   texts=[x['text'] for v in part['replace'].values() for x in (v if isinstance(v,list) else [v])]+[t for b in part.get('titles',{}).values() for t in b.values()]+[r['text'] for rows in list(part['before'].values())+list(part['after'].values())+list(part.get('blocks',{}).values()) for r in rows]+[t for e in part.get('new_evidence',{}).values() for t in [e['name']]+list(e['variants'].values())]
    for t in texts:
     self.assertFalse(any(w in t for w in FORBIDDEN),t);self.assertIsNone(EMOJI.search(t),t)
   self.assertEqual(len(list((ROOT/'game/v111/newworld').glob('d*.json'))),14)
@@ -97,6 +98,21 @@ class NewWorldText(Layer):
   self.assertEqual(rows[3][0],'daram');self.assertEqual(rows[3][2]['expression'],'anxious')
   self.env['r13_v111_set']('OWL_ALIVE',False)
   self.assertIn('조건 줄',[r[1] for r in env['r13_v111_lines'](['MS14_D01_S05_L0004'])])
+ def test_replace_variants_follow_the_branch(self):
+  # Owner 2026-10-22: the gate record reads differently when the proof was lost.
+  env=self.fixture('d01',dict(replace={'MS14_D01_S04_L0005':[dict(text='잃은 쪽',when='gate_daram_unlisted'),dict(text='이긴 쪽',when='gate_daram_listed',expression='joy')]}))
+  self.assertEqual(env['r13_v111_lines'](['MS14_D01_S04_L0005'])[0][1],'이긴 쪽')
+  self.assertEqual(env['r13_v111_lines'](['MS14_D01_S04_L0005'])[0][2]['expression'],'joy')
+  self.env['r13_v111_set']('gate_daram_unlisted',True)
+  self.assertEqual(env['r13_v111_lines'](['MS14_D01_S04_L0005'])[0][1],'잃은 쪽')
+ def test_gate_rule_has_no_family_visit_category(self):
+  # Owner 2026-10-22: "가족을 만나러 오는 별도의 입장규칙" makes no sense; the rule speaks of visitors.
+  env=self.load()
+  rule=env['R13_V111']['evidence']['E04']['variants']['observed']
+  self.assertIn('방문객',rule);self.assertNotIn('가족',rule)
+  shown=[env['r13_v111_line'](rid)[1] for rid in ('MS14_D01_S03_L0007','MS14_D01_S03_L0021','MS14_D01_S03_L0029','MS14_D01_S04_L0014')]
+  self.assertFalse([t for t in shown if '가족' in t],shown)
+  self.assertEqual(env['R13_V111_BINDINGS']['gate_choice']['options'][1]['title'],'방문 신청서를 찾아 달라고 한다')
  def test_cut_uses_existing_art_only(self):
   row=dict(id='NW_T_C1',speaker=None,text='벽을 본다',cut='O47-handprints')
   env=self.fixture('d09',dict(after={'MS14_D09_S01_L0001':[row]}),art={'assets/room13-ep-O47-handprints.webp'})
@@ -195,17 +211,21 @@ class Event01Gate(Layer):
  def test_won_gate_keeps_the_authored_registration(self):
   env=self.load()
   texts=[r[1] for r in env['r13_v111_lines'](self.RIDS)]
-  self.assertEqual(texts,[source_tests.DATA['records'][r]['text'] for r in self.RIDS])
+  # Day-1 rewrite (owner 2026-10-22): wording changed, the record still names both of them.
+  self.assertEqual(len(texts),len(self.RIDS))
+  self.assertIn('방문객 다돌, 동행 아동',texts[3]);self.assertNotIn('일꾼',texts[3])
+  self.assertIn('다람',texts[4]);self.assertEqual(texts[5],source_tests.DATA['records']['MS14_D01_S04_L0008']['text'])
+  self.assertIn('방문객 다돌, 동행인 다람',env['r13_v111_lines'](['MS14_D01_S04_L9101'])[0][1])
   after=[r[1] for r in env['r13_v111_lines'](['MS14_D01_S04_L0021'])]
   self.assertIn('정정한 표',after[1]);self.assertEqual(len(after),3)
  def test_lost_gate_leaves_daram_off_the_record(self):
   env=self.load();self.env['r13_v111_set']('gate_daram_unlisted',True)
   texts=[r[1] for r in env['r13_v111_lines'](self.RIDS)]
-  self.assertEqual(texts[3],'그렇소. 일꾼 다돌, 외 한 명.')
-  self.assertEqual(texts[4],source_tests.DATA['records']['MS14_D01_S04_L0006']['text'],'Daram still asks for her name')
-  self.assertEqual(texts[5],'이름 칸이 없소. 표가 그렇게 생겼소.')
+  self.assertIn('일꾼 다돌, 외 한 명',texts[3])
+  self.assertIn('내 이름은 다람',texts[4],'Daram still asks for her name')
+  self.assertTrue(texts[5].startswith('이름 칸이 없소.'))
   self.assertIn('정정 없음',env['r13_v111_lines'](['MS14_D01_S04_L9101'])[0][1])
-  self.assertIn('고친 건 없소',env['r13_v111_lines'](['MS14_D01_S04_L0016'])[0][1])
+  self.assertIn('고친 게 없소',env['r13_v111_lines'](['MS14_D01_S04_L0016'])[0][1])
   after=[r[1] for r in env['r13_v111_lines'](['MS14_D01_S04_L0021'])]
   self.assertNotIn('정정한 표',' '.join(after));self.assertEqual(len(after),3)
   self.assertTrue(env['R13_V111']['evidence']['E05']['variants']['unlisted'].startswith('정정 없음.'))
