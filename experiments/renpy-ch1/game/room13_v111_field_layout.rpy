@@ -55,3 +55,42 @@ init 336 python:
                 R13_STAGE_ORDER_OVERRIDE=None
             if not r13_stage_face_covered(again):rows=again
         return rows
+
+    # Stand spots by role (owner 2026-10-22, mockup D: "서 있을 자리를 먼저 정한다").
+    # Gate: the gatekeeper beside the right gate post, the carter whispering at his shoulder,
+    # Karo kneeling at his own wheel, Daram beside him with her notebook, Bori carrying wood at
+    # the woodpile. The gate passage and the booth papers stay clear; ordinary things (the
+    # cart, crates, fence) have people beside them so the empty space is not a pointer.
+    R13_STAND_SPOTS={
+        "gate":dict(
+            positions={"guard":[1234,592,222],"resident_siluk":[1290,545,212],"karo":[580,628,230],
+                       "daram":[690,704,205],"resident_bori":[1770,666,238]},
+            poses={"guard":"neutral","daram":"thinking","resident_siluk":"event_whisper","karo":"living_axlewrap",
+                   "resident_bori":"map27_carry_firewood_v2"},
+            pose_positions={"karo:living_axlewrap":[580,628]},
+            pinned=["karo","guard","daram","resident_siluk","resident_bori"],
+        ),
+    }
+    for _spot_place,_spot in R13_STAND_SPOTS.items():
+        _spot_layout=R13_WORLD_LAYOUTS.get(_spot_place)
+        if not _spot_layout:continue
+        _spot_layout["positions"]=dict(_spot_layout.get("positions",{}),**_spot["positions"])
+        _spot_layout["poses"]=dict(_spot_layout.get("poses",{}),**_spot["poses"])
+        _spot_layout["pose_positions"]=dict(_spot_layout.get("pose_positions",{}),**_spot["pose_positions"])
+        _spot_layout["pinned"]=list(dict.fromkeys(list(_spot_layout.get("pinned",[]))+_spot["pinned"]))
+
+    # People with no part in the current gate scene go where their day's work is
+    # ("다른 주민은 생활과 이야기상 맞는 장소로 분산"): Nero to the general store, Badook to the
+    # square patrol. Anyone the current scene names, or who has an option here, stays.
+    R13_RELOCATE={("gate","resident_nero"):"store",("gate","resident_badook"):"square"}
+    def r13_v111_needed_at(person,place):
+        if not r13_v111_active():return True
+        binding=r13_v111_binding()
+        if person in binding.get("people",[]):return True
+        return any(o.get("person")==person and o.get("location")==place for o in binding.get("options",[]))
+    _r13_relocate_where=r13_where
+    def r13_where(person):
+        place=_r13_relocate_where(person)
+        target=R13_RELOCATE.get((place,person))
+        if target and not r13_v111_needed_at(person,place):return target
+        return place

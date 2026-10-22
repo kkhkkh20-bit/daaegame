@@ -21,11 +21,25 @@ init 58 python:
     def r13_world_height(location=None):
         return 720
 
+    # Field zoom (owner 2026-10-22, mockup D: "맵 전체가 쪼그라드는 거지 ... 같은 비율에서 넓게").
+    # A wide place listed here is drawn smaller: the viewport shows 1280/zoom world pixels and
+    # is scaled by zoom; the strip below holds the field controls or the dialogue. World
+    # coordinates (objects, stand spots, saves) do not change. Other places stay at 1.0.
+    R13_FIELD_ZOOM={"gate":0.75}
+    def r13_field_zoom(location=None):
+        location=location or (store.room13 or {}).get("location")
+        if r13_world_width(location)<=1280:return 1.0
+        return R13_FIELD_ZOOM.get(location,1.0)
+    def r13_view_width(location=None):
+        return int(round(1280.0/r13_field_zoom(location)))
+    def r13_camera_range(location=None):
+        return max(0,r13_world_width(location)-r13_view_width(location))
+
     def r13_world_offset(location=None):
         location=location or (store.room13 or {}).get("location")
         initial=r13_layout(location).get("initial_x",0)
         value=getattr(store,"r13_world_cameras",{}).get(location,initial)
-        return int(max(0,min(r13_world_width(location)-1280,round(value))))
+        return int(max(0,min(r13_camera_range(location),round(value))))
 
     def r13_world_revision(location):
         return r13_hashlib.sha256(json.dumps(R13_WORLD_LAYOUTS[location],sort_keys=True).encode("utf-8")).hexdigest()
@@ -64,6 +78,11 @@ init 58 python:
         # Follow the current place's live clock rather than the constructor's
         # old morning value; do not change the clock or the saved camera.
         period=r13_daylight() if location==store.room13.get("location") else daylight
+        z=r13_field_zoom(location)
+        if z<1.0:
+            # 0.20.3: dialogue over a zoomed place keeps the same framing; the say window sits in the strip.
+            view=Transform(Crop((r13_world_offset(location),0,r13_view_width(location),720),r13_world_background(location,period)),zoom=z)
+            return Fixed(Solid("#1d1611"),view,Transform(Solid("#c9a86a88"),xsize=1280,ysize=1,ypos=int(720*z)),xysize=(1280,720)),None
         return Crop((r13_world_offset(location),0,1280,720),r13_world_background(location,period)),None
 
     class R13WorldCameraChanged:
@@ -73,7 +92,7 @@ init 58 python:
         def __call__(self,value):
             if getattr(self,"destination",None) is not None:
                 value=self.destination
-            value=int(max(0,min(r13_world_width(self.location)-1280,round(value))))
+            value=int(max(0,min(r13_camera_range(self.location),round(value))))
             cameras=dict(getattr(store,"r13_world_cameras",{}))
             if cameras.get(self.location)!=value:
                 cameras[self.location]=value
@@ -85,14 +104,14 @@ init 58 python:
                 renpy.retain_after_load()
 
     def r13_world_zone_offset(location):
-        end=max(0,r13_world_width(location)-1280)
+        end=r13_camera_range(location)
         return end if r13_world_offset(location)>end/2.0 else 0
 
     def r13_world_adjustment(location):
         # Legacy free-pan saves settle at the nearest authored endpoint.
         value=r13_world_zone_offset(location)
         R13WorldCameraChanged(location)(value)
-        return ui.adjustment(range=max(0,r13_world_width(location)-1280),value=value,
+        return ui.adjustment(range=r13_camera_range(location),value=value,
             step=1,force_step=False,changed=R13WorldCameraChanged(location))
 
     def r13_pan_ease(t):
@@ -150,11 +169,12 @@ init 58 python:
     def r13_world_edge_people(adjustment):
         left=[];right=[]
         value=adjustment.value
+        view=r13_view_width()
         for actor in r13_stage_people():
             fx,fy,fw,fh=r13_actor_face(actor,0)
             center=fx+fw/2.0
             if center<value+30:left.append(actor["person"])
-            elif center>value+1250:right.append(actor["person"])
+            elif center>value+view-30:right.append(actor["person"])
         return (tuple(left),tuple(right))
 
     def r13_world_edge_label(people):
@@ -170,7 +190,12 @@ init 58 python:
             renpy.restart_interaction()
 
     def r13_world_to_screen(point,location=None):
-        return (point[0]-r13_world_offset(location),point[1])
+        z=r13_field_zoom(location)
+        return (int((point[0]-r13_world_offset(location))*z),int(point[1]*z))
+
+    def r13_screen_to_world(point,location=None):
+        z=r13_field_zoom(location)
+        return (point[0]/z+r13_world_offset(location),point[1]/z)
 
 init 62 python:
     # Rectangles move with the authored wider scene; object facts do not change.

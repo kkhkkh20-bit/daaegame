@@ -9,9 +9,9 @@ init 69 python:
         spec=ROOM13["objects"].get(store.room13["location"],{}).get(key)
         if not spec:return
         x,y,w,h=spec["rect"]
-        offset=r13_world_offset()
-        mx,my=renpy.get_mouse_pos()
-        point=(mx,my) if x<=mx+offset<=x+w and y<=my<=y+h else (x+w//2-offset,y+h//2)
+        wx,wy=r13_screen_to_world(renpy.get_mouse_pos())
+        target=(wx,wy) if x<=wx<=x+w and y<=wy<=y+h else (x+w/2.0,y+h/2.0)
+        point=r13_world_to_screen(target)
         renpy.show_screen("r13_click_glint", point=point)
 
     class R13ClickGlint(renpy.Displayable):

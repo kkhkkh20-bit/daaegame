@@ -749,6 +749,10 @@ screen pause_menu():
     # 0.19.2: 단축키 안내는 「더보기」에서 설정 안으로 옮겼다.
     textbutton "단축키 PC":
         xpos 486 ypos 626 xsize 170 text_size r13_opt_size() action Show("r13_shortcut_help")
+    # 0.20.3 (owner 2026-10-22: "저장버튼이 어차피 빈번한 게임이 아니니 옵션에 넣어줘도 되고").
+    if not main_menu:
+        textbutton "저장 · 불러오기":
+            xpos 672 ypos 626 xsize 220 text_size r13_opt_size() action ShowMenu("save")
     textbutton "닫기":
         xpos 1040 ypos 626 xsize 190 text_size r13_opt_size() action Return()
     key "game_menu" action Return()

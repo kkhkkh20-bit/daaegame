@@ -17,7 +17,7 @@ init 85 python:
         if not spec or not r13_object_visible(spec):return None
         x,y,w,h=spec["rect"]
         offset=r13_world_offset(picked[0])
-        return picked[1] if x+w>offset and x<offset+1280 else None
+        return picked[1] if x+w>offset and x<offset+r13_view_width(picked[0]) else None
 
     def r13_field_sync():
         if not getattr(store,"room13",None):return

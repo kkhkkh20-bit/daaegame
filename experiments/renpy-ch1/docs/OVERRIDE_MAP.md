@@ -107,6 +107,21 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 9 | 173 | `systems/room13_review_knowledge.rpy:144` | _r13_question_topic_lines |
 | 10 | 190 | `systems/room13_question_discovery.rpy:186` |  |
 
+## `r13_where` (10층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 55 | `room13_rules.rpy:227` | _r13_before_gate_where |
+| 2 | 67 | `room13_gate_continuity.rpy:9` | _r13_home_where |
+| 3 | 79 | `room13_home.rpy:10` | _r13_life_where |
+| 4 | 93 | `systems/room13_livelihood_flow.rpy:107` | _r13_episode_where |
+| 5 | 103 | `systems/room13_episodes.rpy:55` | _r13_alibi_where |
+| 6 | 147 | `systems/room13_alibi.rpy:30` | _r13_kd_where |
+| 7 | 153 | `systems/room13_ep2_kids.rpy:92` | _r13_nt_where |
+| 8 | 155 | `systems/room13_ep4_night13.rpy:34` | _r13_continuity_where |
+| 9 | 162 | `systems/room13_story_continuity.rpy:19` | _r13_relocate_where |
+| 10 | 336 | `room13_v111_field_layout.rpy:92` |  |
+
 ## `r13_first_mystery_notes` (9층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -120,20 +135,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 7 | 147 | `systems/room13_alibi.rpy:157` | _r13_review_notes |
 | 8 | 173 | `systems/room13_review_knowledge.rpy:90` | _r13_q1_notes |
 | 9 | 181 | `systems/room13_q1_review.rpy:49` |  |
-
-## `r13_where` (9층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 55 | `room13_rules.rpy:227` | _r13_before_gate_where |
-| 2 | 67 | `room13_gate_continuity.rpy:9` | _r13_home_where |
-| 3 | 79 | `room13_home.rpy:10` | _r13_life_where |
-| 4 | 93 | `systems/room13_livelihood_flow.rpy:107` | _r13_episode_where |
-| 5 | 103 | `systems/room13_episodes.rpy:55` | _r13_alibi_where |
-| 6 | 147 | `systems/room13_alibi.rpy:30` | _r13_kd_where |
-| 7 | 153 | `systems/room13_ep2_kids.rpy:92` | _r13_nt_where |
-| 8 | 155 | `systems/room13_ep4_night13.rpy:34` | _r13_continuity_where |
-| 9 | 162 | `systems/room13_story_continuity.rpy:19` |  |
 
 ## `r13_compare_result` (6층)
 
@@ -793,14 +794,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 58 | `room13_world_camera.rpy:49` | _r13_ep_art_world_background |
+| 1 | 58 | `room13_world_camera.rpy:63` | _r13_ep_art_world_background |
 | 2 | 160 | `systems/room13_ep_art.rpy:86` |  |
 
 ## `r13_world_edge_label` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 58 | `room13_world_camera.rpy:160` | _r13_offer_edge_label |
+| 1 | 58 | `room13_world_camera.rpy:180` | _r13_offer_edge_label |
 | 2 | 124 | `systems/room13_event_offers.rpy:94` |  |
 
 ## `r13_world_props` (2층)

@@ -127,13 +127,13 @@ init 61 python:
             person=actor["person"];face=faces[person]
             cx,top=r13_actor_nameplate(actor)
             top=max(101,top-14)
-            tag_h=56 if r13_touch_ui() else 40;width=max(72,sum((11 if r13_touch_ui() else 8) if ch==" " else (22 if r13_touch_ui() else 17) for ch in R13_NAMES[person])+28)  # 0.20.2 tidy tags
+            tag_z=1.0/r13_field_zoom();tag_h=int((56 if r13_touch_ui() else 40)*tag_z);width=int(max(72,sum((11 if r13_touch_ui() else 8) if ch==" " else (22 if r13_touch_ui() else 17) for ch in R13_NAMES[person])+28)*tag_z)  # 0.20.2 tidy tags; 0.20.3 tags keep screen size in a zoomed field
             # A head can straddle the panorama edge while its name used to
             # remain outside the visible window. Keep that label in view.
             left=0;right=r13_world_width()
             offset=r13_world_offset()
-            if face[0]<offset+1280 and face[0]+face[2]>offset:
-                left=offset;right=min(right,offset+1280)
+            if face[0]<offset+r13_view_width() and face[0]+face[2]>offset:
+                left=offset;right=min(right,offset+r13_view_width())
             preferred=(max(left+8,min(right-8-width,int(cx-width/2))),top,width,tag_h)
             candidates=[]
             for dy in (0,-(tag_h+4),-2*(tag_h+4),tag_h+4):  # 0.20.2: move up/down first, little sideways

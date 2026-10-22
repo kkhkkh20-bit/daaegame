@@ -70,15 +70,22 @@ screen r13_hub(entry=False):
     default world_adjustment=r13_world_adjustment(room13["location"])
 
     if r13_world_width()>1280:
-        viewport:
-            id "r13_world_viewport"
-            area (0,0,1280,720)
-            xadjustment world_adjustment
-            draggable False mousewheel False arrowkeys False
-            fixed:
-                xsize r13_world_width() ysize 720
-                add r13_world_background()
-                use r13_world_contents(entry,input_ready)
+        # 0.20.3 (owner mockup D): a zoomed place draws its world smaller and leaves a strip below.
+        if r13_field_zoom()<1.0:
+            add Solid("#1d1611") ypos int(720*r13_field_zoom()) xsize 1280 ysize 720-int(720*r13_field_zoom())
+            add Solid("#c9a86a88") ypos int(720*r13_field_zoom()) xsize 1280 ysize 1
+        fixed:
+            at r13_field_zoomed(r13_field_zoom())
+            xsize r13_view_width() ysize 720
+            viewport:
+                id "r13_world_viewport"
+                area (0,0,r13_view_width(),720)
+                xadjustment world_adjustment
+                draggable False mousewheel False arrowkeys False
+                fixed:
+                    xsize r13_world_width() ysize 720
+                    add r13_world_background()
+                    use r13_world_contents(entry,input_ready)
         if not world_moving:
             use r13_world_camera_controls(world_adjustment)
     else:
@@ -173,7 +180,7 @@ screen r13_world_contents(entry=False,ready=False):
             add leader xpos leader.left ypos leader.top
         textbutton (R13_NAMES[nameplate["person"]]+(" !" if not entry and nameplate["person"]=="resident_piko" and r13_offer_for_person("resident_piko")=="r13_w1c_portrait" else "")):
             area nameplate["rect"]
-            padding (10,4) background R13ActionPanel() hover_background R13ActionPanel(True) text_size (24 if r13_touch_ui() else 18) text_color "#fff2cf" text_xalign .5 text_yalign .5
+            padding (10,4) background R13ActionPanel() hover_background R13ActionPanel(True) text_size int((24 if r13_touch_ui() else 18)/r13_field_zoom()) text_color "#fff2cf" text_xalign .5 text_yalign .5
             action r13_person_action(nameplate["person"],entry) sensitive ready
         if not entry and r13_offer_for_person(nameplate["person"]) and not (nameplate["person"]=="resident_piko" and r13_offer_for_person("resident_piko")=="r13_w1c_portrait"):
             # 0.18.53: something is happening with this person; press them to see it.
