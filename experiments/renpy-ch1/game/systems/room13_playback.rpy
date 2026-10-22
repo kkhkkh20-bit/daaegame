@@ -46,6 +46,10 @@ screen r13_playback_footer(show_record=False,ready=True):
     use r13_night_controls(ready=ready)
 
 screen r13_more_tools():
+    # 0.20.0 (owner QA: "까로 질문 중 더보기 메뉴가 뒤에 떠 저장을 누르지 못하는 문제"): zorder set
+    # inside a used screen is ignored, so this screen sat at 0 behind the modal question screen (30).
+    zorder 105
+    modal True
     # New-world meetings keep the approved dialogue menu (backlog inside, skip outside with confirmation).
     if r13_meeting_active and not r13_nw_meeting_claim(r13_meeting_claim):
         use r13_meeting_more_tools

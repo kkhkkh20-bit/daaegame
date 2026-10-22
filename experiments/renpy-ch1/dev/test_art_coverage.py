@@ -23,7 +23,8 @@ class ArtCoverage(unittest.TestCase):
             self.assertIn(f'character/{person}/dialogue/neutral',self.rows)
 
     def test_fallback_is_not_finished_expression(self):
-        doto=self.rows['character/resident_teacher/dialogue/joy']
+        # resident_teacher joy was filled 2026-10-22 (expr-intake-20261022); piko still waits for the palette set.
+        doto=self.rows['character/resident_piko/dialogue/joy']
         self.assertEqual(doto['production_status'],'not_produced')
         self.assertEqual(doto['connection_status'],'neutral_fallback')
         self.assertEqual(self.rows['character/guard/dialogue/angry']['production_status'],'available_unreviewed')

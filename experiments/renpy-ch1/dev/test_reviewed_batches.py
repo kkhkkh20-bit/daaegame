@@ -18,7 +18,9 @@ class ReviewedBatches(unittest.TestCase):
  def test_distinct_expression_connections_and_held_joy(self):
   for row in REPORT['expressions']:
    spec=FB[row['person']]['images'][row['key']];self.assertEqual(spec,row['image']);self.assertNotIn('fallback',spec);self.assertNotEqual(spec['file'],FB[row['person']]['images']['neutral']['file'])
-  self.assertEqual(FB['resident_teacher']['images']['joy']['fallback'],'neutral')
+  # The held joy (hand at the frame edge) stays out; 2026-10-22 a new joy came from expr-intake-20261022.
+  joy=FB['resident_teacher']['images']['joy']
+  self.assertTrue(joy.get('fallback')=='neutral' or joy.get('review_batch')=='expr-intake-20261022')
  def test_pose_uses_mapped_native_image(self):
   for row in REPORT['poses']:
    spec=FB[row['person']]['poses'][row['key']];self.assertEqual(spec['mapped_image'],row['image']);self.assertEqual(spec['figure'],FB[row['person']]['figure'])

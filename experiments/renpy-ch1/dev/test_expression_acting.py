@@ -65,7 +65,7 @@ class ExpressionActing(unittest.TestCase):
             self.assertEqual(entry["acting_package"], "expression-acting-20261016")
             for e in EMOTIONS:
                 image = entry["images"][e]
-                if image.get("review_batch")=="reviewed-batches-20261017": continue
+                if image.get("review_batch") in ("reviewed-batches-20261017", "expr-intake-20261022"): continue
                 if e in keys:
                     continue
                 if spec.get("package_only"):

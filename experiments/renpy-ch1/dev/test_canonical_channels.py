@@ -46,6 +46,8 @@ class CanonicalChannels(unittest.TestCase):
                 continue # Six approved chinchilla sources supersede this historical pending list.
             for emotion in missing:
                 image = fb[rid]["images"][emotion]
+                if image.get("review_batch") == "expr-intake-20261022":
+                    continue  # filled by dev/import_expr_intake_20261022.py (test_expr_intake_20261022)
                 self.assertEqual(image["fallback"], "neutral")
                 self.assertEqual(image["production_status"], "pending")
         layout = load(A / "room13-world-layout.json")
