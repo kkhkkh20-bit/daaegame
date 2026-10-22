@@ -917,7 +917,7 @@ label r13_v111_prevent_clinic8:
     $ r13_v111_scene('MS14_D08_P01')
     $ r13_edit(period=0)
     $ room13["v111"]["people"]=[]
-    call r13_v111_travel('clinic','prevent_clinic8',['daram'])
+    call r13_v111_travel('room13','prevent_clinic8',['daram'])
     $ r13_v111_arrive(['daram', 'resident_owlgp', 'resident_seori'])
     $ r13_v111_score()
 
@@ -1435,6 +1435,8 @@ label r13_v111_passage_wrong10:
 label r13_v111_hearing_hint10:
     call r13_lines(r13_v111_lines(['MS14_D10_S02_L0051']),'v111:MS14_D10_S02_L0051')
     $ r13_v111_commit('MS14_D10_S02_L0052')
+    if r13_v111_value("D10_S02_two_wounds_completed"):
+        jump r13_v111_passage_proof10
     jump r13_v111_wound_proof10
 
 label r13_v111_owner10:
@@ -1748,7 +1750,7 @@ label r13_v111_public_paper10:
     jump r13_v111_prevent_return10
 
 label r13_v111_authority_wrong10:
-    if r13_nw_retry("records",['E06_CONTACT', 'E09_MAIL'],'부엉이가 손을 거둔다. 받는 사람과 그 기록을 함께 놓아야 한다.'):
+    if r13_nw_retry("records",['E06_CONTACT', 'E09_MAIL'],'부엉이가 손을 거둔다. 아내가 실제로 쓴 연락 길과 우체국 기록을 함께 놓아야 한다.'):
         call r13_lines(r13_v111_lines(['MS14_D10_P01_L0084', 'MS14_D10_P01_L0085']),'v111:authority_wrong10:half')
         jump r13_v111_authority_proof10
     $ r13_nw_meeting_end("records","lose")

@@ -261,14 +261,26 @@ label r13_v111_inspect_gate4:
 
 label r13_v111_fence_seen4:
     $ r13_v111_set('d4_fence_seen',True)
+    # Audit d01-05 #11: the inspected object is described (source MS14_D04_S04_L0034).
+    $ r13_field_reading=True
+    call r13_lines([(None,'울타리 못에 회색 천이 걸렸다.')],'v111:fence_seen4')
+    $ r13_field_reading=False
     jump r13_v111_inspection_ready4
 
 label r13_v111_tracks_seen4:
     $ r13_v111_set('d4_tracks_seen',True)
+    # Audit d01-05 #11: the inspected object is described (source MS14_D04_S04_L0034).
+    $ r13_field_reading=True
+    call r13_lines([(None,'눈 위에 발자국이 여러 겹 겹쳐 있다.')],'v111:tracks_seen4')
+    $ r13_field_reading=False
     jump r13_v111_inspection_ready4
 
 label r13_v111_bucket_seen4:
     $ r13_v111_set('d4_bucket_seen',True)
+    # Audit d01-05 #11: the inspected object is described (source MS14_D04_S04_L0034).
+    $ r13_field_reading=True
+    call r13_lines([(None,'양동이가 엎어져 있다. 옆의 발자국도 겹쳐 있다.')],'v111:bucket_seen4')
+    $ r13_field_reading=False
     jump r13_v111_inspection_ready4
 
 label r13_v111_inspection_ready4:

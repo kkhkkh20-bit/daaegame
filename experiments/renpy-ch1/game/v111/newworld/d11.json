@@ -756,6 +756,22 @@
         "kind": "narration",
         "text": "나비가 쟁반을 한 손으로 돌리며 돌아본다."
       }
+    ],
+    "MS14_D11_S03_L0002": [
+      {
+        "id": "NW_AUD_D11_04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "엄마가 등을 들어 벽 한쪽을 비춘다. 새겨진 그림 속에서 누군가 돌을 장치 안에 넣고 있다. 그 옆에는 장작불이 따로 피어 있다."
+      }
+    ],
+    "MS14_D11_S03_L0043": [
+      {
+        "id": "NW_AUD_D11_05",
+        "speaker": null,
+        "kind": "narration",
+        "text": "엄마가 등을 들어 벽 한쪽을 비춘다. 새겨진 그림 속에서 누군가 돌을 장치 안에 넣고 있다. 그 옆에는 장작불이 따로 피어 있다."
+      }
     ]
   },
   "after": {
@@ -825,7 +841,7 @@
         "id": "NW_D11_S03_A01",
         "speaker": null,
         "kind": "narration",
-        "text": "엄마가 등을 들어 벽을 비춘다. 벽 가득 그림이 새겨져 있다."
+        "text": "엄마가 등을 더 높이 든다. 그림은 벽 끝까지 이어져 있다."
       },
       {
         "id": "NW_D11_S03_A02",
@@ -1208,7 +1224,7 @@
         "id": "NW_H1_W_01",
         "speaker": "아빠",
         "kind": "dialogue",
-        "text": "초롱 씨는 등마다 잠깐 서서 덮개만 보고 지나갑니다. 점검장에 그렇게 적혀 있어요.",
+        "text": "초롱 씨 점검장에는 등마다 번호와 점검 시각, 한 줄씩뿐입니다. 덮개를 살피고 다음 등으로 넘어가는 거죠.",
         "expression": "neutral"
       },
       {
@@ -1239,7 +1255,16 @@
         "speaker": "돌목",
         "kind": "dialogue",
         "text": "그 말로는 모르겠소. 초소 불은 그대로 두겠소.",
-        "expression": "neutral"
+        "expression": "neutral",
+        "when": "hyp_final"
+      },
+      {
+        "id": "NW_AUD_D11_01",
+        "speaker": "돌목",
+        "kind": "dialogue",
+        "text": "……그 말만으로는 아직 모르겠소. 초소 불은 더 들어 보고 정하겠소.",
+        "expression": "neutral",
+        "when": "hyp_retry"
       }
     ],
     "hyp2_q11": [
@@ -1309,7 +1334,16 @@
         "speaker": "백 부인",
         "kind": "dialogue",
         "text": "그럼 내 창고하고는 상관없는 얘기네요. 문은 안 열어요.",
-        "expression": "neutral"
+        "expression": "neutral",
+        "when": "hyp_final"
+      },
+      {
+        "id": "NW_AUD_D11_02",
+        "speaker": "백 부인",
+        "kind": "dialogue",
+        "text": "그 말로는 내 창고 얘기가 아니네요. 문은…… 좀 더 들어 보고요.",
+        "expression": "neutral",
+        "when": "hyp_retry"
       }
     ],
     "hyp3_q11": [
@@ -1574,7 +1608,15 @@
         "id": "NW_H_LO_02",
         "speaker": null,
         "kind": "narration",
-        "text": "아무도 불을 끄지 않는다. 학교에 장작으로 모인 사람은 처음부터 대피해 온 사람들뿐이다."
+        "text": "아무도 불을 끄지 않는다. 학교에 장작으로 모인 사람은 처음부터 대피해 온 사람들뿐이다.",
+        "when": "hyp_lose_none_won"
+      },
+      {
+        "id": "NW_AUD_D11_03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "학교에서 불을 끄겠다던 몇 집도 촌장의 말을 듣고 다시 불을 켠다. 학교에 장작으로 모인 사람은 처음부터 대피해 온 사람들뿐이다.",
+        "when": "hyp_lose_some_won"
       },
       {
         "id": "NW_H_LO_03",

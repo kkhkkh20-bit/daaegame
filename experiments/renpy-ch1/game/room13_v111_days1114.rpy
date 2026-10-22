@@ -1728,9 +1728,9 @@ label r13_v111_blanket_lie13:
     $ r13_edit(period=0)
     $ room13["v111"]["people"]=[]
     call r13_v111_travel('square','blanket_lie13',['mom', 'daram'])
-    $ r13_v111_arrive(['mom', 'daram', 'npc_pandol', 'resident_ppul', 'guard', 'karo'])
+    $ r13_v111_arrive(['mom', 'daram', 'npc_pandol', 'resident_ppul', 'guard', 'karo', 'resident_badook'])
     $ r13_v111_score()
-    $ r13_v111_arrive(['mom', 'daram', 'npc_pandol', 'resident_ppul', 'guard', 'karo'])
+    $ r13_v111_arrive(['mom', 'daram', 'npc_pandol', 'resident_ppul', 'guard', 'karo', 'resident_badook'])
     call r13_lines(r13_v111_lines(['MS14_D13_S03_L0002']),'v111:MS14_D13_S03_L0002')
     call r13_lines(r13_v111_lines(['MS14_D13_S03_L0003']),'v111:MS14_D13_S03_L0003')
     call r13_lines(r13_v111_lines(['MS14_D13_S03_L0004']),'v111:MS14_D13_S03_L0004')
@@ -1878,11 +1878,17 @@ label r13_v111_stop_cart13:
         call r13_lines(r13_v111_lines(['MS14_D13_S04_L0004']),'v111:MS14_D13_S04_L0004')
     $ r13_v111_set('cart_stopped',True)
     $ r13_v111_set('stop_actor','resident_badook')
+    # Audit d11-14 #7: listed Daram is untied as soon as the cart stops.
+    if r13_v111_value("listed:daram") and not r13_v111_value("handed:daram"):
+        call r13_lines(r13_nw_block('listed_down_daram13'),'nw:listed_down_daram13:stop')
+        $ r13_v111_set("handed:daram",True)
     $ r13_v111_set('busy:resident_badook','stop_cart')
     $ r13_v111_set("cart_roster",r13_v111_value("cart_roster") or ["npc_pandol","resident_momo","resident_guldol"])
     jump r13_v111_rein13
 
 label r13_v111_rein13:
+    # Audit d11-14 #14: Silluk speaks in this meeting, so he stands in the scene.
+    $ r13_v111_arrive(['mom', 'daram', 'karo', 'guard', 'resident_badook', 'npc_pandol', 'resident_momo', 'resident_guldol', 'resident_ppul', 'neoul', 'resident_siluk'])
     call r13_lines(r13_nw_block('rein_open13'),'nw:rein_open13')
     jump r13_v111_rein_ledger13p
 

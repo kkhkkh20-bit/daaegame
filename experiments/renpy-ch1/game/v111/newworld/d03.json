@@ -537,9 +537,23 @@
       "text": "그 칼 쓰는 사람이 나뿐이에요?",
       "expression": "angry"
     },
-    "MS14_D03_S05_L0073": {
-      "text": "조각이 나온 자리와 실룩의 말을 다시 살펴보자."
-    },
+    "MS14_D03_S05_L0073": [
+      {
+        "text": "마지막 점검 기록과 창고의 돌을 다시 살펴보자.",
+        "when": "lamp_stage_stone"
+      },
+      {
+        "text": "조각이 나온 자리와 실룩의 말을 다시 살펴보자.",
+        "when": "lamp_stage_latch"
+      },
+      {
+        "text": "창고에서 본 돌과 백 부인의 장부를 다시 살펴보자.",
+        "when": "lamp_stage_sale"
+      },
+      {
+        "text": "고친 때, 잰 때, 마지막으로 본 때. 각각 적힌 자료를 다시 살펴보자."
+      }
+    ],
     "MS14_D03_S05_L9101": {
       "text": "실룩의 동의를 받고 칼과 조각을 맞췄다. 깨진 면과 칼날을 갈아 낸 선이 이어진다."
     },
@@ -648,7 +662,15 @@
         "id": "NW_D03_S02_A01",
         "speaker": null,
         "kind": "narration",
-        "text": "광장으로 가는 길에 짐수레를 끌던 짐꾼이 먼저 다가왔다. 수레 손잡이 옆에 칼자루가 꽂혀 있었다."
+        "text": "광장으로 가는 길에 짐수레를 끌던 짐꾼이 먼저 다가왔다. 수레 손잡이 옆에 칼자루가 꽂혀 있었다.",
+        "when": "piko_alive"
+      },
+      {
+        "id": "NW_AUD_D03_05",
+        "speaker": null,
+        "kind": "narration",
+        "text": "초롱이 판자를 빼는 동안, 짐수레를 끌던 짐꾼이 먼저 다가왔다. 수레 손잡이 옆에 칼자루가 꽂혀 있었다.",
+        "when": "piko_dead"
       },
       {
         "id": "NW_D03_S02_A02",
@@ -772,6 +794,15 @@
         "kind": "narration",
         "text": "실룩이 주머니에서 손을 꺼냈다. 빈손이었다.",
         "beat": "cornered"
+      }
+    ],
+    "MS14_D03_S05_L0051": [
+      {
+        "id": "NW_AUD_D03_07",
+        "speaker": null,
+        "kind": "narration",
+        "text": "초소에서 온 사람이 탁자 끝에 서서 기록지를 펼쳤다.",
+        "when": "lamp_not_win"
       }
     ]
   },
@@ -922,17 +953,49 @@
         "id": "NW_D03_S05_C05",
         "speaker": "너울",
         "kind": "dialogue",
-        "text": "돌을 팔았다, 칼이 닮았다. 그것뿐이오. 주운 돌을 판 걸로 사람을 붙잡아 둘 순 없소.",
+        "text": "톡이 손댄 뒤에도 돌이 있었다는 건 알겠소. 하지만 누가 꺼냈는지는 대지 못했소. 짐 나른 걸로 사람을 붙잡아 둘 순 없소.",
         "expression": "neutral",
-        "when": "lamp_partial"
+        "when": "lamp_partial_sale"
       },
       {
         "id": "NW_D03_S05_C06",
         "speaker": "실룩",
         "kind": "dialogue",
-        "text": "거봐요. 주웠다니까요.",
+        "text": "거봐요. 난 짐만 날랐다니까요.",
         "expression": "neutral",
-        "when": "lamp_partial"
+        "when": "lamp_partial_sale"
+      },
+      {
+        "id": "NW_AUD_D03_01",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "칼끝이 맞는 건 봤소. 하지만 걸쇠를 닫다가 부러졌다는 말은 깨지 못했소. 주운 돌을 판 걸로 사람을 붙잡아 둘 순 없소.",
+        "expression": "neutral",
+        "when": "lamp_partial_latch"
+      },
+      {
+        "id": "NW_AUD_D03_02",
+        "speaker": "실룩",
+        "kind": "dialogue",
+        "text": "거봐요. 걸쇠만 닫았다니까요!",
+        "expression": "neutral",
+        "when": "lamp_partial_latch"
+      },
+      {
+        "id": "NW_AUD_D03_03",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "칼끝이 돌 밑에서 부러진 건 알겠소. 하지만 그 돌이 장부에 적힌 돌이라는 건 잇지 못했소. 그걸로는 사람을 붙잡아 둘 수 없소.",
+        "expression": "neutral",
+        "when": "lamp_partial_stone"
+      },
+      {
+        "id": "NW_AUD_D03_04",
+        "speaker": "실룩",
+        "kind": "dialogue",
+        "text": "거봐요. 내가 판 돌이 그 돌인지는 모르잖아요.",
+        "expression": "neutral",
+        "when": "lamp_partial_stone"
       },
       {
         "id": "NW_D03_S05_C07",
@@ -983,6 +1046,14 @@
         "speaker": null,
         "kind": "narration",
         "text": "바둑이는 차렷 자세로 섰다. 경례하려던 손이 반쯤 올라가다 멈췄다."
+      }
+    ],
+    "MS14_D03_S04_L0006": [
+      {
+        "id": "NW_AUD_D03_06",
+        "speaker": null,
+        "kind": "narration",
+        "text": "실룩이 칼로 짐끈을 툭 끊었다. 칼끝 한쪽이 이가 빠져 있었다."
       }
     ]
   },

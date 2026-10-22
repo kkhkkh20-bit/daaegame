@@ -67,9 +67,18 @@ init 319 python:
         "lamp_partial":lambda:r13_v111_value("meeting:lamp")=="partial",
         "lamp_lose":lambda:r13_v111_value("meeting:lamp")=="lose",
         "lamp_not_win":lambda:r13_v111_value("meeting:lamp") in ("partial","lose"),
+        # Audit d01-05 #1/#6: which stage of the lamp meeting was reached (sale -> knife -> latch -> stone).
+        "lamp_stage_sale":lambda:r13_v111_value("repair_opening_separated") is True,
+        "lamp_stage_latch":lambda:r13_v111_owned("E33"),
+        "lamp_stage_stone":lambda:r13_v111_value("outer_latch_claim_refuted") is True,
+        "lamp_partial_sale":lambda:r13_v111_value("meeting:lamp")=="partial" and not r13_v111_owned("E33"),
+        "lamp_partial_latch":lambda:r13_v111_value("meeting:lamp")=="partial" and r13_v111_owned("E33") and r13_v111_value("outer_latch_claim_refuted") is not True,
+        "lamp_partial_stone":lambda:r13_v111_value("meeting:lamp")=="partial" and r13_v111_value("outer_latch_claim_refuted") is True,
         # Event 04: the day-5 gate-post meeting.
         "gate_post_lose":lambda:r13_v111_value("meeting:gate_post")=="lose",
         "gate_post_half":lambda:(r13_v111_value("tries:gate_post") or 0)>0 and r13_v111_value("meeting:gate_post") is None,
+        # Audit d01-05 #2: Bami's own night testimony (E21) was among the presented records.
+        "gate_post_with_e21":lambda:"V111:E21" in (getattr(store,"v111_last_presented",None) or []),
         # Event 05: the day-7 fire meeting.
         "fire_win":lambda:r13_v111_value("meeting:fire")=="win",
         "fire_partial":lambda:r13_v111_value("meeting:fire")=="partial",
@@ -114,6 +123,23 @@ init 319 python:
         "cart_departed":lambda:r13_v111_value("cart_departed") is True,
         "daram_departed":lambda:r13_v111_value("departed:daram") is True,
         "neoul_held":lambda:r13_v111_value("neoul_held") is True,
+        # Audit d11-14 #2: a hypothesis wrong answer that may be retried holds judgment.
+        "hyp_retry":lambda:r13_v111_value("meeting:hypothesis") is None and (r13_v111_value("tries:hypothesis") or 0)<R13_NW_TRIES,
+        "hyp_final":lambda:not (r13_v111_value("meeting:hypothesis") is None and (r13_v111_value("tries:hypothesis") or 0)<R13_NW_TRIES),
+        # Audit d11-14 #3: a lost hypothesis meeting after some issues were won.
+        "hyp_lose_some_won":lambda:r13_v111_value("meeting:hypothesis")=="lose" and any(r13_v111_value("hyp_issue:%d"%i)=="won" for i in (1,2,3,4)),
+        "hyp_lose_none_won":lambda:not (r13_v111_value("meeting:hypothesis")=="lose" and any(r13_v111_value("hyp_issue:%d"%i)=="won" for i in (1,2,3,4))),
+        # Audit d11-14 #8: Nabi changed her room 13 testimony only on the murder route.
+        "soup_lose_nabi_murder":lambda:r13_v111_value("meeting:soup")=="lose" and r13_v111_value("soup_lose_kind")=="nabi" and r13_v111_value("route7")=="murder",
+        "soup_lose_nabi_prevented":lambda:r13_v111_value("meeting:soup")=="lose" and r13_v111_value("soup_lose_kind")=="nabi" and r13_v111_value("route7")!="murder",
+        # Audit d11-14 #12: firewood is really at the school (carrier received or box picked up).
+        "wood12_here":lambda:bool(r13_v111_value("warm_support_arrived") or r13_v111_value("heat_box_received")),
+        "wood12_missing":lambda:not (r13_v111_value("warm_support_arrived") or r13_v111_value("heat_box_received")),
+        # Audit d11-14 #10, #13, #6, #7.
+        "blanket_undecided":lambda:r13_v111_value("meeting:blanket") is None,
+        "blanket_partial":lambda:r13_v111_value("meeting:blanket")=="partial",
+        "siluk_not_listed":lambda:r13_v111_value("listed:resident_siluk") is not True,
+        "daram_listed_unhanded":lambda:r13_v111_value("listed:daram") is True and not r13_v111_value("handed:daram"),
         # Event 11: the altar, Bomi, and the endings.
         "has_ledger":lambda:r13_v111_owned("NW_NEOUL_LEDGER"),
         "no_ledger":lambda:not r13_v111_owned("NW_NEOUL_LEDGER"),

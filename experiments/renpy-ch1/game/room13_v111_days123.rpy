@@ -559,18 +559,34 @@ label r13_v111_lamp_observe:
 
 label r13_v111_lamp_seen_0:
     $ r13_v111_apply('lamp_seen_0',[{'op': 'set', 'field': 'lamp_part_0', 'value': True}])
+    # Audit d01-05 #11: the chosen part is described (source MS14_D02_S03_L0025).
+    $ r13_field_reading=True
+    call r13_lines([(None,'번호판에 3이라고 적혀 있다.')],'v111:lamp_seen_0')
+    $ r13_field_reading=False
     jump r13_v111_lamp_observe
 
 label r13_v111_lamp_seen_1:
     $ r13_v111_apply('lamp_seen_1',[{'op': 'set', 'field': 'lamp_part_1', 'value': True}])
+    # Audit d01-05 #11: the chosen part is described (source MS14_D02_S03_L0025).
+    $ r13_field_reading=True
+    call r13_lines([(None,'덮개가 덜 맞물려 있다. 바람이 불 때마다 달그락거린다.')],'v111:lamp_seen_1')
+    $ r13_field_reading=False
     jump r13_v111_lamp_observe
 
 label r13_v111_lamp_seen_2:
     $ r13_v111_apply('lamp_seen_2',[{'op': 'set', 'field': 'lamp_part_2', 'value': True}])
+    # Audit d01-05 #11: the chosen part is described (source MS14_D02_S03_L0025).
+    $ r13_field_reading=True
+    call r13_lines([(None,'피코의 담요는 얇다.')],'v111:lamp_seen_2')
+    $ r13_field_reading=False
     jump r13_v111_lamp_observe
 
 label r13_v111_lamp_seen_3:
     $ r13_v111_apply('lamp_seen_3',[{'op': 'set', 'field': 'lamp_part_3', 'value': True}])
+    # Audit d01-05 #11: the chosen part is described (source MS14_D02_S03_L0025).
+    $ r13_field_reading=True
+    call r13_lines([(None,'받침 가까이는 따뜻하다. 받침에서 멀어질수록 바닥이 차갑다.')],'v111:lamp_seen_3')
+    $ r13_field_reading=False
     jump r13_v111_lamp_observe
 
 label r13_v111_lamp_details:
@@ -1235,6 +1251,9 @@ label r13_v111_restore_route:
 
 label r13_v111_restore_input:
     call r13_v111_travel('square','restore_input')
+    # Audit d01-05 #8: after a lost meeting Tok is at the work station; Chorong restores alone (NW_D03_S06_A01).
+    if r13_v111_value('meeting:lamp')=='lose':
+        jump r13_v111_restore3
     call r13_v111_wait('restore_input')
     $ v111_answer=_return
     if v111_answer==0:

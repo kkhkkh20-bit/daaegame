@@ -180,7 +180,7 @@ field('tool_faces8','clinic',['resident_seori','buri'],'notes','손잡이·파�
 label('tool_faces_seen8');segment(s,7,19);goto('wire_curve8')
 field('wire_curve8','clinic',['resident_seori','buri'],'notes','구리 조각과 핀 끝을 대조한다','wire_curve_seen8')
 label('wire_curve_seen8');segment(s,20,28);goto('mother_letter8')
-s='MS14_D08_P01';begin(s,'clinic','prevent_clinic8',['daram','resident_owlgp','resident_seori']);branch('prevention_story8',V('prevention')+"=='A'",'fear8','care8')
+s='MS14_D08_P01';begin(s,'room13','prevent_clinic8',['daram','resident_owlgp','resident_seori']);branch('prevention_story8',V('prevention')+"=='A'",'fear8','care8')
 label('fear8');segment(s,1,10);goto('missing_pages8')
 label('care8');segment(s,11,17);goto('missing_pages8')
 label('missing_pages8');segment(s,18,26);code('r13_nw_acquire("NW_STONE","removed" if r13_v111_value("prevention")=="A" else "clinic")');goto('mother_letter8')
@@ -241,7 +241,7 @@ def room13_end(key,a,b,result,kind=None):
  code("r13_v111_apply('MS14_D10_S03_L0088',[o for o in R13_V111['records']['MS14_D10_S03_L0088']['operations'] if o['field'] in ('DARAM_DETAINED','DARAM_location','D10_confrontation_release_completed')])");goto('bench10')
 nw_half_retry('hearing_wrong10',['E08_CHILD_ACCOUNT','E08_TOOL'],47,48,'wound_proof10','너울이 고개를 젓는다. 아이의 말과 촛대 조각을 함께 놓아야 한다.');room13_end('hearing_wrong10',47,48,'lose')
 nw_half_retry('passage_wrong10',['E09_PASSAGE','E08_ROOM'],50,50,'passage_proof10','따닥이 고개를 젓는다. 직접 걸어 본 길과 현장 배치를 함께 놓아야 한다.');room13_end('passage_wrong10',50,50,'lose')
-label('hearing_hint10');segment(s,51,52);goto('wound_proof10')
+label('hearing_hint10');segment(s,51,52);lines.append('    if r13_v111_value("D10_S02_two_wounds_completed"):');lines.append('        jump r13_v111_passage_proof10');goto('wound_proof10')
 s='MS14_D10_S03';begin(s,'school','owner10',['daram','granny','resident_ppul','neoul','nabi','resident_seori']);segment(s,1,4);goto('owner_proof10')
 proof('owner_proof10','구리선과 수선 출처를 대조한다',['E08_WOUND_WIRE','E09_PIN_OWNER'],'owner_answer10','owner_wrong10')
 branch('owner_answer10','r13_v111_tok_attends("hearing")','owner_tok10','owner_copy10')
@@ -277,7 +277,7 @@ def records_half(key,correct,a,b,proof_key,note):
  lines.extend(['    if r13_nw_retry("records",%r,%r):'%(correct,note),
   '        call r13_lines(r13_v111_lines(%r),%r)'%(rids,'v111:'+key+':half'),
   '        jump r13_v111_'+proof_key])
-records_half('authority_wrong10',['E06_CONTACT','E09_MAIL'],84,85,'authority_proof10','부엉이가 손을 거둔다. 받는 사람과 그 기록을 함께 놓아야 한다.')
+records_half('authority_wrong10',['E06_CONTACT','E09_MAIL'],84,85,'authority_proof10','부엉이가 손을 거둔다. 아내가 실제로 쓴 연락 길과 우체국 기록을 함께 놓아야 한다.')
 code('r13_nw_meeting_end("records","lose")');code('r13_nw_list("resident_owlgp","records_lose")');segment(s,84,85);code("r13_v111_commit('MS14_D10_P01_L0083')");goto('prevent_return10')
 records_half('writing_wrong10',['E01','E07','E09_MAIL'],86,86,'writing_proof10','슬링이 고개를 젓는다. 편지와 봉투, 필사본을 함께 놓아야 한다.')
 code('r13_nw_meeting_end("records","partial")');segment(s,86,86);goto('writing_partial10')
