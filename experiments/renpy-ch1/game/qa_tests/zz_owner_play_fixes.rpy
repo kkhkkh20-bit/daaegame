@@ -14,7 +14,8 @@ testcase owner_play_fixes:
     pause 0.6
     # Daram: show the letter.
     click "다람"
-    pause 1.0
+    click pos (900,600) until screen "r13_topics" timeout 20  # 0.20.10: Daram answers once first
+    pause 0.5
     screenshot "fix-02-daram-topics.png"
     click "자료 보여주기"
     pause 1.0
