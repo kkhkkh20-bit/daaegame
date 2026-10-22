@@ -1,13 +1,13 @@
 {
  "engine": "Ren'Py 8.5.3",
  "game_transport": {
-  "archive_bytes": 15017334,
-  "archive_sha256": "9647bf2f96f287a3e9ef36e72f8733d6daf7ab8eac9aac39c842b30ea92597d5",
+  "archive_bytes": 15118117,
+  "archive_sha256": "bf378357c1567217148335a02bd787cbf746411c1e98339a5873c12f928eacb0",
   "parts": [
    {
     "file": "game.part01",
-    "bytes": 15017334,
-    "sha256": "9647bf2f96f287a3e9ef36e72f8733d6daf7ab8eac9aac39c842b30ea92597d5"
+    "bytes": 15118117,
+    "sha256": "bf378357c1567217148335a02bd787cbf746411c1e98339a5873c12f928eacb0"
    }
   ]
  },
@@ -29,12 +29,12 @@
    "sha256": "6bb23b55d259a317d6c3a496f5c8892bd820bc4f0730a172d030b4497c534bfe"
   },
   "game-transport.json": {
-   "bytes": 206735,
-   "sha256": "cbfbc7b46c477c90b66628932338f82b2360373855d260ac456a5da7e5ba7831"
+   "bytes": 210573,
+   "sha256": "70a2bd030e32ca08ef0f48a60114799a668a1e834f1c998b7820b88723270f08"
   },
   "game.part01": {
-   "bytes": 15017334,
-   "sha256": "9647bf2f96f287a3e9ef36e72f8733d6daf7ab8eac9aac39c842b30ea92597d5"
+   "bytes": 15118117,
+   "sha256": "bf378357c1567217148335a02bd787cbf746411c1e98339a5873c12f928eacb0"
   },
   "game/assets/Galmuri11.ttf": {
    "bytes": 1964416,
@@ -4839,6 +4839,278 @@
   "game/assets/driver.png": {
    "bytes": 1867861,
    "sha256": "4a5478da4b31eb5d985797d5f851a3eb5d5c2d9f31eb3960d5b4b4755cefc455"
+  },
+  "game/assets/evidence/E01.webp": {
+   "bytes": 23922,
+   "sha256": "303b57e56d3d6208515340568c5d15ef1bbb20d78d1492b89bf04fb26a9ac3f1"
+  },
+  "game/assets/evidence/E02.webp": {
+   "bytes": 31216,
+   "sha256": "83441bb8fee355faffeedfe473e8c418cf63f46d83ca2efc8744da427d039757"
+  },
+  "game/assets/evidence/E03.webp": {
+   "bytes": 23448,
+   "sha256": "29706cac3ee4ac26d057fb07afefca98d79d238a682d59d4cbd8edad47bba805"
+  },
+  "game/assets/evidence/E04.webp": {
+   "bytes": 28668,
+   "sha256": "c8eb7262cd14f9ed2733f9e397c234a5ce265d2d56a81bda26e12c7e10f32f65"
+  },
+  "game/assets/evidence/E05.webp": {
+   "bytes": 28124,
+   "sha256": "1fdd7c8977c3cc3ce4f5ef77e909f7c784a2b1d5992887a40419e7d86c83421e"
+  },
+  "game/assets/evidence/E06.webp": {
+   "bytes": 23308,
+   "sha256": "199282650ea59e6c1869200c5cdbc6e7a042bfb228a14824036d265af2dec6e3"
+  },
+  "game/assets/evidence/E06_CONTACT.webp": {
+   "bytes": 33748,
+   "sha256": "222310145feb5d31e108cf9a08299f9d672c95544afcb872ee3800e7f0fbbe80"
+  },
+  "game/assets/evidence/E06_EMPTY.webp": {
+   "bytes": 19378,
+   "sha256": "a0f65da38fe7ea84722fac896d86dd29a213025b7829749766db9ad6fc8a61ea"
+  },
+  "game/assets/evidence/E06_FIRE.webp": {
+   "bytes": 29186,
+   "sha256": "d90528e53eda8cf35fd407e02c2aac807ddc6418f65c7bdfb7a387d942f90e0f"
+  },
+  "game/assets/evidence/E06_RESCUE.webp": {
+   "bytes": 33164,
+   "sha256": "ea1977fb31e4264d63a7044782225c82baddf9605e22a7338790c1b15c0f4b1a"
+  },
+  "game/assets/evidence/E07.webp": {
+   "bytes": 25460,
+   "sha256": "b894a1edc3b04c7514ee0600722ad741b69cc578b643b924965e577ca3f948d5"
+  },
+  "game/assets/evidence/E08.webp": {
+   "bytes": 21406,
+   "sha256": "48a83020a5d78621a61a58356bb8f2ed761bb5627895d7f35cc252effde420ce"
+  },
+  "game/assets/evidence/E08_CHILD_ACCOUNT.webp": {
+   "bytes": 21288,
+   "sha256": "887f4b8b299cad8a7d52c9c602ba669076d9a522226a0e2e00586d7c5cec30f0"
+  },
+  "game/assets/evidence/E08_CHILD_POSITION.webp": {
+   "bytes": 27670,
+   "sha256": "8fd5bcd6524d781f7c05a2ff42e07a18e63929619d94101a94d72eeed067ac5e"
+  },
+  "game/assets/evidence/E08_CONTACT_ASSEMBLY.webp": {
+   "bytes": 35920,
+   "sha256": "139f432476ffc22bc21098d0e4eb46c51402bd74c60b99e9dc610a41f848233c"
+  },
+  "game/assets/evidence/E08_RECENT_LETTER.webp": {
+   "bytes": 24146,
+   "sha256": "2f3ea1ec6be6e58295855bef74a5e5960bf5c9dc5fc0568cd81450d5d622290f"
+  },
+  "game/assets/evidence/E08_ROOM.webp": {
+   "bytes": 29894,
+   "sha256": "2f89a3170eccf5bebe96bebf51c9c01368206c4264bc95175de7d4301701748f"
+  },
+  "game/assets/evidence/E08_ROOM_REACH.webp": {
+   "bytes": 25324,
+   "sha256": "45f02c1cb070dc1fab6305e0263cbc7ed630d1793bd9f553f57b7f506ca8d7d6"
+  },
+  "game/assets/evidence/E08_TOOL.webp": {
+   "bytes": 24470,
+   "sha256": "3a78db360470bcd5cee9cf75ea9146fa97bc16341d84a4ea4f38ce60a8f1236e"
+  },
+  "game/assets/evidence/E08_WOUND_WIRE.webp": {
+   "bytes": 17968,
+   "sha256": "454da09e8159b5c45bfc93932bb781aeb6343781507815bdea902a6d14f20955"
+  },
+  "game/assets/evidence/E09_MAIL.webp": {
+   "bytes": 24050,
+   "sha256": "a9add4642759e01925cf6961f499b52c405ac353a7676e2a986bc347d0f6210c"
+  },
+  "game/assets/evidence/E09_PASSAGE.webp": {
+   "bytes": 23548,
+   "sha256": "1286d09e9830148354b13cd1f81ff4c3caf5cb214883954735edabe7383ce49b"
+  },
+  "game/assets/evidence/E09_PIN_HANDOVER_TIME.webp": {
+   "bytes": 25648,
+   "sha256": "69b76d463fd195643146e3dc7648b92c5f41b8ee77d5929c3103463b9c1ff8a3"
+  },
+  "game/assets/evidence/E09_PIN_OWNER.webp": {
+   "bytes": 23674,
+   "sha256": "c0d83a8f4ccfa7f19ed6ae400823e45ff8dff13069611fc8bd261437e6805468"
+  },
+  "game/assets/evidence/E09_PIN_TIME.webp": {
+   "bytes": 24260,
+   "sha256": "67628f2dcbe2bc592ef6b3a98e0badb42f4b0ed34b06cfef1fa2094a5b2ba409"
+  },
+  "game/assets/evidence/E09_SCARF.webp": {
+   "bytes": 35096,
+   "sha256": "f07149b138ebfb3a76ad5155773dbfae7bf908764638d8a6cddd2306dc300357"
+  },
+  "game/assets/evidence/E10.webp": {
+   "bytes": 21952,
+   "sha256": "9117aedea88117e2958e8f07837b7e45b9c1e8054dffd4e9553a2546a4ccd278"
+  },
+  "game/assets/evidence/E10_PUMP.webp": {
+   "bytes": 22948,
+   "sha256": "b79c14eb07db98f1a53fc7c4178a113abdbbc704db6fb53370a867d150fd07ff"
+  },
+  "game/assets/evidence/E11.webp": {
+   "bytes": 24506,
+   "sha256": "549ea89137a5efa63432a2036497eafd85488d21a3465144c0309624cfed1607"
+  },
+  "game/assets/evidence/E12.webp": {
+   "bytes": 25500,
+   "sha256": "b046052b1aaeaa1cb0a300223fd411fc9b021fc42b0cf7c590e483a1cf1da372"
+  },
+  "game/assets/evidence/E12_FRAGMENT.webp": {
+   "bytes": 29094,
+   "sha256": "8dfc9b26978b43868daa1e3bce96dfe4813531642dcabfdebef6f64282c34bea"
+  },
+  "game/assets/evidence/E12_HANDLING.webp": {
+   "bytes": 28510,
+   "sha256": "9b0f1d9bfa1182e7eacf033de8c4ba254c15579c61e2054cd0139373c489721a"
+  },
+  "game/assets/evidence/E12_SEAL.webp": {
+   "bytes": 22164,
+   "sha256": "eb1a8b0519a8016ddf09447f51f1d6e2ede5cc8295f1534991676ff34c047191"
+  },
+  "game/assets/evidence/E13.webp": {
+   "bytes": 26264,
+   "sha256": "4f74809b11663750b433d8f5c60b211fdab728bed1d9162c09677382a8624eda"
+  },
+  "game/assets/evidence/E13_HANDOVER.webp": {
+   "bytes": 25460,
+   "sha256": "1fd2fdb9ffb46f7300f4416c9e931876bfe1b089201ee50150ad0b52622021a6"
+  },
+  "game/assets/evidence/E13_ORDER.webp": {
+   "bytes": 24936,
+   "sha256": "cffc375b5f3b1f55405cf3ec742f4a9a599947b60abfe451ef3d095358d28b8b"
+  },
+  "game/assets/evidence/E14.webp": {
+   "bytes": 29248,
+   "sha256": "99556ec8f0e498ea7f13e5c1c7958f9a39562864244c5f2df89626f04cea27ce"
+  },
+  "game/assets/evidence/E14_SUPPLY.webp": {
+   "bytes": 24150,
+   "sha256": "34ed61e63e766c886aeb7c17eae283ad59298609363b4775b3a8a55589507ed7"
+  },
+  "game/assets/evidence/E15.webp": {
+   "bytes": 28804,
+   "sha256": "2d719ae5919e5ff888824fc0214e94229b4e0cb13c550450b8fdbf2a95cd5e7d"
+  },
+  "game/assets/evidence/E16.webp": {
+   "bytes": 22436,
+   "sha256": "7aa1ee3a26a806817d3b60bccbe2df6f795fd38d08fd12e67e12958c38841acc"
+  },
+  "game/assets/evidence/E17.webp": {
+   "bytes": 25876,
+   "sha256": "b4211b1ae75eb3c8f6bb0ad56f2e5a4ad44040be11423b9bf4322d6b4d4f88a8"
+  },
+  "game/assets/evidence/E18.webp": {
+   "bytes": 27572,
+   "sha256": "877aa890eee3b75a9df0697bc614d82c72bf680f006e65d115a935e9d036ee50"
+  },
+  "game/assets/evidence/E22.webp": {
+   "bytes": 26700,
+   "sha256": "a1a89ed489427cd94aa7458afc818ab51c6dc08f387f5cf60dd2288ee840116a"
+  },
+  "game/assets/evidence/E23.webp": {
+   "bytes": 29786,
+   "sha256": "16b7b82357ad64ace53c3df9f4b4e4ce856c503594adc099ce9c71bbdae5a103"
+  },
+  "game/assets/evidence/E26.webp": {
+   "bytes": 27490,
+   "sha256": "0ee90b7dda96b915adebb075d9da76ccc48012a0d8b7d3a95ff7655be99adbcc"
+  },
+  "game/assets/evidence/E27.webp": {
+   "bytes": 28648,
+   "sha256": "e1c3df9ea22e5412d306983c615b1748429d884b9a3d1c6969ff264d7609553b"
+  },
+  "game/assets/evidence/E28.webp": {
+   "bytes": 26000,
+   "sha256": "bd1c8bbf06d7d3e861af08af2d4403627657a5c114530318b01cf07534d03ea2"
+  },
+  "game/assets/evidence/E29.webp": {
+   "bytes": 28944,
+   "sha256": "aed3f5e69f2d8c2fb70ced498d975c78334e225a51dbb3c3b102ed1824cdf621"
+  },
+  "game/assets/evidence/E31.webp": {
+   "bytes": 22272,
+   "sha256": "b25846c2ab389cff1e61c194de3b797fb546b844dc9aac159d53bd623ca68bde"
+  },
+  "game/assets/evidence/E32.webp": {
+   "bytes": 30228,
+   "sha256": "79876f1e0f34ddb29e10bdd93f67d3e4adce2e322547c7f6d82c868caded6a86"
+  },
+  "game/assets/evidence/E33.webp": {
+   "bytes": 16620,
+   "sha256": "c6537441ec4eb69d1a87cda1c6fc77ac17c12fbfeb55ee6b3ae0e284fe1e1d53"
+  },
+  "game/assets/evidence/E34.webp": {
+   "bytes": 25172,
+   "sha256": "dc8522d869adfe1a49ccd4b44793f64e54cccb2f3146d9cbf2b119002accc1db"
+  },
+  "game/assets/evidence/E35.webp": {
+   "bytes": 28474,
+   "sha256": "489b9c260e33cb06986ee25209459673c1d697d0ebd6d8f92c8e213cc3bab3c8"
+  },
+  "game/assets/evidence/NW_BURNT_PAGE.webp": {
+   "bytes": 25660,
+   "sha256": "0d8f2d1bd51ada4594691d2b9a0456558cad8e9ea14b117832a80734fdd9e08e"
+  },
+  "game/assets/evidence/NW_HALL_WINDOW.webp": {
+   "bytes": 29016,
+   "sha256": "f6e78aa9523ecbe37ecccb4550f2ca8e5005be4cf5bcb8d89e6be59dba62dbc5"
+  },
+  "game/assets/evidence/NW_IRON_MARK.webp": {
+   "bytes": 27780,
+   "sha256": "66912ef4defaaf5f974b1d9bc7870a8ae3029d09a4fc9bf4dac51c28a1316d7d"
+  },
+  "game/assets/evidence/NW_KEEPER_DATE.webp": {
+   "bytes": 28176,
+   "sha256": "1de173c303d203bdee9bdb08073ff819688f9acb36e7ecc42f14904c6582bb3a"
+  },
+  "game/assets/evidence/NW_MADAM_DAY7.webp": {
+   "bytes": 24992,
+   "sha256": "1c29f70ae5168b28123c0d43d7d0fbaa9f9da68a32fccd7cdd26d067d4fe48f8"
+  },
+  "game/assets/evidence/NW_NAMES.webp": {
+   "bytes": 38560,
+   "sha256": "e89b813c34e22486c4414dfd918dad91d2b8ae076647d2d390a3b1ddf86dc4c2"
+  },
+  "game/assets/evidence/NW_NEOUL_LEDGER.webp": {
+   "bytes": 35526,
+   "sha256": "15b35617c70296b42aff375011ffdf27a84fccd93aa7e585d50d29486a250be0"
+  },
+  "game/assets/evidence/NW_PIKO_PAINTING.webp": {
+   "bytes": 32602,
+   "sha256": "94f990a40542c5c0a507ec468923a637933aba49fa26bda320943730eb6d2b4a"
+  },
+  "game/assets/evidence/NW_PIKO_TREMOR.webp": {
+   "bytes": 18164,
+   "sha256": "a9255237737b71b3ffe26da0f1bc82d880d88dff02b564b591b42a24b2d8c9a2"
+  },
+  "game/assets/evidence/NW_SICK_BEDS.webp": {
+   "bytes": 25010,
+   "sha256": "59920a0a32713d7516d4ad226c47f4eed98ab39dee9862a6d75f51d6946f31ae"
+  },
+  "game/assets/evidence/NW_STONE.webp": {
+   "bytes": 29496,
+   "sha256": "ada17ff408e24670e5132354439ce64cdc2e9a250c30660b16aa308fb2c7d0e6"
+  },
+  "game/assets/evidence/NW_TABLET_A.webp": {
+   "bytes": 29056,
+   "sha256": "a8ed642207c4170a86336441c719352cfc893dd6c0dc81333ea3b25f44a60e5c"
+  },
+  "game/assets/evidence/NW_TABLET_B.webp": {
+   "bytes": 33846,
+   "sha256": "504db0f1738d80eec4dc939f9ad15a737cb663e502bba3fedfe6d32a9aa0ed7c"
+  },
+  "game/assets/evidence/NW_TRANSFER_LIST.webp": {
+   "bytes": 27244,
+   "sha256": "412e69d1ebb4031440101c8e84c0d386a7cb1343c474914053a51ae88f2db1ee"
+  },
+  "game/assets/evidence/NW_WHITE_BOWLS.webp": {
+   "bytes": 17426,
+   "sha256": "d4283d6e8f13485065feb92926b6ec2a8893a46b610ffd6634ab987fa01b0b06"
   },
   "game/assets/family.png": {
    "bytes": 1790591,
@@ -10669,5 +10941,5 @@
    "sha256": "0ef27bfe65a2917248171666649a51d85e3a200a3ae87bbaaa7085748bc4f0c5"
   }
  },
- "total_bytes": 590144314
+ "total_bytes": 592055227
 }
