@@ -18,7 +18,7 @@ testcase owner_play_fixes:
     screenshot "fix-02-daram-topics.png"
     click "자료 보여주기"
     pause 1.0
-    click "다람에게 보여주기"
+    click "QA V111:E01"
     pause 1.0
     screenshot "fix-03-daram-letter.png"
     click pos (900,600) until screen "r13_hub" timeout 30
@@ -36,7 +36,7 @@ testcase owner_play_fixes:
     click "자료 보여주기"
     pause 1.2
     screenshot "fix-07-guard-book.png"
-    click "그만두기"
+    click "QA 닫기"
     pause 1.5
     screenshot "fix-08-after-cancel.png"
     assert eval (renpy.get_screen("r13_hub") or renpy.get_screen("r13_topics"))

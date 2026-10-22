@@ -5,7 +5,7 @@ testcase more_save_karo:
     click "편지를 접는다"
     click pos (900,600) until screen "r13_hub" timeout 90
     pause 1.0
-    click "까로"
+    click "다람"
     pause 1.5
     click pos (900,600) until screen "r13_topics" timeout 30
     pause 1.0

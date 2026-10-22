@@ -213,7 +213,7 @@ label r13_v111_wait_again:
                 return _return
             if _return=="present":
                 call screen r13_book(v111_person,present=True)
-                $ v111_shown=_return
+                $ v111_shown=_return if isinstance(_return,str) else None  # 0.20.4: cancel (False/None/True) is not a record
                 $ v111_match=r13_v111_present_index(v111_binding,v111_person,v111_shown)
                 if v111_match is not None:
                     return v111_match

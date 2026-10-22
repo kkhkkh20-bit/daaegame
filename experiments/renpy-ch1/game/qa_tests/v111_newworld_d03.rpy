@@ -44,7 +44,8 @@ testcase v111_nw_d03_lamp_partial:
     pause 1.0
     click pos (900,600) until "오늘은 반환 요구를 보류한다" timeout 90
     assert eval (r13_v111_value("meeting:lamp")=="partial" and not r13_v111_value("listed:resident_tok"))
-    assert eval (qa_nw_seen("주운 돌을 판 걸로") and qa_nw_seen("걸쇠를 닫다가 부러졌다는 말은 깨지 못했소"))
+    # The meeting is set up at its start, so the loss counts at the repair step (audit 2026-10-22).
+    assert eval (qa_nw_seen("짐 나른 걸로 사람을 붙잡아 둘 순 없소") and qa_nw_seen("누가 꺼냈는지도 못 밝혔"))
     click "오늘은 반환 요구를 보류한다"
     click pos (900,600) until screen "r13_hub" timeout 120
     assert eval (r13_v111_value("silluk_status")=="released")

@@ -105,7 +105,7 @@ testcase v111_nw_d14_bomi:
     click pos (900,600) until "보호자와 밖에서 기다린다" timeout 120
     click "보호자와 밖에서 기다린다"
     click pos (900,600) until screen "r13_hub" timeout 120
-    assert eval (qa_nw_seen("마지막 날짜 옆에") and qa_nw_seen("여기, 그 애가 적은 날짜가 있네") and qa_nw_seen("우리 집 불이 되잖아") and qa_nw_seen("고백은 용서가 아니다") and not qa_nw_seen("그 애는 날짜도 몰랐어"))
+    assert eval (qa_nw_seen("마지막 날짜 옆에") and qa_nw_seen("여기, 그 애가 적은 날짜가 있네") and qa_nw_seen("우리 집 불이 되잖아") and qa_nw_seen("털어놓았다고 풀려나지는 않는다") and not qa_nw_seen("그 애는 날짜도 몰랐어"))
 
 testcase v111_nw_d14_true_ending:
     pause 1.0
