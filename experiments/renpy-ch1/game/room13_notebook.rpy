@@ -272,6 +272,12 @@ screen r13_reference_record_categories(owner,current,present=False,archive=False
                         add R13AntiqueIcon(icon,size=24) yalign .5
                         text title size r13_read_size(20,24) font r13_ui_font() color ("#fff0ce" if current==key else "#493b30") yalign .5
 
+    if r13_v111_active() and not present:
+        textbutton "갈림길":
+            style "r13_paper_tab_button" xpos 66 ypos (488 if r13_touch_ui() else 392)
+            xsize 176 ysize (80 if r13_touch_ui() else 56) text_size r13_read_size(20,24)
+            action Show("r13_fork_screen")
+
 screen r13_record_filters(owner,order,archive=False):
     hbox:
         xpos 280 ypos 76 spacing 10
@@ -413,7 +419,7 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
         # 0.18.99: the run toggle sits in the left column (design chat 0.18.98); 지난 사건 is in the second chip row.
         if r13_learning_archive_keys():
             textbutton ("이번 여정" if not archive else "지난 플레이"):
-                style "r13_paper_tab_button" xpos 66 ypos (490 if r13_touch_ui() else 426) xsize 176 ysize (80 if r13_touch_ui() else 40) text_size 18
+                style "r13_paper_tab_button" xpos (1034 if r13_touch_ui() else 66) ypos (54 if r13_touch_ui() else 458) xsize 176 ysize (80 if r13_touch_ui() else 40) text_size 18
                 action [SetScreenVariable("archive",not archive),SetScreenVariable("shelf",False),SetScreenVariable("detail",None),SetScreenVariable("page",0)]
         $ material_filter="all" if material_filter=="unread" or (archive and material_filter=="transfer") else material_filter
         $ entries=r13_material_subset(r13_catalog_entries(archive,shelf=shelf and not archive),material_filter)

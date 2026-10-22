@@ -111,11 +111,12 @@ init 58 python:
             return r
 
     class R13PaperPanel(renpy.Displayable):
-        def __init__(self, focused=False, dark=False, transferable=False, **kwargs):
+        def __init__(self, focused=False, dark=False, transferable=False, remembered=False, **kwargs):
             super(R13PaperPanel,self).__init__(**kwargs)
             self.focused=focused
             self.dark=dark
             self.transferable=transferable
+            self.remembered=remembered
         def render(self,width,height,st,at):
             w=max(1,int(width)); h=max(1,int(height))
             out=renpy.Render(w,h); c=out.canvas()
@@ -123,7 +124,15 @@ init 58 python:
             points=[(0,0),(w-1,0),(w-1,h-1),(0,h-1)]
             fill=('#3c3431' if self.dark else '#f7e7c8' if self.focused else '#e2cca8')
             c.polygon(fill,points)
-            c.lines('#b58b2f' if self.transferable else '#9a634d' if self.focused else '#baa07b',True,points,3 if self.focused else 2)
+            if getattr(self,"remembered",False):
+                for x in range(0,w,10):
+                    c.line('#baa07b',(x,0),(min(x+5,w-1),0),2)
+                    c.line('#baa07b',(x,h-1),(min(x+5,w-1),h-1),2)
+                for y in range(0,h,10):
+                    c.line('#baa07b',(0,y),(0,min(y+5,h-1)),2)
+                    c.line('#baa07b',(w-1,y),(w-1,min(y+5,h-1)),2)
+            else:
+                c.lines('#b58b2f' if self.transferable else '#9a634d' if self.focused else '#baa07b',True,points,3 if self.focused else 2)
             return out
 
     class R13ActionPanel(R13InkPanel):

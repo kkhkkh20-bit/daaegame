@@ -21,7 +21,9 @@ init 318 python:
     R13_NW_MEETING_RESULTS=("win","partial","lose")
     def r13_nw_meeting_end(meeting,result):
         if result not in R13_NW_MEETING_RESULTS:raise Exception("Unknown meeting result: "+str(result))
-        if r13_v111_value("meeting:"+meeting) is None:r13_v111_set("meeting:"+meeting,result)
+        if r13_v111_value("meeting:"+meeting) is None:
+            r13_v111_set("meeting:"+meeting,result)
+            if "r13_fork_record" in globals():r13_fork_record(meeting,result)
         return r13_v111_value("meeting:"+meeting)
     R13_NW_LISTABLE=("resident_tok","bami","resident_bori","nabi","daram","resident_owlgp","resident_piko","resident_siluk","resident_guldol","resident_teacher","mom","dad")
     def r13_nw_list(person,reason):

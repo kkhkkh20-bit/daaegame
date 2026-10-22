@@ -11,7 +11,11 @@ init 58 python:
             def box(col,x,y,w,h):c.rect(col,(int(x*z),int(y*z),max(1,int(w*z)),max(1,int(h*z))))
             def line(col,a,b,n=1):c.line(col,(int(a[0]*z),int(a[1]*z)),(int(b[0]*z),int(b[1]*z)),max(1,int(n*z)))
             k=self.kind
-            if k=='check':
+            if k=='lock':
+                box(shade,10,3,14,16);box(paper,13,6,8,10)
+                box(shade,6,14,20,16);box(light,9,17,3,10)
+                box(paper,17,20,3,6)
+            elif k=='check':
                 box(ink,2,2,28,28);box(shade,4,4,24,24);box(paper,5,5,22,22)
                 line('#657451',(8,16),(14,22),3);line('#657451',(14,22),(25,9),3)
             elif k=='investigate':

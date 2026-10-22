@@ -1,6 +1,6 @@
 # Native Room13 story labels. Generated from reviewed source IDs; no runtime route interpreter.
 label r13_v111_start:
-    $ room13["v111"]=dict(version="1.1.1",values=winter_copy.deepcopy(R13_V111["initial"]),gate="",people=["daram"])
+    $ room13["v111"]=dict(version="1.1.1",values=winter_copy.deepcopy(R13_V111["initial"]),gate="",people=["daram"]); r13_fork_start()
     $ ms14=None; r13_flag("lodging"); r13_carriage_skip=False
     call r13_carriage_departure
     jump r13_v111_start_block

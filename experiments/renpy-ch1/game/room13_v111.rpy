@@ -20,6 +20,7 @@ init 301 python:
         if key=="grandmother_custody":n["granny_state"]="detained" if value=="detained" else "trusted"
         if key=="family_reunited" and value:n["mom_state"]="reunited"
         store.room13=n
+        if key=="ending14" and "r13_fork_ending" in globals():r13_fork_ending(value)
         death={"piko_alive":"piko_dead","KKOMI_ALIVE":"kkomi_dead","alive:kid_dodam":"dodam_dead","nero_alive":"nero_dead","TOK_ALIVE":"tok_dead","OWL_ALIVE":"v111:owl_dead"}
         if key in death and value is False:r13_flag(death[key])
     def r13_v111_owned(key):
