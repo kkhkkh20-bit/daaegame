@@ -25,7 +25,7 @@ init 58 python:
     # A wide place listed here is drawn smaller: the viewport shows 1280/zoom world pixels and
     # is scaled by zoom; the strip below holds the field controls or the dialogue. World
     # coordinates (objects, stand spots, saves) do not change. Other places stay at 1.0.
-    R13_FIELD_ZOOM={"gate":0.75}
+    R13_FIELD_ZOOM={}  # 0.20.3: gate 0.75 waits for the taller 2560x960 art (owner 2026-10-22: "맵을 새로 넓게 그려서")
     def r13_field_zoom(location=None):
         location=location or (store.room13 or {}).get("location")
         if r13_world_width(location)<=1280:return 1.0
