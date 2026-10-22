@@ -138,4 +138,32 @@ init 337 python:
         out=[]
         for actor in rows:
             out.append(r13_clear_critical_x(actor,rects,rows,width) if actor.get("rect") else actor)
-        return sorted(out,key=lambda a:a.get("depth",0))
+        return sorted(r13_separate_overlaps(out,rects,width),key=lambda a:a.get("depth",0))
+
+    # 0.20.10 (4~14일 리뷰: 5일 골목, 9일 주방, 11일 숲): 두 사람이 거의 같은 자리에 서면 뒤에 선
+    # 사람의 얼굴과 이름표가 가린다. 뒤쪽(깊이가 얕은) 사람이 가장 가까운 빈자리로 비켜 선다.
+    def r13_separate_overlaps(rows,rects,width):
+        rows=list(rows)
+        for _ in range(3):
+            moved=False
+            for i,a in enumerate(rows):
+                for j,b in enumerate(rows):
+                    if j<=i or not a.get("rect") or not b.get("rect"):continue
+                    ax,ay,aw,ah=a["rect"];bx,by,bw,bh=b["rect"]
+                    cover=min(ax+aw,bx+bw)-max(ax,bx)
+                    if cover<=0.55*min(aw,bw) or min(ay+ah,by+bh)-max(ay,by)<=0.5*min(ah,bh):continue
+                    k=i if a.get("depth",0)<=b.get("depth",0) else j
+                    back=rows[k];fx,fy,fw,fh=back["rect"];cx=fx+fw/2.0
+                    others=[r for n,r in enumerate(rows) if n!=k and r.get("rect")]
+                    def crowd(f):
+                        hit=sum(1 for r in others if abs((r["rect"][0]+r["rect"][2]/2.0)-f)<(fw+r["rect"][2])/2.0*0.8)
+                        hit+=sum(1 for ox,oy,ow,oh in rects if ox-fw/2.0<f<ox+ow+fw/2.0)
+                        return hit
+                    feet=[cx+d*s for d in range(90,900,90) for s in (-1,1) if fw/2.0<=cx+d*s<=width-fw/2.0]
+                    if not feet:continue
+                    best=min(feet,key=lambda f:(crowd(f),abs(f-cx)))
+                    if crowd(best)>0:continue
+                    rows[k]=r13_ma_place(back,back["pose"],int(best),back["y"]+back["height"],back["height"])
+                    moved=True
+            if not moved:break
+        return rows

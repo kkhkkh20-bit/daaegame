@@ -171,6 +171,11 @@ init 301 python:
             or any(spec is value and r13_v111_ambient_text(key,value) for key,value in objects.items()))
     ROOM13["objects"].setdefault("forest",{})["v111_box"]=dict(rect=[1150,548,220,152],need=[],give=[],flags=[],text="북쪽 물자 길 교환함")
     R13_OBJECT_NAMES["v111_box"]="교환함"
+    # 0.20.10 (4~14일 리뷰 D11-02·03): 서술이 가리키는 대상을 그 단계에서만 보이는 조사 지점으로 둔다.
+    ROOM13["objects"].setdefault("facility",{})["v111_mural"]=dict(rect=[1690,90,220,400],need=[],give=[],flags=[],text="벽 그림과 떨어진 돌판")
+    R13_OBJECT_NAMES["v111_mural"]="벽 그림과 돌판"
+    ROOM13["objects"].setdefault("forest",{})["v111_lower_door"]=dict(rect=[1310,360,290,230],need=[],give=[],flags=[],text="눈에 묻힌 아랫길 집 문")
+    R13_OBJECT_NAMES["v111_lower_door"]="눈에 묻힌 문"
     _r13_v111_props=r13_world_props
     def r13_world_props(entry=False):
         if r13_v111_active() and store.room13["location"]=="forest" and store.room13["v111"].get("scene") in ("MS14_D02_S01","MS14_D11_S00"):
@@ -222,6 +227,9 @@ label r13_v111_wait_again:
         if v111_person in r13_visible_people() and r13_v111_idle_ok(v111_person):
             call r13_lines(r13_v111_idle_lines(v111_person),"v111:idle:"+v111_person)
         elif v111_person in r13_visible_people():
+            # 0.20.10 (4~14일 리뷰 P07): 물을 것이 없는 다람은 장면마다 처음 한 번 먼저 대답한다.
+            if v111_person=="daram" and r13_v111_daram_hello_due():
+                call r13_lines(r13_v111_daram_hello(),"v111:daram_hello")
             call screen r13_topics(v111_person)
             if _return!="back":
                 $ r13_v111_talk_person=v111_person
@@ -269,7 +277,7 @@ label r13_v111_proof(key,correct,success,wrong=None,hint=None):
     $ R13_CLAIMS[v111_claim]=dict(assertion=R13_PROOF_TITLES.get(key,key))
     $ room13["arguments"].setdefault(v111_claim,[])
 label r13_v111_proof_again:
-    call screen r13_crisis_proof(v111_claim,heading="기록 · 자료 대조",can_press=bool(hint),need_evidence=True,leave_label="자료 다시 보기",chances=r13_v111_proof_chances(key))
+    call screen r13_crisis_proof(v111_claim,heading="기록 · 자료 대조",can_press=bool(hint) or key in R13_PROOF_RANGE,need_evidence=True,leave_label="자료 다시 보기",chances=r13_v111_proof_chances(key))
     if _return=="present":
         jump r13_v111_proof_pick
     if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="remove":
@@ -289,6 +297,9 @@ label r13_v111_proof_again:
             return v111_wrong_target
     if _return=="press" and hint:
         return hint
+    if _return=="press" and key in R13_PROOF_RANGE:
+        # 0.20.10 (4~14일 리뷰 D5-02 등): 되묻기는 이 대조가 무엇과 무엇을 맞추는지만 짚는다.
+        call r13_lines([r13_nw_added_line(dict(speaker="아빠",kind="thought",text=R13_PROOF_RANGE[key]))],"v111:proof_range")
     if _return=="leave":
         call screen r13_book(called=True)  # 0.20.6: X returns here instead of hiding the called screen
     jump r13_v111_proof_again

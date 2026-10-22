@@ -14,8 +14,8 @@ testcase v111_opening_native:
     click pos (900,600) until screen "r13_hub" timeout 30
     assert eval (r13_v111_owned("E02"))
     click "다람"
-    pause .4
-    assert screen "r13_topics"
+    # 0.20.10: with nothing to ask, Daram answers once first, then the topics screen opens.
+    click pos (900,600) until screen "r13_topics" timeout 20
     screenshot "v111_gate_field.png"
     click "돌아가기"
     pause .4

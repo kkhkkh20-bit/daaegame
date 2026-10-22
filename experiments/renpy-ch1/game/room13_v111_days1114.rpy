@@ -1681,6 +1681,8 @@ label r13_v111_teacher_relief_check13:
     jump r13_v111_teacher_relief_check13
 
 label r13_v111_teacher_relief_done13:
+    if r13_v111_actor_ready('guard'):
+        call r13_lines(r13_nw_block('relief_done13'),'nw:relief_done13')
     $ r13_v111_set('busy:v111_patrol','teacher_supervision')
     $ r13_v111_set('teacher_supervisor','v111_patrol')
     $ r13_v111_set('busy:guard',False)
@@ -2087,6 +2089,8 @@ label r13_v111_nabi_beds13:
     jump r13_v111_nabi_beds13
 
 label r13_v111_beds_ready13:
+    if r13_v111_actor_ready('nabi'):
+        call r13_lines(r13_nw_block('beds_ready13'),'nw:beds_ready13')
     $ r13_v111_set('handover_prepared13',True)
     $ r13_v111_set('busy:karo',False)
     call r13_v111_travel('square','beds_ready13')
@@ -2599,6 +2603,8 @@ label r13_v111_altar_guide14:
     jump r13_v111_altar_guide14
 
 label r13_v111_altar_ready14:
+    if r13_v111_actor_ready('resident_badook'):
+        call r13_lines(r13_nw_block('altar_guide14'),'nw:altar_guide14')
     $ r13_v111_set('altar_guide_confirmed',True)
     $ r13_v111_set('busy:resident_badook',False)
     jump r13_v111_altar14

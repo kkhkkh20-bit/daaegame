@@ -73,7 +73,9 @@ label r13_v111_nabi_supply6:
     call r13_lines(r13_v111_lines(['MS14_D06_S01_L0040']),'v111:MS14_D06_S01_L0040')
     call r13_lines(r13_v111_lines(['MS14_D06_S01_L0041']),'v111:MS14_D06_S01_L0041')
     call r13_lines(r13_v111_lines(['MS14_D06_S01_L0042']),'v111:MS14_D06_S01_L0042')
-    call r13_v111_travel('dining','supply6')
+    # 0.20.10 (4~14일 리뷰 D6-01): "꼬미를 따라 식당 뒷문으로 간다"는 서술대로 바로 식당으로 간다.
+    $ r13_v111_time("move:travel:dining",5)
+    call r13_v111_travel('dining','supply6',direct=True)
     jump r13_v111_board6
 
 label r13_v111_board6:
@@ -703,6 +705,11 @@ label r13_v111_prevent_b7:
     call r13_lines(r13_v111_lines(['MS14_D07_P02_L0015']),'v111:MS14_D07_P02_L0015')
     call r13_lines(r13_v111_lines(['MS14_D07_P02_L0016']),'v111:MS14_D07_P02_L0016')
     call r13_lines(r13_v111_lines(['MS14_D07_P02_L0017']),'v111:MS14_D07_P02_L0017')
+    # 0.20.10 (4~14일 리뷰 7일): 대본의 '같은 제설길로 여관 귀환'을 실제 이동으로 보인다.
+    call r13_lines(r13_nw_block('owl_return7'),'nw:owl_return7')
+    $ r13_v111_time("move:travel:room13",5)
+    call r13_v111_travel('room13','prevent_b7_return',['daram'],direct=True)
+    $ r13_v111_arrive(['daram', 'doto', 'resident_owlgp', 'resident_seori', 'karo'])
     call r13_lines(r13_v111_lines(['MS14_D07_P02_L0019']),'v111:MS14_D07_P02_L0019')
     call r13_lines(r13_v111_lines(['MS14_D07_P02_L0020']),'v111:MS14_D07_P02_L0020')
     $ r13_v111_commit('MS14_D07_P02_L0021')
@@ -984,6 +991,9 @@ label r13_v111_mother_letter8:
     $ r13_v111_scene('MS14_D08_S04')
     $ r13_edit(period=1)
     $ room13["v111"]["people"]=[]
+    # 0.20.10 (4~14일 리뷰 8일): 다람을 어디에 두고 나왔는지 보인다.
+    if not r13_v111_value('DARAM_DETAINED') and r13_v111_actor_ready('nabi'):
+        call r13_lines(r13_nw_block('daram_school8'),'nw:daram_school8')
     call r13_v111_travel('square','mother_letter8',[])
     $ r13_v111_arrive(['resident_lamplighter', 'doto', 'resident_badook'])
     $ r13_v111_score()
@@ -1778,7 +1788,7 @@ label r13_v111_public_paper10:
     jump r13_v111_prevent_return10
 
 label r13_v111_authority_wrong10:
-    if r13_nw_retry("records",['E06_CONTACT', 'E09_MAIL'],'부엉이가 손을 거둔다. 아내가 실제로 쓴 연락 길과 우체국 기록을 함께 놓아야 한다.'):
+    if r13_nw_retry("records",['E06_CONTACT', 'E09_MAIL'],'부엉이가 손을 거둔다. 할머니에게 맡겼다는 말이 어디에 적혀 있는지부터 봐야 한다. 물자를 건넨 공개 기록과 우체국 기록을 함께 놓자.'):
         call r13_lines(r13_v111_lines(['MS14_D10_P01_L0084', 'MS14_D10_P01_L0085']),'v111:authority_wrong10:half')
         jump r13_v111_authority_proof10
     $ r13_nw_meeting_end("records","lose")

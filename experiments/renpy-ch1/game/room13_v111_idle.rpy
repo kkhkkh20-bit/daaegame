@@ -169,3 +169,18 @@ init 349 python:
             return [r13_nw_added_line(dict(speaker=None,text="돌목은 다친 팔을 몸 쪽에 붙인 채 서 있다. 발소리에 손을 뻗으려다 멈추고, 먼저 부른다.",kind="narration")),
                     r13_nw_added_line(dict(speaker="돌목",text="거기 누구요. ……아, 당신이군.",expression="neutral",kind="dialogue"))]
         return _r13_guard_idle_lines(person)
+
+# 0.20.10 (4~14일 리뷰 P07): 다람을 눌렀는데 지금 물을 것도 새 질문도 없으면 빈 질문 화면만 열렸다.
+# 장면마다 처음 한 번은 다람이 먼저 짧게 대답한다. 자료를 보여 주는 화면은 그대로 열린다.
+init 350 python:
+    R13_DARAM_HELLO=("응? 아빠, 왜?","나 여기 있어.")
+    def r13_v111_daram_hello_due():
+        scene=(store.room13.get("v111") or {}).get("scene")
+        if r13_v111_has_business("daram") or r13_v111_value("daram_hello:%s"%scene):return False
+        return bool(scene)
+    def r13_v111_daram_hello():
+        scene=(store.room13.get("v111") or {}).get("scene")
+        r13_v111_set("daram_hello:%s"%scene,True)
+        n=r13_v111_value("daram_hello_count") or 0
+        r13_v111_set("daram_hello_count",n+1)
+        return [r13_nw_added_line(dict(speaker="다람",text=R13_DARAM_HELLO[n%len(R13_DARAM_HELLO)],expression="neutral",kind="dialogue"))]
