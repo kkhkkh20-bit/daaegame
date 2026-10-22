@@ -231,7 +231,8 @@ screen r13_relations_content(owner,selected,filt,focused=True):
                         add Transform(r13_rel_face(who),xysize=(face,face-2),fit="contain",nearest=r13_profile_nearest(who),alpha=.55 if kind in ("gone","missing") else 1.0) xpos (48-face//2) ypos 5
                     if kind in ("dead","saved","gone","missing"):
                         frame:
-                            xpos 62 ypos 36 xysize (22,22) padding (0,0)
+                            # 0.19.96: two-line names (부엉이 할아버지) start at y48; keep the badge above them.
+                            xpos 62 ypos (24 if two_lines else 36) xysize (22,22) padding (0,0)
                             background Solid({"dead":"#874a3b","saved":"#4d765c"}.get(kind,"#726f78"))
                             if kind=="saved":
                                 add R13AntiqueIcon("check",size=18) align (.5,.5)

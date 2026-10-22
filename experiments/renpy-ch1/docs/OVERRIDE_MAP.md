@@ -638,6 +638,20 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 68 | `room13_notebook.rpy:65` | _r13_learning_record_entries |
 | 2 | 98 | `systems/room13_learning.rpy:107` |  |
 
+## `r13_rel_edges` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 166 | `systems/room13_relations.rpy:92` | _r13_nw_rel_edges |
+| 2 | 330 | `systems/room13_v111_relations.rpy:72` |  |
+
+## `r13_rel_status` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 166 | `systems/room13_relations.rpy:33` | _r13_nw_rel_status |
+| 2 | 330 | `systems/room13_v111_relations.rpy:32` |  |
+
 ## `r13_remember_line` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -714,6 +728,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 301 | `room13_v111.rpy:54` | _r13_nw_authored_line |
 | 2 | 319 | `room13_v111_newworld_text.rpy:167` |  |
+
+## `r13_v111_set` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 301 | `room13_v111.rpy:11` | _r13_nw_rel_set |
+| 2 | 330 | `systems/room13_v111_relations.rpy:18` |  |
 
 ## `r13_w2_action_done` (2층)
 
