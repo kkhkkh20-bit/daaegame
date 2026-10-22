@@ -8,7 +8,8 @@ label r13_v111_start:
 label r13_v111_start_block:
     $ r13_v111_scene('MS14_D01_S01')
     $ r13_v111_score()
-    call r13_lines([('daram','아빠, 숲이 아직 깜깜해.',{'no_lead':True}),('dad','조금 있으면 날이 밝을 거야.',{'no_lead':True}),('daram','엄마는 벌써 일어났을까?',{'no_lead':True}),('dad','만나면 물어보자.',{'no_lead':True})], 'v111:carriage:before-bump')
+    # 2026-10-22 owner-approved script v5 ("훨씬 낫네"): the snack banter opens the carriage.
+    call r13_lines([('daram','아빠! 일곱 개에서 여섯 개 먹으면?',{'no_lead':True,'expression':'joy','pose':'seat_quiz'}),('dad','음…… 배부르지?',{'no_lead':True}),('daram','아니이! 하나잖아. 똑바로 대답해!',{'no_lead':True,'expression':'angry','pose':'seat_pout'}),('dad','탐정님이 다 아시면서 왜 물어보실까.',{'no_lead':True}),('daram','아빠도 아나 보는 거야. 시험이야, 시험!',{'no_lead':True,'expression':'joy','pose':'seat_quiz'}),('dad','알지, 알지. 하나 남았다는 거. ……반만 먹을까?',{'no_lead':True}),('daram','안 돼! 엄마 거야!',{'no_lead':True,'expression':'angry','pose':'seat_angry'}),('dad','알았어, 알았어. 엄마 거.',{'no_lead':True}),('daram','그리고 엄마한테 여섯 개 얘긴 하지 마. 비밀이야.',{'no_lead':True,'expression':'flustered','pose':'seat_secret'}),('dad','아빠 입을 막으려면 반은 줘야겠는데?',{'no_lead':True}),('daram','엄마 거라니까아!',{'no_lead':True,'expression':'angry','pose':'seat_pout'}),(None,'일곱 개 중 하나. 다람이는 오는 내내 그 하나를 지켰다.',{'no_lead':True})], 'v111:carriage:before-bump')
     call r13_lines(r13_v111_lines(['MS14_D01_S01_L0001', 'MS14_D01_S01_L0002', 'MS14_D01_S01_L0003', 'MS14_D01_S01_L0004', 'MS14_D01_S01_L0005', 'MS14_D01_S01_L0006', 'MS14_D01_S01_L0007', 'MS14_D01_S01_L0008', 'MS14_D01_S01_L0009']), 'v111:start:MS14_D01_S01_L0002')
     jump r13_v111_letter_open
 

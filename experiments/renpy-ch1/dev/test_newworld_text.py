@@ -186,7 +186,7 @@ class Event01Gate(Layer):
  def test_approved_lines_are_in_place(self):
   env=self.load()
   carriage=[r[1] for r in env['r13_v111_lines'](['MS14_D01_S01_L0019','MS14_D01_S01_L0020','MS14_D01_S01_L0021','MS14_D01_S01_L0022'])]
-  self.assertEqual(carriage[4:],['창밖으로 길을 따라 등이 줄지어 서 있었다. 바람이 부는데 불빛이 하나도 흔들리지 않았다.','예쁘다. 꼭 별 같아. 불이 하나도 안 떨려.','기름이 아니라 돌이 들었대. 엄마가 그래서 여기 온 거야.','우리 동네는 기계 난로잖아.'])
+  self.assertEqual(carriage[-4:],['창밖으로 길을 따라 등이 줄지어 서 있었다. 바람이 부는데 불빛이 하나도 흔들리지 않았다.','예쁘다. 꼭 별 같아. 불이 하나도 안 떨려.','기름이 아니라 돌이 들었대. 엄마가 그래서 여기 온 거야.','우리 동네는 기계 난로잖아.'])
   greet=[(r[0],r[1]) for r in env['r13_v111_lines'](['MS14_D01_S04_L0011'])]
   self.assertEqual(greet[2],('guard','아르카 곁에.'))
   room=env['r13_v111_lines'](['MS14_D01_S05_L0016','MS14_D01_S05_L0017'])
@@ -229,7 +229,8 @@ class ContextArtByRecord(Layer):
   rids=['MS14_D01_S01_L9101','MS14_D01_S01_L0011','MS14_D01_S01_L0012','MS14_D01_S01_L0013','MS14_D01_S01_L0014']
   env=self.load()
   rows=env['r13_v111_lines'](rids)
-  self.assertEqual(env['r13_dialogue_context_match'](identity,3,rows[3],'neutral')['line_id'],'MS14_D01_S01_L0013')
+  # 2026-10-22 script v5 adds the narration 'NW_D01_S01_P01' before the letter, so L0013 is row 4.
+  self.assertEqual(env['r13_dialogue_context_match'](identity,4,rows[4],'neutral')['line_id'],'MS14_D01_S01_L0013')
   env=self.fixture('d01',dict(replace={'MS14_D01_S01_L0013':{'text':'십삼 호. 다 외웠어.'}},
    before={'MS14_D01_S01_L0011':[dict(id='NW_T_X1',speaker=None,text='끼운 줄')]}))
   rows=env['r13_v111_lines'](rids)

@@ -36,7 +36,7 @@ label r13_coach_travel_cut:
 
 default r13_black_card = False
 define R13_BLACK_CARD_LINES = (
-    "아내의 편지는 짧았다.",
-    "아이를 데리고 와 달라는 말, 그리고 방 번호 하나.",
-    "그 마을이 무엇을 태워 겨울을 나는지, 그때는 몰랐다.",
+    "아내에게서 편지가 왔다.",
+    "두 줄짜리 편지였다.",
+    "짧았지만, 그걸로 충분했다.",
 )

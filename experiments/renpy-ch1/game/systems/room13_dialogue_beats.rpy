@@ -130,7 +130,10 @@ init 170 python:
     def r13_dialogue_source_neutral(person,pose,height):
         profile=r13_dialogue_source_profile(person,pose,height)
         if not profile:return None
-        emotion=r13_fullbody_emotion(pose) if getattr(store,"r13_meeting_active",False) else "neutral"
+        # 0.19.98 (owner 2026-10-22: "대사에 맞는 표정들도 많이 부족해서"): every line shows the
+        # expression it was written with, not only meeting lines and reviewed cues. Lines with no
+        # expression are still neutral; a missing frame keeps the nearest approved one below.
+        emotion=r13_fullbody_emotion(pose)
         emotion={"surprise":"surprise_talk","flustered":"anxious"}.get(emotion,emotion)
         frame=profile["frames"].get(emotion,profile["frames"]["neutral"])
         if renpy.loadable(frame["file"]):

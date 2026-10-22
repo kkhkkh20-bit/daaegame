@@ -5865,28 +5865,30 @@
   },
   {
     "source": "game/room13_v111_days123.rpy",
-    "line": 11,
+    "line": 12,
     "context": "label r13_v111_start_block:",
     "person": "daram",
-    "text": "아빠, 숲이 아직 깜깜해.",
+    "text": "아빠! 일곱 개에서 여섯 개 먹으면?",
     "packet": [
       "daram",
-      "아빠, 숲이 아직 깜깜해.",
+      "아빠! 일곱 개에서 여섯 개 먹으면?",
       {
-        "no_lead": true
+        "no_lead": true,
+        "expression": "joy",
+        "pose": "seat_quiz"
       }
     ],
     "already_static_text": false
   },
   {
     "source": "game/room13_v111_days123.rpy",
-    "line": 11,
+    "line": 12,
     "context": "label r13_v111_start_block:",
     "person": "dad",
-    "text": "조금 있으면 날이 밝을 거야.",
+    "text": "음…… 배부르지?",
     "packet": [
       "dad",
-      "조금 있으면 날이 밝을 거야.",
+      "음…… 배부르지?",
       {
         "no_lead": true
       }
@@ -5895,13 +5897,30 @@
   },
   {
     "source": "game/room13_v111_days123.rpy",
-    "line": 11,
+    "line": 12,
     "context": "label r13_v111_start_block:",
     "person": "daram",
-    "text": "엄마는 벌써 일어났을까?",
+    "text": "아니이! 하나잖아. 똑바로 대답해!",
     "packet": [
       "daram",
-      "엄마는 벌써 일어났을까?",
+      "아니이! 하나잖아. 똑바로 대답해!",
+      {
+        "no_lead": true,
+        "expression": "angry",
+        "pose": "seat_pout"
+      }
+    ],
+    "already_static_text": false
+  },
+  {
+    "source": "game/room13_v111_days123.rpy",
+    "line": 12,
+    "context": "label r13_v111_start_block:",
+    "person": "dad",
+    "text": "탐정님이 다 아시면서 왜 물어보실까.",
+    "packet": [
+      "dad",
+      "탐정님이 다 아시면서 왜 물어보실까.",
       {
         "no_lead": true
       }
@@ -5910,13 +5929,126 @@
   },
   {
     "source": "game/room13_v111_days123.rpy",
-    "line": 11,
+    "line": 12,
+    "context": "label r13_v111_start_block:",
+    "person": "daram",
+    "text": "아빠도 아나 보는 거야. 시험이야, 시험!",
+    "packet": [
+      "daram",
+      "아빠도 아나 보는 거야. 시험이야, 시험!",
+      {
+        "no_lead": true,
+        "expression": "joy",
+        "pose": "seat_quiz"
+      }
+    ],
+    "already_static_text": false
+  },
+  {
+    "source": "game/room13_v111_days123.rpy",
+    "line": 12,
     "context": "label r13_v111_start_block:",
     "person": "dad",
-    "text": "만나면 물어보자.",
+    "text": "알지, 알지. 하나 남았다는 거. ……반만 먹을까?",
     "packet": [
       "dad",
-      "만나면 물어보자.",
+      "알지, 알지. 하나 남았다는 거. ……반만 먹을까?",
+      {
+        "no_lead": true
+      }
+    ],
+    "already_static_text": false
+  },
+  {
+    "source": "game/room13_v111_days123.rpy",
+    "line": 12,
+    "context": "label r13_v111_start_block:",
+    "person": "daram",
+    "text": "안 돼! 엄마 거야!",
+    "packet": [
+      "daram",
+      "안 돼! 엄마 거야!",
+      {
+        "no_lead": true,
+        "expression": "angry",
+        "pose": "seat_angry"
+      }
+    ],
+    "already_static_text": false
+  },
+  {
+    "source": "game/room13_v111_days123.rpy",
+    "line": 12,
+    "context": "label r13_v111_start_block:",
+    "person": "dad",
+    "text": "알았어, 알았어. 엄마 거.",
+    "packet": [
+      "dad",
+      "알았어, 알았어. 엄마 거.",
+      {
+        "no_lead": true
+      }
+    ],
+    "already_static_text": false
+  },
+  {
+    "source": "game/room13_v111_days123.rpy",
+    "line": 12,
+    "context": "label r13_v111_start_block:",
+    "person": "daram",
+    "text": "그리고 엄마한테 여섯 개 얘긴 하지 마. 비밀이야.",
+    "packet": [
+      "daram",
+      "그리고 엄마한테 여섯 개 얘긴 하지 마. 비밀이야.",
+      {
+        "no_lead": true,
+        "expression": "flustered",
+        "pose": "seat_secret"
+      }
+    ],
+    "already_static_text": false
+  },
+  {
+    "source": "game/room13_v111_days123.rpy",
+    "line": 12,
+    "context": "label r13_v111_start_block:",
+    "person": "dad",
+    "text": "아빠 입을 막으려면 반은 줘야겠는데?",
+    "packet": [
+      "dad",
+      "아빠 입을 막으려면 반은 줘야겠는데?",
+      {
+        "no_lead": true
+      }
+    ],
+    "already_static_text": false
+  },
+  {
+    "source": "game/room13_v111_days123.rpy",
+    "line": 12,
+    "context": "label r13_v111_start_block:",
+    "person": "daram",
+    "text": "엄마 거라니까아!",
+    "packet": [
+      "daram",
+      "엄마 거라니까아!",
+      {
+        "no_lead": true,
+        "expression": "angry",
+        "pose": "seat_pout"
+      }
+    ],
+    "already_static_text": false
+  },
+  {
+    "source": "game/room13_v111_days123.rpy",
+    "line": 12,
+    "context": "label r13_v111_start_block:",
+    "person": null,
+    "text": "일곱 개 중 하나. 다람이는 오는 내내 그 하나를 지켰다.",
+    "packet": [
+      null,
+      "일곱 개 중 하나. 다람이는 오는 내내 그 하나를 지켰다.",
       {
         "no_lead": true
       }

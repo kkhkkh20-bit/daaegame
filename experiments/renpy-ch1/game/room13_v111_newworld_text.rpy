@@ -2,7 +2,7 @@
 # The authored V1.1.1 records stay exactly as imported (test_v111 checks them).
 # Owner-reviewed revisions live in game/v111/newworld/dNN.json and are applied
 # here, by record ID only:
-#   replace  {rid: {"text": ..., "when"?: name}}   new sentence for an authored line (only while when holds)
+#   replace  {rid: {"text": ..., "when"?: name, "expression"?: slot}}   new sentence for an authored line (only while when holds)
 #   before / after  {rid: [line, ...]}             new lines around an authored line
 #   drop     [rid | {"id": rid, "when": name}, ...]  authored line not shown (while when holds)
 #   evidence {key: {"name": ..., "variants": {variant: text}, "add_variants": {new: text}}}
@@ -167,7 +167,11 @@ init 319 python:
     def r13_v111_line(rid):
         packet=_r13_nw_authored_line(rid)
         revised=R13_NW_TEXT["replace"].get(rid)
-        if revised and R13_NW_WHEN[revised.get("when","always")]():packet=(packet[0],revised["text"])+tuple(packet[2:])
+        if revised and R13_NW_WHEN[revised.get("when","always")]():
+            packet=(packet[0],revised["text"])+tuple(packet[2:])
+            # 0.19.98: a revised line may carry its own expression (owner: "대사에 맞는 표정").
+            if revised.get("expression") and len(packet)>2 and isinstance(packet[2],dict):
+                packet=(packet[0],packet[1],dict(packet[2],expression=revised["expression"],pose=revised["expression"]))+tuple(packet[3:])
         return packet
     def r13_nw_added_line(row):
         if row.get("kind")=="thought":

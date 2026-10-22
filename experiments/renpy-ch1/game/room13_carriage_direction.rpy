@@ -67,3 +67,41 @@ label r13_carriage_departure:
     $ r13_speaker("daram","neutral")
     $ renpy.pause(.65)
     return
+
+# 0.19.98 (owner 2026-10-22: "첫 씬 다애가 마차에 서있으니 이상하고", "대사에 맞는 표정"):
+# in the carriage Daram sits on the bench. Each of her lines picks a seated picture
+# (art/daram-carriage-seat-20261022, drawn by Codex): an explicit "seat_<name>" pose, or the
+# nearest one for the line's expression. Dad's and Karo's lines keep her as she is.
+init 306 python:
+    R13_CARRIAGE_SEATS=("neutral","quiz","pout","angry","secret","bravado","joy","wistful")
+    R13_CARRIAGE_SEAT_OF={"neutral":"neutral","thinking":"neutral","joy":"joy","expressive":"joy","angry":"pout",
+        "anxious":"wistful","distressed":"wistful","flustered":"secret","surprise":"quiz","panic":"quiz"}
+    R13_CARRIAGE_SEAT_ZOOM=.62
+    def r13_carriage_seat(pose):
+        key=(pose or "neutral").replace("interview_","")
+        if key.startswith("seat_") and key[5:] in R13_CARRIAGE_SEATS:return key[5:]
+        if key=="intake21_01_bravado" or key.endswith("bravado"):return "bravado"
+        return R13_CARRIAGE_SEAT_OF.get(key,"neutral")
+    def r13_carriage_daram_seat_art(seat):
+        return Transform("assets/room13-carriage-daram-seat-%s.webp"%seat,zoom=R13_CARRIAGE_SEAT_ZOOM)
+    _r13_carriage_line_performance=r13_line_performance
+    def r13_line_performance(identity,index,packet):
+        # Keep an authored seated picture; the general path would fold it into "neutral".
+        if store.place=="마차 안" and packet and packet[0]=="daram" and len(packet)>2 and isinstance(packet[2],dict) and str(packet[2].get("pose","")).startswith("seat_"):
+            return packet[2].get("expression","neutral"),packet[2]["pose"]
+        return _r13_carriage_line_performance(identity,index,packet)
+    _r13_carriage_speaker=r13_speaker
+    def r13_speaker(who,expression="neutral",pose=None):
+        if store.place=="마차 안" and who=="daram" and not getattr(store,"r13_meeting_active",False):
+            seat=r13_carriage_seat(pose or expression)
+            store.dialogue_speaker=None
+            store.dialogue_expression=expression if "avatar_"+str(expression) in CAST.get("daram",{}) else "neutral"
+            store.r13_current_pose=pose or expression or "neutral"
+            if store.r13_motion_person!="daram" or getattr(store,"r13_carriage_seat_shown",None)!=seat or "r13_visitor" not in renpy.get_showing_tags():
+                renpy.show("r13_actor",what=r13_carriage_daram_seat_art(seat),tag="r13_visitor",at_list=[Transform(xanchor=.5,xpos=850,yanchor=0,ypos=96)])
+                store.r13_carriage_seat_shown=seat
+            store.r13_motion_person="daram"
+            return
+        return _r13_carriage_speaker(who,expression,pose)
+
+default r13_carriage_seat_shown = None
