@@ -1,39 +1,26 @@
 # Travel folio, warm paper and ink. Clean colour planes without grain/noise.
 init 58 python:
+    # 0.19.99 (owner 2026-10-22: "갈색 톤으로 하고 ... 쭉쭉 가보자"): every dark panel and
+    # every control uses the same brown pieces as the dialogue and settings windows
+    # (game/assets/ui-night/, dev/make_night_ui_assets.py). Class names stay for old saves.
+    R13_UI_PIECES="assets/ui-night/"
     class R13InkPanel(renpy.Displayable):
-        """Warm brown cover edges, ink face, and amber light only along the lower edge."""
+        """Brown panel with a thin gold edge (9-slice). focused/disabled change the shade only."""
         def __init__(self,focused=False,disabled=False,alpha="ff",corner=None,dark=False,slim=False,**kwargs):
             super(R13InkPanel,self).__init__(**kwargs)
             self.focused=focused;self.disabled=disabled
             self.alpha=alpha;self.corner=corner;self.dark=dark;self.slim=slim
         def render(self,width,height,st,at):
             w=max(1,int(width));h=max(1,int(height))
-            r=renpy.Render(w,h);c=r.canvas()
-            cut=min(self.corner or 6,max(1,min(w,h)//4))
-            def edge(n):
-                d=max(1,cut-n)
-                return [(n+d,n),(w-n-d-1,n),(w-n-1,n+d),(w-n-1,h-n-d-1),
-                        (w-n-d-1,h-n-1),(n+d,h-n-1),(n,h-n-d-1),(n,n+d)]
-            fill=('#453d34' if self.disabled else '#2c2420' if self.dark else '#4a3b30' if self.focused else '#352c27')
-            c.polygon(fill+self.alpha,edge(3))
-            if self.slim:
-                c.lines("#a78b6466",True,edge(1),1)
-                if self.focused:
-                    c.line("#d5b479cc",(cut+4,h-2),(w-cut-5,h-2),1)
-                return r
-            # Border bands leave the inner face clear for the explicit light option.
-            for outer,inner,color in ((edge(0),edge(1),'#332b28'),
-                    (edge(1),edge(3),'#8b745a')):
-                for i in range(8):
-                    j=(i+1)%8
-                    c.polygon(color,[outer[i],outer[j],inner[j],inner[i]])
-            c.line('#b19872',(cut+2,2),(w-cut-3,2),1)
-            c.line('#251f1e',(cut+2,h-2),(w-cut-3,h-2),1)
-            if self.focused and not self.disabled:
-                # Discrete pixel bands: amber rises only from the bottom, no top/side glow.
-                c.rect('#60503b',(cut+3,h-9,max(1,w-2*cut-6),3))
-                c.rect('#9a7842',(cut+2,h-6,max(1,w-2*cut-4),2))
-                c.line('#e6bd69',(cut+2,h-3),(w-cut-3,h-3),2)
+            r=renpy.Render(w,h)
+            try:a=int(self.alpha,16)/255.0
+            except Exception:a=1.0
+            if self.disabled:
+                face=Frame(R13_UI_PIECES+"opt_btn_insensitive.png",16,16)
+            else:
+                face=Frame(R13_UI_PIECES+"panel_small.png",12,12)
+                if self.focused:face=Transform(face,matrixcolor=BrightnessMatrix(.08))
+            r.blit(renpy.render(Transform(face,alpha=a,xysize=(w,h)),w,h,st,at),(0,0))
             return r
 
     class R13ControlSurface(renpy.Displayable):
@@ -42,16 +29,14 @@ init 58 python:
             super(R13ControlSurface,self).__init__(**kwargs)
             self.primary=primary;self.chosen=chosen;self.hovered=hovered;self.disabled=disabled
         def render(self,width,height,st,at):
-            w=max(1,int(width));h=max(1,int(height));r=renpy.Render(w,h);c=r.canvas()
-            def outline(n):
-                return [(n+5,n),(w-n-6,n),(w-n-1,n+5),(w-n-1,h-n-6),
-                    (w-n-6,h-n-1),(n+5,h-n-1),(n,h-n-6),(n,n+5)]
-            # All states share opacity and geometry; state changes use colour.
-            fill="#39312b" if self.disabled else "#806039" if self.primary else "#51412e" if self.chosen else "#44382e" if self.hovered else "#302923"
-            border="#746651" if self.disabled else "#dfbd79" if self.primary or self.chosen or self.hovered else "#a18a68"
-            c.polygon(fill+R13_CONTROL["alpha"],outline(0))
-            c.lines(border,True,outline(1),2)
-            c.line("#ffffff16",(8,4),(w-9,4),1)
+            w=max(1,int(width));h=max(1,int(height));r=renpy.Render(w,h)
+            # Same pieces as the settings buttons: chosen/primary = burgundy, hover = lighter brown.
+            name=("insensitive" if self.disabled else "selected" if self.primary or self.chosen
+                else "hover" if self.hovered else "idle")
+            face=Frame(R13_UI_PIECES+"opt_btn_%s.png"%name,16,16)
+            if self.primary and self.hovered:face=Transform(face,matrixcolor=BrightnessMatrix(.08))
+            if name=="idle":face=Transform(face,alpha=1.0)
+            r.blit(renpy.render(Transform(face,xysize=(w,h)),w,h,st,at),(0,0))
             return r
 
     class R13PaperFrame(renpy.Displayable):

@@ -44,7 +44,7 @@ init 150 python:
         return max(240,top)
 
     def r13_night_ribbon():
-        return Frame(R13_NIGHT_UI+"name_ribbon.png",34,10,44,10)
+        return Frame(R13_NIGHT_UI+"name_ribbon.png",44,0,44,0)
 
 style r13_night_link_text is text:
     font r13_ui_font() size 20 color "#eadfc8" hover_color "#fff6e2" insensitive_color "#8f8778"

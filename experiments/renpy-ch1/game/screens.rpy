@@ -589,10 +589,10 @@ style r13opt_text is text:
     font r13_ui_font() color "#f1e6d0" line_spacing 2
 # 0.19.98 (owner 2026-10-22 settings mockup): deep navy sheet, thin gold borders, burgundy choice.
 style r13opt_button is button:
-    background Frame("assets/ui-night/opt_btn_idle.png",8,8) hover_background Frame("assets/ui-night/opt_btn_hover.png",8,8)
-    selected_background Frame("assets/ui-night/opt_btn_selected.png",8,8)
-    selected_hover_background Frame("assets/ui-night/opt_btn_selected.png",8,8)
-    insensitive_background Frame("assets/ui-night/opt_btn_insensitive.png",8,8)
+    background Frame("assets/ui-night/opt_btn_idle.png",16,16) hover_background Frame("assets/ui-night/opt_btn_hover.png",16,16)
+    selected_background Frame("assets/ui-night/opt_btn_selected.png",16,16)
+    selected_hover_background Frame("assets/ui-night/opt_btn_selected.png",16,16)
+    insensitive_background Frame("assets/ui-night/opt_btn_insensitive.png",16,16)
     selected_foreground r13_opt_marks()
     padding (10,4) ysize 52
 style r13opt_button variant "touch":
@@ -602,7 +602,7 @@ style r13opt_button_text is text:
     xalign .5 yalign .5 text_align .5 line_spacing 2
 style r13opt_bar is bar:
     ysize 36
-    left_bar Frame("assets/ui-night/opt_btn_selected.png",8,8) right_bar Frame("assets/ui-night/opt_btn_idle.png",8,8)
+    left_bar Frame("assets/ui-night/opt_btn_selected.png",16,16) right_bar Frame("assets/ui-night/opt_btn_idle.png",16,16)
     thumb Solid("#e8cf96",xsize=14,ysize=36) thumb_offset 7
 style r13opt_tab_button is button:
     background None hover_background None selected_background None padding (0,0)
@@ -644,7 +644,8 @@ screen pause_menu():
     default typing_preview = R13TypingPreview()
     default tab=(persistent.room13_option_tab if persistent.room13_option_tab in ("sound","screen","reading") else "reading")
     add Solid("#05070fa6")
-    add "assets/ui-night/opt_panel.png" xpos 12 ypos 12
+    # 0.19.99: Codex hand-painted panel (art/ui-painted-20261022), 9-slice 48.
+    add Frame("assets/ui-night/panel.png",48,48) xpos 12 ypos 12 xysize (1256,696)
     # Left column: title and the three tabs (chosen tab on a burgundy brush stroke).
     text "설정" xpos 64 ypos 42 size (r13_opt_title_size()+8) color "#f6ecd8"
     use r13_opt_rule(170,104,58)

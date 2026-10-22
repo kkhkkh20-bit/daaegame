@@ -16,12 +16,12 @@ from PIL import Image, ImageDraw, ImageFilter
 import os
 OUT = Path(os.environ.get("R13_UI_OUT") or (Path(__file__).resolve().parents[1] / "game/assets/ui-night"))
 # Palette: "night" (navy, 0.19.98) or "brown" (owner idea 2026-10-22: same style, beige/brown tone).
-TONE = os.environ.get("R13_UI_TONE", "night")
+TONE = os.environ.get("R13_UI_TONE", "brown")  # owner 2026-10-22: 갈색 톤으로 확정
 PAL = {
     "night": dict(shade=(10, 13, 28), shade_top=(6, 6, 8), panel_top=(24, 31, 58), panel_drop=(8, 10, 18),
-                  btn=(15, 20, 38), btn_hover=(40, 34, 58), box=(9, 13, 28), box_line=(104, 108, 128)),
+                  btn=(15, 20, 38), btn_hover=(40, 34, 58), box=(9, 13, 28), box_line=(104, 108, 128), sel=(122, 28, 36)),
     "brown": dict(shade=(26, 16, 11), shade_top=(8, 6, 4), panel_top=(58, 40, 29), panel_drop=(20, 13, 9),
-                  btn=(40, 27, 19), btn_hover=(72, 50, 34), box=(30, 20, 14), box_line=(150, 122, 92)),
+                  btn=(40, 27, 19), btn_hover=(72, 50, 34), box=(30, 20, 14), box_line=(150, 122, 92), sel=(146, 36, 44)),
 }[TONE]
 OUT.mkdir(parents=True, exist_ok=True)
 GOLD = (201, 168, 106)
@@ -113,7 +113,7 @@ def rounded(w, h, fill, border, radius=5, width=2):
 def buttons():
     save(rounded(48, 44, PAL["btn"] + (150,), GOLD + (230,)), "opt_btn_idle.png")
     save(rounded(48, 44, PAL["btn_hover"] + (210,), GOLD_HI + (255,)), "opt_btn_hover.png")
-    save(rounded(48, 44, BURGUNDY + (245,), GOLD_HI + (255,)), "opt_btn_selected.png")
+    save(rounded(48, 44, PAL["sel"] + (245,), GOLD_HI + (255,)), "opt_btn_selected.png")
     save(rounded(48, 44, PAL["btn"] + (110,), (120, 108, 90, 200)), "opt_btn_insensitive.png")
     save(rounded(48, 44, PAL["box"] + (215,), PAL["box_line"] + (220,), radius=6, width=1), "preview_box.png")
 
@@ -147,6 +147,18 @@ def panel(w=1256, h=696):
     save(img.resize((w, h), Image.LANCZOS), "opt_panel.png")
 
 
+def panel_small(size=64):
+    """9-slice (12px) panel for small labels and plates: the same fill and gold edge as the big panel."""
+    s = 4
+    W = size * s
+    img = Image.new("RGBA", (W, W))
+    d = ImageDraw.Draw(img)
+    tr, tg, tb = PAL["panel_top"]
+    d.rounded_rectangle([2 * s, 2 * s, W - 2 * s, W - 2 * s], radius=6 * s, fill=(tr, tg, tb, 236), outline=GOLD + (230,), width=int(1.5 * s))
+    d.rounded_rectangle([5 * s, 5 * s, W - 5 * s, W - 5 * s], radius=4 * s, outline=GOLD + (70,), width=s)
+    save(img.resize((size, size), Image.LANCZOS), "panel_small.png")
+
+
 def close_x(size=34):
     s = 4
     img = Image.new("RGBA", (size * s, size * s))
@@ -165,6 +177,25 @@ def gold_rule(w=240):
     save(img, "gold_rule.png")
 
 
+PAINTED = Path(__file__).resolve().parents[1] / "art/ui-painted-20261022"
+
+
+def painted():
+    """0.19.99: Codex hand-painted pieces (art/ui-painted-20261022/) replace the code-drawn ones."""
+    if not (PAINTED / "panel.png").exists() or TONE != "brown":
+        return False
+    rib = Image.open(PAINTED / "name_ribbon.png").convert("RGBA")
+    save(rib.resize((220, 50), Image.LANCZOS), "name_ribbon.png")       # 3-slice 44/44
+    save(Image.open(PAINTED / "opt_tab.png").convert("RGBA"), "opt_tab.png")
+    panel = Image.open(PAINTED / "panel.png").convert("RGBA")
+    save(panel, "panel.png")                                            # 9-slice 48
+    save(panel.resize((64, 64), Image.LANCZOS), "panel_small.png")      # 9-slice 12
+    for state in ("idle", "hover", "selected", "insensitive"):
+        save(Image.open(PAINTED / ("btn_%s.png" % state)).convert("RGBA"), "opt_btn_%s.png" % state)  # 9-slice 16
+    save(Image.open(PAINTED / "say_shade.png").convert("RGBA"), "say_shade.png")
+    return True
+
+
 if __name__ == "__main__":
     shade()
     save(brush(220, 50, 3), "name_ribbon.png")
@@ -173,6 +204,8 @@ if __name__ == "__main__":
     save(diamond(14, outline=True), "diamond_outline.png")
     buttons()
     panel()
+    panel_small()
     close_x()
     gold_rule()
+    painted()
     print("written", sorted(p.name for p in OUT.iterdir()))

@@ -51,7 +51,7 @@ screen r13_concept_more():
     $ panel_height=menu_rows*(row_height+16)+74
     # 0.19.98 (owner settings mockup): the same night panel and gold-edged buttons as 설정.
     frame:
-        xpos 584 ypos (min(r13_control_y(),R13_NIGHT_CONTROL_Y-28)-panel_height-16) xysize (648,panel_height) padding (28,22) background Frame("assets/ui-night/opt_panel.png",40,40)
+        xpos 584 ypos (min(r13_control_y(),R13_NIGHT_CONTROL_Y-28)-panel_height-16) xysize (648,panel_height) padding (28,22) background Frame("assets/ui-night/panel.png",48,48)
         vbox:
             spacing 16
             text "대화 도구" size 24 color "#f6ecd8" font r13_ui_font()
