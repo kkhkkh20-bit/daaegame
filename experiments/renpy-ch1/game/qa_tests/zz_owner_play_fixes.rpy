@@ -27,3 +27,16 @@ testcase owner_play_fixes:
     click "돌목"
     pause 1.0
     screenshot "fix-04-guard.png"
+    click pos (900,600) until screen "r13_hub" timeout 60
+    pause 0.8
+    screenshot "fix-05-hub-again.png"
+    click "돌목"
+    pause 1.2
+    screenshot "fix-06-guard-topics.png"
+    click "자료 보여주기"
+    pause 1.2
+    screenshot "fix-07-guard-book.png"
+    click "그만두기"
+    pause 1.5
+    screenshot "fix-08-after-cancel.png"
+    assert eval (renpy.get_screen("r13_hub") or renpy.get_screen("r13_topics"))

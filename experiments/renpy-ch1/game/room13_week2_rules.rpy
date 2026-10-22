@@ -9,7 +9,7 @@ init 56 python:
         "school":("마을 학교","r13_school"),
         "store":("공동 물품 창고","r13_store"),
         "greenhouse":("폐온실의 지하 작업실","r13_greenhouse"),
-        "facility":("북쪽 보호시설 접견실","r13_facility"),
+        "facility":("북쪽 옛 시설","r13_facility"),
         "altar":("북쪽 산길 · 숲속 제단","r13_altar"),
     })
     R13_NAMES.update(mom="엄마",resident_teacher="사자 선생님",resident_eunho="은호 사장",

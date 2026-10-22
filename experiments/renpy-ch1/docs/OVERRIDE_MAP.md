@@ -310,7 +310,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 160 | `systems/room13_ep_art.rpy:114` | _r13_impact_line_art |
 | 2 | 345 | `systems/room13_impact_fx.rpy:65` | _r13_met_line_art |
-| 3 | 346 | `room13_v111_idle.rpy:55` |  |
+| 3 | 346 | `room13_v111_idle.rpy:54` |  |
 
 ## `r13_finish_action` (3층)
 
@@ -398,7 +398,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 335 | `room13_v111_reactions.rpy:59` | _r13_idle_present_reaction |
 | 2 | 336 | `room13_v111_idle.rpy:29` | _r13_present_fallback |
-| 3 | 347 | `room13_v111_idle.rpy:90` |  |
+| 3 | 347 | `room13_v111_idle.rpy:97` |  |
 
 ## `r13_background` (2층)
 
@@ -762,7 +762,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 336 | `room13_v111_idle.rpy:35` | _r13_met_idle_lines |
-| 2 | 346 | `room13_v111_idle.rpy:63` |  |
+| 2 | 346 | `room13_v111_idle.rpy:69` |  |
 
 ## `r13_v111_line` (2층)
 

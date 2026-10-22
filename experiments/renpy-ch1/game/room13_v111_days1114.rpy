@@ -324,9 +324,9 @@ label r13_v111_facility11:
     $ r13_edit(period=1)
     $ room13["v111"]["people"]=[]
     call r13_v111_travel('facility','facility11',['daram', 'mom'])
-    $ r13_v111_arrive(['daram', 'mom', 'resident_guldol', 'resident_lamplighter', 'guard', 'karo'])
+    $ r13_v111_arrive(['daram', 'mom', 'resident_guldol', 'resident_lamplighter'])
     $ r13_v111_score()
-    $ r13_v111_arrive(['daram', 'mom', 'resident_guldol', 'resident_lamplighter', 'guard', 'karo'])
+    $ r13_v111_arrive(['daram', 'mom', 'resident_guldol', 'resident_lamplighter'])
     if r13_v111_actor_ready("resident_guldol"):
         call r13_v111_guldol_heat11
     else:
@@ -2975,6 +2975,7 @@ label r13_v111_name_board14:
     $ r13_v111_arrive(['mom', 'daram', 'resident_tosil', 'npc_pandol'])
     $ r13_v111_score()
     $ r13_v111_arrive(['mom', 'daram', 'resident_tosil', 'npc_pandol'])
+    call r13_lines(r13_nw_block('name_board_intro14'),'nw:name_board_intro14')
     menu:
         '토실이 이름을 쓰겠다면 기다린다':
             jump r13_v111_tosil_name14

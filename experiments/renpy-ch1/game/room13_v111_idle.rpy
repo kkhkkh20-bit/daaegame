@@ -48,20 +48,27 @@ init 336 python:
 
 # First meeting (owner 2026-10-22: "다들 나를 본것처럼 이야기하는데?"): a resident who has not yet
 # spoken with Dad in this run greets him as a stranger; their own greeting starts after that.
-# Everyone who speaks a line is remembered in r13_met_people (saved with the game).
-default r13_met_people = set()
+# "Met" is the game's own encounter record (r13_met_people(), filled when someone speaks).
 init 346 python:
     _r13_met_line_art=r13_ep_line_art
     def r13_ep_line_art(packet):
         who=packet[0] if packet else None
         if isinstance(who,str) and who not in ("dad",):
-            met=set(store.r13_met_people or ())
-            if who not in met:
-                met.add(who);store.r13_met_people=met
+            # Owner 2026-10-22 dialogue review: whoever speaks is in the scene. A resident who
+            # talks but was not staged walks in (alive and not departed: r13_v111_join filters).
+            # Family keep their own location rules; a voice tagged as off-screen stays away.
+            try:
+                if (r13_v111_active() and who not in ("daram","mom") and who in CAST
+                        and who not in (store.room13["v111"].get("people") or [])
+                        and not r13_offscreen_voice(R13_NAMES.get(who,who))):
+                    r13_v111_join([who])
+            except Exception:
+                pass
         return _r13_met_line_art(packet)
     _r13_met_idle_lines=r13_v111_idle_lines
     def r13_v111_idle_lines(person):
-        if person not in (store.r13_met_people or ()) and person in R13_GREETINGS:
+        day=(store.room13 or {}).get("day",1)
+        if person not in r13_met_people() and person in R13_GREETINGS and not r13_v111_value("greeted:%s:%s"%(day,person)):
             name=next((n for n,p in MS14_SPEAKERS.items() if p==person),None)
             if name:
                 # Owner 2026-10-22: "처음에 다 인사하는것도 웃기고". A stranger does not greet; they
