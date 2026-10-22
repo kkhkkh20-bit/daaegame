@@ -204,7 +204,9 @@ label r13_v111_wait_again:
         if key=="gate_request" and v111_person=="guard":
             $ r13_v111_time("inspect:gate_request:ledger",15)
             return 0
-        if v111_person in r13_visible_people():
+        if v111_person in r13_visible_people() and r13_v111_idle_ok(v111_person):
+            call r13_lines(r13_v111_idle_lines(v111_person),"v111:idle:"+v111_person)
+        elif v111_person in r13_visible_people():
             call screen r13_topics(v111_person)
             if isinstance(_return,int):
                 $ r13_v111_time("topic:"+key+":"+str(_return),0 if (key=="gate_investigate" and _return in (5,6)) or (key=="post_menu" and _return==1) or key in ("safe_passage9","passage_after9") else 10)
