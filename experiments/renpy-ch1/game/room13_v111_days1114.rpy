@@ -1042,6 +1042,7 @@ label r13_v111_meal12:
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0008']),'v111:MS14_D12_S02_L0008')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0009']),'v111:MS14_D12_S02_L0009')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0010']),'v111:MS14_D12_S02_L0010')
+    call r13_lines(r13_v111_lines(['MS14_D12_S02_L0011']),'v111:MS14_D12_S02_L0011')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0012']),'v111:MS14_D12_S02_L0012')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0013']),'v111:MS14_D12_S02_L0013')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0014']),'v111:MS14_D12_S02_L0014')
@@ -2019,6 +2020,11 @@ label r13_v111_handover_plan13:
             jump r13_v111_crowd13
 
 label r13_v111_school_handover_prep13:
+    # Review 0.20.1 4-3: a listed Nabi gets off the cart before she works the school handover.
+    if r13_v111_value('listed:nabi') is True and not r13_v111_value('handed:nabi'):
+        $ r13_v111_arrive(['guard', 'karo', 'nabi'])
+        call r13_lines(r13_nw_block('nabi_down13'),'nw:nabi_down13')
+        $ r13_v111_set('handed:nabi',True)
     call r13_v111_travel('school','handover_prep13')
     $ r13_v111_arrive(['nabi', 'karo'])
     jump r13_v111_nabi_beds13
@@ -2377,6 +2383,7 @@ label r13_v111_daram_crowd13:
     $ r13_v111_arrive(['mom', 'daram', 'guard', 'karo', 'neoul', 'resident_badook'])
     if r13_v111_actor_ready('daram') and room13['location']=='square':
         call r13_lines(r13_v111_lines(['MS14_D13_C_L0006']),'v111:MS14_D13_C_L0006')
+        $ r13_v111_set('crowd_witnessed',True)
     return
 
 label r13_v111_crowd_block13:
@@ -3154,7 +3161,7 @@ label r13_v111_violence_ending14:
     call r13_lines(r13_v111_lines(['MS14_D14_END_VIOLENCE_L0002']),'v111:MS14_D14_END_VIOLENCE_L0002')
     call r13_lines(r13_v111_lines(['MS14_D14_END_VIOLENCE_L0003']),'v111:MS14_D14_END_VIOLENCE_L0003')
     call r13_lines(r13_v111_lines(['MS14_D14_END_VIOLENCE_L0004']),'v111:MS14_D14_END_VIOLENCE_L0004')
-    if r13_v111_value('family_location')=='square':
+    if r13_v111_value('crowd_witnessed') or r13_v111_value('family_location')=='square':
         call r13_v111_crowd_child_saw14
     else:
         call r13_v111_crowd_child_away14
