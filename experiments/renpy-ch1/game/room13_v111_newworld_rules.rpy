@@ -44,6 +44,31 @@ init 318 python:
         return decided and (previous is None or previous())
     R13_V111_SCENE_CHECKS["MS14_D03_S06"]=r13_nw_lamp_evening_ready
 
+    # Proof scope (owner 2026-10-22, "다 추천안대로"): a proof passes when every needed
+    # record is there. Related records on top are allowed (R13_PROOF_EXTRAS), and a
+    # proof may have another complete set (R13_PROOF_ALTERNATES). The answers themselves
+    # do not change; what was presented is kept as proof_given:<key> so the other side
+    # can name the extra record in one line (conditions in room13_v111_newworld_text.rpy).
+    R13_PROOF_EXTRAS={
+        "함께 들어갈 근거를 고른다":("E01",),
+        "수리와 반출을 가릴 자료를 낸다":("E10",),
+        "밤이 혐의의 근거를 확인한다":("E21",),
+        "초롱과 피코의 하루를 대조한다":("E08",),
+    }
+    R13_PROOF_ALTERNATES={
+        "구리선과 수선 출처를 대조한다":(("E08_CONTACT_ASSEMBLY","E09_PIN_OWNER"),),
+        "초롱과 피코의 하루를 대조한다":(("E11","NW_PIKO_TREMOR"),),
+    }
+    # Shown title only; the proof key (and the saved argument slot) keeps the old name.
+    R13_PROOF_TITLES={"첫 비명 뒤 핀을 다시 채운 때":"핀이 언제 떨어졌는가"}
+    def r13_v111_proof_accepts(key,correct,given):
+        given=set(given or ())
+        extra=set("V111:"+k for k in R13_PROOF_EXTRAS.get(key,()))
+        for need in [tuple(correct)]+list(R13_PROOF_ALTERNATES.get(key,())):
+            need=set("V111:"+k for k in need)
+            if need<=given<=need|extra:return True
+        return False
+
     # Half presentation (plan 7-2): some of the right records, none wrong.
     def r13_nw_half(correct):
         given=set(getattr(store,"v111_last_presented",None) or [])
@@ -106,6 +131,9 @@ init 318 python:
     _r13_nw_arrive=r13_v111_arrive
     def r13_v111_arrive(people):
         return _r13_nw_arrive([p for p in people if not r13_v111_value("departed:"+p)])
+    def r13_v111_join(people):
+        """Someone who speaks walks into the scene already on stage (same filters as arrive)."""
+        r13_v111_arrive(list(store.room13["v111"].get("people") or [])+list(people))
     _r13_nw_binding=r13_v111_binding
     def r13_v111_binding():
         b=_r13_nw_binding()

@@ -248,7 +248,7 @@ label r13_v111_wait_again:
 
 label r13_v111_proof(key,correct,success,wrong=None,hint=None):
     $ v111_claim="v111:"+key
-    $ R13_CLAIMS[v111_claim]=dict(assertion=key)
+    $ R13_CLAIMS[v111_claim]=dict(assertion=R13_PROOF_TITLES.get(key,key))
     $ room13["arguments"].setdefault(v111_claim,[])
 label r13_v111_proof_again:
     call screen r13_crisis_proof(v111_claim,heading="기록 · 자료 대조")
@@ -258,7 +258,8 @@ label r13_v111_proof_again:
             $ v111_copy=winter_copy.deepcopy(room13); v111_copy["arguments"][v111_claim].append(_return); room13=v111_copy
         jump r13_v111_proof_again
     if _return=="argue":
-        if set("V111:"+x for x in correct)==set(room13["arguments"][v111_claim]):
+        if r13_v111_proof_accepts(key,correct,room13["arguments"][v111_claim]):
+            $ r13_v111_set("proof_given:"+key,sorted(room13["arguments"][v111_claim]))
             return success
         $ v111_last_presented=list(room13["arguments"][v111_claim])
         $ v111_wrong_target="r13_v111_gate_number" if v111_claim=="v111:함께 들어갈 근거를 고른다" and room13["arguments"][v111_claim]==["V111:E03"] and not r13_v111_value("gate_hardened") else wrong

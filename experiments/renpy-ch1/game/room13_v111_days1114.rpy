@@ -519,7 +519,7 @@ label r13_v111_tosil_blanket_last11:
     return
 
 label r13_v111_hypothesis11:
-    $ r13_v111_arrive(["daram","resident_teacher","guard","resident_madam","npc_pandol","resident_lamplighter"])
+    $ r13_v111_arrive(["daram","resident_teacher","guard","resident_madam","npc_pandol","resident_lamplighter","resident_owlgp"])
     call r13_lines(r13_nw_block('hyp_open11'),'nw:hyp_open11')
     $ r13_nw_acquire("NW_SICK_BEDS")
     jump r13_v111_hyp0_menu11
@@ -2514,9 +2514,9 @@ label r13_v111_morning_safe14:
     $ r13_edit(period=0)
     $ room13["v111"]["people"]=[]
     call r13_v111_travel('school','morning_safe14',['mom', 'daram'])
-    $ r13_v111_arrive(['mom', 'daram', 'npc_pandol', 'nabi'])
+    $ r13_v111_arrive(['mom', 'daram', 'npc_pandol', 'nabi', 'resident_tosil', 'resident_madam'])
     $ r13_v111_score()
-    $ r13_v111_arrive(['mom', 'daram', 'npc_pandol', 'nabi'])
+    $ r13_v111_arrive(['mom', 'daram', 'npc_pandol', 'nabi', 'resident_tosil', 'resident_madam'])
     call r13_lines(r13_v111_lines(['MS14_D14_S01_L0002']),'v111:MS14_D14_S01_L0002')
     call r13_lines(r13_v111_lines(['MS14_D14_S01_L0003']),'v111:MS14_D14_S01_L0003')
     call r13_lines(r13_v111_lines(['MS14_D14_S01_L0004']),'v111:MS14_D14_S01_L0004')
@@ -2898,9 +2898,9 @@ label r13_v111_granny_interview14:
     $ r13_edit(period=1)
     $ room13["v111"]["people"]=[]
     call r13_v111_travel('gate','granny_interview14',['mom', 'daram'])
-    $ r13_v111_arrive(['mom', 'daram', 'granny', 'guard', 'resident_tosil'])
+    $ r13_v111_arrive(['mom', 'daram', 'granny', 'guard', 'resident_tosil', 'resident_owlgp'])
     $ r13_v111_score()
-    $ r13_v111_arrive(['mom', 'daram', 'granny', 'guard', 'resident_tosil'])
+    $ r13_v111_arrive(['mom', 'daram', 'granny', 'guard', 'resident_tosil', 'resident_owlgp'])
     call r13_lines(r13_v111_lines(['MS14_D14_S03_L0002']),'v111:MS14_D14_S03_L0002')
     call r13_lines(r13_v111_lines(['MS14_D14_S03_L0003']),'v111:MS14_D14_S03_L0003')
     call r13_lines(r13_v111_lines(['MS14_D14_S03_L0004']),'v111:MS14_D14_S03_L0004')
@@ -3093,9 +3093,9 @@ label r13_v111_partial_ending14:
     $ r13_edit(period=0)
     $ room13["v111"]["people"]=[]
     call r13_v111_travel('square','partial_ending14',[])
-    $ r13_v111_arrive(['karo', 'guard', 'resident_badook'])
+    $ r13_v111_arrive(['karo', 'guard', 'resident_badook', 'daram'])
     $ r13_v111_score()
-    $ r13_v111_arrive(['karo', 'guard', 'resident_badook'])
+    $ r13_v111_arrive(['karo', 'guard', 'resident_badook', 'daram'])
     if r13_v111_value("cart_departed"):
         jump r13_v111_partial_departed14
     if r13_v111_actor_ready('karo'):

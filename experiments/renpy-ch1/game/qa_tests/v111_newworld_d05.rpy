@@ -26,3 +26,44 @@ testcase v111_nw_d05_half_then_lost:
     assert eval (r13_v111_value("meeting:gate_post")=="lose" and r13_v111_value("listed:bami") is True and r13_v111_value("bami_status")=="listed")
     assert eval (qa_nw_seen("밤이는 보호시설에 보낼 명단에") and qa_nw_seen("밤이 아니라고 했잖아"))
     screenshot "v111_nw_d05_lost.png"
+
+testcase v111_nw_d05_extra_e21_wins:
+    # 0.20.4 proof scope: the four needed records plus Bami's own testimony (E21) win;
+    # Neoul sets the child's own word aside in one line. An unrelated extra still fails.
+    pause 1.0
+    click "처음부터"
+    click pos (900,600) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (900,600) until screen "r13_hub" timeout 90
+    run Function(qa_nw_day5,[])
+    run Function(r13_grant,["V111:E21"],"qa")
+    assert eval (r13_v111_proof_accepts("밤이 혐의의 근거를 확인한다",["E20","E22","E23","E24"],["V111:E20","V111:E21","V111:E22","V111:E23","V111:E24"]))
+    assert eval (not r13_v111_proof_accepts("밤이 혐의의 근거를 확인한다",["E20","E22","E23","E24"],["V111:E01","V111:E20","V111:E22","V111:E23","V111:E24"]))
+    assert eval (not r13_v111_proof_accepts("밤이 혐의의 근거를 확인한다",["E20","E22","E23","E24"],["V111:E20","V111:E21","V111:E22","V111:E23"]))
+    run Jump("r13_v111_proof5")
+    pause 1.5
+    assert screen "r13_crisis_proof"
+    click "근거를 내놓는다"
+    pause 0.5
+    click "QA V111:E20"
+    pause 0.8
+    click "근거를 내놓는다"
+    pause 0.5
+    click "QA V111:E21"
+    pause 0.8
+    click "근거를 내놓는다"
+    pause 0.5
+    click "QA V111:E22"
+    pause 0.8
+    click "근거를 내놓는다"
+    pause 0.5
+    click "QA V111:E23"
+    pause 0.8
+    click "근거를 내놓는다"
+    pause 0.5
+    click "QA V111:E24"
+    pause 0.8
+    click "논리를 연결한다"
+    click pos (900,600) until screen "r13_hub" timeout 120
+    assert eval (r13_v111_value("meeting:gate_post")=="win" and r13_v111_value("listed:bami") is not True)
+    assert eval (qa_nw_seen("아이 말은 그렇다 치고") and not qa_nw_seen("의심받는 아이 말로"))

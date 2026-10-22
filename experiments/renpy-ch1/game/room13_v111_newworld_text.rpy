@@ -77,8 +77,12 @@ init 319 python:
         # Event 04: the day-5 gate-post meeting.
         "gate_post_lose":lambda:r13_v111_value("meeting:gate_post")=="lose",
         "gate_post_half":lambda:(r13_v111_value("tries:gate_post") or 0)>0 and r13_v111_value("meeting:gate_post") is None,
-        # Audit d01-05 #2: Bami's own night testimony (E21) was among the presented records.
-        "gate_post_with_e21":lambda:"V111:E21" in (getattr(store,"v111_last_presented",None) or []),
+        # Proof scope (owner 2026-10-22): a won proof that carried an allowed extra record
+        # (R13_PROOF_EXTRAS / R13_PROOF_ALTERNATES in room13_v111_newworld_rules.rpy).
+        "gate_won_with_e01":lambda:"V111:E01" in (r13_v111_value("proof_given:함께 들어갈 근거를 고른다") or []),
+        "repair_won_with_e10":lambda:"V111:E10" in (r13_v111_value("proof_given:수리와 반출을 가릴 자료를 낸다") or []),
+        "gate_post_won_with_e21":lambda:"V111:E21" in (r13_v111_value("proof_given:밤이 혐의의 근거를 확인한다") or []),
+        "hyp1_won_without_e08":lambda:bool(r13_v111_value("proof_given:초롱과 피코의 하루를 대조한다")) and "V111:E08" not in r13_v111_value("proof_given:초롱과 피코의 하루를 대조한다"),
         # Event 05: the day-7 fire meeting.
         "fire_win":lambda:r13_v111_value("meeting:fire")=="win",
         "fire_partial":lambda:r13_v111_value("meeting:fire")=="partial",

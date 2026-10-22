@@ -491,6 +491,26 @@
         "speaker": null,
         "text": "편지를 폈다. 두 줄은 이미 외웠다."
       }
+    ],
+    "MS14_D01_S03_L0015": [
+      {
+        "id": "NW_D01_S03_X01",
+        "speaker": "돌목",
+        "kind": "dialogue",
+        "text": "그 편지는 이 확인에 필요 없소.",
+        "expression": "neutral",
+        "when": "gate_won_with_e01"
+      }
+    ],
+    "MS14_D01_S03_L0021": [
+      {
+        "id": "NW_D01_S03_X02",
+        "speaker": "돌목",
+        "kind": "dialogue",
+        "text": "그 편지는 이 확인에 필요 없소.",
+        "expression": "neutral",
+        "when": "gate_won_with_e01"
+      }
     ]
   },
   "after": {
@@ -758,5 +778,15 @@
     "gate_choice": {
       "1": "방문 신청서를 찾아 달라고 한다"
     }
+  },
+  "blocks": {
+    "compare_retry": [
+      {
+        "id": "NW_CMP_RETRY_01",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "두 종이를 다시 골라 보자."
+      }
+    ]
   }
 }

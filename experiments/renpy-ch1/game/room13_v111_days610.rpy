@@ -557,9 +557,11 @@ label r13_v111_school_names_done7:
         call r13_v111_living_child7
     else:
         call r13_v111_lost_child7
+    $ r13_v111_join(['doto'])
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0038']),'v111:MS14_D07_S02_L0038')
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0039']),'v111:MS14_D07_S02_L0039')
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0040']),'v111:MS14_D07_S02_L0040')
+    $ r13_v111_join(['resident_lamplighter'])
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0041']),'v111:MS14_D07_S02_L0041')
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0042']),'v111:MS14_D07_S02_L0042')
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0043']),'v111:MS14_D07_S02_L0043')
@@ -676,13 +678,15 @@ label r13_v111_prevent_b7:
     $ r13_v111_scene('MS14_D07_P02')
     $ r13_edit(period=2)
     $ room13["v111"]["people"]=[]
-    call r13_v111_travel('clinic','prevent_b7',['daram'])
-    $ r13_v111_arrive(['daram', 'karo', 'resident_seori'])
+    call r13_v111_travel('room13','prevent_b7_room',['daram'])
+    $ r13_v111_arrive(['daram', 'doto', 'resident_owlgp', 'karo'])
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D07_P02_L0001']),'v111:MS14_D07_P02_L0001')
     call r13_lines(r13_v111_lines(['MS14_D07_P02_L0002']),'v111:MS14_D07_P02_L0002')
     call r13_lines(r13_v111_lines(['MS14_D07_P02_L0003']),'v111:MS14_D07_P02_L0003')
     call r13_lines(r13_v111_lines(['MS14_D07_P02_L0004']),'v111:MS14_D07_P02_L0004')
+    call r13_v111_travel('clinic','prevent_b7',['daram'])
+    $ r13_v111_arrive(['daram', 'karo', 'resident_seori'])
     call r13_lines(r13_v111_lines(['MS14_D07_P02_L0006']),'v111:MS14_D07_P02_L0006')
     call r13_lines(r13_v111_lines(['MS14_D07_P02_L0007']),'v111:MS14_D07_P02_L0007')
     call r13_lines(r13_v111_lines(['MS14_D07_P02_L0008']),'v111:MS14_D07_P02_L0008')
@@ -703,7 +707,7 @@ label r13_v111_incident7:
     $ r13_edit(period=2)
     $ room13["v111"]["people"]=[]
     call r13_v111_travel('gate','incident7',[])
-    $ r13_v111_arrive(['karo', 'resident_seori'])
+    $ r13_v111_arrive(['karo', 'resident_seori', 'doto', 'nabi'])
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0002']),'v111:MS14_D07_S04_L0002')
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0003']),'v111:MS14_D07_S04_L0003')
@@ -717,11 +721,15 @@ label r13_v111_incident7:
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0011']),'v111:MS14_D07_S04_L0011')
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0012']),'v111:MS14_D07_S04_L0012')
     call r13_v111_travel('room13','incident_room7')
+    $ r13_v111_arrive(['karo', 'resident_seori', 'doto', 'nabi'])
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0013']),'v111:MS14_D07_S04_L0013')
+    $ r13_v111_join(['granny'])
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0014']),'v111:MS14_D07_S04_L0014')
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0016']),'v111:MS14_D07_S04_L0016')
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0017']),'v111:MS14_D07_S04_L0017')
+    $ r13_v111_join(['neoul'])
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0018']),'v111:MS14_D07_S04_L0018')
+    $ r13_v111_join(['daram'])
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0020']),'v111:MS14_D07_S04_L0020')
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0021']),'v111:MS14_D07_S04_L0021')
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0022']),'v111:MS14_D07_S04_L0022')
@@ -918,7 +926,7 @@ label r13_v111_prevent_clinic8:
     $ r13_edit(period=0)
     $ room13["v111"]["people"]=[]
     call r13_v111_travel('room13','prevent_clinic8',['daram'])
-    $ r13_v111_arrive(['daram', 'resident_owlgp', 'resident_seori'])
+    $ r13_v111_arrive(['daram', 'resident_owlgp', 'resident_seori', 'doto'])
     $ r13_v111_score()
 
 label r13_v111_prevention_story8:
@@ -1121,6 +1129,7 @@ label r13_v111_tok9:
     jump r13_v111_scarf9
 
 label r13_v111_repair_copy9:
+    $ r13_v111_join(['seryeon'])
     call r13_lines(r13_v111_lines(['MS14_D09_S02_L0019']),'v111:MS14_D09_S02_L0019')
     call r13_lines(r13_v111_lines(['MS14_D09_S02_L0020']),'v111:MS14_D09_S02_L0020')
     call r13_lines(r13_v111_lines(['MS14_D09_S02_L0021']),'v111:MS14_D09_S02_L0021')
@@ -1192,6 +1201,7 @@ label r13_v111_scarf_compare9:
     jump r13_v111_scarf_compare9
 
 label r13_v111_scarf_done9:
+    $ r13_v111_join(['granny'])
     call r13_lines(r13_v111_lines(['MS14_D09_S03_L0042']),'v111:MS14_D09_S03_L0042')
     call r13_lines(r13_v111_lines(['MS14_D09_S03_L0043']),'v111:MS14_D09_S03_L0043')
     call r13_lines(r13_v111_lines(['MS14_D09_S03_L0044']),'v111:MS14_D09_S03_L0044')
@@ -1444,7 +1454,7 @@ label r13_v111_owner10:
     $ r13_edit(period=0)
     $ room13["v111"]["people"]=[]
     call r13_v111_travel('school','owner10',['daram'])
-    $ r13_v111_arrive(['daram', 'granny', 'resident_ppul', 'neoul', 'nabi', 'resident_seori'])
+    $ r13_v111_arrive(['daram', 'granny', 'resident_ppul', 'neoul', 'nabi', 'resident_seori', 'buri', 'doto'])
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D10_S03_L0001']),'v111:MS14_D10_S03_L0001')
     call r13_lines(r13_v111_lines(['MS14_D10_S03_L0002']),'v111:MS14_D10_S03_L0002')
@@ -1461,7 +1471,7 @@ label r13_v111_owner_answer10:
     jump r13_v111_owner_copy10
 
 label r13_v111_owner_tok10:
-    $ r13_v111_arrive(["daram","granny","resident_ppul","neoul","nabi","resident_seori","resident_tok"])
+    $ r13_v111_arrive(["daram","granny","resident_ppul","neoul","nabi","resident_seori","resident_tok","buri","doto"])
     call r13_lines(r13_v111_lines(['MS14_D10_S03_L0005']),'v111:MS14_D10_S03_L0005')
     call r13_lines(r13_v111_lines(['MS14_D10_S03_L0006']),'v111:MS14_D10_S03_L0006')
     call r13_lines(r13_v111_lines(['MS14_D10_S03_L0007']),'v111:MS14_D10_S03_L0007')
@@ -1628,7 +1638,7 @@ label r13_v111_prevent_hearing10:
     $ r13_edit(period=0)
     $ room13["v111"]["people"]=[]
     call r13_v111_travel('school','prevent_hearing10',['daram'])
-    $ r13_v111_arrive(['daram', 'resident_owlgp', 'granny', 'resident_ppul', 'neoul'])
+    $ r13_v111_arrive(['daram', 'resident_owlgp', 'granny', 'resident_ppul', 'neoul', 'resident_sling', 'seryeon'])
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D10_P01_L0002']),'v111:MS14_D10_P01_L0002')
     call r13_lines(r13_v111_lines(['MS14_D10_P01_L0003']),'v111:MS14_D10_P01_L0003')

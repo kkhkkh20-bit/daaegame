@@ -711,6 +711,12 @@
   "before": {
     "MS14_D11_S00_L0007": [
       {
+        "id": "NW_D11_S00_LAMP01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "펌프집으로 가는 길에 큰 집들 앞을 지났다. 날이 훤히 밝았는데도, 위층 아이 방 창마다 등불이 켜져 있었다."
+      },
+      {
         "id": "NW_D11_S00_V01",
         "speaker": null,
         "kind": "narration",
@@ -1233,6 +1239,14 @@
         "kind": "dialogue",
         "text": "피코는 3번 등 바로 아래에서 지냈습니다. 그 불 아래서 그리면 손이 덜 떨린다고 했죠. 떨림은 그 전부터 와 있었던 겁니다.",
         "expression": "neutral"
+      },
+      {
+        "id": "NW_H1_W_02B",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "받침에서 멀어지면 바닥이 차갑습니다. 피코는 그 불 곁을 떠날 수가 없었던 거죠.",
+        "expression": "neutral",
+        "when": "hyp1_won_without_e08"
       },
       {
         "id": "NW_H1_W_03",

@@ -54,3 +54,44 @@ testcase v111_nw_d01_gate_won:
     click pos (900,600) until screen "r13_hub" timeout 90
     assert eval (qa_nw_seen("돌난로는 뚜껑이 닫힌"))
     screenshot "v111_nw_d01_room.png"
+
+testcase v111_nw_d01_gate_extra_letter:
+    # 0.20.4 proof scope: the invitation (E01) on top of the three needed records passes;
+    # Dolmok says the letter is not needed. A wrong letter pair asks to choose again.
+    pause 1.0
+    click "처음부터"
+    click pos (900,600) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (900,600) until screen "r13_hub" timeout 90
+    run Function(r13_v111_commit,"MS14_D01_S02_L0019")
+    run Function(r13_v111_commit,"MS14_D01_S03_L0002")
+    run Function(r13_v111_commit,"MS14_D01_S03_L0007")
+    run Function(r13_grant,["V111:E01","V111:E02","V111:E03","V111:E04"],"qa")
+    run Jump("r13_v111_gate_proof")
+    pause 1.5
+    assert screen "r13_crisis_proof"
+    click "근거를 내놓는다"
+    pause 0.5
+    click "QA V111:E01"
+    pause 0.8
+    click "근거를 내놓는다"
+    pause 0.5
+    click "QA V111:E02"
+    pause 0.8
+    click "근거를 내놓는다"
+    pause 0.5
+    click "QA V111:E03"
+    pause 0.8
+    click "근거를 내놓는다"
+    pause 0.5
+    click "QA V111:E04"
+    pause 0.8
+    click "논리를 연결한다"
+    click pos (900,600) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_value("meeting:gate")=="win" and r13_v111_value("gate_daram_unlisted") is not True)
+    assert eval (qa_nw_seen("그 편지는 이 확인에 필요 없소") and r13_v111_value("proof_given:함께 들어갈 근거를 고른다")==["V111:E01","V111:E02","V111:E03","V111:E04"])
+    run Function(r13_edit,location="room13")
+    run Jump("r13_v111_letter_retry")
+    pause 1.0
+    click pos (900,600) until screen "r13_crisis_proof" timeout 60
+    assert eval (qa_nw_seen("두 종이를 다시 골라 보자"))

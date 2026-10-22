@@ -511,8 +511,13 @@ label r13_v111_warning_read5:
     jump r13_v111_warning_compare5
 
 label r13_v111_warning_compare5:
-    call r13_v111_proof("두 편지의 초대를 대조한다",["E01","E27"],"r13_v111_warning_compared5")
+    call r13_v111_proof("두 편지의 초대를 대조한다",["E01","E27"],"r13_v111_warning_compared5","r13_v111_warning_retry5")
     jump expression _return
+
+label r13_v111_warning_retry5:
+    # 0.20.4 (audit d01-05 B): a wrong pair is not a meeting; say so and choose again.
+    call r13_lines(r13_nw_block('compare_retry'),'nw:compare_retry:warning')
+    jump r13_v111_warning_compare5
 
 label r13_v111_warning_compared5:
     $ r13_v111_commit('MS14_D05_S04_L0014')

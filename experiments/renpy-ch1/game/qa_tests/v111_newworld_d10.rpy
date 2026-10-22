@@ -157,3 +157,31 @@ testcase v111_nw_d10_five_chances:
     run Jump("r13_v111_owner_wrong10")
     click pos (900,600) until screen "r13_hub" timeout 120
     assert eval (r13_v111_value("meeting:room13")=="partial" and R13_NW_TRIES==5)
+
+testcase v111_nw_d10_owner_contact_pin:
+    # 0.20.4 proof scope: the exposed copper end on the pin (E08_CONTACT_ASSEMBLY) with the
+    # repair record also proves the owner; the next proof shows its new title.
+    pause 1.0
+    click "처음부터"
+    click pos (900,600) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (900,600) until screen "r13_hub" timeout 90
+    run Function(qa_nw_day,10,"murder")
+    run Function(r13_edit,location="school")
+    run Function(r13_grant,["V111:E08_CONTACT_ASSEMBLY","V111:E09_PIN_OWNER"],"qa")
+    run Jump("r13_v111_owner_proof10")
+    pause 1.5
+    assert screen "r13_crisis_proof"
+    click "근거를 내놓는다"
+    pause 0.5
+    click "QA V111:E08_CONTACT_ASSEMBLY"
+    pause 0.8
+    click "근거를 내놓는다"
+    pause 0.5
+    click "QA V111:E09_PIN_OWNER"
+    pause 0.8
+    click "논리를 연결한다"
+    click pos (900,600) until screen "r13_crisis_proof" timeout 90
+    assert eval (r13_v111_value("proof_given:구리선과 수선 출처를 대조한다")==["V111:E08_CONTACT_ASSEMBLY","V111:E09_PIN_OWNER"])
+    assert eval (R13_CLAIMS["v111:첫 비명 뒤 핀을 다시 채운 때"]["assertion"]=="핀이 언제 떨어졌는가")
+    screenshot "v111_nw_d10_time_title.png"

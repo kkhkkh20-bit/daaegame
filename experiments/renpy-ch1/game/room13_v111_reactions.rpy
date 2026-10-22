@@ -1,6 +1,7 @@
 # Residents react to what the player has found (owner-approved plan 2026-10-22, item 3:
 # "알아낸 만큼 주민의 말이 달라지게"). Data: game/v111/newworld/reactions.json
-#   present   [{person, evidence, days:[from,to], lines:[row]}]   shown evidence -> reaction lines
+#   present   [{person, evidence, days:[from,to], after_meeting?, lines:[row]}]   shown evidence -> reaction lines
+#             (after_meeting: a meeting name; the reaction opens only once that meeting is decided)
 #   followups [{id, person, after, days, title, lines:[row]}]      a new question once `after` is owned
 #   generic   {person: [{text, expression}]}                       unrelated evidence, in their own voice
 # Rows use the new-world line format (speaker Korean name or null, text, expression, fx).
@@ -8,6 +9,7 @@
 init 335 python:
     R13_REACTIONS=json.load(renpy.file("v111/newworld/reactions.json")) if renpy.loadable("v111/newworld/reactions.json") else dict(present=[],followups=[],generic={})
     R13_REACTION_EXPRESSIONS=("neutral","joy","angry","anxious","surprise","flustered")
+    R13_REACTION_MEETINGS=("gate","lamp","gate_post","fire","room13","records","hypothesis","soup","blanket","piko","altar")
 
     def r13_reaction_problems():
         out=[];people=set(MS14_SPEAKERS.values())
@@ -21,6 +23,7 @@ init 335 python:
             where="present %s %s"%(spec.get("person"),spec.get("evidence"))
             if spec.get("person") not in people:out.append(where+": unknown person")
             if spec.get("evidence") not in R13_V111["evidence"]:out.append(where+": unknown evidence")
+            if spec.get("after_meeting") is not None and spec["after_meeting"] not in R13_REACTION_MEETINGS:out.append(where+": unknown meeting")
             rows(where,spec.get("lines",[]))
         seen=set()
         for spec in R13_REACTIONS.get("followups",[]):
@@ -40,6 +43,9 @@ init 335 python:
     def r13_reaction_day_ok(spec):
         days=spec.get("days") or [1,14]
         day=(store.room13 or {}).get("day",1)
+        # 0.20.4 (audit d11-14 #24): "after_meeting" holds a reaction until that meeting is decided,
+        # so a line never says what the meeting has not brought out yet.
+        if spec.get("after_meeting") and r13_v111_value("meeting:"+spec["after_meeting"]) is None:return False
         return days[0]<=day<=days[-1]
 
     def r13_reaction_packets(lines):

@@ -362,8 +362,13 @@ label r13_v111_bundle:
     jump r13_v111_letter_compare
 
 label r13_v111_letter_compare:
-    call r13_v111_proof('두 편지를 나란히 본다',['E01', 'E06'],'r13_v111_room_compare',None,None)
+    call r13_v111_proof('두 편지를 나란히 본다',['E01', 'E06'],'r13_v111_room_compare','r13_v111_letter_retry',None)
     jump expression _return
+
+label r13_v111_letter_retry:
+    # 0.20.4 (audit d01-05 B): a wrong pair is not a meeting; say so and choose again.
+    call r13_lines(r13_nw_block('compare_retry'),'nw:compare_retry:letter')
+    jump r13_v111_letter_compare
 
 label r13_v111_room_compare:
     $ r13_edit(period=2)
