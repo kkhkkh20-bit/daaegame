@@ -430,21 +430,10 @@ screen r13_book(target=None,present=False,hearing=False):
     timer .15 action SetScreenVariable("ready",True)
     if r13_meeting_active and r13_meeting_claim in R13_DEBATE:
         use r13_meeting_stage(r13_meeting_claim,r13_meeting_focus_person(r13_meeting_claim),True)
-    use r13_reference_record_shell("보여주기" if present else "자료 기록")
-    use r13_reference_record_categories("r13_book",category,True,archive and not present)
-    if not present and r13_learning_archive_keys():
-        textbutton ("이번 여정" if not archive else "지난 플레이"):
-            style "r13_paper_tab_button" xpos 66 ypos 326 xsize 176 ysize (56 if r13_touch_ui() else 40) text_size (22 if r13_touch_ui() else 18)
-            action [SetScreenVariable("archive",not archive),SetScreenVariable("detail",None),SetScreenVariable("page",0)]
-    if present:
-        $ statement=r13_book_statement() if hearing else None
-        text (statement[0]+"의 발언" if statement else R13_NAMES.get(target,"상대")+"에게") xpos 66 ypos 214 xsize 176 size 19 color "#6c512a"
-        if statement:
-            viewport:
-                area (66,252,176,298) mousewheel True draggable True scrollbars "vertical"
-                text statement[1] xsize 156 size r13_read_size(17,21) color "#493b30"
-        else:
-            text "먼저 보여주고, 건넬지는 대화 후 결정합니다." xpos 66 ypos 252 xsize 176 size 17 color "#625738"
+    # 0.20.x 증거 비교 창 (plan5 m2a/m2b): the same brown 자료 view as 기록. Presenting keeps the
+    # single big-picture view with the primary 「~에게 보여주기」; comparing is for reading only.
+    default pair=None
+    default pair_slot=1
     $ entries=r13_catalog_entries(archive and not present,hearing)
     $ entries=r13_present_entries(entries,target) if present else entries
     $ material_filter="all" if material_filter=="unread" or ((hearing or archive) and material_filter=="transfer") else material_filter
@@ -453,27 +442,17 @@ screen r13_book(target=None,present=False,hearing=False):
     if chip_person:
         $ entries=r13_record_related_first(entries,chip_person)
     $ selected_record=r13_present_selection(entries,detail,page) if present else r13_record_selected(entries,detail,page)
-    text ("자료 %d개"%len(entries)) xpos 284 ypos 72 size 20 color "#65503b"
-    use r13_material_filters("r13_book",material_filter,not hearing and not archive,unread=len(r13_material_subset(r13_catalog_entries(archive and not present,hearing),"unread")))
-    use r13_material_grid(entries,selected_record,page,"r13_book",archive and not present,filters=r13_material_filters_visible(material_filter,not hearing and not archive))
-    use r13_material_detail(selected_record,archive and not present,view_context) id (view_context,selected_record,archive,persistent.room13_large_text)
-    if present and not selected_record:
-        text "보여줄 자료를 직접 고르세요." xpos 842 ypos 320 xsize 362 text_align .5 size 18 color "#796044"
-    if present:
-        textbutton ("이 주장에 근거로 낸다" if hearing else R13_NAMES.get(target,"상대")+"에게 보여주기"):
-            style "r13_compact_button" xpos 824 ypos r13_record_footer_y() xsize 398 ysize r13_record_footer_height() text_size r13_read_size(20,24)
-            background R13ControlSurface(primary=True) hover_background R13ControlSurface(primary=True,hovered=True) insensitive_background R13ControlSurface(disabled=True)
-            action Return(selected_record)
-            sensitive ready and detail==selected_record and r13_catalog_can_present(selected_record,hearing) and not archive
-    textbutton ("그만두기" if present else "닫기"):
-        style "r13_compact_button" xpos 66 ypos r13_record_footer_y() xsize 176 ysize r13_record_footer_height() text_size 20
-        action (Return(False) if present else Hide("r13_book")) sensitive ready
-    key "game_menu" action (Return(False) if present else Hide("r13_book"))
-
-screen r13_calendar():
-    modal True
-    zorder 55
-    use r13_records(initial_tab="calendar",close_action=Hide("r13_calendar"))
+    $ statement=r13_book_statement() if present and hearing else None
+    $ day_span=r13_evidence_day_span(entries)
+    $ present_label=("이 주장에 근거로 낸다" if hearing else R13_NAMES.get(target,"상대")+"에게 보여주기")
+    $ present_ok=bool(present and ready and detail==selected_record and selected_record and r13_catalog_can_present(selected_record,hearing) and not archive)
+    use r13_ink_record_shell(("보여주기" if present else "자료 기록"),r13_ev_record_tabs("r13_book",present),"all",
+        (Return(False) if present else Hide("r13_book")),
+        note=((statement[0]+"의 발언에 낼 자료" if statement else R13_NAMES.get(target,"상대")+"에게 보여줄 자료") if present else None))
+    use r13_ink_chips(r13_ev_filter_chips("r13_book",material_filter,not hearing and not archive,None,0,(archive if not present and (archive or r13_learning_archive_keys()) else None)))
+    use r13_evidence_browser(entries,selected_record,page,"r13_book",pair,pair_slot,archive and not present,view_context,("자료 %d개"%len(entries))+((" · "+day_span) if day_span else ""),
+        present,present_label,present_ok,Return(selected_record),(Return(False) if present else Hide("r13_book")),ready,statement,
+        (R13_NAMES.get(target,"상대")+"에게" if present and not statement else None))
 
 screen r13_calendar_content():
     default week=min(1,(room13["day"]-1)//7)

@@ -25,53 +25,12 @@ init 78 python:
         else:renpy.set_screen_variable("feedback",result,screen="r13_record_compare")
         renpy.restart_interaction()
 
+# 0.20.x: the old 「기록 비교」 tab (r13_compare_content, a text verdict for two records) was
+# unreachable: r13_records maps a "compare" tab to 자료. It is removed; looking at two records
+# together is now 「나란히 놓기」 in the 자료 view (systems/room13_evidence_view.rpy), which shows
+# no verdict. r13_compare_result and its layers stay for the story code and tests that call them.
+# This screen name stays for old saves that had it open.
 screen r13_record_compare(called=False):
     modal True
     zorder 80
     use r13_records(initial_tab="all",close_action=(Return() if called else Hide("r13_record_compare")))
-
-screen r13_compare_content(target=None,present_action=None):
-    default selected=()
-    default feedback=""
-    $ materials=[key for key in room13["evidence"] if key in ROOM13["evidence"]]
-    text "기록 비교" xpos 284 ypos 76 size 26 color "#765426"
-    text "함께 살펴볼 기록 두 개를 고르세요." xpos 440 ypos 82 size 19 color "#65503b"
-    for column in range(2):
-        frame:
-            area (284+column*464,128,450,206) padding (16,14)
-            background R13PaperFrame()
-            vbox:
-                spacing 10
-                if len(selected)>column:
-                    $ key=selected[column]
-                    hbox:
-                        spacing 8
-                        add R13AntiqueIcon("evidence",size=24) yalign .5
-                        text ROOM13["evidence"][key]["name"] size r13_read_size(21,25) color "#765426" xsize 382
-                    viewport:
-                        xsize 414 ysize 130 mousewheel True draggable True scrollbars "vertical"
-                        text r13_catalog_observed(key)["establishes"] xsize 388 size r13_read_size(20,24) color "#493b30" line_spacing 5
-                else:
-                    text "기록 선택" size 23 color "#796044"
-    viewport:
-        area (284,350,916,122) mousewheel True draggable True scrollbars "vertical"
-        vpgrid:
-            cols 3 spacing 8
-            for key in materials:
-                textbutton R13_RECORD_SHORT.get(key,ROOM13["evidence"][key]["name"]):
-                    style "r13_paper_tab_button" xsize 292 ysize 52 text_size r13_read_size(18,21)
-                    selected key in selected
-                    action [Function(r13_record_select,_scope,"selected",r13_compare_pair(selected,key)),Function(r13_record_select,_scope,"feedback","")]
-    viewport:
-        area (284,486,914,96) mousewheel True draggable True scrollbars "vertical"
-        text feedback xsize 886 size r13_read_size(20,24) color "#285779" line_spacing 5
-    textbutton "비교하기":
-        style "r13_compact_button" area (954,596,244,44) text_size 21
-        action Function(r13_compare_selected,selected,_scope)
-        sensitive len(selected)==2
-
-    if target is not None and present_action is not None:
-        textbutton (R13_NAMES.get(target,"상대")+"에게 보여주기"):
-            style "r13_compact_button" area (284,596,406,44) text_size r13_read_size(20,24)
-            sensitive bool(selected)
-            action [Function(r13_prepare_present,target,selected),Hide("r13_records"),present_action]

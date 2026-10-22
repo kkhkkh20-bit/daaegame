@@ -30,14 +30,59 @@ class ForkScreen(unittest.TestCase):
         self.assertEqual(len(columns),2)
         self.assertEqual(columns[-1],dict(key=None,day='그 너머',rows=[]))
         self.assertEqual(len(columns[0]['rows']),1)
-    def test_missed_results_have_no_title_or_result(self):
+    def test_missed_results_are_one_lock_with_a_count_only(self):
+        # 0.20.x (plan5 m4): unseen results show only "다른 결과 N", never a title or a result.
         self.values['meeting:gate']='win'
         rows=self.call('columns')[0]['rows']
-        self.assertEqual(len(rows),3)
-        for row in rows[1:]:
-            self.assertEqual(row['kind'],'locked')
-            self.assertIsNone(row['title'])
-            self.assertIsNone(row['result'])
+        self.assertEqual([r['kind'] for r in rows],['current','locked'])
+        self.assertEqual(rows[1]['count'],2)
+        self.assertIsNone(rows[1]['title'])
+        self.assertIsNone(rows[1]['result'])
+        self.assertIsNone(rows[1]['record'])
+        self.persistent.r13_fork_seen[('gate','lose')]={'png':b'png','run':1}
+        rows=self.call('columns')[0]['rows']
+        self.assertEqual([r['kind'] for r in rows],['current','old','locked'])
+        self.assertEqual(rows[2]['count'],1)
+        self.persistent.r13_fork_seen[('gate','partial')]={'png':b'png','run':2}
+        self.assertEqual([r['kind'] for r in self.call('columns')[0]['rows']],['current','old','old'])
+    def test_row_tops_fit_above_the_footer(self):
+        tops=self.call('row_tops',[{'kind':'current'},{'kind':'old'},{'kind':'old'}])
+        self.assertEqual(tops,[200,332,464])
+        self.assertLessEqual(tops[-1]+116,684-80-14)   # above the touch footer rule
+        self.assertIn('$ by = 684-ch',(ROOT/'game/room13_fork_screen.rpy').read_text())
+        self.assertEqual(self.call('row_tops',[{'kind':'current'},{'kind':'locked'}]),[200,332])
+    def test_fate_badge_only_on_decided_fate_meetings_and_names_no_one(self):
+        self.assertFalse(self.call('fate','lamp'))           # not decided yet
+        self.values['meeting:lamp']='win'
+        self.assertTrue(self.call('fate','lamp'))            # the badge does not depend on the result
+        self.values['meeting:gate']='lose'
+        self.assertFalse(self.call('fate','gate'))
+        self.values.update({'meeting:gate':'win','meeting:lamp':'lose'})
+        columns=self.call('columns')
+        self.assertEqual([c['key'] for c in columns if c.get('fate')],['lamp'])
+        self.assertEqual(self.env['R13_FORK_FATE_LINE'],'이 회의에서 누군가의 운명이 갈렸다.')
+        # The current meeting (still ahead) never carries the badge.
+        self.store.r13_meeting_active=True;self.store.r13_meeting_claim='NW:fire'
+        self.values['meeting:gate_post']='win'
+        here=[c for c in self.call('columns') if c.get('here')]
+        self.assertEqual(here[0]['key'],'fire');self.assertFalse(here[0]['fate'])
+    def test_fate_screen_text_never_names_or_reveals(self):
+        screen=(ROOT/'game/room13_fork_screen.rpy').read_text().split('screen r13_fork_screen():',1)[1].split('\ninit ',1)[0]
+        self.assertIn('R13_FORK_FATE_LINE',screen)
+        for leak in ('listed:','departed:','_alive','R13_NAMES','r13_display_name','r13_nw_listed','r13_nw_dead'):
+            self.assertNotIn(leak,screen)
+    def test_fate_set_matches_meeting_result_effects(self):
+        """Re-derive R13_FORK_FATE: a meeting's result label writes a list name, a departure,
+        custody or a death (room13_v111_days*.rpy, rules in room13_v111_newworld_rules.rpy)."""
+        import re
+        effect=re.compile(r'r13_nw_list\(|departed:|DARAM_DETAINED|_custody["\']\s*,\s*["\']detained|(_alive|ALIVE)["\']\s*,\s*False')
+        fate=set()
+        for path in sorted((ROOT/'game').glob('room13_v111_days*.rpy')):
+            for block in re.split(r'\n(?=label )',path.read_text()):
+                for meeting in re.findall(r'r13_nw_meeting_end\(\s*["\'](\w+)["\']',block):
+                    if effect.search(block):fate.add(meeting)
+        self.assertEqual(fate,set(self.env['R13_FORK_FATE']))
+        self.assertTrue(set(self.env['R13_FORK_FATE'])<={m[0] for m in self.env['R13_FORK_MEETINGS']})
     def test_saved_path_changes_independently_of_persistent(self):
         self.call('record','gate','partial')
         self.values['meeting:gate']='win'
