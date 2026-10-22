@@ -24,5 +24,5 @@ testcase v111_nw_d05_half_then_lost:
     pause 1.0
     click pos (900,600) until screen "r13_hub" timeout 90
     assert eval (r13_v111_value("meeting:gate_post")=="lose" and r13_v111_value("listed:bami") is True and r13_v111_value("bami_status")=="listed")
-    assert eval (qa_nw_seen("밤이는 보호시설 명단에 올리시오") and qa_nw_seen("밤이 아니라고 했잖아"))
+    assert eval (qa_nw_seen("밤이는 보호시설에 보낼 명단에") and qa_nw_seen("밤이 아니라고 했잖아"))
     screenshot "v111_nw_d05_lost.png"
