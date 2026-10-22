@@ -59,11 +59,13 @@ screen r13_night_link(caption,glyph,icon,command,enabled=True,link_id=None):
         action command sensitive enabled alt caption
         hbox:
             align (.5,.5) spacing 8
+            # 0.20.0 (owner phone QA): on a phone the game canvas shrinks to about half, so the
+            # small controls grow from 20 to 28px there (about 15pt on an iPhone in landscape).
             if glyph:
-                text glyph style "r13_night_link_text" size 20 yalign .5
+                text glyph style "r13_night_link_text" size (26 if r13_touch_ui() else 20) yalign .5
             if icon:
-                add R13AntiqueIcon(icon,size=18) yalign .5 alpha (1.0 if enabled else .5)
-            text caption style "r13_night_link_text" yalign .5
+                add R13AntiqueIcon(icon,size=(26 if r13_touch_ui() else 18)) yalign .5 alpha (1.0 if enabled else .5)
+            text caption style "r13_night_link_text" size (28 if r13_touch_ui() else 20) yalign .5
 
 screen r13_night_controls(ready=True):
     $ line_active=renpy.get_screen("say") is not None and not any(renpy.get_screen(n) for n in ("choice","r13_topics","r13_resident_approach","r13_entry_topics","r13_entry_karo_topics"))
