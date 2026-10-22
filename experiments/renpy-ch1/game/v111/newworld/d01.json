@@ -1,8 +1,15 @@
 {
   "replace": {
-    "MS14_D01_S03_L0025": {
-      "text": "그걸로는 확인이 안 되오. 너울 표대로 하겠소."
-    },
+    "MS14_D01_S03_L0025": [
+      {
+        "text": "그걸로는 확인이 안 되오. 너울 표대로 하겠소.",
+        "when": "gate_last_try"
+      },
+      {
+        "text": "그걸로는 확인이 안 되오.",
+        "when": "gate_retry"
+      }
+    ],
     "MS14_D01_S04_L0005": [
       {
         "text": "그렇소. 일꾼 다돌, 외 한 명. 적혀 있소.",
@@ -238,11 +245,20 @@
     "MS14_D01_S04_L0003": {
       "text": "이름 적는 동안만 기다리시오."
     },
-    "MS14_D01_S04_L0006": {
-      "text": "‘외 한 명’ 말고, 다람! 내 이름은 다람이야.",
-      "expression": "angry",
-      "fx": "jolt"
-    },
+    "MS14_D01_S04_L0006": [
+      {
+        "text": "‘외 한 명’ 말고, 다람! 내 이름은 다람이야.",
+        "expression": "angry",
+        "fx": "jolt",
+        "when": "gate_daram_unlisted"
+      },
+      {
+        "text": "‘아동 한 명’ 말고, 다람! 내 이름은 다람이야.",
+        "expression": "angry",
+        "fx": "jolt",
+        "when": "gate_daram_listed"
+      }
+    ],
     "MS14_D01_S04_L0009": {
       "text": "자, 이제 들어가자."
     },
@@ -268,7 +284,7 @@
       "text": "부인이 나타나도 여관에 먼저 연락해 달라고 했소, 돌목 씨. 잊지 마시오."
     },
     "MS14_D01_S04_L0021": {
-      "text": "지금은 이 두 사람 등록부터 해야 하오."
+      "text": "등록은 마쳤소. 이 두 사람부터 들여보내겠소."
     },
     "MS14_D01_S05_L0003": {
       "text": "앗, 손 바로 대면 아파! 이걸로 감싸고, 천천히 녹이자.",
@@ -340,7 +356,7 @@
       "expression": "anxious"
     },
     "MS14_D01_S05_L0034": {
-      "text": "지금은…… 모르겠어."
+      "text": "이 편지를 엄마가 직접 썼는지는…… 아직 모르겠어."
     },
     "MS14_D01_S05_L0035": {
       "text": "그럼 초롱한테 물어보자. 가자, 아빠."
@@ -388,7 +404,7 @@
       "text": "응. 깨워 줄게."
     },
     "MS14_D01_S05_L0018": {
-      "text": "메모: “내가 자리를 비웠으면 광장 등의 초롱에게 소식을 물어봐. 물건은 책상 아래에 두었어. {image=assets/room13-acorn-ink-crooked.png}”"
+      "text": "책상 위에 접힌 종이 한 장이 놓여 있었다. 펼쳐 보았다."
     },
     "MS14_D01_S05_L9101": {
       "text": "내가 자리를 비웠으면 광장 등의 초롱에게 소식을 물어봐. 물건은 책상 아래에 두었어. {image=assets/room13-acorn-ink-crooked.png}"
@@ -525,7 +541,16 @@
         "speaker": "돌목",
         "kind": "dialogue",
         "text": "아이는 ‘외 한 명’으로 붙여 두겠소. 들어가는 건 막지 않소.",
-        "expression": "neutral"
+        "expression": "neutral",
+        "when": "gate_last_try"
+      },
+      {
+        "id": "NW_D01_S03_R04",
+        "speaker": "돌목",
+        "kind": "dialogue",
+        "text": "다른 자료가 있으면 다시 보이시오. 아직 정한 건 없소.",
+        "expression": "neutral",
+        "when": "gate_retry"
       }
     ],
     "MS14_D01_S04_L0011": [

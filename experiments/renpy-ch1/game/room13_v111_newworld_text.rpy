@@ -56,6 +56,9 @@ init 319 python:
         # Event 01: lost gate proof, Daram entered as '외 한 명' (owner plan A, 2026-10-21).
         "gate_daram_unlisted":lambda:r13_v111_value("gate_daram_unlisted") is True,
         "gate_daram_listed":lambda:r13_v111_value("gate_daram_unlisted") is not True,
+        # Review 0.20.1 #1: the gate's "entry allowed" lines only on the last wrong answer.
+        "gate_last_try":lambda:(r13_v111_value("tries:gate") or 0)+1>=R13_NW_TRIES,
+        "gate_retry":lambda:(r13_v111_value("tries:gate") or 0)+1<R13_NW_TRIES,
         # Event 03: the day-3 lamp meeting (win / partial / lose).
         "lamp_win":lambda:r13_v111_value("meeting:lamp")=="win",
         "lamp_partial":lambda:r13_v111_value("meeting:lamp")=="partial",
