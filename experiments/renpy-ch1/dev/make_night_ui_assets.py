@@ -192,8 +192,28 @@ def painted():
     save(panel.resize((64, 64), Image.LANCZOS), "panel_small.png")      # 9-slice 12
     for state in ("idle", "hover", "selected", "insensitive"):
         save(Image.open(PAINTED / ("btn_%s.png" % state)).convert("RGBA"), "opt_btn_%s.png" % state)  # 9-slice 16
-    save(Image.open(PAINTED / "say_shade.png").convert("RGBA"), "say_shade.png")
+    save(darker_shade(Image.open(PAINTED / "say_shade.png").convert("RGBA")), "say_shade.png")
     return True
+
+
+def darker_shade(img):
+    """Owner 2026-10-22: "대화창 그라데이션이 적어도 대사있는데까진 어둡게". The painted colour
+    stays; the opacity rises over the top 40% (the fade above the name ribbon) and stays dark
+    where the lines are (from 45% down: 205 -> 235 of 255)."""
+    w, h = img.size
+    r, g, b, _ = img.split()
+    alpha = Image.new("L", (w, h))
+    px = alpha.load()
+    for y in range(h):
+        t = y / float(h - 1)
+        if t < 0.40:
+            u = t / 0.40
+            a = 205 * (u * u * (3 - 2 * u))
+        else:
+            a = 205 + 30 * ((t - 0.40) / 0.60)
+        for x in range(w):
+            px[x, y] = int(round(a))
+    return Image.merge("RGBA", (r, g, b, alpha))
 
 
 if __name__ == "__main__":
