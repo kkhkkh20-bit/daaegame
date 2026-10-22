@@ -47,7 +47,9 @@ screen r13_crisis():
                 if r13_has("E29"):
                     textbutton "가족과 빠져나갈 길" style "r13_action_button" xsize 370 ysize 54 text_size 19 action Return("escape") sensitive ready
 
-screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장"):
+screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_press=True,need_evidence=False,leave_label="다른 주장부터"):
+    # 0.20.5 (Codex A01/A03): new-world proofs pass can_press=bool(hint), need_evidence=True and
+    # leave_label="자료 다시 보기"; the older meetings keep the defaults.
     style_prefix "r13"
     modal True
     default ready=False
@@ -70,9 +72,9 @@ screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장"):
             hbox:
                 spacing 25
                 textbutton "근거를 내놓는다" action Return("present") sensitive ready text_size 24 ysize (64 if r13_touch_ui() else 56)
-                textbutton "되묻는다" action Return("press") sensitive ready text_size 24 ysize (64 if r13_touch_ui() else 56)
-                textbutton "논리를 연결한다" action Return("argue") sensitive ready text_size 24 ysize (64 if r13_touch_ui() else 56)
-                textbutton "다른 주장부터" action Return("leave") sensitive ready text_size 24 ysize (64 if r13_touch_ui() else 56)
+                textbutton "되묻는다" action Return("press") sensitive (ready and can_press) text_size 24 ysize (64 if r13_touch_ui() else 56)
+                textbutton "논리를 연결한다" action Return("argue") sensitive (ready and (bool(room13["arguments"].get(claim)) or not need_evidence)) text_size 24 ysize (64 if r13_touch_ui() else 56)
+                textbutton leave_label action Return("leave") sensitive ready text_size 24 ysize (64 if r13_touch_ui() else 56)
 
 screen r13_rescue_notes():
     style_prefix "r13"

@@ -251,12 +251,14 @@ label r13_v111_proof(key,correct,success,wrong=None,hint=None):
     $ R13_CLAIMS[v111_claim]=dict(assertion=R13_PROOF_TITLES.get(key,key))
     $ room13["arguments"].setdefault(v111_claim,[])
 label r13_v111_proof_again:
-    call screen r13_crisis_proof(v111_claim,heading="기록 · 자료 대조")
+    call screen r13_crisis_proof(v111_claim,heading="기록 · 자료 대조",can_press=bool(hint),need_evidence=True,leave_label="자료 다시 보기")
     if _return=="present":
         call screen r13_book("dad",present=True)
         if _return and _return in room13["evidence"] and _return not in room13["arguments"][v111_claim]:
             $ v111_copy=winter_copy.deepcopy(room13); v111_copy["arguments"][v111_claim].append(_return); room13=v111_copy
         jump r13_v111_proof_again
+    if _return=="argue" and not room13["arguments"][v111_claim]:
+        jump r13_v111_proof_again  # 0.20.5 (Codex A01): an empty submission costs nothing
     if _return=="argue":
         if r13_v111_proof_accepts(key,correct,room13["arguments"][v111_claim]):
             $ r13_v111_set("proof_given:"+key,sorted(room13["arguments"][v111_claim]))
@@ -386,7 +388,7 @@ init 306 python:
                 record["establishes"]="피코가 완성해 건네준 엄마의 초상. 등 절도 순간은 피코가 식당 안에 있었으므로 보지 못했다."
         elif key=="V111:E14_SUPPLY":
             record=dict(record)
-            record["establishes"]=("인수한 온기 상자와 학교 받침을 실제 연결해 사용하고 있다. 사용처와 남은 양을 확인했다." if r13_v111_value("school_heat_connected") else "온기 상자의 실제 학교 인수는 확인했다. 아직 연결해 사용한 기록은 없다.")
+            record["establishes"]=("아빠와 까로가 운반한 장작 묶음을 선생님이 인수했고, 학교에서 실제로 때고 있다. 쓴 양과 남은 양을 확인했다." if r13_v111_value("school_heat_connected") else "아빠와 까로가 운반한 장작 묶음을 선생님이 인수했다. 오늘 밤 쓸 양은 따로 확인한다.")  # 0.20.5 Codex B01
         elif key=="V111:E35":
             record=dict(record)
             received=r13_v111_value("E35.status")=="received"

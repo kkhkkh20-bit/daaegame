@@ -57,6 +57,7 @@ init 330 python:
         full text in 「출처 펼치기」 (owner: no answer clue written into the observed facts)."""
         import re
         text=re.sub(r"\s*[(（][^()（）]*[)）]","",str(text or ""))
+        text=re.sub(r"\s*\{image=[^}]*\}","",text)  # 0.20.5: an inline mark belongs to the picture, not a fact line
         pieces=[]
         for chunk in re.split(r"\n+",text):
             for sentence in re.split(r"(?<=[.!?。…])\s+",chunk.strip()):
@@ -77,7 +78,15 @@ init 330 python:
         base=r13_evidence_base_key(key)
         spec=R13_EVIDENCE_FACTS.get(base) if base else None
         if isinstance(spec,dict):
-            lines=spec.get(r13_evidence_variant(key))
+            # 0.20.5 (Codex B03): a later status (E35.status=received) outranks the acquired variant.
+            status=None
+            try:
+                if r13_v111_active():
+                    status=r13_v111_value(base+".status")
+                    if base=="E09" and r13_v111_value("portrait")=="child_completed":status="child_completed"
+            except Exception:
+                status=None
+            lines=spec.get(status) if status in spec else spec.get(r13_evidence_variant(key))
             if isinstance(lines,(list,tuple)):
                 lines=[str(line).strip() for line in lines if str(line).strip()]
                 if lines:return lines[:R13_EVIDENCE_FACT_LIMIT]
@@ -156,10 +165,10 @@ init 330 python:
 
     def r13_ev_small_size():
         # Touch: small text is never under 18px.
-        return 18 if r13_touch_ui() else r13_read_size(15,18)
+        return r13_read_size(18,21) if r13_touch_ui() else r13_read_size(15,18)  # 0.20.5 (Codex A04): large text on phones too
 
     def r13_ev_fact_size():
-        return 20 if r13_touch_ui() else r13_read_size(19,23)
+        return r13_read_size(20,24) if r13_touch_ui() else r13_read_size(19,23)
 
     def r13_ev_label_size(label,width):
         # A long name in a fixed-width control shrinks instead of spilling out (never under the small size).
@@ -266,7 +275,7 @@ screen r13_evidence_grid(entries,detail,page,owner,pair=None,pair_slot=1,archive
     $ pitch_x=124 if wide else 84
     $ pitch_y=114 if wide else 118
     $ thumb=64 if wide else 74
-    $ label_size=r13_ev_small_size()
+    $ label_size=(18 if r13_touch_ui() else r13_read_size(15,18))  # 0.20.5: grid names keep their fitted size; the big text goes to the picture side
     $ label_chars=12 if wide else 10
     $ actual_page=r13_record_page(entries,page)
     $ page_size=r13_record_page_size()
@@ -342,7 +351,7 @@ screen r13_evidence_single(detail,owner,archive=False,view_context=("records",),
             timer .7 action Function(r13_record_mark_seen,detail)
         vbox:
             xpos 372 ypos 116 xsize 520 spacing 12
-            use r13_evidence_heading(detail,520,(28 if touch else r13_read_size(26,30)))
+            use r13_evidence_heading(detail,520,(r13_read_size(28,32) if touch else r13_read_size(26,30)))
             fixed:
                 xsize 520 ysize 360
                 fixed:
@@ -416,7 +425,7 @@ screen r13_evidence_pair(entries,pair,pair_slot,owner,archive=False):
         vbox:
             xpos (350 if column==0 else 798) ypos 142 xsize 420 spacing 10
             if key is not None:
-                use r13_evidence_heading(key,420,(24 if touch else r13_read_size(24,27)))
+                use r13_evidence_heading(key,420,(r13_read_size(24,28) if touch else r13_read_size(24,27)))
                 fixed:
                     xsize 420 ysize 312
                     fixed:

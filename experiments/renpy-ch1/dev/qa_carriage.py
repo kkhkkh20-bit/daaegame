@@ -45,8 +45,14 @@ async def main():
     if 'say' in st['screens']:break
     await asyncio.sleep(.2)
    await asyncio.sleep(1);await q.shot('c0-carriage-narration')
-   await q.input(810,610);await asyncio.sleep(1.5)
-   info=await q.py('import renpy;s=renpy.store;result=dict(place=s.place,who=s.r13_motion_person,tags=sorted(renpy.exports.get_showing_tags()))')
+   # 0.20.5 (Codex Q01): the opening now has more lines before Daram appears; wait for her
+   # instead of a fixed number of clicks, while still inside the carriage.
+   probe='import renpy;s=renpy.store;result=dict(place=s.place,who=s.r13_motion_person,tags=sorted(renpy.exports.get_showing_tags()))'
+   for _ in range(30):
+    await q.input(810,610);await asyncio.sleep(1.2)
+    info=await q.py(probe)
+    if info['who']=='daram' and 'r13_visitor' in info['tags']:break
+    assert info['place']=='마차 안',info
    assert info['place']=='마차 안' and info['who']=='daram' and 'r13_visitor' in info['tags'],info
    await q.shot('c1-daram-pop')
    await q.input(810,610);await asyncio.sleep(1.2)

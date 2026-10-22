@@ -127,7 +127,7 @@ init 61 python:
             person=actor["person"];face=faces[person]
             cx,top=r13_actor_nameplate(actor)
             top=max(101,top-14)
-            tag_z=1.0/r13_field_zoom();tag_h=int((56 if r13_touch_ui() else 40)*tag_z);width=int(max(72,sum((11 if r13_touch_ui() else 8) if ch==" " else (22 if r13_touch_ui() else 17) for ch in R13_NAMES[person])+28)*tag_z)  # 0.20.2 tidy tags; 0.20.3 tags keep screen size in a zoomed field
+            tag_z=1.0/r13_field_zoom();tag_h=int((72 if r13_touch_ui() else 40)*tag_z);width=int(max((112 if r13_touch_ui() else 72),sum((11 if r13_touch_ui() else 8) if ch==" " else (22 if r13_touch_ui() else 17) for ch in R13_NAMES[person])+28)*tag_z)  # 0.20.2 tidy tags; 0.20.3 tags keep screen size in a zoomed field; 0.20.5 (Codex U02) larger phone touch area
             # A head can straddle the panorama edge while its name used to
             # remain outside the visible window. Keep that label in view.
             left=0;right=r13_world_width()
