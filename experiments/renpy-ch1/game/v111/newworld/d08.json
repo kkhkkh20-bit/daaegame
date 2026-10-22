@@ -475,7 +475,14 @@
         "id": "NW_D08_S02_A11",
         "speaker": "아빠",
         "kind": "dialogue",
-        "text": "문 앞에서 물수건을 적셨다고 하셨지요. 그런데 이건…… 바싹 말라 있습니다.",
+        "text": "다람이가 그러더군요. 아저씨는 금방 온다고 하고…… 나갔다고요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D08_S02_A12",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "문 앞에서 물수건을 적셨다고 하셨지요. 그 물수건이…… 이겁니까?",
         "expression": "neutral"
       }
     ],
@@ -550,7 +557,16 @@
         "speaker": "너울",
         "kind": "dialogue",
         "text": "아이를 붙잡은 노인이오. 데려갈 사람 명단에 올려야겠소.",
-        "expression": "neutral"
+        "expression": "neutral",
+        "when": "prevention_a"
+      },
+      {
+        "id": "NW_D08_P01_A06B",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "가슴을 쥐고 말도 제대로 못 잇던 노인이라 들었소. 혼자 빗장까지 걸려 했다지. 데려갈 사람 명단에 올려야겠소.",
+        "expression": "neutral",
+        "when": "prevention_b"
       },
       {
         "id": "NW_D08_P01_A07",
@@ -563,7 +579,16 @@
         "speaker": "서리",
         "kind": "dialogue",
         "text": "방 때문에 그랬을 수도 있어요. 그 일로 사람을 보내진 마세요.",
-        "expression": "anxious"
+        "expression": "anxious",
+        "when": "prevention_a"
+      },
+      {
+        "id": "NW_D08_P01_A08B",
+        "speaker": "서리",
+        "kind": "dialogue",
+        "text": "방 때문에 그러셨을 수도 있어요. 아프셨다고 사람을 보내진 마세요.",
+        "expression": "anxious",
+        "when": "prevention_b"
       },
       {
         "id": "NW_D08_P01_A09",

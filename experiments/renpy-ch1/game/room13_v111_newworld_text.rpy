@@ -85,6 +85,11 @@ init 319 python:
         "records_partial":lambda:r13_v111_value("meeting:records")=="partial",
         "records_lose":lambda:r13_v111_value("meeting:records")=="lose",
         "records_not_lose":lambda:r13_v111_value("meeting:records")!="lose",
+        # Review 0.20.1 3rd #1: the owl grabbed Daram's sleeve only in prevention A.
+        "records_lose_prev_a":lambda:r13_v111_value("meeting:records")=="lose" and r13_v111_value("prevention")=="A",
+        "records_lose_prev_b":lambda:r13_v111_value("meeting:records")=="lose" and r13_v111_value("prevention")!="A",
+        "records_partial_prev_a":lambda:r13_v111_value("meeting:records")=="partial" and r13_v111_value("prevention")=="A",
+        "records_partial_prev_b":lambda:r13_v111_value("meeting:records")=="partial" and r13_v111_value("prevention")!="A",
         # Event 08: the day-11 facility and the hypothesis meeting.
         "guldol_ready":lambda:r13_v111_actor_ready("resident_guldol"),
         "guldol_absent":lambda:not r13_v111_actor_ready("resident_guldol"),
