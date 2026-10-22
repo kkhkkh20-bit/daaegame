@@ -19,18 +19,26 @@ init 345 python:
         "flash": ("assets/source-shock9.wav", 0, 0.0, .85),
     }
 
-    def r13_impact_shake(amp, duration):
-        def shake(trans, st, at):
-            if st >= duration:
+    class R13ImpactShake(object):
+        """Saveable shake callback (owner QA 2026-10-22: saving right after a shaken line failed
+        with "Can't get local object r13_impact_shake.<locals>.shake" — a nested function cannot be
+        pickled into the layer's scene list). A store-level class instance pickles fine."""
+        def __init__(self, amp, duration):
+            self.amp = amp
+            self.duration = duration
+        def __call__(self, trans, st, at):
+            if st >= self.duration:
                 trans.xoffset = 0
                 trans.yoffset = 0
                 return None
-            left = 1.0 - st / duration
+            left = 1.0 - st / self.duration
             step = int(st * 45)
-            trans.xoffset = int(round(amp * left * (1 if step % 2 else -1)))
-            trans.yoffset = int(round(amp * .45 * left * (1 if (step // 2) % 2 else -1)))
+            trans.xoffset = int(round(self.amp * left * (1 if step % 2 else -1)))
+            trans.yoffset = int(round(self.amp * .45 * left * (1 if (step // 2) % 2 else -1)))
             return 0
-        return Transform(function=shake)
+
+    def r13_impact_shake(amp, duration):
+        return Transform(function=R13ImpactShake(amp, duration))
 
     def r13_impact(kind):
         spec = R13_IMPACT_FX.get(kind)
