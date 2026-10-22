@@ -193,7 +193,7 @@ screen r13_relations_content(owner,selected,filt,focused=True):
     $ linked={other for other,k,lab in r13_rel_lines_of(selected)}
     text "알게 된 관계" xpos 282 ypos 66 size r13_read_size(23,26) color "#654b30"
     textbutton ("전체 관계도" if focused else "인물 중심"):
-        style "r13_paper_tab_button" xpos 704 ypos 62 xsize 160 ysize 40 padding (4,0) text_size 19 text_yalign .5
+        style "r13_paper_tab_button" xpos 704 ypos 62 xsize 160 ysize (56 if r13_touch_ui() else 40) padding (4,0) text_size (22 if r13_touch_ui() else 19) text_yalign .5
         action Function(r13_record_select,owner,"rel_focus",not focused)
     add R13PaperFrame() xpos 278 ypos 110 xsize 588 ysize 468
     if focused:

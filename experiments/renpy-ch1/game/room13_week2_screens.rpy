@@ -69,10 +69,10 @@ screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장"):
                         text "아직 내놓은 자료가 없다." size 22 color "#717367"
             hbox:
                 spacing 25
-                textbutton "근거를 내놓는다" action Return("present") sensitive ready text_size 24
-                textbutton "되묻는다" action Return("press") sensitive ready text_size 24
-                textbutton "논리를 연결한다" action Return("argue") sensitive ready text_size 24
-                textbutton "다른 주장부터" action Return("leave") sensitive ready text_size 24
+                textbutton "근거를 내놓는다" action Return("present") sensitive ready text_size 24 ysize (64 if r13_touch_ui() else 56)
+                textbutton "되묻는다" action Return("press") sensitive ready text_size 24 ysize (64 if r13_touch_ui() else 56)
+                textbutton "논리를 연결한다" action Return("argue") sensitive ready text_size 24 ysize (64 if r13_touch_ui() else 56)
+                textbutton "다른 주장부터" action Return("leave") sensitive ready text_size 24 ysize (64 if r13_touch_ui() else 56)
 
 screen r13_rescue_notes():
     style_prefix "r13"

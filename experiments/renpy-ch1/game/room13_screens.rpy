@@ -17,7 +17,7 @@ screen r13_hud():
                 vbox:
                     xsize 42 spacing 2
                     text ("%02d"%room13.get("day",1)) size 25 color "#493b30" xalign .5
-                    text "일째" size 12 color "#796044" xalign .5
+                    text "일째" size (16 if r13_touch_ui() else 12) color "#796044" xalign .5
                 vbox:
                     xsize 112 spacing 7
                     text r13_clock().split(" · ")[1] size 17 color "#493b30"
@@ -173,7 +173,7 @@ screen r13_world_contents(entry=False,ready=False):
             add leader xpos leader.left ypos leader.top
         textbutton (R13_NAMES[nameplate["person"]]+(" !" if not entry and nameplate["person"]=="resident_piko" and r13_offer_for_person("resident_piko")=="r13_w1c_portrait" else "")):
             area nameplate["rect"]
-            padding (12,7) background R13ActionPanel() hover_background R13ActionPanel(True) text_size 20 text_color "#fff2cf" text_xalign .5 text_yalign .5
+            padding (12,7) background R13ActionPanel() hover_background R13ActionPanel(True) text_size (24 if r13_touch_ui() else 20) text_color "#fff2cf" text_xalign .5 text_yalign .5
             action r13_person_action(nameplate["person"],entry) sensitive ready
         if not entry and r13_offer_for_person(nameplate["person"]) and not (nameplate["person"]=="resident_piko" and r13_offer_for_person("resident_piko")=="r13_w1c_portrait"):
             # 0.18.53: something is happening with this person; press them to see it.
@@ -434,7 +434,7 @@ screen r13_book(target=None,present=False,hearing=False):
     use r13_reference_record_categories("r13_book",category,True,archive and not present)
     if not present and r13_learning_archive_keys():
         textbutton ("이번 여정" if not archive else "지난 플레이"):
-            style "r13_paper_tab_button" xpos 66 ypos 326 xsize 176 ysize 40 text_size 18
+            style "r13_paper_tab_button" xpos 66 ypos 326 xsize 176 ysize (56 if r13_touch_ui() else 40) text_size (22 if r13_touch_ui() else 18)
             action [SetScreenVariable("archive",not archive),SetScreenVariable("detail",None),SetScreenVariable("page",0)]
     if present:
         $ statement=r13_book_statement() if hearing else None
@@ -503,8 +503,8 @@ screen r13_calendar_content():
                 text "날짜가 정해진 새 약속은 아직 없다." size 21 color "#796044"
     hbox:
         xpos 864 ypos 596 spacing 12
-        textbutton "지난 주" style "r13_compact_button" xsize 158 ysize 44 text_size 19 sensitive week>0 action Function(r13_record_select,_scope,"week",week-1)
-        textbutton "다음 주" style "r13_compact_button" xsize 158 ysize 44 text_size 19 sensitive week<1 action Function(r13_record_select,_scope,"week",week+1)
+        textbutton "지난 주" style "r13_compact_button" xsize 158 ysize (56 if r13_touch_ui() else 44) text_size (22 if r13_touch_ui() else 19) sensitive week>0 action Function(r13_record_select,_scope,"week",week-1)
+        textbutton "다음 주" style "r13_compact_button" xsize 158 ysize (56 if r13_touch_ui() else 44) text_size (22 if r13_touch_ui() else 19) sensitive week<1 action Function(r13_record_select,_scope,"week",week+1)
 
 screen r13_debate(claim):
     style_prefix "r13"

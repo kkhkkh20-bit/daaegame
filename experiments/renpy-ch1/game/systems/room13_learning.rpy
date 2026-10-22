@@ -136,7 +136,7 @@ screen r13_learning_notes_content(focus=None):
         for key,title in (("questions","지금 궁금한 것"),("observations","자세히 본 것"),("world","알게 된 세계")):
             if key!="world" or r13_learning_terms():
                 textbutton title:
-                    style "r13_action_button" xsize 284 ysize 44 text_size r13_read_size(20,24)
+                    style "r13_action_button" xsize 284 ysize (56 if r13_touch_ui() else 44) text_size r13_read_size(20,24)
                     selected tab==key action [Function(r13_record_select,_scope,"tab",key),Function(r13_record_select,_scope,"expanded",None)]
     viewport:
         area (284,180,924,394) mousewheel True draggable True scrollbars "vertical"
@@ -170,7 +170,7 @@ screen r13_learning_notes_content(focus=None):
                                 if owned_keys:
                                     text ("함께 볼 기록 · "+" / ".join(R13_RECORD_SHORT.get(k,ROOM13["evidence"][k]["name"]) for k in owned_keys)) size r13_read_size(20,25) color "#65503b" xsize 850
                                 textbutton ("접기" if expanded==i else "막혔다면 생각 정리"):
-                                    style "r13_action_button" xsize 300 ysize 48 text_size r13_read_size(21,26)
+                                    style "r13_action_button" xsize 300 ysize (56 if r13_touch_ui() else 48) text_size r13_read_size(21,26)
                                     action Function(r13_record_select,_scope,"expanded",None if expanded==i else i)
                                 if expanded==i:
                                     text note["hint"] size r13_read_size(20,24) color "#65503b" xsize 850

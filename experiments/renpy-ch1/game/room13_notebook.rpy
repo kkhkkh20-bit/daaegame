@@ -326,7 +326,7 @@ screen r13_material_grid(entries,detail,page,owner,archive=False,filters=True):
                     text (("● " if not archive and r13_record_unread(key) else "")+R13_RECORD_SHORT.get(key,r13_catalog_title(key)[:8])):
                         size (21 if touch else r13_read_size(16,21)) color "#493b30" xsize cell-20 text_align .5
                     if not archive and r13_catalog_transferable(key):
-                        text "전달 가능" size 14 color "#795714" xalign .5
+                        text "전달 가능" size (18 if touch else 14) color "#795714" xalign .5
     if r13_record_pages(entries)>1:
         hbox:
             xpos 302 ypos r13_record_footer_y() spacing 12
@@ -432,10 +432,10 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
         use r13_relations_content(_scope,rel_sel,rel_filter,rel_focus)
     elif tab=="notes":
         use r13_learning_notes_content(note_focus)
-        textbutton "달력 ›" style "r13_paper_tab_button" xpos 1090 ypos 70 xsize 120 ysize 40 text_size 18 action Function(r13_record_select,_scope,"tab","calendar")
+        textbutton "달력 ›" style "r13_paper_tab_button" xpos 1090 ypos 70 xsize 120 ysize (56 if r13_touch_ui() else 40) text_size (22 if r13_touch_ui() else 18) action Function(r13_record_select,_scope,"tab","calendar")
     elif tab=="calendar":
         use r13_calendar_content()
-        textbutton "‹ 메모" style "r13_paper_tab_button" xpos 400 ypos 70 xsize 120 ysize 40 text_size 18 action Function(r13_record_select,_scope,"tab","notes")
+        textbutton "‹ 메모" style "r13_paper_tab_button" xpos 400 ypos 70 xsize 120 ysize (56 if r13_touch_ui() else 40) text_size (22 if r13_touch_ui() else 18) action Function(r13_record_select,_scope,"tab","notes")
     elif tab=="items":
         use r13_item_bag_content()
     elif tab=="compare":

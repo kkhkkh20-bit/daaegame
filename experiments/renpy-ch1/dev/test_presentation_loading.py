@@ -37,7 +37,7 @@ class PresentationLoading(unittest.TestCase):
   self.assertEqual(f(0,0,'inn','morning')[0][1],('inn','morning'))
  def test_field_nameplates_reserve_the_actual_mobile_dock(self):
   h=80;face=[1120,564,70,70]
-  env=dict(r13_actor_face_target=lambda a:face,r13_actor_nameplate=lambda a:(1155,528),r13_world_width=lambda:1280,r13_world_offset=lambda:0,r13_layout=lambda:{},r13_field_ui_rects=lambda o:[(o+772,624,480,h),(o+1020,528,232,h)],R13_NAMES={'daram':'다람'},R13_CONTROL={'width':232},r13_control_height=lambda:h,store=SimpleNamespace(R13_LIFE_GROUPS=[]))
+  env=dict(r13_touch_ui=lambda:True,r13_actor_face_target=lambda a:face,r13_actor_nameplate=lambda a:(1155,528),r13_world_width=lambda:1280,r13_world_offset=lambda:0,r13_layout=lambda:{},r13_field_ui_rects=lambda o:[(o+772,624,480,h),(o+1020,528,232,h)],R13_NAMES={'daram':'다람'},R13_CONTROL={'width':232},r13_control_height=lambda:h,store=SimpleNamespace(R13_LIFE_GROUPS=[]))
   exec(function('game/room13_interaction.rpy','r13_actor_nameplates'),env)
   label=env['r13_actor_nameplates']([dict(person='daram',rect=face)])[0]['rect']
   def overlaps(a,b):return a[0]<b[0]+b[2] and a[0]+a[2]>b[0] and a[1]<b[1]+b[3] and a[1]+a[3]>b[1]
