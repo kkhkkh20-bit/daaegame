@@ -851,7 +851,7 @@
         "id": "NW_D10_S02P_L01",
         "speaker": "촌장",
         "kind": "dialogue",
-        "text": "아이가 손목을 친 건 아버지도 인정했소. 하지만 부러진 조각을 다시 들지 않았다는 근거는…… 오늘 못 봤소.",
+        "text": "도토 씨가 문을 열 때까지 아이 두 손을 잡고 있었다는 말은 인정하겠소. 하지만 그 문 말고 다른 길로 누가 드나들었다는 건…… 오늘 못 봤소.",
         "expression": "neutral",
         "when": "room13_lose"
       },
@@ -859,7 +859,7 @@
         "id": "NW_D10_S02P_L02",
         "speaker": "너울",
         "kind": "dialogue",
-        "text": "몸을 지키려다 지나치게 다치게 한 거요. 노인을 죽게 한 아이를 그냥 둘 수는 없소.",
+        "text": "그 문 말고 길이 없다면 방 안엔 아이뿐이었소. 두 번째 쿵 소리가 머리를 친 소리였는지는 아무도 못 봤잖소. 손을 잡기 전 일일 수도 있소.",
         "expression": "neutral",
         "when": "room13_lose"
       },
@@ -1130,10 +1130,34 @@
         "when": "room13_partial_accident"
       },
       {
+        "id": "NW_D10_S03C_Q01",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "그 노인이 날 붙들고 안 놨어. 놓으라고 뿌리친 것뿐이야. 그러다 손에 든 게 어디 닿았대도…… 일부러 그런 건 아니야.",
+        "expression": "flustered",
+        "when": "room13_partial_accident"
+      },
+      {
+        "id": "NW_D10_S03C_Q02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "아까는 들어가 보니 이미 쓰러져 있었다고 하셨습니다.",
+        "expression": "angry",
+        "when": "room13_partial_accident"
+      },
+      {
+        "id": "NW_D10_S03C_Q03",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "정신이 없었다니까! 늙은이 말을 하나하나 따지니?",
+        "expression": "anxious",
+        "when": "room13_partial_accident"
+      },
+      {
         "id": "NW_D10_S03C_P02",
         "speaker": "촌장",
         "kind": "dialogue",
-        "text": "하지만 일부러 내리쳤는지는 모르겠소. 몸싸움 중에 닿았다고 적겠소.",
+        "text": "더 가릴 자료가 없소. 일부러 내리쳤는지는 모르겠소. 할머니 말대로…… 붙들려 뿌리치다 닿았다고 적겠소.",
         "expression": "neutral",
         "when": "room13_partial_accident"
       },
@@ -1242,7 +1266,15 @@
         "kind": "dialogue",
         "text": "그리고…… 아이를 붙잡은 노인이오. 이송 명단에 올리겠소.",
         "expression": "neutral",
-        "when": "records_lose"
+        "when": "records_lose_prev_a"
+      },
+      {
+        "id": "NW_D10_P01_L04B",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "그리고…… 아프다고 혼자 문을 걸어 잠그려던 노인이오. 혼자 둘 수 없소. 이송 명단에 올리겠소.",
+        "expression": "neutral",
+        "when": "records_lose_prev_b"
       },
       {
         "id": "NW_D10_P01_L05",
@@ -1298,7 +1330,15 @@
         "kind": "dialogue",
         "text": "기록은 가족이 받으시오. 대신 노인은 계속 지켜볼 사람으로 적겠소. 다시 아이를 붙잡으면…… 명단에 올리겠소.",
         "expression": "neutral",
-        "when": "records_partial"
+        "when": "records_partial_prev_a"
+      },
+      {
+        "id": "NW_D10_P01_P02B",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "기록은 가족이 받으시오. 대신 노인은 계속 지켜볼 사람으로 적겠소. 다시 혼자 문을 걸어 잠그면…… 명단에 올리겠소.",
+        "expression": "neutral",
+        "when": "records_partial_prev_b"
       },
       {
         "id": "NW_D10_P01_P03",
