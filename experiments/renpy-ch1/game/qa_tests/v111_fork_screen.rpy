@@ -17,7 +17,8 @@ init python:
         store.r13_meeting_claim=None
 
     def qa_fork_locked_count():
-        return sum(row['kind']=='locked' for col in r13_fork_columns() for row in col['rows'])
+        # 0.20.x: unseen results are one lock per meeting with a count ("다른 결과 N").
+        return sum(row.get('count',0) for col in r13_fork_columns() for row in col['rows'] if row['kind']=='locked')
 
 testcase v111_fork_screen:
     pause 1.0
@@ -32,6 +33,7 @@ testcase v111_fork_screen:
     pause 0.5
     assert screen 'r13_fork_screen'
     assert eval (qa_fork_locked_count()==6)
+    assert eval ([col['key'] for col in r13_fork_columns() if col.get('fate')]==['lamp','gate_post','fire'])
     assert eval (sum(col['key'] is None for col in r13_fork_columns())==1)
     assert eval (len(r13_fork_columns())==6 and r13_fork_current()==4)
     screenshot "fork_a.png"

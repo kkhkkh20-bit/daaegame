@@ -6,6 +6,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 NOTE=(ROOT/'game/room13_notebook.rpy').read_text()
 BOOK=(ROOT/'game/room13_screens.rpy').read_text()
+VIEW=(ROOT/'game/systems/room13_evidence_view.rpy').read_text()
 REL=(ROOT/'game/systems/room13_relations.rpy').read_text()
 ADMIN=(ROOT/'game/systems/room13_admin_meeting.rpy').read_text()
 module=ast.parse(textwrap.dedent(NOTE.split('init 68 python:\n',1)[1].split('\ninit 71:',1)[0]))
@@ -37,14 +38,17 @@ class RecordCleanup(unittest.TestCase):
    self.assertEqual(y+env['r13_record_footer_height'](),660)
    self.assertEqual(676-(y+height),16)
    self.assertGreaterEqual(y-572,8)
-  self.assertIn('xpos 824 ypos r13_record_footer_y() xsize 398 ysize r13_record_footer_height()',BOOK)
-  self.assertIn('xpos 66 ypos r13_record_footer_y() xsize 176 ysize r13_record_footer_height()',BOOK)
+  # 0.20.x 증거 비교 창: the 자료 view moved to the brown sheet (dev/test_evidence_view.py); the paper
+  # tabs (사람·대화·메모) keep this footer for their 닫기.
+  self.assertIn('xpos 66 ypos r13_record_footer_y() xsize 176 ysize r13_record_footer_height()',NOTE)
  def test_source_expand_is_one_way_and_scroll_is_retained(self):
-  self.assertNotIn('출처 접기',NOTE)
-  self.assertIn('if not origin_open:',NOTE)
-  self.assertIn('SetLocalVariable("origin_open",True)',NOTE)
-  self.assertIn('yadjustment detail_scroll',NOTE)
-  self.assertIn('area (844,218,358,322) mousewheel True draggable True scrollbars "vertical"',NOTE)
+  # 0.20.x: the fold lives in systems/room13_evidence_view.rpy (right column of the 자료 view).
+  self.assertNotIn('출처 접기',VIEW)
+  self.assertIn('if detail and not origin_open:',VIEW)
+  self.assertIn('SetLocalVariable("origin_open",True)',VIEW)
+  self.assertIn('yadjustment detail_scroll',VIEW)
+  self.assertIn('area (916,116,304,max(60,reading_bottom-116)) mousewheel True draggable True scrollbars "vertical"',VIEW)
+  self.assertIn('$ reading_bottom=R13_EV_BOTTOM-buttons*bh-max(0,buttons-1)*12-16',VIEW)
  def test_old_relationship_filters_are_neutralized(self):
   self.assertIn('$ rel_filter="all"',NOTE)
   self.assertIn('$ filt="all"',REL)
@@ -56,11 +60,10 @@ class RecordCleanup(unittest.TestCase):
   self.assertGreaterEqual(92-84,8)
   self.assertIn('action EndReplay(confirm=False)',ADMIN)
   self.assertNotIn('xpos 900 ypos 8',ADMIN)
- def test_grid_reclaims_removed_filter_row(self):
-  self.assertIn('if filters else 116',NOTE)
-  self.assertIn('ysize (572-grid_top)',NOTE)
-  # Rows fit even when there is no chip row, in desktop and touch modes.
-  for step,cellh in ((134,128),(122,116)):
-   self.assertLessEqual(126+2*step+cellh,572)
+ def test_filters_moved_out_of_the_grid(self):
+  # 0.20.x: the filter chips sit in the top bar (r13_ink_chips), so the grid no longer reserves a row.
+  self.assertIn('use r13_ink_chips(r13_ev_filter_chips(',NOTE)
+  self.assertIn('use r13_ink_chips(r13_ev_filter_chips(',BOOK)
+  self.assertNotIn('screen r13_material_filters(',NOTE)
 
 if __name__=='__main__':unittest.main()
