@@ -13,7 +13,16 @@ import math, random
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFilter
 
-OUT = Path(__file__).resolve().parents[1] / "game/assets/ui-night"
+import os
+OUT = Path(os.environ.get("R13_UI_OUT") or (Path(__file__).resolve().parents[1] / "game/assets/ui-night"))
+# Palette: "night" (navy, 0.19.98) or "brown" (owner idea 2026-10-22: same style, beige/brown tone).
+TONE = os.environ.get("R13_UI_TONE", "night")
+PAL = {
+    "night": dict(shade=(10, 13, 28), shade_top=(6, 6, 8), panel_top=(24, 31, 58), panel_drop=(8, 10, 18),
+                  btn=(15, 20, 38), btn_hover=(40, 34, 58), box=(9, 13, 28), box_line=(104, 108, 128)),
+    "brown": dict(shade=(26, 16, 11), shade_top=(8, 6, 4), panel_top=(58, 40, 29), panel_drop=(20, 13, 9),
+                  btn=(40, 27, 19), btn_hover=(72, 50, 34), box=(30, 20, 14), box_line=(150, 122, 92)),
+}[TONE]
 OUT.mkdir(parents=True, exist_ok=True)
 GOLD = (201, 168, 106)
 GOLD_HI = (232, 205, 146)
@@ -34,7 +43,8 @@ def shade():
         # smoothstep up to ~70%, then flat; keeps the art visible above the text.
         a = 0.0 if t < 0.0 else min(1.0, t / 0.72)
         a = a * a * (3 - 2 * a)
-        col = (int(10 + 6 * (1 - t)), int(13 + 6 * (1 - t)), int(28 + 8 * (1 - t)), int(round(240 * a)))
+        r, g, b = PAL["shade"]; dr, dg, db = PAL["shade_top"]
+        col = (int(r + dr * (1 - t)), int(g + dg * (1 - t)), int(b + db * (1 - t)), int(round(240 * a)))
         for x in range(w):
             img.putpixel((x, y), col)
     save(img, "say_shade.png")
@@ -101,11 +111,11 @@ def rounded(w, h, fill, border, radius=5, width=2):
 
 
 def buttons():
-    save(rounded(48, 44, (15, 20, 38, 150), GOLD + (230,)), "opt_btn_idle.png")
-    save(rounded(48, 44, (40, 34, 58, 210), GOLD_HI + (255,)), "opt_btn_hover.png")
+    save(rounded(48, 44, PAL["btn"] + (150,), GOLD + (230,)), "opt_btn_idle.png")
+    save(rounded(48, 44, PAL["btn_hover"] + (210,), GOLD_HI + (255,)), "opt_btn_hover.png")
     save(rounded(48, 44, BURGUNDY + (245,), GOLD_HI + (255,)), "opt_btn_selected.png")
-    save(rounded(48, 44, (15, 20, 38, 110), (120, 108, 90, 200)), "opt_btn_insensitive.png")
-    save(rounded(48, 44, (9, 13, 28, 215), (104, 108, 128, 220), radius=6, width=1), "preview_box.png")
+    save(rounded(48, 44, PAL["btn"] + (110,), (120, 108, 90, 200)), "opt_btn_insensitive.png")
+    save(rounded(48, 44, PAL["box"] + (215,), PAL["box_line"] + (220,), radius=6, width=1), "preview_box.png")
 
 
 def panel(w=1256, h=696):
@@ -118,7 +128,8 @@ def panel(w=1256, h=696):
     bp = ImageDraw.Draw(body)
     for y in range(H):
         t = y / H
-        c = (int(24 - 8 * t), int(31 - 10 * t), int(58 - 18 * t), 238)
+        tr, tg, tb = PAL["panel_top"]; dr, dg, db = PAL["panel_drop"]
+        c = (int(tr - dr * t), int(tg - dg * t), int(tb - db * t), 238)
         bp.line([(0, y), (W, y)], fill=c)
     mask = Image.new("L", (W, H))
     ImageDraw.Draw(mask).rounded_rectangle([14 * s, 14 * s, W - 14 * s, H - 14 * s], radius=10 * s, fill=255)
