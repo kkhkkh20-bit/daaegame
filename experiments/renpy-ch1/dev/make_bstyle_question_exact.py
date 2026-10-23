@@ -107,10 +107,10 @@ def question():
     b.alpha_composite(bori, (int(270 - bori.width / 2), 720 - 575))
     # 수첩(보이는 영역 x485–1230, y157–655)
     part(b, 'b_panel_book', (485, 157, 1230, 655), (90, 84, 100, 30))
-    fit(b, 'notebook_holes', (543, 181, 559, 225), crop_frac=0.64)        # 왼쪽 위 구멍 둘
-    fit(b, 'b_lineart_book_corner', (1000, 176, 1190, 238))               # 오른쪽 위 마을 선화
-    fit(b, 'rule_dotted', (555, 233, 1188, 239))                          # 제목 아래 점선
-    fit(b, 'rule_dotted', (555, 553, 1192, 559))                          # 버튼 위 점선
+    fit(b, 'notebook_holes', (558, 206, 572, 240), crop_frac=0.64)        # 왼쪽 위 구멍 둘(종이 안쪽, 가장자리에 안 걸리게)
+    fit(b, 'b_lineart_book_corner', (960, 186, 1118, 232))                # 오른쪽 위 마을 선화(빨간 테이프와 안 겹치게)
+    fit(b, 'rule_dotted', (572, 236, 1180, 241))                          # 제목 아래 점선
+    fit(b, 'rule_dotted', (572, 551, 1180, 556))                          # 버튼 위 점선(왼쪽 효과선과 안 겹치게)
     # 제목 탭(x562–922, y130–202), 도토리 아이콘 중심 (607,166), 글자 왼쪽 650
     part(b, 'b_tab_title', (562, 130, 922, 202), (30, 8, 30, 8))
     icon(b, 'b_icon_acorn', 607, 166, 36)
@@ -125,13 +125,13 @@ def question():
              ('b_panel_card', (450, 535), '이곳의 겨울에 관해서', False, 'b_lineart_winter')]
     for name, (y0, y1), q, done, art in cards:
         part(b, name, (552, y0, 1185, y1), (24, 20, 24, 20))
-        fit(b, art, (930, y0 + 6, 1176, y1 - 6))
+        fit(b, art, (930, y0 + 12, 1152, y1 - 12))   # 카드 접힌 귀와 안 겹치게
         cy = (y0 + y1) / 2
         icon(b, 'b_icon_acorn_done' if done else 'b_icon_acorn', 616, cy, 40)
         d = ImageDraw.Draw(b)
         text_mid(d, 661, cy, q, font('SemiBold', 27), INK_DONE if done else INK)
     fit(b, 'accent_rays_red', (628, 258, 646, 276))      # 고른 카드 도토리 옆
-    fit(b, 'accent_rays_red', (536, 545, 554, 563))      # 자료 보여주기 왼쪽 위
+    fit(b, 'accent_rays_red', (549, 549, 563, 563))      # 자료 보여주기 왼쪽 위(종이 안쪽)
     # 아래 버튼 넷(y569–615)
     buttons = [((552, 724), '자료 보여주기', True, 'icon_document'), ((735, 870), '기록', False, 'icon_book_open'),
                ((881, 1029), '더보기', False, 'b_icon_more'), ((1040, 1195), '돌아가기', False, 'icon_arrow_left_bold')]

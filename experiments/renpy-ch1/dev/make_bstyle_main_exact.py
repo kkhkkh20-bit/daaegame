@@ -63,15 +63,17 @@ def main():
     for l in lay['layers']:
         im = Image.open(M / l['file']).convert('RGBA').resize((l['width'], l['height']), Image.LANCZOS)
         b.alpha_composite(im, (l['x'], l['y']))
-    for bt in lay['buttons']:
-        im = Image.open(M / bt['file']).convert('RGBA').resize((bt['width'], bt['height']), Image.LANCZOS)
-        b.alpha_composite(im, (bt['x'], bt['y']))
+    # 소유자 2026-10-23 "수첩 크기를 작게 하든, 아이콘을 키우든 해서 좀 꽉 채워줘": 납품 좌표의 버튼은 판 안에서
+    # 작아 빈 곳이 많았다. 판의 종이 안쪽(보이는 영역 x120–578, y455–640)을 2×2 로 채우도록 버튼을 키운다.
+    fb = ImageFont.truetype(str(FONT / 'Pretendard-Bold.otf'), 30)
+    boxes = [(120, 455, 341, 538), (357, 455, 578, 538), (120, 556, 341, 639), (357, 556, 578, 639)]
+    for bt, box in zip(lay['buttons'], boxes):
+        im = visible(Image.open(M / bt['file']).convert('RGBA'))
+        slice_into(b, im, box, (14, 10, 14, 10))
         d = ImageDraw.Draw(b)
-        f = ImageFont.truetype(str(FONT / 'Pretendard-SemiBold.otf'), bt['text_size'])
-        t = bt['text']
-        x0, y0, bb = bt['x'], bt['y'], f.getbbox(t)
-        cx, cy = x0 + bt['width'] / 2, y0 + bt['height'] / 2
-        d.text((cx - (bb[2] - bb[0]) / 2 - bb[0], cy - (bb[1] + bb[3]) / 2), t, font=f,
+        t = bt['text']; bb = fb.getbbox(t)
+        cx, cy = (box[0] + box[2]) / 2, (box[1] + box[3]) / 2
+        d.text((cx - (bb[2] - bb[0]) / 2 - bb[0], cy - (bb[1] + bb[3]) / 2), t, font=fb,
                fill=WHITE if 'primary' in bt['file'] else INK)
     OUT.mkdir(parents=True, exist_ok=True)
     row = row_version(lay, W, H)
@@ -85,7 +87,7 @@ def main():
     f = ImageFont.truetype(str(FONT / 'Pretendard-SemiBold.otf'), 24)
     d.text((20, 12), '① 원본 시안 · 스티커 마을 메인', font=f, fill=(240, 232, 220))
     d.text((W + 40, 12), '② 원본 배치 재현(버튼 한 줄, 판 없음)', font=f, fill=(240, 232, 220))
-    d.text((W * 2 + 60, 12), '③ 납품 layout 좌표 그대로(수첩 메뉴 판)', font=f, fill=(240, 232, 220))
+    d.text((W * 2 + 60, 12), '③ 수첩 메뉴 판(버튼을 판 안쪽에 꽉 채움)', font=f, fill=(240, 232, 220))
     pair.save(OUT / '05_메인_비교.png')
     print(OUT / '05_메인_비교.png')
 
