@@ -150,6 +150,7 @@ init 319 python:
         # Event 08: the day-11 facility and the hypothesis meeting.
         "guldol_ready":lambda:r13_v111_actor_ready("resident_guldol"),
         "karo_ready":lambda:r13_v111_actor_ready("karo"),  # 0.20.9
+        "karo_absent":lambda:not r13_v111_actor_ready("karo"),  # 2026-10-23 연결오류: 까로가 없는 숲의 대체 지문
         "route12_late":lambda:r13_v111_value("route12")=="late_exposure",  # 0.20.10 D12-03 학교 밖에 다녀온 경로
         "route12_stayed":lambda:r13_v111_value("route12")!="late_exposure",
         "tosil_inside":lambda:r13_v111_value("tosil_listen")=="inside",  # 0.20.9 엔딩 검토 9
