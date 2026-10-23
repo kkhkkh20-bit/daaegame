@@ -100,7 +100,8 @@ init 301 python:
         n=winter_copy.deepcopy(store.room13);n["v111"]["gate"]=key;store.room13=n
     def r13_v111_questions(person):
         b=r13_v111_binding()
-        return [(o["title"],Return("present") if o.get("present") else Return(o.get("index",i)),False) for i,o in enumerate(b.get("options",[])) if o.get("person")==person and o.get("location")==store.room13["location"]]
+        # 0.20.10 (4~14일 리뷰): 제목이 보일 자료를 이미 말하므로, 가진 자료면 목록에서 다시 찾지 않는다.
+        return [(o["title"],Return("present") if o.get("present") and o["present"] not in store.room13["evidence"] else Return(o.get("index",i)),False) for i,o in enumerate(b.get("options",[])) if o.get("person")==person and o.get("location")==store.room13["location"]]
     for title in R13_V111["proof_claims"]:R13_CLAIMS["v111:"+title]=dict(assertion=title)
     for key,spec in R13_V111["evidence"].items():
         rid="V111:"+key

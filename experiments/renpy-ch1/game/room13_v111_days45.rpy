@@ -417,6 +417,7 @@ label r13_v111_cloth_match5:
     call r13_v111_travel('clinic','clinic_handoff5')
     call r13_lines(r13_v111_lines(['MS14_D05_S02_L0030']),'v111:MS14_D05_S02_L0030')
     $ r13_v111_commit('MS14_D05_S02_L0031')
+    call r13_lines(r13_nw_block('clinic_next5'),'nw:clinic_next5')
     jump r13_v111_hearing5
 
 label r13_v111_hearing5:

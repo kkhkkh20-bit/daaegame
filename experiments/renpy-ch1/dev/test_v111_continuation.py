@@ -112,13 +112,15 @@ class ContinuationGuards(unittest.TestCase):
   choose=self.env['r13_v111_present_index']
   binding['options'][0]['title']='이분을 보셨습니까?'
   self.env.update(Return=lambda value:value,r13_v111_binding=lambda:binding)
-  self.assertEqual(self.env['r13_v111_questions']('resident_nero')[0][1],'present')
+  # 0.20.10: the title already names the portrait; holding it, the question presents it directly.
+  self.assertEqual(self.env['r13_v111_questions']('resident_nero')[0][1],3)
   self.assertIsNone(choose(binding,'resident_somi','V111:E09'))
   self.assertEqual(choose(binding,'resident_nero','V111:E09'),3)
   self.state.room13['location']='gate'
   self.assertIsNone(choose(binding,'resident_nero','V111:E09'))
   self.state.room13['location']='ms14_somi';self.state.room13['evidence']=[]
   self.assertIsNone(choose(binding,'resident_nero','V111:E09'))
+  self.assertEqual(self.env['r13_v111_questions']('resident_nero')[0][1],'present')  # not held: the book opens
  def test_night_testimony_unlocks_missing_e21_only_at_completion(self):
   self.assertFalse(self.env['r13_v111_owned']('E21'))
   self.env['r13_v111_commit']('MS14_D04_S04_L0018')

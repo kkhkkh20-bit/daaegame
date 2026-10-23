@@ -186,3 +186,14 @@ init 161 python:
             Transform("r13_ep_bell_swing",size=(256,384),xpos=512,ypos=40,nearest=True),
             At(Transform("assets/room13-ep-U21-soundwaves.webp",size=(1280,480),xpos=0,ypos=0,nearest=True),r13_ep_wave_pulse),
             xysize=(1280,720))
+
+# 0.20.10 (4~14일 리뷰 6일): 식은 창고 터 그림은 예전 이야기의 아침용이다. 새 이야기에서는 같은 날 저녁이라
+# 밤빛 화재 뒤 하늘이 다시 밝아 보였다. 저녁·밤에는 그림을 저녁빛으로 물들인다.
+init 162 python:
+    _r13_v111_ruin_bg=r13_ep_background
+    def r13_ep_background(key):
+        image=_r13_v111_ruin_bg(key)
+        state=getattr(store,"room13",None) or {}
+        if key=="ep_woodshed_ruin" and state.get("v111") and state.get("period",0)>=2:
+            return Transform(image,matrixcolor=TintMatrix("#9a8cb0")*BrightnessMatrix(-0.12))
+        return image

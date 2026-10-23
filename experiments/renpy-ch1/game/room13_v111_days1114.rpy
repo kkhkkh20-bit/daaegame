@@ -48,6 +48,7 @@ label r13_v111_root11:
     jump r13_v111_root_note11
 
 label r13_v111_root_note11:
+    $ r13_world_cameras=dict(r13_world_cameras,forest=0)  # 0.20.10: the roots are at the left edge
     call r13_v111_wait('root_note11')
     if _return==0:
         jump r13_v111_root_read11
@@ -2840,7 +2841,7 @@ label r13_v111_device_record14:
     if _return=="V111:E14_SUPPLY" and r13_v111_owned("E14_SUPPLY") and r13_v111_value("school_heat_connected"):
         jump r13_v111_device_supply14
     if _return:
-        $ renpy.notify("실제 인수한 구조 기록이나 연결·사용을 확인한 물자 기록이 필요하다.")
+        call r13_lines([r13_nw_added_line(dict(speaker="아빠",kind="thought",text="이걸로는 부족하다. 사람을 실제로 넘겨받은 기록이나, 물자를 연결해 쓴 것까지 확인한 기록이어야 한다."))],"v111:device_record_wrong14")
     jump r13_v111_device_pause14
 
 label r13_v111_device_pause14:

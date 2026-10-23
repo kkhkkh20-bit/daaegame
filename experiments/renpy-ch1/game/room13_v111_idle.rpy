@@ -184,3 +184,16 @@ init 350 python:
         n=r13_v111_value("daram_hello_count") or 0
         r13_v111_set("daram_hello_count",n+1)
         return [r13_nw_added_line(dict(speaker="다람",text=R13_DARAM_HELLO[n%len(R13_DARAM_HELLO)],expression="neutral",kind="dialogue"))]
+
+# 0.20.10 (4~14일 리뷰: 4일 초소 비명 뒤 일반 인사, 7일 빨래터 추궁 직후 "또 오셨어요?"):
+# 지금 장면에 함께 있는 사람은 할 말이 없어도 평소 생활 인사를 하지 않는다. 아빠가 지금 할 일을 떠올린다.
+init 351 python:
+    # 사건이 막 일어났거나 추궁·청문이 이어지는 장면만(그 밖에는 소유자 결정대로 그날 첫 인사).
+    R13_TENSE_SCENES={"MS14_D04_S03","MS14_D07_S01","MS14_D07_S02","MS14_D07_S04","MS14_D11_S04","MS14_D12_S04","MS14_D13_C"}
+    _r13_scene_idle_lines=r13_v111_idle_lines
+    def r13_v111_idle_lines(person):
+        v=store.room13.get("v111") or {}
+        scene_people=v.get("people") or []
+        if v.get("scene") in R13_TENSE_SCENES and person in scene_people and person in r13_met_people():
+            return [r13_nw_added_line(dict(speaker="아빠",kind="thought",text="지금은 인사를 나눌 때가 아니다. 이 일부터 하자."))]
+        return _r13_scene_idle_lines(person)
