@@ -23,7 +23,10 @@ init 57 python:
         h=r13_control_height()
         return [(offset+772,r13_control_y(),480,h),
                 (offset+1020,r13_control_upper_y(),232,h),
-                (offset+940,20,314,68),(offset+24,20,400,54)]
+                (offset+940,20,314,68),(offset+24,20,400,54),
+                # 0.20.11 (owner-approved mockup 2026-10-23): the screen-edge pan arrows
+                # (room13_world_camera.rpy) — a name tag never covers them.
+                (offset+8,236,80,80),(offset+1192,236,80,80)]
 
     R13_UI_PADDING = {
         "button": (18,12), "compact": (12,8), "panel": (24,20),

@@ -46,15 +46,51 @@ init 61 python:
             c.line(ink,(w//2,2),(w-2,3),3 if self.hovered else 2)
             return r
 
+    # 0.20.11 (owner 2026-10-23 "맵 자체를 좀 더 크게" → widened village map, same scale).
+    # A region may carry its own drawing size; the village map is larger than the screen and
+    # is shown in a draggable view that opens on the current or selected place.
+    def r13_cart_canvas(region):
+        w,h=R13_CARTOGRAPHY["regions"][region].get("size",R13_CARTOGRAPHY["size"])
+        return int(round(w*R13_MAP_SCALE)),int(round(h*R13_MAP_SCALE))
+
+    R13_MAP_VIEW=(1248,720)
+    def r13_cart_focus(region,key):
+        vw,vh=r13_cart_canvas(region)
+        nodes=R13_MAP_NODES.get(region,{})
+        x,y=nodes.get(key) or nodes.get(store.room13.get("location")) or (vw//2,vh//2)
+        fx=max(0,min(vw-R13_MAP_VIEW[0],x-R13_MAP_VIEW[0]//2))
+        fy=max(0,min(vh-R13_MAP_VIEW[1],y-R13_MAP_VIEW[1]//2+40))
+        return int(fx),int(fy)
+
+    # 0.20.11: light "tick" when choosing a place (shortened, quieter sfx-click), and which places lift on hover.
+    R13_MAP_TICK="assets/sfx-map-tick.wav"
+    def r13_cart_pops(region,key):
+        node=R13_CARTOGRAPHY["regions"][region]["nodes"][key]
+        return node.get("art_key",key) not in ("river","forest") and node["bounds"][2]*node["bounds"][3]<200000
+
     def r13_cart_cover_visible(key):
         # Image discovery uses the same authored knowledge gate as the names.
         # The base image contains ordinary forest, not future-place silhouettes.
         return key in dict(r13_map_nodes("mountain"))
 
 screen r13_cartography(region,selected,ready,map_hover):
+    if "size" in R13_CARTOGRAPHY["regions"][region]:
+        $ vw,vh=r13_cart_canvas(region)
+        $ fx,fy=r13_cart_focus(region,selected)
+        viewport id "r13_map_view":
+            xpos 16 ypos 0 xysize R13_MAP_VIEW
+            draggable True mousewheel True
+            xinitial fx yinitial fy
+            fixed:
+                xysize (vw,vh)
+                use r13_cartography_layer(region,selected,ready,map_hover)
+    else:
+        use r13_cartography_layer(region,selected,ready,map_hover)
+
+screen r13_cartography_layer(region,selected,ready,map_hover):
     $ art=R13_CARTOGRAPHY["regions"][region]["art"]
     $ ox,oy=R13_CARTOGRAPHY["regions"][region].get("offset",(16,9))
-    add Transform(art,size=(1248,702),nearest=True) xpos ox ypos oy
+    add Transform(art,size=r13_cart_canvas(region),nearest=True) xpos ox ypos oy
     if region=="mountain":
         for secret in ("greenhouse","altar"):
             if r13_cart_cover_visible(secret):
@@ -67,6 +103,11 @@ screen r13_cartography(region,selected,ready,map_hover):
         if key in r13_places():
             $ outlined_focus=key==selected or key==map_hover
             add Transform(r13_cart_layer(region,key,outline=True),matrixcolor=TintMatrix("#694425" if outlined_focus else "#a18b6c"),alpha=(1.0 if outlined_focus else .85)) xpos (ox+lx) ypos (oy+ly)
+            # 0.20.11 (owner 2026-10-23 "마우스오버하면 아이콘처럼 집이 튀어나오게"): the place's own
+            # drawing lifts a little on hover/selection. Wide terrain (river, forest) keeps the outline only.
+            if outlined_focus and r13_cart_pops(region,key):
+                add Transform(r13_cart_layer(region,key),matrixcolor=TintMatrix("#3b2414")*OpacityMatrix(.28)) xanchor .5 yanchor 1.0 xpos (ox+lx+lw//2) ypos (oy+ly+lh+3)
+                add At(r13_cart_layer(region,key,highlight=True),r13_map_pop) xanchor .5 yanchor 1.0 xpos (ox+lx+lw//2) ypos (oy+ly+lh)
         button:
             id ("map_building_"+key)
             area (ox+lx,oy+ly,lw,lh) padding (0,0)
@@ -75,6 +116,7 @@ screen r13_cartography(region,selected,ready,map_hover):
             insensitive_background None
             focus_mask r13_cart_layer(region,key)
             action SetScreenVariable("selected",key)
+            activate_sound R13_MAP_TICK
             hovered SetScreenVariable("map_hover",key)
             unhovered SetScreenVariable("map_hover",None)
             sensitive ready
@@ -91,6 +133,7 @@ screen r13_cartography(region,selected,ready,map_hover):
                 area (nx,ny,nw,nh) padding (0,0)
                 background None hover_background None insensitive_background None
                 action SetScreenVariable("selected",key)
+                activate_sound R13_MAP_TICK
                 hovered SetScreenVariable("map_hover",key)
                 unhovered SetScreenVariable("map_hover",None)
                 sensitive ready
@@ -107,3 +150,8 @@ screen r13_cartography(region,selected,ready,map_hover):
             xpos (max(24,min(1256-nw,hx-nw//2))) ypos (max(101,min(568,hy-62)))
             xysize (nw,38) padding (8,3) background R13InkPanel(focused=True)
             text R13_MAP_LABELS[map_hover] size 21 color "#fff0d2" align (.5,.5)
+
+transform r13_map_pop:
+    subpixel True
+    zoom 1.0 yoffset 0
+    easein .12 zoom 1.08 yoffset -6

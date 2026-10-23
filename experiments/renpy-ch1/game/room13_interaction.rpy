@@ -137,7 +137,7 @@ init 61 python:
             preferred=(max(left+8,min(right-8-width,int(cx-width/2))),top,width,tag_h)
             candidates=[]
             for dy in (0,-(tag_h+4),-2*(tag_h+4),tag_h+4):  # 0.20.2: move up/down first, little sideways
-                for dx in (0,-20,20,-40,40):
+                for dx in (0,-20,20,-40,40,-60,60,-90,90):  # 0.20.11: room to clear a pan arrow
                     candidates.append((max(left+8,min(right-8-width,preferred[0]+dx)),max(101,min(676,top+dy)),width,tag_h))
             candidates.append((max(left+8,min(right-8-width,preferred[0])),min(676,face[1]+face[3]+6),width,tag_h))
             def score(rect):

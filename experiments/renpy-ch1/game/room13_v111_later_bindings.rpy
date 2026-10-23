@@ -12,7 +12,8 @@ init 310 python:
         "MS14_D05_S05":([],{"mother_warning_received":True,"supply_contact_pending":True}),
     })
     # Existing map component needs positions for the already registered places.
-    R13_MAP_NODES["village"].update(ms14_somi=(242,310),ms14_somi_inside=(270,330),ms14_guardroom=(155,375))
+    # 0.20.11: ms14_somi/ms14_somi_inside use the drawn riverside house (alias of "somi", init 313).
+    R13_MAP_NODES["village"].update(ms14_guardroom=(155,375))
     R13_MAP_LABELS.update(ms14_somi="솜이네 골목",ms14_somi_inside="솜이네 방",ms14_guardroom="밝은 초소")
     # Use the existing approved Somi room master for this place, without starting
     # the inactive MS14 controller or changing the picture itself.
@@ -36,8 +37,9 @@ init 310 python:
     R13_MAP_LABELS["v111_supervised"]="분리 감독 자리"
     R13_MAP_NODES["village"]["v111_custody"]=(150,330)
     R13_MAP_LABELS["v111_custody"]="보호실"
-    R13_MAP_NODES["village"]["laundry"]=(560,350)
+    # 0.20.11: the laundry has its own drawn place on the widened map (room13-cartography.json).
     R13_MAP_LABELS["laundry"]="빨래터"
+    R13_MAP_LABELS["somi"]="솜이네"
     for _key,_title,_bg in (("v111_labor","공동 장작 하역장","ep_woodshed_intact"),("v111_woodshed","학교 뒤 장작 창고","ep_woodshed_intact"),("v111_fire","장작 창고 바깥","ep_woodshed_fire"),("v111_ruin","식은 장작 창고 터","ep_woodshed_ruin")):
         R13_PLACES[_key]=(_title,_bg)
         R13_MAP_NODES["village"][_key]=(102,190)
@@ -96,7 +98,7 @@ init 312 python:
 init 313 python:
     # Existing cartography contours are reused for places within those map areas.
     # There are no new generated map plates or replacement navigation controls.
-    R13_V111_MAP_ALIASES={"ms14_somi":"river","ms14_somi_inside":"river","ms14_guardroom":"gate","v111_custody":"gate","v111_supervised":"gate","v111_labor":"store","v111_woodshed":"school","v111_fire":"school","v111_ruin":"school","laundry":"river"}
+    R13_V111_MAP_ALIASES={"ms14_somi":"somi","ms14_somi_inside":"somi","ms14_guardroom":"gate","v111_custody":"gate","v111_supervised":"gate","v111_labor":"store","v111_woodshed":"school","v111_fire":"school","v111_ruin":"school"}
     for _alias,_base in R13_V111_MAP_ALIASES.items():
         _node=winter_copy.deepcopy(R13_CARTOGRAPHY["regions"]["village"]["nodes"][_base])
         _node["art_key"]=_base

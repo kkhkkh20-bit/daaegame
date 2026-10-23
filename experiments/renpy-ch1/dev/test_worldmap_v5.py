@@ -52,11 +52,12 @@ class WorldmapV5(unittest.TestCase):
         for region,spec in DATA['regions'].items():
             art=GAME/spec['art']
             self.assertEqual(hashlib.sha256(art.read_bytes()).hexdigest(),spec['sha256'])
-            with Image.open(art) as im:self.assertEqual(im.size,tuple(DATA['size']))
+            size=tuple(spec.get('size',DATA['size']))  # 0.20.11: the village map has its own, wider size
+            with Image.open(art) as im:self.assertEqual(im.size,size)
             masks={}
             for key,node in spec['nodes'].items():
                 x,y,w,h=node['bounds']
-                mask=Image.new('L',tuple(DATA['size']))
+                mask=Image.new('L',size)
                 ImageDraw.Draw(mask).polygon([tuple(p) for p in node['polygon']],fill=255)
                 masks[key]=mask
                 for suffix in ('','-outline'):
@@ -65,10 +66,14 @@ class WorldmapV5(unittest.TestCase):
                 px,py=node['point']
                 self.assertEqual(mask.getpixel((px,py)),255,key)
                 # Both floating bars must leave the actual click point uncovered.
+                # A wider (draggable) map only needs its points inside the drawing.
                 ox,oy=spec.get('offset',(16,9))
                 sx,sy=ox+px*1248/1672,oy+py*1248/1672
-                self.assertTrue(9<sy<614,key)
-                self.assertFalse(24<=sx<=274 and 20<=sy<=96,key)
+                if 'size' in spec:
+                    self.assertTrue(0<px<size[0] and 0<py<size[1],key)
+                else:
+                    self.assertTrue(9<sy<614,key)
+                    self.assertFalse(24<=sx<=274 and 20<=sy<=96,key)
             for i,(key,mask) in enumerate(masks.items()):
                 for other,other_mask in list(masks.items())[i+1:]:
                     self.assertIsNone(ImageChops.multiply(mask,other_mask).getbbox(),(region,key,other))
@@ -100,9 +105,13 @@ class WorldmapV5(unittest.TestCase):
             self.assertTrue(by<=node['label_point'][1]<=by+bh,key)
             width=max(90,round(bw*1248/1672)+16);height=max(42,round(bh*1248/1672)+8)
             box=(x-width//2,y-height//2,x+width//2,y+height//2)
-            self.assertTrue(24<=box[0]<box[2]<=1256,key)
-            self.assertTrue(9<box[1]<box[3]<614,key)
-            self.assertFalse(box[0]<274 and box[1]<96,key)
+            if 'size' in spec:  # 0.20.11: draggable view; names stay inside the drawing
+                cw,ch=[round(v*1248/1672) for v in spec['size']]
+                self.assertTrue(0<=box[0]<box[2]<=cw and 0<=box[1]<box[3]<=ch,key)
+            else:
+                self.assertTrue(24<=box[0]<box[2]<=1256,key)
+                self.assertTrue(9<box[1]<box[3]<614,key)
+                self.assertFalse(box[0]<274 and box[1]<96,key)
             for other,b in boxes:
                 self.assertFalse(box[0]<b[2] and b[0]<box[2] and box[1]<b[3] and b[1]<box[3],(key,other))
             boxes.append((key,box))
