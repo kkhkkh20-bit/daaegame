@@ -131,3 +131,26 @@ testcase v111_nw_d13_partial_listed:
     click pos (640,300) until screen "r13_hub" timeout 120
     assert eval (r13_v111_value("handed:daram") is True and "resident_tok" in r13_v111_value("cart_roster") and "daram" not in r13_v111_value("cart_roster"))
     assert eval (qa_nw_seen("까로가 다람의 손목 끈을 푼다"))
+
+testcase v111_nw_d13_cleanup_bundled:
+    # 0.20.12 (후반 기획서 C안): 구조 뒤 다섯 확인을 바둑이·돌목·까로 세 대화로 묶는다.
+    pause 1.0
+    click "처음부터"
+    click pos (900,600) until "편지를 접는다" timeout 60
+    click "편지를 접는다"
+    click pos (900,600) until screen "r13_hub" timeout 90
+    run Function(qa_nw_day13)
+    run Function(r13_edit,location="square")
+    run Function(r13_v111_set,"all_cart_handed",True)
+    run Jump("r13_v111_driver_refuse13")
+    click pos (900,600) until screen "r13_hub" timeout 120
+    assert eval (r13_v111_value("Kkaro_forced_transport_refused") is True and r13_v111_value("cart_returned") is True and qa_nw_seen("은호 씨한테 돌려주자"))
+    assert eval ([o["index"] for o in r13_v111_binding()["options"] if o.get("person") in ("karo","guard","resident_badook")]==[0,1])
+    run Jump("r13_v111_order_stop13")
+    click pos (900,600) until screen "r13_book" timeout 120
+    assert eval (r13_v111_value("current_order_execution_stopped") is True and qa_nw_seen("너울에게 직접 보여 줘야"))
+    # 제시 화면 자체는 예전과 같다. 맞는 자료를 낸 뒤의 경로로 잇는다.
+    run Jump("r13_v111_relay_confirmed13")
+    click pos (900,600) until screen "r13_hub" timeout 120
+    assert eval (r13_v111_value("relay_stopped") is True)
+    assert eval ([o["index"] for o in r13_v111_binding()["options"] if o.get("person") in ("karo","guard","resident_badook")]==[0])

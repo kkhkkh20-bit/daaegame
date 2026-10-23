@@ -2318,7 +2318,9 @@ label r13_v111_order_stop13:
         $ r13_v111_commit('MS14_D13_S04_L0081')
     $ r13_v111_set('current_order_execution_stopped',True)
     $ r13_v111_apply('actual_stopped_order13',[dict(op="acquire",key='E13_ORDER',variant="observed")])
-    jump r13_v111_transport_cleanup13
+    # 0.20.12 (후반 기획서 C안): 명령 중지와 사본 전달을 한 번의 대화로 잇는다.
+    call r13_lines(r13_nw_block('order_relay_next13'),'nw:order_relay_next13')
+    jump r13_v111_relay_stop13
 
 label r13_v111_driver_refuse13:
     call r13_lines(r13_v111_lines(['MS14_D13_S04_L0082']),'v111:MS14_D13_S04_L0082')
@@ -2326,7 +2328,9 @@ label r13_v111_driver_refuse13:
         call r13_lines(r13_v111_lines(['MS14_D13_S04_L0083']),'v111:MS14_D13_S04_L0083')
         $ r13_v111_commit('MS14_D13_S04_L0083')
     $ r13_v111_set('Kkaro_forced_transport_refused',True)
-    jump r13_v111_transport_cleanup13
+    # 0.20.12 (후반 기획서 C안): 운반 거부와 빈 수레 반환을 한 번의 대화로 잇는다.
+    call r13_lines(r13_nw_block('karo_cart_next13'),'nw:karo_cart_next13')
+    jump r13_v111_cart_return13
 
 label r13_v111_cart_return13:
     $ r13_v111_arrive(['karo', 'guard', 'resident_badook', 'resident_eunho'])

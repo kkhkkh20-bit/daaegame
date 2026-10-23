@@ -80,6 +80,14 @@ init 301 python:
             for option in b["options"]:
                 if option.get("person")=="guard":option["location"]=guard_place
             square_people=["karo","resident_badook"]+([] if guard_place!="square" else ["guard"])
+            # 0.20.12 (후반 기획서 C안): 다섯 확인을 바둑이·돌목·까로 세 대화로 묶는다. 마친 확인은 목록에서 빼고,
+            # 이어지는 두 번째 확인(수레 반환, 사본 전달)은 앞 대화 뒤에 남은 경우에만 따로 보인다.
+            _done={0:r13_v111_value("actual_stop_actor_refuses_transport"),
+                   1:r13_v111_value("current_order_execution_stopped"),
+                   2:r13_v111_value("Kkaro_forced_transport_refused"),
+                   3:r13_v111_value("cart_returned") or not r13_v111_value("Kkaro_forced_transport_refused"),
+                   4:r13_v111_value("relay_stopped") or not r13_v111_value("current_order_execution_stopped")}
+            b["options"]=[o for o in b["options"] if not _done.get(o["index"])]
             b["people_by_location"]={"square":square_people,"school":["nabi","mom","daram"],"v111_labor":["guard","resident_siluk"],"v111_supervised":["neoul","resident_teacher"],"workshop":["buri"]}
         if v.get("gate")=="device_detach14" and r13_v111_value("buri_device_present"):b["people"]=["mom","daram","buri","resident_ppul","resident_badook","karo"]
         if v.get("gate")=="guard_relief_check14":b["people"]=["guard","resident_siluk",r13_v111_value("guard_relief_person") or "v111_patrol"]
