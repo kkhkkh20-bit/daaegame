@@ -18,7 +18,7 @@ testcase v111_nw_d07_fire_lost:
     pause 1.0
     click pos (900,600) until screen "r13_hub" timeout 120
     assert eval (r13_v111_value("meeting:fire")=="lose" and r13_v111_value("listed:resident_bori") is True)
-    assert eval (qa_nw_seen("불을 놓은 사람은 보리로 적으시오") and qa_nw_seen("사정은 들었소") and qa_nw_seen("붙잡는 사람은 없었다"))
+    assert eval (qa_nw_seen("불을 놓은 사람은 보리로 적으시오") and qa_nw_seen("사정은 들었소") and qa_nw_seen("붙잡는 사람은 없다"))
     assert eval (not r13_v111_value("fire_neoul_promise_recorded"))
 
 testcase v111_nw_d07_fire_partial:
@@ -37,4 +37,4 @@ testcase v111_nw_d07_fire_partial:
     pause 1.0
     click pos (900,600) until screen "r13_hub" timeout 120
     assert eval (r13_v111_value("meeting:fire")=="partial" and r13_v111_value("listed:resident_bori") is True)
-    assert eval (qa_nw_seen("셋 다 책임이오") and qa_nw_seen("어디에도 적히지 않았다") and not qa_nw_seen("……적으시오"))
+    assert eval (qa_nw_seen("셋 다 책임이오") and qa_nw_seen("어디에도 적히지 않는다") and not qa_nw_seen("……적으시오"))

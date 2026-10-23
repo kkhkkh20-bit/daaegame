@@ -24,7 +24,7 @@ testcase v111_nw_d01_gate_lost:
     run Jump("r13_v111_registered_depart")
     pause 1.0
     click pos (900,600) until screen "r13_hub" timeout 90
-    assert eval (qa_nw_seen("돌목이 표를 접다가") and not qa_nw_seen("정정한 표를 접다가") and qa_nw_seen("여관에 먼저 연락하라"))
+    assert eval (qa_nw_seen("돌목이 표를 접으며") and not qa_nw_seen("정정한 표를 접으며") and qa_nw_seen("여관에 먼저 연락하라"))
 
 testcase v111_nw_d01_gate_won:
     # Winning keeps the authored registration and adds the greeting and the aside.
@@ -47,7 +47,7 @@ testcase v111_nw_d01_gate_won:
     run Jump("r13_v111_registered_depart")
     pause 1.0
     click pos (900,600) until screen "r13_hub" timeout 90
-    assert eval (qa_nw_seen("정정한 표를 접다가") and qa_nw_seen("여관에 먼저 연락하라"))
+    assert eval (qa_nw_seen("정정한 표를 접으며") and qa_nw_seen("여관에 먼저 연락하라"))
     run Function(r13_edit,location="room13")
     run Jump("r13_v111_room_empty")
     pause 1.0

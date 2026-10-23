@@ -88,7 +88,7 @@ testcase v111_nw_d13_rein_won:
     click "선택한 근거 제출"
     click pos (900,600) until "엄마와 다람이 곁에 남게 한다" timeout 60
     assert eval (r13_v111_value("meeting:piko")=="win" and r13_v111_value("neoul_held") is True and r13_v111_owned("NW_NEOUL_LEDGER") and r13_v111_value("NW_NEOUL_LEDGER.variant")=="full")
-    assert eval (qa_nw_seen("너울 씨가 시켰어요") and qa_nw_seen("그럼 다 죽소"))
+    assert eval (qa_nw_seen("너울 씨가 시켰어요") and qa_nw_seen("그러면 다 죽소"))
 
 testcase v111_nw_d13_rein_painting_first:
     # Painting first: "죽은 화가의 낙서요" and the re-investigation is lost.
@@ -148,7 +148,7 @@ testcase v111_nw_d13_cleanup_bundled:
     assert eval ([o["index"] for o in r13_v111_binding()["options"] if o.get("person") in ("karo","guard","resident_badook")]==[0,1])
     run Jump("r13_v111_order_stop13")
     click pos (900,600) until screen "r13_book" timeout 120
-    assert eval (r13_v111_value("current_order_execution_stopped") is True and qa_nw_seen("너울에게 직접 보여 줘야"))
+    assert eval (r13_v111_value("current_order_execution_stopped") is True and qa_nw_seen("너울에게 이걸 직접 보여 줘야"))
     # 제시 화면 자체는 예전과 같다. 맞는 자료를 낸 뒤의 경로로 잇는다.
     run Jump("r13_v111_relay_confirmed13")
     click pos (900,600) until screen "r13_hub" timeout 120

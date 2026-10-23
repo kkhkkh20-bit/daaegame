@@ -28,7 +28,7 @@ testcase v111_nw_d03_lamp_lost:
     run Jump("r13_v111_restore3")
     pause 1.0
     click pos (900,600) until screen "r13_hub" timeout 120
-    assert eval (qa_nw_seen("초롱이 혼자 받침에 돌을 끼웠다"))
+    assert eval (qa_nw_seen("초롱이 혼자 받침에 돌을 끼운다"))
     screenshot "v111_nw_d03_lost.png"
 
 testcase v111_nw_d03_lamp_partial:
