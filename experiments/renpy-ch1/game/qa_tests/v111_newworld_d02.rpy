@@ -27,7 +27,7 @@ testcase v111_nw_d02_afternoon_shelter:
     click "나비"
     pause 1.0
     click "포대를 옮긴다"
-    click pos (900,600) until eval (r13_v111_value("piko_sacks2") is True and qa_nw_seen("이제 마른 천만 있으면 된다")) timeout 30
+    click pos (900,600) until eval (r13_v111_value("piko_sacks2") is True and qa_nw_seen("벤치 하나가 빈다")) timeout 30
     assert eval (qa_nw_afternoon_titles("dining")==["네로를 만나러 간다"] and qa_nw_afternoon_titles("inn")==["마른 천을 빌린다"])
     assert eval (qa_nw_afternoon_titles("square")==[])
     run Function(r13_v111_set,"piko_cloth2",True)

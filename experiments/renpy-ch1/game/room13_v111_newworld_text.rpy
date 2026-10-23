@@ -108,9 +108,6 @@ init 319 python:
         "gate_post_won_with_sketch_only":lambda:"V111:NW_PIKO_SKETCH4" in (r13_v111_value("proof_given:밤이 혐의의 근거를 확인한다") or []) and not {"V111:E23","V111:E24"}&set(r13_v111_value("proof_given:밤이 혐의의 근거를 확인한다") or []),
         # 0.20.18 (열쇠표 K1): 2일 오후 피코의 자리를 위해 실제로 한 일.
         "piko_sacks2":lambda:r13_v111_value("piko_sacks2") is True,
-        "piko_no_sacks2":lambda:r13_v111_value("piko_sacks2") is not True,
-        "piko_cloth2":lambda:r13_v111_value("piko_cloth2") is True,
-        "piko_no_cloth2":lambda:r13_v111_value("piko_cloth2") is not True,
         # 0.20.18 (열쇠표 K2): 6일 선생님께 아이들 자리를 받아 두었는가.
         "kkomi_seat6":lambda:r13_v111_value("kkomi_seat6") is True,
         "hyp1_won_without_e08":lambda:bool(r13_v111_value("proof_given:초롱과 피코의 하루를 대조한다")) and "V111:E08" not in r13_v111_value("proof_given:초롱과 피코의 하루를 대조한다"),
