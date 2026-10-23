@@ -959,6 +959,11 @@ label r13_v111_living_names12:
 label r13_v111_morning_notice12:
     call r13_v111_travel('school','notice12')
     $ r13_v111_arrive(['mom', 'daram', 'guard', 'resident_teacher'])
+    # 0.20.18 (소유자 2026-10-23 "착한 선택 한다고 좋은 결과가 안 나오게", CRUEL_CHOICES.md C2·C4): 2일에 피코를
+    # 들여 담요를 못 받았거나 11일 토실에게 한 장을 건넨 판은, 그날 밤 다람이 외투로 버티고 아침에 열이 난다.
+    if r13_v111_value('carried_dry_blankets')<2 and r13_v111_actor_ready('daram') and not r13_v111_value('daram_fever12'):
+        $ r13_v111_set('daram_fever12',True)
+        call r13_lines(r13_nw_block('daram_fever12'),'nw:daram_fever12')
     call r13_lines(r13_v111_lines(['MS14_D12_S01_L0017']),'v111:MS14_D12_S01_L0017')
     if r13_v111_actor_ready('guard'):
         call r13_lines(r13_v111_lines(['MS14_D12_S01_L0018']),'v111:MS14_D12_S01_L0018')
@@ -1005,6 +1010,11 @@ label r13_v111_medicine12:
 label r13_v111_warm_place12:
     call r13_v111_travel('school','warm_place12')
     $ r13_v111_arrive(['mom', 'daram', 'resident_teacher'])
+    # 열이 난 판: 하나뿐인 난로 옆자리를 다람이 쓴다. 배식 때 쓸 자리는 끝내 마련되지 않는다(조기 예방 불가).
+    if r13_v111_value('daram_fever12'):
+        call r13_lines(r13_nw_block('fever_seat12'),'nw:fever_seat12')
+        $ r13_v111_set('warm_seat_taken12',True)
+        jump r13_v111_morning_prep12_entry
     call r13_lines(r13_v111_lines(['MS14_D12_S01_L0026']),'v111:MS14_D12_S01_L0026')
     call r13_lines(r13_v111_lines(['MS14_D12_S01_L0027']),'v111:MS14_D12_S01_L0027')
     $ r13_v111_set('warm_seat_ready',True)
@@ -2459,6 +2469,18 @@ label r13_v111_crowd_block13:
     call r13_lines(r13_v111_lines(['MS14_D13_C_L0009']),'v111:MS14_D13_C_L0009')
     call r13_lines(r13_v111_lines(['MS14_D13_C_L0010']),'v111:MS14_D13_C_L0010')
     call r13_lines(r13_v111_lines(['MS14_D13_C_L0011']),'v111:MS14_D13_C_L0011')
+    # 0.20.18 (소유자 2026-10-23 "권선징악으로 유도하면 안 돼", CRUEL_CHOICES.md C1): 원수를 몸으로 감싸도
+    # 아무도 구하지 못한다. 군중이 아빠 쪽으로 쏠리고 너울은 그 틈에 빠져나간다. 막는 길은 비어 있는 감독자뿐이다.
+    call r13_lines(r13_nw_block('crowd_block_fail13'),'nw:crowd_block_fail13')
+    $ r13_v111_set('crowd_resolution_done',True)
+    $ r13_v111_set('crowd_injury',True)
+    $ r13_v111_set('crowd_intervention','failed')
+    $ r13_v111_set('outcome13','crowd_violence')
+    jump r13_v111_sleep13
+
+# 0.20.18 이전의 「너울 앞을 막는다」 성공 줄. 새 판은 지나지 않는다(옛 저장용).
+label r13_v111_crowd_block_old13:
+    call r13_lines(r13_v111_lines(['MS14_D13_C_L0009']),'v111:MS14_D13_C_L0009')
     if r13_v111_actor_ready('daram') and room13['location']=='square':
         call r13_lines(r13_v111_lines(['MS14_D13_C_L0013']),'v111:MS14_D13_C_L0013')
     if r13_v111_actor_ready('guard'):
