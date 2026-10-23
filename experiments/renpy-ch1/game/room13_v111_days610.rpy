@@ -128,16 +128,46 @@ label r13_v111_woodshed_seen6:
     call r13_lines(r13_v111_lines(['MS14_D06_S02_L0022']),'v111:MS14_D06_S02_L0022')
     call r13_lines(r13_v111_lines(['MS14_D06_S02_L0023']),'v111:MS14_D06_S02_L0023')
     $ r13_v111_commit('MS14_D06_S02_L0024')
-    menu:
-        '오늘 안에 학교 자리를 확인하고 옮긴다.':
-            $ r13_v111_set('choice:MS14_D06_S02','today')
-            $ r13_v111_commit('MS14_D06_S02_L0026')
-            jump r13_v111_today6
-        '허락을 받아 두고, 아이들은 내일 아침 데리러 온다.':  # 0.20.7 (review 6-12 #1): the time span is said before
-            $ r13_v111_set('choice:MS14_D06_S02','permission')
-            $ r13_v111_commit('MS14_D06_S02_L0026')
-            jump r13_v111_permission6
+    jump r13_v111_afternoon6
 
+label r13_v111_afternoon6:
+    # 0.20.18 (소유자 2026-10-23 "꼬미도 행동 판정", 열쇠표 K2): 「오늘 옮긴다 / 내일 데리러 온다」 메뉴를 걷었다.
+    # 학교 선생님께 실제로 자리를 받아 두고 창고로 돌아가 「지금 같이 가자」고 해야 아이들이 해 지기 전에
+    # 학교에 든다. 「내일 아침에 데리러 올게」로 떠나면 저녁에 불이 난다. 무엇을 잃는지는 미리 말하지 않는다.
+    call r13_v111_wait('afternoon6')
+    $ v111_answer=_return
+    if v111_answer==0:
+        jump r13_v111_seat6
+    if v111_answer==1:
+        $ r13_v111_set('choice:MS14_D06_S02','today')
+        $ r13_v111_commit('MS14_D06_S02_L0026')
+        $ r13_v111_commit('MS14_D06_S02_L0029')
+        jump r13_v111_fetch6
+    if v111_answer==2:
+        $ r13_v111_set('choice:MS14_D06_S02','permission')
+        $ r13_v111_commit('MS14_D06_S02_L0026')
+        jump r13_v111_permission6
+    jump r13_v111_afternoon6
+
+label r13_v111_seat6:
+    # 선생님께 자리를 받는 대화만 여기서 한다. 꼬미가 학교에 들어선 뒤의 말(P01 L0004~L0007)은 인계 때 나온다.
+    $ r13_v111_set('evacuation_requested',True)
+    $ r13_v111_scene('MS14_D06_P01')
+    $ r13_v111_arrive(['daram', 'resident_teacher'])
+    call r13_lines(r13_v111_lines(['MS14_D06_P01_L0001', 'MS14_D06_P01_L0002', 'MS14_D06_P01_L0003']),'v111:seat6:MS14_D06_P01_L0001')
+    call r13_lines(r13_nw_block('seat_done6'),'nw:seat_done6')
+    $ r13_v111_commit('MS14_D06_P01_L0008')
+    $ r13_v111_set('kkomi_seat6',True)
+    jump r13_v111_afternoon6
+
+label r13_v111_fetch6:
+    call r13_v111_travel('v111_woodshed','children_fetch6')
+    $ r13_v111_arrive(['daram', 'kid_kkomi', 'resident_bori'])
+    call r13_lines(r13_nw_block('fetch_now6'),'nw:fetch_now6')
+    jump r13_v111_acorn_recover6
+
+# 0.20.18 부터 새 판은 아래 today6·permission_today6 를 지나지 않는다(위 afternoon6 이 seat6·fetch6 으로 간다).
+# 그 전 저장을 이어 하는 사람을 위해 남긴다.
 label r13_v111_today6:
     call r13_lines(r13_v111_lines(['MS14_D06_S02_L0027']),'v111:MS14_D06_S02_L0027')
     call r13_lines(r13_v111_lines(['MS14_D06_S02_L0028']),'v111:MS14_D06_S02_L0028')
@@ -197,6 +227,8 @@ label r13_v111_handoff6:
     jump r13_v111_handoff6
 
 label r13_v111_handoff_done6:
+    if r13_v111_value('kkomi_seat6'):
+        call r13_lines(r13_v111_lines(['MS14_D06_P01_L0004', 'MS14_D06_P01_L0005', 'MS14_D06_P01_L0006', 'MS14_D06_P01_L0007']),'v111:handoff6:MS14_D06_P01_L0004')
     call r13_lines(r13_v111_lines(['MS14_D06_P01_L0019']),'v111:MS14_D06_P01_L0019')
     call r13_lines(r13_v111_lines(['MS14_D06_P01_L0020']),'v111:MS14_D06_P01_L0020')
     call r13_lines(r13_v111_lines(['MS14_D06_P01_L0021']),'v111:MS14_D06_P01_L0021')

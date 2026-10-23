@@ -111,6 +111,8 @@ init 319 python:
         "piko_no_sacks2":lambda:r13_v111_value("piko_sacks2") is not True,
         "piko_cloth2":lambda:r13_v111_value("piko_cloth2") is True,
         "piko_no_cloth2":lambda:r13_v111_value("piko_cloth2") is not True,
+        # 0.20.18 (열쇠표 K2): 6일 선생님께 아이들 자리를 받아 두었는가.
+        "kkomi_seat6":lambda:r13_v111_value("kkomi_seat6") is True,
         "hyp1_won_without_e08":lambda:bool(r13_v111_value("proof_given:초롱과 피코의 하루를 대조한다")) and "V111:E08" not in r13_v111_value("proof_given:초롱과 피코의 하루를 대조한다"),
         # Event 05: the day-7 fire meeting.
         "fire_win":lambda:r13_v111_value("meeting:fire")=="win",

@@ -2230,5 +2230,56 @@
         "guard": []
       }
     ]
+  },
+  "afternoon6": {
+    "location": "v111_woodshed",
+    "people": [
+      "daram",
+      "kid_kkomi",
+      "resident_bori"
+    ],
+    "people_by_location": {
+      "v111_woodshed": [
+        "daram",
+        "kid_kkomi",
+        "resident_bori"
+      ],
+      "school": [
+        "daram",
+        "resident_teacher"
+      ]
+    },
+    "options": [
+      {
+        "title": "아이들 자리를 여쭌다",
+        "location": "school",
+        "person": "resident_teacher",
+        "guard": [
+          [
+            "state",
+            "kkomi_seat6",
+            null
+          ]
+        ]
+      },
+      {
+        "title": "자리 났어. 지금 같이 가자",
+        "location": "v111_woodshed",
+        "person": "kid_kkomi",
+        "guard": [
+          [
+            "state",
+            "kkomi_seat6",
+            true
+          ]
+        ]
+      },
+      {
+        "title": "내일 아침에 데리러 올게",
+        "location": "v111_woodshed",
+        "person": "kid_kkomi",
+        "guard": []
+      }
+    ]
   }
 }
