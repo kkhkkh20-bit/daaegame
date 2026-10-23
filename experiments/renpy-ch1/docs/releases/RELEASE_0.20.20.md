@@ -15,4 +15,6 @@
 ## 검증
 
 - 단위 시험 939개: 원래부터 실패하던 3건 외 실패 없음. lint 오류 0. 대사 논리 검사 0건.
-- 화면 시험: 새 시험 3개(`v111_nw_aftermath_reactions`, `v111_nw_aftermath_memorial`, `v111_fork_fate_points`)를 더한 85개 목록 `docs/codex/qa_names_0.20.20.txt`. 결과는 아래.
+- 화면 시험: 새 시험 3개(`v111_nw_aftermath_reactions`, `v111_nw_aftermath_memorial`, `v111_fork_fate_points`)를 더한 85개 목록 `docs/codex/qa_names_0.20.20.txt` 전부 통과.
+- 웹 빌드(archive_sha256 3fb25fed…), 브라우저 `qa_carriage` 통과.
+- B안 화면은 시안만 만들었다(게임 미적용): `docs/reviews/bstyle-20261023/`.
