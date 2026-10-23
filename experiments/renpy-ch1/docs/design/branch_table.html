@@ -1,0 +1,143 @@
+<title>다람탐정 분기표</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
+<style>
+/* 레이아웃: 위에서 아래로 읽는 문서. 표마다 가로 스크롤 상자, 상태는 칩으로 */
+:root{
+  --bg:#f6f2ea; --surface:#fffdf8; --ink:#2b2420; --ink-2:#6b5f55; --line:#ddd2c2;
+  --accent:#7a2531; --gold:#a07a2c;
+  --ok-bg:#e3efe2; --ok-fg:#2f5a2c; --warn-bg:#f6e8cf; --warn-fg:#7a5310; --bad-bg:#f4dcdc; --bad-fg:#7a2222; --plan-bg:#e7e4f0; --plan-fg:#463d6b;
+  --display:"Gowun Batang","Noto Serif KR",serif; --body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#1b1715; --surface:#241f1c; --ink:#efe6da; --ink-2:#b4a797; --line:#3d342e; --accent:#d9798a; --gold:#d4ad5c;
+  --ok-bg:#1f3320; --ok-fg:#a9d6a3; --warn-bg:#3a2d14; --warn-fg:#f0c878; --bad-bg:#3d1d1f; --bad-fg:#f0a3a3; --plan-bg:#2a2638; --plan-fg:#c6bdf0; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1b1715; --surface:#241f1c; --ink:#efe6da; --ink-2:#b4a797; --line:#3d342e; --accent:#d9798a; --gold:#d4ad5c;
+  --ok-bg:#1f3320; --ok-fg:#a9d6a3; --warn-bg:#3a2d14; --warn-fg:#f0c878; --bad-bg:#3d1d1f; --bad-fg:#f0a3a3; --plan-bg:#2a2638; --plan-fg:#c6bdf0; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;font-size:15px}
+.wrap{max-width:1180px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:36px}
+header{display:grid;gap:8px}
+h1{font-family:var(--display);font-size:clamp(26px,4vw,36px);margin:0;text-wrap:balance}
+h2{font-family:var(--display);font-size:22px;margin:0;text-wrap:balance;color:var(--accent)}
+.lede{color:var(--ink-2);margin:0;max-width:68ch}
+section{display:grid;gap:12px;min-width:0}
+section>p{margin:0;color:var(--ink-2);max-width:72ch}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:13px;color:var(--ink-2)}
+.box{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:900px;font-size:13.5px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font-weight:600;font-size:12px;letter-spacing:.04em;color:var(--ink-2);background:var(--bg);position:sticky;top:0}
+tr:last-child td{border-bottom:none}
+td.day{font-family:var(--display);font-weight:700;white-space:nowrap;color:var(--gold);font-variant-numeric:tabular-nums}
+td b{font-weight:600}
+.tag{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--ink-2);display:block}
+.chip{display:inline-block;font-size:11.5px;font-weight:600;padding:1px 8px;border-radius:999px;white-space:nowrap}
+.ok{background:var(--ok-bg);color:var(--ok-fg)} .warn{background:var(--warn-bg);color:var(--warn-fg)} .bad{background:var(--bad-bg);color:var(--bad-fg)} .plan{background:var(--plan-bg);color:var(--plan-fg)}
+ul{margin:0;padding-left:18px} li{margin:2px 0}
+.note{font-size:13px;color:var(--ink-2)}
+footer{font-size:12.5px;color:var(--ink-2);border-top:1px solid var(--line);padding-top:14px}
+</style>
+
+<div class="wrap">
+<header>
+  <h1>다람탐정 분기표</h1>
+  <p class="lede">0.20.18 작업 소스 기준. 누가 어디서 갈리는지, 무엇으로 정해지는지, 결과가 뒤에서 어떻게 쓰이는지를 한 곳에 모았다. 「현행」은 코드에서 확인한 사실, 「설계」는 아직 넣지 않은 계획이다.</p>
+  <div class="legend">
+    <span><span class="chip ok">행동 판정</span> 앞선 행동으로 정해짐</span>
+    <span><span class="chip warn">메뉴</span> 위기 직전에 고름(바꿀 대상)</span>
+    <span><span class="chip bad">비극</span> 아무것도 모를 때의 기본 결과</span>
+    <span><span class="chip plan">설계</span> 아직 게임에 없음</span>
+  </div>
+</header>
+
+<section id="fate">
+  <h2>1. 생사가 갈리는 곳</h2>
+  <p>판정 시점마다 누가 사는지가 정해진다. 결과 열의 첫 줄이 첫 판의 기본값이다.</p>
+  <div class="box"><table>
+    <thead><tr><th>날</th><th>누구 · 판정 시점</th><th>방식</th><th>결과</th><th>살리는 길(현행)</th><th>뒤에서 쓰이는 곳</th></tr></thead>
+    <tbody>
+    <tr><td class="day">2일</td><td><b>피코</b> · 식당 폐점<span class="tag">D02-PIKO → D03-PIKO</span></td><td><span class="chip ok">행동 판정</span><br><span class="note">0.20.18</span></td>
+      <td><span class="chip bad">비극</span> 3일 아침 꺼진 3번 등 아래서 죽음<br>생존: 식당 벤치에서 잠</td>
+      <td>나비 「포대를 옮긴다」 + 할머니 「마른 천을 빌린다」 → 피코에게 자리 전달 → 함께 입실. 그 전에 「네로를 만나러 간다」면 오후 끝</td>
+      <td>대가: 네로 쪽을 고르면 담요 2장(6일 학교, 11일 덮기)과 네로 면담·자료(E31)를 2일에 얻음. 피코 쪽이면 네로는 4일에 만남(담요 없음)<br>생존 시: 3일 초상 완성, <b>4일 밤 그림 → 5일 회의 근거(P1)</b>, 13일 피코 회의·명단 대상</td></tr>
+    <tr><td class="day">6일</td><td><b>꼬미</b>(보리 손) · 저녁 점호<span class="tag">D06-FIRE</span></td><td><span class="chip warn">메뉴</span></td>
+      <td><span class="chip bad">비극</span> 「내일 아침 데리러 온다」 → 창고 불, 꼬미 죽음, 보리 화상, 세 아이 구조<br>생존: 네 아이 학교 인계</td>
+      <td>메뉴 「오늘 안에 학교 자리를 확인하고 옮긴다」</td>
+      <td>6일 저녁 그릇 수(넷/빈 그릇), 7일 불 회의 경로(빈 창고 / 구조)<br><span class="chip plan">설계</span> P5 비밀 문, P6 작은 냄비 힌트, P7 보리가 11일 수레</td></tr>
+    <tr><td class="day">7일</td><td><b>부엉이</b>(다람 구금) · 서류 열람<span class="tag">D07-OWL → D08-MURDER</span></td><td><span class="chip warn">메뉴</span></td>
+      <td><span class="chip bad">비극</span> C 「다람을 도토에게 맡기고 다녀온다」 → 부엉이 죽음, 다람 구금<br>예방 A(다람과 남음) · B(다람과 함께 감)</td>
+      <td>메뉴 A 또는 B</td>
+      <td>8~10일이 살인 경로(13호 회의)와 예방 경로(기록 회의)로 갈림. 부엉이 생존 시 10·11·14일<br><span class="chip plan">설계</span> 도토와 사전 합의로 C에서도 막기, P2 톡의 빗장, P4 밤이 목격, O2 기록 사본</td></tr>
+    <tr><td class="day">11일</td><td><b>네로</b> · 밤 출발<span class="tag">D11-NERO</span></td><td><span class="chip ok">행동 판정</span><br><span class="note">일부</span></td>
+      <td><span class="chip bad">비극</span> 늦은 구조 → 아랫길에서 죽음<br>생존: 낮 인계 또는 밤 구조</td>
+      <td>낮에 아랫길 세 사람 인계 완료 → 안전. 아니면 밤 구조: 수레·운반자·등·학교 물자 넷을 맞춰야 출발</td>
+      <td>생존 시 13일 가족 호송(「엄마와 다람을 네로와 학교로」)<br><span class="chip plan">설계</span> P3 톡 바퀴, P7 보리 운반, P10 이름표 확인</td></tr>
+    <tr><td class="day">12일</td><td><b>도담</b> · 배식<span class="tag">D12-SOUP</span></td><td><span class="chip warn">메뉴</span> + <span class="chip ok">행동</span></td>
+      <td><span class="chip bad">비극</span> 늦은 폭로(장작 받으러 감) → 도담 죽음<br>먹기 전 중단 · 조기 예방</td>
+      <td>메뉴 「배식 전에 더 살핀다」 → 먹기 전 중단 / 「아침에 부탁한 일들을 확인한다」 + 아침 준비 → 조기 예방</td>
+      <td>12일 수프 회의 경로<br><span class="chip plan">설계</span> P9 부엉이의 약장 열쇠, O4 약병, P11 도담의 담요 기억</td></tr>
+    <tr><td class="day">13일</td><td><b>명단 사람들</b> · 수레·기록 공개<span class="tag">D13-CART · D13-CROWD</span></td><td><span class="chip warn">메뉴</span> + <span class="chip ok">행동</span></td>
+      <td>전원 인계 · 가족 먼저 · 일부 인계 · 군중 폭력</td>
+      <td>담요·피코 회의 승리 뒤 마지막 수레 인계 → 전원. 공개 직후 「너울 앞을 막는다 / 감독자에게 맡긴다」(「막지 않는다」는 폭력)</td>
+      <td>14일 결말 판정(outcome13)<br><span class="chip plan">설계</span> P8 보리, P12 나비, 호루라기</td></tr>
+    </tbody></table></div>
+</section>
+
+<section id="meetings">
+  <h2>2. 회의 11개</h2>
+  <p>회의마다 기회 5번. 틀리면 반박을 듣고 기회가 준다. 「부분」이 없는 회의는 이기거나 진다.</p>
+  <div class="box"><table>
+    <thead><tr><th>날</th><th>회의 · 쟁점</th><th>결과</th><th>지면 / 부분이면</th><th>이기면</th></tr></thead>
+    <tbody>
+    <tr><td class="day">1일</td><td><b>입구 회의</b><br>다람이 함께 들어갈 수 있는가</td><td>이김 · 짐</td><td>다람이 「외 한 명」으로 등록, 아빠는 일꾼 명단</td><td>방문객 다돌·동행 아동으로 등록</td></tr>
+    <tr><td class="day">3일</td><td><b>등 회의</b><br>3번 등의 돌을 꺼낸 사람은 누구인가</td><td>이김 · 부분 · 짐</td><td>짐: 톡 이송 명단. 부분: 톡은 무죄, 칼·판매·걸쇠·돌 중 못 밝힌 쟁점이 남음</td><td>톡 무죄. 실룩 신병을 돌목 감독 / 너울에게(너울이면 실룩 명단)</td></tr>
+    <tr><td class="day">5일</td><td><b>초소 회의</b><br>초소에서 돌목을 문 사람은 밤이인가</td><td>이김 · 짐</td><td>밤이 이송 명단</td><td>밤이 무죄. 정답: 진술+천+겉옷+귀가 진술, <b>또는 진술+천+피코의 그림</b>(0.20.18)</td></tr>
+    <tr><td class="day">7일</td><td><b>불 회의</b><br>창고 문 앞에 불을 놓은 사람은 누구인가</td><td>이김 · 부분 · 짐</td><td>보리 명단(짐·부분 모두)</td><td>보리 무죄, 방화와 장작 절도를 나눔</td></tr>
+    <tr><td class="day">10일</td><td><b>13호실 회의</b>(살인 경로)<br>13호실에서 부엉이에게 무슨 일이 있었나</td><td>이김 · 부분 · 짐</td><td>짐: 다람 명단</td><td>할머니 구금, 다람 풀려남</td></tr>
+    <tr><td class="day">10일</td><td><b>기록 회의</b>(예방 경로)<br>엄마가 맡긴 기록을 누가 받아야 하는가</td><td>이김 · 부분 · 짐</td><td>짐: 부엉이 명단</td><td>가족이 기록을 받음 · 진엔딩 조건</td></tr>
+    <tr><td class="day">11일</td><td><b>가설 회의</b><br>사람이 무너지는 까닭은 무엇인가</td><td>이김 · 부분 · 짐</td><td>시설을 본 판에서 굴돌 명단</td><td>너울 장부를 온전히 얻음(13일) · 진엔딩 조건</td></tr>
+    <tr><td class="day">12일</td><td><b>수프 회의</b><br>아이들이 먹은 수프에 무엇이 들어갔나</td><td>이김 · 부분 · 짐</td><td>짐(파편): 나비 명단</td><td>선생님 처리 경로</td></tr>
+    <tr><td class="day">13일</td><td><b>담요 회의</b><br>모과 씨가 판돌 씨를 기다린다는 말은 사실인가</td><td>이김 · 부분 · 짐</td><td>짐: 일부만 인계</td><td>전원 인계로 가는 길 · 진엔딩 조건</td></tr>
+    <tr><td class="day">13일</td><td><b>피코 회의</b><br>3번 돌을 빼라고 시킨 사람은 누구인가</td><td>이김 · 짐</td><td>장부 없음 → 진엔딩 불가</td><td>너울 장부 확보</td></tr>
+    <tr><td class="day">14일</td><td><b>제단 회의</b><br>사람을 제단에 보내야 마을이 사는가</td><td>이김 · 짐</td><td>아침 결말에서 진엔딩 불가</td><td>진엔딩 조건</td></tr>
+    </tbody></table></div>
+</section>
+
+<section id="endings">
+  <h2>3. 결말 7개</h2>
+  <p>14일에 위에서부터 차례로 따져 처음 맞는 것이 결말이 된다. 사망은 피코·꼬미·부엉이·네로·도담과 기타 생존값으로 센다.</p>
+  <div class="box"><table>
+    <thead><tr><th>순서</th><th>결말</th><th>조건</th></tr></thead>
+    <tbody>
+    <tr><td class="day">1</td><td><b>남겨진 이름</b></td><td>다람이 수레로 떠남(명단에 있고 인계되지 않음)</td></tr>
+    <tr><td class="day">2</td><td><b>얼어붙은 마을</b></td><td>죽은 사람 4명 이상 — 첫 판의 기본값</td></tr>
+    <tr><td class="day">3</td><td><b>함께 떠난 가족</b></td><td>13일 가족 먼저(family_priority)</td></tr>
+    <tr><td class="day">4</td><td><b>남은 사람들</b></td><td>13일 일부 인계(partial_rescue)</td></tr>
+    <tr><td class="day">5</td><td><b>상처 입은 귀환</b></td><td>13일 공개 때 군중 폭력</td></tr>
+    <tr><td class="day">6</td><td><b>마을의 아침</b></td><td>위 어느 것도 아님</td></tr>
+    <tr><td class="day">7</td><td><b>새로운 아침</b>(진엔딩)</td><td>마을의 아침 + 사망 0 + 너울 장부 + 기록·가설·담요·제단 회의 모두 승리<br><span class="chip plan">설계</span> 13일 전원 인계 + 운송 고리 중단 추가(마지막 단계)</td></tr>
+    </tbody></table></div>
+</section>
+
+<section id="chains">
+  <h2>4. 사건이 사건을 구하는 끈</h2>
+  <p>살린 사람과 확보한 물건이 뒤 사건의 다른 길을 연다. 지금 들어간 것은 P1 하나다.</p>
+  <div class="box"><table>
+    <thead><tr><th>#</th><th>앞 사건에서</th><th>뒤 사건에서</th><th>상태</th></tr></thead>
+    <tbody>
+    <tr><td class="day">P1</td><td>2일 피코 생존</td><td>4일 밤 처마 옆 그림 → 5일 초소 회의에서 겉옷 대조·귀가 진술을 대신</td><td><span class="chip ok">0.20.18</span></td></tr>
+    <tr><td class="day">P2</td><td>3일 톡 무죄</td><td>7일 13호 안쪽 빗장 수리 → 부엉이 예방(사람의 길)</td><td><span class="chip plan">설계</span></td></tr>
+    <tr><td class="day">P3</td><td>3일 톡 무죄</td><td>11일 수레 바퀴 → 네로 구조 조건</td><td><span class="chip plan">설계</span></td></tr>
+    <tr><td class="day">P4</td><td>5일 밤이 무죄</td><td>7일 밤 거짓 호출 목격 → 8일 증언, 다음 판의 힌트</td><td><span class="chip plan">설계</span></td></tr>
+    <tr><td class="day">P5–P7</td><td>6일 꼬미 생존 · 보리 손 무사</td><td>9일 비밀 문, 12일 「선생님만 작은 냄비」, 11일 수레 운반</td><td><span class="chip plan">설계</span></td></tr>
+    <tr><td class="day">P8</td><td>7일 보리 무죄</td><td>13일 공개 때 너울 앞에 섬</td><td><span class="chip plan">설계</span></td></tr>
+    <tr><td class="day">P9</td><td>7일 부엉이 생존</td><td>12일 약장 열쇠 위치 → 약병 회수</td><td><span class="chip plan">설계</span></td></tr>
+    <tr><td class="day">P10</td><td>11일 네로 생존</td><td>13일 가족 호송(현행) + 이름표로 전원 인계</td><td><span class="chip warn">일부 현행</span></td></tr>
+    <tr><td class="day">P11–P13</td><td>12일 도담 생존 · 나비 무죄 · 굴돌 명단 없음</td><td>13일 담요 근거, 학교에서 사람 받기, 14일 제단 돌판</td><td><span class="chip plan">설계</span></td></tr>
+    <tr><td class="day">상점</td><td>일당(1일 일꾼 명단의 장작 일 등)</td><td>초(2일 피코), 자물쇠(7일·12일), 방수 덮개(11일), 호루라기(13일)</td><td><span class="chip plan">설계</span></td></tr>
+    </tbody></table></div>
+</section>
+
+<footer>출처: <code>experiments/renpy-ch1/game/room13_v111_days*.rpy</code>, <code>room13_v111_newworld_rules.rpy</code>(결말 판정), <code>room13_fork_screen.rpy</code>(회의 목록), 설계 문서 <code>docs/design/CHAIN_DESIGN.md</code>, <code>FUTURE_KNOWLEDGE_KEYS.md</code>. 2026-10-23.</footer>
+</div>

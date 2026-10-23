@@ -91,7 +91,7 @@ testcase v111_nw_d05_piko_sketch:
     pause 1.0
     screenshot "v111_nw_d04_piko_sketch.png"
     click pos (900,600) until eval (r13_v111_owned("NW_PIKO_SKETCH4")) timeout 60
-    assert eval (qa_nw_seen("애 키는 아니에요") and r13_v111_value("piko.location")=="clinic")
+    assert eval (qa_nw_seen("애들은 저만큼 안 와요") and r13_v111_value("piko.location")=="clinic")
     run Function(qa_nw_day5,[])
     run Jump("r13_v111_proof5")
     pause 1.5
@@ -109,7 +109,7 @@ testcase v111_nw_d05_piko_sketch:
     click "선택한 근거 제출"
     click pos (900,600) until screen "r13_hub" timeout 120
     assert eval (r13_v111_value("meeting:gate_post")=="win" and r13_v111_value("listed:bami") is not True)
-    assert eval (qa_nw_seen("내가 붙잡은 데가 바로 거기요") and qa_nw_seen("그림쟁이 그림 한 장으로요"))
+    assert eval (qa_nw_seen("내가 움켜쥔 데가 딱 여기였소") and qa_nw_seen("그림쟁이 낙서 한 장으로"))
     screenshot "v111_nw_d05_piko_sketch.png"
 
 label r13_v111_qa_piko_sketch4:
