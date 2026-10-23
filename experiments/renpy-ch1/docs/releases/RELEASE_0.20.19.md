@@ -14,4 +14,5 @@
 ## 검증
 
 - 단위 시험 938개: 원래부터 실패하던 3건 외 실패 없음. lint 오류 0. 대사 논리 검사 0건.
-- 화면 시험: 새 시험 3개(`v111_nw_d13_riot_deaths`, `v111_nw_d12_kkomi_soup`, `v111_nw_d11_lower_elder`)를 더한 82개 목록 `docs/codex/qa_names_0.20.19.txt`. 결과는 아래.
+- 화면 시험: 새 시험 3개(`v111_nw_d13_riot_deaths`, `v111_nw_d12_kkomi_soup`, `v111_nw_d11_lower_elder`)를 더한 82개 목록 `docs/codex/qa_names_0.20.19.txt` 전부 통과.
+- 웹 빌드(archive_sha256 8d5d05eb…), 브라우저 `qa_carriage` 통과.
