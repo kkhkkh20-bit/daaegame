@@ -38,7 +38,8 @@
 - 단위 시험 938개: 원래부터 실패하던 3건 외 실패 없음.
 - Ren'Py lint: 오류 0. 도달 불가 경고는 0.20.17 마차 편지 메뉴의 옛 저장용 줄(의도)과 기존 `room13.rpy`.
 - 대사 논리 자동 검사: 이름 소개 전 사용 0, 죽은 인물 대사 0, 결과 지문 중복 0.
-- 화면 시험: 새 시험 3개(`v111_nw_d02_afternoon_shelter`, `v111_nw_d02_afternoon_half_then_nero`, `v111_nw_d05_piko_sketch`)를 더한 목록 `docs/codex/qa_names_0.20.18.txt` 73개 전부 통과. 6일 시험 2개(`v111_nw_d06_afternoon_today`, `v111_nw_d06_afternoon_tomorrow`)를 더해 75개 목록으로 다시 돌린다. 소유자 확인 뒤 대사를 다듬고 2·5일 시험 5개를 다시 돌려 통과.
+- 화면 시험: 새 시험 3개(`v111_nw_d02_afternoon_shelter`, `v111_nw_d02_afternoon_half_then_nero`, `v111_nw_d05_piko_sketch`)를 더한 목록 `docs/codex/qa_names_0.20.18.txt` 73개 전부 통과. 6일·잔혹 선택 시험을 더한 최종 목록 79개(`docs/codex/qa_names_0.20.18.txt`) 전부 통과.
+- 웹 빌드(archive_sha256 e40187fd…), 브라우저 `qa_carriage` 통과. `qa_navigation`·`qa_save_slots`는 옛 현장 화면 전제라 이번에도 돌리지 않았다(다시 써야 함). 소유자 확인 뒤 대사를 다듬고 2·5일 시험 5개를 다시 돌려 통과.
 
 ## 문구 확인(소유자 2026-10-23)
 
