@@ -1,0 +1,317 @@
+{
+  "asset_set": "B approved question screen panel corrections",
+  "reference": "/workspace/shared/ui-cute/b-gameplay/05_질문창.png",
+  "generator": "Built-in image_gen",
+  "postprocess": "ImageMagick meaningful alpha-bound crop (alpha > 4), proportional resize to target art height, protected left/right endcaps, horizontal center fit, transparent canvas padding. No programmatic painting or vertical border stretching.",
+  "coordinate_convention": "Bounding boxes are [left, top, right exclusive, bottom exclusive]. Canvas includes 16px transparent outer margin.",
+  "card_correction": "Actual meaningful artwork is 640x84, not 84px canvas with shorter art. Canvas is 672x116.",
+  "book_correction": {
+    "left_ring_count": 3,
+    "tape_color": "red/coral",
+    "tape_position": "upper right",
+    "blank_center": true
+  },
+  "pixel_identical_states": false,
+  "geometry_verification": {
+    "default": {
+      "silhouette_iou_vs_default_alpha_gt127": 1.0,
+      "silhouette_pixel_disagreement": 0,
+      "maximum_distance_disagreement_to_default_boundary_px": 0.0,
+      "center_rgba_mean": [
+        249.629,
+        237.9,
+        219.685,
+        252.657
+      ],
+      "center_rgb_sd": [
+        0.525,
+        0.664,
+        0.87
+      ],
+      "center_alpha_range": [
+        251,
+        254
+      ]
+    },
+    "hover": {
+      "silhouette_iou_vs_default_alpha_gt127": 0.983373,
+      "silhouette_pixel_disagreement": 795,
+      "maximum_distance_disagreement_to_default_boundary_px": 1.0,
+      "center_rgba_mean": [
+        249.585,
+        237.984,
+        220.872,
+        252.853
+      ],
+      "center_rgb_sd": [
+        0.632,
+        0.942,
+        1.127
+      ],
+      "center_alpha_range": [
+        251,
+        254
+      ]
+    },
+    "done": {
+      "silhouette_iou_vs_default_alpha_gt127": 0.994331,
+      "silhouette_pixel_disagreement": 271,
+      "maximum_distance_disagreement_to_default_boundary_px": 1.0,
+      "center_rgba_mean": [
+        214.052,
+        206.639,
+        198.469,
+        252.676
+      ],
+      "center_rgb_sd": [
+        1.488,
+        1.562,
+        1.671
+      ],
+      "center_alpha_range": [
+        251,
+        254
+      ]
+    }
+  },
+  "limits": [
+    "Generated paper centers are visually near-uniform rather than exact solid RGB.",
+    "Card alpha silhouettes differ by up to about 1px after normalization.",
+    "Central alpha is almost opaque (251-254), not exactly 255.",
+    "Not tested in RenPy runtime."
+  ],
+  "assets": [
+    {
+      "file": "b_panel_card.png",
+      "canvas_size_px": [
+        672,
+        116
+      ],
+      "color_mode": "RGBA",
+      "source_size_px": [
+        2115,
+        743
+      ],
+      "source_alpha_gt_4_crop_xyxy": [
+        66,
+        201,
+        2053,
+        508
+      ],
+      "proportional_resized_size_px": [
+        544,
+        84
+      ],
+      "protected_endcaps_px": [
+        80,
+        80
+      ],
+      "target_art_size_px": [
+        640,
+        84
+      ],
+      "alpha_gt_4_bbox_xyxy": [
+        16,
+        16,
+        656,
+        100
+      ],
+      "meaningful_art_size_px": [
+        640,
+        84
+      ],
+      "raw_alpha_bbox_xyxy": [
+        16,
+        16,
+        656,
+        100
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "sha256": "3b1b051328727710cb8b796e20c6bf4ef068fc9ad0b2bfec308bce9d0ff9419d",
+      "original": "originals/b_panel_card.png"
+    },
+    {
+      "file": "b_panel_card_hover.png",
+      "canvas_size_px": [
+        672,
+        116
+      ],
+      "color_mode": "RGBA",
+      "source_size_px": [
+        2115,
+        743
+      ],
+      "source_alpha_gt_4_crop_xyxy": [
+        66,
+        194,
+        2058,
+        505
+      ],
+      "proportional_resized_size_px": [
+        538,
+        84
+      ],
+      "protected_endcaps_px": [
+        80,
+        80
+      ],
+      "target_art_size_px": [
+        640,
+        84
+      ],
+      "alpha_gt_4_bbox_xyxy": [
+        16,
+        16,
+        656,
+        100
+      ],
+      "meaningful_art_size_px": [
+        640,
+        84
+      ],
+      "raw_alpha_bbox_xyxy": [
+        16,
+        16,
+        656,
+        100
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "sha256": "5be487ea9d29f309c866871f48d5669cc60f609096bce1e6ad26e8e74a1bab41",
+      "original": "originals/b_panel_card_hover.png"
+    },
+    {
+      "file": "b_panel_card_done.png",
+      "canvas_size_px": [
+        672,
+        116
+      ],
+      "color_mode": "RGBA",
+      "source_size_px": [
+        2115,
+        743
+      ],
+      "source_alpha_gt_4_crop_xyxy": [
+        65,
+        196,
+        2059,
+        505
+      ],
+      "proportional_resized_size_px": [
+        542,
+        84
+      ],
+      "protected_endcaps_px": [
+        80,
+        80
+      ],
+      "target_art_size_px": [
+        640,
+        84
+      ],
+      "alpha_gt_4_bbox_xyxy": [
+        16,
+        16,
+        656,
+        100
+      ],
+      "meaningful_art_size_px": [
+        640,
+        84
+      ],
+      "raw_alpha_bbox_xyxy": [
+        16,
+        16,
+        656,
+        100
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "sha256": "db044a1158b8fff0827fcfb494895008f93e77faed1dbec3c70ad1020ac0653e",
+      "original": "originals/b_panel_card_done.png"
+    },
+    {
+      "file": "b_panel_book.png",
+      "canvas_size_px": [
+        760,
+        540
+      ],
+      "color_mode": "RGBA",
+      "source_size_px": [
+        1488,
+        1057
+      ],
+      "source_alpha_gt_4_crop_xyxy": [
+        28,
+        36,
+        1475,
+        1008
+      ],
+      "proportional_resized_size_px": [
+        756,
+        508
+      ],
+      "protected_endcaps_px": [
+        150,
+        150
+      ],
+      "target_art_size_px": [
+        728,
+        508
+      ],
+      "alpha_gt_4_bbox_xyxy": [
+        16,
+        16,
+        744,
+        524
+      ],
+      "meaningful_art_size_px": [
+        728,
+        508
+      ],
+      "raw_alpha_bbox_xyxy": [
+        16,
+        16,
+        744,
+        524
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "sha256": "72df207aa3b12bc6cdcc022c75a0867eb726ea74fb0c3c610f6f4fcf7f443b15",
+      "original": "originals/b_panel_book.png"
+    }
+  ]
+}
