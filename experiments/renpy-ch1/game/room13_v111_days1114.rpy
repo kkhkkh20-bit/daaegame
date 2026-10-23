@@ -2483,7 +2483,7 @@ label r13_v111_crowd_watch13:
     $ r13_v111_set('outcome13','crowd_violence')
     jump r13_v111_sleep13
 
-# 미연결 분기(검토 0.20.4 연결 2): 정상 선택에서 들어오는 길이 없다. 연결 조건은 소유자 결정 뒤 정한다.
+# 미연결 분기(검토 0.20.4 연결 2): 정상 선택에서 들어오는 길이 없다. docs/design/UNCONNECTED_BRANCHES.md (2026-10-23 미연결 유지 결정).
 label r13_v111_crowd_failed13:
     call r13_lines(r13_v111_lines(['MS14_D13_C_L0021']),'v111:MS14_D13_C_L0021')
     call r13_lines(r13_v111_lines(['MS14_D13_C_L0022']),'v111:MS14_D13_C_L0022')

@@ -156,7 +156,7 @@ init 337 python:
                     back=rows[k];fx,fy,fw,fh=back["rect"];cx=fx+fw/2.0
                     others=[r for n,r in enumerate(rows) if n!=k and r.get("rect")]
                     def crowd(f):
-                        hit=sum(1 for r in others if abs((r["rect"][0]+r["rect"][2]/2.0)-f)<(fw+r["rect"][2])/2.0*0.8)
+                        hit=sum(1 for r in others if abs((r["rect"][0]+r["rect"][2]/2.0)-f)<(fw+r["rect"][2])/2.0*0.5)
                         hit+=sum(1 for ox,oy,ow,oh in rects if ox-fw/2.0<f<ox+ow+fw/2.0)
                         return hit
                     feet=[cx+d*s for d in range(90,900,90) for s in (-1,1) if fw/2.0<=cx+d*s<=width-fw/2.0]
