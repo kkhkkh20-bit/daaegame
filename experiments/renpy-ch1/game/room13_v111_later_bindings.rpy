@@ -233,18 +233,22 @@ init 317 python:
     def r13_v111_goal():
         return R13_V111_QUESTIONS.get(store.room13.get("v111",{}).get("scene"),"")
 
-init 163 python:
-    # 0.20.12 (4~14일 리뷰 남은 그림): 6일 창고 안 장면은 바깥 장작더미 대신 창고 안 그림을,
-    # 새 이야기의 보호시설은 오른쪽 벽에 벽화·깨진 돌판·새긴 이름이 있는 그림을 쓴다.
-    # 그림 원본: art/bg-woodshed-mural-20261023/ (Codex, 2026-10-23).
-    R13_EP_BACKGROUNDS["ep_woodshed_inside"]={"morning":"room13-pixel-panorama-woodshed-inside.webp",
-        "afternoon":"room13-pixel-panorama-woodshed-inside.webp","evening":"room13-pixel-panorama-woodshed-inside-evening.webp"}
-    R13_EP_BACKGROUND_X["ep_woodshed_inside"]=260
+init 318 python:
+    # 0.20.12 (4~14일 리뷰 남은 그림, 소유자 "도트 퀄리티 비슷하게", "화면 길게"): 6일 창고 안 장면은
+    # 바깥 장작더미 대신 길게 이어지는 창고 안 그림을, 새 이야기의 보호시설은 오른쪽으로 벽 한 칸을
+    # 늘여 벽화·깨진 돌판·새긴 이름이 있는 그림을 쓴다. 그림 원본: art/bg-woodshed-mural-20261023/round2/.
+    # (init 310~312가 이 장소들을 등록한 뒤라야 덮어쓴다.)
+    R13_EP_BACKGROUNDS["ep_woodshed_inside"]={"morning":"room13-pixel-wide-woodshed-inside-afternoon.webp",
+        "afternoon":"room13-pixel-wide-woodshed-inside-afternoon.webp","evening":"room13-pixel-wide-woodshed-inside-evening.webp"}
     R13_PLACES["v111_woodshed"]=(R13_PLACES["v111_woodshed"][0],"ep_woodshed_inside")
-    for _object,_rect in (("v111_wood",[330,230,282,250]),("v111_water",[78,430,160,140]),("v111_lamp",[1150,310,130,150])):
+    R13_WORLD_LAYOUTS["v111_woodshed"]=dict(width=2400,initial_x=420,ignore_legacy_positions=True,
+        slots=[(330,680,320,"floor"),(760,690,330,"floor"),(1150,680,325,"floor"),(1560,690,335,"floor"),(1980,680,320,"floor")],
+        files={k:"assets/"+v for k,v in R13_EP_BACKGROUNDS["ep_woodshed_inside"].items()})
+    for _object,_rect in (("v111_wood",[656,309,563,290]),("v111_water",[490,470,180,160]),("v111_lamp",[1880,370,120,130])):
         ROOM13["objects"]["v111_woodshed"][_object]=dict(ROOM13["objects"]["v111_woodshed"][_object],rect=_rect)
-    _r13_mural_world_file=r13_world_file
-    def r13_world_file(location,period):
-        if location=="facility" and r13_v111_active():
-            return "assets/room13-pixel-ready-facility-mural-%s.webp" % period
-        return _r13_mural_world_file(location,period)
+    # 보호시설: 왼쪽 2048px은 원래 그림 그대로, 오른쪽에 벽 한 칸(벽화)을 이은 2560px 그림. 축척이 같아
+    # 예전 조사 지점·자리 좌표는 그대로 맞고, 새 벽 칸에 자리 두 곳과 벽화 조사 지점을 더한다.
+    _fac=R13_WORLD_LAYOUTS["facility"]
+    _fac.update(width=2400,files={k:"assets/room13-pixel-wide-facility-%s.webp"%k for k in ("morning","afternoon","evening")})
+    _fac["slots"]=list(_fac.get("slots",[]))+[[1960,684,252,"floor"],[2230,692,256,"floor"]]
+    ROOM13["objects"]["facility"]["v111_mural"]=dict(ROOM13["objects"]["facility"]["v111_mural"],rect=[1950,70,410,420])
