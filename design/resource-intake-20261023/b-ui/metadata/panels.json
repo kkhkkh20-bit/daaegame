@@ -1,0 +1,430 @@
+{
+  "asset_set": "B detective notebook priority-1 panels",
+  "generator": "Built-in image_gen",
+  "artwork": "Generated as six separate raster assets, with default card supplied as the edit reference for hover and done states. No programmatic painting or vector substitutes.",
+  "postprocess": "ImageMagick alpha-bound crop, proportional height resize, protected left/right cap preservation with horizontal center fit, and transparent canvas extent. Original generated RGBA files are retained.",
+  "coordinates": "Insets use [left, top, right, bottom] measured from the full output canvas, including transparent margins. Alpha bounding boxes use right and bottom exclusive.",
+  "limits": "Frame coordinates are proposals based on image inspection, not a RenPy runtime test. Blank centers retain faint generated paper tone rather than a mathematically constant color.",
+  "assets": [
+    {
+      "file": "b_panel_dialogue.png",
+      "width": 1200,
+      "height": 160,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_corners": true,
+      "alpha_bbox": [
+        16,
+        16,
+        1184,
+        144
+      ],
+      "requested_export_margin_px": 16,
+      "source_alpha_crop": [
+        34,
+        201,
+        2106,
+        534
+      ],
+      "protected_end_caps_after_proportional_resize_px": {
+        "left": 127,
+        "right": 127
+      },
+      "original": "originals/b_panel_dialogue.png",
+      "sha256": "c6111c66fc5135db20dc07442dcad0fb4bae9e3b50a58291adeac12ee45e0d25",
+      "proposed_frame_insets_ltrb_px": [
+        64,
+        52,
+        80,
+        32
+      ],
+      "proposed_text_safe_insets_ltrb_px": [
+        72,
+        48,
+        90,
+        36
+      ],
+      "scaling_note": "Horizontal resize only at fixed 160px canvas height. Three baked-in left rings will distort with vertical stretch.",
+      "center_check": {
+        "opaque": false,
+        "mean_rgb": [
+          249.55,
+          237.24,
+          218.28
+        ],
+        "rgb_standard_deviation": [
+          0.53,
+          0.59,
+          0.74
+        ],
+        "alpha_range": [
+          252,
+          254
+        ],
+        "alpha_mean": 253.0095,
+        "effectively_opaque": false
+      },
+      "visual_qa": {
+        "inspected_at_final_size": true,
+        "no_text": true,
+        "no_center_icons_or_patterns": true,
+        "edge_decorations_only": true,
+        "transparent_not_white_matte": true
+      },
+      "renpy_tested": false
+    },
+    {
+      "file": "b_panel_card.png",
+      "width": 640,
+      "height": 80,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_corners": true,
+      "alpha_bbox": [
+        16,
+        16,
+        624,
+        64
+      ],
+      "requested_export_margin_px": 16,
+      "source_alpha_crop": [
+        67,
+        220,
+        2016,
+        501
+      ],
+      "protected_end_caps_after_proportional_resize_px": {
+        "left": 53,
+        "right": 53
+      },
+      "original": "originals/b_panel_card.png",
+      "sha256": "2401123af7a5ccb6ab1e42394528a9233f4d2fc58be80c0b0be1ba03d74cf793",
+      "proposed_frame_insets_ltrb_px": [
+        58,
+        32,
+        30,
+        26
+      ],
+      "proposed_text_safe_insets_ltrb_px": [
+        56,
+        34,
+        40,
+        24
+      ],
+      "scaling_note": "Nine-slice candidate. Preserve corner tape within the top-left slice. Default card states share target size and placement but are separate generated edits, not pixel-identical overlays.",
+      "center_check": {
+        "opaque": false,
+        "mean_rgb": [
+          249.19,
+          236.57,
+          214.38
+        ],
+        "rgb_standard_deviation": [
+          0.92,
+          1.31,
+          1.74
+        ],
+        "alpha_range": [
+          252,
+          254
+        ],
+        "alpha_mean": 253.8753,
+        "effectively_opaque": false
+      },
+      "visual_qa": {
+        "inspected_at_final_size": true,
+        "no_text": true,
+        "no_center_icons_or_patterns": true,
+        "edge_decorations_only": true,
+        "transparent_not_white_matte": true
+      },
+      "renpy_tested": false
+    },
+    {
+      "file": "b_panel_card_hover.png",
+      "width": 640,
+      "height": 80,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_corners": true,
+      "alpha_bbox": [
+        16,
+        16,
+        624,
+        64
+      ],
+      "requested_export_margin_px": 16,
+      "source_alpha_crop": [
+        67,
+        208,
+        2007,
+        481
+      ],
+      "protected_end_caps_after_proportional_resize_px": {
+        "left": 55,
+        "right": 55
+      },
+      "original": "originals/b_panel_card_hover.png",
+      "sha256": "c3299fe32ace98e1cee8f5adf0c5fa4c82c10cd6683d92cd9defcd44ab0c64b8",
+      "proposed_frame_insets_ltrb_px": [
+        58,
+        32,
+        30,
+        26
+      ],
+      "proposed_text_safe_insets_ltrb_px": [
+        56,
+        34,
+        40,
+        24
+      ],
+      "scaling_note": "Nine-slice candidate. Red outline is hover/selection only. Card geometry is close to the default generated source, not mathematically pixel-identical.",
+      "center_check": {
+        "opaque": false,
+        "mean_rgb": [
+          246.96,
+          233.25,
+          211.83
+        ],
+        "rgb_standard_deviation": [
+          0.94,
+          1.81,
+          2.62
+        ],
+        "alpha_range": [
+          252,
+          254
+        ],
+        "alpha_mean": 252.9353,
+        "effectively_opaque": false
+      },
+      "visual_qa": {
+        "inspected_at_final_size": true,
+        "no_text": true,
+        "no_center_icons_or_patterns": true,
+        "edge_decorations_only": true,
+        "transparent_not_white_matte": true
+      },
+      "renpy_tested": false
+    },
+    {
+      "file": "b_panel_card_done.png",
+      "width": 640,
+      "height": 80,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_corners": true,
+      "alpha_bbox": [
+        16,
+        16,
+        624,
+        64
+      ],
+      "requested_export_margin_px": 16,
+      "source_alpha_crop": [
+        67,
+        215,
+        2015,
+        499
+      ],
+      "protected_end_caps_after_proportional_resize_px": {
+        "left": 53,
+        "right": 53
+      },
+      "original": "originals/b_panel_card_done.png",
+      "sha256": "482b87087fe321bfe2142db323abc6846ef3378adfbfb1c5103d359071c2dbdb",
+      "proposed_frame_insets_ltrb_px": [
+        58,
+        32,
+        30,
+        26
+      ],
+      "proposed_text_safe_insets_ltrb_px": [
+        56,
+        34,
+        40,
+        24
+      ],
+      "scaling_note": "Nine-slice candidate. Warm gray-brown fill is the done/previously-asked state. Card geometry is close to the default generated source, not mathematically pixel-identical.",
+      "center_check": {
+        "opaque": false,
+        "mean_rgb": [
+          200.55,
+          190.09,
+          169.78
+        ],
+        "rgb_standard_deviation": [
+          1.07,
+          1.38,
+          1.75
+        ],
+        "alpha_range": [
+          251,
+          254
+        ],
+        "alpha_mean": 252.9584,
+        "effectively_opaque": false
+      },
+      "visual_qa": {
+        "inspected_at_final_size": true,
+        "no_text": true,
+        "no_center_icons_or_patterns": true,
+        "edge_decorations_only": true,
+        "transparent_not_white_matte": true
+      },
+      "renpy_tested": false
+    },
+    {
+      "file": "b_panel_book.png",
+      "width": 760,
+      "height": 540,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_corners": true,
+      "alpha_bbox": [
+        16,
+        16,
+        744,
+        524
+      ],
+      "requested_export_margin_px": 16,
+      "source_alpha_crop": [
+        46,
+        74,
+        1462,
+        952
+      ],
+      "protected_end_caps_after_proportional_resize_px": {
+        "left": 131,
+        "right": 131
+      },
+      "original": "originals/b_panel_book.png",
+      "sha256": "fb40ca8dfc2a0ec5990f2caa3cbf0596fd5a7990bb749ea8950eb92c0231ef28",
+      "proposed_frame_insets_ltrb_px": [
+        104,
+        100,
+        116,
+        48
+      ],
+      "proposed_text_safe_insets_ltrb_px": [
+        104,
+        100,
+        64,
+        56
+      ],
+      "scaling_note": "Horizontal resize only at fixed 540px canvas height. Seven baked-in left rings will distort with vertical stretch. For arbitrary height, remove rings from the base and compose separate ring overlays in a later approved asset revision.",
+      "center_check": {
+        "opaque": false,
+        "mean_rgb": [
+          249.36,
+          238.4,
+          220.84
+        ],
+        "rgb_standard_deviation": [
+          0.59,
+          0.63,
+          0.79
+        ],
+        "alpha_range": [
+          252,
+          254
+        ],
+        "alpha_mean": 253.1337,
+        "effectively_opaque": false
+      },
+      "visual_qa": {
+        "inspected_at_final_size": true,
+        "no_text": true,
+        "no_center_icons_or_patterns": true,
+        "edge_decorations_only": true,
+        "transparent_not_white_matte": true
+      },
+      "renpy_tested": false
+    },
+    {
+      "file": "b_panel_small.png",
+      "width": 240,
+      "height": 60,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_corners": true,
+      "alpha_bbox": [
+        8,
+        8,
+        232,
+        52
+      ],
+      "requested_export_margin_px": 8,
+      "source_alpha_crop": [
+        111,
+        220,
+        2062,
+        502
+      ],
+      "protected_end_caps_after_proportional_resize_px": {
+        "left": 49,
+        "right": 49
+      },
+      "original": "originals/b_panel_small.png",
+      "sha256": "2eb7b30bc334edbba01b2192ad8da460df41afcdfafcab7a2baaefea2531786d",
+      "proposed_frame_insets_ltrb_px": [
+        24,
+        20,
+        24,
+        20
+      ],
+      "proposed_text_safe_insets_ltrb_px": [
+        22,
+        16,
+        22,
+        16
+      ],
+      "scaling_note": "Nine-slice candidate. Uses 8px transparent outer margin instead of 16px because a 60px-high canvas otherwise loses too much usable label area.",
+      "center_check": {
+        "opaque": false,
+        "mean_rgb": [
+          245.82,
+          232.84,
+          212.79
+        ],
+        "rgb_standard_deviation": [
+          0.39,
+          0.37,
+          0.43
+        ],
+        "alpha_range": [
+          254,
+          254
+        ],
+        "alpha_mean": 254.0,
+        "effectively_opaque": true
+      },
+      "visual_qa": {
+        "inspected_at_final_size": true,
+        "no_text": true,
+        "no_center_icons_or_patterns": true,
+        "edge_decorations_only": true,
+        "transparent_not_white_matte": true
+      },
+      "renpy_tested": false
+    }
+  ]
+}

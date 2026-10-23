@@ -13,6 +13,11 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
 A = ROOT / 'game/assets'
+B = ROOT.parents[1] / 'design/resource-intake-20261023/b-ui/assets'   # 소유자 납품 B안 부품 26종
+INSETS = {'b_panel_dialogue': (64, 52, 80, 32), 'b_panel_card': (58, 32, 30, 26), 'b_panel_card_hover': (58, 32, 30, 26),
+          'b_panel_card_done': (58, 32, 30, 26), 'b_panel_book': (104, 100, 116, 48), 'b_panel_small': (24, 20, 24, 20),
+          'b_button': (24, 18, 24, 18), 'b_button_primary': (24, 18, 24, 18), 'b_ribbon_name': (20, 12, 40, 12),
+          'b_tab_title': (40, 14, 40, 14), 'b_bubble_tag': (24, 14, 24, 22)}
 FONT = Path(sys.argv[1])
 OUT = Path(sys.argv[2])
 W, H = 1280, 720
@@ -24,6 +29,54 @@ INK_2 = (126, 104, 86)
 RED = (196, 64, 56)
 RED_DARK = (150, 44, 40)
 TAPE = [(222, 120, 110, 170), (120, 170, 160, 170), (226, 196, 120, 170)]
+
+
+def asset(name):
+    return Image.open(B / f'{name}.png').convert('RGBA')
+
+
+def frame(base, name, box):
+    """Ren'Py Frame 처럼 네 모서리는 그대로, 가장자리와 가운데만 늘려 붙인다(납품 metadata 의 제안 경계)."""
+    im = asset(name)
+    l, t, r, b = INSETS.get(name, (16, 16, 16, 16))
+    x0, y0, x1, y1 = [int(v) for v in box]
+    w, h = x1 - x0, y1 - y0
+    sw, sh = im.size
+    out = Image.new('RGBA', (w, h), (0, 0, 0, 0))
+    xs = [(0, l, 0, l), (l, sw - r, l, w - r), (sw - r, sw, w - r, w)]
+    ys = [(0, t, 0, t), (t, sh - b, t, h - b), (sh - b, sh, h - b, h)]
+    for sx0, sx1, dx0, dx1 in xs:
+        for sy0, sy1, dy0, dy1 in ys:
+            if dx1 <= dx0 or dy1 <= dy0 or sx1 <= sx0 or sy1 <= sy0:
+                continue
+            out.alpha_composite(im.crop((sx0, sy0, sx1, sy1)).resize((dx1 - dx0, dy1 - dy0), Image.LANCZOS), (dx0, dy0))
+    base.alpha_composite(out, (x0, y0))
+
+
+def bribbon(base, x, y, who, size=24):
+    d = ImageDraw.Draw(base)
+    tw = d.textlength(who, font=font('Bold', size))
+    frame(base, 'b_ribbon_name', (x, y, x + tw + 84, y + 54))
+    d = ImageDraw.Draw(base)
+    d.text((x + 28, y + 11), who, font=font('Bold', size), fill=(255, 250, 240))
+
+
+def icon(base, name, cx, cy, size):
+    im = asset(name).resize((size, size), Image.LANCZOS)
+    base.alpha_composite(im, (int(cx - size / 2), int(cy - size / 2)))
+
+
+def bbutton(base, box, text, primary=False, ic=None, size=20):
+    frame(base, 'b_button_primary' if primary else 'b_button', box)
+    d = ImageDraw.Draw(base)
+    f = font('SemiBold', size)
+    tw = d.textlength(text, font=f)
+    x0, y0, x1, y1 = box
+    gap = 30 if ic else 0
+    tx = (x0 + x1 - tw - gap) / 2 + gap
+    if ic:
+        icon(base, ic, tx - 20, (y0 + y1) / 2, 38)
+    d.text((tx, (y0 + y1) / 2 - size * 0.62), text, font=f, fill=(255, 250, 240) if primary else INK)
 
 
 def font(weight, size):
@@ -126,110 +179,109 @@ def sprite(base, path, height, x, y_bottom):
 
 
 def say_box(base, who, line, links=True):
-    box = (40, 540, 1240, 690)
-    paper(base, box)
-    ribbon(base, (88, 516), who)
+    frame(base, 'b_panel_dialogue', (40, 536, 1240, 696))
+    bribbon(base, 92, 506, who)
     d = ImageDraw.Draw(base)
-    d.text((96, 588), line, font=font('Regular', 30), fill=INK)
+    d.text((112, 592), line, font=font('Regular', 30), fill=INK)
     if links:
         f = font('Regular', 17)
-        d.line((1010, 572, 1010, 660), fill=(220, 202, 172), width=2)
-        d.text((1030, 604), '기록 · 자동 · 더보기', font=f, fill=INK_2)
-        d.polygon([(1206, 604), (1206, 624), (1220, 614)], fill=INK)
+        d.text((1010, 606), '기록 · 자동 · 더보기', font=f, fill=INK_2)
+        icon(base, 'b_icon_next', 1190, 616, 30)
 
 
 def dialogue():
     b = cover(A / 'carriage.png')
     sprite(b, A / 'room13-carriage-daram-seat-bravado.webp', 560, 820, 600)
     say_box(b, '다람', '예쁘다. 꼭 별 같아. 불이 하나도 안 떨려.')
-    label_top(b, 'B안 · 대사창 · 시안(미적용) · 고딕체')
+    label_top(b, 'B안 · 대사창 · 납품 부품 적용 시안(미적용) · 고딕체')
     return b
 
 
 def choice():
     b = cover(A / 'room13-pixel-panorama-square-evening.webp')
     b.alpha_composite(Image.new('RGBA', (W, H), (10, 8, 20, 90)))
-    title = (300, 150, 980, 222)
-    paper(b, title, rings=False)
+    frame(b, 'b_panel_small', (300, 140, 980, 222))
     d = ImageDraw.Draw(b)
     f = font('Bold', 30)
     t = '누군가 너울의 팔을 잡아당긴다.'
-    d.text(((300 + 980 - d.textlength(t, font=f)) / 2, 168), t, font=f, fill=INK)
+    d.text(((300 + 980 - d.textlength(t, font=f)) / 2, 160), t, font=f, fill=INK)
+    tapes = ['b_tape_red', 'b_tape_teal', 'b_tape_yellow']
     opts = ['너울 앞을 막는다', '현장 감독자에게 보호를 맡긴다', '막지 않는다']
     for i, o in enumerate(opts):
-        y = 262 + i * 92
-        box = (330, y, 950, y + 72)
-        paper(b, box, radius=12, rings=False, tape=False)
+        y = 246 + i * 100
+        frame(b, 'b_panel_card_hover' if i == 1 else 'b_panel_card', (320, y, 960, y + 88))
         d = ImageDraw.Draw(b)
-        tape_strip(b, (322, y - 8), 46, 18, -10, TAPE[i % 3])
-        d.text((372, y + 18), f'{i + 1}', font=font('Bold', 28), fill=RED)
-        d.text((410, y + 20), '·  ' + o, font=font('Regular', 27), fill=INK)
-    d.text((1120, 680), '▶ 기록 · 더보기', font=font('Regular', 17), fill=(250, 244, 230))
-    label_top(b, 'B안 · 선택창 · 시안(미적용) · 강조는 선택 정답이 아님')
+        d.text((392, y + 26), f'{i + 1}', font=font('Bold', 28), fill=RED)
+        d.text((428, y + 28), '·  ' + o, font=font('Regular', 27), fill=INK)
+    d.text((1120, 680), '기록 · 더보기', font=font('Regular', 17), fill=(250, 244, 230))
+    label_top(b, 'B안 · 선택창 · 납품 부품 적용 시안(미적용) · 빨간 테두리는 포커스, 정답 아님')
     return b
 
 
 def question():
     b = cover(A / 'room13-pixel-panorama-square-afternoon.webp')
     sprite(b, A / 'room13-canonical-default-resident_bori.webp', 560, 250, 720)
-    ribbon(b, (150, 640), '보리')
-    box = (480, 110, 1230, 640)
-    paper(b, box)
+    bribbon(b, 130, 630, '보리')
+    frame(b, 'b_panel_book', (470, 96, 1240, 650))
+    frame(b, 'b_tab_title', (560, 60, 930, 132))
     d = ImageDraw.Draw(b)
-    tab = (520, 84, 820, 140)
-    d.rounded_rectangle(tab, 12, fill=RED, outline=RED_DARK, width=2)
-    acorn(d, 550, 110, 10, (255, 236, 220))
-    d.text((572, 94), '묻고 싶은 이야기', font=font('Bold', 26), fill=(255, 250, 240))
+    icon(b, 'b_icon_acorn', 612, 96, 40)
+    d.text((640, 80), '묻고 싶은 이야기', font=font('Bold', 26), fill=(255, 250, 240))
     qs = [('창고 문 앞 장작', False), ('아이들이 자는 자리', True), ('수레에 덮은 담요', False)]
     for i, (q, done) in enumerate(qs):
-        y = 170 + i * 100
-        r = (520, y, 1190, y + 80)
-        d.rounded_rectangle(r, 12, fill=(252, 247, 236) if not done else (238, 230, 214), outline=PAPER_EDGE, width=2)
-        acorn(d, 560, y + 38, 12, (140, 92, 50) if not done else (176, 156, 130))
-        d.text((588, y + 22), q, font=font('SemiBold', 27), fill=INK if not done else INK_2)
-        if done:
-            d.ellipse((1140, y + 26, 1166, y + 52), outline=INK_2, width=2)
-            d.line((1146, y + 39, 1152, y + 46, 1161, y + 32), fill=INK_2, width=3)
-    for i, (t, p) in enumerate([('자료 보여주기', True), ('기록', False), ('더보기', False), ('돌아가기', False)]):
-        x = 520 + i * 172
-        button(b, (x, 560, x + 160, 612), t, primary=p, size=19)
-    label_top(b, 'B안 · 질문창 · 시안(미적용) · 질문 문구는 예시, 완료 표시는 상태 예시')
+        y = 168 + i * 96
+        frame(b, 'b_panel_card_done' if done else 'b_panel_card', (560, y, 1190, y + 88))
+        icon(b, 'b_icon_acorn_done' if done else 'b_icon_acorn', 620, y + 46, 48)
+        d = ImageDraw.Draw(b)
+        d.text((650, y + 28), q, font=font('SemiBold', 27), fill=INK if not done else INK_2)
+    for i, (t, p, ic) in enumerate([('자료 보여주기', True, None), ('기록', False, 'b_icon_book'), ('더보기', False, 'b_icon_more'), ('돌아가기', False, 'b_icon_back')]):
+        x = 560 + i * 160
+        bbutton(b, (x, 556, x + 152, 608), t, primary=p, ic=ic, size=18)
+    label_top(b, 'B안 · 질문창 · 납품 부품 적용 시안(미적용) · 질문 문구는 예시')
     return b
 
 
 def investigate():
     b = cover(A / 'gate-wide/gate-wide-morning.webp', crop_x=420)
+    frame(b, 'b_panel_small', (24, 20, 264, 80))
+    icon(b, 'b_icon_pin', 56, 50, 44)
     d = ImageDraw.Draw(b)
-    # 장소 이름표(왼쪽 위)와 지도·기록(오른쪽 위)
-    paper(b, (28, 24, 250, 76), radius=12, rings=False, tape=False)
-    d = ImageDraw.Draw(b)
-    d.ellipse((46, 40, 62, 56), outline=RED, width=3)
-    d.text((72, 36), '눈에 막힌 입구', font=font('SemiBold', 22), fill=INK)
-    for i, t in enumerate(['지도', '기록']):
-        x = 1076 + i * 96
-        paper(b, (x, 24, x + 84, 84), radius=12, rings=False, tape=False)
+    d.text((80, 36), '눈에 막힌 입구', font=font('SemiBold', 22), fill=INK)
+    for i, (t, ic) in enumerate([('지도', 'b_icon_map'), ('기록', 'b_icon_book')]):
+        x = 1060 + i * 106
+        frame(b, 'b_panel_small', (x, 18, x + 98, 96))
+        icon(b, ic, x + 49, 44, 46)
         d = ImageDraw.Draw(b)
-        d.text((x + 42 - d.textlength(t, font=font('SemiBold', 19)) / 2, 44), t, font=font('SemiBold', 19), fill=INK)
-    # 물건 이름표(말풍선)
-    tag = (150, 390, 280, 430)
-    paper(b, tag, radius=10, rings=False, tape=False)
+        d.text((x + 49 - d.textlength(t, font=font('SemiBold', 16)) / 2, 68), t, font=font('SemiBold', 16), fill=INK)
+    frame(b, 'b_bubble_tag', (140, 386, 290, 442))
     d = ImageDraw.Draw(b)
-    d.polygon([(170, 430), (186, 430), (172, 448)], fill=PAPER)
-    d.text((170, 398), '마차 바퀴', font=font('SemiBold', 20), fill=INK)
-    box = (40, 560, 1240, 690)
-    paper(b, box)
+    d.text((168, 396), '마차 바퀴', font=font('SemiBold', 20), fill=INK)
+    frame(b, 'b_panel_dialogue', (40, 536, 1240, 696))
+    icon(b, 'b_icon_magnifier', 118, 590, 44)
     d = ImageDraw.Draw(b)
-    acorn(d, 112, 600, 12)
-    d.text((134, 584), '조사', font=font('Bold', 24), fill=INK)
-    d.text((112, 626), '바퀴살 사이에 얼음이 끼어 있다. 굴러온 길은 눈에 덮였다.', font=font('Regular', 27), fill=INK)
-    button(b, (1060, 596, 1210, 644), '돌아가기', size=19)
-    label_top(b, 'B안 · 조사창 · 시안(미적용) · 조사 대상·문장은 예시')
+    d.text((142, 576), '조사', font=font('Bold', 24), fill=INK)
+    d.text((112, 624), '바퀴살 사이에 얼음이 끼어 있다. 굴러온 길은 눈에 덮였다.', font=font('Regular', 27), fill=INK)
+    bbutton(b, (1040, 596, 1196, 648), '돌아가기', ic='b_icon_back', size=19)
+    label_top(b, 'B안 · 조사창 · 납품 부품 적용 시안(미적용) · 조사 대상·문장은 예시')
+    return b
+
+
+def main_menu():
+    b = cover(A / 'room13-pixel-panorama-square-evening.webp')
+    logo = asset('b_logo').resize((720, 240), Image.LANCZOS)
+    b.alpha_composite(logo, (40, 30))
+    frame(b, 'b_main_panel', (40, 330, 700, 650))
+    for i, (t, p, ic) in enumerate([('이어하기', True, 'b_icon_next'), ('처음부터', False, 'b_icon_acorn'), ('불러오기', False, 'b_icon_book'), ('설정', False, 'b_icon_more')]):
+        x = 130 + (i % 2) * 270
+        y = 410 + (i // 2) * 96
+        bbutton(b, (x, y, x + 250, y + 70), t, primary=p, ic=ic, size=24)
+    label_top(b, 'B안 · 메인화면 · 납품 로고·판 적용 시안(미적용) · 배경은 현행 광장 저녁')
     return b
 
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    for name, fn in [('01_대사창', dialogue), ('02_선택창', choice), ('03_질문창', question), ('04_조사창', investigate)]:
+    for name, fn in [('01_대사창', dialogue), ('02_선택창', choice), ('03_질문창', question), ('04_조사창', investigate), ('05_메인화면', main_menu)]:
         fn().convert('RGB').save(OUT / f'{name}.png')
         print(OUT / f'{name}.png')
 

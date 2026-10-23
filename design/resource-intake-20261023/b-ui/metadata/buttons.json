@@ -1,0 +1,540 @@
+{
+  "asset_group": "B notebook buttons, tags and decoration parts",
+  "generation_tool": "built-in image_gen.imagegen",
+  "reference": "/workspace/shared/ui-cute/다람탐정_B안_탐정수첩_설정시안.png",
+  "transformation": "ImageMagick mechanical crop and center-span resizing with preserved end caps, transparent canvas extent. Crop bounds use alpha >1/255 plus 3 source pixels padding to exclude far-off nearly invisible alpha specks. Generated alpha inside the crop is preserved and resampled. No new painting or vector replacements.",
+  "margin_note": "Functional content area prioritized per parent review. Requested 16 px margins cannot coexist with readable small controls. Actual symmetric margins: name ribbon 16 px horizontal /12 px vertical; title 16/12; buttons 16/10; bubble 8/8; tapes 4/4; ring 4/4. Exact canvas dimensions are unchanged.",
+  "assets": [
+    {
+      "filename": "b_ribbon_name.png",
+      "width": 200,
+      "height": 56,
+      "source": "/workspace/scratch/6fde33eec4d5/generated_images/exec-48f4489c-c7d7-4433-a58f-d00b149630de.png",
+      "original": "originals/b_ribbon_name.png",
+      "prompt": "Use case: precise-object-edit. Create an actual standalone raster UI component for a cozy hand-drawn Korean detective notebook game, using the supplied mockup ONLY as a STYLE REFERENCE. Extract/redraw ONLY the described component, do not reproduce any screen, notebook, scene, caption, or other objects. Style: subtle paper texture, warm brown ink outline, warm cream #F7EEDA and muted red #C44038 palette consistent with the reference, gentle hand-drawn edge. Production asset, perfectly frontal orthographic, level horizontal with zero tilt and zero perspective. One component per image centered with generous TRANSPARENT padding. Absolutely no text, characters, letters, numerals, runes, symbols, labels, watermarks, or decorative strokes anywhere. Completely transparent alpha background, no white background, no colored backdrop, no checkerboard pixels, no floor or shadow plane. Only a tiny edge-local shadow is allowed. IMPORTANT proportions: follow described ultra-wide horizontal silhouette; don't fill the canvas vertically. One single blank deep warm red paper ribbon name strip. Long very slender horizontal silhouette with straight squared left end and one swallowtail V notch cut into the right end only. No curls, no folds outside the silhouette. Body width-to-height about 7:1.",
+      "qa": {
+        "mode": "RGBA",
+        "actual_dimensions": [
+          200,
+          56
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox_xyxy": [
+          16,
+          12,
+          184,
+          44
+        ],
+        "visible_dimensions": [
+          168,
+          32
+        ],
+        "transparent_margins_ltrb": [
+          16,
+          12,
+          16,
+          12
+        ],
+        "fully_transparent_pixel_count": 5943,
+        "fully_opaque_pixel_count": 20,
+        "total_pixels": 11200,
+        "source_dimensions": [
+          2172,
+          724
+        ],
+        "dimensions_pass": true,
+        "alpha_pass": true
+      },
+      "mechanical_source_crop_xyxy": [
+        58,
+        223,
+        2115,
+        462
+      ],
+      "sizing_method": "Mechanical height resize and horizontal center-span compression, preserving end caps.",
+      "target_content_dimensions": [
+        168,
+        32
+      ],
+      "minimum_transparent_margins_xy": [
+        16,
+        12
+      ]
+    },
+    {
+      "filename": "b_tab_title.png",
+      "width": 320,
+      "height": 64,
+      "source": "/workspace/scratch/6fde33eec4d5/generated_images/exec-fc82eb9a-eccb-4791-88d0-3983dbd1e39f.png",
+      "original": "originals/b_tab_title.png",
+      "prompt": "Use case: precise-object-edit. Create an actual standalone raster UI component for a cozy hand-drawn Korean detective notebook game, using the supplied mockup ONLY as a STYLE REFERENCE. Extract/redraw ONLY the described component, do not reproduce any screen, notebook, scene, caption, or other objects. Style: subtle paper texture, warm brown ink outline, warm cream #F7EEDA and muted red #C44038 palette consistent with the reference, gentle hand-drawn edge. Production asset, perfectly frontal orthographic, level horizontal with zero tilt and zero perspective. One component per image centered with generous TRANSPARENT padding. Absolutely no text, characters, letters, numerals, runes, symbols, labels, watermarks, or decorative strokes anywhere. Completely transparent alpha background, no white background, no colored backdrop, no checkerboard pixels, no floor or shadow plane. Only a tiny edge-local shadow is allowed. IMPORTANT proportions: follow described ultra-wide horizontal silhouette; don't fill the canvas vertically. One single blank deep warm red notebook title tab. Extremely long slender horizontal tab silhouette, nearly rectangular with gently rounded top corners and straight flat bottom edge to attach onto a notebook. Body width-to-height about 9:1. Not a complete notebook; just this single tab.",
+      "qa": {
+        "mode": "RGBA",
+        "actual_dimensions": [
+          320,
+          64
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox_xyxy": [
+          16,
+          12,
+          304,
+          52
+        ],
+        "visible_dimensions": [
+          288,
+          40
+        ],
+        "transparent_margins_ltrb": [
+          16,
+          12,
+          16,
+          12
+        ],
+        "fully_transparent_pixel_count": 9352,
+        "fully_opaque_pixel_count": 15,
+        "total_pixels": 20480,
+        "source_dimensions": [
+          2172,
+          724
+        ],
+        "dimensions_pass": true,
+        "alpha_pass": true
+      },
+      "mechanical_source_crop_xyxy": [
+        47,
+        237,
+        2126,
+        462
+      ],
+      "sizing_method": "Mechanical height resize and horizontal center-span compression, preserving end caps.",
+      "target_content_dimensions": [
+        288,
+        40
+      ],
+      "minimum_transparent_margins_xy": [
+        16,
+        12
+      ]
+    },
+    {
+      "filename": "b_button.png",
+      "width": 160,
+      "height": 52,
+      "source": "/workspace/scratch/6fde33eec4d5/generated_images/exec-c6067543-13a5-479f-a593-5bebfc0505d7.png",
+      "original": "originals/b_button.png",
+      "prompt": "Use case: precise-object-edit. Create an actual standalone raster UI component for a cozy hand-drawn Korean detective notebook game, using the supplied mockup ONLY as a STYLE REFERENCE. Extract/redraw ONLY the described component, do not reproduce any screen, notebook, scene, caption, or other objects. Style: subtle paper texture, warm brown ink outline, warm cream #F7EEDA and muted red #C44038 palette consistent with the reference, gentle hand-drawn edge. Production asset, perfectly frontal orthographic, level horizontal with zero tilt and zero perspective. One component per image centered with generous TRANSPARENT padding. Absolutely no text, characters, letters, numerals, runes, symbols, labels, watermarks, or decorative strokes anywhere. Completely transparent alpha background, no white background, no colored backdrop, no checkerboard pixels, no floor or shadow plane. Only a tiny edge-local shadow is allowed. IMPORTANT proportions: follow described ultra-wide horizontal silhouette; don't fill the canvas vertically. One single blank pale cream paper UI button with slightly rounded rectangular corners and a fine warm brown hand-inked outline. Long slender horizontal body width-to-height about 6.4:1. No objects, no extra decorations, no symbol.",
+      "qa": {
+        "mode": "RGBA",
+        "actual_dimensions": [
+          160,
+          52
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox_xyxy": [
+          16,
+          10,
+          144,
+          42
+        ],
+        "visible_dimensions": [
+          128,
+          32
+        ],
+        "transparent_margins_ltrb": [
+          16,
+          10,
+          16,
+          10
+        ],
+        "fully_transparent_pixel_count": 4287,
+        "fully_opaque_pixel_count": 13,
+        "total_pixels": 8320,
+        "source_dimensions": [
+          2169,
+          725
+        ],
+        "dimensions_pass": true,
+        "alpha_pass": true
+      },
+      "mechanical_source_crop_xyxy": [
+        50,
+        223,
+        2122,
+        503
+      ],
+      "sizing_method": "Mechanical height resize and horizontal center-span compression, preserving end caps.",
+      "target_content_dimensions": [
+        128,
+        32
+      ],
+      "minimum_transparent_margins_xy": [
+        16,
+        10
+      ]
+    },
+    {
+      "filename": "b_button_primary.png",
+      "width": 160,
+      "height": 52,
+      "source": "/workspace/scratch/6fde33eec4d5/generated_images/exec-324e94f8-60c0-4db1-a193-eaecdaa57f18.png",
+      "original": "originals/b_button_primary.png",
+      "prompt": "Use case: precise-object-edit. Create an actual standalone raster UI component for a cozy hand-drawn Korean detective notebook game, using the supplied mockup ONLY as a STYLE REFERENCE. Extract/redraw ONLY the described component, do not reproduce any screen, notebook, scene, caption, or other objects. Style: subtle paper texture, warm brown ink outline, warm cream #F7EEDA and muted red #C44038 palette consistent with the reference, gentle hand-drawn edge. Production asset, perfectly frontal orthographic, level horizontal with zero tilt and zero perspective. One component per image centered with generous TRANSPARENT padding. Absolutely no text, characters, letters, numerals, runes, symbols, labels, watermarks, or decorative strokes anywhere. Completely transparent alpha background, no white background, no colored backdrop, no checkerboard pixels, no floor or shadow plane. Only a tiny edge-local shadow is allowed. IMPORTANT proportions: follow described ultra-wide horizontal silhouette; don't fill the canvas vertically. One single blank warm red paper primary UI button with slightly rounded rectangular corners and fine dark warm red-brown hand-inked outline. Long slender horizontal body width-to-height about 6.4:1. No objects, no extra decorations, no symbol.",
+      "qa": {
+        "mode": "RGBA",
+        "actual_dimensions": [
+          160,
+          52
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox_xyxy": [
+          16,
+          10,
+          144,
+          42
+        ],
+        "visible_dimensions": [
+          128,
+          32
+        ],
+        "transparent_margins_ltrb": [
+          16,
+          10,
+          16,
+          10
+        ],
+        "fully_transparent_pixel_count": 4285,
+        "fully_opaque_pixel_count": 16,
+        "total_pixels": 8320,
+        "source_dimensions": [
+          1983,
+          793
+        ],
+        "dimensions_pass": true,
+        "alpha_pass": true
+      },
+      "mechanical_source_crop_xyxy": [
+        123,
+        258,
+        1860,
+        537
+      ],
+      "sizing_method": "Mechanical height resize and horizontal center-span compression, preserving end caps.",
+      "target_content_dimensions": [
+        128,
+        32
+      ],
+      "minimum_transparent_margins_xy": [
+        16,
+        10
+      ]
+    },
+    {
+      "filename": "b_bubble_tag.png",
+      "width": 140,
+      "height": 56,
+      "source": "/workspace/scratch/6fde33eec4d5/generated_images/exec-e3abdcfe-4cc5-4650-9375-b4ab79c2e7d0.png",
+      "original": "originals/b_bubble_tag.png",
+      "prompt": "Use case: precise-object-edit. Create an actual standalone raster UI component for a cozy hand-drawn Korean detective notebook game, using the supplied mockup ONLY as a STYLE REFERENCE. Extract/redraw ONLY the described component, do not reproduce any screen, notebook, scene, caption, or other objects. Style: subtle paper texture, warm brown ink outline, warm cream #F7EEDA and muted red #C44038 palette consistent with the reference, gentle hand-drawn edge. Production asset, perfectly frontal orthographic, level horizontal with zero tilt and zero perspective. One component per image centered with generous TRANSPARENT padding. Absolutely no text, characters, letters, numerals, runes, symbols, labels, watermarks, or decorative strokes anywhere. Completely transparent alpha background, no white background, no colored backdrop, no checkerboard pixels, no floor or shadow plane. Only a tiny edge-local shadow is allowed. IMPORTANT proportions: follow described ultra-wide horizontal silhouette; don't fill the canvas vertically. One single blank pale cream rounded rectangular paper speech-bubble label with a tiny centered downward pointing triangular tail. Thin warm brown hand-inked outline. Long slender horizontal body, the entire silhouette including tail width-to-height about 4.5:1. No objects, no extra decorations.",
+      "qa": {
+        "mode": "RGBA",
+        "actual_dimensions": [
+          140,
+          56
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox_xyxy": [
+          8,
+          8,
+          132,
+          48
+        ],
+        "visible_dimensions": [
+          124,
+          40
+        ],
+        "transparent_margins_ltrb": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "fully_transparent_pixel_count": 3474,
+        "fully_opaque_pixel_count": 18,
+        "total_pixels": 7840,
+        "source_dimensions": [
+          2135,
+          736
+        ],
+        "dimensions_pass": true,
+        "alpha_pass": true
+      },
+      "mechanical_source_crop_xyxy": [
+        50,
+        220,
+        2088,
+        516
+      ],
+      "sizing_method": "Mechanical height resize and horizontal center-span compression, preserving end caps. Central tail is preserved as a separate slice.",
+      "target_content_dimensions": [
+        124,
+        40
+      ],
+      "minimum_transparent_margins_xy": [
+        8,
+        8
+      ]
+    },
+    {
+      "filename": "b_tape_red.png",
+      "width": 96,
+      "height": 28,
+      "source": "/workspace/scratch/6fde33eec4d5/generated_images/exec-c50d916e-180c-406d-9823-2ec9a523cce1.png",
+      "original": "originals/b_tape_red.png",
+      "prompt": "Use case: precise-object-edit. Create an actual standalone raster UI component for a cozy hand-drawn Korean detective notebook game, using the supplied mockup ONLY as a STYLE REFERENCE. Extract/redraw ONLY the described component, do not reproduce any screen, notebook, scene, caption, or other objects. Style: subtle paper texture, warm brown ink outline, warm cream #F7EEDA and muted red #C44038 palette consistent with the reference, gentle hand-drawn edge. Production asset, perfectly frontal orthographic, level horizontal with zero tilt and zero perspective. One component per image centered with generous TRANSPARENT padding. Absolutely no text, characters, letters, numerals, runes, symbols, labels, watermarks, or decorative strokes anywhere. Completely transparent alpha background, no white background, no colored backdrop, no checkerboard pixels, no floor or shadow plane. Only a tiny edge-local shadow is allowed. IMPORTANT proportions: follow described ultra-wide horizontal silhouette; don't fill the canvas vertically. One single warm muted red masking tape strip, horizontal straight orientation, modest irregular torn ends, soft fiber paper texture, visually simple. Single coherent long strip, width-to-height about 4.4:1, thin warm red-brown edge. No folds, no pattern.",
+      "qa": {
+        "mode": "RGBA",
+        "actual_dimensions": [
+          96,
+          28
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox_xyxy": [
+          4,
+          4,
+          92,
+          24
+        ],
+        "visible_dimensions": [
+          88,
+          20
+        ],
+        "transparent_margins_ltrb": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "fully_transparent_pixel_count": 961,
+        "fully_opaque_pixel_count": 15,
+        "total_pixels": 2688,
+        "source_dimensions": [
+          2079,
+          756
+        ],
+        "dimensions_pass": true,
+        "alpha_pass": true
+      },
+      "mechanical_source_crop_xyxy": [
+        138,
+        238,
+        1948,
+        504
+      ],
+      "sizing_method": "Mechanical height resize and horizontal center-span compression, preserving end caps.",
+      "target_content_dimensions": [
+        88,
+        20
+      ],
+      "minimum_transparent_margins_xy": [
+        4,
+        4
+      ]
+    },
+    {
+      "filename": "b_tape_teal.png",
+      "width": 96,
+      "height": 28,
+      "source": "/workspace/scratch/6fde33eec4d5/generated_images/exec-5d8b92b8-6b57-470b-a9e9-0cf33bd12aef.png",
+      "original": "originals/b_tape_teal.png",
+      "prompt": "Use case: precise-object-edit. Create an actual standalone raster UI component for a cozy hand-drawn Korean detective notebook game, using the supplied mockup ONLY as a STYLE REFERENCE. Extract/redraw ONLY the described component, do not reproduce any screen, notebook, scene, caption, or other objects. Style: subtle paper texture, warm brown ink outline, warm cream #F7EEDA and muted red #C44038 palette consistent with the reference, gentle hand-drawn edge. Production asset, perfectly frontal orthographic, level horizontal with zero tilt and zero perspective. One component per image centered with generous TRANSPARENT padding. Absolutely no text, characters, letters, numerals, runes, symbols, labels, watermarks, or decorative strokes anywhere. Completely transparent alpha background, no white background, no colored backdrop, no checkerboard pixels, no floor or shadow plane. Only a tiny edge-local shadow is allowed. IMPORTANT proportions: follow described ultra-wide horizontal silhouette; don't fill the canvas vertically. One single muted dusty teal masking tape strip, horizontal straight orientation, modest irregular torn ends, soft fiber paper texture, visually simple. Single coherent long strip, width-to-height about 4.4:1, thin warm brown edge. No folds, no pattern.",
+      "qa": {
+        "mode": "RGBA",
+        "actual_dimensions": [
+          96,
+          28
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox_xyxy": [
+          4,
+          4,
+          92,
+          24
+        ],
+        "visible_dimensions": [
+          88,
+          20
+        ],
+        "transparent_margins_ltrb": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "fully_transparent_pixel_count": 963,
+        "fully_opaque_pixel_count": 9,
+        "total_pixels": 2688,
+        "source_dimensions": [
+          2079,
+          756
+        ],
+        "dimensions_pass": true,
+        "alpha_pass": true
+      },
+      "mechanical_source_crop_xyxy": [
+        102,
+        255,
+        1977,
+        503
+      ],
+      "sizing_method": "Mechanical height resize and horizontal center-span compression, preserving end caps.",
+      "target_content_dimensions": [
+        88,
+        20
+      ],
+      "minimum_transparent_margins_xy": [
+        4,
+        4
+      ]
+    },
+    {
+      "filename": "b_tape_yellow.png",
+      "width": 96,
+      "height": 28,
+      "source": "/workspace/scratch/6fde33eec4d5/generated_images/exec-8a5ff8ec-3b4b-430f-8602-b4cfc9e1c713.png",
+      "original": "originals/b_tape_yellow.png",
+      "prompt": "Use case: precise-object-edit. Create an actual standalone raster UI component for a cozy hand-drawn Korean detective notebook game, using the supplied mockup ONLY as a STYLE REFERENCE. Extract/redraw ONLY the described component, do not reproduce any screen, notebook, scene, caption, or other objects. Style: subtle paper texture, warm brown ink outline, warm cream #F7EEDA and muted red #C44038 palette consistent with the reference, gentle hand-drawn edge. Production asset, perfectly frontal orthographic, level horizontal with zero tilt and zero perspective. One component per image centered with generous TRANSPARENT padding. Absolutely no text, characters, letters, numerals, runes, symbols, labels, watermarks, or decorative strokes anywhere. Completely transparent alpha background, no white background, no colored backdrop, no checkerboard pixels, no floor or shadow plane. Only a tiny edge-local shadow is allowed. IMPORTANT proportions: follow described ultra-wide horizontal silhouette; don't fill the canvas vertically. One single muted warm mustard yellow masking tape strip, horizontal straight orientation, modest irregular torn ends, soft fiber paper texture, visually simple. Single coherent long strip, width-to-height about 4.4:1, thin warm brown edge. No folds, no pattern.",
+      "qa": {
+        "mode": "RGBA",
+        "actual_dimensions": [
+          96,
+          28
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox_xyxy": [
+          4,
+          4,
+          92,
+          24
+        ],
+        "visible_dimensions": [
+          88,
+          20
+        ],
+        "transparent_margins_ltrb": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "fully_transparent_pixel_count": 979,
+        "fully_opaque_pixel_count": 15,
+        "total_pixels": 2688,
+        "source_dimensions": [
+          2058,
+          764
+        ],
+        "dimensions_pass": true,
+        "alpha_pass": true
+      },
+      "mechanical_source_crop_xyxy": [
+        91,
+        257,
+        1981,
+        510
+      ],
+      "sizing_method": "Mechanical height resize and horizontal center-span compression, preserving end caps.",
+      "target_content_dimensions": [
+        88,
+        20
+      ],
+      "minimum_transparent_margins_xy": [
+        4,
+        4
+      ]
+    },
+    {
+      "filename": "b_spiral_ring.png",
+      "width": 32,
+      "height": 24,
+      "source": "/workspace/scratch/6fde33eec4d5/generated_images/exec-883ff2c7-6c7c-4f39-a389-97bf658d38e5.png",
+      "original": "originals/b_spiral_ring.png",
+      "prompt": "Use case: precise-object-edit. Create an actual standalone raster UI component for a cozy hand-drawn Korean detective notebook game, using the supplied mockup ONLY as a STYLE REFERENCE. Extract/redraw ONLY the described component, do not reproduce any screen, notebook, scene, caption, or other objects. Style: subtle paper texture, warm brown ink outline, warm cream #F7EEDA and muted red #C44038 palette consistent with the reference, gentle hand-drawn edge. Production asset, perfectly frontal orthographic, level horizontal with zero tilt and zero perspective. One component per image centered with generous TRANSPARENT padding. Absolutely no text, characters, letters, numerals, runes, symbols, labels, watermarks, or decorative strokes anywhere. Completely transparent alpha background, no white background, no colored backdrop, no checkerboard pixels, no floor or shadow plane. Only a tiny edge-local shadow is allowed. IMPORTANT proportions: follow described ultra-wide horizontal silhouette; don't fill the canvas vertically. One single isolated notebook binding ring matching the reference's warm copper-brown left-side rings. A thick continuous curved upside-down U-shaped copper wire, elliptical arch, with two small rounded downward ends. Empty transparent interior and open at bottom. Silhouette width-to-height 1.5:1. Simplified strong graphic readable at 24 by 16 pixels. No notebook, no holes, no paper, no dangling shadows.",
+      "qa": {
+        "mode": "RGBA",
+        "actual_dimensions": [
+          32,
+          24
+        ],
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bbox_xyxy": [
+          4,
+          4,
+          28,
+          20
+        ],
+        "visible_dimensions": [
+          24,
+          16
+        ],
+        "transparent_margins_ltrb": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "fully_transparent_pixel_count": 559,
+        "fully_opaque_pixel_count": 23,
+        "total_pixels": 768,
+        "source_dimensions": [
+          1536,
+          1024
+        ],
+        "dimensions_pass": true,
+        "alpha_pass": true
+      },
+      "mechanical_source_crop_xyxy": [
+        124,
+        213,
+        1411,
+        808
+      ],
+      "sizing_method": "Mechanical fit to 24x16 content area.",
+      "target_content_dimensions": [
+        24,
+        16
+      ],
+      "minimum_transparent_margins_xy": [
+        4,
+        4
+      ]
+    }
+  ]
+}
