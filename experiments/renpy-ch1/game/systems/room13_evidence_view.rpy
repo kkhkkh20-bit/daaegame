@@ -215,18 +215,22 @@ init 330 python:
             need=max(need,head+facts+30)
         return max(180,min(312,bottom-12-top-need))
     def r13_ev_button_height():
-        return 56 if r13_touch_ui() or persistent.room13_large_text else 48
+        # 844x390 displays the 720px canvas at 0.542x: 84 becomes 45.5 CSS px.
+        return 84 if r13_touch_ui() else (56 if persistent.room13_large_text else 48)
 
     def r13_ev_small_size():
         # Touch: small text is never under 18px.
         return r13_read_size(18,21) if r13_touch_ui() else r13_read_size(15,18)  # 0.20.5 (Codex A04): large text on phones too
 
     def r13_ev_fact_size():
-        return r13_read_size(20,24) if r13_touch_ui() else r13_read_size(19,23)
+        return r13_read_size(30,32) if r13_touch_ui() else r13_read_size(19,23)
+
+    def r13_ev_reading_size():
+        return r13_read_size(26,28) if r13_touch_ui() else r13_ev_small_size()
 
     def r13_ev_label_size(label,width):
         # A long name in a fixed-width control shrinks instead of spilling out (never under the small size).
-        normal=r13_read_size(R13_CONTROL["text"],R13_CONTROL["large_text"])
+        normal=r13_read_size(28,30) if r13_touch_ui() else r13_read_size(R13_CONTROL["text"],R13_CONTROL["large_text"])
         fit=(width-2*R13_CONTROL["padding"])//max(1,len(label))
         return max(r13_ev_small_size(),min(normal,fit))
 
@@ -253,6 +257,14 @@ init 330 python:
     def r13_ev_chip_boxes(chips,right=1168,gap=6):
         size=r13_ev_small_size()
         widths=[max(96,len(label)*size+18) for label,chosen,act in chips]
+        # Reserve all five tabs even when large text exposes every filter.
+        left=R13_EV_TAB_X+4*R13_EV_TAB_PITCH+86+12
+        available=right-left-gap*max(0,len(widths)-1)
+        if widths and sum(widths)>available:
+            floor=84 if r13_touch_ui() else 72
+            extra=sum(w-floor for w in widths)
+            ratio=max(0,available-floor*len(widths))/max(1,extra)
+            widths=[floor+int((w-floor)*ratio) for w in widths]
         x=right-sum(widths)-gap*max(0,len(widths)-1)
         boxes=[]
         for w in widths:
@@ -289,14 +301,14 @@ init 331:
 # Brown sheet with the title, top tabs, close X and the gold rule (settings-window pieces).
 screen r13_ink_record_shell(title,tabs,current="all",close_action=None,note=None):
     $ touch=r13_touch_ui()
-    $ tab_h=56 if touch else 48
+    $ tab_h=84 if touch else 48
     add Solid("#05070fa6")
     add Frame(R13_NIGHT_UI+"panel.png",48,48) xpos 12 ypos 12 xysize (1256,696)
     $ tab_x=r13_ev_tab_x(title)
     text title xpos 60 ypos 40 size 34 color "#f6ecd8" font r13_ui_font()
     for index,(tab_key,tab_title,tab_action) in enumerate(tabs):
         fixed:
-            xpos (tab_x+index*R13_EV_TAB_PITCH) ypos (66-tab_h//2) xysize (86,tab_h)
+            xpos (tab_x+index*R13_EV_TAB_PITCH) ypos ((58 if touch else 66)-tab_h//2) xysize (86,tab_h)
             if tab_key==current:
                 add Transform(R13_NIGHT_UI+"opt_tab.png",xysize=(86,44)) align (.5,.5)
             textbutton tab_title:
@@ -306,7 +318,7 @@ screen r13_ink_record_shell(title,tabs,current="all",close_action=None,note=None
         text note xpos (tab_x+len(tabs)*R13_EV_TAB_PITCH+12) ypos 52 size r13_ev_small_size() color "#d9b46c" font r13_ui_font()
     button:
         id "r13_ev_close"
-        xpos (1170 if touch else 1176) ypos (30 if touch else 34) xysize ((64,64) if touch else (52,52))
+        xpos 1176 ypos (16 if touch else 34) xysize ((84,84) if touch else (52,52))
         background None hover_background Solid("#fff6e214")
         action close_action alt "닫기"
         add R13_NIGHT_UI+"close_x.png" align (.5,.5)
@@ -319,8 +331,8 @@ screen r13_ink_chips(chips):
     for index,(chip_label,chip_chosen,chip_action) in enumerate(chips):
         textbutton chip_label:
             style "r13ev_chip_button" text_style "r13ev_chip_button_text"
-            xpos boxes[index][0] ypos (38 if touch else 46) xsize boxes[index][1] ysize (56 if touch else 40)
-            text_size r13_ev_small_size() selected chip_chosen action chip_action
+            xpos boxes[index][0] ypos (16 if touch else 46) xsize boxes[index][1] ysize (84 if touch else 40)
+            text_size min(r13_ev_small_size(),(boxes[index][1]-12)//max(1,len(chip_label))) selected chip_chosen action chip_action
 
 # Left column: small pictures, page by page. While comparing, a tap fills the chosen slot.
 screen r13_evidence_grid(entries,detail,page,owner,pair=None,pair_slot=1,archive=False,header=""):
@@ -328,11 +340,11 @@ screen r13_evidence_grid(entries,detail,page,owner,pair=None,pair_slot=1,archive
     $ wide=touch or bool(persistent.room13_large_text)
     $ cols=2 if wide else 3
     $ pitch_x=124 if wide else 84
-    $ pitch_y=114 if wide else 118
+    $ pitch_y=108 if touch else (114 if wide else 118)
     # 0.20.12 (자료 목록 잘림): the PC grid keeps 3x4 cells but gives the name three lines under a
     # slightly smaller picture, so long names ("첫 비명 뒤 핀을 다시 채운 때") read whole.
-    $ thumb=64 if wide else 62
-    $ label_size=(18 if r13_touch_ui() else r13_read_size(14,18))  # 0.20.5: grid names keep their fitted size; the big text goes to the picture side
+    $ thumb=48 if touch else (64 if wide else 62)
+    $ label_size=(r13_read_size(22,24) if touch else r13_read_size(14,18))
     $ label_lines=2 if wide else 3
     $ label_chars=12 if wide else 10
     $ actual_page=r13_record_page(entries,page)
@@ -366,24 +378,27 @@ screen r13_evidence_grid(entries,detail,page,owner,pair=None,pair_slot=1,archive
                     xpos 0 ypos (thumb+3) xsize cell_w text_align .5 size label_size color "#e3d6bd" font r13_ui_font() line_spacing -1
     if r13_record_pages(entries)>1:
         $ ph=r13_ev_button_height()
+        $ pw=84 if touch else 72
         fixed:
-            xpos 60 ypos (R13_EV_BOTTOM-ph) xysize (72,ph)
-            use r13_control("‹",None,Function(r13_record_select,owner,"page",actual_page-1,False),enabled=actual_page>0,width=72,height=ph,control_id="r13_ev_prev")
+            xpos 60 ypos (R13_EV_BOTTOM-ph) xysize (pw,ph)
+            use r13_control("‹",None,Function(r13_record_select,owner,"page",actual_page-1,False),enabled=actual_page>0,width=pw,height=ph,control_id="r13_ev_prev")
         text ("%d / %d"%(actual_page+1,r13_record_pages(entries))) xpos 188 xanchor .5 ypos (R13_EV_BOTTOM-ph//2) yanchor .5 size label_size color "#d9c9a8" font r13_ui_font()
         fixed:
-            xpos 244 ypos (R13_EV_BOTTOM-ph) xysize (72,ph)
-            use r13_control("›",None,Function(r13_record_select,owner,"page",actual_page+1,False),enabled=actual_page+1<r13_record_pages(entries),width=72,height=ph,control_id="r13_ev_next")
+            xpos (316-pw) ypos (R13_EV_BOTTOM-ph) xysize (pw,ph)
+            use r13_control("›",None,Function(r13_record_select,owner,"page",actual_page+1,False),enabled=actual_page+1<r13_record_pages(entries),width=pw,height=ph,control_id="r13_ev_next")
     if not entries:
         text ("아직 모은 자료가 없습니다." if not r13_catalog_entries(archive) else "이 분류에 해당하는 자료가 없습니다.") xpos 64 ypos 160 xsize 252 size label_size color "#b8b0a2" font r13_ui_font()
     add Solid("#c9a86a66") xpos 330 ypos 116 xsize 1 ysize 564
 
 screen r13_evidence_heading(key,width,title_size):
+    $ badge_size=r13_ev_small_size()
+    $ badge_title=r13_evidence_kind_label(key)
     hbox:
         spacing 10
-        text r13_catalog_title(key) size title_size color "#f6ecd8" font r13_ui_font() xmaximum (width-90) yalign .5
+        text r13_catalog_title(key) size title_size color "#f6ecd8" font r13_ui_font() xmaximum max(100,width-r13_ev_title_width(badge_title,badge_size)-26) yalign .5
         frame:
             yalign .5 padding (8,2) background Frame(R13_NIGHT_UI+"preview_box.png",8,8)
-            text r13_evidence_kind_label(key) size r13_ev_small_size() color "#d9b46c" font r13_ui_font()
+            text badge_title size badge_size color "#d9b46c" font r13_ui_font()
 
 screen r13_evidence_picture_box(key,box):
     frame:
@@ -404,21 +419,27 @@ screen r13_evidence_single(detail,owner,archive=False,view_context=("records",),
     default origin_open=False
     $ bh=r13_ev_button_height()
     $ touch=r13_touch_ui()
-    $ small=r13_ev_small_size()
+    $ small=r13_ev_reading_size()
     $ buttons=(1 if detail else 0)+(2 if present else (1 if can_compare else 0))  # 0.20.7: the source button stays (펼치기/접기)
     $ reading_bottom=R13_EV_BOTTOM-buttons*bh-max(0,buttons-1)*12-16
     if detail:
         if not archive and r13_record_unread(detail):
             timer .7 action Function(r13_record_mark_seen,detail)
-        vbox:
-            xpos 372 ypos 116 xsize 520 spacing 12
-            use r13_evidence_heading(detail,520,(r13_read_size(28,32) if touch else r13_read_size(26,30)))
-            fixed:
-                xsize 520 ysize 360
+        viewport:
+            id "r13_ev_single_reading"
+            area (372,116,520,R13_EV_BOTTOM-116)
+            mousewheel True draggable True scrollbars "vertical"
+            vscrollbar_unscrollable "hide"
+            vbox:
+                xsize 500 spacing 12
+                use r13_evidence_heading(detail,500,(r13_read_size(30,32) if touch else r13_read_size(26,30)))
+                $ picture=280 if touch else 360
                 fixed:
-                    xpos 80 xysize (360,360)
-                    use r13_evidence_picture_box(detail,360)
-            use r13_evidence_fact_list(detail,500)
+                    xsize 500 ysize picture
+                    fixed:
+                        xpos ((500-picture)//2) xysize (picture,picture)
+                        use r13_evidence_picture_box(detail,picture)
+                use r13_evidence_fact_list(detail,500)
     elif not empty:  # 0.20.5 (UI review): nothing to pick -> no "pick one" line; the grid says why
         text ("보여줄 자료를 왼쪽에서 직접 고르세요." if present else "자료를 선택하세요.") xpos 372 ypos 300 xsize 520 text_align .5 size r13_ev_fact_size() color "#b8b0a2" font r13_ui_font()
     for scroll_key index scroll_key in [r13_record_scroll_key(view_context,detail,archive)]:
@@ -427,6 +448,7 @@ screen r13_evidence_single(detail,owner,archive=False,view_context=("records",),
             id "r13_material_scroll"
             yadjustment detail_scroll
             area (916,116,304,max(60,reading_bottom-116)) mousewheel True draggable True scrollbars ("vertical" if (detail or present) else None)
+            vscrollbar_unscrollable "hide"
             vbox:
                 spacing 12
                 if present:
@@ -438,7 +460,7 @@ screen r13_evidence_single(detail,owner,archive=False,view_context=("records",),
                             text present_note size small color "#d9b46c" font r13_ui_font() xsize 280
                         text "먼저 보여주고, 건넬지는 대화 후 결정합니다." size small color "#b8b0a2" font r13_ui_font() xsize 280
                 elif can_compare and not origin_open:
-                    text "이 자료와 함께 볼 자료가 있으면\n아래 「나란히 놓기」를 누르고\n왼쪽에서 하나 고릅니다." size small color "#b8b0a2" font r13_ui_font() xsize 280
+                    text "「나란히 놓기」를 누른 뒤 왼쪽에서 함께 볼 자료를 고르세요." size small color "#b8b0a2" font r13_ui_font() xsize 280
                 if detail and origin_open:
                     $ ev=r13_catalog_record(detail)
                     text ("들은 말" if ev.get("kind")=="증언" else "확인한 내용") size small color "#d9b46c" font r13_ui_font()
@@ -459,7 +481,7 @@ screen r13_evidence_single(detail,owner,archive=False,view_context=("records",),
     if present:
         fixed:
             xpos 920 ypos by xysize (296,bh)
-            use r13_control(("그만두기"),None,stop_action,enabled=ready,width=296,height=bh,control_id="r13_ev_stop")
+            use r13_control(("그만두기"),None,stop_action,enabled=ready,width=296,height=bh,label_size=r13_ev_label_size("그만두기",296),control_id="r13_ev_stop")
         fixed:
             xpos 920 ypos (by-bh-12) xysize (296,bh)
             use r13_control(present_label,None,present_action,enabled=present_ok,primary=True,width=296,height=bh,label_size=r13_ev_label_size(present_label,296),control_id="r13_ev_present")
@@ -467,13 +489,13 @@ screen r13_evidence_single(detail,owner,archive=False,view_context=("records",),
     elif can_compare:
         fixed:
             xpos 920 ypos by xysize (296,bh)
-            use r13_control("⇆ 나란히 놓기",None,[Function(r13_record_select,owner,"pair",r13_compare_begin(detail),False),Function(r13_record_select,owner,"pair_slot",1,False)],enabled=bool(detail),primary=True,width=296,height=bh,control_id="r13_ev_pair")
+            use r13_control("⇆ 나란히 놓기",None,[Function(r13_record_select,owner,"pair",r13_compare_begin(detail),False),Function(r13_record_select,owner,"pair_slot",1,False)],enabled=bool(detail),primary=True,width=296,height=bh,label_size=r13_ev_label_size("⇆ 나란히 놓기",296),control_id="r13_ev_pair")
         $ by=by-bh-12
     if detail:
         # 0.20.7 (Codex design 08, owner "다 해줘"): the same button folds the source again.
         fixed:
             xpos 920 ypos by xysize (296,bh)
-            use r13_control(("출처 접기" if origin_open else "출처 펼치기"),None,SetLocalVariable("origin_open",not origin_open),width=296,height=bh,control_id="r13_ev_origin")
+            use r13_control(("출처 접기" if origin_open else "출처 펼치기"),None,SetLocalVariable("origin_open",not origin_open),width=296,height=bh,label_size=r13_ev_label_size("출처 펼치기",296),control_id="r13_ev_origin")
 
 # Two records side by side, equal columns. No marks, no highlighting.
 screen r13_evidence_pair(entries,pair,pair_slot,owner,archive=False):
@@ -483,34 +505,39 @@ screen r13_evidence_pair(entries,pair,pair_slot,owner,archive=False):
     text "나란히 놓기 · 두 자료를 함께 봅니다. 맞는지 아닌지는 표시하지 않습니다." xpos 350 ypos 112 size r13_ev_small_size() color "#d9c9a8" font r13_ui_font()
     add Solid("#c9a86a66") xpos 782 ypos 150 xsize 1 ysize (by-162)
     add R13_NIGHT_UI+"diamond.png" xpos 778 ypos ((150+by-12)//2)
-    $ pair_title=(r13_read_size(24,28) if touch else r13_read_size(24,27))
+    $ pair_title=(r13_read_size(28,30) if touch else r13_read_size(24,27))
     $ pic=r13_ev_pair_picture(pair,by,pair_title)
-    for column,key in enumerate(r13_compare_slots(pair)):
-        vbox:
-            xpos (350 if column==0 else 798) ypos 142 xsize 420 spacing 10
-            if key is not None:
-                use r13_evidence_heading(key,420,pair_title)
-                fixed:
-                    xsize 420 ysize pic
+    for column,key index (column,key) in enumerate(r13_compare_slots(pair)):
+        viewport:
+            id ("r13_ev_pair_reading_%d"%column)
+            area ((350 if column==0 else 798),142,420,by-154)
+            mousewheel True draggable True scrollbars "vertical"
+            vscrollbar_unscrollable "hide"
+            vbox:
+                xsize 408 spacing 10
+                if key is not None:
+                    use r13_evidence_heading(key,408,pair_title)
                     fixed:
-                        xpos ((420-pic)//2) xysize (pic,pic)
-                        use r13_evidence_picture_box(key,pic)
-                use r13_evidence_fact_list(key,420)
-            else:
-                text ("%d번 자리"%(column+1)) size (24 if touch else r13_read_size(24,27)) color "#b8b0a2" font r13_ui_font()
-                frame:
-                    xsize pic ysize pic xoffset ((420-pic)//2) padding (24,24) background Frame(R13_NIGHT_UI+"preview_box.png",8,8)
-                    text "왼쪽에서 함께 볼 자료를 고르세요." align (.5,.5) text_align .5 size r13_ev_fact_size() color "#b8b0a2" font r13_ui_font()
+                        xsize 408 ysize pic
+                        fixed:
+                            xpos ((408-pic)//2) xysize (pic,pic)
+                            use r13_evidence_picture_box(key,pic)
+                    use r13_evidence_fact_list(key,408)
+                else:
+                    text ("%d번 자리"%(column+1)) size pair_title color "#b8b0a2" font r13_ui_font()
+                    frame:
+                        xsize pic ysize pic xoffset ((408-pic)//2) padding (24,24) background Frame(R13_NIGHT_UI+"preview_box.png",8,8)
+                        text "왼쪽에서 함께 볼 자료를 고르세요." align (.5,.5) text_align .5 size r13_ev_fact_size() color "#b8b0a2" font r13_ui_font()
     $ single=r13_compare_single(pair)
     fixed:
         xpos 350 ypos by xysize (198,bh)
-        use r13_control("한 장만 보기",None,[Function(r13_record_select,owner,"detail",single,not archive),Function(r13_record_select,owner,"page",r13_compare_page(entries,single),False),Function(r13_record_select,owner,"pair",None,False)],width=198,height=bh,control_id="r13_ev_single")
+        use r13_control("한 장만 보기",None,[Function(r13_record_select,owner,"detail",single,not archive),Function(r13_record_select,owner,"page",r13_compare_page(entries,single),False),Function(r13_record_select,owner,"pair",None,False)],width=198,height=bh,label_size=r13_ev_label_size("한 장만 보기",198),control_id="r13_ev_single")
     fixed:
         xpos 566 ypos by xysize (198,bh)
-        use r13_control("자리 바꾸기",None,Function(r13_record_select,owner,"pair",r13_compare_swap(pair),False),width=198,height=bh,control_id="r13_ev_swap")
+        use r13_control("자리 바꾸기",None,Function(r13_record_select,owner,"pair",r13_compare_swap(pair),False),width=198,height=bh,label_size=r13_ev_label_size("자리 바꾸기",198),control_id="r13_ev_swap")
     fixed:
         xpos 1012 ypos by xysize (206,bh)
-        use r13_control(("⇆ %d번 바꾸기"%(2 if pair_slot else 1)),None,Function(r13_record_select,owner,"pair_slot",0 if pair_slot else 1,False),width=206,height=bh,control_id="r13_ev_slot")
+        use r13_control(("⇆ %d번 바꾸기"%(2 if pair_slot else 1)),None,Function(r13_record_select,owner,"pair_slot",0 if pair_slot else 1,False),width=206,height=bh,label_size=r13_ev_label_size("⇆ 2번 바꾸기",206),control_id="r13_ev_slot")
 
 # The whole 자료 view (records tab and the 보여주기 book).
 screen r13_evidence_browser(entries,detail,page,owner,pair=None,pair_slot=1,archive=False,view_context=("records",),header="",present=False,present_label="",present_ok=False,present_action=None,stop_action=None,ready=True,statement=None,present_note=None):

@@ -143,7 +143,8 @@ class EvidenceView(unittest.TestCase):
     # -- touch sizes ----------------------------------------------------------------
     def test_touch_controls_and_small_text(self):
         env = self.build(touch=True)
-        self.assertGreaterEqual(env["r13_ev_button_height"](), 56)
+        self.assertGreaterEqual(env["r13_ev_button_height"]()*390/720, 44)
+        self.assertGreaterEqual(env["r13_ev_fact_size"]()*390/720, 16)
         self.assertGreaterEqual(env["r13_ev_small_size"](), 18)
         self.assertGreaterEqual(env["r13_ev_label_size"]("올빼미 할아버지에게 보여주기", 296), 18)
         env = self.build()
@@ -167,6 +168,17 @@ class EvidenceView(unittest.TestCase):
             self.assertGreaterEqual(env["r13_ev_tab_x"](title), 60 + env["r13_ev_title_width"](title) + 20)
             self.assertGreaterEqual(env["r13_ev_tab_x"](title), env["R13_EV_TAB_X"])
         self.assertEqual(env["r13_ev_tab_x"]("기록"), env["R13_EV_TAB_X"])
+
+    def test_all_filters_with_large_text_leave_tabs_and_touch_targets_clear(self):
+        for touch in (False, True):
+            env = self.build(touch=touch)
+            env["r13_read_size"] = lambda base, large: large
+            chips = [(label, False, None) for label in ("전체", "증언", "전달 가능", "지난 사건", "지난 플레이")]
+            boxes = env["r13_ev_chip_boxes"](chips)
+            self.assertGreaterEqual(boxes[0][0], 158+4*90+86+12)
+            self.assertLessEqual(boxes[-1][0]+boxes[-1][1], 1168)
+            if touch:
+                self.assertTrue(all(width*390/720 >= 44 for x, width in boxes))
     def test_grid_names_keep_two_lines(self):
         env = self.build()
         for name in ("● 학교 장작 인수 기록", "흰 그릇을 받은 아이들의 아주 긴 이름", "공백없는아주긴자료이름입니다정말로"):
@@ -232,10 +244,10 @@ class EvidenceView(unittest.TestCase):
     def test_grid_rows_end_above_the_pager(self):
         # PC: 3 columns x 4 rows (12), touch/large: 2 x 4 (8); the pager sits at R13_EV_BOTTOM-height.
         grid = VIEW.split("screen r13_evidence_grid(", 1)[1].split("\nscreen ", 1)[0]
-        self.assertIn("$ pitch_y=114 if wide else 118", grid)
+        self.assertIn("$ pitch_y=108 if touch else (114 if wide else 118)", grid)
         self.assertIn("ypos (148+(index//cols)*pitch_y)", grid)
         bottom = self.build()["R13_EV_BOTTOM"]
-        for pitch, pager in ((118, 48), (114, 56)):
+        for pitch, pager in ((118, 48), (114, 56), (108, 84)):
             self.assertLessEqual(148 + 4 * pitch, bottom - pager)
 
 
