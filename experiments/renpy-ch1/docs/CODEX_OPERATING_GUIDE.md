@@ -27,7 +27,7 @@
    `RENPY_SDK=/root/.cache/renpy/renpy-8.5.3-sdk dev/run_renpy_tests.sh $(cat docs/codex/qa_names_0.20.12.txt)` → 로그 `/tmp/room13-qa/renpy/<이름>.txt`. 시험 이름은 testcase 이름이다(파일명과 다를 수 있음).
 7. **커밋·push**: 원본 변경은 바로 커밋(한국어 메시지, 무엇을 왜). `git -c user.name="kkhkkh20-bit" -c user.email="kkhkkh20@gmail.com" commit`. `.rpyc`는 커밋하지 않는다. `git fetch` → `git merge origin/main` → `git push origin HEAD:main`.
 8. **공개**는 5장 절차로, 묶음이 끝났을 때.
-9. **실제 플레이에 가까운 검사**: 화면 시험(장면 시험)은 상태를 주입해 특정 장면만 확인하므로 1~14일을 이어서 할 때의 막힘·흐름은 잡지 못한다. 큰 묶음마다 브라우저 자동 플레이(`dev/qa_v111_play.py`, `dev/qa_v111_continuation.py` — 처음부터 클릭으로 진행)를 돌리고, 막힌 지점·이상한 화면을 캡처해 보고한다(소유자 2026-10-23 "실제 플레이 검사야?").
+9. (선택) 브라우저 자동 플레이(`dev/qa_v111_play.py`, `dev/qa_v111_continuation.py`)는 필수가 아니다(소유자 2026-10-23 "꼭 돌릴 필요 없고"). 소유자가 요청할 때만 돌린다.
 
 ## 2. 구현 규칙 (자주 틀리는 것)
 
