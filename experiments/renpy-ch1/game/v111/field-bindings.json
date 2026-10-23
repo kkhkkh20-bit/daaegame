@@ -2160,5 +2160,75 @@
         "object": "blankets"
       }
     ]
+  },
+  "afternoon2": {
+    "location": "dining",
+    "people": [
+      "nabi",
+      "daram"
+    ],
+    "people_by_location": {
+      "dining": [
+        "nabi",
+        "daram"
+      ],
+      "inn": [
+        "granny",
+        "daram"
+      ],
+      "square": [
+        "resident_piko",
+        "daram"
+      ]
+    },
+    "options": [
+      {
+        "title": "포대를 옮긴다",
+        "location": "dining",
+        "person": "nabi",
+        "guard": [
+          [
+            "state",
+            "piko_sacks2",
+            null
+          ]
+        ]
+      },
+      {
+        "title": "마른 천을 빌린다",
+        "location": "inn",
+        "person": "granny",
+        "guard": [
+          [
+            "state",
+            "piko_cloth2",
+            null
+          ]
+        ]
+      },
+      {
+        "title": "비운 벤치와 조건을 전한다",
+        "location": "square",
+        "person": "resident_piko",
+        "guard": [
+          [
+            "state",
+            "piko_sacks2",
+            true
+          ],
+          [
+            "state",
+            "piko_cloth2",
+            true
+          ]
+        ]
+      },
+      {
+        "title": "네로를 만나러 간다",
+        "location": "dining",
+        "person": "nabi",
+        "guard": []
+      }
+    ]
   }
 }

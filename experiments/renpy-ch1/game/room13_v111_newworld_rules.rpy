@@ -64,12 +64,16 @@ init 318 python:
     R13_PROOF_EXTRAS={
         "함께 들어갈 근거를 고른다":("E01",),
         "수리와 반출을 가릴 자료를 낸다":("E10",),
-        "밤이 혐의의 근거를 확인한다":("E21",),
+        "밤이 혐의의 근거를 확인한다":("E21","NW_PIKO_SKETCH4"),
         "초롱과 피코의 하루를 대조한다":("E08",),
     }
     R13_PROOF_ALTERNATES={
         "구리선과 수선 출처를 대조한다":(("E08_CONTACT_ASSEMBLY","E09_PIN_OWNER"),),
         "초롱과 피코의 하루를 대조한다":(("E11","NW_PIKO_TREMOR"),),
+        # 0.20.18 연쇄 P1 (소유자 2026-10-23 "전 사건에서 살린 애가 나중에 활용되어"): 2일에 살린 피코의
+        # 그림이 겉옷 대조·귀가 진술을 대신한다. 그림은 얼굴이 아니라 키·소매·맨발만 보이므로 밤이를 벗길 뿐
+        # 누가 물었는지는 정하지 않는다(회의 결론 불변).
+        "밤이 혐의의 근거를 확인한다":(("E20","E22","NW_PIKO_SKETCH4"),("E20","E22","E23","NW_PIKO_SKETCH4"),("E20","E22","E24","NW_PIKO_SKETCH4")),
     }
     # Shown title only; the proof key (and the saved argument slot) keeps the old name.
     R13_PROOF_TITLES={"첫 비명 뒤 핀을 다시 채운 때":"핀이 언제 떨어졌는가",

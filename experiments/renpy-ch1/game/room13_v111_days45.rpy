@@ -322,6 +322,7 @@ label r13_v111_cloth4:
     call r13_lines(r13_v111_lines(['MS14_D04_S04_L0057']),'v111:MS14_D04_S04_L0057')
     call r13_lines(r13_v111_lines(['MS14_D04_S04_L0058']),'v111:MS14_D04_S04_L0058')
     call r13_lines(r13_v111_lines(['MS14_D04_S04_L0059']),'v111:MS14_D04_S04_L0059')
+    call r13_v111_piko_sketch4
     call r13_v111_travel('square','night_lamp4')
     call r13_lines(r13_v111_lines(['MS14_D04_S04_L0061']),'v111:MS14_D04_S04_L0061')
     call r13_lines(r13_v111_lines(['MS14_D04_S04_L0062']),'v111:MS14_D04_S04_L0062')
@@ -659,3 +660,17 @@ label r13_v111_sleep5:
 label r13_v111_morning6:
     $ r13_v111_set("day",6)
     jump r13_v111_day6
+
+label r13_v111_piko_sketch4:
+    # 0.20.18 연쇄 P1 (CHAIN_DESIGN.md): 2일에 살린 피코가 4일 저녁 처마 옆에서 본 것을 그려 온다.
+    # 피코는 3일부터 진료소에 머물므로, 국을 받으러 온 이 장면에서만 식당에 세웠다가 되돌린다.
+    if r13_v111_value('piko_alive')!=True or r13_v111_owned('NW_PIKO_SKETCH4'):
+        return
+    $ v111_people_before=list(room13["v111"].get("people") or [])
+    $ r13_v111_set('piko.location','dining')
+    $ r13_v111_join(['resident_piko'])
+    call r13_lines(r13_nw_block('piko_sketch4'),'nw:piko_sketch4')
+    $ r13_nw_acquire("NW_PIKO_SKETCH4")
+    $ r13_v111_set('piko.location','clinic')
+    $ r13_v111_arrive(v111_people_before)
+    return

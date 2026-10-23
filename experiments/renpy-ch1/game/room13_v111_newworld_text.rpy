@@ -103,6 +103,14 @@ init 319 python:
         "gate_won_with_e01":lambda:"V111:E01" in (r13_v111_value("proof_given:함께 들어갈 근거를 고른다") or []),
         "repair_won_with_e10":lambda:"V111:E10" in (r13_v111_value("proof_given:수리와 반출을 가릴 자료를 낸다") or []),
         "gate_post_won_with_e21":lambda:"V111:E21" in (r13_v111_value("proof_given:밤이 혐의의 근거를 확인한다") or []),
+        # 0.20.18 연쇄 P1: 살아 있는 피코의 4일 밤 그림을 회의에 냈는가. _only 는 겉옷·귀가 진술 없이 그림으로 이긴 경우.
+        "gate_post_won_with_sketch":lambda:"V111:NW_PIKO_SKETCH4" in (r13_v111_value("proof_given:밤이 혐의의 근거를 확인한다") or []),
+        "gate_post_won_with_sketch_only":lambda:"V111:NW_PIKO_SKETCH4" in (r13_v111_value("proof_given:밤이 혐의의 근거를 확인한다") or []) and not {"V111:E23","V111:E24"}&set(r13_v111_value("proof_given:밤이 혐의의 근거를 확인한다") or []),
+        # 0.20.18 (열쇠표 K1): 2일 오후 피코의 자리를 위해 실제로 한 일.
+        "piko_sacks2":lambda:r13_v111_value("piko_sacks2") is True,
+        "piko_no_sacks2":lambda:r13_v111_value("piko_sacks2") is not True,
+        "piko_cloth2":lambda:r13_v111_value("piko_cloth2") is True,
+        "piko_no_cloth2":lambda:r13_v111_value("piko_cloth2") is not True,
         "hyp1_won_without_e08":lambda:bool(r13_v111_value("proof_given:초롱과 피코의 하루를 대조한다")) and "V111:E08" not in r13_v111_value("proof_given:초롱과 피코의 하루를 대조한다"),
         # Event 05: the day-7 fire meeting.
         "fire_win":lambda:r13_v111_value("meeting:fire")=="win",

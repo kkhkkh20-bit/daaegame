@@ -626,23 +626,33 @@ label r13_v111_diner_offer:
     $ r13_v111_scene('MS14_D02_S04')
     call r13_v111_travel('dining','diner_offer')
     $ r13_v111_score()
-    call r13_lines(r13_v111_lines(['MS14_D02_S04_L0002', 'MS14_D02_S04_L0003', 'MS14_D02_S04_L0004', 'MS14_D02_S04_L0005', 'MS14_D02_S04_L0006', 'MS14_D02_S04_L0007', 'MS14_D02_S04_L0008', 'MS14_D02_S04_L0009', 'MS14_D02_S04_L0010', 'MS14_D02_S04_L0012', 'MS14_D02_S04_L0013', 'MS14_D02_S04_L0014', 'MS14_D02_S04_L0016', 'MS14_D02_S04_L0017', 'MS14_D02_S04_L0018', 'MS14_D02_S04_L0019', 'MS14_D02_S04_L0020']), 'v111:diner_offer:MS14_D02_S04_L0002')
+    call r13_lines(r13_v111_lines(['MS14_D02_S04_L0002', 'MS14_D02_S04_L0003', 'MS14_D02_S04_L0004', 'MS14_D02_S04_L0005', 'MS14_D02_S04_L0006', 'MS14_D02_S04_L0007', 'MS14_D02_S04_L0008', 'MS14_D02_S04_L0009', 'MS14_D02_S04_L0010', 'MS14_D02_S04_L0012', 'MS14_D02_S04_L0013', 'MS14_D02_S04_L0014', 'MS14_D02_S04_L0016', 'MS14_D02_S04_L0017', 'MS14_D02_S04_L0018', 'MS14_D02_S04_L0019']), 'v111:diner_offer:MS14_D02_S04_L0002')
     jump r13_v111_afternoon
 
 label r13_v111_afternoon:
-    $ v111_menu_owner='afternoon'
-    $ v111_menu=[('피코가 오늘 안에서 잘 자리를 마련한다',0) for _ in [0] if True] + [('네로를 만나 물자 일을 돕는다',1) for _ in [0] if True]
-    $ v111_answer=renpy.display_menu(v111_menu)
+    # 0.20.18 (소유자 2026-10-23, 열쇠표 K1): 결과를 미리 적은 두 갈래 메뉴를 걷었다. 해 지기 전에
+    # 실제로 한 일이 피코의 밤을 정한다 — 포대와 마른 천을 마치고 피코에게 자리를 전하면 그 길로
+    # 들어가고, 네로를 만나러 가면 오후가 끝난다. 반쯤 하다 떠나면 한 일은 남지 않는다.
+    call r13_v111_wait('afternoon2')
+    $ v111_answer=_return
     if v111_answer==0:
+        $ r13_v111_set('piko_sacks2',True)
+        call r13_lines(r13_nw_block('shelter_work_done2'),'nw:shelter_work_done2')
+    elif v111_answer==1:
+        $ r13_v111_set('piko_cloth2',True)
+        call r13_lines(r13_nw_block('shelter_cloth_done2'),'nw:shelter_cloth_done2')
+    elif v111_answer==2:
         $ r13_v111_option('MS14_D02_S04_L0020_O1')
         $ r13_v111_apply('option:afternoon:0',[{'op': 'set', 'field': 'D02_afternoon', 'value': 'shelter'}])
-        jump r13_v111_shelter_choice
-    if v111_answer==1:
+        jump r13_v111_shelter_prepare
+    elif v111_answer==3:
         $ r13_v111_option('MS14_D02_S04_L0020_O2')
         $ r13_v111_apply('option:afternoon:1',[{'op': 'set', 'field': 'D02_afternoon', 'value': 'nero'}])
         jump r13_v111_nero_choice
     jump r13_v111_afternoon
 
+# 0.20.18 부터 새 판은 이 두 라벨을 지나지 않는다(위 afternoon 이 직접 shelter_prepare 로 간다).
+# 그 전 저장을 이어 하는 사람이 여기서 멈춰 있을 수 있어 남긴다.
 label r13_v111_shelter_choice:
     $ r13_v111_scene('MS14_D02_S04')
     call r13_v111_travel('dining','shelter_choice')
