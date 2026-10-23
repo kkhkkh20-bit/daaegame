@@ -423,7 +423,7 @@
       "expression": "anxious"
     },
     "MS14_D07_S04_L0005": {
-      "text": "부엉이 어르신. 안에서 빗장을 빼세요. 다람아, 문에서 떨어져 있어.",
+      "text": "부엉이 어르신. 안에서 빗장을 빼세요. 다람아, 머리는 문에서 떼. 손은 놓지 말고.",
       "expression": "anxious"
     },
     "MS14_D07_S04_L0006": {
@@ -508,6 +508,9 @@
     },
     "MS14_D07_P02_L0008": {
       "text": "손 꼭 잡아. 다치면 안 돼. 여기 발자국을 따라가자."
+    },
+    "MS14_D07_S04_L0014": {
+      "text": "얼굴은 문에서 떼. 아빠 여기 있어."
     }
   },
   "before": {
@@ -586,7 +589,7 @@
         "id": "NW_D07_S03_A03",
         "speaker": null,
         "kind": "narration",
-        "text": "13호 안은 이상하게 차다. 그런데 난로 불빛은 평소보다 푸르다. 책상 앞에 처음 보는 노인이 앉아 있고, 책상 위에는 서류뿐이다. 노인은 말을 꺼내기 전에 겉옷 품을 한 번 누른다."
+        "text": "13호 안은 이상하게 차다. 그런데 난로 불빛은 평소보다 푸르다. 책상 앞에 처음 보는 노인이 앉아 있고, 책상 위에는 누렇게 바랜 서류뿐이다. 노인은 말을 꺼내기 전에 겉옷 품을 한 번 누른다."
       },
       {
         "id": "NW_D07_S03_A04",
@@ -673,6 +676,13 @@
         "kind": "narration",
         "text": "다람이 손을 번쩍 든다.",
         "when": "kkomi_alive"
+      },
+      {
+        "id": "NW_D07_S02_V06",
+        "speaker": null,
+        "kind": "narration",
+        "text": "교실 구석에 있던 다람이 도토를 올려다본다.",
+        "when": "kkomi_dead"
       }
     ],
     "MS14_D07_S02_L0036": [
@@ -764,39 +774,6 @@
         "kind": "narration",
         "text": "보리가 그 자리에 굳는다.",
         "beat": "shaken"
-      }
-    ],
-    "MS14_D07_S01_L0047": [
-      {
-        "id": "NW_D07_S01_C01",
-        "speaker": "너울",
-        "kind": "dialogue",
-        "text": "보리가 그 천을 가져다 썼을 수도 있소. 장작을 훔친 것도 보리요. 불이 난 데 있던 장작도 보리 것이고.",
-        "expression": "neutral",
-        "when": "fire_lose"
-      },
-      {
-        "id": "NW_D07_S01_C02",
-        "speaker": "보리",
-        "kind": "dialogue",
-        "text": "내가 왜 애들 있는 데 불을 놓소. 왜.",
-        "expression": "angry",
-        "when": "fire_lose"
-      },
-      {
-        "id": "NW_D07_S01_C03",
-        "speaker": "너울",
-        "kind": "dialogue",
-        "text": "불을 놓은 사람은 보리로 적으시오. 보호시설로 보낼 명단에도 올리시오.",
-        "expression": "neutral",
-        "when": "fire_lose"
-      },
-      {
-        "id": "NW_D07_S01_C04",
-        "speaker": null,
-        "kind": "narration",
-        "text": "누비는 행주를 쥔 채 아무 말도 하지 않는다. 아이들이 나간 문 쪽만 바라본다.",
-        "when": "fire_lose"
       }
     ],
     "MS14_D07_S03_L0005": [
@@ -931,6 +908,22 @@
         "kind": "narration",
         "text": "서리가 먼저 바닥을 살피며 들어간다."
       }
+    ],
+    "MS14_D07_S01_L0027": [
+      {
+        "id": "NW_D07_S01_H01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "누비는 대답 대신 아이들 쪽으로 고개를 돌린다. 입술만 달싹인다."
+      }
+    ],
+    "MS14_D07_S02_L0012": [
+      {
+        "id": "NW_D07_S02_M01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "회의가 끝난다. 누비는 회관에 남는다. 나는 나비, 보리와 함께 학교로 건너간다."
+      }
     ]
   },
   "drop": [],
@@ -950,6 +943,46 @@
         "speaker": null,
         "kind": "narration",
         "text": "같은 제설길을 거쳐 여관으로 돌아온다. 비명도, 문을 부수는 소리도 없다. 도토가 부엉이 어르신의 잔을 잡아 주고 있다. 빗장은 열려 있고 촛대도 그대로다."
+      }
+    ],
+    "fire_lose_neoul7": [
+      {
+        "id": "NW_D07_S01_C00",
+        "speaker": null,
+        "kind": "narration",
+        "text": "빨래터 문간으로 너울이 들어선다. 회의 기록철을 옆구리에 끼고 있다.",
+        "when": "fire_lose"
+      },
+      {
+        "id": "NW_D07_S01_C01",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "보리가 그 천을 가져다 썼을 수도 있소. 장작을 훔친 것도 보리요. 불이 난 데 있던 장작도 보리 것이고.",
+        "expression": "neutral",
+        "when": "fire_lose"
+      },
+      {
+        "id": "NW_D07_S01_C02",
+        "speaker": "보리",
+        "kind": "dialogue",
+        "text": "내가 왜 애들 있는 데 불을 놓소. 왜.",
+        "expression": "angry",
+        "when": "fire_lose"
+      },
+      {
+        "id": "NW_D07_S01_C03",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "불을 놓은 사람은 보리로 적으시오. 보호시설로 보낼 명단에도 올리시오.",
+        "expression": "neutral",
+        "when": "fire_lose"
+      },
+      {
+        "id": "NW_D07_S01_C04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "누비는 행주를 쥔 채 아무 말도 하지 않는다. 아이들이 나간 문 쪽만 바라본다.",
+        "when": "fire_lose"
       }
     ]
   }

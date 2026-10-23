@@ -110,6 +110,8 @@ init 319 python:
         "piko_sacks2":lambda:r13_v111_value("piko_sacks2") is True,
         # 0.20.18 (열쇠표 K2): 6일 선생님께 아이들 자리를 받아 두었는가.
         "kkomi_seat6":lambda:r13_v111_value("kkomi_seat6") is True,
+        # 2026-10-23 연결오류: 아이들을 먼저 옮긴 판에서는 도토를 이미 만났다(P01·빈 창고 불). 소개를 되풀이하지 않는다.
+        "fire_evacuated":lambda:r13_v111_value("FIRE_EVACUATED") is True,
         # 0.20.18 (CRUEL_CHOICES.md C1): 13일 공개 때 엄마와 다람이 광장에 있는가.
         # 0.20.18 (CRUEL_CHOICES.md C3 A안): 3일 실룩을 풀어 준 판, 5번 등이 비어 밤이가 처마에서 내려왔다.
         "bami_cold4":lambda:r13_v111_value("bami_cold4") is True,

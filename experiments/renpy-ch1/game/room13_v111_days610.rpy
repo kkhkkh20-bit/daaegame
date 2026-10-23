@@ -503,6 +503,9 @@ label r13_v111_nubi_wrong7:
     $ r13_nw_list("resident_bori","fire_lose")
     call r13_lines(r13_v111_lines(['MS14_D07_S01_L0046']),'v111:MS14_D07_S01_L0046')
     call r13_lines(r13_v111_lines(['MS14_D07_S01_L0047']),'v111:MS14_D07_S01_L0047')
+    # 2026-10-23 연결오류: 빨래터에는 누비·보리만 있었다. 너울은 문간으로 들어선 다음에 말한다.
+    $ r13_v111_join(['neoul'])
+    call r13_lines(r13_nw_block('fire_lose_neoul7'),'nw:fire_lose_neoul7')
     jump r13_v111_responsibility7
 
 label r13_v111_nubi_admission7:
@@ -572,6 +575,8 @@ label r13_v111_responsibility_answers7:
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0011']),'v111:MS14_D07_S02_L0011')
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0012']),'v111:MS14_D07_S02_L0012')
     $ r13_v111_commit('MS14_D07_S02_L0014')
+    # 2026-10-23 연결오류: 회의는 회관에서 끝나고 누비·너울은 남는다. 학교에는 나비·보리와 함께 건너간다.
+    $ r13_v111_arrive(['nabi', 'resident_bori', 'resident_teacher'])
     jump r13_v111_school_names7
 
 label r13_v111_school_names7:
@@ -599,7 +604,8 @@ label r13_v111_school_names_done7:
         call r13_v111_living_child7
     else:
         call r13_v111_lost_child7
-    $ r13_v111_join(['doto'])
+    # 2026-10-23 연결오류: 다람은 낮 동안 학교에 있었다. 도토를 반기는 S02_L0039 전에 무대에 세운다.
+    $ r13_v111_join(['doto', 'daram'])
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0038']),'v111:MS14_D07_S02_L0038')
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0039']),'v111:MS14_D07_S02_L0039')
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0040']),'v111:MS14_D07_S02_L0040')
