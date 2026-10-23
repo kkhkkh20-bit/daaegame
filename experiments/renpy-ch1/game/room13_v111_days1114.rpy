@@ -903,6 +903,9 @@ label r13_v111_late_road11:
     $ r13_v111_set('lower_road_lost',True)
     $ r13_v111_set('location:resident_nero','forest')
     $ r13_v111_set('nero_alive',False)
+    # D4: 네로가 데리러 가던 아랫길 노인도 함께 묻힌다.
+    $ r13_v111_set('alive:v111_lowerroad_elder',False)
+    call r13_lines(r13_nw_block('lower_elder11'),'nw:lower_elder11')
     jump r13_v111_sleep11
 
 label r13_v111_sleep11:
@@ -1185,6 +1188,10 @@ label r13_v111_late_meal12:
     call r13_lines(r13_v111_lines(['MS14_D12_S03_L0003']),'v111:MS14_D12_S03_L0003')
     call r13_lines(r13_v111_lines(['MS14_D12_S03_L0004']),'v111:MS14_D12_S03_L0004')
     call r13_lines(r13_v111_lines(['MS14_D12_S03_L0005']),'v111:MS14_D12_S03_L0005')
+    # D3: 6일에 살린 꼬미도 같은 냄비를 먹었다.
+    if r13_v111_value('KKOMI_ALIVE') is True:
+        call r13_lines(r13_nw_block('kkomi_soup12'),'nw:kkomi_soup12')
+        $ r13_v111_set('KKOMI_ALIVE',False)
     call r13_lines(r13_v111_lines(['MS14_D12_S03_L0007']),'v111:MS14_D12_S03_L0007')
     call r13_lines(r13_v111_lines(['MS14_D12_S03_L0008']),'v111:MS14_D12_S03_L0008')
     call r13_lines(r13_v111_lines(['MS14_D12_S03_L0009']),'v111:MS14_D12_S03_L0009')
@@ -2472,6 +2479,7 @@ label r13_v111_crowd_block13:
     # 0.20.18 (소유자 2026-10-23 "권선징악으로 유도하면 안 돼", CRUEL_CHOICES.md C1): 원수를 몸으로 감싸도
     # 아무도 구하지 못한다. 군중이 아빠 쪽으로 쏠리고 너울은 그 틈에 빠져나간다. 막는 길은 비어 있는 감독자뿐이다.
     call r13_lines(r13_nw_block('crowd_block_fail13'),'nw:crowd_block_fail13')
+    $ r13_v111_set('alive:neoul',False)
     $ r13_v111_set('crowd_resolution_done',True)
     $ r13_v111_set('crowd_injury',True)
     $ r13_v111_set('crowd_intervention','failed')
@@ -2504,6 +2512,12 @@ label r13_v111_crowd_guard13:
 
 label r13_v111_crowd_watch13:
     call r13_lines(r13_v111_lines(['MS14_D13_C_L0020']),'v111:MS14_D13_C_L0020')
+    # D1: 손을 놓으면 폭동이 된다. 너울이 맞아 죽고, 뒤집힌 수레에 아직 내리지 못한 모모가 깔린다.
+    $ r13_v111_set('riot_momo13',r13_v111_value('handed:resident_momo') is not True and r13_v111_person_alive('resident_momo'))
+    call r13_lines(r13_nw_block('riot13'),'nw:riot13')
+    $ r13_v111_set('alive:neoul',False)
+    if r13_v111_value('riot_momo13'):
+        $ r13_v111_set('alive:resident_momo',False)
     $ r13_v111_set('crowd_resolution_done',True)
     $ r13_v111_set('crowd_injury',True)
     $ r13_v111_set('crowd_intervention','none')
@@ -3232,7 +3246,7 @@ label r13_v111_partial_handoff14:
     jump r13_v111_partial_handoff14
 
 label r13_v111_partial_work14:
-    $ v111_pending_patient=next((p for p in (r13_v111_value("cart_roster") or ["npc_pandol","resident_momo","resident_guldol"]) if not r13_v111_value("handed:"+p)),None)
+    $ v111_pending_patient=next((p for p in (r13_v111_value("cart_roster") or ["npc_pandol","resident_momo","resident_guldol"]) if not r13_v111_value("handed:"+p) and r13_v111_person_alive(p)),None)
     jump r13_v111_partial_patient14
 
 label r13_v111_partial_patient14:
@@ -3249,7 +3263,7 @@ label r13_v111_partial_receipt14:
 label r13_v111_partial_received14:
     if v111_pending_patient:
         $ r13_v111_set("handed:"+v111_pending_patient,True)
-    $ v111_pending_rest=[p for p in (r13_v111_value("cart_roster") or ["npc_pandol","resident_momo","resident_guldol"]) if not r13_v111_value("handed:"+p)]
+    $ v111_pending_rest=[p for p in (r13_v111_value("cart_roster") or ["npc_pandol","resident_momo","resident_guldol"]) if not r13_v111_value("handed:"+p) and r13_v111_person_alive(p)]
     if v111_pending_rest:
         jump r13_v111_partial_wait14
     if r13_v111_actor_ready('karo'):

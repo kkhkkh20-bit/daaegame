@@ -114,6 +114,9 @@ init 319 python:
         # 0.20.18 (CRUEL_CHOICES.md C3 A안): 3일 실룩을 풀어 준 판, 5번 등이 비어 밤이가 처마에서 내려왔다.
         "bami_cold4":lambda:r13_v111_value("bami_cold4") is True,
         "bami_warm4":lambda:r13_v111_value("bami_cold4") is not True,
+        # 0.20.19 (CRUEL_CHOICES.md D1·D3): 폭동 때 수레에 남아 있던 모모, 12일 다람이 말할 수 있는가.
+        "riot_momo13":lambda:r13_v111_value("riot_momo13") is True,
+        "daram_ready":lambda:r13_v111_actor_ready("daram"),
         "family_on_square":lambda:r13_v111_value("family_location")=="square" and r13_v111_actor_ready("daram"),
         "hyp1_won_without_e08":lambda:bool(r13_v111_value("proof_given:초롱과 피코의 하루를 대조한다")) and "V111:E08" not in r13_v111_value("proof_given:초롱과 피코의 하루를 대조한다"),
         # Event 05: the day-7 fire meeting.

@@ -48,7 +48,7 @@ testcase v111_nw_d13_crowd_block_fails:
     pause 1.0
     click pos (900,600) until eval (r13_v111_value("crowd_injury") is True) timeout 60
     assert eval (r13_v111_value("outcome13")=="crowd_violence" and r13_v111_value("crowd_intervention")=="failed")
-    assert eval (qa_nw_seen("애가 있어요") and qa_nw_seen("아무도 그쪽을 보지 않는다"))
+    assert eval (qa_nw_seen("애가 있어요") and qa_nw_seen("아무도 일으키지 않는다") and r13_v111_value("alive:neoul") is False)
     screenshot "v111_nw_d13_crowd_block.png"
 
 testcase v111_nw_d04_silluk_mercy:
@@ -72,3 +72,45 @@ testcase v111_nw_d04_silluk_mercy:
     pause 1.5
     assert screen "r13_crisis_proof"
     assert eval (r13_v111_value("tries:gate_post")==1 and r13_v111_value("gate_post_cold_cost") is True)
+
+testcase v111_nw_d13_riot_deaths:
+    # 0.20.19 CRUEL_CHOICES.md D1·D2: 「막지 않는다」면 폭동. 너울과 수레의 모모가 죽고, 사망으로 센다.
+    pause 1.0
+    click "처음부터"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
+    click pos (900,600) until screen "r13_hub" timeout 90
+    run Function(qa_nw_day13)
+    run Jump("r13_v111_crowd_watch13")
+    pause 1.0
+    click pos (900,600) until eval (r13_v111_value("alive:neoul") is False) timeout 60
+    assert eval (r13_v111_value("alive:resident_momo") is False and qa_nw_seen("아무도 그 손을 잡지 않았다"))
+    assert eval ("neoul" in r13_nw_dead() and "resident_momo" in r13_nw_dead())
+    run Function(r13_v111_set,"departed_names",["npc_pandol","resident_guldol","daram"])
+    assert eval ("npc_pandol" in r13_nw_dead() and "daram" not in r13_nw_dead())
+    screenshot "v111_nw_d13_riot.png"
+
+testcase v111_nw_d12_kkomi_soup:
+    # 0.20.19 D3: 늦은 폭로면 6일에 살린 꼬미도 같은 냄비를 먹고 죽는다.
+    pause 1.0
+    click "처음부터"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
+    click pos (900,600) until screen "r13_hub" timeout 90
+    run Function(qa_nw_day12)
+    run Function(r13_v111_set,"KKOMI_ALIVE",True)
+    run Jump("r13_v111_late_meal12")
+    pause 1.0
+    click pos (900,600) until eval (r13_v111_value("KKOMI_ALIVE") is False) timeout 60
+    assert eval (qa_nw_seen("도토리 하나가 굴러 나온다") and "kid_kkomi" in r13_nw_dead())
+
+testcase v111_nw_d11_lower_elder:
+    # 0.20.19 D4: 늦은 구조면 네로와 함께 아랫길 노인도 묻힌다.
+    pause 1.0
+    click "처음부터"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
+    click pos (900,600) until screen "r13_hub" timeout 90
+    run Function(r13_v111_set,"day",11)
+    run Function(r13_edit,location="forest",period=2)
+    run Jump("r13_v111_late_road11")
+    pause 1.0
+    click pos (900,600) until eval (r13_v111_value("alive:v111_lowerroad_elder") is False) timeout 60
+    assert eval (r13_v111_value("nero_alive") is False and "v111_lowerroad_elder" in r13_nw_dead())

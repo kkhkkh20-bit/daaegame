@@ -137,12 +137,18 @@ init 318 python:
     # Endings (plan 11-1). Checked on the 14th morning before the kept endings.
     # The five lives the frozen-village ending counts.
     R13_NW_LIVES=(("resident_piko","piko_alive"),("kid_kkomi","KKOMI_ALIVE"),("resident_owlgp","OWL_ALIVE"),("resident_nero","nero_alive"),("kid_dodam","alive:kid_dodam"))
+    # 0.20.19 (소유자 2026-10-23 "나는 많이 죽었으면 해. 개입 안 하면 폭동이든", CRUEL_CHOICES.md D1~D4):
+    # 폭동(너울·수레의 모모), 늦은 구조에 함께 묻힌 아랫길 노인도 죽음으로 센다.
+    R13_NW_LIVES=R13_NW_LIVES+(("neoul","alive:neoul"),("resident_momo","alive:resident_momo"),("v111_lowerroad_elder","alive:v111_lowerroad_elder"))
     R13_NW_FROZEN_AT=4
     def r13_nw_is_dead(who,key):
         if r13_v111_value(key) is False:return True
         return who=="kid_dodam" and r13_v111_value("route12")=="late_exposure"
     def r13_nw_dead():
-        return [who for who,key in R13_NW_LIVES if r13_nw_is_dead(who,key)]
+        dead=[who for who,key in R13_NW_LIVES if r13_nw_is_dead(who,key)]
+        # D2: 13일 수레로 실려 간 사람은 돌아오지 못한다. 다람은 「남겨진 이름」이 따로 받는다.
+        dead+=[p for p in (r13_v111_value("departed_names") or []) if p!="daram" and p not in dead]
+        return dead
     def r13_nw_loss_count():
         return len(r13_nw_dead())
     def r13_nw_ending14():
