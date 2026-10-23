@@ -109,7 +109,7 @@ init 301 python:
     def r13_v111_questions(person):
         b=r13_v111_binding()
         # 0.20.10 (4~14일 리뷰): 제목이 보일 자료를 이미 말하므로, 가진 자료면 목록에서 다시 찾지 않는다.
-        return [(o["title"],Return("present") if o.get("present") and o["present"] not in store.room13["evidence"] else Return(o.get("index",i)),False) for i,o in enumerate(b.get("options",[])) if o.get("person")==person and o.get("location")==store.room13["location"]]
+        return [(o["title"],Return("present") if o.get("present") and o["present"] not in store.room13["evidence"] else Return(o.get("index",i)),bool(o.get("remember_read") and r13_v111_value("ui_topic_read:%s:%s"%(store.room13["v111"].get("gate"),o.get("index",i))))) for i,o in enumerate(b.get("options",[])) if o.get("person")==person and o.get("location")==store.room13["location"]]
     for title in R13_V111["proof_claims"]:R13_CLAIMS["v111:"+title]=dict(assertion=title)
     for key,spec in R13_V111["evidence"].items():
         rid="V111:"+key
@@ -244,6 +244,7 @@ label r13_v111_wait_again:
                 $ r13_v111_talk_person=v111_person
                 $ r13_v111_set("talked:%s:%s"%(room13["v111"].get("scene"),v111_person),True)
             if isinstance(_return,int):
+                $ r13_v111_set("ui_topic_read:%s:%s"%(key,_return),True)
                 $ r13_v111_time("topic:"+key+":"+str(_return),0 if (key=="gate_investigate" and _return in (5,6)) or (key=="post_menu" and _return==1) or key in ("safe_passage9","passage_after9") else 10)
                 return _return
             if _return=="present":
@@ -315,8 +316,8 @@ label r13_v111_proof_again:
 
 label r13_v111_proof_pick:
     # 0.20.7 (Codex A05, owner "다 해줘"): the book stays open while records are added; picking a
-    # record already on the table takes it back; 「그만두기」 returns to the proof.
-    call screen r13_book("dad",present=True,purpose="proof",chosen=list(room13["arguments"][v111_claim]))
+    # record already on the table takes it back; 「선택 마치기」 returns to the proof without submitting.
+    call screen r13_book("dad",present=True,purpose=("compare" if key in R13_SELF_COMPARE_PROOFS else "proof"),chosen=list(room13["arguments"][v111_claim]))
     if _return and _return in room13["evidence"]:
         $ v111_copy=winter_copy.deepcopy(room13)
         if _return in v111_copy["arguments"][v111_claim]:

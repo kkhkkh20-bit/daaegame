@@ -21,12 +21,12 @@ init 148 python:
         # 0.18.99: records of a finished episode move to the 지난 사건 shelf (systems/room13_shelf.rpy).
         if not archive:
             shelved=getattr(store,"r13_shelved_keys",lambda:set())()
-            if shelf:return list(reversed([k for k in keys if k in shelved]))
+            if shelf:return [k for k in keys if k in shelved]
             keys=[k for k in keys if k not in shelved]
         if not archive and not hearing:
             keys += ["tool:"+k for k in r13_inspection_state()["inventory"] if k in R13_INSPECTION_ITEMS]
             keys += ["bag:"+k for k in r13_wallet(store.room13)["items"] if k in set(R13_SHOP)|set(R13_BORROW)]
-        return list(reversed(list(dict.fromkeys(keys))))
+        return list(dict.fromkeys(keys))
 
     def r13_catalog_observed(key):
         """0.18.99: while a case is open a record shows only what was observed; the meaning

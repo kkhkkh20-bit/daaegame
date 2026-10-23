@@ -1,0 +1,3537 @@
+{
+  "scope": "첫 시작·편지·입구는 실제 UI 진행. 크기/글자 설정과 다페이지 질문은 화면 fixture, 첫 입실·메모는 선행 상태/라벨 fixture 후 실제 지도 이동.",
+  "checks": [
+    "새 게임→마차 두 조사→읽음 표시→편지 접기→입구 실제 진행",
+    "크기·글자 설정과 세로→가로 회전 뒤 날짜·장소·진행 상태 보존",
+    "질문 다페이지 fixture의 실제 이전/다음 클릭과 게임 상태 보존",
+    "첫 입실/메모 라벨 fixture: 첫 입실 생각 표시, 실제 침대·카메라 이동·메모 클릭, 메모 자료 획득"
+  ],
+  "measurements": [
+    {
+      "screen": "dialogue",
+      "size": "pc",
+      "large": false,
+      "targets": [
+        {
+          "text": "▸▸ 건너뛰기",
+          "alt": "건너뛰기",
+          "values": [
+            "True",
+            "None"
+          ],
+          "rect": [
+            933,
+            666,
+            152,
+            54
+          ],
+          "css_width": 152.0,
+          "css_height": 54.0,
+          "meets_target": true
+        },
+        {
+          "text": "더보기",
+          "alt": "더보기",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1094,
+            666,
+            108,
+            54
+          ],
+          "css_width": 108.0,
+          "css_height": 54.0,
+          "meets_target": true
+        }
+      ],
+      "text": {
+        "top": 588,
+        "height": 94,
+        "text": "아빠!\n일곱 개에서 여섯 개 먹으면?"
+      }
+    },
+    {
+      "screen": "dialogue",
+      "size": "pc",
+      "large": true,
+      "targets": [
+        {
+          "text": "▸▸ 건너뛰기",
+          "alt": "건너뛰기",
+          "values": [
+            "True",
+            "None"
+          ],
+          "rect": [
+            933,
+            666,
+            152,
+            54
+          ],
+          "css_width": 152.0,
+          "css_height": 54.0,
+          "meets_target": true
+        },
+        {
+          "text": "더보기",
+          "alt": "더보기",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1094,
+            666,
+            108,
+            54
+          ],
+          "css_width": 108.0,
+          "css_height": 54.0,
+          "meets_target": true
+        }
+      ],
+      "text": {
+        "top": 582,
+        "height": 100,
+        "text": "아빠!\n일곱 개에서 여섯 개 먹으면?"
+      }
+    },
+    {
+      "screen": "dialogue",
+      "size": "phone",
+      "large": false,
+      "targets": [
+        {
+          "text": "▸▸ 건너뛰기",
+          "alt": "건너뛰기",
+          "values": [
+            "True",
+            "None"
+          ],
+          "rect": [
+            857,
+            616,
+            196,
+            88
+          ],
+          "css_width": 106.17,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "더보기",
+          "alt": "더보기",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1062,
+            616,
+            140,
+            88
+          ],
+          "css_width": 75.83,
+          "css_height": 47.67,
+          "meets_target": true
+        }
+      ],
+      "text": {
+        "top": 520,
+        "height": 100,
+        "text": "아빠!\n일곱 개에서 여섯 개 먹으면?"
+      }
+    },
+    {
+      "screen": "dialogue",
+      "size": "phone",
+      "large": true,
+      "targets": [
+        {
+          "text": "▸▸ 건너뛰기",
+          "alt": "건너뛰기",
+          "values": [
+            "True",
+            "None"
+          ],
+          "rect": [
+            857,
+            616,
+            196,
+            88
+          ],
+          "css_width": 106.17,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "더보기",
+          "alt": "더보기",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1062,
+            616,
+            140,
+            88
+          ],
+          "css_width": 75.83,
+          "css_height": 47.67,
+          "meets_target": true
+        }
+      ],
+      "text": {
+        "top": 520,
+        "height": 100,
+        "text": "아빠!\n일곱 개에서 여섯 개 먹으면?"
+      }
+    },
+    {
+      "screen": "dialogue",
+      "size": "small-phone",
+      "large": false,
+      "targets": [
+        {
+          "text": "▸▸ 건너뛰기",
+          "alt": "건너뛰기",
+          "values": [
+            "True",
+            "None"
+          ],
+          "rect": [
+            857,
+            616,
+            196,
+            88
+          ],
+          "css_width": 98.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "더보기",
+          "alt": "더보기",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1062,
+            616,
+            140,
+            88
+          ],
+          "css_width": 70.0,
+          "css_height": 44.0,
+          "meets_target": true
+        }
+      ],
+      "text": {
+        "top": 520,
+        "height": 100,
+        "text": "아빠!\n일곱 개에서 여섯 개 먹으면?"
+      }
+    },
+    {
+      "screen": "dialogue",
+      "size": "small-phone",
+      "large": true,
+      "targets": [
+        {
+          "text": "▸▸ 건너뛰기",
+          "alt": "건너뛰기",
+          "values": [
+            "True",
+            "None"
+          ],
+          "rect": [
+            857,
+            616,
+            196,
+            88
+          ],
+          "css_width": 98.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "더보기",
+          "alt": "더보기",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1062,
+            616,
+            140,
+            88
+          ],
+          "css_width": 70.0,
+          "css_height": 44.0,
+          "meets_target": true
+        }
+      ],
+      "text": {
+        "top": 520,
+        "height": 100,
+        "text": "아빠!\n일곱 개에서 여섯 개 먹으면?"
+      }
+    },
+    {
+      "screen": "carriage",
+      "size": "pc",
+      "large": false,
+      "targets": [
+        {
+          "text": "마지막 줄을 본다",
+          "alt": "",
+          "values": [
+            "None",
+            "0"
+          ],
+          "rect": [
+            36,
+            226,
+            600,
+            80
+          ],
+          "css_width": 600.0,
+          "css_height": 80.0,
+          "meets_target": true
+        },
+        {
+          "text": "글씨를 살핀다",
+          "alt": "",
+          "values": [
+            "None",
+            "1"
+          ],
+          "rect": [
+            36,
+            322,
+            600,
+            80
+          ],
+          "css_width": 600.0,
+          "css_height": 80.0,
+          "meets_target": true
+        },
+        {
+          "text": "편지를 접는다",
+          "alt": "",
+          "values": [
+            "None",
+            "2"
+          ],
+          "rect": [
+            36,
+            418,
+            600,
+            80
+          ],
+          "css_width": 600.0,
+          "css_height": 80.0,
+          "meets_target": true
+        }
+      ]
+    },
+    {
+      "screen": "carriage",
+      "size": "pc",
+      "large": true,
+      "targets": [
+        {
+          "text": "마지막 줄을 본다",
+          "alt": "",
+          "values": [
+            "None",
+            "0"
+          ],
+          "rect": [
+            36,
+            226,
+            600,
+            80
+          ],
+          "css_width": 600.0,
+          "css_height": 80.0,
+          "meets_target": true
+        },
+        {
+          "text": "글씨를 살핀다",
+          "alt": "",
+          "values": [
+            "None",
+            "1"
+          ],
+          "rect": [
+            36,
+            322,
+            600,
+            80
+          ],
+          "css_width": 600.0,
+          "css_height": 80.0,
+          "meets_target": true
+        },
+        {
+          "text": "편지를 접는다",
+          "alt": "",
+          "values": [
+            "None",
+            "2"
+          ],
+          "rect": [
+            36,
+            418,
+            600,
+            80
+          ],
+          "css_width": 600.0,
+          "css_height": 80.0,
+          "meets_target": true
+        }
+      ]
+    },
+    {
+      "screen": "carriage",
+      "size": "phone",
+      "large": false,
+      "targets": [
+        {
+          "text": "마지막 줄을 본다",
+          "alt": "",
+          "values": [
+            "None",
+            "0"
+          ],
+          "rect": [
+            36,
+            226,
+            600,
+            88
+          ],
+          "css_width": 325.0,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "글씨를 살핀다",
+          "alt": "",
+          "values": [
+            "None",
+            "1"
+          ],
+          "rect": [
+            36,
+            330,
+            600,
+            88
+          ],
+          "css_width": 325.0,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "편지를 접는다",
+          "alt": "",
+          "values": [
+            "None",
+            "2"
+          ],
+          "rect": [
+            36,
+            434,
+            600,
+            88
+          ],
+          "css_width": 325.0,
+          "css_height": 47.67,
+          "meets_target": true
+        }
+      ]
+    },
+    {
+      "screen": "carriage",
+      "size": "phone",
+      "large": true,
+      "targets": [
+        {
+          "text": "마지막 줄을 본다",
+          "alt": "",
+          "values": [
+            "None",
+            "0"
+          ],
+          "rect": [
+            36,
+            226,
+            600,
+            88
+          ],
+          "css_width": 325.0,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "글씨를 살핀다",
+          "alt": "",
+          "values": [
+            "None",
+            "1"
+          ],
+          "rect": [
+            36,
+            330,
+            600,
+            88
+          ],
+          "css_width": 325.0,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "편지를 접는다",
+          "alt": "",
+          "values": [
+            "None",
+            "2"
+          ],
+          "rect": [
+            36,
+            434,
+            600,
+            88
+          ],
+          "css_width": 325.0,
+          "css_height": 47.67,
+          "meets_target": true
+        }
+      ]
+    },
+    {
+      "screen": "carriage",
+      "size": "small-phone",
+      "large": false,
+      "targets": [
+        {
+          "text": "마지막 줄을 본다",
+          "alt": "",
+          "values": [
+            "None",
+            "0"
+          ],
+          "rect": [
+            36,
+            226,
+            600,
+            88
+          ],
+          "css_width": 300.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "글씨를 살핀다",
+          "alt": "",
+          "values": [
+            "None",
+            "1"
+          ],
+          "rect": [
+            36,
+            330,
+            600,
+            88
+          ],
+          "css_width": 300.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "편지를 접는다",
+          "alt": "",
+          "values": [
+            "None",
+            "2"
+          ],
+          "rect": [
+            36,
+            434,
+            600,
+            88
+          ],
+          "css_width": 300.0,
+          "css_height": 44.0,
+          "meets_target": true
+        }
+      ]
+    },
+    {
+      "screen": "carriage",
+      "size": "small-phone",
+      "large": true,
+      "targets": [
+        {
+          "text": "마지막 줄을 본다",
+          "alt": "",
+          "values": [
+            "None",
+            "0"
+          ],
+          "rect": [
+            36,
+            226,
+            600,
+            88
+          ],
+          "css_width": 300.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "글씨를 살핀다",
+          "alt": "",
+          "values": [
+            "None",
+            "1"
+          ],
+          "rect": [
+            36,
+            330,
+            600,
+            88
+          ],
+          "css_width": 300.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "편지를 접는다",
+          "alt": "",
+          "values": [
+            "None",
+            "2"
+          ],
+          "rect": [
+            36,
+            434,
+            600,
+            88
+          ],
+          "css_width": 300.0,
+          "css_height": 44.0,
+          "meets_target": true
+        }
+      ]
+    },
+    {
+      "screen": "gate-nameplates",
+      "size": "pc",
+      "large": false,
+      "labels": [
+        {
+          "person": "resident_siluk",
+          "rect": [
+            364.5,
+            359.25,
+            72,
+            39.75
+          ],
+          "overlaps_faces": []
+        },
+        {
+          "person": "guard",
+          "rect": [
+            485.25,
+            383.25,
+            72,
+            39.75
+          ],
+          "overlaps_faces": []
+        },
+        {
+          "person": "resident_bori",
+          "rect": [
+            900,
+            426.75,
+            72,
+            39.75
+          ],
+          "overlaps_faces": []
+        },
+        {
+          "person": "karo",
+          "rect": [
+            405.75,
+            450,
+            72,
+            39.75
+          ],
+          "overlaps_faces": [],
+          "distance_from_head": 41.62668915491599
+        },
+        {
+          "person": "daram",
+          "rect": [
+            188.25,
+            477,
+            72,
+            39.75
+          ],
+          "overlaps_faces": []
+        }
+      ],
+      "layout": {
+        "zoom": 0.75,
+        "offset": 853,
+        "faces": {
+          "resident_siluk": [
+            377.25,
+            406.5,
+            47.25,
+            33.75
+          ],
+          "guard": [
+            493.5,
+            430.5,
+            56.25,
+            45.75
+          ],
+          "karo": [
+            416.25,
+            497.25,
+            51.75,
+            28.5
+          ],
+          "resident_bori": [
+            903.75,
+            474,
+            64.5,
+            52.5
+          ],
+          "daram": [
+            186.75,
+            524.25,
+            75,
+            15.75
+          ]
+        },
+        "labels": [
+          {
+            "person": "resident_siluk",
+            "name": "실룩",
+            "rect": [
+              364.5,
+              359.25,
+              72,
+              39.75
+            ]
+          },
+          {
+            "person": "guard",
+            "name": "돌목",
+            "rect": [
+              485.25,
+              383.25,
+              72,
+              39.75
+            ]
+          },
+          {
+            "person": "resident_bori",
+            "name": "보리",
+            "rect": [
+              900,
+              426.75,
+              72,
+              39.75
+            ]
+          },
+          {
+            "person": "karo",
+            "name": "까로",
+            "rect": [
+              405.75,
+              450,
+              72,
+              39.75
+            ]
+          },
+          {
+            "person": "daram",
+            "name": "다람",
+            "rect": [
+              188.25,
+              477,
+              72,
+              39.75
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "screen": "gate-nameplates",
+      "size": "pc",
+      "large": true,
+      "labels": [
+        {
+          "person": "resident_siluk",
+          "rect": [
+            364.5,
+            359.25,
+            72,
+            39.75
+          ],
+          "overlaps_faces": []
+        },
+        {
+          "person": "guard",
+          "rect": [
+            485.25,
+            383.25,
+            72,
+            39.75
+          ],
+          "overlaps_faces": []
+        },
+        {
+          "person": "resident_bori",
+          "rect": [
+            900,
+            426.75,
+            72,
+            39.75
+          ],
+          "overlaps_faces": []
+        },
+        {
+          "person": "karo",
+          "rect": [
+            405.75,
+            450,
+            72,
+            39.75
+          ],
+          "overlaps_faces": [],
+          "distance_from_head": 41.62668915491599
+        },
+        {
+          "person": "daram",
+          "rect": [
+            188.25,
+            477,
+            72,
+            39.75
+          ],
+          "overlaps_faces": []
+        }
+      ],
+      "layout": {
+        "zoom": 0.75,
+        "offset": 853,
+        "faces": {
+          "resident_siluk": [
+            377.25,
+            406.5,
+            47.25,
+            33.75
+          ],
+          "guard": [
+            493.5,
+            430.5,
+            56.25,
+            45.75
+          ],
+          "karo": [
+            416.25,
+            497.25,
+            51.75,
+            28.5
+          ],
+          "resident_bori": [
+            903.75,
+            474,
+            64.5,
+            52.5
+          ],
+          "daram": [
+            186.75,
+            524.25,
+            75,
+            15.75
+          ]
+        },
+        "labels": [
+          {
+            "person": "resident_siluk",
+            "name": "실룩",
+            "rect": [
+              364.5,
+              359.25,
+              72,
+              39.75
+            ]
+          },
+          {
+            "person": "guard",
+            "name": "돌목",
+            "rect": [
+              485.25,
+              383.25,
+              72,
+              39.75
+            ]
+          },
+          {
+            "person": "resident_bori",
+            "name": "보리",
+            "rect": [
+              900,
+              426.75,
+              72,
+              39.75
+            ]
+          },
+          {
+            "person": "karo",
+            "name": "까로",
+            "rect": [
+              405.75,
+              450,
+              72,
+              39.75
+            ]
+          },
+          {
+            "person": "daram",
+            "name": "다람",
+            "rect": [
+              188.25,
+              477,
+              72,
+              39.75
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "screen": "gate-nameplates",
+      "size": "phone",
+      "large": false,
+      "labels": [
+        {
+          "person": "resident_siluk",
+          "rect": [
+            344.25,
+            327,
+            111.75,
+            72
+          ],
+          "overlaps_faces": []
+        },
+        {
+          "person": "guard",
+          "rect": [
+            465,
+            351,
+            111.75,
+            72
+          ],
+          "overlaps_faces": []
+        },
+        {
+          "person": "resident_bori",
+          "rect": [
+            879.75,
+            394.5,
+            111.75,
+            72
+          ],
+          "overlaps_faces": []
+        },
+        {
+          "person": "karo",
+          "rect": [
+            385.5,
+            530.25,
+            111.75,
+            72
+          ],
+          "overlaps_faces": [],
+          "distance_from_head": 54.75513674533194
+        },
+        {
+          "person": "daram",
+          "rect": [
+            168,
+            444.75,
+            111.75,
+            72
+          ],
+          "overlaps_faces": []
+        }
+      ],
+      "layout": {
+        "zoom": 0.75,
+        "offset": 853,
+        "faces": {
+          "resident_siluk": [
+            377.25,
+            406.5,
+            47.25,
+            33.75
+          ],
+          "guard": [
+            493.5,
+            430.5,
+            56.25,
+            45.75
+          ],
+          "karo": [
+            416.25,
+            497.25,
+            51.75,
+            28.5
+          ],
+          "resident_bori": [
+            903.75,
+            474,
+            64.5,
+            52.5
+          ],
+          "daram": [
+            186.75,
+            524.25,
+            75,
+            15.75
+          ]
+        },
+        "labels": [
+          {
+            "person": "resident_siluk",
+            "name": "실룩",
+            "rect": [
+              344.25,
+              327,
+              111.75,
+              72
+            ]
+          },
+          {
+            "person": "guard",
+            "name": "돌목",
+            "rect": [
+              465,
+              351,
+              111.75,
+              72
+            ]
+          },
+          {
+            "person": "resident_bori",
+            "name": "보리",
+            "rect": [
+              879.75,
+              394.5,
+              111.75,
+              72
+            ]
+          },
+          {
+            "person": "karo",
+            "name": "까로",
+            "rect": [
+              385.5,
+              530.25,
+              111.75,
+              72
+            ]
+          },
+          {
+            "person": "daram",
+            "name": "다람",
+            "rect": [
+              168,
+              444.75,
+              111.75,
+              72
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "screen": "gate-nameplates",
+      "size": "phone",
+      "large": true,
+      "labels": [
+        {
+          "person": "resident_siluk",
+          "rect": [
+            344.25,
+            327,
+            111.75,
+            72
+          ],
+          "overlaps_faces": []
+        },
+        {
+          "person": "guard",
+          "rect": [
+            465,
+            351,
+            111.75,
+            72
+          ],
+          "overlaps_faces": []
+        },
+        {
+          "person": "resident_bori",
+          "rect": [
+            879.75,
+            394.5,
+            111.75,
+            72
+          ],
+          "overlaps_faces": []
+        },
+        {
+          "person": "karo",
+          "rect": [
+            385.5,
+            530.25,
+            111.75,
+            72
+          ],
+          "overlaps_faces": [],
+          "distance_from_head": 54.75513674533194
+        },
+        {
+          "person": "daram",
+          "rect": [
+            168,
+            444.75,
+            111.75,
+            72
+          ],
+          "overlaps_faces": []
+        }
+      ],
+      "layout": {
+        "zoom": 0.75,
+        "offset": 853,
+        "faces": {
+          "resident_siluk": [
+            377.25,
+            406.5,
+            47.25,
+            33.75
+          ],
+          "guard": [
+            493.5,
+            430.5,
+            56.25,
+            45.75
+          ],
+          "karo": [
+            416.25,
+            497.25,
+            51.75,
+            28.5
+          ],
+          "resident_bori": [
+            903.75,
+            474,
+            64.5,
+            52.5
+          ],
+          "daram": [
+            186.75,
+            524.25,
+            75,
+            15.75
+          ]
+        },
+        "labels": [
+          {
+            "person": "resident_siluk",
+            "name": "실룩",
+            "rect": [
+              344.25,
+              327,
+              111.75,
+              72
+            ]
+          },
+          {
+            "person": "guard",
+            "name": "돌목",
+            "rect": [
+              465,
+              351,
+              111.75,
+              72
+            ]
+          },
+          {
+            "person": "resident_bori",
+            "name": "보리",
+            "rect": [
+              879.75,
+              394.5,
+              111.75,
+              72
+            ]
+          },
+          {
+            "person": "karo",
+            "name": "까로",
+            "rect": [
+              385.5,
+              530.25,
+              111.75,
+              72
+            ]
+          },
+          {
+            "person": "daram",
+            "name": "다람",
+            "rect": [
+              168,
+              444.75,
+              111.75,
+              72
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "screen": "gate-nameplates",
+      "size": "small-phone",
+      "large": false,
+      "labels": [
+        {
+          "person": "resident_siluk",
+          "rect": [
+            344.25,
+            327,
+            111.75,
+            72
+          ],
+          "overlaps_faces": []
+        },
+        {
+          "person": "guard",
+          "rect": [
+            465,
+            351,
+            111.75,
+            72
+          ],
+          "overlaps_faces": []
+        },
+        {
+          "person": "resident_bori",
+          "rect": [
+            879.75,
+            394.5,
+            111.75,
+            72
+          ],
+          "overlaps_faces": []
+        },
+        {
+          "person": "karo",
+          "rect": [
+            385.5,
+            530.25,
+            111.75,
+            72
+          ],
+          "overlaps_faces": [],
+          "distance_from_head": 54.75513674533194
+        },
+        {
+          "person": "daram",
+          "rect": [
+            168,
+            444.75,
+            111.75,
+            72
+          ],
+          "overlaps_faces": []
+        }
+      ],
+      "layout": {
+        "zoom": 0.75,
+        "offset": 853,
+        "faces": {
+          "resident_siluk": [
+            377.25,
+            406.5,
+            47.25,
+            33.75
+          ],
+          "guard": [
+            493.5,
+            430.5,
+            56.25,
+            45.75
+          ],
+          "karo": [
+            416.25,
+            497.25,
+            51.75,
+            28.5
+          ],
+          "resident_bori": [
+            903.75,
+            474,
+            64.5,
+            52.5
+          ],
+          "daram": [
+            186.75,
+            524.25,
+            75,
+            15.75
+          ]
+        },
+        "labels": [
+          {
+            "person": "resident_siluk",
+            "name": "실룩",
+            "rect": [
+              344.25,
+              327,
+              111.75,
+              72
+            ]
+          },
+          {
+            "person": "guard",
+            "name": "돌목",
+            "rect": [
+              465,
+              351,
+              111.75,
+              72
+            ]
+          },
+          {
+            "person": "resident_bori",
+            "name": "보리",
+            "rect": [
+              879.75,
+              394.5,
+              111.75,
+              72
+            ]
+          },
+          {
+            "person": "karo",
+            "name": "까로",
+            "rect": [
+              385.5,
+              530.25,
+              111.75,
+              72
+            ]
+          },
+          {
+            "person": "daram",
+            "name": "다람",
+            "rect": [
+              168,
+              444.75,
+              111.75,
+              72
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "screen": "gate-nameplates",
+      "size": "small-phone",
+      "large": true,
+      "labels": [
+        {
+          "person": "resident_siluk",
+          "rect": [
+            344.25,
+            327,
+            111.75,
+            72
+          ],
+          "overlaps_faces": []
+        },
+        {
+          "person": "guard",
+          "rect": [
+            465,
+            351,
+            111.75,
+            72
+          ],
+          "overlaps_faces": []
+        },
+        {
+          "person": "resident_bori",
+          "rect": [
+            879.75,
+            394.5,
+            111.75,
+            72
+          ],
+          "overlaps_faces": []
+        },
+        {
+          "person": "karo",
+          "rect": [
+            385.5,
+            530.25,
+            111.75,
+            72
+          ],
+          "overlaps_faces": [],
+          "distance_from_head": 54.75513674533194
+        },
+        {
+          "person": "daram",
+          "rect": [
+            168,
+            444.75,
+            111.75,
+            72
+          ],
+          "overlaps_faces": []
+        }
+      ],
+      "layout": {
+        "zoom": 0.75,
+        "offset": 853,
+        "faces": {
+          "resident_siluk": [
+            377.25,
+            406.5,
+            47.25,
+            33.75
+          ],
+          "guard": [
+            493.5,
+            430.5,
+            56.25,
+            45.75
+          ],
+          "karo": [
+            416.25,
+            497.25,
+            51.75,
+            28.5
+          ],
+          "resident_bori": [
+            903.75,
+            474,
+            64.5,
+            52.5
+          ],
+          "daram": [
+            186.75,
+            524.25,
+            75,
+            15.75
+          ]
+        },
+        "labels": [
+          {
+            "person": "resident_siluk",
+            "name": "실룩",
+            "rect": [
+              344.25,
+              327,
+              111.75,
+              72
+            ]
+          },
+          {
+            "person": "guard",
+            "name": "돌목",
+            "rect": [
+              465,
+              351,
+              111.75,
+              72
+            ]
+          },
+          {
+            "person": "resident_bori",
+            "name": "보리",
+            "rect": [
+              879.75,
+              394.5,
+              111.75,
+              72
+            ]
+          },
+          {
+            "person": "karo",
+            "name": "까로",
+            "rect": [
+              385.5,
+              530.25,
+              111.75,
+              72
+            ]
+          },
+          {
+            "person": "daram",
+            "name": "다람",
+            "rect": [
+              168,
+              444.75,
+              111.75,
+              72
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "screen": "settings",
+      "size": "pc",
+      "large": false,
+      "targets": [
+        {
+          "text": "읽기",
+          "alt": "",
+          "values": [
+            "'reading'",
+            "'reading'",
+            "None"
+          ],
+          "rect": [
+            34,
+            136,
+            230,
+            76
+          ],
+          "css_width": 230.0,
+          "css_height": 76.0,
+          "meets_target": true
+        },
+        {
+          "text": "소리",
+          "alt": "",
+          "values": [
+            "'sound'",
+            "'sound'",
+            "None"
+          ],
+          "rect": [
+            34,
+            212,
+            230,
+            76
+          ],
+          "css_width": 230.0,
+          "css_height": 76.0,
+          "meets_target": true
+        },
+        {
+          "text": "화면",
+          "alt": "",
+          "values": [
+            "'screen'",
+            "'screen'",
+            "None"
+          ],
+          "rect": [
+            34,
+            288,
+            230,
+            76
+          ],
+          "css_width": 230.0,
+          "css_height": 76.0,
+          "meets_target": true
+        },
+        {
+          "text": "",
+          "alt": "닫기",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1172,
+            18,
+            88,
+            88
+          ],
+          "css_width": 88.0,
+          "css_height": 88.0,
+          "meets_target": true
+        },
+        {
+          "text": "작게",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            611,
+            112,
+            190,
+            52
+          ],
+          "css_width": 190.0,
+          "css_height": 52.0,
+          "meets_target": true
+        },
+        {
+          "text": "보통",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            816,
+            112,
+            190,
+            52
+          ],
+          "css_width": 190.0,
+          "css_height": 52.0,
+          "meets_target": true
+        },
+        {
+          "text": "크게",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1021,
+            112,
+            190,
+            52
+          ],
+          "css_width": 190.0,
+          "css_height": 52.0,
+          "meets_target": true
+        },
+        {
+          "text": "느리게",
+          "alt": "",
+          "values": [
+            "24",
+            "None"
+          ],
+          "rect": [
+            611,
+            204,
+            143,
+            52
+          ],
+          "css_width": 143.0,
+          "css_height": 52.0,
+          "meets_target": true
+        },
+        {
+          "text": "보통",
+          "alt": "",
+          "values": [
+            "34",
+            "None"
+          ],
+          "rect": [
+            769,
+            204,
+            143,
+            52
+          ],
+          "css_width": 143.0,
+          "css_height": 52.0,
+          "meets_target": true
+        },
+        {
+          "text": "빠르게",
+          "alt": "",
+          "values": [
+            "55",
+            "None"
+          ],
+          "rect": [
+            927,
+            204,
+            143,
+            52
+          ],
+          "css_width": 143.0,
+          "css_height": 52.0,
+          "meets_target": true
+        },
+        {
+          "text": "즉시",
+          "alt": "",
+          "values": [
+            "0",
+            "None"
+          ],
+          "rect": [
+            1085,
+            204,
+            142,
+            52
+          ],
+          "css_width": 142.0,
+          "css_height": 52.0,
+          "meets_target": true
+        },
+        {
+          "text": "보통",
+          "alt": "",
+          "values": [
+            "15"
+          ],
+          "rect": [
+            927,
+            296,
+            143,
+            52
+          ],
+          "css_width": 143.0,
+          "css_height": 52.0,
+          "meets_target": true
+        },
+        {
+          "text": "저장 · 불러오기",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            672,
+            626,
+            260,
+            52
+          ],
+          "css_width": 260.0,
+          "css_height": 52.0,
+          "meets_target": true
+        },
+        {
+          "text": "닫기",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1040,
+            626,
+            190,
+            52
+          ],
+          "css_width": 190.0,
+          "css_height": 52.0,
+          "meets_target": true
+        }
+      ]
+    },
+    {
+      "screen": "settings",
+      "size": "pc",
+      "large": true,
+      "targets": [
+        {
+          "text": "읽기",
+          "alt": "",
+          "values": [
+            "'reading'",
+            "'reading'",
+            "None"
+          ],
+          "rect": [
+            34,
+            136,
+            230,
+            76
+          ],
+          "css_width": 230.0,
+          "css_height": 76.0,
+          "meets_target": true
+        },
+        {
+          "text": "소리",
+          "alt": "",
+          "values": [
+            "'sound'",
+            "'sound'",
+            "None"
+          ],
+          "rect": [
+            34,
+            212,
+            230,
+            76
+          ],
+          "css_width": 230.0,
+          "css_height": 76.0,
+          "meets_target": true
+        },
+        {
+          "text": "화면",
+          "alt": "",
+          "values": [
+            "'screen'",
+            "'screen'",
+            "None"
+          ],
+          "rect": [
+            34,
+            288,
+            230,
+            76
+          ],
+          "css_width": 230.0,
+          "css_height": 76.0,
+          "meets_target": true
+        },
+        {
+          "text": "",
+          "alt": "닫기",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1172,
+            18,
+            88,
+            88
+          ],
+          "css_width": 88.0,
+          "css_height": 88.0,
+          "meets_target": true
+        },
+        {
+          "text": "작게",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            611,
+            122,
+            190,
+            52
+          ],
+          "css_width": 190.0,
+          "css_height": 52.0,
+          "meets_target": true
+        },
+        {
+          "text": "보통",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            816,
+            122,
+            190,
+            52
+          ],
+          "css_width": 190.0,
+          "css_height": 52.0,
+          "meets_target": true
+        },
+        {
+          "text": "크게",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1021,
+            122,
+            190,
+            52
+          ],
+          "css_width": 190.0,
+          "css_height": 52.0,
+          "meets_target": true
+        },
+        {
+          "text": "느리게",
+          "alt": "",
+          "values": [
+            "24",
+            "None"
+          ],
+          "rect": [
+            611,
+            234,
+            143,
+            52
+          ],
+          "css_width": 143.0,
+          "css_height": 52.0,
+          "meets_target": true
+        },
+        {
+          "text": "보통",
+          "alt": "",
+          "values": [
+            "34",
+            "None"
+          ],
+          "rect": [
+            769,
+            234,
+            143,
+            52
+          ],
+          "css_width": 143.0,
+          "css_height": 52.0,
+          "meets_target": true
+        },
+        {
+          "text": "빠르게",
+          "alt": "",
+          "values": [
+            "55",
+            "None"
+          ],
+          "rect": [
+            927,
+            234,
+            143,
+            52
+          ],
+          "css_width": 143.0,
+          "css_height": 52.0,
+          "meets_target": true
+        },
+        {
+          "text": "즉시",
+          "alt": "",
+          "values": [
+            "0",
+            "None"
+          ],
+          "rect": [
+            1085,
+            234,
+            142,
+            52
+          ],
+          "css_width": 142.0,
+          "css_height": 52.0,
+          "meets_target": true
+        },
+        {
+          "text": "보통",
+          "alt": "",
+          "values": [
+            "15"
+          ],
+          "rect": [
+            927,
+            346,
+            143,
+            52
+          ],
+          "css_width": 143.0,
+          "css_height": 52.0,
+          "meets_target": true
+        },
+        {
+          "text": "저장 · 불러오기",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            672,
+            626,
+            260,
+            52
+          ],
+          "css_width": 260.0,
+          "css_height": 52.0,
+          "meets_target": true
+        },
+        {
+          "text": "닫기",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1040,
+            626,
+            190,
+            52
+          ],
+          "css_width": 190.0,
+          "css_height": 52.0,
+          "meets_target": true
+        }
+      ]
+    },
+    {
+      "screen": "settings",
+      "size": "phone",
+      "large": false,
+      "targets": [
+        {
+          "text": "읽기",
+          "alt": "",
+          "values": [
+            "'reading'",
+            "'reading'",
+            "None"
+          ],
+          "rect": [
+            34,
+            136,
+            230,
+            88
+          ],
+          "css_width": 124.58,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "소리",
+          "alt": "",
+          "values": [
+            "'sound'",
+            "'sound'",
+            "None"
+          ],
+          "rect": [
+            34,
+            224,
+            230,
+            88
+          ],
+          "css_width": 124.58,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "화면",
+          "alt": "",
+          "values": [
+            "'screen'",
+            "'screen'",
+            "None"
+          ],
+          "rect": [
+            34,
+            312,
+            230,
+            88
+          ],
+          "css_width": 124.58,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "",
+          "alt": "닫기",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1172,
+            18,
+            88,
+            88
+          ],
+          "css_width": 47.67,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "작게",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            611,
+            94,
+            190,
+            88
+          ],
+          "css_width": 102.92,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "보통",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            816,
+            94,
+            190,
+            88
+          ],
+          "css_width": 102.92,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "크게",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1021,
+            94,
+            190,
+            88
+          ],
+          "css_width": 102.92,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "느리게",
+          "alt": "",
+          "values": [
+            "24",
+            "None"
+          ],
+          "rect": [
+            611,
+            186,
+            143,
+            88
+          ],
+          "css_width": 77.46,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "보통",
+          "alt": "",
+          "values": [
+            "34",
+            "None"
+          ],
+          "rect": [
+            769,
+            186,
+            143,
+            88
+          ],
+          "css_width": 77.46,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "빠르게",
+          "alt": "",
+          "values": [
+            "55",
+            "None"
+          ],
+          "rect": [
+            927,
+            186,
+            143,
+            88
+          ],
+          "css_width": 77.46,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "즉시",
+          "alt": "",
+          "values": [
+            "0",
+            "None"
+          ],
+          "rect": [
+            1085,
+            186,
+            142,
+            88
+          ],
+          "css_width": 76.92,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "보통",
+          "alt": "",
+          "values": [
+            "15"
+          ],
+          "rect": [
+            927,
+            278,
+            143,
+            88
+          ],
+          "css_width": 77.46,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "저장 · 불러오기",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            672,
+            616,
+            260,
+            88
+          ],
+          "css_width": 140.83,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "닫기",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1040,
+            616,
+            190,
+            88
+          ],
+          "css_width": 102.92,
+          "css_height": 47.67,
+          "meets_target": true
+        }
+      ]
+    },
+    {
+      "screen": "settings",
+      "size": "phone",
+      "large": true,
+      "targets": [
+        {
+          "text": "읽기",
+          "alt": "",
+          "values": [
+            "'reading'",
+            "'reading'",
+            "None"
+          ],
+          "rect": [
+            34,
+            136,
+            230,
+            88
+          ],
+          "css_width": 124.58,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "소리",
+          "alt": "",
+          "values": [
+            "'sound'",
+            "'sound'",
+            "None"
+          ],
+          "rect": [
+            34,
+            224,
+            230,
+            88
+          ],
+          "css_width": 124.58,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "화면",
+          "alt": "",
+          "values": [
+            "'screen'",
+            "'screen'",
+            "None"
+          ],
+          "rect": [
+            34,
+            312,
+            230,
+            88
+          ],
+          "css_width": 124.58,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "",
+          "alt": "닫기",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1172,
+            18,
+            88,
+            88
+          ],
+          "css_width": 47.67,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "작게",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            611,
+            104,
+            190,
+            88
+          ],
+          "css_width": 102.92,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "보통",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            816,
+            104,
+            190,
+            88
+          ],
+          "css_width": 102.92,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "크게",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1021,
+            104,
+            190,
+            88
+          ],
+          "css_width": 102.92,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "느리게",
+          "alt": "",
+          "values": [
+            "24",
+            "None"
+          ],
+          "rect": [
+            611,
+            216,
+            143,
+            88
+          ],
+          "css_width": 77.46,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "보통",
+          "alt": "",
+          "values": [
+            "34",
+            "None"
+          ],
+          "rect": [
+            769,
+            216,
+            143,
+            88
+          ],
+          "css_width": 77.46,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "빠르게",
+          "alt": "",
+          "values": [
+            "55",
+            "None"
+          ],
+          "rect": [
+            927,
+            216,
+            143,
+            88
+          ],
+          "css_width": 77.46,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "즉시",
+          "alt": "",
+          "values": [
+            "0",
+            "None"
+          ],
+          "rect": [
+            1085,
+            216,
+            142,
+            88
+          ],
+          "css_width": 76.92,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "보통",
+          "alt": "",
+          "values": [
+            "15"
+          ],
+          "rect": [
+            927,
+            328,
+            143,
+            88
+          ],
+          "css_width": 77.46,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "저장 · 불러오기",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            672,
+            616,
+            260,
+            88
+          ],
+          "css_width": 140.83,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "닫기",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1040,
+            616,
+            190,
+            88
+          ],
+          "css_width": 102.92,
+          "css_height": 47.67,
+          "meets_target": true
+        }
+      ]
+    },
+    {
+      "screen": "settings",
+      "size": "small-phone",
+      "large": false,
+      "targets": [
+        {
+          "text": "읽기",
+          "alt": "",
+          "values": [
+            "'reading'",
+            "'reading'",
+            "None"
+          ],
+          "rect": [
+            34,
+            136,
+            230,
+            88
+          ],
+          "css_width": 115.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "소리",
+          "alt": "",
+          "values": [
+            "'sound'",
+            "'sound'",
+            "None"
+          ],
+          "rect": [
+            34,
+            224,
+            230,
+            88
+          ],
+          "css_width": 115.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "화면",
+          "alt": "",
+          "values": [
+            "'screen'",
+            "'screen'",
+            "None"
+          ],
+          "rect": [
+            34,
+            312,
+            230,
+            88
+          ],
+          "css_width": 115.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "",
+          "alt": "닫기",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1172,
+            18,
+            88,
+            88
+          ],
+          "css_width": 44.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "작게",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            611,
+            94,
+            190,
+            88
+          ],
+          "css_width": 95.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "보통",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            816,
+            94,
+            190,
+            88
+          ],
+          "css_width": 95.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "크게",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1021,
+            94,
+            190,
+            88
+          ],
+          "css_width": 95.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "느리게",
+          "alt": "",
+          "values": [
+            "24",
+            "None"
+          ],
+          "rect": [
+            611,
+            186,
+            143,
+            88
+          ],
+          "css_width": 71.5,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "보통",
+          "alt": "",
+          "values": [
+            "34",
+            "None"
+          ],
+          "rect": [
+            769,
+            186,
+            143,
+            88
+          ],
+          "css_width": 71.5,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "빠르게",
+          "alt": "",
+          "values": [
+            "55",
+            "None"
+          ],
+          "rect": [
+            927,
+            186,
+            143,
+            88
+          ],
+          "css_width": 71.5,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "즉시",
+          "alt": "",
+          "values": [
+            "0",
+            "None"
+          ],
+          "rect": [
+            1085,
+            186,
+            142,
+            88
+          ],
+          "css_width": 71.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "보통",
+          "alt": "",
+          "values": [
+            "15"
+          ],
+          "rect": [
+            927,
+            278,
+            143,
+            88
+          ],
+          "css_width": 71.5,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "저장 · 불러오기",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            672,
+            616,
+            260,
+            88
+          ],
+          "css_width": 130.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "닫기",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1040,
+            616,
+            190,
+            88
+          ],
+          "css_width": 95.0,
+          "css_height": 44.0,
+          "meets_target": true
+        }
+      ]
+    },
+    {
+      "screen": "settings",
+      "size": "small-phone",
+      "large": true,
+      "targets": [
+        {
+          "text": "읽기",
+          "alt": "",
+          "values": [
+            "'reading'",
+            "'reading'",
+            "None"
+          ],
+          "rect": [
+            34,
+            136,
+            230,
+            88
+          ],
+          "css_width": 115.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "소리",
+          "alt": "",
+          "values": [
+            "'sound'",
+            "'sound'",
+            "None"
+          ],
+          "rect": [
+            34,
+            224,
+            230,
+            88
+          ],
+          "css_width": 115.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "화면",
+          "alt": "",
+          "values": [
+            "'screen'",
+            "'screen'",
+            "None"
+          ],
+          "rect": [
+            34,
+            312,
+            230,
+            88
+          ],
+          "css_width": 115.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "",
+          "alt": "닫기",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1172,
+            18,
+            88,
+            88
+          ],
+          "css_width": 44.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "작게",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            611,
+            104,
+            190,
+            88
+          ],
+          "css_width": 95.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "보통",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            816,
+            104,
+            190,
+            88
+          ],
+          "css_width": 95.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "크게",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1021,
+            104,
+            190,
+            88
+          ],
+          "css_width": 95.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "느리게",
+          "alt": "",
+          "values": [
+            "24",
+            "None"
+          ],
+          "rect": [
+            611,
+            216,
+            143,
+            88
+          ],
+          "css_width": 71.5,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "보통",
+          "alt": "",
+          "values": [
+            "34",
+            "None"
+          ],
+          "rect": [
+            769,
+            216,
+            143,
+            88
+          ],
+          "css_width": 71.5,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "빠르게",
+          "alt": "",
+          "values": [
+            "55",
+            "None"
+          ],
+          "rect": [
+            927,
+            216,
+            143,
+            88
+          ],
+          "css_width": 71.5,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "즉시",
+          "alt": "",
+          "values": [
+            "0",
+            "None"
+          ],
+          "rect": [
+            1085,
+            216,
+            142,
+            88
+          ],
+          "css_width": 71.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "보통",
+          "alt": "",
+          "values": [
+            "15"
+          ],
+          "rect": [
+            927,
+            328,
+            143,
+            88
+          ],
+          "css_width": 71.5,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "저장 · 불러오기",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            672,
+            616,
+            260,
+            88
+          ],
+          "css_width": 130.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "닫기",
+          "alt": "",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1040,
+            616,
+            190,
+            88
+          ],
+          "css_width": 95.0,
+          "css_height": 44.0,
+          "meets_target": true
+        }
+      ]
+    },
+    {
+      "screen": "question-fixture",
+      "size": "pc",
+      "large": false,
+      "targets": [
+        {
+          "text": "1 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  두 종이의 항목을 비교한다",
+          "alt": "",
+          "values": [
+            "None",
+            "None"
+          ],
+          "rect": [
+            640,
+            192,
+            592,
+            54
+          ],
+          "css_width": 592.0,
+          "css_height": 54.0,
+          "meets_target": true
+        },
+        {
+          "text": "2 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  숙소 확인 칸을 본다",
+          "alt": "",
+          "values": [
+            "None",
+            "None"
+          ],
+          "rect": [
+            640,
+            254,
+            592,
+            54
+          ],
+          "css_width": 592.0,
+          "css_height": 54.0,
+          "meets_target": true
+        },
+        {
+          "text": "3 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  자료를 함께 제시한다",
+          "alt": "",
+          "values": [
+            "None",
+            "None"
+          ],
+          "rect": [
+            640,
+            316,
+            592,
+            54
+          ],
+          "css_width": 592.0,
+          "css_height": 54.0,
+          "meets_target": true
+        },
+        {
+          "text": "4 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  힌트를 생각한다",
+          "alt": "",
+          "values": [
+            "None",
+            "None"
+          ],
+          "rect": [
+            640,
+            378,
+            592,
+            54
+          ],
+          "css_width": 592.0,
+          "css_height": 54.0,
+          "meets_target": true
+        },
+        {
+          "text": "다음 질문 →",
+          "alt": "",
+          "values": [
+            "1"
+          ],
+          "rect": [
+            944,
+            500,
+            288,
+            48
+          ],
+          "css_width": 288.0,
+          "css_height": 48.0,
+          "meets_target": true
+        },
+        {
+          "text": "돌아가기",
+          "alt": "돌아가기",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1000,
+            640,
+            232,
+            64
+          ],
+          "css_width": 232.0,
+          "css_height": 64.0,
+          "meets_target": true
+        }
+      ],
+      "pages": 4
+    },
+    {
+      "screen": "question-fixture",
+      "size": "pc",
+      "large": true,
+      "targets": [
+        {
+          "text": "1 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  두 종이의 항목을 비교한다",
+          "alt": "",
+          "values": [
+            "None",
+            "None"
+          ],
+          "rect": [
+            640,
+            192,
+            592,
+            54
+          ],
+          "css_width": 592.0,
+          "css_height": 54.0,
+          "meets_target": true
+        },
+        {
+          "text": "2 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  숙소 확인 칸을 본다",
+          "alt": "",
+          "values": [
+            "None",
+            "None"
+          ],
+          "rect": [
+            640,
+            254,
+            592,
+            54
+          ],
+          "css_width": 592.0,
+          "css_height": 54.0,
+          "meets_target": true
+        },
+        {
+          "text": "3 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  자료를 함께 제시한다",
+          "alt": "",
+          "values": [
+            "None",
+            "None"
+          ],
+          "rect": [
+            640,
+            316,
+            592,
+            54
+          ],
+          "css_width": 592.0,
+          "css_height": 54.0,
+          "meets_target": true
+        },
+        {
+          "text": "4 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  힌트를 생각한다",
+          "alt": "",
+          "values": [
+            "None",
+            "None"
+          ],
+          "rect": [
+            640,
+            378,
+            592,
+            54
+          ],
+          "css_width": 592.0,
+          "css_height": 54.0,
+          "meets_target": true
+        },
+        {
+          "text": "다음 질문 →",
+          "alt": "",
+          "values": [
+            "1"
+          ],
+          "rect": [
+            944,
+            468,
+            288,
+            48
+          ],
+          "css_width": 288.0,
+          "css_height": 48.0,
+          "meets_target": true
+        },
+        {
+          "text": "돌아가기",
+          "alt": "돌아가기",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1000,
+            624,
+            232,
+            80
+          ],
+          "css_width": 232.0,
+          "css_height": 80.0,
+          "meets_target": true
+        }
+      ],
+      "pages": 4
+    },
+    {
+      "screen": "question-fixture",
+      "size": "phone",
+      "large": false,
+      "targets": [
+        {
+          "text": "1 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  두 종이의 항목을 비교한다",
+          "alt": "",
+          "values": [
+            "None",
+            "None"
+          ],
+          "rect": [
+            640,
+            192,
+            592,
+            88
+          ],
+          "css_width": 320.67,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "2 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  숙소 확인 칸을 본다",
+          "alt": "",
+          "values": [
+            "None",
+            "None"
+          ],
+          "rect": [
+            640,
+            288,
+            592,
+            88
+          ],
+          "css_width": 320.67,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "다음 질문 →",
+          "alt": "",
+          "values": [
+            "1"
+          ],
+          "rect": [
+            944,
+            416,
+            288,
+            88
+          ],
+          "css_width": 156.0,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "돌아가기",
+          "alt": "돌아가기",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1000,
+            616,
+            232,
+            88
+          ],
+          "css_width": 125.67,
+          "css_height": 47.67,
+          "meets_target": true
+        }
+      ],
+      "pages": 8
+    },
+    {
+      "screen": "question-fixture",
+      "size": "phone",
+      "large": true,
+      "targets": [
+        {
+          "text": "1 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  두 종이의 항목을 비교한다",
+          "alt": "",
+          "values": [
+            "None",
+            "None"
+          ],
+          "rect": [
+            640,
+            192,
+            592,
+            88
+          ],
+          "css_width": 320.67,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "2 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  숙소 확인 칸을 본다",
+          "alt": "",
+          "values": [
+            "None",
+            "None"
+          ],
+          "rect": [
+            640,
+            288,
+            592,
+            88
+          ],
+          "css_width": 320.67,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "다음 질문 →",
+          "alt": "",
+          "values": [
+            "1"
+          ],
+          "rect": [
+            944,
+            416,
+            288,
+            88
+          ],
+          "css_width": 156.0,
+          "css_height": 47.67,
+          "meets_target": true
+        },
+        {
+          "text": "돌아가기",
+          "alt": "돌아가기",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1000,
+            616,
+            232,
+            88
+          ],
+          "css_width": 125.67,
+          "css_height": 47.67,
+          "meets_target": true
+        }
+      ],
+      "pages": 8
+    },
+    {
+      "screen": "question-fixture",
+      "size": "small-phone",
+      "large": false,
+      "targets": [
+        {
+          "text": "1 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  두 종이의 항목을 비교한다",
+          "alt": "",
+          "values": [
+            "None",
+            "None"
+          ],
+          "rect": [
+            640,
+            192,
+            592,
+            88
+          ],
+          "css_width": 296.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "2 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  숙소 확인 칸을 본다",
+          "alt": "",
+          "values": [
+            "None",
+            "None"
+          ],
+          "rect": [
+            640,
+            288,
+            592,
+            88
+          ],
+          "css_width": 296.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "다음 질문 →",
+          "alt": "",
+          "values": [
+            "1"
+          ],
+          "rect": [
+            944,
+            416,
+            288,
+            88
+          ],
+          "css_width": 144.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "돌아가기",
+          "alt": "돌아가기",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1000,
+            616,
+            232,
+            88
+          ],
+          "css_width": 116.0,
+          "css_height": 44.0,
+          "meets_target": true
+        }
+      ],
+      "pages": 8
+    },
+    {
+      "screen": "question-fixture",
+      "size": "small-phone",
+      "large": true,
+      "targets": [
+        {
+          "text": "1 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  두 종이의 항목을 비교한다",
+          "alt": "",
+          "values": [
+            "None",
+            "None"
+          ],
+          "rect": [
+            640,
+            192,
+            592,
+            88
+          ],
+          "css_width": 296.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "2 {font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  숙소 확인 칸을 본다",
+          "alt": "",
+          "values": [
+            "None",
+            "None"
+          ],
+          "rect": [
+            640,
+            288,
+            592,
+            88
+          ],
+          "css_width": 296.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "다음 질문 →",
+          "alt": "",
+          "values": [
+            "1"
+          ],
+          "rect": [
+            944,
+            416,
+            288,
+            88
+          ],
+          "css_width": 144.0,
+          "css_height": 44.0,
+          "meets_target": true
+        },
+        {
+          "text": "돌아가기",
+          "alt": "돌아가기",
+          "values": [
+            "None"
+          ],
+          "rect": [
+            1000,
+            616,
+            232,
+            88
+          ],
+          "css_width": 116.0,
+          "css_height": 44.0,
+          "meets_target": true
+        }
+      ],
+      "pages": 8
+    },
+    {
+      "screen": "memo-target-fixture",
+      "size": "pc",
+      "targets": [
+        {
+          "text": "",
+          "alt": "책상 위 접힌 종이",
+          "values": [
+            "None",
+            "('object', 'mother_note')"
+          ],
+          "rect": [
+            160,
+            383,
+            152,
+            49
+          ],
+          "css_width": 152.0,
+          "css_height": 49.0,
+          "meets_target": true
+        }
+      ]
+    },
+    {
+      "screen": "memo-target-fixture",
+      "size": "phone",
+      "targets": [
+        {
+          "text": "",
+          "alt": "책상 위 접힌 종이",
+          "values": [
+            "None",
+            "('object', 'mother_note')"
+          ],
+          "rect": [
+            160,
+            363,
+            152,
+            88
+          ],
+          "css_width": 82.33,
+          "css_height": 47.67,
+          "meets_target": true
+        }
+      ]
+    },
+    {
+      "screen": "memo-target-fixture",
+      "size": "small-phone",
+      "targets": [
+        {
+          "text": "",
+          "alt": "책상 위 접힌 종이",
+          "values": [
+            "None",
+            "('object', 'mother_note')"
+          ],
+          "rect": [
+            160,
+            363,
+            152,
+            88
+          ],
+          "css_width": 76.0,
+          "css_height": 44.0,
+          "meets_target": true
+        }
+      ]
+    }
+  ],
+  "page_errors": [],
+  "version": "0.20.14",
+  "status": "passed",
+  "archive_sha256": "a311278c6e21501e82c90165790ad2cf8aeb08bb4a090ea8f4e196fdafdebe73",
+  "visual_review": "최종 캡처 직접 검토 완료: 대사 마지막 줄/조작, 마차 다람 얼굴, 입구 이름표, 설정, 질문, 실제 travel로 초기화된 13호실 첫 생각 및 메모. 얼굴 가림/하단 잘림 없음. 선행 상태와 라벨은 명시적 검수 fixture이며 초반부터의 자연 진행으로 주장하지 않음."
+}

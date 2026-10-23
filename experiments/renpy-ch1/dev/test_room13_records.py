@@ -24,11 +24,14 @@ assert env['r13_record_entries']('evidence')==['E01']
 assert env['r13_record_entries']('testimony',True)==['E12']
 assert env['r13_record_entries']('testimony',True,True)==['E06','E10']
 assert env['r13_record_entries']('evidence',True,True)==['E01']
-entries=list(range(34));assert env['r13_record_pages'](entries)==3
-assert env['r13_record_page'](entries,100)==2
-assert env['r13_record_selected'](entries,1,1)==12
-assert env['r13_record_selected'](entries,33,2)==33
+entries=list(range(34));assert env['r13_record_pages'](entries)==7
+assert env['r13_record_page'](entries,100)==6
+assert env['r13_record_selected'](entries,1,1)==5
+assert env['r13_record_selected'](entries,33,6)==33
 assert env['r13_record_selected']([],None,3) is None
+assert env['r13_record_restore_page'](entries,33,2)==6
+assert env['r13_record_restore_page'](entries,None,999)==6
+assert env['r13_record_restore_page']([],33,2)==0
 # Legacy recovery uses only this save's actual topics/presentations; no invented time/place.
 topic=next(iter(content['topics']));person=content['topics'][topic]['npc']
 s.room13.update(read_topics=[topic],resident_knowledge={person:['E01:anonymous']})
@@ -39,4 +42,4 @@ env['r13_history_stamp'](entry);s._history_list=[entry,types.SimpleNamespace(who
 rows=env['r13_history_rows']();assert [r['kind'] for r in rows]==['서술','발언','독백'];assert rows[-1]['stamp']=='2일 · 여관'
 assert [r['what'] for r in rows]==['실제 서술.','실제 발언.','내가 실제로 한 생각.']
 assert 'does_not_establish' not in (root/'game/room13_notebook.rpy').read_text()
-print(json.dumps({'pass':True,'evidence':34,'testimony':6,'page_size':12,'checks':['explicit categories','acquired only and no duplicates','archive never submitted','34 entries pagination','old save factual people recovery without mutations','real history and thought distinction','limitation copy removed only from UI']},ensure_ascii=False,indent=2))
+print(json.dumps({'pass':True,'evidence':34,'testimony':6,'page_size':5,'checks':['explicit categories','acquired only and no duplicates','archive never submitted','34 entries pagination','old save factual people recovery without mutations','real history and thought distinction','limitation copy removed only from UI']},ensure_ascii=False,indent=2))

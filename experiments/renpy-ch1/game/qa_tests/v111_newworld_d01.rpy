@@ -70,7 +70,7 @@ testcase v111_nw_d01_gate_extra_letter:
     run Jump("r13_v111_gate_proof")
     pause 1.5
     assert screen "r13_crisis_proof"
-    click "근거를 내놓는다"
+    click "자료 고르기"
     pause 0.5
     click "QA V111:E01"
     pause 0.8
@@ -82,7 +82,7 @@ testcase v111_nw_d01_gate_extra_letter:
     pause 0.8
     click "QA 닫기"  # 0.20.7: the proof book stays open between picks
     pause 0.5
-    click "논리를 연결한다"
+    click "선택한 근거 제출"
     click pos (900,600) until screen "r13_hub" timeout 90
     assert eval (r13_v111_value("meeting:gate")=="win" and r13_v111_value("gate_daram_unlisted") is not True)
     assert eval (qa_nw_seen("그 편지는 이 확인에 필요 없소") and r13_v111_value("proof_given:함께 들어갈 근거를 고른다")==["V111:E01","V111:E02","V111:E03","V111:E04"])

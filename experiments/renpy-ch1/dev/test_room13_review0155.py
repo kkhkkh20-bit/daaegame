@@ -25,11 +25,11 @@ assert not env['r13_record_update_ui']('favorites','G1',True)
 assert not env['r13_record_update_ui']('favorites','unknown',True)
 assert store.room13==before
 assert env['r13_record_unread']('G1');env['r13_record_update_ui']('seen','G1',True);assert not env['r13_record_unread']('G1')
-persistent.room13_large_text=True;assert env['r13_record_page_size']()==8;assert env['r13_record_pages'](list(range(34)))==5;assert env['r13_record_selected'](list(range(34)),0,1)==8
-persistent.room13_large_text=False;assert env['r13_record_pages'](list(range(34)))==3
+persistent.room13_large_text=True;assert env['r13_record_page_size']()==5;assert env['r13_record_pages'](list(range(34)))==7;assert env['r13_record_selected'](list(range(34)),0,1)==5
+persistent.room13_large_text=False;assert env['r13_record_pages'](list(range(34)))==7
 # Compact touch pages stay bounded even with ordinary text enabled.
 env["r13_touch_ui"]=lambda:True
-assert env["r13_record_page_size"]()==8 and env["r13_record_pages"](list(range(34)))==5
+assert env["r13_record_page_size"]()==5 and env["r13_record_pages"](list(range(34)))==7
 assert entries(order="recent")==["G2","G3","G1","E01"]
 env["r13_touch_ui"]=lambda:False
 # Execute actual gate helpers with grants/marks isolated, not reconstructed logic.
@@ -48,4 +48,4 @@ assert 'gate_documents_compared' not in store.room13['flags']
 env['r13_gate_record_comparison']();assert 'gate_documents_compared' in store.room13['flags']
 assert store.room13['evidence']==['G1','G3'] and store.room13['period']==1
 before=copy.deepcopy(store.room13);env['r13_gate_record_comparison']();assert store.room13==before
-print(json.dumps({'passed':True,'checks':['same-period chronological/recent order','current evidence only in presentation','retired favorites do not mutate state; seen changes UI only','unknown record rejected','legacy missing UI fields safe','8/12 pagination','separate documents do not imply comparison','explicit comparison grants once without time cost'],'retain_callbacks':len(retains)},indent=2))
+print(json.dumps({'passed':True,'checks':['same-period chronological/recent order','current evidence only in presentation','retired favorites do not mutate state; seen changes UI only','unknown record rejected','legacy missing UI fields safe','stable five-row pagination','separate documents do not imply comparison','explicit comparison grants once without time cost'],'retain_callbacks':len(retains)},indent=2))

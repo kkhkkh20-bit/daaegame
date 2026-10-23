@@ -29,7 +29,7 @@ label r13_v111_letter_read:
 
 label r13_v111_letter_menu:
     $ v111_menu_owner='letter_menu'
-    $ v111_menu=[('마지막 줄을 본다',0) for _ in [0] if True] + [('글씨를 살핀다',1) for _ in [0] if True] + [('편지를 접는다',2) for _ in [0] if True]
+    $ v111_menu=[(('✓ 마지막 줄을 본다' if r13_v111_value('K01a') else '마지막 줄을 본다'),0) for _ in [0] if True] + [(('✓ 글씨를 살핀다' if r13_v111_value('K01b') else '글씨를 살핀다'),1) for _ in [0] if True] + [('편지를 접는다',2) for _ in [0] if True]
     $ v111_answer=renpy.display_menu(v111_menu)
     if v111_answer==0:
         $ r13_v111_option('MS14_D01_S01_L0014_O1')
@@ -320,6 +320,9 @@ label r13_v111_inn:
 
 label r13_v111_room_observe:
     call r13_v111_travel('room13','room_observe')
+    if not r13_v111_value('ui_room_arrival_seen'):
+        call r13_lines([r13_nw_added_line(dict(kind="thought",text="아내가 머물던 방이다. 다람이와 함께, 남겨 둔 흔적을 천천히 살펴보자."))],'nw:room_arrival_context')
+        $ r13_v111_set('ui_room_arrival_seen',True)
     call r13_v111_wait('room_observe')
     $ v111_answer=_return
     if v111_answer==0:

@@ -46,7 +46,7 @@ screen r13_concept_more():
         ("메인화면","place_inn",[Hide("r13_more_tools"),Confirm("메인화면으로 돌아가시겠습니까?\n저장하지 않은 게임 진행은 사라집니다.",MainMenu(confirm=False))],True)]
     button:
         area (0,0,1280,720) background None action Hide("r13_more_tools") alt "닫기"
-    $ row_height=80 if r13_touch_ui() else 64
+    $ row_height=88 if r13_touch_ui() else 64
     $ menu_rows=(len(items)+1)//2
     $ panel_height=menu_rows*(row_height+16)+74
     # 0.19.98 (owner settings mockup): the same night panel and gold-edged buttons as 설정.

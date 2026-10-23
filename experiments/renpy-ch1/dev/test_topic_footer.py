@@ -8,6 +8,6 @@ class TopicFooter(unittest.TestCase):
   self.assertEqual(s.count('use r13_concept_action(R13_CONCEPT_RIGHT-232,232,"돌아가기"'),2)
  def test_geometry_desktop_touch_large(self):
   rects=[(336,256),(608,160),(784,160),(1000,232)]
-  for height in (64,80):
+  for height in (64,80,88):
    for x,w in rects:self.assertLessEqual(x+w,1232)
    for (x,w),(nx,nw) in zip(rects,rects[1:]):self.assertGreaterEqual(nx-x-w,16)

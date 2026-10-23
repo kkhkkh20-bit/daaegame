@@ -91,7 +91,7 @@ class WorldmapV5(unittest.TestCase):
         source=(GAME/'room13_worldmap_v5.rpy').read_text()
         self.assertIn('if r13_cart_cover_visible(secret):',source)
         self.assertNotIn('v5_label_',source)
-        self.assertIn('action SetScreenVariable("selected",key)',source)
+        self.assertIn('action [SetScreenVariable("selected",key),SetScreenVariable("map_notice",None)]',source)
 
     def test_village_name_targets_fit_without_overlap(self):
         # Hand-lettered names retain invisible, separated UI targets above the

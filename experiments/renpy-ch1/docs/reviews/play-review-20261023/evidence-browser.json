@@ -1,0 +1,121 @@
+{
+  "page_errors": [],
+  "passed": true,
+  "version": "0.20.14",
+  "scope": "오프닝 실제 진입, 자료 화면은 보유 상태를 구성한 검수",
+  "worst_existing_records": [
+    "V111:NW_NEOUL_LEDGER",
+    "V111:NW_KEEPER_DATE"
+  ],
+  "measurements": [
+    {
+      "fact": 19,
+      "button": 48,
+      "views": [
+        {
+          "range": 0,
+          "page": 468,
+          "value": 0
+        },
+        {
+          "range": 0,
+          "page": 468,
+          "value": 0
+        }
+      ],
+      "after_scroll": [
+        {
+          "range": 0,
+          "value": 0
+        },
+        {
+          "range": 0,
+          "value": 0
+        }
+      ],
+      "mode": "desktop-normal"
+    },
+    {
+      "fact": 23,
+      "button": 56,
+      "views": [
+        {
+          "range": 0,
+          "page": 460,
+          "value": 0
+        },
+        {
+          "range": 1,
+          "page": 460,
+          "value": 0
+        }
+      ],
+      "after_scroll": [
+        {
+          "range": 0,
+          "value": 0
+        },
+        {
+          "range": 1,
+          "value": 0
+        }
+      ],
+      "mode": "desktop-large"
+    },
+    {
+      "fact": 30,
+      "button": 88,
+      "views": [
+        {
+          "range": 62,
+          "page": 428,
+          "value": 0
+        },
+        {
+          "range": 60,
+          "page": 428,
+          "value": 0
+        }
+      ],
+      "after_scroll": [
+        {
+          "range": 62,
+          "value": 62
+        },
+        {
+          "range": 60,
+          "value": 60
+        }
+      ],
+      "mode": "mobile-normal"
+    },
+    {
+      "fact": 32,
+      "button": 88,
+      "views": [
+        {
+          "range": 123,
+          "page": 428,
+          "value": 0
+        },
+        {
+          "range": 82,
+          "page": 428,
+          "value": 0
+        }
+      ],
+      "after_scroll": [
+        {
+          "range": 123,
+          "value": 123
+        },
+        {
+          "range": 82,
+          "value": 82
+        }
+      ],
+      "mode": "mobile-large"
+    }
+  ],
+  "world_state_preserved": true
+}

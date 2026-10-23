@@ -148,7 +148,7 @@ screen r13_world_contents(entry=False,ready=False):
     for key,spec in ROOM13["objects"].get(room13["location"],{}).items():
         if r13_object_visible(spec):
             button:
-                area tuple(spec["rect"])
+                area r13_object_target_rect(key,spec)
                 background None hover_background None insensitive_background None padding (0,0)
                 action [Function(r13_click_feedback,key),Return(("object",key))] sensitive ready
                 tooltip r13_object_name(key) alt r13_object_name(key)
@@ -206,7 +206,9 @@ screen r13_resident_stage(entry=False,ready=False):
 
 screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=420,list_width=760,animate=True,return_action=None,caption=""):
     style_prefix "r13"
-    if person and title!="선택":
+    if title=="선택" and place=="마차 안":
+        use r13_carriage_choice_list(entries,ready,caption)
+    elif person and title!="선택":
         use r13_side_question_list(person,pose,entries,ready,return_action,caption)
     elif person:
         $ list_width=min(900,max(760,list_width))
@@ -433,6 +435,7 @@ screen r13_book(target=None,present=False,hearing=False,called=False,purpose=Non
     default category="all"
     $ category="all"
     default page=remembered.get("page",0)
+    default page_restored=False
     default material_filter=remembered.get("material_filter","all")
     on "hide" action Function(r13_book_remember,view_context,detail,page,material_filter)
     default order="recent"
@@ -451,19 +454,24 @@ screen r13_book(target=None,present=False,hearing=False,called=False,purpose=Non
     # 0.19.2: 보여줄 때는 단추 없이, 지금 상대(발언자)와 이어진 자료를 앞에 놓는다.
     if chip_person:
         $ entries=r13_record_related_first(entries,chip_person)
+    if not page_restored:
+        $ page=r13_record_restore_page(entries,detail,page)
+        $ page_restored=True
     $ selected_record=r13_present_selection(entries,detail,page) if present else r13_record_selected(entries,detail,page)
     $ statement=r13_book_statement() if present and hearing else None
     $ day_span=r13_evidence_day_span(entries)
     $ purpose_text=R13_BOOK_PURPOSE.get(purpose)
-    $ present_label=("이 주장에 근거로 낸다" if hearing else (("근거에서 빼기" if purpose=="proof" and detail in chosen else purpose_text[0]) if purpose_text else R13_NAMES.get(target,"상대")+"에게 보여주기"))
+    $ book_copy=r13_book_ui_copy(purpose,chosen,hearing,target)
+    $ present_label=("이 주장에 근거로 낸다" if hearing else ((("비교에서 빼기" if purpose=="compare" else "근거에서 빼기") if purpose in ("proof","compare") and detail in chosen else purpose_text[0]) if purpose_text else R13_NAMES.get(target,"상대")+"에게 보여주기"))
     $ present_ok=bool(present and ready and detail==selected_record and selected_record and r13_catalog_can_present(selected_record,hearing) and not archive)
-    use r13_ink_record_shell(("보여주기" if present else "자료 기록"),r13_ev_record_tabs("r13_book",present),"all",
+    use r13_ink_record_shell((book_copy["title"] if present else "자료 기록"),r13_ev_record_tabs("r13_book",present),"all",
         (Return(False) if present or called else Hide("r13_book")),
-        note=((statement[0]+"의 발언에 낼 자료" if statement else ((purpose_text[1]+(" · 고른 자료 %d개"%len(chosen) if chosen else "")) if purpose_text else R13_NAMES.get(target,"상대")+"에게 보여줄 자료")) if present else None))
+        note=((statement[0]+"의 발언에 낼 자료" if statement else book_copy["note"]) if present else None))
     use r13_ink_chips(r13_ev_filter_chips("r13_book",material_filter,not hearing and not archive,None,0,(archive if not present and (archive or r13_learning_archive_keys()) else None)))
     use r13_evidence_browser(entries,selected_record,page,"r13_book",pair,pair_slot,archive and not present,view_context,("자료 %d개"%len(entries))+((" · "+day_span) if day_span else ""),
         present,present_label,present_ok,Return(selected_record),(Return(False) if present or called else Hide("r13_book")),ready,statement,
-        (R13_NAMES.get(target,"상대")+"에게" if present and not statement and not purpose_text else None))
+        (R13_NAMES.get(target,"상대")+"에게" if present and not statement and not purpose_text else None),
+        stop_label=book_copy["stop"],present_help=book_copy["help"])
 
 screen r13_calendar_content():
     default week=min(1,(room13["day"]-1)//7)
@@ -519,7 +527,7 @@ screen r13_debate(claim):
                 spacing 18
                 textbutton "근거 내놓기" action Return("present") sensitive ready
                 textbutton "되묻기" action Return("press") sensitive ready
-                textbutton "논리를 연결한다" action Return("argue") sensitive ready
+                textbutton "선택한 근거 제출" action Return("argue") sensitive ready
                 textbutton "이 문제는 남겨 둔다" action Return("leave") sensitive ready text_size 22
 
 screen r13_handoff():

@@ -85,13 +85,13 @@ testcase v111_nw_d11_hyp_stone_proof:
     run Jump("r13_v111_hyp5_proof11")
     pause 1.5
     assert screen "r13_crisis_proof"
-    click "근거를 내놓는다"
+    click "자료 고르기"
     pause 0.5
     click "QA V111:NW_STONE"
     pause 0.8
     click "QA 닫기"  # 0.20.7: the proof book stays open between picks
     pause 0.5
-    click "논리를 연결한다"
+    click "선택한 근거 제출"
     click pos (900,600) until screen "r13_hub" timeout 120
     assert eval (r13_v111_value("meeting:hypothesis")=="partial")
     assert eval (qa_nw_seen("각인 없는 검푸른 돌입니다") and qa_nw_seen("침상 목록을 가슴에 끌어안는다"))
@@ -108,7 +108,7 @@ testcase v111_nw_d11_hyp1_two_records:
     run Jump("r13_v111_hyp1_proof11")
     pause 1.5
     assert screen "r13_crisis_proof"
-    click "근거를 내놓는다"
+    click "자료 고르기"
     pause 0.5
     click "QA V111:E11"
     pause 0.8
@@ -116,6 +116,6 @@ testcase v111_nw_d11_hyp1_two_records:
     pause 0.8
     click "QA 닫기"  # 0.20.7: the proof book stays open between picks
     pause 0.5
-    click "논리를 연결한다"
+    click "선택한 근거 제출"
     click pos (640,300) until "백 부인은 그 돌 곁에서 잠을 자지 않는다" timeout 60
     assert eval (r13_v111_value("hyp_issue:1")=="won" and qa_nw_seen("받침에서 멀어지면 바닥이 차갑습니다"))

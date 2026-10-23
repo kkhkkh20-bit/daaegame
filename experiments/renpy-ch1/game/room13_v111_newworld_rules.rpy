@@ -166,10 +166,12 @@ init 318 python:
         used=(r13_v111_value("tries:"+meeting) or 0)+1
         r13_v111_set("tries:"+meeting,used)
         left=R13_NW_TRIES-used
-        if left<=0:return False
+        if left<=0:
+            renpy.notify("잘못된 제출로 기회 1회 사용 · 남은 기회 0번.")
+            return False
         kept=bool((store.room13.get("arguments") or {}).get(getattr(store,"v111_claim",None) or ""))
         hint=note if (note and correct and r13_nw_half(correct)) else ("맞는 근거는 남겨 두었다." if kept else "맞지 않는다.")
-        renpy.notify("%s 남은 기회 %d번."%(hint,left))
+        renpy.notify("기회 1회 사용 · 남은 기회 %d번. %s"%(left,hint))
         return True
 
     # Review 2026-10-22: a person who left on the cart (departed:<p>) is never placed again.

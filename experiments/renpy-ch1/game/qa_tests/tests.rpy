@@ -12194,11 +12194,11 @@ testcase cartography:
     pause 3.0
     run Call("r13_qa_roam",dict(day=2,period=0,location="inn",life_poc=True),("entry_corrected","lodging"))
     click pos (640,600) until screen "r13_hub" timeout 40
-    click "지도 · 이동" until screen "r13_map" timeout 30
+    click "지도" until screen "r13_map" timeout 30
     click "마을"
     pause 1.0
     screenshot "map_village.png"
-    click pos (270,371)
+    click id "map_name_inn"
     pause 0.4
     assert eval (renpy.get_screen("r13_map").scope["selected"]=="inn" and room13["location"]=="inn")
     click "여관 안"

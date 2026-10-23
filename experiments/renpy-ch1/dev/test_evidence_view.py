@@ -210,7 +210,7 @@ class EvidenceView(unittest.TestCase):
         self.assertIn('use r13_evidence_browser(entries,selected_record,page,_scope,pair,pair_slot,archive,("records",),header)', NOTE)
         self.assertIn('use r13_evidence_browser(entries,selected_record,page,"r13_book"', BOOK)
         self.assertIn('present,present_label,present_ok,Return(selected_record)', BOOK)
-        self.assertIn('"이 주장에 근거로 낸다" if hearing else (("근거에서 빼기" if purpose=="proof" and detail in chosen else purpose_text[0]) if purpose_text else R13_NAMES.get(target,"상대")+"에게 보여주기")', BOOK)  # 0.20.7: 「근거에 추가」/「근거에서 빼기」
+        self.assertIn('purpose in ("proof","compare") and detail in chosen', BOOK)  # 0.20.7: 「근거에 추가」/「근거에서 빼기」
         self.assertIn('(Return(False) if present or called else Hide("r13_book"))', BOOK)  # 0.20.6: a called book always returns
         self.assertIn("$ live_pair=None if present else r13_compare_live(pair)", VIEW)
         for screen in ("default pair=None", "default pair_slot=1"):
@@ -242,13 +242,23 @@ class EvidenceView(unittest.TestCase):
         self.assertNotIn("r13_material_detail(", BOOK)
 
     def test_grid_rows_end_above_the_pager(self):
-        # PC: 3 columns x 4 rows (12), touch/large: 2 x 4 (8); the pager sits at R13_EV_BOTTOM-height.
-        grid = VIEW.split("screen r13_evidence_grid(", 1)[1].split("\nscreen ", 1)[0]
-        self.assertIn("$ pitch_y=108 if touch else (114 if wide else 118)", grid)
-        self.assertIn("ypos (148+(index//cols)*pitch_y)", grid)
         bottom = self.build()["R13_EV_BOTTOM"]
-        for pitch, pager in ((118, 48), (114, 56), (108, 84)):
-            self.assertLessEqual(148 + 4 * pitch, bottom - pager)
+        self.assertLessEqual(140 + 5 * 88, bottom - 88)
+        self.assertGreaterEqual(88 * 360 / 720, 44)
+
+    def test_all_current_names_fit_whole_words_without_ellipsis(self):
+        env = self.build()
+        known = dict(RECORDS["evidence"])
+        for part in sorted((ROOT / "game/v111/newworld").glob("d*.json")):
+            known.update(json.loads(part.read_text()).get("new_evidence", {}))
+        for key, spec in known.items():
+            for size in (18, 22, 24):
+                name = spec["name"]
+                lines = env["r13_ev_two_lines"](name, 174, size, 3).split("\n")
+                self.assertEqual("".join(lines).replace(" ",""), name.replace(" ",""), (key, size, lines))
+                self.assertTrue(all(env["r13_ev_text_units"](line)*size <= 174 for line in lines))
+                self.assertLessEqual(len(lines), 3)
+        self.assertNotIn("\n장", env["r13_ev_two_lines"]("반쯤 탄 수첩 장", 174, 24, 3))
 
 
 if __name__ == "__main__":

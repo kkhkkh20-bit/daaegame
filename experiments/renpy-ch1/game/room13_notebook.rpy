@@ -130,9 +130,12 @@ init 68 python:
             page=entries.index(key)//r13_record_page_size())
         r13_record_mark_seen(key)
 
-    def r13_record_page_size():return 8 if getattr(persistent,"room13_large_text",False) or r13_touch_ui() else R13_RECORD_PAGE_SIZE
+    def r13_record_page_size():return 5
     def r13_record_pages(entries):return max(1,(len(entries)+r13_record_page_size()-1)//r13_record_page_size())
     def r13_record_page(entries,page):return max(0,min(page,r13_record_pages(entries)-1))
+    def r13_record_restore_page(entries,detail,page):
+        # The remembered record survives page-size/order changes in old saves.
+        return entries.index(detail)//r13_record_page_size() if detail in entries else r13_record_page(entries,page)
     def r13_record_selected(entries,detail,page):
         visible=entries[r13_record_page(entries,page)*r13_record_page_size():][:r13_record_page_size()]
         return detail if detail in visible else (visible[0] if visible else None)
@@ -182,6 +185,9 @@ init 68 python:
         # Testimony portraits come only from authored evidence_sources.
         who=ROOM13["evidence_sources"].get(key) if r13_record_category(key)=="testimony" else None
         if who:return r13_art(who,"avatar_neutral")
+        # Use the same authored object in every picker, not just the large detail view.
+        evidence_path=globals().get("r13_evidence_art_path",lambda key:None)(key)
+        if evidence_path:return evidence_path
         art=r13_material_art(key)
         if art is not None:return art
         if key in R13_RECORD_ICON_SHEET:
@@ -316,6 +322,7 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
     default detail=r13_records_view.get("detail")
     default person=r13_records_view.get("person")
     default page=r13_records_view.get("page",0)
+    default page_restored=False
     default archive=r13_records_view.get("archive",False)
     default order="recent"
     default shelf=False
@@ -336,6 +343,9 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
         # systems/room13_evidence_view.rpy. The other tabs keep the paper folio below.
         $ material_filter="all" if material_filter=="unread" or (archive and material_filter=="transfer") else material_filter
         $ entries=r13_material_subset(r13_catalog_entries(archive,shelf=shelf and not archive),material_filter)
+        if not page_restored:
+            $ page=r13_record_restore_page(entries,detail,page)
+            $ page_restored=True
         $ selected_record=r13_record_selected(entries,detail,page)
         $ day_span=r13_evidence_day_span(entries)
         $ header=(("지난 사건 %d개" if shelf and not archive else "자료 %d개")%len(entries))+((" · "+day_span) if day_span else "")

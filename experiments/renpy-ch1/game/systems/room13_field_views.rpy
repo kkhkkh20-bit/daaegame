@@ -40,9 +40,9 @@ screen r13_field_view_controls(ready):
     $ scene_hint,pan_hint=r13_field_hint_state(room13["location"],wide,r13_scene_hint_seen,persistent.r13_pan_hint_seen)
     if scene_hint or pan_hint:
         if scene_hint:
-            timer 3.0 action SetVariable("r13_scene_hint_seen",tuple(r13_scene_hint_seen)+(room13["location"],))
+            timer (6.0 if room13["location"]=="gate" else 3.0) action SetVariable("r13_scene_hint_seen",tuple(r13_scene_hint_seen)+(room13["location"],))
         if pan_hint:
             timer 6.0 action SetField(persistent,"r13_pan_hint_seen",True)
         frame:
             area (28,656,720,48) padding (16,8) background R13InkPanel(alpha="e6",slim=True)
-            text ("인물·사물을 눌러 조사 · 좌우 끝 화살표로 이동" if wide else "인물이나 사물을 눌러 조사하세요") yalign .5 size r13_read_size(21,24) color "#fff4df" font r13_ui_font()
+            text ("인물과 놓인 물건·붙은 글을 눌러 살펴보세요." if room13["location"]=="gate" and scene_hint else ("인물·사물을 눌러 조사 · 좌우 끝 화살표로 이동" if wide else "인물이나 사물을 눌러 조사하세요")) yalign .5 size r13_read_size(21,24) color "#fff4df" font r13_ui_font()

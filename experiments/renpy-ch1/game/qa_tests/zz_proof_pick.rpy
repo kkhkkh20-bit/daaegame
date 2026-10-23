@@ -9,7 +9,7 @@ testcase proof_pick:
     run Function(r13_grant,["V111:E01","V111:E02","V111:E03","V111:E04"],"qa")
     run Jump("r13_v111_gate_proof")
     pause 1.5
-    click "근거를 내놓는다"
+    click "자료 고르기"
     pause 0.5
     click "QA V111:E02"
     pause 0.6

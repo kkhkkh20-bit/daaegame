@@ -55,9 +55,9 @@ init 61 python:
         return int(round(w*R13_MAP_SCALE)),int(round(h*R13_MAP_SCALE))
 
     R13_MAP_VIEW=(1248,720)
-    # The bottom panel covers ~124px of the view; leave that much extra canvas so the
+    # The footer and status strip cover ~184px of the view; leave extra canvas so the
     # lowest places (빨래터, 솜이네) can be dragged above the panel.
-    R13_MAP_BOTTOM_PAD=124
+    R13_MAP_BOTTOM_PAD=184
     def r13_cart_focus(region,key):
         vw,vh=r13_cart_canvas(region)
         nodes=R13_MAP_NODES.get(region,{})
@@ -101,6 +101,25 @@ screen r13_cartography_layer(region,selected,ready,map_hover):
             if r13_cart_cover_visible(secret):
                 $ cx,cy,cw,ch=R13_CARTOGRAPHY["reveals"][secret]["bounds"]
                 add Transform(R13_CARTOGRAPHY["reveals"][secret]["art"],size=(int(round(cw*R13_MAP_SCALE)),int(round(ch*R13_MAP_SCALE))),nearest=True) xpos (16+int(round(cx*R13_MAP_SCALE))) ypos (9+int(round(cy*R13_MAP_SCALE)))
+    for key,point in r13_map_locked_nodes(region):
+        $ lx,ly,lw,lh=r13_cart_rect(region,key)
+        button:
+            id ("map_locked_"+key)
+            area (ox+lx,oy+ly,lw,lh) padding (0,0)
+            background None hover_background None insensitive_background None
+            focus_mask r13_cart_layer(region,key)
+            action SetScreenVariable("map_notice",R13_MAP_LABELS[key]+" · 지금은 이곳으로 갈 수 없습니다.")
+            sensitive ready
+            alt (R13_MAP_LABELS[key]+" · 지금은 이동할 수 없음")
+        if region=="village":
+            $ nx,ny,nw,nh=r13_cart_name_rect(key)
+            button:
+                id ("map_locked_name_"+key)
+                area (nx,ny,nw,nh) padding (0,0)
+                background None hover_background None insensitive_background None
+                action SetScreenVariable("map_notice",R13_MAP_LABELS[key]+" · 지금은 이곳으로 갈 수 없습니다.")
+                sensitive ready
+                alt (R13_MAP_LABELS[key]+" · 지금은 이동할 수 없음")
     for key,point in r13_map_nodes(region):
         $ lx,ly,lw,lh=r13_cart_rect(region,key)
         # Reuse the authored contour: available destinations are visible before
@@ -121,10 +140,11 @@ screen r13_cartography_layer(region,selected,ready,map_hover):
             hover_background None
             insensitive_background None
             focus_mask r13_cart_layer(region,key)
-            action SetScreenVariable("selected",key)
+            action [SetScreenVariable("selected",key),SetScreenVariable("map_notice",None)]
             activate_sound R13_MAP_TICK
-            hovered SetScreenVariable("map_hover",key)
-            unhovered SetScreenVariable("map_hover",None)
+            # A touch has no hover phase: restarting here can consume its first tap.
+            hovered (None if r13_touch_ui() else SetScreenVariable("map_hover",key))
+            unhovered (None if r13_touch_ui() else SetScreenVariable("map_hover",None))
             sensitive ready
             alt R13_MAP_LABELS[key]
     # Village names are ink in the approved drawing, not separate button plates.
@@ -138,10 +158,11 @@ screen r13_cartography_layer(region,selected,ready,map_hover):
                 id ("map_name_"+key)
                 area (nx,ny,nw,nh) padding (0,0)
                 background None hover_background None insensitive_background None
-                action SetScreenVariable("selected",key)
+                action [SetScreenVariable("selected",key),SetScreenVariable("map_notice",None)]
                 activate_sound R13_MAP_TICK
-                hovered SetScreenVariable("map_hover",key)
-                unhovered SetScreenVariable("map_hover",None)
+                # A touch has no hover phase: restarting here can consume its first tap.
+                hovered (None if r13_touch_ui() else SetScreenVariable("map_hover",key))
+                unhovered (None if r13_touch_ui() else SetScreenVariable("map_hover",None))
                 sensitive ready
                 alt R13_MAP_LABELS[key]
             if key==selected or key==map_hover:

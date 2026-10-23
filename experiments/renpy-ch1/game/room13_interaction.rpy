@@ -126,26 +126,30 @@ init 61 python:
         for actor in sorted(actors,key=lambda a:(faces[a["person"]][1],faces[a["person"]][0])):
             person=actor["person"];face=faces[person]
             cx,top=r13_actor_nameplate(actor)
-            top=max(101,top-14)
             tag_z=1.0/r13_field_zoom();tag_h=int((72 if r13_touch_ui() else 40)*tag_z);width=int(max((112 if r13_touch_ui() else 72),sum((11 if r13_touch_ui() else 8) if ch==" " else (22 if r13_touch_ui() else 17) for ch in R13_NAMES[person])+28)*tag_z)  # 0.20.2 tidy tags; 0.20.3 tags keep screen size in a zoomed field; 0.20.5 (Codex U02) larger phone touch area
+            # Keep the full touch target above the head, not centred across it.
+            top=max(101,int(face[1])-tag_h-int(8*tag_z))
             # A head can straddle the panorama edge while its name used to
             # remain outside the visible window. Keep that label in view.
             left=0;right=r13_world_width()
             offset=r13_world_offset()
             if face[0]<offset+r13_view_width() and face[0]+face[2]>offset:
                 left=offset;right=min(right,offset+r13_view_width())
-            preferred=(max(left+8,min(right-8-width,int(cx-width/2))),top,width,tag_h)
+            bottom=int(720*tag_z)-tag_h-8
+            preferred=(max(left+8,min(right-8-width,int(cx-width/2))),min(bottom,top),width,tag_h)
             candidates=[]
             for dy in (0,-(tag_h+4),-2*(tag_h+4),tag_h+4):  # 0.20.2: move up/down first, little sideways
                 for dx in (0,-20,20,-40,40,-60,60,-90,90):  # 0.20.11: room to clear a pan arrow
-                    candidates.append((max(left+8,min(right-8-width,preferred[0]+dx)),max(101,min(676,top+dy)),width,tag_h))
-            candidates.append((max(left+8,min(right-8-width,preferred[0])),min(676,face[1]+face[3]+6),width,tag_h))
+                    candidates.append((max(left+8,min(right-8-width,preferred[0]+dx)),max(101,min(bottom,top+dy)),width,tag_h))
+            candidates.append((max(left+8,min(right-8-width,preferred[0])),min(bottom,face[1]+face[3]+6),width,tag_h))
             def score(rect):
                 blocked=sum(overlap(rect,f) for f in faces.values())
                 blocked+=sum(overlap(rect,p["rect"]) for p in placed)
                 blocked+=sum(overlap(rect,r) for r in reserved)
-                for offset in {0,max(0,r13_world_width()-1280),r13_layout().get("initial_x",0)}:
-                    blocked+=sum(overlap(rect,r) for r in r13_field_ui_rects(offset))
+                # HUD rectangles are in screen coordinates; compare in this zoomed world.
+                z=r13_field_zoom()
+                for ux,uy,uw,uh in r13_field_ui_rects(0):
+                    blocked+=overlap(rect,(offset+ux/z,uy/z,uw/z,uh/z))
                 return blocked*10000+abs(rect[0]-preferred[0])+abs(rect[1]-preferred[1])*1.1
             rect=min(candidates,key=score)
             leader=None

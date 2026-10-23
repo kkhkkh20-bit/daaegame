@@ -10,7 +10,7 @@ init 80 python:
             label=r13_question_caption(title,read,mark_unread=True)
             text=Text(label,font=r13_ui_font(),size=r13_read_size(26,28),xsize=506,line_spacing=2)
             height=int(renpy.render(text,506,720,0,0).get_size()[1])
-            rows.append(((title,action,read),max(64 if r13_touch_ui() else 54,height+16)))
+            rows.append(((title,action,read),max(88 if r13_touch_ui() else 54,height+16)))
         def pack(cap):
             pages=[];page=[];used=0
             for entry,height in rows:
@@ -20,7 +20,7 @@ init 80 python:
             return pages+([page] if page else []) or [[]]
         cap=r13_control_upper_y()-(R13_SIDE_QUESTION_TOP+42)-12
         pages=pack(cap)
-        return pack(cap-60) if len(pages)>1 else pages
+        return pack(cap-(96 if r13_touch_ui() else 60)) if len(pages)>1 else pages
 
 screen r13_side_question_list(person,pose,entries,ready,return_action=None,caption=""):
     default page=0
@@ -53,11 +53,11 @@ screen r13_side_question_list(person,pose,entries,ready,return_action=None,capti
     if len(pages)>1:
         textbutton "← 이전 질문":
             id "r13_topics_previous"
-            area (640,r13_control_upper_y()-(72 if r13_touch_ui() else 60),288,(64 if r13_touch_ui() else 48)) style "r13_action_button" text_size r13_read_size(22,26) padding (12,4) text_yalign .5
+            area (640,r13_control_upper_y()-(96 if r13_touch_ui() else 60),288,(88 if r13_touch_ui() else 48)) style "r13_action_button" text_size r13_read_size(22,26) padding (12,4) text_yalign .5
             action SetLocalVariable("page",page-1) sensitive ready and page>0
         textbutton "다음 질문 →":
             id "r13_topics_next"
-            area (944,r13_control_upper_y()-(72 if r13_touch_ui() else 60),288,(64 if r13_touch_ui() else 48)) style "r13_action_button" text_size r13_read_size(22,26) padding (12,4) text_yalign .5
+            area (944,r13_control_upper_y()-(96 if r13_touch_ui() else 60),288,(88 if r13_touch_ui() else 48)) style "r13_action_button" text_size r13_read_size(22,26) padding (12,4) text_yalign .5
             action SetLocalVariable("page",page+1) sensitive ready and page<len(pages)-1
     if ready:
         for i,((label,command,read),height) in enumerate(visible):

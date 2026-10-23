@@ -11,6 +11,9 @@ init 150 python:
     R13_NIGHT_CONTROL_Y=694          # centre line of the small text controls
     R13_NIGHT_TEXT_BOTTOM=670        # last dialogue line ends above the controls row
 
+    def r13_night_control_y():
+        return 660 if r13_touch_ui() else R13_NIGHT_CONTROL_Y
+
     def r13_night_say_size():
         # The mockup's line is a step larger than the boxed window's (same size setting).
         return _r13_say_size()+3
@@ -24,7 +27,7 @@ init 150 python:
         """Top of the dialogue text: lines stack upward from a fixed bottom, so one line sits
         low like the mockup and two lines never reach the controls row."""
         size=r13_night_say_size()
-        bottom=R13_NIGHT_TEXT_BOTTOM+(30 if getattr(store,"r13_field_reading",False) else 0)
+        bottom=(R13_NIGHT_TEXT_BOTTOM+30 if getattr(store,"r13_field_reading",False) else (608 if r13_touch_ui() else R13_NIGHT_TEXT_BOTTOM))
         return bottom-max(2,r13_night_say_lines(what))*(size+10)  # 0.20.4 owner: one and two lines share one top
 
     def r13_night_text_color():
@@ -54,7 +57,7 @@ screen r13_night_link(caption,glyph,icon,command,enabled=True,link_id=None):
     # Visible as small text; the pressable area stays at the shared touch height.
     button:
         id (link_id or ("r13_night_"+caption))
-        ysize (80 if r13_touch_ui() else 56) yalign .5 padding (10,0)
+        ysize (88 if r13_touch_ui() else 56) yalign .5 padding (10,0)
         background None hover_background None
         action command sensitive enabled alt caption
         hbox:
@@ -71,7 +74,7 @@ screen r13_night_controls(ready=True):
     $ line_active=renpy.get_screen("say") is not None and not any(renpy.get_screen(n) for n in ("choice","r13_topics","r13_resident_approach","r13_entry_topics","r13_entry_karo_topics"))
     $ skip_action=([SetVariable("r13_carriage_skip",True),Function(renpy.end_interaction,True)] if place=="마차 안" else [SetVariable("r13_conv_skip",True),Function(renpy.end_interaction,True)])
     hbox:
-        xanchor 1.0 xpos (R13_CONCEPT_RIGHT-30) yanchor .5 ypos R13_NIGHT_CONTROL_Y spacing 0
+        xanchor 1.0 xpos (R13_CONCEPT_RIGHT-30) yanchor .5 ypos r13_night_control_y() spacing 0
         if _preferences.afm_enable and line_active:
             use r13_night_link("자동 읽기 중 · 정지","■",None,Preference("auto-forward","disable"),enabled=ready,link_id="r13_night_auto_stop")
             text "|" style "r13_night_link_text" color "#8f866f" yalign .5

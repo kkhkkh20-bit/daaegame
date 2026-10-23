@@ -7,6 +7,14 @@ init 129 python:
         need=["lodging"],give=[],flags=[],mother_note_spot=True)
     R13_OBJECT_NAMES["mother_note"]="책상 위 접힌 종이"
 
+    def r13_object_target_rect(key,spec):
+        x,y,w,h=spec["rect"]
+        if key=="mother_note" and r13_touch_ui():
+            minimum=int(88/r13_field_zoom()+.999999)  # round up after the field zoom
+            width=max(w,minimum);height=max(h,minimum)
+            return (int(x+(w-width)/2),int(y+(h-height)/2),width,height)
+        return tuple(spec["rect"])
+
     _r13_note_spot_visible=r13_object_visible
     def r13_object_visible(spec):
         if spec.get("mother_note_spot"):

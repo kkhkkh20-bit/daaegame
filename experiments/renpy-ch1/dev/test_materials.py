@@ -42,6 +42,11 @@ class Materials(unittest.TestCase):
         self.assertEqual(set(self.e['r13_catalog_entries']()),{'E01','E06','tool:pencil','bag:herbs','bag:lamp_oil'})
         self.assertEqual(self.e['r13_catalog_title']('bag:herbs'),'해열 약초 묶음')
         self.assertEqual(self.store.room13,before)
+    def test_new_evidence_keeps_existing_evidence_positions(self):
+        before=self.e['r13_catalog_entries'](hearing=True)
+        self.content['evidence']['E02']=dict(name='새 기록',kind='기록')
+        self.store.room13['evidence'].append('E02')
+        self.assertEqual(self.e['r13_catalog_entries'](hearing=True),before+['E02'])
     def test_hearing_and_archive_never_include_inventory_or_invent_ownership(self):
         self.assertEqual(set(self.e['r13_catalog_entries'](hearing=True)),{'E01','E06'})
         self.assertEqual(self.e['r13_catalog_entries'](archive=True),['E01'])

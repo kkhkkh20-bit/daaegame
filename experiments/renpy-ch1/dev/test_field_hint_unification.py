@@ -36,11 +36,17 @@ class FieldHintUnification(unittest.TestCase):
         self.assertEqual(self.state('post',True,('post',),False),(False,True))
         self.assertEqual(self.state('post',True,('post',),True),(False,False))
 
+    def test_gate_tutorial_keeps_six_seconds_other_places_keep_three(self):
+        timer=next(line.strip() for line in self.field.splitlines() if 'timer ' in line and 'SetVariable("r13_scene_hint_seen"' in line)
+        duration=timer.split('timer ',1)[1].split(' action ',1)[0]
+        for place,seconds in (("gate",6.0),("inn",3.0),("post",3.0)):
+            self.assertEqual(eval(duration,{}, {"room13":{"location":place}}),seconds)
+
     def test_single_panel_owner_and_existing_state_timers(self):
         screen=self.field.split('screen r13_field_view_controls(ready):',1)[1]
         self.assertEqual(screen.count('        frame:'),1)
         self.assertIn('if scene_hint or pan_hint:',screen)
-        self.assertIn('timer 3.0 action SetVariable("r13_scene_hint_seen"',screen)
+        self.assertIn('timer (6.0 if room13["location"]=="gate" else 3.0) action SetVariable("r13_scene_hint_seen"',screen)
         self.assertIn('timer 6.0 action SetField(persistent,"r13_pan_hint_seen",True)',screen)
         self.assertNotIn('화면을 좌우로 끌면 옆을 둘러볼 수 있다',self.camera)
         self.assertNotIn('timer 6.0 action SetField(persistent,"r13_pan_hint_seen"',self.camera)

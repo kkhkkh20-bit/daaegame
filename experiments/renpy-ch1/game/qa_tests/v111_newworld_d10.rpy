@@ -172,7 +172,7 @@ testcase v111_nw_d10_owner_contact_pin:
     run Jump("r13_v111_owner_proof10")
     pause 1.5
     assert screen "r13_crisis_proof"
-    click "근거를 내놓는다"
+    click "자료 고르기"
     pause 0.5
     click "QA V111:E08_CONTACT_ASSEMBLY"
     pause 0.8
@@ -180,7 +180,7 @@ testcase v111_nw_d10_owner_contact_pin:
     pause 0.8
     click "QA 닫기"  # 0.20.7: the proof book stays open between picks
     pause 0.5
-    click "논리를 연결한다"
+    click "선택한 근거 제출"
     click pos (900,600) until screen "r13_crisis_proof" timeout 90
     assert eval (r13_v111_value("proof_given:구리선과 수선 출처를 대조한다")==["V111:E08_CONTACT_ASSEMBLY","V111:E09_PIN_OWNER"])
     assert eval (R13_CLAIMS["v111:첫 비명 뒤 핀을 다시 채운 때"]["assertion"]=="핀이 언제 떨어졌는가")

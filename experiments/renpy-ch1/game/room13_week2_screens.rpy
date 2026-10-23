@@ -48,42 +48,41 @@ screen r13_crisis():
                     textbutton "가족과 빠져나갈 길" style "r13_action_button" xsize 370 ysize 54 text_size 19 action Return("escape") sensitive ready
 
 screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_press=True,need_evidence=False,leave_label="다른 주장부터",chances=None):
-    # 0.20.5 (Codex A01/A03): new-world proofs pass can_press=bool(hint), need_evidence=True and
-    # leave_label="자료 다시 보기"; the older meetings keep the defaults.
     style_prefix "r13"
     modal True
     default ready=False
     timer .15 action SetScreenVariable("ready",True)
+    $ control_height=88 if r13_touch_ui() else 56
     frame:
-        area (50,160,1180,450) padding (28,25) background R13PaperPanel()
-        vbox:
-            spacing 18
+        area (50,110,1180,554) padding (28,25) background R13PaperPanel()
+        fixed:
             hbox:
-                xfill True
+                xsize 1110
                 text heading size 22 color "#717367"
                 if chances:
                     text chances size 22 color "#795d40" xalign 1.0
-            text R13_CLAIMS[claim]["assertion"] size 31 color "#765426"
-            text "직접 내놓은 자료" size 22
+            text R13_CLAIMS[claim]["assertion"] ypos 40 size r13_read_size(30,32) color "#765426" xsize 1110
+            text ("고른 자료 · %d개"%len(room13["arguments"].get(claim,[]))) ypos 116 size 22
             viewport:
-                xsize 1110 ysize 170 draggable True mousewheel True scrollbars "vertical"
+                ypos 150 xsize 1110 ysize 120 draggable True mousewheel True scrollbars "vertical"
+                vscrollbar_unscrollable "hide"
                 vbox:
                     spacing 8
                     for key in room13["arguments"].get(claim,[]):
                         hbox:
                             spacing 16
-                            text ("· "+ROOM13["evidence"][key]["name"]) size 23 yalign .5
+                            text ("· "+ROOM13["evidence"][key]["name"]) size r13_read_size(23,26) xsize 900 yalign .5
                             if need_evidence:
-                                # 0.20.7 (Codex A02): take a record back before arguing.
-                                textbutton "빼기" action Return(("remove",key)) sensitive ready text_size 20 ysize (56 if r13_touch_ui() else 40) yalign .5
+                                use r13_control("빼기",None,Return(("remove",key)),enabled=ready,width=128,height=control_height,label_size=24)
                     if not room13["arguments"].get(claim):
-                        text "아직 내놓은 자료가 없다." size 22 color "#717367"
+                        text "아직 고른 자료가 없습니다." size 22 color "#717367"
+            text r13_proof_edit_help(chances) ypos 290 size (26 if r13_touch_ui() else 22) color "#795d40" xsize 1110
             hbox:
-                spacing 25
-                textbutton "근거를 내놓는다" action Return("present") sensitive ready text_size 24 ysize (64 if r13_touch_ui() else 56)
-                textbutton "되묻는다" action Return("press") sensitive (ready and can_press) text_size 24 ysize (64 if r13_touch_ui() else 56)
-                textbutton "논리를 연결한다" action Return("argue") sensitive (ready and (bool(room13["arguments"].get(claim)) or not need_evidence)) text_size 24 ysize (64 if r13_touch_ui() else 56)
-                textbutton leave_label action Return("leave") sensitive ready text_size 24 ysize (64 if r13_touch_ui() else 56)
+                ypos 414 spacing 16
+                use r13_control("자료 고르기",None,Return("present"),enabled=ready,width=264,height=control_height,label_size=24,control_id="r13_proof_pick")
+                use r13_control("되묻는다",None,Return("press"),enabled=(ready and can_press),width=264,height=control_height,label_size=24,control_id="r13_proof_hint")
+                use r13_control("선택한 근거 제출",None,Return("argue"),enabled=(ready and (bool(room13["arguments"].get(claim)) or not need_evidence)),primary=True,width=264,height=control_height,label_size=24,control_id="r13_proof_submit")
+                use r13_control(leave_label,None,Return("leave"),enabled=ready,width=264,height=control_height,label_size=24,control_id="r13_proof_back")
 
 screen r13_rescue_notes():
     style_prefix "r13"

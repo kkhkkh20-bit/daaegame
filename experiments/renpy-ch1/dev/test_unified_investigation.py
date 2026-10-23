@@ -33,7 +33,7 @@ class UnifiedInvestigation(unittest.TestCase):
  def test_toggle_removed_but_hint_and_callback_retained(self):
   self.assertNotIn('주변 살피기',FIELD);self.assertNotIn('사람 보기',FIELD)
   self.assertIn('config.after_load_callbacks.append(r13_field_sync)',FIELD)
-  self.assertIn('timer 3.0 action SetVariable',FIELD)
+  self.assertIn('timer (6.0 if room13["location"]=="gate" else 3.0) action SetVariable',FIELD)
   self.assertIn('인물이나 사물을 눌러 조사하세요',FIELD)
  def test_no_new_story_or_travel_side_effects(self):
   self.assertNotIn('r13_tick(',FIELD);self.assertNotIn('r13_grant(',FIELD)

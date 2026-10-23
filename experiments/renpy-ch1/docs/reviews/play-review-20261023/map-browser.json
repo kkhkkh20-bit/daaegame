@@ -1,0 +1,345 @@
+{
+  "scope": "새 게임으로 첫 입구 진입 후 지도 화면 직접 열기 fixture. 장소 클릭은 실제 입력. 전체 지역 외형은 공개 장소 목록 fixture.",
+  "checks": [
+    "PC/844/740에서 잠긴 수리점 클릭 안내, 현재 선택·진행 전체 상태 보존, 허용 장소 선택 시 안내 해제"
+  ],
+  "measurements": [
+    {
+      "mode": "pc-normal",
+      "controls": [
+        {
+          "id": "r13_map_region_village",
+          "rect": [
+            366,
+            625,
+            116,
+            64
+          ],
+          "css_height": 64.0
+        },
+        {
+          "id": "r13_map_region_inn",
+          "rect": [
+            490,
+            625,
+            116,
+            64
+          ],
+          "css_height": 64.0
+        },
+        {
+          "id": "r13_map_region_mountain",
+          "rect": [
+            614,
+            625,
+            116,
+            64
+          ],
+          "css_height": 64.0
+        },
+        {
+          "id": "r13_map_travel",
+          "rect": [
+            748,
+            625,
+            232,
+            64
+          ],
+          "css_height": 64.0
+        },
+        {
+          "id": "r13_map_close",
+          "rect": [
+            996,
+            625,
+            232,
+            64
+          ],
+          "css_height": 64.0
+        }
+      ]
+    },
+    {
+      "mode": "pc-large",
+      "controls": [
+        {
+          "id": "r13_map_region_village",
+          "rect": [
+            366,
+            617,
+            116,
+            80
+          ],
+          "css_height": 80.0
+        },
+        {
+          "id": "r13_map_region_inn",
+          "rect": [
+            490,
+            617,
+            116,
+            80
+          ],
+          "css_height": 80.0
+        },
+        {
+          "id": "r13_map_region_mountain",
+          "rect": [
+            614,
+            617,
+            116,
+            80
+          ],
+          "css_height": 80.0
+        },
+        {
+          "id": "r13_map_travel",
+          "rect": [
+            748,
+            617,
+            232,
+            80
+          ],
+          "css_height": 80.0
+        },
+        {
+          "id": "r13_map_close",
+          "rect": [
+            996,
+            617,
+            232,
+            80
+          ],
+          "css_height": 80.0
+        }
+      ]
+    },
+    {
+      "mode": "touch844-normal",
+      "controls": [
+        {
+          "id": "r13_map_region_village",
+          "rect": [
+            366,
+            613,
+            116,
+            88
+          ],
+          "css_height": 47.666666666666664
+        },
+        {
+          "id": "r13_map_region_inn",
+          "rect": [
+            490,
+            613,
+            116,
+            88
+          ],
+          "css_height": 47.666666666666664
+        },
+        {
+          "id": "r13_map_region_mountain",
+          "rect": [
+            614,
+            613,
+            116,
+            88
+          ],
+          "css_height": 47.666666666666664
+        },
+        {
+          "id": "r13_map_travel",
+          "rect": [
+            748,
+            613,
+            232,
+            88
+          ],
+          "css_height": 47.666666666666664
+        },
+        {
+          "id": "r13_map_close",
+          "rect": [
+            996,
+            613,
+            232,
+            88
+          ],
+          "css_height": 47.666666666666664
+        }
+      ]
+    },
+    {
+      "mode": "touch844-large",
+      "controls": [
+        {
+          "id": "r13_map_region_village",
+          "rect": [
+            366,
+            613,
+            116,
+            88
+          ],
+          "css_height": 47.666666666666664
+        },
+        {
+          "id": "r13_map_region_inn",
+          "rect": [
+            490,
+            613,
+            116,
+            88
+          ],
+          "css_height": 47.666666666666664
+        },
+        {
+          "id": "r13_map_region_mountain",
+          "rect": [
+            614,
+            613,
+            116,
+            88
+          ],
+          "css_height": 47.666666666666664
+        },
+        {
+          "id": "r13_map_travel",
+          "rect": [
+            748,
+            613,
+            232,
+            88
+          ],
+          "css_height": 47.666666666666664
+        },
+        {
+          "id": "r13_map_close",
+          "rect": [
+            996,
+            613,
+            232,
+            88
+          ],
+          "css_height": 47.666666666666664
+        }
+      ]
+    },
+    {
+      "mode": "touch740-normal",
+      "controls": [
+        {
+          "id": "r13_map_region_village",
+          "rect": [
+            366,
+            613,
+            116,
+            88
+          ],
+          "css_height": 44.0
+        },
+        {
+          "id": "r13_map_region_inn",
+          "rect": [
+            490,
+            613,
+            116,
+            88
+          ],
+          "css_height": 44.0
+        },
+        {
+          "id": "r13_map_region_mountain",
+          "rect": [
+            614,
+            613,
+            116,
+            88
+          ],
+          "css_height": 44.0
+        },
+        {
+          "id": "r13_map_travel",
+          "rect": [
+            748,
+            613,
+            232,
+            88
+          ],
+          "css_height": 44.0
+        },
+        {
+          "id": "r13_map_close",
+          "rect": [
+            996,
+            613,
+            232,
+            88
+          ],
+          "css_height": 44.0
+        }
+      ]
+    },
+    {
+      "mode": "touch740-large",
+      "controls": [
+        {
+          "id": "r13_map_region_village",
+          "rect": [
+            366,
+            613,
+            116,
+            88
+          ],
+          "css_height": 44.0
+        },
+        {
+          "id": "r13_map_region_inn",
+          "rect": [
+            490,
+            613,
+            116,
+            88
+          ],
+          "css_height": 44.0
+        },
+        {
+          "id": "r13_map_region_mountain",
+          "rect": [
+            614,
+            613,
+            116,
+            88
+          ],
+          "css_height": 44.0
+        },
+        {
+          "id": "r13_map_travel",
+          "rect": [
+            748,
+            613,
+            232,
+            88
+          ],
+          "css_height": 44.0
+        },
+        {
+          "id": "r13_map_close",
+          "rect": [
+            996,
+            613,
+            232,
+            88
+          ],
+          "css_height": 44.0
+        }
+      ]
+    }
+  ],
+  "mouse_input": "마우스이동→180ms hover→첫클릭1회",
+  "touch_input": "CDP 실제 접촉120ms, 스크롤은 손가락드래그, 각장소 첫탭1회 뒤 선택값 확인",
+  "archive_sha256": "a311278c6e21501e82c90165790ad2cf8aeb08bb4a090ea8f4e196fdafdebe73",
+  "version": "0.20.14",
+  "passed": true,
+  "page_errors": [],
+  "state_preserved": true
+}

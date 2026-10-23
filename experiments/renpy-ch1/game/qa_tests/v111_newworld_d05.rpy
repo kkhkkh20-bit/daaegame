@@ -43,7 +43,7 @@ testcase v111_nw_d05_extra_e21_wins:
     run Jump("r13_v111_proof5")
     pause 1.5
     assert screen "r13_crisis_proof"
-    click "근거를 내놓는다"
+    click "자료 고르기"
     pause 0.5
     click "QA V111:E20"
     pause 0.8
@@ -57,7 +57,7 @@ testcase v111_nw_d05_extra_e21_wins:
     pause 0.8
     click "QA 닫기"  # 0.20.7: the proof book stays open between picks
     pause 0.5
-    click "논리를 연결한다"
+    click "선택한 근거 제출"
     click pos (900,600) until screen "r13_hub" timeout 120
     assert eval (r13_v111_value("meeting:gate_post")=="win" and r13_v111_value("listed:bami") is not True)
     assert eval (qa_nw_seen("아이 말은 그렇다 치고") and not qa_nw_seen("의심받는 아이 말로"))

@@ -29,6 +29,27 @@ async def main():
    before = (await q.state())['room']
    # Existing authored records with the longest reading load, not invented facts.
    worst = await q.py('import renpy;s=renpy.store;result=sorted(s.r13_catalog_entries(),key=lambda k:len(s.r13_catalog_title(k))+sum(len(x) for x in s.r13_evidence_facts(k)),reverse=True)[:2]')
+   # Render every current title and icon through the engine, not a width estimate.
+   asset_check=await q.py('''import renpy
+s=renpy.store
+keys=[k for k in s.ROOM13["evidence"] if k.startswith("V111:")]
+rows=[]
+for key in keys:
+ picture=s.r13_evidence_picture(key,60)
+ rendered=renpy.display.render.render(picture,60,60,0,0)
+ heights=[]
+ for size in (18,22,24):
+  label=s.r13_ev_two_lines(s.r13_catalog_title(key),174,size,3)
+  text=renpy.text.text.Text(label,font=s.r13_ui_font(),size=size,xsize=174,line_spacing=-1)
+  w,h=renpy.display.render.render(text,174,88,0,0).get_size()
+  assert h<=88 and w<=174,(key,size,w,h,label)
+  assert "…" not in label,(key,label)
+  heights.append(h)
+ rows.append(dict(key=key,title=s.r13_catalog_title(key),picture=list(rendered.get_size()),title_heights=heights))
+assert len(rows)==80,len(rows)
+result=rows
+''')
+   (OUT/'all-evidence-render.json').write_text(json.dumps(asset_check,ensure_ascii=False,indent=2))
    measurements=[]
    for touch in (False, True):
     await page.set_viewport_size({'width':844,'height':390} if touch else {'width':1280,'height':720})
@@ -36,10 +57,14 @@ async def main():
     for large in (False, True):
      prefix=('mobile' if touch else 'desktop')+('-large' if large else '-normal')
      await q.py('import renpy;s=renpy.store;s.persistent.room13_large_text='+str(large)+';sc=renpy.display.screen.get_screen("r13_records");sc.scope.update(detail=None,page=0,pair=None);renpy.exports.restart_interaction();result=True')
+     # Old remembered page and full long title are exercised in the same actual list.
+     await q.py('import renpy;s=renpy.store;sc=renpy.display.screen.get_screen("r13_records");entries=s.r13_catalog_entries();sc.scope.update(page=s.r13_compare_page(entries,"V111:NW_BURNT_PAGE"),detail="V111:NW_BURNT_PAGE");renpy.exports.restart_interaction();result=True')
+     await q.shot(prefix+'-burnt-page')
+     await q.py('import renpy;sc=renpy.display.screen.get_screen("r13_records");sc.scope.update(page=0,detail=None);renpy.exports.restart_interaction();result=True')
      await q.input(90,185)
      await q.shot(prefix+'-single')
      await q.press('출처 펼치기');await q.press('출처 접기')
-     await q.press('나란히 놓기');await q.input(200 if touch or large else 180,185)
+     await q.press('나란히 놓기');await q.input(90,270)
      await q.shot(prefix+'-pair')
      pair=await q.py('import renpy;result=list(renpy.display.screen.get_screen("r13_records").scope["pair"])')
      assert all(pair) and pair[0]!=pair[1],pair
