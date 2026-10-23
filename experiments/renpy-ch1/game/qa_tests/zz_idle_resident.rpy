@@ -9,8 +9,7 @@ default qa_idle_person = None
 testcase idle_resident:
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     pause 1.0
     run SetVariable("qa_idle_person","resident_bori")

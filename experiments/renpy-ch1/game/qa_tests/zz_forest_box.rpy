@@ -10,8 +10,7 @@ init python:
 testcase zz_forest_box:
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(lambda: store.room13["flags"].append("v111:applied:option:sleep1:0") if isinstance(store.room13["flags"],list) else store.room13["flags"].add("v111:applied:option:sleep1:0"))
     run Function(r13_v111_set,"day",2)

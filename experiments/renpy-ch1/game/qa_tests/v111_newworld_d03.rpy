@@ -11,8 +11,7 @@ testcase v111_nw_d03_lamp_lost:
     # Losing Tok's innocence (gate) ends the meeting: Tok is listed, Silluk walks free.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day3_meeting_ready)
     run Function(r13_v111_set,"tries:lamp",R13_NW_TRIES-1)
@@ -35,8 +34,7 @@ testcase v111_nw_d03_lamp_partial:
     # A later issue lost: partial. Tok is cleared, Silluk is only a man who sold a found stone.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day3_meeting_ready)
     run Function(r13_v111_set,"tries:lamp",R13_NW_TRIES-1)
@@ -54,8 +52,7 @@ testcase v111_nw_d03_lamp_won:
     # Win keeps the authored custody choice; handing Silluk to Neoul lists him.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day3_meeting_ready)
     run Function(r13_v111_set,"lamp_theft_supported",True)

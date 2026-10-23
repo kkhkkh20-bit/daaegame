@@ -3,8 +3,7 @@
 testcase evidence_facts_engine:
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     assert eval (len(R13_EVIDENCE_FACTS)>=80)
     assert eval (r13_evidence_facts("V111:E01")==["다람이를 데리고 와 달라는 편지다.","여관 13호실에서 기다린다고 적혔다."])

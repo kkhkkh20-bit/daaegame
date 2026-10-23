@@ -9,8 +9,7 @@ testcase v111_nw_d05_half_then_lost:
     # Part of the right set once: one more try. A wrong answer after that is final.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day5,["V111:E20"])
     run Function(r13_v111_set,"tries:gate_post",R13_NW_TRIES-2)
@@ -32,8 +31,7 @@ testcase v111_nw_d05_extra_e21_wins:
     # Neoul sets the child's own word aside in one line. An unrelated extra still fails.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day5,[])
     run Function(r13_grant,["V111:E21"],"qa")

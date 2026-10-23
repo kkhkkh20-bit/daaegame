@@ -1,8 +1,7 @@
 testcase map_review_locked:
     pause 1.0
     click "처음부터"
-    click pos (640,300) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (640,300) until "편지를 외투 안에" timeout 60
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     $ r13_qa_map_before=winter_copy.deepcopy(room13)

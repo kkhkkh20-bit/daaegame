@@ -9,8 +9,7 @@ testcase v111_nw_d07_fire_lost:
     # Losing Nubi's fire (gate): Bori is blamed and listed; the school scene still opens.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day7)
     run Function(r13_v111_set,"tries:fire",R13_NW_TRIES-1)
@@ -25,8 +24,7 @@ testcase v111_nw_d07_fire_partial:
     # Weighing lost: '셋 다 책임' stands, Bori listed for hiding, the promise is not recorded.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day7)
     run Function(r13_v111_set,"NUBI_admitted_setting_fire",True)

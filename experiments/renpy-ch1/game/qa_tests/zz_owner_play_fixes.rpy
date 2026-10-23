@@ -2,8 +2,7 @@
 testcase owner_play_fixes:
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     pause 1.0
     # 실룩 has not spoken with Dad yet: a stranger's greeting, not "또 만나네요".

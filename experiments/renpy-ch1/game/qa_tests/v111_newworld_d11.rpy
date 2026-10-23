@@ -13,8 +13,7 @@ testcase v111_nw_d11_hyp_lost:
     # Gate 0: repeating the village's own word ends the meeting; nobody puts out a fire.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day11)
     run Function(r13_v111_set,"tries:hypothesis",R13_NW_TRIES-1)
@@ -29,8 +28,7 @@ testcase v111_nw_d11_hyp_wrong_reason:
     # A wrong reason leaves that house's fire burning and moves on to the next question.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day11)
     run Function(r13_v111_set,"tries:hypothesis",R13_NW_TRIES-1)
@@ -44,8 +42,7 @@ testcase v111_nw_d11_hyp_partial:
     # Gates held, the storehouse question lost: only some fires go out.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day11)
     run Function(r13_v111_set,"hyp_issue:1","won")
@@ -61,8 +58,7 @@ testcase v111_nw_d11_hyp_won:
     # Every question answered: most of the village puts out its fires; Mother's note.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day11)
     run Function(r13_v111_set,"hyp_issue:1","won")
@@ -78,8 +74,7 @@ testcase v111_nw_d11_hyp_stone_proof:
     # Gate 5 played through the real proof screen with the unmarked stone.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day11)
     run Jump("r13_v111_hyp5_proof11")
@@ -101,8 +96,7 @@ testcase v111_nw_d11_hyp1_two_records:
     # the father adds what the lamp record (E08) would have shown.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day11)
     run Jump("r13_v111_hyp1_proof11")

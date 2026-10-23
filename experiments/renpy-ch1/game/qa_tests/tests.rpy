@@ -128,8 +128,7 @@ testcase trial_partial:
 testcase trial_win:
     pause 1.0
     click "처음부터"
-    click pos (640,300) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (640,300) until "편지를 외투 안에" timeout 60
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     run Call("r13_qa_trial",('E01', 'E06', 'E07', 'E09', 'E35'),())
@@ -174,8 +173,7 @@ testcase trial_win:
 testcase trial_full:
     pause 1.0
     click "처음부터"
-    click pos (640,300) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (640,300) until "편지를 외투 안에" timeout 60
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E35', 'E36'),())
@@ -320,8 +318,7 @@ testcase trial_full:
 testcase trial_gate_unenforced:
     pause 1.0
     click "처음부터"
-    click pos (640,300) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (640,300) until "편지를 외투 안에" timeout 60
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E35', 'E36'),("-gates","witness:nabi","witness:tok"))
@@ -467,8 +464,7 @@ testcase trial_gate_unenforced:
 testcase trial_gate_no_witness:
     pause 1.0
     click "처음부터"
-    click pos (640,300) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (640,300) until "편지를 외투 안에" timeout 60
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E35', 'E36'),("-gates",))
@@ -804,8 +800,7 @@ testcase carriage_skip:
     assert eval (place=="마차 안" and r13_v111_active())
     screenshot "c0_carriage.png"
     click "건너뛰기"
-    click pos (640,300) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (640,300) until "편지를 외투 안에" timeout 60
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     assert eval (r13_v111_active() and not r13_carriage_skip)
@@ -1134,18 +1129,11 @@ testcase skip_modes:
     assert eval (not _windows_hidden)
     # keysym sends a key press/release pair; hold-mode progression uses its handler.
     run Function(r13_shortcut_fast,True)
-    pause until screen "choice" timeout 60
+    # 2026-10-23: 마차 편지 선택지를 없앴다. 빨리 넘기기는 첫 조작 화면(입구 초소)에서 멈춘다.
+    pause until screen "r13_hub" timeout 90
     run Function(r13_shortcut_fast,False)
     assert eval (not r13_fast_all and not r13_fast_read)
-    assert eval (v111_menu_owner=="letter_menu")
-    # The choice screen ignores keys during its .35s entrance guard.
-    pause until eval renpy.get_screen("choice").scope["choice_ready"] timeout 30
-    keysym "K_1"
-    pause until screen "say" timeout 30
-    click pos (640,300) until "편지를 접는다" timeout 30
-    assert eval (r13_v111_value("K01a") is True)
-    click "편지를 접는다"
-    click pos (640,300) until screen "r13_hub" timeout 90
+    assert eval (r13_v111_value("K01a") is True and r13_v111_value("K01b") is True)
     assert eval (r13_v111_active() and not r13_fast_all and not r13_fast_read)
 
 testcase evening_board:
@@ -1364,8 +1352,7 @@ testcase w2e_share:
 testcase trial_fake_testimony:
     pause 1.0
     click "처음부터"
-    click pos (640,300) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (640,300) until "편지를 외투 안에" timeout 60
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E35', 'E36'),("-gates","witness:nabi","witness:tok","fair_hearing","fake_testimony"))
@@ -1543,8 +1530,7 @@ testcase trial_c1_h7:
 testcase w1c_mother_line:
     pause 1.0
     click "처음부터"
-    click pos (640,300) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (640,300) until "편지를 외투 안에" timeout 60
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("+w1c","+ep","ep1_patrol_seen","ev_a_done"),(),12)
@@ -1873,8 +1859,7 @@ testcase grant_after_reaction:
 testcase gate_documents:
     pause 1.0
     click "처음부터"
-    click pos (640,300) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (640,300) until "편지를 외투 안에" timeout 60
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     run Function(setattr,store,"room13",r13_new())
@@ -2320,8 +2305,7 @@ testcase redesign_dialogue:
 testcase day1_note_spot:
     pause 1.0
     click "처음부터"
-    click pos (640,300) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (640,300) until "편지를 외투 안에" timeout 60
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     run Call("r13_qa_roam",dict(day=1,period=1,location="room13",life_poc=True,evidence=["E03"]),("lodging","entry_corrected"))
@@ -2419,8 +2403,7 @@ testcase dot_fx:
 testcase karo_center:
     pause 1.0
     click "처음부터"
-    click pos (640,300) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (640,300) until "편지를 외투 안에" timeout 60
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     $ persistent.room13_large_text=True
@@ -2466,8 +2449,7 @@ testcase opening_cut:
 testcase trial_counter:
     pause 1.0
     click "처음부터"
-    click pos (640,300) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (640,300) until "편지를 외투 안에" timeout 60
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E35'),())
@@ -2533,8 +2515,7 @@ testcase trial_counter:
 testcase crossed_accounts:
     pause 1.0
     click "처음부터"
-    click pos (640,300) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (640,300) until "편지를 외투 안에" timeout 60
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     run Call("r13_qa_roam",dict(day=2,period=0,location="inn"),())
@@ -2619,8 +2600,7 @@ testcase topic_record:
 testcase conversation_skip:
     pause 1.0
     click "처음부터"
-    click pos (640,300) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (640,300) until "편지를 외투 안에" timeout 60
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     run Show("r13_qa_inject_return",value=("person","guard"))
@@ -9456,8 +9436,7 @@ testcase karo_night1:
 testcase karo_comes_day2:
     pause 1.0
     click "처음부터"
-    click pos (640,300) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (640,300) until "편지를 외투 안에" timeout 60
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     run Call("r13_qa_roam",dict(day=2,period=0,location="room13",daram_state="with_dad",life_poc=True),("+w1c","entry_corrected","lodging","night1_seen"),(),12)
@@ -9575,8 +9554,7 @@ testcase perspective_views:
 testcase dialogue_expand:
     pause 1.0
     click "처음부터"
-    click pos (640,300) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (640,300) until "편지를 외투 안에" timeout 60
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     run Call("r13_qa_roam",dict(day=2,period=0,location="inn",life_poc=True),("entry_corrected","lodging"))
@@ -9603,8 +9581,7 @@ testcase dialogue_expand:
 testcase new_places_tour:
     pause 1.0
     click "처음부터"
-    click pos (640,300) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (640,300) until "편지를 외투 안에" timeout 60
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     run Function(r13_v111_set,"day",3)
@@ -9866,8 +9843,7 @@ testcase map_actions:
 testcase new_places:
     pause 1.0
     click "처음부터"
-    click pos (640,300) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (640,300) until "편지를 외투 안에" timeout 60
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     run Function(r13_v111_set,"day",3)
@@ -11713,8 +11689,7 @@ testcase relations_tab:
 testcase time_flow:
     pause 1.0
     click "처음부터"
-    click pos (640,300) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (640,300) until "편지를 외투 안에" timeout 60
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     $ store._qa_minutes=r13_v111_value("elapsed_minutes") or 0
@@ -11767,8 +11742,7 @@ testcase o46_ropes:
 testcase shortcuts:
     pause 1.0
     click "처음부터"
-    click pos (640,300) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (640,300) until "편지를 외투 안에" timeout 60
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     pause 0.6
@@ -11810,8 +11784,7 @@ testcase meeting_pairs:
 testcase polish3:
     pause 1.0
     click "처음부터"
-    click pos (640,300) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (640,300) until "편지를 외투 안에" timeout 60
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     run Function(r13_morning_snapshot)
@@ -12158,8 +12131,7 @@ testcase carriage_pop:
     # 0.19.97 (owner): the carriage dialogue plays the typing sound.
     assert eval (typing_allowed)
     screenshot "carriage_seated.png"
-    click pos (640,300) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (640,300) until "편지를 외투 안에" timeout 60
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     assert eval (place!="마차 안" and typing_allowed)
@@ -12169,8 +12141,7 @@ testcase carriage_pop:
 testcase owner_fixes_0192:
     pause 1.0
     click "처음부터"
-    click pos (640,300) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (640,300) until "편지를 외투 안에" timeout 60
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     assert eval (r13_rel_status("mom")[0]=="missing")
@@ -12403,8 +12374,7 @@ testcase q1_argument_access:
 testcase owner_fixes_0192_legacy:
     pause 1.0
     click "처음부터"
-    click pos (640,300) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (640,300) until "편지를 외투 안에" timeout 60
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("entry_corrected","lodging","+ep"))

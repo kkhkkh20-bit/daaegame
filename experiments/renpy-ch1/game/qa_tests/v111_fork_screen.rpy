@@ -23,8 +23,7 @@ init python:
 testcase v111_fork_screen:
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_fork_fixture)
     run Show('r13_records')

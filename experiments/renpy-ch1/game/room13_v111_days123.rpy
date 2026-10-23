@@ -24,10 +24,13 @@ label r13_v111_letter_read:
     call r13_v111_travel('gate','letter_read')
     $ r13_v111_score()
     $ r13_v111_commit('MS14_D01_S01_L0010')
-    call r13_lines(r13_v111_lines(['MS14_D01_S01_L9101', 'MS14_D01_S01_L0011', 'MS14_D01_S01_L0012', 'MS14_D01_S01_L0013', 'MS14_D01_S01_L0014']), 'v111:letter_read:MS14_D01_S01_L9101')
+    call r13_lines(r13_v111_lines(['MS14_D01_S01_L9101', 'MS14_D01_S01_L0011', 'MS14_D01_S01_L0012', 'MS14_D01_S01_L0013']), 'v111:letter_read:MS14_D01_S01_L9101')
     jump r13_v111_letter_menu
 
 label r13_v111_letter_menu:
+    # 2026-10-23 소유자: "결과가 그냥 읽는 거라 이런 선택지는 없어도 되지 않을까". 세 갈래가 같은 곳으로
+    # 모이고 남는 값(K01a·K01b)도 마차 안에서만 쓰여, 고르지 않고 이어 읽는다. 라벨은 예전 저장을 위해 남긴다.
+    jump r13_v111_letter_last
     $ v111_menu_owner='letter_menu'
     $ v111_menu=[(('✓ 마지막 줄을 본다' if r13_v111_value('K01a') else '마지막 줄을 본다'),0) for _ in [0] if True] + [(('✓ 글씨를 살핀다' if r13_v111_value('K01b') else '글씨를 살핀다'),1) for _ in [0] if True] + [('편지를 접는다',2) for _ in [0] if True]
     $ v111_answer=renpy.display_menu(v111_menu)
@@ -47,14 +50,15 @@ label r13_v111_letter_last:
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D01_S01_L0015']), 'v111:letter_last:MS14_D01_S01_L0015')
     $ r13_v111_commit('MS14_D01_S01_L0015')
-    jump r13_v111_letter_menu
+    jump r13_v111_letter_hand
 
 label r13_v111_letter_hand:
     $ r13_v111_scene('MS14_D01_S01')
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D01_S01_L0016']), 'v111:letter_hand:MS14_D01_S01_L0016')
     $ r13_v111_commit('MS14_D01_S01_L0016')
-    jump r13_v111_letter_menu
+    # 편지를 외투 안에 넣는 줄(L0018)로 마무리한다
+    jump r13_v111_letter_none
 
 label r13_v111_letter_close:
     if r13_v111_value('K01a')==True:

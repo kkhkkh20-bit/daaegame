@@ -15,8 +15,7 @@ testcase v111_nw_d12_morning_list:
     # The transfer column: Daram's name is on it after a lost room-13 meeting.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day12)
     run Function(r13_nw_list,"daram","room13_lose")
@@ -30,8 +29,7 @@ testcase v111_nw_d12_soup_list_partial:
     # Teacher confessed, list point lost: Neoul keeps the list.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day12)
     run Function(r13_v111_set,"teacher_confessed",True)
@@ -45,8 +43,7 @@ testcase v111_nw_d12_soup_list_partial:
 testcase v111_nw_d12_soup_won:
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day12)
     run Function(r13_v111_set,"teacher_confessed",True)
@@ -59,8 +56,7 @@ testcase v111_nw_d12_soup_lost_nabi:
     # Handling point lost: Nabi is written on the list, the teacher goes free.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day12,"premeal_stopped")
     run SetVariable("v111_last_presented",["V111:E01"])
@@ -74,8 +70,7 @@ testcase v111_nw_d12_portrait:
     # Piko dead: the overpainted portrait shows what was under it.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day12)
     run Function(r13_v111_set,"piko_alive",False)

@@ -14,8 +14,7 @@ testcase v111_nw_d13_cart_left_with_daram:
     # Blanket point lost: the cart leaves with everyone on it, Daram too.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day13)
     run Function(r13_v111_set,"false_message_admitted",False)
@@ -31,8 +30,7 @@ testcase v111_nw_d13_cart_left_with_daram:
 testcase v111_nw_d13_badook_partial:
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day13)
     run SetVariable("v111_last_presented",["V111:E01"])
@@ -45,8 +43,7 @@ testcase v111_nw_d13_cart_names:
     # The cart carries the names the meetings listed; a living Piko says what was under the portrait.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day13)
     run Function(r13_nw_list,"resident_tok","lamp_lose")
@@ -60,8 +57,7 @@ testcase v111_nw_d13_rein_won:
     # The ledger's double price, then the painting: Neoul is held, his ledger is taken.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day13)
     run Function(r13_v111_set,"meeting:blanket","win")
@@ -94,8 +90,7 @@ testcase v111_nw_d13_rein_painting_first:
     # Painting first: "죽은 화가의 낙서요" and the re-investigation is lost.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day13)
     run Function(r13_v111_set,"meeting:blanket","win")
@@ -118,8 +113,7 @@ testcase v111_nw_d13_partial_listed:
     # Badook partial: listed passengers stay aboard with the others; Daram comes down at once.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day13)
     run Function(r13_nw_list,"daram","room13_lose")
@@ -136,8 +130,7 @@ testcase v111_nw_d13_cleanup_bundled:
     # 0.20.12 (후반 기획서 C안): 구조 뒤 다섯 확인을 바둑이·돌목·까로 세 대화로 묶는다.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day13)
     run Function(r13_edit,location="square")

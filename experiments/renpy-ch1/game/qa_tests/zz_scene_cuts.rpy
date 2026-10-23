@@ -9,8 +9,7 @@ label qa_cut_demo:
 testcase scene_cuts:
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Call("qa_cut_demo")
     pause 1.5

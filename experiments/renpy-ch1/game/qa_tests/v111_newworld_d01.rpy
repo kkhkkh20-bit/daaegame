@@ -7,8 +7,7 @@ testcase v111_nw_d01_gate_lost:
     # Event 01 plan A: a wrong gate proof is final; Daram enters as '외 한 명'.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     assert eval (qa_nw_seen("꼭 별 같아") and qa_nw_seen("기계 난로") and qa_nw_seen("등갓에 손을"))
     run Function(r13_v111_commit,"MS14_D01_S02_L0019")
@@ -30,8 +29,7 @@ testcase v111_nw_d01_gate_won:
     # Winning keeps the authored registration and adds the greeting and the aside.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(r13_v111_commit,"MS14_D01_S02_L0019")
     run Function(r13_v111_commit,"MS14_D01_S03_L0002")
@@ -60,8 +58,7 @@ testcase v111_nw_d01_gate_extra_letter:
     # Dolmok says the letter is not needed. A wrong letter pair asks to choose again.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(r13_v111_commit,"MS14_D01_S02_L0019")
     run Function(r13_v111_commit,"MS14_D01_S03_L0002")

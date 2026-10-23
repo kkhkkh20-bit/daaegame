@@ -15,8 +15,7 @@ testcase v111_nw_d08_room_stone:
     # Room 13 on day 8: Buri's missing notebook, Granny's whisper, the unmarked stone.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day,8,"murder")
     run Function(r13_v111_set,"DARAM_DETAINED",True)
@@ -30,8 +29,7 @@ testcase v111_nw_d10_room13_half_then_lost:
     # Gate (self-defence): half once, then a wrong answer lists Daram; she still leaves custody.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day,10,"murder")
     run SetVariable("v111_last_presented",["V111:E08_TOOL"])
@@ -55,8 +53,7 @@ testcase v111_nw_d10_room13_partial:
     # A later point lost: Daram is freed, the culprit stays 'someone who used the passage'.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day,10,"murder")
     run SetVariable("v111_last_presented",["V111:E01"])
@@ -71,8 +68,7 @@ testcase v111_nw_d10_records_lost:
     # Living owl, addressee point lost: Granny keeps the bundle, the old man is listed.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day,10,"prevented")
     run SetVariable("v111_last_presented",["V111:E01"])
@@ -87,8 +83,7 @@ testcase v111_nw_d10_records_partial:
     # Writing point lost: the family gets the records, the old man stays under watch.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day,10,"prevented")
     run SetVariable("v111_last_presented",["V111:E02"])
@@ -103,8 +98,7 @@ testcase v111_nw_d10_room13_won:
     # Every point held: the notebook line, Sling names Granny, Granny is held.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day,10,"murder")
     run Jump("r13_v111_contact_answer10")
@@ -117,8 +111,7 @@ testcase v111_nw_d07_stone_out:
     # Event 07 path A: Dad takes the stone out and the old man calls Buri's name.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(r13_v111_set,"day",7)
     run Function(r13_edit,day=7,location="room13")
@@ -133,8 +126,7 @@ testcase v111_nw_d10_five_chances:
     # Five chances per meeting (owner, 2026-10-22): four wrong answers go back to the proof with a notice; the fifth stands.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day,10,"murder")
     run SetVariable("v111_last_presented",["V111:E01"])
@@ -163,8 +155,7 @@ testcase v111_nw_d10_owner_contact_pin:
     # repair record also proves the owner; the next proof shows its new title.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day,10,"murder")
     run Function(r13_edit,location="school")

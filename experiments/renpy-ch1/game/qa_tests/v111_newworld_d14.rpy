@@ -16,8 +16,7 @@ init python:
 testcase v111_nw_d14_left_name:
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day14)
     run Function(r13_v111_set,"departed:daram",True)
@@ -29,8 +28,7 @@ testcase v111_nw_d14_left_name:
 testcase v111_nw_d14_frozen:
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day14)
     run Function(r13_v111_set,"piko_alive",False)
@@ -43,8 +41,7 @@ testcase v111_nw_d14_frozen:
 testcase v111_nw_d14_partial_departed:
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day14)
     run Function(r13_v111_set,"outcome13","partial_rescue")
@@ -58,8 +55,7 @@ testcase v111_nw_d14_altar_lost:
     # Point 1 lost: the irons stay; the day goes on to Granny.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day14)
     run Function(r13_edit,location="gate")
@@ -73,8 +69,7 @@ testcase v111_nw_d14_altar_half_then_partial:
     # No ledger: the school's three days are only half; the meeting ends partial at best.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day14)
     run Function(r13_edit,location="gate")
@@ -94,8 +89,7 @@ testcase v111_nw_d14_bomi:
     # Bomi's record, the burnt page, the stone and the day-7 ledger line before Granny.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day14)
     run Function(r13_v111_set,"meeting:room13","win")
@@ -111,8 +105,7 @@ testcase v111_nw_d14_bomi:
 testcase v111_nw_d14_true_ending:
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day14,"prevented")
     run Function(r13_v111_set,"ending14","morning")
@@ -130,8 +123,7 @@ testcase v111_nw_d14_altar_without_records:
     # unanswerable, no chance is spent, and the meeting ends partial without a dead-end proof.
     pause 1.0
     click "처음부터"
-    click pos (900,600) until "편지를 접는다" timeout 60
-    click "편지를 접는다"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day14)
     run Function(r13_edit,location="gate")
