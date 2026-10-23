@@ -719,11 +719,15 @@ label r13_v111_incident7:
     $ r13_v111_scene('MS14_D07_S04')
     $ r13_edit(period=2)
     $ room13["v111"]["people"]=[]
-    call r13_v111_travel('gate','incident7',[])
-    $ r13_v111_arrive(['karo', 'resident_seori', 'doto', 'nabi'])
+    # 2026-10-23 대사 검수: 서리는 진료소에서 데려오고(S04_L0003), 여관 현관과 위층 복도에서
+    # 도토·나비를 만난다(L0004~). 예전에는 입구 초소에 넷을 함께 세워 대사와 배경이 어긋났다.
+    call r13_v111_travel('clinic','incident7',[])
+    $ r13_v111_arrive(['karo', 'resident_seori'])
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0002']),'v111:MS14_D07_S04_L0002')
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0003']),'v111:MS14_D07_S04_L0003')
+    call r13_v111_travel('hall','incident_hall7',[],True)
+    $ r13_v111_arrive(['karo', 'resident_seori', 'doto', 'nabi'])
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0004']),'v111:MS14_D07_S04_L0004')
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0005']),'v111:MS14_D07_S04_L0005')
     call r13_lines(r13_v111_lines(['MS14_D07_S04_L0006']),'v111:MS14_D07_S04_L0006')

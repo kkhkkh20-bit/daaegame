@@ -49,6 +49,13 @@ def day_lines(day):
     return out
 
 
+# 사람이 확인한 이름 첫 언급(2026-10-23): 같은 줄에서 누군가 알려 주거나 명단에서 읽는다.
+NAME_REVIEWED = {
+    (11, 'NW_DLG_D11_01', '굴돌'),   # 엄마가 같은 줄에서 일러 준다
+    (12, 'NW_D12_S01_A01', '새미'),  # 대피 명단에 적힌 이름을 읽는다
+}
+
+
 def check_names(names):
     told = {}
     first_by_dad = []
@@ -58,9 +65,15 @@ def check_names(names):
     for day in range(1, 15):
         for row in day_lines(day):
             for n in plain:
-                if n in told or n == row['who']:
+                if n in told:
                     continue
-                if re.search(r'(?<![가-힣])' + re.escape(n) + r'(?=[ 이가은는을를의에께와과도만야아씨,.…!?’”]|$)', row['text']):
+                # 부르는 꼴(솜이→솜아, 도담→도담아)도 이름을 알려 준 것으로 본다
+                stem = n[:-1] if n.endswith('이') else n
+                pat = r'(?<![가-힣])(' + re.escape(n) + r'|' + re.escape(stem) + r'아(?=[ ,.…!?]))'  # 뒤 조사는 가리지 않는다(네로한테, 도토예요)
+                if re.search(pat, row['text']):
+                    if (day, row['id'], n) in NAME_REVIEWED:
+                        told[n] = (day, row['id'], row['who'])
+                        continue
                     told[n] = (day, row['id'], row['who'])
                     if row['who'] in ('아빠', '지문', '아빠(생각)'):
                         first_by_dad.append((day, row['id'], n, row['who'], row['text'][:50]))
@@ -150,6 +163,18 @@ def check_dead_speakers(names, life):
     return out
 
 
+# 사람이 경로를 따라가 확인한 결과 지문 묶음(2026-10-23). 각 오답 라벨은 마지막 기회일 때만 회의를
+# 끝내고 곧장 마무리 선택으로 넘어가므로, 같은 조건 지문은 한 판에 한 번만 나온다.
+OUTCOME_REVIEWED = {
+    ('d03', 'lamp_lose'): '회의 결과(S05)와 다음 장면(S06)의 뒷모습',
+    ('d03', 'lamp_partial'): 'knife_wrong 과 trial_wrong 은 서로 다른 마지막 기회',
+    ('d10', 'records_lose'): '오답 라벨마다 마지막 기회일 때 한 번',
+    ('d10', 'room13_lose'): 'H/P 는 다른 경로, S04 는 다음 장면의 뒷모습',
+    ('d10', 'room13_partial_unknown'): 'O/T 는 다른 경로',
+    ('d11', 'room13_lose'): '아침(S00)과 뒤 장면(S02)의 뒷모습',
+}
+
+
 def check_outcomes():
     out = []
     for path in sorted(NW.glob('d*.json')):
@@ -163,7 +188,7 @@ def check_outcomes():
                         seen[cond].append((rid, row.get('id')))
         for cond, items in seen.items():
             anchors = {r for r, _ in items}
-            if len(anchors) > 1:
+            if len(anchors) > 1 and (path.stem, cond) not in OUTCOME_REVIEWED:
                 out.append((path.stem, cond, sorted(i for _, i in items)))
     return out
 
