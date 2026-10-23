@@ -1,13 +1,13 @@
 {
  "engine": "Ren'Py 8.5.3",
  "game_transport": {
-  "archive_bytes": 14935009,
-  "archive_sha256": "08c9710fbab335c0060894b5fc210745c0f3d9dddb1159309309bb1392ba3bc7",
+  "archive_bytes": 14956150,
+  "archive_sha256": "6e7a4c30c3c83fba204f54ed2f4ddf71899fece147e601628a9b0fa3e92e52d8",
   "parts": [
    {
     "file": "game.part01",
-    "bytes": 14935009,
-    "sha256": "08c9710fbab335c0060894b5fc210745c0f3d9dddb1159309309bb1392ba3bc7"
+    "bytes": 14956150,
+    "sha256": "6e7a4c30c3c83fba204f54ed2f4ddf71899fece147e601628a9b0fa3e92e52d8"
    }
   ]
  },
@@ -29,12 +29,12 @@
    "sha256": "6bb23b55d259a317d6c3a496f5c8892bd820bc4f0730a172d030b4497c534bfe"
   },
   "game-transport.json": {
-   "bytes": 210900,
-   "sha256": "a6f0d6f72f971a2f03561198e93decfa9c376c02516a3320fd8f0ccc10a49439"
+   "bytes": 212663,
+   "sha256": "41963817047101d7f971aa2302f01ed0d960129da624fc18ca39af18a297679a"
   },
   "game.part01": {
-   "bytes": 14935009,
-   "sha256": "08c9710fbab335c0060894b5fc210745c0f3d9dddb1159309309bb1392ba3bc7"
+   "bytes": 14956150,
+   "sha256": "6e7a4c30c3c83fba204f54ed2f4ddf71899fece147e601628a9b0fa3e92e52d8"
   },
   "game/assets/Galmuri11.ttf": {
    "bytes": 1964416,
@@ -8892,97 +8892,201 @@
    "bytes": 210054,
    "sha256": "1ca6f195bc2f47f3d176dc13c52acda37050e7b3784789da51c2ab3d7f10936d"
   },
+  "game/assets/room13-map-village-clinic-base.webp": {
+   "bytes": 41342,
+   "sha256": "877153ff3d95ded4efcb4b51a5a4a07d0ed88a04c609739232605f29f5cf4799"
+  },
   "game/assets/room13-map-village-clinic-outline.webp": {
-   "bytes": 576,
-   "sha256": "1b354adc9a2322b09b36c2c50fd268843e3d04480c735218fb7bdb3592aa8e5f"
+   "bytes": 722,
+   "sha256": "a042f46fbc891f24afb25290fd5488c29559a13f4df2af567eca8b465544e377"
+  },
+  "game/assets/room13-map-village-clinic-pop.webp": {
+   "bytes": 70138,
+   "sha256": "eb18bd63d52f790bb8cd430532392a7ef5af911a5cdddd0b866b3767af05d38e"
   },
   "game/assets/room13-map-village-clinic.webp": {
-   "bytes": 48896,
-   "sha256": "b87ea2cfad64377c07c2397c2d6057482bb1e06a13002f3eacd5173774a9c62c"
+   "bytes": 62742,
+   "sha256": "54699c7513cf0c2b164f2f8655d6c6af123298e0b0d16a2d75f5f17022575035"
   },
   "game/assets/room13-map-village-forest-outline.webp": {
-   "bytes": 490,
-   "sha256": "5c1b5d6046030b8d0a9a35b3f04e81e5fe21334bc76f1687c048db44511a6ea1"
+   "bytes": 1382,
+   "sha256": "6632b0738a2248ad9fbbcd884214213388f83b20707aba72de6a5c57929fe1c7"
   },
   "game/assets/room13-map-village-forest.webp": {
-   "bytes": 29906,
-   "sha256": "bcf04c1c873de7b180cb874557f0e8c42dce096db39e08059ffe626b9aab6880"
+   "bytes": 294922,
+   "sha256": "533c9291002c2b5484223d6916fdf1d040e5e78bde3a82d6c369c273f235aa4b"
+  },
+  "game/assets/room13-map-village-gate-base.webp": {
+   "bytes": 50522,
+   "sha256": "5bfb03753939e2cf9eb181a339ab19d4d553a0933b9e89c7b51ae2e67ba9307e"
   },
   "game/assets/room13-map-village-gate-outline.webp": {
    "bytes": 788,
-   "sha256": "2d77c4bb4afdbfd730d6c07031952c30588ddf691ddfd18df2912281bce52698"
+   "sha256": "7a73aacd89def4ace73960e3c2ba1fd16112748d7c5aa64dea636bf2c3d83dcb"
+  },
+  "game/assets/room13-map-village-gate-pop.webp": {
+   "bytes": 88854,
+   "sha256": "8aa2b0ecc6f13af6e697093e2768463d691d9b1e1a4e718231790b2aabd74f54"
   },
   "game/assets/room13-map-village-gate.webp": {
-   "bytes": 48456,
-   "sha256": "9c8d4b651f7d44f109daea00c29a715b09f16b496d3fd7431e79332634d1c53f"
+   "bytes": 76738,
+   "sha256": "2a7da02558fedd6baef3222fdad48abc49c5723132d96545386655341760b57c"
+  },
+  "game/assets/room13-map-village-inn-base.webp": {
+   "bytes": 94094,
+   "sha256": "bc61c94a46567abbe1ebdfa87c1c0b54a460ce63035865e13261ea18f472e64c"
   },
   "game/assets/room13-map-village-inn-outline.webp": {
-   "bytes": 730,
-   "sha256": "91aa4a887e80c2c87e925cb322d89d447e7c099ded27444b6ce141e9db8c32a7"
+   "bytes": 980,
+   "sha256": "b29540cbe5479c7674e67793a58af15e952c40acfb86474aa4b59453e78359ba"
+  },
+  "game/assets/room13-map-village-inn-pop.webp": {
+   "bytes": 197556,
+   "sha256": "511316a92ac308e7e56f6db19914578477cc4d23f5fcaf2d5ddfc9ed4aa04c6c"
   },
   "game/assets/room13-map-village-inn.webp": {
-   "bytes": 101062,
-   "sha256": "1d41c8f1c778e023a0d10b544ca4232942e53566a098ef2387f36ad0f6ac6217"
+   "bytes": 178538,
+   "sha256": "77c8ea0dd6b43d86d17c542fab6ac79743af2ee4cffb0a7f2f41f745eb9652d2"
+  },
+  "game/assets/room13-map-village-laundry-base.webp": {
+   "bytes": 25172,
+   "sha256": "2f4c3ce06554b8533f2f82bc8479148840d7c06ecaa6f2e2ed9b751009e7523d"
+  },
+  "game/assets/room13-map-village-laundry-outline.webp": {
+   "bytes": 596,
+   "sha256": "e4054ad2f103a97ffc8e964b26dd8625f308f53adcb37898180baa72db0f6dc3"
+  },
+  "game/assets/room13-map-village-laundry-pop.webp": {
+   "bytes": 44098,
+   "sha256": "399d592abe9220e7ec84392a8da509c63979383b2529c439a71aa8448b6b9974"
+  },
+  "game/assets/room13-map-village-laundry.webp": {
+   "bytes": 37726,
+   "sha256": "e4364b850d13d34000e6f2cc2b2d85278edadef007be02124abc5b9c9e8d729c"
+  },
+  "game/assets/room13-map-village-market-base.webp": {
+   "bytes": 41292,
+   "sha256": "63f7ca1c52a44ad7bb4376b15f2136d6dc7cd1442a04f8fcf99c01ecad11eeed"
   },
   "game/assets/room13-map-village-market-outline.webp": {
-   "bytes": 626,
-   "sha256": "4e451ca95ae7bb0bba3c7229c715be7891c2311751ab5ce6dcae82735d358718"
+   "bytes": 794,
+   "sha256": "c0c29016bca6574e3fa768a1fcb37763d6514df9f52b2527f25b64a845bbe929"
+  },
+  "game/assets/room13-map-village-market-pop.webp": {
+   "bytes": 70938,
+   "sha256": "732fadc85bea4f7f89e8de126bd6673aac52902bd9b2896d571cdd82f4c30bc9"
   },
   "game/assets/room13-map-village-market.webp": {
-   "bytes": 40688,
-   "sha256": "77e3427b6f8ac86fb306e83caaba98434a81ce6029e2a7a9986080366e12f79b"
+   "bytes": 61852,
+   "sha256": "b469c2942eebfd9ad7402963f17a52bfc4077f78d1aa7f84a302fb6005a7b1d2"
+  },
+  "game/assets/room13-map-village-post-base.webp": {
+   "bytes": 33462,
+   "sha256": "d5d1abc01d020abbd00d08f47dcd090bc631933071ef6ed2687e25e0dccddd96"
   },
   "game/assets/room13-map-village-post-outline.webp": {
-   "bytes": 552,
-   "sha256": "52d5dde639462cac13e31e462337efe479f31ef28f67d00e1b136abf07bba501"
+   "bytes": 678,
+   "sha256": "4e6c9029c59f69de2e3fb888d50a65bd76e832657b073dc3f7b8b2d301cf396b"
+  },
+  "game/assets/room13-map-village-post-pop.webp": {
+   "bytes": 55982,
+   "sha256": "ce00b9c5fde7252a48500f7bdf5c61d419654910c6bae8ede50895e082bdd11e"
   },
   "game/assets/room13-map-village-post.webp": {
-   "bytes": 27350,
-   "sha256": "3a98cc262815ac75898a757885d492132b5f39d69938e254a8083ecdbc52d137"
+   "bytes": 48790,
+   "sha256": "363236235530a4976e29d273ce07d731b718988271f5baba8208d4650877553d"
   },
   "game/assets/room13-map-village-river-outline.webp": {
-   "bytes": 760,
-   "sha256": "28a68535192ce6b1a75259d106618c4ee37d9e69a14d4f3990a09ecad9b845ab"
+   "bytes": 3278,
+   "sha256": "264f74d4a59720da4e8ce255d006c33daa0e8c656a15a5e77be5be5b5a9f89a3"
   },
   "game/assets/room13-map-village-river.webp": {
-   "bytes": 37698,
-   "sha256": "27998fe313228aa203574e7da45144a626d0ddc1ba7430924d7324b0fb18ae23"
+   "bytes": 403140,
+   "sha256": "f08c9dcc269525273b60f1ce3358f13d529c77265db9a238fdb0b084f3931319"
+  },
+  "game/assets/room13-map-village-school-base.webp": {
+   "bytes": 48436,
+   "sha256": "27caf1e8d670c3094775d3c916b6429329924e10a008f7f502ac344e36d0dbc3"
   },
   "game/assets/room13-map-village-school-outline.webp": {
-   "bytes": 558,
-   "sha256": "ce2c5bfb5617135e83b5a8b85d6e8ae4e02887533a814aad5aac1b0d1e16b137"
+   "bytes": 736,
+   "sha256": "098879b20d03bf362955c7becdd439f1875ba006dd40c1df551b645c4ccce381"
+  },
+  "game/assets/room13-map-village-school-pop.webp": {
+   "bytes": 98312,
+   "sha256": "18c2111113258c6e16cd80b4fffbdc1268d60b4ffc8ce833e64c5a97081f38fb"
   },
   "game/assets/room13-map-village-school.webp": {
-   "bytes": 53464,
-   "sha256": "5e8289379a023649ea85fb57bc6fdba4b9990ed8f90bdc981ab66f60730e081f"
+   "bytes": 89024,
+   "sha256": "6550b3b60e782d15105fce05555fe2a2239277578294ed369a74980c7245ae92"
+  },
+  "game/assets/room13-map-village-somi-base.webp": {
+   "bytes": 34890,
+   "sha256": "ec6385f3f386a40ad6f43a2ba180c299616d9b1db2b8f4fb2e1dd843085f7bad"
+  },
+  "game/assets/room13-map-village-somi-outline.webp": {
+   "bytes": 636,
+   "sha256": "e4cc4d4ec68f1c4c7d0c07ba395df232350586a187748ce7d2a811db78af0350"
+  },
+  "game/assets/room13-map-village-somi-pop.webp": {
+   "bytes": 70172,
+   "sha256": "f7627ee6b2780475829e4adda8180d385413d90798c63fe77ae2b5aabdca92b8"
+  },
+  "game/assets/room13-map-village-somi.webp": {
+   "bytes": 63304,
+   "sha256": "0148a7dd8bc28e6d2b04928fa34265198a2473af45ab8fca97026a02d1f625d7"
+  },
+  "game/assets/room13-map-village-square-base.webp": {
+   "bytes": 24130,
+   "sha256": "603b503e35a5952d1704307067fe183d33bde594c4011531cc33cff486c51237"
   },
   "game/assets/room13-map-village-square-outline.webp": {
-   "bytes": 396,
-   "sha256": "fc461074b0911343a7ef5a12ade3f4905442b0089786f8746cdceb5d83703223"
+   "bytes": 492,
+   "sha256": "c0f713613c1fbf7ebafb42ab99292823324085e550978aec055b54467125160d"
+  },
+  "game/assets/room13-map-village-square-pop.webp": {
+   "bytes": 40690,
+   "sha256": "26fd11e5f71a65287e1f6d7d983b897ded43f795612ff3a4de6e1def6b229176"
   },
   "game/assets/room13-map-village-square.webp": {
-   "bytes": 22660,
-   "sha256": "cae3b43489904631b24b6150cb9efe39394bfe4163438b4da4923ee5d3bf81e7"
+   "bytes": 35718,
+   "sha256": "9734f566dfbe960b14003f0cbc1c2061d63c755394541901b74183c028e9691a"
+  },
+  "game/assets/room13-map-village-store-base.webp": {
+   "bytes": 46238,
+   "sha256": "1628762f08d0ffee271cd761846df8bdf4365a17be8e82b34f6aac43d50459a6"
   },
   "game/assets/room13-map-village-store-outline.webp": {
-   "bytes": 638,
-   "sha256": "318c1d2e2f018c275620df55e0ad12b52a0df5c714db6840a4e1d782331cc197"
+   "bytes": 746,
+   "sha256": "a3fc27a4c77317bd1666b1571cc177a5b38b419da4506d3d813cb672b4969ee5"
+  },
+  "game/assets/room13-map-village-store-pop.webp": {
+   "bytes": 91906,
+   "sha256": "174e16cc802c58f73849787ca578dc418e1752793d8ab0f0162a23a18aa10bfa"
   },
   "game/assets/room13-map-village-store.webp": {
-   "bytes": 47670,
-   "sha256": "b7f81ea8801213d0f620878c292e77484b6b46484846b651c27e77c0412dfe11"
+   "bytes": 82808,
+   "sha256": "b557a6cba8a4fedab019c640f0441238d88f51d708d9ff77cea80a69cd2a4025"
+  },
+  "game/assets/room13-map-village-workshop-base.webp": {
+   "bytes": 38714,
+   "sha256": "ae502b60ee737d32f5f31a87eab4b5528930a4d7cae30a981ea0ecccb2d1f115"
   },
   "game/assets/room13-map-village-workshop-outline.webp": {
-   "bytes": 632,
-   "sha256": "cf10b7cdf5bd90467ad04737e63843305cf0a5720e3f5df0914e8a1bd56ff1c2"
+   "bytes": 588,
+   "sha256": "316b724af5b98d61c0b880d8062330ed36104cb0b163fd655ba375f590d56beb"
+  },
+  "game/assets/room13-map-village-workshop-pop.webp": {
+   "bytes": 76312,
+   "sha256": "a18caa1046229fd906462d4482ef9dccc8a7cbd8e4855975ee4235a78db998ef"
   },
   "game/assets/room13-map-village-workshop.webp": {
-   "bytes": 55514,
-   "sha256": "993c4e039bf0c0c2be456c40263a516cda1d626223a6c1c0ee02853a90b2377b"
+   "bytes": 68332,
+   "sha256": "a58cc4723694a39dd86d2c694c2f75033298d815b9c0bb80248202ab8939602a"
   },
   "game/assets/room13-map-village.webp": {
-   "bytes": 1817804,
-   "sha256": "903f503f3ae7f4c8ef7897c17abae311231367123cc8f5f13db31fd985429761"
+   "bytes": 4087992,
+   "sha256": "6776bf7d7d945d5581468c8d3d2bcebbe12f237e8d35cb2312b16538dda7a05e"
   },
   "game/assets/room13-meeting-seated-buri068.webp": {
    "bytes": 140256,
@@ -10512,6 +10616,10 @@
    "bytes": 19276,
    "sha256": "ce9c415859c5518ddfa6bfed7adbb2d4823a35b944b5f9b87d733b28e034b554"
   },
+  "game/assets/sfx-map-tick.wav": {
+   "bytes": 7982,
+   "sha256": "5dea44b309a58c452dfb2b8e34ddf0f45151add3b7a3f154f578df3a385a776d"
+  },
   "game/assets/sfx-mystery.wav": {
    "bytes": 474348,
    "sha256": "2daf8fadf9f330346b07d74845641e5c653f6cd301e2cd5774c3d679a8bb8a40"
@@ -10961,5 +11069,5 @@
    "sha256": "0ef27bfe65a2917248171666649a51d85e3a200a3ae87bbaaa7085748bc4f0c5"
   }
  },
- "total_bytes": 597915420
+ "total_bytes": 602595684
 }

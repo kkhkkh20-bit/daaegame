@@ -11,9 +11,10 @@ init 61 python:
         a,b,c,d=[int(round(v*R13_MAP_SCALE)) for v in (x,y,x+w,y+h)]
         return a,b,c-a,d-b
 
-    def r13_cart_layer(region,key,highlight=False,outline=False):
+    def r13_cart_layer(region,key,highlight=False,outline=False,pop=False,base=False):
         art_key=R13_CARTOGRAPHY["regions"][region]["nodes"][key].get("art_key",key)
-        path="assets/room13-map-%s-%s%s.webp" % (region,art_key,"-outline" if outline else "")
+        # pop: soft-edged copy for the hover lift (dev/make_map_pop_assets.py)
+        path="assets/room13-map-%s-%s%s.webp" % (region,art_key,"-outline" if outline else "-pop" if pop else "-base" if base else "")
         art=Transform(path,size=r13_cart_rect(region,key)[2:],nearest=True)
         return Transform(art,matrixcolor=BrightnessMatrix(.09)) if highlight else art
 
@@ -54,12 +55,15 @@ init 61 python:
         return int(round(w*R13_MAP_SCALE)),int(round(h*R13_MAP_SCALE))
 
     R13_MAP_VIEW=(1248,720)
+    # The bottom panel covers ~124px of the view; leave that much extra canvas so the
+    # lowest places (빨래터, 솜이네) can be dragged above the panel.
+    R13_MAP_BOTTOM_PAD=124
     def r13_cart_focus(region,key):
         vw,vh=r13_cart_canvas(region)
         nodes=R13_MAP_NODES.get(region,{})
         x,y=nodes.get(key) or nodes.get(store.room13.get("location")) or (vw//2,vh//2)
         fx=max(0,min(vw-R13_MAP_VIEW[0],x-R13_MAP_VIEW[0]//2))
-        fy=max(0,min(vh-R13_MAP_VIEW[1],y-R13_MAP_VIEW[1]//2+40))
+        fy=max(0,min(vh+R13_MAP_BOTTOM_PAD-R13_MAP_VIEW[1],y-R13_MAP_VIEW[1]//2+40))
         return int(fx),int(fy)
 
     # 0.20.11: light "tick" when choosing a place (shortened, quieter sfx-click), and which places lift on hover.
@@ -82,7 +86,8 @@ screen r13_cartography(region,selected,ready,map_hover):
             draggable True mousewheel True
             xinitial fx yinitial fy
             fixed:
-                xysize (vw,vh)
+                xysize (vw,vh+R13_MAP_BOTTOM_PAD)
+                add Solid("#ead6b4") ypos vh xysize (vw,R13_MAP_BOTTOM_PAD)
                 use r13_cartography_layer(region,selected,ready,map_hover)
     else:
         use r13_cartography_layer(region,selected,ready,map_hover)
@@ -106,8 +111,9 @@ screen r13_cartography_layer(region,selected,ready,map_hover):
             # 0.20.11 (owner 2026-10-23 "마우스오버하면 아이콘처럼 집이 튀어나오게"): the place's own
             # drawing lifts a little on hover/selection. Wide terrain (river, forest) keeps the outline only.
             if outlined_focus and r13_cart_pops(region,key):
-                add Transform(r13_cart_layer(region,key),matrixcolor=TintMatrix("#3b2414")*OpacityMatrix(.28)) xanchor .5 yanchor 1.0 xpos (ox+lx+lw//2) ypos (oy+ly+lh+3)
-                add At(r13_cart_layer(region,key,highlight=True),r13_map_pop) xanchor .5 yanchor 1.0 xpos (ox+lx+lw//2) ypos (oy+ly+lh)
+                add r13_cart_layer(region,key,base=True) xpos (ox+lx) ypos (oy+ly)
+                add Transform(r13_cart_layer(region,key,pop=True),matrixcolor=TintMatrix("#3b2414")*OpacityMatrix(.22)) xanchor .5 yanchor 1.0 xpos (ox+lx+lw//2) ypos (oy+ly+lh+2)
+                add At(Transform(r13_cart_layer(region,key,pop=True),matrixcolor=BrightnessMatrix(.04)),r13_map_pop) xanchor .5 yanchor 1.0 xpos (ox+lx+lw//2) ypos (oy+ly+lh)
         button:
             id ("map_building_"+key)
             area (ox+lx,oy+ly,lw,lh) padding (0,0)
@@ -142,7 +148,7 @@ screen r13_cartography_layer(region,selected,ready,map_hover):
                 $ underline_width=max(36,int(round(R13_CARTOGRAPHY["regions"]["village"]["nodes"][key]["label_bounds"][2]*R13_MAP_SCALE)))
                 add R13MapInkUnderline(hovered=(key==map_hover)) xpos (hx-underline_width//2) ypos (hy+18) xysize (underline_width,6)
             if key==("inn" if room13["location"] in R13_INN_LOCATIONS else room13["location"]):
-                text "현재 위치" xpos hx ypos (hy+24 if hy<565 else hy-42) xanchor .5 size 14 color "#765b3e"
+                text "현재 위치" xpos hx ypos (hy+24 if hy<r13_cart_canvas(region)[1]-60 else hy-42) xanchor .5 size 14 color "#765b3e"
     elif map_hover in dict(r13_map_nodes(region)):
         $ hx,hy=r13_cart_point(region,map_hover)
         $ nw=max(118,min(230,32+len(R13_MAP_LABELS[map_hover])*22))
@@ -154,4 +160,4 @@ screen r13_cartography_layer(region,selected,ready,map_hover):
 transform r13_map_pop:
     subpixel True
     zoom 1.0 yoffset 0
-    easein .12 zoom 1.08 yoffset -6
+    easein .12 zoom 1.05 yoffset -5
