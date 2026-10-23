@@ -5,6 +5,7 @@
 고칠 때는 "ID -> 새 문장"만 적으면 패치의 알맞은 자리에 넣는다.
 
   python3 dev/dialogue_day.py show 7            7일 대본(장면 제목, 화자, 조건 포함)
+  python3 dev/dialogue_day.py show 7 --tag D07-OWL   그 사건(docs/design/EVENT_TAGS.md)만
   python3 dev/dialogue_day.py apply 7 EDITS.json [--dry]
 
 EDITS.json 은 [{"ref": "...", "text": "..."}] 목록이다.
@@ -72,8 +73,12 @@ def who(row, base_speaker=None):
     return row.get('speaker') or base_speaker or '?'
 
 
-def show(day):
+def show(day, tag=None):
     recs, _, patch = load(day)
+    only = None
+    if tag:
+        # 사건 태그(docs/design/event_tags.json)의 장면만 보인다
+        only = set(json.loads((ROOT / 'docs/design/event_tags.json').read_text())['events'][tag]['scenes'])
     titles = scenes()
     prefix = f'MS14_D{day:02d}_'
     drops = {}
@@ -88,6 +93,8 @@ def show(day):
     lines = []
     for rid, rec in recs.items():
         if not rid.startswith(prefix) or rid not in shown:
+            continue
+        if only is not None and rid.rsplit('_', 1)[0] not in only:
             continue
         if rid in carriage:
             rec = dict(rec, text=carriage[rid])
@@ -174,7 +181,7 @@ def apply(day, edits_path, dry=False):
 if __name__ == '__main__':
     cmd = sys.argv[1] if len(sys.argv) > 1 else ''
     if cmd == 'show':
-        show(int(sys.argv[2]))
+        show(int(sys.argv[2]), sys.argv[sys.argv.index('--tag') + 1] if '--tag' in sys.argv else None)
     elif cmd == 'apply':
         apply(int(sys.argv[2]), sys.argv[3], '--dry' in sys.argv)
     else:
