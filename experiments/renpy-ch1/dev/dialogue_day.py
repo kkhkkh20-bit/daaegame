@@ -128,7 +128,7 @@ def apply(day, edits_path, dry=False):
     done, problems = 0, []
     for e in edits:
         ref, text = e['ref'], e['text'].strip()
-        if re.match(r'S\w+_L\d{4}', ref):
+        if re.match(r'[A-Z]\w*?_L\d{4}', ref) and not ref.startswith(('MS14_', 'NW_')):
             ref = f'MS14_D{day:02d}_' + ref
         if not text:
             problems.append(f'{ref}: 빈 문장')
