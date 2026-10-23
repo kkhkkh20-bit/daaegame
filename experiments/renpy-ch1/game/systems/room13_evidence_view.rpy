@@ -133,23 +133,33 @@ init 330 python:
     def r13_ev_tab_x(title):
         """0.20.5 (UI review): the first tab starts after the sheet title, never under it."""
         return max(R13_EV_TAB_X,60+r13_ev_title_width(title)+24)
-    def r13_ev_two_lines(text,width,size):
+    def r13_ev_text_units(text):
+        # 0.20.12: a space or Latin letter is narrower than a Hangul syllable.
+        return sum(.35 if c==" " else (.55 if ord(c)<0x1100 else 1.0) for c in text)
+
+    def r13_ev_two_lines(text,width,size,max_lines=2):
         """0.20.5 (UI review): a grid name in at most two lines at this width, then "…".
-        Words stay whole when they fit; a word longer than a line is cut."""
-        cap=max(2,int(width//max(1,size)))
+        Words stay whole when they fit; a word longer than a line is cut.
+        0.20.12: widths count Hangul as one unit and spaces/Latin as less, and the PC grid may use three lines."""
+        cap=max(2.0,float(width)/max(1,size))
+        units=r13_ev_text_units
         lines=[""]
         for word in str(text).split(" "):
             while word:
-                room=cap-len(lines[-1])-(1 if lines[-1] else 0)
-                if len(word)<=room:
+                room=cap-units(lines[-1])-(.35 if lines[-1] else 0)
+                if units(word)<=room:
                     lines[-1]=(lines[-1]+" "+word) if lines[-1] else word;word=""
-                elif lines[-1] and len(word)<=cap:
+                elif lines[-1] and units(word)<=cap:
                     lines.append("")
                 else:
-                    cut=max(1,room);lines[-1]=(lines[-1]+(" " if lines[-1] else "")+word[:cut]);word=word[cut:]
+                    cut=1
+                    while cut<len(word) and units(word[:cut+1])<=room:cut+=1
+                    lines[-1]=(lines[-1]+(" " if lines[-1] else "")+word[:cut]);word=word[cut:]
                     if word:lines.append("")
-        if len(lines)>2:
-            lines=lines[:2];lines[1]=lines[1][:max(1,cap-1)].rstrip()+"…"
+        if len(lines)>max_lines:
+            lines=lines[:max_lines];last=lines[-1]
+            while last and units(last)+1>cap:last=last[:-1]
+            lines[-1]=last.rstrip()+"…"
         return "\n".join(lines)
 
     def r13_evidence_short(key,limit):
@@ -319,8 +329,11 @@ screen r13_evidence_grid(entries,detail,page,owner,pair=None,pair_slot=1,archive
     $ cols=2 if wide else 3
     $ pitch_x=124 if wide else 84
     $ pitch_y=114 if wide else 118
-    $ thumb=64 if wide else 74
-    $ label_size=(18 if r13_touch_ui() else r13_read_size(15,18))  # 0.20.5: grid names keep their fitted size; the big text goes to the picture side
+    # 0.20.12 (자료 목록 잘림): the PC grid keeps 3x4 cells but gives the name three lines under a
+    # slightly smaller picture, so long names ("첫 비명 뒤 핀을 다시 채운 때") read whole.
+    $ thumb=64 if wide else 62
+    $ label_size=(18 if r13_touch_ui() else r13_read_size(14,18))  # 0.20.5: grid names keep their fitted size; the big text goes to the picture side
+    $ label_lines=2 if wide else 3
     $ label_chars=12 if wide else 10
     $ actual_page=r13_record_page(entries,page)
     $ page_size=r13_record_page_size()
@@ -346,8 +359,11 @@ screen r13_evidence_grid(entries,detail,page,owner,pair=None,pair_slot=1,archive
                     add R13_NIGHT_UI+"diamond.png" xpos ((cell_w-thumb)//2+7) ypos 7
                 if pair and key in (first,second):
                     text ("①" if key==first else "②") xpos ((cell_w+thumb)//2+4) xanchor 1.0 ypos -8 size 22 color "#fff0ce" outlines [(3,"#8b1f2a",0,0)] font r13_ui_font()
-                text r13_ev_two_lines(("● " if not archive and r13_record_unread(key) else "")+r13_evidence_short(key,label_chars*2),cell_w-4,label_size):
-                    xpos 0 ypos (thumb+4) xsize cell_w text_align .5 size label_size color "#e3d6bd" font r13_ui_font() line_spacing 0
+                # 0.20.12: the unread mark sits on the picture's corner instead of taking name width.
+                if not pair and not archive and r13_record_unread(key):
+                    text "●" xpos ((cell_w+thumb)//2-4) xanchor 1.0 ypos 3 size 13 color "#f0c66a" font r13_ui_font()
+                text r13_ev_two_lines(r13_evidence_short(key,label_chars*2),cell_w-2,label_size,label_lines):
+                    xpos 0 ypos (thumb+3) xsize cell_w text_align .5 size label_size color "#e3d6bd" font r13_ui_font() line_spacing -1
     if r13_record_pages(entries)>1:
         $ ph=r13_ev_button_height()
         fixed:

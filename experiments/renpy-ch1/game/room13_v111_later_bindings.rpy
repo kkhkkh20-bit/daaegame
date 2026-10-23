@@ -232,3 +232,19 @@ init 317 python:
     }
     def r13_v111_goal():
         return R13_V111_QUESTIONS.get(store.room13.get("v111",{}).get("scene"),"")
+
+init 163 python:
+    # 0.20.12 (4~14일 리뷰 남은 그림): 6일 창고 안 장면은 바깥 장작더미 대신 창고 안 그림을,
+    # 새 이야기의 보호시설은 오른쪽 벽에 벽화·깨진 돌판·새긴 이름이 있는 그림을 쓴다.
+    # 그림 원본: art/bg-woodshed-mural-20261023/ (Codex, 2026-10-23).
+    R13_EP_BACKGROUNDS["ep_woodshed_inside"]={"morning":"room13-pixel-panorama-woodshed-inside.webp",
+        "afternoon":"room13-pixel-panorama-woodshed-inside.webp","evening":"room13-pixel-panorama-woodshed-inside-evening.webp"}
+    R13_EP_BACKGROUND_X["ep_woodshed_inside"]=260
+    R13_PLACES["v111_woodshed"]=(R13_PLACES["v111_woodshed"][0],"ep_woodshed_inside")
+    for _object,_rect in (("v111_wood",[330,230,282,250]),("v111_water",[78,430,160,140]),("v111_lamp",[1150,310,130,150])):
+        ROOM13["objects"]["v111_woodshed"][_object]=dict(ROOM13["objects"]["v111_woodshed"][_object],rect=_rect)
+    _r13_mural_world_file=r13_world_file
+    def r13_world_file(location,period):
+        if location=="facility" and r13_v111_active():
+            return "assets/room13-pixel-ready-facility-mural-%s.webp" % period
+        return _r13_mural_world_file(location,period)
