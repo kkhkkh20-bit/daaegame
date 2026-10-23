@@ -117,6 +117,9 @@ init 319 python:
         # 0.20.19 (CRUEL_CHOICES.md D1·D3): 폭동 때 수레에 남아 있던 모모, 12일 다람이 말할 수 있는가.
         "riot_momo13":lambda:r13_v111_value("riot_momo13") is True,
         "daram_ready":lambda:r13_v111_actor_ready("daram"),
+        # 0.20.20 (aftermath 시안): 막아섰다가 실패한 판, 수레로 떠난 사람이 있는 판.
+        "crowd_block_failed13":lambda:r13_v111_value("crowd_intervention")=="failed" and r13_v111_value("crowd_blocked_by_dad") is True,
+        "departed_any":lambda:any(p!="daram" for p in (r13_v111_value("departed_names") or [])),
         "family_on_square":lambda:r13_v111_value("family_location")=="square" and r13_v111_actor_ready("daram"),
         "hyp1_won_without_e08":lambda:bool(r13_v111_value("proof_given:초롱과 피코의 하루를 대조한다")) and "V111:E08" not in r13_v111_value("proof_given:초롱과 피코의 하루를 대조한다"),
         # Event 05: the day-7 fire meeting.
@@ -209,6 +212,8 @@ init 319 python:
         "granny_room13_partial":lambda:r13_v111_value("OWL_ALIVE") is False and r13_v111_value("meeting:room13")=="partial",
         "granny_room13_lose":lambda:r13_v111_value("OWL_ALIVE") is False and r13_v111_value("meeting:room13")=="lose",
     }
+    for _nw_who in ("resident_piko","kid_kkomi","resident_owlgp","resident_nero","kid_dodam","neoul","resident_momo","v111_lowerroad_elder"):
+        R13_NW_WHEN["dead:"+_nw_who]=(lambda w=_nw_who:w in r13_nw_dead())
     # One condition per person who can be on the transfer list (same names as R13_NW_LISTABLE).
     R13_NW_LIST_NAMES=("resident_tok","bami","resident_bori","nabi","daram","resident_owlgp","resident_piko","resident_siluk","resident_guldol","resident_teacher","mom","dad")
     for _nw_person in R13_NW_LIST_NAMES:

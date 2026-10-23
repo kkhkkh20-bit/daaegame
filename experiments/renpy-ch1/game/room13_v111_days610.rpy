@@ -146,6 +146,7 @@ label r13_v111_afternoon6:
     if v111_answer==2:
         $ r13_v111_set('choice:MS14_D06_S02','permission')
         $ r13_v111_commit('MS14_D06_S02_L0026')
+        $ r13_fork_set_fate('fate_kkomi','lost')
         jump r13_v111_permission6
     jump r13_v111_afternoon6
 
@@ -234,6 +235,7 @@ label r13_v111_handoff_done6:
     call r13_lines(r13_v111_lines(['MS14_D06_P01_L0021']),'v111:MS14_D06_P01_L0021')
     call r13_lines(r13_v111_lines(['MS14_D06_P01_L0022']),'v111:MS14_D06_P01_L0022')
     $ r13_v111_commit('MS14_D06_P01_L0024')
+    $ r13_fork_set_fate('fate_kkomi','saved')
     jump r13_v111_empty_fire6
 
 label r13_v111_empty_fire6:
@@ -652,18 +654,21 @@ label r13_v111_room_visit7:
         '다람과 남고 까로를 의료진에게 보낸다':
             $ r13_v111_set('route7','prevented')
             $ r13_v111_set('prevention','A')
+            $ r13_fork_set_fate('fate_owl','stay')
             $ r13_v111_set('choice:MS14_D07_S03','A')
             $ r13_v111_commit('MS14_D07_S03_L0016')
             jump r13_v111_stay7
         '다람과 함께 의료진을 데리러 간다':
             $ r13_v111_set('route7','prevented')
             $ r13_v111_set('prevention','B')
+            $ r13_fork_set_fate('fate_owl','take')
             $ r13_v111_set('choice:MS14_D07_S03','B')
             $ r13_v111_commit('MS14_D07_S03_L0016')
             jump r13_v111_take7
         '다람을 도토에게 맡기고 의료진을 데리러 간다':
             $ r13_v111_set('route7','murder')
             $ r13_v111_set('choice:MS14_D07_S03','C')
+            $ r13_fork_set_fate('fate_owl','lost')
             $ r13_v111_commit('MS14_D07_S03_L0016')
             jump r13_v111_handover7
 

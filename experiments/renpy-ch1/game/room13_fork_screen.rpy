@@ -21,7 +21,43 @@ init 322 python:
     # room13_v111_days*.rpy; dev/test_fork_screen.py re-derives this). A retry is not a result.
     R13_FORK_OUTCOMES = dict(gate=('win','lose'),gate_post=('win','lose'),piko=('win','lose'))
     def r13_fork_outcomes(meeting):
+        if meeting in R13_FORK_FATE_RESULTS:return tuple(r for r,_ in R13_FORK_FATE_RESULTS[meeting])
         return R13_FORK_OUTCOMES.get(meeting,('win','partial','lose'))
+    # 0.20.20 (소유자 2026-10-23 "다 해 줘", 승인 시안 docs/reviews/future-keys-20261023/fork_after_ending.png):
+    # 회의 사이에 생사가 갈리는 판정 시점 칸을 넣는다. 이번 판의 결과만 이름이 보이고 나머지는 개수만.
+    R13_FORK_FATE_POINTS = (
+        ('fate_piko','3번 등 앞','2일 저녁','square'),
+        ('fate_kkomi','장작 창고','6일 저녁','square'),
+        ('fate_owl','13호','7일 밤','room13'),
+        ('fate_nero','아랫길','11일 밤','square'),
+        ('fate_soup','학교 배식','12일 낮','dining'),
+        ('fate_crowd','광장','13일','square'))
+    R13_FORK_FATE_RESULTS = dict(
+        fate_piko=(('saved','들임'),('lost','꺼진 등')),
+        fate_kkomi=(('saved','넷 인계'),('lost','타 버린 창고')),
+        fate_owl=(('stay','함께 남음'),('take','함께 감'),('lost','닫힌 문')),
+        fate_nero=(('handover','인계'),('rescue','구조'),('lost','끊긴 등불')),
+        fate_soup=(('early','조기 예방'),('premeal','먹기 전 중단'),('lost','작은 냄비')),
+        fate_crowd=(('supervisor','감독자'),('block','막아섬'),('riot','올라간 주먹')))
+    # 날짜 순서. 같은 날은 일어나는 차례대로(11일 회의 뒤 밤 출발, 12일 배식 뒤 수프 회의, 13일 회의 뒤 공개).
+    R13_FORK_ORDER = ('gate','fate_piko','lamp','gate_post','fate_kkomi','fire','fate_owl','room13','records',
+        'hypothesis','fate_nero','fate_soup','soup','blanket','piko','fate_crowd','altar')
+    def r13_fork_points():
+        spec = dict((m[0],m) for m in R13_FORK_MEETINGS+R13_FORK_FATE_POINTS)
+        return [spec[k] for k in R13_FORK_ORDER]
+    def r13_fork_is_fate_point(key):
+        return key in R13_FORK_FATE_RESULTS
+    def r13_fork_value(key):
+        return r13_v111_value(('fate:' if r13_fork_is_fate_point(key) else 'meeting:')+key)
+    def r13_fork_result_name(key,result):
+        if r13_fork_is_fate_point(key):return dict(R13_FORK_FATE_RESULTS[key]).get(result,'지나감')
+        return R13_FORK_RESULTS.get(result,'지나감')
+    def r13_fork_set_fate(key,result):
+        """판정 시점의 결과를 이번 판에 적고(한 번만) 갈림길 기록에 남긴다."""
+        if r13_v111_value('fate:'+key) is None:
+            r13_v111_set('fate:'+key,result)
+            r13_fork_record(key,result)
+
     R13_FORK_ENDINGS = dict(left_name='남겨진 이름',frozen='얼어붙은 마을',family='함께 떠난 가족',partial='남은 사람들',violence='상처 입은 귀환',morning='마을의 아침',true='새로운 아침')
 
     def r13_fork_start():
@@ -36,7 +72,7 @@ init 322 python:
             return None
 
     def r13_fork_record(meeting,result):
-        if meeting not in [m[0] for m in R13_FORK_MEETINGS] or result not in R13_FORK_RESULTS:return
+        if meeting not in R13_FORK_ORDER or result not in r13_fork_outcomes(meeting):return
         seen = dict(persistent.r13_fork_seen or {})
         seen[(meeting,result)] = dict(png=r13_fork_capture(),run=store.room13['v111'].get('fork_run',1))
         persistent.r13_fork_seen = seen
@@ -50,12 +86,13 @@ init 322 python:
         renpy.save_persistent()
 
     def r13_fork_current():
+        points = r13_fork_points()
         claim = getattr(store,'r13_meeting_claim',None)
         if getattr(store,'r13_meeting_active',False) and claim:
-            for i,m in enumerate(R13_FORK_MEETINGS):
+            for i,m in enumerate(points):
                 if claim == 'NW:'+m[0]:return i
-        decided = [i for i,m in enumerate(R13_FORK_MEETINGS) if r13_v111_value('meeting:'+m[0]) in R13_FORK_RESULTS]
-        return min(11,max(decided)+1) if decided else 0
+        decided = [i for i,m in enumerate(points) if r13_fork_value(m[0]) in r13_fork_outcomes(m[0])]
+        return min(len(points)-1,max(decided)+1) if decided else 0
 
     # 0.20.x 갈림길 (owner-approved plan5 m4, 2026-10-22): a meeting whose result decides someone's
     # fate carries a "?" person badge and the line R13_FORK_FATE_LINE. Never who, never the
@@ -65,10 +102,11 @@ init 322 python:
     # grandmother_custody) or ends a life (*_alive False). dev/test_fork_screen.py re-derives the
     # set from those labels, so a new fate effect in a meeting shows up as a test failure.
     R13_FORK_FATE = frozenset(('lamp','gate_post','fire','room13','records','soup','blanket'))
-    R13_FORK_FATE_LINE = '이 회의에서 누군가의 운명이 갈렸다.'
+    R13_FORK_FATE_LINE = '여기서 누군가의 운명이 갈렸다.'
 
     def r13_fork_fate(meeting):
         """Badge only on a meeting already decided in this run (never on the one still ahead)."""
+        if r13_fork_is_fate_point(meeting):return r13_fork_value(meeting) in r13_fork_outcomes(meeting)
         return meeting in R13_FORK_FATE and r13_v111_value('meeting:'+meeting) in R13_FORK_RESULTS
 
     def r13_fork_day_label(day):
@@ -78,9 +116,10 @@ init 322 python:
         current = r13_fork_current()
         seen = persistent.r13_fork_seen or {}
         columns = []
-        for i,(key,title,day,place) in enumerate(R13_FORK_MEETINGS):
+        points = r13_fork_points()
+        for i,(key,title,day,place) in enumerate(points):
             if i>current:break
-            result = r13_v111_value('meeting:'+key)
+            result = r13_fork_value(key)
             here = i==current
             # 0.20.5 (Codex S02): the shared record keeps the latest run's picture; an earlier
             # run's save shows the place background instead of another run's picture.
@@ -97,7 +136,7 @@ init 322 python:
                 # Unseen results: one lock with a count only (no title, no result, no picture).
                 if hidden:rows.append(dict(kind='locked',result=None,title=None,record=None,count=hidden))
             columns.append(dict(key=key,day=day,place=place,here=here,rows=rows,title=title,fate=(not here) and r13_fork_fate(key)))
-        if current<11:columns.append(dict(key=None,day='그 너머',rows=[]))
+        if current<len(points)-1:columns.append(dict(key=None,day='그 너머',rows=[]))
         return columns
 
     def r13_fork_image(record,place='square'):
@@ -107,7 +146,7 @@ init 322 python:
         return r13_background(R13_PLACES[place][1])
 
     def r13_fork_initial_page():
-        return min(max(0,len(r13_fork_columns())-6),max(0,min(r13_fork_current(),10)-4))
+        return min(max(0,len(r13_fork_columns())-6),max(0,min(r13_fork_current(),len(R13_FORK_ORDER)-2)-4))
 
     def r13_fork_row_tops(rows,top=200,gap=16):
         """Card tops in one column: result cards are 116 high, the count lock 56."""
@@ -141,7 +180,7 @@ screen r13_fork_card(column,row,small=16):
                 add Transform(r13_fork_image(row['record'],column['place']),xysize=(165,72),nearest=True,matrixcolor=SepiaMatrix() if row['kind']=='old' else BrightnessMatrix(0))
                 fixed:
                     xysize (165,30)
-                    text R13_FORK_RESULTS.get(row['result'],'지나감') xpos 4 yalign .5 size (small+2) color '#f6ecd8' font r13_ui_font()
+                    text r13_fork_result_name(column['key'],row['result']) xpos 4 yalign .5 size (small+2) color '#f6ecd8' font r13_ui_font()
                     text ('이번 회차' if row['kind']=='current' else '%d회차에서 봄'%(row['record'] or {}).get('run',1)) xalign 1.0 xoffset -4 yalign .5 size small color '#cdbb98' font r13_ui_font()
 
 screen r13_fork_screen():
@@ -185,7 +224,7 @@ screen r13_fork_screen():
         hbox:
             spacing 6
             add R13ForkBadge(22) yalign .5
-            text '누군가의 운명이 갈린 회의' size small color '#e3d6bd' font r13_ui_font()
+            text '누군가의 운명이 갈린 곳' size small color '#e3d6bd' font r13_ui_font()
     $ fate_box = None
     for offset,column in enumerate(columns[first:first+6]):
         $ cx = 68+offset*194

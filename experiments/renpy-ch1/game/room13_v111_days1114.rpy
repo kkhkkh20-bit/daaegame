@@ -802,6 +802,7 @@ label r13_v111_rest_blanket11:
     return
 
 label r13_v111_lower_safe11:
+    $ r13_fork_set_fate('fate_nero','handover')
     if r13_v111_actor_ready('resident_nero'):
         call r13_lines(r13_v111_lines(['MS14_D11_S04_L0030']),'v111:MS14_D11_S04_L0030')
     call r13_lines(r13_v111_lines(['MS14_D11_S04_L0031']),'v111:MS14_D11_S04_L0031')
@@ -856,6 +857,7 @@ label r13_v111_snow_door11:
     jump r13_v111_snow_door11
 
 label r13_v111_night_rescue_done11:
+    $ r13_fork_set_fate('fate_nero','rescue')
     call r13_lines(r13_v111_lines(['MS14_D11_S04_L0018']),'v111:MS14_D11_S04_L0018')
     call r13_lines(r13_v111_lines(['MS14_D11_S04_L0019']),'v111:MS14_D11_S04_L0019')
     call r13_v111_travel('school','night_rescue_done11')
@@ -895,6 +897,7 @@ label r13_v111_late_cart11:
     jump r13_v111_late_road11
 
 label r13_v111_late_road11:
+    $ r13_fork_set_fate('fate_nero','lost')
     call r13_v111_travel('forest','late_road11',[])
     $ r13_v111_arrive(['karo'])
     if r13_v111_actor_ready('karo'):
@@ -946,6 +949,8 @@ label r13_v111_loss_names12:
     call r13_lines(r13_v111_lines(['MS14_D12_S01_L0006']),'v111:MS14_D12_S01_L0006')
     call r13_lines(r13_v111_lines(['MS14_D12_S01_L0007']),'v111:MS14_D12_S01_L0007')
     call r13_lines(r13_v111_lines(['MS14_D12_S01_L0008']),'v111:MS14_D12_S01_L0008')
+    if r13_v111_value('alive:v111_lowerroad_elder') is False:
+        call r13_lines(r13_nw_block('elder_name12'),'nw:elder_name12')
     jump r13_v111_morning_notice12
 
 label r13_v111_living_names12:
@@ -1142,6 +1147,7 @@ label r13_v111_stay_meal12:
     jump r13_v111_premeal12
 
 label r13_v111_take_daram12:
+    $ r13_fork_set_fate('fate_soup','lost')
     $ r13_v111_set('route12','late_exposure')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0028']),'v111:MS14_D12_S02_L0028')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0029']),'v111:MS14_D12_S02_L0029')
@@ -1150,6 +1156,7 @@ label r13_v111_take_daram12:
     jump r13_v111_pickup12
 
 label r13_v111_leave_daram12:
+    $ r13_fork_set_fate('fate_soup','lost')
     $ r13_v111_set('route12','late_exposure')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0031']),'v111:MS14_D12_S02_L0031')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0032']),'v111:MS14_D12_S02_L0032')
@@ -1192,6 +1199,7 @@ label r13_v111_late_meal12:
     if r13_v111_value('KKOMI_ALIVE') is True:
         call r13_lines(r13_nw_block('kkomi_soup12'),'nw:kkomi_soup12')
         $ r13_v111_set('KKOMI_ALIVE',False)
+        $ r13_v111_set('kkomi_soup_dead',True)
     call r13_lines(r13_v111_lines(['MS14_D12_S03_L0007']),'v111:MS14_D12_S03_L0007')
     call r13_lines(r13_v111_lines(['MS14_D12_S03_L0008']),'v111:MS14_D12_S03_L0008')
     call r13_lines(r13_v111_lines(['MS14_D12_S03_L0009']),'v111:MS14_D12_S03_L0009')
@@ -1218,6 +1226,7 @@ label r13_v111_fragment_seen12:
     jump r13_v111_soup_hearing12
 
 label r13_v111_premeal12:
+    $ r13_fork_set_fate('fate_soup','premeal')
     $ r13_v111_scene('MS14_D12_A')
     $ r13_edit(period=1)
     $ room13["v111"]["people"]=[]
@@ -1594,6 +1603,7 @@ label r13_v111_child_dark12:
     return
 
 label r13_v111_early12:
+    $ r13_fork_set_fate('fate_soup','early')
     $ r13_v111_scene('MS14_D12_B')
     $ r13_edit(period=2)
     $ room13["v111"]["people"]=[]
@@ -1650,6 +1660,11 @@ label r13_v111_day13:
     $ r13_v111_set('busy:karo',False)
     if r13_v111_value("piko_alive") is not False:
         $ r13_nw_list("resident_piko","street")
+    # 0.20.20 뒤 반응: 12일 같은 냄비로 죽은 꼬미의 빈자리, 12일부터 이어지는 다람의 열.
+    if r13_v111_value('kkomi_soup_dead'):
+        call r13_lines(r13_nw_block('kkomi_gone13'),'nw:kkomi_gone13')
+    if r13_v111_value('daram_fever12') and r13_v111_actor_ready('daram'):
+        call r13_lines(r13_nw_block('fever13'),'nw:fever13')
     call r13_lines(r13_v111_lines(['MS14_D13_S01_L0002']),'v111:MS14_D13_S01_L0002')
     call r13_lines(r13_v111_lines(['MS14_D13_S01_L0003']),'v111:MS14_D13_S01_L0003')
     call r13_lines(r13_v111_lines(['MS14_D13_S01_L0004']),'v111:MS14_D13_S01_L0004')
@@ -2473,12 +2488,14 @@ label r13_v111_daram_crowd13:
     return
 
 label r13_v111_crowd_block13:
+    $ r13_fork_set_fate('fate_crowd','block')
     call r13_lines(r13_v111_lines(['MS14_D13_C_L0009']),'v111:MS14_D13_C_L0009')
     call r13_lines(r13_v111_lines(['MS14_D13_C_L0010']),'v111:MS14_D13_C_L0010')
     call r13_lines(r13_v111_lines(['MS14_D13_C_L0011']),'v111:MS14_D13_C_L0011')
     # 0.20.18 (소유자 2026-10-23 "권선징악으로 유도하면 안 돼", CRUEL_CHOICES.md C1): 원수를 몸으로 감싸도
     # 아무도 구하지 못한다. 군중이 아빠 쪽으로 쏠리고 너울은 그 틈에 빠져나간다. 막는 길은 비어 있는 감독자뿐이다.
     call r13_lines(r13_nw_block('crowd_block_fail13'),'nw:crowd_block_fail13')
+    $ r13_v111_set('crowd_blocked_by_dad',True)
     $ r13_v111_set('alive:neoul',False)
     $ r13_v111_set('crowd_resolution_done',True)
     $ r13_v111_set('crowd_injury',True)
@@ -2502,6 +2519,7 @@ label r13_v111_crowd_block_old13:
     jump r13_v111_handover_plan13
 
 label r13_v111_crowd_guard13:
+    $ r13_fork_set_fate('fate_crowd','supervisor')
     call r13_lines(r13_v111_lines(['MS14_D13_C_L0017']),'v111:MS14_D13_C_L0017')
     if r13_v111_actor_ready('guard'):
         call r13_lines(r13_v111_lines(['MS14_D13_C_L0018']),'v111:MS14_D13_C_L0018')
@@ -2511,6 +2529,7 @@ label r13_v111_crowd_guard13:
     jump r13_v111_handover_plan13
 
 label r13_v111_crowd_watch13:
+    $ r13_fork_set_fate('fate_crowd','riot')
     call r13_lines(r13_v111_lines(['MS14_D13_C_L0020']),'v111:MS14_D13_C_L0020')
     # D1: 손을 놓으면 폭동이 된다. 너울이 맞아 죽고, 뒤집힌 수레에 아직 내리지 못한 모모가 깔린다.
     $ r13_v111_set('riot_momo13',r13_v111_value('handed:resident_momo') is not True and r13_v111_person_alive('resident_momo'))
@@ -2572,6 +2591,13 @@ label r13_v111_morning14:
     $ r13_v111_set('day',14)
     jump r13_v111_day14
 
+# 0.20.20 (소유자 2026-10-23 "다 해 줘", docs/reviews/aftermath-20261023): 결말마다 이번 판에 죽은 사람의
+# 남은 물건을 한 줄씩. 죽은 사람이 없으면 아무것도 나오지 않는다(진엔딩은 사망 0 이라 늘 비어 있다).
+label r13_v111_memorial14:
+    if r13_nw_dead():
+        call r13_lines(r13_nw_block('end_memorial14'),'nw:end_memorial14')
+    return
+
 label r13_v111_day14:
     jump r13_v111_ending_dispatch14
 
@@ -2593,6 +2619,7 @@ label r13_v111_left_name_ending14:
     $ r13_edit(period=0,location='school')
     $ room13["v111"]["people"]=[]
     call r13_scene(R13_PLACES['school'][1],'남겨진 이름',"quiet")
+    call r13_v111_memorial14
     call r13_lines(r13_nw_block('end_left_name14'),'nw:end_left_name14')
     jump r13_v111_story_end14
 
@@ -2600,6 +2627,7 @@ label r13_v111_frozen_ending14:
     $ r13_edit(period=0,location='gate')
     $ room13["v111"]["people"]=[]
     call r13_scene(R13_PLACES['gate'][1],'얼어붙은 마을',"quiet")
+    call r13_v111_memorial14
     call r13_lines(r13_nw_block('end_frozen14'),'nw:end_frozen14')
     jump r13_v111_story_end14
 
@@ -2617,6 +2645,7 @@ label r13_v111_morning_safe14:
     call r13_v111_travel('school','morning_safe14',['mom', 'daram'])
     $ r13_v111_arrive(['mom', 'daram', 'npc_pandol', 'nabi', 'resident_tosil', 'resident_madam'])
     $ r13_v111_score()
+    call r13_v111_memorial14
     $ r13_v111_arrive(['mom', 'daram', 'npc_pandol', 'nabi', 'resident_tosil', 'resident_madam'])
     call r13_lines(r13_v111_lines(['MS14_D14_S01_L0002']),'v111:MS14_D14_S01_L0002')
     call r13_lines(r13_v111_lines(['MS14_D14_S01_L0003']),'v111:MS14_D14_S01_L0003')
@@ -3204,6 +3233,7 @@ label r13_v111_family_ending14:
     call r13_v111_travel('gate','family_ending14',['mom', 'daram'])
     $ r13_v111_arrive(['mom', 'daram', 'guard'])
     $ r13_v111_score()
+    call r13_v111_memorial14
     $ r13_v111_arrive(['mom', 'daram', 'guard'])
     if r13_v111_actor_ready('guard'):
         call r13_lines(r13_v111_lines(['MS14_D14_END_FAMILY_L0002']),'v111:MS14_D14_END_FAMILY_L0002')
@@ -3223,6 +3253,7 @@ label r13_v111_partial_ending14:
     call r13_v111_travel('square','partial_ending14',[])
     $ r13_v111_arrive(['karo', 'guard', 'resident_badook', 'daram'])
     $ r13_v111_score()
+    call r13_v111_memorial14
     $ r13_v111_arrive(['karo', 'guard', 'resident_badook', 'daram'])
     if r13_v111_value("cart_departed"):
         jump r13_v111_partial_departed14
@@ -3291,6 +3322,7 @@ label r13_v111_violence_ending14:
     call r13_v111_travel('clinic','violence_ending14',['mom', 'daram'])
     $ r13_v111_arrive(['mom', 'daram', 'guard', 'resident_seori'])
     $ r13_v111_score()
+    call r13_v111_memorial14
     $ r13_v111_arrive(['mom', 'daram', 'guard', 'resident_seori'])
     call r13_lines(r13_v111_lines(['MS14_D14_END_VIOLENCE_L0002']),'v111:MS14_D14_END_VIOLENCE_L0002')
     call r13_lines(r13_v111_lines(['MS14_D14_END_VIOLENCE_L0003']),'v111:MS14_D14_END_VIOLENCE_L0003')

@@ -648,6 +648,7 @@ label r13_v111_afternoon:
     elif v111_answer==3:
         $ r13_v111_option('MS14_D02_S04_L0020_O2')
         $ r13_v111_apply('option:afternoon:1',[{'op': 'set', 'field': 'D02_afternoon', 'value': 'nero'}])
+        $ r13_fork_set_fate('fate_piko','lost')
         jump r13_v111_nero_choice
     jump r13_v111_afternoon
 
@@ -695,6 +696,7 @@ label r13_v111_shelter_done:
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D02_S04_L0030', 'MS14_D02_S04_L0031', 'MS14_D02_S04_L0032', 'MS14_D02_S04_L0033', 'MS14_D02_S04_L0034', 'MS14_D02_S04_L0035', 'MS14_D02_S04_L0036', 'MS14_D02_S04_L0038']), 'v111:shelter_done:MS14_D02_S04_L0030')
     $ r13_v111_commit('MS14_D02_S04_L0038')
+    $ r13_fork_set_fate('fate_piko','saved')
     jump r13_v111_evening2
 
 label r13_v111_nero_choice:

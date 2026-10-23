@@ -31,10 +31,10 @@ testcase v111_fork_screen:
     click '갈림길'
     pause 0.5
     assert screen 'r13_fork_screen'
-    assert eval (qa_fork_locked_count()==4)  # 0.20.5: gate 1, lamp 1, gate_post 1, fire 1
+    assert eval (qa_fork_locked_count()==8)  # gate 1, lamp 1, gate_post 1, fire 1 + 0.20.20 판정 칸(피코 2, 꼬미 2)
     assert eval ([col['key'] for col in r13_fork_columns() if col.get('fate')]==['lamp','gate_post','fire'])
     assert eval (sum(col['key'] is None for col in r13_fork_columns())==1)
-    assert eval (len(r13_fork_columns())==6 and r13_fork_current()==4)
+    assert eval (len(r13_fork_columns())==8 and r13_fork_current()==6)
     screenshot "fork_a.png"
     click '닫기'
     assert screen 'r13_records'

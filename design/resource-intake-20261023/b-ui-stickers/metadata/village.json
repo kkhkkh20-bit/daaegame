@@ -1,0 +1,74 @@
+{
+  "collection": "B notebook winter village decorative die-cut stickers",
+  "created_at": "2026-10-23T15:16:42Z",
+  "generation_tool": "Built-in image_gen.imagegen",
+  "transparency_requested": true,
+  "purpose": "Generic decorative props only. Not game evidence, new mechanics, or UI implementation.",
+  "style_references": [
+    "/workspace/shared/ui-cute/b-gameplay/03_메인_스티커마을.png",
+    "/workspace/shared/ui-cute/다람탐정_B안_탐정수첩_설정시안.png"
+  ],
+  "source_dimensions": [
+    1254,
+    1254
+  ],
+  "final_dimensions": [
+    512,
+    512
+  ],
+  "final_format": "PNG, 8-bit per channel RGBA / sRGB",
+  "minimum_transparent_margin_px": 24,
+  "processing": "Original generated PNGs preserved unchanged. ImageMagick only: zero alpha below 10% to remove faint isolated ghost pixels; crop to alpha >10% meaningful bounds; Lanczos resize to fit 464x464; center on transparent 512x512 canvas; export PNG color type 6.",
+  "qa_preview": "qa_navy.png",
+  "qa": "Each source and final navy-background composite inspected. One prop per image, cream die-cut border, no text, characters, clues, scenes, or wide floor platforms. Final alpha min 0 and max 255; transparency preserved. Cart has one centered visible six-spoke wheel on a plausible single transverse axle and two pull shafts.",
+  "assets": [
+    {
+      "id": "snow_cottage",
+      "label": "Snow cottage",
+      "original": "originals/snow_cottage.png",
+      "final": "sticker_snow_cottage.png",
+      "original_meaningful_alpha_bounds": "1192x1126+31+65",
+      "final_nonzero_alpha_bounds": "464x438+24+37",
+      "mean_alpha": 0.549488,
+      "sha256": "3d5ec00838019e0c9ddb17c885e1e791c8b27733dc4cf0304984b361df18ca5f",
+      "prompt": "Use case: illustration-story. Asset type: finished standalone die-cut notebook sticker game asset. Create exactly ONE charming snow-covered timber cottage, isolated on a genuinely transparent background. No other subjects. Warm clean illustrated storybook style matching a cozy winter detective notebook: confident dark warm-brown ink outlines, gently textured flat painted fills, readable refined detail, cream paper die-cut contour of uniform thickness. Three-quarter view of one small chalet with a steep navy-blue roof thickly capped by white snow, warm tan wooden walls, amber glowing windows, a restrained muted red door, short chimney. Cozy, calm, meticulously constructed. No smoke. The entire cottage including the cream sticker border must be visible, centered and uncropped, comfortably inside the canvas. The sticker contour closely follows only the cottage silhouette: no scenic floor, no wide snow platform, no landscape, no sky, no square backing. Crisp cutout boundaries and actual clear alpha outside the cream edge, including no shadows or glow beyond it. Palette: deep navy, honey brown, cream, warm amber, tiny muted red and teal accents. No characters, no animals, no evidence clues, no symbols, no badges, no logos, no UI, no letters, no words, no numbers, no watermark. High-resolution square PNG. A single useful decorative cottage prop, not a mockup or sticker sheet.",
+      "generation_output_hint": "Generated images are saved to /workspace/scratch/6fde33eec4d5/generated_images as /workspace/scratch/6fde33eec4d5/generated_images/exec-86f5f2d0-1d0e-4196-ab9d-efae704e1061.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "warm_hanging_lantern",
+      "label": "Warm hanging lantern",
+      "original": "originals/warm_hanging_lantern.png",
+      "final": "sticker_warm_hanging_lantern.png",
+      "original_meaningful_alpha_bounds": "671x1232+292+11",
+      "final_nonzero_alpha_bounds": "253x464+129+24",
+      "mean_alpha": 0.253378,
+      "sha256": "a1caf5ed68daa4f03e04c90a17afe3c6ec47c53079b3c67300ca966e793c6f9c",
+      "prompt": "Use case: illustration-story. Asset type: finished standalone die-cut notebook sticker game asset for a cozy winter detective notebook. Create exactly ONE prop. Clean illustrated storybook style, confident dark warm-brown outlines, gently textured painted fills with readable refined detail, uniform cream paper die-cut contour tightly hugging the prop silhouette. Palette deep navy, warm honey brown, cream, muted red, muted teal and warm amber. Entire prop and cream border centered and fully visible with generous transparent margins. Genuinely transparent background, alpha clear outside cream border; no shadow or glow outside border. No scenic floor, no wide base, no landscape, no sky, no square backing. No characters, no animals, no clues, no signs, no badges, no UI, no letters, no words, no numbers, no watermark. High-resolution square PNG. A single decorative prop, not a mockup or sticker sheet. Subject: ONE small antique hanging lantern, gently three-quarter view, warm brass and brown metal frame, amber light in clean glass panels, dark curved metal top handle, tapered hexagonal chamber, tiny snow cap on its hood. Suspended object only, no hook attached to a wall, no wall, no cable, no post. Mechanically coherent assembled lantern. The ring handle is visible and unbroken, amber illumination contained inside lantern glass.",
+      "generation_output_hint": "Generated images are saved to /workspace/scratch/6fde33eec4d5/generated_images as /workspace/scratch/6fde33eec4d5/generated_images/exec-98113008-a9ff-459c-8cee-eaca41f1f4e6.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "snowy_fir_tree",
+      "label": "Snowy fir tree",
+      "original": "originals/snowy_fir_tree.png",
+      "final": "sticker_snowy_fir_tree.png",
+      "original_meaningful_alpha_bounds": "1011x1219+122+17",
+      "final_nonzero_alpha_bounds": "385x464+63+24",
+      "mean_alpha": 0.364207,
+      "sha256": "16f1d91b91d37242e292fc93c2d16b27acf231ba313ff75b888cd9176558602c",
+      "prompt": "Use case: illustration-story. Asset type: finished standalone die-cut notebook sticker game asset for a cozy winter detective notebook. Create exactly ONE prop. Clean illustrated storybook style, confident dark warm-brown outlines, gently textured painted fills with readable refined detail, uniform cream paper die-cut contour tightly hugging the prop silhouette. Palette deep navy, warm honey brown, cream, muted red, muted teal and warm amber. Entire prop and cream border centered and fully visible with generous transparent margins. Genuinely transparent background, alpha clear outside cream border; no shadow or glow outside border. No scenic floor, no wide base, no landscape, no sky, no square backing. No characters, no animals, no clues, no signs, no badges, no UI, no letters, no words, no numbers, no watermark. High-resolution square PNG. A single decorative prop, not a mockup or sticker sheet. Subject: ONE evergreen fir tree with three or four clean tiered boughs, dark muted teal needles and navy shaded lower foliage beneath thick rounded caps of powdery white snow. Subtle warm blue snow shadows. Short brown trunk visible at bottom. Not a Christmas tree: absolutely no ornaments, no lights, no ribbons or stars. No platform or snow island under the trunk. Compact balanced silhouette with gently irregular natural branches, not hyper-detailed tiny needles.",
+      "generation_output_hint": "Generated images are saved to /workspace/scratch/6fde33eec4d5/generated_images as /workspace/scratch/6fde33eec4d5/generated_images/exec-0bd7d039-5831-4865-b972-e1b41b3a7dbb.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "covered_wooden_cart",
+      "label": "Covered wooden handcart",
+      "original": "originals/covered_wooden_cart.png",
+      "final": "sticker_covered_wooden_cart.png",
+      "original_meaningful_alpha_bounds": "1205x766+26+238",
+      "final_nonzero_alpha_bounds": "464x295+24+108",
+      "mean_alpha": 0.28048,
+      "sha256": "5062501b8e29b51c1b7ed5e377976a6f320d536a53d64857bff7842e078c7c1c",
+      "prompt": "Use case: illustration-story. Asset type: finished standalone die-cut notebook sticker game asset for a cozy winter detective notebook. Create exactly ONE prop. Clean illustrated storybook style, confident dark warm-brown outlines, gently textured painted fills with readable refined detail, uniform cream paper die-cut contour tightly hugging the prop silhouette. Palette deep navy, warm honey brown, cream, muted red, muted teal and warm amber. Entire prop and cream border centered and fully visible with generous transparent margins. Genuinely transparent background, alpha clear outside cream border; no shadow or glow outside border. No scenic floor, no wide base, no landscape, no sky, no square backing. No characters, no animals, no clues, no signs, no badges, no UI, no letters, no words, no numbers, no watermark. High-resolution square PNG. A single decorative prop, not a mockup or sticker sheet. Subject: ONE small antique covered wooden village handcart in an exact clean side profile, front pointing to the LEFT. It has exactly TWO wheels total on one transverse axle, one large near-side wooden spoked wheel completely visible centered beneath the wooden cargo bed, and the opposite far-side wheel mostly occluded directly behind the near wheel. Show only the near wheel, do not invent any extra visible wheel or axle. The one visible circular wheel has precisely one centered hub and six straight spokes running radially to its outer rim; rim is round and closed, no wheel-shaped circular cargo. Cart body a simple compact honey-brown wooden cargo bed with muted teal lower rail, a small arched muted red canvas cover supported by hoops, snow gently sitting on the roof, two short parallel wooden pull shafts extending forward to the LEFT. Side profile ensures wheel axis is physically coherent. The near-side wheel overlaps the outside of the bed and attaches at the center of the undercarriage. Exactly one visible wheel, correctly located under the cart center. No cargo outside cart, no scene, no ground. Charming but mechanically plausible.",
+      "generation_output_hint": "Generated images are saved to /workspace/scratch/6fde33eec4d5/generated_images as /workspace/scratch/6fde33eec4d5/generated_images/exec-5a7867c0-491c-4fb8-91ab-0b3019ee2520.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    }
+  ]
+}

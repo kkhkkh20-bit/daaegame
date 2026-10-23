@@ -1,0 +1,124 @@
+{
+  "generator": "Built-in image_gen",
+  "delivery_format": "512x512 PNG RGBA",
+  "normalization": "ImageMagick explicit alpha expression u<=4/255?0:u, alpha-aware trim, fit within 464x464, center on 512x512 transparent canvas. High-resolution originals preserved unchanged.",
+  "quality_check": "Four expressions visually inspected on dark and cream backgrounds at native 256px. Real alpha, no full-canvas matte, bust-only framing, approved red cap/bow and navy/cream/turquoise colors.",
+  "assets": [
+    {
+      "file": "sticker_daram_delighted.png",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "meaningful_alpha_bbox": [
+        27,
+        24,
+        485,
+        488
+      ],
+      "margins_px": [
+        27,
+        24,
+        27,
+        24
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 112321,
+      "mostly_opaque_pixels_alpha_ge_240": 146980,
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "f612b1ca54273c0303051a113d5239f58f0577ce43d30dff5b5fef62a49893d3"
+    },
+    {
+      "file": "sticker_daram_eureka.png",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "meaningful_alpha_bbox": [
+        48,
+        24,
+        464,
+        488
+      ],
+      "margins_px": [
+        48,
+        24,
+        48,
+        24
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 120336,
+      "mostly_opaque_pixels_alpha_ge_240": 138834,
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "c725f443f797f1f5bb69e82eab99fd88fdd53e83bff1f1c90ec98e0db56cf166"
+    },
+    {
+      "file": "sticker_daram_scared_brave.png",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "meaningful_alpha_bbox": [
+        57,
+        24,
+        455,
+        488
+      ],
+      "margins_px": [
+        57,
+        24,
+        57,
+        24
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 130751,
+      "mostly_opaque_pixels_alpha_ge_240": 128481,
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "a62512cda5d186de9d4f1c795b3e829c02bbb99476d589aae9c2eb3a17b43526"
+    },
+    {
+      "file": "sticker_daram_stubborn.png",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "meaningful_alpha_bbox": [
+        64,
+        24,
+        447,
+        488
+      ],
+      "margins_px": [
+        64,
+        24,
+        65,
+        24
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 136260,
+      "mostly_opaque_pixels_alpha_ge_240": 123136,
+      "original_dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "c52abd9405dbd645d87ec66d1534492e3b61827ab19abdb3e37e09de194abf44"
+    }
+  ]
+}

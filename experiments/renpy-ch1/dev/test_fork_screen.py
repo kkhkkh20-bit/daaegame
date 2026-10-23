@@ -72,7 +72,7 @@ class ForkScreen(unittest.TestCase):
         self.values.update({'meeting:gate':'win','meeting:lamp':'lose'})
         columns=self.call('columns')
         self.assertEqual([c['key'] for c in columns if c.get('fate')],['lamp'])
-        self.assertEqual(self.env['R13_FORK_FATE_LINE'],'이 회의에서 누군가의 운명이 갈렸다.')
+        self.assertEqual(self.env['R13_FORK_FATE_LINE'],'여기서 누군가의 운명이 갈렸다.')
         # The current meeting (still ahead) never carries the badge.
         self.store.r13_meeting_active=True;self.store.r13_meeting_claim='NW:fire'
         self.values['meeting:gate_post']='win'
@@ -117,9 +117,9 @@ class ForkScreen(unittest.TestCase):
     def test_active_stage_wins_and_initial_page_contains_it(self):
         self.store.r13_meeting_active=True
         self.store.r13_meeting_claim='NW:soup'
-        self.assertEqual(self.call('current'),7)
-        self.assertLessEqual(self.call('initial_page'),7)
-        self.assertGreater(self.call('initial_page')+6,7)
+        self.assertEqual(self.call('current'),12)   # 0.20.20: 판정 시점 칸이 회의 사이에 들어갔다
+        self.assertLessEqual(self.call('initial_page'),12)
+        self.assertGreater(self.call('initial_page')+6,12)
     def test_run_number_is_saved_and_reading_does_not_increment(self):
         self.call('start')
         saved=copy.deepcopy(self.store.room13)
@@ -154,10 +154,19 @@ class ForkScreen(unittest.TestCase):
         self.env.update(R13_PLACES={'room13':('13호실','room'),'square':('광장','winter_square')},r13_background=lambda name:'bg:'+name)
         self.assertEqual(self.call('image',{'png':None},'room13'),'bg:room')
 
+    def test_fate_points_show_their_own_result_names(self):
+        # 0.20.20: 판정 시점 칸은 회의와 같은 줄에 있고, 결과 이름은 그 칸의 말(들임/꺼진 등…)을 쓴다.
+        self.values.update({'meeting:gate':'win','fate:fate_piko':'lost'})
+        col=[c for c in self.call('columns') if c['key']=='fate_piko'][0]
+        self.assertEqual([r['kind'] for r in col['rows']],['current','locked'])
+        self.assertEqual(self.call('result_name','fate_piko','lost'),'꺼진 등')
+        self.assertTrue(col['fate'])
+        self.call('set_fate','fate_piko','saved')   # 한 번 정해지면 바뀌지 않는다
+        self.assertNotIn(('fate_piko','saved'),self.persistent.r13_fork_seen)
     def test_all_completed_has_no_future_and_valid_page(self):
         self.values.update({'meeting:'+m[0]:'win' for m in self.env['R13_FORK_MEETINGS']})
-        self.assertEqual(self.call('current'),11)
-        self.assertEqual(len(self.call('columns')),11)
-        self.assertEqual(self.call('initial_page'),5)
+        self.assertEqual(self.call('current'),16)
+        self.assertEqual(len(self.call('columns')),17)
+        self.assertEqual(self.call('initial_page'),11)
 
 if __name__=='__main__':unittest.main()

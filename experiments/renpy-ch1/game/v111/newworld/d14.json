@@ -1476,8 +1476,8 @@
         "id": "NW_EF_11",
         "speaker": null,
         "kind": "narration",
-        "text": "광장에서 너울 앞을 막아섰던 날을 기억하는 사람은 이제 우리뿐이었다.",
-        "when": "crowd_blocked13"
+        "text": "광장에서 너울 앞을 막아섰던 날, 등 뒤에서 들린 소리를 우리는 잊지 못했다.",
+        "when": "crowd_block_failed13"
       },
       {
         "id": "NW_EF_07",
@@ -1782,6 +1782,84 @@
         "kind": "dialogue",
         "text": "산길 끝까지 눈은 치워 뒀소. 내가 앞장서겠소.",
         "expression": "neutral"
+      }
+    ],
+    "end_memorial14": [
+      {
+        "id": "NW_D14_MM10",
+        "speaker": null,
+        "kind": "narration",
+        "text": "광장 수레 자리에 밤새 눈이 쌓였다. 아무도 치우지 않았다.",
+        "when": "dead:neoul"
+      },
+      {
+        "id": "NW_D14_MM11",
+        "speaker": "주민",
+        "text": "누가 먼저 쳤는지는 아무도 몰라요. 다들 그랬으니까.",
+        "when": "dead:neoul"
+      },
+      {
+        "id": "NW_D14_MM01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "광장 3번 등 아래, 피코의 이젤은 그대로 서 있었다.",
+        "when": "dead:resident_piko"
+      },
+      {
+        "id": "NW_D14_MM02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "학교 창가 자리에는 도토리 깡통이 놓여 있었다.",
+        "when": "dead:kid_kkomi"
+      },
+      {
+        "id": "NW_D14_MM03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "13호 문은 다시 열리지 않았다. 창틀에 안경 하나가 남아 있었다.",
+        "when": "dead:resident_owlgp"
+      },
+      {
+        "id": "NW_D14_MM04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "아랫길 끝, 네로의 장갑 한 짝이 눈 위에 걸려 있었다.",
+        "when": "dead:resident_nero"
+      },
+      {
+        "id": "NW_D14_MM05",
+        "speaker": null,
+        "kind": "narration",
+        "text": "보리는 작은 그릇 하나를 날마다 닦았다.",
+        "when": "dead:kid_dodam"
+      },
+      {
+        "id": "NW_D14_MM06",
+        "speaker": null,
+        "kind": "narration",
+        "text": "너울의 주판은 수레 바퀴 옆에서 주워졌다. 알 하나가 빠져 있었다.",
+        "when": "dead:neoul"
+      },
+      {
+        "id": "NW_D14_MM07",
+        "speaker": null,
+        "kind": "narration",
+        "text": "모모 씨의 이름은 이름판 맨 아래에 있었다.",
+        "when": "dead:resident_momo"
+      },
+      {
+        "id": "NW_D14_MM08",
+        "speaker": null,
+        "kind": "narration",
+        "text": "이름 없는 표 하나는 끝내 이름을 얻지 못했다.",
+        "when": "dead:v111_lowerroad_elder"
+      },
+      {
+        "id": "NW_D14_MM09",
+        "speaker": null,
+        "kind": "narration",
+        "text": "수레에 오른 이름들은 봄이 와도 돌아오지 않았다.",
+        "when": "departed_any"
       }
     ]
   }
