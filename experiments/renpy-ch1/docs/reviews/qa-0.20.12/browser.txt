@@ -1,0 +1,84 @@
+pc Traceback (most recent call last):
+  File "/home/claude/daaegame/experiments/renpy-ch1/docs/reviews/qa-0.20.12/browser_qa.py", line 62, in main
+    try:await run(mobile)
+        ^^^^^^^^^^^^^^^^^
+  File "/home/claude/daaegame/experiments/renpy-ch1/docs/reviews/qa-0.20.12/browser_qa.py", line 12, in run
+    b=await p.chromium.launch(executable_path='/opt/pw-browsers/chromium-1194/chrome-linux/chrome',args=['--no-sandbox','--enable-unsafe-swiftshader'])
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/async_api/_generated.py", line 14495, in launch
+    await self._impl_obj.launch(
+    ...<17 lines>...
+    )
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_browser_type.py", line 98, in launch
+    await self._channel.send(
+        "launch", TimeoutSettings.launch_timeout, params
+    )
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserType.launch: Target page, context or browser has been closed
+Browser logs:
+
+<launching> /opt/pw-browsers/chromium-1194/chrome-linux/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --no-sandbox --enable-unsafe-swiftshader --user-data-dir=/tmp/playwright_chromiumdev_profile-DTrUfG --remote-debugging-pipe --no-startup-window
+<launched> pid=22
+[pid=22][err] [22:22:1023/142425.268216:ERROR:third_party/crashpad/crashpad/util/linux/socket.cc:45] setsockopt: Operation not permitted (1)
+Call log:
+  - <launching> /opt/pw-browsers/chromium-1194/chrome-linux/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --no-sandbox --enable-unsafe-swiftshader --user-data-dir=/tmp/playwright_chromiumdev_profile-DTrUfG --remote-debugging-pipe --no-startup-window
+  - <launched> pid=22
+  - [pid=22][err] [22:22:1023/142425.268216:ERROR:third_party/crashpad/crashpad/util/linux/socket.cc:45] setsockopt: Operation not permitted (1)
+  - [pid=22] <gracefully close start>
+  - [pid=22] <kill>
+  - [pid=22] <will force kill>
+  - [pid=22] <process did exit: exitCode=null, signal=SIGTRAP>
+  - [pid=22] starting temporary directories cleanup
+  - [pid=22] finished temporary directories cleanup
+  - [pid=22] <gracefully close end>
+
+
+mobile Traceback (most recent call last):
+  File "/home/claude/daaegame/experiments/renpy-ch1/docs/reviews/qa-0.20.12/browser_qa.py", line 62, in main
+    try:await run(mobile)
+        ^^^^^^^^^^^^^^^^^
+  File "/home/claude/daaegame/experiments/renpy-ch1/docs/reviews/qa-0.20.12/browser_qa.py", line 12, in run
+    b=await p.chromium.launch(executable_path='/opt/pw-browsers/chromium-1194/chrome-linux/chrome',args=['--no-sandbox','--enable-unsafe-swiftshader'])
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/async_api/_generated.py", line 14495, in launch
+    await self._impl_obj.launch(
+    ...<17 lines>...
+    )
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_browser_type.py", line 98, in launch
+    await self._channel.send(
+        "launch", TimeoutSettings.launch_timeout, params
+    )
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserType.launch: Target page, context or browser has been closed
+Browser logs:
+
+<launching> /opt/pw-browsers/chromium-1194/chrome-linux/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --no-sandbox --enable-unsafe-swiftshader --user-data-dir=/tmp/playwright_chromiumdev_profile-mVS9N9 --remote-debugging-pipe --no-startup-window
+<launched> pid=34
+[pid=34][err] [34:34:1023/142425.653999:ERROR:third_party/crashpad/crashpad/util/linux/socket.cc:45] setsockopt: Operation not permitted (1)
+Call log:
+  - <launching> /opt/pw-browsers/chromium-1194/chrome-linux/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --no-sandbox --enable-unsafe-swiftshader --user-data-dir=/tmp/playwright_chromiumdev_profile-mVS9N9 --remote-debugging-pipe --no-startup-window
+  - <launched> pid=34
+  - [pid=34][err] [34:34:1023/142425.653999:ERROR:third_party/crashpad/crashpad/util/linux/socket.cc:45] setsockopt: Operation not permitted (1)
+  - [pid=34] <gracefully close start>
+  - [pid=34] <kill>
+  - [pid=34] <will force kill>
+  - [pid=34] <process did exit: exitCode=null, signal=SIGTRAP>
+  - [pid=34] starting temporary directories cleanup
+  - [pid=34] finished temporary directories cleanup
+  - [pid=34] <gracefully close end>
+
+
