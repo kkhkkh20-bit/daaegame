@@ -50,3 +50,25 @@ testcase v111_nw_d13_crowd_block_fails:
     assert eval (r13_v111_value("outcome13")=="crowd_violence" and r13_v111_value("crowd_intervention")=="failed")
     assert eval (qa_nw_seen("애가 있어요") and qa_nw_seen("아무도 그쪽을 보지 않는다"))
     screenshot "v111_nw_d13_crowd_block.png"
+
+testcase v111_nw_d04_silluk_mercy:
+    # 0.20.18 CRUEL_CHOICES.md C3 A안: 3일 실룩을 풀어 주면 4일 5번 등이 비고, 밤이가 울타리 옆으로 내려온다.
+    # 5일 초소 회의 기회가 하나 준다.
+    pause 1.0
+    click "처음부터"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
+    click pos (900,600) until screen "r13_hub" timeout 90
+    run Function(r13_v111_set,"day",4)
+    run Function(r13_v111_set,"silluk_status","reporting_obligation")
+    run Function(r13_grant,["V111:E18"],"qa")
+    run Function(r13_edit,location="square",period=1)
+    run Jump("r13_v111_eaves4")
+    pause 1.0
+    click pos (900,600) until eval (r13_v111_value("bami_cold4") is True and qa_nw_seen("입술이 파랗다")) timeout 60
+    assert eval (qa_nw_seen("5번 등이요. 어젯밤에 또 비었어요"))
+    screenshot "v111_nw_d04_silluk_mercy.png"
+    run Function(qa_nw_day5,[])
+    run Jump("r13_v111_proof5")
+    pause 1.5
+    assert screen "r13_crisis_proof"
+    assert eval (r13_v111_value("tries:gate_post")==1 and r13_v111_value("gate_post_cold_cost") is True)

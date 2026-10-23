@@ -118,6 +118,12 @@ label r13_v111_eaves4:
     call r13_v111_travel('square','eaves4',['daram'])
     $ r13_v111_arrive(['daram', 'resident_kongi', 'resident_tosil', 'bami'])
     $ r13_v111_score()
+    # 0.20.18 (소유자 2026-10-23 C3 A안 "착한 선택 한다고 좋은 결과가 안 나오게"): 3일에 실룩을 풀어 준 판은
+    # 그 밤 5번 등이 또 빈다. 그 밑에서 자던 밤이가 처마에서 내려와 울타리 옆에 있게 되고, 5일 회의 기회가 하나 준다.
+    if r13_v111_value('silluk_status')=='reporting_obligation' and not r13_v111_value('bami_cold4'):
+        $ r13_v111_set('bami_cold4',True)
+        $ r13_v111_join(['resident_lamplighter'])
+        call r13_lines(r13_nw_block('silluk_lamp4'),'nw:silluk_lamp4')
     call r13_lines(r13_v111_lines(['MS14_D04_S02_L0002']),'v111:MS14_D04_S02_L0002')
     call r13_lines(r13_v111_lines(['MS14_D04_S02_L0003']),'v111:MS14_D04_S02_L0003')
     call r13_lines(r13_v111_lines(['MS14_D04_S02_L0004']),'v111:MS14_D04_S02_L0004')
@@ -435,6 +441,10 @@ label r13_v111_hearing5:
     jump r13_v111_proof5
 
 label r13_v111_proof5:
+    # C3 A안: 밤이가 울타리 옆에 있었던 판은 너울이 한 수를 더 쥔다(기회 하나 감소, 한 번만).
+    if r13_v111_value('bami_cold4') and not r13_v111_value('gate_post_cold_cost'):
+        $ r13_v111_set('gate_post_cold_cost',True)
+        $ r13_v111_set('tries:gate_post',(r13_v111_value('tries:gate_post') or 0)+1)
     call r13_v111_proof("밤이 혐의의 근거를 확인한다",["E20","E22","E23","E24"],"r13_v111_bami_clear5","r13_v111_wrong5","r13_v111_hint5")
     jump expression _return
 
