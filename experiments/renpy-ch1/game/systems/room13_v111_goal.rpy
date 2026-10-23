@@ -21,7 +21,7 @@ init 341 python:
     _r13_step_goal=r13_v111_goal
     def r13_v111_goal():
         gate=(store.room13.get("v111") or {}).get("gate")
-        return R13_V111_STEP_GOALS.get(gate) or _r13_step_goal()
+        return r13_day2_guidance() or R13_V111_STEP_GOALS.get(gate) or _r13_step_goal()
 
 # 0.20.10 (4~14일 리뷰): 힌트 라벨이 없는 대조의 되묻기. 비교할 범위만 말하고 정답 자료는 말하지 않는다.
 init 342 python:

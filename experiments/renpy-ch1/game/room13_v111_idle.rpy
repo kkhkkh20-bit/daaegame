@@ -192,6 +192,8 @@ init 351 python:
     R13_TENSE_SCENES={"MS14_D04_S03","MS14_D07_S01","MS14_D07_S02","MS14_D07_S04","MS14_D11_S04","MS14_D12_S04","MS14_D13_C"}
     _r13_scene_idle_lines=r13_v111_idle_lines
     def r13_v111_idle_lines(person):
+        guidance=r13_day2_idle_guidance(person)
+        if guidance:return guidance
         v=store.room13.get("v111") or {}
         scene_people=v.get("people") or []
         if v.get("scene") in R13_TENSE_SCENES and person in scene_people and person in r13_met_people():

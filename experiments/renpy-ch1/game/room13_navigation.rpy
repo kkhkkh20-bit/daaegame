@@ -45,6 +45,28 @@ init 60 python:
         # 740x360 landscape: 88 virtual px equals a 44 CSS-px finger target.
         return max(88,r13_control_height()) if r13_touch_ui() else r13_control_height()
 
+    def r13_map_label(key):
+        """Connect the spoken destination with its map name only during that trip."""
+        state=store.room13
+        story=state.get("v111",{})
+        going_to_box=(story.get("gate")=="go_box" or
+            (story.get("gate")=="travel" and story.get("scene")=="MS14_D02_S01"
+                and story.get("travel_to")=="forest"
+                and not story.get("values",{}).get("mother_box_checked_day2")))
+        if (key=="forest" and state.get("day")==2
+                and globals().get("r13_v111_active",lambda:False)()
+                and going_to_box
+                and key in r13_places()):
+            return R13_MAP_LABELS[key]+" · 교환함"
+        return R13_MAP_LABELS[key]
+
+    def r13_map_input_hint(region):
+        if region=="village":
+            if r13_touch_ui():
+                return "지도를 손가락으로 끌어 둘러보세요. 테두리 장소 선택 후 이동으로 확정합니다."
+            return "드래그·휠 / Shift+방향키·PgUp·PgDn으로 둘러보기 · 장소 선택 후 이동으로 확정"
+        return "테두리가 있는 곳은 이동할 수 있습니다. 장소를 고른 뒤 이동을 누르세요."
+
     def r13_map_region(location):
         if location in R13_INN_LOCATIONS:return "inn"
         if location in ("forest","facility","greenhouse","altar"):return "mountain"
@@ -175,12 +197,12 @@ screen r13_map(initial_region=None, local_guide=False):
         frame:
             area (24,548,1232,48) padding (20,8)
             background Frame(R13_NIGHT_UI+"panel_small.png",12,12)
-            text (map_notice or "테두리가 있는 곳은 이동할 수 있습니다. 장소를 고른 뒤 이동을 누르세요.") size (24 if r13_touch_ui() else 20) color "#e3d6bd" yalign .5
+            text (map_notice or r13_map_input_hint(region)) size (24 if r13_touch_ui() else 20) color "#e3d6bd" yalign .5
     add Frame(R13_NIGHT_UI+"panel_small.png",12,12) xpos 24 ypos 602 xysize (1232,110)
     # Center every map control in the same footer, including 88px touch targets.
     $ map_controls_y=602+(110-r13_map_control_height())//2
     if selected:
-        text R13_MAP_LABELS[selected] xpos 48 ypos 627 size 27 color "#f6ecd8"
+        text r13_map_label(selected) xpos 48 ypos 627 size 27 color "#f6ecd8"
         $ meeting_venue=r13_meeting_map_venue(selected)
         text (("● 현재 위치" if selected==room13["location"] else "선택됨")+(" · "+meeting_venue[2] if meeting_venue else " · 이동 버튼으로 확정")+(" · 모임 중" if meeting_venue and r13_meeting_map_pending(selected) else "")) xpos 48 ypos 663 size 17 color "#d9b46c" xsize 302
         $ can_travel=selected!=room13["location"] and (selected in dict(r13_local_connections()) if local_guide else selected in r13_places())

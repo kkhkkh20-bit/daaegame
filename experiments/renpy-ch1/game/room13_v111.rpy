@@ -178,7 +178,7 @@ init 301 python:
         if any(spec is value and r13_v111_object_key(key)!=key for key,value in objects.items()):return False
         return (any(spec is objects.get(o.get("object")) for o in r13_v111_binding().get("options",[]) if o.get("location")==store.room13["location"])
             or any(spec is value and r13_v111_ambient_text(key,value) for key,value in objects.items()))
-    ROOM13["objects"].setdefault("forest",{})["v111_box"]=dict(rect=[1150,548,220,152],need=[],give=[],flags=[],text="북쪽 물자 길 교환함")
+    ROOM13["objects"].setdefault("forest",{})["v111_box"]=dict(rect=[880,500,220,152],need=[],give=[],flags=[],text="북쪽 물자 길 교환함")
     R13_OBJECT_NAMES["v111_box"]="교환함"
     # 0.20.10 (4~14일 리뷰 D11-02·03): 서술이 가리키는 대상을 그 단계에서만 보이는 조사 지점으로 둔다.
     ROOM13["objects"].setdefault("facility",{})["v111_mural"]=dict(rect=[1690,90,220,400],need=[],give=[],flags=[],text="벽 그림과 떨어진 돌판")
@@ -188,7 +188,9 @@ init 301 python:
     _r13_v111_props=r13_world_props
     def r13_world_props(entry=False):
         if r13_v111_active() and store.room13["location"]=="forest" and store.room13["v111"].get("scene") in ("MS14_D02_S01","MS14_D11_S00"):
-            return [(Transform("assets/ms14/box.png",xysize=(220,152),fit="contain",nearest=True),1150,548)]
+            # One rect drives both the prop and its click target on days 2 and 11.
+            x,y,w,h=ROOM13["objects"]["forest"]["v111_box"]["rect"]
+            return [(Transform("assets/ms14/box.png",xysize=(w,h),fit="contain",nearest=True),x,y)]
         if r13_v111_active() and store.room13["location"]=="school" and store.room13["v111"].get("gate")=="blanket_mend13":
             return [(Transform("assets/room13-v111-blanket-before.webp",xysize=(260,180),fit="contain",nearest=True),30,441)]
         return _r13_v111_props(entry)

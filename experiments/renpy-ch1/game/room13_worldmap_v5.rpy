@@ -81,9 +81,17 @@ screen r13_cartography(region,selected,ready,map_hover):
     if "size" in R13_CARTOGRAPHY["regions"][region]:
         $ vw,vh=r13_cart_canvas(region)
         $ fx,fy=r13_cart_focus(region,selected)
+        # Keep ordinary arrow keys for button focus; modified arrows pan the
+        # drawing without selecting a place or confirming a trip.
+        key "shift_K_LEFT" action Scroll("r13_map_view","horizontal decrease",160)
+        key "shift_K_RIGHT" action Scroll("r13_map_view","horizontal increase",160)
+        key "shift_K_UP" action Scroll("r13_map_view","vertical decrease",160)
+        key "shift_K_DOWN" action Scroll("r13_map_view","vertical increase",160)
         viewport id "r13_map_view":
-            xpos 16 ypos 0 xysize R13_MAP_VIEW
+            # Clip drawing and input above the fixed status strip.
+            xpos 16 ypos 0 xysize (R13_MAP_VIEW[0],min(R13_MAP_VIEW[1],548))
             draggable True mousewheel True
+            pagekeys True
             xinitial fx yinitial fy
             fixed:
                 xysize (vw,vh+R13_MAP_BOTTOM_PAD)
@@ -146,7 +154,7 @@ screen r13_cartography_layer(region,selected,ready,map_hover):
             hovered (None if r13_touch_ui() else SetScreenVariable("map_hover",key))
             unhovered (None if r13_touch_ui() else SetScreenVariable("map_hover",None))
             sensitive ready
-            alt R13_MAP_LABELS[key]
+            alt r13_map_label(key)
     # Village names are ink in the approved drawing, not separate button plates.
     # Only existing eligible places receive interactive targets and underlines.
     # Building contours above persist independently of the supplementary underline.
@@ -164,7 +172,7 @@ screen r13_cartography_layer(region,selected,ready,map_hover):
                 hovered (None if r13_touch_ui() else SetScreenVariable("map_hover",key))
                 unhovered (None if r13_touch_ui() else SetScreenVariable("map_hover",None))
                 sensitive ready
-                alt R13_MAP_LABELS[key]
+                alt r13_map_label(key)
             if key==selected or key==map_hover:
                 $ underline_width=max(36,int(round(R13_CARTOGRAPHY["regions"]["village"]["nodes"][key]["label_bounds"][2]*R13_MAP_SCALE)))
                 add R13MapInkUnderline(hovered=(key==map_hover)) xpos (hx-underline_width//2) ypos (hy+18) xysize (underline_width,6)
@@ -172,11 +180,11 @@ screen r13_cartography_layer(region,selected,ready,map_hover):
                 text "현재 위치" xpos hx ypos (hy+24 if hy<r13_cart_canvas(region)[1]-60 else hy-42) xanchor .5 size 14 color "#765b3e"
     elif map_hover in dict(r13_map_nodes(region)):
         $ hx,hy=r13_cart_point(region,map_hover)
-        $ nw=max(118,min(230,32+len(R13_MAP_LABELS[map_hover])*22))
+        $ nw=max(118,min(304,32+len(r13_map_label(map_hover))*22))
         frame:
             xpos (max(24,min(1256-nw,hx-nw//2))) ypos (max(101,min(568,hy-62)))
             xysize (nw,38) padding (8,3) background R13InkPanel(focused=True)
-            text R13_MAP_LABELS[map_hover] size 21 color "#fff0d2" align (.5,.5)
+            text r13_map_label(map_hover) size 21 color "#fff0d2" align (.5,.5)
 
 transform r13_map_pop:
     subpixel True

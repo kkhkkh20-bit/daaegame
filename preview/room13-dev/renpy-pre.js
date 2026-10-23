@@ -673,7 +673,7 @@ Module.preRun = Module.preRun || [ ];
                         console.log(err, err.message);
                         printMessage("Warning: cannot import savegames: write error: " + err.message );
                     } else {
-                        renpy_exec('renpy.loadsave.location.scan()').then(result => {
+                        renpy_exec('renpy.loadsave.location.scan(); renpy.loadsave.clear_cache()').then(result => {
                             printMessage("Saves imported successfully.");
                         }).catch(error => {
                             console.error('Cannot rescan saves folder:', error);

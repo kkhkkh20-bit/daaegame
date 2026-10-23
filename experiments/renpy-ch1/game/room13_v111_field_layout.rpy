@@ -138,7 +138,10 @@ init 337 python:
         out=[]
         for actor in rows:
             out.append(r13_clear_critical_x(actor,rects,rows,width) if actor.get("rect") else actor)
-        return sorted(r13_separate_overlaps(out,rects,width),key=lambda a:a.get("depth",0))
+        out=r13_separate_overlaps(out,rects,width)
+        if location in ("square","forest"):
+            out=r13_clear_field_hud(out,rects,width)
+        return sorted(out,key=lambda a:a.get("depth",0))
 
     # 0.20.10 (4~14일 리뷰: 5일 골목, 9일 주방, 11일 숲): 두 사람이 거의 같은 자리에 서면 뒤에 선
     # 사람의 얼굴과 이름표가 가린다. 뒤쪽(깊이가 얕은) 사람이 가장 가까운 빈자리로 비켜 선다.
@@ -167,3 +170,47 @@ init 337 python:
                     moved=True
             if not moved:break
         return rows
+
+
+    def r13_clear_field_hud(rows,critical,width):
+        # A04: fixed work poses and the final object-clearance pass run AFTER
+        # ordinary slot scoring. Recheck these two reviewed panoramas only.
+        # Reserve the largest existing touch dock at both camera endpoints;
+        # panning or changing text size must not make a face slide behind it.
+        ui=[]
+        for offset in (0,max(0,width-1280)):
+            ui.extend([(offset+772,616,480,88),(offset+1020,512,232,112)])
+        def overlap(a,b):
+            return max(0,min(a[0]+a[2],b[0]+b[2])-max(a[0],b[0]))*max(0,min(a[1]+a[3],b[1]+b[3])-max(a[1],b[1]))
+        out=list(rows)
+        for index,actor in enumerate(out):
+            face=r13_actor_face_target(actor) or actor["rect"]
+            if not any(overlap(face,r) for r in ui):continue
+            # Do not detach a seated/furniture-bound resident from authored art.
+            if actor.get("contact") in ("hanging","background_bench","bench_sit","behind_counter","background_chair"):continue
+            dxs={0}
+            for rect in ui+list(critical):
+                dxs.update((int(rect[0]-8-face[0]-face[2]),int(rect[0]+rect[2]+8-face[0]),
+                            int(rect[0]-8-actor["rect"][0]-actor["rect"][2]),int(rect[0]+rect[2]+8-actor["rect"][0])))
+            dxs.update(d for n in (48,96,144,240,384,640) for d in (-n,n))
+            candidates=[]
+            for dx in sorted(dxs):
+                for dy in (0,-24,24,-48,48):
+                    candidate=r13_balance_translate(actor,dx,dy)
+                    x,y,w,h=candidate["rect"]
+                    if x<8 or x+w>width-8 or y<100 or y+h>720:continue
+                    cf=r13_actor_face_target(candidate) or candidate["rect"]
+                    ui_cover=sum(overlap(cf,r) for r in ui)
+                    object_cover=sum(overlap(candidate["rect"],r) for r in critical)
+                    faces=0
+                    for other_index,other in enumerate(out):
+                        if other_index==index:continue
+                        of=r13_actor_face_target(other) or other["rect"]
+                        faces+=overlap(cf,of)*4
+                        if candidate.get("depth",0)>other.get("depth",0):faces+=overlap(candidate["rect"],of)
+                        else:faces+=overlap(cf,other["rect"])
+                    body_cover=sum(overlap(candidate["rect"],r) for r in ui)
+                    score=(ui_cover,object_cover,faces,body_cover*.01+abs(dx)+abs(dy)*2)
+                    candidates.append((score,candidate))
+            if candidates:out[index]=min(candidates,key=lambda item:item[0])[1]
+        return out

@@ -1,0 +1,655 @@
+{
+  "source": "0.20.14 Chromium read-only stage geometry, 2026-10-23, explicit day2 fixture",
+  "cases": [
+    {
+      "location": "square",
+      "large": false,
+      "width": 1920,
+      "actors": [
+        {
+          "person": "resident_seol",
+          "pose": "living_bellrope",
+          "x": 317,
+          "y": 241,
+          "width": 97,
+          "height": 175,
+          "rect": [
+            317,
+            241,
+            97,
+            175
+          ],
+          "depth": 460,
+          "contact": "standing",
+          "head_relative": [
+            16,
+            0,
+            47,
+            35
+          ]
+        },
+        {
+          "person": "resident_lamplighter",
+          "pose": "living_inspectlamp",
+          "x": 1646,
+          "y": 364,
+          "width": 105,
+          "height": 220,
+          "rect": [
+            1646,
+            364,
+            105,
+            220
+          ],
+          "depth": 584,
+          "contact": "standing",
+          "head_relative": [
+            12,
+            0,
+            80,
+            78
+          ]
+        },
+        {
+          "person": "resident_hyeoni",
+          "pose": "map27_mk_8",
+          "x": 1234,
+          "y": 385,
+          "width": 150,
+          "height": 232,
+          "rect": [
+            1234,
+            385,
+            150,
+            232
+          ],
+          "depth": 617,
+          "contact": "standing",
+          "map27_keepouts": [],
+          "head_relative": [
+            39,
+            0,
+            90,
+            65
+          ]
+        },
+        {
+          "person": "resident_yeoni",
+          "pose": "living_mend",
+          "x": 1708,
+          "y": 440,
+          "width": 120,
+          "height": 180,
+          "rect": [
+            1708,
+            440,
+            120,
+            180
+          ],
+          "depth": 620,
+          "contact": "bench_sit",
+          "head_relative": [
+            37,
+            1,
+            46,
+            33
+          ]
+        },
+        {
+          "person": "doto",
+          "pose": "map27_write_ledger_v2",
+          "x": 1176,
+          "y": 376,
+          "width": 126,
+          "height": 245,
+          "rect": [
+            1176,
+            376,
+            126,
+            245
+          ],
+          "depth": 621,
+          "contact": "standing",
+          "map27_keepouts": [],
+          "head_relative": [
+            15,
+            0,
+            95,
+            73
+          ]
+        },
+        {
+          "person": "resident_ppul",
+          "pose": "activity",
+          "x": 1367,
+          "y": 459,
+          "width": 205,
+          "height": 182,
+          "rect": [
+            1367,
+            459,
+            205,
+            182
+          ],
+          "depth": 641,
+          "contact": "standing",
+          "head_relative": [
+            2,
+            0,
+            203,
+            109
+          ]
+        },
+        {
+          "person": "resident_owlgp",
+          "pose": "living_notebook",
+          "x": 153,
+          "y": 478,
+          "width": 123,
+          "height": 198,
+          "rect": [
+            153,
+            478,
+            123,
+            198
+          ],
+          "depth": 676,
+          "contact": "portable_stool",
+          "head_relative": [
+            36,
+            1,
+            78,
+            74
+          ]
+        },
+        {
+          "person": "daram",
+          "pose": "neutral",
+          "x": 1005,
+          "y": 426,
+          "width": 202,
+          "height": 265,
+          "rect": [
+            1005,
+            426,
+            202,
+            265
+          ],
+          "depth": 691,
+          "contact": "standing",
+          "head_relative": [
+            71,
+            0,
+            131,
+            120
+          ]
+        },
+        {
+          "person": "resident_badook",
+          "pose": "living_bootlace",
+          "x": 294,
+          "y": 482,
+          "width": 278,
+          "height": 224,
+          "rect": [
+            294,
+            482,
+            278,
+            224
+          ],
+          "depth": 706,
+          "contact": "self-contained",
+          "head_relative": [
+            64,
+            0,
+            214,
+            122
+          ]
+        }
+      ]
+    },
+    {
+      "location": "square",
+      "large": true,
+      "width": 1920,
+      "actors": [
+        {
+          "person": "resident_seol",
+          "pose": "living_bellrope",
+          "x": 317,
+          "y": 241,
+          "width": 97,
+          "height": 175,
+          "rect": [
+            317,
+            241,
+            97,
+            175
+          ],
+          "depth": 460,
+          "contact": "standing",
+          "head_relative": [
+            16,
+            0,
+            47,
+            35
+          ]
+        },
+        {
+          "person": "resident_lamplighter",
+          "pose": "living_inspectlamp",
+          "x": 467,
+          "y": 362,
+          "width": 105,
+          "height": 220,
+          "rect": [
+            467,
+            362,
+            105,
+            220
+          ],
+          "depth": 582,
+          "contact": "standing",
+          "head_relative": [
+            12,
+            0,
+            80,
+            78
+          ]
+        },
+        {
+          "person": "resident_hyeoni",
+          "pose": "map27_mk_8",
+          "x": 1234,
+          "y": 385,
+          "width": 150,
+          "height": 232,
+          "rect": [
+            1234,
+            385,
+            150,
+            232
+          ],
+          "depth": 617,
+          "contact": "standing",
+          "map27_keepouts": [],
+          "head_relative": [
+            39,
+            0,
+            90,
+            65
+          ]
+        },
+        {
+          "person": "resident_yeoni",
+          "pose": "living_mend",
+          "x": 1708,
+          "y": 440,
+          "width": 120,
+          "height": 180,
+          "rect": [
+            1708,
+            440,
+            120,
+            180
+          ],
+          "depth": 620,
+          "contact": "bench_sit",
+          "head_relative": [
+            37,
+            1,
+            46,
+            33
+          ]
+        },
+        {
+          "person": "doto",
+          "pose": "map27_write_ledger_v2",
+          "x": 1176,
+          "y": 376,
+          "width": 126,
+          "height": 245,
+          "rect": [
+            1176,
+            376,
+            126,
+            245
+          ],
+          "depth": 621,
+          "contact": "standing",
+          "map27_keepouts": [],
+          "head_relative": [
+            15,
+            0,
+            95,
+            73
+          ]
+        },
+        {
+          "person": "resident_badook",
+          "pose": "living_bootlace",
+          "x": 1341,
+          "y": 437,
+          "width": 253,
+          "height": 203,
+          "rect": [
+            1341,
+            437,
+            253,
+            203
+          ],
+          "depth": 640,
+          "contact": "self-contained",
+          "head_relative": [
+            58,
+            0,
+            195,
+            111
+          ]
+        },
+        {
+          "person": "resident_owlgp",
+          "pose": "living_notebook",
+          "x": 153,
+          "y": 478,
+          "width": 123,
+          "height": 198,
+          "rect": [
+            153,
+            478,
+            123,
+            198
+          ],
+          "depth": 676,
+          "contact": "portable_stool",
+          "head_relative": [
+            36,
+            1,
+            78,
+            74
+          ]
+        },
+        {
+          "person": "daram",
+          "pose": "neutral",
+          "x": 1005,
+          "y": 426,
+          "width": 202,
+          "height": 265,
+          "rect": [
+            1005,
+            426,
+            202,
+            265
+          ],
+          "depth": 691,
+          "contact": "standing",
+          "head_relative": [
+            71,
+            0,
+            131,
+            120
+          ]
+        },
+        {
+          "person": "resident_ppul",
+          "pose": "activity",
+          "x": 346,
+          "y": 505,
+          "width": 227,
+          "height": 202,
+          "rect": [
+            346,
+            505,
+            227,
+            202
+          ],
+          "depth": 707,
+          "contact": "standing",
+          "head_relative": [
+            2,
+            0,
+            225,
+            120
+          ]
+        }
+      ]
+    },
+    {
+      "location": "forest",
+      "large": false,
+      "width": 2160,
+      "actors": [
+        {
+          "person": "daram",
+          "pose": "neutral",
+          "x": 1815,
+          "y": 456,
+          "width": 169,
+          "height": 221,
+          "rect": [
+            1815,
+            456,
+            169,
+            221
+          ],
+          "depth": 677,
+          "contact": "standing",
+          "head_relative": [
+            60,
+            0,
+            109,
+            100
+          ]
+        },
+        {
+          "person": "resident_siluk",
+          "pose": "neutral",
+          "x": 822,
+          "y": 450,
+          "width": 109,
+          "height": 249,
+          "rect": [
+            822,
+            450,
+            109,
+            249
+          ],
+          "depth": 699,
+          "contact": "standing",
+          "head_relative": [
+            30,
+            1,
+            64,
+            48
+          ]
+        },
+        {
+          "person": "resident_lamplighter",
+          "pose": "living_inspectlamp",
+          "x": 999,
+          "y": 450,
+          "width": 119,
+          "height": 250,
+          "rect": [
+            999,
+            450,
+            119,
+            250
+          ],
+          "depth": 700,
+          "contact": "standing",
+          "head_relative": [
+            14,
+            0,
+            90,
+            89
+          ]
+        },
+        {
+          "person": "resident_solbang",
+          "pose": "work_herb_bundle",
+          "x": 1369,
+          "y": 472,
+          "width": 157,
+          "height": 233,
+          "rect": [
+            1369,
+            472,
+            157,
+            233
+          ],
+          "depth": 705,
+          "contact": "standing",
+          "head_relative": [
+            29,
+            0,
+            87,
+            89
+          ]
+        },
+        {
+          "person": "resident_kalbaram",
+          "pose": "map27_fo_1",
+          "x": 1504,
+          "y": 554,
+          "width": 164,
+          "height": 180,
+          "rect": [
+            1504,
+            554,
+            164,
+            180
+          ],
+          "depth": 734,
+          "contact": "kneeling",
+          "map27_keepouts": [],
+          "head_relative": [
+            88,
+            10,
+            61,
+            63
+          ]
+        }
+      ]
+    },
+    {
+      "location": "forest",
+      "large": true,
+      "width": 2160,
+      "actors": [
+        {
+          "person": "resident_solbang",
+          "pose": "work_herb_bundle",
+          "x": 656,
+          "y": 452,
+          "width": 144,
+          "height": 214,
+          "rect": [
+            656,
+            452,
+            144,
+            214
+          ],
+          "depth": 666,
+          "contact": "standing",
+          "head_relative": [
+            27,
+            0,
+            79,
+            81
+          ]
+        },
+        {
+          "person": "daram",
+          "pose": "neutral",
+          "x": 1815,
+          "y": 456,
+          "width": 169,
+          "height": 221,
+          "rect": [
+            1815,
+            456,
+            169,
+            221
+          ],
+          "depth": 677,
+          "contact": "standing",
+          "head_relative": [
+            60,
+            0,
+            109,
+            100
+          ]
+        },
+        {
+          "person": "resident_siluk",
+          "pose": "neutral",
+          "x": 822,
+          "y": 450,
+          "width": 109,
+          "height": 249,
+          "rect": [
+            822,
+            450,
+            109,
+            249
+          ],
+          "depth": 699,
+          "contact": "standing",
+          "head_relative": [
+            30,
+            1,
+            64,
+            48
+          ]
+        },
+        {
+          "person": "resident_lamplighter",
+          "pose": "living_inspectlamp",
+          "x": 999,
+          "y": 450,
+          "width": 119,
+          "height": 250,
+          "rect": [
+            999,
+            450,
+            119,
+            250
+          ],
+          "depth": 700,
+          "contact": "standing",
+          "head_relative": [
+            14,
+            0,
+            90,
+            89
+          ]
+        },
+        {
+          "person": "resident_kalbaram",
+          "pose": "map27_fo_1",
+          "x": 1344,
+          "y": 554,
+          "width": 164,
+          "height": 180,
+          "rect": [
+            1344,
+            554,
+            164,
+            180
+          ],
+          "depth": 734,
+          "contact": "kneeling",
+          "map27_keepouts": [],
+          "head_relative": [
+            88,
+            10,
+            61,
+            63
+          ]
+        }
+      ]
+    }
+  ]
+}

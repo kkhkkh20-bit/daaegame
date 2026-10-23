@@ -346,7 +346,15 @@ def install_loader(path):
         a = s.index("    async function r13FetchGameZip()")
         hook = "    Module['preRun'].push(runLoadGameZip);\n"
         b = s.index(hook, a) + len(hook)
-    path.write_text(s[:a] + LOADER + s[b:])
+    s = s[:a] + LOADER + s[b:]
+    # Import can leave newest_slot(None) cached when the menu had no saves.
+    # Rescan disk, invalidate all slot metadata, and let clear_cache redraw UI.
+    old_import = "renpy_exec('renpy.loadsave.location.scan()')"
+    new_import = "renpy_exec('renpy.loadsave.location.scan(); renpy.loadsave.clear_cache()')"
+    s = s.replace(old_import, new_import)
+    if new_import not in s:
+        raise RuntimeError("Save import refresh hook not found in web runtime")
+    path.write_text(s)
 
 
 def seed_previous_rpyc(release, game):
