@@ -251,4 +251,4 @@ init 318 python:
     _fac=R13_WORLD_LAYOUTS["facility"]
     _fac.update(width=2400,files={k:"assets/room13-pixel-wide-facility-%s.webp"%k for k in ("morning","afternoon","evening")})
     _fac["slots"]=list(_fac.get("slots",[]))+[[1960,684,252,"floor"],[2230,692,256,"floor"]]
-    ROOM13["objects"]["facility"]["v111_mural"]=dict(ROOM13["objects"]["facility"]["v111_mural"],rect=[1950,70,410,420])
+    ROOM13["objects"]["facility"]["v111_mural"]=dict(ROOM13["objects"]["facility"]["v111_mural"],rect=[1940,80,380,560])
