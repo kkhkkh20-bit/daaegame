@@ -453,7 +453,7 @@ s='MS14_D13_A';start(s,'square','family_exit13',['mom','daram','guard','karo'],2
 s='MS14_D13_B';start(s,'square','partial13',['karo','guard','resident_badook'],2);late(s,1,10);setv('outcome13','partial_rescue');setv('cart_stopped',True);setv('pending_handover_supervised',True);goto('sleep13')
 s='MS14_D13_C';start(s,'square','crowd13',['guard','karo','resident_badook','neoul'],2);late(s,1,4)
 lines.append('    if '+V('family_location')+"=='square':");lines.append('        call r13_v111_daram_crowd13')
-select([('너울 앞을 막는다','crowd_block13',None),('현장 감독자에게 보호를 맡긴다','crowd_guard13','not '+V('busy:guard')),('막지 않는다','crowd_watch13',None)])
+select([('너울을 몸으로 감싼다','crowd_block13',None),('돌목에게 너울을 맡긴다','crowd_guard13','not '+V('busy:guard')),('주민들을 말리지 않는다','crowd_watch13',None)])
 label('daram_crowd13');arrive(['mom','daram','guard','karo','neoul','resident_badook']);late(s,5,7);lines.append('    return')
 label('crowd_block13');late(s,8,16);setv('crowd_resolution_done',True);setv('crowd_injury',False);setv('crowd_intervention','success');setv('outcome13','all_rescued');goto('handover_plan13')
 label('crowd_guard13');late(s,17,18);setv('crowd_resolution_done',True);setv('crowd_injury',False);setv('outcome13','all_rescued');goto('handover_plan13')

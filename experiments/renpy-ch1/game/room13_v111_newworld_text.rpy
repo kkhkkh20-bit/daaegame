@@ -232,6 +232,28 @@ init 319 python:
         "daram_watching13":lambda:r13_v111_actor_ready("daram") and r13_v111_value("listed:daram") is not True,
         # 14일 아침: 엄마와 다람이 함께 학교에 있을 때만 셋이 말한다.
         "mom_daram_ready14":lambda:r13_v111_actor_ready("mom") and r13_v111_actor_ready("daram"),
+        # 2026-10-24 행동 검수(action-review-20261024/적용보고.md). 이미 있는 값만 읽는다.
+        # 대안 1: 회의에서 틀린 뒤 기회가 한 번만 남았을 때 결정하는 사람이 참을성이 바닥났음을 말한다.
+        "lamp_last_try":lambda:r13_v111_value("meeting:lamp") is None and r13_nw_tries_left("lamp")==1,
+        "gate_post_last_try":lambda:r13_v111_value("meeting:gate_post") is None and r13_nw_tries_left("gate_post")==1,
+        # 4-1: 3일 회의를 진 판은 보호시설 설명을 이미 들었다. 5-1: 밤이를 풀어 준 판.
+        "lamp_not_lose":lambda:r13_v111_value("meeting:lamp")!="lose",
+        "gate_post_win":lambda:r13_v111_value("meeting:gate_post")=="win",
+        # 소유자 결정 4(탈출 축): 3일에 톡에게 「쇠 토막을 구해 와야 해요」를 들은 판에서, 5일 식당에 까로가 있을 때.
+        "karo_heard_iron5":lambda:r13_v111_value("meeting:lamp") in ("win","partial") and r13_v111_value("listed:resident_tok") is not True and r13_v111_actor_ready("karo"),
+        # 11-11: 학교 물자를 아직 넘기지 않아 「학교 물자 인계를 먼저」가 메뉴에 남는 판.
+        "school_supply_pending":lambda:not r13_v111_value("school_supply_handed"),
+        # 12-1·13-3: 돌목이 그 자리에 있을 때(원래 줄도 같은 확인을 한다).
+        "guard_ready":lambda:r13_v111_actor_ready("guard"),
+        # 13-4: 다람이 수레를 보지 못하는 판은 엄마가 같은 말을 한다.
+        "daram_not_watching13":lambda:not (r13_v111_actor_ready("daram") and r13_v111_value("listed:daram") is not True),
+        # 13-10: 까로와 돌목이 둘 다 곁에 있으면 셋이 주고받고, 아니면 아빠의 속말 한 줄.
+        "karo_guard_ready13":lambda:r13_v111_actor_ready("karo") and r13_v111_actor_ready("guard"),
+        "karo_guard_not_ready13":lambda:not (r13_v111_actor_ready("karo") and r13_v111_actor_ready("guard")),
+        # 14-5: 부리가 공구를 챙긴 판에서 촌장 동행을 아직 묻기 전.
+        "buri_site_ask14":lambda:bool(r13_v111_value("buri_device_consent")) and not r13_v111_value("mayor_site_decided") and r13_v111_person_alive("buri"),
+        # 대안 9: 마을의 아침인데 이 아침을 함께 못 맞은 사람이 있는 판(진엔딩을 막는 까닭 하나).
+        "morning_with_loss14":lambda:r13_v111_value("ending14")=="morning" and r13_nw_loss_count()>0 and r13_v111_actor_ready("mom") and r13_v111_actor_ready("daram"),
     }
     for _nw_who in ("resident_piko","kid_kkomi","resident_owlgp","resident_nero","kid_dodam","neoul","resident_momo","v111_lowerroad_elder"):
         R13_NW_WHEN["dead:"+_nw_who]=(lambda w=_nw_who:w in r13_nw_dead())

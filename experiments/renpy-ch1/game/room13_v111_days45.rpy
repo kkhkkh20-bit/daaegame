@@ -592,6 +592,9 @@ label r13_v111_night5:
     call r13_lines(r13_v111_lines(['MS14_D05_S05_L0015']),'v111:MS14_D05_S05_L0015')
     call r13_lines(r13_v111_lines(['MS14_D05_S05_L0016']),'v111:MS14_D05_S05_L0016')
     call r13_v111_travel('dining','diner5')
+    # 2026-10-24 행동 검수(소유자 결정 4, 탈출 축): 3일에 톡에게 쇠 토막 이야기를 들은 판은 식당에 까로가 있다.
+    if R13_NW_WHEN["tok_freed3"]() and r13_v111_person_alive("karo"):
+        $ r13_v111_join(['karo'])
     call r13_lines(r13_v111_lines(['MS14_D05_S05_L0019']),'v111:MS14_D05_S05_L0019')
     call r13_lines(r13_v111_lines(['MS14_D05_S05_L0020']),'v111:MS14_D05_S05_L0020')
     call r13_lines(r13_v111_lines(['MS14_D05_S05_L0021']),'v111:MS14_D05_S05_L0021')

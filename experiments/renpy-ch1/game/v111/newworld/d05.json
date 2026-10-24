@@ -617,6 +617,38 @@
         "kind": "narration",
         "text": "다람이 책상 접시에서 과자 봉지를 집어 작은 가방에 넣는다."
       }
+    ],
+    "MS14_D05_S05_L0019": [
+      {
+        "id": "NW_AR_D05_05",
+        "speaker": null,
+        "kind": "narration",
+        "text": "식당 안쪽 자리에서 까로가 국그릇을 비우고 있다.",
+        "when": "karo_heard_iron5"
+      },
+      {
+        "id": "NW_AR_D05_06",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "까로 씨, 쇠 토막은 어디서 구합니까? 톡 씨가 구해 와야 한다던데요.",
+        "expression": "neutral",
+        "when": "karo_heard_iron5"
+      },
+      {
+        "id": "NW_AR_D05_07",
+        "speaker": "까로",
+        "kind": "dialogue",
+        "text": "지금은 구할 데가 없어요. 고개 소식부터 보죠.",
+        "expression": "neutral",
+        "when": "karo_heard_iron5"
+      },
+      {
+        "id": "NW_AR_D05_08",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "축이 굴러가야 나간다. 그때까지는…… 이 마을에서 버텨야 한다.",
+        "when": "karo_heard_iron5"
+      }
     ]
   },
   "after": {
@@ -784,6 +816,14 @@
         "text": "……밤이 아니라고 했잖아.",
         "expression": "anxious",
         "when": "gate_post_lose"
+      },
+      {
+        "id": "NW_AR_D05_01",
+        "speaker": "바둑이",
+        "kind": "dialogue",
+        "text": "다음에도 같은 말이면, 나도 너울 씨 말을 적을 수밖에 없소.",
+        "expression": "neutral",
+        "when": "gate_post_last_try"
       }
     ],
     "MS14_D05_S04_L0019": [
@@ -914,6 +954,32 @@
         "speaker": "돌목",
         "text": "……그래, 이 소매요. 내가 움켜쥔 데가 딱 여기였소.",
         "when": "gate_post_won_with_sketch"
+      }
+    ],
+    "MS14_D05_S05_L0008": [
+      {
+        "id": "NW_AR_D05_02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "솜아. 할아버지 옷 이야기는 아저씨가 했어. 밤이를 풀어 주려면 그것밖에 없었어.",
+        "expression": "anxious",
+        "when": "gate_post_win"
+      },
+      {
+        "id": "NW_AR_D05_03",
+        "speaker": "솜이",
+        "kind": "dialogue",
+        "text": "……밤이는 풀려났어요?",
+        "expression": "neutral",
+        "when": "gate_post_win"
+      },
+      {
+        "id": "NW_AR_D05_04",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "응. 그 대신 약속은 못 지켰다. 미안하다.",
+        "expression": "anxious",
+        "when": "gate_post_win"
       }
     ]
   },

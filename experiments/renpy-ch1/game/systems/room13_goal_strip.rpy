@@ -17,6 +17,7 @@ init 337 python:
         room13_empty=("MS14_D01_S05_L0016","MS14_D02_S01"),   # 1일 13호실 빈방 「엄마?」
         bami_river=("MS14_D04_S02_L0017","MS14_D04_S03"),     # 4일 밤이 「이 사람…… 강 쪽에서 봤어요.」
         pass_blocked=("MS14_D11_S00_L0002","MS14_D11_S01"),   # 11일 까로 「바깥 고개가 막혔대요.」
+        list_seen13=("MS14_D13_S02_L0013","MS14_D13_S03"),    # 13일 광장 너울 「부인도 명단에 있소. 여기 적혀 있소.」
     )
     # 칸 아래 한 줄: (시작 날, 끝 날, 지나야 하는 것, 문장). 뒤에서부터 조건이 맞는 첫 줄을 쓴다.
     # 조건이 안 맞으면 앞 줄로 내려간다(예: 4일인데 밤이 대화 전이면 1~3일 문장). 문장은 소유자 승인안 그대로.
@@ -24,8 +25,14 @@ init 337 python:
         (1,3,"room13_empty","엄마는 여관 13호실에서 기다린다고 했다. 13호실은 비어 있었다."),
         (4,10,"bami_river","밤이가 강 쪽에서 엄마를 봤다고 했다."),
         (11,12,"pass_blocked","바깥 고개가 막혔다. 걸어서도 못 나간다."),
-        (13,14,"scene:MS14_D13_S01","명단에 오른 사람은 수레에 실려 간다. 셋이 함께 남아야 한다."),
+        # 2026-10-24 행동 검수 8(소유자 승인): 「셋이 함께 남아야 한다」가 13일 촌장의 거래(가족 셋만 물러나기)를
+        # 권하는 말로 읽혔다. 문장을 바꾸고, 아빠가 광장에서 명단 종이를 처음 보는 줄(D13_S02_L0013)부터 보인다.
+        # 그 전 13일 아침과 입구 경비실(같은 D13_S02 장면)에서는 11~12일 문장이 남는다.
+        (13,14,"list_seen13","명단에 빈칸이 있는 한, 다음은 누구든 될 수 있다."),
     )
+    # 2026-10-24 행동 검수 8(소유자 승인): 엄마는 13일 명단에 오른다. 만났다고 곧바로 「엄마를 지킨다 — 마침」으로
+    # 두면 13일 사실과 어긋난다. 13일 수레 일이 다 지나간 뒤(14일 장면에 들어선 뒤)에야 ③으로 넘긴다.
+    R13_GOAL_GUARD_DONE="MS14_D14_S01"
     R13_GOAL_GOLD="#d6b26c"
     R13_GOAL_INK="#ece0c8"
     R13_GOAL_DIM="#96846e"
@@ -54,7 +61,7 @@ init 337 python:
         """(단계 이름 셋, 지금 단계 번호 0~2, 아래 한 줄 또는 None)."""
         met=r13_v111_value("family_reunited") is True
         steps=[R13_GOAL_STEPS[0],R13_GOAL_STEPS[1][1 if met else 0],R13_GOAL_STEPS[2]]
-        current=2 if met else (1 if r13_goal_scene_reached(R13_GOAL_GATE_PASSED) else 0)
+        current=2 if met and r13_goal_scene_reached(R13_GOAL_GUARD_DONE) else (1 if met or r13_goal_scene_reached(R13_GOAL_GATE_PASSED) else 0)
         day=(store.room13 or {}).get("day") or 1
         note=None
         for first,last,mark,text in reversed(R13_GOAL_NOTES):

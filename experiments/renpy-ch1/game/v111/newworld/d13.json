@@ -602,6 +602,29 @@
     ],
     "MS14_D13_S02_L0017": [
       {
+        "id": "NW_AR_D13_04",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "아빠, 판돌 아저씨가 수레에 있어.",
+        "expression": "anxious",
+        "when": "daram_watching13"
+      },
+      {
+        "id": "NW_AR_D13_05",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "판돌 씨가 수레에 있어.",
+        "expression": "anxious",
+        "when": "daram_not_watching13"
+      },
+      {
+        "id": "NW_AR_D13_06",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "……아침에 학교에서 떨던 그분이.",
+        "expression": "anxious"
+      },
+      {
         "id": "NW_D13_S02_V03",
         "speaker": null,
         "kind": "narration",
@@ -743,6 +766,30 @@
         "speaker": null,
         "kind": "narration",
         "text": "나는 수첩에 ‘오늘 밤만’이라고 적는다."
+      },
+      {
+        "id": "NW_AR_D13_01",
+        "speaker": "돌목",
+        "kind": "dialogue",
+        "text": "광장에 이송 수레가 섰소. 너울이 명단을 부르고 있소.",
+        "expression": "neutral",
+        "when": "guard_ready"
+      },
+      {
+        "id": "NW_AR_D13_02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "명단이요? ……누구 이름입니까?",
+        "expression": "anxious",
+        "when": "guard_ready"
+      },
+      {
+        "id": "NW_AR_D13_03",
+        "speaker": "돌목",
+        "kind": "dialogue",
+        "text": "가 보면 아시오. 나도 서류를 들고 가야 하오.",
+        "expression": "neutral",
+        "when": "guard_ready"
       }
     ],
     "MS14_D13_S03_L0017": [
@@ -802,6 +849,29 @@
         "text": "우리 가족 몫은 마른 담요 두 장뿐입니다. 이 회색 담요는 오늘 아침 학교 정리대에 있던 거예요.",
         "expression": "neutral",
         "when": "blanket_won_with_e35"
+      }
+    ],
+    "MS14_D13_S02_L0030": [
+      {
+        "id": "NW_AR_D13_07",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "아내 이름을 빼면, 그 칸엔 누가 들어갑니까?",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_AR_D13_08",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "그건 그때 정하오.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_AR_D13_09",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "……빈칸이 있는 한 또 누가 적혀.",
+        "expression": "anxious"
       }
     ]
   },
@@ -1076,6 +1146,13 @@
         "kind": "narration",
         "text": "나는 대답 대신 다람의 손을 꼭 쥔다.",
         "when": "daram_watching13"
+      },
+      {
+        "id": "NW_AR_D13_10",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "저 칸을 채우는 손이 따로 있다. ……실룩 씨가 저 수레에 있다. 3일에 3번 돌을 판 사람이다.",
+        "when": "listed:resident_siluk"
       },
       {
         "id": "NW_RO_01",
@@ -1479,6 +1556,60 @@
         "speaker": "엄마",
         "text": "대장은 오늘 누워 있는 거야."
       }
+    ],
+    "handover_wait13": [
+      {
+        "id": "NW_AR_D13_11",
+        "speaker": "까로",
+        "kind": "dialogue",
+        "text": "학교 자리가 덜 났으면 덮개 씌워 하룻밤 수레에서 기다리게 할 수도 있어요.",
+        "expression": "neutral",
+        "when": "karo_guard_ready13"
+      },
+      {
+        "id": "NW_AR_D13_12",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "그러면 내일 아침까지 저분들은 수레 위에 있는 거군요.",
+        "expression": "anxious",
+        "when": "karo_guard_ready13"
+      },
+      {
+        "id": "NW_AR_D13_13",
+        "speaker": "돌목",
+        "kind": "dialogue",
+        "text": "내가 지키겠소. 그 대신 오늘은 거기서 끝이오.",
+        "expression": "neutral",
+        "when": "karo_guard_ready13"
+      },
+      {
+        "id": "NW_AR_D13_14",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "학교 자리가 다 나기 전이면, 덮개를 씌워 수레에서 하룻밤 기다리게 할 수도 있다. 그러면 오늘은 거기서 끝이다.",
+        "when": "karo_guard_not_ready13"
+      }
+    ],
+    "buri_tools13": [
+      {
+        "id": "NW_AR_D13_15",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "내일 수레가 가던 곳에 가 보려고 합니다. 사람을 묶어 두는 게 있으면 떼어 내야죠.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_AR_D13_16",
+        "speaker": "부리",
+        "kind": "dialogue",
+        "text": "그런 게 있으면 위부터 풀면 안 돼요. 받침이랑 공구를 챙길게요.",
+        "expression": "neutral"
+      }
     ]
+  },
+  "titles": {
+    "transport_cleanup13": {
+      "6": "내일 쓸 공구를 부탁합니다."
+    }
   }
 }
