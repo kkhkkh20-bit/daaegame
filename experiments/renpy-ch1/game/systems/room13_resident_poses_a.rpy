@@ -4,7 +4,7 @@
 # 교체표는 dev/import_resident_poses_a.py 가 만든다. 기존 JSON 은 영수증·지문 시험에 묶여 있어 고치지 않고,
 # 여기서 같은 spec dict 를 제자리에서 바꾼다(행·R13_ACTING·CAST 가 같은 dict 를 함께 가리킨다).
 # 옛 그림이 이미 다른 그림으로 바뀌어 있으면(다른 작업) 그 자리는 건드리지 않는다.
-# 함수 덮어쓰기 층은 없다.
+# 함수 덮어쓰기 층은 r13_stage_people 하나(할머니 접수대 접점 보정).
 init 186 python:
     import copy as r13_poses_a_copy
     R13_RESIDENT_POSES_A = json.load(renpy.file("assets/room13-resident-poses-a.json")) if renpy.loadable("assets/room13-resident-poses-a.json") else {"slots": []}
@@ -63,3 +63,22 @@ init 186 python:
         return changed
 
     R13_RESIDENT_POSES_A_CHANGED = r13_poses_a_apply()
+
+    # 여관 접수대 할머니: 공간 접점 층(179)이 책 아래 모서리를 옛 그림의 잘라내기 좌표(220,355)로 박아
+    # 접수대 장부 위에 놓는다. 새 그림은 배율이 달라 그 숫자가 다른 곳을 가리키므로, 새 그림이
+    # 준 같은 점(register_contact)으로 다시 맞춘다. 그 파일은 바이트 고정 시험이 묶여 있어 여기서 고친다.
+    _r13_poses_a_stage=r13_stage_people
+    def r13_stage_people(entry=False):
+        actors=_r13_poses_a_stage(entry)
+        state=store.room13 or {}
+        if state.get("location")!="inn" or r13_world_width()!=1920:return actors
+        result=[]
+        for actor in actors:
+            spec=r13_acting_spec(actor["person"],actor["pose"]) or {}
+            if actor["person"]=="granny" and actor["pose"]=="living_keyledger" and spec.get("register_contact") and actor.get("map27_occlusion") and not r13_offer_for_person("granny"):
+                h0=r13_actor_geometry("granny","living_keyledger")[1];scale=float(actor["height"])/h0
+                bx,by=spec["register_contact"];dx=int(round((220-bx)*scale));dy=int(round((355-by)*scale))
+                actor=dict(actor);actor["x"]+=dx;actor["y"]+=dy;actor["depth"]=actor["depth"]+dy
+                actor["rect"]=[actor["x"],actor["y"],actor["width"],actor["height"]]
+            result.append(actor)
+        return sorted(result,key=lambda a:a["depth"])

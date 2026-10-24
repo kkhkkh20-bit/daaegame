@@ -62,7 +62,7 @@ class ResidentPosesA(unittest.TestCase):
     def test_layer_runs_after_placement_layers(self):
         text = (GAME / "systems/room13_resident_poses_a.rpy").read_text(encoding="utf-8")
         self.assertIn("init 186 python:", text)
-        self.assertNotIn("def r13_stage_people", text)
+        self.assertIn("_r13_poses_a_stage=r13_stage_people", text)
 
 
 if __name__ == "__main__":

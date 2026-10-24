@@ -66,9 +66,7 @@ init 179 python:
                     # Crop-relative lower book edge (220,355) sits above the drawn register.
                     spec=r13_acting_spec(person,actor["pose"]);w0,h0=r13_actor_geometry(person,actor["pose"])
                     scale=float(actor["height"])/h0;foot=spec["foot"]
-                    # 2026-10-24 A안 그림은 잘라내기 배율이 달라 책 모서리 좌표를 spec 이 함께 준다(없으면 옛 그림 값).
-                    bx,by=spec.get("register_contact",(220,355))
-                    target=(1600+(foot[0]-bx)*scale,340+(foot[1]-by)*scale)
+                    target=(1600+(foot[0]-220)*scale,340+(foot[1]-355)*scale)
                     actor=r13_contact_geometry(actor,actor["pose"],"foot",target,actor["height"],target[1])
                     layout=r13_layout("inn");rx,ry,rw,rh=layout["objects"]["register"]
                     actor["map27_occlusion"]=[layout["occlusion"],[(rx,ry),(rx+rw,ry),(rx+rw,ry+rh),(rx,ry+rh)]]
