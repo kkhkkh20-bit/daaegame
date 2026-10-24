@@ -1,0 +1,2026 @@
+{
+  "schema": 1,
+  "base_commit": "e19f912a0ee182117e871afa2b47c2fd0931a9c6",
+  "scope": "Existing assets only. No code, registry, runtime placement, dialogue, conditions, or semantics changed. Exact source bytes, no regeneration.",
+  "status_warning": "Asset upload does not approve mapping. Keep original 30 confirmed / 16 candidate / 10 hold statuses for batches 01–06. Confirmed means static correspondence only; runtime remains unverified. Batch07–08 need current-source validation. Do not connect holds. No standing/speaking meeting assets.",
+  "counts": {
+    "resident_webp": 65,
+    "prop_webp": 6,
+    "prior_static": {
+      "확정": 30,
+      "보류": 10,
+      "후보": 16
+    }
+  },
+  "residents": [
+    {
+      "id": "A1-01",
+      "batch": 1,
+      "description": "피코 화판 그림",
+      "character_id": "resident_piko",
+      "static_match_status": "확정",
+      "existing_pose": "map27_paint_sketchboard_v2",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-map-action27.json",
+          "field": "file",
+          "path": "assets/investigation-canonical-20261018/resident_piko--map27_paint_sketchboard_v2.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-map-action27.json",
+          "file": "assets/investigation-canonical-20261018/resident_piko--map27_paint_sketchboard_v2.webp"
+        }
+      ],
+      "basis": "map27의 기존 request_id·활동 설명·동작 등록과 대응. 날짜/장소/깃발/replace_poses/이벤트 제안 조건을 그대로 보존.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch01/piko_paint_sketchboard_A.webp",
+      "bytes": 793708,
+      "sha256": "096c349dd2f7b051d111d76cd2ee4a579f43f0569ba1b301b5dad855b98d38f1",
+      "git_blob_sha": "b9e1789c910be4383355113fdec25bc638a71b59"
+    },
+    {
+      "id": "A1-02",
+      "batch": 1,
+      "description": "피코 이젤 그림",
+      "character_id": "resident_piko",
+      "static_match_status": "보류",
+      "existing_pose": null,
+      "existing_assets": [],
+      "current_registered_targets": [],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류. 최신 이야기의 동일 행동 호출이 확인되지 않거나 직접 대응 원화 등록이 없음. 구판 장면을 새 이야기로 자동 이식하지 않음. 이젤은 시안 기반. 기존 화판 원화 직접 변환이 아니므로 화판 파일로 추정 매칭하지 않음.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch01/piko_paint_easel_A.webp",
+      "bytes": 1076222,
+      "sha256": "86d2e27c9d6105b36977d9e39fdc124a5dc76dcf00f139fa7e1a13af082ae2ee",
+      "git_blob_sha": "f8981733f426a99b2a0b789762e0e5c8758dc5c5"
+    },
+    {
+      "id": "A1-03",
+      "batch": 1,
+      "description": "뭉치 상자 정리",
+      "character_id": "resident_mungchi",
+      "static_match_status": "확정",
+      "existing_pose": "map9_store_sort_boxes",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-map-work-nine.json",
+          "field": "file",
+          "path": "assets/map-work-nine/resident_mungchi--store_sort_boxes.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-map-work-nine.json",
+          "file": "assets/map-work-nine/resident_mungchi--store_sort_boxes.webp"
+        }
+      ],
+      "basis": "map9의 기존 인물·활동·파일 등록과 납품 동작 설명이 대응. map27 및 이후 배치층에 의해 대체될 수 있어 최종 활성 여부는 별도 확인.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch01/mungchi_store_boxes_A.webp",
+      "bytes": 949108,
+      "sha256": "4dfd42dce44f38a737d92499a7b0fd89ae8daf04d0111eacb25b4c03f0bae778",
+      "git_blob_sha": "cb7b7ca82e4a69cddb5e760e02c823d1efe9a72f"
+    },
+    {
+      "id": "A1-04",
+      "batch": 1,
+      "description": "보리 회의 착석",
+      "character_id": "resident_bori",
+      "static_match_status": "보류",
+      "existing_pose": "meeting_seated",
+      "existing_assets": [],
+      "current_registered_targets": [],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류. 최신 이야기의 동일 행동 호출이 확인되지 않거나 직접 대응 원화 등록이 없음. 구판 장면을 새 이야기로 자동 이식하지 않음. 회의 등록만으로 현재 회의에 착석 그림이 쓰인다고 볼 수 없음. R13_MEETING_SEATED에 이 인물 없음. 다람 마차 seat_* 표정 세트도 별개.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch01/bori_meeting_seated_A.webp",
+      "bytes": 878698,
+      "sha256": "4016d0a47105d8347d743004c9096529dce48f058c8264da46f521621c73d2da",
+      "git_blob_sha": "cb8cea9e9497c8f7250f314ecad4ab6c462940d7"
+    },
+    {
+      "id": "A2-01",
+      "batch": 2,
+      "description": "달그락 그릇 진열",
+      "character_id": "resident_dalgeurak",
+      "static_match_status": "확정",
+      "existing_pose": "map9_pots_display",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-map-work-nine.json",
+          "field": "file",
+          "path": "assets/map-work-nine/resident_dalgeurak--pots_display.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-map-work-nine.json",
+          "file": "assets/map-work-nine/resident_dalgeurak--pots_display.webp"
+        }
+      ],
+      "basis": "map9의 기존 인물·활동·파일 등록과 납품 동작 설명이 대응. map27 및 이후 배치층에 의해 대체될 수 있어 최종 활성 여부는 별도 확인.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch02/dalgeurak_pots_display_A.webp",
+      "bytes": 986310,
+      "sha256": "b1b00a10c9a77ee2ed0c1c69f574f6bc7a4190987c315da111e86af67c9d1d2f",
+      "git_blob_sha": "fb80e893a65611fb060dc16c72ab7bbfe2415d10"
+    },
+    {
+      "id": "A2-02",
+      "batch": 2,
+      "description": "굴돌 돌 두드리기",
+      "character_id": "resident_guldol",
+      "static_match_status": "확정",
+      "existing_pose": "map9_stone_tapping",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-map-work-nine.json",
+          "field": "file",
+          "path": "assets/map-work-nine/resident_guldol--stone_tapping.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-map-work-nine.json",
+          "file": "assets/map-work-nine/resident_guldol--stone_tapping.webp"
+        }
+      ],
+      "basis": "map9의 기존 인물·활동·파일 등록과 납품 동작 설명이 대응. map27 및 이후 배치층에 의해 대체될 수 있어 최종 활성 여부는 별도 확인.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch02/guldol_stone_tapping_A.webp",
+      "bytes": 847994,
+      "sha256": "8d50594ef1bd490294b53a2cdcc20fc0a6dba88f7a45348a8ab1ca5c130f838d",
+      "git_blob_sha": "7d3d2458929c9caff9a4155f9a8c839c5c8e3959"
+    },
+    {
+      "id": "A2-03",
+      "batch": 2,
+      "description": "꽉 그물 당기기",
+      "character_id": "resident_kkwak",
+      "static_match_status": "확정",
+      "existing_pose": "map9_river_haul_net",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-map-work-nine.json",
+          "field": "file",
+          "path": "assets/map-work-nine/resident_kkwak--river_haul_net.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-map-work-nine.json",
+          "file": "assets/map-work-nine/resident_kkwak--river_haul_net.webp"
+        }
+      ],
+      "basis": "map9의 기존 인물·활동·파일 등록과 납품 동작 설명이 대응. map27 및 이후 배치층에 의해 대체될 수 있어 최종 활성 여부는 별도 확인.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch02/kkwak_haul_net_A.webp",
+      "bytes": 1029390,
+      "sha256": "e392fdd710df62f5de02f2298e9fa1a314bb5fc9a21ee477ffc352616830c75a",
+      "git_blob_sha": "c3c24e25535a3d825e6ab4f1430361ba4bd95c78"
+    },
+    {
+      "id": "A2-04",
+      "batch": 2,
+      "description": "물결 밧줄 감기",
+      "character_id": "resident_mulgyeol",
+      "static_match_status": "확정",
+      "existing_pose": "map9_rope_coiling",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-map-work-nine.json",
+          "field": "file",
+          "path": "assets/map-work-nine/resident_mulgyeol--rope_coiling.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-map-work-nine.json",
+          "file": "assets/map-work-nine/resident_mulgyeol--rope_coiling.webp"
+        }
+      ],
+      "basis": "map9의 기존 인물·활동·파일 등록과 납품 동작 설명이 대응. map27 및 이후 배치층에 의해 대체될 수 있어 최종 활성 여부는 별도 확인.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch02/mulgyeol_rope_coiling_A.webp",
+      "bytes": 909600,
+      "sha256": "42d0ff7284bfbf04b1097e373c9ddfe89d2a4c64e6c06cd20d43a0089bca77f7",
+      "git_blob_sha": "137deeb2416ec3824e9ff65e2b69b7525bfe5bd2"
+    },
+    {
+      "id": "A2-05",
+      "batch": 2,
+      "description": "할머니 열쇠와 장부",
+      "character_id": "granny",
+      "static_match_status": "후보",
+      "existing_pose": "living_keyledger",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-pixel-acting.json",
+          "field": "file",
+          "path": "assets/room13-action-granny-living_keyledger.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-pixel-acting.json",
+          "file": "assets/room13-action-granny-living_keyledger.webp"
+        }
+      ],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류. 현재 기본 여관 pose는 world_counter_wipe; living_keyledger를 기본 동작으로 교체하지 않음.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch02/granny_keyledger_A.webp",
+      "bytes": 725372,
+      "sha256": "6920ea6448f714b3bbd31794de55896902011aeb2fe3e11bff15e9e540c388d9",
+      "git_blob_sha": "5a54d033097638a9125ce2fc02eec036451ef96b"
+    },
+    {
+      "id": "A2-06",
+      "batch": 2,
+      "description": "까로 차축 감싸기",
+      "character_id": "karo",
+      "static_match_status": "후보",
+      "existing_pose": "living_axlewrap",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-pixel-acting.json",
+          "field": "file",
+          "path": "assets/room13-action-karo-living_axlewrap.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-pixel-acting.json",
+          "file": "assets/room13-action-karo-living_axlewrap.webp"
+        }
+      ],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류. 납품은 천만 포함, 차축 없음. 기존 배경 차축·손 접점 및 발 기준점 맞춤 필요.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch02/karo_axlewrap_A.webp",
+      "bytes": 929394,
+      "sha256": "39e40d1ba631cf861426b58d03bcdde8ea43585c6d896dbd74e41fc963f9c69e",
+      "git_blob_sha": "2acdcb938c6be8d093a7e5cc9980e8fef1b6365e"
+    },
+    {
+      "id": "A2-07",
+      "batch": 2,
+      "description": "사서 책·종이 정리",
+      "character_id": "resident_librarian",
+      "static_match_status": "확정",
+      "existing_pose": "living_bookpaper",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-pixel-acting.json",
+          "field": "file",
+          "path": "assets/room13-action-resident_librarian-living_bookpaper.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-pixel-acting.json",
+          "file": "assets/room13-action-resident_librarian-living_bookpaper.webp"
+        }
+      ],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch02/resident_librarian_bookpaper_A.webp",
+      "bytes": 843596,
+      "sha256": "35496120ec4908388c8b1ac0b71106a425523740ee483df983081e3fccb26241",
+      "git_blob_sha": "1f4a850aa952fe67567682c555868fcb7327e4f6"
+    },
+    {
+      "id": "A2-08",
+      "batch": 2,
+      "description": "모모 등 살피기",
+      "character_id": "resident_momo",
+      "static_match_status": "확정",
+      "existing_pose": "living_lampnumber",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-pixel-acting.json",
+          "field": "file",
+          "path": "assets/room13-action-resident_momo-living_lampnumber.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-pixel-acting.json",
+          "file": "assets/room13-action-resident_momo-living_lampnumber.webp"
+        }
+      ],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch02/resident_momo_lampnumber_A_v2.webp",
+      "bytes": 578086,
+      "sha256": "223cb6a1a8a97889fa580d6018de92394c64e8067ded4bda88d58dec0d730658",
+      "git_blob_sha": "4b3c3433ccc5a6ca08c11c893637c5dae5e5ac4c"
+    },
+    {
+      "id": "A2-09",
+      "batch": 2,
+      "description": "부엉이 할아버지 앉아 수첩 살피기",
+      "character_id": "resident_owlgp",
+      "static_match_status": "확정",
+      "existing_pose": "living_notebook",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-pixel-acting.json",
+          "field": "file",
+          "path": "assets/room13-action-resident_owlgp-living_notebook.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-pixel-acting.json",
+          "file": "assets/room13-action-resident_owlgp-living_notebook.webp"
+        }
+      ],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch02/resident_owlgp--notebook--A.webp",
+      "bytes": 1012520,
+      "sha256": "9d57a653323fec0ba4ca1d7d14d9f855ebafaed97e4b2fafdaad66875b622684",
+      "git_blob_sha": "d60747be2e3e2ebbe66f1b7bd9110f2c608188cc"
+    },
+    {
+      "id": "A2-10",
+      "batch": 2,
+      "description": "설 종줄 다루기",
+      "character_id": "resident_seol",
+      "static_match_status": "확정",
+      "existing_pose": "living_bellrope",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-pixel-acting.json",
+          "field": "file",
+          "path": "assets/room13-action-resident_seol-living_bellrope.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-pixel-acting.json",
+          "file": "assets/room13-action-resident_seol-living_bellrope.webp"
+        }
+      ],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch02/resident_seol--bellrope--A-v2-margin.webp",
+      "bytes": 712118,
+      "sha256": "b4583fbff93ccef875b09af840a6f3d2b89f716b920b1672f4e044c2d801b1d1",
+      "git_blob_sha": "91047a663a3c59662973668bde3ed16674504f3c"
+    },
+    {
+      "id": "A2-11",
+      "batch": 2,
+      "description": "토실 보온병",
+      "character_id": "resident_tosil",
+      "static_match_status": "확정",
+      "existing_pose": "living_thermos",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-pixel-acting.json",
+          "field": "file",
+          "path": "assets/investigation-source2/tosil-thermos-v1.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-pixel-acting.json",
+          "file": "assets/investigation-source2/tosil-thermos-v1.webp"
+        }
+      ],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch02/resident_tosil--thermos--A.webp",
+      "bytes": 678314,
+      "sha256": "1ce73024b78286906c076bbf4b19625acd8355763031fc91af216e37af5c0311",
+      "git_blob_sha": "d7644c1de89d13ebac6c45111679100894586d5e"
+    },
+    {
+      "id": "A2-12",
+      "batch": 2,
+      "description": "여니 바느질",
+      "character_id": "resident_yeoni",
+      "static_match_status": "확정",
+      "existing_pose": "living_mend",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-pixel-acting.json",
+          "field": "file",
+          "path": "assets/room13-action-resident_yeoni-living_mend.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-pixel-acting.json",
+          "file": "assets/room13-action-resident_yeoni-living_mend.webp"
+        }
+      ],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch02/resident_yeoni--mend--A.webp",
+      "bytes": 992332,
+      "sha256": "23bd10c1d50a75852b5a2ee22659bade8263a71c4641a5ffc79a49f3742191b8",
+      "git_blob_sha": "94394abfae9b2b8b3924f88abcae953be54a7ba2"
+    },
+    {
+      "id": "A3-01",
+      "batch": 3,
+      "description": "도토 장부 쓰기",
+      "character_id": "doto",
+      "static_match_status": "확정",
+      "existing_pose": "map27_write_ledger_v2",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-map-action27.json",
+          "field": "file",
+          "path": "assets/investigation-canonical-20261018/doto--map27_write_ledger_v2.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-map-action27.json",
+          "field": "file",
+          "path": "assets/investigation-canonical-20261018/doto--map27_write_ledger_v2.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-map-action27.json",
+          "file": "assets/investigation-canonical-20261018/doto--map27_write_ledger_v2.webp"
+        },
+        {
+          "registry": "room13-map-action27.json",
+          "file": "assets/investigation-canonical-20261018/doto--map27_write_ledger_v2.webp"
+        }
+      ],
+      "basis": "map27의 기존 request_id·활동 설명·동작 등록과 대응. 날짜/장소/깃발/replace_poses/이벤트 제안 조건을 그대로 보존.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch03/doto_write_ledger_A.webp",
+      "bytes": 773856,
+      "sha256": "f6ae26e11070e0dd08169a612144589a292ff25f0d79231f87c1f4bbb7a153a2",
+      "git_blob_sha": "30d6553154e648657d56ddedefc67ce702820246"
+    },
+    {
+      "id": "A3-02",
+      "batch": 3,
+      "description": "종종 편지 분류",
+      "character_id": "resident_jongjong",
+      "static_match_status": "확정",
+      "existing_pose": "map27_sort_letters_v2",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-map-action27.json",
+          "field": "file",
+          "path": "assets/investigation-canonical-20261018/resident_jongjong--map27_sort_letters_v2.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-map-action27.json",
+          "file": "assets/investigation-canonical-20261018/resident_jongjong--map27_sort_letters_v2.webp"
+        }
+      ],
+      "basis": "map27의 기존 request_id·활동 설명·동작 등록과 대응. 날짜/장소/깃발/replace_poses/이벤트 제안 조건을 그대로 보존.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch03/jongjong_sort_letters_A.webp",
+      "bytes": 724276,
+      "sha256": "a86ed15d3c6e02edcd37fd2f932d79a928ded72ea76dd241045acbae981dfda4",
+      "git_blob_sha": "25d7e7f4a4e6254d35e2f7b0c4631b8b435de9ce"
+    },
+    {
+      "id": "A3-03",
+      "batch": 3,
+      "description": "무쇠 오래된 도구 검사",
+      "character_id": "resident_musoe",
+      "static_match_status": "확정",
+      "existing_pose": "job_inspect_old_tool",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-map-action27.json",
+          "field": "file",
+          "path": "assets/investigation-jobs-20261018/musoe-inspect-old-tool-v1.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-map-action27.json",
+          "file": "assets/investigation-jobs-20261018/musoe-inspect-old-tool-v1.webp"
+        }
+      ],
+      "basis": "map27의 기존 request_id·활동 설명·동작 등록과 대응. 날짜/장소/깃발/replace_poses/이벤트 제안 조건을 그대로 보존.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch03/musoe_inspect_tool_A.webp",
+      "bytes": 837784,
+      "sha256": "93704bc386ff6e81f7e14f5affc8aa7151e98589772eba8a0428ed6c3d3ae097",
+      "git_blob_sha": "ef749ad82779ba0cdfe2b7be2d18a4319358075d"
+    },
+    {
+      "id": "A3-04",
+      "batch": 3,
+      "description": "누비 여관 빨래 정리",
+      "character_id": "resident_nubi",
+      "static_match_status": "확정",
+      "existing_pose": "map9_inn_sort_tie_laundry",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-map-work-nine.json",
+          "field": "file",
+          "path": "assets/map-work-nine/resident_nubi--inn_sort_tie_laundry.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-map-work-nine.json",
+          "file": "assets/map-work-nine/resident_nubi--inn_sort_tie_laundry.webp"
+        }
+      ],
+      "basis": "map9의 기존 인물·활동·파일 등록과 납품 동작 설명이 대응. map27 및 이후 배치층에 의해 대체될 수 있어 최종 활성 여부는 별도 확인.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch03/nubi_tie_laundry_A.webp",
+      "bytes": 951746,
+      "sha256": "d9adc499702f1f3aaada0d3a4c0b3cad63eac1c7714d79bb926e025620d67113",
+      "git_blob_sha": "5c2f0eed77654bec6e5f18ac1adb46e0d6ed9295"
+    },
+    {
+      "id": "A3-05",
+      "batch": 3,
+      "description": "부리 공구함에 손 올리기",
+      "character_id": "buri",
+      "static_match_status": "후보",
+      "existing_pose": "event_toolbox",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-pixel-acting.json",
+          "field": "file",
+          "path": "assets/room13-action-buri-event_toolbox.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-pixel-acting.json",
+          "file": "assets/room13-action-buri-event_toolbox.webp"
+        }
+      ],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch03/buri_A.webp",
+      "bytes": 886864,
+      "sha256": "a2bb13b1313b9f2319031f8f365ffe998bc7b4656780c1517ab5e967ba45345b",
+      "git_blob_sha": "7dacbb099fe68ac8dba053f8b736be3a39456685"
+    },
+    {
+      "id": "A3-06",
+      "batch": 3,
+      "description": "실룩 속삭이기",
+      "character_id": "resident_siluk",
+      "static_match_status": "확정",
+      "existing_pose": "event_whisper",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-pixel-acting.json",
+          "field": "file",
+          "path": "assets/room13-action-resident_siluk-event_whisper.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-pixel-acting.json",
+          "file": "assets/room13-action-resident_siluk-event_whisper.webp"
+        }
+      ],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch03/siluk_A.webp",
+      "bytes": 888826,
+      "sha256": "587a70cfd3dd050185ed901e80997809b5f841f323daa06ffcd14ea04b6bc838",
+      "git_blob_sha": "636fcc14528bddd8d21ba221d46eace4cf15cb70"
+    },
+    {
+      "id": "A3-07",
+      "batch": 3,
+      "description": "슬링 봉투 들고 살피기",
+      "character_id": "resident_sling",
+      "static_match_status": "후보",
+      "existing_pose": "event_steam",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-pixel-acting.json",
+          "field": "file",
+          "path": "assets/room13-action-resident_sling-event_steam.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-pixel-acting.json",
+          "file": "assets/room13-action-resident_sling-event_steam.webp"
+        }
+      ],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류. 기존 event_steam은 봉투를 김에 쐬는 행동. 단순 봉투 살피기와 의미/소품 동일 여부 미확인.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch03/sling_A.webp",
+      "bytes": 787330,
+      "sha256": "d62961d99a0c26d82f94eadb4ce62d816b373404ca4319b8bda67e1333cc4b93",
+      "git_blob_sha": "020184111a504ea303d2610d1de749aaaee27c06"
+    },
+    {
+      "id": "A3-08",
+      "batch": 3,
+      "description": "따닥 망치 들고 날개 뻗기",
+      "character_id": "resident_ttadak",
+      "static_match_status": "후보",
+      "existing_pose": "living_repair",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-pixel-acting.json",
+          "field": "file",
+          "path": "assets/room13-pixel-acting-ttadak.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-pixel-acting.json",
+          "file": "assets/room13-pixel-acting-ttadak.webp"
+        }
+      ],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch03/ttadak_A.webp",
+      "bytes": 838618,
+      "sha256": "2b11def6f1d347609cc46085334e8ad1cb689c51f2afbc0040367318699fc840",
+      "git_blob_sha": "832555326fe8c536c600a3be8aa1174ee2707244"
+    },
+    {
+      "id": "A3-09",
+      "batch": 3,
+      "description": "선생님 젖은 외투 펼치기",
+      "character_id": "resident_teacher",
+      "static_match_status": "확정",
+      "existing_pose": "map9_school_spread_wet_coat",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-map-work-nine.json",
+          "field": "file",
+          "path": "assets/map-work-nine/resident_teacher--school_spread_wet_coat.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-map-work-nine.json",
+          "file": "assets/map-work-nine/resident_teacher--school_spread_wet_coat.webp"
+        }
+      ],
+      "basis": "map9의 기존 인물·활동·파일 등록과 납품 동작 설명이 대응. map27 및 이후 배치층에 의해 대체될 수 있어 최종 활성 여부는 별도 확인.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch03/resident_teacher--wet_coat--A.webp",
+      "bytes": 1055168,
+      "sha256": "a64fb9dbe53b1f81949e169df2047e397d995acf00332108ea710a49bfe56bea",
+      "git_blob_sha": "aa718aadc69c7cff3d9d817d0f1498988d4d6982"
+    },
+    {
+      "id": "A3-10",
+      "batch": 3,
+      "description": "솔방 약초 묶기",
+      "character_id": "resident_solbang",
+      "static_match_status": "확정",
+      "existing_pose": "work_herb_bundle",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-pixel-acting.json",
+          "field": "file",
+          "path": "assets/solbang-chinchilla-map/work_herb_bundle.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-pixel-acting.json",
+          "file": "assets/solbang-chinchilla-map/work_herb_bundle.webp"
+        }
+      ],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch03/resident_solbang--herb_bundle--A.webp",
+      "bytes": 1176302,
+      "sha256": "e3da70037f9654cb81b383bdbae1b1020b84620aae074647178b1d7ef566778d",
+      "git_blob_sha": "02958f305cc8a3381334bd5f7d26f05eebfb248f"
+    },
+    {
+      "id": "A3-11",
+      "batch": 3,
+      "description": "콩이 회의 착석",
+      "character_id": "resident_kongi",
+      "static_match_status": "후보",
+      "existing_pose": "meeting_seated",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-meeting-seated.json",
+          "field": "file",
+          "path": "assets/room13-meeting-seated-resident_kongi068.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류. 회의 등록만으로 현재 회의에 착석 그림이 쓰인다고 볼 수 없음.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch03/resident_kongi--meeting_seated--A.webp",
+      "bytes": 867038,
+      "sha256": "eb34adbc750600f1dd3ef79565e3c9fe6cc812b241864cc276c05ef8f4fd71a9",
+      "git_blob_sha": "7020101530d7492ff2d1506f6fbab963aca5549f"
+    },
+    {
+      "id": "A3-12",
+      "batch": 3,
+      "description": "등지기 등돌 교체",
+      "character_id": "resident_lamplighter",
+      "static_match_status": "확정",
+      "existing_pose": "job_replace_lightstone",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-map-action27.json",
+          "field": "file",
+          "path": "assets/investigation-jobs-20261018/chorong-replace-lightstone-v1.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-map-action27.json",
+          "file": "assets/investigation-jobs-20261018/chorong-replace-lightstone-v1.webp"
+        }
+      ],
+      "basis": "map27의 기존 request_id·활동 설명·동작 등록과 대응. 날짜/장소/깃발/replace_poses/이벤트 제안 조건을 그대로 보존.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch03/resident_lamplighter--lightstone--A.webp",
+      "bytes": 789730,
+      "sha256": "bed577103a66040c3b6abd77b67d198b56de95261aee88e4b323c1043831d87a",
+      "git_blob_sha": "aa07f8ecccd37e0663e77e8dd6656db9c0b20024"
+    },
+    {
+      "id": "A4-01",
+      "batch": 4,
+      "description": "톡 등 수리 드라이버",
+      "character_id": "resident_tok",
+      "static_match_status": "확정",
+      "existing_pose": "map27_ws_1",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-map-action27.json",
+          "field": "file",
+          "path": "assets/map-action27/WS-1--resident_tok.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-map-action27.json",
+          "file": "assets/map-action27/WS-1--resident_tok.webp"
+        }
+      ],
+      "basis": "map27의 기존 request_id·활동 설명·동작 등록과 대응. 날짜/장소/깃발/replace_poses/이벤트 제안 조건을 그대로 보존.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch04/tok_repair_lantern_A.webp",
+      "bytes": 860900,
+      "sha256": "4fb8bf9b7c71c39d89ad3100857fadd78d18f7814ba08c36806dcdfd306bbc5c",
+      "git_blob_sha": "4ed518c9f3d6eda4ae6caba89678d7cd78865bca"
+    },
+    {
+      "id": "A4-02",
+      "batch": 4,
+      "description": "너울 서류 들고 방향 안내",
+      "character_id": "neoul",
+      "static_match_status": "후보",
+      "existing_pose": "map27_ga_1",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-map-action27.json",
+          "field": "file",
+          "path": "assets/map-action27/GA-1--neoul.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-map-action27.json",
+          "file": "assets/map-action27/GA-1--neoul.webp"
+        }
+      ],
+      "basis": "map27의 기존 request_id·활동 설명·동작 등록과 대응. 날짜/장소/깃발/replace_poses/이벤트 제안 조건을 그대로 보존.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류. 기존 map27_ga_1은 winter_official_navy_v1/map_only. 남색 옷·붉은 완장과 흰 대화 의상 연속성 확인 전 대화에 적용 금지.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch04/neoul_point_documents_A.webp",
+      "bytes": 861550,
+      "sha256": "d01b0d9b4bba7d2a13bfb3a97c82b026700f4024cb70d0c0f44aa55f68104657",
+      "git_blob_sha": "f9c7521ba4c5ffe601833b74372f0937e8dbceca"
+    },
+    {
+      "id": "A4-03",
+      "batch": 4,
+      "description": "칼바람 웅크려 땅 검사",
+      "character_id": "resident_kalbaram",
+      "static_match_status": "확정",
+      "existing_pose": "map27_fo_1",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-map-action27.json",
+          "field": "file",
+          "path": "assets/map-action27/FO-1--resident_kalbaram.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-map-action27.json",
+          "file": "assets/map-action27/FO-1--resident_kalbaram.webp"
+        }
+      ],
+      "basis": "map27의 기존 request_id·활동 설명·동작 등록과 대응. 날짜/장소/깃발/replace_poses/이벤트 제안 조건을 그대로 보존.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch04/kalbaram_examine_ground_A.webp",
+      "bytes": 992870,
+      "sha256": "ec17b832c2af3853446f60ad28f5823499af3786070a889a94c71b141769c5d3",
+      "git_blob_sha": "09fbe3f6d0ee304be0d3144cf7b42c99ad0f8e84"
+    },
+    {
+      "id": "A4-04",
+      "batch": 4,
+      "description": "나비 당근 썰기",
+      "character_id": "nabi",
+      "static_match_status": "확정",
+      "existing_pose": "map27_ki_1",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-map-action27.json",
+          "field": "file",
+          "path": "assets/map-action27/KI-1--nabi.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-map-action27.json",
+          "file": "assets/map-action27/KI-1--nabi.webp"
+        }
+      ],
+      "basis": "map27의 기존 request_id·활동 설명·동작 등록과 대응. 날짜/장소/깃발/replace_poses/이벤트 제안 조건을 그대로 보존.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch04/nabi_slice_carrot_A.webp",
+      "bytes": 784880,
+      "sha256": "888808d035fa6caf350d8b0e46cd58b8de5bcf21fc6c008b95161815c0aed2e7",
+      "git_blob_sha": "2371308cfd06c8089f3126a5ea5a67a07bfa93a5"
+    },
+    {
+      "id": "A4-05",
+      "batch": 4,
+      "description": "은호 장부 쓰기",
+      "character_id": "resident_eunho",
+      "static_match_status": "확정",
+      "existing_pose": "map27_mk_2",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-map-action27.json",
+          "field": "file",
+          "path": "assets/map-action27/MK-2--resident_eunho.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-map-action27.json",
+          "file": "assets/map-action27/MK-2--resident_eunho.webp"
+        }
+      ],
+      "basis": "map27의 기존 request_id·활동 설명·동작 등록과 대응. 날짜/장소/깃발/replace_poses/이벤트 제안 조건을 그대로 보존.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch04/eunho_A.webp",
+      "bytes": 829640,
+      "sha256": "95a62641f7d60e6d766c5b9c9042342b199737a7ccfca0ea258a063a845c2786",
+      "git_blob_sha": "a378473499f1b403925ffd15c06213a046dcf3a5"
+    },
+    {
+      "id": "A4-06",
+      "batch": 4,
+      "description": "구슬 치즈 무게 재기",
+      "character_id": "resident_guseul",
+      "static_match_status": "확정",
+      "existing_pose": "map27_mk_3",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-map-action27.json",
+          "field": "file",
+          "path": "assets/map-action27/MK-3--resident_guseul.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-map-action27.json",
+          "file": "assets/map-action27/MK-3--resident_guseul.webp"
+        }
+      ],
+      "basis": "map27의 기존 request_id·활동 설명·동작 등록과 대응. 날짜/장소/깃발/replace_poses/이벤트 제안 조건을 그대로 보존.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch04/guseul_A.webp",
+      "bytes": 646760,
+      "sha256": "5ebead92f2033471a035bbb47cdfeb08b20ee39fb217736bbab3e699d105f5a9",
+      "git_blob_sha": "dd1c1e22f2c41c5370268e313acc7b440cdfe2ee"
+    },
+    {
+      "id": "A4-07",
+      "batch": 4,
+      "description": "현이 현악기 연주",
+      "character_id": "resident_hyeoni",
+      "static_match_status": "확정",
+      "existing_pose": "map27_mk_8",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-map-action27.json",
+          "field": "file",
+          "path": "assets/map-action27/MK-8--resident_hyeoni.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-map-action27.json",
+          "field": "file",
+          "path": "assets/map-action27/MK-8--resident_hyeoni.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-map-action27.json",
+          "field": "file",
+          "path": "assets/map-action27/MK-8--resident_hyeoni.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-map-action27.json",
+          "file": "assets/map-action27/MK-8--resident_hyeoni.webp"
+        },
+        {
+          "registry": "room13-map-action27.json",
+          "file": "assets/map-action27/MK-8--resident_hyeoni.webp"
+        },
+        {
+          "registry": "room13-map-action27.json",
+          "file": "assets/map-action27/MK-8--resident_hyeoni.webp"
+        }
+      ],
+      "basis": "map27의 기존 request_id·활동 설명·동작 등록과 대응. 날짜/장소/깃발/replace_poses/이벤트 제안 조건을 그대로 보존.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch04/hyeoni_A.webp",
+      "bytes": 946760,
+      "sha256": "f98551dcdc8a4901f9310a08b6b484530cd2bcd01bc8258e03683198fb107f7b",
+      "git_blob_sha": "3f6186bc24d798ca987d7334df8d6db293805cdb"
+    },
+    {
+      "id": "A4-08",
+      "batch": 4,
+      "description": "바둑 등불 들고 주변 살피기",
+      "character_id": "resident_badook",
+      "static_match_status": "확정",
+      "existing_pose": "map27_lantern_patrol",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-map-action27.json",
+          "field": "file",
+          "path": "assets/map-action27/VA-1--resident_badook.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-map-action27.json",
+          "file": "assets/map-action27/VA-1--resident_badook.webp"
+        }
+      ],
+      "basis": "map27의 기존 request_id·활동 설명·동작 등록과 대응. 날짜/장소/깃발/replace_poses/이벤트 제안 조건을 그대로 보존.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch04/badook_A.webp",
+      "bytes": 909790,
+      "sha256": "831de1ec9d57cbdc6da6427517fb5fc5cceacfc8a8895c83755aadd59eb79882",
+      "git_blob_sha": "0de3d1ada1f412d9a618b1d7cda0822ce3e3e3e6"
+    },
+    {
+      "id": "A4-09",
+      "batch": 4,
+      "description": "뿔 회의 착석",
+      "character_id": "resident_ppul",
+      "static_match_status": "후보",
+      "existing_pose": "meeting_seated",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-meeting-seated.json",
+          "field": "file",
+          "path": "assets/room13-meeting-seated-resident_ppul068.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류. 회의 등록만으로 현재 회의에 착석 그림이 쓰인다고 볼 수 없음.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch04/resident_ppul--meeting_seated--A.webp",
+      "bytes": 815842,
+      "sha256": "f6b1b188f13dc3995cf30d292507fbdd35350ab15016f71b01c7a26d932c11e2",
+      "git_blob_sha": "ca0090027bde442f357101d6631788ebd7d11750"
+    },
+    {
+      "id": "A4-10",
+      "batch": 4,
+      "description": "서리 회의 착석",
+      "character_id": "resident_seori",
+      "static_match_status": "후보",
+      "existing_pose": "meeting_seated",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-meeting-seated.json",
+          "field": "file",
+          "path": "assets/room13-meeting-seated-resident_seori068.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류. 회의 등록만으로 현재 회의에 착석 그림이 쓰인다고 볼 수 없음.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch04/resident_seori--meeting_seated--A.webp",
+      "bytes": 747542,
+      "sha256": "87be5534b8d955405471cc26193600c68d9b1d1965f680ead3c521a43dc317e9",
+      "git_blob_sha": "d5427a414bfb19b67b1e9de20ddaecf48c4d4f01"
+    },
+    {
+      "id": "A4-11",
+      "batch": 4,
+      "description": "토리 회의 착석",
+      "character_id": "resident_tori",
+      "static_match_status": "후보",
+      "existing_pose": "meeting_seated",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-meeting-seated.json",
+          "field": "file",
+          "path": "assets/room13-meeting-seated-resident_tori068.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류. 회의 등록만으로 현재 회의에 착석 그림이 쓰인다고 볼 수 없음.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch04/resident_tori--meeting_seated--A.webp",
+      "bytes": 807728,
+      "sha256": "c7e2d5c5daab947a6e170d8ba39cb5b5533edb5520f69782f4e8258d74eb0376",
+      "git_blob_sha": "4d62bc273daf698f753351bef6f6c406a3556f5c"
+    },
+    {
+      "id": "A4-12",
+      "batch": 4,
+      "description": "서련 회의 착석",
+      "character_id": "seryeon",
+      "static_match_status": "후보",
+      "existing_pose": "meeting_seated",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-meeting-seated.json",
+          "field": "file",
+          "path": "assets/room13-meeting-seated-seryeon068.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류. 회의 등록만으로 현재 회의에 착석 그림이 쓰인다고 볼 수 없음.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch04/seryeon--meeting_seated--A.webp",
+      "bytes": 808166,
+      "sha256": "e12b6602c2e6ee8bee2875c1cf8f7b26056676e434db5b9138f46002f827e392",
+      "git_blob_sha": "0d5b941fb812b2bc91e6c13e39298a78185d6553"
+    },
+    {
+      "id": "A5-01",
+      "batch": 5,
+      "description": "다람 착석",
+      "character_id": "daram",
+      "static_match_status": "보류",
+      "existing_pose": null,
+      "existing_assets": [],
+      "current_registered_targets": [],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류. 최신 이야기의 동일 행동 호출이 확인되지 않거나 직접 대응 원화 등록이 없음. 구판 장면을 새 이야기로 자동 이식하지 않음. 회의 등록만으로 현재 회의에 착석 그림이 쓰인다고 볼 수 없음. R13_MEETING_SEATED에 이 인물 없음. 다람 마차 seat_* 표정 세트도 별개. 납품 설명은 착석만 명시한다. 회의 착석으로 단정하지 않음. 현재 room13/action_2 바닥 그림 그리기와 마차 seat_*는 별도 후보이나 같은 동작인지 미확인.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch05/daram_carriage_seated_A.webp",
+      "bytes": 932652,
+      "sha256": "b7b25299ea2836759fba512c708707cb5cfa888d44e52744de9f32c08989d47f",
+      "git_blob_sha": "13e4d088b97aefc962b54ff63bf1a5ddda865d89"
+    },
+    {
+      "id": "A5-02",
+      "batch": 5,
+      "description": "엄마 조각 보여주기",
+      "character_id": "mom",
+      "static_match_status": "보류",
+      "existing_pose": "show_fragments",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-pixel-acting.json",
+          "field": "file",
+          "path": "assets/room13-fullbody-mom-pose-show_fragments.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-dialogue-pose-source-art.json",
+          "field": "file",
+          "path": "assets/dialogue-pose-source/mom/show_fragments/560.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-dialogue-pose-source-art.json",
+          "field": "file",
+          "path": "assets/dialogue-pose-source/mom/show_fragments/760.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-dialogue-pose-source-art.json",
+          "field": "file",
+          "path": "assets/dialogue-pose-source/mom/show_fragments/840.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-pixel-acting.json",
+          "file": "assets/room13-fullbody-mom-pose-show_fragments.webp"
+        }
+      ],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류. 최신 이야기의 동일 행동 호출이 확인되지 않거나 직접 대응 원화 등록이 없음. 구판 장면을 새 이야기로 자동 이식하지 않음.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch05/mom_show_fragments_A.webp",
+      "bytes": 1023692,
+      "sha256": "5d628ecb10455e51a6d9dde55ef7488d66c49ddc9087592b110d23ae2e436cd2",
+      "git_blob_sha": "74c9f79fd747c3bb320e6886654c37565a33ac98"
+    },
+    {
+      "id": "A5-03",
+      "batch": 5,
+      "description": "판돌 이름 가리키기",
+      "character_id": "npc_pandol",
+      "static_match_status": "보류",
+      "existing_pose": "point_name",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-pixel-acting.json",
+          "field": "file",
+          "path": "assets/room13-fullbody-npc_pandol-pose-point_name.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-dialogue-pose-source-art.json",
+          "field": "file",
+          "path": "assets/dialogue-pose-source/npc_pandol/point_name/560.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-dialogue-pose-source-art.json",
+          "field": "file",
+          "path": "assets/dialogue-pose-source/npc_pandol/point_name/760.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-dialogue-pose-source-art.json",
+          "field": "file",
+          "path": "assets/dialogue-pose-source/npc_pandol/point_name/840.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-pixel-acting.json",
+          "file": "assets/room13-fullbody-npc_pandol-pose-point_name.webp"
+        }
+      ],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류. 최신 이야기의 동일 행동 호출이 확인되지 않거나 직접 대응 원화 등록이 없음. 구판 장면을 새 이야기로 자동 이식하지 않음.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch05/pandol_point_name_A.webp",
+      "bytes": 1080528,
+      "sha256": "ea846ffe4179ff59ed89bf3f2cd4bef7cb826ea589e8b874552b58a340b3d234",
+      "git_blob_sha": "c920994cb57c2078840d4b5e497fe0fe9d1ed844"
+    },
+    {
+      "id": "A5-04",
+      "batch": 5,
+      "description": "초롱엄마 등 건네기",
+      "character_id": "chorong_mother",
+      "static_match_status": "보류",
+      "existing_pose": "offer_lantern",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-pixel-acting.json",
+          "field": "file",
+          "path": "assets/room13-fullbody-chorong_mother-pose-offer_lantern.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-dialogue-pose-source-art.json",
+          "field": "file",
+          "path": "assets/dialogue-pose-source/chorong_mother/offer_lantern/560.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-dialogue-pose-source-art.json",
+          "field": "file",
+          "path": "assets/dialogue-pose-source/chorong_mother/offer_lantern/760.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-dialogue-pose-source-art.json",
+          "field": "file",
+          "path": "assets/dialogue-pose-source/chorong_mother/offer_lantern/840.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-pixel-acting.json",
+          "file": "assets/room13-fullbody-chorong_mother-pose-offer_lantern.webp"
+        }
+      ],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류. 최신 이야기의 동일 행동 호출이 확인되지 않거나 직접 대응 원화 등록이 없음. 구판 장면을 새 이야기로 자동 이식하지 않음.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch05/chorong_mother_offer_lantern_A.webp",
+      "bytes": 844768,
+      "sha256": "0baf0a4ac5ddaaec983cef606d169f5793816b5b7395cdd3827c150c60daed72",
+      "git_blob_sha": "1324edb82a2ae0713af1a832b5fe09349d8ce55a"
+    },
+    {
+      "id": "A5-05",
+      "batch": 5,
+      "description": "방 방울 아래 두 손 모으기",
+      "character_id": "kid_bang",
+      "static_match_status": "후보",
+      "existing_pose": "group_play",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-life-groups.json",
+          "field": "file",
+          "path": "assets/room13-group-kid_bang-play.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류. group_play 원화와 납품 몸짓 동일성 미확인. 정적 그림이며 걷기/점프 애니메이션으로 등록하지 않음.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch05/bang_A.webp",
+      "bytes": 817692,
+      "sha256": "89928f00de127a922cdb727fe1f86c8f101af90a1a454d94e217f515fdc59c12",
+      "git_blob_sha": "de965e5123f05be6fc60059dc262633e088af236"
+    },
+    {
+      "id": "A5-06",
+      "batch": 5,
+      "description": "도담 국자 맛보기",
+      "character_id": "kid_dodam",
+      "static_match_status": "보류",
+      "existing_pose": "lick_ladle",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-pixel-acting.json",
+          "field": "file",
+          "path": "assets/room13-fullbody-kid_dodam-pose-lick_ladle.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-dialogue-pose-source-art.json",
+          "field": "file",
+          "path": "assets/dialogue-pose-source/kid_dodam/lick_ladle/560.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-dialogue-pose-source-art.json",
+          "field": "file",
+          "path": "assets/dialogue-pose-source/kid_dodam/lick_ladle/760.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-dialogue-pose-source-art.json",
+          "field": "file",
+          "path": "assets/dialogue-pose-source/kid_dodam/lick_ladle/840.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-pixel-acting.json",
+          "file": "assets/room13-fullbody-kid_dodam-pose-lick_ladle.webp"
+        }
+      ],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류. 최신 이야기의 동일 행동 호출이 확인되지 않거나 직접 대응 원화 등록이 없음. 구판 장면을 새 이야기로 자동 이식하지 않음.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch05/dodam_A.webp",
+      "bytes": 1118070,
+      "sha256": "c87c6d37f4666577bcff3cc6771e8926125e1a24ce153500819490a4e00bab45",
+      "git_blob_sha": "b030315aae5444f3c55e158568c4f46e5645eccd"
+    },
+    {
+      "id": "A5-07",
+      "batch": 5,
+      "description": "꼬미 몸 기울여 엿보기",
+      "character_id": "kid_kkomi",
+      "static_match_status": "보류",
+      "existing_pose": "door_peek",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-pixel-acting.json",
+          "field": "file",
+          "path": "assets/room13-fullbody-kid_kkomi-pose-door_peek.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-dialogue-pose-source-art.json",
+          "field": "file",
+          "path": "assets/dialogue-pose-source/kid_kkomi/door_peek/560.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-dialogue-pose-source-art.json",
+          "field": "file",
+          "path": "assets/dialogue-pose-source/kid_kkomi/door_peek/760.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-dialogue-pose-source-art.json",
+          "field": "file",
+          "path": "assets/dialogue-pose-source/kid_kkomi/door_peek/840.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-pixel-acting.json",
+          "file": "assets/room13-fullbody-kid_kkomi-pose-door_peek.webp"
+        }
+      ],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류. 최신 이야기의 동일 행동 호출이 확인되지 않거나 직접 대응 원화 등록이 없음. 구판 장면을 새 이야기로 자동 이식하지 않음.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch05/kkomi_A.webp",
+      "bytes": 964486,
+      "sha256": "b25e8efba6387a22bda2891dd70f6734e00f2f8ea9190c009f442a295b795c0f",
+      "git_blob_sha": "593eb60edbc8ea131641bf459c19b6779dc04613"
+    },
+    {
+      "id": "A5-08",
+      "batch": 5,
+      "description": "새미 웅크려 그릇 안기",
+      "character_id": "kid_saemi",
+      "static_match_status": "보류",
+      "existing_pose": "hide_bowl",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-pixel-acting.json",
+          "field": "file",
+          "path": "assets/room13-fullbody-kid_saemi-pose-hide_bowl.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-dialogue-pose-source-art.json",
+          "field": "file",
+          "path": "assets/dialogue-pose-source/kid_saemi/hide_bowl/560.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-dialogue-pose-source-art.json",
+          "field": "file",
+          "path": "assets/dialogue-pose-source/kid_saemi/hide_bowl/760.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-dialogue-pose-source-art.json",
+          "field": "file",
+          "path": "assets/dialogue-pose-source/kid_saemi/hide_bowl/840.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-pixel-acting.json",
+          "file": "assets/room13-fullbody-kid_saemi-pose-hide_bowl.webp"
+        }
+      ],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류. 최신 이야기의 동일 행동 호출이 확인되지 않거나 직접 대응 원화 등록이 없음. 구판 장면을 새 이야기로 자동 이식하지 않음.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch05/saemi_A.webp",
+      "bytes": 1137734,
+      "sha256": "5f5047fc5e88936bc0e8916ed3ff032b2eed2968f202a5f0a021b70f190b1358",
+      "git_blob_sha": "b500e01ceedc07e489b5b813dfd90538d04f5496"
+    },
+    {
+      "id": "A5-09",
+      "batch": 5,
+      "description": "깜 손 흔드는 장난스런 걸음",
+      "character_id": "kid_kkam",
+      "static_match_status": "후보",
+      "existing_pose": "group_play",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-life-groups.json",
+          "field": "file",
+          "path": "assets/room13-group-kid_kkam-play.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류. group_play 원화와 납품 몸짓 동일성 미확인. 정적 그림이며 걷기/점프 애니메이션으로 등록하지 않음.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch05/kid_kkam--play_wave--A.webp",
+      "bytes": 944280,
+      "sha256": "43287b298b28ec78ded8a2e59cc996adc847de4077989084976c79e40ec07b7a",
+      "git_blob_sha": "cf31aa89ec8fddeeb29db9f245f3f24c832d8168"
+    },
+    {
+      "id": "A5-10",
+      "batch": 5,
+      "description": "몽 한발 뛰어놀기",
+      "character_id": "kid_mong",
+      "static_match_status": "후보",
+      "existing_pose": "group_play",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-life-groups.json",
+          "field": "file",
+          "path": "assets/room13-group-kid_mong-play.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류. group_play 원화와 납품 몸짓 동일성 미확인. 정적 그림이며 걷기/점프 애니메이션으로 등록하지 않음.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch05/kid_mong--play_skip--A.webp",
+      "bytes": 1060778,
+      "sha256": "2c5ec5106232a8763630f67bc87c5ae141429afccca9f7bf35312bd268b89cc5",
+      "git_blob_sha": "87c82cb0596597fcb44531c4f543834e5ed98457"
+    },
+    {
+      "id": "A5-11",
+      "batch": 5,
+      "description": "밤이 앉아 수첩 쓰기",
+      "character_id": "bami",
+      "static_match_status": "후보",
+      "existing_pose": "action_2",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-pixel-acting.json",
+          "field": "file",
+          "path": "assets/room13-pixel-acting-bami.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-pixel-acting.json",
+          "file": "assets/room13-pixel-acting-bami.webp"
+        }
+      ],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류. action_2는 정적 후보. 납품 원화의 맨발과 현재 의상/접지 확인 필요.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch05/bami--seated_writing--A.webp",
+      "bytes": 782858,
+      "sha256": "dd670d2f5db718c6a55aae4dad7131ddee75db5ad7309352aaab09fd3e05c0e0",
+      "git_blob_sha": "3488b31f8b826e46f7ea8eada09a30adf2441370"
+    },
+    {
+      "id": "A5-12",
+      "batch": 5,
+      "description": "보듬 쪼그려 빵바구니 천 열기",
+      "character_id": "bodum",
+      "static_match_status": "후보",
+      "existing_pose": "activity",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-pixel-acting.json",
+          "field": "file",
+          "path": "assets/room13-pixel-acting-bodum.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-pixel-acting.json",
+          "file": "assets/room13-pixel-acting-bodum.webp"
+        }
+      ],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch05/bodum--basket_cloth_opening--A.webp",
+      "bytes": 1023836,
+      "sha256": "88d134c56da1777c468e71615e677d7a4ccce581857ae31f608e328918a5b9ea",
+      "git_blob_sha": "0e41bae3d6393d297968ad25e44bfbe644bcfdaa"
+    },
+    {
+      "id": "A6-01",
+      "batch": 6,
+      "description": "보리 쪼그려 장작 묶음 끈 조이기",
+      "character_id": "resident_bori",
+      "static_match_status": "확정",
+      "existing_pose": "living_firewood",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-pixel-acting.json",
+          "field": "file",
+          "path": "assets/room13-action-resident_bori-living_firewood.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-pixel-acting.json",
+          "file": "assets/room13-action-resident_bori-living_firewood.webp"
+        }
+      ],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류. gate는 현재 map27_carry_firewood_v2 우선 배치. 장작 나르기와 끈 조이기를 구분.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch06/bori_tie_firewood_A.webp",
+      "bytes": 942156,
+      "sha256": "30b501a30991c4c799b31a5adbbdfc42714bb24cbde99a5b45eff35e3d521878",
+      "git_blob_sha": "5b214b5e03e24d9c7931028e93a8683f033d6fc5"
+    },
+    {
+      "id": "A6-02",
+      "batch": 6,
+      "description": "토실 닫힌 그림책 가슴에 안기",
+      "character_id": "resident_tosil",
+      "static_match_status": "보류",
+      "existing_pose": "hold_storybook",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-pixel-acting.json",
+          "field": "file",
+          "path": "assets/room13-fullbody-resident_tosil-pose-hold_storybook.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-dialogue-pose-source-art.json",
+          "field": "file",
+          "path": "assets/dialogue-pose-source/resident_tosil/hold_storybook/560.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-dialogue-pose-source-art.json",
+          "field": "file",
+          "path": "assets/dialogue-pose-source/resident_tosil/hold_storybook/760.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-dialogue-pose-source-art.json",
+          "field": "file",
+          "path": "assets/dialogue-pose-source/resident_tosil/hold_storybook/840.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-pixel-acting.json",
+          "file": "assets/room13-fullbody-resident_tosil-pose-hold_storybook.webp"
+        }
+      ],
+      "basis": "기존 pose/원화 등록 및 코드 인용 참조. 최신 대사 후보는 별도이며 원화 존재만으로 최신 실행 연결을 확정하지 않음.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류. 최신 이야기의 동일 행동 호출이 확인되지 않거나 직접 대응 원화 등록이 없음. 구판 장면을 새 이야기로 자동 이식하지 않음. 구판 r13_cv_altar/cv:altar:book 후반 전용. 보온병·일반 독서와 혼용 금지.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch06/tosil_hold_closed_book_A.webp",
+      "bytes": 794010,
+      "sha256": "8608366d9a5a641481630d665c43a72590d189c1b73a6bb09c8826912ea766f7",
+      "git_blob_sha": "eb6224eb6b901f74fdd5af77cf15c715935781d3"
+    },
+    {
+      "id": "A6-03",
+      "batch": 6,
+      "description": "도토 배급표 두 장 비교",
+      "character_id": "doto",
+      "static_match_status": "확정",
+      "existing_pose": "map27_compare_ration_slips_v2",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-map-action27.json",
+          "field": "file",
+          "path": "assets/investigation-canonical-20261018/doto--map27_compare_ration_slips_v2.webp",
+          "exists": true
+        },
+        {
+          "registry": "game/assets/room13-map-action27.json",
+          "field": "file",
+          "path": "assets/investigation-canonical-20261018/doto--map27_compare_ration_slips_v2.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-map-action27.json",
+          "file": "assets/investigation-canonical-20261018/doto--map27_compare_ration_slips_v2.webp"
+        },
+        {
+          "registry": "room13-map-action27.json",
+          "file": "assets/investigation-canonical-20261018/doto--map27_compare_ration_slips_v2.webp"
+        }
+      ],
+      "basis": "map27의 기존 request_id·활동 설명·동작 등록과 대응. 날짜/장소/깃발/replace_poses/이벤트 제안 조건을 그대로 보존.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch06/doto_compare_ration_slips_A.webp",
+      "bytes": 722148,
+      "sha256": "4ab9714765f40694f5fc4d8825d83daaa5704264bf35fdfd9d38602075b0504e",
+      "git_blob_sha": "e247f6fd4252a354dac65496266d5da211bf5ea4"
+    },
+    {
+      "id": "A6-04",
+      "batch": 6,
+      "description": "종종 열린 우편가방에 편지 묶음 챙기기",
+      "character_id": "resident_jongjong",
+      "static_match_status": "확정",
+      "existing_pose": "map27_pack_satchel_v2",
+      "existing_assets": [
+        {
+          "registry": "game/assets/room13-map-action27.json",
+          "field": "file",
+          "path": "assets/investigation-canonical-20261018/resident_jongjong--map27_pack_satchel_v2.webp",
+          "exists": true
+        }
+      ],
+      "current_registered_targets": [
+        {
+          "registry": "room13-map-action27.json",
+          "file": "assets/investigation-canonical-20261018/resident_jongjong--map27_pack_satchel_v2.webp"
+        }
+      ],
+      "basis": "map27의 기존 request_id·활동 설명·동작 등록과 대응. 날짜/장소/깃발/replace_poses/이벤트 제안 조건을 그대로 보존.",
+      "hold_reason": "새 ZIP과 매니페스트 미열람: 납품 파일명·픽셀·출처 동일성 및 실행 검증 전 적용 보류.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch06/jongjong_pack_mailbag_A.webp",
+      "bytes": 644932,
+      "sha256": "1658246572e7b9edf595f96d42e36bc2582b9439d488247738d2136c085fb91b",
+      "git_blob_sha": "2a8b757b7d64113384e45a25266c14d6fbb41278"
+    },
+    {
+      "id": "A7-01",
+      "batch": 7,
+      "description": "부리 · 톱니 부품 닦기",
+      "character_id": "buri",
+      "static_match_status": "source_documented_requires_current_validation",
+      "existing_pose": "action_1",
+      "source": "preview/room13-dev/game/assets/room13-action-buri-action_1.webp",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/room13-action-buri-action_1.webp",
+      "source_crop": null,
+      "evidence": "experiments/renpy-ch1/game/room13_acting.rpy:280 r13_living_pose: (buri, workshop), period != 2. Static pose selection; actual runtime and specific dialogue unverified.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch07/buri_clean_gears_A.webp",
+      "bytes": 651802,
+      "sha256": "2a06f13714a688eff8217682e58e38f8c589ed2b69f51d2f192ff208ca1689cb",
+      "git_blob_sha": "e8871139da4c34e64aed195cdfa4a3cf75c7c51b"
+    },
+    {
+      "id": "A7-02",
+      "batch": 7,
+      "description": "부리 · 회중시계 검사",
+      "character_id": "buri",
+      "static_match_status": "source_documented_requires_current_validation",
+      "existing_pose": "action_2",
+      "source": "preview/room13-dev/game/assets/room13-action-buri-action_2.webp",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/room13-action-buri-action_2.webp",
+      "source_crop": null,
+      "evidence": "experiments/renpy-ch1/game/room13_acting.rpy:280 r13_living_pose: (buri, workshop), period == 2. Static pose selection; actual runtime and specific dialogue unverified.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch07/buri_inspect_watch_A.webp",
+      "bytes": 807146,
+      "sha256": "2acee141e025b65a37e9155cc2f128f420d0dc8ae118b53827b2d01a36401021",
+      "git_blob_sha": "572252e6ae43a949dccc48503cdf45c688904b96"
+    },
+    {
+      "id": "A7-03",
+      "batch": 7,
+      "description": "사서 · 장부 묶음 끈 매기",
+      "character_id": "resident_librarian",
+      "static_match_status": "source_documented_requires_current_validation",
+      "existing_pose": "event_ledgertie",
+      "source": "preview/room13-dev/game/assets/room13-action-resident_librarian-event_ledgertie.webp",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/room13-action-resident_librarian-event_ledgertie.webp",
+      "source_crop": null,
+      "evidence": "experiments/renpy-ch1/game/systems/room13_event_offers.rpy:33 R13_OFFER_ACTORS r13_b3_pages -> resident_librarian event_ledgertie. Event registration confirmed; visibility branches/runtime unverified.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch07/librarian_tie_ledgers_A.webp",
+      "bytes": 898726,
+      "sha256": "3493ccd3fc908ec8c7b211aa1fb0936cdfd123a10dd5ebbb46212c5cd2d382f4",
+      "git_blob_sha": "e426b2dff11d3fe92c119cdddb2f7e58d18f8bac"
+    },
+    {
+      "id": "A7-04",
+      "batch": 7,
+      "description": "선생님 · 출석부 쓰기",
+      "character_id": "resident_teacher",
+      "static_match_status": "source_documented_requires_current_validation",
+      "existing_pose": "write_attendance",
+      "source": "preview/room13-dev/game/assets/dialogue-pose-source/resident_teacher/write_attendance/840.webp",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/dialogue-pose-source/resident_teacher/write_attendance/840.webp",
+      "source_crop": null,
+      "evidence": "experiments/renpy-ch1/game/systems/room13_ep_story.rpy:45-47 ep5:st_teacher_after days(13,14), need teacher_alive -> pose write_attendance. Also room13_ep5_soup.rpy ws:teacher:count dynamic:418. Static script verified; runtime unverified.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch07/teacher_write_attendance_A.webp",
+      "bytes": 1018060,
+      "sha256": "ffcf3551ecb76d6b376183918821b856be3f808330dd82998e56d70bb2e9d1cf",
+      "git_blob_sha": "06c07a046eb21e1353d079eda3c074af940cdbe0"
+    },
+    {
+      "id": "A8-01",
+      "batch": 8,
+      "description": "피코 · 물감 섞기",
+      "character_id": "resident_piko",
+      "static_match_status": "source_documented_requires_current_validation",
+      "existing_pose": null,
+      "source": "preview/room13-dev/game/assets/investigation-canonical-20261018/resident_piko--map27_mix_paint_v2.webp",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/investigation-canonical-20261018/resident_piko--map27_mix_paint_v2.webp",
+      "source_crop": null,
+      "evidence": "experiments/renpy-ch1/game/assets/room13-map-action27.json /rows request_id VA-3: square, periods[1], days[2,4,8,10], max_day10, activity 팔레트에서 물감 색을 섞는다.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch08/piko_mix_paint_A.webp",
+      "bytes": 835934,
+      "sha256": "2bf18017fefa1d8cf1741083f313bddb952eb80be11a9d708612a7d4cea1f6bc",
+      "git_blob_sha": "1ea392385cf0c5ffa2ea173a9d6cd46e858f8e3d"
+    },
+    {
+      "id": "A8-02",
+      "batch": 8,
+      "description": "카로 · 찻잔 들고 휴식",
+      "character_id": "karo",
+      "static_match_status": "source_documented_requires_current_validation",
+      "existing_pose": null,
+      "source": "preview/room13-dev/game/assets/room13-pixel-acting-karo.webp",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/room13-pixel-acting-karo.webp",
+      "source_crop": [
+        1080,
+        558,
+        435,
+        439
+      ],
+      "evidence": "experiments/renpy-ch1/game/room13_acting.rpy:283 gate에서 period==2이면 action_2; code comment evening tea stays. dashboard action_2 crop confirmed.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch08/karo_drink_tea_A.webp",
+      "bytes": 749284,
+      "sha256": "267e6380d50f94fbe61256fbe8b792c9130cace4943be246bd6d4b283dffedac",
+      "git_blob_sha": "597b56c9118dc6c5f4afaf63f3e8b47a5379ed80"
+    },
+    {
+      "id": "A8-03",
+      "batch": 8,
+      "description": "나비 · 찻잔 나르기",
+      "character_id": "nabi",
+      "static_match_status": "source_documented_requires_current_validation",
+      "existing_pose": null,
+      "source": "preview/room13-dev/game/assets/room13-pixel-acting-nabi.webp",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/room13-pixel-acting-nabi.webp",
+      "source_crop": [
+        1084,
+        533,
+        416,
+        454
+      ],
+      "evidence": "experiments/renpy-ch1/game/room13_acting.rpy:287-289 dining period!=0 또는 school -> action_2. dashboard action_2 crop confirmed.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch08/nabi_carry_teacups_A.webp",
+      "bytes": 643236,
+      "sha256": "ab2189403621c00da5e013f83567d60e26d98f2d24d362d2523853b78030dd2a",
+      "git_blob_sha": "36d09ecfa7bcd3459aeb11d92edd1b51605ae7c1"
+    },
+    {
+      "id": "A8-04",
+      "batch": 8,
+      "description": "나비 · 젖은 천 짜기",
+      "character_id": "nabi",
+      "static_match_status": "source_documented_requires_current_validation",
+      "existing_pose": null,
+      "source": "preview/room13-dev/game/assets/room13-pixel-acting-nabi.webp",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/room13-pixel-acting-nabi.webp",
+      "source_crop": [
+        564,
+        535,
+        445,
+        447
+      ],
+      "evidence": "experiments/renpy-ch1/game/room13_acting.rpy:287-288 dining period==0 또는 inn -> action_1. dashboard action_1 crop confirmed.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch08/nabi_wring_cloth_A.webp",
+      "bytes": 774660,
+      "sha256": "ee87c893e5cfc81f315879b55558b95d965929c34b51bdd21c2d6a70c7326366",
+      "git_blob_sha": "393915761e336a9b7a5189f54cd1af4dfafee8d8"
+    },
+    {
+      "id": "A8-05",
+      "batch": 8,
+      "description": "세련 · 편지 읽기",
+      "character_id": "seryeon",
+      "static_match_status": "source_documented_requires_current_validation",
+      "existing_pose": null,
+      "source": "preview/room13-dev/game/assets/dialogue-pose-source/seryeon/chair_read/840.webp",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/dialogue-pose-source/seryeon/chair_read/840.webp",
+      "source_crop": null,
+      "evidence": "room13_acting.rpy:281 post period1 -> chair_read; :583 conversation thinking -> chair_read.",
+      "runtime_verified": false,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/residents/batch08/seryeon_read_letter_A.webp",
+      "bytes": 929024,
+      "sha256": "46bec9baf223a637bcc5c9f36d5fb2e6b095ad9b281c8b8d5ec90141e8655dbf",
+      "git_blob_sha": "f744534a38a10d1e540977d48ab26d9506972f8b"
+    }
+  ],
+  "props": [
+    {
+      "key": "bag:snack",
+      "registry": "experiments/renpy-ch1/game/assets/room13-material-icons079.json",
+      "semantics_unchanged": true,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/props/sticker_snack.webp",
+      "bytes": 40330,
+      "sha256": "efdabf261d690c1b048415877292294a484bb6ad72918b0fe127797237eeee55",
+      "git_blob_sha": "2041847460e665511b428aeb9a72407d1297a645"
+    },
+    {
+      "key": "bag:postcard",
+      "registry": "experiments/renpy-ch1/game/assets/room13-material-icons079.json",
+      "semantics_unchanged": true,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/props/sticker_postcard.webp",
+      "bytes": 48886,
+      "sha256": "c6efbbfcebdfaaf96d0f43b543af433865f9615ab8dc4b10c66509f2d98f7e45",
+      "git_blob_sha": "ab329bc7a600c9b9e1c952e6a1d5e08af23fafd8"
+    },
+    {
+      "key": "bag:cord",
+      "registry": "experiments/renpy-ch1/game/assets/room13-material-icons079.json",
+      "semantics_unchanged": true,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/props/sticker_cord.webp",
+      "bytes": 50384,
+      "sha256": "0ee242ff1a27a258bdb493b98fb979493b9c32fbc7e74fd486cea6488f1cda68",
+      "git_blob_sha": "babea331d197a5a7171f2f634838c98e2ec7b15b"
+    },
+    {
+      "key": "bag:hat",
+      "registry": "experiments/renpy-ch1/game/assets/room13-material-icons079.json",
+      "semantics_unchanged": true,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/props/sticker_hat.webp",
+      "bytes": 47404,
+      "sha256": "975a1652cf5c21c177fe0021bd233a8bf705893c376651518a0b4e706bb5afca",
+      "git_blob_sha": "3142ec770e325516bd2fca6be098660baf6c9e60"
+    },
+    {
+      "key": "bag:lamp_oil",
+      "registry": "experiments/renpy-ch1/game/assets/room13-material-icons079.json",
+      "semantics_unchanged": true,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/props/sticker_lamp_oil.webp",
+      "bytes": 35742,
+      "sha256": "a147525e285bae025e1c692369a45692cffea23ca11cff3acfd79c4664249d0f",
+      "git_blob_sha": "735e5c553baf5e6063f4cef007afb23c680fb74d"
+    },
+    {
+      "key": "bag:herbs",
+      "registry": "experiments/renpy-ch1/game/assets/room13-material-icons079.json",
+      "semantics_unchanged": true,
+      "asset_applied": false,
+      "path": "experiments/renpy-ch1/art/resident-props-delivery-20261024/props/sticker_herbs.webp",
+      "bytes": 47194,
+      "sha256": "f274707b47bd92df63170c30f49153b9a7c176f66da58221707f6dd9b81124a5",
+      "git_blob_sha": "74d5f059683f1a0ab3dc81794472c720162feb4f"
+    }
+  ]
+}

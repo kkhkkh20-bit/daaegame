@@ -1,0 +1,211 @@
+{
+  "repository": "kkhkkh20-bit/daaegame",
+  "commit": "1a0fc74775514efb353b844e102034600389b6f2",
+  "items": [
+    {
+      "id": "resident_piko",
+      "action": "팔레트 위 물감 색 섞기",
+      "source": "preview/room13-dev/game/assets/investigation-canonical-20261018/resident_piko--map27_mix_paint_v2.webp",
+      "crop": null,
+      "identity": "승인 B 및 1차 피코와 같은 주황 장모 동물, 검은 코트·하늘색 스카프·붉은 허리띠",
+      "evidence": "experiments/renpy-ch1/game/assets/room13-map-action27.json /rows request_id VA-3: square, periods[1], days[2,4,8,10], max_day10, activity 팔레트에서 물감 색을 섞는다.",
+      "duplicate": "1차 이젤/그림판에 그리기와 다른 실제 동작. 222 기본 감정표정과 다름.",
+      "status": "completed_identity_QA_passed",
+      "scope": "생존 생활동작. specific dialogue/runtime 미확인.",
+      "label": "피코 · 물감 섞기",
+      "raw": "raw/piko_mix_paint_A.png",
+      "png": "png/piko_mix_paint_A.png",
+      "webp": "webp/piko_mix_paint_A.webp",
+      "source_local": "sources/investigation-canonical-20261018__resident_piko--map27_mix_paint_v2.webp",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/investigation-canonical-20261018/resident_piko--map27_mix_paint_v2.webp",
+      "raw_dimensions": [
+        1024,
+        1536
+      ],
+      "padded_dimensions": [
+        1088,
+        1600
+      ],
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha_visible_rgba_exact": true,
+      "webp_lossless_verified": true,
+      "sha256_png": "672eb5e011f4e6192aa01a12610ce51161a310a7479d09096e237656b5530893",
+      "identity_check": "Source and B directly inspected; delivered batch01 Piko, batch02 Karo, batch04 Nabi/Seryeon directly compared. Same species/costume."
+    },
+    {
+      "id": "karo",
+      "action": "나무상자에 앉아 김 나는 찻잔 들기",
+      "source": "preview/room13-dev/game/assets/room13-pixel-acting-karo.webp",
+      "crop": [
+        1080,
+        558,
+        435,
+        439
+      ],
+      "identity": "승인 B와 같은 푸른 깃 새, 붉은 재킷·노란 조끼·갈색 바지·가방",
+      "evidence": "experiments/renpy-ch1/game/room13_acting.rpy:283 gate에서 period==2이면 action_2; code comment evening tea stays. dashboard action_2 crop confirmed.",
+      "duplicate": "2차 차축 감싸기와 다른 휴식동작.",
+      "status": "completed_identity_QA_passed",
+      "scope": "생존 생활동작, 저녁 성문 선택. 대본 대사/runtime 미확인.",
+      "label": "카로 · 찻잔 들고 휴식",
+      "raw": "raw/karo_drink_tea_A.png",
+      "png": "png/karo_drink_tea_A.png",
+      "webp": "webp/karo_drink_tea_A.webp",
+      "source_local": "sources/room13-pixel-acting-karo.webp",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/room13-pixel-acting-karo.webp",
+      "raw_dimensions": [
+        1199,
+        1312
+      ],
+      "padded_dimensions": [
+        1263,
+        1376
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_visible_rgba_exact": true,
+      "webp_lossless_verified": true,
+      "sha256_png": "6083a6b0240840a87625e5283b0ea715eafdc887eccb0e9600497878547040bb",
+      "identity_check": "Source and B directly inspected; delivered batch01 Piko, batch02 Karo, batch04 Nabi/Seryeon directly compared. Same species/costume."
+    },
+    {
+      "id": "nabi",
+      "action": "쟁반의 찻잔 2개 나르기",
+      "source": "preview/room13-dev/game/assets/room13-pixel-acting-nabi.webp",
+      "crop": [
+        1084,
+        533,
+        416,
+        454
+      ],
+      "identity": "승인 B와 같은 크림 고양이, 남색 세일러복·붉은 리본·방울·남색 신발",
+      "evidence": "experiments/renpy-ch1/game/room13_acting.rpy:287-289 dining period!=0 또는 school -> action_2. dashboard action_2 crop confirmed.",
+      "duplicate": "4차 당근 썰기와 다름.",
+      "status": "completed_identity_QA_passed",
+      "scope": "생존 생활동작. 대사/runtime 미확인.",
+      "label": "나비 · 찻잔 나르기",
+      "raw": "raw/nabi_carry_teacups_A.png",
+      "png": "png/nabi_carry_teacups_A.png",
+      "webp": "webp/nabi_carry_teacups_A.webp",
+      "source_local": "sources/room13-pixel-acting-nabi.webp",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/room13-pixel-acting-nabi.webp",
+      "raw_dimensions": [
+        1199,
+        1312
+      ],
+      "padded_dimensions": [
+        1263,
+        1376
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_visible_rgba_exact": true,
+      "webp_lossless_verified": true,
+      "sha256_png": "6c64a82938c4aade792d528ac77637e788dd31bb6db9f179a4b6e9419138f8a8",
+      "identity_check": "Source and B directly inspected; delivered batch01 Piko, batch02 Karo, batch04 Nabi/Seryeon directly compared. Same species/costume."
+    },
+    {
+      "id": "nabi",
+      "action": "양동이 위에서 젖은 천 짜기",
+      "source": "preview/room13-dev/game/assets/room13-pixel-acting-nabi.webp",
+      "crop": [
+        564,
+        535,
+        445,
+        447
+      ],
+      "identity": "승인 B 동일 고양이/복장",
+      "evidence": "experiments/renpy-ch1/game/room13_acting.rpy:287-288 dining period==0 또는 inn -> action_1. dashboard action_1 crop confirmed.",
+      "duplicate": "당근 썰기 및 찻잔 나르기와 다름.",
+      "status": "completed_identity_QA_passed",
+      "scope": "생존 생활동작. 뒷모습, 물방울·양동이 유지. 대사/runtime 미확인.",
+      "label": "나비 · 젖은 천 짜기",
+      "raw": "raw/nabi_wring_cloth_A.png",
+      "png": "png/nabi_wring_cloth_A.png",
+      "webp": "webp/nabi_wring_cloth_A.webp",
+      "source_local": "sources/room13-pixel-acting-nabi.webp",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/room13-pixel-acting-nabi.webp",
+      "raw_dimensions": [
+        1240,
+        1268
+      ],
+      "padded_dimensions": [
+        1304,
+        1332
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_visible_rgba_exact": true,
+      "webp_lossless_verified": true,
+      "sha256_png": "61ee4f9d41c886fc13ce3a377685f5ce05052e95048363f79e82581521b661ba",
+      "identity_check": "Source and B directly inspected; delivered batch01 Piko, batch02 Karo, batch04 Nabi/Seryeon directly compared. Same species/costume."
+    },
+    {
+      "id": "seryeon",
+      "action": "앉아서 접힌 편지 읽기",
+      "source": "preview/room13-dev/game/assets/dialogue-pose-source/seryeon/chair_read/840.webp",
+      "crop": null,
+      "identity": "승인 B와 같은 주황 여우·파란 코트·노란 조끼",
+      "evidence": "room13_acting.rpy:281 post period1 -> chair_read; :583 conversation thinking -> chair_read.",
+      "duplicate": "4차 직접 대조 완료: 기존 손을 무릎에 둔 회의착석과 다름. 새 원화는 편지 읽기, 원화에 없는 의자 추가하지 않음.",
+      "status": "completed_identity_QA_passed",
+      "scope": "생존 업무동작. 원화에 의자 자체는 안 보임. 임의 의자 추가 금지.",
+      "label": "세련 · 편지 읽기",
+      "raw": "raw/seryeon_read_letter_A.png",
+      "png": "png/seryeon_read_letter_A.png",
+      "webp": "webp/seryeon_read_letter_A.webp",
+      "source_local": "sources/dialogue-pose-source__seryeon__chair_read__840.webp",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/dialogue-pose-source/seryeon/chair_read/840.webp",
+      "raw_dimensions": [
+        966,
+        1629
+      ],
+      "padded_dimensions": [
+        1030,
+        1693
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_visible_rgba_exact": true,
+      "webp_lossless_verified": true,
+      "sha256_png": "e489866cad29357e45f032fe6a2300a96c97951f675cef8a6bbfff44c89530b0",
+      "identity_check": "Source and B directly inspected; delivered batch01 Piko, batch02 Karo, batch04 Nabi/Seryeon directly compared. Same species/costume."
+    }
+  ],
+  "prior_deliveries": {
+    "batch01": "libfile_809cdfd1eed081919158feaceaa3ff88",
+    "batch02_version1": "libfile_519d5f522a90819181e34208b7d541ee",
+    "batch03": "libfile_baa8aa756f9081919a271eb76058b14f",
+    "batch04": "libfile_0fd99877757081919c976827c77069c8",
+    "B_starter37": "libfile_fb260ed6e2748191902af00c5acd8938",
+    "batch07": "libfile_550b34f676308191b095f58a15f2cf78"
+  },
+  "production": "built-in image_gen, five separate action conversions",
+  "processing": [
+    "32px transparent padding per side, no resize, no alpha threshold/cleanup.",
+    "Original alpha including253/254 and all visibleRGBA preserved exactly. HiddenRGB at alpha0 may normalize.",
+    "LosslessWebP alpha and visibleRGBA exact verification passed.",
+    "No clipping of body/props/whiteborder on solid-blueQA.",
+    "No code or deployment changes."
+  ],
+  "limitations": [
+    "Pinned commit only; latest Claude branch changes not audited.",
+    "Alive everyday poses; no death image substitution. Piko clinic-rest source deliberately NOT produced.",
+    "Seryeon needs scene-provided seat support: source had no chair, none invented. Karo original crate retained.",
+    "No runtime/placement/scale validation.",
+    "Props and markings not authoritative puzzle/clue geometry.",
+    "AI style conversion preserves action/identity, not source pixels."
+  ],
+  "label_note": "연락시트 카로(karo)·세련(seryeon)은 이 기준 저장소의 이름 표기를 따름. 사용자 기억의 까로/서련과 표기 차이가 있으며 이름 변경/캐릭터 추가 의도가 아님."
+}
