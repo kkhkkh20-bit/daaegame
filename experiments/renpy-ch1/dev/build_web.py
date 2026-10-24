@@ -66,6 +66,9 @@ def startup_media(rel, startup_files):
 
 def startup_files(game):
     result = set(START_FILES)
+    # Approved title/settings must be ready before the first interaction.
+    for folder in ("ui-b-main", "ui-b-options"):
+        result.update(p.relative_to(game).as_posix() for p in (game / "assets" / folder).glob("*.png"))
     layout = json.loads((game / "assets/room13-world-layout.json").read_text())
     def files(value):
         if isinstance(value, str) and value.startswith("assets/"):result.add(value)
