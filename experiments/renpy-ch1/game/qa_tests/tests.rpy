@@ -800,7 +800,9 @@ testcase carriage_skip:
     assert eval (place=="마차 안" and r13_v111_active())
     screenshot "c0_carriage.png"
     click "건너뛰기"
-    click pos (640,300) until "편지를 외투 안에" timeout 60
+    # 2026-10-24: 건너뛰기는 마차 안 대사(「편지를 외투 안에」 포함)를 통째로 넘기고 입구 장면부터 잇는다.
+    # 그 줄을 기다리면 영영 나오지 않으므로, 입구에 도착해 현장 화면이 열리는지를 본다.
+    pause until eval (place!="마차 안") timeout 30
     click pos (640,300) until screen "r13_hub" timeout 90
     assert eval (r13_v111_active())
     assert eval (r13_v111_active() and not r13_carriage_skip)
