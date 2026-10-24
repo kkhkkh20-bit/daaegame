@@ -42,7 +42,7 @@ footer{font-size:12.5px;color:var(--ink-2);border-top:1px solid var(--line);padd
 <div class="wrap">
 <header>
   <h1>다람탐정 분기표</h1>
-  <p class="lede">0.20.18 작업 소스 기준. 누가 어디서 갈리는지, 무엇으로 정해지는지, 결과가 뒤에서 어떻게 쓰이는지를 한 곳에 모았다. 「현행」은 코드에서 확인한 사실, 「설계」는 아직 넣지 않은 계획이다.</p>
+  <p class="lede">0.20.24 기준(2026-10-24 갱신). 누가 어디서 갈리는지, 무엇으로 정해지는지, 결과가 뒤에서 어떻게 쓰이는지를 한 곳에 모았다. 「현행」은 코드에서 확인한 사실, 「설계」는 아직 넣지 않은 계획이다.</p>
   <div class="legend">
     <span><span class="chip ok">행동 판정</span> 앞선 행동으로 정해짐</span>
     <span><span class="chip warn">메뉴</span> 위기 직전에 고름(바꿀 대상)</span>
@@ -50,6 +50,27 @@ footer{font-size:12.5px;color:var(--ink-2);border-top:1px solid var(--line);padd
     <span><span class="chip plan">설계</span> 아직 게임에 없음</span>
   </div>
 </header>
+
+<section id="episodes">
+  <h2>0. 에피소드 한눈에</h2>
+  <p>사건마다 누가 잃고 누가 했는지, 아빠가 왜 나서는지. 아빠의 동기는 살아남기 · 엄마 찾기 · 빠져나가기 셋으로 본다. 자세한 근거는 <code>docs/design/EPISODES.md</code>.</p>
+  <div class="box"><table>
+    <thead><tr><th>날</th><th>사건</th><th>피해자</th><th>가해자(진범) / 누명</th><th>아빠가 나서는 까닭</th></tr></thead>
+    <tbody>
+    <tr><td class="day">1일</td><td><b>마을 입구</b></td><td>다람(「외 한 명」), 아빠(일꾼 명단)</td><td>너울(명단 처리)</td><td>다람이 들어갈 수 있나 · 아내를 만나러 왔다</td></tr>
+    <tr><td class="day">2~3일</td><td><b>피코와 꺼진 3번 등</b></td><td>피코(얼어 죽음)</td><td>실룩(돌을 뺌) · 너울(지시) · 백 부인(두 배 매입)</td><td>다람이 피코에게 한 약속</td></tr>
+    <tr><td class="day">3일</td><td><b>등 도둑 회의</b></td><td>톡(누명·명단), 실룩 아이들</td><td>실룩 / 누명 톡·우박</td><td>톡이 끌려가면 까로의 축을 고칠 사람이 없다 — 나갈 마차 <span class="chip ok">0.20.24</span></td></tr>
+    <tr><td class="day">4~5일</td><td><b>울타리와 밤이</b></td><td>돌목(물림), 밤이(누명·명단)</td><td>무쇠(야생화, 의도 없음) / 누명 밤이·네로</td><td>밤이는 강 쪽에서 엄마를 본 아이 <span class="chip ok">0.20.24</span></td></tr>
+    <tr><td class="day">6~7일</td><td><b>장작 창고 불</b></td><td>꼬미(사망), 보리(화상·누명)</td><td>누비(방화) · 배후 너울의 약속 / 누명 보리·나비</td><td>여관 장작이 탔다 — 오늘 밤 다람이 방 <span class="chip ok">0.20.24</span></td></tr>
+    <tr><td class="day">7~10일</td><td><b>13호 부엉이</b></td><td>부엉이(사망), 다람(누명·명단), 도토(누명)</td><td>할머니(안쪽 돌 · 거짓 호출 · 촛대)</td><td>다람이 범인으로 적힌다 · 부엉이가 엄마 기록을 쥐었다</td></tr>
+    <tr><td class="day">10일</td><td><b>기록 회의</b>(예방 경로)</td><td>가족(엄마 기록), 부엉이(명단)</td><td>할머니(가로채기)</td><td>엄마의 기록</td></tr>
+    <tr><td class="day">1~10일</td><td><b>초대장 위조</b>(관통)</td><td>아빠·다람·엄마</td><td>할머니(슬링·도토는 모르고 거듦)</td><td>누가 엄마 이름으로 불렀나</td></tr>
+    <tr><td class="day">11일</td><td><b>가설 회의 · 아랫길</b></td><td>야생화 앓는 사람들, 네로·아랫길 노인</td><td>꺼낸 아르카를 태우는 관습 · 너울(아랫길 등을 끊음)</td><td>고개가 막혔다 — 봄까지 여기서 살아야 한다 <span class="chip ok">0.20.24</span></td></tr>
+    <tr><td class="day">12일</td><td><b>학교 국</b></td><td>도담·꼬미(사망), 나비·서리(누명)</td><td>사자 선생님(약) · 서리(약 맡김)</td><td>다람이 먹는 국</td></tr>
+    <tr><td class="day">13일</td><td><b>담요와 수레 · 군중</b></td><td>판돌·모모·굴돌·명단 사람, 엄마(명단), 너울·모모(폭동)</td><td>촌장(거짓 전언) · 너울(집행) · 주민들</td><td>엄마 이름이 명단에 있다 · 다음 빈칸이 우리일 수도</td></tr>
+    <tr><td class="day">14일</td><td><b>제단</b></td><td>달래·보미·모과(지난 겨울들), 다음 명단</td><td>촌장(시작) · 너울(장부) · 바둑이(쇠 운반)</td><td>쇠가 남으면 셋이 다 마차를 탈 수 없다</td></tr>
+    </tbody></table></div>
+</section>
 
 <section id="fate">
   <h2>1. 생사가 갈리는 곳</h2>
@@ -85,6 +106,14 @@ footer{font-size:12.5px;color:var(--ink-2);border-top:1px solid var(--line);padd
       <td>담요 2장 지킴 → 열 없음<br><span class="chip bad">대가</span> 피코를 들였거나 토실에게 1장 → 다람 열</td>
       <td>네로 쪽(2일)을 고르고 11일 담요 두 장을 다 지킨다</td>
       <td>열이 나면 난로 옆자리를 다람이 차지 → 12일 조기 예방 불가. 착한 일(피코·토실)이 열흘 뒤 내 아이에게 돌아온다</td></tr>
+    <tr><td class="day">3~4일</td><td><b>밤이</b> · 실룩을 풀어 준 판<span class="tag">C3</span></td><td><span class="chip ok">행동 판정</span></td>
+      <td>실룩을 풀어 주면 4일 5번 등이 또 빈다 → 밤이가 처마에서 내려와 울타리 옆 → 혐의가 더 무겁다(5일 기회 4번)</td><td>실룩을 너울에게 넘긴다(대신 실룩 명단)</td><td>자비가 다른 아이를 다치게 한다</td></tr>
+    <tr><td class="day">11일</td><td><b>아랫길 노인</b> · 늦은 구조<span class="tag">D3</span></td><td><span class="chip ok">행동 판정</span></td>
+      <td><span class="chip bad">비극</span> 늦으면 네로와 함께 죽음 → 12일 「이름 없는 표」</td><td>낮 인계</td><td>14일 추모 줄</td></tr>
+    <tr><td class="day">12일</td><td><b>꼬미</b> · 늦은 폭로<span class="tag">D4</span></td><td><span class="chip ok">행동 판정</span></td>
+      <td><span class="chip bad">비극</span> 6일에 살렸어도 12일 같은 냄비로 죽을 수 있다 → 13일 빈자리에 도토리</td><td>12일 조기 예방·먹기 전 중단</td><td>13일 아침 반응, 14일 추모</td></tr>
+    <tr><td class="day">13일</td><td><b>너울 · 모모</b> · 공개 뒤 군중<span class="tag">D1 · D2</span></td><td><span class="chip warn">메뉴</span></td>
+      <td>「막는다」 → 너울 사망 · 「막지 않는다」 → 폭동, 너울·모모 사망 · 「감독자에게 맡긴다」 → 막음</td><td>현장 감독자(돌목이 실룩 감독 중이면 없음)</td><td>14일 「누가 먼저 쳤는지는 아무도 몰라요」</td></tr>
     </tbody></table></div>
 </section>
 
@@ -126,11 +155,13 @@ footer{font-size:12.5px;color:var(--ink-2);border-top:1px solid var(--line);padd
 
 <section id="chains">
   <h2>4. 사건이 사건을 구하는 끈</h2>
-  <p>살린 사람과 확보한 물건이 뒤 사건의 다른 길을 연다. 지금 들어간 것은 P1 하나다.</p>
+  <p>살린 사람과 확보한 물건이 뒤 사건의 다른 길을 연다. 들어간 것은 P1, 톡의 축(탈출의 끈), 안 쓰이던 자료 10건의 재활용이다.</p>
   <div class="box"><table>
     <thead><tr><th>#</th><th>앞 사건에서</th><th>뒤 사건에서</th><th>상태</th></tr></thead>
     <tbody>
     <tr><td class="day">P1</td><td>2일 피코 생존</td><td>4일 밤 처마 옆 그림 → 5일 초소 회의에서 겉옷 대조·귀가 진술을 대신</td><td><span class="chip ok">0.20.18</span></td></tr>
+    <tr><td class="day">축</td><td>3일 톡 무죄(또는 명단)</td><td>까로의 쇠 축을 톡이 고친다 → 9일 반쯤 · 쇠가 모자람 → 14일 첫 길의 마차(부품은 상점·대가 설계에서)</td><td><span class="chip ok">0.20.24 대사</span></td></tr>
+    <tr><td class="day">자료</td><td>앞 사건에서 쓸모없던 자료 10건</td><td>뒤 회의의 덧붙임·대체 정답·인물 반응(엄마 경고 편지 → 10일 기록 회의 대체 정답 등)</td><td><span class="chip ok">0.20.23</span></td></tr>
     <tr><td class="day">P2</td><td>3일 톡 무죄</td><td>7일 13호 안쪽 빗장 수리 → 부엉이 예방(사람의 길)</td><td><span class="chip plan">설계</span></td></tr>
     <tr><td class="day">P3</td><td>3일 톡 무죄</td><td>11일 수레 바퀴 → 네로 구조 조건</td><td><span class="chip plan">설계</span></td></tr>
     <tr><td class="day">P4</td><td>5일 밤이 무죄</td><td>7일 밤 거짓 호출 목격 → 8일 증언, 다음 판의 힌트</td><td><span class="chip plan">설계</span></td></tr>
@@ -143,5 +174,5 @@ footer{font-size:12.5px;color:var(--ink-2);border-top:1px solid var(--line);padd
     </tbody></table></div>
 </section>
 
-<footer>출처: <code>experiments/renpy-ch1/game/room13_v111_days*.rpy</code>, <code>room13_v111_newworld_rules.rpy</code>(결말 판정), <code>room13_fork_screen.rpy</code>(회의 목록), 설계 문서 <code>docs/design/CHAIN_DESIGN.md</code>, <code>FUTURE_KNOWLEDGE_KEYS.md</code>. 2026-10-23.</footer>
+<footer>출처: <code>experiments/renpy-ch1/game/room13_v111_days*.rpy</code>, <code>room13_v111_newworld_rules.rpy</code>(결말 판정), <code>room13_fork_screen.rpy</code>(회의 목록), 설계 문서 <code>docs/design/CHAIN_DESIGN.md</code>, <code>FUTURE_KNOWLEDGE_KEYS.md</code>. <code>EPISODES.md</code>, 분기 점검 도구 <code>dev/branch_audit.py</code>. 2026-10-24 갱신.</footer>
 </div>
