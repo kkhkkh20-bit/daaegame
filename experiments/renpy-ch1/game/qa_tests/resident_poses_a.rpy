@@ -76,14 +76,14 @@ testcase poses_a_field:
     pause 1.2
     $ r13_qa_poses_a_report("post_morning_d7")
     screenshot "poses_a_post_morning.png"
-    run Call("r13_qa_roam",dict(day=8,period=2,location="square",life_poc=True,case_state="occurred"),("know_stone_history","ep1_done","ev_b_done","ev_c_done"))
-    click pos (1150,90) until screen "r13_hub" timeout 40
+    run Call("r13_qa_roam",dict(day=3,period=1,location="store",life_poc=True))
+    click pos (640,600) until screen "r13_hub" timeout 40
     $ r13_qa_poses_a_focus()
     pause 1.2
-    $ r13_qa_poses_a_report("square_evening")
-    screenshot "poses_a_square_evening.png"
+    $ r13_qa_poses_a_report("store_afternoon")
+    screenshot "poses_a_store_afternoon.png"
     run Call("r13_qa_roam",dict(day=3,period=0,location="river",life_poc=True),("entry_corrected","lodging","livelihood_open"),cash=4)
-    click pos (1150,90) until screen "r13_hub" timeout 40
+    click pos (640,600) until screen "r13_hub" timeout 40
     $ r13_qa_poses_a_focus()
     pause 1.2
     $ r13_qa_poses_a_report("river_afternoon")
