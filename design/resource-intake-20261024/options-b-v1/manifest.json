@@ -1,0 +1,239 @@
+{
+  "title": "Daram Detective B Options UI assets",
+  "date": "2026-10-24",
+  "scope": "22 approved art files: required12parts+8icons+optional2decorations. No game code changed. No dark variant.",
+  "generation": "Built-in imagegen; ImageMagick cropping, resizing, padding and mockup composition. No Python image editing.",
+  "files": [
+    {
+      "file": "assets/b_icon_opt_home.png",
+      "canvas": "64x64",
+      "channels": "srgba 4.0",
+      "alpha_bounds": "28x28+18+18",
+      "sha256": "14731499c0dd51c9d43e92eee9cc920cc6d7a6deb039f9b262159f53f2e57260",
+      "slicing": "Fixed-size artwork; do not stretch."
+    },
+    {
+      "file": "assets/b_icon_opt_keys.png",
+      "canvas": "64x64",
+      "channels": "srgba 4.0",
+      "alpha_bounds": "28x28+18+18",
+      "sha256": "1846d4df1068e6c14d4f77227770b75f2add15247bb74d1154bc28494334906f",
+      "slicing": "Fixed-size artwork; do not stretch."
+    },
+    {
+      "file": "assets/b_icon_opt_mute.png",
+      "canvas": "64x64",
+      "channels": "srgba 4.0",
+      "alpha_bounds": "28x28+18+18",
+      "sha256": "c4ebf832a2b2eff83217eef427dbe15729efe4ef1b03c8d755a32d02178d0e86",
+      "slicing": "Fixed-size artwork; do not stretch."
+    },
+    {
+      "file": "assets/b_icon_opt_reading.png",
+      "canvas": "64x64",
+      "channels": "srgba 4.0",
+      "alpha_bounds": "28x28+18+18",
+      "sha256": "ed16c013cefdafdce27dffead0bc893ded8278c509152003de91d512461afa5f",
+      "slicing": "Fixed-size artwork; do not stretch."
+    },
+    {
+      "file": "assets/b_icon_opt_reset.png",
+      "canvas": "64x64",
+      "channels": "srgba 4.0",
+      "alpha_bounds": "28x28+18+18",
+      "sha256": "f07c12c296dc6ba3067fbcb37d971581cd41e8d13186750865d27cc3efc3b8d7",
+      "slicing": "Fixed-size artwork; do not stretch."
+    },
+    {
+      "file": "assets/b_icon_opt_save.png",
+      "canvas": "64x64",
+      "channels": "srgba 4.0",
+      "alpha_bounds": "28x28+18+18",
+      "sha256": "e8ea1ed6d10a2d2464d6d87de3065e05f4ebb5fba6041dd541d0f50585507cbd",
+      "slicing": "Fixed-size artwork; do not stretch."
+    },
+    {
+      "file": "assets/b_icon_opt_screen.png",
+      "canvas": "64x64",
+      "channels": "srgba 4.0",
+      "alpha_bounds": "28x28+18+18",
+      "sha256": "78127caeeb156f08b640ecb433b4bc70f090e4b929c0ce796717aeb6318a6bcf",
+      "slicing": "Fixed-size artwork; do not stretch."
+    },
+    {
+      "file": "assets/b_icon_opt_sound.png",
+      "canvas": "64x64",
+      "channels": "srgba 4.0",
+      "alpha_bounds": "28x28+18+18",
+      "sha256": "bd6e505448707a743a95ebddd6781f075012c0d8a9072c967ab75b43c9a49cce",
+      "slicing": "Fixed-size artwork; do not stretch."
+    },
+    {
+      "file": "assets/b_opt_bar_fill.png",
+      "canvas": "312x52",
+      "channels": "srgba 4.0",
+      "alpha_bounds": "280x20+16+16",
+      "sha256": "1789e6bf068c3430dc2198140158e4d90786a6411ecb68f9e27274d45ae80033",
+      "slicing": "Proposed horizontal cap insets including padding:26px; fixed20px art height. Crop fill under thumb, or slice capped fill."
+    },
+    {
+      "file": "assets/b_opt_bar_thumb.png",
+      "canvas": "68x68",
+      "channels": "srgba 4.0",
+      "alpha_bounds": "36x36+16+16",
+      "sha256": "00e17aef1510e5c0ecfea3d51a85a8626dccb58fb02537a7b73cf54feca9dbe9",
+      "slicing": "Fixed-size artwork; do not stretch."
+    },
+    {
+      "file": "assets/b_opt_bar_track.png",
+      "canvas": "312x52",
+      "channels": "srgba 4.0",
+      "alpha_bounds": "280x20+16+16",
+      "sha256": "bf5c5239af6bd78c99a7ceb14dc6ea4020155e0d09d42a0120e4eaae09c95601",
+      "slicing": "Proposed horizontal cap insets including padding:26px; fixed20px art height. Crop fill under thumb, or slice capped fill."
+    },
+    {
+      "file": "assets/b_opt_choice.png",
+      "canvas": "222x84",
+      "channels": "srgba 4.0",
+      "alpha_bounds": "190x52+16+16",
+      "sha256": "4cda21d2041e630a448e02a3acd9d06f90f74c2d5d1d56f2c5536d14b4151057",
+      "slicing": "Proposed 9-slice insets including transparent padding: left/right 40, top/bottom 32. Verify in engine at widths143–300 and heights52–88."
+    },
+    {
+      "file": "assets/b_opt_choice_hover.png",
+      "canvas": "222x84",
+      "channels": "srgba 4.0",
+      "alpha_bounds": "190x52+16+16",
+      "sha256": "aa25fe0ec03511d459263e7a04357b948596383764e9131b95856ac78873c6e3",
+      "slicing": "Proposed 9-slice insets including transparent padding: left/right 40, top/bottom 32. Verify in engine at widths143–300 and heights52–88."
+    },
+    {
+      "file": "assets/b_opt_choice_selected.png",
+      "canvas": "222x84",
+      "channels": "srgba 4.0",
+      "alpha_bounds": "190x52+16+16",
+      "sha256": "13b9543fe3061854f0f2a0bd12b190afac13f65aee5039b64c0939a8e47edf16",
+      "slicing": "Proposed 9-slice insets including transparent padding: left/right 40, top/bottom 32. Verify in engine at widths143–300 and heights52–88."
+    },
+    {
+      "file": "assets/b_opt_close.png",
+      "canvas": "88x88",
+      "channels": "srgba 4.0",
+      "alpha_bounds": "56x56+16+16",
+      "sha256": "4448867c4950ab21277c3eef06cceae8fb4e6185f08c393de81cf093c96c8f9c",
+      "slicing": "Fixed-size artwork; do not stretch."
+    },
+    {
+      "file": "assets/b_opt_divider.png",
+      "canvas": "1224x38",
+      "channels": "srgba 4.0",
+      "alpha_bounds": "1192x6+16+16",
+      "sha256": "02821168b0cdab833ba57b78ee5d0890f8896e2942e1d2be9a20576ea00bb331",
+      "slicing": "Fixed1192px width preferred. Center acorn is6px tall per specification; stretching whole image stretches acorn/dash spacing. Tile left/right halves around fixed center for alternate widths."
+    },
+    {
+      "file": "assets/b_opt_panel.png",
+      "canvas": "1288x728",
+      "channels": "srgba 4.0",
+      "alpha_bounds": "1256x696+16+16",
+      "sha256": "284f1c2ca9088e5d6295c39bc1de740172383739a9035e2f1e0ac0b52ed98fdc",
+      "slicing": "Use fixed native1256x696 art size. Full panel cannot be vertically 9-sliced without stretching 3 rings. Separate ring-free technical base supplied; no automatic integration."
+    },
+    {
+      "file": "assets/b_opt_preview_box.png",
+      "canvas": "892x142",
+      "channels": "srgba 4.0",
+      "alpha_bounds": "860x110+16+16",
+      "sha256": "65f381c7f99bcfe54d072828770111ee888f76ea2a520755652e76f1a2726317",
+      "slicing": "Keep tape corners: horizontal cap insets 120px including padding; vertical cap36px. Horizontal stretch only preferred: rules stretch on vertical stretch."
+    },
+    {
+      "file": "assets/b_opt_sticker_corner.png",
+      "canvas": "152x152",
+      "channels": "srgba 4.0",
+      "alpha_bounds": "120x120+16+16",
+      "sha256": "d4d086bacf2e2e04aa7fdda60dd52980fd7c821e6b448fc5c7fb3a8d0f63f989",
+      "slicing": "Fixed-size artwork; do not stretch."
+    },
+    {
+      "file": "assets/b_opt_tab.png",
+      "canvas": "238x94",
+      "channels": "srgba 4.0",
+      "alpha_bounds": "206x62+16+16",
+      "sha256": "402b9d5408df582294c98924f0eccbda55a1bfbea12375dc18e24e53aa03d603",
+      "slicing": "Proposed 9-slice insets including padding: left/right48, top/bottom36. Verify at target scale."
+    },
+    {
+      "file": "assets/b_opt_tab_selected.png",
+      "canvas": "238x94",
+      "channels": "srgba 4.0",
+      "alpha_bounds": "206x62+16+16",
+      "sha256": "ea4a9d7dc8ec2e9fe672fdd7d30e77e38c0768051b22fbe4520550e2644f66ae",
+      "slicing": "Proposed 9-slice insets including padding: left/right48, top/bottom36. Verify at target scale."
+    },
+    {
+      "file": "assets/b_opt_title_tape.png",
+      "canvas": "182x76",
+      "channels": "srgba 4.0",
+      "alpha_bounds": "150x44+16+16",
+      "sha256": "926e869e7ebf736e961bc682eacb87b333b7fd6ded3bb28c8ba86d95b2ffaa07",
+      "slicing": "Fixed-size artwork; do not stretch."
+    },
+    {
+      "file": "technical/b_opt_panel_9slice_base.png",
+      "canvas": "1288x728",
+      "alpha_bounds": "1256x696+16+16",
+      "sha256": "822ef0c6967455c927fbcf629898ae82c502c74ac90396e2e7792c07dc6fe675",
+      "slicing": "visible48px corners; canvas insets64px each including16px transparency. 9-slice tests1256x696,1500x696,1256x900 passed."
+    },
+    {
+      "file": "technical/b_opt_ring_overlay.png",
+      "canvas": "112x84",
+      "alpha_bounds": "80x52+16+16",
+      "sha256": "6195e3dcbe085e6f05d99df35464c208cf35fd67156c809593653ac5fbdc8201",
+      "placement": "Composite unchanged ring canvas at x0, y=round(visible_panel_height*r)-26, r0.22,0.50,0.78. For H696: y127,322,517. Coordinates relative to full padded panel canvas. Never resize ring."
+    },
+    {
+      "file": "technical/b_opt_rings3_overlay.png",
+      "canvas": "1288x728",
+      "alpha_bounds": "80x442+16+143",
+      "sha256": "0e1430c321a5f018548eec99307b17f57efc6005be14f1148dcd780e3b507bd5",
+      "placement": "Native-size three rings, overlay at0,0 on padded panel1288x728. For other heights, repeat single ring rather than resizing whole overlay."
+    }
+  ],
+  "caveats": [
+    "Generated illustrations not engine integration; 9-slice insets are conservative recommendations, not runtime-tested.",
+    "Reading mockup scales preview width to fit illustrative layout; request's production PNG retains860px art width.",
+    "Bottom buttons in mockups use new choice textures as placeholders; actual integration must reuse existing b_button/b_button_primary as request states.",
+    "Screen tab adds no unverified options; mockup only shows shared exterior.",
+    "Technical ring-free v2 replaces prior technical alternate, not original full panel. Original full-panel art unchanged.",
+    "Sound mockup two-row whitespace is not a finalized layout. Verify grouping/readability in actual game; no invented options/decorations added."
+  ],
+  "revision": "1: 48px visible-corner technical panel and fixed-ring overlays",
+  "nineslice_qa": {
+    "visible_corner": 48,
+    "padded_canvas_corner": 64,
+    "visible_sizes": [
+      [
+        1256,
+        696
+      ],
+      [
+        1500,
+        696
+      ],
+      [
+        1256,
+        900
+      ]
+    ],
+    "four_corner_hashes_equal": true,
+    "native_reconstruction_opaque_background_mean_error": 0,
+    "rings_visible_size": [
+      80,
+      52
+    ],
+    "engine_runtime_test": false
+  }
+}
