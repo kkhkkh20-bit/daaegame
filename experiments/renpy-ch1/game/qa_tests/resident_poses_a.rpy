@@ -34,10 +34,11 @@ screen r13_qa_poses_a_meeting():
         $ cx,edge=r13_meeting_seat_position(i,len(seated),"trial")
         add Transform(r13_meeting_actor(who,None,cx,seated=True),ysize=230,fit="contain",nearest=True) xcenter cx ypos edge+95-230
 
-testcase resident_poses_a:
+testcase poses_a_field:
     pause 2.0
     click "처음부터"
     pause 3.0
+    $ r13_qa_note("poses_a start changed=%d" % r13_qa_poses_a_changed())
     assert eval (r13_qa_poses_a_changed()>=40)
     run Call("r13_qa_roam",dict(day=2,period=0,location="market",life_poc=True),R13_QA_POSES_A_FLAGS,(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
@@ -93,8 +94,13 @@ testcase resident_poses_a:
     run Hide("r13_qa_poses_a_meeting")
     $ r13_qa_note("poses_a done changed=%d" % r13_qa_poses_a_changed())
 
-testcase resident_poses_a_kids:
+testcase poses_a_kids:
     run Jump('r13_qa_life_school')
     pause 1.0
     $ r13_qa_poses_a_report("school_play")
     screenshot "poses_a_school_play.png"
+
+testcase poses_a_debug:
+    $ r13_qa_note("changed=" + repr(sorted(R13_RESIDENT_POSES_A_CHANGED)))
+    $ r13_qa_note("missing=" + repr([(s["kind"],s["person"],s["pose"],(R13_ACTING.get(s["person"],{}).get(s["pose"]) or {}).get("file"),(CAST.get(s["person"],{}).get(s["pose"]) or {}).get("file"),renpy.loadable(s["fields"]["file"])) for s in R13_RESIDENT_POSES_A["slots"] if (s["person"],s["pose"]) not in R13_RESIDENT_POSES_A_CHANGED and s["kind"]!="meeting"]))
+    $ r13_qa_note("meeting=" + repr([(k,v["file"]) for k,v in R13_MEETING_SEATED.items()]))
