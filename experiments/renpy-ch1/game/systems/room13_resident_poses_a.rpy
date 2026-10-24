@@ -42,9 +42,10 @@ init 186 python:
             fields = slot["fields"]
             if not renpy.loadable(fields["file"]):continue
             for spec, row in r13_poses_a_targets(slot):
-                if spec.get("file") == fields["file"]:continue
-                if spec.get("file") != slot["old_file"]:continue
-                spec.update(r13_poses_a_copy.deepcopy(fields))
+                # 행과 R13_ACTING 이 같은 dict 를 가리키면 두 번째로 만날 때는 이미 바뀌어 있다.
+                if spec.get("file") != fields["file"]:
+                    if spec.get("file") != slot["old_file"]:continue
+                    spec.update(r13_poses_a_copy.deepcopy(fields))
                 if row is not None and slot.get("row_fields"):
                     row["source_size"] = list(slot["row_fields"]["source_size"])
                     row.setdefault("contacts", {})["contacts_normalized_full_canvas"] = r13_poses_a_copy.deepcopy(slot["row_fields"]["contacts_normalized_full_canvas"])
