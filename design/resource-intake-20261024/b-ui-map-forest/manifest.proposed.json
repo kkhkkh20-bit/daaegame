@@ -1,0 +1,172 @@
+{
+  "status": "시안·미적용",
+  "source": "map.md section C; village B palette and frame",
+  "canvas": [
+    1136,
+    570
+  ],
+  "frame": [
+    1280,
+    720
+  ],
+  "map_offset": [
+    88,
+    58
+  ],
+  "coordinate_basis": "Local map pixel coordinates. Proposed visual layout only. Geographic and story connections unverified.",
+  "placements": [
+    {
+      "id": "forest_path",
+      "label": "숲길",
+      "box": [
+        125,
+        285,
+        225,
+        210
+      ],
+      "label_center": [
+        237,
+        516
+      ],
+      "hitgroup": "forest_path"
+    },
+    {
+      "id": "protection_facility",
+      "label": "보호시설",
+      "box": [
+        290,
+        50,
+        260,
+        190
+      ],
+      "label_center": [
+        420,
+        257
+      ],
+      "hitgroup": "protection_facility"
+    },
+    {
+      "id": "abandoned_greenhouse",
+      "label": "폐온실",
+      "box": [
+        640,
+        290,
+        230,
+        210
+      ],
+      "label_center": [
+        755,
+        520
+      ],
+      "hitgroup": "abandoned_greenhouse",
+      "cover": "cover_greenhouse",
+      "cover_box": [
+        610,
+        285,
+        290,
+        220
+      ]
+    },
+    {
+      "id": "mountain_altar",
+      "label": "산속 제단",
+      "box": [
+        785,
+        55,
+        220,
+        210
+      ],
+      "label_center": [
+        895,
+        284
+      ],
+      "hitgroup": "mountain_altar",
+      "cover": "cover_altar",
+      "cover_box": [
+        750,
+        50,
+        290,
+        235
+      ]
+    }
+  ],
+  "visibility_contract": {
+    "default": "Render forest_path and protection_facility and their labels/hitgroups only. Render opaque concealment patches instead of abandoned_greenhouse and mountain_altar. Do not render hidden stickers, labels, hit areas, focus targets, tooltip content or accessibility names.",
+    "revealed": "Designer-only preview displays all four places. Actual story reveal conditions must be mapped to verified existing game logic by implementer; no story flags invented here.",
+    "hover": "Move sticker and label together within their corresponding hitgroup; never move concealment patches as hidden location targets."
+  },
+  "assets": [
+    {
+      "file": "assets/map_forest_base_1136x570.png",
+      "size": [
+        1136,
+        570
+      ],
+      "mode": "RGB",
+      "sha256": "d8c823d19ce19850307cef2b525961af05ffb59637c01ba1cc212427a254afd7"
+    },
+    {
+      "file": "assets/notebook_frame_1280x720.png",
+      "size": [
+        1280,
+        720
+      ],
+      "mode": "RGBA",
+      "sha256": "e9472803750aeec18ad23df1fb04e6f877daf70d21980a6dd35244f92210ad59"
+    },
+    {
+      "file": "assets/cover_greenhouse.png",
+      "size": [
+        640,
+        366
+      ],
+      "mode": "RGBA",
+      "sha256": "f3aa4f567873e99666055cd5a2875ee77235c290459b37208e0b20ef9ba3b225"
+    },
+    {
+      "file": "assets/forest_path.png",
+      "size": [
+        640,
+        585
+      ],
+      "mode": "RGBA",
+      "sha256": "1db726e815526a4cf5ea93dc389fd0de811754ac1efc3dac01195a2d810cd833"
+    },
+    {
+      "file": "assets/mountain_altar.png",
+      "size": [
+        640,
+        569
+      ],
+      "mode": "RGBA",
+      "sha256": "cbb3e3fd266ba1515c34d106b8ba6f1b74483359e1ece66057e1c49c0e4464d5"
+    },
+    {
+      "file": "assets/abandoned_greenhouse.png",
+      "size": [
+        640,
+        577
+      ],
+      "mode": "RGBA",
+      "sha256": "16ce60e551205ed2c269845babf3d82f2e73815b8cf439228fabe2a4825a3ab7"
+    },
+    {
+      "file": "assets/cover_altar.png",
+      "size": [
+        640,
+        442
+      ],
+      "mode": "RGBA",
+      "sha256": "c4ded8f3d566bece0dd6063a9968cc19242703279a388bf200c04a4a7b6f5b4c"
+    },
+    {
+      "file": "assets/protection_facility.png",
+      "size": [
+        640,
+        453
+      ],
+      "mode": "RGBA",
+      "sha256": "872ab9ce7ba1cfe9921f36eddff45fa1f668ceb0caecd8f9c789bcb2a6483d5b"
+    }
+  ]
+}

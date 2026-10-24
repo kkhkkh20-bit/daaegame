@@ -1,0 +1,149 @@
+{
+  "status": "시안·미적용 / 연결 좌표 검증 전",
+  "coordinate_space": "1136x570 map-local, top-left origin; notebook offset x88 y58",
+  "not_story_geometry": true,
+  "connections": null,
+  "visibility_note": "숨은 통로는 별도 레이어. 개발자가 기존 이야기 공개 조건과 연결할 때만 표시. 새 플래그, 자동 공개, 이동·문·증거 판정은 정의하지 않음.",
+  "items": [
+    {
+      "id": "corridor",
+      "file": "assets/room_corridor_512.png",
+      "x": 95,
+      "y": 68,
+      "width": 280,
+      "height": 280,
+      "floor": 2,
+      "anchor": {
+        "type": "bottom_center",
+        "x": 235.0,
+        "y": 348
+      },
+      "label": {
+        "x": 235.0,
+        "y": 336
+      },
+      "default_visible": true,
+      "z_index": 10
+    },
+    {
+      "id": "room13",
+      "file": "assets/room_room13_512.png",
+      "x": 409,
+      "y": 56,
+      "width": 290,
+      "height": 290,
+      "floor": 2,
+      "anchor": {
+        "type": "bottom_center",
+        "x": 554.0,
+        "y": 346
+      },
+      "label": {
+        "x": 554.0,
+        "y": 334
+      },
+      "default_visible": true,
+      "z_index": 10
+    },
+    {
+      "id": "temporary_guestroom",
+      "file": "assets/room_temporary_guestroom_512.png",
+      "x": 770,
+      "y": 56,
+      "width": 290,
+      "height": 290,
+      "floor": 2,
+      "anchor": {
+        "type": "bottom_center",
+        "x": 915.0,
+        "y": 346
+      },
+      "label": {
+        "x": 915.0,
+        "y": 334
+      },
+      "default_visible": true,
+      "z_index": 10
+    },
+    {
+      "id": "reception",
+      "file": "assets/room_reception_512.png",
+      "x": 95,
+      "y": 300,
+      "width": 270,
+      "height": 270,
+      "floor": 1,
+      "anchor": {
+        "type": "bottom_center",
+        "x": 230.0,
+        "y": 570
+      },
+      "label": {
+        "x": 230.0,
+        "y": 536
+      },
+      "default_visible": true,
+      "z_index": 10
+    },
+    {
+      "id": "dining",
+      "file": "assets/room_dining_512.png",
+      "x": 430,
+      "y": 300,
+      "width": 270,
+      "height": 270,
+      "floor": 1,
+      "anchor": {
+        "type": "bottom_center",
+        "x": 565.0,
+        "y": 570
+      },
+      "label": {
+        "x": 565.0,
+        "y": 536
+      },
+      "default_visible": true,
+      "z_index": 10
+    },
+    {
+      "id": "kitchen",
+      "file": "assets/room_kitchen_512.png",
+      "x": 775,
+      "y": 300,
+      "width": 270,
+      "height": 270,
+      "floor": 1,
+      "anchor": {
+        "type": "bottom_center",
+        "x": 910.0,
+        "y": 570
+      },
+      "label": {
+        "x": 910.0,
+        "y": 536
+      },
+      "default_visible": true,
+      "z_index": 10
+    },
+    {
+      "id": "hidden_passage",
+      "file": "assets/room_hidden_passage_512.png",
+      "x": 652,
+      "y": 103,
+      "width": 160,
+      "height": 160,
+      "floor": 2,
+      "anchor": {
+        "type": "bottom_center",
+        "x": 732.0,
+        "y": 263
+      },
+      "label": {
+        "x": 732.0,
+        "y": 251
+      },
+      "default_visible": false,
+      "z_index": 5
+    }
+  ]
+}
