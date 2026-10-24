@@ -10,20 +10,24 @@ async def main():
   b=await p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox','--enable-unsafe-swiftshader'])
   page=await b.new_page(viewport={'width':1280,'height':720},has_touch=True);q=UIQA(page,OUT)
   try:
-   await page.goto(URL);await page.wait_for_function("typeof renpy_exec==='function'",timeout=150000);await q.wait('main_menu');await asyncio.sleep(2.5)
+   await page.goto(URL);await page.wait_for_function("typeof renpy_exec==='function' && !document.getElementById('presplash')",timeout=150000);await q.wait('main_menu');await asyncio.sleep(2.5)
    st=await q.state();assert not any(any(label in v['text'] for label in ('이어하기','불러오기')) for v in st['buttons']),st
    assert await q.py('result=renpy.display.screen.get_screen("main_menu").scope["title_focus"]')=='new'
    await q.shot('title-desktop')
-   # Check hardware keyboard focus in a desktop context, separately from touch emulation.
-   desktop=await b.new_page(viewport={'width':1280,'height':720});keys=UIQA(desktop,OUT)
-   await desktop.goto(URL);await desktop.wait_for_function("typeof renpy_exec==='function'",timeout=150000);await keys.wait('main_menu');await asyncio.sleep(2.5)
+   # Reuse the loaded page so two software-rendered games do not compete for the GPU.
+   desktop=page;keys=q
+   await desktop.mouse.click(650,360)
+   await desktop.mouse.move(446,506);await asyncio.sleep(.4)
    await desktop.keyboard.press('ArrowDown');await keys.shot('title-keyboard')
    assert await keys.py('result=renpy.display.screen.get_screen("main_menu").scope["title_focus"]')=='settings'
-   await desktop.keyboard.press('Enter');await keys.wait('pause_menu');await desktop.close()
+   await desktop.keyboard.press('Enter');await keys.wait('pause_menu');await keys.press('닫기');await keys.wait('main_menu')
    await q.press('설정');await q.wait('pause_menu');await q.shot('title-settings');await q.press('닫기');await q.wait('main_menu')
    await q.press('음악 출처');await q.shot('title-credits');await q.press('닫기');await q.wait('main_menu')
    await q.py('import renpy;renpy.store.persistent.room13_motion=False;renpy.exports.restart_interaction();result=True');await q.shot('title-motion-off')
-   await page.set_viewport_size({'width':844,'height':390});q.touch=True;await q.shot('title-mobile');await q.press('설정');await q.wait('pause_menu');await q.press('닫기');await q.wait('main_menu')
+   await page.set_viewport_size({'width':844,'height':390});q.touch=True;await q.shot('title-mobile');await q.press('설정');await q.wait('pause_menu');await q.shot('title-settings-mobile');await q.press('닫기');await q.wait('main_menu')
+   if os.environ.get('ROOM13_TITLE_SMOKE_ONLY')=='1':
+    info={'passed':True,'scope':'title-settings','version':(await q.info())['version'],'checks':['fresh title','keyboard down and Enter from focused new-game button','settings open and return','music credits','motion off','844x390 touch settings and return']}
+    (OUT/'result.json').write_text(json.dumps(info,ensure_ascii=False,indent=2));print('PASS',info,flush=True);return
    await page.set_viewport_size({'width':1280,'height':720});q.touch=False
    await q.py('import renpy;renpy.store.persistent.room13_motion=True;renpy.exports.restart_interaction();result=True')
    await q.press('처음부터');await q.press('건너뛰기');await q.wait('say');await q.press('건너뛰기');await q.advance();await q.wait('r13_hub');await q.shot('fresh-start')

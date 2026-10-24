@@ -1,12 +1,12 @@
 {
  "multipart": true,
- "archive_bytes": 15094945,
- "archive_sha256": "6831695d408d215a6be013ed79d0dcd2c84e61574379630d7d4843ff2e21d7da",
+ "archive_bytes": 15303051,
+ "archive_sha256": "1090dbfce95338101a1093cae6754ecb8ce98f4a4c11fcd115a9c2e1b146a6fb",
  "parts": [
   {
    "file": "game.part01",
-   "bytes": 15094945,
-   "sha256": "6831695d408d215a6be013ed79d0dcd2c84e61574379630d7d4843ff2e21d7da"
+   "bytes": 15303051,
+   "sha256": "1090dbfce95338101a1093cae6754ecb8ce98f4a4c11fcd115a9c2e1b146a6fb"
   }
  ],
  "preload": [
@@ -109,6 +109,36 @@
    "file": "game/assets/room13-title-winter020.webp",
    "bytes": 1759252,
    "sha256": "0b146b2716d19e429c1fa1855674b542aafdc5ea48b96ec3a44d586639e1abee"
+  },
+  {
+   "file": "game/assets/ui-b-main/b_logo.png",
+   "bytes": 238806,
+   "sha256": "4b3d8c6e3896eb4b8764568a61a607e109ce191396aea7dfcecb0bd4b186dbc6"
+  },
+  {
+   "file": "game/assets/ui-b-main/b_main_background.png",
+   "bytes": 1957810,
+   "sha256": "5d49f06d3bca99640fdf88b0779c2ba1511b4a8502cd32e81d7133b7aaa8a9d1"
+  },
+  {
+   "file": "game/assets/ui-b-main/b_main_daram.png",
+   "bytes": 613493,
+   "sha256": "819b5b2ee00de88f9fdb616568b826e977022c18084351e6db763c1c17e92783"
+  },
+  {
+   "file": "game/assets/ui-b-main/b_main_panel.png",
+   "bytes": 137057,
+   "sha256": "3db5e5edeca046e4d8820a796ab2e83d4ed02f701e74d559ab843c3e9d4ffb22"
+  },
+  {
+   "file": "game/assets/ui-b-options/b_opt_panel.png",
+   "bytes": 941287,
+   "sha256": "284f1c2ca9088e5d6295c39bc1de740172383739a9035e2f1e0ac0b52ed98fdc"
+  },
+  {
+   "file": "game/assets/ui-b-options/b_opt_preview_box.png",
+   "bytes": 103448,
+   "sha256": "65f381c7f99bcfe54d072828770111ee888f76ea2a520755652e76f1a2726317"
   }
  ],
  "asset_versions": {
@@ -141,6 +171,52 @@
   "game/assets/comic.mp3": "49f6987b5576",
   "game/assets/contract.png": "a53dea2cea0f",
   "game/assets/council.png": "526d06e0f5c5",
+  "game/assets/dialogue-b-primary50/granny_angry.webp": "8fdab15fc45c",
+  "game/assets/dialogue-b-primary50/granny_anxious.webp": "8761f943db8f",
+  "game/assets/dialogue-b-primary50/granny_joy.webp": "0bc830e63746",
+  "game/assets/dialogue-b-primary50/granny_surprise_react.webp": "9a81428bdea4",
+  "game/assets/dialogue-b-primary50/granny_surprise_talk.webp": "c27195f9a12e",
+  "game/assets/dialogue-b-primary50/guard_angry.webp": "af56effc839b",
+  "game/assets/dialogue-b-primary50/guard_anxious.webp": "89fcf72bdd26",
+  "game/assets/dialogue-b-primary50/guard_joy.webp": "3e31ceacabb0",
+  "game/assets/dialogue-b-primary50/guard_surprise_react.webp": "2121ea093030",
+  "game/assets/dialogue-b-primary50/guard_surprise_talk.webp": "e47d051b76e9",
+  "game/assets/dialogue-b-primary50/mom_angry.webp": "efe22259975b",
+  "game/assets/dialogue-b-primary50/mom_anxious.webp": "d0ae66338201",
+  "game/assets/dialogue-b-primary50/mom_joy.webp": "c76367930280",
+  "game/assets/dialogue-b-primary50/mom_surprise_react.webp": "10363832a8de",
+  "game/assets/dialogue-b-primary50/mom_surprise_talk.webp": "b81efde29ae5",
+  "game/assets/dialogue-b-primary50/nabi_angry.webp": "65f5914d97f9",
+  "game/assets/dialogue-b-primary50/nabi_anxious.webp": "8e21cb947fe9",
+  "game/assets/dialogue-b-primary50/nabi_joy.webp": "d39850dab2a6",
+  "game/assets/dialogue-b-primary50/nabi_surprise_react.webp": "c3c4d68bad22",
+  "game/assets/dialogue-b-primary50/nabi_surprise_talk.webp": "28c43240c6f2",
+  "game/assets/dialogue-b-primary50/neoul_angry.webp": "60d287dcf2f0",
+  "game/assets/dialogue-b-primary50/neoul_anxious.webp": "317254fba2c5",
+  "game/assets/dialogue-b-primary50/neoul_joy.webp": "8325f0d3f944",
+  "game/assets/dialogue-b-primary50/neoul_surprise_react.webp": "2e376ee686d3",
+  "game/assets/dialogue-b-primary50/neoul_surprise_talk.webp": "c03f6a31f434",
+  "game/assets/dialogue-b-primary50/resident_lamplighter_anxious.webp": "0c281bfaae2a",
+  "game/assets/dialogue-b-primary50/resident_lamplighter_surprise_react.webp": "1ce3fc50eb71",
+  "game/assets/dialogue-b-primary50/resident_nero_angry.webp": "52dfa55ae7d0",
+  "game/assets/dialogue-b-primary50/resident_nero_anxious.webp": "05acfa4bfa71",
+  "game/assets/dialogue-b-primary50/resident_nero_joy.webp": "8331bc79fa15",
+  "game/assets/dialogue-b-primary50/resident_nero_surprise_react.webp": "64b85163b8b9",
+  "game/assets/dialogue-b-primary50/resident_nero_surprise_talk.webp": "465f3130d8db",
+  "game/assets/dialogue-b-primary50/resident_ppul_angry.webp": "b3694bdb35b9",
+  "game/assets/dialogue-b-primary50/resident_ppul_anxious.webp": "9a7f91f46adc",
+  "game/assets/dialogue-b-primary50/resident_ppul_joy.webp": "04cf60ace6af",
+  "game/assets/dialogue-b-primary50/resident_ppul_surprise_react.webp": "c0c012b66e7a",
+  "game/assets/dialogue-b-primary50/resident_ppul_surprise_talk.webp": "b293c5ca5ebd",
+  "game/assets/dialogue-b-primary50/resident_seori_angry.webp": "18a90c768f99",
+  "game/assets/dialogue-b-primary50/resident_seori_anxious.webp": "0e844a014f5b",
+  "game/assets/dialogue-b-primary50/resident_seori_joy.webp": "96dc54e00b6c",
+  "game/assets/dialogue-b-primary50/resident_seori_surprise_react.webp": "a7eccaf76644",
+  "game/assets/dialogue-b-primary50/resident_seori_surprise_talk.webp": "2ae392253198",
+  "game/assets/dialogue-b-primary50/resident_teacher_angry.webp": "1b45fc78f7cc",
+  "game/assets/dialogue-b-primary50/resident_teacher_anxious.webp": "f4a757668a9d",
+  "game/assets/dialogue-b-primary50/resident_teacher_joy.webp": "9bd6faae1e16",
+  "game/assets/dialogue-b-primary50/resident_teacher_surprise_react.webp": "80ee8bbdd604",
   "game/assets/dialogue-context-master/bami/560/small_relief.webp": "3f20bb3bc435",
   "game/assets/dialogue-context-master/bami/760/small_relief.webp": "a8c983c42310",
   "game/assets/dialogue-context-master/bami/840/small_relief.webp": "0994c7305bc9",
@@ -1594,7 +1670,15 @@
   "game/assets/r13-gimmick-stone-base.webp": "74069639cc36",
   "game/assets/r13-gimmick-stone-paper.webp": "bd48f37e86cc",
   "game/assets/r13-gimmick-stone-rubbed.webp": "e84f31ea58fb",
+  "game/assets/resident-a-20261024/resident_teacher/write_attendance/approved.webp": "ffcf3551ecb7",
+  "game/assets/resident-a-20261024/seryeon/chair_read/approved.webp": "46bec9baf223",
   "game/assets/resident-librarian-teacher.png": "d738754bc1b9",
+  "game/assets/resident-props-20261024/sticker_cord.webp": "0ee242ff1a27",
+  "game/assets/resident-props-20261024/sticker_hat.webp": "975a1652cf5c",
+  "game/assets/resident-props-20261024/sticker_herbs.webp": "f274707b47bd",
+  "game/assets/resident-props-20261024/sticker_lamp_oil.webp": "a147525e285b",
+  "game/assets/resident-props-20261024/sticker_postcard.webp": "c6efbbfcebdf",
+  "game/assets/resident-props-20261024/sticker_snack.webp": "efdabf261d69",
   "game/assets/resident_badook-body.png": "2a84f5c4f262",
   "game/assets/resident_badook-face.png": "def0896f268e",
   "game/assets/resident_bori-body.png": "807a0a44e8a2",
@@ -2777,6 +2861,9 @@
   "game/assets/table.png": "a69e4d56023e",
   "game/assets/town-bright.mp3": "4fa2da90a7d8",
   "game/assets/travel.mp3": "ae70a95360ac",
+  "game/assets/ui-b-question/b_panel_card.png": "3b1b05132872",
+  "game/assets/ui-b-question/b_panel_card_done.png": "db044a1158b8",
+  "game/assets/ui-b-question/b_panel_card_hover.png": "5be487ea9d29",
   "game/assets/ui-night/close_x.png": "794b022fdf57",
   "game/assets/ui-night/diamond.png": "8d44e7fc8244",
   "game/assets/ui-night/diamond_outline.png": "651fea55e6ae",
