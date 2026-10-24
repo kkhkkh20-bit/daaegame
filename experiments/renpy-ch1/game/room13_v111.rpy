@@ -288,7 +288,17 @@ label r13_v111_wait_again:
             $ r13_field_reading=False
     jump r13_v111_wait_again
 
+default r13_nw_wrong_pending = None
+
+label r13_nw_wrong_thought:
+    # 2026-10-24 지시서 01 4번: 틀린 뒤 아빠 속말(문구는 room13_v111_newworld_rules.rpy R13_NW_WRONG_THOUGHTS).
+    if r13_nw_wrong_pending:
+        $ v111_wrong_text=r13_nw_wrong_pending[1]; r13_nw_wrong_pending=None
+        call r13_lines([r13_nw_added_line(dict(kind="thought",text=v111_wrong_text))],"v111:wrong_thought")
+    return
+
 label r13_v111_proof(key,correct,success,wrong=None,hint=None):
+    call r13_nw_wrong_thought
     $ v111_claim="v111:"+key
     $ R13_CLAIMS[v111_claim]=dict(assertion=R13_PROOF_TITLES.get(key,key))
     $ room13["arguments"].setdefault(v111_claim,[])
@@ -397,7 +407,8 @@ init 303 python:
         "MS14_D03_S02":(["E09"],{}),
         "MS14_D03_S03":(["E10","E11","E32"],{}),
         "MS14_D03_S04":([],{"measurement_separated_from_theft":True}),
-        "MS14_D03_S05":(["E11","E12","E13","E14","E15","E16","E32"],{"silluk_knife_comparison_consent":True,"silluk.children.location":"workshop_with_buri"}),
+        # 2026-10-24 지시서 01 1번: 칼 대조 동의는 회의 진입 조건에서 뺐다. 동의가 없어도 회의는 열리고 칼 쟁점은 이길 수 있다.
+        "MS14_D03_S05":(["E11","E12","E13","E14","E15","E16","E32"],{"silluk.children.location":"workshop_with_buri"}),
         "MS14_D03_S06":([],{"lamp_theft_supported":True,"stone_choice_completed":True}),
     }
     def r13_v111_thought_hold(scene):

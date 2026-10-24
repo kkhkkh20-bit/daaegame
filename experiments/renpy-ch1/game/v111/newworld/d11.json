@@ -1047,6 +1047,29 @@
         "kind": "narration",
         "text": "까로가 굽이 위 나무에 끈을 묶어 표시를 남긴다. 둘 다 한동안 아래를 내려다본다.",
         "when": "karo_ready"
+      },
+      {
+        "id": "NW_D11_LATE_A04",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "네로 씨는 이 길을 누구보다 잘 아는 사람인데…… 왜 굽이 아래로 들어갔을까요.",
+        "expression": "neutral",
+        "when": "karo_ready"
+      },
+      {
+        "id": "NW_D11_LATE_A05",
+        "speaker": "까로",
+        "kind": "dialogue",
+        "text": "등이 없어서요. 아랫길 등이 오늘 밤 다 꺼졌잖아요. 굽이 위 처마가 안 보였어요. 눈이 얼마나 얹혔는지도 모르고…… 네로 씨가 그 아래로 들어갔어요.",
+        "expression": "anxious",
+        "when": "karo_ready"
+      },
+      {
+        "id": "NW_D11_LATE_A06",
+        "speaker": null,
+        "kind": "narration",
+        "text": "굽이 위를 올려다본다. 등이 꺼진 아랫길에서는 처마 끝도 보이지 않는다. 그 아래로 네로가 들어갔다.",
+        "when": "karo_absent"
       }
     ],
     "MS14_D11_S02B_L0027": [
@@ -1859,7 +1882,15 @@
         "id": "NW_N11_02",
         "speaker": null,
         "kind": "narration",
-        "text": "너울은 내가 학교에서 꺼낸 말을 자기 방식대로 해치운다. 큰 집 불이 아니라, 가장 약한 곳의 불부터."
+        "text": "너울은 내가 학교에서 꺼낸 말을 자기 방식대로 해치운다. 큰 집 불이 아니라, 가장 약한 곳의 불부터.",
+        "when": "hyp_not_lose"
+      },
+      {
+        "id": "NW_N11_02L",
+        "speaker": null,
+        "kind": "narration",
+        "text": "아무도 불을 끄지 않았다. 그런데도 너울은 가장 약한 곳의 불부터 거둔다.",
+        "when": "hyp_lose"
       },
       {
         "id": "NW_N11_03",

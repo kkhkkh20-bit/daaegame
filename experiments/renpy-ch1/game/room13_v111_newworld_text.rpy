@@ -71,11 +71,11 @@ init 319 python:
         "room13_checked_d1":lambda:r13_v111_owned("E06"),
         "room13_unchecked_d1":lambda:not r13_v111_owned("E06"),
         "d06_bowl_together":lambda:r13_v111_value("choice:MS14_D06_S01")=="together",  # 0.20.7
-        "gate_last_try":lambda:(r13_v111_value("tries:gate") or 0)+1>=R13_NW_TRIES,
-        "gate_retry":lambda:(r13_v111_value("tries:gate") or 0)+1<R13_NW_TRIES,
+        "gate_last_try":lambda:(r13_v111_value("tries:gate") or 0)+1>=r13_nw_tries_max("gate"),
+        "gate_retry":lambda:(r13_v111_value("tries:gate") or 0)+1<r13_nw_tries_max("gate"),
         # 0.20.5 (Codex C03): a wrong answer that held only some of the gate records says so,
         # without naming the missing ones; a set with none of them gets the plain refusal.
-        "gate_partial_retry":lambda:(r13_v111_value("tries:gate") or 0)+1<R13_NW_TRIES and bool(set(getattr(store,"v111_last_presented",None) or [])&{"V111:E02","V111:E03","V111:E04"}),
+        "gate_partial_retry":lambda:(r13_v111_value("tries:gate") or 0)+1<r13_nw_tries_max("gate") and bool(set(getattr(store,"v111_last_presented",None) or [])&{"V111:E02","V111:E03","V111:E04"}),
         # Review 0.20.1 4-5: the day-12 prep line names only what is really ready.
         "prep12_others_ready":lambda:all(r13_v111_value(k) for k in ("warm_seat_ready","carrier_arrived","warm_support_arrived")),
         "prep12_others_missing":lambda:not all(r13_v111_value(k) for k in ("warm_seat_ready","carrier_arrived","warm_support_arrived")),
@@ -190,8 +190,8 @@ init 319 python:
         "daram_departed":lambda:r13_v111_value("departed:daram") is True,
         "neoul_held":lambda:r13_v111_value("neoul_held") is True,
         # Audit d11-14 #2: a hypothesis wrong answer that may be retried holds judgment.
-        "hyp_retry":lambda:r13_v111_value("meeting:hypothesis") is None and (r13_v111_value("tries:hypothesis") or 0)<R13_NW_TRIES,
-        "hyp_final":lambda:not (r13_v111_value("meeting:hypothesis") is None and (r13_v111_value("tries:hypothesis") or 0)<R13_NW_TRIES),
+        "hyp_retry":lambda:r13_v111_value("meeting:hypothesis") is None and (r13_v111_value("tries:hypothesis") or 0)<r13_nw_tries_max("hypothesis"),
+        "hyp_final":lambda:not (r13_v111_value("meeting:hypothesis") is None and (r13_v111_value("tries:hypothesis") or 0)<r13_nw_tries_max("hypothesis")),
         # Audit d11-14 #3: a lost hypothesis meeting after some issues were won.
         "hyp_lose_some_won":lambda:r13_v111_value("meeting:hypothesis")=="lose" and any(r13_v111_value("hyp_issue:%d"%i)=="won" for i in (1,2,3,4)),
         "hyp_lose_none_won":lambda:not (r13_v111_value("meeting:hypothesis")=="lose" and any(r13_v111_value("hyp_issue:%d"%i)=="won" for i in (1,2,3,4))),
@@ -347,6 +347,13 @@ init 319 python:
         if row.get("beat"):options["beat"]=row["beat"]
         if row.get("fx"):options["fx"]=row["fx"]
         return (who,row["text"],options)
+    def r13_nw_wrong_final_lines():
+        # 2026-10-24 지시서 01 4번: 회의 기회를 다 쓴 오답 뒤 처음 나오는 대사 묶음 끝에 아빠 속말 한 줄
+        # (r13_nw_wrong_queue 가 남겨 둔 것, room13_v111_newworld_rules.rpy). 한 번 보이면 지운다.
+        pending=globals().get("r13_nw_wrong_pending")
+        if not pending or pending[0]!="final":return []
+        globals()["r13_nw_wrong_pending"]=None
+        return [r13_nw_added_line(dict(kind="thought",text=pending[1]))]
     def r13_v111_lines(rids):
         """Authored lines with the reviewed new-world revisions around them."""
         out=[]
@@ -360,11 +367,11 @@ init 319 python:
                 out.append((packet[0],packet[1],dict(packet[2],line_id=rid))+tuple(packet[3:]))
             for row in R13_NW_TEXT["after"].get(rid,()):
                 if R13_NW_WHEN[row.get("when","always")]():out.append(r13_nw_added_line(row))
-        return out
+        return out+r13_nw_wrong_final_lines()
     def r13_nw_block(name):
         """Lines of a new-world block (a new meeting) whose conditions hold."""
         if name not in R13_NW_TEXT["blocks"]:raise Exception("Unknown new-world block: "+str(name))
-        return [r13_nw_added_line(row) for row in R13_NW_TEXT["blocks"][name] if R13_NW_WHEN[row.get("when","always")]()]
+        return [r13_nw_added_line(row) for row in R13_NW_TEXT["blocks"][name] if R13_NW_WHEN[row.get("when","always")]()]+r13_nw_wrong_final_lines()
     _r13_nw_context_match=r13_dialogue_context_match
     def r13_dialogue_context_match(identity,index,packet,pose):
         rid=packet[2].get("line_id") if len(packet)>2 and isinstance(packet[2],dict) else None

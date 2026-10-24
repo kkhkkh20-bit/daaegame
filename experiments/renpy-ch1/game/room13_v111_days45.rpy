@@ -337,6 +337,22 @@ label r13_v111_cloth4:
     call r13_v111_travel('room13','bed4')
     jump r13_v111_sleep4
 
+# 2026-10-24 지시서 01: 이 레이블은 4일 밤에 불린다. 서랍 자리표(dev/build_evidence_drawer.py)는 파일 안의
+# 바로 앞 장면 표시로 자리를 정하므로, 5일 장면 뒤에 두면 4일에 얻은 그림이 5일 저녁 묶음으로 잘못 들어간다.
+label r13_v111_piko_sketch4:
+    # 0.20.18 연쇄 P1 (CHAIN_DESIGN.md): 2일에 살린 피코가 4일 저녁 처마 옆에서 본 것을 그려 온다.
+    # 피코는 3일부터 진료소에 머물므로, 국을 받으러 온 이 장면에서만 식당에 세웠다가 되돌린다.
+    if r13_v111_value('piko_alive')!=True or r13_v111_owned('NW_PIKO_SKETCH4'):
+        return
+    $ v111_people_before=list(room13["v111"].get("people") or [])
+    $ r13_v111_set('piko.location','dining')
+    $ r13_v111_join(['resident_piko'])
+    call r13_lines(r13_nw_block('piko_sketch4'),'nw:piko_sketch4')
+    $ r13_nw_acquire("NW_PIKO_SKETCH4")
+    $ r13_v111_set('piko.location','clinic')
+    $ r13_v111_arrive(v111_people_before)
+    return
+
 label r13_v111_sleep4:
     call r13_v111_wait('sleep4')
     if _return==0:
@@ -674,16 +690,3 @@ label r13_v111_morning6:
     $ r13_v111_set("day",6)
     jump r13_v111_day6
 
-label r13_v111_piko_sketch4:
-    # 0.20.18 연쇄 P1 (CHAIN_DESIGN.md): 2일에 살린 피코가 4일 저녁 처마 옆에서 본 것을 그려 온다.
-    # 피코는 3일부터 진료소에 머물므로, 국을 받으러 온 이 장면에서만 식당에 세웠다가 되돌린다.
-    if r13_v111_value('piko_alive')!=True or r13_v111_owned('NW_PIKO_SKETCH4'):
-        return
-    $ v111_people_before=list(room13["v111"].get("people") or [])
-    $ r13_v111_set('piko.location','dining')
-    $ r13_v111_join(['resident_piko'])
-    call r13_lines(r13_nw_block('piko_sketch4'),'nw:piko_sketch4')
-    $ r13_nw_acquire("NW_PIKO_SKETCH4")
-    $ r13_v111_set('piko.location','clinic')
-    $ r13_v111_arrive(v111_people_before)
-    return

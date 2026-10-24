@@ -182,8 +182,8 @@ screen r13_nw_meeting_chrome(claim):
         vbox:
             xpos 42
             spacing 2
-            text (r13_meeting_header(r13_debate_session(claim))+"  ·  남은 기회 %d / %d"%(left,R13_NW_TRIES)) size r13_read_size(15,17) color "#795d40"
+            text (r13_meeting_header(r13_debate_session(claim))+"  ·  남은 기회 %d / %d"%(left,r13_nw_tries_max(key))) size r13_read_size(15,17) color "#795d40"
             text ("쟁점 · "+R13_NW_MEETINGS[key]["issue"]) size r13_read_size(21,25) color "#493b30"
         add Solid("#d6bf98") xpos 0 ypos 51 xysize (868,3)
-        if left<R13_NW_TRIES:
-            add Solid("#a88043") xpos 0 ypos 51 xysize (int(868*left/float(R13_NW_TRIES)),3)
+        if left<r13_nw_tries_max(key):
+            add Solid("#a88043") xpos 0 ypos 51 xysize (int(868*left/float(r13_nw_tries_max(key))),3)
