@@ -76,18 +76,24 @@ testcase poses_a_field:
     pause 1.2
     $ r13_qa_poses_a_report("post_morning_d7")
     screenshot "poses_a_post_morning.png"
-    run Call("r13_qa_roam",dict(day=3,period=2,location="square",life_poc=True),R13_QA_POSES_A_FLAGS,(),12)
+    run Call("r13_qa_roam",dict(day=8,period=2,location="square",life_poc=True,case_state="occurred"),("know_stone_history","ep1_done","ev_b_done","ev_c_done"))
     click pos (1150,90) until screen "r13_hub" timeout 40
     $ r13_qa_poses_a_focus()
     pause 1.2
     $ r13_qa_poses_a_report("square_evening")
     screenshot "poses_a_square_evening.png"
-    run Call("r13_qa_roam",dict(day=2,period=1,location="river",life_poc=True),R13_QA_POSES_A_FLAGS,(),12)
+    run Call("r13_qa_roam",dict(day=3,period=0,location="river",life_poc=True),("entry_corrected","lodging","livelihood_open"),cash=4)
     click pos (1150,90) until screen "r13_hub" timeout 40
     $ r13_qa_poses_a_focus()
     pause 1.2
     $ r13_qa_poses_a_report("river_afternoon")
     screenshot "poses_a_river_afternoon.png"
+    run Call("r13_qa_roam",dict(day=7,period=0,location="workshop",life_poc=True),("ep1_done","ev_b_done","ep4_seen","tok_cleared"),("medkit",))
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_qa_poses_a_focus()
+    pause 1.2
+    $ r13_qa_poses_a_report("workshop_d7")
+    screenshot "poses_a_workshop_d7.png"
     run Show("r13_qa_poses_a_meeting")
     pause 1.0
     screenshot "poses_a_meeting_seats.png"
@@ -100,7 +106,3 @@ testcase poses_a_kids:
     $ r13_qa_poses_a_report("school_play")
     screenshot "poses_a_school_play.png"
 
-testcase poses_a_debug:
-    $ r13_qa_note("changed=" + repr(sorted(R13_RESIDENT_POSES_A_CHANGED)))
-    $ r13_qa_note("missing=" + repr([(s["kind"],s["person"],s["pose"],(R13_ACTING.get(s["person"],{}).get(s["pose"]) or {}).get("file"),(CAST.get(s["person"],{}).get(s["pose"]) or {}).get("file"),renpy.loadable(s["fields"]["file"])) for s in R13_RESIDENT_POSES_A["slots"] if (s["person"],s["pose"]) not in R13_RESIDENT_POSES_A_CHANGED and s["kind"]!="meeting"]))
-    $ r13_qa_note("meeting=" + repr([(k,v["file"]) for k,v in R13_MEETING_SEATED.items()]))

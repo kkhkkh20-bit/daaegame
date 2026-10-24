@@ -9,13 +9,17 @@ init 186 python:
     import copy as r13_poses_a_copy
     R13_RESIDENT_POSES_A = json.load(renpy.file("assets/room13-resident-poses-a.json")) if renpy.loadable("assets/room13-resident-poses-a.json") else {"slots": []}
 
+    def r13_poses_a_is_spec(spec):
+        # 스토어 안의 dict 는 되돌리기용 dict 로 바뀌어 있어, json 이 만든 보통 dict 와 isinstance 가 맞지 않는다.
+        return spec is not None and hasattr(spec, "get") and "file" in spec
+
     def r13_poses_a_targets(slot):
         person, pose = slot["person"], slot["pose"]
         kind = slot["kind"]
         if kind in ("acting", "cast", "map27", "map9", "life_group"):
             for table in (R13_ACTING, CAST):
                 spec = table.get(person, {}).get(pose)
-                if isinstance(spec, dict):
+                if r13_poses_a_is_spec(spec):
                     yield spec, None
         if kind == "map27":
             for row in R13_MAP_ACTION27["rows"]:
@@ -33,7 +37,7 @@ init 186 python:
                         yield member["spec"], None
         if kind == "meeting":
             spec = R13_MEETING_SEATED.get(person)
-            if isinstance(spec, dict):
+            if r13_poses_a_is_spec(spec):
                 yield spec, None
 
     def r13_poses_a_apply():
