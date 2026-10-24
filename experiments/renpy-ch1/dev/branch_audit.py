@@ -28,6 +28,7 @@ import ast
 import collections
 import datetime
 import difflib
+import heapq
 import json
 import re
 import sys
@@ -801,14 +802,16 @@ class Analyzer:
         if entry not in labels:
             entry = self.story.order[0]
         self.entry = {entry: self.initial_state()}
-        work = collections.deque([entry])
+        # 대본 순서가 앞선 라벨부터 처리한다(날이 흐르는 순서라 다시 처리하는 일이 적다).
+        rank = {n: i for i, n in enumerate(self.story.order)}
+        work = [(rank[entry], entry)]
         queued = {entry}
-        guard = 0
+        self.passes = 0
         while work:
-            guard += 1
-            if guard > 200000:
+            self.passes += 1
+            if self.passes > 200000:
                 raise RuntimeError('흐름 따라가기가 끝나지 않는다')
-            name = work.popleft()
+            _, name = heapq.heappop(work)
             queued.discard(name)
             lab = labels[name]
             outs = []
@@ -823,7 +826,7 @@ class Analyzer:
                 if new != old:
                     self.entry[target] = new
                     if target not in queued:
-                        work.append(target)
+                        heapq.heappush(work, (rank[target], target))
                         queued.add(target)
         return self
 
