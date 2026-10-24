@@ -35,22 +35,24 @@ init 60 python:
                 c.polygon(color,[(x,yy-2),(x+2,yy),(x,yy+2),(x-2,yy)])
             return out
 
+# B 메인 전용 스타일. 판/버튼은 납품 비율을 유지하고 투명 여백은 클릭에서 제외한다.
 init 81:
     style r13_title_button is r13_button:
-        xsize 146 ysize 82
-        background R13TitleLink()
-        hover_background R13TitleLink(True)
-        selected_background R13TitleLink(True)
-        selected_hover_background R13TitleLink(True)
-        insensitive_background R13TitleLink(disabled=True)
-        padding (8,16,8,28)
+        xsize 240 ysize 84
+        background Transform("assets/ui-b-main/b_button.png", xysize=(240,84))
+        hover_background Transform("assets/ui-b-main/b_button_primary.png", xysize=(240,84))
+        selected_background Transform("assets/ui-b-main/b_button_primary.png", xysize=(240,84))
+        selected_hover_background Transform("assets/ui-b-main/b_button_primary.png", xysize=(240,84))
+        insensitive_background Transform("assets/ui-b-main/b_button.png", xysize=(240,84), alpha=.55)
+        focus_mask True
+        padding (24,14)
     style r13_title_button_text is r13_button_text:
         font "assets/Room13TitleSerif.otf"
-        size 23
+        size 25
         bold False
-        color '#f2ead8'
-        hover_color '#fff5dc'
-        selected_color '#fff5dc'
-        insensitive_color '#939bb1'
-        outlines [(1,'#1c264c90',0,1)]
+        color '#503a2c'
+        hover_color '#fff5df'
+        selected_color '#fff5df'
+        insensitive_color '#948573'
+        outlines []
         xalign .5 yalign .5 text_align .5

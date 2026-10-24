@@ -61,28 +61,30 @@ screen main_menu():
     $ title_continue = r13_continue_slot()
     $ title_has_save = bool(r13_save_slots())
     default title_focus = ("continue" if r13_continue_slot() else "new")
-    add Transform("assets/room13-title-winter020.webp",size=(1280,720),nearest=False)
-    add r13_title_fx()
-    add r13_title_menu_shade()
-    hbox:
-        xpos 62 ypos 584 spacing 5
+    # 승인된 B 메인 납품 좌표. 배경에 합쳐진 조명에는 구판 title light rig를 얹지 않는다.
+    add Transform("assets/ui-b-main/b_main_background.png", xysize=(1280,720))
+    add Transform("assets/ui-b-main/b_logo.png", xysize=(780,260)) xpos 10 ypos 10
+    add Transform("assets/ui-b-main/b_main_daram.png", xysize=(435,580)) xpos 790 ypos 130
+    add Transform("assets/ui-b-main/b_main_panel.png", xysize=(620,300)) xpos 28 ypos 400
+    fixed:
         at r13_title_menu_in
         textbutton "이어하기":
+            xpos 110 ypos 464
             style "r13_title_button" selected title_focus=="continue"
             sensitive title_continue is not None
             default_focus title_continue is not None hovered SetScreenVariable("title_focus","continue")
             action (r13_load_action(title_continue) if title_continue is not None else NullAction())
-        add Solid("#b6bbcb70",xsize=1,ysize=39) yalign .35
         textbutton "처음부터":
+            xpos 326 ypos 464
             style "r13_title_button" selected title_focus=="new"
             default_focus title_continue is None hovered SetScreenVariable("title_focus","new") action Start()
-        add Solid("#b6bbcb70",xsize=1,ysize=39) yalign .35
         textbutton "불러오기":
+            xpos 110 ypos 540
             style "r13_title_button" selected title_focus=="load"
             sensitive title_has_save
             hovered SetScreenVariable("title_focus","load") action ShowMenu("load")
-        add Solid("#b6bbcb70",xsize=1,ysize=39) yalign .35
         textbutton "설정":
+            xpos 326 ypos 540
             style "r13_title_button" selected title_focus=="settings"
             hovered SetScreenVariable("title_focus","settings") action ShowMenu("pause_menu")
     textbutton "음악 출처":
