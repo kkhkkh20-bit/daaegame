@@ -1001,6 +1001,26 @@
         "kind": "dialogue",
         "text": "말 안 했어요. 말하면…… 명단이 길어지니까.",
         "expression": "anxious"
+      },
+      {
+        "id": "NW_D03_SR01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "명단이요? 무슨 명단입니까?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D03_SR02",
+        "speaker": "우박",
+        "kind": "dialogue",
+        "text": "……모르는 게 나아요. 손님은 곧 떠날 사람이잖아요.",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_D03_SR03",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "떠날 수 있으면 좋겠다. 마차 축이 고쳐지기만 하면."
       }
     ],
     "MS14_D03_S04_L0033": [
@@ -1088,6 +1108,30 @@
         "kind": "dialogue",
         "text": "작업 대기소로 데려가시오. 보호시설 명단에도 올리시오.",
         "expression": "neutral",
+        "when": "lamp_lose"
+      },
+      {
+        "id": "NW_D03_SR04",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "보호시설이요? 거기가 어딥니까?",
+        "expression": "anxious",
+        "when": "lamp_lose"
+      },
+      {
+        "id": "NW_D03_SR05",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "겨울을 혼자 못 나는 사람을 돌보는 곳이오. 눈이 깊어지기 전에 수레가 가오.",
+        "expression": "neutral",
+        "when": "lamp_lose"
+      },
+      {
+        "id": "NW_D03_SR06",
+        "speaker": "톡",
+        "kind": "dialogue",
+        "text": "저, 저는 아프지도 않은데요…….",
+        "expression": "anxious",
         "when": "lamp_lose"
       },
       {

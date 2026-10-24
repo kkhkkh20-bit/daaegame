@@ -1162,8 +1162,17 @@
         "id": "NW_H_OPEN_10",
         "speaker": "판돌",
         "kind": "dialogue",
-        "text": "판돌이오. 돌 일 하는 늙은이요. 까닭이나 들어 봅시다.",
-        "expression": "neutral"
+        "text": "판돌이오. 돌 일 하는 늙은이요. 손님이 마을 일을 몇 번 가려 줬다고 들었소. 까닭이나 들어 봅시다.",
+        "expression": "neutral",
+        "when": "town_won_before11"
+      },
+      {
+        "id": "NW_H_OPEN_10B",
+        "speaker": "판돌",
+        "kind": "dialogue",
+        "text": "판돌이오. 돌 일 하는 늙은이요. 손님 말은 회의마다 막혔다고 들었소. ……그래도 까닭이나 들어 봅시다.",
+        "expression": "neutral",
+        "when": "town_won_none_before11"
       },
       {
         "id": "NW_H_OPEN_11",
@@ -1924,7 +1933,7 @@
         "id": "NW_D11_LE03",
         "speaker": null,
         "kind": "narration",
-        "text": "지팡이 손잡이에 아랫길 판잣집 할아버지의 이름이 새겨져 있다.",
+        "text": "지팡이 손잡이가 닳아 반들반들하다. 누군가 오래 짚던 것이다. 이름은 어디에도 없다.",
         "when": "karo_absent"
       }
     ]

@@ -37,7 +37,7 @@ testcase v111_nw_aftermath_memorial:
     run Jump("r13_v111_ending_dispatch14")
     click pos (900,600) until screen "r13_confirm" timeout 120
     assert eval (r13_v111_value("ending14")=="frozen")
-    assert eval (qa_nw_seen("피코의 이젤은 그대로") and qa_nw_seen("도토리 깡통이 놓여") and qa_nw_seen("네로의 장갑 한 짝"))
+    assert eval (qa_nw_seen("피코의 이젤은 그대로") and qa_nw_seen("도토리 한 알이 놓여") and qa_nw_seen("네로의 장갑 한 짝"))
     assert eval (qa_nw_seen("알 하나가 빠져 있었다") and qa_nw_seen("누가 먼저 쳤는지는 아무도 몰라요"))
     assert eval (qa_nw_seen("등 뒤에서 들린 소리") and not qa_nw_seen("작은 그릇 하나를 날마다") and not qa_nw_seen("모모 씨의 이름은"))
 

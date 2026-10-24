@@ -643,6 +643,43 @@
     ],
     "MS14_D13_S02_L0015": [
       {
+        "id": "NW_D13_SR01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "왜 아내 이름이 거기 있습니까?",
+        "expression": "angry"
+      },
+      {
+        "id": "NW_D13_SR02",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "시설에 드나든 사람이오. 굴돌과 같소. 이유 칸에 그렇게 적혀 있소.",
+        "expression": "neutral",
+        "when": "listed:resident_guldol"
+      },
+      {
+        "id": "NW_D13_SR03",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "시설에 드나든 사람이오. 이유 칸에 그렇게 적혀 있소.",
+        "expression": "neutral",
+        "when": "guldol_not_listed"
+      },
+      {
+        "id": "NW_D13_SR04",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "……혼자 들어간 게 아니에요. 데려간 사람이 있었어요.",
+        "expression": "angry"
+      },
+      {
+        "id": "NW_D13_SR05",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "장부엔 들어간 사람 이름만 적소.",
+        "expression": "neutral"
+      },
+      {
         "id": "NW_D13_S02_A01",
         "speaker": "너울",
         "kind": "dialogue",

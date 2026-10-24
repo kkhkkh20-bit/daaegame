@@ -169,6 +169,11 @@ init 319 python:
         "heard_inn_order1":lambda:r13_v111_value("heard_inn_order1") is True,  # 0.20.9 1일 문간 지시를 들은 경로
         "guldol_absent":lambda:not r13_v111_actor_ready("resident_guldol"),
         "guldol_listed":lambda:r13_v111_value("listed:resident_guldol") is True,
+        # 2026-10-24 자가 검수 14: 13일 엄마 명단 사유에서 굴돌이 명단에 없는 판은 「굴돌과 같소」를 뺀다.
+        "guldol_not_listed":lambda:r13_v111_value("listed:resident_guldol") is not True,
+        # 2026-10-24 자가 검수 12: 11일 판돌이 아빠 말을 들어 주는 까닭. 앞 회의(3·5·7·10일) 중 하나라도 이겼는가.
+        "town_won_before11":lambda:any(r13_v111_value("meeting:"+m)=="win" for m in ("lamp","gate_post","fire","room13","records")),
+        "town_won_none_before11":lambda:not any(r13_v111_value("meeting:"+m)=="win" for m in ("lamp","gate_post","fire","room13","records")),
         "hyp_win":lambda:r13_v111_value("meeting:hypothesis")=="win",
         "hyp_partial":lambda:r13_v111_value("meeting:hypothesis")=="partial",
         "hyp_lose":lambda:r13_v111_value("meeting:hypothesis")=="lose",
