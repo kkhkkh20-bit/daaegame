@@ -22,7 +22,7 @@ class TypographyRoles(unittest.TestCase):
         self.assertNotIn('{b}',self.fn('「예약 원본」에는 다람이 이름도 있다.'))
     def test_item_span_takes_entity_colour_only(self):
         out=self.fn('「예약 원본」에는 다람이 이름도 적혀 있습니다.')
-        self.assertTrue(out.startswith('{color='+TOK['roles']['entity']['dark']+'}「예약 원본」{/color}'))
+        self.assertTrue(out.startswith('{color='+TOK['roles']['entity']['paper']+'}「예약 원본」{/color}'))
         self.assertEqual(re.sub(r'\{[^}]*\}','',out),'「예약 원본」에는 다람이 이름도 적혀 있습니다.')
     def test_long_quotes_stay_body_text(self):
         letter='「나는 편지를 보내 달라고 부탁한 적 없어. 내가 어디로 가는지 여관에는 말하지 마.」'

@@ -1,13 +1,8 @@
-# Night-ink dialogue and settings (owner 2026-10-22, Notion "UI 개선안" top mockup and the
-# settings mockup: "맨위 스크린샷 예시 고대로 대화창 옵션창 만들어줘", "이것도 적용해봐 이렇게").
-# Dialogue: no box. A shallow navy shade rises from the bottom edge, the speaker's name sits on a
-# burgundy brush ribbon with a thin gold rule, the line is large warm-white text, and the line
-# tools are small text controls at the bottom right ("▸▸ 건너뛰기 | ⚙ 더보기"). The records
-# button moved into 더보기 for plain lines; question screens keep the approved dock.
-# Assets: dev/make_night_ui_assets.py -> game/assets/ui-night/.
+# B notebook dialogue (2026-10-24 owner approval). Historical function names
+# preserve geometry and save compatibility; controls retain their existing actions.
 init 150 python:
     R13_NIGHT_UI="assets/ui-night/"
-    R13_NIGHT_TEXT_COLOR="#f6ecd8"
+    R13_NIGHT_TEXT_COLOR="#4b3420"
     R13_NIGHT_CONTROL_Y=694          # centre line of the small text controls
     R13_NIGHT_TEXT_BOTTOM=670        # last dialogue line ends above the controls row
 
@@ -21,7 +16,9 @@ init 150 python:
     def r13_night_say_lines(what):
         if not isinstance(what,str):return 1
         size=r13_night_say_size()
-        return max(1,_r13_say_lines(what,size,1090))
+        packet=getattr(store,"r13_packet",None)
+        face=None if getattr(store,"r13_thought_active",False) else r13_bdialogue_face(packet[0] if packet else None,r13_fullbody_emotion(getattr(store,"r13_directed_pose","neutral")))
+        return max(1,_r13_say_lines(what,size,988 if face else 1090))
 
     def r13_night_say_top(what=None):
         """Top of the dialogue text: lines stack upward from a fixed bottom, so one line sits
@@ -31,15 +28,15 @@ init 150 python:
         return bottom-max(2,r13_night_say_lines(what))*(size+10)  # 0.20.4 owner: one and two lines share one top
 
     def r13_night_text_color():
-        # Always the dark-surface roles: the night dialogue has no paper behind it, even in meetings.
-        if getattr(store,"r13_thought_active",False):return r13_role_color("thought","dark")
+        # B dialogue uses paper-role colours on the cream notebook.
+        if getattr(store,"r13_thought_active",False):return r13_role_color("thought","paper")
         packet=getattr(store,"r13_packet",None)
-        if packet and packet[0] is None:return r13_role_color("narration","dark")
+        if packet and packet[0] is None:return r13_role_color("narration","paper")
         return R13_NIGHT_TEXT_COLOR
 
     def r13_night_shade_alpha():
         # The approved "대사창 진하기" setting still decides how dark the shade gets.
-        return {"99":.72,"d4":1.0,"f5":1.0}.get(persistent.room13_window_alpha or "d4",1.0)
+        return {"99":.72,"d4":.92,"f5":1.0}.get(persistent.room13_window_alpha or "d4",1.0)
 
     def r13_night_shade_top(what=None):
         top=r13_night_say_top(what)-150
@@ -50,10 +47,11 @@ init 150 python:
         return Frame(R13_NIGHT_UI+"name_ribbon.png",44,0,44,0)
 
 style r13_night_link_text is text:
-    font r13_ui_font() size 20 color "#eadfc8" hover_color "#fff6e2" insensitive_color "#8f8778"
-    outlines [(1,"#0b0f1e",0,0)]
+    font r13_ui_font() size 20 color "#4b3420" hover_color "#b03730" insensitive_color "#8f8778"
+    outlines []
 
 screen r13_night_link(caption,glyph,icon,command,enabled=True,link_id=None):
+    $ b_link_color = "#eadfc8" if r13_black_card else "#4b3420"
     # Visible as small text; the pressable area stays at the shared touch height.
     button:
         id (link_id or ("r13_night_"+caption))
@@ -65,10 +63,12 @@ screen r13_night_link(caption,glyph,icon,command,enabled=True,link_id=None):
             # 0.20.0 (owner phone QA): on a phone the game canvas shrinks to about half, so the
             # small controls grow from 20 to 28px there (about 15pt on an iPhone in landscape).
             if glyph:
-                text glyph style "r13_night_link_text" size (26 if r13_touch_ui() else 20) yalign .5
-            if icon:
+                text glyph style "r13_night_link_text" color b_link_color size (26 if r13_touch_ui() else 20) yalign .5
+            if icon=="settings" and not r13_black_card:
+                add Transform(Crop((16,20,32,24),"assets/ui-b-dialogue/b_icon_more.png"),xysize=((26,20) if r13_touch_ui() else (20,15))) yalign .5
+            elif icon:
                 add R13AntiqueIcon(icon,size=(26 if r13_touch_ui() else 18)) yalign .5 alpha (1.0 if enabled else .5)
-            text caption style "r13_night_link_text" size (28 if r13_touch_ui() else 20) yalign .5
+            text caption style "r13_night_link_text" color b_link_color size (28 if r13_touch_ui() else 20) yalign .5
 
 screen r13_night_controls(ready=True):
     $ line_active=renpy.get_screen("say") is not None and not any(renpy.get_screen(n) for n in ("choice","r13_topics","r13_resident_approach","r13_entry_topics","r13_entry_karo_topics"))

@@ -25,8 +25,8 @@ class SettingsTypeScale(unittest.TestCase):
  def test_mixer_thumb_does_not_touch_percentage(self):
   for widget in ('music_volume','fx_volume'):
    self.assertIn('ysize 36 yalign .5 id "'+widget+'"',A)
-  self.assertIn('thumb_offset 7',A);self.assertIn('spacing 15',A)
-  self.assertGreaterEqual(15-7,8)
+  self.assertIn('thumb_offset 0',A);self.assertIn('Crop((16,16,36,36)',A);self.assertIn('spacing 15',A)
+  self.assertGreaterEqual(15-0,8)
  def test_row_labels_and_controls_share_vertical_center(self):
   self.assertIn('xpos 0 yalign .5 xsize 256 spacing 4',A)
   self.assertIn('ypos ((r13_opt_row_height()-r13_opt_button_height())//2)',A)

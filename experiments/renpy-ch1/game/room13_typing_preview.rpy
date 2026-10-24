@@ -30,7 +30,7 @@ init 71 python:
                 self.child = R13DialogueText(
                     "창밖에는 눈이 내리고 있다.\n아직 확인하지 못한 이야기가 남아 있다.",
                     slow=True, slow_cps=signature[0], slow_abortable=False,
-                    size=signature[1], font=signature[2], color="#efe2c2", xmaximum=860)
+                    size=signature[1], font=signature[2], color="#4b3420", xmaximum=860)
             # Own local clock: replay starts at zero even if the menu was open.
             rendered = renpy.render(self.child, width, height, max(0, st-self.started), at)
             result = renpy.Render(*rendered.get_size())

@@ -1,4 +1,4 @@
-# Shared dialogue dock and playback tools — approved Galmuri Regular design.
+# Shared dialogue dock and playback tools — approved Pretendard Regular design.
 init 80 python:
     R13_CONCEPT_RIGHT=1232
 screen r13_concept_action(x,w,caption,icon,command,enabled=True,primary=False):
@@ -64,7 +64,7 @@ screen r13_concept_more():
                         hbox:
                             align (.5,.5) spacing 10
                             add R13AntiqueIcon(icon,size=(26 if r13_touch_ui() else 20)) yalign .5 alpha (1.0 if enabled else .5)
-                            text title size (26 if r13_touch_ui() else 20) font r13_ui_font() yalign .5 color ("#efe3cc" if enabled else "#8f8778")
+                            text title size (26 if r13_touch_ui() else 20) font r13_ui_font() yalign .5 color ("#4b3420" if enabled else "#8f8778")
                 if len(items)%2:
                     null width 288 height row_height
     key "game_menu" action Hide("r13_more_tools")

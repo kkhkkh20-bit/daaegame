@@ -1,5 +1,5 @@
-# Role tokens. Galmuri11 ships one real weight (Regular); never synthesize
-# Thin/Medium/Black or italic for small Korean pixel text.
+# Role tokens. The approved Pretendard Regular is shared by Korean UI text.
+# Keep the existing regular weight; do not synthesize bold or italic.
 init 57 python:
     # One 1280x720 grid, shared by every gameplay footer.
     R13_CONTROL = dict(width=232, gap=16, left=28, bottom=16,

@@ -142,7 +142,7 @@ init 58 python:
     R13StoneTouchSurface=R13TouchSurface
 
     def r13_ui_font():
-        return 'assets/Galmuri11.ttf'
+        return R13_UI_FONT
 
 init 61:
     style r13_text is default:
