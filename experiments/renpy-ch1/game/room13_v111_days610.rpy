@@ -610,6 +610,7 @@ label r13_v111_school_names_done7:
         call r13_v111_living_child7
     else:
         call r13_v111_lost_child7
+    call r13_v111_dodam_spoon7
     # 2026-10-23 연결오류: 다람은 낮 동안 학교에 있었다. 도토를 반기는 S02_L0039 전에 무대에 세운다.
     $ r13_v111_join(['doto', 'daram'])
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0038']),'v111:MS14_D07_S02_L0038')
@@ -623,6 +624,16 @@ label r13_v111_school_names_done7:
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0045']),'v111:MS14_D07_S02_L0045')
     $ r13_v111_commit('MS14_D07_S02_L0046')
     jump r13_v111_room_visit7
+
+# 2026-10-24 지시서 02 감정선(도담): 학교 점심에 도담이 다람에게 제 숟가락을 빌려준다(아빠 숟가락은 자기가 들고 다닌다).
+# 12일 배식 장면과 그 저녁 창가가 이 숟가락을 비춘다. 보리의 손은 불을 끄다 덴 판에만 다쳤다(bori_burned6).
+label r13_v111_dodam_spoon7:
+    if not r13_v111_person_alive('kid_dodam') or not r13_v111_person_alive('resident_bori'):
+        return
+    $ r13_v111_join(['daram','kid_dodam'])
+    call r13_lines(r13_nw_block('dodam_spoon7'),'nw:dodam_spoon7')
+    $ r13_v111_set('dodam_spoon7',True)
+    return
 
 label r13_v111_living_child7:
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0034']),'v111:MS14_D07_S02_L0034')
@@ -1883,7 +1894,18 @@ label r13_v111_prevent_return10:
 
 label r13_v111_sleep10:
     call r13_v111_travel('school','sleep10')
+    call r13_v111_kkomi_acorn10
     jump r13_v111_sleep10_input
+
+# 2026-10-24 지시서 02 감정선(꼬미, 6일에 살린 판만): 잠들기 전 교실에서 꼬미가 새 깡통을 흔들고, 다람과 도토리를 하나씩 나눈다.
+# 12일 국 장면이 이 일을 비춘다. 다람이 보호실에 있거나 학교에 없으면 나오지 않는다.
+label r13_v111_kkomi_acorn10:
+    if r13_v111_value('KKOMI_ALIVE') is not True or r13_v111_value('kkomi_acorn10') or r13_v111_value('DARAM_DETAINED') or not r13_v111_actor_ready('daram'):
+        return
+    $ r13_v111_join(['kid_kkomi'])
+    call r13_lines(r13_nw_block('kkomi_acorn10'),'nw:kkomi_acorn10')
+    $ r13_v111_set('kkomi_acorn10',True)
+    return
 
 label r13_v111_sleep10_input:
     call r13_v111_wait('sleep10_input')

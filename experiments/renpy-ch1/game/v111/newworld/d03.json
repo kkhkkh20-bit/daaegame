@@ -1622,6 +1622,85 @@
         "text": "톡이 공구 띠를 붙든 손을 놓지 않는다.",
         "when": "listed:resident_tok"
       }
+    ],
+    "owl_tongs3": [
+      {
+        "id": "NW_BD_D03_O01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "우박의 집게를 공방에 돌려준다. 부리가 말없이 받아 공구판 빈자리에 도로 건다."
+      },
+      {
+        "id": "NW_BD_D03_O02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "공방 안쪽 의자에 눈이 둥근 노인이 앉아 있다. 무릎 위 수첩을 덮으며 나를 올려다본다."
+      },
+      {
+        "id": "NW_BD_D03_O03",
+        "speaker": "부리",
+        "kind": "dialogue",
+        "text": "할아버지, 집게 돌아왔어요. 이 손님이 가져왔어요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_BD_D03_O04",
+        "speaker": "부엉이",
+        "kind": "dialogue",
+        "text": "……흠. 얼굴이 벌겋구먼. 어디서 소리를 지르고 왔나?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_BD_D03_O05",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "……진료소에서요. 우박 씨한테 제가 성급했습니다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_BD_D03_O06",
+        "speaker": "부엉이",
+        "kind": "dialogue",
+        "text": "자네 수첩은…… 펴 보고 소리를 질렀나?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_BD_D03_O07",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "……아니요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_BD_D03_O08",
+        "speaker": "부엉이",
+        "kind": "dialogue",
+        "text": "나도 그랬네. 젊을 때. 본 건 왼쪽, 들은 건 오른쪽. 그렇게만 해도…… 덜 부끄럽지.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_BD_D03_O09",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "할아버지도 탐정이에요?",
+        "expression": "neutral",
+        "when": "daram_ready"
+      },
+      {
+        "id": "NW_BD_D03_O10",
+        "speaker": "부엉이",
+        "kind": "dialogue",
+        "text": "이젠…… 종이 묶음이나 세는 늙은이다.",
+        "expression": "neutral",
+        "when": "daram_ready"
+      },
+      {
+        "id": "NW_BD_D03_O11",
+        "speaker": null,
+        "kind": "narration",
+        "text": "다람이 제 수첩을 펴서 한가운데에 세로줄을 하나 긋는다.",
+        "when": "daram_ready"
+      }
     ]
   }
 }

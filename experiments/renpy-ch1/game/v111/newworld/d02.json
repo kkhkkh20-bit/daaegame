@@ -896,7 +896,7 @@
         "id": "NW_AR_D02_02",
         "speaker": "세련",
         "kind": "dialogue",
-        "text": "광장 3번 등 아래 화가가 있어요.",
+        "text": "그림이요? 그건 저보다 저분이 잘 아세요. ……모모 관장님?",
         "expression": "neutral"
       }
     ]
@@ -927,6 +927,57 @@
         "speaker": null,
         "kind": "narration",
         "text": "할머니가 마른 천을 내준다. 다람이가 천을 품에 꼭 안는다."
+      }
+    ],
+    "momo_post2": [
+      {
+        "id": "NW_BD_D02_M01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "창구 옆 구석에서 두꺼운 장부를 넘기던 사람이 고개를 든다. 손에는 열쇠 꾸러미를 쥐고 있다."
+      },
+      {
+        "id": "NW_BD_D02_M02",
+        "speaker": "모모",
+        "kind": "dialogue",
+        "text": "얼굴을 그리려면 광장 3번 등 밑 화가한테 가 봐요. 값은 깎지 말고요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_BD_D02_M03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "아시는 분입니까?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_BD_D02_M04",
+        "speaker": "모모",
+        "kind": "dialogue",
+        "text": "그림은 안 사요. 내 박물관엔 둘 데가 없거든요. ……그래도 그 사람 눈은 정확해요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_BD_D02_M05",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "그럼 왜 안 사요?",
+        "expression": "neutral",
+        "when": "daram_ready"
+      },
+      {
+        "id": "NW_BD_D02_M06",
+        "speaker": "모모",
+        "kind": "dialogue",
+        "text": "정확한 그림은 무서워요. 꼬마는 아직 몰라도 돼요.",
+        "expression": "neutral",
+        "when": "daram_ready"
+      },
+      {
+        "id": "NW_BD_D02_M07",
+        "speaker": null,
+        "kind": "narration",
+        "text": "모모가 장부를 옆구리에 끼고 먼저 우체국을 나선다. 열쇠 꾸러미가 짤랑거린다."
       }
     ]
   }

@@ -1225,6 +1225,49 @@
         "expression": "neutral",
         "when": "guard_ready"
       }
+    ],
+    "MS14_D12_S02_L0005": [
+      {
+        "id": "NW_BD_D12_D01",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "도담아, 그때 빌린 숟가락 아직 나한테 있어. 깜빡했어.",
+        "expression": "neutral",
+        "when": "dodam_spoon_lent"
+      },
+      {
+        "id": "NW_BD_D12_D02",
+        "speaker": "도담",
+        "kind": "dialogue",
+        "text": "그럼 그건 우리 아빠 자리에 놔 줘.",
+        "expression": "neutral",
+        "when": "dodam_spoon_lent"
+      },
+      {
+        "id": "NW_BD_D12_D03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "다람이 보리 옆자리에 숟가락을 내려놓는다.",
+        "when": "dodam_spoon_lent"
+      }
+    ],
+    "MS14_D12_S05_L0016": [
+      {
+        "id": "NW_BD_D12_D04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "보리 옆자리에 숟가락 두 개가 나란히 놓여 있다.",
+        "when": "dodam_spoon12"
+      }
+    ],
+    "MS14_D12_S05_L0039": [
+      {
+        "id": "NW_BD_D12_D05",
+        "speaker": null,
+        "kind": "narration",
+        "text": "불 꺼진 창가, 보리 옆자리에 숟가락 두 개가 놓여 있다.",
+        "when": "dodam_spoon12"
+      }
     ]
   },
   "drop": [
@@ -1597,6 +1640,14 @@
         "speaker": null,
         "kind": "narration",
         "text": "꼬미의 손에서 도토리 하나가 굴러 나온다. 그릇은 반쯤 비어 있다."
+      },
+      {
+        "id": "NW_BD_D12_K01",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "……내 주머니에 하나, 네 깡통에 하나랬잖아.",
+        "expression": "anxious",
+        "when": "kkomi_acorn_shared"
       }
     ],
     "elder_name12": [
@@ -1609,13 +1660,44 @@
       {
         "id": "NW_D12_EN02",
         "speaker": "다람",
-        "text": "이 할아버지는 이름이 뭐야?",
+        "text": "이건 누구 표야?",
+        "when": "daram_ready"
+      },
+      {
+        "id": "NW_BD_D12_E01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "아랫길 할아버지. 솜이네 처마 밑에서 지팡이 짚던 분.",
+        "expression": "neutral",
+        "when": "daram_ready"
+      },
+      {
+        "id": "NW_BD_D12_E02",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "……이름은 뭐야?",
+        "expression": "neutral",
         "when": "daram_ready"
       },
       {
         "id": "NW_D12_EN03",
         "speaker": "아빠",
         "text": "……아무도 몰랐어."
+      },
+      {
+        "id": "NW_BD_D12_E03",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "영감이야. 네로 아저씨가 그렇게 부르던 거, 나 들었어.",
+        "expression": "neutral",
+        "when": "daram_ready"
+      },
+      {
+        "id": "NW_BD_D12_E04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "다람이 이름 없는 표 귀퉁이에 연필로 작게 ‘영감’이라고 적는다.",
+        "when": "daram_ready"
       }
     ]
   }

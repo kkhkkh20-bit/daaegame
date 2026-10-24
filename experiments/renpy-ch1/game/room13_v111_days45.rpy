@@ -110,7 +110,17 @@ label r13_v111_somi_talk4:
     call r13_lines(r13_v111_lines(['MS14_D04_S01_L0058']),'v111:MS14_D04_S01_L0058')
     call r13_lines(r13_v111_lines(['MS14_D04_S01_L0060']),'v111:MS14_D04_S01_L0060')
     call r13_lines(r13_v111_lines(['MS14_D04_S01_L0061']),'v111:MS14_D04_S01_L0061')
+    call r13_v111_elder_cane4
     jump r13_v111_eaves4
+
+# 2026-10-24 지시서 02 감정선(아랫길 노인): 네로가 업어 온 아랫길 노인을 솜이네 처마 밑에서 만난다.
+# 이름은 없고 네로가 「영감」이라 부른다. 11일 끊긴 등불(지팡이)과 12일 이름 없는 표가 이 일을 비춘다.
+label r13_v111_elder_cane4:
+    if not r13_v111_actor_ready('daram') or not r13_v111_person_alive('v111_lowerroad_elder'):
+        return
+    $ r13_v111_join(['v111_lowerroad_elder'])
+    call r13_lines(r13_nw_block('elder_cane4'),'nw:elder_cane4')
+    return
 
 label r13_v111_eaves4:
     $ r13_v111_scene('MS14_D04_S02')
@@ -328,6 +338,7 @@ label r13_v111_cloth4:
     call r13_lines(r13_v111_lines(['MS14_D04_S04_L0057']),'v111:MS14_D04_S04_L0057')
     call r13_lines(r13_v111_lines(['MS14_D04_S04_L0058']),'v111:MS14_D04_S04_L0058')
     call r13_lines(r13_v111_lines(['MS14_D04_S04_L0059']),'v111:MS14_D04_S04_L0059')
+    call r13_v111_kkomi_backdoor4
     call r13_v111_piko_sketch4
     call r13_v111_travel('square','night_lamp4')
     call r13_lines(r13_v111_lines(['MS14_D04_S04_L0061']),'v111:MS14_D04_S04_L0061')
@@ -351,6 +362,17 @@ label r13_v111_piko_sketch4:
     $ r13_nw_acquire("NW_PIKO_SKETCH4")
     $ r13_v111_set('piko.location','clinic')
     $ r13_v111_arrive(v111_people_before)
+    return
+
+# 2026-10-24 지시서 02 감정선(꼬미): 식당 뒷문에서 꼬미가 다람의 연필을 주워 준다. 받은 것을 깡통에 넣어 세는 버릇.
+# 6일 불(「……깡통.」)과 10일 도토리 나누기가 이 일을 비춘다. 깡통을 가져가라고 권하는 사람은 없다.
+label r13_v111_kkomi_backdoor4:
+    if not r13_v111_actor_ready('daram') or r13_v111_value('KKOMI_ALIVE') is False:
+        return
+    $ r13_v111_join(['kid_kkomi'])
+    call r13_lines(r13_nw_block('kkomi_backdoor4'),'nw:kkomi_backdoor4')
+    # 꼬미는 부엌으로 들어갔다. 식당에는 이동 때 함께 온 다람만 남는다(night_diner4 이동의 동행).
+    $ r13_v111_arrive(['daram'])
     return
 
 label r13_v111_sleep4:
@@ -621,6 +643,7 @@ label r13_v111_night5:
     call r13_lines(r13_v111_lines(['MS14_D05_S05_L0026']),'v111:MS14_D05_S05_L0026')
     call r13_lines(r13_v111_lines(['MS14_D05_S05_L9501']),'v111:MS14_D05_S05_L9501')
     $ r13_v111_commit('MS14_D05_S05_L9502')
+    call r13_v111_owl_glove5
     call r13_v111_travel('inn','lobby5')
     $ r13_v111_commit('MS14_D05_S05_L0027')
     call r13_lines(r13_v111_lines(['MS14_D05_S05_L0028']),'v111:MS14_D05_S05_L0028')
@@ -634,6 +657,16 @@ label r13_v111_night5:
     call r13_lines(r13_v111_lines(['MS14_D05_S05_L0037']),'v111:MS14_D05_S05_L0037')
     call r13_v111_travel('room13','lock5')
     jump r13_v111_lock_check5
+
+# 2026-10-24 지시서 02 감정선(부엉이): 3일 공방의 그 노인이 다람의 장갑을 두 땀 꿰매 주며 이름을 두 번 묻는다.
+# 첫 판에는 나이 탓으로 지나간다(야생화의 기미). 7일 13호에서 아빠가 이 노인을 알아본다.
+label r13_v111_owl_glove5:
+    if not r13_v111_actor_ready('daram') or r13_v111_value('OWL_ALIVE') is False:
+        return
+    # 바로 다음이 여관으로의 이동이라(무대를 새로 세운다) 노인을 따로 내리지 않는다.
+    $ r13_v111_join(['resident_owlgp'])
+    call r13_lines(r13_nw_block('owl_glove5'),'nw:owl_glove5')
+    return
 
 label r13_v111_lock_check5:
     call r13_v111_wait('lock_check5')

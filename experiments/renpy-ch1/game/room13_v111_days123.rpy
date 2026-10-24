@@ -536,6 +536,9 @@ label r13_v111_post_return:
     call r13_lines(r13_v111_lines(['MS14_D02_S02_L0017', 'MS14_D02_S02_L0018', 'MS14_D02_S02_L0019', 'MS14_D02_S02_L0020', 'MS14_D02_S02_L0021', 'MS14_D02_S02_L0022', 'MS14_D02_S02_L0023', 'MS14_D02_S02_L0024']), 'v111:post_return:MS14_D02_S02_L0017')
     $ r13_v111_commit('MS14_D02_S02_L0025')
     call r13_lines(r13_v111_lines(['MS14_D02_S02_L0026', 'MS14_D02_S02_L0027', 'MS14_D02_S02_L0028']), 'v111:post_return:MS14_D02_S02_L0026')
+    # 2026-10-24 지시서 02 감정선(모모): 우체국 구석의 모모가 피코에게 가는 길을 알려 준다. 13일 수레 장면이 이 일을 비춘다.
+    $ r13_v111_join(['resident_momo'])
+    call r13_lines(r13_nw_block('momo_post2'),'nw:momo_post2')
     jump r13_v111_piko2
 
 label r13_v111_piko2:
@@ -950,7 +953,17 @@ label r13_v111_measurement_after:
     $ r13_v111_scene('MS14_D03_S03')
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D03_S03_L0036', 'MS14_D03_S03_L0037', 'MS14_D03_S03_L0038']), 'v111:measurement_after:MS14_D03_S03_L0036')
+    call r13_v111_owl_tongs3
     jump r13_v111_silluk3
+
+# 2026-10-24 지시서 02 감정선(부엉이): 우박에게 약속한 대로 집게를 공방에 돌려준다. 공방 안쪽에 부리의 할아버지가
+# 이름 없이 앉아 있다(아빠는 「눈이 둥근 노인」으로만 안다). 7일 13호에서 아빠가 이 노인을 알아본다.
+# 지도 이동 단계를 늘리지 않으려고 바로 옮긴다(direct). 3일 회의 쟁점(시각·칼끝·등)은 말하지 않는다.
+label r13_v111_owl_tongs3:
+    call r13_v111_travel('workshop','owl_tongs3',direct=True)
+    $ r13_v111_join(['buri','resident_owlgp'])
+    call r13_lines(r13_nw_block('owl_tongs3'),'nw:owl_tongs3')
+    return
 
 label r13_v111_silluk3:
     $ r13_v111_scene('MS14_D03_S04')

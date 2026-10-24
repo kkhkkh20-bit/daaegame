@@ -1085,6 +1085,8 @@ label r13_v111_meal12:
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0003']),'v111:MS14_D12_S02_L0003')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0004']),'v111:MS14_D12_S02_L0004')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0005']),'v111:MS14_D12_S02_L0005')
+    # 2026-10-24 지시서 02 감정선(도담): 7일에 빌린 숟가락을 다람이 보리 자리에 놓았는지(그 저녁 창가 지문이 읽는다).
+    $ r13_v111_set('dodam_spoon12',bool(r13_v111_value('dodam_spoon7')) and r13_v111_actor_ready('daram'))
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0007']),'v111:MS14_D12_S02_L0007')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0008']),'v111:MS14_D12_S02_L0008')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0009']),'v111:MS14_D12_S02_L0009')

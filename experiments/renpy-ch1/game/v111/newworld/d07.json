@@ -589,7 +589,7 @@
         "id": "NW_D07_S03_A03",
         "speaker": null,
         "kind": "narration",
-        "text": "13호 안은 이상하게 차다. 그런데 난로 불빛은 평소보다 푸르다. 책상 앞에 처음 보는 노인이 앉아 있고, 책상 위에는 누렇게 바랜 서류뿐이다. 노인은 말을 꺼내기 전에 겉옷 품을 한 번 누른다."
+        "text": "13호 안은 이상하게 차다. 그런데 난로 불빛은 평소보다 푸르다. 책상 앞에 눈이 둥근 노인이 앉아 있고, 책상 위에는 누렇게 바랜 서류뿐이다. 노인은 말을 꺼내기 전에 겉옷 품을 한 번 누른다."
       },
       {
         "id": "NW_D07_S03_A04",
@@ -613,10 +613,30 @@
         "expression": "neutral"
       },
       {
+        "id": "NW_BD_D07_O01",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "……그저께 다람의 장갑을 꿰매 주던 그분이다."
+      },
+      {
         "id": "NW_D07_SR01",
         "speaker": "아빠",
         "kind": "dialogue",
         "text": "……여긴 저희 방인데요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_BD_D07_O02",
+        "speaker": "부엉이",
+        "kind": "dialogue",
+        "text": "다람이…… 이번엔 안 잊었지.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_BD_D07_O03",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "장갑 할아버지! 두 땀, 아직 그대로예요.",
         "expression": "neutral"
       },
       {
@@ -644,7 +664,14 @@
         "id": "NW_DLG_D07_01",
         "speaker": "아빠",
         "kind": "dialogue",
-        "text": "부엉이 어르신이십니까. 다돌입니다. 초롱 씨가 이 쪽지를 전해 줬습니다. 아내 소식을 아십니까?",
+        "text": "그때는 인사도 못 드렸습니다. 부엉이 어르신이셨군요. 다돌입니다. 초롱 씨가 이 쪽지를 전해 줬습니다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_BD_D07_O04",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "아내 소식을 아십니까?",
         "expression": "neutral"
       }
     ],
@@ -991,6 +1018,23 @@
         "text": "사흘 뒤 회관에서 가리겠소. 그때까지 아이는 보호실이오.",
         "expression": "neutral"
       }
+    ],
+    "MS14_D07_S04_L0022": [
+      {
+        "id": "NW_BD_D07_O05",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "할아버지가…… 두 땀이면 된다고 했는데.",
+        "expression": "anxious"
+      }
+    ],
+    "MS14_D07_P01_L0005": [
+      {
+        "id": "NW_BD_D07_O06",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "그저께 다람의 장갑을 꿰매 주던 손이다."
+      }
     ]
   },
   "drop": [],
@@ -1122,6 +1166,71 @@
         "speaker": "아빠",
         "kind": "thought",
         "text": "어제 창고 뒤를 오래 보던 사람도 빨래터에 있었지."
+      }
+    ],
+    "dodam_spoon7": [
+      {
+        "id": "NW_BD_D07_D01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "점심 그릇이 돈다. 다람이 제 그릇 옆을 더듬다 손을 멈춘다."
+      },
+      {
+        "id": "NW_BD_D07_D02",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "나 숟가락 없어.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_BD_D07_D03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "보리의 아이 도담이 제 숟가락을 다람의 그릇에 걸쳐 놓는다. 도담의 손에는 숟가락이 하나 더 있다."
+      },
+      {
+        "id": "NW_BD_D07_D04",
+        "speaker": "도담",
+        "kind": "dialogue",
+        "text": "내 거 써. 우리 아빠 건 내가 들고 다녀.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_BD_D07_D05",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "그럼 도담이는 뭘로 먹니?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_BD_D07_D06",
+        "speaker": "도담",
+        "kind": "dialogue",
+        "text": "아빠 거로. 아빠는 불 끄다 손을 데어서 숟가락을 못 잡아요.",
+        "expression": "neutral",
+        "when": "fire_not_evacuated"
+      },
+      {
+        "id": "NW_BD_D07_D07",
+        "speaker": "도담",
+        "kind": "dialogue",
+        "text": "아빠 거로. 아빠는 장작 나르느라 밥 먹을 틈도 없대요.",
+        "expression": "neutral",
+        "when": "fire_evacuated"
+      },
+      {
+        "id": "NW_BD_D07_D08",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "내일 돌려줄게. 꼭.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_BD_D07_D09",
+        "speaker": "보리",
+        "kind": "dialogue",
+        "text": "……먹기나 해라. 국 식는다.",
+        "expression": "neutral"
       }
     ]
   }

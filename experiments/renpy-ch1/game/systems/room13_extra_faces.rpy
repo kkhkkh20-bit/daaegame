@@ -7,6 +7,7 @@ init 59 python:
         "v111_child":"kid_kkam",                  # 아이
         "v111_patrol":"resident_kalbaram",        # 순찰대원
         "v111_lower_resident":"resident_solbang", # 아랫길 주민
+        "v111_lowerroad_elder":"elder",           # 아랫길 노인(지팡이, 2026-10-24 지시서 02)
         "v111_siluk_child":"kid_siluk1",          # 실룩의 아이
         "ms14_clinician":"resident_eunho",        # 진료 담당자
         "ms14_attendant":"resident_jongjong",     # 종업원

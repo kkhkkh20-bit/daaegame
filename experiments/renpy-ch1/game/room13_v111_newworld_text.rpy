@@ -110,6 +110,12 @@ init 319 python:
         "kkomi_seat6":lambda:r13_v111_value("kkomi_seat6") is True,
         # 2026-10-23 연결오류: 아이들을 먼저 옮긴 판에서는 도토를 이미 만났다(P01·빈 창고 불). 소개를 되풀이하지 않는다.
         "fire_evacuated":lambda:r13_v111_value("FIRE_EVACUATED") is True,
+        # 2026-10-24 지시서 02 감정선: 불을 끄다 보리가 손을 덴 판(bori_burned6), 7일 도담 숟가락·12일 다람이 숟가락을 돌려주는가,
+        # 10일 꼬미와 도토리를 나눴는가.
+        "fire_not_evacuated":lambda:r13_v111_value("FIRE_EVACUATED") is not True,
+        "dodam_spoon_lent":lambda:r13_v111_value("dodam_spoon7") is True and r13_v111_actor_ready("daram"),
+        "dodam_spoon12":lambda:r13_v111_value("dodam_spoon12") is True,
+        "kkomi_acorn_shared":lambda:r13_v111_value("kkomi_acorn10") is True and r13_v111_actor_ready("daram"),
         # 0.20.18 (CRUEL_CHOICES.md C1): 13일 공개 때 엄마와 다람이 광장에 있는가.
         # 0.20.18 (CRUEL_CHOICES.md C3 A안): 3일 실룩을 풀어 준 판, 5번 등이 비어 밤이가 처마에서 내려왔다.
         "bami_cold4":lambda:r13_v111_value("bami_cold4") is True,
