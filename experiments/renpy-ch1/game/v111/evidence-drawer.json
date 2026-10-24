@@ -1,0 +1,751 @@
+{
+ "note": "dev/build_evidence_drawer.py 가 만든다. 손으로 고치지 않는다.",
+ "meetings": [
+  {
+   "key": "gate",
+   "scene": "MS14_D01_S03",
+   "file": "room13_v111_days123.rpy",
+   "line": 214,
+   "day": 1
+  },
+  {
+   "key": "lamp",
+   "scene": "MS14_D03_S05",
+   "file": "room13_v111_days123.rpy",
+   "line": 1123,
+   "day": 3
+  },
+  {
+   "key": "gate_post",
+   "scene": "MS14_D05_S03",
+   "file": "room13_v111_days45.rpy",
+   "line": 448,
+   "day": 5
+  },
+  {
+   "key": "fire",
+   "scene": "MS14_D07_S02",
+   "file": "room13_v111_days610.rpy",
+   "line": 554,
+   "day": 7
+  },
+  {
+   "key": "room13",
+   "scene": "MS14_D10_S03",
+   "file": "room13_v111_days610.rpy",
+   "line": 1599,
+   "day": 10
+  },
+  {
+   "key": "records",
+   "scene": "MS14_D10_P01",
+   "file": "room13_v111_days610.rpy",
+   "line": 1753,
+   "day": 10
+  },
+  {
+   "key": "hypothesis",
+   "scene": "MS14_D11_S03",
+   "file": "room13_v111_days1114.rpy",
+   "line": 750,
+   "day": 11
+  },
+  {
+   "key": "soup",
+   "scene": "MS14_D12_S04",
+   "file": "room13_v111_days1114.rpy",
+   "line": 1427,
+   "day": 12
+  },
+  {
+   "key": "blanket",
+   "scene": "MS14_D13_S03",
+   "file": "room13_v111_days1114.rpy",
+   "line": 1841,
+   "day": 13
+  },
+  {
+   "key": "piko",
+   "scene": "MS14_D13_S04",
+   "file": "room13_v111_days1114.rpy",
+   "line": 1979,
+   "day": 13
+  },
+  {
+   "key": "altar",
+   "scene": "MS14_D14_S02",
+   "file": "room13_v111_days1114.rpy",
+   "line": 2811,
+   "day": 14
+  }
+ ],
+ "sites": {
+  "E01": [
+   [
+    "MS14_D01_S01",
+    "",
+    -1
+   ]
+  ],
+  "E02": [
+   [
+    "MS14_D01_S02",
+    "",
+    -1
+   ]
+  ],
+  "E03": [
+   [
+    "MS14_D01_S03",
+    "",
+    -1
+   ]
+  ],
+  "E04": [
+   [
+    "MS14_D01_S03",
+    "",
+    -1
+   ]
+  ],
+  "E05": [
+   [
+    "MS14_D01_S04",
+    "",
+    -1
+   ]
+  ],
+  "E06": [
+   [
+    "MS14_D01_S05",
+    "",
+    -1
+   ]
+  ],
+  "E06_CONTACT": [
+   [
+    "MS14_D06_S01",
+    "",
+    -1
+   ]
+  ],
+  "E06_EMPTY": [
+   [
+    "MS14_D06_S04",
+    "",
+    -1
+   ]
+  ],
+  "E06_FIRE": [
+   [
+    "MS14_D06_S04",
+    "",
+    -1
+   ]
+  ],
+  "E06_RESCUE": [
+   [
+    "MS14_D06_S04",
+    "",
+    -1
+   ]
+  ],
+  "E07": [
+   [
+    "MS14_D02_S02",
+    "",
+    -1
+   ]
+  ],
+  "E07_NUBI": [
+   [
+    "MS14_D07_S01",
+    "",
+    -1
+   ]
+  ],
+  "E08": [
+   [
+    "MS14_D02_S03",
+    "",
+    -1
+   ]
+  ],
+  "E08_CHILD_ACCOUNT": [
+   [
+    "MS14_D08_S01",
+    "",
+    -1
+   ]
+  ],
+  "E08_CHILD_POSITION": [
+   [
+    "MS14_D08_S02",
+    "",
+    -1
+   ]
+  ],
+  "E08_CONTACT_ASSEMBLY": [
+   [
+    "MS14_D08_S03",
+    "",
+    -1
+   ]
+  ],
+  "E08_RECENT_LETTER": [
+   [
+    "MS14_D08_S04",
+    "",
+    -1
+   ]
+  ],
+  "E08_ROOM": [
+   [
+    "MS14_D08_S02",
+    "",
+    -1
+   ]
+  ],
+  "E08_ROOM_REACH": [
+   [
+    "MS14_D08_S02",
+    "",
+    -1
+   ]
+  ],
+  "E08_TOOL": [
+   [
+    "MS14_D08_S03",
+    "",
+    -1
+   ]
+  ],
+  "E08_WOUND_WIRE": [
+   [
+    "MS14_D08_S03",
+    "",
+    -1
+   ]
+  ],
+  "E09": [
+   [
+    "MS14_D03_S01",
+    "",
+    -1
+   ]
+  ],
+  "E09_MAIL": [
+   [
+    "MS14_D09_S04",
+    "",
+    -1
+   ]
+  ],
+  "E09_PASSAGE": [
+   [
+    "MS14_D09_S01",
+    "",
+    -1
+   ],
+   [
+    "MS14_D09_P01",
+    "",
+    -1
+   ]
+  ],
+  "E09_PIN_HANDOVER_TIME": [
+   [
+    "MS14_D09_S03",
+    "",
+    -1
+   ]
+  ],
+  "E09_PIN_OWNER": [
+   [
+    "MS14_D09_S02",
+    "",
+    -1
+   ]
+  ],
+  "E09_PIN_TIME": [
+   [
+    "MS14_D09_S03",
+    "",
+    -1
+   ]
+  ],
+  "E09_SCARF": [
+   [
+    "MS14_D09_S03",
+    "",
+    -1
+   ]
+  ],
+  "E10": [
+   [
+    "MS14_D03_S02",
+    "",
+    -1
+   ]
+  ],
+  "E10_PUMP": [
+   [
+    "MS14_D10_S04",
+    "",
+    -1
+   ],
+   [
+    "MS14_D10_P01",
+    "",
+    -1
+   ]
+  ],
+  "E11": [
+   [
+    "MS14_D03_S02",
+    "",
+    -1
+   ]
+  ],
+  "E12": [
+   [
+    "MS14_D03_S03",
+    "",
+    -1
+   ]
+  ],
+  "E12_FRAGMENT": [
+   [
+    "MS14_D12_S04",
+    "room13_v111_days1114.rpy",
+    1292
+   ]
+  ],
+  "E12_HANDLING": [
+   [
+    "MS14_D12_S04",
+    "room13_v111_days1114.rpy",
+    1378
+   ]
+  ],
+  "E12_SEAL": [
+   [
+    "MS14_D12_S04",
+    "room13_v111_days1114.rpy",
+    1293
+   ]
+  ],
+  "E13": [
+   [
+    "MS14_D03_S03",
+    "",
+    -1
+   ]
+  ],
+  "E13_HANDOVER": [
+   [
+    "MS14_D13_S04",
+    "room13_v111_days1114.rpy",
+    2147
+   ]
+  ],
+  "E13_MENDING": [
+   [
+    "MS14_D13_S01",
+    "room13_v111_days1114.rpy",
+    1701
+   ]
+  ],
+  "E13_ORDER": [
+   [
+    "MS14_D13_S04",
+    "room13_v111_days1114.rpy",
+    2352
+   ]
+  ],
+  "E14": [
+   [
+    "MS14_D03_S04",
+    "",
+    -1
+   ]
+  ],
+  "E14_SUPPLY": [
+   [
+    "MS14_D11_S03",
+    "room13_v111_days1114.rpy",
+    471
+   ],
+   [
+    "MS14_D11_S04",
+    "room13_v111_days1114.rpy",
+    890
+   ],
+   [
+    "MS14_D12_S01",
+    "room13_v111_days1114.rpy",
+    1053
+   ]
+  ],
+  "E15": [
+   [
+    "MS14_D03_S04",
+    "",
+    -1
+   ]
+  ],
+  "E16": [
+   [
+    "MS14_D03_S04",
+    "",
+    -1
+   ]
+  ],
+  "E17": [
+   [
+    "MS14_D03_S05",
+    "",
+    -1
+   ]
+  ],
+  "E18": [
+   [
+    "MS14_D04_S01",
+    "",
+    -1
+   ]
+  ],
+  "E19": [
+   [
+    "MS14_D04_S02",
+    "",
+    -1
+   ]
+  ],
+  "E20": [
+   [
+    "MS14_D04_S03",
+    "",
+    -1
+   ]
+  ],
+  "E21": [
+   [
+    "MS14_D04_S04",
+    "",
+    -1
+   ]
+  ],
+  "E22": [
+   [
+    "MS14_D04_S04",
+    "",
+    -1
+   ]
+  ],
+  "E23": [
+   [
+    "MS14_D05_S02",
+    "",
+    -1
+   ]
+  ],
+  "E24": [
+   [
+    "MS14_D05_S02",
+    "",
+    -1
+   ]
+  ],
+  "E25": [
+   [
+    "MS14_D05_S03",
+    "",
+    -1
+   ]
+  ],
+  "E26": [
+   [
+    "MS14_D05_S03",
+    "",
+    -1
+   ]
+  ],
+  "E27": [
+   [
+    "MS14_D05_S04",
+    "",
+    -1
+   ]
+  ],
+  "E28": [
+   [
+    "MS14_D05_S04",
+    "",
+    -1
+   ]
+  ],
+  "E29": [
+   [
+    "MS14_D05_S05",
+    "",
+    -1
+   ]
+  ],
+  "E30": [
+   [
+    "MS14_D01_S05",
+    "",
+    -1
+   ]
+  ],
+  "E31": [
+   [
+    "MS14_D02_S04",
+    "",
+    -1
+   ],
+   [
+    "MS14_D04_S01",
+    "",
+    -1
+   ]
+  ],
+  "E32": [
+   [
+    "MS14_D03_S02",
+    "",
+    -1
+   ]
+  ],
+  "E33": [
+   [
+    "MS14_D03_S05",
+    "",
+    -1
+   ]
+  ],
+  "E34": [
+   [
+    "MS14_D04_S01",
+    "",
+    -1
+   ]
+  ],
+  "E35": [
+   [
+    "MS14_D02_S04",
+    "",
+    -1
+   ]
+  ],
+  "NW_BURNT_PAGE": [
+   [
+    "MS14_D14_S01",
+    "room13_v111_days1114.rpy",
+    2665
+   ]
+  ],
+  "NW_HALL_WINDOW": [
+   [
+    "MS14_D12_B",
+    "room13_v111_days1114.rpy",
+    1633
+   ]
+  ],
+  "NW_INNER_PRICE": [
+   [
+    "MS14_D03_S04",
+    "room13_v111_days123.rpy",
+    1040
+   ]
+  ],
+  "NW_IRON_MARK": [
+   [
+    "MS14_D14_S02",
+    "room13_v111_days1114.rpy",
+    2698
+   ]
+  ],
+  "NW_KEEPER_DATE": [
+   [
+    "MS14_D03_S04",
+    "room13_v111_days123.rpy",
+    1041
+   ]
+  ],
+  "NW_KKOMI_NOSTONE": [
+   [
+    "MS14_D06_S02",
+    "room13_v111_days610.rpy",
+    102
+   ]
+  ],
+  "NW_MADAM_DAY7": [
+   [
+    "MS14_D14_S01",
+    "room13_v111_days1114.rpy",
+    2666
+   ]
+  ],
+  "NW_MUSOE_DEEP": [
+   [
+    "MS14_D05_S01",
+    "room13_v111_days45.rpy",
+    380
+   ]
+  ],
+  "NW_NAMES": [
+   [
+    "MS14_D11_S03",
+    "room13_v111_days1114.rpy",
+    384
+   ]
+  ],
+  "NW_NEOUL_LEDGER": [
+   [
+    "MS14_D13_S04",
+    "room13_v111_days1114.rpy",
+    1986
+   ]
+  ],
+  "NW_PIKO_PAINTING": [
+   [
+    "MS14_D12_B",
+    "room13_v111_days1114.rpy",
+    1635
+   ],
+   [
+    "MS14_D13_S03",
+    "room13_v111_days1114.rpy",
+    1915
+   ]
+  ],
+  "NW_PIKO_SKETCH4": [
+   [
+    "MS14_D05_S05",
+    "room13_v111_days45.rpy",
+    683
+   ]
+  ],
+  "NW_PIKO_TREMOR": [
+   [
+    "MS14_D02_S03",
+    "room13_v111_days123.rpy",
+    562
+   ]
+  ],
+  "NW_SICK_BEDS": [
+   [
+    "MS14_D11_S03",
+    "room13_v111_days1114.rpy",
+    535
+   ]
+  ],
+  "NW_STONE": [
+   [
+    "MS14_D08_S02",
+    "room13_v111_days610.rpy",
+    931
+   ],
+   [
+    "MS14_D08_P01",
+    "room13_v111_days610.rpy",
+    1034
+   ]
+  ],
+  "NW_TABLET_A": [
+   [
+    "MS14_D11_S03",
+    "room13_v111_days1114.rpy",
+    383
+   ]
+  ],
+  "NW_TABLET_B": [
+   [
+    "MS14_D14_S02",
+    "room13_v111_days1114.rpy",
+    2697
+   ]
+  ],
+  "NW_TRANSFER_LIST": [
+   [
+    "MS14_D12_S01",
+    "room13_v111_days1114.rpy",
+    982
+   ]
+  ],
+  "NW_WHITE_BOWLS": [
+   [
+    "MS14_D12_S02",
+    "room13_v111_days1114.rpy",
+    1096
+   ]
+  ]
+ },
+ "fixed": [
+  "E01",
+  "E02",
+  "E03",
+  "E04",
+  "E06",
+  "E06_CONTACT",
+  "E06_EMPTY",
+  "E06_FIRE",
+  "E06_RESCUE",
+  "E07",
+  "E07_NUBI",
+  "E08",
+  "E08_CHILD_ACCOUNT",
+  "E08_CHILD_POSITION",
+  "E08_CONTACT_ASSEMBLY",
+  "E08_ROOM",
+  "E08_ROOM_REACH",
+  "E08_TOOL",
+  "E08_WOUND_WIRE",
+  "E09",
+  "E09_MAIL",
+  "E09_PASSAGE",
+  "E09_PIN_HANDOVER_TIME",
+  "E09_PIN_OWNER",
+  "E09_PIN_TIME",
+  "E09_SCARF",
+  "E11",
+  "E12",
+  "E12_FRAGMENT",
+  "E12_HANDLING",
+  "E12_SEAL",
+  "E13",
+  "E13_HANDOVER",
+  "E13_MENDING",
+  "E13_ORDER",
+  "E14_SUPPLY",
+  "E15",
+  "E16",
+  "E17",
+  "E20",
+  "E22",
+  "E23",
+  "E24",
+  "E27",
+  "E28",
+  "E32",
+  "E33",
+  "NW_HALL_WINDOW",
+  "NW_INNER_PRICE",
+  "NW_IRON_MARK",
+  "NW_KEEPER_DATE",
+  "NW_KKOMI_NOSTONE",
+  "NW_MUSOE_DEEP",
+  "NW_NAMES",
+  "NW_NEOUL_LEDGER",
+  "NW_PIKO_PAINTING",
+  "NW_PIKO_TREMOR",
+  "NW_SICK_BEDS",
+  "NW_STONE",
+  "NW_TABLET_A",
+  "NW_TABLET_B",
+  "NW_TRANSFER_LIST",
+  "NW_WHITE_BOWLS"
+ ]
+}

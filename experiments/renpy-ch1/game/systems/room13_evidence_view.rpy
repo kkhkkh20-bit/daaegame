@@ -372,24 +372,29 @@ screen r13_evidence_grid(entries,detail,page,owner,pair=None,pair_slot=1,archive
         $ chosen=(key==first) if pair else (key==detail)
         $ cell_action=(([Function(r13_record_select,owner,"pair",r13_compare_fill(pair,pair_slot,key),False)]+([] if archive else [Function(r13_record_mark_seen,key)]))
             if pair else Function(r13_record_select,owner,"detail",key,not archive))
-        button:
-            xpos 60 ypos (140+index*pitch_y) xysize (cell_w,cell_h)
-            padding (0,0)
-            background R13ControlSurface(chosen=chosen)
-            hover_background R13ControlSurface(chosen=chosen,hovered=True)
-            alt r13_catalog_title(key) action cell_action
+        if key in R13_DRAWER_BACK:
+            # 2026-10-24 증거 서랍: 묶음 안 상세의 첫 줄은 묶음 목록으로 돌아가는 칸이다(나란히 놓기 중에도 같다).
             fixed:
-                xysize (cell_w,cell_h)
-                add r13_evidence_picture(key,thumb) xpos 7 ypos (cell_h//2) yanchor .5
-                if not archive and r13_catalog_transferable(key):
-                    add R13_NIGHT_UI+"diamond.png" xpos 9 ypos 7
-                if pair and key in (first,second):
-                    text ("①" if key==first else "②") xpos 65 xanchor 1.0 ypos 2 size 22 color "#fff0ce" outlines [(3,"#8b1f2a",0,0)] font r13_ui_font()
-                # 0.20.12: the unread mark sits on the picture's corner instead of taking name width.
-                if not pair and not archive and r13_record_unread(key):
-                    text "●" xpos 65 xanchor 1.0 ypos 3 size 13 color "#f0c66a" font r13_ui_font()
-                text r13_ev_two_lines(r13_catalog_title(key),174,label_size,3):
-                    xpos 76 ypos (cell_h//2) yanchor .5 xsize 174 text_align 0 size label_size color "#e3d6bd" font r13_ui_font() line_spacing -1
+                xpos 60 ypos (140+index*pitch_y) xysize (cell_w,cell_h)
+                use r13_control(("‹ 지난 사건 목록" if key==R13_DRAWER_BACK[0] else "‹ 사람 목록"),None,r13_drawer_back(owner),width=cell_w,height=cell_h,label_size=label_size,control_id="r13_dr_back")
+        else:
+            button:
+                xpos 60 ypos (140+index*pitch_y) xysize (cell_w,cell_h)
+                padding (0,0)
+                background R13ControlSurface(chosen=chosen)
+                hover_background R13ControlSurface(chosen=chosen,hovered=True)
+                alt r13_catalog_title(key) action cell_action
+                fixed:
+                    xysize (cell_w,cell_h)
+                    # 2026-10-24 증거 서랍: 이름 아래 「N일 · 장소」 꼬리표와 귀퉁이 쪽지(v111 에서만. 옛 이야기는 이름만).
+                    use r13_drawer_card_body(key,cell_w,cell_h,label_size,chosen,thumb,174)
+                    if not archive and r13_catalog_transferable(key):
+                        add R13_NIGHT_UI+"diamond.png" xpos 9 ypos 7
+                    if pair and key in (first,second):
+                        text ("①" if key==first else "②") xpos 65 xanchor 1.0 ypos 2 size 22 color "#fff0ce" outlines [(3,"#8b1f2a",0,0)] font r13_ui_font()
+                    # 0.20.12: the unread mark sits on the picture's corner instead of taking name width.
+                    if not pair and not archive and r13_drawer_unread(key):
+                        text "●" xpos 65 xanchor 1.0 ypos 3 size 13 color "#f0c66a" font r13_ui_font()
     if r13_record_pages(entries)>1:
         $ ph=r13_ev_button_height()
         $ pw=88 if touch else 72
@@ -437,8 +442,8 @@ screen r13_evidence_single(detail,owner,archive=False,view_context=("records",),
     $ buttons=(1 if detail else 0)+(2 if present else (1 if can_compare else 0))  # 0.20.7: the source button stays (펼치기/접기)
     $ reading_bottom=R13_EV_BOTTOM-buttons*bh-max(0,buttons-1)*12-16
     if detail:
-        if not archive and r13_record_unread(detail):
-            timer .7 action Function(r13_record_mark_seen,detail)
+        if not archive and r13_drawer_unread(detail):
+            timer .7 action [Function(r13_record_mark_seen,detail),Function(r13_drawer_mark_notes,detail)]
         viewport:
             id "r13_ev_single_reading"
             area (372,116,520,R13_EV_BOTTOM-116)
@@ -454,6 +459,9 @@ screen r13_evidence_single(detail,owner,archive=False,view_context=("records",),
                         xpos ((500-picture)//2) xysize (picture,picture)
                         use r13_evidence_picture_box(detail,picture)
                 use r13_evidence_fact_list(detail,500)
+                # 2026-10-24 증거 서랍: 접힌 쪽지(정정·결과 기록)는 원래 카드 내용 아래에 이어 읽는다.
+                if not archive:
+                    use r13_drawer_note_blocks(detail,500)
     elif not empty:  # 0.20.5 (UI review): nothing to pick -> no "pick one" line; the grid says why
         text ("보여줄 자료를 왼쪽에서 직접 고르세요." if present else "자료를 선택하세요.") xpos 372 ypos 300 xsize 520 text_align .5 size r13_ev_fact_size() color "#b8b0a2" font r13_ui_font()
     for scroll_key index scroll_key in [r13_record_scroll_key(view_context,detail,archive)]:

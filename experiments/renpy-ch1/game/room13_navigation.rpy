@@ -139,61 +139,21 @@ screen r13_map(initial_region=None, local_guide=False):
     key "game_menu" action close_action
     timer .15 action SetScreenVariable("ready",True)
     add Solid("#2c211b")
-    if region in ("village","mountain"):
+    # 2026-10-24: 「여관 안」·「숲·산길」은 B 지도(수첩 틀 + 장소 스티커, game/room13_map_b.rpy).
+    # 마을 탭은 마을 v2 납품 전까지 기존 그림 지도를 그대로 쓴다.
+    if region=="village":
         use r13_cartography(region,selected,ready,map_hover)
     else:
-        add r13_background(R13_PLACES[room13["location"]][1])
-        add Solid("#21160fbb")
-        add Frame(R13_NIGHT_UI+"panel.png",48,48) xpos 12 ypos 12 xysize (1256,696)
-        $ known=set(key for key,point in r13_map_nodes("inn"))
-        $ floors=[("1층",("inn","dining","kitchen")),("2층",("hall","room13","guestroom")),("안쪽",("passage",)),("지하",("ancient",))]
-        if room13["location"]=="ancient":
-            $ floors=floors[-1:]+floors[:-1]
-        viewport:
-            id "map_inn_list"
-            area (50,120,718,472) mousewheel True draggable True scrollbars "vertical"
-            vbox:
-                spacing 14
-                for floor,keys in floors:
-                    if any(key in known for key in keys):
-                        text floor size 21 color "#d9b46c"
-                        for key in keys:
-                            if key in known:
-                                button:
-                                    id ("map_room_"+key)
-                                    xsize 682 ysize (r13_map_control_height() if r13_touch_ui() else 58) padding (18,8)
-                                    background Frame(R13_NIGHT_UI+("opt_btn_selected.png" if key==selected else "opt_btn_idle.png"),16,16)
-                                    hover_background Frame(R13_NIGHT_UI+"opt_btn_hover.png",16,16)
-                                    action [SetScreenVariable("selected",key),SetScreenVariable("map_notice",None)] sensitive ready
-                                    fixed:
-                                        text R13_MAP_LABELS[key] size 25 color "#f6ecd8" yalign .5
-                                        text ("현재 위치" if key==room13["location"] else "선택됨" if key==selected else "›") size 20 color "#d9b46c" xalign 1.0 yalign .5
-        if selected:
-            frame:
-                area (810,134,402,420) padding (22,20) background Frame(R13_NIGHT_UI+"panel_small.png",12,12)
-                vbox:
-                    spacing 20
-                    text R13_MAP_LABELS[selected] size 28 color "#f6ecd8"
-                    add Transform(r13_background(R13_PLACES[selected][1]),size=(358,202),nearest=True)
-                    text ("● 현재 위치" if selected==room13["location"] else "아래 이동 버튼으로 확정합니다.") size 20 color "#d9c9ac" xsize 358
-    # A small corner caption leaves the greenhouse roof and altar fully visible.
-    if region=="inn":
-        add Frame(R13_NIGHT_UI+"panel_small.png",12,12) xpos 24 ypos 20 xysize (1232,76)
-        fixed:
-            area (46,20,190,76)
-            text "여관 안내" yalign .5 size 29 color "#f6ecd8"
-        fixed:
-            area (260,20,950,76)
-            text ("현재 · "+r13_location_path()) yalign .5 size 19 color "#d9c9ac" xsize 950
-    else:
+        use r13_map_b(region,selected,ready,map_hover,map_notice)
+    # B 지도는 구역 이름·현재 위치·안내를 수첩 아래 띠에 쓴다. 마을만 왼쪽 위 이름판과 안내 줄을 쓴다.
+    if region=="village":
         add Frame(R13_NIGHT_UI+"panel_small.png",12,12) xpos 24 ypos 20 xysize (250,76)
         fixed:
             area (46,20,206,76)
             vbox:
                 yalign .5 spacing 5
-                text ("숲·산길" if region=="mountain" else "마을 지도") size 29 color "#f6ecd8"
+                text "마을 지도" size 29 color "#f6ecd8"
                 text ("현재 · "+(R13_MAP_LABELS.get(room13["location"],"마을") if r13_map_discovered(room13["location"]) else "마을")) size 17 color "#d9c9ac" xsize 206
-    if region in ("village","mountain"):
         frame:
             area (24,548,1232,48) padding (20,8)
             background Frame(R13_NIGHT_UI+"panel_small.png",12,12)

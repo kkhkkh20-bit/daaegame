@@ -28,8 +28,8 @@ init 68 python:
         views[context]=dict(detail=detail,page=page,material_filter=material_filter)
         store.r13_book_views=views
 
-    def r13_records_remember(tab,detail,person,page,archive,rel_sel=None,rel_filter="all",rel_focus=True,material_filter="all"):
-        store.r13_records_view=dict(tab=tab,detail=detail,person=person,page=page,archive=archive,rel_sel=rel_sel,rel_filter=rel_filter,rel_focus=rel_focus,material_filter=material_filter)
+    def r13_records_remember(tab,detail,person,page,archive,rel_sel=None,rel_filter="all",rel_focus=True,material_filter="all",drawer="now",drawer_case=None):
+        store.r13_records_view=dict(tab=tab,detail=detail,person=person,page=page,archive=archive,rel_sel=rel_sel,rel_filter=rel_filter,rel_focus=rel_focus,material_filter=material_filter,drawer=drawer,drawer_case=drawer_case)
 
     class R13RecordScrollChanged:
         def __init__(self,key):
@@ -331,7 +331,12 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
     default rel_filter="all"
     $ rel_filter="all" # Retired status filter must not survive an old saved screen.
     default rel_focus=r13_records_view.get("rel_focus",True)
-    on "hide" action [Function(source_fx,"note_close"),Function(r13_records_remember,tab,detail,person,page,archive,rel_sel,rel_filter,rel_focus,material_filter)]
+    # 2026-10-24 증거 서랍(v111): 이번 사건 / 지난 사건 / 사람별. 옛 저장의 화면 기억에는 없으므로 이번 사건부터.
+    default drawer=r13_records_view.get("drawer","now")
+    default drawer_case=r13_records_view.get("drawer_case")
+    default drawer_gpage=0
+    default drawer_ipage=0
+    on "hide" action [Function(source_fx,"note_close"),Function(r13_records_remember,tab,detail,person,page,archive,rel_sel,rel_filter,rel_focus,material_filter,drawer,drawer_case)]
     # 0.20.x 증거 비교 창: a comparison pair is never restored from an older save's screen.
     default pair=None
     default pair_slot=1
@@ -342,16 +347,33 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
         # one big picture with a few observed facts, 「나란히 놓기」 for two records side by side.
         # systems/room13_evidence_view.rpy. The other tabs keep the paper folio below.
         $ material_filter="all" if material_filter=="unread" or (archive and material_filter=="transfer") else material_filter
-        $ entries=r13_material_subset(r13_catalog_entries(archive,shelf=shelf and not archive),material_filter)
-        if not page_restored:
-            $ page=r13_record_restore_page(entries,detail,page)
-            $ page_restored=True
-        $ selected_record=r13_record_selected(entries,detail,page)
-        $ day_span=r13_evidence_day_span(entries)
-        $ header=(("지난 사건 %d개" if shelf and not archive else "자료 %d개")%len(entries))+((" · "+day_span) if day_span else "")
-        use r13_ink_record_shell("기록",r13_ev_record_tabs(_scope),"all",(close_action or Hide("r13_records")))
-        use r13_ink_chips(r13_ev_filter_chips(_scope,material_filter,not archive,(None if archive else shelf),len(r13_catalog_entries(shelf=True)),(archive if archive or r13_learning_archive_keys() else None)))
-        use r13_evidence_browser(entries,selected_record,page,_scope,pair,pair_slot,archive,("records",),header)
+        if r13_drawer_active(archive):
+            # 2026-10-24 증거 서랍 (시안 docs/reviews/evidence-drawer-20261024/, systems/room13_evidence_drawer.rpy).
+            $ drawer_all=r13_catalog_entries()
+            $ drawer_view=r13_drawer_view(drawer,drawer_all,detail,drawer_case)
+            $ header=r13_drawer_header(drawer,drawer_all,drawer_view,drawer_case)
+            use r13_ink_record_shell("기록",r13_ev_record_tabs(_scope),"all",(close_action or Hide("r13_records")))
+            use r13_ink_chips(r13_drawer_chips(_scope,drawer,(False if r13_learning_archive_keys() else None)))
+            if drawer_view[0]=="groups":
+                use r13_drawer_groups_view(drawer,drawer_all,drawer_case,drawer_gpage,drawer_ipage,_scope,header)
+            else:
+                $ entries=drawer_view[1]
+                if not page_restored:
+                    $ page=r13_record_restore_page(entries,detail,page)
+                    $ page_restored=True
+                $ selected_record=r13_drawer_selected(entries,detail,page)
+                use r13_evidence_browser(entries,selected_record,page,_scope,pair,pair_slot,False,("records",),header)
+        else:
+            $ entries=r13_material_subset(r13_catalog_entries(archive,shelf=shelf and not archive),material_filter)
+            if not page_restored:
+                $ page=r13_record_restore_page(entries,detail,page)
+                $ page_restored=True
+            $ selected_record=r13_record_selected(entries,detail,page)
+            $ day_span=r13_evidence_day_span(entries)
+            $ header=(("지난 사건 %d개" if shelf and not archive else "자료 %d개")%len(entries))+((" · "+day_span) if day_span else "")
+            use r13_ink_record_shell("기록",r13_ev_record_tabs(_scope),"all",(close_action or Hide("r13_records")))
+            use r13_ink_chips(r13_ev_filter_chips(_scope,material_filter,not archive,(None if archive else shelf),len(r13_catalog_entries(shelf=True)),(archive if archive or r13_learning_archive_keys() else None)))
+            use r13_evidence_browser(entries,selected_record,page,_scope,pair,pair_slot,archive,("records",),header)
     else:
         use r13_reference_record_shell("기록")
         use r13_reference_record_categories(_scope,tab,archive=archive)
