@@ -194,36 +194,38 @@ screen say(who,what):
             else:
                 use r13_playback_footer()
     else:
-        # 0.19.98 (owner 2026-10-22): night-ink dialogue per the Notion mockup — a shallow shade
-        # from the bottom edge instead of a box (systems/room13_night_ui.rpy).
+        # Approved B notebook dialogue; retain existing controls and story state.
         key "K_h" action Show("r13_backlog")
-        # New-world meetings keep their approved stage and header; the line itself uses the
-        # same night-ink dialogue as everywhere else.
         if r13_meeting_active and r13_nw_meeting_claim(r13_meeting_claim):
             use r13_meeting_stage(r13_meeting_claim,r13_meeting_focus_person(r13_meeting_claim),True)
             use r13_meeting_chrome(r13_meeting_claim)
-        add Transform(R13_NIGHT_UI+"say_shade.png",xysize=(1280,720-r13_night_shade_top(what)),alpha=r13_night_shade_alpha()) ypos r13_night_shade_top(what)
+        $ b_face = r13_bdialogue_face(r13_packet[0],r13_fullbody_emotion(r13_directed_pose)) if who and r13_packet and not r13_thought_active else None
+        $ b_text_x = 222 if b_face else 120
+        $ b_text_width = 988 if b_face else 1090
+        $ b_text_top = r13_night_say_top(what)
+        add Transform(Frame(Crop((16,16,1168,128),"assets/ui-b-dialogue/b_panel_dialogue.png"),48,24,64,24),xysize=(1220,718-(b_text_top-28)),alpha=r13_night_shade_alpha()) xpos 30 ypos (b_text_top-28)
+        if b_face:
+            add Transform(b_face,xysize=(112,112)) xpos 70 ypos (b_text_top-10)
         window:
             id "window"
-            xpos 120 ypos r13_night_say_top(what) xsize 1100 yminimum 40
+            xpos b_text_x ypos b_text_top xsize b_text_width yminimum 40
             background None padding (0,0)
-            r13_dialogue_text what id "what" style "say_dialogue" size r13_night_say_size() line_spacing 8 xsize 1090 font r13_ui_font() color r13_night_text_color() outlines [(2,"#0b0f1e66",0,1)]
+            r13_dialogue_text what id "what" style "say_dialogue" size r13_night_say_size() line_spacing 8 xsize b_text_width font r13_ui_font() color r13_night_text_color() outlines []
         if who:
             $ r13_name_track(who)
             hbox:
-                xpos 92 ypos (r13_night_say_top(what)-62) spacing -12
+                xpos b_text_x ypos (r13_night_say_top(what)-62) spacing 12
                 at r13_name_fade
                 frame:
-                    background r13_night_ribbon() padding (40,8,58,10) yalign .5
-                    text who id "who" color "#fff3df" font r13_ui_font() size r13_read_size(27,30) xmaximum 640 outlines [(2,"#4a0f16",0,0)]
-                add Crop((0,0,96,9),R13_NIGHT_UI+"gold_rule.png") yalign .5
+                    background Frame(Crop((16,12,168,32),"assets/ui-b-dialogue/b_ribbon_name.png"),16,6,32,6) padding (22,8,36,10) yalign .5
+                    text who id "who" color "#fff3df" font r13_ui_font() size r13_read_size(27,30) xmaximum 640 outlines []
                 if r13_offscreen_voice(who):
-                    text r13_offscreen_voice(who) yalign .5 size r13_read_size(20,22) color "#d9c7a4" font r13_ui_font() xoffset 22
+                    text r13_offscreen_voice(who) yalign .5 size r13_read_size(20,22) color "#fff3df" font r13_ui_font() outlines [(1,"#30261f",0,0)]
         # Next-line mark at the end of the controls row (mockup: "더보기 ▸").
         if r13_fx_active():
-            text "▸" xanchor 1.0 xpos R13_CONCEPT_RIGHT yanchor .5 ypos r13_night_control_y() size 22 color "#eadfc8" at r13_next_glow
+            text "▸" xanchor 1.0 xpos R13_CONCEPT_RIGHT yanchor .5 ypos r13_night_control_y() size 22 color "#4b3420" at r13_next_glow
         else:
-            text "▸" xanchor 1.0 xpos R13_CONCEPT_RIGHT yanchor .5 ypos r13_night_control_y() size 22 color "#eadfc8"
+            text "▸" xanchor 1.0 xpos R13_CONCEPT_RIGHT yanchor .5 ypos r13_night_control_y() size 22 color "#4b3420"
         timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
         if r13_field_reading:
             pass

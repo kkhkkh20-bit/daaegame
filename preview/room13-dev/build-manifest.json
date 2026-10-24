@@ -1,13 +1,13 @@
 {
  "engine": "Ren'Py 8.5.3",
  "game_transport": {
-  "archive_bytes": 15306722,
-  "archive_sha256": "769adf2a35974cec2d09aad880961bcd0d07a6148be2f1a036e02c092bb721ab",
+  "archive_bytes": 15914342,
+  "archive_sha256": "feb121a51d4a3c187c5a61a936c331cde08354068d1a594d78a9684825331c7b",
   "parts": [
    {
     "file": "game.part01",
-    "bytes": 15306722,
-    "sha256": "769adf2a35974cec2d09aad880961bcd0d07a6148be2f1a036e02c092bb721ab"
+    "bytes": 15914342,
+    "sha256": "feb121a51d4a3c187c5a61a936c331cde08354068d1a594d78a9684825331c7b"
    }
   ]
  },
@@ -29,12 +29,12 @@
    "sha256": "6bb23b55d259a317d6c3a496f5c8892bd820bc4f0730a172d030b4497c534bfe"
   },
   "game-transport.json": {
-   "bytes": 220318,
-   "sha256": "86dead2855f72e09f51e0f37fcd5a5a82130c3c0bb6af387a7290027406e9d3b"
+   "bytes": 222010,
+   "sha256": "2b6899e540e5e0b7e6201f2ebbd560d37e4cf594fbe993ef4c6b5bebaf8317c7"
   },
   "game.part01": {
-   "bytes": 15306722,
-   "sha256": "769adf2a35974cec2d09aad880961bcd0d07a6148be2f1a036e02c092bb721ab"
+   "bytes": 15914342,
+   "sha256": "feb121a51d4a3c187c5a61a936c331cde08354068d1a594d78a9684825331c7b"
   },
   "game/assets/Galmuri11.ttf": {
    "bytes": 1964416,
@@ -300,13 +300,25 @@
    "bytes": 283800,
    "sha256": "c03f6a31f434b4c3639454f873e36e19640b67a0613ade19c670a8ef6290af97"
   },
+  "game/assets/dialogue-b-primary50/resident_lamplighter_angry.webp": {
+   "bytes": 274048,
+   "sha256": "9b25d8051c63e4a2a379bced93f5dfbb8055aaa97d2e3ffbfb5904a6b9372f75"
+  },
   "game/assets/dialogue-b-primary50/resident_lamplighter_anxious.webp": {
    "bytes": 261704,
    "sha256": "0c281bfaae2ae017971855b113c2bb0b67d7b08a495aafbdc055ff515b32b3c4"
   },
+  "game/assets/dialogue-b-primary50/resident_lamplighter_joy.webp": {
+   "bytes": 252068,
+   "sha256": "8522192f9809a5e5b3c4c74eab0e9a8eeddce0e7b6403c5d7d900104c52e7591"
+  },
   "game/assets/dialogue-b-primary50/resident_lamplighter_surprise_react.webp": {
    "bytes": 299362,
    "sha256": "1ce3fc50eb71ac5016358d4f4d5b58f60a23f8f1a7828908d0d304c4b7d467fc"
+  },
+  "game/assets/dialogue-b-primary50/resident_lamplighter_surprise_talk.webp": {
+   "bytes": 258424,
+   "sha256": "91fe716cefcea05021b5a336ea4d8f1654640d1ed5e9149557d39fd140d8cf7a"
   },
   "game/assets/dialogue-b-primary50/resident_nero_angry.webp": {
    "bytes": 272430,
@@ -383,6 +395,10 @@
   "game/assets/dialogue-b-primary50/resident_teacher_surprise_react.webp": {
    "bytes": 286422,
    "sha256": "80ee8bbdd604b4b92912b3d1ea31cdd23d2ace92171a58ba6c26e95fab72cb06"
+  },
+  "game/assets/dialogue-b-primary50/resident_teacher_surprise_talk.webp": {
+   "bytes": 306020,
+   "sha256": "a5d90291745a22f2d047f2a74eebcea1eebef28dbd6ab4029430f3dd5346b9b0"
   },
   "game/assets/dialogue-context-master/bami/560/small_relief.webp": {
    "bytes": 49722,
@@ -11212,6 +11228,10 @@
    "bytes": 12740,
    "sha256": "40f506ad3a5513e10398f7084bce2b0fdf5963756f8383b855d5d69ec2c37463"
   },
+  "game/assets/ui-b-dialogue/b_panel_dialogue.png": {
+   "bytes": 137657,
+   "sha256": "c6111c66fc5135db20dc07442dcad0fb4bae9e3b50a58291adeac12ee45e0d25"
+  },
   "game/assets/ui-b-main/b_logo.png": {
    "bytes": 238806,
    "sha256": "4b3d8c6e3896eb4b8764568a61a607e109ce191396aea7dfcecb0bd4b186dbc6"
@@ -11445,5 +11465,5 @@
    "sha256": "0ef27bfe65a2917248171666649a51d85e3a200a3ae87bbaaa7085748bc4f0c5"
   }
  },
- "total_bytes": 627998216
+ "total_bytes": 629835745
 }

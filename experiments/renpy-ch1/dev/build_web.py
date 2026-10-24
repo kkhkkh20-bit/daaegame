@@ -67,8 +67,10 @@ def startup_media(rel, startup_files):
 def startup_files(game):
     result = set(START_FILES)
     # Approved title/settings must be ready before the first interaction.
-    for folder in ("ui-b-main", "ui-b-options"):
+    for folder in ("ui-b-main", "ui-b-options", "ui-b-dialogue"):
         result.update(p.relative_to(game).as_posix() for p in (game / "assets" / folder).glob("*.png"))
+    # Small face stickers must be present when the first dialogue is drawn.
+    result.update(p.relative_to(game).as_posix() for p in (game / "assets/dialogue-b-faces").glob("*.webp"))
     layout = json.loads((game / "assets/room13-world-layout.json").read_text())
     def files(value):
         if isinstance(value, str) and value.startswith("assets/"):result.add(value)
@@ -110,8 +112,16 @@ def character_manifests(game):
              "room13-dialogue-context-art", "room13-dialogue-pose-source-art",
              "room13-meeting-seated", "room13-meeting-source-art", "room13-profile-source-art",
              "room13-pixel-acting", "room13-pixel-motion")
-    return [json.loads((game / "assets" / (name + ".json")).read_text())
-            for name in names if (game / "assets" / (name + ".json")).exists()]
+    manifests = [json.loads((game / "assets" / (name + ".json")).read_text())
+                 for name in names if (game / "assets" / (name + ".json")).exists()]
+    body = game / "assets/room13-dialogue-b-primary50.json"
+    if body.exists():
+        manifests.append({"people": {person: {"profiles": profiles}
+            for person, profiles in json.loads(body.read_text()).items()}})
+    faces = game / "assets/room13-dialogue-b-faces.json"
+    if faces.exists():
+        manifests.append(json.loads(faces.read_text()))
+    return manifests
 
 
 def character_files(game):

@@ -39,7 +39,7 @@ class CompactDialogue(unittest.TestCase):
     def test_same_font_and_name_anchor(self):
         # 0.19.98 night dialogue (owner mockup): same font and size token, name on the ribbon
         # directly above the text, which stacks up from a fixed bottom.
-        self.assertIn('size r13_night_say_size() line_spacing 8 xsize 1090 font r13_ui_font()',SOURCE)
+        self.assertIn('size r13_night_say_size() line_spacing 8 xsize b_text_width font r13_ui_font()',SOURCE)
         self.assertIn('ypos (r13_night_say_top(what)-62)',SOURCE)
         self.assertIn('background None padding (0,0)',SOURCE)
 

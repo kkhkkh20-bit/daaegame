@@ -1,12 +1,12 @@
 {
  "multipart": true,
- "archive_bytes": 15306722,
- "archive_sha256": "769adf2a35974cec2d09aad880961bcd0d07a6148be2f1a036e02c092bb721ab",
+ "archive_bytes": 15914342,
+ "archive_sha256": "feb121a51d4a3c187c5a61a936c331cde08354068d1a594d78a9684825331c7b",
  "parts": [
   {
    "file": "game.part01",
-   "bytes": 15306722,
-   "sha256": "769adf2a35974cec2d09aad880961bcd0d07a6148be2f1a036e02c092bb721ab"
+   "bytes": 15914342,
+   "sha256": "feb121a51d4a3c187c5a61a936c331cde08354068d1a594d78a9684825331c7b"
   }
  ],
  "preload": [
@@ -116,6 +116,11 @@
    "sha256": "0b146b2716d19e429c1fa1855674b542aafdc5ea48b96ec3a44d586639e1abee"
   },
   {
+   "file": "game/assets/ui-b-dialogue/b_panel_dialogue.png",
+   "bytes": 137657,
+   "sha256": "c6111c66fc5135db20dc07442dcad0fb4bae9e3b50a58291adeac12ee45e0d25"
+  },
+  {
    "file": "game/assets/ui-b-main/b_logo.png",
    "bytes": 238806,
    "sha256": "4b3d8c6e3896eb4b8764568a61a607e109ce191396aea7dfcecb0bd4b186dbc6"
@@ -201,8 +206,11 @@
   "game/assets/dialogue-b-primary50/neoul_joy.webp": "8325f0d3f944",
   "game/assets/dialogue-b-primary50/neoul_surprise_react.webp": "2e376ee686d3",
   "game/assets/dialogue-b-primary50/neoul_surprise_talk.webp": "c03f6a31f434",
+  "game/assets/dialogue-b-primary50/resident_lamplighter_angry.webp": "9b25d8051c63",
   "game/assets/dialogue-b-primary50/resident_lamplighter_anxious.webp": "0c281bfaae2a",
+  "game/assets/dialogue-b-primary50/resident_lamplighter_joy.webp": "8522192f9809",
   "game/assets/dialogue-b-primary50/resident_lamplighter_surprise_react.webp": "1ce3fc50eb71",
+  "game/assets/dialogue-b-primary50/resident_lamplighter_surprise_talk.webp": "91fe716cefce",
   "game/assets/dialogue-b-primary50/resident_nero_angry.webp": "52dfa55ae7d0",
   "game/assets/dialogue-b-primary50/resident_nero_anxious.webp": "05acfa4bfa71",
   "game/assets/dialogue-b-primary50/resident_nero_joy.webp": "8331bc79fa15",
@@ -222,6 +230,7 @@
   "game/assets/dialogue-b-primary50/resident_teacher_anxious.webp": "f4a757668a9d",
   "game/assets/dialogue-b-primary50/resident_teacher_joy.webp": "9bd6faae1e16",
   "game/assets/dialogue-b-primary50/resident_teacher_surprise_react.webp": "80ee8bbdd604",
+  "game/assets/dialogue-b-primary50/resident_teacher_surprise_talk.webp": "a5d90291745a",
   "game/assets/dialogue-context-master/bami/560/small_relief.webp": "3f20bb3bc435",
   "game/assets/dialogue-context-master/bami/760/small_relief.webp": "a8c983c42310",
   "game/assets/dialogue-context-master/bami/840/small_relief.webp": "0994c7305bc9",
@@ -2938,6 +2947,11 @@
   "game/assets/dialogue-source-master/guard/840/surprise_talk.webp",
   "game/assets/dialogue-source-master/guard/840/surprise_react.webp",
   "game/assets/profile-source-master/guard.webp",
+  "game/assets/dialogue-b-primary50/guard_joy.webp",
+  "game/assets/dialogue-b-primary50/guard_angry.webp",
+  "game/assets/dialogue-b-primary50/guard_anxious.webp",
+  "game/assets/dialogue-b-primary50/guard_surprise_talk.webp",
+  "game/assets/dialogue-b-primary50/guard_surprise_react.webp",
   "game/assets/room13-canonical-default-neoul.webp",
   "game/assets/room13-pixel-dialogue-neoul.webp",
   "game/assets/dialogue-source-master/neoul/840/neutral.webp",
@@ -2947,6 +2961,11 @@
   "game/assets/dialogue-source-master/neoul/840/surprise_talk.webp",
   "game/assets/dialogue-source-master/neoul/840/surprise_react.webp",
   "game/assets/profile-source-master/neoul.webp",
+  "game/assets/dialogue-b-primary50/neoul_joy.webp",
+  "game/assets/dialogue-b-primary50/neoul_angry.webp",
+  "game/assets/dialogue-b-primary50/neoul_anxious.webp",
+  "game/assets/dialogue-b-primary50/neoul_surprise_talk.webp",
+  "game/assets/dialogue-b-primary50/neoul_surprise_react.webp",
   "game/assets/room13-redesign-granny.webp",
   "game/assets/room13-pixel-main-profile-granny.webp",
   "game/assets/room13-pixel-dialogue-granny.webp",
@@ -2962,6 +2981,11 @@
   "game/assets/profile-source-master/granny.webp",
   "game/assets/room13-action-granny-living_keyledger.webp",
   "game/assets/room13-fullbody-granny-pose-withdraw_hand.webp",
+  "game/assets/dialogue-b-primary50/granny_joy.webp",
+  "game/assets/dialogue-b-primary50/granny_angry.webp",
+  "game/assets/dialogue-b-primary50/granny_anxious.webp",
+  "game/assets/dialogue-b-primary50/granny_surprise_talk.webp",
+  "game/assets/dialogue-b-primary50/granny_surprise_react.webp",
   "game/assets/room13-pixel-acting-nabi.webp",
   "game/assets/room13-pixel-main-profile-a.webp",
   "game/assets/room13-pixel-dialogue-nabi.webp",
@@ -2974,6 +2998,11 @@
   "game/assets/room13-meeting-seated-nabi068.webp",
   "game/assets/meeting-source-master/nabi--witness_hesitate.webp",
   "game/assets/profile-source-master/nabi.webp",
+  "game/assets/dialogue-b-primary50/nabi_joy.webp",
+  "game/assets/dialogue-b-primary50/nabi_angry.webp",
+  "game/assets/dialogue-b-primary50/nabi_anxious.webp",
+  "game/assets/dialogue-b-primary50/nabi_surprise_talk.webp",
+  "game/assets/dialogue-b-primary50/nabi_surprise_react.webp",
   "game/assets/bgm-snow.mp3",
   "game/assets/amb-wind.mp3",
   "game/assets/bgm-inn.mp3",

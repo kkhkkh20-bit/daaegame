@@ -45,7 +45,7 @@ init 140 python:
             if s and not s.endswith(")"):text=text+")"
             return text
         if "「" not in text:return text
-        color=r13_role_color("entity","paper" if getattr(store,"r13_meeting_active",False) else "dark")
+        color=r13_role_color("entity","dark" if getattr(store,"r13_black_card",False) else "paper")
         parts=_r13_tre.split(r"(\{[^{}]*\}|\[[^\[\]]*\])",text)
         return "".join(p if p.startswith(("{","[")) else _R13_ITEM_SPAN.sub(lambda m:"{color="+color+"}"+m.group(0)+"{/color}",p) for p in parts)
 

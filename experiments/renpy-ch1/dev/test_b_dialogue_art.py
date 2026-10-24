@@ -18,14 +18,14 @@ class BDialogueArt(unittest.TestCase):
  def test_authored_pose_precedes_b_emotions(self):
   p=self.env['r13_dialogue_source_profile']('granny','withdraw_hand',840)
   self.assertIn('dialogue-pose-source/granny/withdraw_hand',p['frames']['neutral']['file'])
- def test_neutral_and_held_frames_unchanged(self):
+ def test_neutral_unchanged_and_all_delivered_expressions_connected(self):
   for person,profiles in self.new.items():
    for h,p in profiles.items():
     self.assertEqual(p['canvas'],self.old[person]['profiles'][h]['canvas'])
     self.assertEqual(p['frames']['neutral'],self.old[person]['profiles'][h]['frames']['neutral'])
   for person,emotion in [('resident_lamplighter','angry'),('resident_lamplighter','joy'),('resident_lamplighter','surprise_talk'),('resident_teacher','surprise_talk')]:
-   for h,p in self.new[person].items():self.assertEqual(p['frames'][emotion],self.old[person]['profiles'][h]['frames'][emotion])
- def test_all_46_frames_preserve_visible_height_bottom_and_center(self):
+   for h,p in self.new[person].items():self.assertTrue(p['frames'][emotion]['file'].startswith('assets/dialogue-b-primary50/'))
+ def test_all_50_frames_preserve_visible_height_and_fit_canvas(self):
   count=0
   for person,profiles in self.new.items():
    for h,p in profiles.items():
@@ -36,12 +36,14 @@ class BDialogueArt(unittest.TestCase):
      with Image.open(ROOT/'game'/f['file']) as im:nb=im.getbbox()
      os=old.get('scale',1);ns=f['scale']
      self.assertAlmostEqual((ob[3]-ob[1])*os,(nb[3]-nb[1])*ns)
-     self.assertAlmostEqual(old['offset'][1]+ob[3]*os,f['offset'][1]+nb[3]*ns,delta=.51)
+     bottom=old['offset'][1]+ob[3]*os
+     expected=min(bottom,p['canvas'][1]-1) if f.get('foot_clamped_to_canvas') else bottom
+     self.assertAlmostEqual(expected,f['offset'][1]+nb[3]*ns,delta=.51)
      self.assertAlmostEqual(old['offset'][0]+(ob[0]+ob[2])*os/2,f['offset'][0]+(nb[0]+nb[2])*ns/2,delta=.51)
      self.assertGreaterEqual(f['offset'][0]+nb[0]*ns,0)
      self.assertLessEqual(f['offset'][0]+nb[2]*ns,p['canvas'][0]+.001)
      self.assertLessEqual(f['offset'][1]+nb[3]*ns,p['canvas'][1]+.001)
-  self.assertEqual(count,138)
+  self.assertEqual(count,150)
  def test_thought_and_unknown_pose_keep_existing_guards(self):
   self.env['store'].r13_thought_active=True
   self.assertIsNone(self.env['r13_dialogue_source_profile']('granny','joy',840))
