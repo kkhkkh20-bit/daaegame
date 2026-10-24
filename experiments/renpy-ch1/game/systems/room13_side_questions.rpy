@@ -39,13 +39,14 @@ screen r13_side_question_list(person,pose,entries,ready,return_action=None,capti
             button:
                 id ("r13_side_topic_"+str(i+1))
                 xsize 592 ysize height padding (20,8)
-                background R13ControlSurface()
-                hover_background R13ControlSurface(hovered=True)
+                # Strip delivery padding; retain the paper corners at all existing row heights.
+                background Frame(Crop((16,16,640,84),"assets/ui-b-question/b_panel_card_done.png" if read else "assets/ui-b-question/b_panel_card.png"),80,24)
+                hover_background Frame(Crop((16,16,640,84),"assets/ui-b-question/b_panel_card_hover.png"),80,24)
                 action r13_safe_question_action(command) sensitive ready
                 hbox:
                     yalign .5 spacing 12
-                    text str(i+1) yalign .5 xsize 34 size r13_read_size(26,28) color "#f6dfac" font r13_ui_font()
-                    text r13_question_caption(label,read,mark_unread=True) yalign .5 xsize 506 size r13_read_size(26,28) line_spacing 2 color (r13_role_color("subdued") if read else "#fff4df") font r13_ui_font()
+                    text str(i+1) yalign .5 xsize 34 size r13_read_size(26,28) color "#4b3420" font r13_ui_font()
+                    text r13_question_caption(label,read,mark_unread=True) yalign .5 xsize 506 size r13_read_size(26,28) line_spacing 2 color ("#665749" if read else "#4b3420") font r13_ui_font()
         if not entries:
             frame:
                 xsize 592 padding (20,20) background R13ControlSurface()
