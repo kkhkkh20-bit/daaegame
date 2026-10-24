@@ -1,5 +1,5 @@
 style default:
-    font "assets/Galmuri11.ttf"
+    font R13_UI_FONT
     size 25
     color "#f3e7ce"
     # Break Korean at spaces, never inside a word (비/켜).
@@ -89,7 +89,7 @@ screen main_menu():
             hovered SetScreenVariable("title_focus","settings") action ShowMenu("pause_menu")
     textbutton "음악 출처":
         xpos 28 ypos 680 padding (8,5) background None
-        text_font "assets/Room13TitleSerif.otf" text_size 14 text_color "#c5c6d2" text_hover_color "#fff0ce"
+        text_font R13_UI_FONT text_size 14 text_color "#c5c6d2" text_hover_color "#fff0ce"
         action Show("r13_music_credits")
     text config.version xpos 1172 ypos 674 font r13_ui_font() size 13 color "#b2b8b8"
 
@@ -165,11 +165,11 @@ screen say(who,what):
                     xpos (32 if room13_mode else 240 if has_portrait else 32) ypos 18
                     spacing 10
                     if who and not room13_mode:
-                        text who id "who" color "#ebcd8a" font (r13_ui_font() if room13_mode else "assets/Galmuri11.ttf")
+                        text who id "who" color "#ebcd8a" font (r13_ui_font() if room13_mode else R13_UI_FONT)
                     if room13_mode:
                         r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(26,32) line_spacing 7 xsize 930 text_align .0 font r13_ui_font() color r13_say_color()
                     else:
-                        text what id "what" xsize (910 if has_portrait else 1120) font "assets/Galmuri11.ttf" color "#fff5df"
+                        text what id "what" xsize (910 if has_portrait else 1120) font R13_UI_FONT color "#fff5df"
         if who and room13_mode:
             frame:
                 xpos 160 xanchor 0.0 ypos (428 if persistent.room13_large_text else 474) padding R13_UI_PADDING["name"]
@@ -236,7 +236,7 @@ style legacy_choice_frame is frame
 style legacy_choice_vbox is vbox
 style legacy_choice_button is button
 style legacy_choice_button_text is button_text:
-    font "assets/Galmuri11.ttf"
+    font R13_UI_FONT
 
 screen choice(items):
     style_prefix ("r13" if room13_mode else "legacy_choice")

@@ -4,7 +4,7 @@
 #     exactly once, narration grey. One speaker-label colour for everyone.
 #   - Item names are marked by the author with 「…」; only that span takes the entity colour.
 #     The old automatic name/place/evidence regex and its fake {b} are retired.
-#   - Galmuri11 has one real weight: no {b}, bold or italic anywhere in room13 text.
+#   - Use the approved Pretendard Regular: no synthetic bold or italic.
 #   - Dark windows and light paper use different colours for the same role.
 #   - Warm paper for records and compact HUD labels; translucent ink-brown for speech/actions (solid in explicit dark mode).
 #     Shared code-drawn materials live in room13_ui_art.rpy; semantic roles stay independent.
@@ -60,6 +60,6 @@ init 140 python:
         return R13InkPanel(alpha="ff" if dark else "c9" if alpha=="99" else "d9",dark=dark,slim=True)
 
 init 141:
-    # Galmuri11 has no bold file: never synthesize it in labels.
+    # Keep the approved regular weight in labels.
     style say_label:
         bold False

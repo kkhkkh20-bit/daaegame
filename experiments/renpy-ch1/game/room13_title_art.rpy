@@ -49,7 +49,7 @@ init 81:
         focus_rect (24,16,192,52)
         padding (24,14)
     style r13_title_button_text is r13_button_text:
-        font "assets/Room13TitleSerif.otf"
+        font R13_UI_FONT
         size 25
         bold False
         color '#503a2c'

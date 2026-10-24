@@ -55,7 +55,7 @@ init -100 python:
   if(document.getElementById('r13-boot-failure'))return;
   var d=document.createElement('div');d.id='r13-boot-failure';
   d.style.cssText='position:fixed;left:50%%;top:50%%;transform:translate(-50%%,-50%%);z-index:1000;max-width:560px;width:86%%;'+
-    'background:#211a16f2;border:1px solid #806446;border-radius:8px;padding:18px;color:#f3e7ce;font-family:Galmuri,sans-serif;font-size:15px;line-height:1.6';
+    'background:#211a16f2;border:1px solid #806446;border-radius:8px;padding:18px;color:#f3e7ce;font-family:Pretendard,sans-serif;font-size:15px;line-height:1.6';
   d.innerHTML='<b style="color:#ffdc91;font-size:18px">화면을 그리지 못해 게임을 멈췄습니다</b>'+
     '<p>이 브라우저 탭에서 그래픽(WebGL) 화면을 만들지 못했습니다. 이야기는 진행되지 않았고, 저장도 바뀌지 않았습니다.</p>'+
     '<p>다시 시도해도 같으면 다른 브라우저나 기기에서 열어 주세요. 실행 기록을 받아 두면 원인을 확인할 수 있습니다.</p>';

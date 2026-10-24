@@ -1,4 +1,4 @@
-# Shared dialogue dock and playback tools — approved Galmuri Regular design.
+# Shared dialogue dock and playback tools — approved Pretendard Regular design.
 init 80 python:
     R13_CONCEPT_RIGHT=1232
 screen r13_concept_action(x,w,caption,icon,command,enabled=True,primary=False):

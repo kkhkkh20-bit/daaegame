@@ -23,7 +23,7 @@ class PresentationLoading(unittest.TestCase):
    for f in p['frames'].values():self.assertTrue(startup_media(f['file'],early),f['file'])
   for path in ('assets/room13-pixel-world-daram-gray-gutter.webp','assets/room13-pixel-acting-daram.webp','assets/dialogue-source-master/guard/840/angry.webp','assets/room13-pixel-ready-gate0173-evening.webp','assets/bgm-snow.mp3'):
    self.assertFalse(startup_media(path,early),path)
-  for path in ('assets/bgm-title.mp3','assets/bgm-travel.mp3','assets/Galmuri11.ttf'):
+  for path in ('assets/bgm-title.mp3','assets/bgm-travel.mp3','assets/Pretendard-Regular.otf'):
    self.assertTrue(startup_media(path,early),path)
  def test_dialogue_background_uses_the_live_clock_without_state_writes(self):
   state=SimpleNamespace(room13=dict(location='square',period=0))
