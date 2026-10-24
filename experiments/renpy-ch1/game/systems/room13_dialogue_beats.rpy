@@ -2,6 +2,7 @@
 default r13_dialogue_beat = None
 
 init 170 python:
+    R13_DIALOGUE_B_ART = json.load(renpy.file("assets/room13-dialogue-b-primary50.json"))
     R13_DIALOGUE_BEATS = json.load(renpy.file("assets/room13-dialogue-beats.json"))
     R13_DIALOGUE_TALK_ART = json.load(renpy.file("assets/room13-dialogue-talk-art.json"))
 
@@ -81,7 +82,7 @@ init 170 python:
                 if key and key not in self.frames:
                     frame=profile["frames"][key]
                     self.frames[key]=Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],zoom=frame.get("scale",1.0),nearest=False,subpixel=True),xysize=tuple(profile["canvas"]))
-                    if profile.get("pixel_grid")==2:
+                    if profile.get("pixel_grid")==2 and not frame.get("native_detail"):
                         self.frames[key]=r13_pixel_scale(self.frames[key],profile["canvas"][0],profile["canvas"][1],2)
         def visit(self):
             return list(self.frames.values())
@@ -117,6 +118,12 @@ init 170 python:
         if key in entry.get("pose_profiles",{}):return entry["pose_profiles"][key]
         return entry if key in entry.get("poses",[]) else {}
 
+    def r13_dialogue_render_profiles(person,entry):
+        # Approved B expressions are dialogue-only; meeting art keeps its original profiles.
+        if not getattr(store,"r13_meeting_active",False) and R13_DIALOGUE_B_ART.get(person):
+            return R13_DIALOGUE_B_ART[person]
+        return entry.get("profiles",{})
+
     def r13_dialogue_source_profile(person,pose,height):
         # Authored poses retain their own smooth source, even during narration/thought.
         posed=r13_dialogue_pose_source(person,pose)
@@ -125,7 +132,7 @@ init 170 python:
         if r13_fullbody_key(pose) not in R13_FULLBODY_PLAIN:return None
         entry=R13_DIALOGUE_TALK_ART["people"].get(person,{})
         if entry.get("status")!="approved_runtime":return None
-        return r13_dialogue_fit_profile(entry.get("profiles",{}),height)
+        return r13_dialogue_fit_profile(r13_dialogue_render_profiles(person,entry),height)
 
     def r13_dialogue_source_neutral(person,pose,height):
         profile=r13_dialogue_source_profile(person,pose,height)
@@ -138,7 +145,7 @@ init 170 python:
         frame=profile["frames"].get(emotion,profile["frames"]["neutral"])
         if renpy.loadable(frame["file"]):
             art=Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],zoom=frame.get("scale",1.0),nearest=False,subpixel=True),xysize=tuple(profile["canvas"]))
-            return r13_pixel_scale(art,profile["canvas"][0],profile["canvas"][1],2) if profile.get("pixel_grid")==2 else art
+            return r13_pixel_scale(art,profile["canvas"][0],profile["canvas"][1],2) if profile.get("pixel_grid")==2 and not frame.get("native_detail") else art
         # An approved character must never silently revert to the old pixel design.
         # A second shipped size is the same approved neutral, with its whole canvas scaled.
         posed=r13_dialogue_pose_source(person,pose)
@@ -156,7 +163,7 @@ init 170 python:
 
     def r13_dialogue_beat_art(person,height):
         if not r13_dialogue_beat_ready(person):return None
-        profile=r13_dialogue_fit_profile(R13_DIALOGUE_TALK_ART["people"][person]["profiles"],height)
+        profile=r13_dialogue_fit_profile(r13_dialogue_render_profiles(person,R13_DIALOGUE_TALK_ART["people"][person]),height)
         return R13DialogueBeat(store.r13_dialogue_beat,profile) if profile else None
 
     config.after_load_callbacks.append(r13_dialogue_beat_after_load)
