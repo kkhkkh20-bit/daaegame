@@ -69,7 +69,7 @@ testcase v111_rules_copper_resubmit:
     click "선택한 근거 제출"
     click pos (900,600) until screen "r13_crisis_proof" timeout 90
     assert eval (r13_v111_value("tries:room13")==1 and sorted(room13["arguments"]["v111:구리선과 수선 출처를 대조한다"])==["V111:E08_WOUND_WIRE","V111:E09_PIN_OWNER"])
-    assert eval qa_nw_seen("근거는 다 손에 있다. 내가 엉뚱한 것끼리 묶었다.")
+    assert eval qa_nw_seen(R13_NW_WRONG_THOUGHTS["구리선과 수선 출처를 대조한다"][1])
     click "선택한 근거 제출"
     click pos (900,600) until screen "r13_crisis_proof" timeout 90
     assert eval (r13_v111_value("proof_given:구리선과 수선 출처를 대조한다")==["V111:E08_WOUND_WIRE","V111:E09_PIN_OWNER"] and r13_v111_value("tries:room13")==1)

@@ -778,14 +778,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 311 | `room13_v111_later_bindings.rpy:69` | _r13_nw_arrive |
-| 2 | 318 | `room13_v111_newworld_rules.rpy:255` |  |
+| 2 | 318 | `room13_v111_newworld_rules.rpy:299` |  |
 
 ## `r13_v111_binding` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 301 | `room13_v111.rpy:71` | _r13_nw_binding |
-| 2 | 318 | `room13_v111_newworld_rules.rpy:261` |  |
+| 2 | 318 | `room13_v111_newworld_rules.rpy:305` |  |
 
 ## `r13_v111_goal` (2층)
 
