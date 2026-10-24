@@ -141,8 +141,7 @@ async def main():
                         measured.append({"id":wid,"rect":rect,"css_height":rect[3]*scale})
                     await q.press("여관 안")
                     await q.shot(prefix+"-inn")
-                    await q.py('import renpy;v=renpy.exports.get_widget("r13_map","map_inn_list");v.yadjustment.change(v.yadjustment.range);renpy.exports.restart_interaction();result=True')
-                    await asyncio.sleep(.3)
+                    # 2026-10-24: 여관 안은 B 지도(스크롤 목록 없음). 13호실 스티커를 바로 누른다.
                     await q.click_id("map_room_room13")
                     await q.shot(prefix+"-room13")
                     await q.press("숲·산길")

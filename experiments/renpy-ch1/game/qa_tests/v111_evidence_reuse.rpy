@@ -154,3 +154,56 @@ testcase evidence_reuse_hyp3_extra:
     click "선택한 근거 제출"
     click pos (640,300) until "아이 방에도 아르카등이 밤새 켜져 있었다" timeout 60
     assert eval (r13_v111_value("hyp_issue:3")=="won" and qa_nw_seen("등에서 빠진 돌까지 그 창고로 갔어요") and qa_nw_seen("안쪽 돌은 오늘 끄겠소"))
+
+# 2026-10-24 새 사실 1번(docs/reviews/evidence-reuse-20261024/새사실_시안.md, 소유자 "추천안대로"):
+# 초상 속 엄마는 바늘을 쥐고 있다(2일 다람의 주문). 10일 기록 회의에서 「손이 아프다」에 덧붙임으로만 쓴다.
+# 보고서: docs/reviews/evidence-reuse-20261024/새사실_적용보고.md
+testcase evidence_reuse_portrait_needle:
+    # 받는 범위와 줄. 초상은 정답 세트·대체 세트 위에 얹히기만 하고, 혼자서는 무엇도 대신하지 못한다.
+    pause 1.0
+    click "처음부터"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
+    click pos (900,600) until screen "r13_hub" timeout 90
+    assert eval qa_reuse_ok("반송·필사본·초대 발송을 대조한다",["E01","E07","E09_MAIL"],["E01","E07","E09_MAIL","E09"])
+    assert eval qa_reuse_ok("반송·필사본·초대 발송을 대조한다",["E01","E07","E09_MAIL"],["E01","E27","E09_MAIL","E09"])
+    assert eval not qa_reuse_ok("반송·필사본·초대 발송을 대조한다",["E01","E07","E09_MAIL"],["E01","E09","E09_MAIL"])
+    assert eval not qa_reuse_ok("수신인과 가족 전달 권한을 구분한다",["E06_CONTACT","E09_MAIL"],["E06_CONTACT","E09_MAIL","E09"])
+    # 2일 주문, 3일 두 판의 그림 속 바늘, 자료 문구.
+    assert eval "엄마 손엔 바늘 그려 주세요" in qa_reuse_text(r13_v111_lines(["MS14_D02_S03_L0018"]))
+    assert eval "바늘은 따님 주문이에요" in qa_reuse_text(r13_v111_lines(["MS14_D03_S01_L0036"]))
+    assert eval "손까지는 다 그려져 있다" in qa_reuse_text(r13_v111_lines(["MS14_D03_S01_L9101"]))
+    assert eval all("바늘" in t for t in R13_V111["evidence"]["E09"]["variants"].values())
+    # 10일: 초상을 덧붙였을 때만 아빠가 짚고 할머니가 받아친다.
+    $ qa_reuse_start(10,route7="prevented",OWL_ALIVE=True)
+    $ qa_reuse_given("반송·필사본·초대 발송을 대조한다",["E01","E07","E09_MAIL"])
+    assert eval "바늘을 쥐고 있습니다" not in qa_reuse_text(r13_v111_lines(["MS14_D10_P01_L0032"]))
+    $ qa_reuse_given("반송·필사본·초대 발송을 대조한다",["E01","E07","E09_MAIL","E09"])
+    assert eval ("바늘을 쥐고 있습니다" in qa_reuse_text(r13_v111_lines(["MS14_D10_P01_L0032"])) and "그림이야 좋게 그리죠" in qa_reuse_text(r13_v111_lines(["MS14_D10_P01_L0032"])))
+
+testcase evidence_reuse_portrait_proof:
+    # 10일 기록 회의를 실제 증명 화면에서 정답 세 장 + 초상으로 이기고, 초상을 짚는 줄이 나온다.
+    pause 1.0
+    click "처음부터"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
+    click pos (900,600) until screen "r13_hub" timeout 90
+    $ qa_reuse_start(10,route7="prevented",OWL_ALIVE=True,DARAM_DETAINED=False)
+    $ r13_grant(["V111:E01","V111:E07","V111:E09_MAIL","V111:E09"],"qa")
+    run Jump("r13_v111_writing_proof10")
+    pause 1.5
+    assert screen "r13_crisis_proof"
+    click "자료 고르기"
+    pause 0.5
+    click "QA V111:E01"
+    pause 0.8
+    click "QA V111:E07"
+    pause 0.8
+    click "QA V111:E09_MAIL"
+    pause 0.8
+    click "QA V111:E09"
+    pause 0.8
+    click "QA 닫기"
+    pause 0.5
+    click "선택한 근거 제출"
+    click pos (900,600) until screen "r13_hub" timeout 120
+    assert eval (r13_v111_value("meeting:records")=="win")
+    assert eval (qa_nw_seen("바늘을 쥐고 있습니다") and qa_nw_seen("그림이야 좋게 그리죠") and qa_nw_seen("본보기를 만들었고"))

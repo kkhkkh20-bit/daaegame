@@ -24,6 +24,9 @@ init 336 python:
     # E13_HANDOVER·E14_SUPPLY·E13_ORDER 는 대화·회의에서 직접 꺼내는 자료라 접지 않는다(적용보고.md).
     R13_DRAWER_NOTES=(("E26","E21"),("E19","E21"),("E05","E02"),("E30","E06"),("E10_PUMP","E06_CONTACT"),("E08_RECENT_LETTER","E27"))
     R13_DRAWER_BACK=("drawer:back:past","drawer:back:person")
+    # 꼬리표는 짧게: 긴 장소 이름은 끝 낱말로 줄이되(「눈에 막힌 입구」→「입구」), 그게 어색한 곳만 적는다.
+    R13_DRAWER_PLACE_SHORT=dict(v111_custody="보호실",v111_supervised="감독 자리")
+    R13_DRAWER_PERSON_SKIP=("아이","주민","아빠","순찰대원")
     R13_DRAWER_GRID_ROWS=3
     R13_DRAWER_GRID_COLS=3
 
@@ -141,7 +144,8 @@ init 336 python:
         people=list(dict.fromkeys(list(met)+list(R13_NAMES)))
         for person in people:
             name=R13_NAMES.get(person)
-            if person in ("dad",) or not name or name in seen_names or person not in CAST:continue
+            # 이름 없는 배역(순찰대원·주민·아이 등)은 흔한 낱말이라 아무 자료에나 걸린다. 이름 있는 사람만.
+            if person=="dad" or person.startswith("v111_") or not name or name in R13_DRAWER_PERSON_SKIP or name in seen_names or person not in CAST:continue
             keys=[k for k in visible if r13_drawer_mentions(k,person)]
             if keys:
                 seen_names.add(name);rows.append((person,keys))
@@ -174,7 +178,10 @@ init 336 python:
         day=rec.get("day")
         place=None
         if day is not None:
+            # 「여관 1층 · 주방」처럼 긴 장소 이름은 마지막 자리만(시안 「13일 밤 · 주방」).
             place=(R13_PLACES.get(rec.get("place")) or (None,))[0]
+            place=R13_DRAWER_PLACE_SHORT.get(rec.get("place")) or (place.split(" · ")[-1] if place else None)
+            if place and len(place)>6:place=place.split(" ")[-1]
         else:
             site=r13_drawer_site(key)
             day=R13_V111["scene_days"].get(site[0]) if site else None

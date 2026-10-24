@@ -118,10 +118,29 @@ testcase b_map_revealed:
     assert eval (r13_qa_bmap_scope()["map_hover"]=="passage")
     screenshot "bmap-pc-inn-revealed-hover-passage.png"
     run Hide("r13_map")
-    pause 0.5
-    # 폐온실·제단: 2주차(E19) + 결말 시작, 제단에 서 있을 때.
-    run Call("r13_qa_roam",dict(day=14,period=0,location="altar",life_poc=True,finale_started=True,week2_started=True,case_state="occurred"),("entry_corrected","lodging","E19"))
-    pause until screen "r13_hub" timeout 60
+    pause 0.3
+    # 옛 시설(지하): 기존 조건(passage_open + ancient_found)이 맞을 때만. 그림이 없어 이름표만 남긴다.
+    assert eval ("ancient" not in dict(r13_bmap_places("inn")))
+    $ room13["flags"]=list(room13["flags"])+["ancient_found"]
+    run Show("r13_map")
+    pause until eval r13_qa_bmap_scope()["ready"] timeout 10
+    assert eval (dict(r13_bmap_places("inn")).get("ancient")=="open" and r13_bmap_target("inn","ancient")["sticker"] is None)
+    assert eval (r13_qa_bmap_widget("map_room_ancient") is not None)
+    click id "map_room_ancient"
+    pause 0.4
+    assert eval (r13_qa_bmap_scope()["selected"]=="ancient")
+    $ r13_qa_bmap_record("pc_inn_ancient")
+    screenshot "bmap-pc-inn-ancient-label-only.png"
+    run Hide("r13_map")
+    $ r13_qa_note("b_map_revealed: passage drawn only after the existing gate; ancient label-only")
+
+testcase b_map_revealed_forest:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    # 폐온실·제단: 2주차(E19) + 결말 시작(finale_started), 제단에 서 있을 때.
+    run Call("r13_qa_roam",dict(day=11,period=0,location="altar",life_poc=True,finale_started=True,week2_started=True,case_state="occurred"),("entry_corrected","lodging","E19"))
+    click pos (640,600) until screen "r13_hub" timeout 60
     run Show("r13_map")
     pause until eval r13_qa_bmap_scope()["ready"] timeout 10
     assert eval (r13_qa_bmap_scope()["region"]=="mountain")
@@ -136,7 +155,7 @@ testcase b_map_revealed:
     assert eval (r13_qa_bmap_scope()["map_hover"]=="greenhouse")
     screenshot "bmap-pc-mountain-revealed-hover-greenhouse.png"
     run Hide("r13_map")
-    $ r13_qa_note("b_map_revealed: passage/greenhouse/altar drawn only after the existing gates")
+    $ r13_qa_note("b_map_revealed_forest: greenhouse/altar drawn only after the existing gates")
 
 testcase b_map_touch:
     pause 2.0

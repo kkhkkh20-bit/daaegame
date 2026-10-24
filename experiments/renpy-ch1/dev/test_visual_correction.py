@@ -28,5 +28,9 @@ class VisualCorrection(unittest.TestCase):
   self.assertGreaterEqual(travel[0]-sum(tabs),16);self.assertGreaterEqual(back[0]-sum(travel),16);self.assertEqual(1256-sum(back),28)
  def test_header_text_same_centerline(self):
   s=(ROOT/'game/room13_navigation.rpy').read_text()
-  self.assertIn('area (46,20,190,76)',s);self.assertIn('area (260,20,950,76)',s)
-  self.assertIn('text "여관 안내" yalign .5',s);self.assertIn('r13_location_path()) yalign .5',s)
+  # 2026-10-24 B 지도: 여관 안·숲·산길은 이름·현재 위치를 수첩 아래 띠 한 줄(같은 가운데선)에 쓴다.
+  self.assertIn('area (46,20,206,76)',s)
+  b=(ROOT/'game/room13_map_b.rpy').read_text()
+  self.assertIn('hbox:\n            yalign .5 spacing 14',b)
+  self.assertIn('size 23 color "#4b3420" yalign .5',b);self.assertIn('size 17 color "#765b3e" yalign .5',b)
+  self.assertIn('xalign 1.0 yalign .5 text_align 1.0',b)

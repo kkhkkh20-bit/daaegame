@@ -447,17 +447,32 @@ screen r13_book(target=None,present=False,hearing=False,called=False,purpose=Non
     # single big-picture view with the primary 「~에게 보여주기」; comparing is for reading only.
     default pair=None
     default pair_slot=1
+    # 2026-10-24 증거 서랍(v111): 회의·대화의 보여주기도 「이번 사건」이 먼저 열리고 「지난 사건」·「사람별」을 열 수 있다.
+    # 어느 자료가 다시 쓰이는지는 표시하지 않는다. 옛 이야기는 예전대로 「지난 사건」 묶음이 목록에서 빠진다.
+    default drawer="now"
+    default drawer_case=None
+    default drawer_gpage=0
+    default drawer_ipage=0
+    $ drawer_on=r13_drawer_active(archive)
     $ entries=r13_catalog_entries(archive and not present,hearing)
+    if drawer_on:
+        $ drawer_all=entries
+        $ drawer_view=r13_drawer_view(drawer,drawer_all,detail,drawer_case)
+        $ drawer_back=[k for k in (drawer_view[1] or ()) if k in R13_DRAWER_BACK]
+        $ entries=[k for k in (drawer_view[1] or ()) if k not in R13_DRAWER_BACK]
     $ entries=r13_present_entries(entries,target) if present else entries
     $ material_filter="all" if material_filter=="unread" or ((hearing or archive) and material_filter=="transfer") else material_filter
-    $ entries=r13_material_subset(entries,material_filter)
+    $ entries=entries if drawer_on else r13_material_subset(entries,material_filter)
     # 0.19.2: 보여줄 때는 단추 없이, 지금 상대(발언자)와 이어진 자료를 앞에 놓는다.
     if chip_person:
         $ entries=r13_record_related_first(entries,chip_person)
-    if not page_restored:
+    if drawer_on:
+        $ entries=drawer_back+entries
+    if not page_restored and not (drawer_on and drawer_view[0]=="groups"):
         $ page=r13_record_restore_page(entries,detail,page)
         $ page_restored=True
-    $ selected_record=r13_present_selection(entries,detail,page) if present else r13_record_selected(entries,detail,page)
+    $ selected_record=(r13_drawer_selected(entries,detail,page,present) if drawer_on else
+        (r13_present_selection(entries,detail,page) if present else r13_record_selected(entries,detail,page)))
     $ statement=r13_book_statement() if present and hearing else None
     $ day_span=r13_evidence_day_span(entries)
     $ purpose_text=R13_BOOK_PURPOSE.get(purpose)
@@ -467,11 +482,23 @@ screen r13_book(target=None,present=False,hearing=False,called=False,purpose=Non
     use r13_ink_record_shell((book_copy["title"] if present else "자료 기록"),r13_ev_record_tabs("r13_book",present),"all",
         (Return(False) if present or called else Hide("r13_book")),
         note=((statement[0]+"의 발언에 낼 자료" if statement else book_copy["note"]) if present else None))
-    use r13_ink_chips(r13_ev_filter_chips("r13_book",material_filter,not hearing and not archive,None,0,(archive if not present and (archive or r13_learning_archive_keys()) else None)))
-    use r13_evidence_browser(entries,selected_record,page,"r13_book",pair,pair_slot,archive and not present,view_context,("자료 %d개"%len(entries))+((" · "+day_span) if day_span else ""),
-        present,present_label,present_ok,Return(selected_record),(Return(False) if present or called else Hide("r13_book")),ready,statement,
-        (R13_NAMES.get(target,"상대")+"에게" if present and not statement and not purpose_text else None),
-        stop_label=book_copy["stop"],present_help=book_copy["help"])
+    if drawer_on:
+        use r13_ink_chips(r13_drawer_chips("r13_book",drawer,(False if not present and r13_learning_archive_keys() else None)))
+    else:
+        use r13_ink_chips(r13_ev_filter_chips("r13_book",material_filter,not hearing and not archive,None,0,(archive if not present and (archive or r13_learning_archive_keys()) else None)))
+    if drawer_on and drawer_view[0]=="groups":
+        use r13_drawer_groups_view(drawer,drawer_all,drawer_case,drawer_gpage,drawer_ipage,"r13_book",r13_drawer_header(drawer,drawer_all,drawer_view,drawer_case))
+        # 묶음을 고르는 동안에도 회의·대화를 그만둘 수 있게 「돌아가기」(또는 「선택 마치기」)는 늘 같은 자리에 둔다.
+        $ stop_h=r13_ev_button_height()
+        fixed:
+            xpos 920 ypos (R13_EV_BOTTOM-stop_h) xysize (296,stop_h)
+            use r13_control(book_copy["stop"],None,(Return(False) if present or called else Hide("r13_book")),enabled=ready,width=296,height=stop_h,label_size=r13_ev_label_size(book_copy["stop"],296),control_id="r13_ev_stop")
+    else:
+        use r13_evidence_browser(entries,selected_record,page,"r13_book",pair,pair_slot,archive and not present,view_context,
+            (r13_drawer_header(drawer,drawer_all,(drawer_view[0],entries),drawer_case) if drawer_on else ("자료 %d개"%len(entries))+((" · "+day_span) if day_span else "")),
+            present,present_label,present_ok,Return(selected_record),(Return(False) if present or called else Hide("r13_book")),ready,statement,
+            (R13_NAMES.get(target,"상대")+"에게" if present and not statement and not purpose_text else None),
+            stop_label=book_copy["stop"],present_help=book_copy["help"])
 
 screen r13_calendar_content():
     default week=min(1,(room13["day"]-1)//7)

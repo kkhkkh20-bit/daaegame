@@ -30,7 +30,7 @@ init 64 python:
             "dining": dict(art="assets/map-b/inn_dining.webp", box=(430,300,270,270), label=(565,548), z=10),
             "kitchen": dict(art="assets/map-b/inn_kitchen.webp", box=(775,300,270,270), label=(910,548), z=10),
             # 숨은 통로: 13호실과 임시 객실 사이, 방들 아래층(z5). 공개 전에는 아무것도 그리지 않는다.
-            "passage": dict(art="assets/map-b/inn_hidden_passage.webp", box=(652,103,160,160), label=(732,254), z=5),
+            "passage": dict(art="assets/map-b/inn_hidden_passage.webp", box=(652,103,160,160), label=(722,256), z=5),
             # 옛 시설(지하): 납품에 그림이 없다. 공개된 뒤에만 이름표 한 장을 지면 오른쪽 아래에 둔다.
             "ancient": dict(art=None, box=None, label=(1078,548), z=10),
         }, covers={}),
@@ -164,7 +164,9 @@ screen r13_map_b(region, selected, ready, map_hover, map_notice=None):
         add Transform(cover["art"], size=(cw, ch)) xpos cx ypos cy
     $ rows = r13_bmap_places(region)
     $ current = room13["location"]
-    for key, state in rows:
+    # 떠오른 스티커는 이웃 스티커(숨은 통로 위의 방 등)에 가리지 않게 맨 나중에 그린다.
+    $ draw_rows = [r for r in rows if r[0] not in (selected, map_hover)]+[r for r in rows if r[0] in (selected, map_hover)]
+    for key, state in draw_rows:
         $ place = spec["places"][key]
         $ t = r13_bmap_target(region, key)
         $ focused = state != "locked" and (key == selected or key == map_hover)
