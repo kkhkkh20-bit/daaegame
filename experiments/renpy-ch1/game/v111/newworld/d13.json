@@ -653,17 +653,16 @@
         "id": "NW_D13_SR02",
         "speaker": "너울",
         "kind": "dialogue",
-        "text": "시설에 드나든 사람이오. 굴돌과 같소. 이유 칸에 그렇게 적혀 있소.",
-        "expression": "neutral",
-        "when": "listed:resident_guldol"
+        "text": "시설에 드나든 사람이오. 이유 칸에 그렇게 적혀 있소.",
+        "expression": "neutral"
       },
       {
         "id": "NW_D13_SR03",
         "speaker": "너울",
         "kind": "dialogue",
-        "text": "시설에 드나든 사람이오. 이유 칸에 그렇게 적혀 있소.",
+        "text": "굴돌도 같은 이유로 올랐소.",
         "expression": "neutral",
-        "when": "guldol_not_listed"
+        "when": "listed:resident_guldol"
       },
       {
         "id": "NW_D13_SR04",
