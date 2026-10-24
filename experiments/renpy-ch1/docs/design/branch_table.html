@@ -42,7 +42,7 @@ footer{font-size:12.5px;color:var(--ink-2);border-top:1px solid var(--line);padd
 <div class="wrap">
 <header>
   <h1>다람탐정 분기표</h1>
-  <p class="lede">0.20.24 기준(2026-10-24 갱신). 누가 어디서 갈리는지, 무엇으로 정해지는지, 결과가 뒤에서 어떻게 쓰이는지를 한 곳에 모았다. 「현행」은 코드에서 확인한 사실, 「설계」는 아직 넣지 않은 계획이다.</p>
+  <p class="lede">0.20.25 기준(2026-10-24 갱신). 누가 어디서 갈리는지, 무엇으로 정해지는지, 결과가 뒤에서 어떻게 쓰이는지를 한 곳에 모았다. 「현행」은 코드에서 확인한 사실, 「설계」는 아직 넣지 않은 계획이다.</p>
   <div class="legend">
     <span><span class="chip ok">행동 판정</span> 앞선 행동으로 정해짐</span>
     <span><span class="chip warn">메뉴</span> 위기 직전에 고름(바꿀 대상)</span>
@@ -124,12 +124,12 @@ footer{font-size:12.5px;color:var(--ink-2);border-top:1px solid var(--line);padd
     <thead><tr><th>날</th><th>회의 · 쟁점</th><th>결과</th><th>지면 / 부분이면</th><th>이기면</th></tr></thead>
     <tbody>
     <tr><td class="day">1일</td><td><b>입구 회의</b><br>다람이 함께 들어갈 수 있는가</td><td>이김 · 짐</td><td>다람이 「외 한 명」으로 등록, 아빠는 일꾼 명단</td><td>방문객 다돌·동행 아동으로 등록</td></tr>
-    <tr><td class="day">3일</td><td><b>등 회의</b><br>3번 등의 돌을 꺼낸 사람은 누구인가</td><td>이김 · 부분 · 짐</td><td>짐: 톡 이송 명단. 부분: 톡은 무죄, 칼·판매·걸쇠·돌 중 못 밝힌 쟁점이 남음</td><td>톡 무죄. 실룩을 풀어 주면 4일 5번 등이 또 비고 밤이가 혐의를 더 받는다 / 너울에게 넘기면 실룩 명단</td></tr>
+    <tr><td class="day">3일</td><td><b>등 회의</b><br>3번 등의 돌을 꺼낸 사람은 누구인가</td><td>이김 · 부분 · 짐</td><td>짐: 톡 이송 명단 — 아빠가 「보호시설이 어디입니까」를 묻고 너울이 「겨울을 혼자 못 나는 사람을 돌보는 곳」이라 답한다(날짜는 말하지 않음) <span class="chip ok">0.20.25</span>. 부분: 톡은 무죄, 칼·판매·걸쇠·돌 중 못 밝힌 쟁점이 남음</td><td>톡 무죄. 실룩을 풀어 주면 4일 5번 등이 또 비고 밤이가 혐의를 더 받는다 / 너울에게 넘기면 실룩 명단</td></tr>
     <tr><td class="day">5일</td><td><b>초소 회의</b><br>초소에서 돌목을 문 사람은 밤이인가</td><td>이김 · 짐</td><td>밤이 이송 명단</td><td>밤이 무죄. 정답: 진술+천+겉옷+귀가 진술, <b>또는 진술+천+피코의 그림</b>(0.20.18). 3일 실룩을 풀어 준 판은 기회 4번</td></tr>
     <tr><td class="day">7일</td><td><b>불 회의</b><br>창고 문 앞에 불을 놓은 사람은 누구인가</td><td>이김 · 부분 · 짐</td><td>보리 명단(짐·부분 모두)</td><td>보리 무죄, 방화와 장작 절도를 나눔</td></tr>
     <tr><td class="day">10일</td><td><b>13호실 회의</b>(살인 경로)<br>13호실에서 부엉이에게 무슨 일이 있었나</td><td>이김 · 부분 · 짐</td><td>짐: 다람 명단</td><td>할머니 구금, 다람 풀려남</td></tr>
     <tr><td class="day">10일</td><td><b>기록 회의</b>(예방 경로)<br>엄마가 맡긴 기록을 누가 받아야 하는가</td><td>이김 · 부분 · 짐</td><td>짐: 부엉이 명단</td><td>가족이 기록을 받음 · 진엔딩 조건</td></tr>
-    <tr><td class="day">11일</td><td><b>가설 회의</b><br>사람이 무너지는 까닭은 무엇인가</td><td>이김 · 부분 · 짐</td><td>시설을 본 판에서 굴돌 명단</td><td>너울 장부를 온전히 얻음(13일) · 진엔딩 조건</td></tr>
+    <tr><td class="day">11일</td><td><b>가설 회의</b><br>사람이 무너지는 까닭은 무엇인가</td><td>이김 · 부분 · 짐</td><td>시설을 본 판에서 굴돌 명단. 회의 첫머리 판돌의 말이 앞 회의 결과로 갈린다 — 하나라도 이겼으면 「마을 일을 몇 번 가려 줬다」, 하나도 못 이겼으면 「회의마다 막혔다」 <span class="chip ok">0.20.25</span></td><td>너울 장부를 온전히 얻음(13일) · 진엔딩 조건</td></tr>
     <tr><td class="day">12일</td><td><b>수프 회의</b><br>아이들이 먹은 수프에 무엇이 들어갔나</td><td>이김 · 부분 · 짐</td><td>짐(파편): 나비 명단</td><td>선생님 처리 경로</td></tr>
     <tr><td class="day">13일</td><td><b>담요 회의</b><br>모과 씨가 판돌 씨를 기다린다는 말은 사실인가</td><td>이김 · 부분 · 짐</td><td>짐: 일부만 인계</td><td>전원 인계로 가는 길 · 진엔딩 조건</td></tr>
     <tr><td class="day">13일</td><td><b>피코 회의</b><br>3번 돌을 빼라고 시킨 사람은 누구인가</td><td>이김 · 짐</td><td>장부 없음 → 진엔딩 불가</td><td>너울 장부 확보</td></tr>
@@ -174,5 +174,21 @@ footer{font-size:12.5px;color:var(--ink-2);border-top:1px solid var(--line);padd
     </tbody></table></div>
 </section>
 
-<footer>출처: <code>experiments/renpy-ch1/game/room13_v111_days*.rpy</code>, <code>room13_v111_newworld_rules.rpy</code>(결말 판정), <code>room13_fork_screen.rpy</code>(회의 목록), 설계 문서 <code>docs/design/CHAIN_DESIGN.md</code>, <code>FUTURE_KNOWLEDGE_KEYS.md</code>. <code>EPISODES.md</code>, 분기 점검 도구 <code>dev/branch_audit.py</code>. 2026-10-24 갱신.</footer>
+<section id="pathlines">
+  <h2>5. 경로마다 맞춘 대사(0.20.25)</h2>
+  <p>처음부터 다시 읽은 검수에서, 어느 경로로 왔느냐에 따라 거짓이 되던 말을 고쳤다. 아래는 경로를 따지는 것만 추렸다. 전체 15건은 <code>docs/reviews/self-review-20261024/적용보고.md</code>.</p>
+  <div class="box"><table>
+    <thead><tr><th>날</th><th>자리</th><th>갈리는 것</th><th>맞춘 방식</th></tr></thead>
+    <tbody>
+    <tr><td class="day">3일</td><td>등 회의에 진 판</td><td>톡 명단(<code>lamp_lose</code>)</td><td>보호시설을 묻고 답하는 줄만 더함. 「간 사람은 안 돌아온다」는 5일 네로 말로 남겨 둔다</td></tr>
+    <tr><td class="day">7일</td><td>13호실의 부엉이</td><td>조건 없음(모든 갈래에서 나옴)</td><td>「주인장이 열어 주더군」. 쪽지를 부엉이가 썼다고 단정하지 않게 「자네가 든 쪽지의 13」으로</td></tr>
+    <tr><td class="day">11일</td><td>까로 없는 늦은 갈래의 지팡이</td><td><code>karo_absent</code></td><td>이 갈래에서는 아빠가 아랫길 문 안에 들어간 적이 없다 → 노인 언급을 빼고 「이름은 어디에도 없다」(12일 「이름 없는 표」와 이음)</td></tr>
+    <tr><td class="day">11일</td><td>가설 회의 첫머리 판돌</td><td>앞 회의(등·초소·불·13호실 또는 기록) 가운데 이긴 것이 있는지</td><td>새 조건 <code>town_won_before11</code> / <code>town_won_none_before11</code>로 두 갈래</td></tr>
+    <tr><td class="day">12일</td><td>서리의 병</td><td>예방 경로는 9일 학교 복도, 살인 경로는 10일 회관 복도에서 봄</td><td>「어제」 대신 「며칠 전 복도 끝에서」 — 두 경로 모두 맞음</td></tr>
+    <tr><td class="day">13일</td><td>엄마 이름이 명단에 오른 까닭</td><td>굴돌 명단(<code>listed:resident_guldol</code>) · 11일 할머니 이야기를 들었는지</td><td>「시설에 드나든 사람」. 굴돌이 오른 판에만 한 줄 더. 엄마는 할머니 이름 없이 「데려간 사람이 있었어요」(안 들은 판에 새 사실을 꺼내지 않음)</td></tr>
+    <tr><td class="day">14일</td><td>꼬미 추모</td><td>다람이 13일 수레로 떠났거나 자리에 없던 판</td><td>「다람이 날마다 닦았다」를 빼고 「창가 자리에 도토리 한 알」만</td></tr>
+    </tbody></table></div>
+</section>
+
+<footer>출처: <code>experiments/renpy-ch1/game/room13_v111_days*.rpy</code>, <code>room13_v111_newworld_rules.rpy</code>(결말 판정), <code>room13_fork_screen.rpy</code>(회의 목록), 설계 문서 <code>docs/design/CHAIN_DESIGN.md</code>, <code>FUTURE_KNOWLEDGE_KEYS.md</code>. <code>EPISODES.md</code>, 분기 점검 도구 <code>dev/branch_audit.py</code>. 검수 기록 <code>docs/reviews/self-review-20261024/</code>. 2026-10-24 갱신.</footer>
 </div>
