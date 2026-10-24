@@ -1,0 +1,158 @@
+{
+  "repository": "kkhkkh20-bit/daaegame",
+  "commit": "1a0fc74775514efb353b844e102034600389b6f2",
+  "tool": "built-in image_gen",
+  "items": [
+    {
+      "id": "buri",
+      "stem": "buri_clean_gears_A",
+      "label": "부리 · 톱니 부품 닦기",
+      "source": "room13-action-buri-action_1.webp",
+      "pose": "action_1",
+      "evidence": "experiments/renpy-ch1/game/room13_acting.rpy:280 r13_living_pose: (buri, workshop), period != 2. Static pose selection; actual runtime and specific dialogue unverified.",
+      "usage": "생활 동작, 생존 모습",
+      "source_path": "preview/room13-dev/game/assets/room13-action-buri-action_1.webp",
+      "source_local": "sources/room13-action-buri-action_1.webp",
+      "raw": "raw/buri_clean_gears_A.png",
+      "png": "png/buri_clean_gears_A.png",
+      "webp": "webp/buri_clean_gears_A.webp",
+      "raw_dimensions": [
+        1024,
+        1536
+      ],
+      "padded_dimensions": [
+        1088,
+        1600
+      ],
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha_and_visible_rgba_preserved": true,
+      "webp_lossless_verified": true,
+      "sha256_png": "28efa62867a81fd2debe157786b2dedcae8a5ea9a1122e20fe9b0c32e4207ede",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/room13-action-buri-action_1.webp",
+      "identity_validation": "Directly compared with approved B fullbody and batch03 delivered action: same species/costume."
+    },
+    {
+      "id": "buri",
+      "stem": "buri_inspect_watch_A",
+      "label": "부리 · 회중시계 검사",
+      "source": "room13-action-buri-action_2.webp",
+      "pose": "action_2",
+      "evidence": "experiments/renpy-ch1/game/room13_acting.rpy:280 r13_living_pose: (buri, workshop), period == 2. Static pose selection; actual runtime and specific dialogue unverified.",
+      "usage": "생활 동작, 생존 모습; 시계는 원화 소품이며 핵심 추리 접합물로 검증되지 않음",
+      "source_path": "preview/room13-dev/game/assets/room13-action-buri-action_2.webp",
+      "source_local": "sources/room13-action-buri-action_2.webp",
+      "raw": "raw/buri_inspect_watch_A.png",
+      "png": "png/buri_inspect_watch_A.png",
+      "webp": "webp/buri_inspect_watch_A.webp",
+      "raw_dimensions": [
+        1024,
+        1536
+      ],
+      "padded_dimensions": [
+        1088,
+        1600
+      ],
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha_and_visible_rgba_preserved": true,
+      "webp_lossless_verified": true,
+      "sha256_png": "db545c8b0757cfc065142dfded43e89df06ae359a5f592bf3b4818d23b908db2",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/room13-action-buri-action_2.webp",
+      "identity_validation": "Directly compared with approved B fullbody and batch03 delivered action: same species/costume."
+    },
+    {
+      "id": "resident_librarian",
+      "stem": "librarian_tie_ledgers_A",
+      "label": "사서 · 장부 묶음 끈 매기",
+      "source": "room13-action-resident_librarian-event_ledgertie.webp",
+      "pose": "event_ledgertie",
+      "evidence": "experiments/renpy-ch1/game/systems/room13_event_offers.rpy:33 R13_OFFER_ACTORS r13_b3_pages -> resident_librarian event_ledgertie. Event registration confirmed; visibility branches/runtime unverified.",
+      "usage": "이벤트용 동작, 생존 모습; 일반 책 묶기 시각이나 사건 맥락은 유지",
+      "source_path": "preview/room13-dev/game/assets/room13-action-resident_librarian-event_ledgertie.webp",
+      "source_local": "sources/room13-action-resident_librarian-event_ledgertie.webp",
+      "raw": "raw/librarian_tie_ledgers_A.png",
+      "png": "png/librarian_tie_ledgers_A.png",
+      "webp": "webp/librarian_tie_ledgers_A.webp",
+      "raw_dimensions": [
+        1312,
+        1199
+      ],
+      "padded_dimensions": [
+        1376,
+        1263
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_and_visible_rgba_preserved": true,
+      "webp_lossless_verified": true,
+      "sha256_png": "231212afee0cb9896b9834d5c650f44c5040e3dce168da4ead405d5c8affbb45",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/room13-action-resident_librarian-event_ledgertie.webp",
+      "identity_validation": "Directly compared with batch02 latest version1 delivered librarian_bookpaper: same snow leopard/cape/burgundy dress/apron/spotted tail. No separate B ref."
+    },
+    {
+      "id": "resident_teacher",
+      "stem": "teacher_write_attendance_A",
+      "label": "선생님 · 출석부 쓰기",
+      "source": "dialogue-pose-source/resident_teacher/write_attendance/840.webp",
+      "local": "teacher_write_attendance.webp",
+      "pose": "write_attendance",
+      "evidence": "experiments/renpy-ch1/game/systems/room13_ep_story.rpy:45-47 ep5:st_teacher_after days(13,14), need teacher_alive -> pose write_attendance. Also room13_ep5_soup.rpy ws:teacher:count dynamic:418. Static script verified; runtime unverified.",
+      "usage": "대본 장면 연결 동작, 생존 모습. teacher_alive 조건 존중",
+      "source_path": "preview/room13-dev/game/assets/dialogue-pose-source/resident_teacher/write_attendance/840.webp",
+      "source_local": "sources/teacher_write_attendance.webp",
+      "raw": "raw/teacher_write_attendance_A.png",
+      "png": "png/teacher_write_attendance_A.png",
+      "webp": "webp/teacher_write_attendance_A.webp",
+      "raw_dimensions": [
+        1059,
+        1485
+      ],
+      "padded_dimensions": [
+        1123,
+        1549
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_and_visible_rgba_preserved": true,
+      "webp_lossless_verified": true,
+      "sha256_png": "fd63b72b13e292715b4c4fff2308f1268e8b65af9bad50f5e62d843a288369a4",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/dialogue-pose-source/resident_teacher/write_attendance/840.webp",
+      "identity_validation": "Directly compared with approved B fullbody and batch03 delivered action: same species/costume."
+    }
+  ],
+  "excluded": [
+    {
+      "id": "resident_piko",
+      "source": "preview/room13-dev/game/assets/room13-action-resident_piko-event_paintwipe.webp",
+      "reason": "Event source is peacock; approved B and batch01 delivered painting assets are orange long-haired animal. Species mismatch. Not generated; no inference about age or integration status."
+    },
+    {
+      "id": "resident_mungchi",
+      "source": "preview/room13-dev/game/assets/room13-action-resident_mungchi-event_handrub.webp",
+      "reason": "Event source is panda; batch01 delivered box-sorting asset is moose. Species mismatch. Generated candidate quarantined and excluded from delivery. No inference about age or integration status."
+    }
+  ],
+  "processing": [
+    "32px transparent padding each side, no resize/crop/alpha threshold.",
+    "Raw alpha including254 and every visible RGBA preserved exactly. Alpha0 hidden RGB may normalize.",
+    "Lossless WebP exact alpha and visible RGBA verified.",
+    "Bodies and all props inspected against sources; solid-blue QA passed.",
+    "No game code/deployment change."
+  ],
+  "limitations": [
+    "Sources and script evidence pinned to commit above; latest Claude changes not audited.",
+    "AI style transfer, not exact source pixels; prop markings are not authoritative clues or puzzle-fitting geometry.",
+    "No runtime/placement/scale integration test.",
+    "Teacher script includes teacher_alive condition; librarian event registration is scene-specific.",
+    "New actions differ from56 prior delivered actions; parent confirmed222 dialogue portraits are six emotions only, no write_attendance."
+  ]
+}
