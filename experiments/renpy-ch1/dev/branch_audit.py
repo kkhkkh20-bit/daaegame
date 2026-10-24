@@ -1870,17 +1870,21 @@ def main(argv=None):
         return 2
     days = [int(x) for x in a.day.split(',')] if a.day else None
     res = audit(days=days)
+    if a.write:
+        # 출력을 head 등으로 잘라 보더라도 보고서는 남게 먼저 쓴다.
+        p = write_md(res, days, ROOT / 'docs/reviews/branch-audit' / (datetime.date.today().strftime('%Y%m%d') + '.md'))
+        print('썼다: %s' % p.relative_to(ROOT), file=sys.stderr)
     if a.json:
         print(json.dumps(dict(counts=counts(res['findings']), findings=res['findings'],
                               unknown_conditions=dict(res['unknown_conds']),
                               unreached_labels=res['unreached']), ensure_ascii=False, indent=1))
     else:
         print_text(res, days)
-    if a.write:
-        p = write_md(res, days, ROOT / 'docs/reviews/branch-audit' / (datetime.date.today().strftime('%Y%m%d') + '.md'))
-        print('\n썼다: %s' % p.relative_to(ROOT), file=sys.stderr)
     return 0
 
 
 if __name__ == '__main__':
-    sys.exit(main())
+    try:
+        sys.exit(main())
+    except BrokenPipeError:
+        sys.exit(0)  # head 등으로 잘라 볼 때
