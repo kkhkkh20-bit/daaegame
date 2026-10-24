@@ -353,7 +353,8 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
             $ drawer_view=r13_drawer_view(drawer,drawer_all,detail,drawer_case)
             $ header=r13_drawer_header(drawer,drawer_all,drawer_view,drawer_case)
             use r13_ink_record_shell("기록",r13_ev_record_tabs(_scope),"all",(close_action or Hide("r13_records")))
-            use r13_ink_chips(r13_drawer_chips(_scope,drawer,(False if r13_learning_archive_keys() else None)))
+            $ drawer_chips=r13_drawer_chips(_scope,drawer,(False if r13_learning_archive_keys() else None))
+            use r13_ink_chips(drawer_chips)
             if drawer_view[0]=="groups":
                 use r13_drawer_groups_view(drawer,drawer_all,drawer_case,drawer_gpage,drawer_ipage,_scope,header)
             else:
@@ -363,6 +364,8 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
                     $ page_restored=True
                 $ selected_record=r13_drawer_selected(entries,detail,page)
                 use r13_evidence_browser(entries,selected_record,page,_scope,pair,pair_slot,False,("records",),header)
+            # 2026-10-24 수첩 목표 칸(systems/room13_goal_strip.rpy): 탭 줄과 칩 사이 빈자리. 펼친 판이 위에 오도록 맨 끝에 둔다.
+            use r13_goal_strip(r13_ev_tab_x("기록")+(len(r13_ev_record_tabs(_scope))-1)*R13_EV_TAB_PITCH+88,r13_ev_chip_boxes(drawer_chips)[0][0])
         else:
             $ entries=r13_material_subset(r13_catalog_entries(archive,shelf=shelf and not archive),material_filter)
             if not page_restored:
