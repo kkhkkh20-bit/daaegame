@@ -18,8 +18,8 @@ class VisualCorrection(unittest.TestCase):
   self.assertEqual([(x[0],x[2:]) for x in normal],[(x[0],x[2:]) for x in selected]);self.assertNotEqual(normal,selected)
  def test_option_states_share_frame(self):
   s=(ROOT/'game/screens.rpy').read_text().split('style r13opt_button is button:',1)[1].split('style r13opt_button_text',1)[0]
-  # 0.19.98 night settings: every state is one of the shared night-button frames.
-  self.assertNotIn('R13InkPanel',s);self.assertEqual(s.count('assets/ui-night/opt_btn_'),5)
+  # B settings: all five states retain the same cropped frame geometry.
+  self.assertNotIn('R13InkPanel',s);self.assertEqual(s.count('assets/ui-b-options/b_opt_choice'),5);self.assertEqual(s.count('Crop((16,16,190,52)'),5);self.assertEqual(s.count('),24,16)'),5)
  def test_preview_not_stretched_and_font_unchanged(self):
   s=(ROOT/'game/screens.rpy').read_text();self.assertIn('add typing_preview\n',s);self.assertNotIn('add typing_preview xsize',s)
   p=(ROOT/'game/room13_typing_preview.rpy').read_text();self.assertIn('r13_ui_font()',p);self.assertIn('font=signature[2]',p)
