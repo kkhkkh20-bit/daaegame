@@ -1288,6 +1288,8 @@ label r13_v111_trial_hint_stone:
     jump r13_v111_trial_stone
 
 label r13_v111_restore_route:
+    # 2026-10-24 동기 줄 4차: 회의가 끝난 공방에서 톡과 까로의 축 이야기(풀려난 판 / 명단에 오른 판).
+    call r13_lines(r13_nw_block('tok_axle3'),'nw:tok_axle3')
     if r13_v111_value('public_stones')=='returned_uninstalled':
         jump r13_v111_restore_input
     jump r13_v111_restore_defer

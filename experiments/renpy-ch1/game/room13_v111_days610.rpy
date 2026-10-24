@@ -411,6 +411,13 @@ label r13_v111_sleep6_input:
 
 label r13_v111_sleep6_done:
     $ r13_v111_set("day",7)
+    jump r13_v111_morning7
+
+# 2026-10-24 동기 줄 4차: 6일 밤은 학교에서 잤다. 빨래터(회의 무대)로 가기 전 학교 아침에 나비·다람과 장작 이야기.
+label r13_v111_morning7:
+    $ r13_v111_scene('MS14_D07_S01')
+    $ r13_edit(period=0)
+    call r13_lines(r13_nw_block('wood_morning7'),'nw:wood_morning7')
     jump r13_v111_day7
 
 label r13_v111_day7:

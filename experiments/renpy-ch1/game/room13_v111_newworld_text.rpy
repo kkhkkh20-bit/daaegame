@@ -223,6 +223,12 @@ init 319 python:
         "granny_held_win":lambda:r13_v111_value("OWL_ALIVE") is False and r13_v111_value("meeting:room13")=="win",
         "granny_room13_partial":lambda:r13_v111_value("OWL_ALIVE") is False and r13_v111_value("meeting:room13")=="partial",
         "granny_room13_lose":lambda:r13_v111_value("OWL_ALIVE") is False and r13_v111_value("meeting:room13")=="lose",
+        # 2026-10-24 동기 줄 4차(문구시안.md): 3일 회의에서 톡이 풀려난 판(이김·부분). 짐은 listed:resident_tok 이 받는다.
+        "tok_freed3":lambda:r13_v111_value("meeting:lamp") in ("win","partial") and r13_v111_value("listed:resident_tok") is not True,
+        # 13일 수레 앞: 다람이 곁에 있고, 방금까지 수레에 묶여 있던 판(listed:daram)이 아닐 때만 빈 칸을 묻는다.
+        "daram_watching13":lambda:r13_v111_actor_ready("daram") and r13_v111_value("listed:daram") is not True,
+        # 14일 아침: 엄마와 다람이 함께 학교에 있을 때만 셋이 말한다.
+        "mom_daram_ready14":lambda:r13_v111_actor_ready("mom") and r13_v111_actor_ready("daram"),
     }
     for _nw_who in ("resident_piko","kid_kkomi","resident_owlgp","resident_nero","kid_dodam","neoul","resident_momo","v111_lowerroad_elder"):
         R13_NW_WHEN["dead:"+_nw_who]=(lambda w=_nw_who:w in r13_nw_dead())
