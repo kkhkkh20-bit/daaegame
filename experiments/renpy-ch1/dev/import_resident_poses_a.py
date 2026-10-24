@@ -188,6 +188,9 @@ def build_one(entry):
             fields["anchors"] = {n: rel_point(p, c) for n, p in spec["anchors"].items()}
         if spec.get("foreground_parts"):
             fields["foreground_parts"] = [[rel_point(p, c) for p in poly] for poly in spec["foreground_parts"]]
+        if s["person"] == "granny" and s["pose"] == "living_keyledger":
+            # 여관 접수대 장부 위에 책 아래 모서리를 놓는 좌표(systems/room13_spatial_contacts.rpy, 옛 그림 220,355)
+            fields["register_contact"] = rel_point([220, 355], c)
         if s["kind"] == "meeting":
             fields = dict(file=out_rel, crop=crop, source_sha256=sha, resident_pose_a=True)
         row = dict(kind=s["kind"], person=s["person"], pose=s["pose"], old_file=old_file, fields=fields)
