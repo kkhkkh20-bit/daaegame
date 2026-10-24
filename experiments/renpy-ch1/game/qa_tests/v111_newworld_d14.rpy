@@ -60,7 +60,7 @@ testcase v111_nw_d14_altar_lost:
     run Function(qa_nw_day14)
     run Function(r13_edit,location="gate")
     run SetVariable("v111_last_presented",["V111:E01"])
-    run Function(r13_v111_set,"tries:altar",R13_NW_TRIES-1)
+    run Function(r13_v111_set,"tries:altar",r13_nw_tries_max("altar")-1)
     run Jump("r13_v111_altar1_wrong14")
     click pos (900,600) until "안에서 직접 듣는다" timeout 120
     assert eval (r13_v111_value("meeting:altar")=="lose" and qa_nw_seen("다음 겨울에 다시 정하겠소") and qa_nw_seen("숫자를 보시오"))

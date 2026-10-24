@@ -150,6 +150,7 @@ label r13_v111_gate_original_out:
     jump r13_v111_gate_investigate
 
 label r13_v111_gate_investigate:
+    call r13_nw_wrong_thought
     call r13_v111_travel('gate','gate_investigate')
     call r13_v111_wait('gate_investigate')
     $ v111_answer=_return
@@ -240,7 +241,7 @@ label r13_v111_gate_number:
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D01_S03_L0024']), 'v111:gate_number:MS14_D01_S03_L0024')
     # New world (event 01, plan A): a half presentation gets its own hint once, but it uses
-    # one of the meeting's chances (R13_NW_TRIES) like any wrong answer (review 2026-10-22).
+    # one of the meeting's chances (r13_nw_tries_max) like any wrong answer (review 2026-10-22).
     $ r13_v111_set('gate_hardened',True)
     if r13_nw_retry('gate'):
         jump r13_v111_gate_investigate
@@ -1074,8 +1075,13 @@ label r13_v111_trial_sale_ok:
     jump r13_v111_trial_knife
 
 label r13_v111_trial_knife:
+    call r13_nw_wrong_thought
+    $ v111_claim='menu:trial_knife'
     $ v111_menu_owner='trial_knife'
-    $ v111_menu=[('안쪽 파편과 칼끝을 대조한다',0) for _ in [0] if r13_v111_value('silluk_knife_comparison_consent')==True and r13_v111_owned('E32')] + [('칼 모양만으로 지목한다',1) for _ in [0] if True] + [('자료를 다시 본다',2) for _ in [0] if True]
+    # 2026-10-24 지시서 01 1번 (MEETING_RULES_V2.md 1장 2번 「회의는 언제나 깰 수 있다」): 정답 보기는 칼 대조
+    # 동의·파편 소지와 상관없이 늘 보인다. 예전에는 동의가 없으면 오답과 「자료를 다시 본다」만 남아 이길 수 없었다.
+    # 실룩은 이 회의 자리에서 아빠가 다시 청하자 칼을 내보인다(MS14_D03_S05_L0012~L0014).
+    $ v111_menu=[('안쪽 파편과 칼끝을 대조한다',0)] + [('칼 모양만으로 지목한다',1) for _ in [0] if True] + [('자료를 다시 본다',2) for _ in [0] if True]
     $ v111_answer=renpy.display_menu(v111_menu)
     if v111_answer==0:
         jump r13_v111_knife_fit

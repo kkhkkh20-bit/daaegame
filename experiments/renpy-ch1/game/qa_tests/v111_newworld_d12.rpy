@@ -34,7 +34,7 @@ testcase v111_nw_d12_soup_list_partial:
     run Function(qa_nw_day12)
     run Function(r13_v111_set,"teacher_confessed",True)
     run SetVariable("v111_last_presented",["V111:E01"])
-    run Function(r13_v111_set,"tries:soup",R13_NW_TRIES-1)
+    run Function(r13_v111_set,"tries:soup",r13_nw_tries_max("soup")-1)
     run Jump("r13_v111_list_wrong12")
     click pos (900,600) until "돌목에게 감독을 맡긴다" timeout 150
     assert eval (r13_v111_value("meeting:soup")=="partial" and not r13_v111_value("transfer_list_secured"))
@@ -60,7 +60,7 @@ testcase v111_nw_d12_soup_lost_nabi:
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day12,"premeal_stopped")
     run SetVariable("v111_last_presented",["V111:E01"])
-    run Function(r13_v111_set,"tries:soup",R13_NW_TRIES-1)
+    run Function(r13_v111_set,"tries:soup",r13_nw_tries_max("soup")-1)
     run Jump("r13_v111_fragment_wrong12")
     click pos (900,600) until screen "r13_hub" timeout 150
     assert eval (r13_v111_value("meeting:soup")=="lose" and r13_v111_value("listed:nabi") is True and not r13_v111_value("teacher_confessed"))

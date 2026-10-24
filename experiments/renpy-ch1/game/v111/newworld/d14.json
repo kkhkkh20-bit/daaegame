@@ -872,6 +872,62 @@
         "expression": "anxious"
       },
       {
+        "id": "NW_D14_S03_P01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "그래서 그 밤, 계단 아래서 도토 씨를 부르셨습니까?",
+        "expression": "neutral",
+        "when": "granny_held_win"
+      },
+      {
+        "id": "NW_D14_S03_P02",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "도토가 그 방에 있으면 난로를 들여다봐요. 돌 갈아 넣는 게 그 애 일이니까. 그래서 떼어 놨어요. 그 노인 혼자, 그 불 곁에 밤새 있게.",
+        "expression": "anxious",
+        "when": "granny_held_win"
+      },
+      {
+        "id": "NW_D14_S03_P03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "그런데 기다리지 않고, 통로로 직접 들어가셨습니다.",
+        "expression": "neutral",
+        "when": "granny_held_win"
+      },
+      {
+        "id": "NW_D14_S03_P04",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "아이 비명이 났어요. 문은 안에서 걸려 있었고요. 들어가 보니 아이 손에 촛대가 있었어요.",
+        "expression": "anxious",
+        "when": "granny_held_win"
+      },
+      {
+        "id": "NW_D14_S03_P04B",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "……회관에서 한 말 그대로예요. 아이 손에 촛대가 있으면, 아무도 늙은이를 안 봐요.",
+        "expression": "anxious",
+        "when": "granny_held_win"
+      },
+      {
+        "id": "NW_D14_S03_P05",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "할머니 핀과 목도리 조각이 감긴 그 윗조각은, 왜 방에 두고 나오셨습니까?",
+        "expression": "neutral",
+        "when": "granny_held_win"
+      },
+      {
+        "id": "NW_D14_S03_P06",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "문틀이 우는 소리가 났어요. 나비가 밖에서 문을 받치고 있었으니까. 곧 열릴 것 같아서…… 집어 들 틈이 없었어요.",
+        "expression": "anxious",
+        "when": "granny_held_win"
+      },
+      {
         "id": "NW_D14_S03_A08",
         "speaker": "아빠",
         "kind": "dialogue",
@@ -1159,7 +1215,7 @@
       "name": "제단 쇠의 공방 표식",
       "kind": "물증",
       "variants": {
-        "observed": "제단의 고리 달린 쇠 안쪽에 공방 표식이 있다. 바둑이: 4년 전 공방 장부에 ‘촌장 댁, 고리 달린 쇠 넷’이 적혔고, 자기가 산길 끝까지 날랐다."
+        "observed": "제단의 고리 달린 쇠 안쪽에 공방 표식이 있다. 무슨 표식이냐고 묻자 바둑이는 「그 표식은…… 나중에 말씀드리겠습니다」라고만 했다."
       }
     },
     "NW_BURNT_PAGE": {
@@ -1379,15 +1435,33 @@
         "id": "NW_A3_W01",
         "speaker": "아빠",
         "kind": "dialogue",
-        "text": "쇠 안쪽에 공방 표식이 있습니다. 4년 전 공방 장부에 ‘촌장 댁, 고리 달린 쇠 넷’이라고 적혀 있고요.",
-        "expression": "neutral"
+        "text": "쇠 안쪽에 공방 표식이 있습니다. 너울 씨 장부 상자 맨 아래, 4년 전 공방 인수장 사본에 ‘촌장 댁, 고리 달린 쇠 넷’이라고 적혀 있고요.",
+        "expression": "neutral",
+        "when": "has_ledger"
+      },
+      {
+        "id": "NW_A3_W01N",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "쇠 안쪽에 공방 표식이 있습니다. ……바둑이 씨. 제단에서 이 표식은 나중에 말씀하겠다고 하셨지요. 지금 말씀해 주십시오.",
+        "expression": "neutral",
+        "when": "no_ledger"
       },
       {
         "id": "NW_A3_W02",
         "speaker": "바둑이",
         "kind": "dialogue",
         "text": "제가 날랐습니다. 산길 끝까지.",
-        "expression": "neutral"
+        "expression": "neutral",
+        "when": "has_ledger"
+      },
+      {
+        "id": "NW_A3_W02N",
+        "speaker": "바둑이",
+        "kind": "dialogue",
+        "text": "4년 전, 공방에서 받아 온 쇠입니다. 인수장에는 ‘촌장 댁, 고리 달린 쇠 넷’이라고 적었습니다. 제가 날랐습니다. 산길 끝까지.",
+        "expression": "neutral",
+        "when": "no_ledger"
       },
       {
         "id": "NW_A3_W03",
@@ -1427,7 +1501,14 @@
         "id": "NW_A4_W02",
         "speaker": "아빠",
         "kind": "dialogue",
-        "text": "4년 전 장부를 보면 그해 돌을 가장 많이 받은 집은 촌장님 댁이었습니다. 달래가 먼저 무너진 건 그 집 불 곁에서 지냈기 때문입니다.",
+        "text": "너울 씨 장부 상자의 4년 전 집별 배급 줄을 보면, 맨 윗칸이 촌장님 댁입니다. 그해 돌을 가장 많이 받은 집이요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_A4_W02B",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "달래가 먼저 무너진 건 그 집 불 곁에서 지냈기 때문입니다.",
         "expression": "neutral"
       },
       {

@@ -536,6 +536,8 @@ label r13_v111_hypothesis11:
     jump r13_v111_hyp0_menu11
 
 label r13_v111_hyp0_menu11:
+    call r13_nw_wrong_thought
+    $ v111_claim='menu:hyp0'
     menu:
         '야생화는 옮는 병이다':
             jump r13_v111_hyp0_sick11
@@ -569,7 +571,9 @@ label r13_v111_hyp0_won11:
     jump r13_v111_hyp1_q11
 
 label r13_v111_hyp1_q11:
+    call r13_nw_wrong_thought
     call r13_lines(r13_nw_block('hyp1_q11'),'nw:hyp1_q11')
+    $ v111_claim='menu:hyp1'
     menu:
         '만지는 것보다 곁에서 오래 지내는 게 문제다':
             jump r13_v111_hyp1_reason11
@@ -608,7 +612,9 @@ label r13_v111_hyp1_won11:
     jump r13_v111_hyp2_q11
 
 label r13_v111_hyp2_q11:
+    call r13_nw_wrong_thought
     call r13_lines(r13_nw_block('hyp2_q11'),'nw:hyp2_q11')
+    $ v111_claim='menu:hyp2'
     menu:
         '켜지 않고 쌓아 둔 돌은 아무 해가 없다':
             jump r13_v111_hyp2_badreason11
@@ -647,7 +653,9 @@ label r13_v111_hyp2_won11:
     jump r13_v111_hyp3_q11
 
 label r13_v111_hyp3_q11:
+    call r13_nw_wrong_thought
     call r13_lines(r13_nw_block('hyp3_q11'),'nw:hyp3_q11')
+    $ v111_claim='menu:hyp3'
     menu:
         '요즘 사람들이 약해졌다':
             jump r13_v111_hyp3_badreason11
@@ -686,7 +694,9 @@ label r13_v111_hyp3_won11:
     jump r13_v111_hyp4_q11
 
 label r13_v111_hyp4_q11:
+    call r13_nw_wrong_thought
     call r13_lines(r13_nw_block('hyp4_q11'),'nw:hyp4_q11')
+    $ v111_claim='menu:hyp4'
     menu:
         '아이 방에도 아르카등이 밤새 켜져 있었다':
             jump r13_v111_hyp4_reason11
@@ -725,7 +735,9 @@ label r13_v111_hyp4_won11:
     jump r13_v111_hyp5_q11
 
 label r13_v111_hyp5_q11:
+    call r13_nw_wrong_thought
     call r13_lines(r13_nw_block('hyp5_q11'),'nw:hyp5_q11')
+    $ v111_claim='menu:hyp5'
     menu:
         '한 방의 돌이 바뀌자 한 사람이 한 저녁 사이에 무너졌다' if r13_v111_value('OWL_ALIVE') is False:
             jump r13_v111_hyp5_reason11

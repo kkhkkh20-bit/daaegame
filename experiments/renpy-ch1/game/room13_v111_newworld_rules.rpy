@@ -113,16 +113,20 @@ init 318 python:
     def r13_v111_proof_chances(key):
         meeting=R13_PROOF_MEETING.get(key)
         if not meeting or r13_v111_value("meeting:"+meeting) is not None:return None
-        left=max(0,R13_NW_TRIES-(r13_v111_value("tries:"+meeting) or 0))
+        most=r13_nw_tries_max(meeting)
+        left=max(0,most-(r13_v111_value("tries:"+meeting) or 0))
         # 0.20.7 (play review days 2-3): a wrong answer now settles the meeting; say so.
-        return "남은 기회 %d / %d"%(left,R13_NW_TRIES)+(" · 이번이 마지막" if left==1 else "")
+        return "남은 기회 %d / %d"%(left,most)+(" · 이번이 마지막" if left==1 else "")
+    def r13_v111_proof_sets(key,correct):
+        return [set("V111:"+k for k in need) for need in [tuple(correct)]+list(R13_PROOF_ALTERNATES.get(key,()))]
     def r13_v111_proof_accepts(key,correct,given):
+        # 2026-10-24 지시서 01: 정답 세트 하나를 다 갖추고, 나머지가 다른 정답 세트나 덧붙임에 든 자료뿐이면 받는다.
+        # 예전에는 세트마다 따로 견줘서 13호 3번(구리선)의 두 세트를 함께 내면 틀렸고, 「맞는 근거는 남겨 두었다」를
+        # 믿고 그대로 다시 내도 또 틀렸다. 두 세트는 같은 사실(핀 수선 출처)을 다른 쪽에서 짚을 뿐이라 함께 내도 맞다.
         given=set(given or ())
-        extra=set("V111:"+k for k in R13_PROOF_EXTRAS.get(key,()))
-        for need in [tuple(correct)]+list(R13_PROOF_ALTERNATES.get(key,())):
-            need=set("V111:"+k for k in need)
-            if need<=given<=need|extra:return True
-        return False
+        sets=r13_v111_proof_sets(key,correct)
+        allowed=set().union(*sets)|set("V111:"+k for k in R13_PROOF_EXTRAS.get(key,()))
+        return any(need<=given for need in sets) and given<=allowed
 
     # 0.20.6 (owner day-1 play: "인정받은 부분을 남겨 두기"): after a wrong answer the records that
     # belong to an accepted set stay on the table; only the others are taken back. Chances and the
@@ -130,6 +134,12 @@ init 318 python:
     def r13_v111_proof_kept(key,correct,given):
         sets=[set(correct)]+[set(a) for a in R13_PROOF_ALTERNATES.get(key,())]
         keep=set().union(*sets)
+        # 2026-10-24 지시서 01 (소유자 결정 6 「전부 내기」 막기): 가진 자료를 다 내면 정답 쪽만 남아 다음 제출로
+        # 풀렸다(회의 11개 중 8개). 덧붙임을 빼고 센 자료 수가 정답이 받아 줄 수 있는 수(모든 정답 세트의 합)보다
+        # 많으면 아무것도 남기지 않는다. 상한은 화면에 보이지 않는다 — 보이면 정답 개수가 드러난다.
+        extra=set(R13_PROOF_EXTRAS.get(key,()))
+        counted=[k for k in (given or ()) if not (isinstance(k,str) and k.startswith("V111:") and k[5:] in extra)]
+        if len(counted)>len(keep-extra):return []
         return [k for k in (given or ()) if isinstance(k,str) and k.startswith("V111:") and k[5:] in keep]
 
     # Half presentation (plan 7-2): some of the right records, none wrong.
@@ -181,23 +191,64 @@ init 318 python:
         return all(r13_v111_value("meeting:"+m)=="win" for m in ("records","hypothesis","blanket","altar"))
 
     # Chances per meeting (owner 2026-10-22: three, then five "so the player can keep deducing").
-    # A wrong answer shows the rebuttal and costs a chance; the third wrong answer stands.
-    R13_NW_TRIES=5  # owner 2026-10-22: five per meeting (was three)
+    # A wrong answer shows the rebuttal and costs a chance; the wrong answer that uses the last chance stands.
+    # 2026-10-24 소유자 결정 5 (docs/reviews/meeting-balance-20261024/기회수_분석.md 5장 B안): 같은 다섯 번이
+    # 쟁점 하나짜리 회의는 너무 쉽게, 11일 가설(결정점 11자리)은 너무 어렵게 만들었다. 회의별 기회 = 쟁점 수 + 2
+    # (최소 3), 11일 가설만 결정점 수 + 2 = 13. 표에 없는 회의는 예전 값 R13_NW_TRIES 를 쓴다.
+    R13_NW_TRIES=5
+    R13_NW_TRIES_BY_MEETING=dict(gate=3,gate_post=3,fire=4,records=4,blanket=4,piko=4,soup=5,altar=6,lamp=7,room13=7,hypothesis=13)
+    def r13_nw_tries_max(meeting):
+        return R13_NW_TRIES_BY_MEETING.get(meeting,R13_NW_TRIES)
     def r13_nw_tries_left(meeting):
-        return max(0,R13_NW_TRIES-(r13_v111_value("tries:"+meeting) or 0))
+        return max(0,r13_nw_tries_max(meeting)-(r13_v111_value("tries:"+meeting) or 0))
     def r13_nw_retry(meeting,correct=None,note=None):
         """True (and one chance used) when this wrong answer may be tried again."""
         if r13_v111_value("meeting:"+meeting) is not None:return False
         used=(r13_v111_value("tries:"+meeting) or 0)+1
         r13_v111_set("tries:"+meeting,used)
-        left=R13_NW_TRIES-used
+        left=r13_nw_tries_max(meeting)-used
         if left<=0:
             renpy.notify("잘못된 제출로 기회 1회 사용 · 남은 기회 0번.")
+            r13_nw_wrong_queue(meeting,True)
             return False
         kept=bool((store.room13.get("arguments") or {}).get(getattr(store,"v111_claim",None) or ""))
         hint=note if (note and correct and r13_nw_half(correct)) else ("맞는 근거는 남겨 두었다." if kept else "맞지 않는다.")
         renpy.notify("기회 1회 사용 · 남은 기회 %d번. %s"%(left,hint))
+        r13_nw_wrong_queue(meeting,False)
         return True
+
+    # 2026-10-24 지시서 01 4번 (MEETING_RULES_V2.md 6장 1·2번, 소유자 「증거는 모였다는 걸 알려 주면 좋고」):
+    # 틀린 뒤 반박을 듣고 나서 아빠 속말 한 줄. 같은 쟁점에서 틀린 횟수 1 / 2 / 3번째부터 문구가 다르다.
+    # 쟁점별 문구는 아직 비어 있다(다음 지시서에서 채운다). 비어 있으면 기본 문구를 쓴다.
+    # 자료 이름·정답은 넣지 않는다. 2번째는 상대 주장의 한 구절, 3번째부터는 자료의 종류까지만.
+    #   형식: R13_NW_WRONG_THOUGHTS["<쟁점 키>"]={1:"...",2:"...",3:"..."}
+    #   쟁점 키 = 증명 키(r13_v111_proof 의 첫 인자), 선택지 쟁점은 "menu:<이름>"(3일 칼 trial_knife, 11일 hyp0~hyp5).
+    # 기회를 다 쓴 오답 뒤에는 회의마다 한 번 「다 있었다」 줄을 보인다.
+    # 보이는 자리: 증명 화면에 다시 들어갈 때, 선택지 쟁점의 질문 앞(label r13_nw_wrong_thought),
+    # 기회를 다 쓴 줄은 그 뒤 처음 나오는 대사 묶음 끝(r13_v111_lines·r13_nw_block 이 덧붙인다).
+    R13_NW_WRONG_DEFAULT="근거는 다 손에 있다. 내가 엉뚱한 것끼리 묶었다."
+    R13_NW_WRONG_FINAL="다 있었다. 그런데 이어 붙이지 못했다."
+    R13_NW_WRONG_THOUGHTS={}
+    def r13_nw_wrong_issue():
+        claim=getattr(store,"v111_claim",None) or ""
+        return claim[5:] if claim.startswith("v111:") else claim
+    def r13_nw_wrong_text(issue,count):
+        rows=R13_NW_WRONG_THOUGHTS.get(issue) or {}
+        for n in range(min(max(1,count),3),0,-1):
+            if rows.get(n):return rows[n]
+        return R13_NW_WRONG_DEFAULT
+    def r13_nw_wrong_queue(meeting,final):
+        issue=r13_nw_wrong_issue()
+        count=(r13_v111_value("wrong:"+issue) or 0)+1 if issue else 1
+        if issue:r13_v111_set("wrong:"+issue,count)
+        if final:
+            if r13_v111_value("wrong_final:"+meeting):
+                store.r13_nw_wrong_pending=None
+                return
+            r13_v111_set("wrong_final:"+meeting,True)
+            store.r13_nw_wrong_pending=("final",R13_NW_WRONG_FINAL)
+        else:
+            store.r13_nw_wrong_pending=("try",r13_nw_wrong_text(issue,count))
 
     # Review 2026-10-22: a person who left on the cart (departed:<p>) is never placed again.
     _r13_nw_arrive=r13_v111_arrive

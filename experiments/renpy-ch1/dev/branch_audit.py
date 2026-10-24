@@ -326,6 +326,9 @@ def load_game():
         m = re.search(r'^\s*%s\s*=\s*(\d+)' % name, rules, re.M)
         if m:
             g.consts[name] = int(m.group(1))
+    # 2026-10-24 지시서 01: 회의별 기회 수 표(r13_nw_tries_max 가 읽는다).
+    m = re.search(r'^\s*R13_NW_TRIES_BY_MEETING\s*=\s*dict\(([^)]*)\)', rules, re.M)
+    g.tries_by_meeting = {k: int(v) for k, v in re.findall(r'(\w+)\s*=\s*(\d+)', m.group(1))} if m else {}
     fork = (GAME / 'room13_fork_screen.rpy').read_text(encoding='utf-8')
     points = _literal_after(fork, 'R13_FORK_FATE_POINTS')
     for p in ast.literal_eval(points) if points is not None else ():
@@ -562,6 +565,8 @@ class Evaluator:
             return self.dead()
         if name == 'r13_nw_loss_count':
             return len(self.dead())
+        if name == 'r13_nw_tries_max':
+            return getattr(self.g, 'tries_by_meeting', {}).get(args[0], self.g.consts.get('R13_NW_TRIES', self.CONSTS['R13_NW_TRIES']))
         if name == 'r13_nw_listed':
             return [p for p in self.g.listable if self.get('listed:' + p)]
         if name in self.g.funcs:
