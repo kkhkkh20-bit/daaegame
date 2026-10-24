@@ -72,20 +72,31 @@ testcase v111_goal_strip:
     assert eval (qa_goal_note()=="밤이가 강 쪽에서 엄마를 봤다고 했다." and r13_goal_state()[1]==1)
     $ r13_goal_mark_line("v111:MS14_D11_S00_L0002")
     assert eval (qa_goal_note()=="바깥 고개가 막혔다. 걸어서도 못 나간다.")
-    # 엄마를 만나면(family_reunited) ②가 「엄마를 지킨다」로 바뀌고 ③ 셋이 나간다가 지금.
+    # 엄마를 만나면(family_reunited) ②가 「엄마를 지킨다」로 바뀌고, 그 단계가 지금이다.
+    # (2026-10-24 행동 검수 8: 13일 수레 일이 지나 14일 장면에 들어설 때까지 ②에 머문다.)
     $ r13_v111_set("family_reunited",True)
-    assert eval (r13_goal_state()[0][1]=="엄마를 지킨다" and r13_goal_state()[1]==2)
-    # 13일 장면에 들면 13~14일 문장.
+    assert eval (r13_goal_state()[0][1]=="엄마를 지킨다" and r13_goal_state()[1]==1)
+    # 13일 아침(D13_S01)은 아직 명단 종이를 보기 전이라 11~12일 문장이 남는다.
     $ r13_v111_set("day",13)
     $ r13_flag("v111:entered:MS14_D13_S01")
-    assert eval (qa_goal_note()=="명단에 오른 사람은 수레에 실려 간다. 셋이 함께 남아야 한다.")
+    assert eval (qa_goal_note()=="바깥 고개가 막혔다. 걸어서도 못 나간다." and r13_goal_state()[1]==1)
+    # 입구 경비실(D13_S02 장면)에 들어도 명단을 보기 전이면 11~12일 문장이 남는다.
+    $ r13_flag("v111:entered:MS14_D13_S02")
+    assert eval (qa_goal_note()=="바깥 고개가 막혔다. 걸어서도 못 나간다.")
+    # 광장에서 명단을 읽는 줄(D13_S02_L0013)을 지나면 13~14일 문장. 아직 ②가 지금.
+    $ r13_goal_mark_line("v111:MS14_D13_S02_L0013")
+    assert eval (qa_goal_note()=="명단에 빈칸이 있는 한, 다음은 누구든 될 수 있다." and r13_goal_state()[1]==1)
+    # 14일 장면에 들어서면 ③ 셋이 나간다가 지금.
+    $ r13_flag("v111:entered:MS14_D14_S01")
+    assert eval (r13_goal_state()[1]==2)
+    $ qa_goal_unflag("v111:entered:MS14_D14_S01")
     # 옛 저장(값이 없는 판): family_reunited 가 없으면 엄마를 찾는 중으로 본다.
     $ qa_goal_saved=winter_copy.deepcopy(room13)
     $ room13["v111"]["values"].pop("family_reunited",None)
     assert eval (r13_goal_state()[1]==1 and r13_goal_state()[0][1]=="엄마를 찾는다")
     $ room13=qa_goal_saved
     # 판정 표를 본 값들을 지우고 5일 상태로 다시 세운다.
-    $ qa_goal_unflag(*[k for k in room13["flags"] if k.startswith("v111:line:") or k in ("v111:entered:MS14_D04_S03","v111:entered:MS14_D11_S00","v111:entered:MS14_D13_S01")])
+    $ qa_goal_unflag(*[k for k in room13["flags"] if k.startswith("v111:line:") or k in ("v111:entered:MS14_D04_S03","v111:entered:MS14_D11_S00","v111:entered:MS14_D13_S01","v111:entered:MS14_D13_S02")])
     $ r13_v111_set("family_reunited",None)
     # --- 5일 상태 ---
     run Function(qa_goal_day5)
@@ -110,7 +121,7 @@ testcase v111_goal_strip:
     # --- 14일 상태 ---
     run Function(qa_goal_day14)
     run Function(qa_goal_dump,"14일")
-    assert eval (r13_goal_state()==(["마을을 조사한다","엄마를 지킨다","셋이 나간다"],2,"명단에 오른 사람은 수레에 실려 간다. 셋이 함께 남아야 한다."))
+    assert eval (r13_goal_state()==(["마을을 조사한다","엄마를 지킨다","셋이 나간다"],2,"명단에 빈칸이 있는 한, 다음은 누구든 될 수 있다."))
     $ r13_records_view={"tab":"all","detail":"V111:NW_BURNT_PAGE","page":0,"drawer":"now"}
     run Show("r13_records")
     pause 1.2

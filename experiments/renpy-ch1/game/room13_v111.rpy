@@ -105,7 +105,11 @@ init 301 python:
                 return option.get("index",i)
         return None
     def r13_v111_context(key):
-        n=winter_copy.deepcopy(store.room13);n["v111"]["gate"]=key;store.room13=n
+        n=winter_copy.deepcopy(store.room13);n["v111"]["gate"]=key
+        # 2026-10-24 행동 검수 4(소유자 승인 「구조 수정」): 이동 말고 다른 대기에 닿으면 지금 장면의
+        # 「생각」을 보인 것이므로, 이동 중에 붙들어 두던 직전 장면 문구를 놓는다.
+        if key!="travel":n["v111"]["thought_pending"]=False
+        store.room13=n
     def r13_v111_questions(person):
         b=r13_v111_binding()
         # 0.20.10 (4~14일 리뷰): 제목이 보일 자료를 이미 말하므로, 가진 자료면 목록에서 다시 찾지 않는다.
@@ -347,6 +351,8 @@ label r13_v111_travel(destination,travel_id,companions=None,direct=False):
         call r13_scene(R13_PLACES[destination][1],R13_PLACES[destination][0],"calm")
     else:
         call r13_v111_wait("travel")
+    # 2026-10-24 행동 검수 4: 도착했으니 「생각」은 이 장면 문구로 바뀐다(이어서 또 이동해도 앞 장면으로 돌아가지 않는다).
+    $ room13["v111"]["thought_pending"]=False
     $ r13_v111_arrive(companions)
     return
 
@@ -394,9 +400,18 @@ init 303 python:
         "MS14_D03_S05":(["E11","E12","E13","E14","E15","E16","E32"],{"silluk_knife_comparison_consent":True,"silluk.children.location":"workshop_with_buri"}),
         "MS14_D03_S06":([],{"lamp_theft_supported":True,"stone_choice_completed":True}),
     }
+    def r13_v111_thought_hold(scene):
+        """2026-10-24 행동 검수 4: 장면은 이동 「전에」 지정된다. 그래서 지도 화면의 「생각」이 도착할 장면의
+        일(아직 일어나지 않은 비명, 만나지 않은 사람)을 먼저 말했다. 장면이 실제로 바뀌는 순간 마지막으로 보인
+        장면을 적어 두고, 이동 대기 동안에는 그 장면의 문구를 보인다(r13_v111_goal). 도착 뒤 첫 대기에서 놓는다.
+        진입이 거절된 장면은 값을 바꾸지 않으므로 이 함수는 거절 검사를 다 지난 뒤에만 부른다."""
+        v=store.room13["v111"]
+        if v.get("scene")!=scene and not v.get("thought_pending"):
+            v["thought_scene"]=v.get("scene");v["thought_pending"]=True
     def r13_v111_scene(scene):
         marker="v111:entered:"+scene
         if r13_has(marker):
+            r13_v111_thought_hold(scene)
             store.room13["v111"]["scene"]=scene
             return
         if store.room13["day"]!=R13_V111["scene_days"][scene]:raise Exception("Wrong authored day: "+scene)
@@ -409,6 +424,7 @@ init 303 python:
         if not all(r13_v111_owned(x) for x in items) or not all(r13_v111_value(k)==v for k,v in values.items()):raise Exception("Unmet authored scene entry: "+scene)
         if scene=="MS14_D02_S01" and not r13_has("v111:applied:option:sleep1:0"):raise Exception("Missing actual first-night sleep")
         if scene=="MS14_D03_S01" and not r13_has("v111:applied:option:sleep2:0"):raise Exception("Missing actual second-night sleep")
+        r13_v111_thought_hold(scene)
         store.room13["v111"]["scene"]=scene
         r13_flag(marker)
 

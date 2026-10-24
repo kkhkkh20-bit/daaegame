@@ -2095,6 +2095,10 @@ label r13_v111_handover_plan13:
         $ room13["v111"]["music_hold"]="MS14_D13_S04"
         $ renpy.music.stop(fadeout=.15)
         $ r13_v111_score()
+    # 2026-10-24 행동 검수 13-10: 「기다린다」를 고르면 그날이 끝난다는 것을 고르기 전에 한 번 들려준다.
+    if not r13_has("v111:shown:handover_wait13"):
+        $ r13_flag("v111:shown:handover_wait13")
+        call r13_lines(r13_nw_block('handover_wait13'),'nw:handover_wait13')
     menu:
         '학교 침상과 인수를 먼저 확인한다':
             jump r13_v111_school_handover_prep13
@@ -2400,6 +2404,8 @@ label r13_v111_relay_confirmed13:
 
 label r13_v111_buri_tools13:
     $ r13_v111_arrive(['buri'])
+    # 2026-10-24 행동 검수 13-13: 「고정부」를 아직 모르므로, 아빠가 짐작을 말하고 부리가 받는다.
+    call r13_lines(r13_nw_block('buri_tools13'),'nw:buri_tools13')
     call r13_lines([(None,"부리가 공구와 받침을 챙겼다. 내일 현장에 함께 가겠다고 했다.")],"v111:buri_tools_consent13")
     $ r13_v111_set('buri_device_consent',True)
     jump r13_v111_transport_cleanup13
@@ -2472,12 +2478,14 @@ label r13_v111_crowd13:
     call r13_lines(r13_v111_lines(['MS14_D13_C_L0003']),'v111:MS14_D13_C_L0003')
     if r13_v111_value('family_location')=='square':
         call r13_v111_daram_crowd13
+    # 2026-10-24 행동 검수 13-11: 메뉴 글이 두 뜻으로 읽혔다(「너울 앞을 막는다」=달아나는 길을 막는다?,
+    # 「막지 않는다」=무엇을?, 「현장 감독자」=이 장면에서 불린 적 없는 말). 같은 갈래를 뜻이 하나로 읽히게 쓴다.
     menu:
-        '너울 앞을 막는다':
+        '너울을 몸으로 감싼다':
             jump r13_v111_crowd_block13
-        '현장 감독자에게 보호를 맡긴다' if not r13_v111_value('busy:guard'):
+        '돌목에게 너울을 맡긴다' if not r13_v111_value('busy:guard'):
             jump r13_v111_crowd_guard13
-        '막지 않는다':
+        '주민들을 말리지 않는다':
             jump r13_v111_crowd_watch13
 
 label r13_v111_daram_crowd13:
@@ -2904,6 +2912,10 @@ label r13_v111_madam_device_close14:
     return
 
 label r13_v111_device_record14:
+    # 2026-10-24 행동 검수 14-6: 촌장이 따라오지 않은 판은 무엇에 답하려고 기록을 꺼내는지 물음이 없었다.
+    if not r13_v111_value("buri_device_present") and r13_v111_actor_ready("resident_badook") and not r13_has("v111:shown:record_question14"):
+        $ r13_flag("v111:shown:record_question14")
+        call r13_lines(r13_nw_block('record_question14'),'nw:record_question14')
     call screen r13_book("dad",present=True,purpose="use")
     if _return=="V111:E13_HANDOVER" and r13_v111_owned("E13_HANDOVER"):
         jump r13_v111_device_rescue14

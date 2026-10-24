@@ -807,6 +807,20 @@
         "kind": "dialogue",
         "text": "그 표식은…… 나중에 말씀드리겠습니다.",
         "expression": "anxious"
+      },
+      {
+        "id": "NW_AR_D14_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "바둑이 씨, 촌장님은 지금 어디 계십니까?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_AR_D14_02",
+        "speaker": "바둑이",
+        "kind": "dialogue",
+        "text": "입구 경비실에 계시오.",
+        "expression": "neutral"
       }
     ],
     "MS14_D14_S03_L0010": [
@@ -961,6 +975,22 @@
     ],
     "MS14_D14_S05_L0022": [
       {
+        "id": "NW_AR_D14_13",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "엄마, 이제 다 끝났어?",
+        "expression": "neutral",
+        "when": "morning_with_loss14"
+      },
+      {
+        "id": "NW_AR_D14_14",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "오늘 일은. ……그래도 이 아침을 같이 못 맞은 사람이 있어.",
+        "expression": "anxious",
+        "when": "morning_with_loss14"
+      },
+      {
         "id": "NW_D14_S05_A01",
         "speaker": null,
         "kind": "narration",
@@ -1094,6 +1124,24 @@
         "kind": "dialogue",
         "text": "……그러니까 보러 가는 거야.",
         "when": "mom_daram_ready14"
+      }
+    ],
+    "MS14_D14_END_PARTIAL_L0007": [
+      {
+        "id": "NW_AR_D14_11",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "어제 왜 다 안 내려 줬어?",
+        "expression": "anxious",
+        "when": "end_partial_waiting"
+      },
+      {
+        "id": "NW_AR_D14_12",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "학교 자리가 날 때까지 기다리자고 했어. ……그 사이에 밤이 왔어.",
+        "expression": "anxious",
+        "when": "end_partial_waiting"
       }
     ]
   },
@@ -1435,6 +1483,22 @@
         "kind": "narration",
         "text": "쇠는 떼어 내기로 한다. 촌장은 자리를 지킨다. 명단에는 ‘봄까지 보류’라고 적힌다.",
         "when": "altar_partial"
+      },
+      {
+        "id": "NW_AR_D14_03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "촌장님 없이 쇠를 떼면, 내일 다시 걸라는 말이 나오겠죠.",
+        "expression": "anxious",
+        "when": "buri_site_ask14"
+      },
+      {
+        "id": "NW_AR_D14_04",
+        "speaker": "바둑이",
+        "kind": "dialogue",
+        "text": "어르신 말 한마디면 부리도 공구를 놔야 하오.",
+        "expression": "neutral",
+        "when": "buri_site_ask14"
       }
     ],
     "altar_lost14": [
@@ -1492,6 +1556,37 @@
       }
     ],
     "end_frozen14": [
+      {
+        "id": "NW_AR_D14_07",
+        "speaker": null,
+        "kind": "narration",
+        "text": "열나흘째 아침, 입구 경비실 앞. 돌목의 등 곁에 아르카가 다시 켜져 있다.",
+        "when": "hyp_not_lose"
+      },
+      {
+        "id": "NW_AR_D14_08",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "학교에서 다 같이 끄기로 하지 않았습니까. 왜 다시 돌을 켭니까?",
+        "expression": "anxious",
+        "when": "hyp_not_lose"
+      },
+      {
+        "id": "NW_AR_D14_09",
+        "speaker": "돌목",
+        "kind": "dialogue",
+        "text": "장작으로 버티는 동안에도 사람이 죽었소. 돌을 끄면 산다던 말을 이제 아무도 안 믿소.",
+        "expression": "neutral",
+        "when": "hyp_not_lose"
+      },
+      {
+        "id": "NW_AR_D14_10",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "……그분들은 장작 때문에 죽은 게 아닙니다.",
+        "expression": "anxious",
+        "when": "hyp_not_lose"
+      },
       {
         "id": "NW_EF_01",
         "speaker": null,
@@ -1919,6 +2014,22 @@
         "kind": "narration",
         "text": "수레에 오른 이름들은 봄이 와도 돌아오지 않았다.",
         "when": "departed_any"
+      }
+    ],
+    "record_question14": [
+      {
+        "id": "NW_AR_D14_05",
+        "speaker": "바둑이",
+        "kind": "dialogue",
+        "text": "쇠를 떼면 어르신이 물으실 거요. 사람 안 보내고 무엇으로 버티느냐고.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_AR_D14_06",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "……그 답이 될 기록부터 꺼내 보죠.",
+        "expression": "neutral"
       }
     ]
   }

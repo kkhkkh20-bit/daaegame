@@ -522,7 +522,7 @@
       "expression": "anxious"
     },
     "MS14_D03_S05_L0057": {
-      "text": "훔친 일과 이름은 적으십시오. 하지만 어디로 데려갈지도 모르는데 넘길 순 없습니다. 저 아이들은요?"
+      "text": "훔친 일과 이름은 적으십시오. 하지만 대기소에 간 사람이 언제 나오는지도 모르는데 넘길 순 없습니다. 저 아이들은요?"
     },
     "MS14_D03_S05_L0058": {
       "text": "당신에게 이 사람을 어떻게 할지 정할 권한이 있소?"
@@ -952,6 +952,14 @@
         "text": "실룩 씨. 칼과 돌을 다 같이 놓고 보겠습니다. 다른 분들도 부르겠습니다.",
         "expression": "neutral"
       }
+    ],
+    "MS14_D03_S04_L9001": [
+      {
+        "id": "NW_AR_D03_06",
+        "speaker": null,
+        "kind": "narration",
+        "text": "광장에 붙들려 있던 톡이 뒤따라 들어온다. 너울이 고개만 까딱해 보낸 모양이다. 손목에 끈은 없다."
+      }
     ]
   },
   "after": {
@@ -1195,6 +1203,14 @@
         "kind": "narration",
         "text": "톡은 풀려난다. 그러나 3번 등에서 돌을 꺼낸 손이 누구 것인지는 끝내 대지 못했다.",
         "when": "lamp_partial"
+      },
+      {
+        "id": "NW_AR_D03_11",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "한 번만 더 듣겠소. 그다음엔 장부대로 하오.",
+        "expression": "angry",
+        "when": "lamp_last_try"
       }
     ],
     "MS14_D03_S05_L0070": [
@@ -1220,6 +1236,14 @@
         "kind": "narration",
         "text": "톡의 손은 풀린다. 하지만 돌을 꺼낸 사람은 끝내 밝혀내지 못했다.",
         "when": "lamp_partial"
+      },
+      {
+        "id": "NW_AR_D03_10",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "칼 얘기는 이번이 끝이오. 또 빗나가면 장부에 적힌 대로 하겠소.",
+        "expression": "angry",
+        "when": "lamp_last_try"
       }
     ],
     "MS14_D03_S05_L0043": [
@@ -1233,6 +1257,26 @@
       }
     ],
     "MS14_D03_S05_L0032": [
+      {
+        "id": "NW_AR_D03_07",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "누구십니까?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_AR_D03_08",
+        "speaker": "바둑이",
+        "kind": "dialogue",
+        "text": "순찰대 바둑이요. 누가 무엇을 내놨는지 적는 게 내 일이오.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_AR_D03_09",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "너울 씨 장부 말고, 적는 사람이 하나 더 있다."
+      },
       {
         "id": "NW_D03_S05_V02",
         "speaker": null,
@@ -1284,6 +1328,83 @@
         "speaker": "너울",
         "kind": "dialogue",
         "text": "사정이 딱하구려. 장부엔 사정을 안 적소."
+      }
+    ],
+    "MS14_D03_S02_L0019": [
+      {
+        "id": "NW_AR_D03_01",
+        "speaker": "톡",
+        "kind": "dialogue",
+        "text": "집, 집게는 공방 판에 걸려 있어요. 가서 보세요, 끝이 둥근지.",
+        "expression": "anxious"
+      }
+    ],
+    "MS14_D03_S03_L0006": [
+      {
+        "id": "NW_AR_D03_02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "우박 씨는 어디 계십니까?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_AR_D03_03",
+        "speaker": "부리",
+        "kind": "dialogue",
+        "text": "진료소요. 거기서 돌 재요.",
+        "expression": "neutral"
+      }
+    ],
+    "MS14_D03_S03_L0038": [
+      {
+        "id": "NW_AR_D03_04",
+        "speaker": "우박",
+        "kind": "dialogue",
+        "text": "집게는 공방에 갖다줘요. 나 지금 못 나가요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_AR_D03_05",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "제가 가져다드리겠습니다. 가는 길에 톡 씨한테도 알리고요.",
+        "expression": "neutral"
+      }
+    ],
+    "MS14_D03_S05_L0051": [
+      {
+        "id": "NW_AR_D03_12",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "실룩 씨를 데려가시면 어디로 갑니까?",
+        "expression": "neutral",
+        "when": "lamp_win"
+      },
+      {
+        "id": "NW_AR_D03_13",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "작업 대기소요. 갚을 게 있는 사람이 일하고 먹고 자는 곳이오.",
+        "expression": "neutral",
+        "when": "lamp_win"
+      }
+    ],
+    "MS14_D03_S05_L0054": [
+      {
+        "id": "NW_AR_D03_14",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "실룩 씨를 데려가시면 어디로 갑니까?",
+        "expression": "neutral",
+        "when": "lamp_win"
+      },
+      {
+        "id": "NW_AR_D03_15",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "작업 대기소요. 갚을 게 있는 사람이 일하고 먹고 자는 곳이오.",
+        "expression": "neutral",
+        "when": "lamp_win"
       }
     ]
   },
@@ -1469,6 +1590,29 @@
         "speaker": "톡",
         "kind": "dialogue",
         "text": "제 손으로 고친 게 하나라도 굴러가야죠.",
+        "when": "listed:resident_tok"
+      },
+      {
+        "id": "NW_AR_D03_16",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "축을 다 고치시면…… 그다음엔요?",
+        "expression": "anxious",
+        "when": "listed:resident_tok"
+      },
+      {
+        "id": "NW_AR_D03_17",
+        "speaker": "톡",
+        "kind": "dialogue",
+        "text": "수, 수레가 오면 가는 거죠. 그다음 고장은…… 누가 고칠지 몰라요.",
+        "expression": "anxious",
+        "when": "listed:resident_tok"
+      },
+      {
+        "id": "NW_AR_D03_18",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "마차는 굴러가도, 고친 사람은 남지 못한다.",
         "when": "listed:resident_tok"
       },
       {
