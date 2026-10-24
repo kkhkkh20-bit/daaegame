@@ -1353,7 +1353,7 @@
 - `"partial"` · `r13_v111_responsibility_wrong7` (room13_v111_days610.rpy:566): 명단 올림 보리 (까닭 `fire_partial`)
 - `"win"` · `r13_v111_responsibility_answers7` (room13_v111_days610.rpy:571): `fire_neoul_promise_recorded` = `true`
 
-이 회의를 읽는 조건: `fire_lose`, `fire_not_lose`, `fire_partial`, `fire_win`
+이 회의를 읽는 조건: `fire_lose`, `fire_partial`, `fire_win`
 
 ### 13호실 회의 `room13` · 10일 오후 · 기회 7
 
@@ -1374,7 +1374,7 @@
 - `"partial"` · `r13_v111_time_wrong10` (room13_v111_days610.rpy:1666): `room13_partial_kind` = `"unknown"`
 - `"partial"` · `r13_v111_contact_wrong10` (room13_v111_days610.rpy:1676): `room13_partial_kind` = `"accident"`
 
-이 회의를 읽는 조건: `granny_held_win`, `granny_room13_lose`, `granny_room13_partial`, `room13_lose`, `room13_not_win`, `room13_partial`, `room13_partial_accident`, `room13_partial_unknown`, `room13_win`
+이 회의를 읽는 조건: `granny_held_win`, `granny_room13_lose`, `granny_room13_partial`, `room13_lose`, `room13_not_win`, `room13_partial_accident`, `room13_partial_unknown`, `room13_win`
 
 ### 기록 회의 `records` · 10일 오후 · 기회 4
 
@@ -1389,7 +1389,7 @@
 - `"lose"` · `r13_v111_authority_wrong10` (room13_v111_days610.rpy:1847): 명단 올림 부엉이 할아버지 (까닭 `records_lose`)
 - `"partial"` · `r13_v111_writing_wrong10` (room13_v111_days610.rpy:1858)
 
-이 회의를 읽는 조건: `records_lose`, `records_lose_prev_a`, `records_lose_prev_b`, `records_not_lose`, `records_partial`, `records_partial_prev_a`, `records_partial_prev_b`, `records_win`
+이 회의를 읽는 조건: `records_lose`, `records_lose_prev_a`, `records_lose_prev_b`, `records_partial`, `records_partial_prev_a`, `records_partial_prev_b`
 
 ### 가설 회의 `hypothesis` · 11일 · 기회 13
 
@@ -1611,7 +1611,6 @@ def r13_nw_true_ending_ready():
 | 이름 | 식 | 쓰는 곳 |
 |---|---|---|
 | `altar4_won_with_burnt_page` | `"V111:NW_BURNT_PAGE" in (r13_v111_value("proof_given:맨 처음 이름을 짚는다") or [])` | d14 |
-| `altar_half1` | `r13_v111_value("altar_half1") is True` | — |
 | `altar_lose` | `r13_v111_value("meeting:altar")=="lose"` | d14 |
 | `altar_partial` | `r13_v111_value("meeting:altar")=="partial"` | d14 |
 | `altar_win` | `r13_v111_value("meeting:altar")=="win"` | d14 |
@@ -1623,13 +1622,9 @@ def r13_nw_true_ending_ready():
 | `blanket_undecided` | `r13_v111_value("meeting:blanket") is None` | d13 |
 | `blanket_won_with_e35` | `"V111:E35" in (r13_v111_value("proof_given:아내가 봤다는 담요의 시점을 확인한다") or [])` | d13 |
 | `buri_site_ask14` | `bool(r13_v111_value("buri_device_consent")) and not r13_v111_value("mayor_site_decided") and r13_v111_person_alive("buri")` | d14 |
-| `cart_departed` | `r13_v111_value("cart_departed") is True` | — |
 | `crowd_block_failed13` | `r13_v111_value("crowd_intervention")=="failed" and r13_v111_value("crowd_blocked_by_dad") is True` | d14 |
-| `crowd_blocked13` | `r13_v111_value("crowd_intervention")=="success"` | — |
 | `d06_bowl_together` | `r13_v111_value("choice:MS14_D06_S01")=="together"` | d06 |
 | `daram_deal_freed` | `r13_v111_value("daram_deal_freed") is True` | d13, d14 |
-| `daram_departed` | `r13_v111_value("departed:daram") is True` | — |
-| `daram_free` | `not r13_v111_value("DARAM_DETAINED")` | — |
 | `daram_listed_unhanded` | `r13_v111_value("listed:daram") is True and not r13_v111_value("handed:daram")` | d13 |
 | `daram_not_deal_freed` | `r13_v111_value("daram_deal_freed") is not True` | d14 |
 | `daram_not_watching13` | `not (r13_v111_actor_ready("daram") and r13_v111_value("listed:daram") is not True)` | d13 |
@@ -1653,12 +1648,10 @@ def r13_nw_true_ending_ready():
 | `end_partial_done` | `r13_v111_value("ending14")=="partial" and not r13_v111_value("cart_departed") and bool(r13_v111_value("pending_handover_completed"))` | d14 |
 | `end_partial_waiting` | `r13_v111_value("ending14")=="partial" and not r13_v111_value("cart_departed") and not r13_v111_value("pending_handover_completed")` | d14 |
 | `end_portrait_child` | `r13_v111_value("piko_alive") is False and r13_v111_value("portrait")=="child_completed" and not r13_nw_true_ending_ready()` | d14 |
-| `ending_morning` | `r13_v111_value("ending14")=="morning"` | — |
 | `family_on_square` | `r13_v111_value("family_location")=="square" and r13_v111_actor_ready("daram")` | d13 |
 | `family_priority` | `r13_v111_value("outcome13")=="family_priority"` | d14 |
 | `fire_evacuated` | `r13_v111_value("FIRE_EVACUATED") is True` | d06 |
 | `fire_lose` | `r13_v111_value("meeting:fire")=="lose"` | d07 |
-| `fire_not_lose` | `r13_v111_value("meeting:fire")!="lose"` | — |
 | `fire_partial` | `r13_v111_value("meeting:fire")=="partial"` | d07 |
 | `fire_win` | `r13_v111_value("meeting:fire")=="win"` | d07 |
 | `gate_daram_listed` | `r13_v111_value("gate_daram_unlisted") is not True` | d01 |
@@ -1679,7 +1672,6 @@ def r13_nw_true_ending_ready():
 | `granny_room13_partial` | `r13_v111_value("OWL_ALIVE") is False and r13_v111_value("meeting:room13")=="partial"` | d14 |
 | `guard_ready` | `r13_v111_actor_ready("guard")` | d12, d13 |
 | `guldol_absent` | `not r13_v111_actor_ready("resident_guldol")` | d11 |
-| `guldol_listed` | `r13_v111_value("listed:resident_guldol") is True` | d11 |
 | `guldol_ready` | `r13_v111_actor_ready("resident_guldol")` | d11 |
 | `has_burnt_page` | `r13_v111_owned("NW_BURNT_PAGE")` | d14 |
 | `has_ledger` | `r13_v111_owned("NW_NEOUL_LEDGER")` | d14 |
@@ -1725,7 +1717,7 @@ def r13_nw_true_ending_ready():
 | `listed:mom` | `r13_v111_value("listed:mom") is True` | — |
 | `listed:nabi` | `r13_v111_value("listed:nabi") is True` | d12, d13 |
 | `listed:resident_bori` | `r13_v111_value("listed:resident_bori") is True` | d12, d13 |
-| `listed:resident_guldol` | `r13_v111_value("listed:resident_guldol") is True` | d12, d13 |
+| `listed:resident_guldol` | `r13_v111_value("listed:resident_guldol") is True` | d11, d12, d13 |
 | `listed:resident_owlgp` | `r13_v111_value("listed:resident_owlgp") is True` | d12, d13 |
 | `listed:resident_piko` | `r13_v111_value("listed:resident_piko") is True` | d13 |
 | `listed:resident_siluk` | `r13_v111_value("listed:resident_siluk") is True` | d12, d13 |
@@ -1735,7 +1727,6 @@ def r13_nw_true_ending_ready():
 | `medicine_unchecked` | `not r13_v111_value("medicine_locked")` | d12 |
 | `mom_daram_ready14` | `r13_v111_actor_ready("mom") and r13_v111_actor_ready("daram")` | d14 |
 | `morning_with_loss14` | `r13_v111_value("ending14")=="morning" and r13_nw_loss_count()>0 and r13_v111_actor_ready("mom") and r13_v111_actor_ready("daram")` | d14 |
-| `neoul_held` | `r13_v111_value("neoul_held") is True` | — |
 | `no_ledger` | `not r13_v111_owned("NW_NEOUL_LEDGER")` | d14 |
 | `owl_alive` | `r13_v111_value("OWL_ALIVE") is not False` | d11, d14 |
 | `owl_dead` | `r13_v111_value("OWL_ALIVE") is False` | d11, d14 |
@@ -1745,7 +1736,6 @@ def r13_nw_true_ending_ready():
 | `piko_sacks2` | `r13_v111_value("piko_sacks2") is True` | d02 |
 | `prep12_carrier_only` | `bool(r13_v111_value("carrier_arrived")) and not r13_v111_value("warm_seat_ready")` | d12 |
 | `prep12_others_missing` | `not all(r13_v111_value(k) for k in ("warm_seat_ready","carrier_arrived","warm_support_arrived"))` | d12 |
-| `prep12_others_ready` | `all(r13_v111_value(k) for k in ("warm_seat_ready","carrier_arrived","warm_support_arrived"))` | — |
 | `prep12_seat_and_carrier` | `bool(r13_v111_value("warm_seat_ready")) and bool(r13_v111_value("carrier_arrived"))` | d12 |
 | `prep12_seat_only` | `bool(r13_v111_value("warm_seat_ready")) and not r13_v111_value("carrier_arrived")` | d12 |
 | `prevention_a` | `r13_v111_value("prevention")=="A"` | d08, d11 |
@@ -1755,17 +1745,14 @@ def r13_nw_true_ending_ready():
 | `records_lose` | `r13_v111_value("meeting:records")=="lose"` | d10 |
 | `records_lose_prev_a` | `r13_v111_value("meeting:records")=="lose" and r13_v111_value("prevention")=="A"` | d10 |
 | `records_lose_prev_b` | `r13_v111_value("meeting:records")=="lose" and r13_v111_value("prevention")!="A"` | d10 |
-| `records_not_lose` | `r13_v111_value("meeting:records")!="lose"` | — |
 | `records_partial` | `r13_v111_value("meeting:records")=="partial"` | d10 |
 | `records_partial_prev_a` | `r13_v111_value("meeting:records")=="partial" and r13_v111_value("prevention")=="A"` | d10 |
 | `records_partial_prev_b` | `r13_v111_value("meeting:records")=="partial" and r13_v111_value("prevention")!="A"` | d10 |
-| `records_win` | `r13_v111_value("meeting:records")=="win"` | — |
 | `repair_won_with_e10` | `"V111:E10" in (r13_v111_value("proof_given:수리와 반출을 가릴 자료를 낸다") or [])` | d03 |
 | `riot_momo13` | `r13_v111_value("riot_momo13") is True` | d13 |
 | `room13_checked_d1` | `r13_v111_owned("E06")` | d01 |
 | `room13_lose` | `r13_v111_value("meeting:room13")=="lose"` | d10, d11, d12 |
 | `room13_not_win` | `r13_v111_value("meeting:room13") in ("partial","lose")` | d10 |
-| `room13_partial` | `r13_v111_value("meeting:room13")=="partial"` | — |
 | `room13_partial_accident` | `r13_v111_value("meeting:room13")=="partial" and r13_v111_value("room13_partial_kind")=="accident"` | d10 |
 | `room13_partial_unknown` | `r13_v111_value("meeting:room13")=="partial" and r13_v111_value("room13_partial_kind")=="unknown"` | d10 |
 | `room13_unchecked_d1` | `not r13_v111_owned("E06")` | d01 |
@@ -1774,7 +1761,6 @@ def r13_nw_true_ending_ready():
 | `route12_stayed` | `r13_v111_value("route12")!="late_exposure"` | d12 |
 | `school_supply_pending` | `not r13_v111_value("school_supply_handed")` | d11 |
 | `siluk_not_listed` | `r13_v111_value("listed:resident_siluk") is not True` | d13 |
-| `soup_late` | `r13_v111_value("route12")=="late_exposure"` | d12 |
 | `soup_lose_nabi` | `r13_v111_value("meeting:soup")=="lose" and r13_v111_value("soup_lose_kind")=="nabi"` | d12 |
 | `soup_lose_nabi_murder` | `r13_v111_value("meeting:soup")=="lose" and r13_v111_value("soup_lose_kind")=="nabi" and r13_v111_value("route7")=="murder"` | d12 |
 | `soup_lose_nabi_prevented` | `r13_v111_value("meeting:soup")=="lose" and r13_v111_value("soup_lose_kind")=="nabi" and r13_v111_value("route7")!="murder"` | d12 |
@@ -1787,7 +1773,6 @@ def r13_nw_true_ending_ready():
 | `town_won_none_before11` | `not any(r13_v111_value("meeting:"+m)=="win" for m in ("lamp","gate_post","fire","room13","records"))` | d11 |
 | `warm_support_pending` | `not r13_v111_value("warm_support_arrived")` | d12 |
 | `warm_support_ready` | `r13_v111_value("warm_support_arrived") is True` | d12 |
-| `wood12_here` | `bool(r13_v111_value("warm_support_arrived") or r13_v111_value("heat_box_received"))` | — |
 | `wood12_missing` | `not (r13_v111_value("warm_support_arrived") or r13_v111_value("heat_box_received"))` | d12 |
 | `writing_won_with_e09` | `"V111:E09" in (r13_v111_value("proof_given:반송·필사본·초대 발송을 대조한다") or [])` | d10 |
 | `writing_won_with_e27` | `"V111:E27" in (r13_v111_value("proof_given:반송·필사본·초대 발송을 대조한다") or [])` | d10 |

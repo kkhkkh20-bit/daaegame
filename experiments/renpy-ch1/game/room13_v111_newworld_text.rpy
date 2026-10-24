@@ -62,7 +62,6 @@ init 319 python:
         "piko_dead":lambda:r13_v111_value("piko_alive") is False,
         "kkomi_alive":lambda:r13_v111_value("KKOMI_ALIVE") is not False,
         "kkomi_dead":lambda:r13_v111_value("KKOMI_ALIVE") is False,
-        "daram_free":lambda:not r13_v111_value("DARAM_DETAINED"),
         # Event 01: lost gate proof, Daram entered as '외 한 명' (owner plan A, 2026-10-21).
         "gate_daram_unlisted":lambda:r13_v111_value("gate_daram_unlisted") is True,
         "gate_daram_listed":lambda:r13_v111_value("gate_daram_unlisted") is not True,
@@ -77,7 +76,6 @@ init 319 python:
         # without naming the missing ones; a set with none of them gets the plain refusal.
         "gate_partial_retry":lambda:(r13_v111_value("tries:gate") or 0)+1<r13_nw_tries_max("gate") and bool(set(getattr(store,"v111_last_presented",None) or [])&{"V111:E02","V111:E03","V111:E04"}),
         # Review 0.20.1 4-5: the day-12 prep line names only what is really ready.
-        "prep12_others_ready":lambda:all(r13_v111_value(k) for k in ("warm_seat_ready","carrier_arrived","warm_support_arrived")),
         "prep12_others_missing":lambda:not all(r13_v111_value(k) for k in ("warm_seat_ready","carrier_arrived","warm_support_arrived")),
         # 0.20.6 (owner review): one of the two ready -> name only what is still missing.
         "prep12_seat_only":lambda:bool(r13_v111_value("warm_seat_ready")) and not r13_v111_value("carrier_arrived"),
@@ -137,20 +135,16 @@ init 319 python:
         "fire_win":lambda:r13_v111_value("meeting:fire")=="win",
         "fire_partial":lambda:r13_v111_value("meeting:fire")=="partial",
         "fire_lose":lambda:r13_v111_value("meeting:fire")=="lose",
-        "fire_not_lose":lambda:r13_v111_value("meeting:fire")!="lose",
         # Events 06-07: the day-7 room 13 night and the day-10 meetings.
         "prevention_a":lambda:r13_v111_value("prevention")=="A",
         "prevention_b":lambda:r13_v111_value("prevention")=="B",
         "room13_win":lambda:r13_v111_value("meeting:room13")=="win",
-        "room13_partial":lambda:r13_v111_value("meeting:room13")=="partial",
         "room13_lose":lambda:r13_v111_value("meeting:room13")=="lose",
         "room13_not_win":lambda:r13_v111_value("meeting:room13") in ("partial","lose"),
         "room13_partial_unknown":lambda:r13_v111_value("meeting:room13")=="partial" and r13_v111_value("room13_partial_kind")=="unknown",
         "room13_partial_accident":lambda:r13_v111_value("meeting:room13")=="partial" and r13_v111_value("room13_partial_kind")=="accident",
-        "records_win":lambda:r13_v111_value("meeting:records")=="win",
         "records_partial":lambda:r13_v111_value("meeting:records")=="partial",
         "records_lose":lambda:r13_v111_value("meeting:records")=="lose",
-        "records_not_lose":lambda:r13_v111_value("meeting:records")!="lose",
         # Review 0.20.1 3rd #1: the owl grabbed Daram's sleeve only in prevention A.
         "records_lose_prev_a":lambda:r13_v111_value("meeting:records")=="lose" and r13_v111_value("prevention")=="A",
         "records_lose_prev_b":lambda:r13_v111_value("meeting:records")=="lose" and r13_v111_value("prevention")!="A",
@@ -164,11 +158,9 @@ init 319 python:
         "route12_stayed":lambda:r13_v111_value("route12")!="late_exposure",
         "tosil_inside":lambda:r13_v111_value("tosil_listen")=="inside",  # 0.20.9 엔딩 검토 9
         "tosil_outside":lambda:r13_v111_value("tosil_listen")=="outside",
-        "crowd_blocked13":lambda:r13_v111_value("crowd_intervention")=="success",  # 0.20.9 엔딩 검토 14
         "tok_round_asked":lambda:bool(r13_v111_value("followup_read:NW_RX_F007")),  # 0.20.9 D23-04 먼저 물어본 경우
         "heard_inn_order1":lambda:r13_v111_value("heard_inn_order1") is True,  # 0.20.9 1일 문간 지시를 들은 경로
         "guldol_absent":lambda:not r13_v111_actor_ready("resident_guldol"),
-        "guldol_listed":lambda:r13_v111_value("listed:resident_guldol") is True,
         # 2026-10-24 자가 검수 12: 11일 판돌이 아빠 말을 들어 주는 까닭. 앞 회의(3·5·7·10일) 중 하나라도 이겼는가.
         "town_won_before11":lambda:any(r13_v111_value("meeting:"+m)=="win" for m in ("lamp","gate_post","fire","room13","records")),
         "town_won_none_before11":lambda:not any(r13_v111_value("meeting:"+m)=="win" for m in ("lamp","gate_post","fire","room13","records")),
@@ -181,14 +173,10 @@ init 319 python:
         "hyp_lost3":lambda:r13_v111_value("hyp_issue:3")=="lost",
         "hyp_lost4":lambda:r13_v111_value("hyp_issue:4")=="lost",
         # Event 09: the day-12 soup.
-        "soup_late":lambda:r13_v111_value("route12")=="late_exposure",
         "soup_lose_stolen":lambda:r13_v111_value("meeting:soup")=="lose" and r13_v111_value("soup_lose_kind")=="stolen",
         "soup_lose_nabi":lambda:r13_v111_value("meeting:soup")=="lose" and r13_v111_value("soup_lose_kind")=="nabi",
         # Event 10: the day-13 cart.
         "daram_deal_freed":lambda:r13_v111_value("daram_deal_freed") is True,
-        "cart_departed":lambda:r13_v111_value("cart_departed") is True,
-        "daram_departed":lambda:r13_v111_value("departed:daram") is True,
-        "neoul_held":lambda:r13_v111_value("neoul_held") is True,
         # Audit d11-14 #2: a hypothesis wrong answer that may be retried holds judgment.
         "hyp_retry":lambda:r13_v111_value("meeting:hypothesis") is None and (r13_v111_value("tries:hypothesis") or 0)<r13_nw_tries_max("hypothesis"),
         "hyp_final":lambda:not (r13_v111_value("meeting:hypothesis") is None and (r13_v111_value("tries:hypothesis") or 0)<r13_nw_tries_max("hypothesis")),
@@ -199,7 +187,6 @@ init 319 python:
         "soup_lose_nabi_murder":lambda:r13_v111_value("meeting:soup")=="lose" and r13_v111_value("soup_lose_kind")=="nabi" and r13_v111_value("route7")=="murder",
         "soup_lose_nabi_prevented":lambda:r13_v111_value("meeting:soup")=="lose" and r13_v111_value("soup_lose_kind")=="nabi" and r13_v111_value("route7")!="murder",
         # Audit d11-14 #12: firewood is really at the school (carrier received or box picked up).
-        "wood12_here":lambda:bool(r13_v111_value("warm_support_arrived") or r13_v111_value("heat_box_received")),
         "wood12_missing":lambda:not (r13_v111_value("warm_support_arrived") or r13_v111_value("heat_box_received")),
         # Audit d11-14 #10, #13, #6, #7.
         "blanket_undecided":lambda:r13_v111_value("meeting:blanket") is None,
@@ -213,14 +200,12 @@ init 319 python:
         "altar_win":lambda:r13_v111_value("meeting:altar")=="win",
         "altar_partial":lambda:r13_v111_value("meeting:altar")=="partial",
         "altar_lose":lambda:r13_v111_value("meeting:altar")=="lose",
-        "altar_half1":lambda:r13_v111_value("altar_half1") is True,
         "medicine_locked":lambda:r13_v111_value("medicine_locked") is True,
         "medicine_unchecked":lambda:not r13_v111_value("medicine_locked"),
         "daram_not_deal_freed":lambda:r13_v111_value("daram_deal_freed") is not True,
         "warm_support_pending":lambda:not r13_v111_value("warm_support_arrived"),
         "warm_support_ready":lambda:r13_v111_value("warm_support_arrived") is True,
         "family_priority":lambda:r13_v111_value("outcome13")=="family_priority",
-        "ending_morning":lambda:r13_v111_value("ending14")=="morning",
         "reader_nabi":lambda:not (r13_v111_value("departed:nabi") or not r13_v111_person_alive("nabi")),
         "reader_tosil":lambda:bool(r13_v111_value("departed:nabi") or not r13_v111_person_alive("nabi")),
         "granny_held_win":lambda:r13_v111_value("OWL_ALIVE") is False and r13_v111_value("meeting:room13")=="win",
