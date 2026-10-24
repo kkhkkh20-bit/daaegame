@@ -76,12 +76,12 @@ testcase poses_a_field:
     pause 1.2
     $ r13_qa_poses_a_report("post_morning_d7")
     screenshot "poses_a_post_morning.png"
-    run Call("r13_qa_roam",dict(day=3,period=1,location="store",life_poc=True))
+    run Call("r13_qa_roam",dict(day=2,period=0,location="school",life_poc=True),R13_QA_POSES_A_FLAGS,(),12)
     click pos (640,600) until screen "r13_hub" timeout 40
     $ r13_qa_poses_a_focus()
     pause 1.2
-    $ r13_qa_poses_a_report("store_afternoon")
-    screenshot "poses_a_store_afternoon.png"
+    $ r13_qa_poses_a_report("school_morning")
+    screenshot "poses_a_school_morning.png"
     run Call("r13_qa_roam",dict(day=3,period=0,location="river",life_poc=True),("entry_corrected","lodging","livelihood_open"),cash=4)
     click pos (640,600) until screen "r13_hub" timeout 40
     $ r13_qa_poses_a_focus()
