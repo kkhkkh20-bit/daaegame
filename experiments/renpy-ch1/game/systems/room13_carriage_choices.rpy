@@ -16,9 +16,9 @@ screen r13_carriage_choice_list(entries,ready,caption=""):
             button:
                 id ("r13_carriage_choice_"+str(index+1))
                 xsize 600 yminimum row_height padding (64,16,20,16)
-                background R13ReferenceChoice(False,index+1) hover_background R13ReferenceChoice(True,index+1)
+                background R13ReferenceChoice(False,index+1,parchment=True) hover_background R13ReferenceChoice(True,index+1,parchment=True)
                 action r13_safe_question_action(command) sensitive ready
-                text r13_question_caption(label,was_read,False) xsize 516 size r13_read_size(24,28) font r13_ui_font() color "#fff4df" yalign .5
+                text r13_question_caption(label,was_read,False) xsize 516 size r13_read_size(24,28) font r13_ui_font() color "#4b3420" yalign .5
     if ready:
         for index,(label,command,was_read) in enumerate(entries[:9]):
             key ("K_%d"%(index+1)) action r13_safe_question_action(command)
