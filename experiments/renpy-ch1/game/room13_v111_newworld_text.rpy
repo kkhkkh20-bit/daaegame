@@ -123,6 +123,14 @@ init 319 python:
         "crowd_block_failed13":lambda:r13_v111_value("crowd_intervention")=="failed" and r13_v111_value("crowd_blocked_by_dad") is True,
         "departed_any":lambda:any(p!="daram" for p in (r13_v111_value("departed_names") or [])),
         "family_on_square":lambda:r13_v111_value("family_location")=="square" and r13_v111_actor_ready("daram"),
+        # 2026-10-24 자료 재사용(EVIDENCE_CLUTTER_PLAN.md 2부): 정답 위에 덧붙인 자료를 상대가 한 줄로 짚는다.
+        "hyp1_won_with_e28":lambda:"V111:E28" in (r13_v111_value("proof_given:초롱과 피코의 하루를 대조한다") or []),
+        "hyp3_won_with_e14":lambda:"V111:E14" in (r13_v111_value("proof_given:요즘 돌이 어디서 오는지 대조한다") or []),
+        "writing_won_with_e27":lambda:"V111:E27" in (r13_v111_value("proof_given:반송·필사본·초대 발송을 대조한다") or []),
+        "blanket_won_with_e35":lambda:"V111:E35" in (r13_v111_value("proof_given:아내가 봤다는 담요의 시점을 확인한다") or []),
+        "badook_won_with_e29":lambda:"V111:E29" in (r13_v111_value("proof_given:촌장이 어젯밤 있던 곳을 확인한다") or []),
+        "piko_ledger_with_e34":lambda:"V111:E34" in (r13_v111_value("proof_given:장부의 두 배를 실룩에게 보인다") or []),
+        "altar4_won_with_burnt_page":lambda:"V111:NW_BURNT_PAGE" in (r13_v111_value("proof_given:맨 처음 이름을 짚는다") or []),
         "hyp1_won_without_e08":lambda:bool(r13_v111_value("proof_given:초롱과 피코의 하루를 대조한다")) and "V111:E08" not in r13_v111_value("proof_given:초롱과 피코의 하루를 대조한다"),
         # Event 05: the day-7 fire meeting.
         "fire_win":lambda:r13_v111_value("meeting:fire")=="win",
