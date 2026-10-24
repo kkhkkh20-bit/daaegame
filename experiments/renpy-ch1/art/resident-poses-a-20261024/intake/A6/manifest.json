@@ -1,0 +1,146 @@
+{
+  "repository": "kkhkkh20-bit/daaegame",
+  "commit": "1a0fc74775514efb353b844e102034600389b6f2",
+  "tool": "built-in image_gen",
+  "items": [
+    {
+      "id": "resident_bori",
+      "name": "보리",
+      "visible": "쪼그려 앉아 장작 묶음 위의 끈을 양손으로 묶거나 조이는 자세. 장작을 들고 서 있는 모습은 아님.",
+      "source": "preview/room13-dev/game/assets/room13-action-resident_bori-living_firewood.webp",
+      "previous": "1차 회의 착석과 인물은 같지만 원화/동작 비중복",
+      "connection": "대사 주제 연결 확인: room13_conversations.rpy의 bori_bundle에서 길이가 비슷한 장작을 묶고 쏠리면 묶은 자리를 다시 본다고 설명. 정확한 living_firewood 포즈의 해당 대사 시점 호출은 미확인.",
+      "priority": 1,
+      "label": "보리 · 장작 끈 조이기",
+      "raw": "raw/bori_tie_firewood_A.png",
+      "png": "png/bori_tie_firewood_A.png",
+      "webp": "webp/bori_tie_firewood_A.webp",
+      "source_local": "sources/room13-action-resident_bori-living_firewood.webp",
+      "raw_dimensions": [
+        1024,
+        1536
+      ],
+      "padded_dimensions": [
+        1088,
+        1600
+      ],
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha_preserved": true,
+      "visible_rgba_preserved": true,
+      "webp_lossless_visible_rgba_verified": true,
+      "sha256_png": "fde98c7fe1f3fb1a531bb2f258c22d7b81faac18117be5a2c9b19cc3a74b2458",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/room13-action-resident_bori-living_firewood.webp"
+    },
+    {
+      "id": "resident_tosil",
+      "name": "토실",
+      "visible": "서서 닫힌 갈색 책을 가슴 앞에 양손으로 안고 있음. 책을 펼쳐 읽거나 상대에게 팔을 뻗어 건네는 동작은 아님.",
+      "source": "preview/room13-dev/game/assets/dialogue-pose-source/resident_tosil/hold_storybook/840.webp",
+      "previous": "2차 보온병 다루기와 인물은 같지만 원화/동작 비중복",
+      "connection": "직접 포즈 호출 확인: systems/room13_ep6_cart.rpy의 cv:altar:book, r13_cv_daram() 조건 아래 hold_storybook. 특정 후반 장면용이며 범용 독서 동작으로 단정하지 않음.",
+      "priority": 2,
+      "label": "토실 · 닫힌 그림책 안기",
+      "raw": "raw/tosil_hold_closed_book_A.png",
+      "png": "png/tosil_hold_closed_book_A.png",
+      "webp": "webp/tosil_hold_closed_book_A.webp",
+      "source_local": "sources/tosil_hold_storybook.webp",
+      "raw_dimensions": [
+        921,
+        1708
+      ],
+      "padded_dimensions": [
+        985,
+        1772
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_preserved": true,
+      "visible_rgba_preserved": true,
+      "webp_lossless_visible_rgba_verified": true,
+      "sha256_png": "104fbd3ac2f7d6a5b132720a1a16ab829b2592c7e75f0d98454eacde1fc53e41",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/dialogue-pose-source/resident_tosil/hold_storybook/840.webp"
+    },
+    {
+      "id": "doto",
+      "name": "도토",
+      "visible": "양손에 서로 다른 종이 두 장을 따로 들고 비교하는 자세.",
+      "source": "preview/room13-dev/game/assets/investigation-canonical-20261018/doto--map27_compare_ration_slips_v2.webp",
+      "previous": "3차 장부 쓰기와 인물은 같지만 원화/동작 비중복",
+      "connection": "room13-map-action27.json의 VA-10-square / VA-10-hall에 활동 문구 '두 배급표의 표기를 비교한다.'와 정확한 원화 연결 확인. 특정 대사 직접 연결과 현재 실행 관찰은 미확인. 종이 표기/도장을 새 증거로 재해석하면 안 됨.",
+      "priority": 3,
+      "label": "도토 · 배급표 비교",
+      "raw": "raw/doto_compare_ration_slips_A.png",
+      "png": "png/doto_compare_ration_slips_A.png",
+      "webp": "webp/doto_compare_ration_slips_A.webp",
+      "source_local": "sources/doto--map27_compare_ration_slips_v2.webp",
+      "raw_dimensions": [
+        1024,
+        1536
+      ],
+      "padded_dimensions": [
+        1088,
+        1600
+      ],
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha_preserved": true,
+      "visible_rgba_preserved": true,
+      "webp_lossless_visible_rgba_verified": true,
+      "sha256_png": "3e806e863a05799090e8275159aefaa17c00dea0db01a5ef7b978471f29e72a6",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/investigation-canonical-20261018/doto--map27_compare_ration_slips_v2.webp"
+    },
+    {
+      "id": "resident_jongjong",
+      "name": "종종",
+      "visible": "열린 어깨 우편가방에 봉투 묶음을 넣고 다른 손으로 가방 입구를 잡는 자세.",
+      "source": "preview/room13-dev/game/assets/investigation-canonical-20261018/resident_jongjong--map27_pack_satchel_v2.webp",
+      "previous": "3차 편지를 들어 분류하는 모습과 원화/동작 비중복. 다만 같은 우편 업무라 기능상 차이는 작음.",
+      "connection": "room13-map-action27.json의 VA-12-post에 활동 문구 '우편 가방에 편지를 챙긴다.'와 정확한 원화 연결 확인. 특정 대사 직접 연결과 현재 실행 관찰은 미확인.",
+      "priority": 4,
+      "label": "종종 · 우편가방 챙기기",
+      "raw": "raw/jongjong_pack_mailbag_A.png",
+      "png": "png/jongjong_pack_mailbag_A.png",
+      "webp": "webp/jongjong_pack_mailbag_A.webp",
+      "source_local": "sources/resident_jongjong--map27_pack_satchel_v2.webp",
+      "raw_dimensions": [
+        1024,
+        1536
+      ],
+      "padded_dimensions": [
+        1088,
+        1600
+      ],
+      "alpha_range": [
+        0,
+        254
+      ],
+      "alpha_preserved": true,
+      "visible_rgba_preserved": true,
+      "webp_lossless_visible_rgba_verified": true,
+      "sha256_png": "05bb4c91a8e030f07463b3079af28e2008ff5796d5aad82f40512020b91672e4",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/investigation-canonical-20261018/resident_jongjong--map27_pack_satchel_v2.webp"
+    }
+  ],
+  "processing": [
+    "Raw generated PNGs preserved byte-for-byte.",
+    "PNG adds 32 transparent pixels on each side only, no resize.",
+    "Alpha values including 254 and all visible RGBA pixels preserved exactly after padding. Invisible RGB at alpha0 may be normalized by ImageMagick.",
+    "Lossless WebP: alpha and visible RGBA verified exactly against padded PNG.",
+    "No alpha threshold, cleanup, crop, game code change or deployment."
+  ],
+  "limitations": [
+    "AI style conversion, not a pixel-identical redraw of source.",
+    "Doto ration-slip marks are visual reference only: no definitive clue or textual interpretation.",
+    "Doto/Jongjong have activity-config links; specific dialogue connection remains unverified.",
+    "Tosil hold_storybook is scene-specific: cv:altar:book with r13_cv_daram() condition; not general reading or handing over.",
+    "Bori has corresponding firewood-bundling dialogue; precise runtime pose call there remains unverified.",
+    "In-game placement and final sprite scale have not been tested."
+  ]
+}

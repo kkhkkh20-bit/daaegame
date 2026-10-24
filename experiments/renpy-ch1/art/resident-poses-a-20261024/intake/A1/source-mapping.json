@@ -1,0 +1,59 @@
+{
+  "repository": "kkhkkh20-bit/daaegame",
+  "commit": "1a0fc74775514efb353b844e102034600389b6f2",
+  "files": [
+    {
+      "character": "피코",
+      "action": "그림판에 그림 그리기",
+      "source_local": "sources/resident_piko--map27_paint_sketchboard_v2.webp",
+      "source_repository_path": "preview/room13-dev/game/assets/investigation-canonical-20261018/resident_piko--map27_paint_sketchboard_v2.webp",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/investigation-canonical-20261018/resident_piko--map27_paint_sketchboard_v2.webp",
+      "source_dimensions": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "character": "뭉치",
+      "action": "상점 상자 정리",
+      "source_local": "sources/resident_mungchi--store_sort_boxes.webp",
+      "source_repository_path": "preview/room13-dev/game/assets/map-work-nine/resident_mungchi--store_sort_boxes.webp",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/map-work-nine/resident_mungchi--store_sort_boxes.webp",
+      "source_dimensions": [
+        1037,
+        1517
+      ],
+      "converted_file": "mungchi_store_boxes_white_master.png",
+      "converted_dimensions": [
+        1037,
+        1516
+      ],
+      "generation_method": "Built-in image_gen; transparent PNG; original generated canvas preserved; no game integration"
+    },
+    {
+      "character": "보리",
+      "action": "회의 착석",
+      "source_local": "sources/room13-meeting-seated-resident_bori068.webp",
+      "source_repository_path": "preview/room13-dev/game/assets/room13-meeting-seated-resident_bori068.webp",
+      "source_url": "https://github.com/kkhkkh20-bit/daaegame/blob/1a0fc74775514efb353b844e102034600389b6f2/preview/room13-dev/game/assets/room13-meeting-seated-resident_bori068.webp",
+      "source_dimensions": [
+        1024,
+        1536
+      ],
+      "converted_file": "bori_meeting_seated_white_master.png",
+      "converted_dimensions": [
+        1024,
+        1536
+      ],
+      "generation_method": "Built-in image_gen; transparent PNG; original generated canvas preserved; no game integration"
+    }
+  ],
+  "notes": [
+    "Original source assets downloaded read-only through connected GitHub.",
+    "Mungchi identity based on actual source, no separate approved B fullbody file was found. Source species (moose), costume and box sorting action preserved. Piko A used solely as style reference.",
+    "Bori uses approved B fullbody identity fullbody_sticker_resident_bori.png; seated action and wooden chair are from actual meeting pose. Label meeting-seated, not resting.",
+    "Bori face is intentionally aligned to the approved B identity rather than the older pixel source.",
+    "Final masters were not overwritten with subsequent cleanup variants. Parent verified originals flattened on a colored background; viewer gray halo was not reliable evidence of baked background.",
+    "Actual game placement size remains unverified. No game code or data changed."
+  ]
+}
