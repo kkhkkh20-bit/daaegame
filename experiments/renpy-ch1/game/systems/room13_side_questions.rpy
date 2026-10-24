@@ -8,7 +8,7 @@ init 80 python:
         rows=[]
         for title,action,read in entries:
             label=r13_question_caption(title,read,mark_unread=True)
-            text=Text(label,font=r13_ui_font(),size=r13_read_size(26,28),xsize=506,line_spacing=2)
+            text=Text(label,font=r13_ui_font(),size=r13_read_size(28,32),xsize=506,line_spacing=2)
             height=int(renpy.render(text,506,720,0,0).get_size()[1])
             rows.append(((title,action,read),max(88 if r13_touch_ui() else 54,height+16)))
         def pack(cap):
@@ -45,8 +45,8 @@ screen r13_side_question_list(person,pose,entries,ready,return_action=None,capti
                 action r13_safe_question_action(command) sensitive ready
                 hbox:
                     yalign .5 spacing 12
-                    text str(i+1) yalign .5 xsize 34 size r13_read_size(26,28) color "#4b3420" font r13_ui_font()
-                    text r13_question_caption(label,read,mark_unread=True) yalign .5 xsize 506 size r13_read_size(26,28) line_spacing 2 color ("#665749" if read else "#4b3420") font r13_ui_font()
+                    text str(i+1) yalign .5 xsize 34 size r13_read_size(28,32) color "#4b3420" font r13_ui_font()
+                    text r13_question_caption(label,read,mark_unread=True) yalign .5 xsize 506 size r13_read_size(28,32) line_spacing 2 color ("#665749" if read else "#4b3420") font r13_ui_font()
         if not entries:
             frame:
                 xsize 592 padding (20,20) background R13ControlSurface()

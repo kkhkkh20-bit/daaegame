@@ -1,19 +1,21 @@
-# Small drawn controls; no borrowed reference artwork or additional bitmap assets.
+# Existing approved B paper cards; keep the authored choice geometry and numbering.
 init 79 python:
     class R13ReferenceChoice(renpy.Displayable):
-        def __init__(self,hover=False,number=None,**kwargs):
+        def __init__(self,hover=False,number=None,parchment=False,**kwargs):
             super(R13ReferenceChoice,self).__init__(**kwargs)
             self.hover=hover
             self.number=number
+            self.parchment=parchment
         def render(self,width,height,st,at):
             w=max(1,int(width));h=max(42,int(height))
             r=renpy.Render(w,h)
-            panel=R13ControlSurface(hovered=self.hover)
+            panel=(Frame(Crop((16,16,640,84),"assets/ui-b-question/b_panel_card_hover.png" if self.hover else "assets/ui-b-question/b_panel_card.png"),80,24)
+                if self.parchment else R13ControlSurface(hovered=self.hover))
             r.blit(renpy.render(panel,w,h,st,at),(0,0))
-            c=r.canvas()
-            c.rect("#626b60" if self.hover else "#2b3230",(10,10,44,h-20))
+            if not self.parchment:
+                r.canvas().rect("#626b60" if self.hover else "#2b3230",(10,10,44,h-20))
             if self.number is not None:
-                t=renpy.render(Text(str(self.number),size=r13_read_size(24,28),font=r13_ui_font(),color="#eee7ce",bold=False),60,h,st,at)
+                t=renpy.render(Text(str(self.number),size=r13_read_size(24,28),font=r13_ui_font(),color=("#4b3420" if self.parchment else "#eee7ce"),bold=False),60,h,st,at)
                 tw,th=t.get_size()
                 r.blit(t,(int(32-tw/2),int((h-th)/2)))
             return r
