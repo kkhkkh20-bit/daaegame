@@ -4,11 +4,14 @@ init 999 python:
     R13_QA_POSES_A_FLAGS=("+w1c","ev_l_done","ev_g_done","ev_i_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected")
 
     def r13_qa_poses_a_on_stage():
-        return [(a["person"],a["pose"]) for a in r13_stage_people() if (r13_acting_spec(a["person"],a["pose"]) or {}).get("resident_pose_a")]
+        # 교체 대상 자세로 선 인물(비교용 실행에서는 옛 그림으로 선다)
+        pairs={(x["person"],x["pose"]) for x in R13_RESIDENT_POSES_A["slots"]}
+        return [(a["person"],a["pose"]) for a in r13_stage_people() if (a["person"],a["pose"]) in pairs]
 
     def r13_qa_poses_a_focus():
         # 새 그림 인물이 화면 가운데 오도록 카메라를 옮긴다. 인물이 없으면 그대로 둔다.
-        loc=store.room13["location"];actors=[a for a in r13_stage_people() if (r13_acting_spec(a["person"],a["pose"]) or {}).get("resident_pose_a")]
+        loc=store.room13["location"];pairs={(x["person"],x["pose"]) for x in R13_RESIDENT_POSES_A["slots"]}
+        actors=[a for a in r13_stage_people() if (a["person"],a["pose"]) in pairs]
         if actors and r13_world_width()>1280:
             cx=sum(a["x"]+a["width"]/2.0 for a in actors)/len(actors)
             store.r13_world_cameras[loc]=int(max(0,min(r13_world_width()-1280,cx-640)))
@@ -19,7 +22,7 @@ init 999 python:
         hits=[]
         for a in r13_stage_people():
             if (a["person"],a["pose"]) in found:
-                hits.append("%s:%s rect=%s" % (a["person"],a["pose"],a["rect"]))
+                hits.append("%s:%s %s rect=%s" % (a["person"],a["pose"],"a" if (r13_acting_spec(a["person"],a["pose"]) or {}).get("resident_pose_a") else "old",a["rect"]))
         r13_qa_note("poses_a %s day=%s period=%s loc=%s -> %s" % (tag,store.room13["day"],store.room13["period"],store.room13["location"],"; ".join(hits) or "없음"))
         return found
 
