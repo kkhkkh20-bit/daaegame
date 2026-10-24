@@ -27,6 +27,9 @@ init python:
         r13_edit(day=14,location="school",period=1)
     def qa_drawer_scope(name="r13_records"):
         return renpy.get_screen(name).scope
+    def qa_drawer_set(name="r13_records",**values):
+        for key,value in values.items():renpy.set_screen_variable(key,value,screen=name)
+        renpy.restart_interaction()
     def qa_drawer_log(text):
         with open(os.path.join(config.basedir,"qa_result.txt"),"a",encoding="utf-8") as out:out.write(text+"\n")
     def qa_drawer_legacy_ok():
@@ -122,13 +125,11 @@ testcase v111_evidence_drawer:
     click "지난 사건"
     pause 0.8
     screenshot "drawer-08-proof-past-pc.png"
-    click "⑩ 두 배의 장부 · 13일"
+    click "⑧ 학교의 수프 · 12일"
     pause 0.6
-    click "너울의 장부"
+    click "학교 문 옆 이송 예정 칸"
     pause 1.0
-    assert eval (qa_drawer_scope("r13_book")["drawer"]=="past")
-    click "백 부인의 매입 장부"
-    pause 1.0
+    assert eval (qa_drawer_scope("r13_book")["drawer"]=="past" and qa_drawer_scope("r13_book")["detail"]=="V111:NW_TRANSFER_LIST")
     screenshot "drawer-09-proof-past-pick-pc.png"
     run Hide("r13_book")
     pause 0.4
@@ -138,24 +139,20 @@ testcase v111_evidence_drawer:
     run Show("r13_records")
     pause 1.2
     screenshot "drawer-11-now-touch.png"
-    $ qa_drawer_scope()["drawer"]="past"
-    $ qa_drawer_scope()["detail"]=None
+    run Function(qa_drawer_set,drawer="past",detail=None)
     pause 0.8
     screenshot "drawer-12-past-touch.png"
-    $ qa_drawer_scope()["drawer_case"]="gate_post"
-    $ qa_drawer_scope()["detail"]="V111:E21"
-    $ qa_drawer_scope()["page"]=0
+    run Function(qa_drawer_set,drawer_case="gate_post",detail="V111:E21",page=0)
     pause 1.0
     screenshot "drawer-13-note-detail-touch.png"
-    $ qa_drawer_scope()["drawer"]="person"
-    $ qa_drawer_scope()["detail"]=None
+    run Function(qa_drawer_set,drawer="person",detail=None)
     pause 0.8
     screenshot "drawer-14-person-touch.png"
     run Hide("r13_records")
     pause 0.4
     run Show("r13_book",target="dad",present=True,purpose="proof",chosen=[])
     pause 1.0
-    $ qa_drawer_scope("r13_book")["drawer"]="past"
+    run Function(qa_drawer_set,"r13_book",drawer="past",detail=None)
     pause 0.8
     screenshot "drawer-15-proof-past-touch.png"
     run Hide("r13_book")

@@ -303,13 +303,14 @@ screen r13_drawer_group_list(mode,entries,chosen,gpage,owner,header):
                 if mode=="past":
                     # 사건의 자료 그림 세 장을 겹쳐 놓는다(시안).
                     for j,icon_key in enumerate(group_items[:3]):
-                        add r13_evidence_picture(icon_key,40) xpos (8+j*22) ypos (44+(j%2)*6) yanchor .5
+                        add r13_evidence_picture(icon_key,40) xpos (6+j*20) ypos (44+(j%2)*6) yanchor .5
                 else:
                     add Transform(r13_art(group_key,"avatar_neutral"),xysize=(56,56),fit="contain") xpos 10 ypos 44 yanchor .5
+                # 시안은 셋째 그림과 이름 첫 글자가 겹친다. 번호가 그림에 묻히지 않게 이름을 몇 px 오른쪽에 둔다.
                 vbox:
-                    xpos 84 ypos 44 yanchor .5 spacing 2
-                    text r13_ev_two_lines(r13_drawer_group_title(mode,group_key,False),164,label_size,2):
-                        xsize 164 size label_size color "#e3d6bd" font r13_ui_font() line_spacing -1
+                    xpos 92 ypos 44 yanchor .5 spacing 2
+                    text r13_ev_two_lines(r13_drawer_group_title(mode,group_key,False),156,label_size,2):
+                        xsize 156 size label_size color "#e3d6bd" font r13_ui_font() line_spacing -1
                     text ((("%d일 · "%r13_drawer_case_day(group_key)) if mode=="past" and r13_drawer_case_day(group_key) else "")+"자료 %d"%len(group_items)):
                         size r13_ev_small_size() color ("#f0c66a" if is_chosen else "#beaa8c") font r13_ui_font()
     if pages>1:

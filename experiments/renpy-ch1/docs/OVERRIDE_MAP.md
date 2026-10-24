@@ -657,7 +657,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 68 | `room13_notebook.rpy:126` | _r13_drawer_open_person_material |
-| 2 | 336 | `systems/room13_evidence_drawer.rpy:249` |  |
+| 2 | 336 | `systems/room13_evidence_drawer.rpy:251` |  |
 
 ## `r13_prove` (2층)
 
