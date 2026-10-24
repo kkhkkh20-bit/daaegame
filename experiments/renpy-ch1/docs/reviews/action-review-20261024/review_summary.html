@@ -1,0 +1,160 @@
+<title>행동 검수와 불타는 밤</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+:root{--bg:#f6eedd;--paper:#fffaf0;--ink:#3f2e22;--ink2:#6e5a49;--line:#d8c7ad;--accent:#b5523f;--navy:#2c3e60;--ok:#4d6b3c;--warn:#a46a14;--bad:#a33a2c;--chip:#efe3cc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1712;--paper:#271f18;--ink:#eee2cf;--ink2:#b9a68f;--line:#4a3c2f;--accent:#e08a74;--navy:#9db3dc;--ok:#9cc27f;--warn:#e0b25a;--bad:#ef8b7c;--chip:#33281f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1d1712;--paper:#271f18;--ink:#eee2cf;--ink2:#b9a68f;--line:#4a3c2f;--accent:#e08a74;--navy:#9db3dc;--ok:#9cc27f;--warn:#e0b25a;--bad:#ef8b7c;--chip:#33281f;color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;line-height:1.65;font-size:15px}
+.wrap{max-width:960px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:28px}
+h1{font-size:1.7rem;margin:0;text-wrap:balance}
+h2{font-size:1.25rem;margin:0 0 4px;text-wrap:balance;border-bottom:2px solid var(--line);padding-bottom:6px}
+h3{font-size:1.02rem;margin:14px 0 4px}
+p{margin:0;max-width:72ch}
+.lede{color:var(--ink2)}
+section{display:grid;gap:12px;min-width:0}
+.box{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--paper)}
+table{border-collapse:collapse;width:100%;min-width:560px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-size:.82rem;letter-spacing:.04em;color:var(--ink2);background:var(--chip)}
+tr:last-child td{border-bottom:0}
+.n{text-align:right;font-variant-numeric:tabular-nums}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:grid;gap:6px;min-width:0}
+.card b.t{font-size:1rem}
+.fact{color:var(--ink2)}
+.say{border-left:3px solid var(--accent);padding-left:10px;margin:2px 0}
+.chip{display:inline-block;font-size:.75rem;padding:1px 8px;border-radius:99px;background:var(--chip);color:var(--ink2);margin-left:6px;white-space:nowrap}
+.chip.d{background:var(--accent);color:var(--paper)}
+ol.dec{margin:0;padding-left:1.3em;display:grid;gap:8px}
+ol.dec li{max-width:72ch}
+.rec{color:var(--ok);font-weight:600}
+code{font-size:.85em;background:var(--chip);padding:0 4px;border-radius:4px}
+.flow{display:grid;gap:6px;counter-reset:s}
+.flow div{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+footer{color:var(--ink2);font-size:.85rem}
+</style>
+
+<div class="wrap">
+<header style="display:grid;gap:8px">
+  <h1>행동 검수와 불타는 밤</h1>
+  <p class="lede">2026-10-24 · 다람탐정 Room13 0.20.25 기준. 1부는 「주인공 시점에서 이 모든 행동을 유저가 이해할까?」에 대한 답, 2부는 집단 야생화 「불타는 밤」의 사실 대조와 구현 지시서 요약이다. 게임은 아직 고치지 않았다.</p>
+</header>
+
+<section>
+  <h2>1부. 행동 이해도 — 결론</h2>
+  <p>큰 줄기(왜 엄마를 찾는지, 왜 못 나가는지, 회의에서 무엇을 내미는지)는 대부분 이해된다. 지도는 갈 곳이 한 군데만 켜져 길을 잃지는 않는다. 다만 <b>왜 거기로 가는지 대사가 없으면 화살표만 따라가게 되고</b>, 회의에서 지면 가족이 무엇을 잃는지 미리 모르는 자리가 있다.</p>
+  <div class="box"><table>
+    <thead><tr><th>구간</th><th class="n">행동 지점</th><th class="n">이해됨</th><th class="n">약함</th><th class="n">안 됨</th></tr></thead>
+    <tbody>
+      <tr><td>1~5일</td><td class="n">81</td><td class="n">63</td><td class="n">16</td><td class="n">1</td></tr>
+      <tr><td>6~10일 (두 경로 합)</td><td class="n">59</td><td class="n">38</td><td class="n">18</td><td class="n">3</td></tr>
+      <tr><td>11~14일 (결말 표 포함)</td><td class="n">52</td><td class="n">32</td><td class="n">14</td><td class="n">6</td></tr>
+    </tbody></table></div>
+  <p class="fact">6~10일·11~14일 수는 보고서 표의 판정 칸을 센 값이다. 날짜별 판정과 줄 ID는 <code>docs/reviews/action-review-20261024/d01-05.md · d06-10.md · d11-14.md</code>.</p>
+</section>
+
+<section>
+  <h2>큰 구멍 9개와 대안</h2>
+  <p class="lede">원칙: 사실·조건·결과는 그대로. 행동 <b>앞에</b> 아빠가 묻고 상대가 답하는 두세 줄을 둔다.</p>
+
+  <div class="card"><b class="t">1. 마을은 왜 외지인의 증거를 받아 주나 <span class="chip">1~5일</span></b>
+    <p class="fact">증거를 받아 적는 바둑이가 누구인지 한 번도 나오지 않는다. 「기회 5번」은 화면 숫자뿐이다.</p>
+    <p class="say">바둑이: 순찰대 바둑이요. 누가 무엇을 내놨는지 적는 게 내 일이오. / 아빠(생각): 너울 씨 장부 말고, 적는 사람이 하나 더 있다.</p>
+    <p>마지막 기회가 남았을 때만 결정하는 사람이 한 줄로 태도를 보인다 — 너울 「한 번만 더 듣겠소. 그다음엔 장부대로 하오.」</p></div>
+
+  <div class="card"><b class="t">2. 지면 무엇을 잃는지 모른다 <span class="chip">1일·3일</span></b>
+    <p class="fact">1일에 져도 다람은 「외 한 명」으로 들어가고, 3일에 져도 톡이 축을 끝낸다고 해 아빠가 건 「못 나간다」가 일어나지 않는다.</p>
+    <p class="say">아빠: 이름 칸이 없으면 어떻게 됩니까? / 돌목: 표에 적힌 대로만 셉니다. / 다람: ……나 없는 사람이야?</p>
+    <p class="say">아빠: 축을 다 고치시면…… 그다음엔요? / 톡: 수레가 오면 가는 거죠. 그다음 고장은 누가 고칠지 몰라요.</p></div>
+
+  <div class="card"><b class="t">3. 이동의 까닭이 화면 밖에 있다 <span class="chip">3일 광장 등 8곳</span></b>
+    <p class="fact">3일 진료소→광장은 까닭이 원본 지문에만 있고 게임이 부르지 않는다(유일한 「안 됨」). 7일 빨래터, 8일 광장, 9일 주방·공방, 11일 옛 시설, 13일 광장, 14일 입구도 약하다.</p>
+    <p class="say">우박: 집게는 공방에 갖다줘요. 나 지금 못 나가요. / 아빠: 제가 가져다드리겠습니다. 가는 길에 톡 씨한테도 알리고요.</p></div>
+
+  <div class="card"><b class="t">4. 「생각」 칸이 아직 모르는 일을 먼저 말한다 <span class="chip">전 구간</span><span class="chip d">결정</span></b>
+    <p class="fact">장면을 이동 전에 지정해서 지도 화면의 「생각」이 도착할 장면의 사실을 미리 보인다(4일 비명 전 「초소 뒤에서 누가 다친 걸까?」 등).</p>
+    <p><span class="rec">추천</span>: 문구를 하나씩 고치지 않고, 「생각」 칸이 도착한 뒤에 바뀌도록 구조를 고친다. 앞으로 쓰는 장면도 같이 맞는다.</p></div>
+
+  <div class="card"><b class="t">5. 6일 꼬미 — 갈림인 줄 모른다</b>
+    <p class="fact">위험 단서는 있으나 「오늘 밤」이라는 시간 단서가 없고, 창고 화면에는 「내일 아침에 데리러 올게」 하나만 보인다.</p>
+    <p class="say">아빠: 오늘 밤엔 불을 피울 데가 있니? / 꼬미: 등잔 하나. 문 닫으면 따뜻해. / 다람: 문 앞에 장작 있는데…… 닫으면 어떻게 나와?</p>
+    <p>창고에 「선생님께 먼저 여쭤 보고 올게」를 함께 보여 두 길이 한 화면에 있게 한다.</p></div>
+
+  <div class="card"><b class="t">6. 7일 13호 — 다람을 맡긴 밤에만 부엉이가 죽는 까닭 <span class="chip d">결정</span></b>
+    <p class="fact">다람도 데려가는 갈래에서도 부엉이는 도토와 단둘인데, 할머니는 움직이지 않는다. 왜 다람이 남은 밤에만 일이 났는지 말하는 줄이 없다.</p>
+    <p><span class="rec">추천</span>(새 동기 한 줄): 할머니는 누명을 씌울 사람이 있을 때만 움직였다.</p>
+    <p class="say">할머니(10일 진술): 아이가 그 방에 있었으니까요. ……아이 손에 촛대가 있으면, 아무도 늙은이를 안 봐요.</p>
+    <p>다른 안: 동기는 정하지 않고 8일 아빠 속말 「다람이가 없었으면…… 그 방에 아무 일도 없었을까.」만.</p></div>
+
+  <div class="card"><b class="t">7. 10일 — 다람이 명단에 오를 위험을 회의 전에 모른다 <span class="chip">안 됨</span></b>
+    <p class="fact">처음 명시되는 것이 패배 판결 줄이다. 살인 경로에는 회의 예고도 없다.</p>
+    <p class="say">아빠: 다람이는 언제까지 여기 있어야 합니까? / 너울: 사흘 뒤 회관에서 가리겠소.</p>
+    <p class="say">아빠: 회의에서 다람이가 했다고 적히면…… 어떻게 됩니까? / 서리: 보호실은 오래 못 써요. 아이는 이송 명단에 올라요. / 아빠: ……간 사람은 안 돌아온다는 그 명단 말입니까.</p></div>
+
+  <div class="card"><b class="t">8. 13일 — 촌장의 거래, 기록 공개, 군중 선택지 <span class="chip d">결정</span></b>
+    <p class="fact">거래의 대가가 고른 뒤에 나온다. 공개는 까닭도 위험도 앞에 없고, 「막는다 / 막지 않는다」는 두 뜻으로 읽힌다. 수첩 목표 칸은 11일에 벌써 「엄마를 지킨다 — 마침」이고, 13일 한 줄 「셋이 함께 남아야 한다」는 거래를 권하는 말로 읽힌다.</p>
+    <p class="say">아빠: 아내 이름을 빼면, 그 칸엔 누가 들어갑니까? / 촌장: 그건 그때 정하오. / 엄마: ……빈칸이 있는 한 또 누가 적혀.</p>
+    <p class="say">엄마: 여기서 다 읽으면 가족을 보낸 집들이 가만있지 않을 거야. / 아빠: ……돌목 씨가 곁에 있을 때 읽자.</p>
+    <p>선택지 글: 「너울을 몸으로 감싼다」 / 「돌목에게 너울을 맡긴다」 / 「주민들을 말리지 않는다」(결과 그대로).</p>
+    <p><span class="rec">추천</span>(목표 칸): 「엄마를 지킨다」를 13일 수레가 지날 때까지 지금 단계로 두고, 13일 한 줄을 「명단에 빈칸이 있는 한, 다음은 누구든 될 수 있다.」로 바꾼다.</p></div>
+
+  <div class="card"><b class="t">9. 결말 — 왜 그렇게 끝났는지</b>
+    <p class="fact">「얼어붙은 마을」은 조건(사망 4명 이상)과 글(아무도 돌을 끄지 않았다)이 달라, 가설 회의를 이긴 판에서 부딪친다. 「마을의 아침」은 왜 진엔딩이 아닌지 말하지 않는다(살인 경로는 기록 회의가 없어 처음부터 막혀 있다).</p>
+    <p class="say">아빠: 다 같이 끄기로 하지 않았습니까. 왜 다시 돌을 켭니까? / 돌목: 그날 손 든 사람들 곁에서 넷이 죽었소.</p>
+    <p class="say">엄마(마을의 아침): ……부엉이 어르신 기록은 끝내 우리 손에 안 왔어.</p></div>
+
+  <h3>정해 주실 것 — 1부</h3>
+  <ol class="dec">
+    <li>6번 할머니 동기 한 줄 <span class="rec">(추천)</span> / 아빠 속말만.</li>
+    <li>8번 목표 칸: 「엄마를 지킨다」를 13일까지 유지 + 13일 한 줄 교체 <span class="rec">(추천)</span> / 지금대로.</li>
+    <li>4번 「생각」 칸 구조 수정 <span class="rec">(추천)</span> / 문구만 하나씩.</li>
+    <li>탈출 축(3일 뒤 9일까지 할 일이 끊김): 까로 「지금은 구할 데가 없어요. 고개 소식부터 보죠」 <span class="rec">(추천, 새 사실 없음)</span> / 「쇠는 너울 장부에 달렸다」(새 사실).</li>
+  </ol>
+  <p>나머지(1·2·3·5·7·9번과 보고서의 「약함」 항목)는 사실을 늘리지 않는 대사 추가라, 승인되면 한 번에 넣고 화면 시험으로 확인한다.</p>
+</section>
+
+<section>
+  <h2>2부. 불타는 밤 — 사실 대조로 바뀐 점</h2>
+  <p class="lede">결정(2026-10-24): 가설 회의와 제단 회의를 둘 다 지면 / 전조 대화 + 14일 밤 탈출 + 결말 / 다람·엄마도 죽을 수 있다. 코드와 대본에 대 보니 설계안 가운데 다섯 곳이 그대로는 성립하지 않아 이렇게 고쳤다.</p>
+  <div class="box"><table>
+    <thead><tr><th>설계안</th><th>바꾼 것</th><th>까닭 (코드에서 확인)</th></tr></thead>
+    <tbody>
+      <tr><td>결말 판정 「남겨진 이름」 다음</td><td>「마을의 아침」 줄기 안, 제단 회의를 진 뒤 저녁 장면 끝에서 갈린다</td><td>결말은 14일 아침에 먼저 정해지고, 제단 회의는 「마을의 아침」 판에서만 열린다</td></tr>
+      <tr><td>가설 회의 「진다」</td><td>완전히 진 판(lose)만. 부분 승리는 제외</td><td>부분 승리는 일부 집이 등을 끈 판이다</td></tr>
+      <tr><td>여관 방에서 깨어나 13호실·고개로</td><td>학교 교실에서 시작, 숨을 곳은 폐온실(엄마가 숨어 지내던 곳)</td><td>가족은 10일부터 학교에서 잔다. 고갯길은 13·14일 막혀 있다</td></tr>
+      <tr><td>톡이 고친 마차로 탈출</td><td>뺀다</td><td>축이 고쳐졌다는 값이 게임에 없다</td></tr>
+      <tr><td>장작이 없어 집마다 돌을 땐다</td><td>「장작은 학교 몫뿐」</td><td>마을 장작은 해마다 남았다는 줄이 있다</td></tr>
+    </tbody></table></div>
+</section>
+
+<section>
+  <h2>전조와 밤의 흐름 (시안)</h2>
+  <p>가설 회의를 진 판에만, 아빠가 묻고 주민이 답하며 이상을 알아챈다.</p>
+  <div class="flow">
+    <div><b>12일 아침 학교</b> — 선생님: 「셋 더 붙었어요. 다 큰 집 애들이에요.」 「회의 끝나고 돌아가서 등부터 켰대요. 끄면 애들이 무서워서 운다고요.」</div>
+    <div><b>13일 아침 학교</b> — 까로: 「밤새요. 집집이 다 파랬다니까요.」 「앓는 사람 있다고 소문나면 명단에 오르니까요. 식구끼리 안에 두는 거죠.」 / 아빠(생각): 앓는 사람을 돌 곁에 가둬 둔다.</div>
+    <div><b>13일 초소</b> — 돌목: 「세 사람…… 다돌 씨, 부인, 그리고…….」 다람: 「다람이요! 맨날 보면서.」 돌목: 「요즘 이름이 늦게 떠오르오.」</div>
+    <div><b>14일 밤</b> — 교실에서 깨어남 → 복도의 도토(아빠를 못 알아봄) → 광장의 잠긴 집과 불 → 산길 어귀의 돌목 → 첫 굽이의 폐온실. 복도·광장·어귀에서 남을 도울지 지나칠지를 현장 행동으로 고른다(새 선택지 메뉴는 만들지 않음).</div>
+  </div>
+  <h3>결말 「불타는 밤」(가칭) — 세 갈래</h3>
+  <div class="box"><table>
+    <thead><tr><th>갈래</th><th>결말 글 (요지)</th></tr></thead>
+    <tbody>
+      <tr><td>셋이 산다</td><td>폐온실에서 셋이 날이 밝기를 기다렸다. 다람이 엄마와 내 손을 하나씩 쥐고 잤다. 첫 길이 열린 날 셋이 고개를 넘었다.</td></tr>
+      <tr><td>엄마를 잃는다</td><td>이름판 아래 재 속에 엄마의 장갑 한 짝. 다람 「엄마…… 금방 온댔는데.」 확인하지 못한 이름은 적지 않기로 했었다.</td></tr>
+      <tr><td>혼자 남는다</td><td>재 속에서 도토리 두 알을 주웠다. 다람의 주머니는 늘 도토리가 뚫었다. 「셋이 같이 나가 보자」고 한 것은 나였다.</td></tr>
+    </tbody></table></div>
+  <p class="fact">결말 글의 물건(장갑, 도토리 주머니, 「확인 못 한 이름은 적지 않는다」)은 모두 11일·14일 대본에 이미 있는 것이다.</p>
+
+  <h3>정해 주실 것 — 2부</h3>
+  <ol class="dec">
+    <li>판정 자리를 「마을의 아침 줄기 안, 제단 회의 진 뒤」로 바꾸는 것 <span class="rec">(구조상 이것만 가능)</span>.</li>
+    <li>가족 결과를 정하는 값: 「다람의 12일 열(2일·11일 담요 선택의 결과) × 그 밤에 남을 돕느라 지체한 횟수」 <span class="rec">(시안)</span> / 앞 행동 값만(그러면 「셋 / 엄마를 잃음」 두 갈래, 혼자 남는 끝은 따로 값이 필요).</li>
+    <li>숨을 곳을 고개 대신 폐온실로.</li>
+    <li>제단 회의에 갈림길 「?」 표시를 붙일지(이 판에서 마을 사람이 죽는다).</li>
+    <li>결말 이름 「불타는 밤」 확정.</li>
+    <li>새 사실 넷: 큰 집 난로가 넘어져 불이 났다 / 학교도 탔다 / 도토가 야생화가 왔다 / 돌목이 이름을 잊어 간다. 모두 이 판 안에만 나온다(다른 판 대사와 부딪치지 않는 것 확인).</li>
+  </ol>
+</section>
+
+<footer>원문: <code>docs/reviews/action-review-20261024/큰구멍_대안.md</code>, <code>d01-05.md</code>, <code>d06-10.md</code>, <code>d11-14.md</code> · <code>docs/reviews/wild-night-20261024/사실대조.md</code>, <code>지시서.md</code> · 설계 <code>docs/design/WILD_NIGHT_DESIGN.md</code>.</footer>
+</div>
