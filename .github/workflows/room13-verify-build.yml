@@ -39,6 +39,8 @@ jobs:
             experiments/renpy-ch1
             preview/room13-dev
             design/maps
+            design/resource-intake-20261024/b-ui-map-forest
+            design/resource-intake-20261024/b-ui-map-inn
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
