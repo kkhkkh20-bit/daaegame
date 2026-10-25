@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "f0f5676e289a569f2eed02213e709776d3714c7d84a4b3ba9abc965260379893",
+  "source_stamp": "553d7cd68b57135136767dee8d37852f428dbfe7b0cc352abddcf8899909196c",
   "entries": [
     {
       "id": "NW_D10_P01_A01",
@@ -33,7 +33,7 @@
         }
       ],
       "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
-      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
+      "source_hash": "e0fdd2f24204006a5613a7969de6340aa37e8d99913b78a5a8784348ee777207",
       "baseline_hash": "fee1049a02348a9780a6a92c1330d78f0b80e50a2f31b8bfc74d0ef6f67c62d9",
       "uid": "b31ad5036bedc12edabebb88",
       "review_status": "draft",
@@ -72,7 +72,7 @@
         }
       ],
       "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
-      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
+      "source_hash": "e0fdd2f24204006a5613a7969de6340aa37e8d99913b78a5a8784348ee777207",
       "baseline_hash": "0038bb558ca1e3d5aaf2685dc130aa03903c5e28c78492436d85be21bed7b207",
       "uid": "820d23237f83222e2b358f9f",
       "review_status": "draft",
@@ -111,9 +111,399 @@
         }
       ],
       "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
-      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
+      "source_hash": "e0fdd2f24204006a5613a7969de6340aa37e8d99913b78a5a8784348ee777207",
       "baseline_hash": "aac97511fdc5d1a4ea6f34ee541b7f1729d7275565feabca382b5029c9a95e86",
       "uid": "bc03aa496abbade7ac53316f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_P01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_P01_T21",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_P01_L0019",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_P01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_P01_L0019",
+      "when": null,
+      "speaker": "부엉이",
+      "kind": "dialogue",
+      "text": "그랬지.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1712,
+          "label": "r13_v111_authority_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
+      "source_hash": "e0fdd2f24204006a5613a7969de6340aa37e8d99913b78a5a8784348ee777207",
+      "baseline_hash": "0a26ef17942112c6963b833bf015bb2fa4ebd1190b5670047a2eb7011f34db5d",
+      "uid": "40b0adc395ab742c21818abe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_P01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_P01_T22",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_P01_L0019",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_P01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_P01_L0019",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아내가 보낸 물건은 학교 뒤 물자 자리로 왔어요. 받을 사람 이름도 없이요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1712,
+          "label": "r13_v111_authority_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
+      "source_hash": "e0fdd2f24204006a5613a7969de6340aa37e8d99913b78a5a8784348ee777207",
+      "baseline_hash": "e25ae3ca03e0dde5c79ae740714d2945eb6e584f5e26b8b35a2d780c22afa2c1",
+      "uid": "40e026ef99b3685ce19d7582",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_P01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_P01_T23",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_P01_L0019",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_P01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_P01_L0019",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "그게 뭐요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1712,
+          "label": "r13_v111_authority_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
+      "source_hash": "e0fdd2f24204006a5613a7969de6340aa37e8d99913b78a5a8784348ee777207",
+      "baseline_hash": "59257b38eb0861198a11f9a4df38b8c2d13e4406806b157f3d36031f3917e7fc",
+      "uid": "55bbe0b968decbe8ad0f13cc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_P01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_P01_T24",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_P01_L0019",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_P01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_P01_L0019",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "우체국엔 돌아온 옛 편지와 그 뒤에 부친 초대장뿐이고요. ……할머니께 맡겼다는 기록은 어디에도 없습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1712,
+          "label": "r13_v111_authority_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
+      "source_hash": "e0fdd2f24204006a5613a7969de6340aa37e8d99913b78a5a8784348ee777207",
+      "baseline_hash": "24c9362e95c06908f64bac989050a041a75efe6066be427a8b731e231362cf4c",
+      "uid": "028e1ac15584af7ed5bad686",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_P01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_P01_T25",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_P01_L0036",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_P01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_P01_L0036",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그 뒤에 아내 편지는요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1735,
+          "label": "r13_v111_writing_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
+      "source_hash": "e0fdd2f24204006a5613a7969de6340aa37e8d99913b78a5a8784348ee777207",
+      "baseline_hash": "427798adf2fc29fc4f4b5cdb3f0366c83c54ca16550c5faa1655dbcbfdcb99a9",
+      "uid": "04708b237c6c95ecef7cc36e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_P01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_P01_T26",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_P01_L0036",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_P01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_P01_L0036",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "없었어요. 못 찾았습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1735,
+          "label": "r13_v111_writing_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
+      "source_hash": "e0fdd2f24204006a5613a7969de6340aa37e8d99913b78a5a8784348ee777207",
+      "baseline_hash": "19de36c049c4452ef03f7e14897cd1a37affe83cf91cbf72a2a43703707a5ed6",
+      "uid": "38122f85135366f792ef84b0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_P01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_P01_T27",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_P01_L0038",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_P01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_P01_L0038",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "그래서요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1737,
+          "label": "r13_v111_writing_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
+      "source_hash": "e0fdd2f24204006a5613a7969de6340aa37e8d99913b78a5a8784348ee777207",
+      "baseline_hash": "5fbf10884b45297439be335b198c6c96997846dd127aff72d9f4979bd95ac0d2",
+      "uid": "3f1b34caea5fdb99bf29344d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_P01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_P01_T28",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_P01_L0038",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_P01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_P01_L0038",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이번에도 아내가 부탁했다는 자료는 없습니다. 저는 그 글씨 하나 믿고, 아이까지 데리고 왔어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1737,
+          "label": "r13_v111_writing_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
+      "source_hash": "e0fdd2f24204006a5613a7969de6340aa37e8d99913b78a5a8784348ee777207",
+      "baseline_hash": "a8a2efb3f4e74f06ccd841946d7fc9f3f13ed88308e9becf5a15e0a15cac82d9",
+      "uid": "7d6fe4cee8cd75a2cef05e61",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_P01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_P01_T29",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_P01_L0049",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_P01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_P01_L0049",
+      "when": null,
+      "speaker": "부엉이",
+      "kind": "dialogue",
+      "text": "그랬네.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1755,
+          "label": "r13_v111_pocket_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
+      "source_hash": "e0fdd2f24204006a5613a7969de6340aa37e8d99913b78a5a8784348ee777207",
+      "baseline_hash": "305bea31b15f9fa37a49abe16260c6a7f5d6fc1ccfdfac3459bdac83b4d6d04c",
+      "uid": "aaf63de2691b335b28b90644",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_P01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_P01_T30",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_P01_L0049",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_P01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_P01_L0049",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그런데 왜 자꾸 그 주머니를 잡으십니까? 거기에도 아내 기록이 있습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1755,
+          "label": "r13_v111_pocket_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
+      "source_hash": "e0fdd2f24204006a5613a7969de6340aa37e8d99913b78a5a8784348ee777207",
+      "baseline_hash": "b2426d28c0c44d3b52456ec0767ca72cacea134a0ff9aa373f7bd11b7660ac62",
+      "uid": "435e6b7de7eef2e91ef48390",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|MS14_D10_P01|patch|after|행 조건 없음",
