@@ -1,4 +1,6 @@
 init 324 python:
+    def r13_soup_inspect_ready12():
+        return all(r13_v111_value(k) is True for k in ('soup_smallpot_seen12','soup_bowls_seen12','soup_bottle_seen12'))
     def r13_nero_transport_ready11():
         # Old saves may already be waiting after the original preparation scene.
         physical=all(r13_v111_value(k) is True for k in ('rescue_cart_ready','rescue_cover_ready','rescue_driver_ready','rescue_lights_ready'))
@@ -1227,8 +1229,27 @@ label r13_v111_prevent_ready12:
 label r13_v111_stay_meal12:
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0026']),'v111:MS14_D12_S02_L0026')
     call r13_lines(r13_v111_lines(['MS14_D12_S02_L0027']),'v111:MS14_D12_S02_L0027')
-    $ r13_v111_commit('MS14_D12_S02_L0027')
-    jump r13_v111_premeal12
+    jump r13_v111_meal_inspect12
+
+label r13_v111_meal_inspect12:
+    call r13_v111_wait('meal_inspect12')
+    if _return==0:
+        call r13_lines(r13_nw_block('sp_smallpot12'),'nw:sp_smallpot12')
+        $ r13_v111_set('soup_smallpot_seen12',True)
+    elif _return==1:
+        call r13_lines(r13_nw_block('sp_bowls12'),'nw:sp_bowls12')
+        $ r13_v111_set('soup_bowls_seen12',True)
+    elif _return==2:
+        call r13_lines(r13_nw_block('sp_bottle12'),'nw:sp_bottle12')
+        $ r13_v111_set('soup_bottle_seen12',True)
+    elif _return==3 and r13_soup_inspect_ready12():
+        call r13_lines(r13_nw_block('sp_separate12'),'nw:sp_separate12')
+        $ r13_v111_set('soup_serving_separated12',True)
+        $ r13_v111_set('route12','premeal_stopped')
+        jump r13_v111_premeal12
+    elif _return==4:
+        jump r13_v111_meal_choice12
+    jump r13_v111_meal_inspect12
 
 label r13_v111_take_daram12:
     $ r13_fork_set_fate('fate_soup','lost')
