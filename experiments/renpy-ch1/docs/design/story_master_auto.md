@@ -161,7 +161,7 @@
 | `MS14_D03_S02` | 2. 광장 / 먼저 묶인 손 · 3일 아침 / 3번등 공개 조사 | 돌이 있는 광장(square) | — | `r13_v111_lamp3`, `r13_v111_lamp_inspect3`, `r13_v111_lamp_interior3`, `r13_v111_fragment_request`, `r13_v111_lamp_fragment3`, `r13_v111_lamp_log_request` 외 1 |
 | `MS14_D03_S03` | 3. 공방과 진료소 / 돌려놓았다는 말 · 3일 오전 / 공방→진료소 | 수리점(workshop), 임시 진료실(clinic) | 부리, 부엉이 할아버지 | `r13_v111_workshop3`, `r13_v111_loan_read`, `r13_v111_loan3`, `r13_v111_clinic3`, `r13_v111_measurement_read`, `r13_v111_measurement3` 외 6 |
 | `MS14_D03_S04` | 4. 짐 내리는 골목 / 식구의 빵 · 3일 낮 / 골목→허락된 창고→공개확인 | 돌이 있는 광장(square), 공동 물품 창고(store), 수리점(workshop) | — | `r13_v111_silluk3`, `r13_v111_transport_read`, `r13_v111_transport3`, `r13_v111_knife_permission`, `r13_v111_knife_observed`, `r13_v111_store_visit` 외 5 |
-| `MS14_D03_S05` | 5. 광장 공방 / 무엇을 증명했는가 · 3일 오후 / 등 앞 공방 | 수리점(workshop), 돌이 있는 광장(square) | 톡, 초롱, 실룩, 너울, 다람, 피코 | `r13_v111_trial_open`, `r13_v111_trial_repair`, `r13_v111_trial_repair_ok`, `r13_v111_trial_sale`, `r13_v111_trial_sale_ok`, `r13_v111_trial_knife` 외 36 |
+| `MS14_D03_S05` | 5. 광장 공방 / 무엇을 증명했는가 · 3일 오후 / 등 앞 공방 | 수리점(workshop), 돌이 있는 광장(square) | 톡, 초롱, 실룩, 너울, 다람, 부엉이 할아버지, 피코 | `r13_v111_trial_open`, `r13_v111_trial_repair`, `r13_v111_trial_repair_ok`, `r13_v111_trial_sale`, `r13_v111_trial_sale_ok`, `r13_v111_trial_knife` 외 36 |
 | `MS14_D03_S06` | 6. 저녁 / 그려지지 않은 얼굴 · 3일 저녁 / 등 복구·초상·물자인수 | 돌이 있는 광장(square), 임시 진료실(clinic), 여관 2층 · 13호실(room13) | — | `r13_v111_restore3`, `r13_v111_restore_defer`, `r13_v111_box_news3`, `r13_v111_memorial_route`, `r13_v111_piko_evening`, `r13_v111_piko_memorial` 외 6 |
 
 #### `MS14_D03_S01` 갈림 · 값 (room13_v111_days123.rpy:805)
@@ -1935,10 +1935,11 @@ def r13_nw_true_ending_ready():
 | `karo_ready11` | `r13_v111_actor_ready("karo")` | d11 |
 | `kkomi_acorn_shared` | `r13_v111_value("kkomi_acorn10") is True and r13_v111_actor_ready("daram")` | d12 |
 | `kkomi_alive` | `r13_v111_value("KKOMI_ALIVE") is not False` | d07 |
-| `kkomi_can_carried6` | `bool(r13_v111_value("kkomi_can_seen6") and r13_v111_value("acorn_recovered"))` | d06 |
+| `kkomi_can_carried6` | `bool(r13_v111_value("kkomi_can_seen6") and r13_v111_value("acorn_recovered"))` | d06, d10 |
+| `kkomi_can_left6` | `not (r13_v111_value("kkomi_can_seen6") and r13_v111_value("acorn_recovered"))` | d10 |
 | `kkomi_dead` | `r13_v111_value("KKOMI_ALIVE") is False` | d07 |
 | `kkomi_seat6` | `r13_v111_value("kkomi_seat6") is True` | d06 |
-| `lamp_attempt` | `bool(r13_v111_value("lamp_bound2"))` | d04, d13 |
+| `lamp_attempt` | `bool(r13_v111_value("lamp_bound2"))` | d03, d04, d13 |
 | `lamp_attempt_outside` | `bool(r13_v111_value("lamp_bound2")) and not r13_v111_value("piko_sheltered")` | — |
 | `lamp_attempt_sheltered` | `bool(r13_v111_value("lamp_bound2")) and bool(r13_v111_value("piko_sheltered"))` | — |
 | `lamp_attempt_silluk_listed` | `bool(r13_v111_value("lamp_bound2")) and bool(r13_v111_value("listed:resident_siluk"))` | d13 |
@@ -2035,6 +2036,8 @@ def r13_nw_true_ending_ready():
 | `warm_support_pending` | `not r13_v111_value("warm_support_arrived")` | d12 |
 | `warm_support_ready` | `r13_v111_value("warm_support_arrived") is True` | d12 |
 | `wild_alone` | `r13_v111_value("wild_family")=="alone"` | d14 |
+| `wild_alone_fever` | `r13_v111_value("wild_family")=="alone" and bool(r13_v111_value("daram_fever12"))` | d14 |
+| `wild_alone_well` | `r13_v111_value("wild_family")=="alone" and not r13_v111_value("daram_fever12")` | d14 |
 | `wild_daram_fever` | `bool(r13_v111_value("daram_fever12"))` | d14 |
 | `wild_daram_well` | `not r13_v111_value("daram_fever12")` | d14 |
 | `wild_no_mom` | `r13_v111_value("wild_family")=="no_mom"` | d14 |

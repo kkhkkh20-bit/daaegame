@@ -262,6 +262,8 @@ init 319 python:
         "wild_three":lambda:r13_v111_value("wild_family")=="three",
         "wild_no_mom":lambda:r13_v111_value("wild_family")=="no_mom",
         "wild_alone":lambda:r13_v111_value("wild_family")=="alone",
+        "wild_alone_fever":lambda:r13_v111_value("wild_family")=="alone" and bool(r13_v111_value("daram_fever12")),
+        "wild_alone_well":lambda:r13_v111_value("wild_family")=="alone" and not r13_v111_value("daram_fever12"),
         "wild_omen13_gate":lambda:r13_v111_value("meeting:hypothesis")=="lose" and r13_v111_actor_ready("guard") and r13_v111_actor_ready("daram"),
         "mom_daram_ready14":lambda:r13_v111_actor_ready("mom") and r13_v111_actor_ready("daram"),
         # 2026-10-24 행동 검수(action-review-20261024/적용보고.md). 이미 있는 값만 읽는다.

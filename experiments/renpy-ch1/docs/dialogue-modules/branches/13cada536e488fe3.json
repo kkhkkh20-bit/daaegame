@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "c1929c289514d7fc42481afff0c930e12e083df1a4960ba909f7370d652df834",
+  "entries": [
+    {
+      "id": "NW_LA_OWL3A_05",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "owl_workshop3a",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": null,
+      "scene": "owl_workshop3a",
+      "block": "owl_workshop3a",
+      "placement": "blocks",
+      "ref": "owl_workshop3a",
+      "when": "daram_ready",
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "할아버지도 탐정이에요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 94,
+          "label": "r13_lamp_attempt_after3",
+          "guards": []
+        }
+      ],
+      "scene_title": "owl_workshop3a",
+      "source_hash": "18984bf0620c4dcb978d0a385c04fae6f3ca54340159a8303cd56ebab36fa949",
+      "baseline_hash": "24807211609eba90ed4a2da34aa8cbb7e660553799dd9cfbd6da627a19157ca7",
+      "uid": "b5a4c516d84a252ba939f053",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|owl_workshop3a|patch|owl_workshop3a|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_LA_OWL3A_06",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "owl_workshop3a",
+        5,
+        "text"
+      ],
+      "origin": "patch",
+      "day": null,
+      "scene": "owl_workshop3a",
+      "block": "owl_workshop3a",
+      "placement": "blocks",
+      "ref": "owl_workshop3a",
+      "when": "daram_ready",
+      "speaker": "부엉이",
+      "kind": "dialogue",
+      "text": "그 일은 그만뒀네. 지금은 내 수첩이나 다시 읽지.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 94,
+          "label": "r13_lamp_attempt_after3",
+          "guards": []
+        }
+      ],
+      "scene_title": "owl_workshop3a",
+      "source_hash": "18984bf0620c4dcb978d0a385c04fae6f3ca54340159a8303cd56ebab36fa949",
+      "baseline_hash": "40185e4fcf9e950657646301adaca8a61b7cfc9702e8f6847bdb8495aa685118",
+      "uid": "fc73949b0f23cac927c47549",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|owl_workshop3a|patch|owl_workshop3a|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_LA_OWL3A_07",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "owl_workshop3a",
+        6,
+        "text"
+      ],
+      "origin": "patch",
+      "day": null,
+      "scene": "owl_workshop3a",
+      "block": "owl_workshop3a",
+      "placement": "blocks",
+      "ref": "owl_workshop3a",
+      "when": "daram_ready",
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이 제 수첩을 펴서 한가운데에 세로줄을 하나 긋는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 94,
+          "label": "r13_lamp_attempt_after3",
+          "guards": []
+        }
+      ],
+      "scene_title": "owl_workshop3a",
+      "source_hash": "18984bf0620c4dcb978d0a385c04fae6f3ca54340159a8303cd56ebab36fa949",
+      "baseline_hash": "4ed8042ce67c7f2af386fc3332407170f2022e53815e6fc37d44319fd0ae7c3a",
+      "uid": "d8bfce9e4e0c8d577891ed11",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|owl_workshop3a|patch|owl_workshop3a|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

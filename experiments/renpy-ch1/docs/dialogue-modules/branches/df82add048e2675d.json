@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "c1929c289514d7fc42481afff0c930e12e083df1a4960ba909f7370d652df834",
+  "entries": [
+    {
+      "id": "NW_BD_D10_K01",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "blocks",
+        "kkomi_acorn10",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "kkomi_acorn10",
+      "block": "kkomi_acorn10",
+      "placement": "blocks",
+      "ref": "kkomi_acorn10",
+      "when": "kkomi_can_left6",
+      "speaker": null,
+      "kind": "narration",
+      "text": "교실 창가 자리에서 꼬미가 빈 통 하나를 흔든다. 여관 부엌에서 나온 소금 통이다. 아무 소리도 나지 않는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1861,
+          "label": "r13_v111_kkomi_acorn10",
+          "guards": []
+        }
+      ],
+      "scene_title": "kkomi_acorn10",
+      "source_hash": "57b1d284ab7bcac42535420bd41299543ce91003a83bfce361254240fb20260d",
+      "baseline_hash": "8bc49f82ee0328982b95c33249a84b546999587c13e85043634c2f2c708be447",
+      "uid": "2c70dda1ff9871114911ceb2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|kkomi_acorn10|patch|kkomi_acorn10|kkomi_can_left6",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_BD_D10_K02",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "blocks",
+        "kkomi_acorn10",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "kkomi_acorn10",
+      "block": "kkomi_acorn10",
+      "placement": "blocks",
+      "ref": "kkomi_acorn10",
+      "when": "kkomi_can_left6",
+      "speaker": "꼬미",
+      "kind": "dialogue",
+      "text": "새 깡통이야. 아직 하나도 없어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1861,
+          "label": "r13_v111_kkomi_acorn10",
+          "guards": []
+        }
+      ],
+      "scene_title": "kkomi_acorn10",
+      "source_hash": "57b1d284ab7bcac42535420bd41299543ce91003a83bfce361254240fb20260d",
+      "baseline_hash": "0a4bffe92ac64bb966bf017e505700ccf681e4fdbe5372a4db7719930029d075",
+      "uid": "c893120caf52931a638c83d3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|kkomi_acorn10|patch|kkomi_acorn10|kkomi_can_left6",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

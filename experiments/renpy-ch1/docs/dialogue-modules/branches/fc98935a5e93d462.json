@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "c1929c289514d7fc42481afff0c930e12e083df1a4960ba909f7370d652df834",
+  "entries": [
+    {
+      "id": "MS14_D03_S05_L0057",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "replace",
+        "MS14_D03_S05_L0057",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D03_S05_L0057",
+      "when": "lamp_attempt",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "칼을 댄 일과 이름은 적으십시오. 하지만 대기소에 간 사람이 언제 나오는지도 모르는데 넘길 순 없습니다. 저 아이들은요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1246,
+          "label": "r13_v111_silluk_report",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "18b24b3f697414d73f2aacc61c0407738e3e379abfd23cadc29ddcdbc39ab28b",
+      "baseline_hash": "3ce5488519cb639c73e626de4f369e72b4f9d41b02bbb5754253428b37851b77",
+      "uid": "5e8a85c7d7f65aac6e93a3bf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|patch|replace|lamp_attempt",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

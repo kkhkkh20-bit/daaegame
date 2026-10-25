@@ -1,92 +1,14 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "source_stamp": "c1929c289514d7fc42481afff0c930e12e083df1a4960ba909f7370d652df834",
   "entries": [
-    {
-      "id": "NW_BD_D10_K01",
-      "file": "game/v111/newworld/d10.json",
-      "path": [
-        "blocks",
-        "kkomi_acorn10",
-        0,
-        "text"
-      ],
-      "origin": "patch",
-      "day": 10,
-      "scene": "kkomi_acorn10",
-      "block": "kkomi_acorn10",
-      "placement": "blocks",
-      "ref": "kkomi_acorn10",
-      "when": null,
-      "speaker": null,
-      "kind": "narration",
-      "text": "교실 창가 자리에서 꼬미가 빈 통 하나를 흔든다. 여관 부엌에서 나온 소금 통이다. 아무 소리도 나지 않는다.",
-      "editable": true,
-      "usage": "active",
-      "note": "",
-      "call_sites": [
-        {
-          "file": "game/room13_v111_days610.rpy",
-          "line": 1861,
-          "label": "r13_v111_kkomi_acorn10",
-          "guards": []
-        }
-      ],
-      "scene_title": "kkomi_acorn10",
-      "source_hash": "cf9e1b1b4750a7868b90658131a3e096e6ea1cb46d25ddf7d83d11130cc15f9a",
-      "baseline_hash": "8bc49f82ee0328982b95c33249a84b546999587c13e85043634c2f2c708be447",
-      "uid": "2c70dda1ff9871114911ceb2",
-      "review_status": "draft",
-      "baseline_review_status": "draft",
-      "branch_key": "d10|kkomi_acorn10|patch|kkomi_acorn10|행 조건 없음",
-      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
-    },
-    {
-      "id": "NW_BD_D10_K02",
-      "file": "game/v111/newworld/d10.json",
-      "path": [
-        "blocks",
-        "kkomi_acorn10",
-        1,
-        "text"
-      ],
-      "origin": "patch",
-      "day": 10,
-      "scene": "kkomi_acorn10",
-      "block": "kkomi_acorn10",
-      "placement": "blocks",
-      "ref": "kkomi_acorn10",
-      "when": null,
-      "speaker": "꼬미",
-      "kind": "dialogue",
-      "text": "새 깡통이야. 아직 하나도 없어.",
-      "editable": true,
-      "usage": "active",
-      "note": "",
-      "call_sites": [
-        {
-          "file": "game/room13_v111_days610.rpy",
-          "line": 1861,
-          "label": "r13_v111_kkomi_acorn10",
-          "guards": []
-        }
-      ],
-      "scene_title": "kkomi_acorn10",
-      "source_hash": "cf9e1b1b4750a7868b90658131a3e096e6ea1cb46d25ddf7d83d11130cc15f9a",
-      "baseline_hash": "0a4bffe92ac64bb966bf017e505700ccf681e4fdbe5372a4db7719930029d075",
-      "uid": "c893120caf52931a638c83d3",
-      "review_status": "draft",
-      "baseline_review_status": "draft",
-      "branch_key": "d10|kkomi_acorn10|patch|kkomi_acorn10|행 조건 없음",
-      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
-    },
     {
       "id": "NW_BD_D10_K03",
       "file": "game/v111/newworld/d10.json",
       "path": [
         "blocks",
         "kkomi_acorn10",
-        2,
+        4,
         "text"
       ],
       "origin": "patch",
@@ -111,9 +33,9 @@
         }
       ],
       "scene_title": "kkomi_acorn10",
-      "source_hash": "cf9e1b1b4750a7868b90658131a3e096e6ea1cb46d25ddf7d83d11130cc15f9a",
+      "source_hash": "57b1d284ab7bcac42535420bd41299543ce91003a83bfce361254240fb20260d",
       "baseline_hash": "4808978f0750f77175a0d1186f49e1934f77daf33c26f2f59fdc3d47877db8c7",
-      "uid": "a9fdeb2c224d00ac43da6ad1",
+      "uid": "bcb5f99210c5c98abcd4d898",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|kkomi_acorn10|patch|kkomi_acorn10|행 조건 없음",
@@ -125,7 +47,7 @@
       "path": [
         "blocks",
         "kkomi_acorn10",
-        3,
+        5,
         "text"
       ],
       "origin": "patch",
@@ -150,9 +72,9 @@
         }
       ],
       "scene_title": "kkomi_acorn10",
-      "source_hash": "cf9e1b1b4750a7868b90658131a3e096e6ea1cb46d25ddf7d83d11130cc15f9a",
+      "source_hash": "57b1d284ab7bcac42535420bd41299543ce91003a83bfce361254240fb20260d",
       "baseline_hash": "832e553b08e8df2bdf3c4b4fd7379423ba7ce58a31587035b4c57241f70e6fef",
-      "uid": "cb11184820206b9e9a76446a",
+      "uid": "63d984e408702752458d1ff0",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|kkomi_acorn10|patch|kkomi_acorn10|행 조건 없음",
@@ -164,7 +86,7 @@
       "path": [
         "blocks",
         "kkomi_acorn10",
-        4,
+        6,
         "text"
       ],
       "origin": "patch",
@@ -189,9 +111,9 @@
         }
       ],
       "scene_title": "kkomi_acorn10",
-      "source_hash": "cf9e1b1b4750a7868b90658131a3e096e6ea1cb46d25ddf7d83d11130cc15f9a",
+      "source_hash": "57b1d284ab7bcac42535420bd41299543ce91003a83bfce361254240fb20260d",
       "baseline_hash": "5ab5134aba966b4c35a4d4165e530b47336c07e0820c500f130c8dc2d683b5bd",
-      "uid": "bcb5f99210c5c98abcd4d898",
+      "uid": "191698e008d8ffa68dcdba69",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|kkomi_acorn10|patch|kkomi_acorn10|행 조건 없음",
@@ -203,7 +125,7 @@
       "path": [
         "blocks",
         "kkomi_acorn10",
-        5,
+        7,
         "text"
       ],
       "origin": "patch",
@@ -228,9 +150,9 @@
         }
       ],
       "scene_title": "kkomi_acorn10",
-      "source_hash": "cf9e1b1b4750a7868b90658131a3e096e6ea1cb46d25ddf7d83d11130cc15f9a",
+      "source_hash": "57b1d284ab7bcac42535420bd41299543ce91003a83bfce361254240fb20260d",
       "baseline_hash": "8f32fbba3d438c76bcda04f45f94f81364fea5690c558ea42bb62e2f80e003ce",
-      "uid": "63d984e408702752458d1ff0",
+      "uid": "a9a42b7ad6d281407c79c917",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|kkomi_acorn10|patch|kkomi_acorn10|행 조건 없음",
@@ -242,7 +164,7 @@
       "path": [
         "blocks",
         "kkomi_acorn10",
-        6,
+        8,
         "text"
       ],
       "origin": "patch",
@@ -267,9 +189,9 @@
         }
       ],
       "scene_title": "kkomi_acorn10",
-      "source_hash": "cf9e1b1b4750a7868b90658131a3e096e6ea1cb46d25ddf7d83d11130cc15f9a",
+      "source_hash": "57b1d284ab7bcac42535420bd41299543ce91003a83bfce361254240fb20260d",
       "baseline_hash": "262fb0f3ebcfaedf9015cb95b1780af961dfce27bd2ca7fc4fe95e87ee6ada01",
-      "uid": "191698e008d8ffa68dcdba69",
+      "uid": "4844749b1e6740f91c6be6ff",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|kkomi_acorn10|patch|kkomi_acorn10|행 조건 없음",
@@ -281,7 +203,7 @@
       "path": [
         "blocks",
         "kkomi_acorn10",
-        7,
+        9,
         "text"
       ],
       "origin": "patch",
@@ -306,9 +228,9 @@
         }
       ],
       "scene_title": "kkomi_acorn10",
-      "source_hash": "cf9e1b1b4750a7868b90658131a3e096e6ea1cb46d25ddf7d83d11130cc15f9a",
+      "source_hash": "57b1d284ab7bcac42535420bd41299543ce91003a83bfce361254240fb20260d",
       "baseline_hash": "d8d4ae14d9aab691ca4c32bc697ddf6109d324473b2bf68a9bcf0b623060b398",
-      "uid": "a9a42b7ad6d281407c79c917",
+      "uid": "6a6913de4743e7a1590a06dd",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|kkomi_acorn10|patch|kkomi_acorn10|행 조건 없음",
@@ -320,7 +242,7 @@
       "path": [
         "blocks",
         "kkomi_acorn10",
-        8,
+        10,
         "text"
       ],
       "origin": "patch",
@@ -345,9 +267,9 @@
         }
       ],
       "scene_title": "kkomi_acorn10",
-      "source_hash": "cf9e1b1b4750a7868b90658131a3e096e6ea1cb46d25ddf7d83d11130cc15f9a",
+      "source_hash": "57b1d284ab7bcac42535420bd41299543ce91003a83bfce361254240fb20260d",
       "baseline_hash": "97686c23788f960bcbcfcb14f472c439ef3b535b859d0607cd0934b9d8d49836",
-      "uid": "4844749b1e6740f91c6be6ff",
+      "uid": "cf944777ca3654d9919b947e",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|kkomi_acorn10|patch|kkomi_acorn10|행 조건 없음",
@@ -359,7 +281,7 @@
       "path": [
         "blocks",
         "kkomi_acorn10",
-        9,
+        11,
         "text"
       ],
       "origin": "patch",
@@ -384,9 +306,9 @@
         }
       ],
       "scene_title": "kkomi_acorn10",
-      "source_hash": "cf9e1b1b4750a7868b90658131a3e096e6ea1cb46d25ddf7d83d11130cc15f9a",
+      "source_hash": "57b1d284ab7bcac42535420bd41299543ce91003a83bfce361254240fb20260d",
       "baseline_hash": "d4b6682bc2133af42606f4375e645cd1b3e13d3c961f4590490c85f34bfb58b4",
-      "uid": "6a6913de4743e7a1590a06dd",
+      "uid": "067ddc09793e439d1b31e473",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|kkomi_acorn10|patch|kkomi_acorn10|행 조건 없음",

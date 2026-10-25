@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "c1929c289514d7fc42481afff0c930e12e083df1a4960ba909f7370d652df834",
+  "entries": [
+    {
+      "id": "NW_WN_C20W",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "wild_climb14",
+        9,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "wild_climb14",
+      "block": "wild_climb14",
+      "placement": "blocks",
+      "ref": "wild_climb14",
+      "when": "wild_alone_well",
+      "speaker": null,
+      "kind": "narration",
+      "text": "굽이 아래에서 사람들이 한꺼번에 밀려 올라온다. 꼭 붙여 놓겠다던 다람의 손이 내 손에서 빠져나간다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3706,
+          "label": "r13_v111_wild_climb14",
+          "guards": []
+        }
+      ],
+      "scene_title": "wild_climb14",
+      "source_hash": "e3e12c8d94c93ab8c234bf47a2ed8d9ef568d2281d1ca1085d46fe5be0dbff14",
+      "baseline_hash": "58d4151cbf114fd4f2c0c08de330c17d189de59c076d027ad44cf2900561645c",
+      "uid": "469063b9e6744028259d42f4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|wild_climb14|patch|wild_climb14|wild_alone_well",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

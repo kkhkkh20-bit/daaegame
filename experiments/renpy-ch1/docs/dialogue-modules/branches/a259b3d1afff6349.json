@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "source_stamp": "c1929c289514d7fc42481afff0c930e12e083df1a4960ba909f7370d652df834",
   "entries": [
     {
       "id": "NW_LA_LA_STORE3_0",
@@ -35,7 +35,7 @@
         }
       ],
       "scene_title": "la_store3",
-      "source_hash": "e0744a62878837e2581a9c6e142cf46648b8a850fc33276805a6cf4748d2c8de",
+      "source_hash": "18984bf0620c4dcb978d0a385c04fae6f3ca54340159a8303cd56ebab36fa949",
       "baseline_hash": "204aa6657cdbc24a7c326e9e00fa955d4984db9b505de74420b62f91e36860b7",
       "uid": "669dd2491918e28e80abb0ef",
       "review_status": "reviewed",
@@ -76,7 +76,7 @@
         }
       ],
       "scene_title": "la_store3",
-      "source_hash": "e0744a62878837e2581a9c6e142cf46648b8a850fc33276805a6cf4748d2c8de",
+      "source_hash": "18984bf0620c4dcb978d0a385c04fae6f3ca54340159a8303cd56ebab36fa949",
       "baseline_hash": "d93a4ec330c4342269d0e790a1438e3391ac93c2ac1a8f480dbdf4c9cb888670",
       "uid": "3e50133d914d8936a172a8b5",
       "review_status": "draft",
@@ -117,11 +117,52 @@
         }
       ],
       "scene_title": "la_store3",
-      "source_hash": "e0744a62878837e2581a9c6e142cf46648b8a850fc33276805a6cf4748d2c8de",
+      "source_hash": "18984bf0620c4dcb978d0a385c04fae6f3ca54340159a8303cd56ebab36fa949",
       "baseline_hash": "349a617b11fe3adba84d758e59039fac6556a2a653d8b6e0c338f06bd398b28f",
       "uid": "59d69b7ced0d4a460982bc9a",
       "review_status": "reviewed",
       "baseline_review_status": "reviewed",
+      "branch_key": "d03|la_store3|patch|la_store3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_LA_STORE3_PRICE",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_store3",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "la_store3",
+      "block": "la_store3",
+      "placement": "blocks",
+      "ref": "la_store3",
+      "when": null,
+      "speaker": "백 부인",
+      "kind": "dialogue",
+      "text": "요즘 센 돌 찾는 집이 많거든요. 안쪽 돌은 세 배예요. 값이요, 값.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 41,
+          "label": "r13_lamp_attempt_field3",
+          "guards": [
+            "elif _return==3:"
+          ]
+        }
+      ],
+      "scene_title": "la_store3",
+      "source_hash": "18984bf0620c4dcb978d0a385c04fae6f3ca54340159a8303cd56ebab36fa949",
+      "baseline_hash": "9a0b1449c6cd4ca755f27f6c5e54e99c8fdb12dd31c0d69aeb03e7208ec0ddde",
+      "uid": "fd4c2c743cf8194bd329fa67",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
       "branch_key": "d03|la_store3|patch|la_store3|행 조건 없음",
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
@@ -131,7 +172,7 @@
       "path": [
         "blocks",
         "la_store3",
-        3,
+        4,
         "text"
       ],
       "origin": "patch",
@@ -158,9 +199,91 @@
         }
       ],
       "scene_title": "la_store3",
-      "source_hash": "e0744a62878837e2581a9c6e142cf46648b8a850fc33276805a6cf4748d2c8de",
+      "source_hash": "18984bf0620c4dcb978d0a385c04fae6f3ca54340159a8303cd56ebab36fa949",
       "baseline_hash": "77459c2940e0c192845f68e3a3d7fb2ea1bed91e25663256f8394f79f90d5e49",
-      "uid": "fd4c2c743cf8194bd329fa67",
+      "uid": "6ca9033cda09e9b0fb8d0428",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|la_store3|patch|la_store3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_LA_STORE3_KEEPER1",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_store3",
+        5,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "la_store3",
+      "block": "la_store3",
+      "placement": "blocks",
+      "ref": "la_store3",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "창고 구석 침대에서 노인 하나가 몸을 일으킨다. “오늘이 며칠이오?” 내가 대답하자 고개를 끄덕이더니, 조금 뒤 같은 것을 또 묻는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 41,
+          "label": "r13_lamp_attempt_field3",
+          "guards": [
+            "elif _return==3:"
+          ]
+        }
+      ],
+      "scene_title": "la_store3",
+      "source_hash": "18984bf0620c4dcb978d0a385c04fae6f3ca54340159a8303cd56ebab36fa949",
+      "baseline_hash": "066408d1cc7947fcb4d7218aa84e3b585dd9869cd6d7285d39620c9434187c9c",
+      "uid": "6dbbe9e995c007650d1d5c54",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|la_store3|patch|la_store3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_LA_STORE3_KEEPER2",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_store3",
+        6,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "la_store3",
+      "block": "la_store3",
+      "placement": "blocks",
+      "ref": "la_store3",
+      "when": null,
+      "speaker": "백 부인",
+      "kind": "dialogue",
+      "text": "창고지기예요. 신경 쓰지 말아요. 나는 식당 위층에서 살아요. 여기서 자는 건 저 양반이고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 41,
+          "label": "r13_lamp_attempt_field3",
+          "guards": [
+            "elif _return==3:"
+          ]
+        }
+      ],
+      "scene_title": "la_store3",
+      "source_hash": "18984bf0620c4dcb978d0a385c04fae6f3ca54340159a8303cd56ebab36fa949",
+      "baseline_hash": "9dd28259e51a2c01b594d9ab3928cc040a097f0bdd152a9ed33144967482954f",
+      "uid": "c8f83fc3bb9e9e1cf0ed6fe6",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d03|la_store3|patch|la_store3|행 조건 없음",
