@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "28178d88a02b868e5f247c9df131280fa46e892688f8483adc3177e27dfecfe9",
+  "source_stamp": "6a70c7de413307a81c6f3e4d81020448b6af1448d5edb2963e77d1759ee2ee78",
   "entries": [
     {
       "id": "NW_AR_D11_01",
@@ -33,7 +33,7 @@
         }
       ],
       "scene_title": "장면 11-2B. 단추 하나",
-      "source_hash": "2735bb6a26c4796d51e500f560e24b6b688d2c666750715f11359786a0bfe49a",
+      "source_hash": "863b4ca26958ab5f6a9f99d5603bada1275eb6707837b7460205934540a13ed3",
       "baseline_hash": "54040cb2a59a0ade10134c2263afadf44cdeaa57cd72d6c4184f0eb58db3cbc3",
       "uid": "fee0338d4dd6d7c6be8c967a",
       "review_status": "draft",
@@ -72,7 +72,7 @@
         }
       ],
       "scene_title": "장면 11-2B. 단추 하나",
-      "source_hash": "2735bb6a26c4796d51e500f560e24b6b688d2c666750715f11359786a0bfe49a",
+      "source_hash": "863b4ca26958ab5f6a9f99d5603bada1275eb6707837b7460205934540a13ed3",
       "baseline_hash": "7ba16086e74e665312907e69fb8a4d83ea4bb77c078cff2fa48fedb3a62e3b60",
       "uid": "ca15ba855d50cbb95b392876",
       "review_status": "draft",
@@ -111,9 +111,165 @@
         }
       ],
       "scene_title": "장면 11-2B. 단추 하나",
-      "source_hash": "2735bb6a26c4796d51e500f560e24b6b688d2c666750715f11359786a0bfe49a",
+      "source_hash": "863b4ca26958ab5f6a9f99d5603bada1275eb6707837b7460205934540a13ed3",
       "baseline_hash": "80baf5dcb888ac0c223339b553758cfceb795f27c7938d1b41e36dd540ca86b6",
       "uid": "165953dc64ba49e6c44b9809",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D11_S02B_T21",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "after",
+        "MS14_D11_S02B_L0031",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D11_S02B_L0031",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그다음 날은?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 291,
+          "label": "r13_v111_mother_life11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "863b4ca26958ab5f6a9f99d5603bada1275eb6707837b7460205934540a13ed3",
+      "baseline_hash": "f2657bb50c910e9517917f886a1d986f067bbf91ccc710fd26d028229202448f",
+      "uid": "9a5a2aca84b17d969edd5ccb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D11_S02B_T22",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "after",
+        "MS14_D11_S02B_L0031",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D11_S02B_L0031",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "교환함 앞에 너울이 있었어. 내 발자국을 찾더라.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 291,
+          "label": "r13_v111_mother_life11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "863b4ca26958ab5f6a9f99d5603bada1275eb6707837b7460205934540a13ed3",
+      "baseline_hash": "59bedec69eb8108a2522ca3824d38c6a7c9480651f142affede3b4422b78e744",
+      "uid": "a14193202609c7f5ce7f8a12",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D11_S02B_T23",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "after",
+        "MS14_D11_S02B_L0031",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D11_S02B_L0031",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……그래서 답이 늦었구나.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 291,
+          "label": "r13_v111_mother_life11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "863b4ca26958ab5f6a9f99d5603bada1275eb6707837b7460205934540a13ed3",
+      "baseline_hash": "5113b405cd7398a89cbe38b70dcc8c513130cb57253affea6659b1e71f433249",
+      "uid": "4adefada96f4212bc9f26d40",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D11_S02B_T24",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "after",
+        "MS14_D11_S02B_L0031",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D11_S02B_L0031",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "나흘째 밤에야 가서 네 쪽지를 읽고 답을 넣었어. ……하루씩 셌어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 291,
+          "label": "r13_v111_mother_life11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "863b4ca26958ab5f6a9f99d5603bada1275eb6707837b7460205934540a13ed3",
+      "baseline_hash": "ba8cd59703a401d0c7bbeeed34cdd113a0692d485887662fa3c62c19d85db9f7",
+      "uid": "afa5ea529ed886539ea6f0e5",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d11|MS14_D11_S02B|patch|after|행 조건 없음",
@@ -125,7 +281,7 @@
       "path": [
         "after",
         "MS14_D11_S02B_L0031",
-        0,
+        4,
         "text"
       ],
       "origin": "patch",
@@ -150,9 +306,243 @@
         }
       ],
       "scene_title": "장면 11-2B. 단추 하나",
-      "source_hash": "2735bb6a26c4796d51e500f560e24b6b688d2c666750715f11359786a0bfe49a",
+      "source_hash": "863b4ca26958ab5f6a9f99d5603bada1275eb6707837b7460205934540a13ed3",
       "baseline_hash": "d47b8f7d1c6c39b7be30484982e499466d8db2d5908519b77f66e67e3dd5364f",
-      "uid": "9a5a2aca84b17d969edd5ccb",
+      "uid": "8f8b5ea7140db48841a0cdd1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D11_S02B_T25",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "after",
+        "MS14_D11_S02B_L0043",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D11_S02B_L0043",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……응.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 309,
+          "label": "r13_v111_mother_return11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "863b4ca26958ab5f6a9f99d5603bada1275eb6707837b7460205934540a13ed3",
+      "baseline_hash": "1b3ea2cb30cbe787f53cabd2a311c240917f2759c8b9b4bc6606d20fb5948f35",
+      "uid": "8c972473329b52c290e7ee8b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D11_S02B_T26",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "after",
+        "MS14_D11_S02B_L0043",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D11_S02B_L0043",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "산길이 먼저 막혔어. 마을로 내려가면 다들 날 찾고 있었고.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 309,
+          "label": "r13_v111_mother_return11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "863b4ca26958ab5f6a9f99d5603bada1275eb6707837b7460205934540a13ed3",
+      "baseline_hash": "fbe2c39760dac6a47a4ee61bfdd9853d4fc5c1f67cc93cabbf9b1fdbfa6bc8b1",
+      "uid": "55a8f805196fd502eccdf3c7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D11_S02B_T27",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "after",
+        "MS14_D11_S02B_L0043",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D11_S02B_L0043",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "할머니는?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 309,
+          "label": "r13_v111_mother_return11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "863b4ca26958ab5f6a9f99d5603bada1275eb6707837b7460205934540a13ed3",
+      "baseline_hash": "d7f275c90588dfab0a9113443e00bc7c6915b7380326f43dd469351916f6012f",
+      "uid": "debff3f1ef774287d6e4ff6d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D11_S02B_T28",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "after",
+        "MS14_D11_S02B_L0043",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D11_S02B_L0043",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "내가 읽은 기록이 틀렸다고 했더니, 방에서 얘기하자며 문을 잠갔어. 그날 빠져나왔어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 309,
+          "label": "r13_v111_mother_return11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "863b4ca26958ab5f6a9f99d5603bada1275eb6707837b7460205934540a13ed3",
+      "baseline_hash": "c56985b7bc271310bc8f9de2f9293d4e2b08773568748da46d5e9a1ffbbc9b64",
+      "uid": "d07fa18552ca9d54be1f016c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D11_S02B_T29",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "after",
+        "MS14_D11_S02B_L0044",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D11_S02B_L0044",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "사람을 보내? 어디로?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 310,
+          "label": "r13_v111_mother_return11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "863b4ca26958ab5f6a9f99d5603bada1275eb6707837b7460205934540a13ed3",
+      "baseline_hash": "bf557e9ebf61b5bd0ef726c67b473d1743dc98fe54f4eacde59276a12ff18b53",
+      "uid": "fa6ee4ddd19ab0f09e7adcea",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D11_S02B_T30",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "after",
+        "MS14_D11_S02B_L0044",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D11_S02B_L0044",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "……그건 나중에. 그런데 벽의 글하고 남은 조각을 봤어. 거기 적힌 건 사람을 보내라는 게 아니었어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 310,
+          "label": "r13_v111_mother_return11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "863b4ca26958ab5f6a9f99d5603bada1275eb6707837b7460205934540a13ed3",
+      "baseline_hash": "f7dca822fb8919b90370ac3a17d603360d909ca38a93d2a659a8f6ae54a079a5",
+      "uid": "723b2902e05791ee79ea8a2b",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d11|MS14_D11_S02B|patch|after|행 조건 없음",
