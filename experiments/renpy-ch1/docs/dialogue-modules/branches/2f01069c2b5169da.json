@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "6a70c7de413307a81c6f3e4d81020448b6af1448d5edb2963e77d1759ee2ee78",
+  "source_stamp": "9086ac9f19f21e7c656c4fc324ead8808d4f5460e82e3f785dc03be5372c984a",
   "entries": [
     {
       "id": "NW_D08_S01_A01",
@@ -33,7 +33,7 @@
         }
       ],
       "scene_title": "8-1. 아침 / 보호실 — 듣기 싫은 말",
-      "source_hash": "3c17c4903ab61e851c42fd7705d66f0752dd4230f79f6232f51497a3793acfb8",
+      "source_hash": "befcb35cb079f91933466d8c33a04bd9872cb332caaaaec396c10039f971290e",
       "baseline_hash": "bc2fb949a2dbaf32210af7bee7d332bfe0b58ca72cd99e8099125b2cb86227ab",
       "uid": "5f8f072c656e1fea43aa6f82",
       "review_status": "draft",
@@ -59,7 +59,7 @@
       "when": null,
       "speaker": "다람",
       "kind": "dialogue",
-      "text": "할아버지가 도토 아저씨한테 “너 도둑이지” 하고 소리쳤어. 그러고 아래에서 누가 아저씨를 불렀어. 아저씨는 금방 온다고 나갔어.",
+      "text": "할아버지가 도토 아저씨한테 “너 도둑이지” 하고 소리쳤어.",
       "editable": true,
       "usage": "active",
       "note": "",
@@ -72,8 +72,8 @@
         }
       ],
       "scene_title": "8-1. 아침 / 보호실 — 듣기 싫은 말",
-      "source_hash": "3c17c4903ab61e851c42fd7705d66f0752dd4230f79f6232f51497a3793acfb8",
-      "baseline_hash": "fe5102bfd51574344fc027a94f218d516e517ab2c2121b2c5881bbe1f4a1a5a4",
+      "source_hash": "befcb35cb079f91933466d8c33a04bd9872cb332caaaaec396c10039f971290e",
+      "baseline_hash": "63dcd680d95f6c023fbad28e3ffba26b505fd26afcc3f0e70592d28318d20879",
       "uid": "7bc0e8d42abddc0d83d85c1c",
       "review_status": "draft",
       "baseline_review_status": "draft",
@@ -81,7 +81,7 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
-      "id": "NW_D08_S01_A03",
+      "id": "NW_D08_S01_T21",
       "file": "game/v111/newworld/d08.json",
       "path": [
         "after",
@@ -96,9 +96,9 @@
       "placement": "after",
       "ref": "MS14_D08_S01_L0011",
       "when": null,
-      "speaker": "다람",
+      "speaker": "아빠",
       "kind": "dialogue",
-      "text": "아저씨가 나가고, 할아버지가 품에서 수첩을 꺼냈어. 책상에 펴고 뭘 썼어. 그러고 문에 빗장을 걸었어. 종이 가져가는 사람이 온다고 했어……",
+      "text": "그래서?",
       "editable": true,
       "usage": "active",
       "note": "",
@@ -111,9 +111,165 @@
         }
       ],
       "scene_title": "8-1. 아침 / 보호실 — 듣기 싫은 말",
-      "source_hash": "3c17c4903ab61e851c42fd7705d66f0752dd4230f79f6232f51497a3793acfb8",
-      "baseline_hash": "e59f3a451bb0bdd46a5ff730f04bd30193b233fb3d6de16dbd010818ed3b5a2a",
+      "source_hash": "befcb35cb079f91933466d8c33a04bd9872cb332caaaaec396c10039f971290e",
+      "baseline_hash": "f04bbd37504b582fc9415a5af8d59e9c133f0acfeb9cd94955a00517d41f8452",
       "uid": "59542f6b7f93705a2c64259b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D08_S01_T22",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S01_L0011",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S01_L0011",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아래에서 누가 아저씨를 불렀어. 아저씨는 금방 온다고 나갔어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 845,
+          "label": "r13_v111_custody8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-1. 아침 / 보호실 — 듣기 싫은 말",
+      "source_hash": "befcb35cb079f91933466d8c33a04bd9872cb332caaaaec396c10039f971290e",
+      "baseline_hash": "2e5d87eea8c48faf090455e18b280fa26c8b999630f5d997b629de913edabeb5",
+      "uid": "1293cf9eaf4d5d670a8b3213",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D08_S01_A03",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S01_L0011",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S01_L0011",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아저씨가 나가니까, 할아버지가 품에서 수첩을 꺼냈어. 책상에 펴고 뭘 썼어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 845,
+          "label": "r13_v111_custody8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-1. 아침 / 보호실 — 듣기 싫은 말",
+      "source_hash": "befcb35cb079f91933466d8c33a04bd9872cb332caaaaec396c10039f971290e",
+      "baseline_hash": "3661d5dd7139ca60be01aa151b7be25f30285f3ee90d526165295b8f645306a3",
+      "uid": "5bb4634e521f347893c0e673",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D08_S01_T23",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S01_L0011",
+        5,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S01_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "천천히. 그다음엔?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 845,
+          "label": "r13_v111_custody8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-1. 아침 / 보호실 — 듣기 싫은 말",
+      "source_hash": "befcb35cb079f91933466d8c33a04bd9872cb332caaaaec396c10039f971290e",
+      "baseline_hash": "4c346744d634484cd547d254a0909ca05e4d6cd6b9225b97be7ccb70c842de89",
+      "uid": "0732221f4899fa095dbea0cf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D08_S01_T24",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S01_L0011",
+        6,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S01_L0011",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "문에 빗장을 걸었어. 종이 가져가는 사람이 온다고……",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 845,
+          "label": "r13_v111_custody8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-1. 아침 / 보호실 — 듣기 싫은 말",
+      "source_hash": "befcb35cb079f91933466d8c33a04bd9872cb332caaaaec396c10039f971290e",
+      "baseline_hash": "0dd79fc48e82a385bd11ce59d7d9671b0ffa6ebe7add953f26126c8e1e55113a",
+      "uid": "df08f765f17b92e637b82b2f",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d08|MS14_D08_S01|patch|after|행 조건 없음",
@@ -125,7 +281,7 @@
       "path": [
         "after",
         "MS14_D08_S01_L0011",
-        3,
+        7,
         "text"
       ],
       "origin": "patch",
@@ -150,9 +306,87 @@
         }
       ],
       "scene_title": "8-1. 아침 / 보호실 — 듣기 싫은 말",
-      "source_hash": "3c17c4903ab61e851c42fd7705d66f0752dd4230f79f6232f51497a3793acfb8",
+      "source_hash": "befcb35cb079f91933466d8c33a04bd9872cb332caaaaec396c10039f971290e",
       "baseline_hash": "c93d5cf98c5f020d2644e7ce7b7145f42da2ec6fca294d1a4fad8a2b77879a05",
-      "uid": "1293cf9eaf4d5d670a8b3213",
+      "uid": "99d297f8912804644e4dc784",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D08_S01_T25",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S01_L0016",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S01_L0016",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "잘했어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 850,
+          "label": "r13_v111_custody8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-1. 아침 / 보호실 — 듣기 싫은 말",
+      "source_hash": "befcb35cb079f91933466d8c33a04bd9872cb332caaaaec396c10039f971290e",
+      "baseline_hash": "2a08ebc77ce6273fe3ab2109223a9303a78f37936102777b9ba9c77f6d825ee0",
+      "uid": "f573ed1f63a70537ff618b56",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D08_S01_T26",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S01_L0016",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S01_L0016",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그런데 잡고 있는데…… 또 쿵 소리가 났어. 내가 쳤을 때 말고.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 850,
+          "label": "r13_v111_custody8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-1. 아침 / 보호실 — 듣기 싫은 말",
+      "source_hash": "befcb35cb079f91933466d8c33a04bd9872cb332caaaaec396c10039f971290e",
+      "baseline_hash": "09527a11091ace2b01f26710021fd171377f291e64a9f5730b7073280dbf558c",
+      "uid": "97c3479aaaa94a526ea15587",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d08|MS14_D08_S01|patch|after|행 조건 없음",
@@ -164,7 +398,7 @@
       "path": [
         "after",
         "MS14_D08_S01_L0016",
-        0,
+        2,
         "text"
       ],
       "origin": "patch",
@@ -189,9 +423,9 @@
         }
       ],
       "scene_title": "8-1. 아침 / 보호실 — 듣기 싫은 말",
-      "source_hash": "3c17c4903ab61e851c42fd7705d66f0752dd4230f79f6232f51497a3793acfb8",
+      "source_hash": "befcb35cb079f91933466d8c33a04bd9872cb332caaaaec396c10039f971290e",
       "baseline_hash": "c02e42fb45af3dd516560eaf7951fe83ede1ae1acee44863c22e5967d65117a7",
-      "uid": "f573ed1f63a70537ff618b56",
+      "uid": "8195ac0204466e86c1a5abfa",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d08|MS14_D08_S01|patch|after|행 조건 없음",
@@ -228,7 +462,7 @@
         }
       ],
       "scene_title": "8-1. 아침 / 보호실 — 듣기 싫은 말",
-      "source_hash": "3c17c4903ab61e851c42fd7705d66f0752dd4230f79f6232f51497a3793acfb8",
+      "source_hash": "befcb35cb079f91933466d8c33a04bd9872cb332caaaaec396c10039f971290e",
       "baseline_hash": "b47de812205201ddbd5cea00892dbb0c25fc7025f5a738b36bf98b4813e5f147",
       "uid": "89bc9a4fdd9870a1437d602b",
       "review_status": "draft",
@@ -267,7 +501,7 @@
         }
       ],
       "scene_title": "8-1. 아침 / 보호실 — 듣기 싫은 말",
-      "source_hash": "3c17c4903ab61e851c42fd7705d66f0752dd4230f79f6232f51497a3793acfb8",
+      "source_hash": "befcb35cb079f91933466d8c33a04bd9872cb332caaaaec396c10039f971290e",
       "baseline_hash": "98ef0438f13a8e04c7aa670a19defa3f68c6515ff2a3ffca353abb70dd384b62",
       "uid": "803f54588b10bb063b4bd1aa",
       "review_status": "draft",
@@ -306,7 +540,7 @@
         }
       ],
       "scene_title": "8-1. 아침 / 보호실 — 듣기 싫은 말",
-      "source_hash": "3c17c4903ab61e851c42fd7705d66f0752dd4230f79f6232f51497a3793acfb8",
+      "source_hash": "befcb35cb079f91933466d8c33a04bd9872cb332caaaaec396c10039f971290e",
       "baseline_hash": "ecced12ce8acf71024d1e74bedac9047d581bd723f08f1f5941c7e901dcf3d4c",
       "uid": "93c2ecdaab6fdbedfdc3d98e",
       "review_status": "draft",
@@ -345,7 +579,7 @@
         }
       ],
       "scene_title": "8-1. 아침 / 보호실 — 듣기 싫은 말",
-      "source_hash": "3c17c4903ab61e851c42fd7705d66f0752dd4230f79f6232f51497a3793acfb8",
+      "source_hash": "befcb35cb079f91933466d8c33a04bd9872cb332caaaaec396c10039f971290e",
       "baseline_hash": "507d84c50492ed7edb17afb985a0bbeba614f5eaad4ed06901d2f4b4d7d80774",
       "uid": "10a807e82265ec2b60a9aee3",
       "review_status": "draft",
@@ -384,7 +618,7 @@
         }
       ],
       "scene_title": "8-1. 아침 / 보호실 — 듣기 싫은 말",
-      "source_hash": "3c17c4903ab61e851c42fd7705d66f0752dd4230f79f6232f51497a3793acfb8",
+      "source_hash": "befcb35cb079f91933466d8c33a04bd9872cb332caaaaec396c10039f971290e",
       "baseline_hash": "2644a48842a2e980508b0e0083381b4b3663b133bafafeb4daf120ffe279244b",
       "uid": "2bdd2fd879a0620768900ae0",
       "review_status": "draft",
@@ -423,7 +657,7 @@
         }
       ],
       "scene_title": "8-1. 아침 / 보호실 — 듣기 싫은 말",
-      "source_hash": "3c17c4903ab61e851c42fd7705d66f0752dd4230f79f6232f51497a3793acfb8",
+      "source_hash": "befcb35cb079f91933466d8c33a04bd9872cb332caaaaec396c10039f971290e",
       "baseline_hash": "188ce44baee6e37a4e934dc153c6369f61ff869fdd6b9bf9ba8a23bdc347efdb",
       "uid": "be4dc4b046f05848b88bc216",
       "review_status": "draft",
@@ -462,7 +696,7 @@
         }
       ],
       "scene_title": "8-1. 아침 / 보호실 — 듣기 싫은 말",
-      "source_hash": "3c17c4903ab61e851c42fd7705d66f0752dd4230f79f6232f51497a3793acfb8",
+      "source_hash": "befcb35cb079f91933466d8c33a04bd9872cb332caaaaec396c10039f971290e",
       "baseline_hash": "995ccc4973019a142fb757d7ec4988feecbfa1fb536dac0cd29565975a4bb96b",
       "uid": "a306590d00692398f0653101",
       "review_status": "draft",
