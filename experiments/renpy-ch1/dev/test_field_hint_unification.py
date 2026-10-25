@@ -44,7 +44,8 @@ class FieldHintUnification(unittest.TestCase):
 
     def test_single_panel_owner_and_existing_state_timers(self):
         screen=self.field.split('screen r13_field_view_controls(ready):',1)[1]
-        self.assertEqual(screen.count('        frame:'),1)
+        self.assertEqual(screen.count('        frame:'),0)
+        self.assertNotIn('use r13_field_notebook_surface()', (ROOT/'room13_screens.rpy').read_text())
         self.assertIn('if scene_hint or pan_hint:',screen)
         self.assertIn('timer (6.0 if room13["location"]=="gate" else 3.0) action SetVariable("r13_scene_hint_seen"',screen)
         self.assertIn('timer 6.0 action SetField(persistent,"r13_pan_hint_seen",True)',screen)

@@ -51,8 +51,8 @@ screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode=
     else:
         use r13_field_view_controls(ready)
         fixed:
-            area (166,84,132,64)
-            use r13_field_button("기록","record",Show("r13_records"),enabled=ready,width=132,height=64)
+            area (180,84,144,88 if r13_touch_ui() else 64)
+            use r13_field_top_button("기록","record",Show("r13_records"),ready)
         use r13_options_control(ready)
 
 screen r13_options_control(ready=True):
@@ -95,8 +95,8 @@ screen r13_hub(entry=False):
         use r13_waiting_window(input_ready)
     else:
         fixed:
-            area (24,84,130,64)
-            use r13_field_button("지도","map",Return(("menu","map")),enabled=input_ready,width=130,height=64)
+            area (24,84,144,88 if r13_touch_ui() else 64)
+            use r13_field_top_button("지도","map",Return(("menu","map")),input_ready)
     if not entry and r13_bed_available("bed"):
         fixed:
             area (1020,264,232,64)
@@ -109,7 +109,7 @@ screen r13_hub(entry=False):
         # 0.18.56 (owner): no work/shop board at the top. Work is asked for from the person who
         # gives it, goods are bought from the seller in person; only the purse is shown.
         frame:
-            xpos 320 ypos 92 padding (12,6) background r13_field_paper()
+            xpos 510 ypos 100 padding (12,6) background r13_field_paper()
             text ("가진 돈 %d냥"%r13_wallet(room13)["cash"]) size r13_read_size(18,21) color "#664932"
     if not entry and not r13_v111_active():
         use r13_event_offers(input_ready)

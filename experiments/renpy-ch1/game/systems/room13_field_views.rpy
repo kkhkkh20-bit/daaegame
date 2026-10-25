@@ -79,3 +79,7 @@ screen r13_field_view_controls(ready):
         if pan_hint:
             timer 6.0 action SetField(persistent,"r13_pan_hint_seen",True)
         # 안내 문구는 장면을 가리지 않도록 조사 화면에서 상시 표시하지 않는다.
+
+screen r13_field_top_button(caption,icon,command,ready=True,width=144,chosen=False):
+    $ top_icon=Transform(Crop((16,16,32,32),r13_field_icon(icon)),zoom=24.0/32)
+    use r13_state_button(caption,command,width,88 if r13_touch_ui() else 64,family="topic_standard",chosen=chosen,enabled=ready,icon=top_icon,text_size=22)

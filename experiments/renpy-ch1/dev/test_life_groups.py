@@ -64,6 +64,7 @@ class LifeGroups(unittest.TestCase):
         from review_life_groups import stage_environment
         for key in ('workshop_pair','inn_mending','school_play'):
             e,row=stage_environment(key)
+            e['r13_touch_ui']=lambda:False
             for day in row['days']:
                 for period in row['periods']:
                     e['store'].room13.update(day=day,period=period)
