@@ -125,19 +125,19 @@ testcase investigation_placement_granny:
     screenshot "placement-granny-01-field.png"
     run Function(r13_pd_choose_person)
     if eval (not r13_pd_person_ready and r13_world_offset()>0):
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
         run Function(r13_pd_choose_person)
     if eval (not r13_pd_person_ready and r13_world_offset()>0):
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
         run Function(r13_pd_choose_person)
     if eval (not r13_pd_person_ready and r13_world_offset()<r13_world_width()-1280):
-        click "›"
+        click "오른쪽 구역"
         pause 0.5
         run Function(r13_pd_choose_person)
     if eval (not r13_pd_person_ready and r13_world_offset()<r13_world_width()-1280):
-        click "›"
+        click "오른쪽 구역"
         pause 0.5
         run Function(r13_pd_choose_person)
     assert eval (r13_pd_person_ready and r13_pd_person=="granny")
@@ -177,19 +177,19 @@ testcase investigation_placement_granny:
     $ R13_PD_MAP_OBJECTS["inn"]=("register",)
     run Function(r13_pd_choose_object)
     if eval (not r13_pd_object_ready and r13_world_offset()>0):
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
         run Function(r13_pd_choose_object)
     if eval (not r13_pd_object_ready and r13_world_offset()>0):
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
         run Function(r13_pd_choose_object)
     if eval (not r13_pd_object_ready and r13_world_offset()<r13_world_width()-1280):
-        click "›"
+        click "오른쪽 구역"
         pause 0.5
         run Function(r13_pd_choose_object)
     if eval (not r13_pd_object_ready and r13_world_offset()<r13_world_width()-1280):
-        click "›"
+        click "오른쪽 구역"
         pause 0.5
         run Function(r13_pd_choose_object)
     assert eval (r13_pd_object_ready and r13_pd_object=="register")
@@ -212,10 +212,10 @@ testcase investigation_placement_granny:
     screenshot "placement-granny-05-register-returned.png"
     $ R13_PD_MAP_OBJECTS["inn"]=r13_pd_saved_object_preference
     if eval (r13_world_offset()>0):
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
     if eval (r13_world_offset()>0):
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
     assert eval (r13_world_offset()==(r13_world_width()-1280 if room13["location"]=="workshop" else 0))
     run Function(r13_pd_check_field,"placement-opposite-camera-end")

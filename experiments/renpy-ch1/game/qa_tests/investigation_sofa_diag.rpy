@@ -85,12 +85,12 @@ testcase investigation_sofa_tosil:
     # inn's authored initial_x is640; reach zero with real pan controls.
     if eval (r13_world_offset()>0):
         $ r13_s2_before_pan=r13_world_offset()
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
         assert eval (r13_world_offset()<r13_s2_before_pan)
     if eval (r13_world_offset()>0):
         $ r13_s2_before_pan=r13_world_offset()
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
         assert eval (r13_world_offset()<r13_s2_before_pan)
     assert eval (r13_world_offset()==0)
@@ -106,10 +106,10 @@ testcase investigation_sofa_tosil:
     pause 0.01
     screenshot "sofa-tosil-01-camera-zero.png"
     if eval (r13_world_offset()<r13_world_width()-1280):
-        click "›"
+        click "오른쪽 구역"
         pause 0.5
     if eval (r13_world_offset()<r13_world_width()-1280):
-        click "›"
+        click "오른쪽 구역"
         pause 0.5
     assert eval (r13_world_offset()==r13_world_width()-1280)
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
@@ -130,11 +130,11 @@ testcase investigation_sofa_tosil:
     assert eval (not r13_pd_person_ready)
     # Both candidates are left of camera-right; no phantom offscreen input target.
     if eval (not r13_pd_person_ready and r13_world_offset()>0):
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
         run Function(r13_pd_choose_person,True)
     if eval (not r13_pd_person_ready and r13_world_offset()>0):
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
         run Function(r13_pd_choose_person,True)
     assert eval (r13_pd_person_ready and r13_pd_person=='resident_tosil')
@@ -224,12 +224,12 @@ testcase investigation_sofa_nubi:
     # inn's authored initial_x is640; reach zero with real pan controls.
     if eval (r13_world_offset()>0):
         $ r13_s2_before_pan=r13_world_offset()
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
         assert eval (r13_world_offset()<r13_s2_before_pan)
     if eval (r13_world_offset()>0):
         $ r13_s2_before_pan=r13_world_offset()
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
         assert eval (r13_world_offset()<r13_s2_before_pan)
     assert eval (r13_world_offset()==0)
@@ -245,10 +245,10 @@ testcase investigation_sofa_nubi:
     pause 0.01
     screenshot "sofa-nubi-01-camera-zero.png"
     if eval (r13_world_offset()<r13_world_width()-1280):
-        click "›"
+        click "오른쪽 구역"
         pause 0.5
     if eval (r13_world_offset()<r13_world_width()-1280):
-        click "›"
+        click "오른쪽 구역"
         pause 0.5
     assert eval (r13_world_offset()==r13_world_width()-1280)
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
@@ -269,11 +269,11 @@ testcase investigation_sofa_nubi:
     assert eval (not r13_pd_person_ready)
     # Both candidates are left of camera-right; no phantom offscreen input target.
     if eval (not r13_pd_person_ready and r13_world_offset()>0):
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
         run Function(r13_pd_choose_person,True)
     if eval (not r13_pd_person_ready and r13_world_offset()>0):
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
         run Function(r13_pd_choose_person,True)
     assert eval (r13_pd_person_ready and r13_pd_person=='resident_nubi')

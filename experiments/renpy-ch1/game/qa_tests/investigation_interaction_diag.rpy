@@ -154,7 +154,7 @@ init 999 python:
         what=renpy.get_displayable('say','what');who=renpy.get_displayable('say','who')
         expected_name=r13_speaker_label(R13_NAMES[r13_pd_person])
         assert scope.get('who')==expected_name,(scope.get('who'),expected_name)
-        assert scope.get('what') and what is not None and who is not None
+        assert scope.get('what') and what is not None and who is not None, dict(packet=list(r13_packet),who=scope.get('who'),what=scope.get('what'),what_widget=type(what).__name__,who_widget=type(who).__name__,widget_ids=sorted(screen.widgets))
         assert min(renpy.render(what,1280,720,1.2,1.2).get_size())>0
         assert 'r13_visitor' in renpy.get_showing_tags() and r13_motion_person==r13_pd_person
         bounds=renpy.get_image_bounds('r13_visitor')

@@ -48,6 +48,8 @@ testcase investigation_source2_ttadak:
     assert eval ('거절한다' in [item.caption for item in renpy.get_screen('choice').scope['items']])
     run Function(r13_pd_flow_log,"source2-real-arrival-offer",dict(choices=[item.caption for item in renpy.get_screen('choice').scope['items']],state=r13_pd_copy.deepcopy(room13),camera_offset=r13_world_offset()))
     screenshot "source2-ttadak-00-real-arrival-offer.png"
+    # Reach the authored refusal through the visible choice pages.
+    click "다음 →" until "거절한다" timeout 5
     click "거절한다"
     advance until screen "r13_hub" timeout 40
     assert eval (room13['day']==2 and room13['period']==1 and room13['location']=='inn')
@@ -64,12 +66,12 @@ testcase investigation_source2_ttadak:
     # inn's authored initial_x is640; reach zero with real pan controls.
     if eval (r13_world_offset()>0):
         $ r13_s2_before_pan=r13_world_offset()
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
         assert eval (r13_world_offset()<r13_s2_before_pan)
     if eval (r13_world_offset()>0):
         $ r13_s2_before_pan=r13_world_offset()
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
         assert eval (r13_world_offset()<r13_s2_before_pan)
     assert eval (r13_world_offset()==0)
@@ -82,10 +84,10 @@ testcase investigation_source2_ttadak:
     run Function(r13_s2_geometry,"source2-target-camera-zero")
     screenshot "source2-ttadak-01-camera-zero.png"
     if eval (r13_world_offset()<r13_world_width()-1280):
-        click "›"
+        click "오른쪽 구역"
         pause 0.5
     if eval (r13_world_offset()<r13_world_width()-1280):
-        click "›"
+        click "오른쪽 구역"
         pause 0.5
     assert eval (r13_world_offset()==r13_world_width()-1280)
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
@@ -101,11 +103,11 @@ testcase investigation_source2_ttadak:
     screenshot "source2-ttadak-02-camera-right.png"
     run Function(r13_pd_choose_person,True)
     if eval (not r13_pd_person_ready and r13_world_offset()>0):
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
         run Function(r13_pd_choose_person,True)
     if eval (not r13_pd_person_ready and r13_world_offset()>0):
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
         run Function(r13_pd_choose_person,True)
     assert eval (r13_pd_person_ready and r13_pd_person=='resident_ttadak')
@@ -186,12 +188,12 @@ testcase investigation_source2_tosil:
     # inn's authored initial_x is640; reach zero with real pan controls.
     if eval (r13_world_offset()>0):
         $ r13_s2_before_pan=r13_world_offset()
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
         assert eval (r13_world_offset()<r13_s2_before_pan)
     if eval (r13_world_offset()>0):
         $ r13_s2_before_pan=r13_world_offset()
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
         assert eval (r13_world_offset()<r13_s2_before_pan)
     assert eval (r13_world_offset()==0)
@@ -204,10 +206,10 @@ testcase investigation_source2_tosil:
     run Function(r13_s2_geometry,"source2-target-camera-zero")
     screenshot "source2-tosil-01-camera-zero.png"
     if eval (r13_world_offset()<r13_world_width()-1280):
-        click "›"
+        click "오른쪽 구역"
         pause 0.5
     if eval (r13_world_offset()<r13_world_width()-1280):
-        click "›"
+        click "오른쪽 구역"
         pause 0.5
     assert eval (r13_world_offset()==r13_world_width()-1280)
     pause until eval (renpy.get_screen("r13_hub").scope.get("ready",False)) timeout 5
@@ -223,11 +225,11 @@ testcase investigation_source2_tosil:
     screenshot "source2-tosil-02-camera-right.png"
     run Function(r13_pd_choose_person,True)
     if eval (not r13_pd_person_ready and r13_world_offset()>0):
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
         run Function(r13_pd_choose_person,True)
     if eval (not r13_pd_person_ready and r13_world_offset()>0):
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
         run Function(r13_pd_choose_person,True)
     assert eval (r13_pd_person_ready and r13_pd_person=='resident_tosil')
