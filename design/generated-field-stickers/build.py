@@ -8,7 +8,7 @@ def write(name,w,h,body):
     svg=Path(__file__).parent/(name+'.svg')
     svg.write_text(f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}">{body}</svg>')
     subprocess.run(['inkscape',str(svg),'--export-filename='+str(OUT/(name+'.png'))],check=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
-for name,w,h,tape in [('paper',160,64,True),('label',96,36,False)]:
+for name,w,h,tape in [('paper',160,64,False),('place',160,64,True),('label',96,36,False)]:
     for state,ink in [('basic','#29364b'),('hover','#be343f')]:
         body=f'<rect x="2" y="2" width="{w-4}" height="{h-4}" rx="10" fill="#fff9e9"/><rect x="6" y="6" width="{w-12}" height="{h-12}" rx="7" fill="#fff0d4" stroke="{ink}" stroke-width="3"/>'
         if tape:body+=f'<path d="M{w-39} 1l25 3 -2 10 -25 -3z" fill="#d8414a"/><path d="M{w-34} 3l-2 7m8-6 -2 7m8-6 -2 7" stroke="#fff0d4" opacity=".65" stroke-width="2"/>'

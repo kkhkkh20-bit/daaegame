@@ -16,9 +16,9 @@ init 85 python:
         bottom=int(r13_world_height()*r13_field_zoom())
         return 552 if r13_world_width()>1280 and bottom<=552 else r13_control_y()-24
 
-    def r13_field_paper(label=False,hover=False):
+    def r13_field_paper(label=False,hover=False,tape=False):
         # Fixed corners and tape; only blank paper stretches.
-        kind="label" if label else "paper"
+        kind="label" if label else ("place" if tape else "paper")
         state="hover" if hover else "basic"
         return Frame(r13_asset_path("file:assets/ui-field-stickers/%s_%s.png"%(kind,state)),12,14,42 if not label else 12,12)
 

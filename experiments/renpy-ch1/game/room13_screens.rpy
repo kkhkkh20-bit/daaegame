@@ -20,7 +20,7 @@ screen r13_hud():
                 text r13_clock().split(" · ")[-1] xpos 76 ypos 40 xsize 92 size 18 color "#65503b" font r13_ui_font()
                 add R13TimeDial() xpos 182 ypos 16
         frame:
-            xpos 24 ypos 20 padding (12,8) background r13_field_paper()
+            xpos 24 ypos 20 padding (12,8) background r13_field_paper(tape=True)
             hbox:
                 spacing 1
                 add Transform(Crop((16,16,32,32),r13_asset_path("file:assets/ui-b-field/b_icon_pin.png")),xysize=(28,28)) yalign .5
