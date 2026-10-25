@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "607ac99fcd491212b0ebcaf280344abad283b7107977108667ecb778176b5cc6",
+  "source_stamp": "c5d47c1a33484c296e1b1c11afb7b75709c3cc89f39837b24e12ecd8dafd58ed",
   "entries": [
     {
       "id": "MS14_D03_S05_L0001",
@@ -1180,9 +1180,9 @@
       "speaker": "아빠",
       "kind": "dialogue",
       "text": "초롱 씨가 받침을 털었을 땐 조각이 없었어요. 그 뒤에 이 칼끝이 돌 밑에서 부러졌습니다. 그때 칼을 쓴 건 본인이라고 하셨죠.",
-      "editable": true,
-      "usage": "active",
-      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
       "call_sites": [
         {
           "file": "game/room13_v111_days123.rpy",
@@ -1192,7 +1192,9 @@
         }
       ],
       "activation": {
-        "replace_conditions": [],
+        "replace_conditions": [
+          null
+        ],
         "drop_conditions": []
       },
       "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
@@ -2277,9 +2279,9 @@
       "speaker": "아빠",
       "kind": "dialogue",
       "text": "확인된 3번 돌은 돌려놓읍시다. 누가 주고받았는지도 적어 주세요. 돌값은 따로 따지고요.",
-      "editable": true,
-      "usage": "active",
-      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
       "call_sites": [
         {
           "file": "game/room13_v111_days123.rpy",
@@ -2289,7 +2291,9 @@
         }
       ],
       "activation": {
-        "replace_conditions": [],
+        "replace_conditions": [
+          null
+        ],
         "drop_conditions": []
       },
       "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
