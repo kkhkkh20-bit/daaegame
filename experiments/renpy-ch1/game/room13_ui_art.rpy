@@ -77,6 +77,11 @@ init 58 python:
             out=renpy.Render(w,h)
             face=Frame(r13_asset_path("file:assets/ui-field-stickers/diary.png"),26,26)
             out.blit(renpy.render(Transform(face,xysize=(w,h)),w,h,st,at),(0,0))
+            # 일정한 간격의 옅은 종이 결. 패널 크기와 무관하게 결의 크기를 유지한다.
+            c=out.canvas()
+            for y in range(28,max(29,h-28),11):
+                for x in range(28,max(29,w-28),29):
+                    c.line("#a8783210",(x,y),(min(x+5,w-27),y),1)
             ring=renpy.render(r13_asset("file:assets/ui-field-stickers/ring.png"),28,34,st,at)
             for y in (.25,.5,.75):out.blit(ring,(0,int(h*y)-17))
             return out

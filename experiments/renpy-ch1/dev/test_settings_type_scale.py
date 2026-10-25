@@ -62,7 +62,8 @@ class SettingsTypeScale(unittest.TestCase):
   for widget in ('music_volume','fx_volume'):
    self.assertRegex(A,r'id "'+widget+r'"\n\s+text [^\n]+id "'+widget+r'_percent"[^\n]+xsize 64 yalign \.5')
  def test_row_labels_and_controls_share_vertical_center(self):
-  self.assertIn('xpos 0 yalign .5 xsize 256 spacing 4',A)
+  self.assertIn('xpos 0 yalign .5 xsize 232 spacing 4',A)
+  self.assertGreaterEqual(248-232,16)
   self.assertIn('ypos ((r13_opt_row_height()-r13_opt_button_height())//2)',A)
  def test_preview_uses_actual_say_size_without_transform(self):
   preview=(ROOT/'game/room13_typing_preview.rpy').read_text()
