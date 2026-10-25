@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "8e8130dc632cd818d8e2c5ca5ac7e9a9daf1b18ba758a2313318bbfcf02d917b",
+  "source_stamp": "4be46ed21680c8ca7ab02c19d4e5e84ef6f493013278b0cf3a1f041ce50e29cf",
   "entries": [
     {
       "id": "NW_AR_D11_01",
@@ -33,7 +33,7 @@
         }
       ],
       "scene_title": "장면 11-2B. 단추 하나",
-      "source_hash": "0ba5ee822924678bbe0d55c53a45e696441b6a969e4ca395ebe81c542d31c469",
+      "source_hash": "c6bf6ee9d8fa17c9aa32451e75bf251bac027ff193352c9ffa1728424f9695d5",
       "baseline_hash": "54040cb2a59a0ade10134c2263afadf44cdeaa57cd72d6c4184f0eb58db3cbc3",
       "uid": "fee0338d4dd6d7c6be8c967a",
       "review_status": "draft",
@@ -72,7 +72,7 @@
         }
       ],
       "scene_title": "장면 11-2B. 단추 하나",
-      "source_hash": "0ba5ee822924678bbe0d55c53a45e696441b6a969e4ca395ebe81c542d31c469",
+      "source_hash": "c6bf6ee9d8fa17c9aa32451e75bf251bac027ff193352c9ffa1728424f9695d5",
       "baseline_hash": "7ba16086e74e665312907e69fb8a4d83ea4bb77c078cff2fa48fedb3a62e3b60",
       "uid": "ca15ba855d50cbb95b392876",
       "review_status": "draft",
@@ -111,9 +111,48 @@
         }
       ],
       "scene_title": "장면 11-2B. 단추 하나",
-      "source_hash": "0ba5ee822924678bbe0d55c53a45e696441b6a969e4ca395ebe81c542d31c469",
+      "source_hash": "c6bf6ee9d8fa17c9aa32451e75bf251bac027ff193352c9ffa1728424f9695d5",
       "baseline_hash": "80baf5dcb888ac0c223339b553758cfceb795f27c7938d1b41e36dd540ca86b6",
       "uid": "165953dc64ba49e6c44b9809",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D11_S02B_V09",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "after",
+        "MS14_D11_S02B_L0031",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D11_S02B_L0031",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "엄마가 손가락을 하나씩 접는다. 넷째 손가락에서 멈춘다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 291,
+          "label": "r13_v111_mother_life11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "c6bf6ee9d8fa17c9aa32451e75bf251bac027ff193352c9ffa1728424f9695d5",
+      "baseline_hash": "d47b8f7d1c6c39b7be30484982e499466d8db2d5908519b77f66e67e3dd5364f",
+      "uid": "9a5a2aca84b17d969edd5ccb",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d11|MS14_D11_S02B|patch|after|행 조건 없음",
