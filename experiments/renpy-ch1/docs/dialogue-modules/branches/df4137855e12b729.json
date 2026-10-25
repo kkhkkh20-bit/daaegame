@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "9086ac9f19f21e7c656c4fc324ead8808d4f5460e82e3f785dc03be5372c984a",
+  "source_stamp": "22551b066ac78d5585d4e1e8fb6c4d3ea7e21a858e45b7fb149d5b95c7f6a94f",
   "entries": [
     {
       "id": "NW_D07_S02_V05",
@@ -33,7 +33,7 @@
         }
       ],
       "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
-      "source_hash": "291cd7546f8a5800746bca13e2082a7d8f69ce31cfea4f1a0dd6b4d5c727782c",
+      "source_hash": "eb20c7d6a27d6b4fd075ce3fe14bcf6e4c80692fa0f10f0aa5b5555f78edde9f",
       "baseline_hash": "9061ffe6059e232cc0ff2211fadd12b3a8ff51394019abe7aec525fdcaedce32",
       "uid": "6b035604255e6d3960c55963",
       "review_status": "draft",
@@ -72,9 +72,87 @@
         }
       ],
       "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
-      "source_hash": "291cd7546f8a5800746bca13e2082a7d8f69ce31cfea4f1a0dd6b4d5c727782c",
+      "source_hash": "eb20c7d6a27d6b4fd075ce3fe14bcf6e4c80692fa0f10f0aa5b5555f78edde9f",
       "baseline_hash": "166cd598de4342ca7d93857a36a35d629e246fc035f8a55a6c68c510aabd7424",
       "uid": "b704f30cab6e549bdca07f22",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D07_S02_T21",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "after",
+        "MS14_D07_S02_L0042",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D07_S02_L0042",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "종이요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 654,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "eb20c7d6a27d6b4fd075ce3fe14bcf6e4c80692fa0f10f0aa5b5555f78edde9f",
+      "baseline_hash": "152878d0a497b446562c735d1acacb572dc779b0d152128d00efd0f15c04281c",
+      "uid": "7da8b3d85b33e40a58d56b72",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D07_S02_T22",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "after",
+        "MS14_D07_S02_L0042",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D07_S02_L0042",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "부엉이 어르신이 예전에 물건 오간 기록을 갖고 계신대요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 654,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "eb20c7d6a27d6b4fd075ce3fe14bcf6e4c80692fa0f10f0aa5b5555f78edde9f",
+      "baseline_hash": "67790740cdd56e433556ba6ba98f1130ac44fac1c6091039ceda59fc2a60d8bc",
+      "uid": "0fc30d5f65d10e9380f491a7",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d07|MS14_D07_S02|patch|after|행 조건 없음",
