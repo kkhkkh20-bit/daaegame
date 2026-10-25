@@ -1,5 +1,12 @@
 # 다른 채팅은 이 페이지에서 시작하세요
 
+[현재 적용/빈 슬롯 전체](inventory.json) · [빈 슬롯 제작 요청서](requests.csv) · [제작자 완료 보고](deliveries.json) · [최근 변경](latest-changes.json) · [파일 채우기 안내](GUIDE.md)
+
+![현황판 미리보기](preview.png)
+
+아래 공개 현황판이 열리지 않아도 이 GitHub 문서와 위 연결표로 작업을 진행할 수 있습니다. 제작자는 deliveries.json에 캡처 경로를 기록하고, 사용자가 GitHub에서도 확인할 수 있도록 이 문서 끝에 완료된 슬롯·상태·캡처 Markdown 링크를 추가하세요.
+
+
 저장소: https://github.com/kkhkkh20-bit/daaegame
 작업 폴더: experiments/renpy-ch1
 공개 현황판: https://kkhkkh20-bit.github.io/daaegame/experiments/renpy-ch1/docs/asset-modules/
