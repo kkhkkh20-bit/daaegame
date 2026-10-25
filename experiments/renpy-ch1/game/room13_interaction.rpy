@@ -134,7 +134,7 @@ init 61 python:
         for actor in sorted(actors,key=lambda a:(faces[a["person"]][1],faces[a["person"]][0])):
             person=actor["person"];face=faces[person]
             cx,top=r13_actor_nameplate(actor)
-            tag_z=1.0/r13_field_zoom();tag_h=int((72 if r13_touch_ui() else 40)*tag_z);width=int(max((112 if r13_touch_ui() else 72),sum((11 if r13_touch_ui() else 8) if ch==" " else (22 if r13_touch_ui() else 17) for ch in R13_NAMES[person])+28)*tag_z)  # 0.20.2 tidy tags; 0.20.3 tags keep screen size in a zoomed field; 0.20.5 (Codex U02) larger phone touch area
+            tag_z=1.0/r13_field_zoom();tag_h=int((36 if r13_touch_ui() else 30)*tag_z);width=int(max((72 if r13_touch_ui() else 64),sum((8 if r13_touch_ui() else 7) if ch==" " else (18 if r13_touch_ui() else 16) for ch in R13_NAMES[person])+18)*tag_z)  # 0.20.2 tidy tags; 0.20.3 tags keep screen size in a zoomed field; 0.20.5 (Codex U02) larger phone touch area
             # Keep the full touch target above the head, not centred across it.
             top=max(101,int(face[1])-tag_h-int(8*tag_z))
             # A head can straddle the panorama edge while its name used to

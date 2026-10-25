@@ -20,8 +20,7 @@ init 57 python:
         # Actual fixed field dock, thought fold and HUD. Shared by staging and
         # labels; touch and large-text geometry must agree with hit targets.
         h=r13_control_height()
-        return [(offset+772,r13_control_y(),480,h),
-                (offset+1020,r13_control_upper_y(),232,h),
+        return [(offset+24,84,274,64),
                 (offset+940,20,314,68),(offset+24,20,400,54),
                 # 0.20.11 (owner-approved mockup 2026-10-23): the screen-edge pan arrows
                 # (room13_world_camera.rpy) — a name tag never covers them.
