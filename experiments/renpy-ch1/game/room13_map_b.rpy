@@ -22,26 +22,26 @@ init 64 python:
     # 숲은 manifest.proposed.json 의 box/label_center 를 옮겼다. 여관 이름표 높이는
     # 실제 그림이 보이는 아래 끝(알파 상자)에 맞췄다 — 제안 좌표는 아래층 그림 위에 걸린다.
     R13_BMAP = {
-        "inn": dict(base="assets/map-b/inn_base.webp", places={
-            "hall": dict(art="assets/map-b/inn_corridor.webp", box=(95,68,280,280), label=(235,325), z=10),
-            "room13": dict(art="assets/map-b/inn_room13.webp", box=(409,56,290,290), label=(554,314), z=10),
-            "guestroom": dict(art="assets/map-b/inn_temporary_guestroom.webp", box=(770,56,290,290), label=(915,321), z=10),
-            "inn": dict(art="assets/map-b/inn_reception.webp", box=(95,300,270,270), label=(230,545), z=10),
-            "dining": dict(art="assets/map-b/inn_dining.webp", box=(430,300,270,270), label=(565,548), z=10),
-            "kitchen": dict(art="assets/map-b/inn_kitchen.webp", box=(775,300,270,270), label=(910,548), z=10),
+        "inn": dict(base=r13_asset_path("file:assets/map-b/inn_base.webp"), places={
+            "hall": dict(art=r13_asset_path("file:assets/map-b/inn_corridor.webp"), box=(95,68,280,280), label=(235,325), z=10),
+            "room13": dict(art=r13_asset_path("file:assets/map-b/inn_room13.webp"), box=(409,56,290,290), label=(554,314), z=10),
+            "guestroom": dict(art=r13_asset_path("file:assets/map-b/inn_temporary_guestroom.webp"), box=(770,56,290,290), label=(915,321), z=10),
+            "inn": dict(art=r13_asset_path("file:assets/map-b/inn_reception.webp"), box=(95,300,270,270), label=(230,545), z=10),
+            "dining": dict(art=r13_asset_path("file:assets/map-b/inn_dining.webp"), box=(430,300,270,270), label=(565,548), z=10),
+            "kitchen": dict(art=r13_asset_path("file:assets/map-b/inn_kitchen.webp"), box=(775,300,270,270), label=(910,548), z=10),
             # 숨은 통로: 13호실과 임시 객실 사이, 방들 아래층(z5). 공개 전에는 아무것도 그리지 않는다.
-            "passage": dict(art="assets/map-b/inn_hidden_passage.webp", box=(652,103,160,160), label=(722,256), z=5),
+            "passage": dict(art=r13_asset_path("file:assets/map-b/inn_hidden_passage.webp"), box=(652,103,160,160), label=(722,256), z=5),
             # 옛 시설(지하): 납품에 그림이 없다. 공개된 뒤에만 이름표 한 장을 지면 오른쪽 아래에 둔다.
             "ancient": dict(art=None, box=None, label=(1078,548), z=10),
         }, covers={}),
-        "mountain": dict(base="assets/map-b/forest_base.webp", places={
-            "forest": dict(art="assets/map-b/forest_forest_path.webp", box=(125,285,225,210), label=(237,516), z=10),
-            "facility": dict(art="assets/map-b/forest_protection_facility.webp", box=(290,50,260,190), label=(420,257), z=10),
-            "greenhouse": dict(art="assets/map-b/forest_abandoned_greenhouse.webp", box=(640,290,230,210), label=(755,520), z=10),
-            "altar": dict(art="assets/map-b/forest_mountain_altar.webp", box=(785,55,220,210), label=(895,284), z=10),
+        "mountain": dict(base=r13_asset_path("file:assets/map-b/forest_base.webp"), places={
+            "forest": dict(art=r13_asset_path("file:assets/map-b/forest_forest_path.webp"), box=(125,285,225,210), label=(237,516), z=10),
+            "facility": dict(art=r13_asset_path("file:assets/map-b/forest_protection_facility.webp"), box=(290,50,260,190), label=(420,257), z=10),
+            "greenhouse": dict(art=r13_asset_path("file:assets/map-b/forest_abandoned_greenhouse.webp"), box=(640,290,230,210), label=(755,520), z=10),
+            "altar": dict(art=r13_asset_path("file:assets/map-b/forest_mountain_altar.webp"), box=(785,55,220,210), label=(895,284), z=10),
         }, covers={
-            "greenhouse": dict(art="assets/map-b/forest_cover_greenhouse.webp", box=(610,285,290,220)),
-            "altar": dict(art="assets/map-b/forest_cover_altar.webp", box=(750,50,290,235)),
+            "greenhouse": dict(art=r13_asset_path("file:assets/map-b/forest_cover_greenhouse.webp"), box=(610,285,290,220)),
+            "altar": dict(art=r13_asset_path("file:assets/map-b/forest_cover_altar.webp"), box=(750,50,290,235)),
         }),
     }
     R13_BMAP_ART_SIZES = {}
@@ -158,7 +158,7 @@ screen r13_map_b(region, selected, ready, map_hover, map_notice=None):
     $ wx, wy = r13_bmap_screen(0, 0)
     # 빈 바탕 → 수첩 틀 → 가림판·스티커 → 이름표 순. 틀을 스티커 아래에 두어 떠오른 스티커가 틀에 잘리지 않는다.
     add Transform(spec["base"], size=(int(round(R13_BMAP_WINDOW[2]*s))+2, int(round(R13_BMAP_WINDOW[3]*s))+2)) xpos (int(wx)-1) ypos (int(wy)-1)
-    add Transform(R13_BMAP_ART+"notebook_frame.webp", zoom=s) xpos fx ypos fy
+    add Transform(r13_asset_path("file:"+(R13_BMAP_ART+"notebook_frame.webp")), zoom=s) xpos fx ypos fy
     for key, cover in r13_bmap_covers(region):
         $ cx, cy, cw, ch = r13_bmap_fit(cover["art"], cover["box"])
         add Transform(cover["art"], size=(cw, ch)) xpos cx ypos cy

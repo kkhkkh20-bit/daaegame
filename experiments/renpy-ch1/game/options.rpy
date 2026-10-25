@@ -1,5 +1,5 @@
 define config.name = "다람탐정 · 눈에 갇힌 마을"
-define config.version = "0.20.36"
+define config.version = "0.20.37"
 # Literal early definition selects the persistent web save mount.
 define config.save_directory = "daaegame-renpy-village-ch1-06"
 
@@ -69,7 +69,7 @@ init python:
     config.exit_transition = Dissolve(0.12)
     config.after_load_transition = Fade(0.12,0.12,0.2)
     build.name = "daram_renpy_small_ch1"
-    build.version = "0.20.36"
+    build.version = "0.20.37"
     build.classify("game/assets/room13-painted-*.png", None)
     build.classify("game/assets/room13-painted-layouts.json", None)
     build.classify("game/assets/*.txt", "all")
@@ -124,7 +124,7 @@ init python:
     NAMES = {"dad":"아빠", "daram":"다람", "granny":"할머니", "seryeon":"세련", "nabi":"나비", "bami":"밤이", "doto":"도토", "buri":"부리", "karo":"까로", "neoul":"너울"}
     for person, states in CAST.items():
         for state_name, spec in states.items():
-            renpy.image(person + " " + state_name, Transform(Crop(tuple(spec["crop"]), spec["file"]),nearest=spec.get("nearest",True)))
+            renpy.image(person + " " + state_name, Transform(Crop(tuple(spec["crop"]), r13_asset("file:"+spec["file"])),nearest=spec.get("nearest",True)))
 
     LOCATIONS = {
         "front":("여관 접수대", "bg front", "granny",625,563),

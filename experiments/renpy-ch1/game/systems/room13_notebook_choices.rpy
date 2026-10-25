@@ -22,10 +22,10 @@ init 81 python:
     def r13_notebook_note():
         # Crop the paper body before nine-slicing; the original large transparent
         # margin above the tape must not consume half of a 92px heading.
-        return Frame(Crop((16,16,190,52),"assets/ui-b-options/b_opt_choice.png"),24,16)
+        return Frame(Crop((16,16,190,52),r13_asset_path("file:assets/ui-b-options/b_opt_choice.png")),24,16)
 
     def r13_notebook_choice_surface(width,hovered=False):
-        return r13_original_card_surface("assets/ui-b-question/"+("b_panel_card_hover.png" if hovered else "b_panel_card.png"),width)
+        return r13_original_card_surface(r13_asset_path("file:"+("assets/ui-b-question/"+("b_panel_card_hover.png" if hovered else "b_panel_card.png"))),width)
 
     def r13_notebook_choice_geometry(entries,width,heading):
         size=r13_read_size(36,38)
@@ -56,7 +56,7 @@ screen r13_notebook_choice_list(person,pose,title,entries,ready,return_action=No
     frame:
         xpos left+20 ypos header_top xsize width-40 ysize header_height padding (42,22,24,22) background r13_notebook_note()
         text heading xsize width-106 align (.5,.5) text_align .5 size r13_read_size(36,38) color "#4b3022" font R13_UI_BOLD_FONT line_spacing 4
-    add Transform("assets/ui-b-question/b_tape_red.png",xysize=(64,22),rotate=-16) xpos left+8 ypos header_top-24
+    add Transform(r13_asset_path("file:assets/ui-b-question/b_tape_red.png"),xysize=(64,22),rotate=-16) xpos left+8 ypos header_top-24
     vbox:
         pos (left,rows_top) spacing 16
         for i,((label,command,read),height) in enumerate(visible):
@@ -69,7 +69,7 @@ screen r13_notebook_choice_list(person,pose,title,entries,ready,return_action=No
                 hovered SetLocalVariable("focused_choice",i)
                 unhovered SetLocalVariable("focused_choice",None)
                 fixed:
-                    add Transform("assets/ui-b-question/b_tape_red.png" if focused_choice==i else "assets/ui-b-question/b_tape_teal.png",xysize=(54,18),rotate=12) xpos width-78 ypos -12
+                    add Transform(r13_asset_path("file:assets/ui-b-question/b_tape_red.png") if focused_choice==i else r13_asset_path("file:assets/ui-b-question/b_tape_teal.png"),xysize=(54,18),rotate=12) xpos width-78 ypos -12
                     frame:
                         xpos 60 yalign .5 xysize (54,54) padding (3,3) background Solid("#fff6e6")
                         fixed:
@@ -78,7 +78,7 @@ screen r13_notebook_choice_list(person,pose,title,entries,ready,return_action=No
                     text "·" xpos 130 yalign .5 size 28 color "#654129" font R13_UI_BOLD_FONT
                     text r13_question_caption(label,False,False) xpos 160 yalign .5 xsize width-184 size r13_read_size(32,34) font R13_UI_BOLD_FONT color "#4b3420" line_spacing 4
                     if focused_choice==i:
-                        add Transform(Crop((20,16,23,32),"assets/ui-b-question/b_icon_acorn.png"),zoom=2.0) xpos -26 yalign .5
+                        add Transform(Crop((20,16,23,32),r13_asset_path("file:assets/ui-b-question/b_icon_acorn.png")),zoom=2.0) xpos -26 yalign .5
         if not entries:
             frame:
                 xsize width padding (26,22) background r13_notebook_note()

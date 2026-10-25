@@ -10,10 +10,10 @@ screen r13_meeting_retry_choice():
     timer .2 action SetScreenVariable("ready",True)
     add Solid("#0f1a287d")
     # 원본 비율 유지. 시안 설명 머리글·검토 문구는 게임에 넣지 않는다.
-    add Transform("assets/ui-b-options/b_opt_panel.png",zoom=1000.0/1288) xpos 138 ypos 86
-    add "assets/ui-b-options/b_opt_title_tape.png" xpos 240 ypos 120
+    add Transform(r13_asset_path("file:assets/ui-b-options/b_opt_panel.png"),zoom=1000.0/1288) xpos 138 ypos 86
+    add r13_asset_path("file:assets/ui-b-options/b_opt_title_tape.png") xpos 240 ypos 120
     text "회의를 마치며" xpos 331 ypos 156 xanchor .5 yanchor .5 size 23 color "#263b52" font R13_UI_BOLD_FONT
-    add Transform("assets/ui-b-options/b_opt_sticker_corner.png",zoom=120.0/152) xpos 953 ypos 117
+    add Transform(r13_asset_path("file:assets/ui-b-options/b_opt_sticker_corner.png"),zoom=120.0/152) xpos 953 ypos 117
     text "다 있었다." xpos 640 ypos 265 xanchor .5 yanchor .5 size 36 color "#263b52" font R13_UI_BOLD_FONT
     text "그런데 이어 붙이지 못했다." xpos 640 ypos 315 xanchor .5 yanchor .5 size 36 color "#263b52" font R13_UI_BOLD_FONT
     # 작은 160px 납품 버튼을 확대하지 않는다. 승인된 고해상 공통 확인 부품을 사용한다.

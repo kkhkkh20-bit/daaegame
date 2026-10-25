@@ -25,7 +25,7 @@ init 65 python:
 
     def r13_village_b_plate(primary=False):
         # 납품 trimmed 비율(일반 약 3.2:1/원본 label 3.5:1)을 유지하는 고정 크기 그림.
-        return R13_VILLAGE_B_ART + ("b_button_primary_trimmed.png" if primary else "b_button_trimmed.png")
+        return r13_asset_path("file:"+(R13_VILLAGE_B_ART + ("b_button_primary_trimmed.png" if primary else "b_button_trimmed.png")))
 
 screen r13_village_b_control(label, rect, action, control_id, primary=False, enabled=True, chosen=False):
     $ bx,by,bw,bh=rect
@@ -53,7 +53,7 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
             fixed:
                 xysize (int(1642*zoom),int(958*zoom))
                 xalign .5 yalign .5
-                add Transform(R13_VILLAGE_B_ART+"village_clean.png",zoom=zoom)
+                add Transform(r13_asset_path("file:assets/map-village-b/village_clean.png"),zoom=zoom)
                 for key,state in rows:
                     if key in R13_VILLAGE_B_PLACES:
                         $ place=R13_VILLAGE_B_PLACES[key]
@@ -74,7 +74,7 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
                             action choose sensitive ready alt label
                             fixed:
                                 xysize (int(lw*zoom),int(38*zoom))
-                                add Transform(Frame(R13_VILLAGE_B_ART+"b_panel_small_trimmed.png",12,10),xysize=(int(lw*zoom),int(38*zoom)))
+                                add Transform(Frame(r13_asset_path("file:assets/map-village-b/b_panel_small_trimmed.png"),12,10),xysize=(int(lw*zoom),int(38*zoom)))
                                 text label font R13_UI_BOLD_FONT size max(12,int(20*zoom)) color ("#963b2f" if key==selected else "#493324" if state=="open" else "#88796b") align (.5,.5)
                 # 공개된 행만 상태를 그린다. 미발견 장소에는 잠금 아이콘도 만들지 않는다.
                 for key,state in rows:
@@ -83,18 +83,18 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
                         $ cx,cy=place["label_center"]
                         $ lw=max(144,len(r13_map_label(key))*21+24)
                         use r13_map_status_badges(key,state,selected,(int((cx-lw/2)*zoom),int((cy-19)*zoom),int(lw*zoom),int(38*zoom)))
-    add (R13_VILLAGE_B_ART+"notebook_frame_1280x720.png")
+    add r13_asset("file:assets/map-village-b/notebook_frame_1280x720.png")
     # 수첩 상단의 좁은 봉제선 대신 지도 창 안에 제목 전용 64px 공간을 확보한다.
     add Solid("#f7e8cd") xpos 88 ypos 58 xysize (1136,64)
     add Solid("#b99a6b") xpos 100 ypos 120 xysize (1112,2)
     # 기존 수첩 에셋으로 가볍게 꾸미고, 제목과 현재 위치를 한 줄에 정렬한다.
-    add Transform(R13_VILLAGE_B_ART+"b_tape_red.png",zoom=.8,rotate=-8) xpos 112 ypos 67
-    add Transform(R13_VILLAGE_B_ART+"b_tape_teal.png",zoom=.65,rotate=9) xpos 156 ypos 88
+    add Transform(r13_asset_path("file:assets/map-village-b/b_tape_red.png"),zoom=.8,rotate=-8) xpos 112 ypos 67
+    add Transform(r13_asset_path("file:assets/map-village-b/b_tape_teal.png"),zoom=.65,rotate=9) xpos 156 ypos 88
     fixed:
         area (360,62,540,54)
         hbox:
             align (.5,.5) spacing 12
-            add Transform(Crop((16,16,32,32),"assets/ui-b-field/b_icon_acorn.png"),zoom=1.0) yalign .5
+            add Transform(Crop((16,16,32,32),r13_asset_path("file:assets/ui-b-field/b_icon_acorn.png")),zoom=1.0) yalign .5
             text "다람탐정 · 마을 지도" font R13_UI_BOLD_FONT size 28 color "#493324" yalign .5
     textbutton "×":
         id "r13_village_close_x"
@@ -106,7 +106,7 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
         area (920,72,248,38)
         hbox:
             align (.5,.5) spacing 8
-            add Transform("assets/map-status/current_location.png",zoom=1.0/3) yalign .5
+            add Transform(r13_asset_path("file:assets/map-status/current_location.png"),zoom=1.0/3) yalign .5
             text ("현재 · "+(r13_map_label(room13["location"]) if r13_map_discovered(room13["location"]) else "마을")) font R13_UI_BOLD_FONT size 18 color "#765b3e" yalign .5 xmaximum 212
     $ extras=[(key,state) for key,state in rows if key not in R13_VILLAGE_B_PLACES]
     if extras:
@@ -119,7 +119,7 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
             action ToggleScreenVariable("extra_places") sensitive ready
     fixed:
         area (102,643,180,40)
-        add Frame(R13_VILLAGE_B_ART+"b_panel_small_trimmed.png",12,10) xysize (180,40)
+        add Frame(r13_asset_path("file:assets/map-village-b/b_panel_small_trimmed.png"),12,10) xysize (180,40)
         text ("선택: "+r13_map_label(selected) if selected else "장소를 선택하세요") font R13_UI_BOLD_FONT size 19 color "#493324" xmaximum 168 align (.5,.5) text_align .5
     if not local_guide:
         for key,title,rect in (("village","마을",(300,643,106,40)),("inn","여관 안",(416,643,120,40)),("mountain","숲·산길",(546,643,132,40))):
@@ -128,13 +128,13 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
     $ can_travel=selected and selected!=room13["location"] and (selected in dict(r13_local_connections()) if local_guide else selected in r13_places())
     use r13_village_b_control("이곳으로 이동",(704,643,184,40),[Hide("r13_inn_guide"),Return(("travel",selected))] if local_guide else Return(selected),"r13_map_travel",primary=True,enabled=ready and can_travel)
     use r13_village_b_control("현장으로",(902,643,142,40),close_action,"r13_map_close",enabled=ready)
-    add Transform(R13_VILLAGE_B_ART+"sticker_daram_stubborn.png",xysize=(67,67),fit="contain") xpos 1137 ypos 631
+    add Transform(r13_asset_path("file:assets/map-village-b/sticker_daram_stubborn.png"),xysize=(67,67),fit="contain") xpos 1137 ypos 631
     $ meeting_venue=r13_meeting_map_venue(selected) if selected else None
     $ visible_notice=map_notice or ((meeting_venue[2]+(" · 모임 중" if r13_meeting_map_pending(selected) else "")) if meeting_venue else None)
     if visible_notice:
         frame:
             area (330,584,620,44) padding (12,6)
-            background Frame(R13_VILLAGE_B_ART+"b_panel_small_trimmed.png",12,10)
+            background Frame(r13_asset_path("file:assets/map-village-b/b_panel_small_trimmed.png"),12,10)
             text visible_notice font R13_UI_BOLD_FONT size 19 color "#963b2f" align (.5,.5)
     if extra_places:
         # 뒤 버튼의 우발 선택을 막되 클릭 한 번으로 닫을 수 있는 공개 목적지 목록.
@@ -143,7 +143,7 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
             action SetScreenVariable("extra_places",False)
         frame:
             area (380,100,520,480) padding (24,20)
-            background Frame(R13_VILLAGE_B_ART+"b_panel_small_trimmed.png",16,16)
+            background Frame(r13_asset_path("file:assets/map-village-b/b_panel_small_trimmed.png"),16,16)
             vbox:
                 spacing 8
                 text "다른 장소" font R13_UI_BOLD_FONT size 26 color "#493324"

@@ -62,10 +62,10 @@ screen main_menu():
     $ title_has_save = bool(r13_save_slots())
     default title_focus = ("continue" if r13_continue_slot() else "new")
     # 승인된 B 메인 납품 좌표. 배경에 합쳐진 조명에는 구판 title light rig를 얹지 않는다.
-    add Transform("assets/ui-b-main/b_main_background_postcard.png", zoom=1280.0/1672)
-    add Transform("assets/ui-b-main/b_logo.png", zoom=.85) xpos -18 ypos 10
+    add Transform(r13_asset_path("file:assets/ui-b-main/b_main_background_postcard.png"), zoom=1280.0/1672)
+    add Transform(r13_asset_path("file:assets/ui-b-main/b_logo.png"), zoom=.85) xpos -18 ypos 10
     # Approved single transparent ensemble sticker; preserve its original ratio.
-    add Transform("assets/ui-b-main/b_main_cast_poster_plain.png",zoom=610.0/1402) xpos 754 ypos 80
+    add Transform(r13_asset_path("file:assets/ui-b-main/b_main_cast_poster_plain.png"),zoom=610.0/1402) xpos 754 ypos 80
     fixed:
         at r13_title_menu_in
         hbox:
@@ -125,11 +125,14 @@ screen say(who,what):
         use r13_meeting_chrome(r13_meeting_claim)
         window:
             id "window"
-            area (80,r13_control_y()-148,1120,132) background R13InkPanel(alpha="d9",slim=True) padding (22,36,22,14)
-            r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(23,29) line_spacing 5 xsize 1076 font r13_ui_font() color "#fff4df"
+            area (80,r13_control_y()-148,1120,132) background Frame(Crop((16,16,1168,128),r13_asset_path("file:assets/ui-b-dialogue/b_panel_dialogue.png")),48,24,64,24) padding (56,50,28,14)
+            r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(23,29) line_spacing 5 xsize 1036 font R13_UI_BOLD_FONT color "#4b3420"
         if who:
-            text who id "who" xpos 104 ypos (r13_control_y()-144) size r13_read_size(24,26) color "#f6dfac" font r13_ui_font() xmaximum 1076
-        text "▸" xpos 1160 ypos (r13_control_y()-48) size 24 color "#e8d9b0"
+            frame:
+                xpos 104 ypos (r13_control_y()-158) padding (16,5,24,7)
+                background Frame(Crop((16,12,168,32),r13_asset_path("file:assets/ui-b-dialogue/b_ribbon_name.png")),16,6,32,6)
+                text who id "who" size r13_read_size(24,26) color "#fff3df" font R13_UI_BOLD_FONT xmaximum 1000 outlines []
+        text "▸" xpos 1160 ypos (r13_control_y()-48) size 24 color "#4b3420"
         timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
         if r13_nw_meeting_claim(r13_meeting_claim):
             use r13_toolbar(mode="line")
@@ -190,7 +193,7 @@ screen say(who,what):
         $ b_text_x = 222 if b_face else 120
         $ b_text_width = 988 if b_face else 1090
         $ b_text_top = r13_night_say_top(what)
-        add Transform(Frame(Crop((16,16,1168,128),"assets/ui-b-dialogue/b_panel_dialogue.png"),48,24,64,24),xysize=(1220,714-(b_text_top-38)),alpha=r13_night_shade_alpha()) xpos 30 ypos (b_text_top-38)
+        add Transform(Frame(Crop((16,16,1168,128),r13_asset_path("file:assets/ui-b-dialogue/b_panel_dialogue.png")),48,24,64,24),xysize=(1220,714-(b_text_top-38)),alpha=r13_night_shade_alpha()) xpos 30 ypos (b_text_top-38)
         if b_face:
             add Transform(b_face,xysize=(112,112)) xpos 70 ypos (b_text_top-10)
         window:
@@ -204,7 +207,7 @@ screen say(who,what):
                 xpos b_text_x ypos (r13_night_say_top(what)-60) spacing 12
                 at r13_name_fade
                 frame:
-                    background Frame(Crop((16,12,168,32),"assets/ui-b-dialogue/b_ribbon_name.png"),16,6,32,6) padding (22,8,36,10) yalign .5
+                    background Frame(Crop((16,12,168,32),r13_asset_path("file:assets/ui-b-dialogue/b_ribbon_name.png")),16,6,32,6) padding (22,8,36,10) yalign .5
                     text who id "who" color "#fff3df" font R13_UI_BOLD_FONT size r13_read_size(27,30) xmaximum 640 outlines []
                 if r13_offscreen_voice(who):
                     text r13_offscreen_voice(who) yalign .5 size r13_read_size(20,22) color "#fff3df" font r13_ui_font() outlines [(1,"#30261f",0,0)]
@@ -273,22 +276,22 @@ screen hud():
         imagebutton:
             xsize 82 ysize 74 padding (15,11)
             background None hover_background None
-            idle Transform("assets/evidence.png",size=(52,52))
-            hover Transform("assets/evidence.png",size=(52,52),alpha=0.75)
+            idle Transform(r13_asset_path("file:assets/evidence.png"),size=(52,52))
+            hover Transform(r13_asset_path("file:assets/evidence.png"),size=(52,52),alpha=0.75)
             action If(source_mode,Show("source_evidence"),Show("evidence_book"))
             tooltip "수첩"
         imagebutton:
             xsize 82 ysize 74 padding (15,11)
             background None hover_background None
-            idle Transform("assets/save.png",size=(52,52))
-            hover Transform("assets/save.png",size=(52,52),alpha=0.75)
+            idle Transform(r13_asset_path("file:assets/save.png"),size=(52,52))
+            hover Transform(r13_asset_path("file:assets/save.png"),size=(52,52),alpha=0.75)
             action ShowMenu("save")
             tooltip "저장"
         imagebutton:
             xsize 82 ysize 74 padding (15,11)
             background None hover_background None
-            idle Transform("assets/menu.png",size=(52,52))
-            hover Transform("assets/menu.png",size=(52,52),alpha=0.75)
+            idle Transform(r13_asset_path("file:assets/menu.png"),size=(52,52))
+            hover Transform(r13_asset_path("file:assets/menu.png"),size=(52,52),alpha=0.75)
             action ShowMenu("pause_menu")
             tooltip "설정"
     if GetTooltip():
@@ -300,14 +303,14 @@ screen explore(location):
     timer 0.35 action SetScreenVariable("input_ready",True)
     # No hotspot tint, labels, cursor change or clue-location tooltip.
     if location == "room":
-        add Transform("assets/pouch-world.png",size=(60,64)) xpos 880 ypos 270
-        add Transform("assets/flour-world.png",size=(64,53)) xpos 590 ypos 337
+        add Transform(r13_asset_path("file:assets/pouch-world.png"),size=(60,64)) xpos 880 ypos 270
+        add Transform(r13_asset_path("file:assets/flour-world.png"),size=(64,53)) xpos 590 ypos 337
         if archive_open:
-            add Transform(Crop((832,565,404,164),"assets/chest-open.png"),size=(150,80)) xpos 659 ypos 425
+            add Transform(Crop((832,565,404,164),r13_asset_path("file:assets/chest-open.png")),size=(150,80)) xpos 659 ypos 425
         else:
-            add Transform(Crop((880,550,365,150),"assets/chest.png"),size=(150,62)) xpos 659 ypos 443
+            add Transform(Crop((880,550,365,150),r13_asset_path("file:assets/chest.png")),size=(150,62)) xpos 659 ypos 443
         if lamp_ready and not somsom_found:
-            add Transform(Crop((802,490,110,80),"assets/somsom.png"),size=(27,19),alpha=0.23) xpos 828 ypos 480
+            add Transform(Crop((802,490,110,80),r13_asset_path("file:assets/somsom.png")),size=(27,19),alpha=0.23) xpos 828 ypos 480
         for key,rect in (("pouch",(680,215,310,115)),("flour",(563,331,150,97)),("under",(550,500,345,87)),("head",(620,170,325,62)),("chest",(655,406,158,93))):
             button:
                 xpos rect[0] ypos rect[1] xsize rect[2] ysize rect[3]
@@ -325,14 +328,14 @@ screen explore(location):
                 sensitive input_ready
                 action Return("talk")
         if location == "hall":
-            add Transform("assets/clock-base.png",size=(115,115)) xpos 410 ypos 170
-            add Transform("assets/clock-hands.png",size=(115,115)) xpos 410 ypos 170
+            add Transform(r13_asset_path("file:assets/clock-base.png"),size=(115,115)) xpos 410 ypos 170
+            add Transform(r13_asset_path("file:assets/clock-hands.png"),size=(115,115)) xpos 410 ypos 170
             button:
                 xpos 405 ypos 165 xsize 125 ysize 125
                 background None hover_background None insensitive_background None padding (0,0)
                 action Return("clock") sensitive input_ready
         if location == "doto":
-            add Transform("assets/notebook.png",size=(128,83)) xpos 850 ypos 324
+            add Transform(r13_asset_path("file:assets/notebook.png"),size=(128,83)) xpos 850 ypos 324
             button:
                 xpos 835 ypos 305 xsize 150 ysize 108
                 background None hover_background None insensitive_background None padding (0,0)
@@ -343,12 +346,12 @@ screen explore(location):
     hbox:
         xpos 852 ypos 609 spacing 12
         imagebutton:
-            idle Transform("assets/move.png",size=(64,64))
+            idle Transform(r13_asset_path("file:assets/move.png"),size=(64,64))
             action Return("map") sensitive input_ready
             tooltip "이동"
         if location != "room":
             imagebutton:
-                idle Transform("assets/talk.png",size=(64,64))
+                idle Transform(r13_asset_path("file:assets/talk.png"),size=(64,64))
                 action Return("talk") sensitive input_ready
                 tooltip "대화"
         if stage == "arrival" and "granny_arrival" in inspected:
@@ -360,7 +363,7 @@ screen explore(location):
 
 screen village_map():
     modal True
-    add Transform("assets/map.png",size=(1280,720))
+    add Transform(r13_asset_path("file:assets/map.png"),size=(1280,720))
     add Solid("#140f0a88")
     frame:
         xpos 25 ypos 110
@@ -377,7 +380,7 @@ screen village_map():
             action Return(key)
             hbox:
                 spacing 8
-                add Transform("assets/move.png",size=(36,36))
+                add Transform(r13_asset_path("file:assets/move.png"),size=(36,36))
                 vbox:
                     spacing 6
                     text LOCATIONS[key][0] size 22
@@ -465,7 +468,7 @@ screen round_table():
         # The full-body source is a distant resident, never reused as the close-up.
     if foreground != "bami":
         add Transform("bami world",zoom=0.47) xpos 1120 ypos 83 id "table_bami"
-    add "assets/table.png" at table_world
+    add r13_asset("file:assets/table.png") at table_world
 
 screen council():
     modal True
@@ -513,8 +516,8 @@ screen clock_compare():
                 spacing 80
                 fixed:
                     xsize 270 ysize 270
-                    add Transform("assets/clock-base.png",size=(270,270))
-                    add Transform("assets/clock-hands.png",size=(270,270),rotate=(180 if clock_rotated else 0),rotate_pad=False)
+                    add Transform(r13_asset_path("file:assets/clock-base.png"),size=(270,270))
+                    add Transform(r13_asset_path("file:assets/clock-hands.png"),size=(270,270),rotate=(180 if clock_rotated else 0),rotate_pad=False)
                 vbox:
                     spacing 20 xsize 500
                     text ("거꾸로 매달린 시선" if clock_rotated else "바닥에 선 우리의 시선") size 25
@@ -583,10 +586,10 @@ style r13opt_text is text:
     font r13_ui_font() color "#4b3420" line_spacing 2
 # Approved B options artwork; crops remove only the transparent delivery margin.
 style r13opt_button is button:
-    background Frame(Crop((16,16,190,52),"assets/ui-b-options/b_opt_choice.png"),24,16) hover_background Frame(Crop((16,16,190,52),"assets/ui-b-options/b_opt_choice_hover.png"),24,16)
-    selected_background Frame(Crop((16,16,190,52),"assets/ui-b-options/b_opt_choice_selected.png"),24,16)
-    selected_hover_background Frame(Crop((16,16,190,52),"assets/ui-b-options/b_opt_choice_selected.png"),24,16)
-    insensitive_background Frame(Crop((16,16,190,52),"assets/ui-b-options/b_opt_choice.png"),24,16)
+    background Frame(Crop((16,16,190,52),r13_asset_path("file:assets/ui-b-options/b_opt_choice.png")),24,16) hover_background Frame(Crop((16,16,190,52),r13_asset_path("file:assets/ui-b-options/b_opt_choice_hover.png")),24,16)
+    selected_background Frame(Crop((16,16,190,52),r13_asset_path("file:assets/ui-b-options/b_opt_choice_selected.png")),24,16)
+    selected_hover_background Frame(Crop((16,16,190,52),r13_asset_path("file:assets/ui-b-options/b_opt_choice_selected.png")),24,16)
+    insensitive_background Frame(Crop((16,16,190,52),r13_asset_path("file:assets/ui-b-options/b_opt_choice.png")),24,16)
     selected_foreground None
     padding (10,4) ysize 52
 style r13opt_button variant "touch":
@@ -596,9 +599,9 @@ style r13opt_button_text is text:
     xalign .5 yalign .5 text_align .5 line_spacing 2
 style r13opt_bar is bar:
     ysize 36
-    left_bar Frame(Crop((16,8,280,36),"assets/ui-b-options/b_opt_bar_fill.png"),10,0)
-    right_bar Frame(Crop((16,8,280,36),"assets/ui-b-options/b_opt_bar_track.png"),10,0)
-    thumb Crop((16,16,36,36),"assets/ui-b-options/b_opt_bar_thumb.png") thumb_offset 0
+    left_bar Frame(Crop((16,8,280,36),r13_asset_path("file:assets/ui-b-options/b_opt_bar_fill.png")),10,0)
+    right_bar Frame(Crop((16,8,280,36),r13_asset_path("file:assets/ui-b-options/b_opt_bar_track.png")),10,0)
+    thumb Crop((16,16,36,36),r13_asset_path("file:assets/ui-b-options/b_opt_bar_thumb.png")) thumb_offset 0
 style r13opt_tab_button is button:
     background None hover_background None selected_background None padding (0,0)
 style r13opt_tab_button_text is text:
@@ -609,15 +612,15 @@ style r13opt_footer_button is r13opt_button:
 style r13opt_footer_button_text is r13opt_button_text:
     hover_color "#4b3420"
 style r13opt_close_button is r13opt_footer_button:
-    background Frame(Crop((16,16,190,52),"assets/ui-b-options/b_opt_choice_selected.png"),24,16)
-    hover_background Frame(Crop((16,16,190,52),"assets/ui-b-options/b_opt_choice_selected.png"),24,16)
+    background Frame(Crop((16,16,190,52),r13_asset_path("file:assets/ui-b-options/b_opt_choice_selected.png")),24,16)
+    hover_background Frame(Crop((16,16,190,52),r13_asset_path("file:assets/ui-b-options/b_opt_choice_selected.png")),24,16)
 style r13opt_close_button_text is r13opt_footer_button_text:
     color "#fff6e2" hover_color "#fff6e2"
 
 init -1 python:
     def r13_opt_marks():
         # The two small gold diamonds on a chosen option (mockup).
-        d="assets/ui-night/diamond.png"
+        d=r13_asset_path("file:assets/ui-night/diamond.png")
         return Fixed(Transform(d,xpos=8,yalign=.5),Transform(d,xalign=1.0,xoffset=-8,yalign=.5))
 
 init python:
@@ -639,7 +642,7 @@ screen r13_opt_row(label,description=""):
         add Solid("#c9a86a40") xpos 0 ypos (r13_opt_row_height()-1) xsize 844 ysize 1
 
 screen r13_opt_rule(width,y,x=0):
-    add Crop((0,0,width,9),"assets/ui-night/gold_rule.png") xpos x ypos y
+    add Crop((0,0,width,9),r13_asset_path("file:assets/ui-night/gold_rule.png")) xpos x ypos y
 
 screen pause_menu():
     tag menu
@@ -650,24 +653,24 @@ screen pause_menu():
     default tab=(persistent.room13_option_tab if persistent.room13_option_tab in ("sound","screen","reading") else "reading")
     add Solid("#05070fa6")
     # Unscaled full panel: preserve the three rings and all border pixels.
-    add "assets/ui-b-options/b_opt_panel.png" xpos -4 ypos -4
+    add r13_asset("file:assets/ui-b-options/b_opt_panel.png") xpos -4 ypos -4
     # Supplied diary stickers: uniform scales, decorative only, clear of controls.
-    add Transform("assets/ui-b-options/daram_diary_sticker_gingham_tape.png",zoom=120.0/464,rotate=-7) xpos 850 ypos 38
-    add Transform("assets/ui-b-options/daram_diary_sticker_star.png",zoom=44.0/368,rotate=10) xpos 1014 ypos 58
-    add Transform("assets/ui-b-options/daram_diary_sticker_emphasis.png",zoom=40.0/432,rotate=12) xpos 1070 ypos 72
-    add Transform("assets/ui-b-options/daram_diary_sticker_acorn.png",zoom=84.0/437,rotate=-9) xpos 116 ypos 410
-    add Transform("assets/ui-b-options/daram_diary_sticker_letter.png",zoom=64.0/408,rotate=8) xpos 216 ypos 406
-    add Transform("assets/ui-b-options/daram_diary_sticker_magnifier.png",zoom=64.0/422,rotate=-10) xpos 216 ypos 460
+    add Transform(r13_asset_path("file:assets/ui-b-options/daram_diary_sticker_gingham_tape.png"),zoom=120.0/464,rotate=-7) xpos 850 ypos 38
+    add Transform(r13_asset_path("file:assets/ui-b-options/daram_diary_sticker_star.png"),zoom=44.0/368,rotate=10) xpos 1014 ypos 58
+    add Transform(r13_asset_path("file:assets/ui-b-options/daram_diary_sticker_emphasis.png"),zoom=40.0/432,rotate=12) xpos 1070 ypos 72
+    add Transform(r13_asset_path("file:assets/ui-b-options/daram_diary_sticker_acorn.png"),zoom=84.0/437,rotate=-9) xpos 116 ypos 410
+    add Transform(r13_asset_path("file:assets/ui-b-options/daram_diary_sticker_letter.png"),zoom=64.0/408,rotate=8) xpos 216 ypos 406
+    add Transform(r13_asset_path("file:assets/ui-b-options/daram_diary_sticker_magnifier.png"),zoom=64.0/422,rotate=-10) xpos 216 ypos 460
     # Keep the index clear of the unscaled binder rings.
-    add Crop((16,16,150,44),"assets/ui-b-options/b_opt_title_tape.png") xpos 96 ypos 42
+    add Crop((16,16,150,44),r13_asset_path("file:assets/ui-b-options/b_opt_title_tape.png")) xpos 96 ypos 42
     text "설정" xpos 120 ypos 42 size (r13_opt_title_size()+8) color "#4b3420"
     vbox:
         xpos 96 ypos 136 spacing 0
         for key,name in (("reading","읽기"),("sound","소리"),("screen","화면")):
             fixed:
                 xsize 200 ysize (88 if r13_touch_ui() else 76)
-                add Frame(Crop((16,16,206,62),"assets/ui-b-options/b_opt_tab_selected.png" if tab==key else "assets/ui-b-options/b_opt_tab.png"),32,20) xpos 0 yalign .5 xysize (200,62)
-                add Crop((18,18,28,28),"assets/ui-b-options/b_icon_opt_%s.png"%key) xpos 28 yalign .5
+                add Frame(Crop((16,16,206,62),r13_asset_path("file:assets/ui-b-options/b_opt_tab_selected.png") if tab==key else r13_asset_path("file:assets/ui-b-options/b_opt_tab.png")),32,20) xpos 0 yalign .5 xysize (200,62)
+                add Crop((18,18,28,28),r13_asset_path("file:"+("assets/ui-b-options/b_icon_opt_%s.png"%key))) xpos 28 yalign .5
                 textbutton name style "r13opt_tab_button":
                     xsize 200 ysize (88 if r13_touch_ui() else 76) text_size (r13_opt_title_size()-2)
                     text_style "r13opt_tab_button_text"
@@ -676,7 +679,7 @@ screen pause_menu():
     add Solid("#c9a86a66") xpos 305 ypos 56 xsize 1 ysize (472 if r13_touch_ui() else 496)
     text "변경한 설정은 바로 적용됩니다." xpos 347 ypos 52 size (r13_opt_size()-3) color "#765b3e"
     imagebutton:
-        idle "assets/ui-b-options/b_opt_close.png" hover Transform("assets/ui-b-options/b_opt_close.png",matrixcolor=BrightnessMatrix(.15))
+        idle r13_asset("file:assets/ui-b-options/b_opt_close.png") hover Transform(r13_asset_path("file:assets/ui-b-options/b_opt_close.png"),matrixcolor=BrightnessMatrix(.15))
         xpos 1130 ypos 48 xysize (64,64) padding (0,0) action Return() alt "닫기"
     viewport:
         id "r13_settings_body"
@@ -724,7 +727,7 @@ screen pause_menu():
                     textbutton "다시 보기" id "r13_preview_replay" xsize 160 text_size r13_opt_size() action Function(typing_preview.restart) ysize r13_opt_button_height()
                 null height 10
                 frame:
-                    xsize 824 ysize 110 padding (26,16) background Frame(Crop((16,16,860,110),"assets/ui-b-options/b_opt_preview_box.png"),26,16)
+                    xsize 824 ysize 110 padding (26,16) background Frame(Crop((16,16,860,110),r13_asset_path("file:assets/ui-b-options/b_opt_preview_box.png")),26,16)
                     add typing_preview
             else:
                 use r13_opt_row("대사창 진하기", "배경이 비쳐 보이는 정도"):
@@ -744,10 +747,10 @@ screen pause_menu():
                         textbutton "핀 번호로 켜기" xsize 220 action Show("r13_admin_pin") text_size r13_opt_size() ysize r13_opt_button_height()
                 null height 14
                 frame:
-                    xsize 824 ysize 110 padding (26,16) background Frame(Crop((16,16,860,110),"assets/ui-b-options/b_opt_preview_box.png"),26,16)
+                    xsize 824 ysize 110 padding (26,16) background Frame(Crop((16,16,860,110),r13_asset_path("file:assets/ui-b-options/b_opt_preview_box.png")),26,16)
                     text "대사창 미리보기\n바꾼 진하기가 바로 적용됩니다." size _r13_say_size() color "#4b3420" xsize 772
     text ("v"+config.version) xpos 120 ypos (516 if r13_touch_ui() else 540) size (r13_opt_size()-6) color "#8f8778"
-    add Crop((16,16,1080,6),"assets/ui-b-options/b_opt_divider.png") xpos 112 ypos (536 if r13_touch_ui() else 560)
+    add Crop((16,16,1080,6),r13_asset_path("file:assets/ui-b-options/b_opt_divider.png")) xpos 112 ypos (536 if r13_touch_ui() else 560)
     textbutton "설정 초기화" style "r13opt_footer_button":
         ysize r13_opt_button_height()
         xpos 112 ypos (552 if r13_touch_ui() else 576) xsize 184 text_size r13_opt_size()

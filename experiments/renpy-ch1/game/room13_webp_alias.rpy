@@ -10,9 +10,12 @@ init -100 python:
                 return twin
         return None
 
+    _r13_webp_previous_open=config.file_open_callback
+
     def r13_webp_open(name):
         twin=r13_webp_twin(name)
-        return renpy.loader.load_core(twin) if twin else None
+        if twin:return renpy.loader.load_core(twin)
+        return _r13_webp_previous_open(name) if _r13_webp_previous_open else None
 
     config.loadable_callback=lambda name:r13_webp_twin(name) is not None
     config.file_open_callback=r13_webp_open

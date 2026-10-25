@@ -43,7 +43,7 @@ init 150 python:
         return max(240,top)
 
     def r13_night_ribbon():
-        return Frame(R13_NIGHT_UI+"name_ribbon.png",44,0,44,0)
+        return Frame(r13_asset_path("file:"+(R13_NIGHT_UI+"name_ribbon.png")),44,0,44,0)
 
 style r13_night_link_text is text:
     font r13_ui_font() size 20 color "#4b3420" hover_color "#b03730" insensitive_color "#8f8778"
@@ -60,7 +60,7 @@ screen r13_night_link(caption,glyph,icon,command,enabled=True,link_id=None):
         fixed:
             xysize (label_width,88 if r13_touch_ui() else 56)
             if on_paper:
-                add Transform(Frame(Crop((16,12,168,32),"assets/ui-b-dialogue/b_ribbon_name.png"),16,6,32,6),xysize=(label_width,52 if r13_touch_ui() else 44),alpha=1.0 if enabled else .55) align (.5,.5)
+                add Transform(Frame(Crop((16,12,168,32),r13_asset_path("file:assets/ui-b-dialogue/b_ribbon_name.png")),16,6,32,6),xysize=(label_width,52 if r13_touch_ui() else 44),alpha=1.0 if enabled else .55) align (.5,.5)
             text caption align (.5,.5) xoffset -6 font R13_UI_BOLD_FONT size (28 if r13_touch_ui() else 24) color ("#fff6e7" if enabled else "#c0b6a5")
 
 screen r13_night_controls(ready=True):

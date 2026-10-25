@@ -11,7 +11,7 @@ init 166 python:
     R13_WILD_NIGHT_REVIEW_KEYS = ("wild_school_hall","wild_road_mouth","wild_greenhouse","wild_village_dawn")
 
     def r13_wild_night_background(key):
-        path=R13_WILD_NIGHT_BACKGROUNDS[key]
+        path=r13_asset_path("file:"+R13_WILD_NIGHT_BACKGROUNDS[key])
         iw,ih=renpy.image_size(path)
         zoom=max(1280.0/iw,720.0/ih)
         # 같은 비율로 확대하고 무대 중앙1280×720을 표시한다.

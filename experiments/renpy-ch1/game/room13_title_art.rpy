@@ -40,17 +40,17 @@ init 60 python:
 
 screen r13_cover_button(caption,key,icon,width,command,focus,enabled=True,first=False):
     $ state_icon=Transform(Crop((16,16,32,32),r13_field_icon(icon)),zoom=30.0/32,alpha=1.0 if enabled else .45)
-    use r13_state_button(caption,command,width,76,family="primary" if focus==key and enabled else "standard",enabled=enabled,icon=state_icon,text_size=28,control_id="r13_cover_"+key,first=first,hover_action=SetScreenVariable("title_focus",key))
+    use r13_state_button(caption,command,width,76,family="main_primary" if focus==key and enabled else "main_standard",enabled=enabled,icon=state_icon,text_size=28,control_id="r13_cover_"+key,first=first,hover_action=SetScreenVariable("title_focus",key))
 
 # B 메인 전용 스타일. 이전 화면/저장 호환용 스타일.
 init 81:
     style r13_title_button is r13_button:
         xsize 240 ysize 84
-        background Transform("assets/ui-b-main/b_button.png", xysize=(240,84))
-        hover_background Transform("assets/ui-b-main/b_button_primary.png", xysize=(240,84))
-        selected_background Transform("assets/ui-b-main/b_button_primary.png", xysize=(240,84))
-        selected_hover_background Transform("assets/ui-b-main/b_button_primary.png", xysize=(240,84))
-        insensitive_background Transform("assets/ui-b-main/b_button.png", xysize=(240,84), alpha=.55)
+        background Transform(r13_asset_path("file:assets/ui-b-main/b_button.png"), xysize=(240,84))
+        hover_background Transform(r13_asset_path("file:assets/ui-b-main/b_button_primary.png"), xysize=(240,84))
+        selected_background Transform(r13_asset_path("file:assets/ui-b-main/b_button_primary.png"), xysize=(240,84))
+        selected_hover_background Transform(r13_asset_path("file:assets/ui-b-main/b_button_primary.png"), xysize=(240,84))
+        insensitive_background Transform(r13_asset_path("file:assets/ui-b-main/b_button.png"), xysize=(240,84), alpha=.55)
         focus_mask True
         # Transparent delivery margins must not overlap the next row/column.
         focus_rect (24,16,192,52)

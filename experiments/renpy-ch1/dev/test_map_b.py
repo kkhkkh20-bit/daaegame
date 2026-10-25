@@ -4,7 +4,7 @@
 숨은 장소가 기존 판정(r13_map_nodes / r13_map_locked_nodes)만 따르는지를 본다.
 실제 입력·떠오름·이동은 game/qa_tests/b_map_inn_forest.rpy 화면 시험이 본다.
 """
-import json, textwrap, types, unittest
+import json, textwrap, types, unittest, sys
 from pathlib import Path
 
 from PIL import Image
@@ -13,6 +13,9 @@ ROOT = Path(__file__).resolve().parents[1]
 GAME = ROOT / "game"
 INTAKE = ROOT.parents[1] / "design/resource-intake-20261024"
 SOURCE = (GAME / "room13_map_b.rpy").read_text(encoding="utf-8")
+sys.path.insert(0,str(GAME/'python-packages'))
+from r13_assets import Registry
+_REGISTRY=Registry(json.loads((GAME/'asset-toolbox/catalog.json').read_text()),json.loads((GAME/'asset-toolbox/bindings.json').read_text()))
 
 
 def image_size(path):
@@ -24,7 +27,7 @@ def namespace(nodes=None, locked=None, places=(), location="inn", touch=False):
     block = SOURCE.split("init 64 python:\n", 1)[1].split("\ntransform ", 1)[0]
     store = types.SimpleNamespace(room13={"location": location})
     renpy = types.SimpleNamespace(image_size=image_size)
-    ns = {"store": store, "renpy": renpy, "r13_touch_ui": lambda: touch,
+    ns = {"store": store, "renpy": renpy, "r13_asset_path":lambda role:_REGISTRY.resolve(role)["path"], "r13_touch_ui": lambda: touch,
           "r13_places": lambda: list(places),
           "r13_map_nodes": lambda region: [(k, (0, 0)) for k in (nodes or {}).get(region, [])],
           "r13_map_locked_nodes": lambda region: [(k, (0, 0)) for k in (locked or {}).get(region, [])],
@@ -56,8 +59,8 @@ class MapB(unittest.TestCase):
                 with Image.open(GAME / art) as im:
                     self.assertIn("A", im.getbands(), art)
                     self.assertLess(im.getchannel("A").getextrema()[0], 10, art)
-                # dev/build_web.py 는 이름이 스크립트에 그대로 적힌 자산만 싣는다.
-                self.assertIn(art.split("/")[-1], SOURCE)
+                # 파일은 태그 등록부에 있고 웹 빌드가 같은 등록부를 읽는다.
+                self.assertIn("file:"+art,_REGISTRY.bindings["bindings"])
 
     def test_every_map_node_has_a_place(self):
         nav = (GAME / "room13_navigation.rpy").read_text(encoding="utf-8")

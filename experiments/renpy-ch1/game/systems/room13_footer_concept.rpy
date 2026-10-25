@@ -51,7 +51,7 @@ screen r13_concept_more():
     $ panel_height=menu_rows*(row_height+16)+74
     # Same paper and navy notebook material as the approved settings screen.
     frame:
-        xpos 584 ypos (min(r13_control_y(),R13_NIGHT_CONTROL_Y-28)-panel_height-16) xysize (648,panel_height) padding (28,22) background Frame(Crop((35,25,550,245),"assets/ui-b-main/b_main_panel.png"),48,40)
+        xpos 584 ypos (min(r13_control_y(),R13_NIGHT_CONTROL_Y-28)-panel_height-16) xysize (648,panel_height) padding (28,22) background Frame(Crop((35,25,550,245),r13_asset_path("file:assets/ui-b-main/b_main_panel.png")),48,40)
         vbox:
             spacing 16
             text "대화 도구" size (28 if r13_touch_ui() else 24) color "#493323" font r13_ui_font()

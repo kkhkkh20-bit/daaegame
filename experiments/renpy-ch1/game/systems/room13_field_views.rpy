@@ -17,13 +17,13 @@ init 85 python:
         return 552 if r13_world_width()>1280 and bottom<=552 else r13_control_y()-24
 
     def r13_field_paper():
-        return Frame(Crop((8,8,224,44),"assets/ui-b-field/b_panel_small.png"),24,12,24,12)
+        return Frame(Crop((8,8,224,44),r13_asset_path("file:assets/ui-b-field/b_panel_small.png")),24,12,24,12)
 
     def r13_field_button_art(primary=False):
-        return Frame(Crop((16,10,128,32),"assets/ui-b-field/b_button_primary.png" if primary else "assets/ui-b-field/b_button.png"),24,10,24,10)
+        return Frame(Crop((16,10,128,32),r13_asset_path("file:assets/ui-b-field/b_button_primary.png") if primary else r13_asset_path("file:assets/ui-b-field/b_button.png")),24,10,24,10)
 
     def r13_field_icon(name):
-        return "assets/ui-b-field/b_icon_%s.png"%({"record":"book","settings":"more","dialogue":"acorn"}.get(name,name))
+        return r13_asset_path("file:"+("assets/ui-b-field/b_icon_%s.png"%({"record":"book","settings":"more","dialogue":"acorn"}.get(name,name))))
 
     def r13_field_selection():
         picked=getattr(store,"r13_field_pick",None)
@@ -52,24 +52,21 @@ init 85 python:
 screen r13_field_button(caption,icon,command,enabled=True,width=232,height=None,chosen=False,control_id=None,primary=False):
     $ state_icon=Transform(Crop((16,16,32,32),r13_field_icon(icon)),zoom=30.0/32,alpha=1.0 if enabled else .5) if icon else None
     if not caption:
-        # 정사각 아이콘 버튼은 가로형 납품을 억지로 맞추지 않고 기존 모양을 유지한다.
+        # Exact square original, same existing input target and accessibility name.
         button:
             id (control_id or "r13_field_icon_control")
             xysize (width,height or r13_control_height()) padding (0,0)
-            background r13_field_button_art(chosen or primary)
-            hover_background Transform(r13_field_button_art(chosen or primary),matrixcolor=BrightnessMatrix(.05))
-            insensitive_background Transform(r13_field_button_art(),alpha=.65)
+            background None hover_background None insensitive_background None
             action command sensitive enabled selected chosen alt "메뉴"
-            if state_icon:
-                add state_icon align (.5,.5)
+            add R13ButtonStateVisual("","square_standard",width,height or r13_control_height(),chosen or primary,enabled,state_icon,22) id ((control_id or "r13_field_icon_control")+"_visual")
     else:
         use r13_state_button(caption,command,width,height or r13_control_height(),family="primary" if chosen or primary else "wide_choice",chosen=chosen,enabled=enabled,icon=state_icon,text_size=r13_read_size(22,25),control_id=control_id or ("r13_field_control_"+caption))
 
 screen r13_field_notebook_surface():
     $ book_top=r13_field_notebook_top()
-    add Transform(Frame(Crop((16,16,1168,128),"assets/ui-b-field/b_panel_dialogue.png"),64,30,64,30),xysize=(1232,712-book_top)) xpos 24 ypos book_top
+    add Transform(Frame(Crop((16,16,1168,128),r13_asset_path("file:assets/ui-b-field/b_panel_dialogue.png")),64,30,64,30),xysize=(1232,712-book_top)) xpos 24 ypos book_top
     # A permanent notebook mascot, never a substitute for the current speaker.
-    add Transform("assets/ui-b-field/sticker_daram_delighted.png",xysize=(72,72)) xpos 76 ypos (book_top+10)
+    add Transform(r13_asset_path("file:assets/ui-b-field/sticker_daram_delighted.png"),xysize=(72,72)) xpos 76 ypos (book_top+10)
 
 screen r13_field_view_controls(ready):
     # Keep the legacy screen name for saved screens; no separate mode or toggle.
@@ -78,7 +75,7 @@ screen r13_field_view_controls(ready):
     $ book_top=r13_field_notebook_top()
     hbox:
         xpos 178 ypos (book_top+8) spacing 4
-        add Transform(Crop((16,16,32,32),"assets/ui-b-field/b_icon_acorn.png"),xysize=(30,30)) yalign .5
+        add Transform(Crop((16,16,32,32),r13_asset_path("file:assets/ui-b-field/b_icon_acorn.png")),xysize=(30,30)) yalign .5
         text "조사" size r13_read_size(24,27) color "#4b3021" font R13_UI_BOLD_FONT yalign .5
     if scene_hint or pan_hint:
         if scene_hint:

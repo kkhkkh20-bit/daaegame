@@ -202,7 +202,7 @@ screen r13_fork_card(column,row,small=16):
             xsize 175 ysize 116 padding (8,8) background R13ControlSurface(primary=True)
             vbox:
                 align (.5,.5) spacing 6
-                add R13_NIGHT_UI+'diamond.png' xalign .5
+                add r13_asset_path("file:"+(R13_NIGHT_UI+'diamond.png')) xalign .5
                 text '지금 여기' size (small+6) color '#fff6e2' font R13_UI_BOLD_FONT xalign .5
                 text '결과 미정' size small color '#f2d28d' font R13_UI_BOLD_FONT xalign .5
     else:
@@ -244,7 +244,7 @@ screen r13_fork_screen():
     $ ch = r13_control_height()
     $ by = 684-ch
     add Solid('#05070fa6')
-    add 'assets/ui-b-options/b_opt_panel.png' xpos -4 ypos -4
+    add r13_asset_path("file:assets/ui-b-options/b_opt_panel.png") xpos -4 ypos -4
     text '이야기의 갈림길' xpos 114 ypos 68 size 34 color '#263b52' font R13_UI_BOLD_FONT
     text '기록 / 지나온 이야기' xpos 114 ypos 110 size small color '#756f66' font R13_UI_BOLD_FONT
     text ('%d회차 · %d일째' % (room13['v111'].get('fork_run',1),room13['day'])) xpos 1150 xanchor 1.0 ypos 78 size (small+2) color '#263b52' font R13_UI_BOLD_FONT
@@ -253,8 +253,8 @@ screen r13_fork_screen():
         xpos (1170 if touch else 1176) ypos (52 if touch else 60) xysize ((64,64) if touch else (52,52))
         background None hover_background Solid('#fff6e214')
         action Hide('r13_fork_screen') alt '닫기'
-        add Transform('assets/ui-b-options/b_opt_close.png',xysize=(40,40)) align (.5,.5)
-    add R13_NIGHT_UI+'diamond.png' xpos 94 ypos 145
+        add Transform(r13_asset_path("file:assets/ui-b-options/b_opt_close.png"),xysize=(40,40)) align (.5,.5)
+    add r13_asset_path("file:"+(R13_NIGHT_UI+'diamond.png')) xpos 94 ypos 145
     add Solid('#c9a86a99') xpos 104 ypos 149 xsize 1096 ysize 1
     # Legend (mockup row): this run, other runs, unseen (count only), a fate meeting.
     hbox:
@@ -308,7 +308,7 @@ screen r13_fork_screen():
             background R13PaperFrame()
             action SetScreenVariable('fate_open',None) alt R13_FORK_FATE_LINE
             text R13_FORK_FATE_LINE size small color '#263b52' font R13_UI_BOLD_FONT xsize 208
-    add R13_NIGHT_UI+'diamond.png' xpos 114 ypos (by-18)
+    add r13_asset_path("file:"+(R13_NIGHT_UI+'diamond.png')) xpos 114 ypos (by-18)
     add Solid('#c9a86a99') xpos 114 ypos (by-14) xsize 1082 ysize 1
     text '지나온 길을 모아, 다음 이야기를 찾아요.' xpos 114 ypos (by+ch//2) yanchor .5 size small color '#756f66' font R13_UI_BOLD_FONT
     viewport:
