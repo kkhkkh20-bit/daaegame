@@ -15,12 +15,12 @@ init 58 python:
             r=renpy.Render(w,h)
             try:a=int(self.alpha,16)/255.0
             except Exception:a=1.0
-            if self.disabled:
-                face=Frame(R13_UI_PIECES+"opt_btn_insensitive.png",16,16)
-            else:
-                face=Frame(R13_UI_PIECES+"panel_small.png",12,12)
-                if self.focused:face=Transform(face,matrixcolor=BrightnessMatrix(.08))
+            # Navy notebook cover retains contrast for existing light-text overlays.
+            # The outer sticker stays ivory; only the inset cover receives the navy tint.
+            face=r13_sticker_button(focused=self.focused,disabled=self.disabled)
             r.blit(renpy.render(Transform(face,alpha=a,xysize=(w,h)),w,h,st,at),(0,0))
+            inset=Transform(r13_sticker_button(),matrixcolor=TintMatrix("#263953"),alpha=a,xysize=(max(1,w-10),max(1,h-10)))
+            r.blit(renpy.render(inset,max(1,w-10),max(1,h-10),st,at),(5,5))
             return r
 
     class R13ControlSurface(renpy.Displayable):
@@ -30,12 +30,7 @@ init 58 python:
             self.primary=primary;self.chosen=chosen;self.hovered=hovered;self.disabled=disabled
         def render(self,width,height,st,at):
             w=max(1,int(width));h=max(1,int(height));r=renpy.Render(w,h)
-            # Same pieces as the settings buttons: chosen/primary = burgundy, hover = lighter brown.
-            name=("insensitive" if self.disabled else "selected" if self.primary or self.chosen
-                else "hover" if self.hovered else "idle")
-            face=Frame(R13_UI_PIECES+"opt_btn_%s.png"%name,16,16)
-            if self.primary and self.hovered:face=Transform(face,matrixcolor=BrightnessMatrix(.08))
-            if name=="idle":face=Transform(face,alpha=1.0)
+            face=r13_sticker_button(primary=self.primary or self.chosen,focused=self.hovered,disabled=self.disabled)
             r.blit(renpy.render(Transform(face,xysize=(w,h)),w,h,st,at),(0,0))
             return r
 
@@ -46,14 +41,9 @@ init 58 python:
             self.corner=corner;self.ink=ink
         def render(self,width,height,st,at):
             w=max(1,int(width));h=max(1,int(height));r=renpy.Render(w,h);c=r.canvas()
-            # Edge patina is broad, bounded shading, never speckled texture.
-            c.rect('#806249',(0,2,w,max(1,h-2)))
-            c.rect('#bea077',(1,0,max(1,w-2),max(1,h-3)))
-            c.rect('#d9be91',(3,2,max(1,w-6),max(1,h-6)))
-            c.rect('#66513d' if self.ink else '#e5cea5',(6,5,max(1,w-12),max(1,h-13)))
-            c.rect('#4a3b30' if self.ink else '#f0dfbd',(10,9,max(1,w-20),max(1,h-22)))
-            c.line('#fff0cf',(6,4),(w-7,4),1)
-            c.line('#a48861',(5,h-5),(w-6,h-5),1)
+            face=r13_sticker_button()
+            if self.ink:face=Transform(face,matrixcolor=TintMatrix("#263953"))
+            r.blit(renpy.render(Transform(face,xysize=(w,h)),w,h,st,at),(0,0))
             return r
 
     class R13TravelSheet(renpy.Displayable):
@@ -63,25 +53,10 @@ init 58 python:
             self.spine=spine
         def render(self,width,height,st,at):
             w=max(1,int(width));h=max(1,int(height));r=renpy.Render(w,h);c=r.canvas()
-            # Slim walnut cover supports the parchment; the writing face stays clean.
-            c.rect('#241c1888',(4,6,w-4,h-6))
-            c.rect('#3c2d24',(0,0,w-4,h-5))
-            c.rect('#77523a',(3,2,w-10,h-10))
-            c.line('#a17b50',(9,3),(w-16,3),1)
-            c.line('#4c3527',(12,h-8),(w-18,h-8),2)
-            c.rect('#ad895e',(8,7,w-22,h-23))
-            c.rect('#d2b584',(11,9,w-28,h-28))
-            c.rect('#e7cea3',(15,12,w-36,h-35))
-            c.rect('#f0dfbd',(21,17,w-48,h-47))
-            c.line('#fff0d0',(18,13),(w-28,13),2)
-            # A turned lower corner, outside all text and controls.
-            c.polygon('#c4a273',[(w-44,h-25),(w-22,h-47),(w-22,h-25)])
-            c.polygon('#fae9c6',[(w-44,h-25),(w-44,h-47),(w-22,h-47)])
+            face=Frame(Crop((35,25,550,245),"assets/ui-b-main/b_main_panel.png"),44,28)
+            r.blit(renpy.render(Transform(face,xysize=(w,h)),w,h,st,at),(0,0))
             if self.spine:
-                c.rect('#c4a67c',(226,18,10,h-48))
-                c.line('#9b7b53',(230,21),(230,h-32),1)
-                c.line('#fff0ce',(237,21),(237,h-32),2)
-                c.line('#b99b75',(252,h-94),(w-38,h-94),1)
+                c.line("#bda580",(238,26),(238,h-30),2)
             return r
 
     class R13TouchSurface(renpy.Displayable):
@@ -105,19 +80,9 @@ init 58 python:
         def render(self,width,height,st,at):
             w=max(1,int(width)); h=max(1,int(height))
             out=renpy.Render(w,h); c=out.canvas()
-            c.rect('#161e2138',(3,4,max(1,w-3),max(1,h-4)))
-            points=[(0,0),(w-1,0),(w-1,h-1),(0,h-1)]
-            fill=('#3c3431' if self.dark else '#f7e7c8' if self.focused else '#e2cca8')
-            c.polygon(fill,points)
-            if getattr(self,"remembered",False):
-                for x in range(0,w,10):
-                    c.line('#baa07b',(x,0),(min(x+5,w-1),0),2)
-                    c.line('#baa07b',(x,h-1),(min(x+5,w-1),h-1),2)
-                for y in range(0,h,10):
-                    c.line('#baa07b',(0,y),(0,min(y+5,h-1)),2)
-                    c.line('#baa07b',(w-1,y),(w-1,min(y+5,h-1)),2)
-            else:
-                c.lines('#b58b2f' if self.transferable else '#9a634d' if self.focused else '#baa07b',True,points,3 if self.focused else 2)
+            face=r13_sticker_button(focused=self.focused)
+            if self.dark:face=Transform(face,matrixcolor=TintMatrix("#263953"))
+            out.blit(renpy.render(Transform(face,xysize=(w,h)),w,h,st,at),(0,0))
             return out
 
     class R13ActionPanel(R13InkPanel):
@@ -160,7 +125,7 @@ init 61:
         hover_color '#724b39'
         selected_color '#71451f'
         insensitive_color '#999487'
-        font r13_ui_font()
+        font R13_UI_BOLD_FONT
         outlines []
     style r13_frame is frame:
         background R13PaperPanel()

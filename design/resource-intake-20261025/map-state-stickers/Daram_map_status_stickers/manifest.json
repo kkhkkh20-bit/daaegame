@@ -1,0 +1,527 @@
+{
+  "package": "Daram map status sticker assets",
+  "not_game_integration": true,
+  "resize_policy": "Unchanged source PNGs. Runtime PNGs: crop to visible silhouette bounds (alpha >= 8/255; ignores nearly invisible stray pixels), uniform Lanczos3 resize into centered square, maximum visible dimension 84% of canvas, transparent padding. No recoloring or redrawing.",
+  "icons": {
+    "current_location": {
+      "label_ko": "현재 위치",
+      "original": {
+        "path": "originals/current_location.png",
+        "width": 1263,
+        "height": 1246,
+        "has_alpha": true,
+        "alpha": {
+          "transparent": 1086807,
+          "partial": 486734,
+          "opaque": 157
+        },
+        "visible_bounds": {
+          "left": 0,
+          "top": 47,
+          "width": 1249,
+          "height": 1195
+        },
+        "silhouette_bounds_alpha_gte_8": {
+          "left": 267,
+          "top": 130,
+          "width": 729,
+          "height": 979
+        },
+        "sha256": "e19327bcf4a5a3c7eba3343c8cf4d580d09e55a658dc961b766708ae19cfd24c",
+        "bytes": 994743
+      },
+      "runtime": {
+        "48": {
+          "path": "runtime/48/current_location.png",
+          "width": 48,
+          "height": 48,
+          "has_alpha": true,
+          "alpha": {
+            "transparent": 1389,
+            "partial": 844,
+            "opaque": 71
+          },
+          "visible_bounds": {
+            "left": 9,
+            "top": 4,
+            "width": 30,
+            "height": 40
+          },
+          "silhouette_bounds_alpha_gte_8": {
+            "left": 9,
+            "top": 4,
+            "width": 30,
+            "height": 40
+          },
+          "sha256": "3543d26826fe2a0468a07b9c6adc9629b105a11f212c9a9da3ae8db6a8f9662d",
+          "bytes": 3399
+        },
+        "64": {
+          "path": "runtime/64/current_location.png",
+          "width": 64,
+          "height": 64,
+          "has_alpha": true,
+          "alpha": {
+            "transparent": 2483,
+            "partial": 1509,
+            "opaque": 104
+          },
+          "visible_bounds": {
+            "left": 12,
+            "top": 5,
+            "width": 40,
+            "height": 54
+          },
+          "silhouette_bounds_alpha_gte_8": {
+            "left": 12,
+            "top": 5,
+            "width": 40,
+            "height": 54
+          },
+          "sha256": "5ecc878ea1dd99965626f28b4a49aee3a13d7175b8552806039b833e6f0ab04c",
+          "bytes": 5605
+        },
+        "96": {
+          "path": "runtime/96/current_location.png",
+          "width": 96,
+          "height": 96,
+          "has_alpha": true,
+          "alpha": {
+            "transparent": 5693,
+            "partial": 3369,
+            "opaque": 154
+          },
+          "visible_bounds": {
+            "left": 18,
+            "top": 7,
+            "width": 60,
+            "height": 81
+          },
+          "silhouette_bounds_alpha_gte_8": {
+            "left": 18,
+            "top": 7,
+            "width": 60,
+            "height": 81
+          },
+          "sha256": "a4a1efd59782f9b2153afeb117108702d27e0302e4fa39c8305f895615f74d78",
+          "bytes": 11176
+        },
+        "128": {
+          "path": "runtime/128/current_location.png",
+          "width": 128,
+          "height": 128,
+          "has_alpha": true,
+          "alpha": {
+            "transparent": 10213,
+            "partial": 5961,
+            "opaque": 210
+          },
+          "visible_bounds": {
+            "left": 24,
+            "top": 10,
+            "width": 80,
+            "height": 108
+          },
+          "silhouette_bounds_alpha_gte_8": {
+            "left": 24,
+            "top": 10,
+            "width": 80,
+            "height": 108
+          },
+          "sha256": "e82a8c09eee923396747f3a3c62fc30fea78e4202ff1e191feb9aa2adf119e95",
+          "bytes": 18457
+        }
+      }
+    },
+    "map_selected": {
+      "label_ko": "선택한 장소",
+      "original": {
+        "path": "originals/map_selected.png",
+        "width": 1263,
+        "height": 1246,
+        "has_alpha": true,
+        "alpha": {
+          "transparent": 829339,
+          "partial": 743807,
+          "opaque": 552
+        },
+        "visible_bounds": {
+          "left": 80,
+          "top": 7,
+          "width": 1126,
+          "height": 1239
+        },
+        "silhouette_bounds_alpha_gte_8": {
+          "left": 143,
+          "top": 105,
+          "width": 977,
+          "height": 999
+        },
+        "sha256": "e65ebb73a5142b18763ec177fad8a8109044f4fa4d796a127dd8a5b0a9f36817",
+        "bytes": 1401256
+      },
+      "runtime": {
+        "48": {
+          "path": "runtime/48/map_selected.png",
+          "width": 48,
+          "height": 48,
+          "has_alpha": true,
+          "alpha": {
+            "transparent": 994,
+            "partial": 1222,
+            "opaque": 88
+          },
+          "visible_bounds": {
+            "left": 4,
+            "top": 4,
+            "width": 39,
+            "height": 40
+          },
+          "silhouette_bounds_alpha_gte_8": {
+            "left": 4,
+            "top": 4,
+            "width": 39,
+            "height": 40
+          },
+          "sha256": "c0082f9fc75027d6e740e2967d5909cc2ba68a1a0597f5b4af17ba4d8c7ee38b",
+          "bytes": 4412
+        },
+        "64": {
+          "path": "runtime/64/map_selected.png",
+          "width": 64,
+          "height": 64,
+          "has_alpha": true,
+          "alpha": {
+            "transparent": 1757,
+            "partial": 2217,
+            "opaque": 122
+          },
+          "visible_bounds": {
+            "left": 5,
+            "top": 5,
+            "width": 53,
+            "height": 54
+          },
+          "silhouette_bounds_alpha_gte_8": {
+            "left": 5,
+            "top": 5,
+            "width": 53,
+            "height": 54
+          },
+          "sha256": "381593bc9db0314a3361836650bf4cb685790cb63d8b410e7c2c1a23a7c21e29",
+          "bytes": 7308
+        },
+        "96": {
+          "path": "runtime/96/map_selected.png",
+          "width": 96,
+          "height": 96,
+          "has_alpha": true,
+          "alpha": {
+            "transparent": 4099,
+            "partial": 4937,
+            "opaque": 180
+          },
+          "visible_bounds": {
+            "left": 8,
+            "top": 7,
+            "width": 79,
+            "height": 81
+          },
+          "silhouette_bounds_alpha_gte_8": {
+            "left": 8,
+            "top": 7,
+            "width": 79,
+            "height": 81
+          },
+          "sha256": "7655bf66173c156d91e1910b244eeac7be16929c47a249340f733edb0cbf5323",
+          "bytes": 14385
+        },
+        "128": {
+          "path": "runtime/128/map_selected.png",
+          "width": 128,
+          "height": 128,
+          "has_alpha": true,
+          "alpha": {
+            "transparent": 7393,
+            "partial": 8749,
+            "opaque": 242
+          },
+          "visible_bounds": {
+            "left": 11,
+            "top": 10,
+            "width": 106,
+            "height": 108
+          },
+          "silhouette_bounds_alpha_gte_8": {
+            "left": 11,
+            "top": 10,
+            "width": 106,
+            "height": 108
+          },
+          "sha256": "96b0f8dbcea059641ea36aa2c3f255c9bcf6702ba2fcaa9c0c4593a21d970d98",
+          "bytes": 23841
+        }
+      }
+    },
+    "locked": {
+      "label_ko": "잠긴 장소",
+      "original": {
+        "path": "originals/locked.png",
+        "width": 1263,
+        "height": 1246,
+        "has_alpha": true,
+        "alpha": {
+          "transparent": 973066,
+          "partial": 600232,
+          "opaque": 400
+        },
+        "visible_bounds": {
+          "left": 0,
+          "top": 130,
+          "width": 1200,
+          "height": 1043
+        },
+        "silhouette_bounds_alpha_gte_8": {
+          "left": 235,
+          "top": 136,
+          "width": 792,
+          "height": 969
+        },
+        "sha256": "b38c1ff8ec042af6853a09f30db3cfacff43e357fdede681903510661dcd3b93",
+        "bytes": 1195976
+      },
+      "runtime": {
+        "48": {
+          "path": "runtime/48/locked.png",
+          "width": 48,
+          "height": 48,
+          "has_alpha": true,
+          "alpha": {
+            "transparent": 1161,
+            "partial": 1038,
+            "opaque": 105
+          },
+          "visible_bounds": {
+            "left": 7,
+            "top": 4,
+            "width": 33,
+            "height": 40
+          },
+          "silhouette_bounds_alpha_gte_8": {
+            "left": 7,
+            "top": 4,
+            "width": 33,
+            "height": 40
+          },
+          "sha256": "7baf00065066885db2b46517a4c6b98b60149cc6c0b861cb4f34044a4642d143",
+          "bytes": 4033
+        },
+        "64": {
+          "path": "runtime/64/locked.png",
+          "width": 64,
+          "height": 64,
+          "has_alpha": true,
+          "alpha": {
+            "transparent": 2055,
+            "partial": 1896,
+            "opaque": 145
+          },
+          "visible_bounds": {
+            "left": 10,
+            "top": 5,
+            "width": 44,
+            "height": 54
+          },
+          "silhouette_bounds_alpha_gte_8": {
+            "left": 10,
+            "top": 5,
+            "width": 44,
+            "height": 54
+          },
+          "sha256": "37666bf091783be85f5137b106fac9230849148205e399cd05d0a1ea02624bb1",
+          "bytes": 6710
+        },
+        "96": {
+          "path": "runtime/96/locked.png",
+          "width": 96,
+          "height": 96,
+          "has_alpha": true,
+          "alpha": {
+            "transparent": 4766,
+            "partial": 4214,
+            "opaque": 236
+          },
+          "visible_bounds": {
+            "left": 15,
+            "top": 7,
+            "width": 66,
+            "height": 81
+          },
+          "silhouette_bounds_alpha_gte_8": {
+            "left": 15,
+            "top": 7,
+            "width": 66,
+            "height": 81
+          },
+          "sha256": "9988f51a1e7b4d09b6b2e6db594231df4000eda507c58b38613c01d9bc7938d7",
+          "bytes": 13231
+        },
+        "128": {
+          "path": "runtime/128/locked.png",
+          "width": 128,
+          "height": 128,
+          "has_alpha": true,
+          "alpha": {
+            "transparent": 8608,
+            "partial": 7463,
+            "opaque": 313
+          },
+          "visible_bounds": {
+            "left": 20,
+            "top": 10,
+            "width": 88,
+            "height": 108
+          },
+          "silhouette_bounds_alpha_gte_8": {
+            "left": 20,
+            "top": 10,
+            "width": 88,
+            "height": 108
+          },
+          "sha256": "21a9d4683bbfa9c18724090bb561f8910a3f30f0ed9e6597b41db44c2321bd53",
+          "bytes": 21995
+        }
+      }
+    },
+    "new_dialogue": {
+      "label_ko": "새 대화",
+      "original": {
+        "path": "originals/new_dialogue.png",
+        "width": 1312,
+        "height": 1199,
+        "has_alpha": true,
+        "alpha": {
+          "transparent": 1061953,
+          "partial": 510573,
+          "opaque": 562
+        },
+        "visible_bounds": {
+          "left": 65,
+          "top": 17,
+          "width": 1209,
+          "height": 1182
+        },
+        "silhouette_bounds_alpha_gte_8": {
+          "left": 243,
+          "top": 249,
+          "width": 859,
+          "height": 734
+        },
+        "sha256": "42ad53ceb5fbf5bc876906a46e05de3db7d007803b6235584be2a43251f27233",
+        "bytes": 930005
+      },
+      "runtime": {
+        "48": {
+          "path": "runtime/48/new_dialogue.png",
+          "width": 48,
+          "height": 48,
+          "has_alpha": true,
+          "alpha": {
+            "transparent": 1095,
+            "partial": 1113,
+            "opaque": 96
+          },
+          "visible_bounds": {
+            "left": 4,
+            "top": 7,
+            "width": 40,
+            "height": 34
+          },
+          "silhouette_bounds_alpha_gte_8": {
+            "left": 4,
+            "top": 7,
+            "width": 40,
+            "height": 34
+          },
+          "sha256": "89442f42f19ff728cc264048ed06c5aff034a3f20005ea08c97375b85c28ca03",
+          "bytes": 3994
+        },
+        "64": {
+          "path": "runtime/64/new_dialogue.png",
+          "width": 64,
+          "height": 64,
+          "has_alpha": true,
+          "alpha": {
+            "transparent": 1923,
+            "partial": 2052,
+            "opaque": 121
+          },
+          "visible_bounds": {
+            "left": 5,
+            "top": 9,
+            "width": 54,
+            "height": 46
+          },
+          "silhouette_bounds_alpha_gte_8": {
+            "left": 5,
+            "top": 9,
+            "width": 54,
+            "height": 46
+          },
+          "sha256": "55ef06cda9304a69f2b87e74881ebf274b95e776172f9dc62dc603edc3082253",
+          "bytes": 6614
+        },
+        "96": {
+          "path": "runtime/96/new_dialogue.png",
+          "width": 96,
+          "height": 96,
+          "has_alpha": true,
+          "alpha": {
+            "transparent": 4430,
+            "partial": 4586,
+            "opaque": 200
+          },
+          "visible_bounds": {
+            "left": 7,
+            "top": 13,
+            "width": 81,
+            "height": 69
+          },
+          "silhouette_bounds_alpha_gte_8": {
+            "left": 7,
+            "top": 13,
+            "width": 81,
+            "height": 69
+          },
+          "sha256": "4f450eebb34676b5019b7307531b462f374845db4d74222918ce74c48f5a9543",
+          "bytes": 13146
+        },
+        "128": {
+          "path": "runtime/128/new_dialogue.png",
+          "width": 128,
+          "height": 128,
+          "has_alpha": true,
+          "alpha": {
+            "transparent": 8000,
+            "partial": 8141,
+            "opaque": 243
+          },
+          "visible_bounds": {
+            "left": 10,
+            "top": 18,
+            "width": 108,
+            "height": 92
+          },
+          "silhouette_bounds_alpha_gte_8": {
+            "left": 10,
+            "top": 18,
+            "width": 108,
+            "height": 92
+          },
+          "sha256": "cec9ac06304a9a5c9f0f11b09403bf8ab10fb4796f96971a3d7b0e09a8e55b9f",
+          "bytes": 21641
+        }
+      }
+    }
+  }
+}

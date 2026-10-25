@@ -109,8 +109,8 @@ class MapAffordance(unittest.TestCase):
         for column in (3, 4):
             self.assertIn('area (r13_control_x(%d)-24,map_controls_y,R13_CONTROL["width"],r13_map_control_height())' % column, source)
         self.assertIn('text_xalign .5 text_yalign .5', source)
-        self.assertIn('use r13_control("이곳으로 이동","map",', source)
-        self.assertIn('use r13_control("현장으로","dialogue",close_action,enabled=ready,height=r13_map_control_height(),control_id="r13_map_close")', source)
+        self.assertIn('use r13_field_button("이곳으로 이동","map",', source)
+        self.assertIn('use r13_field_button("현장으로","dialogue",close_action,enabled=ready,height=r13_map_control_height(),control_id="r13_map_close")', source)
 
     def test_travel_and_local_guide_gates_remain(self):
         source = (GAME / "room13_navigation.rpy").read_text()

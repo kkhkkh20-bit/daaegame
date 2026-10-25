@@ -1,0 +1,126 @@
+{
+  "version": 1,
+  "description": "Existing raster art, unchanged scale and proportions. UI-only visual state composition.",
+  "state_priority": [
+    "disabled",
+    "pressed",
+    "selected",
+    "basic"
+  ],
+  "families": [
+    {
+      "id": "primary",
+      "source": "source/b_button_primary.png",
+      "canvas": {
+        "width": 160,
+        "height": 52
+      },
+      "hit_rect": {
+        "x": 16,
+        "y": 10,
+        "width": 128,
+        "height": 32
+      },
+      "text_offset": {
+        "basic": [
+          0,
+          0
+        ],
+        "pressed": [
+          0,
+          2
+        ],
+        "selected": [
+          0,
+          0
+        ],
+        "disabled": [
+          0,
+          0
+        ]
+      },
+      "assets": {
+        "basic": "assets/primary_basic.png",
+        "pressed": "assets/primary_pressed.png",
+        "selected": "assets/primary_selected.png",
+        "disabled": "assets/primary_disabled.png"
+      }
+    },
+    {
+      "id": "standard",
+      "source": "source/b_button.png",
+      "canvas": {
+        "width": 160,
+        "height": 52
+      },
+      "hit_rect": {
+        "x": 16,
+        "y": 10,
+        "width": 128,
+        "height": 32
+      },
+      "text_offset": {
+        "basic": [
+          0,
+          0
+        ],
+        "pressed": [
+          0,
+          2
+        ],
+        "selected": [
+          0,
+          0
+        ],
+        "disabled": [
+          0,
+          0
+        ]
+      },
+      "assets": {
+        "basic": "assets/standard_basic.png",
+        "pressed": "assets/standard_pressed.png",
+        "selected": "assets/standard_selected.png",
+        "disabled": "assets/standard_disabled.png"
+      }
+    },
+    {
+      "id": "wide_choice",
+      "source": "source/b_panel_small.png",
+      "canvas": {
+        "width": 240,
+        "height": 60
+      },
+      "hit_rect": {
+        "x": 8,
+        "y": 8,
+        "width": 224,
+        "height": 44
+      },
+      "text_offset": {
+        "basic": [
+          0,
+          0
+        ],
+        "pressed": [
+          0,
+          2
+        ],
+        "selected": [
+          0,
+          0
+        ],
+        "disabled": [
+          0,
+          0
+        ]
+      },
+      "assets": {
+        "basic": "assets/wide_choice_basic.png",
+        "pressed": "assets/wide_choice_pressed.png",
+        "selected": "assets/wide_choice_selected.png",
+        "disabled": "assets/wide_choice_disabled.png"
+      }
+    }
+  ]
+}

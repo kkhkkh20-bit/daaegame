@@ -1,5 +1,4 @@
-# Role tokens. The approved Pretendard Regular is shared by Korean UI text.
-# Keep the existing regular weight; do not synthesize bold or italic.
+# Role tokens. Actual Pretendard Bold is used for interactive labels; body text stays legible.
 init 57 python:
     # One 1280x720 grid, shared by every gameplay footer.
     R13_CONTROL = dict(width=232, gap=16, left=28, bottom=16,
@@ -48,6 +47,7 @@ init 70:
     style r13_button:
         padding R13_UI_PADDING["button"]
     style r13_button_text:
+        font R13_UI_BOLD_FONT
         bold False
         italic False
     style r13_frame:
@@ -92,6 +92,8 @@ init 81:
     style r13_action_button_text:
         xalign .5
         yalign .5
-        color "#fff4df"
-        selected_color "#f2d28d"
-        insensitive_color "#a79c8c"
+        font R13_UI_BOLD_FONT
+        color "#493323"
+        hover_color "#793e2a"
+        selected_color "#fff7e8"
+        insensitive_color "#978572"

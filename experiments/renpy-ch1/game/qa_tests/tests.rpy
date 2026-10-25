@@ -9447,7 +9447,10 @@ testcase karo_comes_day2:
     $ room13["flags"]=[f for f in room13["flags"] if f!="livelihood_open"]
     # 0.19.50 moved local travel to the map; keep exercising the real travel action.
     click "지도" until screen "r13_map" timeout 30
-    click pos r13_cart_label_point("hall")
+    # 복도는 여관 내부 지도의 실제 장소 버튼으로 선택한다.
+    pause until eval renpy.get_screen("r13_map").scope["ready"] timeout 30
+    click id "map_room_hall"
+    pause until eval renpy.get_screen("r13_map").scope["selected"]=="hall" timeout 30
     click "이곳으로 이동"
     pause 2.5
     screenshot "karo_comes_1.png"
@@ -9592,12 +9595,34 @@ testcase new_places_tour:
     assert eval (r13_v111_active())
     screenshot "place_market.png"
     $ r13_qa_crowd_dump()
+    click "지도" until screen "r13_map" timeout 30
+    pause until eval renpy.get_screen("r13_map").scope["ready"] timeout 30
+    run Function(r13_qa_map_reveal,"market")
+    pause .3
+    click id "map_name_market"
+    assert eval (renpy.get_screen("r13_map").scope["selected"]=="market" and room13["location"]=="market")
+    click id "r13_map_close"
+    pause until screen "r13_hub" timeout 30
     run Call("r13_qa_v111_place","river",0)
     pause until screen "r13_hub" timeout 30
     screenshot "place_river.png"
+    click "지도" until screen "r13_map" timeout 30
+    pause until eval renpy.get_screen("r13_map").scope["ready"] timeout 30
+    run Function(r13_qa_map_reveal,"river")
+    pause .3
+    click id "map_name_river"
+    assert eval (renpy.get_screen("r13_map").scope["selected"]=="river" and room13["location"]=="river")
+    click id "r13_map_close"
+    pause until screen "r13_hub" timeout 30
     run Call("r13_qa_v111_place","forest",2)
     pause until screen "r13_hub" timeout 30
     screenshot "place_forest_evening.png"
+    click "지도" until screen "r13_map" timeout 30
+    pause until eval renpy.get_screen("r13_map").scope["ready"] timeout 30
+    click id "map_building_forest"
+    assert eval (renpy.get_screen("r13_map").scope["selected"]=="forest" and room13["location"]=="forest")
+    click id "r13_map_close"
+    pause until screen "r13_hub" timeout 30
 
 testcase job_fishing:
     # 0.18.91 (owner): jobs were removed; no lodging fee is charged overnight either.
@@ -9855,7 +9880,10 @@ testcase new_places:
     click "지도" until screen "r13_map" timeout 30
     # Map pins ignore input until the .15s entrance guard finishes.
     pause until eval renpy.get_screen("r13_map").scope["ready"] timeout 30
-    click pos r13_cart_label_point("river")
+    run Function(r13_qa_map_reveal,"river")
+    pause .3
+    screenshot "map_river_before_select.png"
+    click id "map_name_river"
     pause until eval renpy.get_screen("r13_map").scope["selected"]=="river" timeout 30
     click "이곳으로 이동"
     pause until screen "r13_hub" timeout 30
@@ -9869,7 +9897,10 @@ testcase new_places:
     click "지도" until screen "r13_map" timeout 30
     # Map pins ignore input until the .15s entrance guard finishes.
     pause until eval renpy.get_screen("r13_map").scope["ready"] timeout 30
-    click pos r13_cart_label_point("forest")
+    run Function(r13_qa_map_reveal,"forest")
+    pause .3
+    screenshot "map_forest_before_select.png"
+    click id "map_name_forest"
     pause until eval renpy.get_screen("r13_map").scope["selected"]=="forest" timeout 30
     click "이곳으로 이동"
     pause until screen "r13_hub" timeout 30
@@ -9885,7 +9916,10 @@ testcase new_places:
     # From the forest the map opens on the 숲·산길 area; the market is on 마을.
     click "마을"
     pause .5
-    click pos r13_cart_label_point("market")
+    run Function(r13_qa_map_reveal,"market")
+    pause .3
+    screenshot "map_market_before_select.png"
+    click id "map_name_market"
     pause until eval renpy.get_screen("r13_map").scope["selected"]=="market" timeout 30
     click "이곳으로 이동"
     pause until screen "r13_hub" timeout 30
@@ -12170,6 +12204,8 @@ testcase cartography:
     click "지도" until screen "r13_map" timeout 30
     click "마을"
     pause 1.0
+    run Function(r13_qa_map_reveal,"inn")
+    pause .3
     screenshot "map_village.png"
     click id "map_name_inn"
     pause 0.4

@@ -1,0 +1,119 @@
+diff --git a/experiments/renpy-ch1/game/qa_tests/helpers.rpy b/experiments/renpy-ch1/game/qa_tests/helpers.rpy
+index 1ddbe19a..8774b698 100644
+--- a/experiments/renpy-ch1/game/qa_tests/helpers.rpy
++++ b/experiments/renpy-ch1/game/qa_tests/helpers.rpy
+@@ -12,6 +12,14 @@ init 999:
+             textbutton "QA 닫기" action Return(None)
+ 
+ init 999 python:
++    def r13_qa_map_reveal(key):
++        # 이름표를 실제 뷰포트 안으로 옮긴다. 장소 선택·이동은 시험의 클릭으로만 한다.
++        view = renpy.get_widget("r13_map", "r13_map_view")
++        x, y = r13_cart_label_point(key)
++        view.xadjustment.change(max(0, min(view.xadjustment.range, x - 624)))
++        view.yadjustment.change(max(0, min(view.yadjustment.range, y - 274)))
++        renpy.restart_interaction()
++
+     def r13_qa_dump():
+         d=dict(result=room13.get("trial_result"),daram=room13.get("daram_state"),granny=room13.get("granny_state"),
+             props=list(room13["propositions"]),closed=dict(room13.get("debate",{}).get("closed",{})),
+diff --git a/experiments/renpy-ch1/game/qa_tests/tests.rpy b/experiments/renpy-ch1/game/qa_tests/tests.rpy
+index 90e20ad0..8fa10b09 100644
+--- a/experiments/renpy-ch1/game/qa_tests/tests.rpy
++++ b/experiments/renpy-ch1/game/qa_tests/tests.rpy
+@@ -9447,7 +9447,10 @@ testcase karo_comes_day2:
+     $ room13["flags"]=[f for f in room13["flags"] if f!="livelihood_open"]
+     # 0.19.50 moved local travel to the map; keep exercising the real travel action.
+     click "지도" until screen "r13_map" timeout 30
+-    click pos r13_cart_label_point("hall")
++    # 복도는 마을 이름표가 아니라 여관 내부 지도에 있다.
++    pause until eval renpy.get_screen("r13_map").scope["ready"] timeout 30
++    click id "map_room_hall"
++    pause until eval renpy.get_screen("r13_map").scope["selected"]=="hall" timeout 30
+     click "이곳으로 이동"
+     pause 2.5
+     screenshot "karo_comes_1.png"
+@@ -9855,7 +9858,12 @@ testcase new_places:
+     click "지도" until screen "r13_map" timeout 30
+     # Map pins ignore input until the .15s entrance guard finishes.
+     pause until eval renpy.get_screen("r13_map").scope["ready"] timeout 30
+-    click pos r13_cart_label_point("river")
++    # 지도 내부 좌표를 화면 좌표로 누르지 않고, 이름표를 드러낸 뒤 실제 버튼을 누른다.
++    pause until eval renpy.get_screen("r13_map").scope["ready"] timeout 30
++    run Function(r13_qa_map_reveal,"river")
++    pause .3
++    screenshot "map_river_before_select.png"
++    click id "map_name_river"
+     pause until eval renpy.get_screen("r13_map").scope["selected"]=="river" timeout 30
+     click "이곳으로 이동"
+     pause until screen "r13_hub" timeout 30
+@@ -9869,7 +9877,12 @@ testcase new_places:
+     click "지도" until screen "r13_map" timeout 30
+     # Map pins ignore input until the .15s entrance guard finishes.
+     pause until eval renpy.get_screen("r13_map").scope["ready"] timeout 30
+-    click pos r13_cart_label_point("forest")
++    # 지도 내부 좌표를 화면 좌표로 누르지 않고, 이름표를 드러낸 뒤 실제 버튼을 누른다.
++    pause until eval renpy.get_screen("r13_map").scope["ready"] timeout 30
++    run Function(r13_qa_map_reveal,"forest")
++    pause .3
++    screenshot "map_forest_before_select.png"
++    click id "map_name_forest"
+     pause until eval renpy.get_screen("r13_map").scope["selected"]=="forest" timeout 30
+     click "이곳으로 이동"
+     pause until screen "r13_hub" timeout 30
+@@ -9885,7 +9898,12 @@ testcase new_places:
+     # From the forest the map opens on the 숲·산길 area; the market is on 마을.
+     click "마을"
+     pause .5
+-    click pos r13_cart_label_point("market")
++    # 지도 내부 좌표를 화면 좌표로 누르지 않고, 이름표를 드러낸 뒤 실제 버튼을 누른다.
++    pause until eval renpy.get_screen("r13_map").scope["ready"] timeout 30
++    run Function(r13_qa_map_reveal,"market")
++    pause .3
++    screenshot "map_market_before_select.png"
++    click id "map_name_market"
+     pause until eval renpy.get_screen("r13_map").scope["selected"]=="market" timeout 30
+     click "이곳으로 이동"
+     pause until screen "r13_hub" timeout 30
+diff --git a/experiments/renpy-ch1/dev/test_qa_map_reveal.py b/experiments/renpy-ch1/dev/test_qa_map_reveal.py
+new file mode 100644
+index 00000000..1b31f698
+--- /dev/null
++++ b/experiments/renpy-ch1/dev/test_qa_map_reveal.py
+@@ -0,0 +1,36 @@
++"""지도 시험의 화면 이동이 선택 상태를 대신 바꾸지 않는지 확인한다."""
++import ast
++from pathlib import Path
++from types import SimpleNamespace
++import textwrap
++import unittest
++
++
++class MapRevealTest(unittest.TestCase):
++    def test_reveal_centers_and_clamps_without_selecting(self):
++        source = (Path(__file__).resolve().parents[1] / 'game/qa_tests/helpers.rpy').read_text()
++        block = source.split('init 999 python:\n', 1)[1].split('\nlabel ', 1)[0]
++        tree = ast.parse(textwrap.dedent(block))
++        node = next(n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name == 'r13_qa_map_reveal')
++        class Adjustment:
++            def __init__(self, limit):
++                self.range, self.value = limit, 0
++            def change(self, value):
++                self.value = value
++        view = SimpleNamespace(xadjustment=Adjustment(800), yadjustment=Adjustment(600))
++        points = {'center': (1000, 700), 'top': (10, 20), 'bottom': (2400, 1600)}
++        calls = []
++        def get_widget(screen, widget):
++            self.assertEqual((screen, widget), ('r13_map', 'r13_map_view'))
++            return view
++        ns = dict(renpy=SimpleNamespace(get_widget=get_widget, restart_interaction=lambda: calls.append('refresh')),
++                  r13_cart_label_point=points.__getitem__)
++        exec(compile(ast.Module(body=[node], type_ignores=[]), '<qa-map>', 'exec'), ns)
++        for key, expected in [('center', (376, 426)), ('top', (0, 0)), ('bottom', (800, 600))]:
++            ns['r13_qa_map_reveal'](key)
++            self.assertEqual((view.xadjustment.value, view.yadjustment.value), expected)
++        self.assertEqual(calls, ['refresh'] * 3)
++
++
++if __name__ == '__main__':
++    unittest.main()

@@ -1,5 +1,8 @@
 # Approved moonlit square cover; menu labels remain real keyboard/touch controls.
 init 60 python:
+    renpy.register_shader("r13.title_portrait_fade",
+        variables="varying vec2 v_tex_coord;",
+        fragment_300="gl_FragColor *= 1.0 - smoothstep(0.82, 1.0, v_tex_coord.y);")
     renpy.register_shader("r13.title_menu_shade",
         variables="varying vec2 v_tex_coord;",
         fragment_300="""
@@ -35,7 +38,11 @@ init 60 python:
                 c.polygon(color,[(x,yy-2),(x+2,yy),(x,yy+2),(x-2,yy)])
             return out
 
-# B 메인 전용 스타일. 판/버튼은 납품 비율을 유지하고 투명 여백은 클릭에서 제외한다.
+screen r13_cover_button(caption,key,icon,width,command,focus,enabled=True,first=False):
+    $ state_icon=Transform(Crop((16,16,32,32),r13_field_icon(icon)),zoom=30.0/32,alpha=1.0 if enabled else .45)
+    use r13_state_button(caption,command,width,76,family="primary" if focus==key and enabled else "standard",enabled=enabled,icon=state_icon,text_size=28,control_id="r13_cover_"+key,first=first,hover_action=SetScreenVariable("title_focus",key))
+
+# B 메인 전용 스타일. 이전 화면/저장 호환용 스타일.
 init 81:
     style r13_title_button is r13_button:
         xsize 240 ysize 84

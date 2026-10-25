@@ -3,6 +3,9 @@ init python:
         # Deterministic fixture, isolated by the QA runner's save directory.
         persistent.r13_fork_seen={}
         persistent.r13_fork_endings={}
+        store.r13_fork_win_prior={}
+        r13_v111_set('grand:fire',False)
+        r13_v111_set('grand:soup',False)
         for meeting in ('gate','lamp','gate_post','fire','room13','records','hypothesis','soup','blanket','piko','altar'):
             r13_v111_set('meeting:'+meeting,None)
         r13_nw_meeting_end('gate','win')
@@ -31,7 +34,7 @@ testcase v111_fork_screen:
     click '갈림길'
     pause 0.5
     assert screen 'r13_fork_screen'
-    assert eval (qa_fork_locked_count()==8)  # gate 1, lamp 1, gate_post 1, fire 1 + 0.20.20 판정 칸(피코 2, 꼬미 2)
+    assert eval (qa_fork_locked_count()==9)  # fire의 미확인 grand도 이름 없이 개수에 포함한다.
     assert eval ([col['key'] for col in r13_fork_columns() if col.get('fate')]==['lamp','gate_post','fire'])
     assert eval (sum(col['key'] is None for col in r13_fork_columns())==1)
     assert eval (len(r13_fork_columns())==8 and r13_fork_current()==6)

@@ -1,0 +1,319 @@
+window.MAP_LAYOUT = {
+  "purpose": "Apply-preparation asset handoff; not integrated into the game",
+  "canvas": {
+    "width": 1642,
+    "height": 958
+  },
+  "viewport": {
+    "width": 1136,
+    "height": 570,
+    "screen_x": 88,
+    "screen_y": 58
+  },
+  "default_zoom": 1.15,
+  "uniform_scale_only": true,
+  "source_reference_commit": "08aa1a0a5ee6d8b5dd6c06f1de7bcee134b8397e",
+  "labels_are_dynamic_at_integration": true,
+  "hit_rect_status": "Provisional visual rectangles, not runtime polygons; no pointer QA performed",
+  "locations": [
+    {
+      "id": "forest",
+      "label": "깊은 숲",
+      "runtime_label_source": "r13_map_label",
+      "label_center": [
+        238,
+        130
+      ],
+      "normalized_label_center": [
+        0.14494518879415347,
+        0.13569937369519833
+      ],
+      "label_size": [
+        144,
+        38
+      ],
+      "provisional_hit_rect": [
+        90,
+        35,
+        330,
+        165
+      ]
+    },
+    {
+      "id": "school",
+      "label": "학교",
+      "runtime_label_source": "r13_map_label",
+      "label_center": [
+        684,
+        209
+      ],
+      "normalized_label_center": [
+        0.4165651644336175,
+        0.21816283924843424
+      ],
+      "label_size": [
+        144,
+        38
+      ],
+      "provisional_hit_rect": [
+        480,
+        64,
+        350,
+        135
+      ]
+    },
+    {
+      "id": "clinic",
+      "label": "진료실",
+      "runtime_label_source": "r13_map_label",
+      "label_center": [
+        420,
+        365
+      ],
+      "normalized_label_center": [
+        0.2557856272838002,
+        0.38100208768267224
+      ],
+      "label_size": [
+        144,
+        38
+      ],
+      "provisional_hit_rect": [
+        270,
+        235,
+        250,
+        115
+      ]
+    },
+    {
+      "id": "inn",
+      "label": "여관",
+      "runtime_label_source": "r13_map_label",
+      "label_center": [
+        365,
+        606
+      ],
+      "normalized_label_center": [
+        0.2222898903775883,
+        0.6325678496868476
+      ],
+      "label_size": [
+        144,
+        38
+      ],
+      "provisional_hit_rect": [
+        110,
+        400,
+        410,
+        185
+      ]
+    },
+    {
+      "id": "market",
+      "label": "장터",
+      "runtime_label_source": "r13_map_label",
+      "label_center": [
+        790,
+        342
+      ],
+      "normalized_label_center": [
+        0.48112058465286234,
+        0.3569937369519833
+      ],
+      "label_size": [
+        144,
+        38
+      ],
+      "provisional_hit_rect": [
+        650,
+        230,
+        340,
+        100
+      ]
+    },
+    {
+      "id": "square",
+      "label": "광장",
+      "runtime_label_source": "r13_map_label",
+      "label_center": [
+        754,
+        488
+      ],
+      "normalized_label_center": [
+        0.4591961023142509,
+        0.5093945720250522
+      ],
+      "label_size": [
+        144,
+        38
+      ],
+      "provisional_hit_rect": [
+        674,
+        350,
+        157,
+        116
+      ]
+    },
+    {
+      "id": "post",
+      "label": "우체국",
+      "runtime_label_source": "r13_map_label",
+      "label_center": [
+        901,
+        615
+      ],
+      "normalized_label_center": [
+        0.548721071863581,
+        0.6419624217118998
+      ],
+      "label_size": [
+        144,
+        38
+      ],
+      "provisional_hit_rect": [
+        778,
+        484,
+        210,
+        115
+      ]
+    },
+    {
+      "id": "workshop",
+      "label": "수리점",
+      "runtime_label_source": "r13_map_label",
+      "label_center": [
+        1089,
+        493
+      ],
+      "normalized_label_center": [
+        0.6632155907429963,
+        0.5146137787056367
+      ],
+      "label_size": [
+        144,
+        38
+      ],
+      "provisional_hit_rect": [
+        924,
+        340,
+        245,
+        135
+      ]
+    },
+    {
+      "id": "store",
+      "label": "공동 창고",
+      "runtime_label_source": "r13_map_label",
+      "label_center": [
+        1393,
+        534
+      ],
+      "normalized_label_center": [
+        0.8483556638246041,
+        0.55741127348643
+      ],
+      "label_size": [
+        144,
+        38
+      ],
+      "provisional_hit_rect": [
+        1230,
+        367,
+        275,
+        145
+      ]
+    },
+    {
+      "id": "gate",
+      "label": "마을 입구",
+      "runtime_label_source": "r13_map_label",
+      "label_center": [
+        574,
+        687
+      ],
+      "normalized_label_center": [
+        0.34957369062119364,
+        0.7171189979123174
+      ],
+      "label_size": [
+        144,
+        38
+      ],
+      "provisional_hit_rect": [
+        485,
+        600,
+        340,
+        180
+      ]
+    },
+    {
+      "id": "river",
+      "label": "큰 강",
+      "runtime_label_source": "r13_map_label",
+      "label_center": [
+        1432,
+        674
+      ],
+      "normalized_label_center": [
+        0.8721071863580999,
+        0.7035490605427975
+      ],
+      "label_size": [
+        144,
+        38
+      ],
+      "provisional_hit_rect": [
+        1165,
+        625,
+        350,
+        90
+      ]
+    },
+    {
+      "id": "laundry",
+      "label": "빨래터",
+      "runtime_label_source": "r13_map_label",
+      "label_center": [
+        974,
+        856
+      ],
+      "normalized_label_center": [
+        0.5931790499390986,
+        0.8935281837160751
+      ],
+      "label_size": [
+        144,
+        38
+      ],
+      "provisional_hit_rect": [
+        850,
+        747,
+        235,
+        88
+      ]
+    },
+    {
+      "id": "somi",
+      "label": "솜이네",
+      "runtime_label_source": "r13_map_label",
+      "label_center": [
+        1355,
+        893
+      ],
+      "normalized_label_center": [
+        0.8252131546894031,
+        0.9321503131524008
+      ],
+      "label_size": [
+        144,
+        38
+      ],
+      "provisional_hit_rect": [
+        1240,
+        747,
+        270,
+        125
+      ]
+    }
+  ]
+};

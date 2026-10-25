@@ -67,8 +67,9 @@ def startup_media(rel, startup_files):
 def startup_files(game):
     result = set(START_FILES)
     # Approved title/settings must be ready before the first interaction.
-    for folder in ("ui-b-main", "ui-b-options", "ui-b-dialogue"):
+    for folder in ("ui-b-main", "ui-b-options", "ui-b-dialogue", "ui-b-question", "ui-b-choice", "ui-b-field", "ui-b-sticker", "ui-button-states", "map-status"):
         result.update(p.relative_to(game).as_posix() for p in (game / "assets" / folder).glob("*.png"))
+    result.update(p.relative_to(game).as_posix() for p in (game / "assets/diary-sounds").glob("*.*") if p.suffix in (".mp3", ".ogg"))
     # Small face stickers must be present when the first dialogue is drawn.
     result.update(p.relative_to(game).as_posix() for p in (game / "assets/dialogue-b-faces").glob("*.webp"))
     layout = json.loads((game / "assets/room13-world-layout.json").read_text())

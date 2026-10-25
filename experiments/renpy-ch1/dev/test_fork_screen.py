@@ -56,7 +56,12 @@ class ForkScreen(unittest.TestCase):
             for meeting,rest in re.findall(r'r13_nw_meeting_end\(\s*["\'](\w+)["\']\s*,(.*)',path.read_text()):
                 found.setdefault(meeting,set()).update(re.findall(r'["\'](win|partial|lose)["\']',rest.split('\n')[0]))
         for key,*_ in self.env['R13_FORK_MEETINGS']:
-            self.assertEqual(set(self.call('outcomes',key)),found.get(key),key)
+            expected=found.get(key)
+            if key in self.env['R13_FORK_GRAND_MEETINGS']:
+                # Grand remains an authored flag layered on a real win, not a new verdict.
+                self.assertTrue(any(re.search(r'r13_v111_set\(["\']grand:'+key+r'["\'],\s*True\)',p.read_text()) for p in (ROOT/'game').glob('room13_v111_*.rpy')))
+                expected=expected|{'grand'}
+            self.assertEqual(set(self.call('outcomes',key)),expected,key)
     def test_row_tops_fit_above_the_footer(self):
         tops=self.call('row_tops',[{'kind':'current'},{'kind':'old'},{'kind':'old'}])
         self.assertEqual(tops,[200,332,464])
@@ -168,5 +173,66 @@ class ForkScreen(unittest.TestCase):
         self.assertEqual(self.call('current'),16)
         self.assertEqual(len(self.call('columns')),17)
         self.assertEqual(self.call('initial_page'),11)
+
+    def test_grand_unseen_is_only_one_more_in_the_hidden_count(self):
+        self.values['meeting:fire']='lose'
+        fire=next(c for c in self.call('columns') if c['key']=='fire')
+        self.assertEqual(fire['rows'][-1],dict(kind='locked',result=None,title=None,record=None,count=3))
+        self.assertNotIn('grand',repr(fire['rows']))
+
+    def test_grand_promotion_does_not_collect_plain_win_in_the_same_run(self):
+        self.values['meeting:fire']='win'
+        self.call('record','fire','win')
+        self.values['grand:fire']=True
+        self.call('promote_grand','fire')
+        self.assertEqual(set(self.persistent.r13_fork_seen),{('fire','grand')})
+        self.assertEqual(self.call('value','fire'),'grand')
+        before=(copy.deepcopy(self.persistent.r13_fork_seen),len(self.saves))
+        rows=next(c['rows'] for c in self.call('columns') if c['key']=='fire')
+        self.assertEqual(rows[0]['result'],'grand')
+        self.assertEqual(rows[-1]['count'],3)
+        self.assertEqual(before,(self.persistent.r13_fork_seen,len(self.saves)))
+
+    def test_grand_promotion_preserves_a_plain_win_from_an_older_run(self):
+        old=dict(png=b'old win',run=1)
+        self.persistent.r13_fork_seen[('soup','win')]=old
+        self.store.room13['v111']['fork_run']=2
+        self.values['meeting:soup']='win'
+        self.call('record','soup','win')
+        self.call('record','soup','win')
+        self.values['grand:soup']=True
+        self.call('promote_grand','soup')
+        self.assertEqual(self.persistent.r13_fork_seen[('soup','win')],old)
+        self.assertEqual(self.persistent.r13_fork_seen[('soup','grand')]['run'],2)
+
+    def test_grand_flag_before_verdict_waits_for_an_actual_win(self):
+        self.values['grand:soup']=True
+        self.call('promote_grand','soup')
+        self.assertFalse(self.persistent.r13_fork_seen)
+        self.values['meeting:soup']='partial'
+        self.call('record','soup','partial')
+        self.assertEqual(self.call('value','soup'),'partial')
+        self.values['meeting:soup']='win'
+        self.call('record','soup','win')
+        self.assertNotIn(('soup','win'),self.persistent.r13_fork_seen)
+        self.assertIn(('soup','grand'),self.persistent.r13_fork_seen)
+
+    def test_grand_observer_preserves_original_setter_and_ignores_other_state(self):
+        source=(ROOT/'game/room13_fork_screen.rpy').read_text().split('init 331 python:\n')[1]
+        calls=[]
+        def setter(key,value):
+            calls.append((key,value));self.values[key]=value
+            return 'unchanged contract'
+        self.env['r13_v111_set']=setter
+        exec(textwrap.dedent(source),self.env)
+        self.assertEqual(self.env['r13_v111_set']('unrelated',False),'unchanged contract')
+        self.assertFalse(self.saves)
+        self.values['meeting:fire']='win';self.call('record','fire','win')
+        self.env['r13_v111_set']('grand:fire',True)
+        writes=len(self.saves)
+        self.env['r13_v111_set']('grand:fire',True)
+        self.assertEqual(len(self.saves),writes)
+        self.assertEqual(calls,[('unrelated',False),('grand:fire',True),('grand:fire',True)])
+        self.assertEqual(self.values,{'unrelated':False,'meeting:fire':'win','grand:fire':True})
 
 if __name__=='__main__':unittest.main()

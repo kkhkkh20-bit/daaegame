@@ -259,8 +259,8 @@ init 71:
 screen r13_reference_record_shell(title):
     add Solid("#211b1899")
     add R13TravelSheet() xpos 36 ypos 36 xsize 1208 ysize 640
-    add Solid("#d6bd96") xpos 54 ypos 54 xsize 200 ysize 596
-    text title xpos 76 ypos 72 size 24 color "#493b30" font r13_ui_font()
+    add R13PaperFrame() xpos 54 ypos 54 xsize 200 ysize 596
+    text title xpos 76 ypos 72 size 28 color "#493323" font R13_UI_BOLD_FONT
 
 screen r13_reference_record_categories(owner,current,present=False,archive=False):
     vbox:
@@ -276,7 +276,7 @@ screen r13_reference_record_categories(owner,current,present=False,archive=False
                     hbox:
                         xalign .5 yalign .5 spacing 10
                         add R13AntiqueIcon(icon,size=24) yalign .5
-                        text title size r13_read_size(20,24) font r13_ui_font() color ("#fff0ce" if current==key else "#493b30") yalign .5
+                        text title size r13_read_size(20,24) font R13_UI_BOLD_FONT color ("#fff0ce" if current==key else "#493b30") yalign .5
 
     if r13_v111_active() and not present:
         textbutton "갈림길":

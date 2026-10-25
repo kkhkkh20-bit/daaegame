@@ -1,0 +1,74 @@
+{
+  "status": "PROVISIONAL DESIGN CANDIDATE — NOT STORY-APPROVED OR INTEGRATED",
+  "character_id": "v111_lowerroad_elder",
+  "source_commit": "15fb56cfbd6b713f9e0caa7cddf1d1fb98de8acc",
+  "reference_fullbody": "experiments/renpy-ch1/game/assets/room13-fullbody-elder-neutral.webp",
+  "reference_portrait": "experiments/renpy-ch1/game/assets/room13-pixel-dialogue-support-00.webp",
+  "reference_portrait_crop_xywh": [
+    33,
+    62,
+    322,
+    408
+  ],
+  "identity_note": "The existing lower-road speaker borrows elder (starwatcher). Round-eared animal base and plain winter coat are proposed design, not established story facts. Ornate stars and tassels intentionally removed to distinguish the candidate.",
+  "style": "B illustration sticker; white outline, transparent alpha",
+  "fullbody": {
+    "canvas": [
+      1024,
+      1536
+    ],
+    "facing": "front",
+    "visible_bounds_alpha_ge_8_xyxy": [
+      173,
+      33,
+      857,
+      1488
+    ],
+    "approximate_feet_contact_y": 1470,
+    "approximate_cane_tip_anchor": [
+      591,
+      1480
+    ],
+    "reference_canvas": [
+      512,
+      768
+    ],
+    "reference_figure_xywh": [
+      85,
+      22,
+      347,
+      729
+    ],
+    "reference_figure_bottom_y": 751,
+    "note": "Near 2x borrowed-art scale. Anchors are visual estimates, not runtime-verified."
+  },
+  "face": {
+    "canvas": [
+      555,
+      555
+    ],
+    "source_crop_xyxy": [
+      235,
+      20,
+      790,
+      575
+    ],
+    "method": "Exact crop from candidate fullbody, preserving identity."
+  },
+  "qa": {
+    "transparent": true,
+    "lossless_webp_pixel_identical": true,
+    "alpha_max": 254,
+    "alpha_note": "Generated alpha retained unchanged. Some outside pixels have alpha below 8/255."
+  },
+  "delivered": [
+    "basic fullbody",
+    "face crop"
+  ],
+  "not_generated": [
+    "seated pose",
+    "joy expression",
+    "worry expression"
+  ],
+  "integration": "No repository, game, or code changes."
+}

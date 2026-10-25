@@ -2,6 +2,8 @@
 default persistent.r13_fork_runs = 0
 default persistent.r13_fork_seen = {}
 default persistent.r13_fork_endings = {}
+# 실행 중 win→grand 관찰을 구분하는 기록용 되돌림 정보(이야기 값 아님).
+default r13_fork_win_prior = {}
 
 init 322 python:
     R13_FORK_MEETINGS = (
@@ -16,13 +18,15 @@ init 322 python:
         ('blanket','담요 회의','13일','square'),
         ('piko','피코 회의','13일','square'),
         ('altar','제단 회의','14일','altar'))
-    R13_FORK_RESULTS = dict(win='이김',partial='부분',lose='짐')
+    R13_FORK_RESULTS = dict(win='이김',partial='부분',lose='짐',grand='대승리')
+    R13_FORK_GRAND_MEETINGS = frozenset(('fire','soup'))
     # 0.20.5 (Codex S01): the final results each meeting really has (r13_nw_meeting_end calls in
     # room13_v111_days*.rpy; dev/test_fork_screen.py re-derives this). A retry is not a result.
     R13_FORK_OUTCOMES = dict(gate=('win','lose'),gate_post=('win','lose'),piko=('win','lose'))
     def r13_fork_outcomes(meeting):
         if meeting in R13_FORK_FATE_RESULTS:return tuple(r for r,_ in R13_FORK_FATE_RESULTS[meeting])
-        return R13_FORK_OUTCOMES.get(meeting,('win','partial','lose'))
+        base=R13_FORK_OUTCOMES.get(meeting,('win','partial','lose'))
+        return base+('grand',) if meeting in R13_FORK_GRAND_MEETINGS else base
     # 0.20.20 (소유자 2026-10-23 "다 해 줘", 승인 시안 docs/reviews/future-keys-20261023/fork_after_ending.png):
     # 회의 사이에 생사가 갈리는 판정 시점 칸을 넣는다. 이번 판의 결과만 이름이 보이고 나머지는 개수만.
     R13_FORK_FATE_POINTS = (
@@ -48,7 +52,8 @@ init 322 python:
     def r13_fork_is_fate_point(key):
         return key in R13_FORK_FATE_RESULTS
     def r13_fork_value(key):
-        return r13_v111_value(('fate:' if r13_fork_is_fate_point(key) else 'meeting:')+key)
+        result=r13_v111_value(('fate:' if r13_fork_is_fate_point(key) else 'meeting:')+key)
+        return 'grand' if key in R13_FORK_GRAND_MEETINGS and result=='win' and r13_v111_value('grand:'+key) is True else result
     def r13_fork_result_name(key,result):
         if r13_fork_is_fate_point(key):return dict(R13_FORK_FATE_RESULTS[key]).get(result,'지나감')
         return R13_FORK_RESULTS.get(result,'지나감')
@@ -74,8 +79,36 @@ init 322 python:
     def r13_fork_record(meeting,result):
         if meeting not in R13_FORK_ORDER or result not in r13_fork_outcomes(meeting):return
         seen = dict(persistent.r13_fork_seen or {})
+        run=store.room13['v111'].get('fork_run',1)
+        if meeting in R13_FORK_GRAND_MEETINGS and result=='win':
+            if r13_v111_value('grand:'+meeting) is True:
+                result='grand'
+            else:
+                prior=dict(getattr(store,'r13_fork_win_prior',{}) or {})
+                # 같은 결과를 반복 기록해도 원래 회차의 이김을 잃지 않는다.
+                if meeting not in prior or prior[meeting]['run']!=run:
+                    prior[meeting]=dict(run=run,previous=seen.get((meeting,'win')))
+                store.r13_fork_win_prior=prior
         seen[(meeting,result)] = dict(png=r13_fork_capture(),run=store.room13['v111'].get('fork_run',1))
         persistent.r13_fork_seen = seen
+        renpy.save_persistent()
+
+    def r13_fork_promote_grand(meeting):
+        """이야기에서 확정한 grand만 관찰한다. 화면을 여는 행위는 기록하지 않는다."""
+        if meeting not in R13_FORK_GRAND_MEETINGS or r13_fork_value(meeting)!='grand':return
+        run=store.room13['v111'].get('fork_run',1)
+        seen=dict(persistent.r13_fork_seen or {})
+        prior=dict(getattr(store,'r13_fork_win_prior',{}) or {})
+        win=seen.get((meeting,'win'))
+        saved=prior.get(meeting)
+        # 이 실행에서 잠정 수집한 win만 교체한다. 구판 기록은 추측해서 삭제하지 않는다.
+        if saved and saved['run']==run and win and win.get('run',1)==run:
+            if saved['previous'] is None:seen.pop((meeting,'win'),None)
+            else:seen[(meeting,'win')]=saved['previous']
+            prior.pop(meeting,None)
+            store.r13_fork_win_prior=prior
+        seen[(meeting,'grand')]=dict(png=r13_fork_capture(),run=run)
+        persistent.r13_fork_seen=seen
         renpy.save_persistent()
 
     def r13_fork_ending(key):
@@ -159,29 +192,46 @@ screen r13_fork_card(column,row,small=16):
     # 0.20.x: brown sheet and result cards as the approved mockup (plan5 m4_forks.png).
     if row['kind']=='locked':
         frame:
-            xsize 175 ysize 56 padding (10,4) background Frame(R13_NIGHT_UI+'preview_box.png',8,8)
+            xsize 175 ysize 56 padding (12,8) background r13_field_paper()
             hbox:
                 align (.5,.5) spacing 10
                 add R13AntiqueIcon('lock',size=22) yalign .5
-                text ('다른 결과 %d'%row.get('count',1)) size (small+2) color '#e3d6bd' font r13_ui_font() yalign .5
+                text ('다른 결과 %d'%row.get('count',1)) size (small+2) color '#354151' font R13_UI_BOLD_FONT yalign .5
     elif column['here']:
         frame:
-            xsize 175 ysize 116 padding (8,8) background Frame(R13_NIGHT_UI+'opt_btn_selected.png',16,16)
+            xsize 175 ysize 116 padding (8,8) background R13ControlSurface(primary=True)
             vbox:
                 align (.5,.5) spacing 6
                 add R13_NIGHT_UI+'diamond.png' xalign .5
-                text '지금 여기' size (small+6) color '#fff6e2' font r13_ui_font() xalign .5
-                text '결과 미정' size small color '#f2d28d' font r13_ui_font() xalign .5
+                text '지금 여기' size (small+6) color '#fff6e2' font R13_UI_BOLD_FONT xalign .5
+                text '결과 미정' size small color '#f2d28d' font R13_UI_BOLD_FONT xalign .5
     else:
+        $ result_label=r13_fork_result_name(column['key'],row['result'])
+        # Longer fate labels may use two lines; the run caption always has its own row.
+        $ thumb_height=30 if len(result_label)>7 else 54
         frame:
-            xsize 175 ysize 116 padding (5,5) background Frame(R13_NIGHT_UI+'panel_small.png',12,12)
-            vbox:
-                spacing 4
-                add Transform(r13_fork_image(row['record'],column['place']),xysize=(165,72),nearest=True,matrixcolor=SepiaMatrix() if row['kind']=='old' else BrightnessMatrix(0))
-                fixed:
-                    xysize (165,30)
-                    text r13_fork_result_name(column['key'],row['result']) xpos 4 yalign .5 size (small+2) color '#f6ecd8' font r13_ui_font()
-                    text ('이번 회차' if row['kind']=='current' else '%d회차에서 봄'%(row['record'] or {}).get('run',1)) xalign 1.0 xoffset -4 yalign .5 size small color '#cdbb98' font r13_ui_font()
+            xsize 175 ysize 116 padding (12,8) background r13_field_paper()
+            fixed:
+                xysize (151,100)
+                viewport:
+                    xysize (151,thumb_height)
+                    add Transform(r13_fork_image(row['record'],column['place']),xysize=(151,thumb_height),fit='cover',matrixcolor=SepiaMatrix() if row['kind']=='old' else BrightnessMatrix(0))
+                text result_label xpos 0 ypos (thumb_height+2) xsize 151 size (small+2) line_spacing -2 color '#263b52' font R13_UI_BOLD_FONT
+                text ('이번 회차' if row['kind']=='current' else '%d회차에서 봄'%(row['record'] or {}).get('run',1)) xpos 0 ypos 82 xsize 151 size 14 color '#756f66' font R13_UI_BOLD_FONT
+
+screen r13_fork_card_stack(column,small,height):
+    default scroll=ui.adjustment()
+    viewport:
+        xsize 175 ysize height
+        yadjustment scroll mousewheel True draggable True
+        vbox:
+            spacing 16
+            for row in column['rows']:
+                use r13_fork_card(column,row,small)
+    if scroll.range>0:
+        vbar:
+            xpos 177 xsize 4 ysize height adjustment scroll
+            base_bar Solid('#d8c8b0') thumb Solid('#82684d')
 
 screen r13_fork_screen():
     modal True
@@ -194,61 +244,55 @@ screen r13_fork_screen():
     $ ch = r13_control_height()
     $ by = 684-ch
     add Solid('#05070fa6')
-    add Frame(R13_NIGHT_UI+'panel.png',48,48) xpos 12 ypos 12 xysize (1256,696)
-    text '이야기의 갈림길' xpos 60 ypos 40 size 34 color '#f6ecd8' font r13_ui_font()
-    text '기록 / 지나온 이야기' xpos 316 ypos 54 size small color '#cdbb98' font r13_ui_font()
-    text ('%d회차 · %d일째' % (room13['v111'].get('fork_run',1),room13['day'])) xpos 1150 xanchor 1.0 ypos 52 size (small+2) color '#f6ecd8' font r13_ui_font()
+    add 'assets/ui-b-options/b_opt_panel.png' xpos -4 ypos -4
+    text '이야기의 갈림길' xpos 114 ypos 68 size 34 color '#263b52' font R13_UI_BOLD_FONT
+    text '기록 / 지나온 이야기' xpos 114 ypos 110 size small color '#756f66' font R13_UI_BOLD_FONT
+    text ('%d회차 · %d일째' % (room13['v111'].get('fork_run',1),room13['day'])) xpos 1150 xanchor 1.0 ypos 78 size (small+2) color '#263b52' font R13_UI_BOLD_FONT
     button:
         id 'r13_fork_close'
-        xpos (1170 if touch else 1176) ypos (30 if touch else 34) xysize ((64,64) if touch else (52,52))
+        xpos (1170 if touch else 1176) ypos (52 if touch else 60) xysize ((64,64) if touch else (52,52))
         background None hover_background Solid('#fff6e214')
         action Hide('r13_fork_screen') alt '닫기'
-        add R13_NIGHT_UI+'close_x.png' align (.5,.5)
-    add R13_NIGHT_UI+'diamond.png' xpos 56 ypos 99
-    add Solid('#c9a86a99') xpos 66 ypos 103 xsize 1156 ysize 1
+        add Transform('assets/ui-b-options/b_opt_close.png',xysize=(40,40)) align (.5,.5)
+    add R13_NIGHT_UI+'diamond.png' xpos 94 ypos 145
+    add Solid('#c9a86a99') xpos 104 ypos 149 xsize 1096 ysize 1
     # Legend (mockup row): this run, other runs, unseen (count only), a fate meeting.
     hbox:
-        xpos 64 ypos 116 spacing 26
+        xpos 114 ypos 162 spacing 22
         hbox:
             spacing 8
             add Solid('#d9b46c') xysize (26,2) yalign .5
-            text '이번 회차' size small color '#e3d6bd' font r13_ui_font()
+            text '이번 회차' size small color '#354151' font R13_UI_BOLD_FONT
         hbox:
             spacing 8
             add R13ForkDash(26,2,True) yalign .5
-            text '다른 회차에서 본 결과' size small color '#e3d6bd' font r13_ui_font()
+            text '다른 회차에서 본 결과' size small color '#354151' font R13_UI_BOLD_FONT
         hbox:
             spacing 6
             add R13AntiqueIcon('lock',size=18) yalign .5
-            text '아직 보지 못한 결과 (개수만)' size small color '#e3d6bd' font r13_ui_font()
+            text '아직 보지 못한 결과 (개수만)' size small color '#354151' font R13_UI_BOLD_FONT
         hbox:
             spacing 6
             add R13ForkBadge(22) yalign .5
-            text '누군가의 운명이 갈린 곳' size small color '#e3d6bd' font r13_ui_font()
+            text '누군가의 운명이 갈린 곳' size small color '#354151' font R13_UI_BOLD_FONT
     $ fate_box = None
     for offset,column in enumerate(columns[first:first+6]):
-        $ cx = 68+offset*194
-        text r13_fork_day_label(column['day']) xpos (cx+87) xanchor .5 ypos 150 size small color '#cdbb98' font r13_ui_font()
+        $ cx = 110+offset*182
+        text r13_fork_day_label(column['day']) xpos (cx+87) xanchor .5 ypos 202 size small color '#756f66' font R13_UI_BOLD_FONT
         if column['key'] is None:
             frame:
-                xpos cx ypos 200 xsize 175 ysize 116 padding (8,8) background R13ForkDash(175,116)
-                text '…\n아직 펼치지 않은\n이야기' align (.5,.5) text_align .5 size small color '#b8b0a2' font r13_ui_font()
+                xpos cx ypos 264 xsize 175 ysize 116 padding (8,8) background R13ForkDash(175,116)
+                text '…\n아직 펼치지 않은\n이야기' align (.5,.5) text_align .5 size small color '#756f66' font R13_UI_BOLD_FONT
         else:
-            text column['title'] xpos (cx+87) xanchor .5 ypos 170 size (22 if touch else 24) color '#f6ecd8' font r13_ui_font()
+            text column['title'] xpos (cx+87) xanchor .5 ypos 230 xmaximum 175 text_align .5 size (21 if touch else 22) color '#263b52' font R13_UI_BOLD_FONT
             if first+offset<len(columns)-1 and offset<5:
-                add Solid('#c9a86a99' if column['here'] else '#d9b46c') xpos (cx+175) ypos 257 xysize (19,2)
-            $ row_ys = r13_fork_row_tops(column['rows'])
-            for ri,row in enumerate(column['rows']):
-                fixed:
-                    xpos cx ypos row_ys[ri] xysize (175,(56 if row['kind']=='locked' else 116))
-                    use r13_fork_card(column,row,small)
-            if len(row_ys)>1:
-                add R13ForkDash(2,row_ys[-1]+28-258) xpos (cx-10) ypos 258
-                for tick_y in row_ys[1:]:
-                    add R13ForkDash(10,2,True) xpos (cx-10) ypos (tick_y+28)
+                add Solid('#c9a86a99' if column['here'] else '#d9b46c') xpos (cx+175) ypos 321 xysize (7,2)
+            fixed:
+                area (cx,264,182,by-288)
+                use r13_fork_card_stack(column,small,by-288)
             if column['fate']:
                 button:
-                    xpos (cx+175-(56 if touch else 44)) ypos 200 xysize ((56,56) if touch else (44,44))
+                    xpos (cx+175-(56 if touch else 44)) ypos 264 xysize ((56,56) if touch else (44,44))
                     background None hover_background None
                     action SetScreenVariable('fate_open',None if fate_open==column['key'] else column['key'])
                     hovered SetScreenVariable('fate_open',column['key'])
@@ -256,17 +300,17 @@ screen r13_fork_screen():
                     alt R13_FORK_FATE_LINE
                     add R13ForkBadge(32) align (.5,.5)
                 if fate_open==column['key']:
-                    $ fate_box = (min(max(40,cx+175-246),1000),326)
+                    $ fate_box = (min(max(40,cx+175-246),1000),388)
     # The fate line is drawn last so it sits above the cards below it.
     if fate_box:
         button:
             xpos fate_box[0] ypos fate_box[1] xsize 236 padding (14,10)
-            background Frame(R13_NIGHT_UI+'preview_box.png',8,8)
+            background R13PaperFrame()
             action SetScreenVariable('fate_open',None) alt R13_FORK_FATE_LINE
-            text R13_FORK_FATE_LINE size small color '#f6ecd8' font r13_ui_font() xsize 208
-    add R13_NIGHT_UI+'diamond.png' xpos 56 ypos (by-18)
-    add Solid('#c9a86a99') xpos 66 ypos (by-14) xsize 1156 ysize 1
-    text '지나온 길을 모아, 다음 이야기를 찾아요.' xpos 64 ypos (by+ch//2) yanchor .5 size small color '#cdbb98' font r13_ui_font()
+            text R13_FORK_FATE_LINE size small color '#263b52' font R13_UI_BOLD_FONT xsize 208
+    add R13_NIGHT_UI+'diamond.png' xpos 114 ypos (by-18)
+    add Solid('#c9a86a99') xpos 114 ypos (by-14) xsize 1082 ysize 1
+    text '지나온 길을 모아, 다음 이야기를 찾아요.' xpos 114 ypos (by+ch//2) yanchor .5 size small color '#756f66' font R13_UI_BOLD_FONT
     viewport:
         area (470,by,390,ch) draggable True mousewheel 'horizontal'
         hbox:
@@ -274,11 +318,11 @@ screen r13_fork_screen():
             for ending,record in sorted((persistent.r13_fork_endings or {}).items()):
                 hbox:
                     spacing 8
-                    add Transform(r13_fork_image(record),xysize=(72,41),nearest=True) yalign .5
+                    add Transform(r13_fork_image(record),xysize=(72,41),fit='cover') yalign .5
                     vbox:
                         yalign .5
-                        text ('지난 결말 · %d회차'%record['run']) size small color '#b8b0a2' font r13_ui_font()
-                        text R13_FORK_ENDINGS.get(ending,'') size small color '#e3d6bd' font r13_ui_font()
+                        text ('지난 결말 · %d회차'%record['run']) size small color '#756f66' font R13_UI_BOLD_FONT
+                        text R13_FORK_ENDINGS.get(ending,'') size small color '#354151' font R13_UI_BOLD_FONT
     fixed:
         xpos 880 ypos by xysize (80,ch)
         use r13_control('‹',None,SetScreenVariable('first',max(0,first-1)),width=80,enabled=first>0,control_id='r13_fork_prev')
@@ -305,7 +349,7 @@ init 323 python:
             c.circle('#2b211b',(m,m),m-3)
             c.circle('#f1e6d0',(m-s//8,m-s//8),max(2,s//9))
             c.polygon('#f1e6d0',[(m-s//8-s//5,m+s//4),(m-s//8+s//5,m+s//4),(m-s//8+s//8,m+s//16),(m-s//8-s//8,m+s//16)])
-            q=renpy.render(Text('?',font=r13_ui_font(),size=max(10,s//2-2),color='#f2d28d'),s,s,st,at)
+            q=renpy.render(Text('?',font=R13_UI_BOLD_FONT,size=max(10,s//2-2),color='#f2d28d'),s,s,st,at)
             r.blit(q,(m+s//10,max(0,m-s//3)))
             return r
 
@@ -330,3 +374,13 @@ init 323 python:
             else:
                 for y in range(0,h,6):c.rect(col,(0,y,w,min(3,h-y)))
             return r
+
+# 기존 스토리 setter를 바꾸지 않고 확정 이벤트의 회상 기록만 관찰한다.
+init 331 python:
+    _r13_fork_observed_set=r13_v111_set
+    def r13_v111_set(key,value):
+        before=r13_v111_value(key)
+        result=_r13_fork_observed_set(key,value)
+        if value is True and before is not True and key in ('grand:fire','grand:soup'):
+            r13_fork_promote_grand(key.split(':',1)[1])
+        return result

@@ -12,6 +12,24 @@ init 999:
             textbutton "QA 닫기" action Return(None)
 
 init 999 python:
+    def r13_qa_map_reveal(key):
+        # 납품 B 마을 지도의 실제 뷰포트만 이동한다. 선택·이동은 시험의
+        # map_name_* / 이동 버튼 클릭으로 검증하며 게임 상태를 주입하지 않는다.
+        screen = renpy.get_screen("r13_map")
+        if screen is None or screen.scope.get("region") != "village":
+            raise ValueError("마을 지도가 열린 뒤 이름표를 드러내야 합니다.")
+        view = renpy.get_widget("r13_map", "r13_map_view")
+        if view is None:
+            raise ValueError("마을 지도 뷰포트가 아직 표시되지 않았습니다.")
+        vw, vh = R13_VILLAGE_B_VIEW[2:]
+        canvas = R13_VILLAGE_B_LAYOUT["canvas"]
+        zoom = max(screen.scope.get("village_zoom", 1.15),
+                   vw / float(canvas["width"]), vh / float(canvas["height"]))
+        cx, cy = R13_VILLAGE_B_PLACES[key]["label_center"]
+        view.xadjustment.change(max(0, min(view.xadjustment.range, cx * zoom - vw / 2.0)))
+        view.yadjustment.change(max(0, min(view.yadjustment.range, cy * zoom - vh / 2.0)))
+        renpy.restart_interaction()
+
     def r13_qa_dump():
         d=dict(result=room13.get("trial_result"),daram=room13.get("daram_state"),granny=room13.get("granny_state"),
             props=list(room13["propositions"]),closed=dict(room13.get("debate",{}).get("closed",{})),

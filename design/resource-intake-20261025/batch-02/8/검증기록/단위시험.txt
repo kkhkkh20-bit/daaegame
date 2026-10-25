@@ -1,0 +1,408 @@
+/workspace/daaegame/experiments/renpy-ch1/dev/test_action27_p0.py:29: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels=list(im.crop((250,140,370,300)).getdata());greens=[p for p in pixels if p[3]>128 and p[1]>p[0]*1.15 and p[1]>p[2]*1.15]
+./workspace/daaegame/experiments/renpy-ch1/dev/test_action27_p0.py:13: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/art/approved-action27-p0/originals/MK-2--resident_eunho.png'>
+  src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_action27_p0.py:13: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/art/approved-action27-p0/originals/MK-3--resident_guseul.png'>
+  src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_action27_p0.py:13: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/art/approved-action27-p0/originals/WS-1--resident_tok.png'>
+  src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_action27_p0.py:13: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/art/approved-action27-p0/originals/MK-4--resident_nubi.png'>
+  src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_action27_p0.py:13: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/art/approved-action27-p0/originals/MK-5--resident_yeoni.png'>
+  src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_action27_p0.py:13: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/art/approved-action27-p0/originals/PO-1--resident_sling.png'>
+  src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_action27_p0.py:13: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/art/approved-action27-p0/originals/SQ-2--resident_piko.png'>
+  src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_action27_p0.py:13: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/art/approved-action27-p0/originals/MK-6--resident_dalgeurak.png'>
+  src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+..................................................................................................F................................................../workspace/daaegame/experiments/renpy-ch1/dev/test_drawer_puzzle_art.py:52: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/room13-pixel-inspect-rubbing-paper.webp'>
+  sizes = {Image.open(ROOT / "game" / states[k]["file"]).size for k in ("paper", "rubbing")}
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_drawer_puzzle_art.py:52: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/room13-pixel-inspect-rubbing-done.webp'>
+  sizes = {Image.open(ROOT / "game" / states[k]["file"]).size for k in ("paper", "rubbing")}
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+......................................./workspace/daaegame/experiments/renpy-ch1/dev/test_evidence_drawer.py:16: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/game/systems/room13_evidence_drawer.rpy' mode='r' encoding='utf-8'>
+  return open(os.path.join(ROOT, "game", "systems", "room13_evidence_drawer.rpy"), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/build_evidence_drawer.py:28: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/game/v111/records.json' mode='r' encoding='utf-8'>
+  records = json.load(open(os.path.join(GAME, "v111", "records.json"), encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/build_evidence_drawer.py:22: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_newworld_rules.rpy' mode='r' encoding='utf-8'>
+  rules = open(os.path.join(GAME, "room13_v111_newworld_rules.rpy"), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/build_evidence_drawer.py:54: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/game/room13_v111.rpy' mode='r' encoding='utf-8'>
+  for no, line in enumerate(open(path, encoding="utf-8"), 1):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/build_evidence_drawer.py:54: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy' mode='r' encoding='utf-8'>
+  for no, line in enumerate(open(path, encoding="utf-8"), 1):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/build_evidence_drawer.py:54: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days123.rpy' mode='r' encoding='utf-8'>
+  for no, line in enumerate(open(path, encoding="utf-8"), 1):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/build_evidence_drawer.py:54: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days45.rpy' mode='r' encoding='utf-8'>
+  for no, line in enumerate(open(path, encoding="utf-8"), 1):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/build_evidence_drawer.py:54: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy' mode='r' encoding='utf-8'>
+  for no, line in enumerate(open(path, encoding="utf-8"), 1):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/build_evidence_drawer.py:54: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_field_layout.rpy' mode='r' encoding='utf-8'>
+  for no, line in enumerate(open(path, encoding="utf-8"), 1):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/build_evidence_drawer.py:54: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_grand_win.rpy' mode='r' encoding='utf-8'>
+  for no, line in enumerate(open(path, encoding="utf-8"), 1):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/build_evidence_drawer.py:54: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_idle.rpy' mode='r' encoding='utf-8'>
+  for no, line in enumerate(open(path, encoding="utf-8"), 1):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/build_evidence_drawer.py:54: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_later_bindings.rpy' mode='r' encoding='utf-8'>
+  for no, line in enumerate(open(path, encoding="utf-8"), 1):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/build_evidence_drawer.py:54: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_meeting_stage.rpy' mode='r' encoding='utf-8'>
+  for no, line in enumerate(open(path, encoding="utf-8"), 1):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/build_evidence_drawer.py:54: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_newworld_rules.rpy' mode='r' encoding='utf-8'>
+  for no, line in enumerate(open(path, encoding="utf-8"), 1):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/build_evidence_drawer.py:54: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_newworld_text.rpy' mode='r' encoding='utf-8'>
+  for no, line in enumerate(open(path, encoding="utf-8"), 1):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/build_evidence_drawer.py:54: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_owl_prevent.rpy' mode='r' encoding='utf-8'>
+  for no, line in enumerate(open(path, encoding="utf-8"), 1):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/build_evidence_drawer.py:54: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_reactions.rpy' mode='r' encoding='utf-8'>
+  for no, line in enumerate(open(path, encoding="utf-8"), 1):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/build_evidence_drawer.py:82: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/game/v111/field-bindings.json' mode='r' encoding='utf-8'>
+  walk(json.load(open(os.path.join(GAME, "v111", "field-bindings.json"), encoding="utf-8")))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+./workspace/daaegame/experiments/renpy-ch1/dev/test_evidence_drawer.py:31: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/game/v111/records.json' mode='r' encoding='utf-8'>
+  records = json.load(open(os.path.join(ROOT, "game", "v111", "records.json"), encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+./workspace/daaegame/experiments/renpy-ch1/dev/test_evidence_drawer.py:44: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_newworld_rules.rpy' mode='r' encoding='utf-8'>
+  rules = open(os.path.join(ROOT, "game", "room13_v111_newworld_rules.rpy"), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.F....................................................................................................................................................................../workspace/daaegame/experiments/renpy-ch1/dev/map27_pixel_derivative.py:19: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  image.putdata([(r,g,b,a) if a else (0,0,0,0) for r,g,b,a in image.getdata()])
+............................................................................................................................................................................................................................................................................................................................................/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/piko-paint-sketchboard.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/mungchi-store-boxes.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/doto-write-ledger.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/jongjong-sort-letters.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/musoe-inspect-tool.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/nubi-tie-laundry.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/buri-event-toolbox.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/siluk-event-whisper.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/sling-event-steam.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/ttadak-doorframe.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/teacher-wet-coat.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/solbang-herb-bundle.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/kongi-meeting-seated.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/lamplighter-lightstone.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/tok-repair-lantern.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/neoul-point-documents.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/kalbaram-examine-ground.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/nabi-slice-carrot.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/eunho-ledger.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/guseul-scale.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/hyeoni-lute.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/badook-lantern-patrol.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/ppul-meeting-seated.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/seori-meeting-seated.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/tori-meeting-seated.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/seryeon-meeting-seated.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/kid-bang-play.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/kid-kkam-play.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/kid-mong-play.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/bami-seated-writing.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/bodum-basket-cloth.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/dalgeurak-pots-display.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/guldol-stone-tapping.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/kkwak-haul-net.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/mulgyeol-rope-coiling.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/granny-keyledger.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/karo-axlewrap.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/librarian-bookpaper.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/momo-lampnumber.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/owlgp-notebook.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/seol-bellrope.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/tosil-thermos.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/yeoni-mend.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/bori-tie-firewood.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_resident_poses_a.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/doto-compare-ration-slips.webp'>
+  im = Image.open(GAME / f["file"])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/case.py:589: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/resident-poses-a/jongjong-pack-mailbag.webp'>
+  if method() is not None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+...................../workspace/daaegame/experiments/renpy-ch1/dev/test_role_connect.py:37: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/art/role-connect-20261016/sources/approved/approved-change.csv' mode='r' encoding='utf-8-sig'>
+  for r in csv.DictReader((ART / "sources/approved" / name).open(encoding="utf-8-sig")):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_role_connect.py:37: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/art/role-connect-20261016/sources/approved/three-approved-changes.csv' mode='r' encoding='utf-8-sig'>
+  for r in csv.DictReader((ART / "sources/approved" / name).open(encoding="utf-8-sig")):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+................................................................................................................................................................../workspace/daaegame/experiments/renpy-ch1/dev/test_spatial_contacts.py:43: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/art/approved-seori-threequarter-v2/source-original.png'>
+  self.assertEqual(Image.open(source).size,(1037,1516))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+........<string>:1: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/daaegame/experiments/renpy-ch1/game/assets/room13-special-scenes.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.......................<string>:2: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/room13-typography-tokens.json'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.<string>:2: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/room13-typography-tokens.json'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.<string>:2: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/room13-typography-tokens.json'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.<string>:2: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/room13-typography-tokens.json'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.<string>:2: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/room13-typography-tokens.json'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.<string>:2: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/room13-typography-tokens.json'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.<string>:2: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/room13-typography-tokens.json'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.<string>:2: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/room13-typography-tokens.json'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+............................................................................
+======================================================================
+FAIL: test_literal_inventory_has_no_unreviewed_npc_occurrence (test_dialogue_beats.ContextReviewEvidence.test_literal_inventory_has_no_unreviewed_npc_occurrence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/daaegame/experiments/renpy-ch1/dev/test_dialogue_beats.py", line 61, in test_literal_inventory_has_no_unreviewed_npc_occurrence
+    self.assertEqual(inventory,json.loads((out/'dynamic-literal-inventory.json').read_text()))
+AssertionError: Lists differ: [{'so[125566 chars]': 1770, 'context': 'label r13_v111_owl_invita[876921 chars]lse}] != [{'so[125566 chars]': 1767, 'context': 'label r13_v111_owl_invita[876921 chars]lse}]
+
+First differing element 506:
+{'sou[43 chars]': 1770, 'context': 'label r13_v111_owl_invita[184 chars]True}
+{'sou[43 chars]': 1767, 'context': 'label r13_v111_owl_invita[184 chars]True}
+
+Diff is 1127355 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_table_is_current (test_evidence_drawer.EvidenceDrawer.test_table_is_current)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/daaegame/experiments/renpy-ch1/dev/test_evidence_drawer.py", line 27, in test_table_is_current
+    self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+AssertionError: 1 != 0 : 자리표가 이야기 원본과 다르다. python3 dev/build_evidence_drawer.py --write
+
+
+----------------------------------------------------------------------
+Ran 988 tests in 100.731s
+
+FAILED (failures=2)
+PASS: 9 actual init94/97/100/173 same-day learning routes; legacy pending until live opening; calendar/notebook purity; owned-only evidence; no automatic pickup; post-case delegation; five Seori responses; Tok historical replay
+{
+  "passed": true,
+  "checks": [
+    "8 claims, statements, conclusions and evidence ids are consistent",
+    "counters: options, replies and gates are consistent",
+    "accepted evidence is a subset of the original support sets",
+    "break / soft (other statement, consent) / wrong; one record, one claim",
+    "press reveals hidden statement; true statements are not required",
+    "conclusion unlocks after all required statements; propositions untouched",
+    "partial rebuttal: engageable with some evidence, stuck when nothing breakable is left",
+    "partial close is safe when all or none of the statements were broken",
+    "C2 passage counter appears only after C1",
+    "no trust meter; missing evidence makes a claim unarguable; give-up closes per session",
+    "C3 opens after C2, C4 after C3",
+    "F3 manpower depends on real preparation flags",
+    "F4 s2 skipped after C4",
+    "seat stances derived from progress; sessions separated",
+    "conclusion positions vary per claim",
+    "selection skips true statements after a break",
+    "goal line shows meeting countdown and evidence/preparation readiness"
+  ]
+}
+{
+  "passed": true,
+  "checks": [
+    "all diagram candidate pairs",
+    "reasonable wrong hypothesis rejected",
+    "read-only notes no unseen clue disclosure",
+    "tool ownership check",
+    "once-only old activity reward/time",
+    "owned evidence required; base presentation always invoked",
+    "presentation changes response without opening passage",
+    "first/repeat admission and late-case preserved",
+    "old completed save no re-payment",
+    "trial cancel returns same claim"
+  ]
+}
+{
+  "pass": true,
+  "checks": [
+    "unique pickups including repeated clicks",
+    "wrong motions and a released groove do not open; nothing consumed",
+    "wrong item/target keeps inventory",
+    "placed paper never respawns or duplicates",
+    "save-roundtrip mid-puzzle preserves completion and one reward",
+    "reusable magnifier returns real render targets in both views",
+    "repeat completion cannot farm anything",
+    "portable state follows family; active crime scene rejects new kit",
+    "known motion opens without rubbing"
+  ],
+  "final_items": [
+    "pencil",
+    "ruler",
+    "magnifier"
+  ]
+}
+{
+  "pass": true,
+  "evidence": 34,
+  "testimony": 6,
+  "page_size": 5,
+  "checks": [
+    "explicit categories",
+    "acquired only and no duplicates",
+    "archive never submitted",
+    "34 entries pagination",
+    "old save factual people recovery without mutations",
+    "real history and thought distinction",
+    "limitation copy removed only from UI"
+  ]
+}
+{
+  "passed": true,
+  "checks": [
+    "same-period chronological/recent order",
+    "current evidence only in presentation",
+    "retired favorites do not mutate state; seen changes UI only",
+    "unknown record rejected",
+    "legacy missing UI fields safe",
+    "stable five-row pagination",
+    "separate documents do not imply comparison",
+    "explicit comparison grants once without time cost"
+  ],
+  "retain_callbacks": 1
+}
+{
+  "passed": true,
+  "checks": [
+    "same-period chronological/recent order",
+    "current evidence only in presentation",
+    "retired favorites do not mutate state; seen changes UI only",
+    "unknown record rejected",
+    "legacy missing UI fields safe",
+    "stable five-row pagination",
+    "separate documents do not imply comparison",
+    "explicit comparison grants once without time cost"
+  ],
+  "retain_callbacks": 1
+}
+PASS: archive filter and read isolation; all known appointments; past/unknown appointments absent; current record read tracking
+PASS: automatic read action never exits its parent interaction
+PASS: fresh / legacy route gates; new runs never inherit the route from earlier runs
+{"status": "passed", "conditions": 168, "optional_people": ["resident_kongi", "resident_piko", "resident_ppul", "resident_seol", "resident_sling", "resident_somi", "resident_tori", "resident_yeoni"], "changed_schedule_entries": 190, "all_35_content_residents_reachable": 35, "first_day_square": [{"period": 0, "before": ["doto", "resident_kongi", "resident_owlgp", "resident_piko", "resident_ppul", "resident_seol", "resident_tori"], "after": ["doto", "resident_owlgp", "resident_seol", "resident_tori"]}, {"period": 1, "before": ["doto", "resident_lamplighter", "resident_piko", "resident_seol", "resident_sling", "resident_somi", "resident_tori", "resident_yeoni"], "after": ["doto", "resident_lamplighter", "resident_piko"]}, {"period": 2, "before": ["doto", "resident_badook", "resident_bori"], "after": ["doto", "resident_badook", "resident_bori"]}], "maxima": {"gate": 6, "workshop": 8, "store": 8, "dining": 3, "square": 6, "clinic": 2, "school": 12, "inn": 6, "post": 7, "hall": 2, "kitchen": 1, "facility": 2, "greenhouse": 1}, "checks": ["Non-optional story-critical locations unchanged for all states", "Piko clinic and shelter/patient overrides preserved", "Dead/detained residents absent", "Period3 remains evening, home is not field presence", "No schedule query mutates any story state"]}
+{
+  "pass": true,
+  "checks": [
+    "No tool, no direct object observation, wrong location or missing E03 cannot record",
+    "Before-E04 diagram observation adds only one optional note; no evidence/time/flags/passages",
+    "JSON save/load and repeated use retain one note with original timestamp",
+    "Only the actually recorded observation exposes its own question",
+    "Comparison hint follows existing map day/time availability; cost/grant remain only on map",
+    "Presentation retains original pipeline and requires owned record plus completed optional question",
+    "Daram follow-up remains unavailable while child is held",
+    "Legacy save view is read-only; notes associate with E04 without falsely granting it",
+    "Commit occurs after screen Return; first-save signal true once and repeat false",
+    "Seam popup directly reaches child conversation only when companion is present and note exists"
+  ]
+}
+PASS: testimony requires conversation; owned-only comparison; presentation; no jobs
+PASS: all-skip crosses unread lines; ten choice/menu boundaries restore both original preferences; read-only mode and external stops restore the preference

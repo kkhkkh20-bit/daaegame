@@ -37,11 +37,19 @@ class CompactDialogue(unittest.TestCase):
         self.assertEqual(env['_r13_say_top']('첫 줄.\n둘째 줄.\n셋째 줄.'),env['_r13_say_top']('첫 줄.')-35)
 
     def test_same_font_and_name_anchor(self):
-        # 0.19.98 night dialogue (owner mockup): same font and size token, name on the ribbon
-        # directly above the text, which stacks up from a fixed bottom.
-        self.assertIn('size r13_night_say_size() line_spacing 8 xsize b_text_width font r13_ui_font()',SOURCE)
-        self.assertIn('ypos (r13_night_say_top(what)-62)',SOURCE)
-        self.assertIn('background None padding (0,0)',SOURCE)
+        # Approved B dialogue: the real Bold font is shared by text and name;
+        # the ribbon stays anchored to the text as long lines move upward.
+        speech=SOURCE.split('# Approved B notebook dialogue;',1)[1].split('\nstyle legacy_choice_frame',1)[0]
+        self.assertIn('size r13_night_say_size() line_spacing 4 xsize b_text_width font R13_UI_BOLD_FONT',speech)
+        self.assertRegex(speech,r'text who id "who"[^\n]+font R13_UI_BOLD_FONT')
+        self.assertIn('$ b_text_top = r13_night_say_top(what)',speech)
+        self.assertIn('xpos b_text_x ypos b_text_top',speech)
+        offset=int(re.search(r'xpos b_text_x ypos \(r13_night_say_top\(what\)-(\d+)\)',speech).group(1))
+        name=speech.split('at r13_name_fade',1)[1]
+        padding=tuple(map(int,re.search(r'padding \((\d+),(\d+),(\d+),(\d+)\)',name).groups()))
+        sizes=tuple(map(int,re.search(r'text who[^\n]+size r13_read_size\((\d+),(\d+)\)',name).groups()))
+        for size in sizes:self.assertGreaterEqual(offset-size-padding[1]-padding[3],8)
+        self.assertIn('background None padding (0,0)',speech)
 
 if __name__=='__main__':
     unittest.main()
