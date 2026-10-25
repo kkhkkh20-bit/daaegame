@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "a55b36899a43f9f9e169c85da180c3aa93f44ebe0a4d70e713823c4be1ed6b86",
+  "entries": [
+    {
+      "id": "NW_D03_S06_T21",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "after",
+        "MS14_D03_S06_L0032",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D03_S06_L0032",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "책이요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1400,
+          "label": "r13_v111_somi_lead",
+          "guards": []
+        }
+      ],
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "27d4f46c011ae240e14acf50dcc5ba185297120f57217c3b164fca62c82ef64d",
+      "baseline_hash": "014b1f6b1a024c177e65c0b93174fcb58d8568d69804033416465de5567b3268",
+      "uid": "e2e8c02e6c4b1dd267e36c2f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D03_S06_T22",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "after",
+        "MS14_D03_S06_L0032",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D03_S06_L0032",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "글자가 잘 안 읽힌다고요. 그 집 오갈 때 네로가 도왔으니까, 네로한테 물어봐요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1400,
+          "label": "r13_v111_somi_lead",
+          "guards": []
+        }
+      ],
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "27d4f46c011ae240e14acf50dcc5ba185297120f57217c3b164fca62c82ef64d",
+      "baseline_hash": "3d1c46524997c15604d06f2837ec582ea2c8c68ee6958950f2cebda73bbafe66",
+      "uid": "374ed032f888de5ebe3b7fe6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

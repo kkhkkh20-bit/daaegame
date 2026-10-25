@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "c4dd478aa7d5fd1af09bcd4d6e2e6c0a2f051ad3f169867b7cef0a55a0eecf48",
+  "source_stamp": "a55b36899a43f9f9e169c85da180c3aa93f44ebe0a4d70e713823c4be1ed6b86",
   "entries": [
     {
       "id": "NW_D13_SR01",
@@ -33,7 +33,7 @@
         }
       ],
       "scene_title": "장면 13-2. 벤치 한 칸",
-      "source_hash": "572bccb1291c6fe8d1e6105575461139adcff622d7de858496730a324caa8bb4",
+      "source_hash": "3b53b1c751186a5a10ac7ffe78b6fb6f231c6b6047ccf4a96d7aeb158b861e64",
       "baseline_hash": "5608f9d5f140ded567c4cb8a4ca52c67028349aa6f4c3dab654f621b95118939",
       "uid": "8ee9d624d77f474510008cab",
       "review_status": "draft",
@@ -72,7 +72,7 @@
         }
       ],
       "scene_title": "장면 13-2. 벤치 한 칸",
-      "source_hash": "572bccb1291c6fe8d1e6105575461139adcff622d7de858496730a324caa8bb4",
+      "source_hash": "3b53b1c751186a5a10ac7ffe78b6fb6f231c6b6047ccf4a96d7aeb158b861e64",
       "baseline_hash": "347f7ef847a774e9117f9cfe5c48b3bf948911228896cc9febae2722898866ba",
       "uid": "cafdf2278ecba582a1eb165f",
       "review_status": "draft",
@@ -111,7 +111,7 @@
         }
       ],
       "scene_title": "장면 13-2. 벤치 한 칸",
-      "source_hash": "572bccb1291c6fe8d1e6105575461139adcff622d7de858496730a324caa8bb4",
+      "source_hash": "3b53b1c751186a5a10ac7ffe78b6fb6f231c6b6047ccf4a96d7aeb158b861e64",
       "baseline_hash": "b2eb437038a8c86a440e8ce5116fafe8e3a3a295ef3905e93aa5787612ffd278",
       "uid": "5937399099db618ed6ae856f",
       "review_status": "draft",
@@ -150,9 +150,87 @@
         }
       ],
       "scene_title": "장면 13-2. 벤치 한 칸",
-      "source_hash": "572bccb1291c6fe8d1e6105575461139adcff622d7de858496730a324caa8bb4",
+      "source_hash": "3b53b1c751186a5a10ac7ffe78b6fb6f231c6b6047ccf4a96d7aeb158b861e64",
       "baseline_hash": "e77dceac50ebf8d9d46e33edb71635e3f8d6448b531932dc919161c678958e28",
       "uid": "c82e8727bb2ddd1028a1c8e4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D13_S02_T21",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "after",
+        "MS14_D13_S02_L0017",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D13_S02_L0017",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……무슨 얘기를요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1880,
+          "label": "r13_v111_gate_bench13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "3b53b1c751186a5a10ac7ffe78b6fb6f231c6b6047ccf4a96d7aeb158b861e64",
+      "baseline_hash": "6c5287d0bac1775d5940126700a83a2e6ee134583e72f0e11ef2a8cb052ff268",
+      "uid": "e9f1acc5cdeaf89250f32c1f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D13_S02_T22",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "after",
+        "MS14_D13_S02_L0017",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D13_S02_L0017",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "입구에 머물 자리도, 세 사람 먹을 몫도 내주겠소. 부인 이름은 내가 빼겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1880,
+          "label": "r13_v111_gate_bench13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "3b53b1c751186a5a10ac7ffe78b6fb6f231c6b6047ccf4a96d7aeb158b861e64",
+      "baseline_hash": "d016052162e560491418441ed75f328784c4874100218135f44c4faebfa394ec",
+      "uid": "0467433e1bd1914f22c24ba2",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d13|MS14_D13_S02|patch|after|행 조건 없음",
@@ -189,7 +267,7 @@
         }
       ],
       "scene_title": "장면 13-2. 벤치 한 칸",
-      "source_hash": "572bccb1291c6fe8d1e6105575461139adcff622d7de858496730a324caa8bb4",
+      "source_hash": "3b53b1c751186a5a10ac7ffe78b6fb6f231c6b6047ccf4a96d7aeb158b861e64",
       "baseline_hash": "edd161e4d0e96cb6e92e66eb0c734090d5aea3b6534a4808385f6737e4339817",
       "uid": "2a0c3242efa9d3336c86fe24",
       "review_status": "draft",
@@ -228,7 +306,7 @@
         }
       ],
       "scene_title": "장면 13-2. 벤치 한 칸",
-      "source_hash": "572bccb1291c6fe8d1e6105575461139adcff622d7de858496730a324caa8bb4",
+      "source_hash": "3b53b1c751186a5a10ac7ffe78b6fb6f231c6b6047ccf4a96d7aeb158b861e64",
       "baseline_hash": "aabcde195112a45d8e7f65c2c52f5dea44e7e316bb0da820c55598e14c004c6e",
       "uid": "f828b81ec5ce91c41d0b6f47",
       "review_status": "draft",
@@ -267,7 +345,7 @@
         }
       ],
       "scene_title": "장면 13-2. 벤치 한 칸",
-      "source_hash": "572bccb1291c6fe8d1e6105575461139adcff622d7de858496730a324caa8bb4",
+      "source_hash": "3b53b1c751186a5a10ac7ffe78b6fb6f231c6b6047ccf4a96d7aeb158b861e64",
       "baseline_hash": "47e7485cebaa090a669f142ae585cdd9a90b6418d8898211d4b933a978a128c5",
       "uid": "e95c15242f5bf5dd9c323de6",
       "review_status": "draft",
@@ -306,7 +384,7 @@
         }
       ],
       "scene_title": "장면 13-2. 벤치 한 칸",
-      "source_hash": "572bccb1291c6fe8d1e6105575461139adcff622d7de858496730a324caa8bb4",
+      "source_hash": "3b53b1c751186a5a10ac7ffe78b6fb6f231c6b6047ccf4a96d7aeb158b861e64",
       "baseline_hash": "6cc7d80d9e08928a0c31324331c5258694ad470ce1339756e2d7f4a4fed3910c",
       "uid": "fd22efd8c2849bf16ebf25bc",
       "review_status": "draft",

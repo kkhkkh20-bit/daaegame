@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "c4dd478aa7d5fd1af09bcd4d6e2e6c0a2f051ad3f169867b7cef0a55a0eecf48",
+  "source_stamp": "a55b36899a43f9f9e169c85da180c3aa93f44ebe0a4d70e713823c4be1ed6b86",
   "entries": [
     {
       "id": "NW_D11_S02_V01",
@@ -33,9 +33,87 @@
         }
       ],
       "scene_title": "장면 11-2. 폐온실의 낮은 문",
-      "source_hash": "ca044676f5c361f9aa9b4b032289f84012f1e8e223d2b4d9696020f651603977",
+      "source_hash": "4f7d8ebef2f293fcf7b6e2b70449b8a9d9eb99f308ccae13f1ab22e9383d2156",
       "baseline_hash": "066d55c985a45ba96b83aa0c0f29972efaf46846d5666654767b8afc231de93a",
       "uid": "bb082971347a5dcea7cc0087",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D11_S02_T21",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "after",
+        "MS14_D11_S02_L0013",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D11_S02_L0013",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "토실이를?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 175,
+          "label": "r13_v111_reunion11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-2. 폐온실의 낮은 문",
+      "source_hash": "4f7d8ebef2f293fcf7b6e2b70449b8a9d9eb99f308ccae13f1ab22e9383d2156",
+      "baseline_hash": "ad8e94136eabf4733a732b5080cd53fed3bc197ce84897c8a1c813b15ce10443",
+      "uid": "be3b57a22ade140776d48724",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D11_S02_T22",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "after",
+        "MS14_D11_S02_L0013",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D11_S02_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네가 어디 있는지 알아 오라는 심부름을 받았대. 학교 나비 씨한테 맡기고 왔어. 여기 있는 건 말 안 했고.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 175,
+          "label": "r13_v111_reunion11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-2. 폐온실의 낮은 문",
+      "source_hash": "4f7d8ebef2f293fcf7b6e2b70449b8a9d9eb99f308ccae13f1ab22e9383d2156",
+      "baseline_hash": "fe2ccfb97a745cd14f8c56b50a0f62b3da9731ff316477247dce67370556606e",
+      "uid": "150a01781787893126607412",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d11|MS14_D11_S02|patch|after|행 조건 없음",
