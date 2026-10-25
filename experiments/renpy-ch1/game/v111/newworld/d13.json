@@ -5,11 +5,11 @@
     },
     "MS14_D13_S01_L0005": {
       "text": "담요가 하나 있긴 한데, 에휴, 끝이 터졌어요. 당기면 솜만 나오겠네. 내 축처럼.",
-      "expression": "anxious"
+      "expression": "flustered"
     },
     "MS14_D13_S01_L0016": {
       "text": "다 됐으면 주세요. 판돌 씨한테 가져갈게요. 아이고, 허리야…….",
-      "expression": "anxious"
+      "expression": "flustered"
     },
     "MS14_D13_S01_L0017": {
       "text": "응? 이게 내 거요? 내 거 아니오. 나중에 다른 사람도 써야지.",
@@ -41,18 +41,18 @@
     },
     "MS14_D13_S04_L0057": {
       "text": "학교까지 데려다주고 금방 올게요.",
-      "expression": "anxious"
+      "expression": "neutral"
     },
     "MS14_D13_S04_L0083": {
       "text": "안 해요. 환자나 짐은 옮겨도 사람 묶어서 데려가는 건 안 맡아요."
     },
     "MS14_D13_S04_L0085": {
       "text": "비웠어요. 자, 여기서 받아요.",
-      "expression": "anxious"
+      "expression": "neutral"
     },
     "MS14_D13_B_L0002": {
       "text": "더 태울 자리가 없어요. 먼저 실은 사람 내려놓고 와야 해요.",
-      "expression": "anxious"
+      "expression": "neutral"
     },
     "MS14_D13_S04_L0004": [
       {
@@ -137,7 +137,7 @@
     },
     "MS14_D13_S02_L0007": {
       "text": "우리 셋 다 누우면, 아저씨는 어디 앉아?",
-      "expression": "anxious"
+      "expression": "neutral"
     },
     "MS14_D13_S02_L0008": {
       "text": "나는 저 의자에 앉겠소. 너희 아빠 발이 벤치 밖으로 나오면 좀 접어 주시오."
@@ -179,14 +179,14 @@
     },
     "MS14_D13_S02_L0025": {
       "text": "나하고 다람이 있을 자리는 학교에 확인해 뒀어. 까로 씨가 데려다주면 돼.",
-      "expression": "anxious"
+      "expression": "neutral"
     },
     "MS14_D13_S02_L0026": {
       "text": "까로 씨까지 가면 여기 수레는 누가 맡지?"
     },
     "MS14_D13_S02_L0027": {
       "text": "그러네. 까로 씨가 못 가면, 다람이랑 같이 걸어 줄 사람을 찾아볼게.",
-      "expression": "anxious"
+      "expression": "neutral"
     },
     "MS14_D13_S02_L0029": {
       "text": "내일도 여기 머물 수는 있습니까?"
@@ -337,7 +337,7 @@
     },
     "MS14_D13_S04_L0064": {
       "text": "응. 여기서 다람이만 보고 있을게.",
-      "expression": "anxious"
+      "expression": "neutral"
     },
     "MS14_D13_S04_L0058": {
       "text": "……아빠도 와.",
@@ -351,7 +351,7 @@
     },
     "MS14_D13_S04_L0062": {
       "text": "도착해서 기다릴게. 당신도 와.",
-      "expression": "anxious"
+      "expression": "neutral"
     },
     "MS14_D13_S04_L0016": {
       "text": "판돌 씨, 여기요. 제 어깨 놓지 마세요."
@@ -365,7 +365,7 @@
     },
     "MS14_D13_S04_L0021": {
       "text": "판돌 씨. 학교 안쪽으로 모실게요.",
-      "expression": "anxious"
+      "expression": "neutral"
     },
     "MS14_D13_S04_L0022": {
       "text": "이 담요는…… 가져가도 되오?",
@@ -380,7 +380,7 @@
     },
     "MS14_D13_S04_L0068": {
       "text": "모모 씨, 여기 자리 있어요. 안으로 오세요.",
-      "expression": "anxious"
+      "expression": "neutral"
     },
     "MS14_D13_S04_L0069": {
       "text": "굴돌 씨도 내려오세요. 학교에 자리 있어요."
@@ -391,7 +391,7 @@
     },
     "MS14_D13_S04_L0071": {
       "text": "여기 앉아요. 젖은 건 벗어 두세요.",
-      "expression": "anxious"
+      "expression": "neutral"
     },
     "MS14_D13_S04_L0040": {
       "text": "내 손…… 좀 펴 주시오.",
@@ -480,14 +480,14 @@
     },
     "MS14_D13_A_L0010": {
       "text": "먹어. 당신부터 먹어.",
-      "expression": "anxious"
+      "expression": "neutral"
     },
     "MS14_D13_A_L0011": {
       "text": "다람이 먼저 주고……."
     },
     "MS14_D13_A_L0012": {
       "text": "세 몫이야. 당신 것도 있어.",
-      "expression": "anxious"
+      "expression": "neutral"
     },
     "MS14_D13_A_L0014": {
       "text": "……여긴 따뜻해.",
@@ -626,7 +626,7 @@
         "speaker": "엄마",
         "kind": "dialogue",
         "text": "판돌 씨가 수레에 있어.",
-        "expression": "anxious",
+        "expression": "neutral",
         "when": "daram_not_watching13"
       },
       {
@@ -1013,7 +1013,8 @@
         "speaker": "다람",
         "kind": "dialogue",
         "text": "다람이요! 맨날 보면서.",
-        "when": "wild_omen13_gate"
+        "when": "wild_omen13_gate",
+        "expression": "joy"
       },
       {
         "id": "NW_WO_D13_17",
@@ -1301,7 +1302,7 @@
         "speaker": "다람",
         "kind": "dialogue",
         "text": "아빠, 저 빈 칸은 뭐야?",
-        "expression": "anxious",
+        "expression": "neutral",
         "when": "daram_watching13"
       },
       {
@@ -1948,7 +1949,7 @@
         "speaker": "누비",
         "kind": "dialogue",
         "text": "나한테 시킨 것도 저 사람이에요. 때리면 저 사람 장부도 같이 묻혀요.",
-        "expression": "anxious"
+        "expression": "angry"
       }
     ],
     "crowd_record_read13": [
