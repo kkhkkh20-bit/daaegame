@@ -1,6 +1,7 @@
-# QA-only proposed source2 specimens, NOT approval of all investigation art or a 2x2 pipeline.
+# The two source2 poses now use the approved resident-poses-a replacements.
+# Keep exact artwork fingerprints and the original stature, placement and input checks.
 init 999 python:
-    R13_S2_EXPECTED = {'resident_ttadak': {'file': 'assets/investigation-source2/ttadak-doorframe-v1.webp', 'crop': [30, 82, 967, 1391], 'nearest': True, 'foot': [517.75, 1390], 'head': [300, 0, 430, 450], 'contact': 'standing', 'reviewed': False, 'map_action': True, 'stature_ratio': 1.0, 'source_sha256': 'c8f2b481ff3a4d4fb8e3231b586541f649a912455ccea25cad81b1d32145f89b', 'native_detail': True}, 'resident_tosil': {'file': 'assets/investigation-source2/tosil-thermos-v1.webp', 'crop': [153, 17, 733, 1483], 'nearest': True, 'foot': [418.0, 1482], 'head': [0, 0, 733, 630], 'contact': 'standing', 'reviewed': False, 'map_action': True, 'stature_ratio': 1.0, 'source_sha256': '7c4ac82394064772fc0d1db6176fd467391d9cbf20f9a30eea29f03294b763ff', 'native_detail': True}}
+    R13_S2_EXPECTED = {'resident_ttadak': {'file': 'assets/resident-poses-a/ttadak-doorframe.webp', 'crop': [0, 0, 1012, 1511], 'nearest': True, 'foot': [541.84, 1509.91], 'head': [313.96, 0.0, 450.01, 488.82], 'contact': 'standing', 'reviewed': False, 'map_action': True, 'stature_ratio': 1.0, 'source_sha256': 'f9970f9d443c09c3381f17811409f1b864c1ee68f50189bc38e06a7e42a6d98c', 'native_detail': True, 'resident_pose_a': True}, 'resident_tosil': {'file': 'assets/resident-poses-a/tosil-thermos.webp', 'crop': [0, 0, 738, 1506], 'nearest': True, 'foot': [420.85, 1504.98], 'head': [0.0, 0.0, 738.0, 639.77], 'contact': 'standing', 'reviewed': False, 'map_action': True, 'stature_ratio': 1.0, 'source_sha256': '8a18e03c81e5af29cc1b433fa75fadbbb64b4f2dd3426b07ac2e3629c091e8a9', 'native_detail': True, 'resident_pose_a': True}}
 
     def r13_s2_begin(person,pose,period,height,foot):
         r13_pd_begin('proposed-source2-'+person)
@@ -16,7 +17,7 @@ init 999 python:
         assert actor['pose']==r13_s2_pose,(actor['pose'],r13_s2_pose)
         spec=r13_acting_spec(r13_s2_person,r13_s2_pose)
         expected=R13_S2_EXPECTED[r13_s2_person]
-        for key in ('file','crop','foot','head','source_sha256','native_detail','stature_ratio'):
+        for key in ('file','crop','foot','head','source_sha256','native_detail','stature_ratio','resident_pose_a'):
             assert spec.get(key)==expected[key],('Wrong source2 registry',key,spec.get(key),expected[key])
         row=r13_pd_row(actor,'r13_hub')
         assert actor['height']==r13_s2_height,('Unexpected stature change',actor['height'],r13_s2_height)
