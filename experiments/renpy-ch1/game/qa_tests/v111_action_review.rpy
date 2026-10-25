@@ -101,7 +101,9 @@ testcase v111_ar_d13_deal:
     assert eval (qa_nw_seen("판돌 아저씨가 수레에 있어") and qa_nw_seen("아침에 학교에서 떨던 그분이"))
     assert eval (r13_goal_state()[2]=="명단에 빈칸이 있는 한, 다음은 누구든 될 수 있다." and r13_goal_state()[1]==1)
     click "조건을 더 묻는다"
-    click pos (900,600) until "가족 셋이 수락하고 물러난다" timeout 90
+    click pos (900,600) until "조건을 더 묻는다" timeout 90
+    # 수첩 선택지는 페이지별로 보인다. 실제 다음 버튼으로 수락 항목까지 간다.
+    click "다음 →" until "가족 셋이 수락하고 물러난다" timeout 10
     assert eval (qa_nw_seen("그 칸엔 누가 들어갑니까") and qa_nw_seen("빈칸이 있는 한 또 누가 적혀"))
 
 testcase v111_ar_d13_crowd_menu:
@@ -114,8 +116,10 @@ testcase v111_ar_d13_crowd_menu:
     run Function(r13_flag,"v111:entered:MS14_D13_C")
     run Jump("r13_v111_crowd13")
     click pos (900,600) until "너울을 몸으로 감싼다" timeout 90
-    pause until "돌목에게 너울을 맡긴다" timeout 5
-    pause until "주민들을 말리지 않는다" timeout 5
+    screenshot "v111_ar_d13_crowd_first.png"
+    click "다음 →" until "돌목에게 너울을 맡긴다" timeout 10
+    screenshot "v111_ar_d13_crowd_guard.png"
+    click "다음 →" until "주민들을 말리지 않는다" timeout 10
     screenshot "v111_ar_d13_crowd_menu.png"
 
 testcase v111_ar_d14_frozen_after_hyp:
