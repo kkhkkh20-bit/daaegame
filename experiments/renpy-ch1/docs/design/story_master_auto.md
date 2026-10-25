@@ -1935,6 +1935,7 @@ def r13_nw_true_ending_ready():
 | `karo_ready11` | `r13_v111_actor_ready("karo")` | d11 |
 | `kkomi_acorn_shared` | `r13_v111_value("kkomi_acorn10") is True and r13_v111_actor_ready("daram")` | d12 |
 | `kkomi_alive` | `r13_v111_value("KKOMI_ALIVE") is not False` | d07 |
+| `kkomi_can_carried6` | `bool(r13_v111_value("kkomi_can_seen6") and r13_v111_value("acorn_recovered"))` | d06 |
 | `kkomi_dead` | `r13_v111_value("KKOMI_ALIVE") is False` | d07 |
 | `kkomi_seat6` | `r13_v111_value("kkomi_seat6") is True` | d06 |
 | `lamp_attempt` | `bool(r13_v111_value("lamp_bound2"))` | d04, d13 |
@@ -1965,11 +1966,12 @@ def r13_nw_true_ending_ready():
 | `listed:nabi` | `r13_v111_value("listed:nabi") is True` | d12, d13 |
 | `listed:resident_bori` | `r13_v111_value("listed:resident_bori") is True` | d12, d13 |
 | `listed:resident_guldol` | `r13_v111_value("listed:resident_guldol") is True` | d11, d12, d13 |
-| `listed:resident_owlgp` | `r13_v111_value("listed:resident_owlgp") is True` | d12, d13 |
+| `listed:resident_owlgp` | `r13_v111_value("listed:resident_owlgp") is True` | d12 |
 | `listed:resident_piko` | `r13_v111_value("listed:resident_piko") is True` | d13 |
 | `listed:resident_siluk` | `r13_v111_value("listed:resident_siluk") is True` | d12, d13 |
 | `listed:resident_teacher` | `r13_v111_value("listed:resident_teacher") is True` | — |
 | `listed:resident_tok` | `r13_v111_value("listed:resident_tok") is True` | d03, d12, d13 |
+| `lower_elder_received12` | `r13_v111_value("lower_road_handover")==3 and r13_v111_value("alive:v111_lowerroad_elder") is not False` | d12 |
 | `medicine_locked` | `r13_v111_value("medicine_locked") is True` | d12 |
 | `medicine_unchecked` | `not r13_v111_value("medicine_locked")` | d12 |
 | `mom_daram_ready14` | `r13_v111_actor_ready("mom") and r13_v111_actor_ready("daram")` | d14 |
@@ -1978,6 +1980,7 @@ def r13_nw_true_ending_ready():
 | `owl_alive` | `r13_v111_value("OWL_ALIVE") is not False` | d14 |
 | `owl_dead` | `r13_v111_value("OWL_ALIVE") is False` | d11, d14 |
 | `owl_fell7` | `r13_v111_value("OWL_ALIVE") is not False and r13_v111_value("prevention")!="stone"` | d08, d11 |
+| `owl_listed_cart13` | `r13_v111_value("OWL_ALIVE") is not False and r13_v111_value("listed:resident_owlgp") is True and not r13_v111_value("departed:resident_owlgp")` | d13 |
 | `piko_alive` | `r13_v111_value("piko_alive") is not False` | d03, d13, d14 |
 | `piko_alive_lamp_stolen` | `r13_v111_value("piko_alive") is not False and not r13_v111_value("lamp_bound2")` | d13 |
 | `piko_dead` | `r13_v111_value("piko_alive") is False` | d03, d12, d13, d14 |

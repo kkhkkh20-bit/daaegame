@@ -3118,7 +3118,7 @@ label r13_v111_device_record14:
     if _return=="V111:E14_SUPPLY" and r13_v111_owned("E14_SUPPLY") and r13_v111_value("school_heat_connected"):
         jump r13_v111_device_supply14
     if _return:
-        call r13_lines([r13_nw_added_line(dict(speaker="아빠",kind="thought",text="이걸로는 부족하다. 사람을 실제로 넘겨받은 기록이나, 물자를 연결해 쓴 것까지 확인한 기록이어야 한다."))],"v111:device_record_wrong14")
+        call r13_lines([r13_nw_added_line(dict(speaker="아빠",kind="thought",text="약속만으로는 안 되겠어. 누가 사람을 받았는지, 물자를 어디에 썼는지 확인한 기록이어야 해."))],"v111:device_record_wrong14")
     jump r13_v111_device_pause14
 
 label r13_v111_device_pause14:

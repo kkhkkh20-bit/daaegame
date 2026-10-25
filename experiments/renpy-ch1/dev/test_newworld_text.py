@@ -107,6 +107,17 @@ class NewWorldText(Layer):
   self.assertEqual(env['r13_v111_lines'](['MS14_D01_S04_L0005'])[0][2]['expression'],'joy')
   self.env['r13_v111_set']('gate_daram_unlisted',True)
   self.assertEqual(env['r13_v111_lines'](['MS14_D01_S04_L0005'])[0][1],'잃은 쪽')
+ def test_kkomi_can_dialogue_matches_carried_object_and_legacy_save(self):
+  env=self.load()
+  for seen,recovered in ((None,None),(True,None),(None,True),(True,True)):
+   env['r13_v111_set']('kkomi_can_seen6',seen)
+   env['r13_v111_set']('acorn_recovered',recovered)
+   lines=env['r13_v111_lines'](['MS14_D06_S04_L0044','MS14_D06_S04_L0045'])
+   if seen and recovered:
+    self.assertIn('여기 놓을게',lines[0][1])
+    self.assertNotIn('못 가져왔어',lines[1][1])
+   else:
+    self.assertIn('못 가져왔어',lines[1][1])
  def test_impact_fx_rides_with_the_line(self):
   # Owner 2026-10-22: "퍽 하는 효과음 ... 화면 흔들리는 연출".
   env=self.fixture('d01',dict(replace={'MS14_D01_S05_L0004':{'text':'고맙습니다!','fx':'jolt'}},

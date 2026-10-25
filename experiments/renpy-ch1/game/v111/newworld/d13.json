@@ -892,7 +892,7 @@
         "id": "NW_D13_A_V09",
         "speaker": "아빠",
         "kind": "thought",
-        "text": "따뜻하네. 그래서 더 목이 막힌다."
+        "text": "우리는 따뜻한데, 수레에 남은 사람들은 지금도 밖이야."
       }
     ],
     "MS14_D13_C_L0003": [
@@ -1014,7 +1014,7 @@
         "id": "NW_WO_D13_18",
         "speaker": "아빠",
         "kind": "thought",
-        "text": "이 초소도 돌 곁이다. 날마다 이름을 적던 사람이 이름을 찾는다.",
+        "text": "매일 이름을 적던 사람이 방금 다람이 이름을 물었다.",
         "when": "wild_omen13_gate"
       }
     ]
@@ -1244,7 +1244,21 @@
         "speaker": null,
         "kind": "narration",
         "text": "부엉이가 겉옷 품을 누르고 앉아 있다.",
-        "when": "listed:resident_owlgp"
+        "when": "owl_listed_cart13"
+      },
+      {
+        "id": "NW_DF13_OWL_LIST01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "명단에 적힌 이름에서 눈을 떼고 부엉이를 본다. 노인이 고개를 들 때까지 기다린다.",
+        "when": "owl_listed_cart13"
+      },
+      {
+        "id": "NW_DF13_OWL_LIST02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "어르신, 저 여기 있습니다.",
+        "when": "owl_listed_cart13"
       },
       {
         "id": "NW_CN_PIKO",
@@ -1304,14 +1318,14 @@
         "id": "NW_AR_D13_10",
         "speaker": "아빠",
         "kind": "thought",
-        "text": "저 칸을 채우는 손이 따로 있다. ……실룩 씨가 저 수레에 있다. 3일에 3번 돌을 판 사람이다.",
+        "text": "실룩 씨가 저 수레에 있다. 3일에는 돌을 판 일만 물었어. 왜 3번 등을 골랐는지도 들어야겠다.",
         "when": "lamp_stolen_silluk_listed"
       },
       {
         "id": "NW_AR_D13_10_ATTEMPT",
         "speaker": "아빠",
         "kind": "thought",
-        "text": "저 칸을 채우는 손이 따로 있다. 실룩 씨다. 3번 돌을 빼려다 멈춘 까닭을 아직 다 듣지 못했다.",
+        "text": "실룩 씨가 저 수레에 있다. 3번 돌을 빼려던 까닭을 아직 다 듣지 못했다.",
         "when": "lamp_attempt_silluk_listed"
       },
       {
@@ -1701,7 +1715,7 @@
         "id": "NW_D13_S04_C01",
         "speaker": "아빠",
         "kind": "thought",
-        "text": "명령을 멈췄다는 사본은 받았어. 그런데 명령을 내리던 손은 아직 너울이야."
+        "text": "명령을 멈췄다는 사본은 받았어. 너울이 다시 보내라고 해도 막을 사람이 있어야 해."
       }
     ],
     "karo_cart_next13": [

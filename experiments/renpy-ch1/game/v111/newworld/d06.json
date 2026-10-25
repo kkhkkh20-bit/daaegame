@@ -364,17 +364,37 @@
         "expression": "anxious"
       }
     ],
-    "MS14_D06_S04_L0044": {
-      "text": "……깡통은?",
-      "expression": "anxious"
-    },
-    "MS14_D06_S04_L0045": {
-      "text": "……못 가져왔어."
-    },
-    "MS14_D06_S04_L0046": {
-      "text": "다람이 도토리는…… 내가 꺼내 왔어.",
-      "expression": "anxious"
-    },
+    "MS14_D06_S04_L0044": [
+      {
+        "text": "깡통은 여기 놓을게. 넘어지면 시끄러우니까.",
+        "expression": "anxious",
+        "when": "kkomi_can_carried6"
+      },
+      {
+        "text": "……깡통은?",
+        "expression": "anxious"
+      }
+    ],
+    "MS14_D06_S04_L0045": [
+      {
+        "text": "응. 네 자리 옆에 놓아 둬.",
+        "when": "kkomi_can_carried6"
+      },
+      {
+        "text": "……못 가져왔어."
+      }
+    ],
+    "MS14_D06_S04_L0046": [
+      {
+        "text": "다람이 도토리는…… 따로 꺼내 왔어.",
+        "expression": "anxious",
+        "when": "kkomi_can_carried6"
+      },
+      {
+        "text": "다람이 도토리는…… 내가 꺼내 왔어.",
+        "expression": "anxious"
+      }
+    ],
     "MS14_D06_S04_L0047": {
       "text": "……잘했네.",
       "expression": "anxious"
