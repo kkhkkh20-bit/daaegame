@@ -270,11 +270,19 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 2 | 70 | `room13_conversations.rpy:216` | _r13_route_available |
 | 3 | 90 | `room13_route_knowledge.rpy:16` |  |
 
+## `r13_background` (3층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 57 | `room13_life.rpy:86` | _r13_ep_art_background |
+| 2 | 160 | `systems/room13_ep_art.rpy:44` | _r13_before_wild_night_background |
+| 3 | 166 | `systems/room13_wild_night_art.rpy:21` |  |
+
 ## `r13_bed_available` (3층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 61 | `room13_interaction.rpy:94` | _r13_firstday_bed |
+| 1 | 61 | `room13_interaction.rpy:102` | _r13_firstday_bed |
 | 2 | 94 | `systems/room13_first_day_flow.rpy:31` | _r13_v111_bed |
 | 3 | 301 | `room13_v111.rpy:206` |  |
 
@@ -386,7 +394,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 61 | `room13_interaction.rpy:84` | _r13_before_inspection_name |
+| 1 | 61 | `room13_interaction.rpy:92` | _r13_before_inspection_name |
 | 2 | 66 | `room13_inspection.rpy:294` | _r13_day2_object_name |
 | 3 | 353 | `systems/room13_day2_guidance.rpy:40` |  |
 
@@ -438,12 +446,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 2 | 336 | `room13_v111_idle.rpy:42` | _r13_present_fallback |
 | 3 | 347 | `room13_v111_idle.rpy:119` |  |
 
-## `r13_background` (2층)
+## `r13_v111_set` (3층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 57 | `room13_life.rpy:86` | _r13_ep_art_background |
-| 2 | 160 | `systems/room13_ep_art.rpy:44` |  |
+| 1 | 301 | `room13_v111.rpy:12` | _r13_nw_rel_set |
+| 2 | 330 | `systems/room13_v111_relations.rpy:18` | _r13_fork_observed_set |
+| 3 | 331 | `room13_fork_screen.rpy:381` |  |
 
 ## `r13_calendar_promises` (2층)
 
@@ -808,13 +817,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 301 | `room13_v111.rpy:113` | _r13_reaction_questions |
 | 2 | 335 | `room13_v111_reactions.rpy:81` |  |
-
-## `r13_v111_set` (2층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 301 | `room13_v111.rpy:12` | _r13_nw_rel_set |
-| 2 | 330 | `systems/room13_v111_relations.rpy:18` |  |
 
 ## `r13_w2_action_done` (2층)
 

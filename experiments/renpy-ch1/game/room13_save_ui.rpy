@@ -65,13 +65,13 @@ screen r13_save_review(slot,status):
     add Solid("#07151ddf")
     frame:
         xalign .5 yalign .5 xsize 920 padding (32,28)
-        background R13ActionPanel()
+        background R13PaperFrame()
         vbox:
             spacing 20
-            text "이전 저장 확인" size 30 color "#ebcd8a"
-            text r13_save_caption(renpy.slot_json(slot)) size 24 color "#fff4df" xsize 856
-            text ("이 저장은 진행 규칙이나 화면 버전이 다릅니다. 새 게임으로 시작해 주세요." if status=="incompatible" else "이 저장에는 호환 정보가 없습니다. 이전 화면이 나타날 수 있어 이어하기에서 제외했습니다. 현재 화면으로 시작하려면 처음부터 시작해 주세요.") size 25 color "#fff4df" xsize 856
-            text "저장은 삭제하지 않았습니다." size 22 color "#ced9d4"
+            text "이전 저장 확인" size 30 font R13_UI_BOLD_FONT color "#493323"
+            text r13_save_caption(renpy.slot_json(slot)) size 24 color "#503525" xsize 856
+            text ("이 저장은 진행 규칙이나 화면 버전이 다릅니다. 새 게임으로 시작해 주세요." if status=="incompatible" else "이 저장에는 호환 정보가 없습니다. 이전 화면이 나타날 수 있어 이어하기에서 제외했습니다. 현재 화면으로 시작하려면 처음부터 시작해 주세요.") size 25 color "#503525" xsize 856
+            text "저장은 삭제하지 않았습니다." size 22 color "#80654e"
             hbox:
                 spacing 16
                 textbutton "돌아가기" style "r13_action_button" action Hide("r13_save_review")
@@ -90,12 +90,12 @@ screen r13_save_cleanup(scope="old"):
     add Solid("#07151ddf")
     frame:
         xalign .5 yalign .5 xsize 920 padding (32,28)
-        background R13ActionPanel()
+        background R13PaperFrame()
         vbox:
             spacing 20
-            text ("모든 진행 저장 정리" if scope=="all" else "이전·미확인 저장 정리") size 30 color "#ebcd8a"
-            text ("삭제 대상: 수동 %d개 · 자동 %d개 · 빠른 저장 %d개"%(manual,autos,quick)) size 25 color "#fff4df"
-            text "선택한 진행 저장은 되돌릴 수 없습니다. 소리·큰 글씨 설정과 읽은 대사 표시는 유지합니다." size 25 color "#fff4df" xsize 856
+            text ("모든 진행 저장 정리" if scope=="all" else "이전·미확인 저장 정리") size 30 font R13_UI_BOLD_FONT color "#493323"
+            text ("삭제 대상: 수동 %d개 · 자동 %d개 · 빠른 저장 %d개"%(manual,autos,quick)) size 25 color "#503525"
+            text "선택한 진행 저장은 되돌릴 수 없습니다. 소리·큰 글씨 설정과 읽은 대사 표시는 유지합니다." size 25 color "#503525" xsize 856
             hbox:
                 spacing 20
                 textbutton "취소" style "r13_action_button" action Hide("r13_save_cleanup")

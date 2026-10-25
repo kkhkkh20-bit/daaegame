@@ -77,9 +77,17 @@ init 61 python:
         "vegetables":"손질할 채소", "flour":"밀가루", "dishes":"접시", "herbs":"말린 풀", "ladles":"국자",
     }
     def r13_choice_layout(person,pose,side):
-        # Save-compatible hook: choices keep the existing central portrait.
-        # Show/hide must not move or resize the interlocutor.
-        return
+        # The notebook menu draws the speaker beside the paper. Preserve the
+        # exact stage displayable so dismissing/loading the menu restores it.
+        if store.place=="마차 안" or getattr(store,"r13_meeting_active",False):return
+        if side and person:
+            actor=renpy.game.context().scene_lists.get_displayable_by_tag("master","r13_visitor")
+            if actor is not None:
+                store.r13_choice_hidden_actor=actor
+                renpy.hide("r13_visitor")
+        elif not side and getattr(store,"r13_choice_hidden_actor",None) is not None:
+            renpy.show("r13_visitor",what=store.r13_choice_hidden_actor)
+            store.r13_choice_hidden_actor=None
 
     def r13_object_name(key):
         return R13_OBJECT_NAMES.get(key,key)

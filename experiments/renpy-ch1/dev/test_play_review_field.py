@@ -42,17 +42,28 @@ class PlayReviewField(unittest.TestCase):
         self.assertLess(distance,120)
 
     def test_night_dialogue_and_touch_actions_have_separate_vertical_space(self):
+        night=(ROOT/'game/systems/room13_night_ui.rpy').read_text()
+        screens=(ROOT/'game/screens.rpy').read_text()
+        spacing=int(re.search(r'size r13_night_say_size\(\) line_spacing (\d+)',screens).group(1))
+        link=night.split('screen r13_night_link(',1)[1].split('\nscreen ',1)[0]
+        target_height=re.search(r'xsize label_width ysize (\([^\n]+?\)) yalign',link).group(1)
         for touch in (False,True):
-            ns=dict(r13_touch_ui=lambda:touch,R13_NIGHT_CONTROL_Y=694,R13_NIGHT_TEXT_BOTTOM=670,
-                    store=SimpleNamespace(r13_field_reading=False),r13_night_say_size=lambda:35,
-                    r13_night_say_lines=lambda what:2)
-            center=load_function('game/systems/room13_night_ui.rpy','r13_night_control_y',ns)()
-            top=load_function('game/systems/room13_night_ui.rpy','r13_night_say_top',ns)('긴 대사')
-            if touch:
-                self.assertEqual(center+44,704)
-                self.assertLessEqual(top+2*(35+10)+8,center-44)
-            else:
-                self.assertEqual((center,top),(694,580))
+            for large in (False,True):
+                for lines in (1,2,3,4):
+                    with self.subTest(touch=touch,large=large,lines=lines):
+                        ns=dict(r13_touch_ui=lambda:touch,r13_read_size=lambda normal,big:big if large else normal,
+                                r13_night_say_lines=lambda what:lines)
+                        load_function('game/screens.rpy','_r13_say_size',ns)
+                        size=load_function('game/systems/room13_night_ui.rpy','r13_night_say_size',ns)()
+                        center=load_function('game/systems/room13_night_ui.rpy','r13_night_control_y',ns)()
+                        top=load_function('game/systems/room13_night_ui.rpy','r13_night_say_top',ns)('긴 대사')
+                        height=eval(target_height,ns)
+                        # Use the current text size/line spacing and full hit area,
+                        # not just the smaller visible ribbon inside that button.
+                        text_bottom=top+lines*size+(lines-1)*spacing
+                        self.assertGreaterEqual(center-height/2-text_bottom,2 if touch else 4)
+                        self.assertLessEqual(center+height/2,720-2)
+                        if touch:self.assertGreaterEqual(height*360/720,44)
 
     def test_shared_touch_footer_keeps_bottom_and_desktop_sizes(self):
         for touch,large,expected in ((False,False,64),(False,True,80),(True,False,88),(True,True,88)):
@@ -67,20 +78,20 @@ class PlayReviewField(unittest.TestCase):
     def test_long_question_pages_keep_every_row_above_the_pager(self):
         for touch in (False, True):
             for large in (False, True):
-                upper = 512 if touch else 528 if large else 560
                 ns = dict(R13_SIDE_QUESTION_TOP=150,
                           r13_question_caption=lambda title, *a, **kw: title,
-                          r13_ui_font=lambda: 'font', r13_read_size=lambda a,b: b if large else a,
-                          r13_touch_ui=lambda: touch, r13_control_upper_y=lambda: upper,
+                          r13_ui_font=lambda: 'font', R13_UI_BOLD_FONT='bold-font', r13_read_size=lambda a,b: b if large else a,
+                          r13_touch_ui=lambda: touch,
                           Text=lambda text, **kw: text,
                           renpy=SimpleNamespace(render=lambda text,*a: SimpleNamespace(get_size=lambda: (506, 60 if len(text)>20 else 28))))
+                upper=load_function('game/systems/room13_side_questions.rpy','r13_notebook_topic_y',ns)()
                 pages = load_function('game/systems/room13_side_questions.rpy', 'r13_side_question_pages', ns)
                 entries = [('반복 확인하는 긴 질문입니다. '+str(i), i, False) for i in range(30)]
                 result = pages(entries)
                 self.assertEqual([entry for page in result for entry,height in page], entries)
                 for page in result:
                     height=sum(h for _,h in page)+8*(len(page)-1)
-                    self.assertLessEqual(192+height,upper-(96 if touch else 60)-12)
+                    self.assertLessEqual(228+height,upper-(96 if touch else 60)-12)
                     if touch:
                         self.assertTrue(all(h*360/720>=44 for _,h in page))
 

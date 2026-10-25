@@ -13,7 +13,7 @@ screen r13_concept_action(x,w,caption,icon,command,enabled=True,primary=False):
                 align (.5,.5) spacing 8
                 if icon:
                     add R13AntiqueIcon(icon,size=20) yalign .5
-                text caption size 22 color ("#fff4df" if enabled else "#a79c8c") font r13_ui_font() yalign .5
+                text caption size 22 color ("#fff4df" if primary and enabled else "#4b3022" if enabled else "#a79c8c") font R13_UI_BOLD_FONT yalign .5
 
 screen r13_concept_dock(ready=True,show_record=True,person=None,present_action=None,reserve_return=False):
     $ secondary_width=160
@@ -49,12 +49,12 @@ screen r13_concept_more():
     $ row_height=88 if r13_touch_ui() else 64
     $ menu_rows=(len(items)+1)//2
     $ panel_height=menu_rows*(row_height+16)+74
-    # 0.19.98 (owner settings mockup): the same night panel and gold-edged buttons as 설정.
+    # Same paper and navy notebook material as the approved settings screen.
     frame:
-        xpos 584 ypos (min(r13_control_y(),R13_NIGHT_CONTROL_Y-28)-panel_height-16) xysize (648,panel_height) padding (28,22) background Frame("assets/ui-night/panel.png",48,48)
+        xpos 584 ypos (min(r13_control_y(),R13_NIGHT_CONTROL_Y-28)-panel_height-16) xysize (648,panel_height) padding (28,22) background Frame(Crop((35,25,550,245),"assets/ui-b-main/b_main_panel.png"),48,40)
         vbox:
             spacing 16
-            text "대화 도구" size (28 if r13_touch_ui() else 24) color "#f6ecd8" font r13_ui_font()
+            text "대화 도구" size (28 if r13_touch_ui() else 24) color "#493323" font r13_ui_font()
             grid 2 menu_rows:
                 spacing 16
                 for title,icon,command,enabled in items:

@@ -1,0 +1,279 @@
+{
+  "version": 1,
+  "purpose": "asset_delivery_preview_not_runtime_implementation",
+  "canvas": {
+    "width": 1280,
+    "height": 720
+  },
+  "coordinates": "canvas top-left, px; rectangles [x,y,width,height]",
+  "background": {
+    "asset": "assets/map_background_1136x570.png",
+    "rect": [
+      88,
+      58,
+      1136,
+      570
+    ],
+    "buildings_baked_in": true
+  },
+  "frame": {
+    "asset": "assets/notebook_frame_1280x720.png",
+    "rect": [
+      0,
+      0,
+      1280,
+      720
+    ],
+    "transparent_aperture": [
+      88,
+      58,
+      1136,
+      570
+    ]
+  },
+  "title": {
+    "text": "다람탐정 · 마을 지도",
+    "asset": null,
+    "rect": [
+      510,
+      25,
+      260,
+      28
+    ],
+    "font_size": 20
+  },
+  "locations": [
+    {
+      "id": "plaza",
+      "text": "광장",
+      "label_asset": "assets/b_panel_small_trimmed.png",
+      "label_rect": [
+        259,
+        230,
+        120,
+        34
+      ],
+      "proposed_hit_rect": [
+        251,
+        127,
+        132,
+        104
+      ],
+      "selected": true
+    },
+    {
+      "id": "repair",
+      "text": "수리점",
+      "label_asset": "assets/b_panel_small_trimmed.png",
+      "label_rect": [
+        600,
+        222,
+        120,
+        34
+      ],
+      "proposed_hit_rect": [
+        526,
+        96,
+        244,
+        123
+      ],
+      "selected": false
+    },
+    {
+      "id": "warehouse",
+      "text": "공동 창고",
+      "label_asset": "assets/b_panel_small_trimmed.png",
+      "label_rect": [
+        957,
+        248,
+        120,
+        34
+      ],
+      "proposed_hit_rect": [
+        909,
+        111,
+        206,
+        130
+      ],
+      "selected": false
+    },
+    {
+      "id": "post",
+      "text": "우체국",
+      "label_asset": "assets/b_panel_small_trimmed.png",
+      "label_rect": [
+        437,
+        340,
+        120,
+        34
+      ],
+      "proposed_hit_rect": [
+        429,
+        240,
+        158,
+        96
+      ],
+      "selected": false
+    },
+    {
+      "id": "entrance",
+      "text": "마을 입구",
+      "label_asset": "assets/b_panel_small_trimmed.png",
+      "label_rect": [
+        250,
+        398,
+        120,
+        34
+      ],
+      "proposed_hit_rect": [
+        248,
+        324,
+        165,
+        171
+      ],
+      "selected": false
+    },
+    {
+      "id": "laundry",
+      "text": "빨래터",
+      "label_asset": "assets/b_panel_small_trimmed.png",
+      "label_rect": [
+        559,
+        558,
+        120,
+        34
+      ],
+      "proposed_hit_rect": [
+        489,
+        466,
+        226,
+        91
+      ],
+      "selected": false
+    },
+    {
+      "id": "somi",
+      "text": "솜이네",
+      "label_asset": "assets/b_panel_small_trimmed.png",
+      "label_rect": [
+        992,
+        558,
+        120,
+        34
+      ],
+      "proposed_hit_rect": [
+        919,
+        416,
+        233,
+        130
+      ],
+      "selected": false
+    }
+  ],
+  "controls": [
+    {
+      "id": "selected",
+      "text": "선택: 광장",
+      "asset": "assets/b_panel_small_trimmed.png",
+      "rect": [
+        102,
+        643,
+        180,
+        40
+      ]
+    },
+    {
+      "id": "village",
+      "text": "마을",
+      "asset": "assets/b_button_trimmed.png",
+      "rect": [
+        300,
+        643,
+        106,
+        40
+      ]
+    },
+    {
+      "id": "inn",
+      "text": "여관 안",
+      "asset": "assets/b_button_trimmed.png",
+      "rect": [
+        416,
+        643,
+        120,
+        40
+      ]
+    },
+    {
+      "id": "forest",
+      "text": "숲·산길",
+      "asset": "assets/b_button_trimmed.png",
+      "rect": [
+        546,
+        643,
+        132,
+        40
+      ]
+    },
+    {
+      "id": "move",
+      "text": "이곳으로 이동",
+      "asset": "assets/b_button_primary_trimmed.png",
+      "rect": [
+        704,
+        643,
+        184,
+        40
+      ]
+    },
+    {
+      "id": "scene",
+      "text": "현장으로",
+      "asset": "assets/b_button_trimmed.png",
+      "rect": [
+        902,
+        643,
+        142,
+        40
+      ]
+    }
+  ],
+  "font": {
+    "preview": "NotoSansCJK-Bold.ttc",
+    "labels_px": 20,
+    "controls_px": 19
+  },
+  "hit_regions_status": "coarse visual proposals only; not runtime verified or click-tested",
+  "responsive": {
+    "uniform_scale": "min(viewport_width/1280, viewport_height/720)",
+    "mobile_preview_scale": 0.5,
+    "warning": "640px preview is inspection only, not touch-target or mobile readability certification"
+  },
+  "game_files_changed": false,
+  "sticker": {
+    "asset": "assets/sticker_daram_stubborn.png",
+    "rect": [
+      1137,
+      631,
+      67,
+      67
+    ],
+    "decorative": true
+  },
+  "close_control": {
+    "text": "×",
+    "rect": [
+      1216,
+      24,
+      28,
+      32
+    ],
+    "center": [
+      1230,
+      40
+    ],
+    "native_text": true,
+    "font_size": 24,
+    "interaction_implemented": false
+  }
+}

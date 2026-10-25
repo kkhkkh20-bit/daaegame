@@ -183,8 +183,8 @@ screen r13_cartography_layer(region,selected,ready,map_hover):
         $ nw=max(118,min(304,32+len(r13_map_label(map_hover))*22))
         frame:
             xpos (max(24,min(1256-nw,hx-nw//2))) ypos (max(101,min(568,hy-62)))
-            xysize (nw,38) padding (8,3) background R13InkPanel(focused=True)
-            text r13_map_label(map_hover) size 21 color "#fff0d2" align (.5,.5)
+            xysize (nw,38) padding (8,3) background r13_field_paper()
+            text r13_map_label(map_hover) size 21 color "#4b3021" align (.5,.5)
 
 transform r13_map_pop:
     subpixel True

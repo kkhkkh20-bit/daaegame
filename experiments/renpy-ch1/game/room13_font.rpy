@@ -4,3 +4,7 @@ init -100 python:
         .add("assets/Galmuri11.ttf", 0x21c6, 0x21c6)
         .add("assets/Galmuri11.ttf", 0x25b8, 0x25b8)
         .add("assets/Pretendard-Regular.otf", None, None))
+    R13_UI_BOLD_FONT = (FontGroup()
+        .add("assets/Galmuri11.ttf", 0x21c6, 0x21c6)
+        .add("assets/Galmuri11.ttf", 0x25b8, 0x25b8)
+        .add("assets/Pretendard-Bold.otf", None, None))

@@ -1,0 +1,15 @@
+{
+  "생성도구": "image_gen.imagegen",
+  "용도": "동화 수첩 선택 UI의 찢은 종이 헤더 및 기본/선택 쪽지",
+  "원본": "art/notebook-ui-20261024/paper-components.png",
+  "참고": [
+    "design/resource-intake-20261023/b-ui-question-v2/assets/b_panel_card.png",
+    "design/resource-intake-20261023/b-ui/assets/b_tab_title.png"
+  ],
+  "캔버스": [
+    1536,
+    1024
+  ],
+  "sha256": "98c7b847284da82673c202803630076f305dd0dab578cd58fc2ad9c0b92d942f",
+  "사용법": "원본 RGBA 보존, 런타임 Crop/Transform으로 분리. RGB에 남은 배경색은 alpha0이므로 표시되지 않음. 문구는 Pretendard로 런타임 표시."
+}

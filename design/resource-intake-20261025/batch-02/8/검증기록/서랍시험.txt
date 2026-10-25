@@ -1,0 +1,11 @@
+/workspace/daaegame/experiments/renpy-ch1/dev/test_drawer_puzzle_art.py:52: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/room13-pixel-inspect-rubbing-paper.webp'>
+  sizes = {Image.open(ROOT / "game" / states[k]["file"]).size for k in ("paper", "rubbing")}
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame/experiments/renpy-ch1/dev/test_drawer_puzzle_art.py:52: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame/experiments/renpy-ch1/game/assets/room13-pixel-inspect-rubbing-done.webp'>
+  sizes = {Image.open(ROOT / "game" / states[k]["file"]).size for k in ("paper", "rubbing")}
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+....
+----------------------------------------------------------------------
+Ran 4 tests in 1.881s
+
+OK

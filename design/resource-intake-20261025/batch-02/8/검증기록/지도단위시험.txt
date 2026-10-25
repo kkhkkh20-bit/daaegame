@@ -1,0 +1,7 @@
+/workspace/daaegame/experiments/renpy-ch1/dev/map27_pixel_derivative.py:19: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  image.putdata([(r,g,b,a) if a else (0,0,0,0) for r,g,b,a in image.getdata()])
+..............................................
+----------------------------------------------------------------------
+Ran 46 tests in 1.668s
+
+OK

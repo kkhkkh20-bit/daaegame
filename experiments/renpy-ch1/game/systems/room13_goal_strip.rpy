@@ -33,8 +33,8 @@ init 337 python:
     # 2026-10-24 행동 검수 8(소유자 승인): 엄마는 13일 명단에 오른다. 만났다고 곧바로 「엄마를 지킨다 — 마침」으로
     # 두면 13일 사실과 어긋난다. 13일 수레 일이 다 지나간 뒤(14일 장면에 들어선 뒤)에야 ③으로 넘긴다.
     R13_GOAL_GUARD_DONE="MS14_D14_S01"
-    R13_GOAL_GOLD="#d6b26c"
-    R13_GOAL_INK="#ece0c8"
+    R13_GOAL_GOLD="#8d4b2d"
+    R13_GOAL_INK="#503525"
     R13_GOAL_DIM="#96846e"
     R13_GOAL_RED="#781c24"
     R13_GOAL_RULE="#5a4632"
@@ -225,7 +225,7 @@ screen r13_goal_strip(tabs_right,chips_left):
                             hbox:
                                 spacing (14 if touch else 13)
                                 add R13GoalDot(state,(8 if touch else 6)) yalign .5
-                                text (label+("  ← 지금" if state=="now" else "")) size step_size font r13_ui_font() yalign .5 color (R13_GOAL_DIM if state=="todo" else R13_GOAL_INK)
+                                text (label+("  ← 지금" if state=="now" else "")) size step_size font r13_ui_font() yalign .5 color ("#8a7664" if state=="todo" else "#493323")
                         if layout["note"]:
                             add Solid(R13_GOAL_RULE) xsize (card_w-38) ysize 1 yoffset 2
-                            text layout["note"] size note_size color R13_GOAL_DIM font r13_ui_font() xsize (card_w-40) yoffset 2
+                            text layout["note"] size note_size color "#80654e" font r13_ui_font() xsize (card_w-40) yoffset 2

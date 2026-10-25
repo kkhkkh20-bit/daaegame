@@ -7,25 +7,24 @@ init 150 python:
     R13_NIGHT_TEXT_BOTTOM=670        # last dialogue line ends above the controls row
 
     def r13_night_control_y():
-        return 660 if r13_touch_ui() else R13_NIGHT_CONTROL_Y
+        return 674 if r13_touch_ui() else 684
 
     def r13_night_say_size():
         # The mockup's line is a step larger than the boxed window's (same size setting).
-        return _r13_say_size()+3
+        return 32 if r13_touch_ui() else _r13_say_size()+4
 
     def r13_night_say_lines(what):
         if not isinstance(what,str):return 1
         size=r13_night_say_size()
         packet=getattr(store,"r13_packet",None)
-        face=None if getattr(store,"r13_thought_active",False) else r13_bdialogue_face(packet[0] if packet else None,r13_fullbody_emotion(getattr(store,"r13_directed_pose","neutral")))
+        face=None if getattr(store,"r13_thought_active",False) or "r13_visitor" in renpy.get_showing_tags() else r13_bdialogue_face(packet[0] if packet else None,r13_fullbody_emotion(getattr(store,"r13_directed_pose","neutral")))
         return max(1,_r13_say_lines(what,size,988 if face else 1090))
 
     def r13_night_say_top(what=None):
         """Top of the dialogue text: lines stack upward from a fixed bottom, so one line sits
         low like the mockup and two lines never reach the controls row."""
         size=r13_night_say_size()
-        bottom=(R13_NIGHT_TEXT_BOTTOM+30 if getattr(store,"r13_field_reading",False) else (608 if r13_touch_ui() else R13_NIGHT_TEXT_BOTTOM))
-        return bottom-max(2,r13_night_say_lines(what))*(size+10)  # 0.20.4 owner: one and two lines share one top
+        return (560 if r13_touch_ui() else 578)-max(0,r13_night_say_lines(what)-2)*(size+4)
 
     def r13_night_text_color():
         # B dialogue uses paper-role colours on the cream notebook.
@@ -36,7 +35,7 @@ init 150 python:
 
     def r13_night_shade_alpha():
         # The approved "대사창 진하기" setting still decides how dark the shade gets.
-        return {"99":.72,"d4":.92,"f5":1.0}.get(persistent.room13_window_alpha or "d4",1.0)
+        return {"99":.88,"d4":.985,"f5":1.0}.get(persistent.room13_window_alpha or "d4",1.0)
 
     def r13_night_shade_top(what=None):
         top=r13_night_say_top(what)-150
@@ -51,34 +50,26 @@ style r13_night_link_text is text:
     outlines []
 
 screen r13_night_link(caption,glyph,icon,command,enabled=True,link_id=None):
-    $ b_link_color = "#eadfc8" if r13_black_card else "#4b3420"
-    # Visible as small text; the pressable area stays at the shared touch height.
+    $ on_paper=not r13_black_card
+    $ label_width=(208 if r13_touch_ui() else 184) if caption in ("건너뛰기","더보기") else (370 if r13_touch_ui() else 300)
     button:
         id (link_id or ("r13_night_"+caption))
-        ysize (88 if r13_touch_ui() else 56) yalign .5 padding (10,0)
+        xsize label_width ysize (88 if r13_touch_ui() else 56) yalign .5 padding (0,0)
         background None hover_background None
         action command sensitive enabled alt caption
-        hbox:
-            align (.5,.5) spacing 8
-            # 0.20.0 (owner phone QA): on a phone the game canvas shrinks to about half, so the
-            # small controls grow from 20 to 28px there (about 15pt on an iPhone in landscape).
-            if glyph:
-                text glyph style "r13_night_link_text" color b_link_color size (26 if r13_touch_ui() else 20) yalign .5
-            if icon=="settings" and not r13_black_card:
-                add Transform(Crop((16,20,32,24),"assets/ui-b-dialogue/b_icon_more.png"),xysize=((26,20) if r13_touch_ui() else (20,15))) yalign .5
-            elif icon:
-                add R13AntiqueIcon(icon,size=(26 if r13_touch_ui() else 18)) yalign .5 alpha (1.0 if enabled else .5)
-            text caption style "r13_night_link_text" color b_link_color size (28 if r13_touch_ui() else 20) yalign .5
+        fixed:
+            xysize (label_width,88 if r13_touch_ui() else 56)
+            if on_paper:
+                add Transform(Frame(Crop((16,12,168,32),"assets/ui-b-dialogue/b_ribbon_name.png"),16,6,32,6),xysize=(label_width,52 if r13_touch_ui() else 44),alpha=1.0 if enabled else .55) align (.5,.5)
+            text caption align (.5,.5) xoffset -6 font R13_UI_BOLD_FONT size (28 if r13_touch_ui() else 24) color ("#fff6e7" if enabled else "#c0b6a5")
 
 screen r13_night_controls(ready=True):
     $ line_active=renpy.get_screen("say") is not None and not any(renpy.get_screen(n) for n in ("choice","r13_topics","r13_resident_approach","r13_entry_topics","r13_entry_karo_topics"))
     $ skip_action=([SetVariable("r13_carriage_skip",True),Function(renpy.end_interaction,True)] if place=="마차 안" else [SetVariable("r13_conv_skip",True),Function(renpy.end_interaction,True)])
     hbox:
-        xanchor 1.0 xpos (R13_CONCEPT_RIGHT-30) yanchor .5 ypos r13_night_control_y() spacing 0
+        xanchor 1.0 xpos (R13_CONCEPT_RIGHT-30) yanchor .5 ypos r13_night_control_y() spacing 12
         if _preferences.afm_enable and line_active:
             use r13_night_link("자동 읽기 중 · 정지","■",None,Preference("auto-forward","disable"),enabled=ready,link_id="r13_night_auto_stop")
-            text "|" style "r13_night_link_text" color "#8f866f" yalign .5
         if line_active:
             use r13_night_link("건너뛰기","▸▸",None,skip_action,enabled=ready)
-            text "|" style "r13_night_link_text" color "#8f866f" yalign .5
         use r13_night_link("더보기",None,"settings",Show("r13_more_tools"),enabled=ready)

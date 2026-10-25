@@ -11,21 +11,20 @@ screen r13_hud():
 
     if not r13_cg_active and place!="마차 안" and not r13_meeting_active:
         frame:
-            xpos (940 if renpy.get_screen("r13_hub") else R13_CONCEPT_RIGHT-238) ypos 20 xsize 238 ysize 68 padding (10,8) background R13PaperFrame()
-            hbox:
-                spacing 10
-                vbox:
-                    xsize 42 spacing 2
-                    text ("%02d"%room13.get("day",1)) size 25 color "#493b30" xalign .5
-                    text "일째" size (16 if r13_touch_ui() else 12) color "#796044" xalign .5
-                vbox:
-                    xsize 112 spacing 7
-                    text r13_clock().split(" · ")[1] size 17 color "#493b30"
-                    text r13_clock().split(" · ")[-1] size 17 color "#65503b"
-                add R13TimeDial() yalign .5
+            xpos (940 if renpy.get_screen("r13_hub") else R13_CONCEPT_RIGHT-238) ypos 20 xsize 238 ysize 72 padding (0,0) background r13_field_paper()
+            fixed:
+                xysize (238,72)
+                text ("%02d"%room13.get("day",1)) xpos 14 ypos 8 xsize 48 text_align .5 size 28 color "#493b30" font R13_UI_BOLD_FONT
+                text "일째" xpos 14 ypos 42 xsize 48 text_align .5 size 14 color "#796044" font r13_ui_font()
+                text r13_clock().split(" · ")[1] xpos 76 ypos 12 xsize 92 size 20 color "#493b30" font R13_UI_BOLD_FONT
+                text r13_clock().split(" · ")[-1] xpos 76 ypos 40 xsize 92 size 18 color "#65503b" font r13_ui_font()
+                add R13TimeDial() xpos 182 ypos 16
         frame:
-            xpos 24 ypos 20 padding (14,8) background R13PaperFrame()
-            text r13_hud_place() size r13_read_size(18,22) color "#493b30"
+            xpos 24 ypos 20 padding (12,8) background r13_field_paper()
+            hbox:
+                spacing 1
+                add Transform(Crop((16,16,32,32),"assets/ui-b-field/b_icon_pin.png"),xysize=(28,28)) yalign .5
+                text r13_hud_place() size r13_read_size(20,23) color "#493b30" font R13_UI_BOLD_FONT yalign .5
 
 init 80:
     style r13_toolbar_button is r13_action_button:
@@ -46,19 +45,21 @@ init 80:
 screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode="line",ready=True):
     style_prefix "r13"
     if mode=="talk":
-        use r13_concept_dock(ready=ready,show_record=True,person=person,present_action=present_action,reserve_return=True)
+        use r13_notebook_topic_tools(ready,person,present_action)
     elif mode!="field":
         use r13_playback_footer(show_record=True,ready=ready)
     else:
         use r13_field_view_controls(ready)
-        use r13_footer_control(4,"기록","record",Show("r13_records"),enabled=ready)
+        fixed:
+            area (1000,r13_control_y()-8,224,r13_control_height())
+            use r13_field_button("기록","record",Show("r13_records"),enabled=ready,width=224)
         use r13_options_control(ready)
 
 screen r13_options_control(ready=True):
     # A compact instance of the same component, not a separate vertical icon layout.
     fixed:
         area (1190,20,64,64)
-        use r13_control("","settings",Show("r13_more_tools"),enabled=ready,width=64,height=64,control_id="r13_options_gear")
+        use r13_field_button("","settings",Show("r13_more_tools"),enabled=ready,width=64,height=64,control_id="r13_options_gear")
 
 screen r13_hub(entry=False):
     style_prefix "r13"
@@ -90,12 +91,13 @@ screen r13_hub(entry=False):
             use r13_world_camera_controls(world_adjustment)
     else:
         use r13_world_contents(entry,input_ready)
+    use r13_field_notebook_surface()
     if entry:
         use r13_waiting_window(input_ready)
     else:
         fixed:
-            area (772,r13_control_y(),232,r13_control_height())
-            use r13_antique_button("지도","map",Return(("menu","map")),enabled=input_ready,width=232,height=r13_control_height())
+            area (760,r13_control_y()-8,224,r13_control_height())
+            use r13_field_button("지도","map",Return(("menu","map")),enabled=input_ready,width=224,height=r13_control_height())
     if not entry and r13_bed_available("bed"):
         fixed:
             area (1020,264,232,64)
@@ -108,8 +110,8 @@ screen r13_hub(entry=False):
         # 0.18.56 (owner): no work/shop board at the top. Work is asked for from the person who
         # gives it, goods are bought from the seller in person; only the purse is shown.
         frame:
-            xpos 24 ypos 74 padding (12,6) background R13InkPanel(alpha="b8")
-            text ("가진 돈 %d냥"%r13_wallet(room13)["cash"]) size r13_read_size(18,21) color "#fff2cf"
+            xpos 24 ypos 84 padding (12,6) background r13_field_paper()
+            text ("가진 돈 %d냥"%r13_wallet(room13)["cash"]) size r13_read_size(18,21) color "#664932"
     if not entry and not r13_v111_active():
         use r13_event_offers(input_ready)
     use r13_admin_key()
@@ -123,10 +125,10 @@ screen r13_hub(entry=False):
     $ hint=GetTooltip()
     if hint:
         frame:
-            xpos max(12,min(980,renpy.get_mouse_pos()[0]+18)) ypos max(90,min(594,renpy.get_mouse_pos()[1]+22)) padding (14,9) background R13ActionPanel()
+            xpos max(12,min(980,renpy.get_mouse_pos()[0]+18)) ypos max(90,min(594,renpy.get_mouse_pos()[1]+22)) padding (14,9) background r13_field_paper()
             hbox:
                 spacing 6
-                text hint size 20 color "#fff2cf" yalign .5
+                text hint size 20 color "#4b3021" yalign .5
 
     if world_moving:
         timer .05 repeat True action Function(r13_world_pan_finish,world_adjustment,_update_screens=False)
@@ -180,7 +182,7 @@ screen r13_world_contents(entry=False,ready=False):
             add leader xpos leader.left ypos leader.top
         textbutton (R13_NAMES[nameplate["person"]]+(" !" if not entry and nameplate["person"]=="resident_piko" and r13_offer_for_person("resident_piko")=="r13_w1c_portrait" else "")):
             area nameplate["rect"]
-            padding (10,4) background R13ActionPanel() hover_background R13ActionPanel(True) text_size int((24 if r13_touch_ui() else 18)/r13_field_zoom()) text_color "#fff2cf" text_xalign .5 text_yalign .5
+            padding (10,4) background r13_field_paper() hover_background Transform(r13_field_paper(),matrixcolor=BrightnessMatrix(.05)) text_size int((24 if r13_touch_ui() else 18)/r13_field_zoom()) text_color "#4b3021" text_hover_color "#9c3c2b" text_font R13_UI_BOLD_FONT text_xalign .5 text_yalign .5
             action r13_person_action(nameplate["person"],entry) sensitive ready
         if not entry and r13_offer_for_person(nameplate["person"]) and not (nameplate["person"]=="resident_piko" and r13_offer_for_person("resident_piko")=="r13_w1c_portrait"):
             # 0.18.53: something is happening with this person; press them to see it.
@@ -210,134 +212,9 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
         use r13_carriage_choice_list(entries,ready,caption)
     elif person and title!="선택":
         use r13_side_question_list(person,pose,entries,ready,return_action,caption)
-    elif person:
-        $ list_width=min(900,max(760,list_width))
-        $ list_left=(1280-list_width)//2
-        # Face to face: retain the existing actor, centred behind the choices.
-        # The person stands large
-        # on the left, the scene is dimmed, and plain-text options name what
-        # Dad will ask; the question itself is then spoken in dialogue.
-        # 0.18.39 (owner): same size and place as in dialogue, so the person does not jump.
-        add Solid("#00000030")
-        add r13_close_art(person,pose,840):
-            xpos r13_close_x(person,pose) xanchor .5 ypos r13_close_y(person,840,110,pose)
-        if title=="선택":
-            $ context=r13_choice_context()
-            if context:
-                # 0.18.93 (owner review of the question screen): the line just spoken sits on an ink
-                # panel above the head, never as bare white text over the face or a bright background.
-                frame:
-                    xpos list_left ypos 18 xsize list_width padding (18,8,18,10)
-                    background R13InkPanel(alpha="d9",slim=True)
-                    text context[1]:
-                        xsize list_width-36 text_align .5
-                        size r13_read_size(20,24) color "#fff4df" line_spacing 3 font r13_ui_font()
-                        outlines [(1,"#101515",0,0)]
-        # Questions sit around the centre, clear of dialogue advancement and bottom tools.
-        $ row_h=(80 if persistent.room13_large_text else 72)
-        $ list_top,list_bottom=r13_question_bounds(entries,list_width)
-        if caption:
-            text caption:
-                xpos list_left ypos list_top-44 xsize list_width text_align .5
-                size r13_read_size(22,27) color "#f6d18a" outlines [(1,"#101515",0,0)]
-        if title!="선택":
-            text title.replace(R13_NAMES.get(person, ""), r13_display_name(person)):
-                xpos list_left ypos max(34,list_top-78) xsize list_width text_align .5
-                size r13_read_size(27,32) color "#fff0cc" outlines [(1,"#101515",0,0)]
-            if R13_NAMES.get(person) and R13_NAMES[person] in title:
-                text r13_display_role(person):
-                    xpos list_left ypos max(76,list_top-38) xsize list_width text_align .5
-                    size r13_read_size(18,20) color "#f3e7ce" outlines [(1,"#101515",0,0)]
-        viewport:
-            area (list_left,list_top,list_width,list_bottom-list_top)
-            mousewheel True draggable True scrollbars "vertical" vscrollbar_unscrollable "hide"
-            vbox:
-                spacing 16
-                for index,(title,action,was_read) in enumerate(entries):
-                    button:
-                        xsize list_width-23 yminimum row_h padding (18,17)
-                        background R13ControlSurface() hover_background R13ControlSurface(hovered=True)
-                        action r13_safe_question_action(action) sensitive ready
-                        text (("%d  "%(index+1) if index<9 else "")+r13_question_caption(title,was_read,mark_unread=True)):
-                            xsize list_width-59 text_align .5 xalign .5 yalign .5
-                            size r13_read_size(24,30) font r13_ui_font()
-                            color (r13_role_color("subdued") if was_read else r13_role_color("speech"))
-                            outlines [(1,"#101515",0,0)]
-                if not entries:
-                    # 0.18.93: on a panel like the question rows (bare text sat on the person's face).
-                    frame:
-                        xsize list_width-23 padding (16,10) background R13InkPanel(alpha="d9",slim=True)
-                        text "지금 더 물을 이야기는 없다.\n가지고 온 자료를 보여줄 수도 있다.":
-                            xsize list_width-55 text_align .5 xalign .5 size r13_read_size(24,30) color "#eee5d5"
-                            outlines [(1,"#101515",0,0)]
-        if ready:
-            for index,(title,action,was_read) in enumerate(entries[:9]):
-                key ("K_%d"%(index+1)) action r13_safe_question_action(action)
-                key ("K_KP%d"%(index+1)) action r13_safe_question_action(action)
-        if return_action is not None:
-            # Return to the scene sits at the right; topic tools reserve this slot.
-            use r13_concept_action(R13_CONCEPT_RIGHT-232,232,"돌아가기","dialogue",return_action,enabled=ready)
     else:
-        add Solid("#00000020")
-        $ compact_width=min(list_width,940)
-        $ choice_size=r13_read_size(23,28)
-        $ list_left=(1280-compact_width)//2
-        # Choices (owner, 0.18.4): the line just spoken stays above the options,
-        # each option carries a number (keys 1-9). Captions are kept short (about
-        # 20 characters) so a 940px row holds them on one line.
-        $ context=r13_choice_context() if title=="선택" else None
-        $ list_floor=(190 if context else 100)
-        $ question_height=r13_reference_list_height(entries,compact_width,16,(470 if context else 430 if return_action is not None else 520),72,choice_size,vertical_padding=32)
-        $ question_top=max(list_floor,int((690-question_height+list_floor-100)//2) if return_action is None else min(int((680-question_height)//2),534-question_height))
-        if context:
-            frame:
-                xalign .5 ypos 34 xsize compact_width padding (22,14,22,16)
-                background R13InkPanel(alpha="d9",slim=True)
-                vbox:
-                    spacing 6
-                    if context[0]:
-                        text context[0] size r13_read_size(20,24) color "#f6d18a" font r13_ui_font()
-                    text context[1]:
-                        size r13_read_size(22,27) color "#fff4df" font r13_ui_font() line_spacing 4
-                        xsize compact_width-44
-            if not caption:
-                text ("어떻게 할까?" if renpy.variant("touch") else "어떻게 할까? · 숫자 키로도 고를 수 있다"):
-                    xalign .5 ypos list_floor-34 size r13_read_size(17,20) color "#e8d9b0"
-                    outlines [(1,"#101515",0,0)]
-        else:
-            text title:
-                xalign .5 ypos 50 xsize compact_width text_align .5
-                size r13_read_size(27,32) color "#f6d18a"
-        if caption:
-            text caption:
-                xalign .5 ypos question_top-40 xsize compact_width text_align .5
-                size r13_read_size(22,27) color "#f6d18a" outlines [(1,"#101515",0,0)]
-        viewport:
-            area (list_left,question_top,compact_width,question_height)
-            mousewheel True draggable True scrollbars "vertical" vscrollbar_unscrollable "hide"
-            vbox:
-                spacing 16
-                for index,(title,action,was_read) in enumerate(entries):
-                    button:
-                        # Left padding clears the gold number tab drawn by R13ReferenceChoice.
-                        xsize compact_width-23 yminimum 72 padding (72,16,20,16)
-                        background R13ReferenceChoice(False,index+1 if index<9 else None) hover_background R13ReferenceChoice(True,index+1 if index<9 else None)
-                        action r13_safe_question_action(action) sensitive ready
-                        text r13_question_caption(title,was_read,False):
-                            xsize compact_width-115 text_align .5 xalign .5 yalign .5
-                            size choice_size font r13_ui_font()
-                            color ("#d3e3e7" if was_read else "#ffffff")
-                if not entries:
-                    frame:
-                        xsize compact_width-23 padding (16,10) background R13InkPanel(alpha="d9",slim=True)
-                        text "지금 더 물을 이야기는 없다.\n가지고 온 자료를 보여줄 수도 있다.":
-                            xsize compact_width-55 text_align .5 xalign .5 size r13_read_size(22,28) color "#eee5d5"
-        if ready:
-            for index,(title,action,was_read) in enumerate(entries[:9]):
-                key ("K_%d"%(index+1)) action r13_safe_question_action(action)
-                key ("K_KP%d"%(index+1)) action r13_safe_question_action(action)
-        if return_action is not None:
-            use r13_concept_action(R13_CONCEPT_RIGHT-232,232,"돌아가기","dialogue",return_action,enabled=ready)
+        use r13_notebook_choice_list(person,pose,title,entries,ready,return_action,caption)
+
 
 screen r13_entry_topics():
     style_prefix "r13"

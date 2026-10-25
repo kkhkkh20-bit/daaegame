@@ -16,17 +16,51 @@ class SettingsTypeScale(unittest.TestCase):
    ns={'r13_read_size':size,'persistent':SimpleNamespace(room13_large_text=large)};exec(textwrap.dedent(block),ns)
    self.assertEqual((ns['r13_opt_size'](),ns['r13_opt_title_size'](),ns['r13_opt_row_height']()),(body,title,row))
  def test_no_footer_overlap_all_tabs_even_large(self):
-  self.assertIn('area (347,92,890,500) mousewheel True draggable True',A)
-  self.assertLessEqual(92+500,626-16)
-  self.assertLessEqual(264+4*143+3*15,884)
-  self.assertLessEqual(264+3*190+2*15,884)
-  self.assertLessEqual(264+280+64+150+2*15,884)
-  self.assertLessEqual(264+330+143+15,884)
+  view=re.search(r'id "r13_settings_body"\n\s+area (\([^\n]+\)) mousewheel',A).group(1)
+  footer=A.split('textbutton "설정 초기화"',1)[1].split('key "game_menu"',1)[0]
+  footer_rects=re.findall(r'xpos (\d+) ypos (\([^\n]+?\)) xsize (\d+)',footer)
+  self.assertEqual(len(footer_rects),5)
+  row=A.split('screen r13_opt_row(',1)[1].split('\nscreen ',1)[0]
+  row_width=int(re.search(r'xsize (\d+) ysize r13_opt_row_height',row).group(1))
+  controls_x,gap=map(int,re.search(r'hbox:\n\s+xpos (\d+)[^\n]+spacing (\d+)',row).groups())
+  height_expr=re.search(r'def r13_opt_button_height\(\):\n\s+#[^\n]+\n\s+return ([^\n]+)',A).group(1)
+  for touch in (False,True):
+   ns=dict(r13_touch_ui=lambda:touch)
+   vx,vy,vw,vh=eval(view,ns)
+   height=eval(height_expr,ns)
+   self.assertLessEqual(row_width,vw-8)
+   rects=[(int(x),eval(y,ns),int(w),height) for x,y,w in footer_rects]
+   self.assertLessEqual(vy+vh,min(y for x,y,w,h in rects)-16)
+   for x,y,w,h in rects:self.assertLessEqual(y+h,720-16)
+   for (x,y,w,h),(nx,ny,nw,nh) in zip(rects,rects[1:]):self.assertGreaterEqual(nx-x-w,8)
+  # Measure each row's real children, including repeated options and both
+  # administrator states, against the current notebook content width.
+  lines=A.splitlines()
+  rows=[]
+  for i,line in enumerate(lines):
+   if re.match(r'\s+use r13_opt_row\(',line):
+    indent=len(line)-len(line.lstrip());body=[]
+    for child in lines[i+1:]:
+     if child.strip() and len(child)-len(child.lstrip())<=indent:break
+     body.append(child)
+    rows.append('\n'.join(body))
+  self.assertGreaterEqual(len(rows),10)
+  for body in rows:
+   for branch in re.split(r'^\s+else:\s*$',body,flags=re.M):
+    widths=list(map(int,re.findall(r'\bxsize (\d+)',branch)))
+    repeat=re.search(r'for [^\n]+ in (\([^\n]+\)):',branch)
+    if repeat:widths*=len(ast.literal_eval(repeat.group(1)))
+    if widths:self.assertLessEqual(controls_x+sum(widths)+gap*(len(widths)-1),row_width)
  def test_mixer_thumb_does_not_touch_percentage(self):
   for widget in ('music_volume','fx_volume'):
    self.assertIn('ysize 36 yalign .5 id "'+widget+'"',A)
-  self.assertIn('thumb_offset 0',A);self.assertIn('Crop((16,16,36,36)',A);self.assertIn('spacing 15',A)
-  self.assertGreaterEqual(15-0,8)
+  row=A.split('screen r13_opt_row(',1)[1].split('\nscreen ',1)[0]
+  gap=int(re.search(r'hbox:\n[^\n]+spacing (\d+)',row).group(1))
+  thumb_offset=int(re.search(r'thumb_offset (-?\d+)',A).group(1))
+  self.assertIn('Crop((16,16,36,36)',A)
+  self.assertGreaterEqual(gap-abs(thumb_offset),8)
+  for widget in ('music_volume','fx_volume'):
+   self.assertRegex(A,r'id "'+widget+r'"\n\s+text [^\n]+id "'+widget+r'_percent"[^\n]+xsize 64 yalign \.5')
  def test_row_labels_and_controls_share_vertical_center(self):
   self.assertIn('xpos 0 yalign .5 xsize 256 spacing 4',A)
   self.assertIn('ypos ((r13_opt_row_height()-r13_opt_button_height())//2)',A)

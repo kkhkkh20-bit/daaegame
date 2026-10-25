@@ -186,11 +186,13 @@ screen r13_map_b(region, selected, ready, map_hover, map_notice=None):
     for key, state in rows:
         $ lx, ly, lw, lh = r13_bmap_label_rect(region, key)
         $ focused = state != "locked" and (key == selected or key == map_hover)
-        $ plate = Fixed(r13_bmap_label_bg(lw, lh, focused=focused, locked=state != "open"), Text(r13_bmap_label_text(key), size=r13_bmap_label_size(), color=("#7a2a22" if key == selected else "#65503b" if state == "open" else "#82745e"), xalign=.5, yalign=.5), xysize=(lw, lh+3))
+        $ plate = Fixed(r13_bmap_label_bg(lw, lh, focused=focused, locked=state != "open"), Text(r13_bmap_label_text(key), size=r13_bmap_label_size(), font=R13_UI_BOLD_FONT, color=("#7a2a22" if key == selected else "#65503b" if state == "open" else "#82745e"), xalign=.5, yalign=.5), xysize=(lw, lh+3))
         if focused and state == "open":
             add At(plate, r13_bmap_lift) xpos lx ypos ly
         else:
             add plate xpos lx ypos ly
+    for key,state in rows:
+        use r13_map_status_badges(key,state,selected,r13_bmap_label_rect(region,key))
     # 누를 자리는 그림 위에 따로 둔다. 숨은 장소는 rows 에 없으므로 버튼·접근성 이름도 없다.
     for key, state in rows:
         $ t = r13_bmap_target(region, key)
@@ -225,6 +227,6 @@ screen r13_map_b(region, selected, ready, map_hover, map_notice=None):
         area (band_left, band_y, band_right-band_left, band_h)
         hbox:
             yalign .5 spacing 14
-            text ("여관 안" if region == "inn" else "숲·산길") size 23 color "#4b3420" yalign .5
+            text ("여관 안" if region == "inn" else "숲·산길") size 23 color "#4b3420" font R13_UI_BOLD_FONT yalign .5
             text ("현재 · "+(R13_MAP_LABELS.get(current,"마을") if r13_map_discovered(current) else "마을")) size 17 color "#765b3e" yalign .5
         text (map_notice or r13_bmap_hint(region)) size (19 if r13_touch_ui() else 17) color ("#7a2a22" if map_notice else "#5b4630") xalign 1.0 yalign .5 text_align 1.0

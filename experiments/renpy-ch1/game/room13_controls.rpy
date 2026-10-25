@@ -44,12 +44,15 @@ screen r13_confirmation_card(message,yes,no,ready):
 
 init 111:
     style r13_confirm_button is r13_button:
-        background R13PaperFrame()
-        hover_background Transform(R13PaperFrame(),matrixcolor=BrightnessMatrix(.05))
-        insensitive_background R13PaperFrame()
+        background R13ControlSurface()
+        hover_background R13ControlSurface(hovered=True)
+        insensitive_background R13ControlSurface(disabled=True)
         padding (18,12)
-        xmaximum 430
+        xsize 427
+        xmaximum 427
     style r13_confirm_button_text is r13_button_text:
+        font R13_UI_BOLD_FONT
+        color "#493323"
         size 25
 
 screen r13_control(caption,icon,command,enabled=True,chosen=False,primary=False,width=None,height=None,label_size=None,icon_size=None,control_id=None):
@@ -68,8 +71,9 @@ screen r13_control(caption,icon,command,enabled=True,chosen=False,primary=False,
             if icon:
                 add R13AntiqueIcon(icon,size=icon_size or R13_CONTROL["icon"]) yalign .5 alpha (1.0 if enabled else .5)
             text caption:
-                font r13_ui_font() size (label_size or r13_read_size(R13_CONTROL["text"],R13_CONTROL["large_text"]))
-                color ("#a79c8c" if not enabled else "#fff4df" if primary else "#f2d28d" if chosen else "#fff4df")
+                font R13_UI_BOLD_FONT size (label_size or r13_read_size(R13_CONTROL["text"],R13_CONTROL["large_text"]))
+                color ("#978572" if not enabled else "#fff7e8" if primary or chosen else "#493323")
+                hover_color ("#fff7e8" if primary or chosen else "#793e2a")
                 yalign .5
 
 screen r13_footer_control(column,caption,icon,command,enabled=True,chosen=False,primary=False):
