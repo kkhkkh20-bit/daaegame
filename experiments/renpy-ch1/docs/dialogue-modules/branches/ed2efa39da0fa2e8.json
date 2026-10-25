@@ -1,14 +1,92 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "cdbec8fdf74daccf455ae6a88d7cc975a9acc29a990f93acacb7f1f43292a42b",
+  "source_stamp": "84a2bda26058a83b5b6760b0d1daa39890ce4cd8c2b7975c841fda52d9d5c2ac",
   "entries": [
+    {
+      "id": "NW_D10_S03_T29",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S03_L0067",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S03_L0067",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "그건……",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1594,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
+      "baseline_hash": "81b7f85f7146cdf0b0c7f9e1baae9b4e91a6d9e0134ae1ecc076bb16d47575ee",
+      "uid": "06af4bf09cb27e9f7c803099",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_S03_T30",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S03_L0067",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S03_L0067",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "도토 씨는 바로 밖에 있었어요. 쓰러진 분을 보고도 알리지 않고, 공구만 들고 주방으로 나오셨잖습니까.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1594,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
+      "baseline_hash": "329a3756b1e5622be98c852b35d5cd23b234da87f6d6106ac77a9aaaa1ea251e",
+      "uid": "7ac65b05e1e750ba0ab15c52",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "NW_D10_S03_R01",
       "file": "game/v111/newworld/d10.json",
       "path": [
         "after",
         "MS14_D10_S03_L0067",
-        0,
+        2,
         "text"
       ],
       "origin": "patch",
@@ -33,9 +111,9 @@
         }
       ],
       "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
-      "source_hash": "041a42f889c2a38f61f8094c19aab4401b69e294d3df565c1b0068ee333a7fb9",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
       "baseline_hash": "aeec550b2530480ae3e5539e788e4ce54244c0018bc2f4d0299cd723621dcdec",
-      "uid": "06af4bf09cb27e9f7c803099",
+      "uid": "8663cdb21bc52de82bd80526",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
@@ -47,7 +125,7 @@
       "path": [
         "after",
         "MS14_D10_S03_L0067",
-        1,
+        3,
         "text"
       ],
       "origin": "patch",
@@ -59,7 +137,7 @@
       "when": null,
       "speaker": "아빠",
       "kind": "dialogue",
-      "text": "하나 더 묻겠습니다. 8일에 제게 그러셨죠. ‘도토가 노인 책상에 펼쳐 놓은 수첩을 들여다보더라.’ 아까도 같은 말씀을 하셨고요.",
+      "text": "하나 더요. 8일에 제게 그러셨죠. ‘도토가 노인 책상에 펼쳐 놓은 수첩을 들여다보더라.’",
       "editable": true,
       "usage": "active",
       "note": "",
@@ -72,9 +150,48 @@
         }
       ],
       "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
-      "source_hash": "041a42f889c2a38f61f8094c19aab4401b69e294d3df565c1b0068ee333a7fb9",
-      "baseline_hash": "0302478ba2f58e1b83bede3370eed66075ad1b3fa8778e9bb0f983dd46b3b910",
-      "uid": "7ac65b05e1e750ba0ab15c52",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
+      "baseline_hash": "0b3c5a5e41c7e00bda339e86d37793bc5c4db97c21d23f1c39540b73cdb00979",
+      "uid": "fdde78ca6e16a6d4f3a4ae7b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_S03_T31",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S03_L0067",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S03_L0067",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "그랬죠. 그게 왜요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1594,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
+      "baseline_hash": "90af4e2a4a4889cbbe59a24889c95346ab9343900910e195fe4345f179e7af41",
+      "uid": "4bbaae2b27aa7544e9b14801",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
@@ -86,7 +203,7 @@
       "path": [
         "after",
         "MS14_D10_S03_L0067",
-        2,
+        5,
         "text"
       ],
       "origin": "patch",
@@ -111,9 +228,9 @@
         }
       ],
       "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
-      "source_hash": "041a42f889c2a38f61f8094c19aab4401b69e294d3df565c1b0068ee333a7fb9",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
       "baseline_hash": "cd5bbd5b66b521b12de5fb1608d65843fcf6afc9f5ec48deff5df808439a5fb0",
-      "uid": "8663cdb21bc52de82bd80526",
+      "uid": "6ce3f38b9763397212843b40",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
@@ -125,7 +242,7 @@
       "path": [
         "after",
         "MS14_D10_S03_L0067",
-        3,
+        6,
         "text"
       ],
       "origin": "patch",
@@ -150,9 +267,9 @@
         }
       ],
       "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
-      "source_hash": "041a42f889c2a38f61f8094c19aab4401b69e294d3df565c1b0068ee333a7fb9",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
       "baseline_hash": "7e2c222c396d313876e49a4c8a6b9565de782e080f8011455680f8f7810ba5e9",
-      "uid": "fdde78ca6e16a6d4f3a4ae7b",
+      "uid": "2262d1d6209864a12eae0a4c",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
@@ -164,7 +281,7 @@
       "path": [
         "after",
         "MS14_D10_S03_L0067",
-        4,
+        7,
         "text"
       ],
       "origin": "patch",
@@ -176,7 +293,7 @@
       "when": null,
       "speaker": "아빠",
       "kind": "dialogue",
-      "text": "어르신은 도토 씨가 내려간 다음에야 수첩을 꺼내 책상에 펴셨습니다. 다람이가 봤어요. 도토 씨는…… 그 수첩을 못 봤습니다.",
+      "text": "펴신 건 도토 씨가 내려간 다음입니다. 도토 씨는 그걸 못 봤어요.",
       "editable": true,
       "usage": "active",
       "note": "",
@@ -189,9 +306,48 @@
         }
       ],
       "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
-      "source_hash": "041a42f889c2a38f61f8094c19aab4401b69e294d3df565c1b0068ee333a7fb9",
-      "baseline_hash": "acda577174e2a210aa32b4ebe3e12e5c1ec4640b57951c6825f936a95c5f6a00",
-      "uid": "4bbaae2b27aa7544e9b14801",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
+      "baseline_hash": "aee189137de1db16a859cb065780feeecc2ee6c04d4aadf935ac5704729fea9f",
+      "uid": "5a66721efcfcbb34f1c4dbb7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_S03_T32",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S03_L0067",
+        8,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S03_L0067",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "응. 할아버지가 품에서 꺼내서 폈어. 내가 봤어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1594,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
+      "baseline_hash": "a27e07060aafd12f5e0711337186bbd32a4e9ff89f6ab80aedd0cf6bb09c4d7b",
+      "uid": "862e6b5f66b5051537798c2f",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
@@ -203,7 +359,7 @@
       "path": [
         "after",
         "MS14_D10_S03_L0067",
-        5,
+        9,
         "text"
       ],
       "origin": "patch",
@@ -228,9 +384,9 @@
         }
       ],
       "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
-      "source_hash": "041a42f889c2a38f61f8094c19aab4401b69e294d3df565c1b0068ee333a7fb9",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
       "baseline_hash": "a1349fa9b9722bd2188d8d3ae2e7fa1a80a7c1952ac5439c443039ba6770321d",
-      "uid": "6ce3f38b9763397212843b40",
+      "uid": "47b64bf47ed275c6b4568cc3",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
@@ -242,7 +398,7 @@
       "path": [
         "after",
         "MS14_D10_S03_L0067",
-        6,
+        10,
         "text"
       ],
       "origin": "patch",
@@ -254,7 +410,7 @@
       "when": null,
       "speaker": "도토",
       "kind": "dialogue",
-      "text": "저는 그 수첩을 본 적도 없어요. 그런데 어떻게 그런 말을 합니까.",
+      "text": "예? 전 그 수첩 본 적도 없어요! 그런데 어떻게……",
       "editable": true,
       "usage": "active",
       "note": "",
@@ -267,9 +423,9 @@
         }
       ],
       "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
-      "source_hash": "041a42f889c2a38f61f8094c19aab4401b69e294d3df565c1b0068ee333a7fb9",
-      "baseline_hash": "4d902156ebab287c52097ed276270e67821b4875f36339d115b6ed6380b3d2fe",
-      "uid": "2262d1d6209864a12eae0a4c",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
+      "baseline_hash": "22d8bc3f715c7616a218661e5adc4b23605d69a86220d29a14df132806aa6d15",
+      "uid": "41a66320def79d351a86ba6c",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
@@ -281,7 +437,7 @@
       "path": [
         "after",
         "MS14_D10_S03_L0067",
-        7,
+        11,
         "text"
       ],
       "origin": "patch",
@@ -293,7 +449,7 @@
       "when": null,
       "speaker": "아빠",
       "kind": "dialogue",
-      "text": "다람이가 수첩 얘길 한 곳은 보호실뿐입니다. 저와 서리 씨, 너울 씨가 있었어요. 출입 기록에…… 할머니 이름은 없습니다.",
+      "text": "다람이가 수첩 얘길 한 곳은 보호실뿐이에요. 저, 서리 씨, 너울 씨. 출입 기록에 할머니 이름은 없고요.",
       "editable": true,
       "usage": "active",
       "note": "",
@@ -306,9 +462,9 @@
         }
       ],
       "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
-      "source_hash": "041a42f889c2a38f61f8094c19aab4401b69e294d3df565c1b0068ee333a7fb9",
-      "baseline_hash": "0a2d779b88c05789ba4242c5e2c6b6d2212e5c6ca0c6b278cf5932aa62254a65",
-      "uid": "5a66721efcfcbb34f1c4dbb7",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
+      "baseline_hash": "59ed0d2c8396fa0280928c95df14fbbb28116b52aab293615b43a4b5ac6e0350",
+      "uid": "3611b412cb8bc8dacf215d50",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
@@ -320,7 +476,7 @@
       "path": [
         "after",
         "MS14_D10_S03_L0067",
-        8,
+        12,
         "text"
       ],
       "origin": "patch",
@@ -345,9 +501,9 @@
         }
       ],
       "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
-      "source_hash": "041a42f889c2a38f61f8094c19aab4401b69e294d3df565c1b0068ee333a7fb9",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
       "baseline_hash": "38823e4e5f4b87e534d625d7af95548e8547b608c572d03b9a95f89d2cc7296a",
-      "uid": "862e6b5f66b5051537798c2f",
+      "uid": "2465ca458c2b69037d72632d",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
@@ -359,7 +515,7 @@
       "path": [
         "after",
         "MS14_D10_S03_L0067",
-        9,
+        13,
         "text"
       ],
       "origin": "patch",
@@ -371,7 +527,7 @@
       "when": null,
       "speaker": "아빠",
       "kind": "dialogue",
-      "text": "펼친 수첩을 본 건, 도토 씨가 내려간 뒤 그 방에 들어간 사람뿐입니다. ……계단 아래서 도토 씨를 부른 것도 할머니셨습니까?",
+      "text": "펼친 수첩을 본 사람은, 도토 씨가 내려간 뒤 그 방에 들어간 사람뿐입니다.",
       "editable": true,
       "usage": "active",
       "note": "",
@@ -384,9 +540,48 @@
         }
       ],
       "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
-      "source_hash": "041a42f889c2a38f61f8094c19aab4401b69e294d3df565c1b0068ee333a7fb9",
-      "baseline_hash": "3934ed9631a785b07d37ae3086435c435831cd520632a8546bb724d4e0a8e98e",
-      "uid": "47b64bf47ed275c6b4568cc3",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
+      "baseline_hash": "fe0309bd3e5677e2fe7283d7667abaa2f13756d792be810ce0dabb614fbf573c",
+      "uid": "9449c6dbf77e3161438fe98c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_S03_T33",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S03_L0067",
+        14,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S03_L0067",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "……그럼 계단 아래서 저를 부른 사람이……",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1594,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
+      "baseline_hash": "8a5cf4830e816b1f430b44689975b3f1c5b426e8c19d7bc6dbed0a6f11c2c705",
+      "uid": "d55c4ed228b0ea5545b8d5cc",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
@@ -398,7 +593,7 @@
       "path": [
         "after",
         "MS14_D10_S03_L0067",
-        10,
+        15,
         "text"
       ],
       "origin": "patch",
@@ -423,9 +618,87 @@
         }
       ],
       "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
-      "source_hash": "041a42f889c2a38f61f8094c19aab4401b69e294d3df565c1b0068ee333a7fb9",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
       "baseline_hash": "cfad7f63d6648fd69d4ddb60f88f263976afcfbf8c45589371f5a3e05f015bbd",
-      "uid": "41a66320def79d351a86ba6c",
+      "uid": "4b52cac4e35a349e1836e22f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_S03_T34",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S03_L0084",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S03_L0084",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "그 둘이 다르다는 거요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1609,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
+      "baseline_hash": "1834bd9f0854fc1c2f47605f4879f0a1b3e87e67036e13b05d7226ec625da1f9",
+      "uid": "bdc793aa57a3dd9bc6614bcd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_S03_T35",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S03_L0084",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S03_L0084",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "상처, 핀 조각, 도토 씨가 아이를 보던 때. 셋이 다 맞아요. 머리 상처까지 아이에게 떠넘길 수는 없습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1609,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
+      "baseline_hash": "8d964176f9d6fbef7d79841462d850ac890ddf52d3e6bff8d18266671d3258b2",
+      "uid": "6910b306eb04e707a98d0023",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
@@ -437,7 +710,7 @@
       "path": [
         "after",
         "MS14_D10_S03_L0084",
-        0,
+        2,
         "text"
       ],
       "origin": "patch",
@@ -462,9 +735,9 @@
         }
       ],
       "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
-      "source_hash": "041a42f889c2a38f61f8094c19aab4401b69e294d3df565c1b0068ee333a7fb9",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
       "baseline_hash": "333496b316803ec38a4478d2e4dfb98649960d6ba16340905670b9ea76a4da4c",
-      "uid": "bdc793aa57a3dd9bc6614bcd",
+      "uid": "f6d7f84923c01a1df7835d12",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
@@ -476,7 +749,7 @@
       "path": [
         "after",
         "MS14_D10_S03_L0084",
-        1,
+        3,
         "text"
       ],
       "origin": "patch",
@@ -501,9 +774,9 @@
         }
       ],
       "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
-      "source_hash": "041a42f889c2a38f61f8094c19aab4401b69e294d3df565c1b0068ee333a7fb9",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
       "baseline_hash": "c5d2e209caf8af0359bc215f4ee8ab77f26700916f0d9c5e7969cea56222572f",
-      "uid": "6910b306eb04e707a98d0023",
+      "uid": "d66748c2803ae3e04a6b628f",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
@@ -515,7 +788,7 @@
       "path": [
         "after",
         "MS14_D10_S03_L0084",
-        2,
+        4,
         "text"
       ],
       "origin": "patch",
@@ -540,9 +813,9 @@
         }
       ],
       "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
-      "source_hash": "041a42f889c2a38f61f8094c19aab4401b69e294d3df565c1b0068ee333a7fb9",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
       "baseline_hash": "49909ef9f2a56f3f81b45bdb26155c2ac3bd2d0f5e242b973fe643cb9cdbcd48",
-      "uid": "f6d7f84923c01a1df7835d12",
+      "uid": "933ebf40dde8f3ca64fdb29e",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
@@ -554,7 +827,7 @@
       "path": [
         "after",
         "MS14_D10_S03_L0084",
-        3,
+        5,
         "text"
       ],
       "origin": "patch",
@@ -579,9 +852,9 @@
         }
       ],
       "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
-      "source_hash": "041a42f889c2a38f61f8094c19aab4401b69e294d3df565c1b0068ee333a7fb9",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
       "baseline_hash": "4c92579321d700112711b4b9ae14e77bd1cae5423fbb5a0a08ec98265ba3c32c",
-      "uid": "d66748c2803ae3e04a6b628f",
+      "uid": "5fcd7dc99be366f5cc32f5fb",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
@@ -618,7 +891,7 @@
         }
       ],
       "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
-      "source_hash": "041a42f889c2a38f61f8094c19aab4401b69e294d3df565c1b0068ee333a7fb9",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
       "baseline_hash": "efb2b24db288c40fdaeee8a99fc5baad0745a5525eb40259ff5e9a1bda7f15cd",
       "uid": "a583fcca1c0b075e72e24024",
       "review_status": "draft",
@@ -657,7 +930,7 @@
         }
       ],
       "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
-      "source_hash": "041a42f889c2a38f61f8094c19aab4401b69e294d3df565c1b0068ee333a7fb9",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
       "baseline_hash": "8da72dc9238b831ab56af4a1d1597a2ba0458ba7fcfdabbd94baecfc48f9cb18",
       "uid": "782946ba35adb812e454e01f",
       "review_status": "draft",
@@ -696,7 +969,7 @@
         }
       ],
       "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
-      "source_hash": "041a42f889c2a38f61f8094c19aab4401b69e294d3df565c1b0068ee333a7fb9",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
       "baseline_hash": "08c6dfbd1172850ac7a07d17eca609a06ad8a61c39f7349b7ad9f7ba2130bbef",
       "uid": "f4fea16a08ceb85dcc237636",
       "review_status": "draft",
@@ -735,7 +1008,7 @@
         }
       ],
       "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
-      "source_hash": "041a42f889c2a38f61f8094c19aab4401b69e294d3df565c1b0068ee333a7fb9",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
       "baseline_hash": "05b7e2cb2aaf752116baedcff0c7ff6921a86c0812db1723ed6770d3ce89c394",
       "uid": "20c80946cc155919dce320a0",
       "review_status": "draft",
@@ -774,7 +1047,7 @@
         }
       ],
       "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
-      "source_hash": "041a42f889c2a38f61f8094c19aab4401b69e294d3df565c1b0068ee333a7fb9",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
       "baseline_hash": "534404cc2b5b32735d310ad0555b029ecdd7cc96c97994cdeeeaefb07de5b946",
       "uid": "e63003829b89159e9463e810",
       "review_status": "draft",
@@ -813,9 +1086,321 @@
         }
       ],
       "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
-      "source_hash": "041a42f889c2a38f61f8094c19aab4401b69e294d3df565c1b0068ee333a7fb9",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
       "baseline_hash": "3f151cc5548236026dec55282626d7abc88b5c5cc980e82ee085a9bf568ca941",
       "uid": "65334d2844a08eba95aa46fd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_S03_T21",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S03_L0008",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S03_L0008",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다른 건요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1524,
+          "label": "r13_v111_owner_tok10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
+      "baseline_hash": "8d2dd386893b032e827eeb6e09956f8a9bb78979b733ae8c50105a544b446abf",
+      "uid": "a980a8dc5cb6c5aaf3b77d7e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_S03_T22",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S03_L0008",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S03_L0008",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "그다음부턴 다르게 감았어요. 장부에 다 있어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1524,
+          "label": "r13_v111_owner_tok10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
+      "baseline_hash": "f4e085b4c25aec3f75bdf05ebd7250655c46a2f9fb1db05b8ccc5b8b4a653296",
+      "uid": "23e0dbe666ddf865c210dda5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_S03_T23",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S03_L0026",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S03_L0026",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그다음은요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1552,
+          "label": "r13_v111_time_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
+      "baseline_hash": "721bdf7beb7bf6418ff786328ec909e7f56814736bba585fd60b8da49980e85e",
+      "uid": "eb5c38e03443473ea7e77440",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_S03_T24",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S03_L0026",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S03_L0026",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "같이 계단으로 갔죠. 도토 씨가 아이 손 잡을 때도 그 핀, 목도리에 있었어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1552,
+          "label": "r13_v111_time_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
+      "baseline_hash": "a80f142f48394d8c7bbca1d9253c1d0429eeacbd6c44f5cff5064b4eeb84ff7a",
+      "uid": "cab2e652df3d425a16f1482f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_S03_T25",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S03_L0055",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S03_L0055",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "그럼 뭐요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1583,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
+      "baseline_hash": "9e8473ae48f3fa31db3467b26b60b777abda6f7b9465e13c88bbae7074d229e8",
+      "uid": "1c2a35928c27c2171488a50a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_S03_T26",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S03_L0055",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S03_L0055",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "목도리를 감고 핀을 채운 그 앞부분이 머리에 닿았다는 겁니다. 그때 구리 끝이 부러져 상처에 남았고요. 이 위치를 봐 주십시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1583,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
+      "baseline_hash": "6245ff038c13fc20a29c0cd97f86c7f0b72600f155f4634fa1dddb07a1ccfd27",
+      "uid": "2d61c4bae5d77c6409135714",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_S03_T27",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S03_L0063",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S03_L0063",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "그, 그랬죠.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1590,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
+      "baseline_hash": "83fec5eab77effcc7345e03353ddbafb4651f3f8a8c8b2b6ff17e0e195905559",
+      "uid": "ee25801b8d01fb387106ae05",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_S03_T28",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S03_L0063",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S03_L0063",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그런데 이젠 아이가 목도리를 잡았다? 언제요. 어디서요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1590,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "e0f7cf55fdce200616892082f9b20f0b3cfb5e1fa8788e159b245c5d90d0ab5c",
+      "baseline_hash": "5078e42be2eb00288ac8314b909867c06a9174f89b0c897c7ed9ef948b72d0a1",
+      "uid": "c7873716135e1bf2a1b285a1",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|MS14_D10_S03|patch|after|행 조건 없음",
