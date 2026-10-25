@@ -1315,9 +1315,9 @@
     ],
     "options": [
       {
-        "title": "빈 수레와 덮개를 부탁합니다.",
+        "title": "수레를 끌고 아랫길로 간다",
         "location": "square",
-        "person": "karo"
+        "object": "cart"
       },
       {
         "title": "수레 짐칸을 살핀다",
@@ -1364,8 +1364,105 @@
             null
           ]
         ]
+      },
+      {
+        "index": 80,
+        "title": "수레 짐을 내려 자리를 비운다",
+        "location": "square",
+        "guard": [
+          [
+            "state",
+            "rescue_cart_ready",
+            null
+          ]
+        ],
+        "object": "cart"
+      },
+      {
+        "index": 81,
+        "title": "덮개를 접어 빈 짐칸에 싣는다",
+        "location": "square",
+        "guard": [
+          [
+            "state",
+            "rescue_cart_ready",
+            true
+          ],
+          [
+            "state",
+            "rescue_cover_ready",
+            null
+          ]
+        ],
+        "object": "cart"
+      },
+      {
+        "index": 82,
+        "title": "까로에게 운반을 부탁한다",
+        "location": "square",
+        "guard": [
+          [
+            "state",
+            "rescue_cart_ready",
+            true
+          ],
+          [
+            "state",
+            "rescue_driver_ready",
+            null
+          ]
+        ],
+        "person": "karo"
+      },
+      {
+        "index": 83,
+        "title": "아랫길을 비추는 등을 점검한다",
+        "location": "square",
+        "guard": [
+          [
+            "state",
+            "rescue_lights_ready",
+            null
+          ]
+        ],
+        "object": "lamp"
+      },
+      {
+        "index": 84,
+        "title": "아랫길 세 사람의 받을 자리를 비운다",
+        "location": "school",
+        "guard": [
+          [
+            "state",
+            "rescue_school_ready11",
+            null
+          ]
+        ],
+        "object": "blankets"
+      },
+      {
+        "index": 85,
+        "title": "먼저 학교 물자를 인계한다",
+        "location": "square",
+        "guard": [],
+        "object": "cart"
       }
-    ]
+    ],
+    "people_by_location": {
+      "square": [
+        "mom",
+        "daram",
+        "karo",
+        "resident_nero",
+        "resident_lamplighter"
+      ],
+      "school": [
+        "mom",
+        "daram",
+        "resident_teacher",
+        "nabi"
+      ]
+    }
   },
   "day_rescue_door11": {
     "location": "forest",
@@ -1874,7 +1971,12 @@
     ],
     "options": [
       {
-        "title": "운반 인력·길등·덮개를 확인한다",
+        "title": "낮에 챙긴 운반 준비를 확인한다",
+        "location": "school",
+        "object": "blankets"
+      },
+      {
+        "title": "오늘은 출발을 미룬다",
         "location": "school",
         "object": "blankets"
       }
@@ -3443,5 +3545,28 @@
         "daram"
       ]
     }
+  },
+  "rescue_handoff11": {
+    "location": "school",
+    "people": [
+      "mom",
+      "daram",
+      "resident_teacher",
+      "karo",
+      "resident_nero",
+      "nabi"
+    ],
+    "options": [
+      {
+        "title": "세 사람을 맞은 자리와 명단을 확인한다",
+        "location": "school",
+        "object": "blankets"
+      },
+      {
+        "title": "학교 안에서 받을 사람을 기다린다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ]
   }
 }

@@ -1,3 +1,12 @@
+init 324 python:
+    def r13_nero_transport_ready11():
+        # Old saves may already be waiting after the original preparation scene.
+        physical=all(r13_v111_value(k) is True for k in ('rescue_cart_ready','rescue_cover_ready','rescue_driver_ready','rescue_lights_ready'))
+        seat=r13_v111_value('rescue_school_ready11') is True or not r13_v111_value('rescue_preparation_schema11')
+        return physical and seat and r13_v111_actor_ready('karo') and not r13_v111_value('departed:karo')
+    def r13_nero_receiver_ready11():
+        return any(r13_v111_actor_ready(p) and not r13_v111_value('departed:'+p) and not r13_v111_value('listed:'+p) for p in ('resident_teacher','nabi'))
+
 # Reviewed D11–D14 source records and native callbacks.
 
 label r13_v111_day11:
@@ -424,6 +433,7 @@ label r13_v111_family_place_done11:
     jump r13_v111_school_visit11
 
 label r13_v111_rescue_prepare11:
+    $ r13_v111_set('rescue_preparation_schema11',True)
     call r13_v111_travel('square','rescue_prepare11')
     $ r13_v111_arrive(['mom', 'daram', 'karo', 'resident_nero', 'resident_lamplighter'])
     jump r13_v111_rescue_cart11
@@ -432,6 +442,28 @@ label r13_v111_rescue_cart11:
     call r13_v111_wait('rescue_cart11')
     if _return==0:
         jump r13_v111_rescue_ready11
+    if _return==80:
+        call r13_lines(r13_nw_block('nr_cart11'),'nw:nr_cart11')
+        $ r13_v111_set('rescue_cart_ready',True)
+    elif _return==81:
+        call r13_lines(r13_nw_block('nr_cover11'),'nw:nr_cover11')
+        $ r13_v111_set('rescue_cover_ready',True)
+    elif _return==82 and r13_v111_actor_ready('karo'):
+        call r13_lines(r13_nw_block('nr_driver11'),'nw:nr_driver11')
+        $ r13_v111_set('rescue_driver_ready',True)
+    elif _return==83:
+        call r13_lines(r13_nw_block('nr_lights11'),'nw:nr_lights11')
+        $ r13_v111_set('rescue_lights_ready',True)
+    elif _return==84 and r13_nero_receiver_ready11():
+        # The cart driver waits beside the cart; school dialogue must not relocate him.
+        $ r13_v111_arrive(['mom','daram','resident_teacher','nabi'])
+        if r13_v111_actor_ready('resident_teacher') and not r13_v111_value('listed:resident_teacher') and not r13_v111_value('departed:resident_teacher'):
+            call r13_lines(r13_nw_block('nr_seat11'),'nw:nr_seat11')
+        else:
+            call r13_lines(r13_nw_block('nr_seat_nabi11'),'nw:nr_seat_nabi11')
+        $ r13_v111_set('rescue_school_ready11',True)
+    elif _return==85:
+        jump r13_v111_supply_school11
     # 2026-10-24 대승리 S1(GRAND_WIN_DESIGN.md 2-3): 짐칸을 비우며 그릇 상자를 내리고, 하나를 주머니에 넣을 수 있다.
     if _return==1:
         call r13_v111_bowl_cart11
@@ -442,11 +474,10 @@ label r13_v111_rescue_cart11:
     jump r13_v111_rescue_cart11
 
 label r13_v111_rescue_ready11:
-    $ r13_v111_set('rescue_cart_ready',True)
-    $ r13_v111_set('rescue_cover_ready',True)
-    $ r13_v111_set('rescue_driver_ready',True)
-    $ r13_v111_set('rescue_lights_ready',True)
-    jump r13_v111_day_rescue11
+    if r13_nero_transport_ready11():
+        jump r13_v111_day_rescue11
+    call r13_lines(r13_nw_block('nr_missing11'),'nw:nr_missing11')
+    jump r13_v111_supply_school11
 
 label r13_v111_day_rescue11:
     call r13_lines(r13_v111_lines(['MS14_D11_S03_L0050']),'v111:MS14_D11_S03_L0050')
@@ -467,8 +498,9 @@ label r13_v111_day_rescue_door11:
 label r13_v111_day_rescue_school11:
     call r13_v111_travel('school','day_rescue_school11')
     $ r13_v111_arrive(['mom', 'daram', 'nabi', 'resident_teacher', 'resident_nero', 'karo'])
-    $ r13_v111_set('lower_road_handover',3)
-    jump r13_v111_school_visit11
+    $ r13_v111_set('lower_road_arrived11',3)
+    $ r13_v111_set('rescue_handoff_period11','day')
+    jump r13_v111_rescue_handoff11
 
 label r13_v111_supply_school11:
     call r13_v111_travel('school','supply_school11')
@@ -816,6 +848,9 @@ label r13_v111_night11:
         call r13_v111_rest_blanket11
 
 label r13_v111_night_rescue_route11:
+    if r13_v111_value('lower_road_arrived11')==3 and r13_v111_value('lower_road_handover')!=3:
+        $ r13_v111_set('rescue_handoff_period11','night')
+        jump r13_v111_rescue_handoff11
     if r13_v111_value('lower_road_handover')==3:
         jump r13_v111_lower_safe11
     jump r13_v111_request_rescue11
@@ -850,24 +885,20 @@ label r13_v111_request_rescue11:
 
 label r13_v111_night_rescue_prepare11:
     call r13_v111_wait('night_rescue_prepare11')
+    if _return==1:
+        if not r13_v111_value('school_supply_handed'):
+            jump r13_v111_late_supply11
+        jump r13_v111_late_road11
     if _return==0:
         jump r13_v111_night_rescue_choices11
     jump r13_v111_night_rescue_prepare11
 
 label r13_v111_night_rescue_choices11:
-    $ r13_v111_set("rescue_cart_ready",r13_v111_actor_ready("karo"))
-    $ r13_v111_set("rescue_driver_ready",r13_v111_actor_ready("karo"))
-    $ r13_v111_set("rescue_lights_ready",bool(r13_v111_value("heat_inventory_observed")))
-    $ r13_v111_set('rescue_cover_ready',True)
-    if r13_v111_value("rescue_cart_ready") and r13_v111_value("rescue_driver_ready") and r13_v111_value("rescue_lights_ready") and r13_v111_value("school_supply_handed"):
+    if r13_nero_transport_ready11() and r13_v111_value('school_supply_handed'):
         jump r13_v111_night_rescue11
-    menu:
-        '준비된 수레로 지금 출발한다' if r13_v111_value('rescue_cart_ready') and r13_v111_value('rescue_cover_ready') and r13_v111_value('rescue_driver_ready') and r13_v111_value('rescue_lights_ready'):
-            jump r13_v111_night_rescue11
-        '학교 물자 인계를 먼저 끝낸다' if not r13_v111_value('school_supply_handed'):
-            jump r13_v111_late_supply11
-        '없는 운반수단을 지금 구한다' if not r13_v111_value('rescue_cart_ready'):
-            jump r13_v111_late_cart11
+    if not r13_v111_value('school_supply_handed'):
+        jump r13_v111_late_supply11
+    jump r13_v111_late_cart11
 
 label r13_v111_night_rescue11:
     call r13_v111_travel('forest','night_rescue11',[])
@@ -883,7 +914,6 @@ label r13_v111_snow_door11:
     jump r13_v111_snow_door11
 
 label r13_v111_night_rescue_done11:
-    $ r13_fork_set_fate('fate_nero','rescue')
     call r13_lines(r13_v111_lines(['MS14_D11_S04_L0018']),'v111:MS14_D11_S04_L0018')
     call r13_lines(r13_v111_lines(['MS14_D11_S04_L0019']),'v111:MS14_D11_S04_L0019')
     call r13_v111_travel('school','night_rescue_done11')
@@ -894,9 +924,29 @@ label r13_v111_night_rescue_done11:
     if r13_v111_actor_ready('resident_nero'):
         call r13_lines(r13_v111_lines(['MS14_D11_S04_L0023']),'v111:MS14_D11_S04_L0023')
     call r13_lines(r13_v111_lines(['MS14_D11_S04_L0024']),'v111:MS14_D11_S04_L0024')
-    $ r13_v111_set('lower_road_handover',3)
-    $ r13_v111_set('nero_alive',True)
-    jump r13_v111_sleep11
+    $ r13_v111_set('lower_road_arrived11',3)
+    $ r13_v111_set('rescue_handoff_period11','night')
+    jump r13_v111_rescue_handoff11
+
+label r13_v111_rescue_handoff11:
+    $ r13_v111_arrive(['mom','daram','resident_teacher','nabi','karo','resident_nero'])
+    call r13_v111_wait('rescue_handoff11')
+    if _return==0 and r13_nero_receiver_ready11():
+        call r13_lines(r13_nw_block('nr_handoff11'),'nw:nr_handoff11')
+        $ r13_v111_set('lower_road_handover',3)
+        $ r13_v111_set('nero_alive',True)
+        $ r13_v111_set('alive:v111_lowerroad_elder',True)
+        if r13_v111_value('rescue_handoff_period11')=='day':
+            $ r13_fork_set_fate('fate_nero','handover')
+            jump r13_v111_school_visit11
+        $ r13_fork_set_fate('fate_nero','rescue')
+        jump r13_v111_sleep11
+    if _return==1:
+        call r13_lines(r13_nw_block('nr_pending11'),'nw:nr_pending11')
+        if r13_v111_value('rescue_handoff_period11')=='day':
+            jump r13_v111_school_visit11
+        jump r13_v111_sleep11
+    jump r13_v111_rescue_handoff11
 
 label r13_v111_late_supply11:
     call r13_lines(r13_v111_lines(['MS14_D11_S04_L0035']),'v111:MS14_D11_S04_L0035')
