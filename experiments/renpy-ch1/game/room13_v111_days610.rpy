@@ -977,6 +977,9 @@ label r13_v111_missing_pages8:
     call r13_lines(r13_v111_lines(['MS14_D08_P01_L0022']),'v111:MS14_D08_P01_L0022')
     call r13_lines(r13_v111_lines(['MS14_D08_P01_L0023']),'v111:MS14_D08_P01_L0023')
     call r13_lines(r13_v111_lines(['MS14_D08_P01_L0024']),'v111:MS14_D08_P01_L0024')
+    # 2026-10-25: 너울과 할머니가 문간에 서는 줄(A05~)은 두 사람을 무대에 세운 뒤에 보인다.
+    $ r13_v111_join(['neoul','granny'])
+    call r13_lines(r13_nw_block('neoul_list8'),'nw:neoul_list8')
     $ r13_v111_commit('MS14_D08_P01_L0026')
     # 돌을 꺼낸 판은 7일 낮에 이미 받았다(swapped). 다짐만 받은 판은 서리가 오늘 꺼낸 돌이다.
     $ r13_nw_acquire("NW_STONE","clinic")
